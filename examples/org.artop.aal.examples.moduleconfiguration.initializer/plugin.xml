@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+  <copyright>
+  
+  Copyright (c) Tata Elxsi Ltd and others.
+  All rights reserved. This program and the accompanying materials are made
+  available under the terms of the Artop Software License Based on Released
+  AUTOSAR Material (ASLR) which accompanies this distribution, and is available
+  at http://www.artop.org/aslr.html
+  
+  Contributors: 
+      Tata Elxsi Ltd - Initial API and implementation
+  
+  </copyright>
+--> 
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         <objectContribution
+           id="org.artop.aal.examples.explorer.objectContribution"
+           objectClass="autosar3x.ecucparameterdef.ModuleDef">
+        <enablement>
+           <objectClass
+                 name="autosar3x.ecucparameterdef.ModuleDef">
+           </objectClass></enablement>
+        <action
+              class="org.artop.aal.examples.moduleconfiguration.initializer.GenerateModuleConfigurationAction"
+              enablesFor="1"
+              id="org.artop.aal.examples.explorer.action"
+              label="Initialize Base Module Configuration">
+        </action>
+     </objectContribution>
+   </extension>
+</plugin>
