@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="autosar3x.ecucparameterdef.ModuleDef"
+            id="org.artop.ecuc.examples.explorer.objectContribution">
+         <menu
+               id="artop.examples.ecuc"
+               label="ECU Configuration"
+               path="artop.examples.menu/artop.examples.group2">
+            <separator
+                  name="artop.examples.ecugroup">
+            </separator>
+         </menu>
+         <action
+               label="Initialize Base Module Configuration"
+               class="org.artop.ecuc.examples.moduleconfiguration.initializer.GenerateModuleConfigurationAction"
+               menubarPath="artop.examples.menu/artop.examples.ecuc/artop.examples.ecugroup"
+               enablesFor="1"
+               id="org.artop.ecuc.examples.ui.newAction">
+         </action>
+         <enablement>
+            <objectClass
+                  name="autosar3x.ecucparameterdef.ModuleDef">
+            </objectClass>
+         </enablement>
+      </objectContribution>
+   </extension>
+
+</plugin>
