@@ -25,6 +25,8 @@ import java.util.UUID;
 import java.util.Vector;
 
 import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
+import org.artop.ecuc.moduleconfiguration.initializer.internal.ConfigurationConstants;
+import org.artop.ecuc.moduleconfiguration.initializer.internal.DescriptionDefinitionMap;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.command.CreateChildCommand;
@@ -201,20 +203,21 @@ public class GenerateModuleConfiguration implements IConfigurationGeneration {
             String name = ConfigurationConstants.EMPTY_STRING;
             
             /* Getting the short name of the definition object */
-            Object shortName = getPropertyValue((GARObject) definitionObject,
-                                                ConfigurationConstants
-                                                    .PROPERTY_ID_SHORT_NAME);
-            if (null != shortName) {
-                name = shortName.toString();
-            }
-            
-            if (upperMultiplicity > 1) {
-                name = name + index;
-            }
-            
             name = getUniqueShortName(definitionObject,
                                       configurationObject,
                                       index);
+            if (name == null) {
+                Object shortName = getPropertyValue((GARObject) definitionObject,
+                                                    ConfigurationConstants
+                                                        .PROPERTY_ID_SHORT_NAME);
+                if (null != shortName) {
+                    name = shortName.toString();
+                }
+                if (upperMultiplicity > 1) {
+                    name = name + index;
+                }
+            }
+            
             
             /* Setting the short name of the configuration */
             setPropertyValue(configurationObject,

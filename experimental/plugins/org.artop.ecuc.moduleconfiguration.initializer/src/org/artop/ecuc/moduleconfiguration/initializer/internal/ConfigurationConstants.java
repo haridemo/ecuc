@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.moduleconfiguration.initializer;
+package org.artop.ecuc.moduleconfiguration.initializer.internal;
 /**
  * 
  * Character Constants used 
