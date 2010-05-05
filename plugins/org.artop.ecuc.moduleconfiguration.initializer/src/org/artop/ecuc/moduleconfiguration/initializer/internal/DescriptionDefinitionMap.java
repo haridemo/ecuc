@@ -1,14 +1,14 @@
 /**
  * <copyright>
  * 
- * Copyright (c) Tata Elxsi Ltd and others.
+ * Copyright (c) Tata Elxsi and others.
  * All rights reserved. This program and the accompanying materials are made
- * available under the terms of the Artop Software License Based on Released
- * AUTOSAR Material (ASLR) which accompanies this distribution, and is available
- * at http://www.artop.org/aslr.html
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
  * 
  * Contributors: 
- *     Tata Elxsi Ltd, India - Initial API and implementation
+ *     Tata Elxsi - Initial API and implementation
  * 
  * </copyright>
  */
@@ -18,8 +18,6 @@ import java.util.HashMap;
 
 /**
  * This class is used to keep the definition description map.
- * 
- * @author 
  */
 public class DescriptionDefinitionMap {
     
