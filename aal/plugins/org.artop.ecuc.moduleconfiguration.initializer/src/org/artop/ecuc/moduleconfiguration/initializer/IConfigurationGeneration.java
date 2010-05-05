@@ -1,18 +1,17 @@
 /**
  * <copyright>
  * 
- * Copyright (c) Tata Elxsi Ltd and others. All rights reserved.
- * This program and the accompanying materials are made available under the
- * terms of the Artop Software License Based on Released AUTOSAR Material (ASLR)
- * which accompanies this distribution, and is available at
- * http://www.artop.org/aslr.html
+ * Copyright (c) Tata Elxsi and others.
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
  * 
  * Contributors: 
- *      Tata Elxsi Ltd, India - Initial API and implementation 
+ *     Tata Elxsi - Initial API and implementation
  * 
  * </copyright>
  */
-
 package org.artop.ecuc.moduleconfiguration.initializer;
 
 import gautosar.gecucdescription.GModuleConfiguration;
@@ -22,8 +21,6 @@ import gautosar.ggenericstructure.ginfrastructure.GARPackage;
 /**
  * The interface for initializing the module configuration from definition
  * object
- * 
- * @author
  */
 public interface IConfigurationGeneration {
     
