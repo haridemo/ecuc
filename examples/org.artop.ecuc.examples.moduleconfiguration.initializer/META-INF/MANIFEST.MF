@@ -7,8 +7,8 @@ Bundle-Activator: org.artop.ecuc.examples.moduleconfiguration.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.ui;bundle-version="3.4.1",
- org.artop.aal.autosar3x;bundle-version="1.2.0"
+ org.eclipse.ui,
+ org.artop.aal.autosar3x
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Import-Package: autosar3x.ecucparameterdef,
