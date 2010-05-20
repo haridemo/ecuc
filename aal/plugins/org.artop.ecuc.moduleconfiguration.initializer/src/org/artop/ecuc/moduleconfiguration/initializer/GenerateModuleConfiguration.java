@@ -74,7 +74,6 @@ public class GenerateModuleConfiguration implements IConfigurationGeneration {
      *            the parent description node
      * @return the description object
      */
-    @SuppressWarnings("restriction")
     private GARObject generateConfiguration(int index,
                                             GARObject definitionObject,
                                             GARObject parentObject) {
@@ -238,7 +237,6 @@ public class GenerateModuleConfiguration implements IConfigurationGeneration {
      * @param configurationObject
      *            the possible child
      */
-    @SuppressWarnings("restriction")
     private void generateConfiguration(GARObject definitionObject,
                                        GARObject parentObject,
                                        TransactionalEditingDomain editingDomain,
@@ -433,7 +431,6 @@ public class GenerateModuleConfiguration implements IConfigurationGeneration {
      *            the short name of the configuration to be given
      * @return the description object
      */
-    @SuppressWarnings("restriction")
     private GARObject generateConfiguration(GARObject definitionObject,
                                             GARObject parentObject,
                                             String shortName) {
@@ -535,7 +532,6 @@ public class GenerateModuleConfiguration implements IConfigurationGeneration {
      *            number of instance to be created
      * @return an iterable list of configuration description objects
      */
-    @SuppressWarnings("restriction")
     private Iterable<GModuleConfiguration> generateConfiguration(
                                                  GARObject definitionObject,
                                                  GARObject parentObject,
@@ -629,7 +625,6 @@ public class GenerateModuleConfiguration implements IConfigurationGeneration {
      *            the index of the item
      * @return the name
      */
-    @SuppressWarnings("restriction")
     private String getUniqueShortName(GARObject definitionObject,
                                       GARObject configurationObject,
                                       int index) {
