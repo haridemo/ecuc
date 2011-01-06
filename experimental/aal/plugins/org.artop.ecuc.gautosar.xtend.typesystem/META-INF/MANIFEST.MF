@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.gautosar.xtend.typesystem;singleton:=true
+Bundle-Version: 3.1.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.xtend;bundle-version="1.0.1";visibility:=reexport,
+ org.artop.aal.common;bundle-version="2.1.1"
+Export-Package: org.artop.ecuc.gautosar.xtend.typesystem,
+ org.artop.ecuc.gautosar.xtend.typesystem.internal;x-internal:=true,
+ org.artop.ecuc.gautosar.xtend.typesystem.metatypes,
+ org.artop.ecuc.gautosar.xtend.typesystem.richtypes,
+ org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory,
+ org.artop.ecuc.gautosar.xtend.typesystem.workflow
+Bundle-Activator: org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator$Implementation
+Bundle-ActivationPolicy: lazy

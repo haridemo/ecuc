@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <actionProvider
+            class="org.artop.ecuc.codegen.xpand.ui.actions.providers.EcucCodeGenActionProvider"
+            id="org.artop.ecuc.codegen.xpand.ui.ecucCodeGenActionProvider">
+         <enablement>
+	        <instanceof value="gautosar.gecucdescription.GModuleConfiguration" />
+         </enablement>
+      </actionProvider>
+   </extension>
+</plugin>
