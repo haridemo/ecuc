@@ -1,0 +1,16 @@
+
+
+«DEFINE ChoiceContainerTest FOR ARRoot::Com»
+
+
+CONST(Com_SignalRouteType,COM_CONST) Com_SignalRoute[<%varGet("SignalRouteNumber")%>] =
+{
+«FOREACH ComConfig.ComGwMapping.ComGwSignalDest.select(e|e.ComGwSignalRef_ComSignal != null) AS signalDest SEPARATOR ','»
+  {
+    /*SourceIdx*/ «signalDest.parent.ComGwSignalSrc.ComGwSignalRef_ComSignal.value.ComHandleId»
+    /*DestIdx*/   «signalDest.ComGwSignalRef_ComSignal.value.ComHandleId»
+  }
+«ENDFOREACH»
+};
+
+«ENDDEFINE»

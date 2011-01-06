@@ -1,0 +1,2151 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION extensions::common»
+«EXTENSION extensions::com»
+«EXTENSION extensions::map»
+«EXTENSION extensions::stack»
+
+«DEFINE hHeader FOR ARRoot::Com -»
+/*=============================================================================
+**                                 GEENSYS
+**                      Proprietary - Copyright (C) 2009
+**-----------------------------------------------------------------------------
+** Supported MCUs      : MCU independent
+** Supported Compilers : Compiler independent
+**-----------------------------------------------------------------------------
+** File name         : Com_Cfg.h
+**
+** Module name       : AUTOSAR COM
+**
+** Requirement specification : AUTOSAR_SWS_COM.pdf
+**
+** Summary: Configuration header file of Autosar COM module
+**          (VARIANT-PRE-COMPILE)
+**
+**= History ===================================================================
+** Generation date: «dateString()»
+=============================================================================*/
+/*=============================================================================
+**
+**                 AUTOMATICALLY GENERATED FILE : DO NOT EDIT
+**
+=============================================================================*/
+
+#ifndef COM_CFG_H
+#define COM_CFG_H
+«ENDDEFINE»
+
+«DEFINE cHeader FOR ARRoot::Com -»
+/*=============================================================================
+**                                 GEENSYS
+**                      Proprietary - Copyright (C) 2009
+**-----------------------------------------------------------------------------
+** Supported MCUs      : MCU independent
+** Supported Compilers : Compiler independent
+**-----------------------------------------------------------------------------
+** File name         : Com_Cfg.c
+**
+** Module name       : AUTOSAR COM
+**
+** Requirement specification : AUTOSAR_SWS_COM.pdf
+**
+** Summary: Configuration pre-compile-time parameters of Autosar COM module
+**          (VARIANT-PRE-COMPILE)
+**
+**= History ===================================================================
+** Generation date: «dateString()»
+=============================================================================*/
+/*=============================================================================
+**
+**                 AUTOMATICALLY GENERATED FILE : DO NOT EDIT
+**
+=============================================================================*/
+«ENDDEFINE»
+
+«DEFINE gceReleaseAbstraction FOR ARRoot::Com -»
+#define Com_iGetRxSg_TimeoutCbk(SignalIndex)                (Com_RxSignalCfgTimeoutNotificationCbk[Com_RxSignalConfig[SignalIndex].TimeoutNotificationCbkIdx])
+#define Com_iCallRxSg_TimeoutCbk(SignalIndex)               (Com_RxSignalCfgTimeoutNotificationCbk[Com_RxSignalConfig[SignalIndex].TimeoutNotificationCbkIdx]())
+#define Com_iGetTxSg_TimeoutCbk(SignalIndex)                (Com_TxSignalCfgTimeoutNotificationCbk[Com_TxSignalConfig[SignalIndex].TimeoutNotificationCbkIdx])
+#define Com_iCallTxSg_TimeoutCbk(SignalIndex)               (Com_TxSignalCfgTimeoutNotificationCbk[Com_TxSignalConfig[SignalIndex].TimeoutNotificationCbkIdx]())
+#define Com_iGetRxSgGr_TimeoutCbk(SignalGroupIndex)         (Com_RxSignalGroupCfgTimeoutNotificationCbk[Com_RxSignalGroupConfig[SignalGroupIndex].TimeoutNotificationCbkIdx])
+#define Com_iCallRxSgGr_TimeoutCbk(SignalGroupIndex)        (Com_RxSignalGroupCfgTimeoutNotificationCbk[Com_RxSignalGroupConfig[SignalGroupIndex].TimeoutNotificationCbkIdx]())
+#define Com_iGetTxSgGr_TimeoutCbk(SignalGroupIndex)         (Com_TxSignalGroupCfgTimeoutNotificationCbk[Com_TxSignalGroupConfig[SignalGroupIndex].TimeoutNotificationCbkIdx])
+#define Com_iCallTxSgGr_TimeoutCbk(SignalGroupIndex)        (Com_TxSignalGroupCfgTimeoutNotificationCbk[Com_TxSignalGroupConfig[SignalGroupIndex].TimeoutNotificationCbkIdx]())
+#define Com_iGetTxSg_ErrorCbk(SignalIndex)                  (Com_TxSignalCfgErrorNotificationCbk[Com_TxSignalConfig[SignalIndex].ErrorNotificationCbkIdx])
+#define Com_iCallTxSg_ErrorCbk(SignalIndex)                 (Com_TxSignalCfgErrorNotificationCbk[Com_TxSignalConfig[SignalIndex].ErrorNotificationCbkIdx]())
+#define Com_iGetTxSgGr_ErrorCbk(SignalGroupIndex)           (Com_TxSignalGroupCfgErrorNotificationCbk[Com_TxSignalGroupConfig[SignalGroupIndex].ErrorNotificationCbkIdx])
+#define Com_iCallTxSgGr_ErrorCbk(SignalGroupIndex)          (Com_TxSignalGroupCfgErrorNotificationCbk[Com_TxSignalGroupConfig[SignalGroupIndex].ErrorNotificationCbkIdx]())
+#define Com_iGetRxSgGr_InvalidCbk(SignalGroupIndex)         (Com_RxSignalGroupCfgInvalidNotificationCbk[Com_RxSignalGroupConfig[SignalGroupIndex].InvalidNotificationCbkIdx])
+#define Com_iCallRxSgGr_InvalidCbk(SignalGroupIndex)        (Com_RxSignalGroupCfgInvalidNotificationCbk[Com_RxSignalGroupConfig[SignalGroupIndex].InvalidNotificationCbkIdx]())
+«ENDDEFINE»
+
+
+«REM»
+<%script type="autosar.objects" name="gceInitScript" post="trim()"%>
+«ENDREM»
+«DEFINE main FOR ARRoot::Com»
+«REM»
+<%-- Mapping of information --%>
+<%mapClearAll()%>
+«ENDREM»
+«mapClearAll()»
+
+«REM»
+<%--Com.mapSpyOn("UINT8_SignalValues").empty()--%>
+«ENDREM»
+«mapSpyOn("UINT8_SignalValues")»
+
+«REM»
+<%-- reporting direction in signal, signal group --%>
+<%for (Com.gceRxIPdu().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+	<%for (ComIPduSignalGroupRef.referenced_ComSignalGroup){%>
+		<%mapPut("direction", "Rx")%>
+	<%}%>
+	<%for (ComIPduSignalRef.referenced_ComSignal){%>
+		<%mapPut("direction", "Rx")%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxIPdu() AS rxIPdu»
+	«FOREACH rxIPdu.ComIPduSignalGroupRef AS signalGroupRef»
+		«signalGroupRef.mapPut("direction", "Rx")»
+	«ENDFOREACH»
+	«FOREACH rxIPdu.ComIPduSignalRef AS signalRef»
+		«signalRef.mapPut("direction", "Rx")»
+	«ENDFOREACH»
+«ENDFOREACH»
+«REM»
+<%for (Com.gceTxIPdu().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+	<%for (ComIPduSignalGroupRef.referenced_ComSignalGroup){%>
+		<%mapPut("direction", "Tx")%>
+	<%}%>
+	<%for (ComIPduSignalRef.referenced_ComSignal){%>
+		<%mapPut("direction", "Tx")%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceTxIPdu() AS txIPdu»
+	«FOREACH txIPdu.ComIPduSignalGroupRef AS signalGroupRef»
+		«signalGroupRef.mapPut("direction", "Tx")»
+	«ENDFOREACH»
+	«FOREACH txIPdu.ComIPduSignalRef AS signalRef»
+		«signalRef.mapPut("direction", "Tx")»
+	«ENDFOREACH»
+«ENDFOREACH»
+
+«REM»
+<%-- Calculation of filterIndex and signalIndex --%>
+<%varSet("FilterOccurenceIdxNumber", 0).empty()%>
+<%varSet("MaxFilterOccurenceValue", 0).empty()%>
+«ENDREM»
+«varSet("FilterOccurenceIdxNumber", 0)»
+«varSet("MaxFilterOccurenceValue", 0)»
+«REM»
+<%for (Com.gceRxSignalGroupSort().cast("ARRoot_Com_ComConfig_ComSignalGroup")){%>
+	<%self().mapPut("signalIndex", i())%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxSignalGroupSort() AS rxSignalGroup ITERATOR i»
+	«rxSignalGroup.mapPut("signalIndex",i.counter0)»
+«ENDFOREACH»
+«REM»
+<%for (Com.gceTxSignalGroupSort().cast("ARRoot_Com_ComConfig_ComSignalGroup")){%>
+	<%self().mapPut("signalIndex", i())%>
+<%}%>
+«ENDREM»
+«FOREACH gceTxSignalGroupSort() AS txSignalGroup ITERATOR i»
+ 	«txSignalGroup.mapPut("signalIndex",i.counter0)»
+«ENDFOREACH»
+«REM»
+<%for (Com.gceRxSignalSort().cast("ARRoot_Com_ComConfig_ComSignal")) {%>
+	<%self().mapPut("signalIndex", i())%>
+	
+	<%-- ComFilter management --%>
+	<%if (ComFilter[!ComFilterAlgorithm.isALWAYS]){%>
+		<%mapPut("filterIndex", (_parent._parent.mapGet("Filters").nSize()+0))%>
+		<%_parent._parent.mapAdd("Filters", ComFilter)%>
+		<%if (ComFilter.ComFilterAlgorithm.isONE_EVERY_N){%>
+			<%ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))%>
+			<%varAdd("FilterOccurenceIdxNumber", 1).empty()%>
+			<%if (ComFilter.ComFilterPeriodFactor.value > varGet("MaxFilterOccurenceValue")){%>
+				<%varSet("MaxFilterOccurenceValue", ComFilter.ComFilterPeriodFactor.value).empty()%>
+			<%}%>
+		<%}%>
+	<%}else{%>
+		<%mapPut("filterIndex", "COM_FILTER_OUT_IDX")%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxSignalSort().flatten() AS signal ITERATOR i»
+	«signal.mapPut("signalIndex", i.counter0)»
+	«REM» comFilter is null, expression is OK «ENDREM»
+	«IF signal.value.ComFilter.ComFilterAlgorithm.isALWAYS() == false»
+		«signal.mapPut("filterIndex", mapGetList("Filters").size)»«REM»same as signal.parent.parent.mapGetList("Filters").size«ENDREM»
+		«mapAdd("Filters", signal.value.ComFilter)»
+		«IF signal.value.ComFilter.ComFilterAlgorithm.isONE_EVERY_N()»
+			«signal.value.ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))»
+			«varSet("FilterOccurenceIdxNumber", (intVarGet("FilterOccurenceIdxNumber") + 1))»
+			«IF signal.value.ComFilter.ComFilterPeriodFactor.value > intVarGet("MaxFilterOccurenceValue")»
+				«varSet("MaxFilterOccurenceValue", signal.value.ComFilter.ComFilterPeriodFactor.value)»
+			«ENDIF»
+		«ENDIF»
+	«ELSE»
+		«signal.mapPut("filterIndex", "COM_FILTER_OUT_IDX")»
+	«ENDIF»
+«ENDFOREACH»
+«REM»
+<%for (Com.gceTxSignalSort().cast("ARRoot_Com_ComConfig_ComSignal")) {%>
+	<%self().mapPut("signalIndex", i())%>
+	
+	<%-- ComFilter management --%>
+	<%if (ComFilter[!ComFilterAlgorithm.isNEVER]){%>
+		<%mapPut("filterIndex", (_parent._parent.mapGet("Filters").nSize()+0))%>
+		<%_parent._parent.mapAdd("Filters", ComFilter)%>
+		<%if (ComFilter.ComFilterAlgorithm.isONE_EVERY_N){%>
+			<%ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))%>
+			<%varAdd("FilterOccurenceIdxNumber", 1).empty()%>
+			<%if (ComFilter.ComFilterPeriodFactor.value > varGet("MaxFilterOccurenceValue")){%>
+				<%varSet("MaxFilterOccurenceValue", ComFilter.ComFilterPeriodFactor.value).empty()%>
+			<%}%>
+		<%}%>
+	<%}else{%>
+		<%mapPut("filterIndex", "COM_FILTER_OUT_IDX")%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceTxSignalSort() AS signal ITERATOR i»
+	«signal.mapPut("signalIndex",i.counter0)»
+	«IF signal.value.ComFilter.ComFilterAlgorithm.isNEVER() == false»
+		«signal.mapPut("filterIndex", mapGetList("Filters").size)»
+		«mapAdd("Filters", signal.value.ComFilter)»
+		«IF signal.value.ComFilter.ComFilterAlgorithm.isONE_EVERY_N()»
+			«signal.value.ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))»
+			«varSet("FilterOccurenceIdxNumber", (intVarGet("FilterOccurenceIdxNumber") + 1))»
+			«IF signal.value.ComFilter.ComFilterPeriodFactor.value > intVarGet("MaxFilterOccurenceValue")»
+				«varSet("MaxFilterOccurenceValue", signal.value.ComFilter.ComFilterPeriodFactor.value)»
+			«ENDIF»
+		«ENDIF»
+	«ELSE»
+		«signal.mapPut("filterIndex", "COM_FILTER_OUT_IDX")»
+	«ENDIF»
+«ENDFOREACH»
+«REM»
+<%for (Com.gceRxGroupSignalSort().cast("ARRoot_Com_ComConfig_ComSignalGroup_ComGroupSignal")) {%>
+	<%self().mapPut("signalIndex", i())%>
+	
+	<%-- ComFilter management --%>
+	<%if (ComFilter[!ComFilterAlgorithm.isALWAYS]){%>
+		<%mapPut("filterIndex", (_parent._parent._parent.mapGet("Filters").nSize()+0))%>
+		<%_parent._parent._parent.mapAdd("Filters", ComFilter)%>
+		<%if (ComFilter.ComFilterAlgorithm.isONE_EVERY_N){%>
+			<%ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))%>
+			<%varAdd("FilterOccurenceIdxNumber", 1).empty()%>
+			<%if (ComFilter.ComFilterPeriodFactor.value > varGet("MaxFilterOccurenceValue")){%>
+				<%varSet("MaxFilterOccurenceValue", ComFilter.ComFilterPeriodFactor.value).empty()%>
+			<%}%>
+		<%}%>
+	<%}else{%>
+		<%mapPut("filterIndex", "COM_FILTER_OUT_IDX")%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxGroupSignalSort().flatten() AS groupSignal ITERATOR i»
+	«groupSignal.mapPut("signalIndex",i.counter0)»
+	«IF groupSignal.ComFilter.ComFilterAlgorithm.isALWAYS() == false»
+		«groupSignal.mapPut("filterIndex", mapGetList("Filters").size)»
+		«mapAdd("Filters", groupSignal.ComFilter)»
+		«IF groupSignal.ComFilter.ComFilterAlgorithm.isONE_EVERY_N()»
+			«groupSignal.ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))»
+			«varSet("FilterOccurenceIdxNumber", (intVarGet("FilterOccurenceIdxNumber") + 1))»
+			«IF groupSignal.ComFilter.ComFilterPeriodFactor.value > intVarGet("MaxFilterOccurenceValue")»
+				«varSet("MaxFilterOccurenceValue", groupSignal.ComFilter.ComFilterPeriodFactor.value)»
+			«ENDIF»
+		«ENDIF»
+	«ELSE»
+		«groupSignal.mapPut("filterIndex", "COM_FILTER_OUT_IDX")»
+	«ENDIF»
+«ENDFOREACH»
+«REM»
+<%for (Com.gceTxGroupSignalSort().cast("ARRoot_Com_ComConfig_ComSignalGroup_ComGroupSignal")) {%>
+	<%self().mapPut("signalIndex", i())%>
+	
+	<%-- ComFilter management --%>
+	<%if (ComFilter[!ComFilterAlgorithm.isNEVER]){%>
+		<%mapPut("filterIndex", (_parent._parent._parent.mapGet("Filters").nSize()+0))%>
+		<%_parent._parent._parent.mapAdd("Filters", ComFilter)%>
+		<%if (ComFilter.ComFilterAlgorithm.isONE_EVERY_N){%>
+			<%ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))%>
+			<%varAdd("FilterOccurenceIdxNumber", 1).empty()%>
+			<%if (ComFilter.ComFilterPeriodFactor.value > varGet("MaxFilterOccurenceValue")){%>
+				<%varSet("MaxFilterOccurenceValue", ComFilter.ComFilterPeriodFactor.value).empty()%>
+			<%}%>
+		<%}%>
+	<%}else{%>
+		<%mapPut("filterIndex", "COM_FILTER_OUT_IDX")%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceTxGroupSignalSort().flatten() AS groupSignal ITERATOR i»
+	«groupSignal.mapPut("signalIndex",i.counter0)»
+	«IF groupSignal.ComFilter.ComFilterAlgorithm.isNEVER() == false»
+		«groupSignal.mapPut("filterIndex", mapGetList("Filters").size)»
+		«mapAdd("Filters", groupSignal.ComFilter)»
+		«IF groupSignal.ComFilter.ComFilterAlgorithm.isONE_EVERY_N()»
+			«groupSignal.ComFilter.mapPut("OccurenceIdx", varGet("FilterOccurenceIdxNumber"))»
+			«varSet("FilterOccurenceIdxNumber", (intVarGet("FilterOccurenceIdxNumber") + 1))»
+			«IF groupSignal.ComFilter.ComFilterPeriodFactor.value > intVarGet("MaxFilterOccurenceValue")»
+				«varSet("MaxFilterOccurenceValue", groupSignal.ComFilter.ComFilterPeriodFactor.value)»
+			«ENDIF»
+		«ENDIF»
+	«ELSE»
+		«groupSignal.mapPut("filterIndex", "COM_FILTER_OUT_IDX")»
+	«ENDIF»
+«ENDFOREACH»
+«REM»
+<%if (varGet("MaxFilterOccurenceValue") < 256){%>
+	<%varSet("MaxFilterOccurenceValueBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxFilterOccurenceValue") < 65536){%>
+		<%varSet("MaxFilterOccurenceValueBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxFilterOccurenceValueBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxFilterOccurenceValue") < 256»
+	«varSet("MaxFilterOccurenceValueBits", 8)»
+«ELSEIF intVarGet("MaxFilterOccurenceValue") < 65536»
+	«varSet("MaxFilterOccurenceValueBits", 16)»
+«ELSE»
+	«varSet("MaxFilterOccurenceValueBits", 32)»
+«ENDIF»
+
+«REM»
+<%-- Mapping in IPdu --%>
+<%for (Com.gceIPdu().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+	<%self().nPush()%>
+	<%for (ComIPduSignalGroupRef.referenced_ComSignalGroup.nSort("ComHandleId.value")){%>
+		<%mapAdd("referencingComIPdu", nPeek())%>
+
+		<%if (nPeek().mapGet("referencingComSignalGroups") != null){%>
+			<%nPeek().mapGet("referencingComSignalGroups").nLast().mapPut("NextElementInIpduIndex", self().mapGet("signalIndex"))%>
+			<%nPeek().mapGet("referencingComSignalGroups").nLast().mapPut("NextElementInIpduType", "COM_SIGNAL_GROUP")%>
+		<%}%>
+	    <%nPeek().mapAdd("referencingComSignalGroups", self())%>
+	<%}%>
+	<%for (ComIPduSignalRef.referenced_ComSignal.nSort("ComHandleId.value")){%>
+		<%mapAdd("referencingComIPdu", nPeek())%>
+
+		<%if (nPeek().mapGet("referencingComSignals") != null){%>
+			<%nPeek().mapGet("referencingComSignals").nLast().mapPut("NextElementInIpduIndex", self().mapGet("signalIndex"))%>
+		<%}else{%>
+			<%if (nPeek().mapGet("referencingComSignalGroups") != null){%>
+				<%nPeek().mapGet("referencingComSignalGroups").nLast().mapPut("NextElementInIpduIndex", self().mapGet("signalIndex"))%>
+				<%nPeek().mapGet("referencingComSignalGroups").nLast().mapPut("NextElementInIpduType", "COM_SIGNAL")%>
+			<%}%>
+		<%}%>
+		<%nPeek().mapAdd("referencingComSignals", self())%>
+	<%}%>
+	<%nPop()%>
+	<%-- IPdu Callout list building without duplicated element --%>
+	<%if (ComIPduCallout.isConfig()){%>
+		<%varSet("CalloutName", ComIPduCallout.value).empty()%>
+		<%varSet("CalloutDuplicated", "false").empty()%>
+		<%for (_parent._parent.mapGet("IPduCallouts")){%>
+			<%if (self().value == varGet("CalloutName")){%>
+				<%varSet("CalloutDuplicated", "true").empty()%>
+			<%}%>
+		<%}%>
+		<%if (varGet("CalloutDuplicated") == "false"){%>
+			<%_parent._parent.mapAdd("IPduCallouts", ComIPduCallout)%>
+		<%}%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceIPdu() AS ipdu»
+	«ipdu.push()»
+	«FOREACH ipdu.ComIPduSignalGroupRef.sortBy(e|e.value.ComHandleId) AS signalGroup»
+		«signalGroup.mapAdd("referencingComIPdu", peek())»
+		
+		«IF ((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGet("referencingComSignalGroups") != null»
+			«((ARRoot::Com::ComConfig::ComSignalGroup)((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGetList("referencingComSignalGroups").last()).mapPut("NextElementInIpduIndex", signalGroup.mapGet("signalIndex"))»
+			«((ARRoot::Com::ComConfig::ComSignalGroup)((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGetList("referencingComSignalGroups").last()).mapPut("NextElementInIpduType", "COM_SIGNAL_GROUP")»
+		«ENDIF»
+		«((ARRoot::Com::ComConfig::ComIPdu) peek()).mapAdd("referencingComSignalGroups", signalGroup)»
+	«ENDFOREACH»
+	«FOREACH ipdu.ComIPduSignalRef.sortBy(e|e.value.ComHandleId) AS signal»
+		«signal.mapAdd("referencingComIPdu", peek())»
+
+		«IF ((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGet("referencingComSignals") != null»
+			«((ARRoot::Com::ComConfig::ComSignal)((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGetList("referencingComSignals").last()).mapPut("NextElementInIpduIndex", signal.mapGet("signalIndex"))»
+		«ELSEIF ((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGet("referencingComSignalGroups") != null»
+			«((ARRoot::Com::ComConfig::ComSignal)((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGetList("referencingComSignals").last()).mapPut("NextElementInIpduIndex", signal.mapGet("signalIndex"))»
+			«((ARRoot::Com::ComConfig::ComSignal)((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGetList("referencingComSignals").last()).mapPut("NextElementInIpduType", "COM_SIGNAL")»
+		«ENDIF»
+		«((ARRoot::Com::ComConfig::ComIPdu) peek()).mapAdd("referencingComSignals", signal)»
+	«ENDFOREACH»
+	«pop()»
+	«IF ipdu.ComIPduCallout != null && ipdu.ComIPduCallout.value.length > 0»
+		«varSet("CalloutName", ipdu.ComIPduCallout.value)»
+		«varSet("CalloutDuplicated", "false")»
+		«FOREACH ipdu.parent.parent.mapGetList("IPduCallouts") AS callout»
+			«IF callout.toString() == varGet("CalloutName")»
+				«varSet("CalloutDuplicated", "true")»
+			«ENDIF»
+		«ENDFOREACH»
+		«IF varGet("CalloutDuplicated") == "false"»
+			«ipdu.parent.parent.mapAdd("IPduCallouts", ipdu.ComIPduCallout.value)»
+		«ENDIF»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%varSet("BOOLEAN_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("UINT8_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("SINT8_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("UINT8_N_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("UINT16_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("SINT16_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("UINT32_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("SINT32_SignalInitValuesListIndex", 0).empty()%>
+<%varSet("BOOLEAN_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("UINT8_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("SINT8_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("UINT8_N_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("UINT16_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("SINT16_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("UINT32_SignalInvalidValuesListIndex", 0).empty()%>
+<%varSet("SINT32_SignalInvalidValuesListIndex", 0).empty()%>
+«ENDREM»
+«varSet("BOOLEAN_SignalInitValuesListIndex", 0)»
+«varSet("UINT8_SignalInitValuesListIndex", 0)»
+«varSet("SINT8_SignalInitValuesListIndex", 0)»
+«varSet("UINT8_N_SignalInitValuesListIndex", 0)»
+«varSet("UINT16_SignalInitValuesListIndex", 0)»
+«varSet("SINT16_SignalInitValuesListIndex", 0)»
+«varSet("UINT32_SignalInitValuesListIndex", 0)»
+«varSet("SINT32_SignalInitValuesListIndex", 0)»
+«varSet("BOOLEAN_SignalInvalidValuesListIndex", 0)»
+«varSet("UINT8_SignalInvalidValuesListIndex", 0)»
+«varSet("SINT8_SignalInvalidValuesListIndex", 0)»
+«varSet("UINT8_N_SignalInvalidValuesListIndex", 0)»
+«varSet("UINT16_SignalInvalidValuesListIndex", 0)»
+«varSet("SINT16_SignalInvalidValuesListIndex", 0)»
+«varSet("UINT32_SignalInvalidValuesListIndex", 0)»
+«varSet("SINT32_SignalInvalidValuesListIndex", 0)»
+
+«REM»
+<%for (Com.gceSignalSort().cast("ARRoot_Com_ComConfig_ComSignal")) {%>
+	<%-- Index for RAM and ROM values --%>
+	<%self().mapPut("signalValueIndex", i())%>
+
+	<%if ((mapGet("direction") == "Tx") ||
+		  ((mapGet("direction") == "Rx") && 
+           (!ComUpdateBitPosition.isConfig()))){%>
+		<%if ((ComFirstTimeoutFactor.isConfig()) && 
+			  (ComFirstTimeoutFactor.value != 0)){%>
+			<%if (mapGet("referencingComIPdu").mapGet("FirstTimeoutFactor") != null){%>
+				<%if (mapGet("referencingComIPdu").mapGet("FirstTimeoutFactor") > ComFirstTimeoutFactor.value){%>
+	        		<%mapGet("referencingComIPdu").mapPut("FirstTimeoutFactor", ComFirstTimeoutFactor.value)%>
+				<%}%>
+	        <%}else{%>
+	        	<%mapGet("referencingComIPdu").mapPut("FirstTimeoutFactor", ComFirstTimeoutFactor.value)%>
+	        <%}%>
+        <%}%>
+		<%if ((ComTimeoutFactor.isConfig()) && 
+			  (ComTimeoutFactor.value != 0)){%>
+			<%if (mapGet("referencingComIPdu").mapGet("TimeoutFactor") != null){%>
+				<%if (mapGet("referencingComIPdu").mapGet("TimeoutFactor") > ComTimeoutFactor.value){%>
+	        		<%mapGet("referencingComIPdu").mapPut("TimeoutFactor", ComTimeoutFactor.value)%>
+				<%}%>
+	        <%}else{%>
+	        	<%mapGet("referencingComIPdu").mapPut("TimeoutFactor", ComTimeoutFactor.value)%>
+	        <%}%>
+        <%}%>
+	<%}%>
+	
+	<%-- Signal Init & Invalid values --%>
+	<%varSet("InitValueName", ComSignalType.value+"SignalInitValue"+(ComSignalInitValue.value+0)).empty()%>
+	<%if (_parent._parent.mapGet(varGet("InitValueName")) == null){%>
+		<%-- It is a new init value so it is added in list --%>
+		<%_parent._parent.mapAdd(ComSignalType.value+"_SignalInitValues", varGet("InitValueName"))%>
+		<%-- put the index of this init value in the list --%>
+		<%_parent._parent.mapPut(varGet("InitValueName"), varGet(ComSignalType.value+"_SignalInitValuesListIndex"))%>
+		<%_parent._parent.mapPut(varGet("InitValueName")+"_RefSignal", self())%>
+		<%-- put the index of the init value for this signal --%>
+		<%mapPut("SignalInitValueIndex", varGet(ComSignalType.value+"_SignalInitValuesListIndex"))%>
+		<%varAdd(ComSignalType.value+"_SignalInitValuesListIndex", 1).empty()%>
+	<%}else{%>
+		<%-- this init value is already configured for another signal so it is reused --%>
+		<%mapPut("SignalInitValueIndex", _parent._parent.mapGet(varGet("InitValueName")))%>
+		<%-- if it is uint8_N and the other value already configured is smaller then it must take the length of this value --%>
+		<%if (ComSignalType.isUINT8_N){%>
+			<%if (ComSignalLength.value > _parent._parent.mapGet(varGet("InitValueName")+"_RefSignal").ComSignalLength.value){%>
+				<%_parent._parent.mapPut(varGet("InitValueName")+"_RefSignal", self())%>
+			<%}%>
+		<%}%>
+	<%}%>
+	<%if (ComSignalDataInvalidValue.isConfig()){%>
+		<%varSet("InvalidValueName", ComSignalType.value+"SignalInvalidValue"+(ComSignalDataInvalidValue.value+0)).empty()%>
+		<%if (_parent._parent.mapGet(varGet("InvalidValueName")) == null){%>
+			<%-- It is a new invalid value so it is added in list --%>
+			<%_parent._parent.mapAdd(ComSignalType.value+"_SignalInvalidValues", varGet("InvalidValueName"))%>
+			<%-- put the index of this invalid value in the list --%>
+			<%_parent._parent.mapPut(varGet("InvalidValueName"), varGet(ComSignalType.value+"_SignalInvalidValuesListIndex"))%>
+			<%_parent._parent.mapPut(varGet("InvalidValueName")+"_RefSignal", self())%>
+			<%-- put the index of the invalid value for this signal --%>
+			<%mapPut("SignalInvalidValueIndex", varGet(ComSignalType.value+"_SignalInvalidValuesListIndex"))%>
+			<%varAdd(ComSignalType.value+"_SignalInvalidValuesListIndex", 1).empty()%>
+		<%}else{%>
+			<%-- this invalid value is already configured for another signal so it is reused --%>
+			<%mapPut("SignalInvalidValueIndex", _parent._parent.mapGet(varGet("InvalidValueName")))%>
+			<%-- if it is uint8_N and the other value already configured is smaller then it must take the length of this value --%>
+			<%if (ComSignalType.isUINT8_N){%>
+				<%if (ComSignalLength.value > _parent._parent.mapGet(varGet("InvalidValueName")+"_RefSignal").ComSignalLength.value){%>
+					<%_parent._parent.mapPut(varGet("InvalidValueName")+"_RefSignal", self())%>
+				<%}%>
+			<%}%>
+		<%}%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceSignalSort() AS signal ITERATOR i»
+	«signal.mapPut("signalValueIndex", i.counter0)»
+	«IF  (signal.mapGet("direction") == "Tx") || (signal.mapGet("direction") == "Rx") && (signal.ComUpdateBitPosition != null)»
+		«IF (signal.ComFirstTimeoutFactor != null) && (signal.ComFirstTimeoutFactor.value != 0)»			  
+			«IF ((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapGet("FirstTimeoutFactor") != null»
+				«IF ((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapGet("FirstTimeoutFactor") > signal.ComFirstTimeoutFactor.value»
+	        		«((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapPut("FirstTimeoutFactor", signal.ComFirstTimeoutFactor.value)»
+				«ENDIF»
+	        «ELSE»
+	        	«((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapPut("FirstTimeoutFactor", signal.ComFirstTimeoutFactor.value)»
+	        «ENDIF»
+        «ENDIF»
+		«IF signal.ComTimeoutFactor != null && signal.ComTimeoutFactor.value != 0»
+			«IF ((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapGet("TimeoutFactor") != null»
+				«IF ((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapGet("TimeoutFactor") > signal.ComTimeoutFactor.value»
+					«((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapPut("TimeoutFactor", signal.ComTimeoutFactor.value)»
+				«ENDIF»
+	        «ELSE»
+	        	«((ARRoot::Com::ComConfig::ComIPdu) signal.mapGet("referencingComIPdu")).mapPut("TimeoutFactor", signal.ComTimeoutFactor.value)»
+	        «ENDIF»
+        «ENDIF»
+	«ENDIF»
+	«varSet("InitValueName", signal.ComSignalType.value + "SignalInitValue" + signal.ComSignalInitValue.value.toString())»
+	«IF signal.parent.parent.mapGet("InitValueName") == null»
+		«REM» It is a new init value so it is added in list «ENDREM»
+		«signal.parent.parent.mapAdd(signal.ComSignalType.value+"_SignalInitValues", varGet("InitValueName"))»
+		«REM» put the index of this init value in the list «ENDREM»
+		«signal.parent.parent.mapPut(varGet("InitValueName").toString(), varGet(signal.ComSignalType.value+"_SignalInitValuesListIndex"))»
+		«signal.parent.parent.mapPut(varGet("InitValueName").toString()+"_RefSignal", signal)»
+		«REM» put the index of the init value for this signal «ENDREM»
+		«signal.mapPut("SignalInitValueIndex", varGet(signal.ComSignalType.value+"_SignalInitValuesListIndex"))»
+		«varSet(signal.ComSignalType.value+"_SignalInitValuesListIndex", intVarGet(signal.ComSignalType.value+"_SignalInitValuesListIndex") + 1)»
+	«ELSE»
+		«REM» this init value is already configured for another signal so it is reused «ENDREM»
+		«signal.mapPut("SignalInitValueIndex", signal.parent.parent.mapGet(varGet("InitValueName").toString()))»
+		«REM» if it is uint8_N and the other value already configured is smaller then it must take the length of this value «ENDREM»
+		«IF signal.ComSignalType.isUINT8_N() == true»
+			«IF signal.ComSignalLength.value > ((ARRoot::Com::ComConfig::ComSignal) signal.parent.parent.mapGet(varGet("InitValueName").toString()+"_RefSignal")).ComSignalLength.value»
+				«signal.parent.parent.mapPut(varGet("InitValueName").toString()+"_RefSignal", signal)»
+			«ENDIF»
+		«ENDIF»
+	«ENDIF»
+	«IF signal.ComSignalDataInvalidValue != null»
+		«varSet("InvalidValueName", signal.ComSignalType.value+"SignalInvalidValue"+ signal.ComSignalDataInvalidValue.value.toString())»
+		«IF signal.parent.parent.mapGet(varGet("InvalidValueName").toString()) == null»
+			«REM» It is a new invalid value so it is added in list «ENDREM»
+			«signal.parent.parent.mapAdd(signal.ComSignalType.value+"_SignalInvalidValues", varGet("InvalidValueName"))»
+			«REM» put the index of this invalid value in the list «ENDREM»
+			«signal.parent.parent.mapPut(varGet("InvalidValueName").toString(), varGet(signal.ComSignalType.value+"_SignalInvalidValuesListIndex"))»
+			«signal.parent.parent.mapPut(varGet("InvalidValueName").toString()+"_RefSignal", signal)»
+			«REM» put the index of the invalid value for this signal «ENDREM»
+			«signal.mapPut("SignalInvalidValueIndex", varGet(signal.ComSignalType.value+"_SignalInvalidValuesListIndex"))»
+			«varSet(signal.ComSignalType.value+"_SignalInvalidValuesListIndex",intVarGet(signal.ComSignalType.value+"_SignalInvalidValuesListIndex") + 1)»
+		«ELSE»
+			«REM» this invalid value is already configured for another signal so it is reused «ENDREM»
+			«signal.mapPut("SignalInvalidValueIndex", signal.parent.parent.mapGet(varGet("InvalidValueName").toString()))»
+			«REM» if it is uint8_N and the other value already configured is smaller then it must take the length of this value «ENDREM»
+			«IF signal.ComSignalType.isUINT8_N()»
+				«IF signal.ComSignalLength > ((ARRoot::Com::ComConfig::ComSignal) signal.parent.parent.mapGet(varGet("InvalidValueName").toString()+"_RefSignal")).ComSignalLength.value»
+					«signal.parent.parent.mapPut(varGet("InvalidValueName").toString()+"_RefSignal", signal)»
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceSignalGroupSort().cast("ARRoot_Com_ComConfig_ComSignalGroup")) {%>
+	<%-- Index for RAM and ROM values --%>
+	<%self().mapPut("signalValueIndex", i())%>
+
+	<%if ((mapGet("direction") == "Tx") ||
+		  ((mapGet("direction") == "Rx") && 
+           (!ComUpdateBitPosition.isConfig()))){%>
+		<%if ((ComFirstTimeoutFactor.isConfig()) && 
+			  (ComFirstTimeoutFactor.value != 0)){%>
+			<%if (mapGet("referencingComIPdu").mapGet("FirstTimeoutFactor") != null){%>
+				<%if (mapGet("referencingComIPdu").mapGet("FirstTimeoutFactor") > ComFirstTimeoutFactor.value){%>
+	        		<%mapGet("referencingComIPdu").mapPut("FirstTimeoutFactor", ComFirstTimeoutFactor.value)%>
+				<%}%>
+	        <%}else{%>
+	        	<%mapGet("referencingComIPdu").mapPut("FirstTimeoutFactor", ComFirstTimeoutFactor.value)%>
+	        <%}%>
+        <%}%>
+		<%if ((ComTimeoutFactor.isConfig()) && 
+			  (ComTimeoutFactor.value != 0)){%>
+			<%if (mapGet("referencingComIPdu").mapGet("TimeoutFactor") != null){%>
+				<%if (mapGet("referencingComIPdu").mapGet("TimeoutFactor") > ComTimeoutFactor.value){%>
+	        		<%mapGet("referencingComIPdu").mapPut("TimeoutFactor", ComTimeoutFactor.value)%>
+				<%}%>
+	        <%}else{%>
+	        	<%mapGet("referencingComIPdu").mapPut("TimeoutFactor", ComTimeoutFactor.value)%>
+	        <%}%>
+        <%}%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceSignalGroupSort() AS signalGroup ITERATOR i»
+	«signalGroup.mapPut("signalValueIndex", i.counter0)»
+
+	«IF (signalGroup.mapGet("direction") == "Tx") || (signalGroup.mapGet("direction") == "Rx") && (signalGroup.ComUpdateBitPosition == null)»
+		«IF signalGroup.ComFirstTimeoutFactor != null && signalGroup.ComFirstTimeoutFactor.value != 0»
+			«IF ((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapGet("FirstTimeoutFactor") != null»
+				«IF ((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapGet("FirstTimeoutFactor") > signalGroup.ComFirstTimeoutFactor.value»
+	        		«((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapPut("FirstTimeoutFactor", signalGroup.ComFirstTimeoutFactor.value)»
+				«ENDIF»
+	        «ELSE»
+	        	«((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapPut("FirstTimeoutFactor", signalGroup.ComFirstTimeoutFactor.value)»
+	        «ENDIF»
+        «ENDIF»
+		«IF signalGroup.ComTimeoutFactor != null && signalGroup.ComTimeoutFactor.value != 0»
+			«IF ((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapGet("TimeoutFactor") != null»
+				«IF ((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapGet("TimeoutFactor") > signalGroup.ComTimeoutFactor.value»
+	        		«((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapPut("TimeoutFactor", signalGroup.ComTimeoutFactor.value)»
+				«ENDIF»
+	        «ELSE»
+	            «((ARRoot::Com::ComConfig::ComIPdu) signalGroup.mapGet("referencingComIPdu")).mapPut("TimeoutFactor", signalGroup.ComTimeoutFactor.value)»
+	        «ENDIF»
+        «ENDIF»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%-- Mapping in SignalGroup --%>
+<%for (Com.gceGroupSignalSort().cast("ARRoot_Com_ComConfig_ComSignalGroup_ComGroupSignal")) {%>
+	<%-- Index for RAM and ROM values --%>
+	<%self().mapPut("signalValueIndex", i())%>
+
+	<%if (_parent.mapGet("referencingComSignals") != null){%>
+		<%_parent.mapGet("referencingComSignals").nLast().mapPut("NextSignalInGroupIdx", self().mapGet("signalIndex"))%>
+	<%}%>
+	<%_parent.mapAdd("referencingComSignals", self())%>
+
+	<%-- Signal Init & Invalid values --%>
+	<%varSet("InitValueName", ComSignalType.value+"SignalInitValue"+(ComSignalInitValue.value+0)).empty()%>
+	<%if (_parent._parent._parent.mapGet(varGet("InitValueName")) == null){%>
+		<%-- It is a new init value so it is added in list --%>
+		<%_parent._parent._parent.mapAdd(ComSignalType.value+"_SignalInitValues", varGet("InitValueName"))%>
+		<%-- put the index of this init value in the list --%>
+		<%_parent._parent._parent.mapPut(varGet("InitValueName"), varGet(ComSignalType.value+"_SignalInitValuesListIndex"))%>
+		<%_parent._parent._parent.mapPut(varGet("InitValueName")+"_RefSignal", self())%>
+		<%-- put the index of the init value for this signal --%>
+		<%mapPut("SignalInitValueIndex", varGet(ComSignalType.value+"_SignalInitValuesListIndex"))%>
+		<%varAdd(ComSignalType.value+"_SignalInitValuesListIndex", 1).empty()%>
+	<%}else{%>
+		<%-- this init value is already configured for another signal so it is reused --%>
+		<%mapPut("SignalInitValueIndex", _parent._parent._parent.mapGet(varGet("InitValueName")))%>
+		<%-- if it is uint8_N and the other value already configured is smaller then it must take the length of this value --%>
+		<%if (ComSignalType.isUINT8_N){%>
+			<%if (ComSignalLength.value > _parent._parent._parent.mapGet(varGet("InitValueName")+"_RefSignal").ComSignalLength.value){%>
+				<%_parent._parent._parent.mapPut(varGet("InitValueName")+"_RefSignal", self())%>
+			<%}%>
+		<%}%>
+	<%}%>
+	<%if (ComSignalDataInvalidValue.isConfig()){%>
+		<%varSet("InvalidValueName", ComSignalType.value+"SignalInvalidValue"+(ComSignalDataInvalidValue.value+0)).empty()%>
+		<%if (_parent._parent._parent.mapGet(varGet("InvalidValueName")) == null){%>
+			<%-- It is a new invalid value so it is added in list --%>
+			<%_parent._parent._parent.mapAdd(ComSignalType.value+"_SignalInvalidValues", varGet("InvalidValueName"))%>
+			<%-- put the index of this invalid value in the list --%>
+			<%_parent._parent._parent.mapPut(varGet("InvalidValueName"), varGet(ComSignalType.value+"_SignalInvalidValuesListIndex"))%>
+			<%_parent._parent._parent.mapPut(varGet("InvalidValueName")+"_RefSignal", self())%>
+			<%-- put the index of the invalid value for this signal --%>
+			<%mapPut("SignalInvalidValueIndex", varGet(ComSignalType.value+"_SignalInvalidValuesListIndex"))%>
+			<%varAdd(ComSignalType.value+"_SignalInvalidValuesListIndex", 1).empty()%>
+		<%}else{%>
+			<%-- this invalid value is already configured for another signal so it is reused --%>
+			<%mapPut("SignalInvalidValueIndex", _parent._parent._parent.mapGet(varGet("InvalidValueName")))%>
+			<%-- if it is uint8_N and the other value already configured is smaller then it must take the length of this value --%>
+			<%if (ComSignalType.isUINT8_N){%>
+				<%if (ComSignalLength.value > _parent._parent._parent.mapGet(varGet("InvalidValueName")+"_RefSignal").ComSignalLength.value){%>
+					<%_parent._parent._parent.mapPut(varGet("InvalidValueName")+"_RefSignal", self())%>
+				<%}%>
+			<%}%>
+		<%}%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceGroupSignalSort() AS groupSignal ITERATOR i»
+	«groupSignal.mapPut("signalValueIndex", i.counter0)»
+
+	«IF groupSignal.parent.mapGet("referencingComSignals") != null»
+		«((ARRoot::Com::ComConfig::ComSignal) groupSignal.parent.mapGetList("referencingComSignals").last()).mapPut("NextSignalInGroupIdx", groupSignal.mapGet("signalIndex"))»
+	«ENDIF»
+	«groupSignal.mapAdd("referencingComSignals", groupSignal)»
+
+	«varSet("InitValueName", groupSignal.ComSignalType.value+"SignalInitValue"+ groupSignal.ComSignalInitValue.value.toString())»
+	«IF groupSignal.parent.parent.parent.mapGet(varGet("InitValueName").toString()) == null»
+		«groupSignal.parent.parent.parent.mapAdd(groupSignal.ComSignalType.value+"_SignalInitValues", varGet("InitValueName"))»
+		«groupSignal.parent.parent.mapPut(varGet("InitValueName").toString(), varGet(groupSignal.ComSignalType.value+"_SignalInitValuesListIndex"))»
+		«groupSignal.parent.parent.parent.mapPut(varGet("InitValueName").toString()+"_RefSignal", groupSignal)»
+		«groupSignal.mapPut("SignalInitValueIndex", varGet(groupSignal.ComSignalType.value+"_SignalInitValuesListIndex"))»
+		«varSet(groupSignal.ComSignalType.value+"_SignalInitValuesListIndex", intVarGet(groupSignal.ComSignalType.value+"_SignalInitValuesListIndex") + 1)»
+	«ELSE»
+		«groupSignal.mapPut("SignalInitValueIndex", groupSignal.parent.parent.parent.mapGet(varGet("InitValueName").toString()))»
+		«IF groupSignal.ComSignalType.isUINT8_N()»
+			«IF groupSignal.ComSignalLength.value > ((ARRoot::Com::ComConfig::ComSignal) groupSignal.parent.parent.parent.mapGet(varGet("InitValueName").toString()+"_RefSignal")).ComSignalLength.value»
+				«groupSignal.parent.parent.parent.mapPut(varGet("InitValueName").toString()+"_RefSignal", groupSignal)»
+			«ENDIF»
+		«ENDIF»
+	«ENDIF»
+	«IF groupSignal.ComSignalDataInvalidValue != null»
+		«varSet("InvalidValueName", groupSignal.ComSignalType.value +"SignalInvalidValue"+ groupSignal.ComSignalDataInvalidValue.value.toString())»
+		«IF groupSignal.parent.parent.parent.mapGet(varGet("InvalidValueName").toString()) == null»
+			«groupSignal.parent.parent.parent.mapAdd(groupSignal.ComSignalType.value + "_SignalInvalidValues", varGet("InvalidValueName"))»
+			«groupSignal.parent.parent.parent.mapPut(varGet("InvalidValueName").toString(), varGet(groupSignal.ComSignalType.value +"_SignalInvalidValuesListIndex"))»
+			«groupSignal.parent.parent.parent.mapPut(varGet("InvalidValueName").toString()+"_RefSignal", groupSignal)»
+			«groupSignal.mapPut("SignalInvalidValueIndex", varGet(groupSignal.ComSignalType.value+"_SignalInvalidValuesListIndex"))»
+			«varSet(groupSignal.ComSignalType.value+"_SignalInvalidValuesListIndex", intVarGet(groupSignal.ComSignalType.value+"_SignalInvalidValuesListIndex") + 1)»
+		«ELSE»
+			<%mapPut("SignalInvalidValueIndex", _parent._parent._parent.mapGet(varGet("InvalidValueName")))%>
+			«IF groupSignal.ComSignalType.isUINT8_N()»
+				«IF groupSignal.ComSignalLength.value > ((ARRoot::Com::ComConfig::ComSignal) groupSignal.parent.parent.parent.mapGet(varGet("InvalidValueName").toString()+"_RefSignal")).ComSignalLength.value»
+					«groupSignal.parent.parent.parent.mapPut(varGet("InvalidValueName").toString()+"_RefSignal", groupSignal)»
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%-- Mapping in IPdu group --%>
+<%for (Com.gceIPDuGroupSort().cast("ARRoot_Com_ComConfig_ComIPduGroup")){%>
+	<%self().mapPut("pduGroupIndex", i())%>
+	<%if (ComIPduGroupGroupRef.referenced_ComIPduGroup.nGet(0).mapGet("referencingComIPduGroups") != null){%>
+		<%ComIPduGroupGroupRef.referenced_ComIPduGroup.nGet(0).mapGet("referencingComIPduGroups").nLast().mapPut("NextIpduGroupInGroupIdx", i())%>
+	<%}%>
+    <%ComIPduGroupGroupRef.referenced_ComIPduGroup.nGet(0).mapAdd("referencingComIPduGroups", self())%>
+<%}%>
+«ENDREM»
+«FOREACH gceIPDuGroupSort() AS ipduGroup ITERATOR i»
+	«ipduGroup.mapPut("pduGroupIndex", i.counter0)»
+	«IF ipduGroup.ComIPduGroupGroupRef.mapGet("referencingComIPduGroups") != null»
+		«((ARRoot::Com::ComConfig::ComIPduGroup) ipduGroup.ComIPduGroupGroupRef.mapGetList("referencingComIPduGroups").last()).mapPut("NextIpduGroupInGroupIdx", i.counter0)»
+	«ENDIF»
+    «ipduGroup.ComIPduGroupGroupRef.mapAdd("referencingComIPduGroups", ipduGroup)»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceRxIPduSort().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+	<%self().mapPut("pduIndex", i())%>
+	<%if (ComIPduGroupRef.referenced_ComIPduGroup.mapGet("referencingComIPdus") != null){%>
+		<%ComIPduGroupRef.referenced_ComIPduGroup.mapGet("referencingComIPdus").nLast().mapPut("NextIpduInGroupIdx", i())%>
+	<%}%>
+    <%ComIPduGroupRef.referenced_ComIPduGroup.mapAdd("referencingComIPdus", self())%>
+    <%ComIPduGroupRef.referenced_ComIPduGroup.mapPut("direction", ComIpduDirection.value)%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxIPduSort() AS ipdu ITERATOR i»
+	«ipdu.mapPut("pduIndex", i.counter0)»
+	«IF ipdu.ComIPduGroupRef.mapGet("referencingComIPdus") != null»
+		«((ARRoot::Com::ComConfig::ComIPdu) ipdu.ComIPduGroupRef.mapGetList("referencingComIPdus").last()).mapPut("NextIpduInGroupIdx", i.counter0)»
+	«ENDIF»
+    «ipdu.ComIPduGroupRef.mapAdd("referencingComIPdus", ipdu)»
+    «ipdu.ComIPduGroupRef.mapPut("direction", ipdu.ComIpduDirection.value)»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceTxIPdu().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+	<%self().mapPut("pduIndex", i())%>
+	<%if (ComIPduGroupRef.referenced_ComIPduGroup.mapGet("referencingComIPdus") != null){%>
+		<%ComIPduGroupRef.referenced_ComIPduGroup.mapGet("referencingComIPdus").nLast().mapPut("NextIpduInGroupIdx", i())%>
+	<%}%>
+    <%ComIPduGroupRef.referenced_ComIPduGroup.mapAdd("referencingComIPdus", self())%>
+    <%ComIPduGroupRef.referenced_ComIPduGroup.mapPut("direction", ComIpduDirection.value)%>
+<%}%>
+«ENDREM»
+«FOREACH  gceTxIPdu() AS ipdu ITERATOR i»
+	«ipdu.mapPut("pduIndex", i.counter0)»
+
+	«IF ipdu.ComIPduGroupRef.mapGet("referencingComIPdus") != null»
+		«((ARRoot::Com::ComConfig::ComIPdu) ipdu.ComIPduGroupRef.mapGetList("referencingComIPdus").last()).mapPut("NextIpduInGroupIdx", i.counter0)»
+	«ENDIF»
+    «ipdu.ComIPduGroupRef.mapAdd("referencingComIPdus", ipdu)»
+    «ipdu.ComIPduGroupRef.mapPut("direction", ipdu.ComIpduDirection.value)»
+«ENDFOREACH»
+
+«REM»
+<%-- Management of transmission mode : Identical transmission mode are not duplicate in ROM config --%>
+<%varSet("TMnumber", 0).empty()%>
+<%for (Com.gceTxIPdu().cast("ARRoot_Com_ComConfig_ComIPdu").ComTxIPdu.ComTxModeTrue.ComTxMode[ComTxModeMode.isConfig()]){%>
+   	<%self().nPush()%>
+    <%for (_parent._parent._parent._parent._parent.mapGet("TransmissionModes")){%>
+    	<%if ((ComTxModeMode.value == nPeek().ComTxModeMode.value) &&
+              (ComTxModeNumberOfRepetitions.value == nPeek().ComTxModeNumberOfRepetitions.value) &&
+              (ComTxModeRepetitionPeriodFactor.value == nPeek().ComTxModeRepetitionPeriodFactor.value) &&
+              (ComTxModeTimeOffsetFactor.value == nPeek().ComTxModeTimeOffsetFactor.value) &&
+              (ComTxModeTimePeriodFactor.value == nPeek().ComTxModeTimePeriodFactor.value)){%>
+              <%nPeek()._parent._parent._parent.mapPut("TransmissionModeTrueIndex", i())%>
+    	<%}%>
+	<%}%>
+	<%nPop()%>
+	<%if (_parent._parent._parent.mapGet("TransmissionModeTrueIndex") == null){%>
+		<%_parent._parent._parent.mapPut("TransmissionModeTrueIndex", (_parent._parent._parent._parent._parent.mapGet("TransmissionModes").nSize()+0))%>
+		<%_parent._parent._parent._parent._parent.mapAdd("TransmissionModes", self())%>
+        <%varAdd("TMnumber", 1).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«varSet("TMnumber", 0)»
+«FOREACH gceTxIPdu().ComTxIPdu.ComTxModeTrue.collect(e|e.ComTxMode).select(e|e.ComTxModeMode != null) AS txMode ITERATOR i»
+   	«txMode.push()»
+    «FOREACH txMode.parent.parent.parent.parent.parent.mapGetList("TransmissionModes") AS mode ITERATOR i»
+    	«IF    (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeMode.value                   == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeMode.value)
+    	    && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeNumberOfRepetitions.value    == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeNumberOfRepetitions.value)
+            && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeRepetitionPeriodFactor.value == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeRepetitionPeriodFactor.value)
+            && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimeOffsetFactor.value       == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeTimeOffsetFactor.value)
+            && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimePeriodFactor.value       == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeTimePeriodFactor.value)»
+              «((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).parent.parent.parent.mapPut("TransmissionModeTrueIndex", i.counter0)»
+    	«ENDIF»
+	«ENDFOREACH»
+	«pop()»
+	«IF txMode.parent.parent.parent.mapGet("TransmissionModeTrueIndex") == null»
+		«txMode.parent.parent.parent.mapPut("TransmissionModeTrueIndex", (txMode.parent.parent.parent.parent.parent.mapGetList("TransmissionModes").size.toString()))»
+		«txMode.parent.parent.parent.parent.parent.mapAdd("TransmissionModes", txMode)»
+        «varSet("TMnumber", intVarGet("TMnumber") + 1)»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceTxIPdu().cast("ARRoot_Com_ComConfig_ComIPdu").ComTxIPdu.ComTxModeFalse.ComTxMode[ComTxModeMode.isConfig()]){%>
+   	<%self().nPush()%>
+    <%for (_parent._parent._parent._parent._parent.mapGet("TransmissionModes")){%>
+    	<%if ((ComTxModeMode.value == nPeek().ComTxModeMode.value) &&
+              (ComTxModeNumberOfRepetitions.value == nPeek().ComTxModeNumberOfRepetitions.value) &&
+              (ComTxModeRepetitionPeriodFactor.value == nPeek().ComTxModeRepetitionPeriodFactor.value) &&
+              (ComTxModeTimeOffsetFactor.value == nPeek().ComTxModeTimeOffsetFactor.value) &&
+              (ComTxModeTimePeriodFactor.value == nPeek().ComTxModeTimePeriodFactor.value)){%>
+              <%nPeek()._parent._parent._parent.mapPut("TransmissionModeFalseIndex", i())%>
+    	<%}%>
+	<%}%>
+	<%nPop()%>
+	<%if (_parent._parent._parent.mapGet("TransmissionModeFalseIndex") == null){%>
+		<%_parent._parent._parent.mapPut("TransmissionModeFalseIndex", (_parent._parent._parent._parent._parent.mapGet("TransmissionModes").nSize()+0))%>
+		<%_parent._parent._parent._parent._parent.mapAdd("TransmissionModes", self())%>
+        <%varAdd("TMnumber", 1).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceTxIPdu().ComTxIPdu.ComTxModeFalse.collect(e|e.ComTxMode).select(e|e.ComTxModeMode != null) AS txMode ITERATOR i»
+   	«txMode.push()»
+    «FOREACH txMode.parent.parent.parent.parent.parent.mapGetList("TransmissionModes") AS mode ITERATOR i»
+    	«IF    (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeMode.value                   == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeMode.value)
+    	    && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeNumberOfRepetitions.value    == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeNumberOfRepetitions.value)
+            && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeRepetitionPeriodFactor.value == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeRepetitionPeriodFactor.value)
+            && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimeOffsetFactor.value       == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeTimeOffsetFactor.value)
+            && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimePeriodFactor.value       == ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).ComTxModeTimePeriodFactor.value)»
+              «((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) peek()).parent.parent.parent.mapPut("TransmissionModeFalseeIndex", i.counter0)»
+    	«ENDIF»
+	«ENDFOREACH»
+	«pop()»
+	«IF txMode.parent.parent.parent.mapGet("TransmissionModeFalseIndex") == null»
+		«txMode.parent.parent.parent.mapPut("TransmissionModeFalseIndex", (txMode.parent.parent.parent.parent.parent.mapGetList("TransmissionModes").size.toString()))»
+		«txMode.parent.parent.parent.parent.parent.mapAdd("TransmissionModes", txMode)»
+        «varSet("TMnumber", intVarGet("TMnumber") + 1)»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%-- Tx Pdu HandleId --%>
+<%if (Com.ComGeneral.ComPduRGeneralRef.referenced_PduRGeneral.PduRZeroCostOperation.isTrue){%>
+    <%if (Com.ComGeneral.ComPduRGeneralRef.referenced_PduRGeneral.PduRSingleIf.isCAN_IF){%>
+    	<%for (Com.ComGeneral.ComCanIfInitConfigurationRef.referenced_CanIfInitConfiguration.CanIfTxPduConfig){%>
+    		<%PduIdRef.referenced_Pdu.mapPut("PduId", CanIfCanTxPduId.value)%>
+    	<%}%>
+    <%}%>
+    <%if (Com.ComGeneral.ComPduRGeneralRef.referenced_PduRGeneral.PduRSingleIf.isFR_IF){%>
+      	<%for (Com.ComGeneral.ComFrIfConfigRef.referenced_FrIfConfig.FrIfPdu.FrIfTxPdu){%>
+      		<%FrIfPduRef.referenced_Pdu.mapPut("PduId", FrIfTxPduId.value)%>
+      	<%}%>
+    <%}%>
+    <%if (Com.ComGeneral.ComPduRGeneralRef.referenced_PduRGeneral.PduRSingleIf.isLIN_IF){%>
+      	<%for (Com.ComGeneral.ComLinIfGlobalConfigRef.referenced_LinIfGlobalConfig.LinIfChannel.LinIfFrame.LinIfTxPdu){%>
+      		<%LinIfTxPduRef.referenced_Pdu.mapPut("PduId", LinIfTxPduId.value)%>
+      	<%}%>
+    <%}%>
+<%}else{%>
+  	<%for (Com.ComGeneral.ComPduRGeneralRef.referenced_PduRGeneral._parent.PduRGlobalConfig.PduRRoutingTable.PduRRoutingPath.PduRSrcPdu){%>
+  	     <%SrcPduRef.referenced_Pdu.mapPut("PduId", HandleId.value)%>
+  	<%}%>
+<%}%>
+«ENDREM»
+«IF ComGeneral.ComPduRGeneralRef.value.PduRZeroCostOperation.value == true»
+    «IF ComGeneral.ComPduRGeneralRef.value.PduRSingleIf.isCAN_IF()»
+    	«FOREACH ComGeneral.ComCanIfInitConfigurationRef.value.CanIfTxPduConfig AS txPduId»
+    		«txPduId.PduIdRef.mapPut("PduId", txPduId.CanIfCanTxPduId.value)»
+    	«ENDFOREACH»
+    «ENDIF»
+    «IF ComGeneral.ComPduRGeneralRef.value.PduRSingleIf.isFR_IF()»
+    	«FOREACH ComGeneral.ComFrIfConfigRef.value.FrIfPdu.FrIfTxPdu AS txPduId»
+    		«txPduId.FrIfPduRef.mapPut("PduId", txPduId.FrIfTxPduId.value)»
+    	«ENDFOREACH»
+    «ENDIF»
+    «IF ComGeneral.ComPduRGeneralRef.value.PduRSingleIf.isLIN_IF()»
+    	«FOREACH ComGeneral.ComLinIfGlobalConfigRef.value.LinIfChannel.LinIfFrame.LinIfTxPdu AS txPduId»
+    		«txPduId.LinIfTxPduRef.mapPut("PduId", txPduId.LinIfTxPduId.value)»
+    	«ENDFOREACH»
+    «ENDIF»
+«ELSE»
+    «REM» Problem «ENDREM»
+    «FOREACH ComGeneral.ComPduRGeneralRef.value.parent.PduRGlobalConfig.PduRRoutingTable.PduRRoutingPath.PduRSrcPdu AS txPduId»
+    	«txPduId.SrcPduRef.mapPut("PduId", txPduId.HandleId.value)»
+    «ENDFOREACH»
+«ENDIF»
+
+«REM»
+<%-- Gateway mapping --%>
+<%for (Com.ComConfig.ComGwMapping){%>
+	<%self().nPush()%>
+	<%for (ComGwSignalDest.ComGwSignalRef.referenced_ComGroupSignal){%>
+		<%nPeek().ComGwSignalSrc.ComGwSignalRef.referenced_ComGroupSignal.mapAdd("gatewayDest", self())%>
+	<%}%>
+	<%for (ComGwSignalDest.ComGwSignalRef.referenced_ComSignal){%>
+		<%nPeek().ComGwSignalSrc.ComGwSignalRef.referenced_ComSignal.mapAdd("gatewayDest", self())%>
+	<%}%>
+	<%for (ComGwSignalDest.ComGwSignalRef.referenced_ComSignalGroup){%>
+		<%nPeek().ComGwSignalSrc.ComGwSignalRef.referenced_ComSignalGroup.mapAdd("gatewayDest", self())%>
+	<%}%>
+	<%nPop()%>
+<%}%>
+«ENDREM»
+«FOREACH  ComConfig.ComGwMapping AS gw»
+	«gw.push()»
+	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComGroupSignal AS groupSignal»
+		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComGroupSignal.mapAdd("gatewayDest", groupSignal)»
+	«ENDFOREACH»
+	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComSignal AS signal»
+		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComSignal.mapAdd("gatewayDest", signal)»
+	«ENDFOREACH»
+	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComSignalGroup AS signalGroup»
+		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComSignalGroup.mapAdd("gatewayDest", signalGroup)»
+	«ENDFOREACH»
+	«pop()»
+«ENDFOREACH»
+
+«REM»
+<%-- Index for var table of routing (incremented during generation) --%>
+<%varSet("RxSgRoutingListIndex", 0).empty()%>
+<%varSet("RxSgGrRoutingListIndex", 0).empty()%>
+<%varSet("RxGrSgRoutingListIndex", 0).empty()%>
+«ENDREM»
+«varSet("RxSgRoutingListIndex", 0)»
+«varSet("RxSgGrRoutingListIndex", 0)»
+«varSet("RxGrSgRoutingListIndex", 0)»
+
+«REM»
+<%-- size for var table of routing --%>
+<%varSet("RxSgRoutingListIdxNumber", 0).empty()%>
+<%varSet("RxSgGrRoutingListIdxNumber", 0).empty()%>
+<%varSet("RxGrSgRoutingListIdxNumber", 0).empty()%>
+«ENDREM»
+«varSet("RxSgRoutingListIdxNumber", 0)»
+«varSet("RxSgGrRoutingListIdxNumber", 0)»
+«varSet("RxGrSgRoutingListIdxNumber", 0)»
+
+«REM»
+<%for (Com.gceRxSignalSort().cast("ARRoot_Com_ComConfig_ComSignal")){%>
+    <%if (mapGet("gatewayDest").nSize() > 0){%>
+    	<%varAdd("RxSgRoutingListIdxNumber", 1).empty()%>
+    <%}%>
+<%}%>
+<%for (Com.gceRxSignalGroupSort().cast("ARRoot_Com_ComConfig_ComSignalGroup")){%>
+    <%if (mapGet("gatewayDest").nSize() > 0){%>
+    	<%varAdd("RxSgGrRoutingListIdxNumber", 1).empty()%>
+    <%}%>
+<%}%>
+<%for (Com.gceRxGroupSignalSort().cast("ARRoot_Com_ComConfig_ComSignalGroup_ComGroupSignal")) {%>
+    <%if (mapGet("gatewayDest").nSize() > 0){%>
+    	<%varAdd("RxGrSgRoutingListIdxNumber", 1).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxSignalSort() AS signal»
+    «IF signal.mapGetList("gatewayDest").size > 0»
+    	«varSet("RxSgRoutingListIdxNumber", intVarGet("RxSgRoutingListIdxNumber") + 1)»
+    «ENDIF»
+«ENDFOREACH»
+«FOREACH gceRxSignalGroupSort() AS signalGroup»
+    «IF signalGroup.mapGetList("gatewayDest").size > 0»
+    	«varSet("RxSgGrRoutingListIdxNumber", intVarGet("RxSgGrRoutingListIdxNumber") + 1)»
+    «ENDIF»
+«ENDFOREACH»
+«FOREACH gceRxGroupSignalSort() AS groupSignal»
+    «IF groupSignal.mapGetList("gatewayDest").size > 0»
+    	«varSet("RxGrSgRoutingListIdxNumber", intVarGet("RxGrSgRoutingListIdxNumber") + 1)»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%-- Calculation of Number --%>
+<%varSet("RxIPduNumber", Com.gceRxIPdu().nSize()).empty()%>
+<%varSet("TxIPduNumber", Com.gceTxIPdu().nSize()).empty()%>
+<%varSet("IPduGroupNumber", Com.ComConfig.ComIPduGroup.nSize()).empty()%>
+<%varSet("RxSignalNumber", Com.gceRxSignal().nSize()).empty()%>
+<%varSet("TxSignalNumber", Com.gceTxSignal().nSize()).empty()%>
+<%varSet("RxGroupSignalNumber", Com.gceRxGroupSignal().nSize()).empty()%>
+<%varSet("TxGroupSignalNumber", Com.gceTxGroupSignal().nSize()).empty()%>
+<%varSet("RxSignalGroupNumber", Com.gceRxSignalGroup().nSize()).empty()%>
+<%varSet("TxSignalGroupNumber", Com.gceTxSignalGroup().nSize()).empty()%>
+<%varSet("AllSignalNumber", varGet("RxSignalNumber")+varGet("TxSignalNumber")+varGet("RxGroupSignalNumber")+varGet("TxGroupSignalNumber")).empty()%>
+<%varSet("AllSignalGroupNumber", Com.ComConfig.ComSignalGroup.nSize()).empty()%>
+<%varSet("FilterNumber", Com.gceFilter().nSize()).empty()%>
+<%varSet("RxSignalFilterNumber", Com.gceRxSignal().ComFilter[!ComFilterAlgorithm.isALWAYS].nSize()).empty()%>
+<%varSet("TxSignalFilterNumber", Com.gceTxSignal().ComFilter[!ComFilterAlgorithm.isNEVER].nSize()).empty()%>
+<%varSet("TxGroupSignalFilterNumber", Com.gceTxGroupSignal().ComFilter[!ComFilterAlgorithm.isNEVER].nSize()).empty()%>
+<%varSet("RxSignalFilterOccNumber", Com.gceRxSignal().ComFilter[ComFilterAlgorithm.isONE_EVERY_N].nSize()).empty()%>
+<%varSet("TxSignalFilterOccNumber", Com.gceTxSignal().ComFilter[ComFilterAlgorithm.isONE_EVERY_N].nSize()).empty()%>
+<%varSet("TxGroupSignalFilterOccNumber", Com.gceTxGroupSignal().ComFilter[ComFilterAlgorithm.isONE_EVERY_N].nSize()).empty()%>
+<%varSet("AllFilterOccNumber", varGet("RxSignalFilterOccNumber")+varGet("TxSignalFilterOccNumber")+varGet("TxGroupSignalFilterOccNumber")).empty()%>
+«ENDREM»
+«varSet("RxIPduNumber", gceRxIPdu().size)»
+«varSet("TxIPduNumber", gceTxIPdu().size)»
+«varSet("IPduGroupNumber", ComConfig.ComIPduGroup.size)»
+«varSet("RxSignalNumber", gceRxSignal().size)»
+«varSet("TxSignalNumber", gceTxSignal().size)»
+«varSet("RxGroupSignalNumber", gceRxGroupSignal().size)»
+«varSet("TxGroupSignalNumber", gceTxGroupSignal().size)»
+«varSet("RxSignalGroupNumber", gceRxSignalGroup().size)»
+«varSet("TxSignalGroupNumber", gceTxSignalGroup().size)»
+«varSet("AllSignalNumber", intVarGet("RxSignalNumber") + intVarGet("TxSignalNumber") + intVarGet("RxGroupSignalNumber") + intVarGet("TxGroupSignalNumber"))»
+«varSet("AllSignalGroupNumber", ComConfig.ComSignalGroup.size)»
+«varSet("FilterNumber", gceFilter().size)»
+«varSet("RxSignalFilterNumber", gceRxSignal().flatten().select(e|e.value.ComFilter != null).value.ComFilter.select(e|e.ComFilterAlgorithm.isALWAYS()).size)»
+«varSet("TxSignalFilterNumber", gceTxSignal().select(e|e.value.ComFilter != null).value.ComFilter.select(e|e.ComFilterAlgorithm.isNEVER()).size)»
+«varSet("TxGroupSignalFilterNumber", gceTxGroupSignal().flatten().select(e|e.ComFilter != null).ComFilter.select(e|e.ComFilterAlgorithm.isNEVER()).size)»
+«varSet("RxSignalFilterOccNumber", gceRxSignal().flatten().select(e|e.value.ComFilter != null).value.ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).size)»
+«varSet("TxSignalFilterOccNumber", gceTxSignal().select(e|e.value.ComFilter != null).value.ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).size)»
+«varSet("TxGroupSignalFilterOccNumber", gceTxGroupSignal().flatten().select(e|e.ComFilter != null).ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).size)»
+«varSet("AllFilterOccNumber", intVarGet("RxSignalFilterOccNumber") + intVarGet("TxSignalFilterOccNumber") + intVarGet("TxGroupSignalFilterOccNumber"))»
+
+«REM»
+<%varSet("SignalRouteNumber", Com.gceSignalRoute().nSize()).empty()%>
+<%varSet("SignalGroupRouteNumber", Com.gceSignalGroupRoute().nSize()).empty()%>
+<%varSet("GroupSignalRouteNumber", Com.gceGroupSignalRoute().nSize()).empty()%>
+«ENDREM»
+«IF gceSignalRoute().size != null»
+«varSet("SignalRouteNumber", gceSignalRoute().size)»
+«ELSE»
+«varSet("SignalRouteNumber", 0)»
+«ENDIF»
+
+«IF gceSignalGroupRoute().size != null»
+«varSet("SignalGroupRouteNumber", gceSignalGroupRoute().size)»
+«ELSE»
+«varSet("SignalGroupRouteNumber", 0)»
+«ENDIF»
+
+«IF gceGroupSignalRoute().size != null»
+«varSet("GroupSignalRouteNumber", gceGroupSignalRoute().size)»
+«ELSE»
+«varSet("GroupSignalRouteNumber", 0)»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MaxIpduIndex --%>
+<%if (varGet("RxIPduNumber") > varGet("TxIPduNumber")){%>
+<%varSet("MaxIpduIndex", (varGet("RxIPduNumber")-1)).empty()%>
+<%}else{%>
+<%varSet("MaxIpduIndex", (varGet("TxIPduNumber")-1)).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("RxIPduNumber") > intVarGet("TxIPduNumber")»
+	«varSet("MaxIpduIndex", (intVarGet("RxIPduNumber")-1))»
+«ELSE»
+	«varSet("MaxIpduIndex", (intVarGet("TxIPduNumber")-1))»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxIpduIndex") < 255){%>
+<%varSet("MaxIpduIndexBits", 8).empty()%>
+<%}else{%>
+    <%if (varGet("MaxIpduIndex") < 65535){%>
+<%varSet("MaxIpduIndexBits", 16).empty()%>
+    <%}else{%>
+<%varSet("MaxIpduIndexBits", 32).empty()%>
+    <%}%>    
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxIpduIndex") < 255»
+	«varSet("MaxIpduIndexBits", 8)»
+«ELSEIF intVarGet("MaxIpduIndex") < 65535»
+	«varSet("MaxIpduIndexBits", 16)»
+«ELSE»
+	«varSet("MaxIpduIndexBits", 32)»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MaxSingleSignalIndex --%>
+<%if (varGet("RxSignalNumber") > varGet("TxSignalNumber")){%>
+<%varSet("MaxSingleSignalIndex", (varGet("RxSignalNumber")-1)).empty()%>
+<%}else{%>
+<%varSet("MaxSingleSignalIndex", (varGet("TxSignalNumber")-1)).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("RxSignalNumber") > intVarGet("TxSignalNumber")»
+	«varSet("MaxSingleSignalIndex", (intVarGet("RxSignalNumber")-1))»
+«ELSE»
+	«varSet("MaxSingleSignalIndex", (intVarGet("TxSignalNumber")-1))»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxSingleSignalIndex") < 255){%>
+<%varSet("MaxSingleSignalIndexBits", 8).empty()%>
+<%}else{%>
+    <%if (varGet("MaxSingleSignalIndex") < 65535){%>
+<%varSet("MaxSingleSignalIndexBits", 16).empty()%>
+    <%}else{%>
+<%varSet("MaxSingleSignalIndexBits", 32).empty()%>
+    <%}%>    
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxSingleSignalIndex") < 255»
+	«varSet("MaxSingleSignalIndexBits", 8)»
+«ELSEIF intVarGet("MaxSingleSignalIndex") < 65535»
+	«varSet("MaxSingleSignalIndexBits", 16)»
+«ELSE»
+	«varSet("MaxSingleSignalIndexBits", 32)»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MaxGroupSignalIndex --%>
+<%if (varGet("RxGroupSignalNumber") > varGet("TxGroupSignalNumber")){%>
+<%varSet("MaxGroupSignalIndex", (varGet("RxGroupSignalNumber")-1)).empty()%>
+<%}else{%>
+<%varSet("MaxGroupSignalIndex", (varGet("TxGroupSignalNumber")-1)).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("RxGroupSignalNumber") > intVarGet("TxGroupSignalNumber")»
+	«varSet("MaxGroupSignalIndex", (intVarGet("RxGroupSignalNumber")-1))»
+«ELSE»
+	«varSet("MaxGroupSignalIndex", (intVarGet("TxGroupSignalNumber")-1))»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxGroupSignalIndex") < 255){%>
+<%varSet("MaxGroupSignalIndexBits", 8).empty()%>
+<%}else{%>
+    <%if (varGet("MaxGroupSignalIndex") < 65535){%>
+<%varSet("MaxGroupSignalIndexBits", 16).empty()%>
+    <%}else{%>
+<%varSet("MaxGroupSignalIndexBits", 32).empty()%>
+    <%}%>    
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxGroupSignalIndex") < 255»
+	«varSet("MaxGroupSignalIndexBits", 8)»
+«ELSEIF intVarGet("MaxGroupSignalIndex") < 65535»
+	«varSet("MaxGroupSignalIndexBits", 16)»
+«ELSE»
+	«varSet("MaxGroupSignalIndexBits", 32)»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MaxAllSignalIndex --%>
+<%if (varGet("MaxSingleSignalIndex") > varGet("MaxGroupSignalIndex")){%>
+<%varSet("MaxAllSignalIndex", varGet("MaxSingleSignalIndex")).empty()%>
+<%}else{%>
+<%varSet("MaxAllSignalIndex", varGet("MaxGroupSignalIndex")).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxSingleSignalIndex") > intVarGet("MaxGroupSignalIndex")»
+	«varSet("MaxAllSignalIndex", intVarGet("MaxSingleSignalIndex"))»
+«ELSE»
+	«varSet("MaxAllSignalIndex", intVarGet("MaxGroupSignalIndex"))»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MaxSignalGroupIndex --%>
+<%if (varGet("RxSignalGroupNumber") > varGet("TxSignalGroupNumber")){%>
+<%varSet("MaxSignalGroupIndex", (varGet("RxSignalGroupNumber")-1)).empty()%>
+<%}else{%>
+<%varSet("MaxSignalGroupIndex", (varGet("TxSignalGroupNumber")-1)).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("RxSignalGroupNumber") > intVarGet("TxSignalGroupNumber")»
+	«varSet("MaxSignalGroupIndex", (intVarGet("RxSignalGroupNumber")-1))»
+«ELSE»
+	«varSet("MaxSignalGroupIndex", (intVarGet("TxSignalGroupNumber")-1))»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxSignalGroupIndex") < 255){%>
+<%varSet("MaxSignalGroupIndexBits", 8).empty()%>
+<%}else{%>
+    <%if (varGet("MaxSignalGroupIndex") < 65535){%>
+<%varSet("MaxSignalGroupIndexBits", 16).empty()%>
+    <%}else{%>
+<%varSet("MaxSignalGroupIndexBits", 32).empty()%>
+    <%}%>    
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxSignalGroupIndex") < 255»
+	«varSet("MaxSignalGroupIndexBits", 8)»
+«ELSEIF intVarGet("MaxSignalGroupIndex") < 65535»
+	«varSet("MaxSignalGroupIndexBits", 16)»
+«ELSE»
+	«varSet("MaxSignalGroupIndexBits", 32)»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MaxNetworkSignalIndex --%>
+<%if (varGet("MaxSignalGroupIndex") > varGet("MaxSingleSignalIndex")){%>
+	<%varSet("MaxNetworkSignalIndex", varGet("MaxSignalGroupIndex")).empty()%>
+<%}else{%>
+	<%varSet("MaxNetworkSignalIndex", varGet("MaxSingleSignalIndex")).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxSignalGroupIndex") > intVarGet("MaxSingleSignalIndex")»
+	«varSet("MaxNetworkSignalIndex", intVarGet("MaxSignalGroupIndex"))»
+«ELSE»
+	«varSet("MaxNetworkSignalIndex", intVarGet("MaxSingleSignalIndex"))»
+«ENDIF»
+
+«REM»
+<%-- Calculation of MDT max value --%>
+<%varSet("MaxMDTValue", 0).empty()%>
+<%for (Com.ComConfig.ComIPdu){%>
+    <%if (ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > varGet("MaxMDTValue")){%>
+        <%varSet("MaxMDTValue", ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«varSet("MaxMDTValue", 0)»
+«FOREACH ComConfig.ComIPdu AS ipdu»
+    «IF ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > intVarGet("MaxMDTValue")»
+        «varSet("MaxMDTValue", ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value)»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%-- Calculation for deadline monitoring max values --%>
+<%-- Size for var table --%>
+<%varSet("RxIPduDeadlineNumber", 0).empty()%>
+<%varSet("TxIPduDeadlineNumber", 0).empty()%>
+<%varSet("TxIPduDirectTimerNumber", 0).empty()%>
+<%varSet("TxIPduPeriodicTimerNumber", 0).empty()%>
+<%varSet("TxIPduMDTimerNumber", 0).empty()%>
+<%varSet("RxSgDeadlineNumber", 0).empty()%>
+<%varSet("RxSgGrDeadlineNumber", 0).empty()%>
+«ENDREM»
+«varSet("RxIPduDeadlineNumber", 0)»
+«varSet("TxIPduDeadlineNumber", 0)»
+«varSet("TxIPduDirectTimerNumber", 0)»
+«varSet("TxIPduPeriodicTimerNumber", 0)»
+«varSet("TxIPduMDTimerNumber", 0)»
+«varSet("RxSgDeadlineNumber", 0)»
+«varSet("RxSgGrDeadlineNumber", 0)»
+
+«REM»
+<%-- Index for var table (incremented during generation) --%>
+<%varSet("RxIPduDeadlineTimerIndex", 0).empty()%>
+<%varSet("TxIPduDeadlineTimerIndex", 0).empty()%>
+<%varSet("TxIPduDirectTimerIndex", 0).empty()%>
+<%varSet("TxIPduPeriodicTimerIndex", 0).empty()%>
+<%varSet("TxIPduMDTimerIndex", 0).empty()%>
+<%varSet("RxSgDeadlineTimerIndex", 0).empty()%>
+<%varSet("RxSgGrDeadlineTimerIndex", 0).empty()%>
+«ENDREM»
+«varSet("RxIPduDeadlineTimerIndex", 0)»
+«varSet("TxIPduDeadlineTimerIndex", 0)»
+«varSet("TxIPduDirectTimerIndex", 0)»
+«varSet("TxIPduPeriodicTimerIndex", 0)»
+«varSet("TxIPduMDTimerIndex", 0)»
+«varSet("RxSgDeadlineTimerIndex", 0)»
+«varSet("RxSgGrDeadlineTimerIndex", 0)»
+
+«REM»
+<%-- Max value for size of data in var table --%>
+<%varSet("MaxRxIPduDeadlineTimer", 0).empty()%>
+<%varSet("MaxTxIPduDeadlineTimer", 0).empty()%>
+<%varSet("MaxTxIPduDirectTimer", 1).empty()%>
+<%varSet("MaxTxIPduPeriodicTimer", 1).empty()%>
+<%varSet("MaxTxIPduMDTimer", 1).empty()%>
+<%varSet("MaxRxSgDeadlineTimer", 0).empty()%>
+<%varSet("MaxRxSgGrDeadlineTimer", 0).empty()%>
+«ENDREM»
+«varSet("MaxRxIPduDeadlineTimer", 0)»
+«varSet("MaxTxIPduDeadlineTimer", 0)»
+«varSet("MaxTxIPduDirectTimer", 1)»
+«varSet("MaxTxIPduPeriodicTimer", 1)»
+«varSet("MaxTxIPduMDTimer", 1)»
+«varSet("MaxRxSgDeadlineTimer", 0)»
+«varSet("MaxRxSgGrDeadlineTimer", 0)»
+
+«REM»
+<%-- Max value for size of data in rom table --%>
+<%varSet("MaxFirstTimeoutFactorValue", 0).empty()%>
+<%varSet("MaxTimeoutFactorValue", 0).empty()%>
+«ENDREM»
+«varSet("MaxFirstTimeoutFactorValue", 0)»
+«varSet("MaxTimeoutFactorValue", 0)»
+
+«REM»
+<%for (Com.gceRxIPduSort().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+    <%if (mapGet("FirstTimeoutFactor") != null){%>
+	    <%if (mapGet("FirstTimeoutFactor") > varGet("MaxRxIPduDeadlineTimer")){%>
+			<%varSet("MaxRxIPduDeadlineTimer", mapGet("FirstTimeoutFactor")).empty()%>
+	    <%}%>
+    <%}%>
+    <%if (mapGet("TimeoutFactor") != null){%>
+	    <%if (mapGet("TimeoutFactor") > varGet("MaxRxIPduDeadlineTimer")){%>
+			<%varSet("MaxRxIPduDeadlineTimer", mapGet("TimeoutFactor")).empty()%>
+	    <%}%>
+	    <%varAdd("RxIPduDeadlineNumber", 1).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxIPduSort() AS ipdu»
+    «IF ipdu.mapGet("FirstTimeoutFactor") != null»
+	    «IF ((int)ipdu.mapGet("FirstTimeoutFactor")) > intVarGet("MaxRxIPduDeadlineTimer")»
+			«varSet("MaxRxIPduDeadlineTimer", (int)ipdu.mapGet("FirstTimeoutFactor"))»
+	    «ENDIF»
+    «ENDIF»
+    «IF ipdu.mapGet("TimeoutFactor") != null»
+	    «IF ((int)ipdu.mapGet("TimeoutFactor")) > intVarGet("MaxRxIPduDeadlineTimer")»
+			«varSet("MaxRxIPduDeadlineTimer", (int)ipdu.mapGet("TimeoutFactor"))»
+	    «ENDIF»
+	    «varSet("RxIPduDeadlineNumber", intVarGet("RxIPduDeadlineNumber") + 1)»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceTxIPdu().cast("ARRoot_Com_ComConfig_ComIPdu")){%>
+    <%if (mapGet("FirstTimeoutFactor") != null){%>
+	    <%if (mapGet("FirstTimeoutFactor") > varGet("MaxTxIPduDeadlineTimer")){%>
+			<%varSet("MaxTxIPduDeadlineTimer", mapGet("FirstTimeoutFactor")).empty()%>
+	    <%}%>
+    <%}%>
+    <%if (mapGet("TimeoutFactor") != null){%>
+    	<%varAdd("TxIPduDeadlineNumber", 1).empty()%>
+	    <%if (mapGet("TimeoutFactor") > varGet("MaxTxIPduDeadlineTimer")){%>
+			<%varSet("MaxTxIPduDeadlineTimer", mapGet("TimeoutFactor")).empty()%>
+	    <%}%>
+    <%}%>
+    <%if (ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isDIRECT ||
+    	  ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isMIXED ||
+    	  ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isDIRECT ||
+    	  ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isMIXED){%>
+    	<%varAdd("TxIPduDirectTimerNumber", 1).empty()%>
+    <%}%>
+    <%if (ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isPERIODIC ||
+    	  ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isMIXED ||
+    	  ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isPERIODIC ||
+    	  ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isMIXED){%>
+    	<%varAdd("TxIPduPeriodicTimerNumber", 1).empty()%>
+    <%}%>
+    <%if (ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.isConfig() && (ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > 0)){%>
+    	<%varAdd("TxIPduMDTimerNumber", 1).empty()%>
+	    <%if (ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > varGet("MaxTxIPduMDTimer")){%>
+			<%varSet("MaxTxIPduMDTimer", ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value).empty()%>
+	    <%}%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH  gceTxIPdu() AS ipdu»
+    «IF ipdu.mapGet("FirstTimeoutFactor") != null»
+	    «IF ((int)ipdu.mapGet("FirstTimeoutFactor")) > intVarGet("MaxTxIPduDeadlineTimer")»
+			«varSet("MaxTxIPduDeadlineTimer", (int)ipdu.mapGet("FirstTimeoutFactor"))»
+	    «ENDIF»
+    «ENDIF»
+    «IF ipdu.mapGet("TimeoutFactor") != null»
+    	«varSet("TxIPduDeadlineNumber", intVarGet("TxIPduDeadlineNumber") + 1)»
+    	«IF ((int)ipdu.mapGet("TimeoutFactor")) > intVarGet("MaxTxIPduDeadlineTimer")»
+			«varSet("MaxTxIPduDeadlineTimer", (int)ipdu.mapGet("TimeoutFactor"))»
+	    «ENDIF»
+    «ENDIF»
+    «IF (ipdu.ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isDIRECT() == true)
+     || (ipdu.ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isMIXED() == true)
+     || (ipdu.ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isDIRECT() == true)
+     || (ipdu.ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isMIXED() == true)»
+    	«varSet("TxIPduDirectTimerNumber", intVarGet("TxIPduDirectTimerNumber") + 1)»
+    «ENDIF»
+    «IF (ipdu.ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isPERIODIC() == true)
+     || (ipdu.ComTxIPdu.ComTxModeFalse.ComTxMode.ComTxModeMode.isMIXED() == true)
+     || (ipdu.ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isPERIODIC() == true)
+     || (ipdu.ComTxIPdu.ComTxModeTrue.ComTxMode.ComTxModeMode.isMIXED() == true)»
+    	«varSet("TxIPduPeriodicTimerNumber", intVarGet("TxIPduPeriodicTimerNumber") + 1)»
+    «ENDIF»
+    «IF (ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor != null) && (ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > 0)»
+	    «varSet("TxIPduMDTimerNumber", intVarGet("TxIPduMDTimerNumber") + 1)»
+	    «IF ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > intVarGet("MaxTxIPduMDTimer")»
+			«varSet("MaxTxIPduMDTimer", ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value)»
+	    «ENDIF»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (mapGet("TransmissionModes")){%>
+	<%if (ComTxModeTimePeriodFactor.isConfig() && (ComTxModeTimePeriodFactor.value > varGet("MaxTxIPduPeriodicTimer"))){%>
+		<%varSet("MaxTxIPduPeriodicTimer", ComTxModeTimePeriodFactor.value).empty()%>
+	<%}%>
+	<%if (ComTxModeTimeOffsetFactor.isConfig() && (ComTxModeTimeOffsetFactor.value > varGet("MaxTxIPduPeriodicTimer"))){%>
+		<%varSet("MaxTxIPduPeriodicTimer", ComTxModeTimeOffsetFactor.value).empty()%>
+	<%}%>
+	<%if (ComTxModeRepetitionPeriodFactor.isConfig() && (ComTxModeRepetitionPeriodFactor.value > varGet("MaxTxIPduDirectTimer"))){%>
+		<%varSet("MaxTxIPduDirectTimer", ComTxModeRepetitionPeriodFactor.value).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH mapGetList("TransmissionModes") AS mode»
+	«IF (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimePeriodFactor != null)
+	 && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimePeriodFactor.value > intVarGet("MaxTxIPduPeriodicTimer"))»
+		«varSet("MaxTxIPduPeriodicTimer", ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimePeriodFactor.value)»
+	«ENDIF»
+	«IF (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimeOffsetFactor != null)
+	 && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimeOffsetFactor.value > intVarGet("MaxTxIPduPeriodicTimer"))»
+		«varSet("MaxTxIPduPeriodicTimer", ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeTimeOffsetFactor.value)»
+	«ENDIF»
+	«IF (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeRepetitionPeriodFactor != null)
+	 && (((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeRepetitionPeriodFactor.value > intVarGet("MaxTxIPduDirectTimer"))»
+		«varSet("MaxTxIPduDirectTimer", ((ARRoot::Com::ComConfig::ComIPdu::ComTxIPdu::ComTxModeFalse::ComTxMode) mode).ComTxModeRepetitionPeriodFactor.value)»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceRxSignalSort().cast("ARRoot_Com_ComConfig_ComSignal")){%>
+	<%if (ComUpdateBitPosition.isConfig() && ComTimeoutFactor.isConfig() && (ComTimeoutFactor.value > 0)){%>
+		<%varAdd("RxSgDeadlineNumber", 1).empty()%>
+	    <%if (ComFirstTimeoutFactor.value > varGet("MaxRxSgDeadlineTimer")){%>
+			<%varSet("MaxRxSgDeadlineTimer", ComFirstTimeoutFactor.value).empty()%>
+	    <%}%>
+	    <%if (ComTimeoutFactor.value > varGet("MaxRxSgDeadlineTimer")){%>
+			<%varSet("MaxRxSgDeadlineTimer", ComTimeoutFactor.value).empty()%>
+	    <%}%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxSignalSort().flatten() AS signal»
+	«IF (signal.value.ComUpdateBitPosition != null)
+	 && (signal.value.ComTimeoutFactor != null)
+	 && (signal.value.ComTimeoutFactor.value > 0)»
+		«varSet("RxSgDeadlineNumber", intVarGet("RxSgDeadlineNumber") + 1)»
+	    «IF signal.value.ComFirstTimeoutFactor.value > intVarGet("MaxRxSgDeadlineTimer")»
+			«varSet("MaxRxSgDeadlineTimer", signal.value.ComFirstTimeoutFactor.value)»
+	    «ENDIF»
+	    «IF signal.value.ComTimeoutFactor.value > intVarGet("MaxRxSgDeadlineTimer")»
+			«varSet("MaxRxSgDeadlineTimer", signal.value.ComTimeoutFactor.value)»
+	    «ENDIF»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.gceRxSignalGroupSort().cast("ARRoot_Com_ComConfig_ComSignalGroup")){%>
+	<%if (ComUpdateBitPosition.isConfig() && ComTimeoutFactor.isConfig() && (ComTimeoutFactor.value > 0)){%>
+		<%varAdd("RxSgGrDeadlineNumber", 1).empty()%>
+	    <%if (ComFirstTimeoutFactor.value > varGet("MaxRxSgGrDeadlineTimer")){%>
+			<%varSet("MaxRxSgDGreadlineTimer", ComFirstTimeoutFactor.value).empty()%>
+	    <%}%>
+	    <%if (ComTimeoutFactor.value > varGet("MaxRxSgGrDeadlineTimer")){%>
+			<%varSet("MaxRxSgGrDeadlineTimer", ComTimeoutFactor.value).empty()%>
+	    <%}%>
+	<%}%>
+<%}%>
+«ENDREM»
+«FOREACH gceRxSignalGroupSort() AS signalGroup»
+	«IF (signalGroup.value.ComUpdateBitPosition != null)
+	 && (signalGroup.value.ComTimeoutFactor     != null)
+	 && (signalGroup.value.ComTimeoutFactor.value     >  0)»
+	 	«varSet("RxSgGrDeadlineNumber", intVarGet("RxSgGrDeadlineNumber") + 1)»
+	    «IF signalGroup.value.ComFirstTimeoutFactor.value > intVarGet("MaxRxSgGrDeadlineTimer")»
+			«varSet("MaxRxSgDGreadlineTimer", signalGroup.value.ComFirstTimeoutFactor.value)»
+	    «ENDIF»
+	    «IF signalGroup.value.ComTimeoutFactor.value > intVarGet("MaxRxSgGrDeadlineTimer")»
+	    	«varSet("MaxRxSgGrDeadlineTimer", signalGroup.value.ComTimeoutFactor.value)»
+	    «ENDIF»
+	«ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.ComConfig.ComIPdu){%>
+    <%if (mapGet("FirstTimeoutFactor") > varGet("MaxFirstTimeoutFactorValue")){%>
+        <%varSet("MaxFirstTimeoutFactorValue", mapGet("FirstTimeoutFactor")).empty()%>
+    <%}%>
+    <%if (mapGet("TimeoutFactor") > varGet("MaxTimeoutFactorValue")){%>
+        <%varSet("MaxTimeoutFactorValue", mapGet("TimeoutFactor")).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH  ComConfig.ComIPdu AS ipdu»
+    «IF ((int)ipdu.mapGet("FirstTimeoutFactor")) > intVarGet("MaxFirstTimeoutFactorValue")»
+        «varSet("MaxFirstTimeoutFactorValue", (int)ipdu.mapGet("FirstTimeoutFactor"))»
+    «ENDIF»
+    «IF ((int)ipdu.mapGet("TimeoutFactor")) > intVarGet("MaxTimeoutFactorValue")»
+        «varSet("MaxTimeoutFactorValue", (int)ipdu.mapGet("TimeoutFactor"))»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%if (varGet("MaxRxIPduDeadlineTimer") < 256){%>
+	<%varSet("MaxRxIPduDeadlineTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxRxIPduDeadlineTimer") < 65536){%>
+		<%varSet("MaxRxIPduDeadlineTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxRxIPduDeadlineTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxRxIPduDeadlineTimer") < 256»
+	«varSet("MaxRxIPduDeadlineTimerBits", 8)»
+«ELSEIF intVarGet("MaxRxIPduDeadlineTimer") < 65536»
+	«varSet("MaxRxIPduDeadlineTimerBits", 16)»
+«ELSE»
+	«varSet("MaxRxIPduDeadlineTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxTxIPduDeadlineTimer") < 256){%>
+	<%varSet("MaxTxIPduDeadlineTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxTxIPduDeadlineTimer") < 65536){%>
+		<%varSet("MaxTxIPduDeadlineTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxTxIPduDeadlineTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxTxIPduDeadlineTimer") < 256»
+	«varSet("MaxTxIPduDeadlineTimerBits", 8)»
+«ELSEIF intVarGet("MaxTxIPduDeadlineTimer") < 65536»
+	«varSet("MaxTxIPduDeadlineTimerBits", 16)»
+«ELSE»
+	«varSet("MaxTxIPduDeadlineTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxTxIPduDirectTimer") < 256){%>
+	<%varSet("MaxTxIPduDirectTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxTxIPduDirectTimer") < 65536){%>
+		<%varSet("MaxTxIPduDirectTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxTxIPduDirectTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxTxIPduDirectTimer") < 256»
+	«varSet("MaxTxIPduDirectTimerBits", 8)»
+«ELSEIF intVarGet("MaxTxIPduDirectTimer") < 65536»
+	«varSet("MaxTxIPduDirectTimerBits", 16)»
+«ELSE»
+	«varSet("MaxTxIPduDirectTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxTxIPduPeriodicTimer") < 256){%>
+	<%varSet("MaxTxIPduPeriodicTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxTxIPduPeriodicTimer") < 65536){%>
+		<%varSet("MaxTxIPduPeriodicTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxTxIPduPeriodicTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxTxIPduPeriodicTimer") < 256»
+	«varSet("MaxTxIPduPeriodicTimerBits", 8)»
+«ELSEIF intVarGet("MaxTxIPduPeriodicTimer") < 65536»
+	«varSet("MaxTxIPduPeriodicTimerBits", 16)»
+	<%}else{%>
+	«varSet("MaxTxIPduPeriodicTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxTxIPduMDTimer") < 256){%>
+	<%varSet("MaxTxIPduMDTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxTxIPduMDTimer") < 65536){%>
+		<%varSet("MaxTxIPduMDTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxTxIPduMDTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxTxIPduMDTimer") < 256»
+	«varSet("MaxTxIPduMDTimerBits", 8)»
+«ELSEIF intVarGet("MaxTxIPduMDTimer") < 65536»
+	«varSet("MaxTxIPduMDTimerBits", 16)»
+«ELSE»
+	«varSet("MaxTxIPduMDTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxRxSgDeadlineTimer") < 256){%>
+	<%varSet("MaxRxSgDeadlineTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxRxSgDeadlineTimer") < 65536){%>
+		<%varSet("MaxRxSgDeadlineTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxRxSgDeadlineTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxRxSgDeadlineTimer") < 256»
+	«varSet("MaxRxSgDeadlineTimerBits", 8)»
+«ELSEIF intVarGet("MaxRxSgDeadlineTimer") < 65536»
+	«varSet("MaxRxSgDeadlineTimerBits", 16)»
+«ELSE»
+	«varSet("MaxRxSgDeadlineTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("MaxRxSgGrDeadlineTimer") < 256){%>
+	<%varSet("MaxRxSgGrDeadlineTimerBits", 8).empty()%>
+<%}else{%>
+	<%if (varGet("MaxRxSgGrDeadlineTimer") < 65536){%>
+		<%varSet("MaxRxSgGrDeadlineTimerBits", 16).empty()%>
+	<%}else{%>
+		<%varSet("MaxRxSgGrDeadlineTimerBits", 32).empty()%>
+	<%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxRxSgGrDeadlineTimer") < 256»
+	«varSet("MaxRxSgGrDeadlineTimerBits", 8)»
+«ELSEIF intVarGet("MaxRxSgGrDeadlineTimer") < 65536»
+	«varSet("MaxRxSgGrDeadlineTimerBits", 16)»
+«ELSE»
+	«varSet("MaxRxSgGrDeadlineTimerBits", 32)»
+«ENDIF»
+
+«REM»
+<%-- Calculation of transmission modes max values --%>
+<%varSet("MaxTimePeriodFactorValue", 0).empty()%>
+<%varSet("MaxTimeOffsetFactorValue", 0).empty()%>
+<%varSet("MaxRepetitionPeriodFactorValue", 0).empty()%>
+«ENDREM»
+«varSet("MaxTimePeriodFactorValue", 0)»
+«varSet("MaxTimeOffsetFactorValue", 0)»
+«varSet("MaxRepetitionPeriodFactorValue", 0)»
+
+«REM»
+<%for (Com.ComConfig.ComIPdu.ComTxIPdu.ComTxModeFalse.ComTxMode){%>
+    <%if (ComTxModeTimePeriodFactor.value > varGet("MaxTimePeriodFactorValue")){%>
+        <%varSet("MaxTimePeriodFactorValue", ComTxModeTimePeriodFactor.value).empty()%>
+    <%}%>
+    <%if (ComTxModeTimeOffsetFactor.value > varGet("MaxTimeOffsetFactorValue")){%>
+        <%varSet("MaxTimeOffsetFactorValue", ComTxModeTimeOffsetFactor.value).empty()%>
+    <%}%>
+    <%if (ComTxModeRepetitionPeriodFactor.value > varGet("MaxRepetitionPeriodFactorValue")){%>
+        <%varSet("MaxRepetitionPeriodFactorValue", ComTxModeRepetitionPeriodFactor.value).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH ComConfig.ComIPdu.ComTxIPdu.select(e|e.ComTxModeFalse != null).ComTxModeFalse.ComTxMode AS mode»
+    «IF mode.ComTxModeTimePeriodFactor.value > intVarGet("MaxTimePeriodFactorValue")»
+        «varSet("MaxTimePeriodFactorValue", mode.ComTxModeTimePeriodFactor.value)»
+    «ENDIF»
+    «IF mode.ComTxModeTimeOffsetFactor.value > intVarGet("MaxTimeOffsetFactorValue")»
+        «varSet("MaxTimeOffsetFactorValue", mode.ComTxModeTimeOffsetFactor.value)»
+    «ENDIF»
+    «IF mode.ComTxModeRepetitionPeriodFactor.value > intVarGet("MaxRepetitionPeriodFactorValue")»
+        «varSet("MaxRepetitionPeriodFactorValue", mode.ComTxModeRepetitionPeriodFactor.value)»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%for (Com.ComConfig.ComIPdu.ComTxIPdu.ComTxModeTrue.ComTxMode){%>
+    <%if (ComTxModeTimePeriodFactor.value > varGet("MaxTimePeriodFactorValue")){%>
+        <%varSet("MaxTimePeriodFactorValue", ComTxModeTimePeriodFactor.value).empty()%>
+    <%}%>
+    <%if (ComTxModeTimeOffsetFactor.value > varGet("MaxTimeOffsetFactorValue")){%>
+        <%varSet("MaxTimeOffsetFactorValue", ComTxModeTimeOffsetFactor.value).empty()%>
+    <%}%>
+    <%if (ComTxModeRepetitionPeriodFactor.value > varGet("MaxRepetitionPeriodFactorValue")){%>
+        <%varSet("MaxRepetitionPeriodFactorValue", ComTxModeRepetitionPeriodFactor.value).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH ComConfig.ComIPdu.ComTxIPdu.select(e|e.ComTxModeTrue != null).ComTxModeTrue.ComTxMode AS mode»
+    «IF mode.ComTxModeTimePeriodFactor.value > intVarGet("MaxTimePeriodFactorValue")»
+        «varSet("MaxTimePeriodFactorValue", mode.ComTxModeTimePeriodFactor.value)»
+    «ENDIF»
+    «IF mode.ComTxModeTimeOffsetFactor.value > intVarGet("MaxTimeOffsetFactorValue")»
+        «varSet("MaxTimeOffsetFactorValue", mode.ComTxModeTimeOffsetFactor.value)»
+    «ENDIF»
+    «IF mode.ComTxModeRepetitionPeriodFactor.value > intVarGet("MaxRepetitionPeriodFactorValue")»
+        «varSet("MaxRepetitionPeriodFactorValue", mode.ComTxModeRepetitionPeriodFactor.value)»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%if (varGet("MaxTimePeriodFactorValue") < varGet("MaxTimeOffsetFactorValue")){%>
+    <%varSet("MaxNextPeriodicTimer", varGet("MaxTimeOffsetFactorValue")).empty()%>
+<%}else{%>
+    <%varSet("MaxNextPeriodicTimer", varGet("MaxTimePeriodFactorValue")).empty()%>
+<%}%>
+«ENDREM»
+«IF intVarGet("MaxTimePeriodFactorValue") < intVarGet("MaxTimeOffsetFactorValue")»
+    «varSet("MaxNextPeriodicTimer", intVarGet("MaxTimeOffsetFactorValue"))»
+«ELSE»
+    «varSet("MaxNextPeriodicTimer", intVarGet("MaxTimePeriodFactorValue"))»
+«ENDIF»
+
+«REM»
+<%-- Calculation of Filter max values --%>
+<%varSet("FilterMaxValue1", 0).empty()%>
+<%varSet("FilterMaxValue2", 0).empty()%>
+«ENDREM»
+«varSet("FilterMaxValue1", 0)»
+«varSet("FilterMaxValue2", 0)»
+
+«REM»
+<%for (Com.gceFilter()){%>
+    <%if (ComFilterMask.value > varGet("FilterMaxValue1")){%>
+        <%varSet("FilterMaxValue1", ComFilterMask.value).empty()%>
+    <%}%>
+    <%if (ComFilterPeriodFactor.value > varGet("FilterMaxValue1")){%>
+        <%varSet("FilterMaxValue1", ComFilterPeriodFactor.value).empty()%>
+    <%}%>
+    <%if (ComFilterMax.value > varGet("FilterMaxValue1")){%>
+        <%varSet("FilterMaxValue1", ComFilterMax.value).empty()%>
+    <%}%>
+    <%if (ComFilterX.value > varGet("FilterMaxValue2")){%>
+        <%varSet("FilterMaxValue2", ComFilterX.value).empty()%>
+    <%}%>
+    <%if (ComFilterOffset.value > varGet("FilterMaxValue2")){%>
+        <%varSet("FilterMaxValue2", ComFilterOffset.value).empty()%>
+    <%}%>
+    <%if (ComFilterMin.value > varGet("FilterMaxValue2")){%>
+        <%varSet("FilterMaxValue2", ComFilterMin.value).empty()%>
+    <%}%>
+<%}%>
+«ENDREM»
+«FOREACH  gceFilter() AS filter»
+    «IF filter.ComFilterMask.value > intVarGet("FilterMaxValue1")»
+        «varSet("FilterMaxValue1", filter.ComFilterMask.value)»
+    «ENDIF»
+    «IF filter.ComFilterPeriodFactor.value > intVarGet("FilterMaxValue1")»
+        «varSet("FilterMaxValue1", filter.ComFilterPeriodFactor.value)»
+    «ENDIF»
+    «IF filter.ComFilterMax.value > intVarGet("FilterMaxValue1")»
+        «varSet("FilterMaxValue1", filter.ComFilterMax.value)»
+    «ENDIF»
+    «IF filter.ComFilterX.value > intVarGet("FilterMaxValue2")»
+        «varSet("FilterMaxValue2", filter.ComFilterX.value)»
+    «ENDIF»
+    «IF filter.ComFilterOffset.value > intVarGet("FilterMaxValue2")»
+        «varSet("FilterMaxValue2", filter.ComFilterOffset.value)»
+    «ENDIF»
+    «IF filter.ComFilterMin.value > intVarGet("FilterMaxValue2")»
+        «varSet("FilterMaxValue2", filter.ComFilterMin.value)»
+    «ENDIF»
+«ENDFOREACH»
+
+«REM»
+<%if (varGet("FilterMaxValue1") < 256){%>
+	<%varSet("FilterMaxValue1Bits", 8)%>
+<%}else{%>
+    <%if (varGet("FilterMaxValue1") < 65536){%>
+		<%varSet("FilterMaxValue1Bits", 16)%>
+    <%}else{%>
+		<%varSet("FilterMaxValue1Bits", 32)%>
+    <%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("FilterMaxValue1") < 256»
+	«varSet("FilterMaxValue1Bits", 8)»
+«ELSEIF intVarGet("FilterMaxValue1") < 65536»
+	«varSet("FilterMaxValue1Bits", 16)»
+«ELSE»
+	«varSet("FilterMaxValue1Bits", 32)»
+«ENDIF»
+
+«REM»
+<%if (varGet("FilterMaxValue2") < 256){%>
+	<%varSet("FilterMaxValue2Bits", 8)%>
+<%}else{%>
+    <%if (varGet("FilterMaxValue2") < 65536){%>
+		<%varSet("FilterMaxValue2Bits", 16)%>
+    <%}else{%>
+		<%varSet("FilterMaxValue2Bits", 32)%>
+    <%}%>
+<%}%>
+«ENDREM»
+«IF intVarGet("FilterMaxValue2") < 256»
+	«varSet("FilterMaxValue2Bits", 8)»
+«ELSEIF intVarGet("FilterMaxValue2") < 65536»
+	«varSet("FilterMaxValue2Bits", 16)»
+«ELSE»
+	«varSet("FilterMaxValue2Bits", 32)»
+«ENDIF»
+
+«ENDDEFINE»
+
+«REM» <%script type="autosar.objects" name="gceBooleanInitValues"%> «ENDREM»
+«DEFINE gceBooleanInitValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("BOOLEAN_SignalInitValues")){%>
+STATIC CONST(boolean, COM_CONST) Com_BOOLEAN_SignalInitValue<%i()%> = <%if (varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0){%>TRUE<%}else{%>FALSE<%}%>;
+«ENDREM»
+«IF mapGet("BOOLEAN_SignalInitValues") != null -»
+«FOREACH mapGetList("BOOLEAN_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(boolean, COM_CONST) Com_BOOLEAN_SignalInitValue«i.counter0» = «IF (((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value) == 1 -»TRUE«ELSE -»FALSE«ENDIF -»;
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+«REM» <%script type="autosar.objects" name="gceBooleanInvalidValues"%> «ENDREM»
+«DEFINE gceBooleanInvalidValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("BOOLEAN_SignalInvalidValues")){%>
+STATIC CONST(boolean, COM_CONST) Com_BOOLEAN_SignalInvalidValue<%i()%> = <%if (varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0){%>TRUE<%}else{%>FALSE<%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("BOOLEAN_SignalInvalidValues") != null -»
+«FOREACH mapGetList("BOOLEAN_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(boolean, COM_CONST) Com_BOOLEAN_SignalInvalidValue«i.counter0» = «IF (((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value) == 1 -»TRUE«ELSE -»FALSE«ENDIF -»;
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+«REM» <%script type="autosar.objects" name="gce8BitsInitValues"%> «ENDREM»
+«DEFINE gce8BitsInitValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("UINT8_SignalInitValues")){%>
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_SignalInitValue<%i()%> = 0x<%printf("%02X",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0)%>;
+<%}%>
+«ENDREM»
+«IF mapGet("UINT8_SignalInitValues") != null -»
+«FOREACH mapGetList("UINT8_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_SignalInitValue«i.counter0» = 0x«((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value.int2hex()»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("SINT8_SignalInitValues")){%>
+STATIC CONST(sint8, COM_CONST)   Com_SINT8_SignalInitValue<%i()%> = <%if ((varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0) < 0){%><%printf("%+d",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0)%><%}else{%><%varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0%><%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("SINT8_SignalInitValues") != null -»
+«FOREACH mapGetList("SINT8_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(sint8, COM_CONST)   Com_SINT8_SignalInitValue«i.counter0» = «((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("UINT8_N_SignalInitValues")){%>
+<%varSet("CurrentSignal", varGet("Com_ARRoot").mapGet(self()+"_RefSignal"))%><%--
+--%><%varSet("InitValue",varGet("CurrentSignal").ComSignalInitValue.value+0).empty()%><%--
+--%><%varSet("Length",varGet("CurrentSignal").ComSignalLength.value).empty()%>
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_N_SignalInitValue<%i()%>[<%varGet("Length")%>] =
+    {
+        <%for (varGet("Length")){%>
+      0x<%printf("%.2s",printf("%02X",((varGet("InitValue"))*16777216)))%><%varSet("InitValue", varGet("InitValue")/256).empty()%><%if ((varGet("Length")-1) != i()){%>,<%}%>
+        <%}%>
+    };
+<%}%>
+«ENDREM»
+«IF mapGet("UINT8_N_SignalInitValues") != null -»
+«FOREACH mapGetList("UINT8_N_SignalInitValues") AS iter ITERATOR i -»
+	«varSet("InitValue", ((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value)»
+	«varSet("Length", ((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalLength.value)»
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_N_SignalInitValue<%i()%>[<%varGet("Length")%>] =
+    {
+        «FOREACH asListOfInteger(intVarGet("Length")) AS iter ITERATOR i SEPARATOR ',' -»
+      0x«(intVarGet("InitValue")*16777216).int2hex()»«varSet("InitValue", intVarGet("InitValue")/256)»
+        «ENDFOREACH -»
+    };
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+
+«REM» <%script type="autosar.objects" name="gce8BitsInvalidValues"%> «ENDREM»
+«DEFINE gce8BitsInvalidValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("UINT8_SignalInvalidValues")){%>
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_SignalInvalidValue<%i()%> = 0x<%printf("%02X",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0)%>;
+<%}%>
+«ENDREM»
+«IF mapGet("UINT8_SignalInvalidValues") != null -»
+«FOREACH mapGetList("UINT8_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_SignalInvalidValue«i.counter0» = 0x«((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value.int2hex()»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("SINT8_SignalInvalidValues")){%>
+STATIC CONST(sint8, COM_CONST)   Com_SINT8_SignalInvalidValue<%i()%> = <%if ((varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0) < 0){%><%printf("%+d",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0)%><%}else{%><%varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0%><%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("SINT8_SignalInvalidValues") != null -»
+«FOREACH mapGetList("SINT8_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(sint8, COM_CONST)   Com_SINT8_SignalInvalidValue«i.counter0» = «((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("UINT8_N_SignalInvalidValues")){%>
+<%varSet("CurrentSignal", varGet("Com_ARRoot").mapGet(self()+"_RefSignal"))%><%--
+--%><%varSet("InvalidValue",varGet("CurrentSignal").ComSignalDataInvalidValue.value+0).empty()%><%--
+--%><%varSet("Length",varGet("CurrentSignal").ComSignalLength.value).empty()%>
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_N_SignalInvalidValue<%i()%>[<%varGet("Length")%>] =
+    {
+        <%for (varGet("Length")){%>
+      0x<%printf("%.2s",printf("%02X",((varGet("InvalidValue"))*16777216)))%><%varSet("InvalidValue", varGet("InvalidValue")/256).empty()%><%if ((varGet("Length")-1) != i()){%>,<%}%>
+        <%}%>
+    };
+<%}%>
+«ENDREM»
+«IF mapGet("UINT8_N_SignalInvalidValues") != null -»
+«FOREACH mapGetList("UINT8_N_SignalInvalidValues") AS iter ITERATOR i -»
+	«varSet("InvalidValue", ((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value)»
+	«varSet("Length", ((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalLength.value)»
+STATIC CONST(uint8, COM_CONST)   Com_UINT8_N_SignalInvalidValue<%i()%>[<%varGet("Length")%>] =
+    {
+        «FOREACH asListOfInteger(intVarGet("Length")) AS iter ITERATOR i SEPARATOR ',' -»
+      0x«(intVarGet("InvalidValue")*16777216).int2hex()»«varSet("InvalidValue", intVarGet("InvalidValue")/256)»
+        «ENDFOREACH -»
+    };
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+
+«REM» <%script type="autosar.objects" name="gce16BitsInitValues"%> «ENDREM»
+«DEFINE gce16BitsInitValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("UINT16_SignalInitValues")){%>
+STATIC CONST(uint16, COM_CONST) Com_UINT16_SignalInitValue<%i()%> = 0x<%printf("%04X",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0)%>;
+<%}%>
+«ENDREM»
+«IF mapGet("UINT16_SignalInitValues") != null -»
+«FOREACH mapGetList("UINT16_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(uint16, COM_CONST)   Com_UINT16_SignalInitValue«i.counter0» = 0x«((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value.int2hex()»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("SINT16_SignalInitValues")){%>
+STATIC CONST(sint16, COM_CONST) Com_SINT16_SignalInitValue<%i()%> = <%if ((varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0) < 0){%><%printf("%+d",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0)%><%}else{%><%varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0%><%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("SINT16_SignalInitValues") != null -»
+«FOREACH mapGetList("SINT16_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(sint16, COM_CONST)   Com_SINT16_SignalInitValue«i.counter0» = «((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value»;
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+
+«REM» <%script type="autosar.objects" name="gce16BitsInvalidValues"%> «ENDREM»
+«DEFINE gce16BitsInvalidValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("UINT16_SignalInvalidValues")){%>
+STATIC CONST(uint16, COM_CONST) Com_UINT16_SignalInvalidValue<%i()%> = 0x<%printf("%04X",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0)%>;
+<%}%>
+«ENDREM»
+«IF mapGet("UINT16_SignalInvalidValues") != null -»
+«FOREACH mapGetList("UINT16_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(uint16, COM_CONST) Com_UINT16_SignalInvalidValue«i.counter0» = 0x«((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value.int2hex()»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("SINT16_SignalInvalidValues")){%>
+STATIC CONST(sint16, COM_CONST) Com_SINT16_SignalInvalidValue<%i()%> = <%if ((varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0) < 0){%><%printf("%+d",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0)%><%}else{%><%varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0%><%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("SINT16_SignalInvalidValues") != null -»
+«FOREACH mapGetList("SINT16_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(sint16, COM_CONST) Com_SINT16_SignalInvalidValue«i.counter0» = «((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value»;
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+
+«REM» <%script type="autosar.objects" name="gce32BitsInitValues"%> «ENDREM»
+«DEFINE gce32BitsInitValues FOR ARRoot::Com»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("UINT32_SignalInitValues")){%>
+STATIC CONST(uint32, COM_CONST) Com_UINT32_SignalInitValue<%i()%> = 0x<%printf("%08X",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0)%>;
+<%}%>
+«ENDREM»
+«IF mapGet("UINT32_SignalInitValues") != null -»
+«FOREACH mapGetList("UINT32_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(uint32, COM_CONST)   Com_UINT32_SignalInitValue«i.counter0» = 0x«((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value.int2hex()»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("SINT32_SignalInitValues")){%>
+STATIC CONST(sint32, COM_CONST) Com_SINT32_SignalInitValue<%i()%> = <%if ((varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0) < 0){%><%printf("%+d",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0)%><%}else{%><%varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalInitValue.value+0%><%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("SINT32_SignalInitValues") != null -»
+«FOREACH mapGetList("SINT32_SignalInitValues") AS iter ITERATOR i -»
+STATIC CONST(sint32, COM_CONST)   Com_SINT32_SignalInitValue«i.counter0» = «((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalInitValue.value»;
+«ENDFOREACH -»
+«ENDIF -»
+«ENDDEFINE»
+
+«REM» <%script type="autosar.objects" name="gce32BitsInvalidValues"%> «ENDREM»
+«DEFINE gce32BitsInvalidValues FOR ARRoot::Com -»
+«REM»
+<%varSet("Com_ARRoot", Com).empty%>
+<%for (Com.mapGet("UINT32_SignalInvalidValues")){%>
+STATIC CONST(uint32, COM_CONST) Com_UINT32_SignalInvalidValue<%i()%> = 0x<%printf("%08X",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0)%>;
+<%}%>
+«ENDREM»
+«IF mapGet("UINT32_SignalInvalidValues") != null -»
+«FOREACH mapGetList("UINT32_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(uint32, COM_CONST) Com_UINT32_SignalInvalidValue«i.counter0» = 0x«((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value.int2hex()»;
+«ENDFOREACH -»
+«ENDIF -»
+«REM»
+<%for (Com.mapGet("SINT32_SignalInvalidValues")){%>
+STATIC CONST(sint32, COM_CONST) Com_SINT32_SignalInvalidValue<%i()%> = <%if ((varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0) < 0){%><%printf("%+d",varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0)%><%}else{%><%varGet("Com_ARRoot").mapGet(self()+"_RefSignal").ComSignalDataInvalidValue.value+0%><%}%>;
+<%}%>
+«ENDREM»
+«IF mapGet("SINT32_SignalInvalidValues") != null -»
+«FOREACH mapGetList("SINT32_SignalInvalidValues") AS iter ITERATOR i -»
+STATIC CONST(sint32, COM_CONST) Com_SINT32_SignalInvalidValue«i.counter0» = «((ARRoot::Com::ComConfig::ComSignal)this.mapGet(iter.toString()+"_RefSignal")).ComSignalDataInvalidValue.value»;
+«ENDFOREACH -»
+«ENDIF -»
+
+«ENDDEFINE»
+
+«REM»
+<%script type="autosar.objects" name="gceComputeRxSgCfg_Cbks" post="trim()"%>
+<%--Track 4.2: Creation of fct pointers arrays --%>
+<%varSet("RxSignalTimeoutNotificationCbk[0]","NULL_PTR").empty()%>
+<%varSet("RxSignalTimeoutNotificationCbkCounter",1).empty()%>
+<%varSet("RxSignalInvalidNotificationCbk[0]","NULL_PTR").empty()%>
+<%varSet("RxSignalInvalidNotificationCbkCounter",1).empty()%>
+<%varSet("RxSignalNotificationCbk[0]","NULL_PTR").empty()%>
+<%varSet("RxSignalNotificationCbkCounter",1).empty()%>
+<%for (Com.gceRxSignalSort().cast("ARRoot_Com_ComConfig_ComSignal")){%>
+<%--Array for RxSignalTimeoutNotificationCallbacks --%>
+  <%if (ComTimeoutNotification.isConfig()){%>
+<%varSet("RxSignalTimeoutNotificationCbkActual",ComTimeoutNotification.value).empty()%>
+  <%}else{%>
+<%varSet("RxSignalTimeoutNotificationCbkActual","NULL_PTR").empty()%>
+  <%}%>
+<%--Fill the cbk list--%>
+  <%--Check if cbk is NULL_PTR : --%>
+  <%if (varGet("RxSignalTimeoutNotificationCbkActual")=="NULL_PTR"){%>
+    <%--No need to add a cbk in the list, and this signal must point on first element of array : --%>
+    <%mapPut("RxSignalTimeoutNotificationCbkListIndex",0)%>
+  <%}else{%>
+    <%--Add the cbk in the list--%>
+    <%varSet("RxSignalTimeoutNotificationCbk["+varGet("RxSignalTimeoutNotificationCbkCounter")+"]",varGet("RxSignalTimeoutNotificationCbkActual"))%>
+    <%--This signal must point on this element of array : --%>
+    <%mapPut("RxSignalTimeoutNotificationCbkListIndex",varGet("RxSignalTimeoutNotificationCbkCounter"))%>
+    <%varAdd("RxSignalTimeoutNotificationCbkCounter",1).empty()%>
+  <%}%>
+
+<%--Array for RxSignalInvalidNotificationCallbacks --%>
+  <%if (ComInvalidNotification.isConfig()){%>
+<%varSet("RxSignalInvalidNotificationCbkActual",ComInvalidNotification.value).empty()%>
+  <%}else{%>
+<%varSet("RxSignalInvalidNotificationCbkActual","NULL_PTR").empty()%>
+  <%}%>
+<%--Fill the cbk list--%>
+  <%--Check if cbk is NULL_PTR : --%>
+  <%if (varGet("RxSignalInvalidNotificationCbkActual")=="NULL_PTR"){%>
+    <%--No need to add a cbk in the list, and this signal must point on first element of array : --%>
+    <%mapPut("RxSignalInvalidNotificationCbkListIndex",0)%>
+  <%}else{%>
+    <%--Add the cbk in the list--%>
+    <%varSet("RxSignalInvalidNotificationCbk["+varGet("RxSignalInvalidNotificationCbkCounter")+"]",varGet("RxSignalInvalidNotificationCbkActual"))%>
+    <%--This signal must point on this element of array : --%>
+    <%mapPut("RxSignalInvalidNotificationCbkListIndex",varGet("RxSignalInvalidNotificationCbkCounter"))%>
+    <%varAdd("RxSignalInvalidNotificationCbkCounter",1).empty()%>
+  <%}%>
+
+<%--Array for RxSignalNotificationCallbacks --%>
+  <%if (ComNotification.isConfig()){%>
+<%varSet("RxSignalNotificationCbkActual",ComNotification.value).empty()%>
+  <%}else{%>
+<%varSet("RxSignalNotificationCbkActual","NULL_PTR").empty()%>
+  <%}%>
+<%--Fill the cbk list--%>
+  <%--Check if cbk is NULL_PTR : --%>
+  <%if (varGet("RxSignalNotificationCbkActual")=="NULL_PTR"){%>
+    <%--No need to add a cbk in the list, and this signal must point on first element of array : --%>
+    <%mapPut("RxSignalNotificationCbkListIndex",0)%>
+  <%}else{%>
+    <%--Add the cbk in the list--%>
+    <%varSet("RxSignalNotificationCbk["+varGet("RxSignalNotificationCbkCounter")+"]",varGet("RxSignalNotificationCbkActual"))%>
+    <%--This signal must point on this element of array : --%>
+    <%mapPut("RxSignalNotificationCbkListIndex",varGet("RxSignalNotificationCbkCounter"))%>
+    <%varAdd("RxSignalNotificationCbkCounter",1).empty()%>
+  <%}%>
+<%}%>
+«ENDREM»
+«DEFINE gceComputeRxSgCfg_Cbks FOR ARRoot::Com»
+«varSet("RxSignalTimeoutNotificationCbk[0]","NULL_PTR")»
+«varSet("RxSignalTimeoutNotificationCbkCounter",1)»
+«varSet("RxSignalInvalidNotificationCbk[0]","NULL_PTR")»
+«varSet("RxSignalInvalidNotificationCbkCounter",1)»
+«varSet("RxSignalNotificationCbk[0]","NULL_PTR")»
+«varSet("RxSignalNotificationCbkCounter",1)»
+«FOREACH gceRxSignalSort().flatten() AS signal -»
+	«IF signal.value.ComTimeoutNotification.value != null -»
+		«varSet("RxSignalTimeoutNotificationCbkActual",signal.value.ComTimeoutNotification.value)»
+	«ELSE»
+		«varSet("RxSignalTimeoutNotificationCbkActual","NULL_PTR")»
+	«ENDIF»
+
+  	«IF varGet("RxSignalTimeoutNotificationCbkActual")=="NULL_PTR"»
+    	«signal.mapPut("RxSignalTimeoutNotificationCbkListIndex",0)»
+  	«ELSE»
+    	«varSet("RxSignalTimeoutNotificationCbk["+varGet("RxSignalTimeoutNotificationCbkCounter").toString()+"]",varGet("RxSignalTimeoutNotificationCbkActual").toString())»
+    	«signal.mapPut("RxSignalTimeoutNotificationCbkListIndex",varGet("RxSignalTimeoutNotificationCbkCounter"))»
+    	«varSet("RxSignalTimeoutNotificationCbkCounter", intVarGet("RxSignalTimeoutNotificationCbkCounter") + 1)»
+	«ENDIF»
+
+  	«IF signal.value.ComInvalidNotification.value != null»
+		«varSet("RxSignalInvalidNotificationCbkActual", signal.value.ComInvalidNotification.value)»
+	«ELSE»	
+		«varSet("RxSignalInvalidNotificationCbkActual","NULL_PTR")»
+	«ENDIF»
+
+  	«IF varGet("RxSignalInvalidNotificationCbkActual")=="NULL_PTR"»
+    	«signal.mapPut("RxSignalInvalidNotificationCbkListIndex",0)»
+  	«ELSE»
+    	«varSet("RxSignalInvalidNotificationCbk["+varGet("RxSignalInvalidNotificationCbkCounter").toString()+"]",varGet("RxSignalInvalidNotificationCbkActual").toString())»
+    	«signal.mapPut("RxSignalInvalidNotificationCbkListIndex",varGet("RxSignalInvalidNotificationCbkCounter"))»
+    	«varSet("RxSignalInvalidNotificationCbkCounter", intVarGet("RxSignalInvalidNotificationCbkCounter") + 1)»
+	«ENDIF»
+
+  	«IF signal.value.ComNotification.value != null»
+		«varSet("RxSignalNotificationCbkActual", signal.value.ComNotification.value)»
+  	«ELSE»
+		«varSet("RxSignalNotificationCbkActual","NULL_PTR")»
+	«ENDIF»
+
+  	«IF varGet("RxSignalNotificationCbkActual")=="NULL_PTR"»
+    	«signal.mapPut("RxSignalNotificationCbkListIndex",0)»
+  	«ELSE»
+    	«varSet("RxSignalNotificationCbk["+varGet("RxSignalNotificationCbkCounter").toString()+"]",varGet("RxSignalNotificationCbkActual").toString())»
+    	«signal.mapPut("RxSignalNotificationCbkListIndex",varGet("RxSignalNotificationCbkCounter"))»
+    	«varSet("RxSignalNotificationCbkCounter",intVarGet("RxSignalNotificationCbkCounter") + 1)»
+	«ENDIF»
+«ENDFOREACH»
+«ENDDEFINE»
+
+
+

@@ -1,0 +1,56 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION org::eclipse::xtend::util::stdlib::properties»
+«EXTENSION extensions::common»
+
+«DEFINE main FOR AR::AUTOSARType»
+  «EXPAND main FOREACH packages»
+«ENDDEFINE»
+
+«DEFINE main FOR AR::ARPackageType»
+	«EXPAND main FOREACH modules»
+«ENDDEFINE»
+
+«DEFINE main FOR ARRoot::Com»
+    «EXPAND ComStatic::main»
+    «EXPAND hFile»
+    «EXPAND cFile»
+«ENDDEFINE»
+
+«DEFINE hFile FOR ARRoot::Com -»
+	«FILE "Com_Cfg.h" -»
+	«EXPAND ComStatic::hHeader»
+	«EXPAND ComH::inclusions»
+	«EXPAND ComH::symbolicName»
+	«EXPAND ComH::macros»
+	«EXPAND ComH::gceDefinitionOfTypes»
+	«EXPAND ComH::gceDeclarationsOfConfigurationsConstants»
+	«EXPAND ComH::gceDeclarationsOfConfigurationsDepedent»
+#endif /* COM_CFG_H */
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE cFile FOR ARRoot::Com»
+	«FILE "Com_Cfg.c"»
+        «EXPAND ComStatic::cHeader»        
+		«EXPAND ComC::inclusions»
+		«EXPAND ComC::configurationDependentData»
+		«EXPAND ComC::definitionOfConfiguration»
+		«EXPAND ComC::declarationOfConfigurationRamInfos»
+/* ENVIRONMENT */		
+/* «dateString()» */
+/* «getProjectDir()» */
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE main FOR AR::ModuleDefType»
+// throw Exception for unhandled moduledeftype
+    «info( "Unhandled ModuleDefType \"" + metaType.toString() + "\" encountered in Com.xpt")»
+«ENDDEFINE»
+
+«DEFINE main FOR Object»
+// throw Exception for unhandled object type
+    «info( "Unhandled object type \"" + metaType.toString() + "\" encountered in Com.xpt")»
+«ENDDEFINE»
+
+
