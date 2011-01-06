@@ -33,7 +33,11 @@ public class EcucMetaModelManager {
 	 */
 	public Object getEcucMetaModel(IModelDescriptor modelDescriptor) {
 		EcucMetaModel metaModel = ecucMetaModels.get(modelDescriptor);
-		if (metaModel == null) {
+
+		// TODO Add resourceSet listener that invalidates ECUC metamodel each time a configuration definition relevant
+		// model element is changed and remove this line when done
+		if (true) {
+			// if (metaModel == null) {
 			// Create and initialize ECU configuration metamodel context object
 			EcucContext context = new EcucContext();
 			context.setModuleDefModelDescriptor(modelDescriptor);
@@ -46,7 +50,4 @@ public class EcucMetaModelManager {
 		}
 		return metaModel;
 	}
-
-	// TODO Add resourceSet listener that invalidates ECUC metamodel each time a configuration definition relevant model
-	// element is changed
 }
