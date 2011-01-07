@@ -4,8 +4,8 @@
    <extension
          point="org.eclipse.core.runtime.adapters">
       <factory
-            adaptableType="org.artop.aal.common.metamodel.AutosarReleaseDescriptor"
-            class="org.artop.ecuc.autosar40.xtend.typesystem.internal.AutosarReleaseDescriptorAdapterFactory">
+            adaptableType="autosar40.util.Autosar40ReleaseDescriptor"
+            class="org.artop.ecuc.autosar40.xtend.typesystem.internal.Autosar40ReleaseDescriptorAdapterFactory">
          <adapter
                type="org.artop.ecuc.gautosar.xtend.typesystem.IEcucMetaModelFactory">
          </adapter>
