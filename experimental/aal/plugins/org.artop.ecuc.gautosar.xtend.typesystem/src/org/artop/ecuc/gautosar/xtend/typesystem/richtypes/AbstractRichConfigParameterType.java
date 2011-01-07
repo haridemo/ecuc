@@ -15,7 +15,6 @@ import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
-//TODO Add support for EcucAddInfoParamValue, EcucNumericalParamValue, EcucTextualParamValue
 public abstract class AbstractRichConfigParameterType extends AbstractCompositeEcucRichType {
 
 	public AbstractRichConfigParameterType(EcucContext context, GConfigParameter configParameter) {
@@ -46,7 +45,7 @@ public abstract class AbstractRichConfigParameterType extends AbstractCompositeE
 	}
 
 	// XXX Shouldn't we add a definition match check here - just as there is in
-	// org.artop.ecuc.typesystem.richtypes.AbstractRichConfigReferenceType.internalGet(Object)?
+	// AbstractRichConfigReferenceType.internalGet(Object)?
 	protected abstract Object internalGet(Object target);
 
 	protected abstract void internalSet(Object target, Object value);

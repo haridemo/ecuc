@@ -22,6 +22,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.EcucRichTypeFactory;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IRichTypeFactory;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.xtend.expression.TypeSystem;
 import org.eclipse.xtend.typesystem.MetaModel;
@@ -29,11 +30,10 @@ import org.eclipse.xtend.typesystem.Type;
 
 public class EcucMetaModel implements MetaModel {
 
-	private EcucContext context;
+	protected EcucContext context;
 
-	private List<Type> metaTypes;
-	private Map<String, Type> types;
-	private EcucRichTypeFactory typeFactory;
+	protected List<Type> metaTypes;
+	protected Map<String, Type> types;
 
 	// Debug only
 	private static int createCounter = 0;
@@ -114,7 +114,6 @@ public class EcucMetaModel implements MetaModel {
 		if (types == null) {
 			metaTypes = new ArrayList<Type>();
 			types = new HashMap<String, Type>();
-			typeFactory = new EcucRichTypeFactory(context, types);
 			createTypes();
 		}
 		return Collections.unmodifiableMap(types);
@@ -131,7 +130,8 @@ public class EcucMetaModel implements MetaModel {
 
 		// Then create rich types for all module definitions and their respective contents in context model
 		try {
-			typeFactory.createRichTypeHierarchy();
+			IRichTypeFactory richTypeFactory = createRichTypeFactory();
+			richTypeFactory.createRichTypeHierarchy();
 		} catch (Exception ex) {
 			PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 		}
@@ -160,6 +160,10 @@ public class EcucMetaModel implements MetaModel {
 		registerType(new ModuleDefType(context));
 		registerType(new ARPackageType(context));
 		registerType(new AUTOSARType(context));
+	}
+
+	protected IRichTypeFactory createRichTypeFactory() {
+		return new EcucRichTypeFactory(context, types);
 	}
 
 	protected void registerType(Type type) {

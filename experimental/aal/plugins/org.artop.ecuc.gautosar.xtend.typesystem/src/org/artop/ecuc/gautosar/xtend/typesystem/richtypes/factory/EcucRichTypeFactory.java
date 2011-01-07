@@ -47,7 +47,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
 import org.eclipse.xtend.typesystem.Type;
 
-public class EcucRichTypeFactory {
+public class EcucRichTypeFactory implements IRichTypeFactory {
 
 	protected EcucContext context;
 	protected Map<String, Type> types;
@@ -75,7 +75,7 @@ public class EcucRichTypeFactory {
 			long start = System.currentTimeMillis();
 			int typesBefore = types.size();
 
-			RichModuleDefType rich = new RichModuleDefType(context, moduleDef);
+			RichModuleDefType rich = createRichModuleDefType(moduleDef);
 			registerType(rich, moduleDef);
 
 			createCompositeRichTypes(rich, moduleDef);
@@ -92,6 +92,10 @@ public class EcucRichTypeFactory {
 		// built.
 	}
 
+	protected RichModuleDefType createRichModuleDefType(GModuleDef moduleDef) {
+		return new RichModuleDefType(context, moduleDef);
+	}
+
 	protected void createCompositeRichTypes(AbstractCompositeEcucRichType parentType, GIdentifiable identifiable) {
 		List<? extends GContainerDef> containerDefs = Collections.emptyList();
 		if (identifiable instanceof GModuleDef) {
@@ -103,95 +107,138 @@ public class EcucRichTypeFactory {
 		}
 
 		for (GContainerDef containerDef : containerDefs) {
-			AbstractCompositeEcucRichType rich = null;
+			AbstractCompositeEcucRichType containerDefType = null;
 			if (containerDef instanceof GParamConfContainerDef) {
-				rich = new RichParamConfContainerDefType(context, (GParamConfContainerDef) containerDef);
+				containerDefType = createRichParamConfContainerDefType(containerDef);
 			} else if (containerDef instanceof GChoiceContainerDef) {
-				rich = new RichChoiceContainerDefType(context, (GChoiceContainerDef) containerDef);
+				containerDefType = createRichChoiceContainerDefType(containerDef);
 			} else {
 				throw new UnsupportedOperationException("ContainerDef type " + containerDef.eClass().getName() + " currently not supported!"); //$NON-NLS-1$ //$NON-NLS-2$
 			}
-			registerType(rich, containerDef);
-			parentType.addChildType(rich);
+			registerType(containerDefType, containerDef);
+			parentType.addChildType(containerDefType);
 
-			createCompositeRichTypes(rich, containerDef);
+			createCompositeRichTypes(containerDefType, containerDef);
 		}
 
 		if (identifiable instanceof GParamConfContainerDef) {
 			for (GConfigParameter parameter : ((GParamConfContainerDef) identifiable).gGetParameters()) {
-				AbstractRichConfigParameterType rich = createConfigParameterType(parameter);
-				if (rich != null) {
-					registerType(rich, parameter);
-					parentType.addChildType(rich);
+				AbstractRichConfigParameterType configParameterType = createConfigParameterType(parameter);
+				if (configParameterType != null) {
+					registerType(configParameterType, parameter);
+					parentType.addChildType(configParameterType);
 				}
 			}
 			for (GConfigReference reference : ((GParamConfContainerDef) identifiable).gGetReferences()) {
-				for (AbstractRichConfigReferenceType rich : createConfigReferenceTypes(reference)) {
-					if (rich != null) {
-						registerType(rich, reference);
-						parentType.addChildType(rich);
+				for (AbstractRichConfigReferenceType configReferenceType : createConfigReferenceTypes(reference)) {
+					if (configReferenceType != null) {
+						registerType(configReferenceType, reference);
+						parentType.addChildType(configReferenceType);
 					}
 				}
 			}
 		}
 	}
 
+	protected RichParamConfContainerDefType createRichParamConfContainerDefType(GContainerDef containerDef) {
+		return new RichParamConfContainerDefType(context, (GParamConfContainerDef) containerDef);
+	}
+
+	protected RichChoiceContainerDefType createRichChoiceContainerDefType(GContainerDef containerDef) {
+		return new RichChoiceContainerDefType(context, (GChoiceContainerDef) containerDef);
+	}
+
 	protected AbstractRichConfigParameterType createConfigParameterType(GConfigParameter parameter) {
 		AbstractRichConfigParameterType configParameterType = null;
 		if (parameter instanceof GIntegerParamDef) {
-			configParameterType = new RichIntegerParamDefType(context, (GIntegerParamDef) parameter);
-		} else if (parameter instanceof GEnumerationParamDef) {
-			configParameterType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
+			configParameterType = createRichIntegerParamDefType(parameter);
 		} else if (parameter instanceof GFloatParamDef) {
-			configParameterType = new RichFloatParamDefType(context, (GFloatParamDef) parameter);
-		} else if (parameter instanceof GFunctionNameDef) {
-			configParameterType = new RichFunctionNameDefType(context, (GFunctionNameDef) parameter);
-		} else if (parameter instanceof GStringParamDef) {
-			configParameterType = new RichStringParamDefType(context, (GStringParamDef) parameter);
-		} else if (parameter instanceof GLinkerSymbolDef) {
-			configParameterType = new RichLinkerSymbolDefType(context, (GLinkerSymbolDef) parameter);
+			configParameterType = createRichFloatParamDefType(parameter);
 		} else if (parameter instanceof GBooleanParamDef) {
-			configParameterType = new RichBooleanParamDefType(context, (GBooleanParamDef) parameter);
+			configParameterType = createRichBooleanParamDefType(parameter);
+		} else if (parameter instanceof GStringParamDef) {
+			configParameterType = createRichStringParamDefType(parameter);
+		} else if (parameter instanceof GLinkerSymbolDef) {
+			configParameterType = createRichLinkerSymbolDefType(parameter);
+		} else if (parameter instanceof GFunctionNameDef) {
+			configParameterType = createRichFunctionNameDefType(parameter);
+		} else if (parameter instanceof GEnumerationParamDef) {
+			RichEnumerationParamDefType enumerationParamDefType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
+			for (GEnumerationLiteralDef literal : ((GEnumerationParamDef) parameter).gGetLiterals()) {
+				enumerationParamDefType.addLiteral(literal.gGetShortName());
+			}
+			configParameterType = enumerationParamDefType;
 		} else {
 			throw new UnsupportedOperationException("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configParameterType;
 	}
 
-	protected AbstractRichConfigParameterType createEnumerationParamDefType(GEnumerationParamDef parameterDef) {
-		RichEnumerationParamDefType type = new RichEnumerationParamDefType(context, parameterDef);
-		for (GEnumerationLiteralDef literal : parameterDef.gGetLiterals()) {
-			type.addLiteral(literal.gGetShortName());
-		}
-		return type;
+	protected RichIntegerParamDefType createRichIntegerParamDefType(GConfigParameter parameter) {
+		return new RichIntegerParamDefType(context, (GIntegerParamDef) parameter);
+	}
+
+	protected RichFloatParamDefType createRichFloatParamDefType(GConfigParameter parameter) {
+		return new RichFloatParamDefType(context, (GFloatParamDef) parameter);
+	}
+
+	protected RichBooleanParamDefType createRichBooleanParamDefType(GConfigParameter parameter) {
+		return new RichBooleanParamDefType(context, (GBooleanParamDef) parameter);
+	}
+
+	protected RichStringParamDefType createRichStringParamDefType(GConfigParameter parameter) {
+		return new RichStringParamDefType(context, (GStringParamDef) parameter);
+	}
+
+	protected RichLinkerSymbolDefType createRichLinkerSymbolDefType(GConfigParameter parameter) {
+		return new RichLinkerSymbolDefType(context, (GLinkerSymbolDef) parameter);
+	}
+
+	protected RichFunctionNameDefType createRichFunctionNameDefType(GConfigParameter parameter) {
+		return new RichFunctionNameDefType(context, (GFunctionNameDef) parameter);
+	}
+
+	protected RichEnumerationParamDefType createEnumerationParamDefType(GEnumerationParamDef parameterDef) {
+		return new RichEnumerationParamDefType(context, parameterDef);
 	}
 
 	protected List<AbstractRichConfigReferenceType> createConfigReferenceTypes(GConfigReference reference) {
 		List<AbstractRichConfigReferenceType> configReferenceTypes = new ArrayList<AbstractRichConfigReferenceType>();
-		if (reference instanceof GChoiceReferenceDef) {
-			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
-			for (GParamConfContainerDef destination : choiceReferenceDef.gGetDestinations()) {
-				configReferenceTypes.add(new RichChoiceReferenceDefType(context, choiceReferenceDef, destination));
-			}
+		if (reference instanceof GReferenceDef) {
+			GReferenceDef referenceDef = (GReferenceDef) reference;
+			configReferenceTypes.add(createRichReferenceDefType(referenceDef));
+		} else if (reference instanceof GSymbolicNameReferenceDef) {
+			// TODO Provide support for GSymbolicNameReferenceDef
+			// configReferenceType.add(new RichSymbolicNameReferenceDefType(context, reference,
+			// getRichTypeName(reference));
+			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GForeignReferenceDef) {
+			// TODO Provide support for GForeignReferenceDef
 			// configReferenceType.add(new RichForeignReferenceDefType(context, reference,
 			// getRichTypeName(reference));
 			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GInstanceReferenceDef) {
+			// TODO Provide support for GInstanceReferenceDef
 			// configReferenceType.add(new RichInstanceReferenceDefType(context, reference,
 			// getRichTypeName(reference));
 			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
-		} else if (reference instanceof GSymbolicNameReferenceDef) {
-			// configReferenceType.add(new RichSymbolicNameReferenceDefType(context, reference,
-			// getRichTypeName(reference));
-			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
-		} else if (reference instanceof GReferenceDef) {
-			GReferenceDef referenceDef = (GReferenceDef) reference;
-			configReferenceTypes.add(new RichReferenceDefType(context, referenceDef, referenceDef.gGetDestination()));
+		} else if (reference instanceof GChoiceReferenceDef) {
+			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
+			for (GParamConfContainerDef destination : choiceReferenceDef.gGetDestinations()) {
+				configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef, destination));
+			}
 		} else {
 			throw new UnsupportedOperationException("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configReferenceTypes;
+	}
+
+	protected RichReferenceDefType createRichReferenceDefType(GReferenceDef referenceDef) {
+		return new RichReferenceDefType(context, referenceDef, referenceDef.gGetDestination());
+	}
+
+	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef, GParamConfContainerDef destination) {
+		return new RichChoiceReferenceDefType(context, choiceReferenceDef, destination);
 	}
 
 	protected void registerType(AbstractEcucRichType type, GIdentifiable identifiable) {
@@ -202,7 +249,5 @@ public class EcucRichTypeFactory {
 		if (type instanceof RichModuleDefType) {
 			rootTypes.add((RichModuleDefType) type);
 		}
-
-		// System.out.println("Created type " + type.getName());
 	}
 }

@@ -3,9 +3,13 @@ package org.artop.ecuc.gautosar.xtend.typesystem.internal;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
+import org.artop.ecl.emf.metamodel.IMetaModelDescriptor;
 import org.artop.ecl.emf.model.IModelDescriptor;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
+import org.artop.ecuc.gautosar.xtend.typesystem.IEcucMetaModelFactory;
+import org.eclipse.core.runtime.Platform;
 
 public class EcucMetaModelManager {
 
@@ -38,16 +42,28 @@ public class EcucMetaModelManager {
 		// model element is changed and remove this line when done
 		if (true) {
 			// if (metaModel == null) {
-			// Create and initialize ECU configuration metamodel context object
-			EcucContext context = new EcucContext();
-			context.setModuleDefModelDescriptor(modelDescriptor);
+			IMetaModelDescriptor mmDescriptor = modelDescriptor.getMetaModelDescriptor();
+			if (mmDescriptor instanceof AutosarReleaseDescriptor) {
+				// Create and initialize ECU configuration metamodel context object
+				EcucContext context = new EcucContext();
+				context.setModuleDefModelDescriptor(modelDescriptor);
 
-			// Create ECU configuration metamodel (alias type system)
-			metaModel = new EcucMetaModel(context);
+				// Create ECU configuration metamodel (alias type system)
+				metaModel = createEcucMetaModel((AutosarReleaseDescriptor) mmDescriptor, context);
 
-			// Register new ECU configuration metamodel
-			ecucMetaModels.put(modelDescriptor, metaModel);
+				// Register new ECU configuration metamodel
+				ecucMetaModels.put(modelDescriptor, metaModel);
+			}
 		}
 		return metaModel;
+	}
+
+	protected EcucMetaModel createEcucMetaModel(AutosarReleaseDescriptor autosarRelease, EcucContext context) {
+		IEcucMetaModelFactory factory = (IEcucMetaModelFactory) Platform.getAdapterManager().loadAdapter(autosarRelease,
+				IEcucMetaModelFactory.class.getName());
+		if (factory != null) {
+			return factory.createEcucMetaModel(context);
+		}
+		return new EcucMetaModel(context);
 	}
 }
