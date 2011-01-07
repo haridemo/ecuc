@@ -176,7 +176,8 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 							boolean useGivenModuleConfigurationName = false;
 							if (configurationObject instanceof GModuleConfiguration && initialModuleConfiguration != null) {
 								configurationObject = initialModuleConfiguration;
-								if (!((GModuleConfiguration) initialModuleConfiguration).gGetShortName().isEmpty()) {
+								String shortName = ((GModuleConfiguration) initialModuleConfiguration).gGetShortName();
+								if (shortName != null && !"".equals(shortName)) { //$NON-NLS-1$
 									useGivenModuleConfigurationName = true;
 								}
 							}
@@ -423,7 +424,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	@SuppressWarnings("unchecked")
 	private void setPropertyValue(GARObject object, EStructuralFeature feature, Object valueObject) {
 		if (object != null && feature != null) {
-			if (valueObject != null && !valueObject.toString().isEmpty()) {
+			if (valueObject != null && !"".equals(valueObject.toString())) { //$NON-NLS-1$
 				if (feature.isMany()) {
 					((List<Object>) ((EObject) object).eGet(feature)).add(valueObject);
 				} else {
