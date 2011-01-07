@@ -126,7 +126,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            the parent description node
 	 * @return configuration description object
 	 */
-	@Override
 	public GModuleConfiguration generateECUConfiguration(GModuleDef definitionObject, GARPackage targetPackage) {
 		return (GModuleConfiguration) generateConfiguration(0, definitionObject, targetPackage);
 	}
@@ -149,7 +148,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				int upperMultiplicity = 0;
 				GARObject configurationObject = null;
 
-				@Override
 				public void run() {
 					do {
 						/* Getting the lower and upper multiplicity if present for the object */
@@ -327,7 +325,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 		Runnable runnable = new Runnable() {
 
 			@SuppressWarnings("unchecked")
-			@Override
 			public void run() {
 				if (owner != null && feature != null && configurationObject != null) {
 					/*
@@ -461,7 +458,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            the short name of the configuration to be given
 	 * @return the configuration description object
 	 */
-	@Override
 	public GModuleConfiguration generateECUConfiguration(GModuleDef definitionObject, GARPackage targetPackage, String shortName) {
 		return (GModuleConfiguration) generateConfiguration(definitionObject, targetPackage, shortName);
 	}
@@ -484,7 +480,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			final Runnable runnable = new Runnable() {
 				GARObject configurationObject = null;
 
-				@Override
 				public void run() {
 					EClass description = getDescription(definitionObject.eClass());
 					if (description != null) {
@@ -553,7 +548,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            number of instance to be created
 	 * @return an iterable list of configuration description objects
 	 */
-	@Override
 	public Iterable<GModuleConfiguration> generateECUConfigurations(GModuleDef definitionObject, GARPackage targetPackage, int multiplicity) {
 		return generateConfiguration(definitionObject, targetPackage, multiplicity);
 	}
@@ -679,7 +673,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            the short names of the configurations to be given
 	 * @return an iterable list of configuration description objects
 	 */
-	@Override
 	public Iterable<GModuleConfiguration> generateECUConfigurations(GModuleDef definitionObject, GARPackage targetPackage, String[] shortNames) {
 		Vector<GModuleConfiguration> iter = new Vector<GModuleConfiguration>();
 
@@ -695,7 +688,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * Initialize the given <code>moduleConfigurationToInitialize</code> module configuration with parameter and
 	 * reference values of <code>moduleConfiguration</code> module configuration
 	 */
-	@Override
 	public GModuleConfiguration initializeModuleConfigurationValues(final GModuleConfiguration moduleConfigurationToInitialize,
 			final GModuleConfiguration moduleConfiguration) {
 		Assert.isNotNull(moduleConfigurationToInitialize);
@@ -703,7 +695,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 		final TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(moduleConfigurationToInitialize);
 		final Runnable runnable = new Runnable() {
-			@Override
 			public void run() {
 				for (GContainer container : moduleConfigurationToInitialize.gGetContainers()) {
 					intializeConfigurationValues(container);
