@@ -20,8 +20,8 @@
             objectClass="org.eclipse.core.resources.IProject">
          <action
                class="org.artop.ecuc.codegen.xpand.ui.actions.ConvertToBSWPlatformProjectAction"
-               id="org.artop.ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToEcuConfigurationProject"
-               label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToEcuConfigurationProject.label">
+               id="org.artop.ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject"
+               label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject.label">
          </action>
       </objectContribution>
    </extension>
