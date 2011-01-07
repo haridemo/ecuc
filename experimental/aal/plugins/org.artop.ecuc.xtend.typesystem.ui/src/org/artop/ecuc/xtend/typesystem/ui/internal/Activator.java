@@ -14,9 +14,19 @@
  */
 package org.artop.ecuc.xtend.typesystem.ui.internal;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
+import org.artop.aal.workspace.natures.AutosarNature;
+import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.xtend.shared.ui.core.builder.XtendXpandNature;
+import org.osgi.framework.BundleContext;
 
 /**
  * This is the central singleton for this plug-in.
@@ -84,6 +94,22 @@ public final class Activator extends EMFPlugin {
 			// Remember the static instance.
 			//
 			plugin = this;
+		}
+
+		@Override
+		public void start(BundleContext context) throws Exception {
+			super.start(context);
+
+			// Trigger asynchronous loading of all BSW Platform projects (i.e., AUTOSAR projects with Xpand/Xtend
+			// nature) to make sure that ECUC typesystems may be created and Xpand/Xtend templates can be successfully
+			// compiled
+			Set<IProject> projectsToLoad = new HashSet<IProject>();
+			for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()) {
+				if (project.isAccessible() && project.hasNature(AutosarNature.ID) && project.hasNature(XtendXpandNature.NATURE_ID)) {
+					projectsToLoad.add(project);
+				}
+			}
+			ModelLoadManager.INSTANCE.loadProjects(projectsToLoad, false, AutosarReleaseDescriptor.INSTANCE, true, null);
 		}
 	}
 }

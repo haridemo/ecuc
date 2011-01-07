@@ -85,11 +85,6 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			System.out
 					.println("Created " + (types.size() - typesBefore) + " types in " + (stop - start) + "ms for " + AutosarURIFactory.getAbsoluteQualifiedName(moduleDef)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
-
-		// FIXME Make sure that AUTOSAR model gets loaded if no module defs could be found (or find a more appropriate
-		// location to do so). Otherwise we end up in compile errors when the workbench has been started, the AUTOSAR
-		// model in a BSW Platform project has not yet been loaded but the code generation templates and extensions get
-		// built.
 	}
 
 	protected RichModuleDefType createRichModuleDefType(GModuleDef moduleDef) {
