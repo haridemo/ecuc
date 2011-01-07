@@ -4,11 +4,10 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 
-	private static final String BUNDLE_NAME = "org.artop.ecuc.codegen.xpand.ui.internal.messages.Messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.artop.ecuc.codegen.xpand.ui.internal.messages.messages"; //$NON-NLS-1$
 
 	public static String menu_generate;
 	public static String menuItem_launchEcucCodeGen;
-	public static String job_generatingCode;
 	public static String task_CreationOfSubpackageExtensions;
 	public static String task_AddPluginDependencies;
 	public static String task_AddXtendXpandNature;
