@@ -10,7 +10,7 @@ import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.StaticPropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
-public class RichEnumerationParamDefType extends AbstractRichConfigParameterType {
+public class RichEnumerationParamDefType extends AbstractRichConfigParameterType implements IRichEnumerationParamDefType {
 
 	public RichEnumerationParamDefType(EcucContext context, GEnumerationParamDef enumerationParamDef) {
 		super(context, enumerationParamDef);

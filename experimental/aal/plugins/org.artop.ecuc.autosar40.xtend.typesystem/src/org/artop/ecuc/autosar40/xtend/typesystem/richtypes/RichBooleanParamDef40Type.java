@@ -1,34 +1,28 @@
 package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
 
-import gautosar.gecucdescription.GBooleanValue;
-import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GBooleanParamDef;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.xtend.typesystem.Type;
 
-public class RichBooleanParamDef40Type extends RichBooleanParamDefType {
+public class RichBooleanParamDef40Type extends AbstractRichNumericalParamDef40Type {
 
 	public RichBooleanParamDef40Type(EcucContext context, GBooleanParamDef booleanParamDef) {
 		super(context, booleanParamDef);
 	}
 
 	@Override
-	protected EClass getParameterValueType() {
-		// TODO Adapt to AUTOSAR 4.0
-		return GecucdescriptionPackage.eINSTANCE.getGBooleanValue();
+	protected Object convertFromEcucValue(String text) {
+		return "1".equals(text); //$NON-NLS-1$
 	}
 
 	@Override
-	protected Object internalGet(Object target) {
-		// TODO Adapt to AUTOSAR 4.0
-		return ((GBooleanValue) target).gGetValue();
+	protected String convertToEcucValue(Object object) {
+		return (Boolean) object ? "1" : "0"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@Override
-	protected void internalSet(Object target, Object value) {
-		// TODO Adapt to AUTOSAR 4.0
-		((GBooleanValue) target).gSetValue((Boolean) value);
+	protected Type getValueType() {
+		return getTypeSystem().getBooleanType();
 	}
 }

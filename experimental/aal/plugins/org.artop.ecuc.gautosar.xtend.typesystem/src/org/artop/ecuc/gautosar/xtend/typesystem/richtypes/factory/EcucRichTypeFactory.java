@@ -33,6 +33,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractCompositeEcucR
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigParameterType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigReferenceType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.IRichEnumerationParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
@@ -158,42 +159,42 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 		} else if (parameter instanceof GFunctionNameDef) {
 			configParameterType = createRichFunctionNameDefType(parameter);
 		} else if (parameter instanceof GEnumerationParamDef) {
-			RichEnumerationParamDefType enumerationParamDefType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
+			IRichEnumerationParamDefType enumerationParamDefType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
 			for (GEnumerationLiteralDef literal : ((GEnumerationParamDef) parameter).gGetLiterals()) {
 				enumerationParamDefType.addLiteral(literal.gGetShortName());
 			}
-			configParameterType = enumerationParamDefType;
+			configParameterType = (AbstractRichConfigParameterType) enumerationParamDefType;
 		} else {
 			throw new UnsupportedOperationException("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configParameterType;
 	}
 
-	protected RichIntegerParamDefType createRichIntegerParamDefType(GConfigParameter parameter) {
+	protected AbstractRichConfigParameterType createRichIntegerParamDefType(GConfigParameter parameter) {
 		return new RichIntegerParamDefType(context, (GIntegerParamDef) parameter);
 	}
 
-	protected RichFloatParamDefType createRichFloatParamDefType(GConfigParameter parameter) {
+	protected AbstractRichConfigParameterType createRichFloatParamDefType(GConfigParameter parameter) {
 		return new RichFloatParamDefType(context, (GFloatParamDef) parameter);
 	}
 
-	protected RichBooleanParamDefType createRichBooleanParamDefType(GConfigParameter parameter) {
+	protected AbstractRichConfigParameterType createRichBooleanParamDefType(GConfigParameter parameter) {
 		return new RichBooleanParamDefType(context, (GBooleanParamDef) parameter);
 	}
 
-	protected RichStringParamDefType createRichStringParamDefType(GConfigParameter parameter) {
+	protected AbstractRichConfigParameterType createRichStringParamDefType(GConfigParameter parameter) {
 		return new RichStringParamDefType(context, (GStringParamDef) parameter);
 	}
 
-	protected RichLinkerSymbolDefType createRichLinkerSymbolDefType(GConfigParameter parameter) {
+	protected AbstractRichConfigParameterType createRichLinkerSymbolDefType(GConfigParameter parameter) {
 		return new RichLinkerSymbolDefType(context, (GLinkerSymbolDef) parameter);
 	}
 
-	protected RichFunctionNameDefType createRichFunctionNameDefType(GConfigParameter parameter) {
+	protected AbstractRichConfigParameterType createRichFunctionNameDefType(GConfigParameter parameter) {
 		return new RichFunctionNameDefType(context, (GFunctionNameDef) parameter);
 	}
 
-	protected RichEnumerationParamDefType createEnumerationParamDefType(GEnumerationParamDef parameterDef) {
+	protected IRichEnumerationParamDefType createEnumerationParamDefType(GEnumerationParamDef parameterDef) {
 		return new RichEnumerationParamDefType(context, parameterDef);
 	}
 
