@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"><AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>EPD</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-DEF UUID="a5549129-3c19-4008-b59c-40efcea89b9b">
+          <SHORT-NAME>Vehicle</SHORT-NAME>
+          <CONTAINERS>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="baf9f9cc-148f-4e5d-afc6-2c26c8acbe26">
+              <SHORT-NAME>CategoryType</SHORT-NAME>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="97c1dd80-4a4c-4173-a258-600eba239b63">
+                  <SHORT-NAME>NbOfWheel</SHORT-NAME>
+                </ECUC-INTEGER-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="e159c07c-cdd7-4ccb-bf83-0367f9be7334">
+              <SHORT-NAME>Engine</SHORT-NAME>
+              <PARAMETERS>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="febbe5f3-3da5-450f-907b-be3267d1dcad">
+                  <SHORT-NAME>Automatic</SHORT-NAME>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="41f735f9-c5c6-474b-b208-b1b21797f85e">
+                  <SHORT-NAME>EngineType</SHORT-NAME>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>Gasoline</SHORT-NAME>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>Diesel</SHORT-NAME>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="bf21620f-9c71-4433-b168-0c2cdf11d966">
+              <SHORT-NAME>GeneralInfo</SHORT-NAME>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="bd6bdbf6-27ee-4867-94d1-c9985c692477">
+                  <SHORT-NAME>Year</SHORT-NAME>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="59f3780d-cf0b-4998-91d3-9fb5c97b48f2">
+                  <SHORT-NAME>Manufacturer</SHORT-NAME>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="6c627d00-5380-426e-96a8-89eab46a6182">
+                  <SHORT-NAME>VehicleName</SHORT-NAME>
+                </ECUC-STRING-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </ECUC-MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES></AUTOSAR>

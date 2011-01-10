@@ -1,0 +1,3 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION org::eclipse::xtend::util::stdlib::properties»
