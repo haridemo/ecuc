@@ -173,7 +173,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	 */
 	@Override
 	protected void initializeDefaultPageImageDescriptor() {
-		ImageDescriptor desc = Activator.getPlugin().getImageDescriptor("wizban/newbswpprj_wiz.png");//$NON-NLS-1$
+		ImageDescriptor desc = Activator.getPlugin().getImageDescriptor("full/wizban/newbswpprj_wiz.png");//$NON-NLS-1$
 		setDefaultPageImageDescriptor(desc);
 	}
 
