@@ -13,6 +13,7 @@ public class Messages extends NLS {
 	public static String task_AddXtendXpandNature;
 	public static String task_ConvertToJavaPluginProject;
 	public static String task_ConvertToBSWPlatformProject;
+	public static String task_AddMetamodelContributor;
 	public static String label_newBSWPlatformProjectWindowTitle;
 	public static String BSWPlatformProjectWizzardTitle;
 	public static String BSWPlatformProjectWizzardFirstPageTitle;

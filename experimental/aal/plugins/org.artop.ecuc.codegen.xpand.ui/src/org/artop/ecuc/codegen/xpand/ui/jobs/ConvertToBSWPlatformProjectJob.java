@@ -1,5 +1,6 @@
 package org.artop.ecuc.codegen.xpand.ui.jobs;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 import java.util.List;
@@ -12,6 +13,7 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -28,11 +30,15 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.pde.internal.core.bundle.WorkspaceBundlePluginModel;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.internal.core.project.PDEProject;
 import org.eclipse.pde.internal.ui.wizards.tools.ConvertProjectToPluginOperation;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.eclipse.xtend.shared.ui.core.builder.XtendXpandNature;
+import org.eclipse.xtend.shared.ui.core.preferences.PreferenceConstants;
+import org.eclipse.xtend.shared.ui.internal.XtendLog;
 
 @SuppressWarnings("restriction")
 public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
@@ -47,6 +53,7 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 	private static String SOURCE_PACKAGE_NAME = "src"; //$NON-NLS-1$
 	private static String REQUIRED_BUNDLES = "org.eclipse.jdt.core,org.eclipse.xtend.profiler,org.apache.commons.logging,org.apache.log4j,com.ibm.icu,org.antlr.runtime,org.eclipse.core.runtime,org.eclipse.emf.ecore.xmi,org.eclipse.jface.text,org.eclipse.xtend,org.eclipse.xtend.typesystem.emf,org.eclipse.xtend.backend,org.eclipse.xtend.middleend.xpand,org.eclipse.xtend.middleend.xtend,org.eclipse.xtend.util.stdlib,org.eclipse.emf.mwe.activities,org.eclipse.xpand"; //$NON-NLS-1$
 	private static String REQUIRED_EXECUTION_ENVIRONMENT = "J2SE-1.5"; //$NON-NLS-1$
+	private static String METAMODEL_CONTRIBUTOR_ECUCMETAMODELCONTRIBUTOR = "org.artop.ecuc.typesystem.ui.internal.EcucMetamodelContributor"; //$NON-NLS-1$
 
 	public ConvertToBSWPlatformProjectJob(String name, IProject project) {
 		super(name);
@@ -78,6 +85,7 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 		model.load();
 		progress.worked(1);
 		IBundle pluginBundle = model.getBundleModel().getBundle();
+		pluginBundle.setHeader(org.osgi.framework.Constants.BUNDLE_NAME, project.getName());
 		pluginBundle.setHeader(org.osgi.framework.Constants.REQUIRE_BUNDLE, REQUIRED_BUNDLES);
 		progress.worked(1);
 		pluginBundle.setHeader(org.osgi.framework.Constants.BUNDLE_REQUIREDEXECUTIONENVIRONMENT, REQUIRED_EXECUTION_ENVIRONMENT);
@@ -196,6 +204,22 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 		progress.done();
 	}
 
+	public void addMetamodelContributor(IProgressMonitor monitor) {
+		SubMonitor progress = SubMonitor.convert(monitor, 2);
+		progress.setTaskName(Messages.task_AddMetamodelContributor);
+		IPreferenceStore store;
+		store = new ScopedPreferenceStore(new ProjectScope(project), org.eclipse.xtend.shared.ui.Activator.getId());
+		store.setValue(PreferenceConstants.PROJECT_SPECIFIC_METAMODEL, true);
+		store.setValue(PreferenceConstants.METAMODELCONTRIBUTORS, METAMODEL_CONTRIBUTOR_ECUCMETAMODELCONTRIBUTOR);
+		progress.worked(1);
+		try {
+			((ScopedPreferenceStore) store).save();
+		} catch (final IOException e1) {
+			XtendLog.logError(e1);
+		}
+		progress.worked(1);
+	}
+
 	@Override
 	public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
 
@@ -226,6 +250,8 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 			progress.worked(1);
 			// we add necessary external dependencies
 			addDependencies(progress);
+			// we add xtend metamodel contributor property
+			addMetamodelContributor(progress);
 			progress.worked(1);
 			progress.done();
 
