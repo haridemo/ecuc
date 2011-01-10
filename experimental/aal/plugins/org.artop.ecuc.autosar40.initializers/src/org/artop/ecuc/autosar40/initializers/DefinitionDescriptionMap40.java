@@ -56,11 +56,12 @@ public class DefinitionDescriptionMap40 extends DefinitionDescriptionMap {
 				EcucdescriptionPackage.eINSTANCE.getEcucNumericalParamValue());
 		definitionDescriptionMap.put(EcucparameterdefPackage.eINSTANCE.getEcucIntegerParamDef(),
 				EcucdescriptionPackage.eINSTANCE.getEcucNumericalParamValue());
-		definitionDescriptionMap.put(EcucparameterdefPackage.eINSTANCE.getEcucBooleanParamDef(),
-				EcucdescriptionPackage.eINSTANCE.getEcucNumericalParamValue());
 		definitionDescriptionMap.put(EcucparameterdefPackage.eINSTANCE.getEcucEnumerationParamDef(),
-				EcucdescriptionPackage.eINSTANCE.getEcucNumericalParamValue());
-		// TODO: add EcucFunctionParamDef, EcucLinkerSymbolDef,
+				EcucdescriptionPackage.eINSTANCE.getEcucTextualParamValue());
+		definitionDescriptionMap.put(EcucparameterdefPackage.eINSTANCE.getEcucFunctionNameDef(),
+				EcucdescriptionPackage.eINSTANCE.getEcucTextualParamValue());
+		definitionDescriptionMap.put(EcucparameterdefPackage.eINSTANCE.getEcucLinkerSymbolDef(),
+				EcucdescriptionPackage.eINSTANCE.getEcucTextualParamValue());
 	}
 
 	/**
