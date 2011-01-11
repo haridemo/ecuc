@@ -40,7 +40,8 @@ public class EcucMetaModelManager {
 
 		// TODO Add resourceSet listener that invalidates ECUC metamodel each time a configuration definition relevant
 		// model element is changed and remove this line when done
-		if (true) {
+		// (aakar): modified condition since the newly create metaModel is not correctly initialized
+		if (metaModel == null) {
 			// if (metaModel == null) {
 			IMetaModelDescriptor mmDescriptor = modelDescriptor.getMetaModelDescriptor();
 			if (mmDescriptor instanceof AutosarReleaseDescriptor) {
