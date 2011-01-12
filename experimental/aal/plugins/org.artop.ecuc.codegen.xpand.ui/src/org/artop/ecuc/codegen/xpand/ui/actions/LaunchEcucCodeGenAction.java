@@ -68,7 +68,8 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 
 	@Override
 	public void run() {
-		if (!existsTemplate()) {
+		// FIXME While wizard is not completely finished, only use default case
+		if (!existsTemplate() && false) {
 			M2TConfigurationWizard wizard = new M2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getOutletContainer());
 			int result = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard).open();
 			if (result == Window.CANCEL) {
