@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.artop.ecl.emf.model.IModelDescriptor;
 import org.eclipse.xtend.expression.TypeSystem;
+import org.eclipse.xtend.expression.TypeSystemImpl;
 
 public class EcucContext {
 
@@ -14,6 +15,9 @@ public class EcucContext {
 	private Set<String> namespaces;
 
 	public TypeSystem getTypeSystem() {
+		if (typeSystem == null) {
+			typeSystem = new TypeSystemImpl();
+		}
 		return typeSystem;
 	}
 
