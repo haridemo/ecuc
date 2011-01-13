@@ -36,7 +36,7 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 	protected GModuleConfiguration moduleConfiguration;
 	protected GModuleDef moduleDef;
 
-	private ResourceSetListener resourceChangedListener;
+	private ResourceSetListener resourceChangedListener = null;
 
 	public LaunchEcucCodeGenAction() {
 		super(Messages.menuItem_launchEcucCodeGen);
@@ -77,10 +77,11 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 					}
 				} else {
 					// Uninstall resource changed listener in case there is any
-					TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(moduleConfiguration);
-					if (editingDomain != null) {
-						if (resourceChangedListener != null) {
+					if (resourceChangedListener != null) {
+						TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(moduleConfiguration);
+						if (editingDomain != null) {
 							editingDomain.removeResourceSetListener(resourceChangedListener);
+							resourceChangedListener = null;
 						}
 					}
 				}
