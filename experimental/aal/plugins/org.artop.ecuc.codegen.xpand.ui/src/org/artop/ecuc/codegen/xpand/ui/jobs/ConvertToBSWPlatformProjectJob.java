@@ -2,6 +2,7 @@ package org.artop.ecuc.codegen.xpand.ui.jobs;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -96,14 +97,18 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 	}
 
 	protected void addNaturesToProject(IProgressMonitor monitor) throws CoreException {
-		SubMonitor progress = SubMonitor.convert(monitor, 2);
+		SubMonitor progress = SubMonitor.convert(monitor, 3);
 		progress.setTaskName(Messages.task_AddXtendXpandNature);
 		if (progress.isCanceled()) {
 			throw new OperationCanceledException();
 		}
-		ExtendedPlatform.addNature(project, JavaCore.NATURE_ID, null);
+		if (!project.hasNature(JavaCore.NATURE_ID)) {
+			ExtendedPlatform.addNature(project, JavaCore.NATURE_ID, null);
+		}
 		progress.worked(1);
-		ExtendedPlatform.addNature(project, XtendXpandNature.NATURE_ID, null);
+		if (!project.hasNature(XtendXpandNature.NATURE_ID)) {
+			ExtendedPlatform.addNature(project, XtendXpandNature.NATURE_ID, null);
+		}
 		progress.worked(1);
 		progress.done();
 	}
@@ -118,6 +123,7 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 		IPath javaSource = project.getFullPath().append(SOURCE_PACKAGE_NAME);
 		IProjectDescription projectDescription = project.getDescription();
 		List<IClasspathEntry> classpathEntries = new UniqueEList<IClasspathEntry>();
+		classpathEntries.addAll(Arrays.asList(javaProject.getRawClasspath()));
 		boolean isInitiallyEmpty = classpathEntries.isEmpty();
 		ICommand[] builders = projectDescription.getBuildSpec();
 		if (builders == null) {
@@ -199,7 +205,6 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 			entries[i] = entry;
 			i++;
 		}
-
 		javaProject.setRawClasspath(entries, progress);
 		progress.done();
 	}
