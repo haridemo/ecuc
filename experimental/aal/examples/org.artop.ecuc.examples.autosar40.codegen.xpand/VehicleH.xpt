@@ -1,0 +1,21 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION extensions::util»
+
+«DEFINE inclusions FOR EPD::Vehicle -»
+
+/*****************************************************************************/
+/* INCLUSIONS                                                                */
+/*****************************************************************************/
+#include "SimpleLib.h"
+«ENDDEFINE»
+
+«DEFINE symbolicName FOR EPD::Vehicle -»
+/*****************************************************************************/
+/* VEHICLE ATTRIBUTES                                                        */
+/*****************************************************************************/
+/* General Information */
+#define «GeneralInfo.VehicleName.absoluteQualifiedName» «GeneralInfo.VehicleName.value»
+
+#define DATE «dateString()»
+«ENDDEFINE»

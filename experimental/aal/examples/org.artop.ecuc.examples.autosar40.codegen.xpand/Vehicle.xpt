@@ -1,3 +1,24 @@
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 «EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
 «EXTENSION org::eclipse::xtend::util::stdlib::properties»
+
+«DEFINE main FOR EPD::Vehicle»
+	«EXPAND hFile»
+«ENDDEFINE»
+
+«DEFINE hFile FOR EPD::Vehicle»
+	«FILE "Vehicle_Cfg.h" -»
+		«EXPAND VehicleH::inclusions»
+		«EXPAND VehicleH::symbolicName»
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE main FOR AR::ModuleDefType»
+// throw Exception for unhandled moduledeftype
+    «info( "Unhandled ModuleDefType \"" + metaType.toString() + "\" encountered in Com.xpt")»
+«ENDDEFINE»
+
+«DEFINE main FOR Object»
+// throw Exception for unhandled object type
+    «info( "Unhandled object type \"" + metaType.toString() + "\" encountered in Com.xpt")»
+«ENDDEFINE»
