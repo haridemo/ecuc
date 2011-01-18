@@ -6,16 +6,10 @@
         <ECUC-MODULE-DEF UUID="a5549129-3c19-4008-b59c-40efcea89b9b">
           <SHORT-NAME>Vehicle</SHORT-NAME>
           <CONTAINERS>
-            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="baf9f9cc-148f-4e5d-afc6-2c26c8acbe26">
-              <SHORT-NAME>CategoryType</SHORT-NAME>
-              <PARAMETERS>
-                <ECUC-INTEGER-PARAM-DEF UUID="97c1dd80-4a4c-4173-a258-600eba239b63">
-                  <SHORT-NAME>NbOfWheel</SHORT-NAME>
-                </ECUC-INTEGER-PARAM-DEF>
-              </PARAMETERS>
-            </ECUC-PARAM-CONF-CONTAINER-DEF>
             <ECUC-PARAM-CONF-CONTAINER-DEF UUID="e159c07c-cdd7-4ccb-bf83-0367f9be7334">
               <SHORT-NAME>Engine</SHORT-NAME>
+              <LOWER-MULTIPLICITY SHORT-LABEL="Lower Multiplicity">0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY SHORT-LABEL="Upper Multiplicity">1</UPPER-MULTIPLICITY>
               <PARAMETERS>
                 <ECUC-BOOLEAN-PARAM-DEF UUID="febbe5f3-3da5-450f-907b-be3267d1dcad">
                   <SHORT-NAME>Automatic</SHORT-NAME>
@@ -32,9 +26,43 @@
                   </LITERALS>
                 </ECUC-ENUMERATION-PARAM-DEF>
               </PARAMETERS>
+              <SUB-CONTAINERS>
+                <ECUC-CHOICE-CONTAINER-DEF UUID="7b958cd3-5a79-432b-9306-641e9f97ced5">
+                  <SHORT-NAME>Type</SHORT-NAME>
+                  <CHOICES>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ab9a24c3-22fd-4fe1-be53-2f83164fd44d">
+                      <SHORT-NAME>Gasoline</SHORT-NAME>
+                      <PARAMETERS>
+                        <ECUC-STRING-PARAM-DEF UUID="9f91d771-f83f-404a-8dcd-f34cdae75d47">
+                          <SHORT-NAME>SparkPlugModel</SHORT-NAME>
+                        </ECUC-STRING-PARAM-DEF>
+                        <ECUC-INTEGER-PARAM-DEF UUID="39d091a1-6c04-40e6-a1c6-5a15d151c4ea">
+                          <SHORT-NAME>SparkPlugNumber</SHORT-NAME>
+                        </ECUC-INTEGER-PARAM-DEF>
+                        <ECUC-FLOAT-PARAM-DEF UUID="03d2e616-90d7-4166-b974-12026070f245">
+                          <SHORT-NAME>SparkPlugVoltage</SHORT-NAME>
+                        </ECUC-FLOAT-PARAM-DEF>
+                      </PARAMETERS>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="92bf15e2-ae7a-4e4e-82fb-63bba19bb400">
+                      <SHORT-NAME>Diesel</SHORT-NAME>
+                      <PARAMETERS>
+                        <ECUC-STRING-PARAM-DEF UUID="86a17303-2c26-49da-9c5f-939568aeaf6d">
+                          <SHORT-NAME>DieselFilterModel</SHORT-NAME>
+                        </ECUC-STRING-PARAM-DEF>
+                        <ECUC-FLOAT-PARAM-DEF UUID="59a9af80-2159-4269-9ae3-fdd04aba29b4">
+                          <SHORT-NAME>MaxCouple</SHORT-NAME>
+                        </ECUC-FLOAT-PARAM-DEF>
+                      </PARAMETERS>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                  </CHOICES>
+                </ECUC-CHOICE-CONTAINER-DEF>
+              </SUB-CONTAINERS>
             </ECUC-PARAM-CONF-CONTAINER-DEF>
             <ECUC-PARAM-CONF-CONTAINER-DEF UUID="bf21620f-9c71-4433-b168-0c2cdf11d966">
               <SHORT-NAME>GeneralInfo</SHORT-NAME>
+              <LOWER-MULTIPLICITY SHORT-LABEL="Lower Multiplicity">1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY SHORT-LABEL="Upper Multiplicity">1</UPPER-MULTIPLICITY>
               <PARAMETERS>
                 <ECUC-INTEGER-PARAM-DEF UUID="bd6bdbf6-27ee-4867-94d1-c9985c692477">
                   <SHORT-NAME>Year</SHORT-NAME>
@@ -46,6 +74,16 @@
                   <SHORT-NAME>VehicleName</SHORT-NAME>
                 </ECUC-STRING-PARAM-DEF>
               </PARAMETERS>
+              <REFERENCES>
+                <ECUC-CHOICE-REFERENCE-DEF>
+                  <SHORT-NAME>EngineTypeChoice</SHORT-NAME>
+                  <ORIGIN></ORIGIN>
+                  <DESTINATION-REFS>
+                    <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Engine/Type/Diesel</DESTINATION-REF>
+                    <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Engine/Type/Gasoline</DESTINATION-REF>
+                  </DESTINATION-REFS>
+                </ECUC-CHOICE-REFERENCE-DEF>
+              </REFERENCES>
             </ECUC-PARAM-CONF-CONTAINER-DEF>
           </CONTAINERS>
         </ECUC-MODULE-DEF>
