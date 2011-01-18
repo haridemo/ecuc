@@ -1,22 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AUTOSAR xmlns="http://autosar.org/schema/r4.0"><AR-PACKAGES>
-    <AR-PACKAGE>
-      <SHORT-NAME>BMD</SHORT-NAME>
-      <ELEMENTS>
-        <BSW-IMPLEMENTATION UUID="079faf2f-91fa-461a-97fb-89812de19136">
-          <SHORT-NAME>Vehicle</SHORT-NAME>
-          <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/BMD/Vehicle/Vehicle</BEHAVIOR-REF>
-          <VENDOR-API-INFIX></VENDOR-API-INFIX>
-          <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/EPD/Vehicle</VENDOR-SPECIFIC-MODULE-DEF-REF>
-        </BSW-IMPLEMENTATION>
-        <BSW-MODULE-DESCRIPTION UUID="fdeaa252-71ea-4fd7-bd72-1c4ad81b97a8">
-          <SHORT-NAME>Vehicle</SHORT-NAME>
-          <INTERNAL-BEHAVIORS>
-            <BSW-INTERNAL-BEHAVIOR UUID="aa427d0c-9d4d-4c4e-b97d-6a2770f0f708">
-              <SHORT-NAME>Vehicle</SHORT-NAME>
-            </BSW-INTERNAL-BEHAVIOR>
-          </INTERNAL-BEHAVIORS>
-        </BSW-MODULE-DESCRIPTION>
-      </ELEMENTS>
-    </AR-PACKAGE>
-  </AR-PACKAGES></AUTOSAR>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"/>
