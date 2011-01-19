@@ -67,6 +67,9 @@
                 <ECUC-INTEGER-PARAM-DEF UUID="bd6bdbf6-27ee-4867-94d1-c9985c692477">
                   <SHORT-NAME>Year</SHORT-NAME>
                 </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="8599103c-e8f0-49b1-8576-14eac05b1c46">
+                  <SHORT-NAME>SerialNumber</SHORT-NAME>
+                </ECUC-INTEGER-PARAM-DEF>
                 <ECUC-STRING-PARAM-DEF UUID="59f3780d-cf0b-4998-91d3-9fb5c97b48f2">
                   <SHORT-NAME>Manufacturer</SHORT-NAME>
                 </ECUC-STRING-PARAM-DEF>
