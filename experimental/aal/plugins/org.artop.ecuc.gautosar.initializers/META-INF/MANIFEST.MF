@@ -13,4 +13,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.artop.aal.common
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Export-Package: org.artop.ecuc.gautosar.initializers
+Export-Package: org.artop.ecuc.gautosar.initializers,
+ org.artop.ecuc.gautosar.initializers.util

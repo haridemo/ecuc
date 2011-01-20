@@ -37,11 +37,11 @@ import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
 import org.artop.ecl.emf.util.WorkspaceTransactionUtil;
 import org.artop.ecl.platform.util.PlatformLogUtil;
 import org.artop.ecuc.gautosar.initializers.internal.Activator;
+import org.artop.ecuc.gautosar.initializers.util.ModuleConfigurationUtil;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -150,7 +150,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 				public void run() {
 					do {
-						/* Getting the lower and upper multiplicity if present for the object */
+						/*
+						 * Getting the lower and upper multiplicity if present for the object
+						 */
 						if (definitionObject instanceof GParamConfMultiplicity) {
 							try {
 								lowerMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetLowerMultiplicityAsString());
@@ -167,9 +169,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 						EClass description = getDescription(definitionObject.eClass());
 						if (description != null) {
-							/*
-							 * Create a command parameter that contains an instance of the new object to be create
-							 */
 							configurationObject = createInstance(description);
 							boolean useGivenModuleConfigurationName = false;
 							if (configurationObject instanceof GModuleConfiguration && initialModuleConfiguration != null) {
@@ -179,7 +178,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 									useGivenModuleConfigurationName = true;
 								}
 							}
-							EStructuralFeature feature = getEStructuralFeature(parentObject.eClass(), description);
+							EStructuralFeature feature = ModuleConfigurationUtil.getEStructuralFeature(parentObject.eClass(), description);
 							Object owner = parentObject;
 							if (configurationObject.eContainer() != null) {
 								owner = configurationObject.eContainer();
@@ -223,53 +222,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	}
 
 	/**
-	 * Returns the feature name that is defined between the given EClasses
-	 * 
-	 * @param ownerEClass
-	 *            the parent EClass
-	 * @param childEClass
-	 *            the child EClass
-	 * @return the feature name that is defined between the given EClasses
-	 */
-	private EStructuralFeature getEStructuralFeature(EClass ownerEClass, EClass childEClass) {
-		EStructuralFeature feature = null;
-		for (EStructuralFeature ownerFeature : ownerEClass.getEAllContainments()) {
-			if (isReferenceTypeSubTypeOf(childEClass, ownerFeature.getEType())) {
-				feature = ownerFeature;
-			}
-		}
-		return feature;
-	}
-
-	/**
-	 * Returns true if the given type is a subType of an other type, false else.
-	 * 
-	 * @param referenceType
-	 * @param type
-	 * @return
-	 */
-	private boolean isReferenceTypeSubTypeOf(EClassifier referenceType, EClassifier type) {
-		Assert.isLegal(referenceType instanceof EClass);
-		Assert.isLegal(type instanceof EClass);
-
-		if (referenceType == type) {
-			return true;
-		}
-
-		for (EClass superType : ((EClass) referenceType).getESuperTypes()) {
-			if (superType == type) {
-				return true;
-			}
-
-			if (isReferenceTypeSubTypeOf(superType, type)) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	/**
 	 * For setting the short name of the generated configuration object
 	 * 
 	 * @param definitionObject
@@ -282,15 +234,15 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            for generating unique short name
 	 */
 	private void setShortName(GARObject definitionObject, GARObject configurationObject, int upperMultiplicity, int index) {
-		if (true == isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+		if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 			String name = ConfigurationConstants.EMPTY_STRING;
 			/*
-			 * Getting the short name of the definition object
+			 * Getting the short name of the definition object.
 			 */
 			name = getUniqueShortName(definitionObject, configurationObject, index);
 			EStructuralFeature shortNameFeature = EObjectUtil.getEStructuralFeature(definitionObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME);
 			if (name == null) {
-				Object shortName = getPropertyValue(definitionObject, shortNameFeature);
+				Object shortName = ModuleConfigurationUtil.getPropertyValue(definitionObject, shortNameFeature);
 				if (null != shortName) {
 					name = shortName.toString();
 				}
@@ -300,9 +252,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			}
 
 			/*
-			 * Setting the short name of the configuration
+			 * Setting the short name of the configuration.
 			 */
-			setPropertyValue(configurationObject, shortNameFeature, name);
+			ModuleConfigurationUtil.setPropertyValue(configurationObject, shortNameFeature, name);
 		}
 	}
 
@@ -339,16 +291,16 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					/*
 					 * Setting the definition of the configuration.
 					 */
-					if (true == isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
+					if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
 						EStructuralFeature definitionFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_DEFINITION);
-						setPropertyValue(configurationObject, definitionFeature, definitionObject);
+						ModuleConfigurationUtil.setPropertyValue(configurationObject, definitionFeature, definitionObject);
 					}
 
 					/*
 					 * Setting the default value of the configuration.
 					 */
-					if (true == isPropertyExist(definitionObject, ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE)) {
+					if (true == ModuleConfigurationUtil.isPropertyExist(definitionObject, ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE)) {
 						EStructuralFeature defaultValueFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE);
 						setDefaultValue(configurationObject, defaultValueFeature, definitionObject);
@@ -364,7 +316,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 		if (editingDomain != null) {
 			try {
-				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Add configuration object"); //$NON-NLS-1$
+				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Add Configuration Object"); //$NON-NLS-1$
 			} catch (OperationCanceledException ex) {
 
 			} catch (ExecutionException ex) {
@@ -385,66 +337,10 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 */
 	private void setDefaultValue(GARObject configurationObject, EStructuralFeature feature, GARObject definitionObject) {
 		Object propertyValue = null;
-		propertyValue = getPropertyValue(definitionObject, feature);
+		propertyValue = ModuleConfigurationUtil.getPropertyValue(definitionObject, feature);
 		if (null != propertyValue && null != feature) {
-			setPropertyValue(configurationObject, feature, propertyValue);
+			ModuleConfigurationUtil.setPropertyValue(configurationObject, feature, propertyValue);
 		}
-	}
-
-	/**
-	 * For setting the property value of the object
-	 * 
-	 * @param object
-	 *            the description object
-	 * @param feature
-	 *            the feature
-	 * @param valueObject
-	 *            the value to be set
-	 */
-	private Object getPropertyValue(GARObject object, EStructuralFeature feature) {
-		if (object != null && feature != null) {
-			return object.eGet(feature);
-		}
-		return null;
-	}
-
-	/**
-	 * For setting the property value of the object
-	 * 
-	 * @param object
-	 *            the description object
-	 * @param feature
-	 *            the feature
-	 * @param valueObject
-	 *            the value to be set
-	 */
-	@SuppressWarnings("unchecked")
-	private void setPropertyValue(GARObject object, EStructuralFeature feature, Object valueObject) {
-		if (object != null && feature != null) {
-			if (valueObject != null && !"".equals(valueObject.toString())) { //$NON-NLS-1$
-				if (feature.isMany()) {
-					((List<Object>) ((EObject) object).eGet(feature)).add(valueObject);
-				} else {
-					object.eSet(feature, valueObject);
-				}
-			}
-		}
-	}
-
-	/**
-	 * For checking a particular property exist for an object
-	 * 
-	 * @param object
-	 *            the object
-	 * @param propertyId
-	 *            the property to be checked
-	 * @return true if the property exist else false
-	 */
-	private boolean isPropertyExist(GARObject object, String propertyId) {
-		if (object != null && EObjectUtil.getEStructuralFeature(object, propertyId) != null) {
-			return true;
-		}
-		return false;
 	}
 
 	/**
@@ -484,13 +380,13 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					EClass description = getDescription(definitionObject.eClass());
 					if (description != null) {
 						/*
-						 * Create a command parameter that contains an instance of new object to be create
+						 * Create a command parameter that contains an instance of new object to be create.
 						 */
 						configurationObject = createInstance(description);
 						if (configurationObject instanceof GModuleConfiguration && initialModuleConfiguration != null) {
 							configurationObject = initialModuleConfiguration;
 						}
-						EStructuralFeature feature = getEStructuralFeature(parentObject.eClass(), description);
+						EStructuralFeature feature = ModuleConfigurationUtil.getEStructuralFeature(parentObject.eClass(), description);
 						Object owner = parentObject;
 						if (configurationObject.eContainer() != null) {
 							owner = configurationObject.eContainer();
@@ -500,7 +396,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						generateConfiguration(editingDomain, owner, feature, configurationObject, definitionObject);
 
 						/*
-						 * Checking for the possible child configuration and initialize if needed
+						 * Checking for the possible child configuration and initialize if needed.
 						 */
 						Collection<?> children = editingDomain.getChildren(definitionObject);
 
@@ -511,10 +407,10 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						}
 					}
 
-					if (true == isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+					if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 						EStructuralFeature shortNameFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_SHORT_NAME);
-						setPropertyValue(configurationObject, shortNameFeature, shortName);
+						ModuleConfigurationUtil.setPropertyValue(configurationObject, shortNameFeature, shortName);
 					}
 
 					if (configurationObject != null) {
@@ -525,7 +421,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 			if (editingDomain != null) {
 				try {
-					WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "generate module configuration"); //$NON-NLS-1$
+					WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Generate Module Configuration"); //$NON-NLS-1$
 				} catch (OperationCanceledException ex) {
 
 				} catch (ExecutionException ex) {
@@ -570,7 +466,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			for (int index = 0; index < multiplicity; index++) {
 				GARObject configurationObject = null;
 
-				/* Checking the possible child descriptors of the node */
+				/*
+				 * Checking the possible child descriptors of the node
+				 */
 				TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(parentObject);
 
 				EClass description = getDescription(definitionObject.eClass());
@@ -582,7 +480,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					if (configurationObject instanceof GModuleConfiguration && initialModuleConfiguration != null) {
 						configurationObject = initialModuleConfiguration;
 					}
-					EStructuralFeature feature = getEStructuralFeature(parentObject.eClass(), description);
+					EStructuralFeature feature = ModuleConfigurationUtil.getEStructuralFeature(parentObject.eClass(), description);
 					Object owner = parentObject;
 					if (configurationObject.eContainer() != null) {
 						owner = configurationObject.eContainer();
@@ -599,11 +497,11 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						}
 					}
 
-					if (true == isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+					if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 						String shortName = getUniqueShortName(definitionObject, configurationObject, index);
 						EStructuralFeature shortNameFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_SHORT_NAME);
-						setPropertyValue(configurationObject, shortNameFeature, shortName);
+						ModuleConfigurationUtil.setPropertyValue(configurationObject, shortNameFeature, shortName);
 					}
 					iter.add((GModuleConfiguration) configurationObject);
 				}
@@ -626,7 +524,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	private String getUniqueShortName(GARObject definitionObject, GARObject configurationObject, int index) {
 		String name = ConfigurationConstants.EMPTY_STRING;
 		EStructuralFeature shortNameFeature = EObjectUtil.getEStructuralFeature(definitionObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME);
-		Object shortName = getPropertyValue(definitionObject, shortNameFeature);
+		Object shortName = ModuleConfigurationUtil.getPropertyValue(definitionObject, shortNameFeature);
 
 		if (null != shortName) {
 			name = shortName.toString();
@@ -640,10 +538,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 		for (Object childConfiguration : children) {
 			String tempName = name + index;
-			if (true == isPropertyExist((GARObject) childConfiguration, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+			if (true == ModuleConfigurationUtil.isPropertyExist((GARObject) childConfiguration, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 				String currentName = ConfigurationConstants.EMPTY_STRING;
-				shortName = getPropertyValue((GARObject) childConfiguration, shortNameFeature);
-
+				shortName = ModuleConfigurationUtil.getPropertyValue((GARObject) childConfiguration, shortNameFeature);
 				if (null != shortName) {
 					currentName = shortName.toString();
 				}
@@ -675,8 +572,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 */
 	public Iterable<GModuleConfiguration> generateECUConfigurations(GModuleDef definitionObject, GARPackage targetPackage, String[] shortNames) {
 		Vector<GModuleConfiguration> iter = new Vector<GModuleConfiguration>();
-
-		/* Generate each description object with the given short name */
+		/*
+		 * Generate each description object with the given short name
+		 */
 		for (String shortName : shortNames) {
 			GModuleConfiguration gModuleConfiguration = (GModuleConfiguration) generateConfiguration(definitionObject, targetPackage, shortName);
 			iter.add(gModuleConfiguration);
@@ -689,7 +587,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * reference values of <code>moduleConfiguration</code> module configuration
 	 */
 	public GModuleConfiguration initializeModuleConfigurationValues(final GModuleConfiguration moduleConfigurationToInitialize,
-			final GModuleConfiguration moduleConfiguration) {
+			final GModuleConfiguration moduleConfiguration, final String preconfiguredRecommendedMarker) {
 		Assert.isNotNull(moduleConfigurationToInitialize);
 		Assert.isNotNull(moduleConfiguration);
 
@@ -697,27 +595,27 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 		final Runnable runnable = new Runnable() {
 			public void run() {
 				for (GContainer container : moduleConfigurationToInitialize.gGetContainers()) {
-					intializeConfigurationValues(container);
+					intializeConfigurationValues(container, preconfiguredRecommendedMarker);
 				}
 			}
 
-			private void intializeConfigurationValues(GContainer container) {
+			private void intializeConfigurationValues(GContainer container, String preconfiguredRecommendedMarker) {
 				GContainerDef containerDef = container.gGetDefinition();
-				GContainer moduleConfContainerValue = getContainerFromDefinition(containerDef, moduleConfiguration);
+				GContainer moduleConfContainerValue = ModuleConfigurationUtil.getContainerFromDefinition(containerDef, moduleConfiguration);
 				if (moduleConfContainerValue != null) {
 					// initialize configuration parameter values
 					for (GParameterValue parameterValue : moduleConfContainerValue.gGetParameterValues()) {
-						initializeContainerValues(container, parameterValue);
+						initializeContainerValues(container, parameterValue, preconfiguredRecommendedMarker);
 					}
 
 					// initialize configuration reference values
 					for (GConfigReferenceValue referenceValue : moduleConfContainerValue.gGetReferenceValues()) {
-						initializeContainerValues(container, referenceValue);
+						initializeContainerValues(container, referenceValue, preconfiguredRecommendedMarker);
 					}
 
 					// iterate sub containers for initializing contained parameter and reference values
 					for (GContainer subContainer : container.gGetSubContainers()) {
-						intializeConfigurationValues(subContainer);
+						intializeConfigurationValues(subContainer, preconfiguredRecommendedMarker);
 					}
 				}
 			}
@@ -725,7 +623,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 		if (editingDomain != null) {
 			try {
-				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "initialize module configuration"); //$NON-NLS-1$
+				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Initialize Module Configuration"); //$NON-NLS-1$
 			} catch (OperationCanceledException ex) {
 
 			} catch (ExecutionException ex) {
@@ -737,60 +635,15 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	}
 
 	/**
-	 * Returns the container that have <code>containerDef</code> as definition and that is defined in
-	 * <code>moduleConfiguration</code> module configuration.
-	 * 
-	 * @param containerDef
-	 * @param moduleConfiguration
-	 * @return the container that have <code>containerDef</code> as definition and that is defined in
-	 *         <code>moduleConfiguration</code> module configuration.
-	 */
-	private GContainer getContainerFromDefinition(GContainerDef containerDef, GModuleConfiguration moduleConfiguration) {
-		Assert.isNotNull(containerDef);
-		Assert.isNotNull(moduleConfiguration);
-		GContainer goodContainer = null;
-		for (GContainer container : moduleConfiguration.gGetContainers()) {
-			GContainer gContainer = getContainerFromDefinition(containerDef, container);
-			if (gContainer != null) {
-				return gContainer;
-			}
-		}
-		return goodContainer;
-	}
-
-	/**
-	 * Returns the given <code>container</code> container if it has <code>containerDef</code> as definition, or null
-	 * else.
-	 * 
-	 * @param containerDef
-	 * @param container
-	 * @return <code>container</code> if it has <code>containerDef</code> as definition, or null else.
-	 */
-	private GContainer getContainerFromDefinition(GContainerDef containerDef, GContainer container) {
-		GContainer goodContainer = null;
-		if (container.gGetDefinition().equals(containerDef)) {
-			return container;
-		}
-
-		// iterate sub containers
-		for (GContainer subContainer : container.gGetSubContainers()) {
-			GContainer gContainer = getContainerFromDefinition(containerDef, subContainer);
-			if (gContainer != null) {
-				goodContainer = gContainer;
-				break;
-			}
-		}
-		return goodContainer;
-	}
-
-	/**
 	 * Initialize the parameter or reference values of <code>containerValue</code> with
-	 * <code>parameterReferenceValue</code>
+	 * <code>parameterReferenceValue</code> and add extension value to parameter or reference values.
 	 * 
 	 * @param containerValue
 	 * @param parameterReferenceValue
+	 * @param preconfiguredRecommendedMarker
+	 * @param extensionValue
 	 */
-	private void initializeContainerValues(GContainer containerValue, GARObject parameterReferenceValue) {
+	private void initializeContainerValues(GContainer containerValue, GARObject parameterReferenceValue, String preconfiguredRecommendedMarker) {
 		// parameterValue case
 		if (parameterReferenceValue != null && parameterReferenceValue instanceof GParameterValue) {
 			GConfigParameter parameterDef = ((GParameterValue) parameterReferenceValue).gGetDefinition();
@@ -804,6 +657,8 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				for (GParameterValue containerParamValue : containerValue.gGetParameterValues()) {
 					if (containerParamValue.gGetDefinition().equals(parameterDef)) {
 						setParameterValue(containerParamValue, newValue);
+						// mark the parameter value as preconfigured or recommended
+						ModuleConfigurationUtil.markAsPreconfiguredRecommended(containerParamValue, preconfiguredRecommendedMarker);
 						break;
 					}
 				}
@@ -823,6 +678,8 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				for (GConfigReferenceValue containerReferenceValue : containerValue.gGetReferenceValues()) {
 					if (containerReferenceValue.gGetDefinition().equals(referenceDef)) {
 						setReferenceValue(containerReferenceValue, newValue);
+						// mark the reference value as preconfigured or recommended
+						ModuleConfigurationUtil.markAsPreconfiguredRecommended(containerReferenceValue, preconfiguredRecommendedMarker);
 						break;
 					}
 				}

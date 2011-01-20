@@ -84,7 +84,7 @@ public interface IConfigurationGeneration {
 	 *            the module definition object to be use for initializing values
 	 * @return initialized module configuration
 	 */
-	GModuleConfiguration initializeModuleConfigurationValues(final GModuleConfiguration moduleConfigurationToInitialize,
-			final GModuleConfiguration moduleConfiguration);
+	GModuleConfiguration initializeModuleConfigurationValues(GModuleConfiguration moduleConfigurationToInitialize,
+			GModuleConfiguration moduleConfiguration, String extensionKey);
 
 }
