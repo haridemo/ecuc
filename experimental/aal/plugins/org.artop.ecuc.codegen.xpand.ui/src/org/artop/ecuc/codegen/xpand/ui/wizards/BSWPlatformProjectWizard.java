@@ -69,7 +69,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 		final CreateArtopProjectJob job = new CreateArtopProjectJob(Messages.job_creatingAutosarProject, projectHandle, location,
 				mainPage.getRelease());
 		job.setReferencedProjects(referencedProjects);
-		job.setImportedLibraries(mainPage.getImportedAutosarLibraryDescriptors());
+		job.getImportedAutosarLibraries().addAll(mainPage.getImportedAutosarLibraryDescriptors());
 		job.setUiInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
 		job.addJobChangeListener(new JobChangeAdapter() {
 			@Override
