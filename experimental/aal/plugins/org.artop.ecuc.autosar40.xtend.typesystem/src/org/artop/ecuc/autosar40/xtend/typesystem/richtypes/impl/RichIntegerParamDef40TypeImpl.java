@@ -1,13 +1,14 @@
-package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
+package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GIntegerParamDef;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.eclipse.xtend.typesystem.Type;
 
-public class RichIntegerParamDef40Type extends AbstractRichNumericalParamDef40Type {
+public class RichIntegerParamDef40TypeImpl extends AbstractRichNumericalParamDef40TypeImpl implements RichIntegerParamDefType {
 
-	public RichIntegerParamDef40Type(EcucContext context, GIntegerParamDef integerParamDef) {
+	public RichIntegerParamDef40TypeImpl(EcucContext context, GIntegerParamDef integerParamDef) {
 		super(context, integerParamDef);
 	}
 

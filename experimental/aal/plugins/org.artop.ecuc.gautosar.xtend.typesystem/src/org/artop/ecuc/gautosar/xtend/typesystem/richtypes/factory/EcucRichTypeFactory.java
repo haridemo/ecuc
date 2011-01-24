@@ -29,14 +29,13 @@ import java.util.Map;
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecl.emf.util.EObjectUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractCompositeEcucRichType;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractEcucRichType;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigParameterType;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigReferenceType;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.IRichEnumerationParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigParameterType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichEnumerationParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFunctionNameDefType;
@@ -46,6 +45,18 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichBooleanParamDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichChoiceContainerDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichChoiceReferenceDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichEnumerationParamDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichFloatParamDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichFunctionNameDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichIntegerParamDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichLinkerSymbolDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichModuleDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichParamConfContainerDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichReferenceDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichStringParamDefTypeImpl;
 import org.eclipse.xtend.typesystem.Type;
 
 public class EcucRichTypeFactory implements IRichTypeFactory {
@@ -89,10 +100,10 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 	}
 
 	protected RichModuleDefType createRichModuleDefType(GModuleDef moduleDef) {
-		return new RichModuleDefType(context, moduleDef);
+		return new RichModuleDefTypeImpl(context, moduleDef);
 	}
 
-	protected void createCompositeRichTypes(AbstractCompositeEcucRichType parentType, GIdentifiable identifiable) {
+	protected void createCompositeRichTypes(CompositeEcucRichType parentType, GIdentifiable identifiable) {
 		List<? extends GContainerDef> containerDefs = Collections.emptyList();
 		if (identifiable instanceof GModuleDef) {
 			containerDefs = ((GModuleDef) identifiable).gGetContainers();
@@ -103,7 +114,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 		}
 
 		for (GContainerDef containerDef : containerDefs) {
-			AbstractCompositeEcucRichType containerDefType = null;
+			CompositeEcucRichType containerDefType = null;
 			if (containerDef instanceof GParamConfContainerDef) {
 				containerDefType = createRichParamConfContainerDefType(containerDef);
 			} else if (containerDef instanceof GChoiceContainerDef) {
@@ -119,14 +130,14 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 
 		if (identifiable instanceof GParamConfContainerDef) {
 			for (GConfigParameter parameter : ((GParamConfContainerDef) identifiable).gGetParameters()) {
-				AbstractRichConfigParameterType configParameterType = createConfigParameterType(parameter);
+				RichConfigParameterType configParameterType = createConfigParameterType(parameter);
 				if (configParameterType != null) {
 					registerType(configParameterType, parameter);
 					parentType.addChildType(configParameterType);
 				}
 			}
 			for (GConfigReference reference : ((GParamConfContainerDef) identifiable).gGetReferences()) {
-				for (AbstractRichConfigReferenceType configReferenceType : createConfigReferenceTypes(reference)) {
+				for (RichConfigReferenceType configReferenceType : createConfigReferenceTypes(reference)) {
 					if (configReferenceType != null) {
 						registerType(configReferenceType, reference);
 						parentType.addChildType(configReferenceType);
@@ -137,15 +148,15 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 	}
 
 	protected RichParamConfContainerDefType createRichParamConfContainerDefType(GContainerDef containerDef) {
-		return new RichParamConfContainerDefType(context, (GParamConfContainerDef) containerDef);
+		return new RichParamConfContainerDefTypeImpl(context, (GParamConfContainerDef) containerDef);
 	}
 
 	protected RichChoiceContainerDefType createRichChoiceContainerDefType(GContainerDef containerDef) {
-		return new RichChoiceContainerDefType(context, (GChoiceContainerDef) containerDef);
+		return new RichChoiceContainerDefTypeImpl(context, (GChoiceContainerDef) containerDef);
 	}
 
-	protected AbstractRichConfigParameterType createConfigParameterType(GConfigParameter parameter) {
-		AbstractRichConfigParameterType configParameterType = null;
+	protected RichConfigParameterType createConfigParameterType(GConfigParameter parameter) {
+		RichConfigParameterType configParameterType = null;
 		if (parameter instanceof GIntegerParamDef) {
 			configParameterType = createRichIntegerParamDefType(parameter);
 		} else if (parameter instanceof GFloatParamDef) {
@@ -159,47 +170,47 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 		} else if (parameter instanceof GFunctionNameDef) {
 			configParameterType = createRichFunctionNameDefType(parameter);
 		} else if (parameter instanceof GEnumerationParamDef) {
-			IRichEnumerationParamDefType enumerationParamDefType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
+			RichEnumerationParamDefType enumerationParamDefType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
 			for (GEnumerationLiteralDef literal : ((GEnumerationParamDef) parameter).gGetLiterals()) {
 				enumerationParamDefType.addLiteral(literal.gGetShortName());
 			}
-			configParameterType = (AbstractRichConfigParameterType) enumerationParamDefType;
+			configParameterType = enumerationParamDefType;
 		} else {
 			throw new UnsupportedOperationException("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configParameterType;
 	}
 
-	protected AbstractRichConfigParameterType createRichIntegerParamDefType(GConfigParameter parameter) {
-		return new RichIntegerParamDefType(context, (GIntegerParamDef) parameter);
+	protected RichIntegerParamDefType createRichIntegerParamDefType(GConfigParameter parameter) {
+		return new RichIntegerParamDefTypeImpl(context, (GIntegerParamDef) parameter);
 	}
 
-	protected AbstractRichConfigParameterType createRichFloatParamDefType(GConfigParameter parameter) {
-		return new RichFloatParamDefType(context, (GFloatParamDef) parameter);
+	protected RichFloatParamDefType createRichFloatParamDefType(GConfigParameter parameter) {
+		return new RichFloatParamDefTypeImpl(context, (GFloatParamDef) parameter);
 	}
 
-	protected AbstractRichConfigParameterType createRichBooleanParamDefType(GConfigParameter parameter) {
-		return new RichBooleanParamDefType(context, (GBooleanParamDef) parameter);
+	protected RichBooleanParamDefType createRichBooleanParamDefType(GConfigParameter parameter) {
+		return new RichBooleanParamDefTypeImpl(context, (GBooleanParamDef) parameter);
 	}
 
-	protected AbstractRichConfigParameterType createRichStringParamDefType(GConfigParameter parameter) {
-		return new RichStringParamDefType(context, (GStringParamDef) parameter);
+	protected RichStringParamDefType createRichStringParamDefType(GConfigParameter parameter) {
+		return new RichStringParamDefTypeImpl(context, (GStringParamDef) parameter);
 	}
 
-	protected AbstractRichConfigParameterType createRichLinkerSymbolDefType(GConfigParameter parameter) {
-		return new RichLinkerSymbolDefType(context, (GLinkerSymbolDef) parameter);
+	protected RichLinkerSymbolDefType createRichLinkerSymbolDefType(GConfigParameter parameter) {
+		return new RichLinkerSymbolDefTypeImpl(context, (GLinkerSymbolDef) parameter);
 	}
 
-	protected AbstractRichConfigParameterType createRichFunctionNameDefType(GConfigParameter parameter) {
-		return new RichFunctionNameDefType(context, (GFunctionNameDef) parameter);
+	protected RichFunctionNameDefType createRichFunctionNameDefType(GConfigParameter parameter) {
+		return new RichFunctionNameDefTypeImpl(context, (GFunctionNameDef) parameter);
 	}
 
-	protected IRichEnumerationParamDefType createEnumerationParamDefType(GEnumerationParamDef parameterDef) {
-		return new RichEnumerationParamDefType(context, parameterDef);
+	protected RichEnumerationParamDefType createEnumerationParamDefType(GEnumerationParamDef parameterDef) {
+		return new RichEnumerationParamDefTypeImpl(context, parameterDef);
 	}
 
-	protected List<AbstractRichConfigReferenceType> createConfigReferenceTypes(GConfigReference reference) {
-		List<AbstractRichConfigReferenceType> configReferenceTypes = new ArrayList<AbstractRichConfigReferenceType>();
+	protected List<RichConfigReferenceType> createConfigReferenceTypes(GConfigReference reference) {
+		List<RichConfigReferenceType> configReferenceTypes = new ArrayList<RichConfigReferenceType>();
 		if (reference instanceof GReferenceDef) {
 			GReferenceDef referenceDef = (GReferenceDef) reference;
 			configReferenceTypes.add(createRichReferenceDefType(referenceDef));
@@ -230,14 +241,14 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 	}
 
 	protected RichReferenceDefType createRichReferenceDefType(GReferenceDef referenceDef) {
-		return new RichReferenceDefType(context, referenceDef, referenceDef.gGetDestination());
+		return new RichReferenceDefTypeImpl(context, referenceDef, referenceDef.gGetDestination());
 	}
 
 	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef, GParamConfContainerDef destination) {
-		return new RichChoiceReferenceDefType(context, choiceReferenceDef, destination);
+		return new RichChoiceReferenceDefTypeImpl(context, choiceReferenceDef, destination);
 	}
 
-	protected void registerType(AbstractEcucRichType type, GIdentifiable identifiable) {
+	protected void registerType(EcucRichType type, GIdentifiable identifiable) {
 		Type previousType = types.put(type.getName(), type);
 		if (previousType != null) {
 			throw new IllegalStateException("Type name conflict: " + type.getName()); //$NON-NLS-1$

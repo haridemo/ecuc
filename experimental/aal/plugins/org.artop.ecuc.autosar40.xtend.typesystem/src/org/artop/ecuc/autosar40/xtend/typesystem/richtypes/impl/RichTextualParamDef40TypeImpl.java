@@ -1,18 +1,22 @@
-package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
+package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GConfigParameter;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigParameterType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFunctionNameDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichLinkerSymbolDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.AbstractRichConfigParameterTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend.typesystem.Type;
 
 import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucdescription.EcucdescriptionPackage;
 
-public class RichTextualParamDef40Type extends AbstractRichConfigParameterType {
+public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTypeImpl implements RichStringParamDefType, RichLinkerSymbolDefType,
+		RichFunctionNameDefType {
 
-	public RichTextualParamDef40Type(EcucContext context, GConfigParameter configParameter) {
+	public RichTextualParamDef40TypeImpl(EcucContext context, GConfigParameter configParameter) {
 		super(context, configParameter);
 	}
 

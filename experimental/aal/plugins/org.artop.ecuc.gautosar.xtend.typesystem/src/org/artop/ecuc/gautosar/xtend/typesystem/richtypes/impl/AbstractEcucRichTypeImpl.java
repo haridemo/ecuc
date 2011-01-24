@@ -1,21 +1,22 @@
-package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.AbstractEcucMetaType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.AbstractEcucMetaTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 
-public abstract class AbstractEcucRichType extends AbstractEcucMetaType implements IEcucRichType {
+public abstract class AbstractEcucRichTypeImpl extends AbstractEcucMetaTypeImpl implements EcucRichType {
 
 	private GIdentifiable ecucTypeDef;
 
-	public AbstractEcucRichType(EcucContext context, GIdentifiable ecucTypeDef) {
+	public AbstractEcucRichTypeImpl(EcucContext context, GIdentifiable ecucTypeDef) {
 		this(context, ecucTypeDef, null);
 	}
 
-	public AbstractEcucRichType(EcucContext context, GIdentifiable ecucTypeDef, String typeNameSuffix) {
+	public AbstractEcucRichTypeImpl(EcucContext context, GIdentifiable ecucTypeDef, String typeNameSuffix) {
 		super(context, getTypeName(ecucTypeDef, typeNameSuffix));
 		this.ecucTypeDef = ecucTypeDef;
 		addBaseFeatures();

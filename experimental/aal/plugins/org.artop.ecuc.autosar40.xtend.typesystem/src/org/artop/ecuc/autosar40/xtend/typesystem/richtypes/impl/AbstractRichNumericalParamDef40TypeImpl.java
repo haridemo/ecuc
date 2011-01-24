@@ -1,9 +1,12 @@
-package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
+package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GConfigParameter;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigParameterType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.AbstractRichConfigParameterTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
 import autosar40.ecucdescription.EcucNumericalParamValue;
@@ -11,9 +14,10 @@ import autosar40.ecucdescription.EcucdescriptionPackage;
 import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
 import autosar40.genericstructure.varianthandling.VarianthandlingFactory;
 
-public abstract class AbstractRichNumericalParamDef40Type extends AbstractRichConfigParameterType {
+public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRichConfigParameterTypeImpl implements RichBooleanParamDefType,
+		RichIntegerParamDefType, RichFloatParamDefType {
 
-	public AbstractRichNumericalParamDef40Type(EcucContext context, GConfigParameter configParameter) {
+	public AbstractRichNumericalParamDef40TypeImpl(EcucContext context, GConfigParameter configParameter) {
 		super(context, configParameter);
 	}
 

@@ -1,4 +1,4 @@
-package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GModuleConfiguration;
@@ -11,46 +11,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
-public abstract class AbstractCompositeEcucRichType extends AbstractEcucRichType implements ICompositeEcucRichType {
+public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRichTypeImpl implements CompositeEcucRichType {
 
-	private List<ICompositeEcucRichType> childTypes = new ArrayList<ICompositeEcucRichType>();
+	private List<CompositeEcucRichType> childTypes = new ArrayList<CompositeEcucRichType>();
 
-	private ICompositeEcucRichType parentType = null;
+	private CompositeEcucRichType parentType = null;
 
-	public AbstractCompositeEcucRichType(EcucContext context, GIdentifiable ecucTypeDef) {
+	public AbstractCompositeEcucRichTypeImpl(EcucContext context, GIdentifiable ecucTypeDef) {
 		super(context, ecucTypeDef);
 	}
 
-	public AbstractCompositeEcucRichType(EcucContext context, GIdentifiable ecucTypeDef, String typeNameSuffix) {
+	public AbstractCompositeEcucRichTypeImpl(EcucContext context, GIdentifiable ecucTypeDef, String typeNameSuffix) {
 		super(context, ecucTypeDef, typeNameSuffix);
 	}
 
-	public boolean isInstance(Object target) {
-		return false;
-	}
-
-	public List<ICompositeEcucRichType> getChildTypes() {
+	public List<CompositeEcucRichType> getChildTypes() {
 		return childTypes;
 	}
 
-	public void addChildType(ICompositeEcucRichType childType) {
+	public void addChildType(CompositeEcucRichType childType) {
 		Assert.isNotNull(childType);
 
 		childTypes.add(childType);
 		childType.setParentType(this);
 	}
 
-	public ICompositeEcucRichType getParentType() {
+	public CompositeEcucRichType getParentType() {
 		return parentType;
 	}
 
-	public void setParentType(ICompositeEcucRichType parentType) {
+	public void setParentType(CompositeEcucRichType parentType) {
 		this.parentType = parentType;
 	}
 
@@ -67,7 +64,7 @@ public abstract class AbstractCompositeEcucRichType extends AbstractEcucRichType
 		return contents.isEmpty() ? null : contents;
 	}
 
-	public void addChildAccessorFeatures(final ICompositeEcucRichType childType) {
+	public void addChildAccessorFeatures(final CompositeEcucRichType childType) {
 		Assert.isNotNull(childType);
 
 		addFeature(new PropertyImpl(this, childType.getSimpleName(), getChildAccessorReturnType(childType)) {
@@ -104,15 +101,15 @@ public abstract class AbstractCompositeEcucRichType extends AbstractEcucRichType
 		});
 	}
 
-	private Type getChildAccessorReturnType(ICompositeEcucRichType childType) {
+	private Type getChildAccessorReturnType(CompositeEcucRichType childType) {
 		return isMany(childType) ? getTypeSystem().getListType(childType) : childType;
 	}
 
-	private boolean isMany(ICompositeEcucRichType compositeType) {
+	private boolean isMany(CompositeEcucRichType compositeType) {
 		Assert.isNotNull(compositeType);
 
 		GIdentifiable typeDef;
-		if (compositeType.getParentType() instanceof RichChoiceContainerDefType) {
+		if (compositeType.getParentType() instanceof RichChoiceContainerDefTypeImpl) {
 			// Choice containers definitions are removed from the type hierarchy
 			// but possible multiplicity must be added to the children
 			typeDef = compositeType.getParentType().getEcucTypeDef();
@@ -128,7 +125,7 @@ public abstract class AbstractCompositeEcucRichType extends AbstractEcucRichType
 		return false;
 	}
 
-	public void addParentAccessorFeatures(ICompositeEcucRichType parentType) {
+	public void addParentAccessorFeatures(CompositeEcucRichType parentType) {
 		addFeature(new PropertyImpl(this, "parent", getParentAccessorReturnType(parentType)) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return ((EObject) target).eContainer();
@@ -136,7 +133,7 @@ public abstract class AbstractCompositeEcucRichType extends AbstractEcucRichType
 		});
 	}
 
-	private Type getParentAccessorReturnType(ICompositeEcucRichType parentType) {
+	private Type getParentAccessorReturnType(CompositeEcucRichType parentType) {
 		return parentType != null ? parentType : getTypeSystem().getObjectType();
 	}
 
@@ -145,9 +142,9 @@ public abstract class AbstractCompositeEcucRichType extends AbstractEcucRichType
 
 		visitor.visit(this);
 
-		for (ICompositeEcucRichType childType : childTypes) {
-			if (childType instanceof AbstractCompositeEcucRichType) {
-				((AbstractCompositeEcucRichType) childType).accept(visitor);
+		for (CompositeEcucRichType childType : childTypes) {
+			if (childType instanceof AbstractCompositeEcucRichTypeImpl) {
+				((AbstractCompositeEcucRichTypeImpl) childType).accept(visitor);
 			}
 		}
 	}

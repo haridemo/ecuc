@@ -1,13 +1,14 @@
-package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
+package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GBooleanParamDef;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.eclipse.xtend.typesystem.Type;
 
-public class RichBooleanParamDef40Type extends AbstractRichNumericalParamDef40Type {
+public class RichBooleanParamDef40TypeImpl extends AbstractRichNumericalParamDef40TypeImpl implements RichBooleanParamDefType {
 
-	public RichBooleanParamDef40Type(EcucContext context, GBooleanParamDef booleanParamDef) {
+	public RichBooleanParamDef40TypeImpl(EcucContext context, GBooleanParamDef booleanParamDef) {
 		super(context, booleanParamDef);
 	}
 

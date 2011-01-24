@@ -1,4 +1,4 @@
-package org.artop.ecuc.gautosar.xtend.typesystem.metatypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl;
 
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.EcucMetaType;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
@@ -17,11 +18,7 @@ import org.eclipse.xtend.typesystem.Type;
 /**
  * Abstract base class for all type implementations
  */
-public abstract class AbstractEcucMetaType extends AbstractTypeImpl implements IEcucMetaType {
-
-	public static final String META_NAMESPACE = "AR"; //$NON-NLS-1$
-
-	public static final String TYPE_NAME_SEGMENT_SEPARATOR = "::"; //$NON-NLS-1$
+public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implements EcucMetaType {
 
 	protected static String getTypeName(GIdentifiable identifiable) {
 		return getTypeName(AutosarURIFactory.getAbsoluteQualifiedName(identifiable));
@@ -29,13 +26,13 @@ public abstract class AbstractEcucMetaType extends AbstractTypeImpl implements I
 
 	protected static String getTypeName(String absoluteQualifiedName) {
 		return absoluteQualifiedName.replaceFirst(AutosarURIFactory.AUTOSAR_ABSOLUTE_QUALIFIED_NAME_SEGMENT, "") //$NON-NLS-1$
-				.replaceAll(AutosarURIFactory.SEGMENT_SEPARATOR, TYPE_NAME_SEGMENT_SEPARATOR);
+				.replaceAll(AutosarURIFactory.SEGMENT_SEPARATOR, EcucMetaType.TYPE_NAME_SEGMENT_SEPARATOR);
 	}
 
 	private EcucContext context;
 	private List<Feature> features;
 
-	public AbstractEcucMetaType(EcucContext context, String typeName) {
+	public AbstractEcucMetaTypeImpl(EcucContext context, String typeName) {
 		super(context.getTypeSystem(), typeName);
 		Assert.isNotNull(context.getMetaModel());
 		Assert.isNotNull(context.getTypeSystem());
@@ -83,12 +80,12 @@ public abstract class AbstractEcucMetaType extends AbstractTypeImpl implements I
 	}
 
 	private void createBaseFeatures() {
-		addFeature(new PropertyImpl(this, "eContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectType.TYPE_NAME))) { //$NON-NLS-1$
+		addFeature(new PropertyImpl(this, "eContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectTypeImpl.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return internalEContents((EObject) target);
 			}
 		});
-		addFeature(new PropertyImpl(this, "eAllContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectType.TYPE_NAME))) { //$NON-NLS-1$
+		addFeature(new PropertyImpl(this, "eAllContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectTypeImpl.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return internalEAllContents((EObject) target);
 			}
@@ -106,8 +103,8 @@ public abstract class AbstractEcucMetaType extends AbstractTypeImpl implements I
 			allContents.addAll(contents);
 			for (EObject content : contents) {
 				Type type = context.getMetaModel().getType(content);
-				if (type instanceof AbstractEcucMetaType) {
-					allContents.addAll(((AbstractEcucMetaType) type).internalEAllContents(content));
+				if (type instanceof AbstractEcucMetaTypeImpl) {
+					allContents.addAll(((AbstractEcucMetaTypeImpl) type).internalEAllContents(content));
 				}
 			}
 		}
@@ -136,8 +133,7 @@ public abstract class AbstractEcucMetaType extends AbstractTypeImpl implements I
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
-	public boolean isAbstract() {
+	public boolean isInstance(Object o) {
 		return false;
 	}
 

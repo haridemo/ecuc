@@ -1,4 +1,4 @@
-package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucparameterdef.GConfigReference;
@@ -11,21 +11,23 @@ import java.util.Set;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
-public abstract class AbstractRichConfigReferenceType extends AbstractCompositeEcucRichType {
+public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichConfigReferenceType {
 
 	protected GParamConfContainerDef valueTypeDef;
 
-	public AbstractRichConfigReferenceType(EcucContext context, GConfigReference configReference, GParamConfContainerDef valueTypeDef) {
+	public AbstractRichConfigReferenceTypeImpl(EcucContext context, GConfigReference configReference, GParamConfContainerDef valueTypeDef) {
 		this(context, configReference, null, valueTypeDef);
 	}
 
-	public AbstractRichConfigReferenceType(EcucContext context, GConfigReference configReference, String typeNameSuffix,
+	public AbstractRichConfigReferenceTypeImpl(EcucContext context, GConfigReference configReference, String typeNameSuffix,
 			GParamConfContainerDef valueTypeDef) {
 		super(context, configReference, typeNameSuffix);
 		this.valueTypeDef = valueTypeDef;
@@ -100,7 +102,7 @@ public abstract class AbstractRichConfigReferenceType extends AbstractCompositeE
 	}
 
 	@Override
-	public void addChildType(ICompositeEcucRichType childType) {
+	public void addChildType(CompositeEcucRichType childType) {
 		throw new UnsupportedOperationException();
 	}
 }

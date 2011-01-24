@@ -1,13 +1,14 @@
-package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
+package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GFloatParamDef;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.eclipse.xtend.typesystem.Type;
 
-public class RichFloatParamDef40Type extends AbstractRichNumericalParamDef40Type {
+public class RichFloatParamDef40TypeImpl extends AbstractRichNumericalParamDef40TypeImpl implements RichFloatParamDefType {
 
-	public RichFloatParamDef40Type(EcucContext context, GFloatParamDef floatParamDef) {
+	public RichFloatParamDef40TypeImpl(EcucContext context, GFloatParamDef floatParamDef) {
 		super(context, floatParamDef);
 	}
 

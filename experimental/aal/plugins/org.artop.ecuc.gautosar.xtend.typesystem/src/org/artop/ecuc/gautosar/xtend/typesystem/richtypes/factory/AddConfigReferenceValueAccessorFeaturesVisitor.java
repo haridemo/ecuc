@@ -1,11 +1,13 @@
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory;
 
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractRichConfigReferenceType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 
-public class AddConfigReferenceValueAccessorFeaturesVisitor extends DefaultEcucRichTypeHierarchyVisitorImpl {
+public class AddConfigReferenceValueAccessorFeaturesVisitor implements IEcucRichTypeHierarchyVisitor {
 
-	@Override
-	public void visit(AbstractRichConfigReferenceType target) {
-		target.addValueAccessorFeatures();
+	public void visit(CompositeEcucRichType target) {
+		if (target instanceof RichConfigReferenceType) {
+			((RichConfigReferenceType) target).addValueAccessorFeatures();
+		}
 	}
 }

@@ -1,14 +1,12 @@
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory;
 
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.AbstractCompositeEcucRichType;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.ICompositeEcucRichType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
 
-public class AddParentAccessorFeaturesVisitor extends DefaultEcucRichTypeHierarchyVisitorImpl {
+public class AddParentAccessorFeaturesVisitor implements IEcucRichTypeHierarchyVisitor {
 
-	@Override
-	public void visit(AbstractCompositeEcucRichType target) {
-		ICompositeEcucRichType parentType = target.getParentType();
+	public void visit(CompositeEcucRichType target) {
+		CompositeEcucRichType parentType = target.getParentType();
 		if (parentType instanceof RichChoiceContainerDefType) {
 			// choice container are removed from the properties hierarchy
 			parentType = ((RichChoiceContainerDefType) parentType).getParentType();

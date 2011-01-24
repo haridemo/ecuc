@@ -10,17 +10,17 @@ import java.util.Set;
 
 import org.artop.ecl.platform.util.PlatformLogUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARPackageType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.AUTOSARType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceContainerDefType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigParameterType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigReferenceType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ARObjectTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ARPackageTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.AUTOSARTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ChoiceContainerDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ChoiceReferenceDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ConfigParameterTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ConfigReferenceTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ContainerDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ModuleDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ParamConfContainerDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.EcucRichTypeFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IRichTypeFactory;
 import org.eclipse.core.runtime.Assert;
@@ -149,17 +149,17 @@ public class EcucMetaModel implements MetaModel {
 	protected void createMetaTypes() {
 		// Create meta types and register them; order does matter!
 		// XXX How does order matter?
-		registerType(new ARObjectType(context));
-		registerType(new ContainerDefType(context));
-		registerType(new ParamConfContainerDefType(context));
-		registerType(new ChoiceContainerDefType(context));
-		registerType(new ConfigParameterType(context));
-		registerType(new ConfigReferenceType(context));
-		registerType(new ReferenceDefType(context));
-		registerType(new ChoiceReferenceDefType(context));
-		registerType(new ModuleDefType(context));
-		registerType(new ARPackageType(context));
-		registerType(new AUTOSARType(context));
+		registerType(new ARObjectTypeImpl(context));
+		registerType(new ContainerDefTypeImpl(context));
+		registerType(new ParamConfContainerDefTypeImpl(context));
+		registerType(new ChoiceContainerDefTypeImpl(context));
+		registerType(new ConfigParameterTypeImpl(context));
+		registerType(new ConfigReferenceTypeImpl(context));
+		registerType(new ReferenceDefTypeImpl(context));
+		registerType(new ChoiceReferenceDefTypeImpl(context));
+		registerType(new ModuleDefTypeImpl(context));
+		registerType(new ARPackageTypeImpl(context));
+		registerType(new AUTOSARTypeImpl(context));
 	}
 
 	protected IRichTypeFactory createRichTypeFactory() {

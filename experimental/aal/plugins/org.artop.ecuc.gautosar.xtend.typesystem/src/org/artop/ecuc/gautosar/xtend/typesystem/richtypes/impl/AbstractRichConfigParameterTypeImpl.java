@@ -1,4 +1,4 @@
-package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GParameterValue;
 import gautosar.gecucparameterdef.GConfigParameter;
@@ -8,6 +8,8 @@ import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigParameterType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigParameterType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
@@ -15,9 +17,9 @@ import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
-public abstract class AbstractRichConfigParameterType extends AbstractCompositeEcucRichType {
+public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichConfigParameterType {
 
-	public AbstractRichConfigParameterType(EcucContext context, GConfigParameter configParameter) {
+	public AbstractRichConfigParameterTypeImpl(EcucContext context, GConfigParameter configParameter) {
 		super(context, configParameter);
 	}
 
@@ -79,7 +81,7 @@ public abstract class AbstractRichConfigParameterType extends AbstractCompositeE
 	}
 
 	@Override
-	public void addChildType(ICompositeEcucRichType childType) {
+	public void addChildType(CompositeEcucRichType childType) {
 		throw new UnsupportedOperationException();
 	}
 }

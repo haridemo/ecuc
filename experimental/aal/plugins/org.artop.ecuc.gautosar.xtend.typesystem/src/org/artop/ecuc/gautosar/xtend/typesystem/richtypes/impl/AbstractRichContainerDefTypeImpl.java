@@ -1,4 +1,4 @@
-package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucparameterdef.GContainerDef;
@@ -8,13 +8,14 @@ import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.xtend.typesystem.Type;
 
-public abstract class AbstractRichContainerDefType extends AbstractCompositeEcucRichType {
+public abstract class AbstractRichContainerDefTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichContainerDefType {
 
-	public AbstractRichContainerDefType(EcucContext context, GContainerDef containerDef) {
+	public AbstractRichContainerDefTypeImpl(EcucContext context, GContainerDef containerDef) {
 		super(context, containerDef);
 	}
 

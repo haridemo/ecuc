@@ -1,15 +1,15 @@
-package org.artop.ecuc.autosar40.xtend.typesystem.richtypes;
+package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GEnumerationParamDef;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.IRichEnumerationParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichEnumerationParamDefType;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.StaticPropertyImpl;
 
-public class RichEnumerationParamDef40Type extends RichTextualParamDef40Type implements IRichEnumerationParamDefType {
+public class RichEnumerationParamDef40TypeImpl extends RichTextualParamDef40TypeImpl implements RichEnumerationParamDefType {
 
-	public RichEnumerationParamDef40Type(EcucContext context, GEnumerationParamDef enumerationParamDef) {
+	public RichEnumerationParamDef40TypeImpl(EcucContext context, GEnumerationParamDef enumerationParamDef) {
 		super(context, enumerationParamDef);
 	}
 
