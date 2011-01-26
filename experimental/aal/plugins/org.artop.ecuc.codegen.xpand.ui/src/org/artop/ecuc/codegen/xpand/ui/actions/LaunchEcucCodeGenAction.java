@@ -133,7 +133,7 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 	protected String getQualifiedTemplateName() {
 		IFile templateFile = getTemplateFile();
 		if (templateFile != null) {
-			return templateFile.getProjectRelativePath().removeFileExtension().append(getRootDefineName()).toString().replaceAll("/", "::"); //$NON-NLS-1$ //$NON-NLS-2$
+			return getScopingResourceLoader().getQualifiedTemplateName(templateFile, getRootDefineName());
 		}
 		return UNKNOWN_TEMPLATE_NAME;
 	}

@@ -36,8 +36,6 @@ public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate 
 	}
 
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		// TODO Auto-generated method stub
 
 	}
-
 }
