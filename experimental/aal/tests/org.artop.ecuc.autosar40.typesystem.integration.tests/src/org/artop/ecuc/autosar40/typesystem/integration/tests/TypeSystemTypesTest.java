@@ -5,87 +5,172 @@ import org.artop.ecl.emf.model.ModelDescriptorRegistry;
 import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.testutils.integration.referenceworkspace.AbstractEcucIntegrationTestCase;
+import org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspace;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.xtend.typesystem.Type;
-
-import autosar40.genericstructure.autosartoplevelstructure.AUTOSAR;
-import autosar40.genericstructure.generaltemplateclasses.arpackage.ARPackage;
 
 public class TypeSystemTypesTest extends AbstractEcucIntegrationTestCase {
 
-
+	// Type Qualified Names definitions
+	private static final String METATYPE_AR_CONFIG_REFERENCE_TYPE = "AR::ConfigReferenceType";
+	private static final String METATYPE_AR_CONFIG_PARAMETER_TYPE = "AR::ConfigParameterType";
+	private static final String METATYPE_AR_CHOICE_REFERENCE_DEF_TYPE = "AR::ChoiceReferenceDefType";
+	private static final String METATYPE_AR_CONTAINER_DEF_TYPE = "AR::ContainerDefType";
+	private static final String METATYPE_AR_MODULE_DEF_TYPE = "AR::ModuleDefType";
+	private static final String METATYPE_AR_PARAM_CONF_CONTAINER_DEF_TYPE = "AR::ParamConfContainerDefType";
+	private static final String METATYPE_AR_CHOICE_CONTAINER_DEF_TYPE = "AR::ChoiceContainerDefType";
+	private static final String METATYPE_AR_REFERENCE_DEF_TYPE = "AR::ReferenceDefType";
+	private static final String METATYPE_AR_AUTOSAR_TYPE = "AR::AUTOSARType";
+	private static final String METATYPE_AR_AR_PACKAGE_TYPE = "AR::ARPackageType";
+	private static final String METATYPE_AR_AR_OBJECT_TYPE = "AR::ARObjectType";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_MAX_COUPLE = "EPD::Vehicle::Engine::Type::Diesel::MaxCouple";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL = "EPD::Vehicle::Engine::Type::Diesel";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_DIESEL_FILTER_MODEL = "EPD::Vehicle::Engine::Type::Diesel::DieselFilterModel";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL = "EPD::Vehicle::Engine::Type::Gasoline::SparkPlugModel";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER = "EPD::Vehicle::Engine::Type::Gasoline::SparkPlugNumber";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE = "EPD::Vehicle::Engine::Type::Gasoline::SparkPlugVoltage";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE = "EPD::Vehicle::Engine::Type::Gasoline";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC = "EPD::Vehicle::Engine::Automatic";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE = "EPD::Vehicle::Engine::Type";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINE_TYPE = "EPD::Vehicle::Engine::EngineType";
+	private static final String RICH_TYPE_EPD_VEHICLE_ENGINE = "EPD::Vehicle::Engine";
+	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME = "EPD::Vehicle::GeneralInfo::VehicleName";
+	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE = "EPD::Vehicle::GeneralInfo::EngineTypeChoice_Gasoline";
+	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_DIESEL = "EPD::Vehicle::GeneralInfo::EngineTypeChoice_Diesel";
+	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR = "EPD::Vehicle::GeneralInfo::Year";
+	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER = "EPD::Vehicle::GeneralInfo::SerialNumber";
+	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO = "EPD::Vehicle::GeneralInfo";
 	private static final String RICH_TYPE_EPD_VEHICLE = "EPD::Vehicle";
 	private static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER = "EPD::Vehicle::GeneralInfo::Manufacturer";
+	// Error message Definitions
+	private static final String TYPE_IS_MISSING = "type {0} is missing";
 
-	public void testTypeGenerationtest()
-	{
-		IFile moduleDefFile = refWks.xPandAutosar40Project.getFile(refWks.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
-		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleDefFile);
+	// EcucMetaModel Type system global instance
+	private EcucMetaModel ecucMetaModel;
+	private Resource moduleConfResource;
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		IFile moduleDefFile = refWks.xPandAutosar40Project
+				.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
+		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE
+				.getModel(moduleDefFile);
 		assertNotNull(moduleDefModelDescriptor);
-		
-		EcucMetaModel ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager().loadAdapter(moduleDefModelDescriptor, EcucMetaModel.class.getName());		
+		ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager()
+				.loadAdapter(moduleDefModelDescriptor,
+						EcucMetaModel.class.getName());
 		assertNotNull(ecucMetaModel);
-		//Check for expected types
-		
-		//MetaTypes
-		assertNotNull("Type AR::ARObjectType is missing",ecucMetaModel.getTypeForName("AR::ARObjectType"));
-		assertNotNull("Type AR::AUTOSARType is missing",ecucMetaModel.getTypeForName("AR::AUTOSARType"));
-		assertNotNull("Type AR::ARPackageType is missing",ecucMetaModel.getTypeForName("AR::ARPackageType"));
-		assertNotNull("Type AR::ReferenceDefType is missing",ecucMetaModel.getTypeForName("AR::ReferenceDefType"));
-		assertNotNull("Type AR::ChoiceContainerDefType is missing",ecucMetaModel.getTypeForName("AR::ChoiceContainerDefType"));
-		assertNotNull("Type AR::ParamConfContainerDefType is missing",ecucMetaModel.getTypeForName("AR::ParamConfContainerDefType"));
-		assertNotNull("Type AR::ModuleDefType is missing",ecucMetaModel.getTypeForName("AR::ModuleDefType"));
-		assertNotNull("Type AR::ContainerDefType is missing",ecucMetaModel.getTypeForName("AR::ContainerDefType"));
-		assertNotNull("Type AR::ChoiceReferenceDefType is missing",ecucMetaModel.getTypeForName("AR::ChoiceReferenceDefType"));
-		assertNotNull("Type AR::ConfigParameterType is missing",ecucMetaModel.getTypeForName("AR::ConfigParameterType"));
-		assertNotNull("Type AR::ConfigReferenceType is missing",ecucMetaModel.getTypeForName("AR::ConfigReferenceType"));
-        
-		//From EPD package
-		assertNotNull("Type EPD::Vehicle is missing",ecucMetaModel.getTypeForName(RICH_TYPE_EPD_VEHICLE));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo::Manufacturer is missing",ecucMetaModel.getTypeForName(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::GeneralInfo"));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo::SerialNumber is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::GeneralInfo::SerialNumber"));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo::Year is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::GeneralInfo::Year"));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo::EngineTypeChoice_Diesel is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::GeneralInfo::EngineTypeChoice_Diesel"));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo::EngineTypeChoice_Gasoline is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::GeneralInfo::EngineTypeChoice_Gasoline"));
-		assertNotNull("Type EPD::Vehicle::GeneralInfo::VehicleName is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::GeneralInfo::VehicleName"));
-		assertNotNull("Type EPD::Vehicle::Engine is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine"));
-		assertNotNull("Type EPD::Vehicle::Engine::EngineType is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::EngineType"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type"));
-		assertNotNull("Type EPD::Vehicle::Engine::Automatic is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Automatic"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Gasoline is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Gasoline"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Gasoline::SparkPlugVoltage is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Gasoline::SparkPlugVoltage"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Gasoline::SparkPlugNumber is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Gasoline::SparkPlugNumber"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Gasoline::SparkPlugModel is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Gasoline::SparkPlugModel"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Diesel::DieselFilterModel is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Diesel::DieselFilterModel"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Diesel is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Diesel"));
-		assertNotNull("Type EPD::Vehicle::Engine::Type::Diesel::MaxCouple is missing",ecucMetaModel.getTypeForName("EPD::Vehicle::Engine::Type::Diesel::MaxCouple"));
-		
+		moduleConfResource = EcorePlatformUtil
+				.getResource(refWks.xPandAutosar40Project
+						.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
+		assertNotNull(moduleConfResource);
 	}
-	
-	public void testTypeConfigurationTest()
-	{
-		IFile moduleDefFile = refWks.xPandAutosar40Project.getFile(refWks.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
-		IFile moduleConfFile = refWks.xPandAutosar40Project.getFile(refWks.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION);
-		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleDefFile);
-		assertNotNull(moduleDefModelDescriptor);
-		
-		EcucMetaModel ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager().loadAdapter(moduleDefModelDescriptor, EcucMetaModel.class.getName());		
-		assertNotNull(ecucMetaModel);	
-		
-	Resource resource = EcorePlatformUtil.getResource(moduleConfFile);
-	assertNotNull(resource);
-		
-EObject eObject = resource.getEObject("/EPC/Car/Engine/@parameterValues.0");
-Type type = ecucMetaModel.getType(eObject);
 
-
+	private void assertExistsTypeInEcucMetaModel(String expectedTypeName) {
+		assertNotNull(NLS.bind(TYPE_IS_MISSING, expectedTypeName),
+				ecucMetaModel.getTypeForName(expectedTypeName));
 	}
-	
-	
+
+	private void assertReturnedEcucMetaModelTypeEquals(
+			String targetUriFragment, String expectedTypeName) {
+
+		EObject target = moduleConfResource.getEObject(targetUriFragment);
+		assertNotNull("Object not found in model", target);
+		Type type = ecucMetaModel.getType(target);
+		assertNotNull(NLS.bind(TYPE_IS_MISSING, expectedTypeName), type);
+		assertEquals(expectedTypeName, type.getName());
+	}
+
+	/**
+	 * 
+	 */
+	public void testTypeGenerationtest() {
+		// Check for expected types
+
+		// MetaTypes
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_AR_OBJECT_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_AR_PACKAGE_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_AUTOSAR_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_REFERENCE_DEF_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_CHOICE_CONTAINER_DEF_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_PARAM_CONF_CONTAINER_DEF_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_MODULE_DEF_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_CONTAINER_DEF_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_CHOICE_REFERENCE_DEF_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_CONFIG_PARAMETER_TYPE);
+		assertExistsTypeInEcucMetaModel(METATYPE_AR_CONFIG_REFERENCE_TYPE);
+
+		// From EPD package
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_DIESEL);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINE_TYPE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_DIESEL_FILTER_MODEL);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL);
+		assertExistsTypeInEcucMetaModel(RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_MAX_COUPLE);
+	}
+
+	/**
+	 * 
+	 */
+	public void testTypeConfigurationTest() {
+
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car", RICH_TYPE_EPD_VEHICLE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine",
+				RICH_TYPE_EPD_VEHICLE_ENGINE);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/Engine/@parameterValues.0",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/Engine/@parameterValues.1",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINE_TYPE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type/Gasoline",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/Engine/Type/Gasoline/@parameterValues.0",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/Engine/Type/Gasoline/@parameterValues.1",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/Engine/Type/Gasoline/@parameterValues.2",
+				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo",
+				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/GeneralInfo/@parameterValues.0",
+				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/GeneralInfo/@parameterValues.1",
+				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/GeneralInfo/@parameterValues.2",
+				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/GeneralInfo/@parameterValues.3",
+				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car/GeneralInfo/@parameterValues.4",
+				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
+	}
 }
-
