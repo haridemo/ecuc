@@ -246,9 +246,10 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				if (null != shortName) {
 					name = shortName.toString();
 				}
-				if (upperMultiplicity > 1) {
-					name = name + index;
-				}
+				// Remove suffix number from short name: refer to https://bugzilla01.geensys.com/show_bug.cgi?id=142
+				// if (upperMultiplicity > 1) {
+				// name = name + index;
+				// }
 			}
 
 			/*
@@ -537,7 +538,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 		int configIndex = children.size();
 
 		for (Object childConfiguration : children) {
-			String tempName = name + index;
+			// Remove suffix number from short name: refer to https://bugzilla01.geensys.com/show_bug.cgi?id=142
+			// String tempName = name + index;
+			String tempName = name;
 			if (true == ModuleConfigurationUtil.isPropertyExist((GARObject) childConfiguration, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 				String currentName = ConfigurationConstants.EMPTY_STRING;
 				shortName = ModuleConfigurationUtil.getPropertyValue((GARObject) childConfiguration, shortNameFeature);
