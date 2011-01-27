@@ -12,10 +12,10 @@
               <SHORT-NAME>Engine</SHORT-NAME>
               <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Engine</DEFINITION-REF>
               <PARAMETER-VALUES>
-                <ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/EPD/Vehicle/Engine/EngineType</DEFINITION-REF>
-                  <VALUE SHORT-LABEL="EngineType">Gasoline</VALUE>
-                </ECUC-NUMERICAL-PARAM-VALUE>
+                  <VALUE>Gasoline</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/EPD/Vehicle/Engine/Automatic</DEFINITION-REF>
                   <VALUE SHORT-LABEL="Automatic">0</VALUE>
