@@ -1,5 +1,6 @@
 package org.artop.ecuc.gautosar.xtend.typesystem;
 
+import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -122,7 +123,7 @@ public class EcucMetaModel implements MetaModel {
 	protected void createTypes() {
 
 		// TODO Surround with appropriate tracing option
-		long start = System.currentTimeMillis();
+		long start = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
 		createCounter++;
 
 		// First define the meta types
@@ -137,8 +138,8 @@ public class EcucMetaModel implements MetaModel {
 		}
 
 		// TODO Surround with appropriate tracing option
-		long stop = System.currentTimeMillis();
-		System.out.println("Created " + types.size() + " types in " + (stop - start) + "ms (#run " + createCounter + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		long stop = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
+		System.out.println("Created " + types.size() + " types in " + (stop - start) / 1000000 + " ms (#run " + createCounter + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 	}
 
 	/**

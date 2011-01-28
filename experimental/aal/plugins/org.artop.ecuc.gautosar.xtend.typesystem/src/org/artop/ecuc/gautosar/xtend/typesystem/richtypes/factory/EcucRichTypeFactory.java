@@ -21,6 +21,7 @@ import gautosar.gecucparameterdef.GStringParamDef;
 import gautosar.gecucparameterdef.GSymbolicNameReferenceDef;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
+import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -84,7 +85,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 	protected void createRichModuleDefTypes() {
 		for (GModuleDef moduleDef : EObjectUtil.getAllInstancesOf(context.getModuleDefModelDescriptor(), GModuleDef.class, false)) {
 			// TODO Surround with appropriate tracing option
-			long start = System.currentTimeMillis();
+			long start = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
 			int typesBefore = types.size();
 
 			RichModuleDefType rich = createRichModuleDefType(moduleDef);
@@ -93,9 +94,10 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			createCompositeRichTypes(rich, moduleDef);
 
 			// TODO Surround with appropriate tracing option
-			long stop = System.currentTimeMillis();
+			long stop = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
+			;
 			System.out
-					.println("Created " + (types.size() - typesBefore) + " types in " + (stop - start) + "ms for " + AutosarURIFactory.getAbsoluteQualifiedName(moduleDef)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					.println("Created " + (types.size() - typesBefore) + " types in " + (stop - start) / 1000000 + " ms for " + AutosarURIFactory.getAbsoluteQualifiedName(moduleDef)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 	}
 
