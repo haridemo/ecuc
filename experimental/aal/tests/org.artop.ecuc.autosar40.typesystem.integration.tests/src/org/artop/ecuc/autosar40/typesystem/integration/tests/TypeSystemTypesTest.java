@@ -56,28 +56,21 @@ public class TypeSystemTypesTest extends AbstractEcucIntegrationTestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		IFile moduleDefFile = refWks.xPandAutosar40Project
-				.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
-		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE
-				.getModel(moduleDefFile);
+		IFile moduleDefFile = refWks.xPandAutosar40Project.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
+		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleDefFile);
 		assertNotNull(moduleDefModelDescriptor);
-		ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager()
-				.loadAdapter(moduleDefModelDescriptor,
-						EcucMetaModel.class.getName());
+		ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager().loadAdapter(moduleDefModelDescriptor, EcucMetaModel.class.getName());
 		assertNotNull(ecucMetaModel);
-		moduleConfResource = EcorePlatformUtil
-				.getResource(refWks.xPandAutosar40Project
-						.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
+		moduleConfResource = EcorePlatformUtil.getResource(refWks.xPandAutosar40Project
+				.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
 		assertNotNull(moduleConfResource);
 	}
 
 	private void assertExistsTypeInEcucMetaModel(String expectedTypeName) {
-		assertNotNull(NLS.bind(TYPE_IS_MISSING, expectedTypeName),
-				ecucMetaModel.getTypeForName(expectedTypeName));
+		assertNotNull(NLS.bind(TYPE_IS_MISSING, expectedTypeName), ecucMetaModel.getTypeForName(expectedTypeName));
 	}
 
-	private void assertReturnedEcucMetaModelTypeEquals(
-			String targetUriFragment, String expectedTypeName) {
+	private void assertReturnedEcucMetaModelTypeEquals(String targetUriFragment, String expectedTypeName) {
 
 		EObject target = moduleConfResource.getEObject(targetUriFragment);
 		assertNotNull("Object not found in model", target);
@@ -133,46 +126,24 @@ public class TypeSystemTypesTest extends AbstractEcucIntegrationTestCase {
 	 */
 	public void testTypeConfigurationTest() {
 
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car?type=EcucModuleConfigurationValue",
-				RICH_TYPE_EPD_VEHICLE);
-		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine",
-				RICH_TYPE_EPD_VEHICLE_ENGINE);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/Engine/@parameterValues.0",
-				RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/Engine/@parameterValues.1",
-				RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINE_TYPE);
-		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type",
-				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
-		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type/Gasoline",
-				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/Engine/Type/Gasoline/@parameterValues.0",
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car?type=EcucModuleConfigurationValue", RICH_TYPE_EPD_VEHICLE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine", RICH_TYPE_EPD_VEHICLE_ENGINE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/@parameterValues.0", RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/@parameterValues.1", RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINE_TYPE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type", RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type/Gasoline", RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type/Gasoline/@parameterValues.0",
 				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/Engine/Type/Gasoline/@parameterValues.1",
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type/Gasoline/@parameterValues.1",
 				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/Engine/Type/Gasoline/@parameterValues.2",
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine/Type/Gasoline/@parameterValues.2",
 				RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
-		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo",
-				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/GeneralInfo/@parameterValues.0",
-				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/GeneralInfo/@parameterValues.1",
-				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/GeneralInfo/@parameterValues.2",
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo", RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo/@parameterValues.0", RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo/@parameterValues.1", RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo/@parameterValues.2",
 				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/GeneralInfo/@parameterValues.3",
-				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
-		assertReturnedEcucMetaModelTypeEquals(
-				"/EPC/Car/GeneralInfo/@parameterValues.4",
-				RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo/@parameterValues.3", RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/GeneralInfo/@parameterValues.4", RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
 	}
 }
