@@ -133,7 +133,9 @@ public class TypeSystemTypesTest extends AbstractEcucIntegrationTestCase {
 	 */
 	public void testTypeConfigurationTest() {
 
-		assertReturnedEcucMetaModelTypeEquals("/EPC/Car", RICH_TYPE_EPD_VEHICLE);
+		assertReturnedEcucMetaModelTypeEquals(
+				"/EPC/Car?type=EcucModuleConfigurationValue",
+				RICH_TYPE_EPD_VEHICLE);
 		assertReturnedEcucMetaModelTypeEquals("/EPC/Car/Engine",
 				RICH_TYPE_EPD_VEHICLE_ENGINE);
 		assertReturnedEcucMetaModelTypeEquals(
