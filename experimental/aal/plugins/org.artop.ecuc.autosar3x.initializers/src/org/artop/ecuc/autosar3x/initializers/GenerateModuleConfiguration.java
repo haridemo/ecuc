@@ -57,6 +57,7 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		return DefinitionDescriptionMap3x.getDescription(definition);
 	}
 
+	// TODO Should we take care of isSetValue ??
 	@Override
 	protected Object getParameterValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof BooleanValue) {
