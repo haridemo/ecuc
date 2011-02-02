@@ -14,12 +14,30 @@
  */
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
+import org.artop.ecl.emf.model.IModelDescriptor;
+import org.artop.ecl.emf.model.ModelDescriptorRegistry;
+import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecl.testutils.integration.AbstractIntegrationTestCase;
+import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.xtend.typesystem.Property;
+import org.eclipse.xtend.typesystem.Type;
 
 @SuppressWarnings("nls")
 public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase<EcucTestReferenceWorkspace> {
+	// Error message Definitions
+	private static final String TYPE_IS_MISSING = "type {0} is missing"; //$NON-NLS-1$
+	private static final String TYPE_NOT_RETURNED_FOR_OBJECT = "Expected type : {0} for Object :{1} is not returned by EcucMetaModel";//$NON-NLS-1$
+	private static final String OBJECT_NOT_FOUND_IN_MODEL = "Object pointed by URI fragment : {0} cannot be found in model";//$NON-NLS-1$
+	private static final String TYPE_RETURNED_NOT_EQUALS_TO_EXPECTED = "Type returned :{0} is not equal to expected type :{1}";//$NON-NLS-1$
+	private static final String NO_TYPE_RETURNED_FOR_OBJECT = "No Type returned for {0}";//$NON-NLS-1$
+	private static final String NO_PROPERTY_FOR_TYPE = "Property {0} is not defined for type {1}";//$NON-NLS-1$
 
 	public AbstractEcucIntegrationTestCase() {
 		super("EcucTestReferenceWorkspace");
@@ -33,5 +51,127 @@ public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase
 	@Override
 	protected EcucTestReferenceWorkspace doCreateReferenceWorkspace(String[] referenceProjectNames) {
 		return new EcucTestReferenceWorkspace(referenceProjectNames);
+	}
+
+	// EcucMetaModel Type system global instance
+	protected EcucMetaModel ecucMetaModel;
+
+	// Module configuration resource
+	protected Resource moduleConfResource;
+
+	@Override
+	protected void setUp() throws Exception {
+		// long start = System.currentTimeMillis();
+		super.setUp();
+		// System.out.println("Super.setUp time : "+start-System.currentTimeMillis());
+		IFile moduleDefFile = refWks.xPandAutosar40Project.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
+		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleDefFile);
+		assertNotNull(moduleDefModelDescriptor);
+		ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager().loadAdapter(moduleDefModelDescriptor, EcucMetaModel.class.getName());
+		assertNotNull(ecucMetaModel);
+		moduleConfResource = EcorePlatformUtil.getResource(refWks.xPandAutosar40Project
+				.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
+		assertNotNull(moduleConfResource);
+	}
+
+	/**
+	 * Asserts that the expected type with qualified name expectedTypeName is registered by ecucMetaModel
+	 * 
+	 * @param expectedTypeName
+	 *            The qualified name of the expected type
+	 */
+	protected void assertExistsTypeInEcucMetaModel(String expectedTypeName) {
+		assertNotNull(NLS.bind(TYPE_IS_MISSING, expectedTypeName), ecucMetaModel.getTypeForName(expectedTypeName));
+	}
+
+	/**
+	 * Asserts that the type return by ecucMetaModel for the object defined in module configuration pointed by the given
+	 * targetUriFragment exists and is equal to the expected Type
+	 * 
+	 * @param targetUriFragment
+	 *            The uri fragment of the object inside
+	 *            /org.artop.ecuc.examples.autosar40.codegen.xpand/bsw.config/Car_Configuration.arxml test resource
+	 * @param expectedTypeName
+	 *            The qualified name of the expected type
+	 */
+	protected void assertReturnedEcucMetaModelTypeNameEquals(String targetUriFragment, String expectedTypeName) {
+
+		EObject target = moduleConfResource.getEObject(targetUriFragment);
+		// Check if object is found in model
+		assertNotNull(NLS.bind(OBJECT_NOT_FOUND_IN_MODEL, targetUriFragment), target);
+		Type type = ecucMetaModel.getType(target);
+		// Check if one type is returned for target object
+		assertNotNull(NLS.bind(TYPE_NOT_RETURNED_FOR_OBJECT, new String[] { expectedTypeName, targetUriFragment }), type);
+		// check if returned type is equals to expected type
+		assertEquals(NLS.bind(TYPE_RETURNED_NOT_EQUALS_TO_EXPECTED, new String[] { type.getName(), expectedTypeName }), expectedTypeName,
+				type.getName());
+	}
+
+	protected void assertPropertyReturnedTypeEquals(EObject target, String propertyName, Type ExpectedReturnedType) {
+		assertNotNull(ExpectedReturnedType);
+		Property property = getProperty(target, propertyName);
+		Type returnedType = property.getReturnType();
+		assertEquals(NLS.bind(TYPE_RETURNED_NOT_EQUALS_TO_EXPECTED, new String[] { returnedType.getName(), ExpectedReturnedType.getName() }),
+				ExpectedReturnedType, returnedType);
+
+	}
+
+	/**
+	 * Returns the value for the property in EObject pointed by the given Uri Fragment
+	 * 
+	 * @param targetUriFragment
+	 *            the URI fragment pointing the {@link EObject} for the one we want to retrieve property value
+	 * @param propertyName
+	 *            the name of the property to retrieve
+	 * @return the property value
+	 */
+	protected Object getPropertyValue(String targetUriFragment, String propertyName) {
+		EObject target = moduleConfResource.getEObject(targetUriFragment);
+		assertNotNull(NLS.bind(OBJECT_NOT_FOUND_IN_MODEL, targetUriFragment), target);
+		return getPropertyValue(target, propertyName);
+	}
+
+	/**
+	 * Returns the property Object for the EObject pointed by the given Uri Fragment
+	 * 
+	 * @param targetUriFragment
+	 *            the URI fragment pointing the {@link EObject} for the one we want to retrieve property
+	 * @param propertyName
+	 *            the name of the property to retrieve
+	 * @return the {@link Property}
+	 */
+	protected Property getProperty(String targetUriFragment, String propertyName) {
+		EObject target = moduleConfResource.getEObject(targetUriFragment);
+		assertNotNull(NLS.bind(OBJECT_NOT_FOUND_IN_MODEL, targetUriFragment), target);
+		return getProperty(target, propertyName);
+	}
+
+	/**
+	 * Returns the property Object for the EObject pointed by the given Uri Fragment
+	 * 
+	 * @param target
+	 *            the {@link Object} for the one we want to retrieve property * @param propertyName the name of the
+	 *            property to retrieve
+	 * @return the {@link Property}
+	 */
+	protected Property getProperty(EObject target, String propertyName) {
+		Type type = ecucMetaModel.getType(target);
+		assertNotNull(NLS.bind(NO_TYPE_RETURNED_FOR_OBJECT, target.toString()), type);
+		return type.getProperty(propertyName);
+	}
+
+	/**
+	 * Returns the value for the property in target object
+	 * 
+	 * @param target
+	 *            the {@link Object} for the one we want to retrieve property value
+	 * @param propertyName
+	 *            the name of the property to retrieve
+	 * @return the property value
+	 */
+	protected Object getPropertyValue(EObject target, String propertyName) {
+		Property property = getProperty(target, propertyName);
+		assertNotNull(NLS.bind(NO_PROPERTY_FOR_TYPE, new String[] { propertyName, ecucMetaModel.getType(target).getName() }), property);
+		return property.get(target);
 	}
 }
