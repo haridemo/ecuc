@@ -1,14 +1,14 @@
 /**
  * <copyright>
  * 
- * Copyright (c) Geensys and others.
+ * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
  * 
  * Contributors: 
- *     Geensys - Initial API and implementation
+ *     See4sys - Initial API and implementation
  * 
  * </copyright>
  */
@@ -26,7 +26,6 @@ import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.xtend.typesystem.Property;
 import org.eclipse.xtend.typesystem.Type;
 
 @SuppressWarnings("nls")
@@ -36,8 +35,6 @@ public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase
 	private static final String TYPE_NOT_RETURNED_FOR_OBJECT = "Expected type : {0} for Object :{1} is not returned by EcucMetaModel";//$NON-NLS-1$
 	private static final String OBJECT_NOT_FOUND_IN_MODEL = "Object pointed by URI fragment : {0} cannot be found in model";//$NON-NLS-1$
 	private static final String TYPE_RETURNED_NOT_EQUALS_TO_EXPECTED = "Type returned :{0} is not equal to expected type :{1}";//$NON-NLS-1$
-	private static final String NO_TYPE_RETURNED_FOR_OBJECT = "No Type returned for {0}";//$NON-NLS-1$
-	private static final String NO_PROPERTY_FOR_TYPE = "Property {0} is not defined for type {1}";//$NON-NLS-1$
 
 	public AbstractEcucIntegrationTestCase() {
 		super("EcucTestReferenceWorkspace");
@@ -107,71 +104,14 @@ public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase
 				type.getName());
 	}
 
-	protected void assertPropertyReturnedTypeEquals(EObject target, String propertyName, Type ExpectedReturnedType) {
-		assertNotNull(ExpectedReturnedType);
-		Property property = getProperty(target, propertyName);
-		Type returnedType = property.getReturnType();
-		assertEquals(NLS.bind(TYPE_RETURNED_NOT_EQUALS_TO_EXPECTED, new String[] { returnedType.getName(), ExpectedReturnedType.getName() }),
-				ExpectedReturnedType, returnedType);
-
-	}
-
 	/**
-	 * Returns the value for the property in EObject pointed by the given Uri Fragment
-	 * 
 	 * @param targetUriFragment
-	 *            the URI fragment pointing the {@link EObject} for the one we want to retrieve property value
-	 * @param propertyName
-	 *            the name of the property to retrieve
-	 * @return the property value
+	 * @return
 	 */
-	protected Object getPropertyValue(String targetUriFragment, String propertyName) {
-		EObject target = moduleConfResource.getEObject(targetUriFragment);
-		assertNotNull(NLS.bind(OBJECT_NOT_FOUND_IN_MODEL, targetUriFragment), target);
-		return getPropertyValue(target, propertyName);
+	protected EObject getConfigurationObject(String uriFragment) {
+		EObject target = moduleConfResource.getEObject(uriFragment);
+		assertNotNull(NLS.bind(OBJECT_NOT_FOUND_IN_MODEL, uriFragment), target);
+		return target;
 	}
 
-	/**
-	 * Returns the property Object for the EObject pointed by the given Uri Fragment
-	 * 
-	 * @param targetUriFragment
-	 *            the URI fragment pointing the {@link EObject} for the one we want to retrieve property
-	 * @param propertyName
-	 *            the name of the property to retrieve
-	 * @return the {@link Property}
-	 */
-	protected Property getProperty(String targetUriFragment, String propertyName) {
-		EObject target = moduleConfResource.getEObject(targetUriFragment);
-		assertNotNull(NLS.bind(OBJECT_NOT_FOUND_IN_MODEL, targetUriFragment), target);
-		return getProperty(target, propertyName);
-	}
-
-	/**
-	 * Returns the property Object for the EObject pointed by the given Uri Fragment
-	 * 
-	 * @param target
-	 *            the {@link Object} for the one we want to retrieve property * @param propertyName the name of the
-	 *            property to retrieve
-	 * @return the {@link Property}
-	 */
-	protected Property getProperty(EObject target, String propertyName) {
-		Type type = ecucMetaModel.getType(target);
-		assertNotNull(NLS.bind(NO_TYPE_RETURNED_FOR_OBJECT, target.toString()), type);
-		return type.getProperty(propertyName);
-	}
-
-	/**
-	 * Returns the value for the property in target object
-	 * 
-	 * @param target
-	 *            the {@link Object} for the one we want to retrieve property value
-	 * @param propertyName
-	 *            the name of the property to retrieve
-	 * @return the property value
-	 */
-	protected Object getPropertyValue(EObject target, String propertyName) {
-		Property property = getProperty(target, propertyName);
-		assertNotNull(NLS.bind(NO_PROPERTY_FOR_TYPE, new String[] { propertyName, ecucMetaModel.getType(target).getName() }), property);
-		return property.get(target);
-	}
 }
