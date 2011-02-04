@@ -16,9 +16,12 @@ package org.artop.ecuc.autosar40.typesystem.integration.tests;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
 import org.artop.ecuc.testutils.integration.referenceworkspace.AbstractEcucIntegrationTestCase;
 import org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspace;
 import org.eclipse.emf.ecore.EObject;
@@ -28,6 +31,8 @@ import org.eclipse.xtend.typesystem.Type;
 import autosar40.ecucdescription.EcucContainerValue;
 import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucparameterdef.EcucBooleanParamDef;
+import autosar40.ecucparameterdef.EcucChoiceContainerDef;
+import autosar40.ecucparameterdef.EcucFloatParamDef;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
 import autosar40.ecucparameterdef.EcucModuleDef;
 import autosar40.ecucparameterdef.EcucParamConfContainerDef;
@@ -141,14 +146,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	// ChoiceReference
 
 	// Tests On Module
-	public void testGetPropertiesOnModuleContainerParamDef() {
+	public void testGetPropertiesOnModuleDef() {
 		EObject carObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR);
 		Type vehiculeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
 		assertTrue(vehiculeType instanceof RichModuleDefType);
 		RichModuleDefType vehiculeRichType = (RichModuleDefType) vehiculeType;
 		assertTrue(vehiculeRichType.getEcucTypeDef() instanceof EcucModuleDef);
 
-		/** 1_1 Get shortName of container parameter definition value **/
+		/** 1_1 Get shortName of module definition **/
 		Property shortNameProperty = vehiculeRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -156,16 +161,15 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(shortName instanceof String);
 		assertEquals("Car", shortName); //$NON-NLS-1$
 
-		/** 1_2 Get absoluteQualifiedName of container parameter definition value **/
-		Property absoluteQualifiedNameProperty = vehiculeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// /** 1_2 Get absoluteQualifiedName of module definition **/
+		//		Property absoluteQualifiedNameProperty = vehiculeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		// assertNotNull(absoluteQualifiedNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(carObject);
+		// assertTrue(absoluteQualifiedName instanceof String);
+		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
 
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(carObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
-
-		/** 1_3 Get EcucContainerValue of container parameter definition value **/
+		/** 1_3 Get EcucContainerValue of module definition **/
 		Property engineProperty = vehiculeRichType.getProperty("Engine"); //$NON-NLS-1$
 		assertNotNull(engineProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE), engineProperty.getReturnType());
@@ -191,13 +195,13 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(shortName instanceof String);
 		assertEquals("Engine", shortName); //$NON-NLS-1$
 
-		/** 2_2 Get absoluteQualifiedName of ParamConfContainerDef **/
-		Property absoluteQualifiedNameProperty = engineRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineObject), absoluteQualifiedName);
+		// /** 2_2 Get absoluteQualifiedName of ParamConfContainerDef **/
+		//		Property absoluteQualifiedNameProperty = engineRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		// assertNotNull(absoluteQualifiedNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineObject);
+		// assertTrue(absoluteQualifiedName instanceof String);
+		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineObject), absoluteQualifiedName);
 
 		/** 2_3 Get EnumerationParamDef on ParamConfContainerDef **/
 		Property engineTypeProperty = engineRichType.getProperty("EngineType"); //$NON-NLS-1$
@@ -227,45 +231,97 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 	}
 
+	public void testGetPropertiesOnChoiceContainerDef() {
+		EObject typeObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE);
+		Type typeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		assertTrue(typeType instanceof RichChoiceContainerDefType);
+		RichChoiceContainerDefType typeRichType = (RichChoiceContainerDefType) typeType;
+		assertTrue(typeRichType.getEcucTypeDef() instanceof EcucChoiceContainerDef);
+
+		/** 2_1 Get shortName of ParamConfContainerDef **/
+		Property shortNameProperty = typeRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(typeObject);
+		assertTrue(shortName instanceof String);
+		assertEquals("Type", shortName); //$NON-NLS-1$
+
+		/** 2_2 Get absoluteQualifiedName of ParamConfContainerDef **/
+		Property absoluteQualifiedNameProperty = typeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(typeObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(typeObject), absoluteQualifiedName);
+
+		// /** 2_3 Get EnumerationParamDef on ParamConfContainerDef **/
+		//		Property engineTypeProperty = typeRichType.getProperty("EngineType"); //$NON-NLS-1$
+		// assertNotNull(engineTypeProperty);
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE),
+		// engineTypeProperty.getReturnType());
+		// Object engineTypeObject = engineTypeProperty.get(typeObject);
+		// assertTrue(engineTypeObject instanceof EcucNumericalParamValue);
+		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE),
+		// engineTypeObject);
+
+		// /** 2_4 Get BooleanParamDef on ParamConfContainerDef **/
+		//		Property automaticProperty = typeRichType.getProperty("Automatic"); //$NON-NLS-1$
+		// assertNotNull(automaticProperty);
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC),
+		// automaticProperty.getReturnType());
+		// Object automaticObject = automaticProperty.get(typeObject);
+		// assertTrue(automaticObject instanceof EcucNumericalParamValue);
+		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC),
+		// automaticObject);
+		//
+		// /** 2_5 Get ChoiceContainerDef on ParamConfContainerDef **/
+		//		Property typeProperty = typeRichType.getProperty("Type"); //$NON-NLS-1$
+		// assertNotNull(typeProperty);
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE),
+		// typeProperty.getReturnType());
+		// Object typeObject = typeProperty.get(typeObject);
+		// assertTrue(typeObject instanceof EcucContainerValue);
+		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE),
+		// typeObject);
+
+	}
+
 	// Tests On Parameters
 
-	public void testIntegerParameter() {
+	public void testGetPropertiesOnIntegerParameter() {
 		EObject serialNumberObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER);
 		Type serialNumberType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
 
-		/** 3_8_0 Check consistency of boolean parameter value type and properties **/
+		/** 3_8_0 Check consistency of integer parameter value type and properties **/
 		assertTrue(serialNumberType instanceof RichIntegerParamDefType);
 		RichIntegerParamDefType serialNumberRichType = (RichIntegerParamDefType) serialNumberType;
 		assertTrue(serialNumberRichType.getEcucTypeDef() instanceof EcucIntegerParamDef);
 
+		/** 3_8_1 Get shortName of integer parameter value **/
 		Property shortNameProperty = serialNumberRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-
-		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-
-		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
-		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
-
-		/** 3_8_1 Get shortName of boolean parameter value **/
 		Object shortName = shortNameProperty.get(serialNumberObject);
 		assertNull(shortName);
 
-		/** 3_8_2 Get absoluteQualifiedName of boolean parameter value **/
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
+		// /** 3_8_2 Get absoluteQualifiedName of integer parameter value **/
+		//		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		// assertNotNull(absoluteQualifiedNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
+		// assertTrue(absoluteQualifiedName instanceof String);
+		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
 
-		/** 3_8_3 Get value of boolean parameter value **/
+		/** 3_8_3 Get value of integer parameter value **/
+		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
 		Object value = valueProperty.get(serialNumberObject);
 		assertTrue(value instanceof Integer);
 		assertTrue(((Integer) value).intValue() == 879055672);
 	}
 
-	public void testBooleanParameter() {
+	public void testGetPropertiesOnBooleanParameter() {
 		EObject automaticObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC);
 		Type automaticType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
 
@@ -274,49 +330,95 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		RichBooleanParamDefType automaticRichType = (RichBooleanParamDefType) automaticType;
 		assertTrue(automaticRichType.getEcucTypeDef() instanceof EcucBooleanParamDef);
 
+		/** 3_8_1 Get shortName of boolean parameter value **/
 		Property shortNameProperty = automaticRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-
-		Property absoluteQualifiedNameProperty = automaticRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-
-		Property valueProperty = automaticRichType.getProperty("value"); //$NON-NLS-1$
-		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), valueProperty.getReturnType());
-
-		/** 3_8_1 Get shortName of boolean parameter value **/
 		Object shortName = shortNameProperty.get(automaticObject);
 		assertNull(shortName);
 
-		/** 3_8_2 Get absoluteQualifiedName of boolean parameter value **/
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(automaticObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(automaticObject), absoluteQualifiedName);
+		// /** 3_8_2 Get absoluteQualifiedName of boolean parameter value **/
+		//		Property absoluteQualifiedNameProperty = automaticRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		// assertNotNull(absoluteQualifiedNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(automaticObject);
+		// assertTrue(absoluteQualifiedName instanceof String);
+		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(automaticObject), absoluteQualifiedName);
 
 		/** 3_8_3 Get value of boolean parameter value **/
+		Property valueProperty = automaticRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), valueProperty.getReturnType());
 		Object value = valueProperty.get(automaticObject);
 		assertTrue(value instanceof Boolean);
 		assertFalse((Boolean) value);
 	}
 
-	// /** 6_1 Get the a parameter value in a parent container of the current container **/
-	// public void testGetParentContainerParameterValue() {
-	// EObject expectedTargetParent =
-	// moduleConfResource.getEObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE);
-	// EObject expectedTargetParentParameter = moduleConfResource
-	// .getEObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE);
-	//
-	// // we retrieve parent property from target
-	// Object retrievedParent = getRichTypePropertyValue(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE,
-	// "parent");
-	// assertNotNull(retrievedParent);
-	// assertEquals(expectedTargetParent, retrievedParent);
-	//
-	// // We retrieve one parameter definition from parent of target element
-	//		Object retrievedParameter = getPropertyValue((EObject) retrievedParent, "EngineType"); //$NON-NLS-1$
-	// assertEquals(expectedTargetParentParameter, retrievedParameter);
-	// }
+	public void testGetPropertiesOnFloatParameter() {
+		EObject sparkPlugVoltageObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE);
+		Type sparkPlugVoltageType = ecucMetaModel
+				.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+
+		/** 3_8_0 Check consistency of float parameter value type and properties **/
+		assertTrue(sparkPlugVoltageType instanceof RichFloatParamDefType);
+		RichFloatParamDefType sparkPlugVoltageRichType = (RichFloatParamDefType) sparkPlugVoltageType;
+		assertTrue(sparkPlugVoltageRichType.getEcucTypeDef() instanceof EcucFloatParamDef);
+
+		/** 3_8_1 Get shortName of float parameter value **/
+		Property shortNameProperty = sparkPlugVoltageRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(sparkPlugVoltageObject);
+		assertNull(shortName);
+
+		// /** 3_8_2 Get absoluteQualifiedName of float parameter value **/
+		//		Property absoluteQualifiedNameProperty = sparkPlugVoltageRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		// assertNotNull(absoluteQualifiedNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(sparkPlugVoltageObject);
+		// assertTrue(absoluteQualifiedName instanceof String);
+		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(sparkPlugVoltageObject), absoluteQualifiedName);
+
+		/** 3_8_3 Get value of float parameter value **/
+		Property valueProperty = sparkPlugVoltageRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getRealType(), valueProperty.getReturnType());
+		Object value = valueProperty.get(sparkPlugVoltageObject);
+		assertTrue(value instanceof Double);
+		assertTrue(((Double) value).doubleValue() == 4.45);
+	}
+
+	public void testGetPropertiesOnStringParameter() {
+		EObject vehicleNameObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME);
+		Type vehicleNameType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+
+		/** 3_8_0 Check consistency of string parameter value type and properties **/
+		assertTrue(vehicleNameType instanceof RichStringParamDefType);
+		RichStringParamDefType vehicleNameRichType = (RichStringParamDefType) vehicleNameType;
+		assertTrue(vehicleNameRichType.getEcucTypeDef() instanceof EcucFloatParamDef);
+
+		/** 3_8_1 Get shortName of string parameter value **/
+		Property shortNameProperty = vehicleNameRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(vehicleNameObject);
+		assertNull(shortName);
+
+		/** 3_8_2 Get absoluteQualifiedName of string parameter value **/
+		Property absoluteQualifiedNameProperty = vehicleNameRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(vehicleNameObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(vehicleNameObject), absoluteQualifiedName);
+
+		/** 3_8_3 Get value of float parameter value **/
+		Property valueProperty = vehicleNameRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), valueProperty.getReturnType());
+		Object value = valueProperty.get(vehicleNameObject);
+		assertTrue(value instanceof String);
+		assertEquals((String) value, "Saxo"); //$NON-NLS-1$
+	}
 
 }
