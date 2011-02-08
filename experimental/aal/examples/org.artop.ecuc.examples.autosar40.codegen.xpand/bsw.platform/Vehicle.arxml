@@ -90,33 +90,36 @@
               <SUB-CONTAINERS>
                 <ECUC-PARAM-CONF-CONTAINER-DEF>
                   <SHORT-NAME>Owners</SHORT-NAME>
-                  <LOWER-MULTIPLICITY SHORT-LABEL="Lower Multiplicity">1</LOWER-MULTIPLICITY>
-                  <UPPER-MULTIPLICITY SHORT-LABEL="Upper Multiplicity">1</UPPER-MULTIPLICITY>
-                  <POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+                  <LOWER-MULTIPLICITY SHORT-LABEL="Lower">1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
                   <SUB-CONTAINERS>
                     <ECUC-PARAM-CONF-CONTAINER-DEF>
                       <SHORT-NAME>Owner</SHORT-NAME>
-                      <LOWER-MULTIPLICITY SHORT-LABEL="Lower Multiplicity">0</LOWER-MULTIPLICITY>
+                      <LOWER-MULTIPLICITY SHORT-LABEL="Lower">1</LOWER-MULTIPLICITY>
                       <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
                       <PARAMETERS>
                         <ECUC-STRING-PARAM-DEF>
-                          <SHORT-NAME>Owner FirstName</SHORT-NAME>
+                          <SHORT-NAME>FirstName</SHORT-NAME>
+                          <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
                         </ECUC-STRING-PARAM-DEF>
                         <ECUC-STRING-PARAM-DEF>
-                          <SHORT-NAME>Owner LastName</SHORT-NAME>
+                          <SHORT-NAME>LastName</SHORT-NAME>
+                          <LOWER-MULTIPLICITY SHORT-LABEL="Lower">1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
                         </ECUC-STRING-PARAM-DEF>
                       </PARAMETERS>
                     </ECUC-PARAM-CONF-CONTAINER-DEF>
                   </SUB-CONTAINERS>
                 </ECUC-PARAM-CONF-CONTAINER-DEF>
                 <ECUC-PARAM-CONF-CONTAINER-DEF>
-                  <SHORT-NAME>Revisons Dates</SHORT-NAME>
-                  <LOWER-MULTIPLICITY SHORT-LABEL="Lower Multiplicity">0</LOWER-MULTIPLICITY>
-                  <UPPER-MULTIPLICITY SD="" SHORT-LABEL="Upper Multiplicity">1</UPPER-MULTIPLICITY>
+                  <SHORT-NAME>Revisons</SHORT-NAME>
+                  <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
                   <PARAMETERS>
                     <ECUC-STRING-PARAM-DEF>
-                      <SHORT-NAME>Revision Date</SHORT-NAME>
-                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <SHORT-NAME>RevisionDate</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
                       <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
                     </ECUC-STRING-PARAM-DEF>
                   </PARAMETERS>

@@ -15,7 +15,7 @@
 /* VEHICLE ATTRIBUTES                                                        */
 /*****************************************************************************/
 /* General Information */
-#define «GeneralInfo.VehicleName.absoluteQualifiedName» «GeneralInfo.VehicleName.value»
+#define «GeneralInfo.VehicleName.shortName» «GeneralInfo.VehicleName.value»
 
 #define DATE «dateString()»
 «ENDDEFINE»
