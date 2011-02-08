@@ -144,19 +144,20 @@
                   <PARAMETER-VALUES>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
-                      <VALUE>06/01/2008</VALUE>
+                      <VALUE>06-01-2008</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
-                      <VALUE>06/05/2008</VALUE>
+                      <VALUE>06-05-2008</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
-                      <VALUE>07/07/2009</VALUE>
+                      <VALUE>07-07-2009</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
-                      <VALUE>18/09/2010</VALUE>
+                      <IS-AUTO-VALUE>false</IS-AUTO-VALUE>
+                      <VALUE>18-09-2010</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                   </PARAMETER-VALUES>
                 </ECUC-CONTAINER-VALUE>
