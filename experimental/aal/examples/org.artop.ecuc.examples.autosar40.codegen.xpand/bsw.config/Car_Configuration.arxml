@@ -145,7 +145,7 @@
                   </SUB-CONTAINERS>
                 </ECUC-CONTAINER-VALUE>
                 <ECUC-CONTAINER-VALUE>
-                  <SHORT-NAME>Revision Dates</SHORT-NAME>
+                  <SHORT-NAME>Revisions</SHORT-NAME>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Revisons</DEFINITION-REF>
                   <PARAMETER-VALUES>
                     <ECUC-TEXTUAL-PARAM-VALUE>
