@@ -36,7 +36,7 @@
                         </ECUC-NUMERICAL-PARAM-VALUE>
                         <ECUC-NUMERICAL-PARAM-VALUE>
                           <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/EPD/Vehicle/Engine/Type/Gasoline/SparkPlugVoltage</DEFINITION-REF>
-                          <VALUE SHORT-LABEL="SparkPlugVoltage">4,45</VALUE>
+                          <VALUE SHORT-LABEL="SparkPlugVoltage">4.45</VALUE>
                         </ECUC-NUMERICAL-PARAM-VALUE>
                         <ECUC-TEXTUAL-PARAM-VALUE>
                           <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/Engine/Type/Gasoline/SparkPlugModel</DEFINITION-REF>
@@ -75,6 +75,92 @@
                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/Engine/Type/Gasoline</VALUE-REF>
                 </ECUC-REFERENCE-VALUE>
               </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>Owners</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>Owner_1</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner LastName</DEFINITION-REF>
+                          <VALUE>Sesestre</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner FirstName</DEFINITION-REF>
+                          <VALUE>Romain</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>Owner_2</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner LastName</DEFINITION-REF>
+                          <VALUE>Dieng</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner FirstName</DEFINITION-REF>
+                          <VALUE>Idrissa</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>Owner_3</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner LastName</DEFINITION-REF>
+                          <VALUE>Eberle</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner FirstName</DEFINITION-REF>
+                          <VALUE>Stephan</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>Owner_4</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner LastName</DEFINITION-REF>
+                          <VALUE>Didierjean</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/Owner FirstName</DEFINITION-REF>
+                          <VALUE>Yannick</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>Revision Dates</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
+                      <VALUE>06/01/2008</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
+                      <VALUE>06/05/2008</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
+                      <VALUE>07/07/2009</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisons Dates/Revision Date</DEFINITION-REF>
+                      <VALUE>18/09/2010</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
           </CONTAINERS>
         </ECUC-MODULE-CONFIGURATION-VALUES>
