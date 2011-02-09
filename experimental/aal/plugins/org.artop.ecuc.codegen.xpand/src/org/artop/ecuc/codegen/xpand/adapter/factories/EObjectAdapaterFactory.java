@@ -20,13 +20,16 @@ import org.eclipse.core.runtime.IAdapterFactory;
 
 public class EObjectAdapaterFactory implements IAdapterFactory {
 
-	public Object getAdapter(Object adaptableObject, Class adapterType) {
+	public static final EObjectAdapaterFactory INSTANCE = new EObjectAdapaterFactory();
+
+	public Object getAdapter(Object adaptableObject, @SuppressWarnings("rawtypes") Class adapterType) {
 		if (IResource.class.equals(adapterType)) {
 			return EcorePlatformUtil.getFile(adaptableObject);
 		}
 		return null;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public Class[] getAdapterList() {
 		return new Class[] { IResource.class };
 	}

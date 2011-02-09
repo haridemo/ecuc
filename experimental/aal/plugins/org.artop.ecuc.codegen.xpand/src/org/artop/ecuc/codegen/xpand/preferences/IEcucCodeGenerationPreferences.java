@@ -20,8 +20,8 @@ import java.util.Collection;
 import org.artop.ecl.platform.preferences.AbstractProjectPreference;
 import org.artop.ecl.platform.preferences.IProjectPreference;
 import org.artop.ecuc.codegen.xpand.Activator;
+import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
 import org.artop.ecuc.codegen.xpand.output.OutputUtil;
-import org.artop.ecuc.codegen.xpand.output.PersistedOutlet;
 import org.eclipse.core.internal.resources.projectvariables.ProjectLocationVariableResolver;
 import org.eclipse.core.internal.resources.projectvariables.WorkspaceLocationVariableResolver;
 import org.eclipse.core.resources.IProject;
@@ -44,36 +44,38 @@ public interface IEcucCodeGenerationPreferences {
 	String PREF_CUSTOM_OUTLETS = "custom.outlets"; //$NON-NLS-1$
 
 	// Default values
+	// TODO (aakar) Merge both preferences
 	String PREF_DEFAULT_OUTLET_DEFAULT = "@${project_loc}/" + DEFAULT_OUTLET_PATH; //$NON-NLS-1$
 	String PREF_CUSTOM_OUTLETS_DEFAULT = "COUTLET@${project_loc}/coutlet;HOUTLET@${project_loc}/houtlet"; //$NON-NLS-1$
 
-	IProjectPreference<PersistedOutlet> DEFAULT_OUTLET = new AbstractProjectPreference<PersistedOutlet>(XtendXpandNatureId, QUALIFIER,
+	// TODO (aakar) Use ProjectOutletPreference
+	IProjectPreference<ExtendedOutlet> DEFAULT_OUTLET = new AbstractProjectPreference<ExtendedOutlet>(XtendXpandNatureId, QUALIFIER,
 			PREF_DEFAULT_OUTLET, PREF_DEFAULT_OUTLET_DEFAULT) {
 		@Override
-		protected PersistedOutlet toObject(IProject project, String valueAsString) {
+		protected ExtendedOutlet toObject(IProject project, String valueAsString) {
 			return OutputUtil.toOutlets(valueAsString).get(0);
 		};
 
 		@Override
-		protected String toString(IProject project, PersistedOutlet valueAsObject) {
-			return "@" + valueAsObject.getPersistedPath(); //$NON-NLS-1$
+		protected String toString(IProject project, ExtendedOutlet valueAsObject) {
+			return "@" + valueAsObject.getPathExpression(); //$NON-NLS-1$
 		};
 	};
 
-	IProjectPreference<Collection<PersistedOutlet>> CUSTOM_OUTLETS = new AbstractProjectPreference<Collection<PersistedOutlet>>(XtendXpandNatureId,
+	IProjectPreference<Collection<ExtendedOutlet>> CUSTOM_OUTLETS = new AbstractProjectPreference<Collection<ExtendedOutlet>>(XtendXpandNatureId,
 			QUALIFIER, PREF_CUSTOM_OUTLETS, PREF_CUSTOM_OUTLETS_DEFAULT) {
 		@Override
-		protected Collection<PersistedOutlet> toObject(IProject project, String valueAsString) {
+		protected Collection<ExtendedOutlet> toObject(IProject project, String valueAsString) {
 			return OutputUtil.toOutlets(valueAsString);
 		};
 
 		@Override
-		protected String toString(IProject project, java.util.Collection<PersistedOutlet> valueAsObject) {
+		protected String toString(IProject project, java.util.Collection<ExtendedOutlet> valueAsObject) {
 			StringBuilder builder = new StringBuilder();
-			for (PersistedOutlet outlet : valueAsObject) {
+			for (ExtendedOutlet outlet : valueAsObject) {
 				builder.append(outlet.getName());
 				builder.append("@"); //$NON-NLS-1$
-				builder.append(outlet.getPersistedPath());
+				builder.append(outlet.getPathExpression());
 				builder.append(File.pathSeparator);
 			}
 			return builder.substring(0, builder.lastIndexOf(File.pathSeparator));

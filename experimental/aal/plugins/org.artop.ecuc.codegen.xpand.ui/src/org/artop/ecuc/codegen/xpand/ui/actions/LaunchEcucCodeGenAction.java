@@ -17,12 +17,22 @@ package org.artop.ecuc.codegen.xpand.ui.actions;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucparameterdef.GModuleDef;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import org.artop.ecl.emf.model.IModelDescriptor;
 import org.artop.ecl.emf.model.ModelDescriptorRegistry;
 import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
 import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
+import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
+import org.artop.ecuc.codegen.xpand.output.OutputUtil;
+import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
+import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
 import org.artop.ecuc.codegen.xpand.ui.internal.messages.Messages;
+import org.artop.ecuc.codegen.xpand.ui.wizards.EcucM2TConfigurationWizard;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -40,8 +50,8 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sphinx.xpand.ui.actions.AbstractM2TAction;
-import org.eclipse.sphinx.xpand.ui.wizards.M2TConfigurationWizard;
 import org.eclipse.xpand2.XpandUtil;
+import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 public class LaunchEcucCodeGenAction extends AbstractM2TAction {
@@ -101,7 +111,6 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 						}
 					}
 				}
-
 				return moduleDef != null && !moduleDef.eIsProxy();
 			}
 		}
@@ -168,7 +177,8 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 	@Override
 	public void run() {
 		if (!existsTemplateFile()) {
-			M2TConfigurationWizard wizard = new M2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getOutletContainer());
+			EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getScopingResourceLoader(),
+					getDefaultOutletURI());
 			WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
 			wizardDialog.open();
 			return;
@@ -182,5 +192,33 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 			return templateFile.exists();
 		}
 		return false;
+	}
+
+	@Override
+	protected Collection<Outlet> getUserDefinedOutlets() {
+		ProjectOutletProvider outletProvider = OutputUtil.getOutletProvider(getSelectedModelObject());
+		if (outletProvider != null) {
+			Collection<ExtendedOutlet> customOutlets = outletProvider.getNamedOutlets();
+			List<Outlet> result = new ArrayList<Outlet>();
+			for (ExtendedOutlet outlet : customOutlets) {
+				result.add(outlet);
+			}
+			outletProvider.dispose();
+			return result;
+		}
+		return Collections.emptyList();
+	}
+
+	@Override
+	protected Outlet getDefaultOutlet() {
+		// TODO (aakar) merge here !!
+		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.get(EcorePlatformUtil.getFile(getSelectedModelObject()).getProject());
+		ProjectOutletProvider outletProvider = OutputUtil.getOutletProvider(getSelectedModelObject());
+		if (outletProvider != null) {
+			Outlet result = outletProvider.getDefaultOutlet();
+			outletProvider.dispose();
+			return result;
+		}
+		return super.getDefaultOutlet();
 	}
 }

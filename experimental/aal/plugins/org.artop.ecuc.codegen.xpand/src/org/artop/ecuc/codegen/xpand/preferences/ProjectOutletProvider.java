@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.artop.ecuc.codegen.xpand.output.PersistedOutlet;
+import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.runtime.Assert;
@@ -30,35 +30,35 @@ import org.eclipse.xpand2.output.Outlet;
 public class ProjectOutletProvider implements IPreferenceChangeListener {
 
 	private IProject fProject;
-	private List<PersistedOutlet> fAllOutlets;
-	private List<PersistedOutlet> fNotStoredOutlets;
+	private List<ExtendedOutlet> fAllOutlets;
+	private List<ExtendedOutlet> unstoredOutlets;
 
 	public ProjectOutletProvider(IProject project) {
 		fProject = project;
-		fAllOutlets = new ArrayList<PersistedOutlet>();
-		fNotStoredOutlets = new ArrayList<PersistedOutlet>();
+		fAllOutlets = new ArrayList<ExtendedOutlet>();
+		unstoredOutlets = new ArrayList<ExtendedOutlet>();
 		fAllOutlets.addAll(getStoredOutlets());
 		addPreferenceChangeListener();
 	}
 
-	public void addOutlet(PersistedOutlet outlet) {
-		fNotStoredOutlets.add(outlet);
+	public void addOutlet(ExtendedOutlet outlet) {
+		unstoredOutlets.add(outlet);
 		fAllOutlets.add(outlet);
 	}
 
-	public void removeOutlet(PersistedOutlet outlet) {
-		fNotStoredOutlets.remove(outlet);
+	public void removeOutlet(ExtendedOutlet outlet) {
+		unstoredOutlets.remove(outlet);
 		fAllOutlets.remove(outlet);
 	}
 
-	public Collection<PersistedOutlet> getOutlets() {
-		List<PersistedOutlet> result = new ArrayList<PersistedOutlet>();
+	public Collection<ExtendedOutlet> getOutlets() {
+		List<ExtendedOutlet> result = new ArrayList<ExtendedOutlet>();
 		result.addAll(fAllOutlets);
 		return result;
 	}
 
-	public Collection<PersistedOutlet> getCustomOutlets() {
-		Collection<PersistedOutlet> result = getOutlets();
+	public Collection<ExtendedOutlet> getNamedOutlets() {
+		Collection<ExtendedOutlet> result = getOutlets();
 		Outlet defaultOutlet = getDefaultOutlet();
 		if (defaultOutlet != null) {
 			result.remove(defaultOutlet);
@@ -66,8 +66,8 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 		return result;
 	}
 
-	public PersistedOutlet getDefaultOutlet() {
-		for (PersistedOutlet outlet : getOutlets()) {
+	public ExtendedOutlet getDefaultOutlet() {
+		for (ExtendedOutlet outlet : getOutlets()) {
 			if (outlet.getName() == null) {
 				return outlet;
 			}
@@ -81,13 +81,13 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 		return projectScope.getNode(IEcucCodeGenerationPreferences.DEFAULT_OUTLET.getQualifier());
 	}
 
-	protected Collection<PersistedOutlet> getStoredOutlets() {
-		List<PersistedOutlet> result = new ArrayList<PersistedOutlet>();
-		PersistedOutlet outlet = IEcucCodeGenerationPreferences.DEFAULT_OUTLET.get(fProject);
+	protected Collection<ExtendedOutlet> getStoredOutlets() {
+		List<ExtendedOutlet> result = new ArrayList<ExtendedOutlet>();
+		ExtendedOutlet outlet = IEcucCodeGenerationPreferences.DEFAULT_OUTLET.get(fProject);
 		if (outlet != null) {
 			result.add(outlet);
 		}
-		Collection<PersistedOutlet> outlets = IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.get(fProject);
+		Collection<ExtendedOutlet> outlets = IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.get(fProject);
 		if (outlets != null && !outlets.isEmpty()) {
 			result.addAll(outlets);
 		}
@@ -104,16 +104,16 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 	public void setToDefault() {
 		IEcucCodeGenerationPreferences.DEFAULT_OUTLET.setToDefault(fProject);
 		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.setToDefault(fProject);
-		fNotStoredOutlets.clear();
+		unstoredOutlets.clear();
 		fAllOutlets.clear();
 		fAllOutlets.addAll(getStoredOutlets());
 	}
 
 	public synchronized void store() {
 		IEcucCodeGenerationPreferences.DEFAULT_OUTLET.set(fProject, getDefaultOutlet());
-		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.set(fProject, getCustomOutlets());
+		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.set(fProject, getNamedOutlets());
 		// Once stored, clear the list of not stored outlets
-		fNotStoredOutlets.clear();
+		unstoredOutlets.clear();
 	}
 
 	// TODO (aakar) to implement
@@ -127,6 +127,6 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 			prefs.removePreferenceChangeListener(this);
 		}
 		fAllOutlets.clear();
-		fNotStoredOutlets.clear();
+		unstoredOutlets.clear();
 	}
 }
