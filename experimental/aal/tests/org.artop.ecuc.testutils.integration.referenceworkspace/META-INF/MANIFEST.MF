@@ -13,3 +13,4 @@ Export-Package: org.artop.ecuc.testutils.integration.referenceworkspace,
  org.artop.ecuc.testutils.integration.referenceworkspace.internal
 Bundle-Vendor: %providerName
 Bundle-Activator: org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator$Implementation
+Bundle-ActivationPolicy: lazy

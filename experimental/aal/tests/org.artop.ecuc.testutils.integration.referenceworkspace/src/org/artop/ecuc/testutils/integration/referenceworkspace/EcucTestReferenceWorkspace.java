@@ -104,7 +104,7 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR = "EPD::Vehicle::GeneralInfo::Year";//$NON-NLS-1$
 
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS = "EPD::Vehicle::GeneralInfo::Revisons";
-	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE = "EPD::Vehicle::GeneralInfo::Revisons Dates::RevisionDate";
+	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE = "EPD::Vehicle::GeneralInfo::Revisons::RevisionDate";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS = "EPD::Vehicle::GeneralInfo::Owners";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER = "EPD::Vehicle::GeneralInfo::Owners::Owner";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME = "EPD::Vehicle::GeneralInfo::Owners::Owner::FirstName";
