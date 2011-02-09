@@ -203,6 +203,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(vehiculeType instanceof RichModuleDefType);
 		RichModuleDefType vehiculeRichType = (RichModuleDefType) vehiculeType;
 		assertTrue(vehiculeRichType.getEcucTypeDef() instanceof EcucModuleDef);
+		/********************************************************************/
 
 		/** 1_2 Get shortname **/
 		Property shortNameProperty = vehiculeRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -211,6 +212,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(carObject);
 		assertTrue(shortName instanceof String);
 		assertEquals("Car", shortName); //$NON-NLS-1$
+		/********************************************************************/
 
 		// TODO Investigate reasons of test failure
 		// /** 1_3 Get absoluteQualifiedName**/
@@ -220,7 +222,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(carObject);
 		// assertTrue(absoluteQualifiedName instanceof String);
 		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
-
+		// /********************************************************************/
 		/** 1_4 Get EcucContainerValue of module definition **/
 		Property engineProperty = vehiculeRichType.getProperty("Engine"); //$NON-NLS-1$
 		assertNotNull(engineProperty);
@@ -228,6 +230,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object engineObject = engineProperty.get(carObject);
 		assertTrue(engineObject instanceof EcucContainerValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE), engineObject);
+		/********************************************************************/
 	}
 
 	// Tests On Containers
@@ -241,6 +244,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(engineType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType engineRichType = (RichParamConfContainerDefType) engineType;
 		assertTrue(engineRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
+		/********************************************************************/
 
 		/** 2_1 Get shortName of ParamConfContainerDef **/
 		Property shortNameProperty = engineRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -249,6 +253,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(engineObject);
 		assertTrue(shortName instanceof String);
 		assertEquals("Engine", shortName); //$NON-NLS-1$
+		/********************************************************************/
 
 		// /** 2_2 Get absoluteQualifiedName of ParamConfContainerDef **/
 		//		Property absoluteQualifiedNameProperty = engineRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -257,6 +262,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineObject);
 		// assertTrue(absoluteQualifiedName instanceof String);
 		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineObject), absoluteQualifiedName);
+		// /********************************************************************/
 
 		/** 2_3 Get EnumerationParamDef **/
 		Property engineTypeProperty = engineRichType.getProperty("EngineType"); //$NON-NLS-1$
@@ -266,6 +272,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object engineTypeObject = engineTypeProperty.get(engineObject);
 		assertTrue(engineTypeObject instanceof EcucNumericalParamValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE), engineTypeObject);
+		/********************************************************************/
 
 		/** 2_4 Get BooleanParamDef **/
 		Property automaticProperty = engineRichType.getProperty("Automatic"); //$NON-NLS-1$
@@ -275,6 +282,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object automaticObject = automaticProperty.get(engineObject);
 		assertTrue(automaticObject instanceof EcucNumericalParamValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC), automaticObject);
+		/********************************************************************/
 
 		/** 2_5 Get ChoiceContainerDef **/
 		Property typeProperty = engineRichType.getProperty("Type"); //$NON-NLS-1$
@@ -283,6 +291,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object typeObject = typeProperty.get(engineObject);
 		assertTrue(typeObject instanceof EcucContainerValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE), typeObject);
+		/********************************************************************/
 
 		/** 2_6 Get and Check Multiplicity on [0 .. 1] parameter container **/
 		/** Get Multiplicity on Container **/
@@ -299,9 +308,13 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object upperMultiplicityObject = upperMultiplicityProperty.get(engineObject);
 		assertTrue(upperMultiplicityObject instanceof String);
 		assertEquals(upperMultiplicityObject, "1"); //$NON-NLS-1$
+		/********************************************************************/
+
 		/** 2_7 Get Multiplicity and Check on [n .. n] parameter container **/
 		/* Not yet implemented in Example Model */
 		/********************************************************************/
+
+		/** 2_8 Get Multiplicity and Check on [n .. *] parameter container **/
 		// we retrieve types necessary for testing
 		Type ownerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertTrue(ownerType instanceof RichParamConfContainerDefType);
@@ -312,7 +325,6 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		RichParamConfContainerDefType ownersRichType = (RichParamConfContainerDefType) ownersType;
 		assertTrue(ownersRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 
-		/** 2_8 Get Multiplicity and Check on [n .. *] parameter container **/
 		/** Check Multiplicity is respected by getting childContainers **/
 		EObject ownersObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS);
 		Property ownersProperty = ownersRichType.getProperty("Owners"); //$NON-NLS-1$
@@ -336,32 +348,38 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		upperMultiplicityObject = upperMultiplicityProperty.get(ownerFirstHandObject);
 		assertTrue(upperMultiplicityObject instanceof String);
 		assertEquals(upperMultiplicityObject, "*"); //$NON-NLS-1$
+		/********************************************************************/
 	}
 
 	// 3_ChoiceContainer
 	public void testChoiceContainerDef() {
+		/** 3_1 Check Rich type consistency **/
 		EObject typeObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE);
 		Type typeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
 		assertTrue(typeType instanceof RichChoiceContainerDefType);
 		RichChoiceContainerDefType typeRichType = (RichChoiceContainerDefType) typeType;
 		assertTrue(typeRichType.getEcucTypeDef() instanceof EcucChoiceContainerDef);
+		/********************************************************************/
 
-		/** 3_1 Get shortName of ParamConfContainerDef **/
+		/** 3_2 Get shortName **/
 		Property shortNameProperty = typeRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
 		Object shortName = shortNameProperty.get(typeObject);
 		assertTrue(shortName instanceof String);
 		assertEquals("Type", shortName); //$NON-NLS-1$
+		/********************************************************************/
 
-		/** 3_2 Get absoluteQualifiedName of ParamConfContainerDef **/
+		/** 3_3 Get absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = typeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
 		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(typeObject);
 		assertTrue(absoluteQualifiedName instanceof String);
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(typeObject), absoluteQualifiedName);
-		/** 3_3 get Value **/
+		/********************************************************************/
+
+		/** 3_4 get Value **/
 		Property gasolineProperty = typeRichType.getProperty("Gasoline"); //$NON-NLS-1$
 		assertNotNull(gasolineProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
@@ -369,6 +387,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object gasoline = absoluteQualifiedNameProperty.get(typeObject);
 		assertTrue(gasoline instanceof EcucParamConfContainerDef);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE), gasoline);
+		/********************************************************************/
 	}
 
 	// 3_Parameter
@@ -381,6 +400,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(automaticType instanceof RichBooleanParamDefType);
 		RichBooleanParamDefType automaticRichType = (RichBooleanParamDefType) automaticType;
 		assertTrue(automaticRichType.getEcucTypeDef() instanceof EcucBooleanParamDef);
+		/********************************************************************/
 
 		/** 3_1_2 Get shortName **/
 		Property shortNameProperty = automaticRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -389,6 +409,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(automaticObject);
 		assertTrue(shortName instanceof String);
 		assertEquals(automaticRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
 		// /** 3_1_3 Get absoluteQualifiedName **/
 		//		Property absoluteQualifiedNameProperty = automaticRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -397,6 +418,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(automaticObject);
 		// assertTrue(absoluteQualifiedName instanceof String);
 		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(automaticObject), absoluteQualifiedName);
+		// /********************************************************************/
 
 		/** 3_1_4 Get Value **/
 		Property valueProperty = automaticRichType.getProperty("value"); //$NON-NLS-1$
@@ -405,6 +427,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(automaticObject);
 		assertTrue(value instanceof Boolean);
 		assertFalse((Boolean) value);
+		/********************************************************************/
 
 		/** 3_1_5 check exists **/
 		Property existsProperty = automaticRichType.getProperty("exists"); //$NON-NLS-1$
@@ -413,6 +436,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = existsProperty.get(automaticObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 
 		/** 3_1_6 check is_configured **/
 		Property isConfiguredProperty = automaticRichType.getProperty("is_configured"); //$NON-NLS-1$
@@ -421,19 +445,9 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = isConfiguredProperty.get(automaticObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 
 	}
-
-	// Tests On Parameters
-	// RichBooleanParamDefType.java
-	// RichIntegerParamDefType.java
-	// RichFloatParamDefType.java
-	// RichStringParamDefType.java
-	// RichFunctionNameDefType.java
-	// RichLinkerSymbolDefType.java
-	// MultilineStringParam => n/a in 3.x
-	// EnumerationParameter
-	// AddInfoParameter => n/a in 3.x
 
 	// 3_2 Integer Parameter
 	public void testIntegerParameterDef() {
@@ -444,6 +458,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(serialNumberType instanceof RichIntegerParamDefType);
 		RichIntegerParamDefType serialNumberRichType = (RichIntegerParamDefType) serialNumberType;
 		assertTrue(serialNumberRichType.getEcucTypeDef() instanceof EcucIntegerParamDef);
+		/********************************************************************/
 
 		/** 3_2_2 Get shortName **/
 		Property shortNameProperty = serialNumberRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -452,6 +467,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(serialNumberObject);
 		assertTrue(shortName instanceof String);
 		assertEquals(serialNumberRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
 		// /** 3_2_3 Get absoluteQualifiedName **/
 		//		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -460,6 +476,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
 		// assertTrue(absoluteQualifiedName instanceof String);
 		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
+		// /********************************************************************/
 
 		/** 3_2_4 Get value of integer parameter value **/
 		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
@@ -468,6 +485,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(serialNumberObject);
 		assertTrue(value instanceof Integer);
 		assertTrue(((Integer) value).intValue() == 879055672);
+		/********************************************************************/
 
 		/** 3_2_5 check exists **/
 		Property existsProperty = serialNumberRichType.getProperty("exists"); //$NON-NLS-1$
@@ -476,6 +494,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = existsProperty.get(serialNumberObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 
 		/** 3_2_6 check is_configured **/
 		Property isConfiguredProperty = serialNumberRichType.getProperty("is_configured"); //$NON-NLS-1$
@@ -484,6 +503,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = isConfiguredProperty.get(serialNumberObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
 	// 3_3 Float Parameter
@@ -496,6 +516,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(sparkPlugVoltageType instanceof RichFloatParamDefType);
 		RichFloatParamDefType sparkPlugVoltageRichType = (RichFloatParamDefType) sparkPlugVoltageType;
 		assertTrue(sparkPlugVoltageRichType.getEcucTypeDef() instanceof EcucFloatParamDef);
+		/********************************************************************/
 
 		/** 3_3_2 Get shortName **/
 		Property shortNameProperty = sparkPlugVoltageRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -504,6 +525,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(sparkPlugVoltageObject);
 		assertTrue(shortName instanceof String);
 		assertEquals(sparkPlugVoltageRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
 		// /** 3_3_3 Get absoluteQualifiedName **/
 		//		Property absoluteQualifiedNameProperty = sparkPlugVoltageRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -512,6 +534,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(sparkPlugVoltageObject);
 		// assertTrue(absoluteQualifiedName instanceof String);
 		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(sparkPlugVoltageObject), absoluteQualifiedName);
+		// /********************************************************************/
 
 		/** 3_3_4 Get value **/
 		Property valueProperty = sparkPlugVoltageRichType.getProperty("value"); //$NON-NLS-1$
@@ -520,6 +543,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(sparkPlugVoltageObject);
 		assertTrue(value instanceof Double);
 		assertTrue(((Double) value).doubleValue() == 4.45);
+		/********************************************************************/
 
 		/** 3_3_5 check exists **/
 		Property existsProperty = sparkPlugVoltageRichType.getProperty("exists"); //$NON-NLS-1$
@@ -528,6 +552,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = existsProperty.get(sparkPlugVoltageObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 
 		/** 3_3_6 check is_configured **/
 		Property isConfiguredProperty = sparkPlugVoltageRichType.getProperty("is_configured"); //$NON-NLS-1$
@@ -536,6 +561,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = isConfiguredProperty.get(sparkPlugVoltageObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
 	// 3_4 String Parameter
@@ -547,6 +573,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(vehicleNameType instanceof RichStringParamDefType);
 		RichStringParamDefType vehicleNameRichType = (RichStringParamDefType) vehicleNameType;
 		assertTrue(vehicleNameRichType.getEcucTypeDef() instanceof EcucStringParamDef);
+		/********************************************************************/
 
 		/** 3_4_2 Get shortName **/
 		Property shortNameProperty = vehicleNameRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -555,6 +582,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(vehicleNameObject);
 		assertTrue(shortName instanceof String);
 		assertEquals(vehicleNameRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
 		/** 3_4_3 Get absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = vehicleNameRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -563,6 +591,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(vehicleNameObject);
 		assertTrue(absoluteQualifiedName instanceof String);
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(vehicleNameObject), absoluteQualifiedName);
+		/********************************************************************/
 
 		/** 3_4_4 Get value **/
 		Property valueProperty = vehicleNameRichType.getProperty("value"); //$NON-NLS-1$
@@ -571,6 +600,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(vehicleNameObject);
 		assertTrue(value instanceof String);
 		assertEquals((String) value, "Saxo"); //$NON-NLS-1$
+		/********************************************************************/
 
 		/** 3_4_5 check exists **/
 		Property existsProperty = vehicleNameRichType.getProperty("exists"); //$NON-NLS-1$
@@ -579,6 +609,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = existsProperty.get(vehicleNameObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 
 		/** 3_4_6 check is_configured **/
 		Property isConfiguredProperty = vehicleNameRichType.getProperty("is_configured"); //$NON-NLS-1$
@@ -587,6 +618,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		value = isConfiguredProperty.get(vehicleNameObject);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
 	// 3_5 Enumeration Parameter
@@ -598,6 +630,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(engineTypeType instanceof RichEnumerationParamDefType);
 		RichEnumerationParamDefType engineTypeRichType = (RichEnumerationParamDefType) engineTypeType;
 		assertTrue(engineTypeRichType.getEcucTypeDef() instanceof EcucEnumerationParamDef);
+		/********************************************************************/
 
 		/** 3_5_2 Get shortName **/
 		Property shortNameProperty = engineTypeRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -606,6 +639,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(engineTypeObject);
 		assertTrue(shortName instanceof String);
 		assertEquals(engineTypeRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
 		/** 3_5_3 Get absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = engineTypeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -614,6 +648,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineTypeObject);
 		assertTrue(absoluteQualifiedName instanceof String);
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineTypeObject), absoluteQualifiedName);
+		/********************************************************************/
 
 		/** 3_5_4 Get value **/
 		Property valueProperty = engineTypeRichType.getProperty("value"); //$NON-NLS-1$
@@ -622,30 +657,93 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(engineTypeObject);
 		assertTrue(value instanceof String);
 		assertEquals((String) value, "Gasoline"); //$NON-NLS-1$
+		/********************************************************************/
+
+		/** 3_5_5 check exists **/
+		Property existsProperty = engineTypeRichType.getProperty("exists"); //$NON-NLS-1$
+		assertNotNull(existsProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), existsProperty.getReturnType());
+		value = existsProperty.get(engineTypeObject);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
+
+		/** 3_5_6 check is_configured **/
+		Property isConfiguredProperty = engineTypeRichType.getProperty("is_configured"); //$NON-NLS-1$
+		assertNotNull(isConfiguredProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredProperty.getReturnType());
+		value = isConfiguredProperty.get(engineTypeObject);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
 	// 3_6 FunctionName Parameter
 	public void testFunctionNameDef() {
 		// RichFunctionNameDefType.java
 		/* Not yet implemented */
+		/** 3_6_1 Check Rich type consistency **/
+
+		/** 3_6_2 Get shortName **/
+
+		/** 3_6_3 Get absoluteQualifiedName **/
+
+		/** 3_6_4 Get value **/
+
+		/** 3_6_5 check exists **/
+
+		/** 3_6_6 check is_configured **/
 	}
 
 	// 3_7 LinkerSymbol Parameter
 	public void testLinkerSymbolDef() {
 		// RichLinkerSymbolDefType.java
 		/* Not yet implemented */
+		/** 3_7_1 Check Rich type consistency **/
+
+		/** 3_7_2 Get shortName **/
+
+		/** 3_7_3 Get absoluteQualifiedName **/
+
+		/** 3_7_4 Get value **/
+
+		/** 3_7_5 check exists **/
+
+		/** 3_7_6 check is_configured **/
 	}
 
 	// 3_8 MultilineString Parameter
 	public void testMultilineStringParamDef() {
 		// MultilineStringParam => n/a in 3.x
 		/* Not yet implemented */
+		/** 3_8_1 Check Rich type consistency **/
+
+		/** 3_8_2 Get shortName **/
+
+		/** 3_8_3 Get absoluteQualifiedName **/
+
+		/** 3_8_4 Get value **/
+
+		/** 3_8_5 check exists **/
+
+		/** 3_8_6 check is_configured **/
 	}
 
 	// 3_9 AddInfo Parameter
 	public void testAddInfoParameterDef() {
 		// AddInfoParameter => n/a in 3.x
 		/* Not yet implemented */
+		/** 3_9_1 Check Rich type consistency **/
+
+		/** 3_9_2 Get shortName **/
+
+		/** 3_9_3 Get absoluteQualifiedName **/
+
+		/** 3_9_4 Get value **/
+
+		/** 3_9_5 check exists **/
+
+		/** 3_9_6 check is_configured **/
 	}
 
 	// 4_Reference
@@ -659,6 +757,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(engineTypeChoiceType instanceof RichChoiceReferenceDefType);
 		RichChoiceReferenceDefType engineTypeChoiceRichType = (RichChoiceReferenceDefType) engineTypeChoiceType;
 		assertTrue(engineTypeChoiceRichType.getEcucTypeDef() instanceof EcucChoiceReferenceDef);
+		/********************************************************************/
 
 		/** 4_1_2 Get shortName **/
 		Property shortNameProperty = engineTypeChoiceRichType.getProperty("shortName"); //$NON-NLS-1$
@@ -667,6 +766,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object shortName = shortNameProperty.get(engineTypeChoiceObject);
 		assertTrue(shortName instanceof String);
 		assertEquals(engineTypeChoiceRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
 		/** 4_1_3 Get absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = engineTypeChoiceRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
@@ -675,6 +775,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineTypeChoiceObject);
 		assertTrue(absoluteQualifiedName instanceof String);
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineTypeChoiceObject), absoluteQualifiedName);
+		/********************************************************************/
 
 		/** 4_1_4 Get value **/
 		Property valueProperty = engineTypeChoiceRichType.getProperty("value"); //$NON-NLS-1$
@@ -684,22 +785,43 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(engineTypeChoiceObject);
 		assertTrue(value instanceof EcucContainerValue);
 		assertEquals(value, getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE));
-
+		/********************************************************************/
 	}
 
 	// 4_2 ChoiceReference
 	public void testSymbolicNameReferenceDef() {
 		/* Not yet implemented */
+		/** 4_2_1 Check Rich type consistency **/
+
+		/** 4_2_2 Get shortName **/
+
+		/** 4_2_3 Get absoluteQualifiedName **/
+
+		/** 4_2_4 Get value **/
 	}
 
 	// 4_3 ChoiceReference
 	public void testForeignReferenceDef() {
 		/* Not yet implemented */
+		/** 4_3_1 Check Rich type consistency **/
+
+		/** 4_3_2 Get shortName **/
+
+		/** 4_3_3 Get absoluteQualifiedName **/
+
+		/** 4_3_4 Get value **/
 	}
 
 	// 4_4 ChoiceReference
 	public void testInstanceReferenceDef() {
 		/* Not yet implemented */
+		/** 4_4_1 Check Rich type consistency **/
+
+		/** 4_4_2 Get shortName **/
+
+		/** 4_4_3 Get absoluteQualifiedName **/
+
+		/** 4_4_4 Get value **/
 	}
 
 }
