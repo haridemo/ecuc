@@ -74,7 +74,6 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 		openProjectProperties(getContextProject(), data);
 	}
 
-	// TODO (aakar) Look if we should update the viewer after the project properties change by the link
 	protected void openProjectProperties(IProject project, Object data) {
 		String id = EcucCodeGenerationPreferencePage.PROP_PAGE_ID;
 		if (id != null) {
