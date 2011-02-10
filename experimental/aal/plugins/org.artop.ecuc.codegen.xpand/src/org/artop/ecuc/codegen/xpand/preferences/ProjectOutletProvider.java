@@ -119,6 +119,7 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 	protected void updateOutlets() {
 		allOutlets.clear();
 		allOutlets.addAll(getStoredOutlets());
+		allOutlets.addAll(unstoredOutlets);
 	}
 
 	public void dispose() {
