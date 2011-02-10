@@ -31,6 +31,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeH
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
+import org.eclipse.xtend.typesystem.Property;
 import org.eclipse.xtend.typesystem.Type;
 
 public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichConfigReferenceType {
@@ -45,6 +46,23 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 			GParamConfContainerDef valueTypeDef) {
 		super(context, configReference, typeNameSuffix);
 		this.valueTypeDef = valueTypeDef;
+	}
+
+	@Override
+	protected Property createShortNameFeature() {
+		return new PropertyImpl(this, "shortName", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				String typeName = getOwner().getName();
+				int idx = typeName.lastIndexOf("::"); //$NON-NLS-1$
+				if (idx != -1) {
+					if (idx + 2 < typeName.length()) {
+						return typeName.substring(idx + 2);
+					}
+					return ""; //$NON-NLS-1$
+				}
+				return typeName;
+			}
+		};
 	}
 
 	public void addValueAccessorFeatures() {

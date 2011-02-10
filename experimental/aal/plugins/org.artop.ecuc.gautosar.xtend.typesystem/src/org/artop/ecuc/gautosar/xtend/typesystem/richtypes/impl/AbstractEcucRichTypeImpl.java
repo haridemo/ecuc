@@ -21,6 +21,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.AbstractEcucMetaTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
+import org.eclipse.xtend.typesystem.Property;
 
 public abstract class AbstractEcucRichTypeImpl extends AbstractEcucMetaTypeImpl implements EcucRichType {
 
@@ -45,19 +46,23 @@ public abstract class AbstractEcucRichTypeImpl extends AbstractEcucMetaTypeImpl 
 	}
 
 	protected void addBaseFeatures() {
-		addFeature(new PropertyImpl(this, "shortName", getTypeSystem().getStringType()) { //$NON-NLS-1$
+		addFeature(createShortNameFeature());
+		addFeature(new PropertyImpl(this, "absoluteQualifiedName", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				return AutosarURIFactory.getAbsoluteQualifiedName(target);
+			}
+		});
+	}
+
+	protected Property createShortNameFeature() {
+		return new PropertyImpl(this, "shortName", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof GIdentifiable) {
 					return ((GIdentifiable) target).gGetShortName();
 				}
 				return null;
 			}
-		});
-		addFeature(new PropertyImpl(this, "absoluteQualifiedName", getTypeSystem().getStringType()) { //$NON-NLS-1$
-			public Object get(Object target) {
-				return AutosarURIFactory.getAbsoluteQualifiedName(ecucTypeDef);
-			}
-		});
+		};
 	}
 
 	public GIdentifiable getEcucTypeDef() {

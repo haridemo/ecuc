@@ -80,8 +80,11 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 
 	public void addChildAccessorFeatures(final CompositeEcucRichType childType) {
 		Assert.isNotNull(childType);
-
-		addFeature(new PropertyImpl(this, childType.getSimpleName(), getChildAccessorReturnType(childType)) {
+		String childPropertyName = childType.getSimpleName();
+		if (isMany(childType)) {
+			childPropertyName = getPluralOf(childType.getSimpleName());
+		}
+		addFeature(new PropertyImpl(this, childPropertyName, getChildAccessorReturnType(childType)) {
 			public Object get(Object target) {
 				List<EObject> values = null;
 				boolean many = isMany(childType);
@@ -113,6 +116,28 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 				return null;
 			}
 		});
+	}
+
+	private String getPluralOf(String input) {
+		String plural = input;
+		if (input != null && input.length() > 0) {
+			if (input.toUpperCase().equals(input)) {
+				if (input.length() > 1 && input.endsWith("Y") //$NON-NLS-1$
+						&& !(input.endsWith("AY") || input.endsWith("EY") || input.endsWith("OY") || input.endsWith("UY"))) { //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+					plural = plural.substring(0, input.length() - 1) + "IES"; //$NON-NLS-1$
+				} else if (!input.endsWith("S")) { //$NON-NLS-1$
+					plural = plural + "S"; //$NON-NLS-1$
+				}
+			} else {
+				if (input.length() > 1 && input.endsWith("y") //$NON-NLS-1$
+						&& !(input.endsWith("ay") || input.endsWith("ey") || input.endsWith("oy") || input.endsWith("uy"))) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+					plural = plural.substring(0, input.length() - 1) + "ies"; //$NON-NLS-1$
+				} else if (!input.endsWith("s")) { //$NON-NLS-1$
+					plural = plural + "s"; //$NON-NLS-1$
+				}
+			}
+		}
+		return plural;
 	}
 
 	private Type getChildAccessorReturnType(CompositeEcucRichType childType) {

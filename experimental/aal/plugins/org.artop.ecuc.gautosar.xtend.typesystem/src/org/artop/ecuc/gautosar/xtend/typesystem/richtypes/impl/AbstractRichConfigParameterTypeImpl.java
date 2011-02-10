@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
+import org.eclipse.xtend.typesystem.Property;
 import org.eclipse.xtend.typesystem.Type;
 
 public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichConfigParameterType {
@@ -40,7 +41,6 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 	@Override
 	protected void addBaseFeatures() {
 		super.addBaseFeatures();
-
 		addFeature(new PropertyImpl(this, "value", getValueType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return internalGet(target);
@@ -58,6 +58,23 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 				return null;
 			}
 		});
+	}
+
+	@Override
+	protected Property createShortNameFeature() {
+		return new PropertyImpl(this, "shortName", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				String typeName = getOwner().getName();
+				int idx = typeName.lastIndexOf("::"); //$NON-NLS-1$
+				if (idx != -1) {
+					if (idx + 2 < typeName.length()) {
+						return typeName.substring(idx + 2);
+					}
+					return ""; //$NON-NLS-1$
+				}
+				return typeName;
+			}
+		};
 	}
 
 	// XXX Shouldn't we add a definition match check here - just as there is in
