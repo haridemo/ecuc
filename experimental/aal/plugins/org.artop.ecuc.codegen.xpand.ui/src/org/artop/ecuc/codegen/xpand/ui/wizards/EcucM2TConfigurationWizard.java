@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
-import org.artop.ecuc.codegen.xpand.output.OutputUtil;
-import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
+import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
 import org.artop.ecuc.codegen.xpand.ui.wizards.pages.EcucM2TConfigurationPage;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.emf.mwe.resources.IScopingResourceLoader;
@@ -25,35 +26,23 @@ public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
 	}
 
 	@Override
-	protected Collection<Outlet> getUserDefinedOutlets() {
-		ProjectOutletProvider outletProvider = OutputUtil.getOutletProvider(fModelObject);
-		if (outletProvider != null) {
-			Collection<ExtendedOutlet> customOutlets = outletProvider.getNamedOutlets();
+	protected Collection<Outlet> getOutlets() {
+		IFile file = EcorePlatformUtil.getFile(modelObject);
+		if (file != null && file.getProject() != null) {
 			List<Outlet> result = new ArrayList<Outlet>();
-			for (ExtendedOutlet outlet : customOutlets) {
+			Collection<ExtendedOutlet> outlets = IEcucCodeGenerationPreferences.OUTLETS.get(file.getProject());
+			for (ExtendedOutlet outlet : outlets) {
 				result.add(outlet);
 			}
-			outletProvider.dispose();
 			return result;
 		}
-		return super.getUserDefinedOutlets();
-	}
-
-	@Override
-	protected Outlet getDefaultOutlet() {
-		ProjectOutletProvider outletProvider = OutputUtil.getOutletProvider(fModelObject);
-		if (outletProvider != null) {
-			Outlet result = outletProvider.getDefaultOutlet();
-			outletProvider.dispose();
-			return result;
-		}
-		return super.getDefaultOutlet();
+		return super.getOutlets();
 	}
 
 	@Override
 	protected M2TConfigurationPage createM2TConfigurationPage() {
 		EcucM2TConfigurationPage m2TPage = new EcucM2TConfigurationPage(Messages.label_configPageName);
-		m2TPage.init(fModelObject, fMetaModel, fDefaultOutletURI);
+		m2TPage.init(modelObject, metaModel, defaultOutletURI);
 		return m2TPage;
 	}
 }

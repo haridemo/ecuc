@@ -29,31 +29,36 @@ import org.eclipse.xpand2.output.Outlet;
 
 public class ProjectOutletProvider implements IPreferenceChangeListener {
 
-	private IProject fProject;
-	private List<ExtendedOutlet> fAllOutlets;
+	private IProject project;
+	private List<ExtendedOutlet> allOutlets;
 	private List<ExtendedOutlet> unstoredOutlets;
 
 	public ProjectOutletProvider(IProject project) {
-		fProject = project;
-		fAllOutlets = new ArrayList<ExtendedOutlet>();
+		this.project = project;
+		allOutlets = new ArrayList<ExtendedOutlet>();
 		unstoredOutlets = new ArrayList<ExtendedOutlet>();
-		fAllOutlets.addAll(getStoredOutlets());
+		allOutlets.addAll(getStoredOutlets());
 		addPreferenceChangeListener();
 	}
 
 	public void addOutlet(ExtendedOutlet outlet) {
 		unstoredOutlets.add(outlet);
-		fAllOutlets.add(outlet);
+		allOutlets.add(outlet);
 	}
 
 	public void removeOutlet(ExtendedOutlet outlet) {
 		unstoredOutlets.remove(outlet);
-		fAllOutlets.remove(outlet);
+		allOutlets.remove(outlet);
 	}
 
+	/**
+	 * Returns a copy of the outlets so calling add/remove on the result will not affect the provider.
+	 * 
+	 * @return
+	 */
 	public Collection<ExtendedOutlet> getOutlets() {
 		List<ExtendedOutlet> result = new ArrayList<ExtendedOutlet>();
-		result.addAll(fAllOutlets);
+		result.addAll(allOutlets);
 		return result;
 	}
 
@@ -78,55 +83,50 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 	protected IEclipsePreferences getProjectPreferences(IProject project) {
 		Assert.isNotNull(project);
 		ProjectScope projectScope = new ProjectScope(project);
-		return projectScope.getNode(IEcucCodeGenerationPreferences.DEFAULT_OUTLET.getQualifier());
+		return projectScope.getNode(IEcucCodeGenerationPreferences.OUTLETS.getQualifier());
 	}
 
 	protected Collection<ExtendedOutlet> getStoredOutlets() {
-		List<ExtendedOutlet> result = new ArrayList<ExtendedOutlet>();
-		ExtendedOutlet outlet = IEcucCodeGenerationPreferences.DEFAULT_OUTLET.get(fProject);
-		if (outlet != null) {
-			result.add(outlet);
-		}
-		Collection<ExtendedOutlet> outlets = IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.get(fProject);
-		if (outlets != null && !outlets.isEmpty()) {
-			result.addAll(outlets);
-		}
-		return result;
+		return IEcucCodeGenerationPreferences.OUTLETS.get(project);
 	}
 
 	protected void addPreferenceChangeListener() {
-		IEclipsePreferences prefs = getProjectPreferences(fProject);
+		IEclipsePreferences prefs = getProjectPreferences(project);
 		if (prefs != null) {
 			prefs.addPreferenceChangeListener(this);
 		}
 	}
 
 	public void setToDefault() {
-		IEcucCodeGenerationPreferences.DEFAULT_OUTLET.setToDefault(fProject);
-		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.setToDefault(fProject);
+		IEcucCodeGenerationPreferences.OUTLETS.setToDefault(project);
 		unstoredOutlets.clear();
-		fAllOutlets.clear();
-		fAllOutlets.addAll(getStoredOutlets());
+		allOutlets.clear();
+		allOutlets.addAll(getStoredOutlets());
 	}
 
 	public synchronized void store() {
-		IEcucCodeGenerationPreferences.DEFAULT_OUTLET.set(fProject, getDefaultOutlet());
-		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.set(fProject, getNamedOutlets());
+		IEcucCodeGenerationPreferences.OUTLETS.set(project, getOutlets());
 		// Once stored, clear the list of not stored outlets
 		unstoredOutlets.clear();
 	}
 
-	// TODO (aakar) to implement
 	public void preferenceChange(PreferenceChangeEvent event) {
-		System.out.println();
+		if (IEcucCodeGenerationPreferences.PREF_OUTLETS.equals(event.getKey())) {
+			updateOutlets();
+		}
+	}
+
+	protected void updateOutlets() {
+		allOutlets.clear();
+		allOutlets.addAll(getStoredOutlets());
 	}
 
 	public void dispose() {
-		IEclipsePreferences prefs = getProjectPreferences(fProject);
+		IEclipsePreferences prefs = getProjectPreferences(project);
 		if (prefs != null) {
 			prefs.removePreferenceChangeListener(this);
 		}
-		fAllOutlets.clear();
+		allOutlets.clear();
 		unstoredOutlets.clear();
 	}
 }

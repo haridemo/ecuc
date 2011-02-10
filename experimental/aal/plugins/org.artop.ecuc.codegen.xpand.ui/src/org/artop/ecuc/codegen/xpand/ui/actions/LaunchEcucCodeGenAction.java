@@ -19,7 +19,6 @@ import gautosar.gecucparameterdef.GModuleDef;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.artop.ecl.emf.model.IModelDescriptor;
@@ -28,9 +27,7 @@ import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
 import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
 import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
-import org.artop.ecuc.codegen.xpand.output.OutputUtil;
 import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
-import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
 import org.artop.ecuc.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.codegen.xpand.ui.wizards.EcucM2TConfigurationWizard;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
@@ -195,30 +192,16 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 	}
 
 	@Override
-	protected Collection<Outlet> getUserDefinedOutlets() {
-		ProjectOutletProvider outletProvider = OutputUtil.getOutletProvider(getSelectedModelObject());
-		if (outletProvider != null) {
-			Collection<ExtendedOutlet> customOutlets = outletProvider.getNamedOutlets();
+	protected Collection<Outlet> getOutlets() {
+		IFile file = EcorePlatformUtil.getFile(getSelectedModelObject());
+		if (file != null && file.getProject() != null) {
 			List<Outlet> result = new ArrayList<Outlet>();
-			for (ExtendedOutlet outlet : customOutlets) {
+			Collection<ExtendedOutlet> outlets = IEcucCodeGenerationPreferences.OUTLETS.get(file.getProject());
+			for (ExtendedOutlet outlet : outlets) {
 				result.add(outlet);
 			}
-			outletProvider.dispose();
 			return result;
 		}
-		return Collections.emptyList();
-	}
-
-	@Override
-	protected Outlet getDefaultOutlet() {
-		// TODO (aakar) merge here !!
-		IEcucCodeGenerationPreferences.CUSTOM_OUTLETS.get(EcorePlatformUtil.getFile(getSelectedModelObject()).getProject());
-		ProjectOutletProvider outletProvider = OutputUtil.getOutletProvider(getSelectedModelObject());
-		if (outletProvider != null) {
-			Outlet result = outletProvider.getDefaultOutlet();
-			outletProvider.dispose();
-			return result;
-		}
-		return super.getDefaultOutlet();
+		return super.getOutlets();
 	}
 }

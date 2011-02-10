@@ -9,6 +9,8 @@ import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
 import org.artop.ecuc.codegen.xpand.ui.OutletsBlock;
 import org.artop.ecuc.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.jface.preference.PreferenceDialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
 import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
 import org.eclipse.swt.SWT;
@@ -23,6 +25,8 @@ import org.eclipse.ui.dialogs.PreferencesUtil;
 
 @SuppressWarnings("restriction")
 public class EcucM2TConfigurationPage extends M2TConfigurationPage {
+
+	protected OutletsBlock outletBlock;
 
 	public EcucM2TConfigurationPage(String pageName) {
 		super(pageName);
@@ -42,7 +46,7 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 		Link link = createLink(outputGroup, AutosarPreferenceMessages.AutosarPreferencePage_configureProjectSpecificSettings);
 		link.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_END));
 
-		OutletsBlock outletBlock = new OutletsBlock();
+		outletBlock = new OutletsBlock();
 		outletBlock.createControl(outputGroup);
 		outletBlock.setEnabled(false);
 		outletBlock.getTableViewer().setInput(new ProjectOutletProvider(getContextProject()));
@@ -70,10 +74,23 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 		openProjectProperties(getContextProject(), data);
 	}
 
+	// TODO (aakar) Look if we should update the viewer after the project properties change by the link
 	protected void openProjectProperties(IProject project, Object data) {
 		String id = EcucCodeGenerationPreferencePage.PROP_PAGE_ID;
 		if (id != null) {
-			PreferencesUtil.createPropertyDialogOn(getShell(), project, id, new String[] { id }, data).open();
+			PreferenceDialog dialog = PreferencesUtil.createPropertyDialogOn(getShell(), project, id, new String[] { id }, data);
+			if (dialog.open() == Window.OK) {
+				outletBlock.getTableViewer().refresh();
+			}
+		}
+	}
+
+	@Override
+	public void dispose() {
+		super.dispose();
+		Object input = outletBlock.getTableViewer().getInput();
+		if (input instanceof ProjectOutletProvider) {
+			((ProjectOutletProvider) input).dispose();
 		}
 	}
 }
