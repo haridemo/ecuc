@@ -117,10 +117,32 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 				return null;
 			}
 		});
-		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType()) { //$NON-NLS-1$
+		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType(), (Type) null) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
-				return target != null;
+				if (target != null) {
+					if (isMany(childType)) {
+						List<EObject> contents = internalEContents((EObject) target);
+						if (contents != null) {
+							for (EObject content : contents) {
+								Object typeDef = null;
+								if (content instanceof GContainer) {
+									typeDef = ((GContainer) content).gGetDefinition();
+								} else if (content instanceof GParameterValue) {
+									typeDef = ((GParameterValue) content).gGetDefinition();
+								} else if (content instanceof GReferenceValue) {
+									typeDef = ((GReferenceValue) content).gGetDefinition();
+								}
+								if (typeDef == childType.getEcucTypeDef()) {
+									return true;
+								}
+							}
+						}
+					} else {
+						return true;
+					}
+				}
+				return false;
 			}
 		});
 	}
