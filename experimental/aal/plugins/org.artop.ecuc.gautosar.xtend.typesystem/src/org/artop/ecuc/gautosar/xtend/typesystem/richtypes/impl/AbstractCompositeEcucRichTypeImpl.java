@@ -29,6 +29,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -114,6 +115,12 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 					}
 				}
 				return null;
+			}
+		});
+		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType()) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				return target != null;
 			}
 		});
 	}
