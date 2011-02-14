@@ -16,6 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.artop.ecuc.codegen.xpand,
+ org.artop.ecuc.codegen.xpand.adapter.factories,
  org.artop.ecuc.codegen.xpand.output,
  org.artop.ecuc.codegen.xpand.preferences
 Bundle-Localization: plugin
