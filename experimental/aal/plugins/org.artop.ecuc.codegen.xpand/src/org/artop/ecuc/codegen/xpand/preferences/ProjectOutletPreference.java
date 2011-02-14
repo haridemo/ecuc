@@ -19,7 +19,7 @@ public class ProjectOutletPreference extends AbstractProjectPreference<Collectio
 	protected String toString(IProject project, java.util.Collection<ExtendedOutlet> valueAsObject) {
 		StringBuilder builder = new StringBuilder();
 		for (ExtendedOutlet outlet : valueAsObject) {
-			builder.append(outlet.getName());
+			builder.append(outlet.getName() != null ? outlet.getName() : ""); //$NON-NLS-1$
 			builder.append("@"); //$NON-NLS-1$
 			builder.append(outlet.getPathExpression());
 			builder.append(File.pathSeparator);
@@ -29,7 +29,7 @@ public class ProjectOutletPreference extends AbstractProjectPreference<Collectio
 
 	@Override
 	protected Collection<ExtendedOutlet> toObject(IProject project, String valueAsString) {
-		return toOutlets(valueAsString);
+		return toOutlets(project, valueAsString);
 	}
 
 	public ExtendedOutlet getDefaultOutlet(IProject project) {
@@ -56,7 +56,7 @@ public class ProjectOutletPreference extends AbstractProjectPreference<Collectio
 		return result;
 	}
 
-	private List<ExtendedOutlet> toOutlets(String valueAsString) {
+	private List<ExtendedOutlet> toOutlets(IProject project, String valueAsString) {
 		List<ExtendedOutlet> result = new ArrayList<ExtendedOutlet>();
 		String[] values = valueAsString.split(File.pathSeparator);
 		for (String value : values) {
@@ -64,7 +64,7 @@ public class ProjectOutletPreference extends AbstractProjectPreference<Collectio
 			String name = args[0];
 			String expression = args[1];
 			ExtendedOutlet outlet = new ExtendedOutlet();
-			outlet.setPathExpression(expression);
+			outlet.setPathExpression(expression, project != null);
 			if (name.length() > 0) {
 				outlet.setName(name);
 			}

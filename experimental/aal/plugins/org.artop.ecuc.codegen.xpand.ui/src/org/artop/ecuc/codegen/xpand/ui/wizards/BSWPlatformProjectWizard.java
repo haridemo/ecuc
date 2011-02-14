@@ -1,14 +1,29 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) See4sys and others.
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
+ * 
+ * Contributors: 
+ *     See4sys - Initial API and implementation
+ * 
+ * </copyright>
+ */
 package org.artop.ecuc.codegen.xpand.ui.wizards;
 
 import java.net.URI;
 
 import org.artop.aal.workspace.jobs.CreateArtopProjectJob;
 import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
-import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
 import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
+import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
 import org.artop.ecuc.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
+import org.artop.ecuc.codegen.xpand.ui.wizards.pages.BSWPlatformProjectWizardFirstPage;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -26,12 +41,10 @@ import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 
 public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implements IExecutableExtension {
 
-	private AutosarProjectWizardFirstPage mainPage;
+	private BSWPlatformProjectWizardFirstPage mainPage;
 
 	private WizardNewProjectReferencePage referencePage;
 
-	// cache of newly-created project
-	private IProject newProject;
 	/**
 	 * The config element which declares this wizard.
 	 */
@@ -82,6 +95,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 						@Override
 						public void done(IJobChangeEvent event) {
 							if (event.getResult().getSeverity() == IStatus.OK) {
+								IEcucCodeGenerationPreferences.OUTLETS.set(projectHandle, mainPage.getOutlets());
 								Display display = ExtendedPlatformUI.getDisplay();
 								if (display != null) {
 									display.asyncExec(new Runnable() {
@@ -117,7 +131,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	 */
 	@Override
 	public void addPages() {
-		mainPage = new AutosarProjectWizardFirstPage("basicNewProjectPage"); //$NON-NLS-1$
+		mainPage = new BSWPlatformProjectWizardFirstPage("basicNewProjectPage"); //$NON-NLS-1$
 		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
 		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
 		addPage(mainPage);

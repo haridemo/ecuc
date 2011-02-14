@@ -1,3 +1,17 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) See4sys and others.
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
+ * 
+ * Contributors: 
+ *     See4sys - Initial API and implementation
+ * 
+ * </copyright>
+ */
 package org.artop.ecuc.codegen.xpand.ui.wizards.pages;
 
 import java.util.HashMap;
@@ -27,6 +41,7 @@ import org.eclipse.ui.dialogs.PreferencesUtil;
 public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 
 	protected OutletsBlock outletBlock;
+	protected ProjectOutletProvider outletProvider;
 
 	public EcucM2TConfigurationPage(String pageName) {
 		super(pageName);
@@ -46,10 +61,9 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 		Link link = createLink(outputGroup, AutosarPreferenceMessages.AutosarPreferencePage_configureProjectSpecificSettings);
 		link.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_END));
 
-		outletBlock = new OutletsBlock();
-		outletBlock.createControl(outputGroup);
+		outletProvider = new ProjectOutletProvider(getContextProject());
+		outletBlock = new OutletsBlock(outputGroup, getShell(), outletProvider);
 		outletBlock.setEnabled(false);
-		outletBlock.getTableViewer().setInput(new ProjectOutletProvider(getContextProject()));
 	}
 
 	protected Link createLink(Composite composite, String text) {
@@ -87,9 +101,6 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	@Override
 	public void dispose() {
 		super.dispose();
-		Object input = outletBlock.getTableViewer().getInput();
-		if (input instanceof ProjectOutletProvider) {
-			((ProjectOutletProvider) input).dispose();
-		}
+		outletProvider.dispose();
 	}
 }

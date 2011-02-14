@@ -1,3 +1,17 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) See4sys and others.
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
+ * 
+ * Contributors: 
+ *     See4sys - Initial API and implementation
+ * 
+ * </copyright>
+ */
 package org.artop.ecuc.codegen.xpand.output;
 
 import java.io.File;
@@ -37,9 +51,11 @@ public class ExtendedOutlet extends Outlet {
 		return pathExpression;
 	}
 
-	public void setPathExpression(String pathExpression) {
+	public void setPathExpression(String pathExpression, boolean resolve) {
 		this.pathExpression = pathExpression;
-		setPath(resolvePathExpression(pathExpression));
+		if (resolve) {
+			setPath(resolvePathExpression(pathExpression));
+		}
 	}
 
 	protected String resolvePathExpression(String pathExpression) {
@@ -52,7 +68,6 @@ public class ExtendedOutlet extends Outlet {
 			// selection is an EObject
 			Platform.getAdapterManager().registerAdapters(EObjectAdapaterFactory.INSTANCE, EObject.class);
 			String resolvedPath = manager.performStringSubstitution(pathExpression);
-			Platform.getAdapterManager().unregisterAdapters(EObjectAdapaterFactory.INSTANCE, EObject.class);
 			IPath path = new Path(resolvedPath);
 			if (path.isAbsolute()) {
 				File file = path.toFile();
