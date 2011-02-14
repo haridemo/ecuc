@@ -41,7 +41,6 @@ public class BSWPlatformProjectWizardFirstPage extends AutosarProjectWizardFirst
 	ProjectOutletProvider outletProvider;
 	OutletsBlock outletBlock;
 
-	@SuppressWarnings("restriction")
 	@Override
 	protected void createAdditionalGroups(Composite parent) {
 		Group group = new Group(parent, SWT.None);
