@@ -14,7 +14,7 @@
  */
 package org.artop.ecuc.codegen.xpand.ui;
 
-import org.artop.ecl.platform.ui.internal.util.SWTUtil;
+import org.artop.ecl.platform.ui.util.SWTUtil;
 import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
 import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
 import org.artop.ecuc.codegen.xpand.ui.providers.OutletTableContentProvider;
