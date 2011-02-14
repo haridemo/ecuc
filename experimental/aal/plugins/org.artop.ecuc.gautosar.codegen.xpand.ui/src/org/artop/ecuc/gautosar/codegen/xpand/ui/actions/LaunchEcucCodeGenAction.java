@@ -81,6 +81,7 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 				// Referenced module definition not available? (this can be the case when the AUTOSAR model behind the
 				// selected element has not been fully loaded yet or the referenced module definition is really
 				// missing)
+				// FIXME (aakar) NPE if moduleDef is null
 				if (moduleDef.eIsProxy()) {
 					// Trigger asynchronous loading of underlying AUTOSAR model including referenced AUTOSAR models in
 					// BSW Platform projects (i.e., AUTOSAR projects with Xpand/Xtend nature) to make sure that

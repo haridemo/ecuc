@@ -24,6 +24,7 @@ Export-Package: org.artop.ecuc.gautosar.codegen.xpand.ui,
  org.artop.ecuc.gautosar.codegen.xpand.ui.jobs,
  org.artop.ecuc.gautosar.codegen.xpand.ui.preferences,
  org.artop.ecuc.gautosar.codegen.xpand.ui.providers,
- org.artop.ecuc.gautosar.codegen.xpand.ui.wizards
+ org.artop.ecuc.gautosar.codegen.xpand.ui.wizards,
+ org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages
 Bundle-Activator: org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator$Implementation
 Bundle-ActivationPolicy: lazy

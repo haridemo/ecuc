@@ -21,7 +21,7 @@ Contributors:
          point="org.eclipse.ui.navigator.navigatorContent">
       <actionProvider
             class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers.EcucCodeGenActionProvider"
-            id="org.artop.ecuc.codegen.xpand.ui.ecucCodeGenActionProvider">
+            id="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucCodeGenActionProvider">
          <enablement>
 	        <instanceof value="gautosar.gecucdescription.GModuleConfiguration" />
          </enablement>
