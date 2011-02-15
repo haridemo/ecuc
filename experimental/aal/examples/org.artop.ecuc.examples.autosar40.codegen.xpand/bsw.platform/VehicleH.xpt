@@ -37,6 +37,26 @@ It does not exist.
 Current Owner: «GeneralInfo.CurrentOwner.value.FirstName.value» «GeneralInfo.CurrentOwner.value.LastName.value»
 Finition Level: «GeneralInfo.FinitionLevel_High.value.shortName»
 
+/* Anybody home */
+«IF Options.FinitionLevels.High.isPresent()»
+High exists.
+«ELSE»
+High does not exist.
+«ENDIF»
+
+«IF Options.FinitionLevels.Medium != null»
+Medium exists.
+«ELSE»
+Medium does not exist.
+«ENDIF»
+«REM»
+«IF Options.FinitionLevels.Medium.isPresent()»
+Medium exists.
+«ELSE»
+Medium does not exist.
+«ENDIF»
+«ENDREM»
+
 «REM»
 List of owners:
 «FOREACH GeneralInfo.Owners.Owner AS owner»
