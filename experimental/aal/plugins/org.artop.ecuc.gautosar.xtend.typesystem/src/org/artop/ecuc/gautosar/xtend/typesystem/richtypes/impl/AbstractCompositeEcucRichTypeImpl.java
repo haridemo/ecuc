@@ -117,7 +117,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 				return null;
 			}
 		});
-		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType(), (Type) null) { //$NON-NLS-1$
+		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				if (target != null) {

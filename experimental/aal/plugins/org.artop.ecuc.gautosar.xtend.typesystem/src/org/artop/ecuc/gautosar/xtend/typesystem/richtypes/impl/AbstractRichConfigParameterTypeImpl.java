@@ -58,6 +58,23 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 				return null;
 			}
 		});
+		addFeature(new OperationImpl(this, "isConfigured", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				if (target != null) {
+					Object value = internalGet(target);
+					if (value != null) {
+						if (getTypeSystem().getStringType().equals(getValueType())) {
+							if (value instanceof String) {
+								String stringValue = (String) value;
+								return stringValue.length() > 0;
+							}
+						}
+					}
+				}
+				return false;
+			}
+		});
 	}
 
 	@Override
