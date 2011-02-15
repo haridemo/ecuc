@@ -69,6 +69,8 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 								String stringValue = (String) value;
 								return stringValue.length() > 0;
 							}
+						} else {
+							return true;
 						}
 					}
 				}
