@@ -52,11 +52,9 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_3_YEAR = "/EPC/Car/GeneralInfo/@parameterValues.3?type=EcucNumericalParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS = "/EPC/Car/GeneralInfo/Owners?type=EcucContainerValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND = "/EPC/Car/GeneralInfo/Owners/FirstHand?type=EcucContainerValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_FIRSTNAME = "/EPC/Car/GeneralInfo/Owners/FirstHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_1_LASTNAME = "/EPC/Car/GeneralInfo/Owners/FirstHand/@parameterValues.1?type=EcucTextualParamValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_LASTNAME = "/EPC/Car/GeneralInfo/Owners/FirstHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND = "/EPC/Car/GeneralInfo/Owners/SecondHand?type=EcucContainerValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_0_FIRSTNAME = "/EPC/Car/GeneralInfo/Owners/SecondHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_1_LASTNAME = "/EPC/Car/GeneralInfo/Owners/SecondHand/@parameterValues.1?type=EcucTextualParamValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_0_LASTNAME = "/EPC/Car/GeneralInfo/Owners/SecondHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND = "/EPC/Car/GeneralInfo/Owners/ThirdHand?type=EcucContainerValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND_PARAMETER_VALUES_0_FIRSTNAME = "/EPC/Car/GeneralInfo/Owners/ThirdHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND_PARAMETER_VALUES_1_LASTNAME = "/EPC/Car/GeneralInfo/Owners/ThirdHand/@parameterValues.1?type=EcucTextualParamValue";//$NON-NLS-1$

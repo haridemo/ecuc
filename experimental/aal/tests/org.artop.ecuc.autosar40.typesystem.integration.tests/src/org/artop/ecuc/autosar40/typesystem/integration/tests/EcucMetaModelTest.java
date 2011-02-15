@@ -29,11 +29,13 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType
 import org.artop.ecuc.testutils.integration.referenceworkspace.AbstractEcucIntegrationTestCase;
 import org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspace;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtend.typesystem.Operation;
 import org.eclipse.xtend.typesystem.Property;
 import org.eclipse.xtend.typesystem.Type;
 
 import autosar40.ecucdescription.EcucContainerValue;
 import autosar40.ecucdescription.EcucNumericalParamValue;
+import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucparameterdef.EcucBooleanParamDef;
 import autosar40.ecucparameterdef.EcucChoiceContainerDef;
 import autosar40.ecucparameterdef.EcucChoiceReferenceDef;
@@ -137,19 +139,13 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_FIRSTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
-		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_1_LASTNAME,
+				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_LASTNAME,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
 
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_0_FIRSTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
-		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_1_LASTNAME,
+				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_0_LASTNAME,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
 
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND,
@@ -215,14 +211,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/********************************************************************/
 
 		// TODO Investigate reasons of test failure
-		// /** 1_3 Get absoluteQualifiedName**/
-		//		Property absoluteQualifiedNameProperty = vehiculeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		// assertNotNull(absoluteQualifiedNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(carObject);
-		// assertTrue(absoluteQualifiedName instanceof String);
-		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
-		// /********************************************************************/
+		/** 1_3 Get absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = vehiculeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(carObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
+		/********************************************************************/
 		/** 1_4 Get EcucContainerValue of module definition **/
 		Property engineProperty = vehiculeRichType.getProperty("Engine"); //$NON-NLS-1$
 		assertNotNull(engineProperty);
@@ -246,7 +242,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(engineRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 		/********************************************************************/
 
-		/** 2_1 Get shortName of ParamConfContainerDef **/
+		/** 2_2 Get shortName **/
 		Property shortNameProperty = engineRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -255,26 +251,26 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals("Engine", shortName); //$NON-NLS-1$
 		/********************************************************************/
 
-		// /** 2_2 Get absoluteQualifiedName of ParamConfContainerDef **/
-		//		Property absoluteQualifiedNameProperty = engineRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		// assertNotNull(absoluteQualifiedNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineObject);
-		// assertTrue(absoluteQualifiedName instanceof String);
-		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineObject), absoluteQualifiedName);
-		// /********************************************************************/
+		/** 2_3 Get absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = engineRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineObject), absoluteQualifiedName);
+		/********************************************************************/
 
-		/** 2_3 Get EnumerationParamDef **/
+		/** 2_4 Get EnumerationParamDef **/
 		Property engineTypeProperty = engineRichType.getProperty("EngineType"); //$NON-NLS-1$
 		assertNotNull(engineTypeProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE),
 				engineTypeProperty.getReturnType());
 		Object engineTypeObject = engineTypeProperty.get(engineObject);
-		assertTrue(engineTypeObject instanceof EcucNumericalParamValue);
+		assertTrue(engineTypeObject instanceof EcucTextualParamValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE), engineTypeObject);
 		/********************************************************************/
 
-		/** 2_4 Get BooleanParamDef **/
+		/** 2_5 Get BooleanParamDef **/
 		Property automaticProperty = engineRichType.getProperty("Automatic"); //$NON-NLS-1$
 		assertNotNull(automaticProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC),
@@ -283,17 +279,27 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(automaticObject instanceof EcucNumericalParamValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC), automaticObject);
 		/********************************************************************/
-
-		/** 2_5 Get ChoiceContainerDef **/
-		Property typeProperty = engineRichType.getProperty("Type"); //$NON-NLS-1$
-		assertNotNull(typeProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE), typeProperty.getReturnType());
-		Object typeObject = typeProperty.get(engineObject);
-		assertTrue(typeObject instanceof EcucContainerValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE), typeObject);
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = engineRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		Object value = isPresentOperation.evaluate(engineObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
 		/********************************************************************/
 
-		/** 2_6 Get and Check Multiplicity on [0 .. 1] parameter container **/
+		/** 2_6 Get ChoiceContainerDef **/
+		//		Property typeProperty = engineRichType.getProperty("Type"); //$NON-NLS-1$
+		// assertNotNull(typeProperty);
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE),
+		// typeProperty.getReturnType());
+		// Object typeObject = typeProperty.get(engineObject);
+		// assertTrue(typeObject instanceof EcucContainerValue);
+		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE),
+		// typeObject);
+		/********************************************************************/
+
+		/** 2_7 Get and Check Multiplicity on [0 .. 1] parameter container **/
 		/** Get Multiplicity on Container **/
 		Property lowerMultiplicityProperty = engineRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
 		assertNotNull(lowerMultiplicityProperty);
@@ -310,11 +316,11 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(upperMultiplicityObject, "1"); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 2_7 Get Multiplicity and Check on [n .. n] parameter container **/
+		/** 2_8 Get Multiplicity and Check on [n .. n] parameter container **/
 		/* Not yet implemented in Example Model */
 		/********************************************************************/
 
-		/** 2_8 Get Multiplicity and Check on [n .. *] parameter container **/
+		/** 2_9 Get Multiplicity and Check on [n .. *] parameter container **/
 		// we retrieve types necessary for testing
 		Type ownerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertTrue(ownerType instanceof RichParamConfContainerDefType);
@@ -327,7 +333,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** Check Multiplicity is respected by getting childContainers **/
 		EObject ownersObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS);
-		Property ownersProperty = ownersRichType.getProperty("Owners"); //$NON-NLS-1$
+		Property ownersProperty = ownersRichType.getProperty("Owner"); //$NON-NLS-1$
 		assertNotNull(ownersProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getListType(ownerType), ownersProperty.getReturnType());
 		Object ownersList = ownersProperty.get(ownersObject);
@@ -349,6 +355,16 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(upperMultiplicityObject instanceof String);
 		assertEquals(upperMultiplicityObject, "*"); //$NON-NLS-1$
 		/********************************************************************/
+
+		/** 3_1_5 check isPresent **/
+		isPresentOperation = ownerRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(ownerFirstHandObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
+
 	}
 
 	// 3_ChoiceContainer
@@ -380,13 +396,23 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/********************************************************************/
 
 		/** 3_4 get Value **/
-		Property gasolineProperty = typeRichType.getProperty("Gasoline"); //$NON-NLS-1$
-		assertNotNull(gasolineProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
-				gasolineProperty.getReturnType());
-		Object gasoline = absoluteQualifiedNameProperty.get(typeObject);
-		assertTrue(gasoline instanceof EcucParamConfContainerDef);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE), gasoline);
+		//		Property gasolineProperty = typeRichType.getProperty("Gasoline"); //$NON-NLS-1$
+		// assertNotNull(gasolineProperty);
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
+		// gasolineProperty.getReturnType());
+		// Object gasoline = absoluteQualifiedNameProperty.get(typeObject);
+		// assertTrue(gasoline instanceof EcucParamConfContainerDef);
+		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE),
+		// gasoline);
+		/********************************************************************/
+
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = typeRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		Object value = isPresentOperation.evaluate(typeObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
 		/********************************************************************/
 	}
 
@@ -411,14 +437,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(automaticRichType.getSimpleName(), shortName);
 		/********************************************************************/
 
-		// /** 3_1_3 Get absoluteQualifiedName **/
-		//		Property absoluteQualifiedNameProperty = automaticRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		// assertNotNull(absoluteQualifiedNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(automaticObject);
-		// assertTrue(absoluteQualifiedName instanceof String);
-		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(automaticObject), absoluteQualifiedName);
-		// /********************************************************************/
+		/** 3_1_3 Get absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = automaticRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(automaticObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(automaticObject), absoluteQualifiedName);
+		/********************************************************************/
 
 		/** 3_1_4 Get Value **/
 		Property valueProperty = automaticRichType.getProperty("value"); //$NON-NLS-1$
@@ -429,20 +455,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertFalse((Boolean) value);
 		/********************************************************************/
 
-		/** 3_1_5 check exists **/
-		Property existsProperty = automaticRichType.getProperty("exists"); //$NON-NLS-1$
-		assertNotNull(existsProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), existsProperty.getReturnType());
-		value = existsProperty.get(automaticObject);
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = automaticRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(automaticObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
 
 		/** 3_1_6 check is_configured **/
-		Property isConfiguredProperty = automaticRichType.getProperty("is_configured"); //$NON-NLS-1$
-		assertNotNull(isConfiguredProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredProperty.getReturnType());
-		value = isConfiguredProperty.get(automaticObject);
+		Operation isConfiguredOperation = automaticRichType.getOperation("isConfigured", new Type[0]);
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(automaticObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
@@ -469,14 +495,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(serialNumberRichType.getSimpleName(), shortName);
 		/********************************************************************/
 
-		// /** 3_2_3 Get absoluteQualifiedName **/
-		//		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		// assertNotNull(absoluteQualifiedNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
-		// assertTrue(absoluteQualifiedName instanceof String);
-		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
-		// /********************************************************************/
+		/** 3_2_3 Get absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
+		/********************************************************************/
 
 		/** 3_2_4 Get value of integer parameter value **/
 		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
@@ -487,20 +513,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(((Integer) value).intValue() == 879055672);
 		/********************************************************************/
 
-		/** 3_2_5 check exists **/
-		Property existsProperty = serialNumberRichType.getProperty("exists"); //$NON-NLS-1$
-		assertNotNull(existsProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), existsProperty.getReturnType());
-		value = existsProperty.get(serialNumberObject);
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = serialNumberRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(serialNumberObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
 
-		/** 3_2_6 check is_configured **/
-		Property isConfiguredProperty = serialNumberRichType.getProperty("is_configured"); //$NON-NLS-1$
-		assertNotNull(isConfiguredProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredProperty.getReturnType());
-		value = isConfiguredProperty.get(serialNumberObject);
+		/** 3_1_6 check is_configured **/
+		Operation isConfiguredOperation = serialNumberRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(serialNumberObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
@@ -527,14 +553,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(sparkPlugVoltageRichType.getSimpleName(), shortName);
 		/********************************************************************/
 
-		// /** 3_3_3 Get absoluteQualifiedName **/
-		//		Property absoluteQualifiedNameProperty = sparkPlugVoltageRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		// assertNotNull(absoluteQualifiedNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(sparkPlugVoltageObject);
-		// assertTrue(absoluteQualifiedName instanceof String);
-		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(sparkPlugVoltageObject), absoluteQualifiedName);
-		// /********************************************************************/
+		/** 3_3_3 Get absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = sparkPlugVoltageRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(sparkPlugVoltageObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(sparkPlugVoltageObject), absoluteQualifiedName);
+		/********************************************************************/
 
 		/** 3_3_4 Get value **/
 		Property valueProperty = sparkPlugVoltageRichType.getProperty("value"); //$NON-NLS-1$
@@ -545,20 +571,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(((Double) value).doubleValue() == 4.45);
 		/********************************************************************/
 
-		/** 3_3_5 check exists **/
-		Property existsProperty = sparkPlugVoltageRichType.getProperty("exists"); //$NON-NLS-1$
-		assertNotNull(existsProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), existsProperty.getReturnType());
-		value = existsProperty.get(sparkPlugVoltageObject);
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = sparkPlugVoltageRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(sparkPlugVoltageObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
 
-		/** 3_3_6 check is_configured **/
-		Property isConfiguredProperty = sparkPlugVoltageRichType.getProperty("is_configured"); //$NON-NLS-1$
-		assertNotNull(isConfiguredProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredProperty.getReturnType());
-		value = isConfiguredProperty.get(sparkPlugVoltageObject);
+		/** 3_1_6 check is_configured **/
+		Operation isConfiguredOperation = sparkPlugVoltageRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(sparkPlugVoltageObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
@@ -602,20 +628,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals((String) value, "Saxo"); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 3_4_5 check exists **/
-		Property existsProperty = vehicleNameRichType.getProperty("exists"); //$NON-NLS-1$
-		assertNotNull(existsProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), existsProperty.getReturnType());
-		value = existsProperty.get(vehicleNameObject);
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = vehicleNameRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(vehicleNameObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
 
-		/** 3_4_6 check is_configured **/
-		Property isConfiguredProperty = vehicleNameRichType.getProperty("is_configured"); //$NON-NLS-1$
-		assertNotNull(isConfiguredProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredProperty.getReturnType());
-		value = isConfiguredProperty.get(vehicleNameObject);
+		/** 3_1_6 check is_configured **/
+		Operation isConfiguredOperation = vehicleNameRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(vehicleNameObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
@@ -659,20 +685,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals((String) value, "Gasoline"); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 3_5_5 check exists **/
-		Property existsProperty = engineTypeRichType.getProperty("exists"); //$NON-NLS-1$
-		assertNotNull(existsProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), existsProperty.getReturnType());
-		value = existsProperty.get(engineTypeObject);
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = engineTypeRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(engineTypeObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
 
-		/** 3_5_6 check is_configured **/
-		Property isConfiguredProperty = engineTypeRichType.getProperty("is_configured"); //$NON-NLS-1$
-		assertNotNull(isConfiguredProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredProperty.getReturnType());
-		value = isConfiguredProperty.get(engineTypeObject);
+		/** 3_1_6 check is_configured **/
+		Operation isConfiguredOperation = engineTypeRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(engineTypeObject, null);
 		assertTrue(value instanceof Boolean);
 		assertTrue((Boolean) value);
 		/********************************************************************/
@@ -690,7 +716,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 3_6_4 Get value **/
 
-		/** 3_6_5 check exists **/
+		/** 3_6_5 check isPresent **/
 
 		/** 3_6_6 check is_configured **/
 	}
@@ -707,7 +733,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 3_7_4 Get value **/
 
-		/** 3_7_5 check exists **/
+		/** 3_7_5 check isPresent **/
 
 		/** 3_7_6 check is_configured **/
 	}
@@ -724,7 +750,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 3_8_4 Get value **/
 
-		/** 3_8_5 check exists **/
+		/** 3_8_5 check isPresent **/
 
 		/** 3_8_6 check is_configured **/
 	}
@@ -741,7 +767,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 3_9_4 Get value **/
 
-		/** 3_9_5 check exists **/
+		/** 3_9_5 check isPresent **/
 
 		/** 3_9_6 check is_configured **/
 	}
@@ -785,6 +811,24 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		Object value = valueProperty.get(engineTypeChoiceObject);
 		assertTrue(value instanceof EcucContainerValue);
 		assertEquals(value, getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE));
+		/********************************************************************/
+
+		/** 3_1_5 check isPresent **/
+		Operation isPresentOperation = engineTypeChoiceRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		assertNotNull(isPresentOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		value = isPresentOperation.evaluate(engineTypeChoiceObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
+
+		/** 3_1_6 check is_configured **/
+		Operation isConfiguredOperation = engineTypeChoiceRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(engineTypeChoiceObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
 		/********************************************************************/
 	}
 
