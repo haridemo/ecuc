@@ -82,7 +82,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 	@Override
 	protected void addBaseFeatures() {
 		super.addBaseFeatures();
-		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
+		addFeature(new OperationImpl(this, "isPresent", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				if (target != null) {
