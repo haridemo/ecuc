@@ -71,8 +71,12 @@
               </PARAMETER-VALUES>
               <REFERENCE-VALUES>
                 <ECUC-REFERENCE-VALUE>
-                  <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/EngineTypeChoice</DEFINITION-REF>
-                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/Engine/Type/Gasoline</VALUE-REF>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/FinitionLevel</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/Options/FinitionLevels/High</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/CurrentOwner</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/GeneralInfo/Owners/FifthHand</VALUE-REF>
                 </ECUC-REFERENCE-VALUE>
               </REFERENCE-VALUES>
               <SUB-CONTAINERS>
@@ -169,6 +173,26 @@
                       <VALUE>2010-09-18</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                   </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="be1f8f35-8c45-41c6-95c0-ffe8da93f033">
+              <SHORT-NAME>Options</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="5201116d-7084-4a67-bd1c-ef0877535437">
+                  <SHORT-NAME>FinitionLevels</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/FinitionLevels</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="8a3bf43c-bc9b-426a-98ea-db157517a0d7">
+                      <SHORT-NAME>High</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/FinitionLevels/High</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="bcfbeddb-dd1a-428a-b86f-19a70e22539b">
+                      <SHORT-NAME>Low</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/FinitionLevels/Low</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
                 </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
