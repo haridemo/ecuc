@@ -114,11 +114,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 
 	public void addChildAccessorFeatures(final CompositeEcucRichType childType) {
 		Assert.isNotNull(childType);
-		String childPropertyName = childType.getSimpleName();
-		if (isMany(childType)) {
-			childPropertyName = getPluralOf(childType.getSimpleName());
-		}
-		addFeature(new PropertyImpl(this, childPropertyName, getChildAccessorReturnType(childType)) {
+		addFeature(new PropertyImpl(this, childType.getSimpleName(), getChildAccessorReturnType(childType)) {
 			public Object get(Object target) {
 				List<EObject> values = null;
 				boolean many = isMany(childType);
