@@ -52,7 +52,7 @@ public class BSWPlatformProjectWizardFirstPage extends AutosarProjectWizardFirst
 
 		outletProvider = new ProjectOutletProvider();
 
-		outletBlock = new OutletsBlock(group, getShell(), outletProvider);
+		outletBlock = new OutletsBlock(group, outletProvider, true);
 
 		restoreDefaultButton = SWTUtil.createButton(outletBlock.getButtonsComposite(), "Restore Defaults", SWT.PUSH); //$NON-NLS-1$
 		restoreDefaultButton.addListener(SWT.Selection, new Listener() {

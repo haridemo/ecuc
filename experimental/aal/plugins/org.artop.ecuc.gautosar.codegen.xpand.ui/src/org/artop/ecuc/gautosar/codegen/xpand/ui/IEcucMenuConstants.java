@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui;
 
+import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 
 public interface IEcucMenuConstants {
@@ -21,8 +22,7 @@ public interface IEcucMenuConstants {
 	/**
 	 * Identifier of the Generate sub menu.
 	 */
-	// FIXME (aakar) why it's type system ??
-	public static final String MENU_GENERATE_ID = "org.artop.ecuc.typesystem.ui.menus.generate"; //$NON-NLS-1$
+	public static final String MENU_GENERATE_ID = Activator.getPlugin().getSymbolicName() + ".menus.generate"; //$NON-NLS-1$
 
 	/**
 	 * Label of the Generate sub menu.

@@ -101,7 +101,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 									display.asyncExec(new Runnable() {
 										public void run() {
 											updatePerspective();
-											selectAndReveal(getNewProject(), PlatformUI.getWorkbench().getActiveWorkbenchWindow());
+											selectAndReveal(projectHandle, PlatformUI.getWorkbench().getActiveWorkbenchWindow());
 										}
 									});
 								}

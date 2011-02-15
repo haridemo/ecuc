@@ -83,7 +83,7 @@ public class EcucCodeGenerationPreferencePage extends PreferenceAndPropertyPage 
 
 		fOutletProvider = new ProjectOutletProvider((IProject) getElement());
 
-		OutletsBlock outletsBlock = new OutletsBlock(innerParent, getShell(), fOutletProvider);
+		OutletsBlock outletsBlock = new OutletsBlock(innerParent, fOutletProvider, true);
 		fTableViewer = outletsBlock.getTableViewer();
 
 		Dialog.applyDialogFont(parent);

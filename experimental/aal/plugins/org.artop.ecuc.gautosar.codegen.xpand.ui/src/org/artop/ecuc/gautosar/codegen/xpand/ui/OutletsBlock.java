@@ -40,7 +40,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.xpand2.output.Outlet;
@@ -57,9 +56,6 @@ public class OutletsBlock {
 	private Button editButton;
 	private Button removeButton;
 
-	// TODO (aakar) Test with platform ui shell and remove this ?!!
-	private Shell shell;
-
 	private Listener listener = new Listener() {
 
 		public void handleEvent(Event event) {
@@ -73,16 +69,14 @@ public class OutletsBlock {
 		}
 	};
 
-	public OutletsBlock(Composite parent, Shell shell, ProjectOutletProvider outletProvider) {
+	public OutletsBlock(Composite parent, ProjectOutletProvider outletProvider, boolean addButtons) {
 		projectOuletProvider = outletProvider;
-		this.shell = shell;
-		createControl(parent);
+		createControl(parent, addButtons);
 	}
 
-	@SuppressWarnings("restriction")
-	private void createControl(Composite parent) {
-
+	private void createControl(Composite parent, boolean addButtons) {
 		Assert.isNotNull(parent.getShell(), "The shell of the composite is null !");
+
 		GC gc = new GC(parent.getShell());
 		gc.setFont(JFaceResources.getDialogFont());
 
@@ -111,6 +105,17 @@ public class OutletsBlock {
 		gc.dispose();
 
 		tableViewer = new TableViewer(table);
+		tableViewer.setLabelProvider(new OutletTableLabelProvider());
+		tableViewer.setContentProvider(new OutletTableContentProvider());
+		tableViewer.setInput(projectOuletProvider);
+
+		if (addButtons) {
+			addTableViewerListener();
+			addButtons(parent);
+		}
+	}
+
+	protected void addTableViewerListener() {
 		tableViewer.addDoubleClickListener(new IDoubleClickListener() {
 
 			public void doubleClick(DoubleClickEvent e) {
@@ -124,10 +129,9 @@ public class OutletsBlock {
 				updateButtons();
 			}
 		});
-		tableViewer.setLabelProvider(new OutletTableLabelProvider());
-		tableViewer.setContentProvider(new OutletTableContentProvider());
-		tableViewer.setInput(projectOuletProvider);
+	}
 
+	protected void addButtons(Composite parent) {
 		Composite buttonsComposite = new Composite(parent, SWT.NONE);
 		buttonsComposite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_BEGINNING));
 		GridLayout blayout = new GridLayout();
@@ -155,7 +159,10 @@ public class OutletsBlock {
 	}
 
 	public Composite getButtonsComposite() {
-		return addButton.getParent();
+		if (addButton != null) {
+			return addButton.getParent();
+		}
+		return null;
 	}
 
 	/**
@@ -202,7 +209,7 @@ public class OutletsBlock {
 	}
 
 	protected ExtendedOutlet editOutlet(ExtendedOutlet outlet, boolean edit, boolean isNameModifiable) {
-		EditOutletDialog dialog = new EditOutletDialog(shell, outlet, edit, isNameModifiable, projectOuletProvider);
+		EditOutletDialog dialog = new EditOutletDialog(getTableViewer().getControl().getShell(), outlet, edit, isNameModifiable, projectOuletProvider);
 		if (dialog.open() == Window.OK) {
 			return dialog.getOutlet();
 		}

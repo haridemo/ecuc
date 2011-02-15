@@ -79,37 +79,37 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 				moduleDef = moduleConfiguration.gGetDefinition();
 
 				// Referenced module definition not available? (this can be the case when the AUTOSAR model behind the
-				// selected element has not been fully loaded yet or the referenced module definition is really
-				// missing)
-				// FIXME (aakar) NPE if moduleDef is null
-				if (moduleDef.eIsProxy()) {
-					// Trigger asynchronous loading of underlying AUTOSAR model including referenced AUTOSAR models in
-					// BSW Platform projects (i.e., AUTOSAR projects with Xpand/Xtend nature) to make sure that
-					// referenced module definition has a chance to get resolved
-					IFile moduleConfigurationFile = EcorePlatformUtil.getFile(moduleConfiguration);
-					IModelDescriptor moduleConfigurationModel = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
-					ModelLoadManager.INSTANCE.loadModel(moduleConfigurationModel, true, true, null);
+				// selected element has not been fully loaded yet or the referenced module definition is really missing)
+				if (moduleDef != null) {
+					if (moduleDef.eIsProxy()) {
+						// Trigger asynchronous loading of underlying AUTOSAR model including referenced AUTOSAR models
+						// in BSW Platform projects (i.e., AUTOSAR projects with Xpand/Xtend nature) to make sure that
+						// referenced module definition has a chance to get resolved
+						IFile moduleConfigurationFile = EcorePlatformUtil.getFile(moduleConfiguration);
+						IModelDescriptor moduleConfigurationModel = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
+						ModelLoadManager.INSTANCE.loadModel(moduleConfigurationModel, true, true, null);
 
-					// Install resource changed listener which updates this action's selection state once the loading
-					// has been finished
-					TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(moduleConfiguration);
-					if (editingDomain != null) {
-						if (resourceChangedListener == null) {
-							resourceChangedListener = createResourceChangedListener();
-						}
-						editingDomain.addResourceSetListener(resourceChangedListener);
-					}
-				} else {
-					// Uninstall resource changed listener in case there is any
-					if (resourceChangedListener != null) {
+						// Install resource changed listener which updates this action's selection state once the
+						// loading has been finished
 						TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(moduleConfiguration);
 						if (editingDomain != null) {
-							editingDomain.removeResourceSetListener(resourceChangedListener);
-							resourceChangedListener = null;
+							if (resourceChangedListener == null) {
+								resourceChangedListener = createResourceChangedListener();
+							}
+							editingDomain.addResourceSetListener(resourceChangedListener);
+						}
+					} else {
+						// Uninstall resource changed listener in case there is any
+						if (resourceChangedListener != null) {
+							TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(moduleConfiguration);
+							if (editingDomain != null) {
+								editingDomain.removeResourceSetListener(resourceChangedListener);
+								resourceChangedListener = null;
+							}
 						}
 					}
 				}
-				return moduleDef != null && !moduleDef.eIsProxy();
+				return moduleDef != null && !moduleDef.eIsProxy() && !getQualifiedTemplateNameToEObjectMap().isEmpty();
 			}
 		}
 		return false;

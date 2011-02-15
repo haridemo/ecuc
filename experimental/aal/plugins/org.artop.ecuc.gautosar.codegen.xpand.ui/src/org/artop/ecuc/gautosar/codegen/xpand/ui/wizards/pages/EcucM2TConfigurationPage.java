@@ -19,12 +19,9 @@ import java.util.Map;
 
 import org.artop.aal.workspace.ui.preferences.AutosarPreferenceMessages;
 import org.artop.aal.workspace.ui.preferences.PreferenceAndPropertyPage;
-import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.OutletsBlock;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.preference.PreferenceDialog;
-import org.eclipse.jface.window.Window;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
 import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
 import org.eclipse.swt.SWT;
@@ -40,9 +37,6 @@ import org.eclipse.ui.dialogs.PreferencesUtil;
 @SuppressWarnings("restriction")
 public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 
-	protected OutletsBlock outletBlock;
-	protected ProjectOutletProvider outletProvider;
-
 	public EcucM2TConfigurationPage(String pageName) {
 		super(pageName);
 	}
@@ -52,18 +46,19 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 
 		Group outputGroup = new Group(parent, SWT.SHADOW_NONE);
 		outputGroup.setText(Messages.label_output);
-		outputGroup.setLayoutData(new GridData(SWT.FILL, SWT.NONE, true, false));
+		outputGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 
 		GridLayout outputGroupLayout = new GridLayout();
 		outputGroupLayout.verticalSpacing = 10;
 		outputGroup.setLayout(outputGroupLayout);
 
 		Link link = createLink(outputGroup, AutosarPreferenceMessages.AutosarPreferencePage_configureProjectSpecificSettings);
-		link.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_END));
+		link.setLayoutData(new GridData(GridData.END, GridData.END, true, true));
+	}
 
-		outletProvider = new ProjectOutletProvider(getContextProject());
-		outletBlock = new OutletsBlock(outputGroup, getShell(), outletProvider);
-		outletBlock.setEnabled(false);
+	@Override
+	protected boolean isOutputBlockComplete() {
+		return true;
 	}
 
 	protected Link createLink(Composite composite, String text) {
@@ -92,15 +87,7 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 		String id = EcucCodeGenerationPreferencePage.PROP_PAGE_ID;
 		if (id != null) {
 			PreferenceDialog dialog = PreferencesUtil.createPropertyDialogOn(getShell(), project, id, new String[] { id }, data);
-			if (dialog.open() == Window.OK) {
-				outletBlock.getTableViewer().refresh();
-			}
+			dialog.open();
 		}
-	}
-
-	@Override
-	public void dispose() {
-		super.dispose();
-		outletProvider.dispose();
 	}
 }
