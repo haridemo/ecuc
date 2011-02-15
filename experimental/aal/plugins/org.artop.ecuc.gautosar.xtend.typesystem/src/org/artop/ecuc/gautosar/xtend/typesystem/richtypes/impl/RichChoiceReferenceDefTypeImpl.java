@@ -14,11 +14,8 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
-import gautosar.gecucdescription.GContainer;
-import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucparameterdef.GChoiceReferenceDef;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
-import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.Collections;
 import java.util.Set;
@@ -36,21 +33,6 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 
 	private static String getTypeNameSuffix(GParamConfContainerDef valueTypeDef) {
 		return "_" + valueTypeDef.gGetShortName(); //$NON-NLS-1$
-	}
-
-	@Override
-	protected Object internalGet(Object target) {
-		GReferenceValue value = (GReferenceValue) target;
-		// XXX Check if the value's definition matches ???
-		if (getParentType().getEcucTypeDef() == value.gGetDefinition()) {
-			GIdentifiable valueValue = value.gGetValue();
-			if (valueValue instanceof GContainer) {
-				if (valueTypeDef == ((GContainer) valueValue).gGetDefinition()) {
-					return valueValue;
-				}
-			}
-		}
-		return null;
 	}
 
 	@Override

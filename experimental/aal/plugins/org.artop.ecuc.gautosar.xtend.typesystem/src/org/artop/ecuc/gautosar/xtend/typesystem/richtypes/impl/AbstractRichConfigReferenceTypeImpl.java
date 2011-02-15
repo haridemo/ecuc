@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
+import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
@@ -46,6 +47,20 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 			GParamConfContainerDef valueTypeDef) {
 		super(context, configReference, typeNameSuffix);
 		this.valueTypeDef = valueTypeDef;
+	}
+
+	@Override
+	protected void addBaseFeatures() {
+		super.addBaseFeatures();
+		addFeature(new OperationImpl(this, "isConfigured", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				if (target != null) {
+					return internalGet(target) != null;
+				}
+				return false;
+			}
+		});
 	}
 
 	@Override
@@ -87,9 +102,13 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 
 	protected Object internalGet(Object target) {
 		GReferenceValue value = (GReferenceValue) target;
-		GConfigReference referenceDef = value.gGetDefinition();
-		if (referenceDef == getEcucTypeDef()) {
-			return value.gGetValue();
+		if (value.gGetDefinition() == getEcucTypeDef()) {
+			GIdentifiable valueValue = value.gGetValue();
+			if (valueValue instanceof GContainer) {
+				if (valueTypeDef == ((GContainer) valueValue).gGetDefinition()) {
+					return valueValue;
+				}
+			}
 		}
 		return null;
 	}
