@@ -79,6 +79,39 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 		return contents.isEmpty() ? null : contents;
 	}
 
+	@Override
+	protected void addBaseFeatures() {
+		super.addBaseFeatures();
+		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				if (target != null) {
+					if (isMany(AbstractCompositeEcucRichTypeImpl.this)) {
+						List<EObject> contents = internalEContents((EObject) target);
+						if (contents != null) {
+							for (EObject content : contents) {
+								Object typeDef = null;
+								if (content instanceof GContainer) {
+									typeDef = ((GContainer) content).gGetDefinition();
+								} else if (content instanceof GParameterValue) {
+									typeDef = ((GParameterValue) content).gGetDefinition();
+								} else if (content instanceof GReferenceValue) {
+									typeDef = ((GReferenceValue) content).gGetDefinition();
+								}
+								if (typeDef == AbstractCompositeEcucRichTypeImpl.this.getEcucTypeDef()) {
+									return true;
+								}
+							}
+						}
+					} else {
+						return true;
+					}
+				}
+				return false;
+			}
+		});
+	}
+
 	public void addChildAccessorFeatures(final CompositeEcucRichType childType) {
 		Assert.isNotNull(childType);
 		String childPropertyName = childType.getSimpleName();
@@ -117,34 +150,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 				return null;
 			}
 		});
-		addFeature(new OperationImpl(this, "exists", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
-			@Override
-			protected Object evaluateInternal(Object target, Object[] params) {
-				if (target != null) {
-					if (isMany(childType)) {
-						List<EObject> contents = internalEContents((EObject) target);
-						if (contents != null) {
-							for (EObject content : contents) {
-								Object typeDef = null;
-								if (content instanceof GContainer) {
-									typeDef = ((GContainer) content).gGetDefinition();
-								} else if (content instanceof GParameterValue) {
-									typeDef = ((GParameterValue) content).gGetDefinition();
-								} else if (content instanceof GReferenceValue) {
-									typeDef = ((GReferenceValue) content).gGetDefinition();
-								}
-								if (typeDef == childType.getEcucTypeDef()) {
-									return true;
-								}
-							}
-						}
-					} else {
-						return true;
-					}
-				}
-				return false;
-			}
-		});
+
 	}
 
 	private String getPluralOf(String input) {
