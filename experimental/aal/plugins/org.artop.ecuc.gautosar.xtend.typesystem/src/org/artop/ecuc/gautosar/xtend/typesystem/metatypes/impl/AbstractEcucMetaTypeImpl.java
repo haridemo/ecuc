@@ -21,12 +21,14 @@ import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.EcucMetaType;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.AbstractTypeImpl;
 import org.eclipse.xtend.typesystem.Feature;
+import org.eclipse.xtend.typesystem.Property;
 import org.eclipse.xtend.typesystem.Type;
 
 /**
@@ -56,7 +58,7 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 		registerNamespace(getNamespace());
 
 		features = new ArrayList<Feature>(0);
-		createBaseFeatures();
+		addBaseFeatures();
 	}
 
 	/*
@@ -93,17 +95,34 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 		return context;
 	}
 
-	private void createBaseFeatures() {
-		addFeature(new PropertyImpl(this, "eContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectTypeImpl.TYPE_NAME))) { //$NON-NLS-1$
+	protected void addBaseFeatures() {
+		addFeature(new PropertyImpl(this, "eContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectType.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return internalEContents((EObject) target);
 			}
 		});
-		addFeature(new PropertyImpl(this, "eAllContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectTypeImpl.TYPE_NAME))) { //$NON-NLS-1$
+		addFeature(new PropertyImpl(this, "eAllContents", getTypeSystem().getListType(getTypeSystem().getTypeForName(ARObjectType.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return internalEAllContents((EObject) target);
 			}
 		});
+		addFeature(createShortNameFeature());
+		addFeature(new PropertyImpl(this, "absoluteQualifiedName", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				return AutosarURIFactory.getAbsoluteQualifiedName(target);
+			}
+		});
+	}
+
+	protected Property createShortNameFeature() {
+		return new PropertyImpl(this, "shortName", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof GIdentifiable) {
+					return ((GIdentifiable) target).gGetShortName();
+				}
+				return null;
+			}
+		};
 	}
 
 	protected List<EObject> internalEContents(EObject object) {

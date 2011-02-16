@@ -28,6 +28,8 @@ import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
+import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
@@ -47,6 +49,47 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 	@Override
 	protected Type getValueType() {
 		return getContext().getMetaModel().getTypeForName(ParamConfContainerDefType.TYPE_NAME);
+	}
+
+	@Override
+	public void addValueAccessorFeatures() {
+		super.addValueAccessorFeatures();
+		for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {
+			String propertyValueName = "value_" + destinationTypeDef.gGetShortName(); //$NON-NLS-1$
+
+			addFeature(new PropertyImpl(this, propertyValueName, getContext().getMetaModel().getTypeForName(getTypeName(destinationTypeDef))) {
+
+				public Object get(Object target) {
+					Type returnType = getReturnType();
+					if (returnType instanceof RichParamConfContainerDefType) {
+						RichParamConfContainerDefType richType = (RichParamConfContainerDefType) returnType;
+						GIdentifiable destinationTypeDef = richType.getEcucTypeDef();
+						if (destinationTypeDef instanceof GParamConfContainerDef) {
+							return internalGet(target, (GParamConfContainerDef) destinationTypeDef);
+						}
+					}
+					return null;
+				}
+
+				@Override
+				public void set(Object target, Object newValue) {
+					internalSet(target, newValue);
+				}
+			});
+		}
+	}
+
+	protected Object internalGet(Object target, GParamConfContainerDef destinationTypeDef) {
+		GReferenceValue value = (GReferenceValue) target;
+		if (value.gGetDefinition() == getEcucTypeDef()) {
+			GIdentifiable valueValue = value.gGetValue();
+			if (valueValue instanceof GContainer) {
+				if (((GContainer) valueValue).gGetDefinition() == destinationTypeDef) {
+					return valueValue;
+				}
+			}
+		}
+		return null;
 	}
 
 	@Override
