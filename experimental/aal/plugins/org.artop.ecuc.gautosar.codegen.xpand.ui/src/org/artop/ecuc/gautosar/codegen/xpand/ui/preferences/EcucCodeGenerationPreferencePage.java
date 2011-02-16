@@ -119,15 +119,9 @@ public class EcucCodeGenerationPreferencePage extends PreferenceAndPropertyPage 
 	}
 
 	@Override
-	protected void performApply() {
-		fOutletProvider.store();
-		super.performApply();
-	}
-
-	@Override
 	public void dispose() {
-		super.dispose();
 		fOutletProvider.dispose();
+		super.dispose();
 	}
 
 	@Override

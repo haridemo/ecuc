@@ -123,9 +123,8 @@ public class ProjectOutletProvider implements IPreferenceChangeListener {
 
 	public synchronized void store() {
 		if (project != null) {
-			IEcucCodeGenerationPreferences.OUTLETS.set(project, getOutlets());
-			// Once stored, clear the list of not stored outlets
 			unappliedOutlets.clear();
+			IEcucCodeGenerationPreferences.OUTLETS.set(project, getOutlets());
 		}
 	}
 
