@@ -14,29 +14,52 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
+import gautosar.gecucdescription.GContainer;
+import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucparameterdef.GChoiceReferenceDef;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
+	Collection<GParamConfContainerDef> destinationTypeDefs;
 
-	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef, GParamConfContainerDef valueTypeDef) {
-		super(context, choiceReferenceDef, getTypeNameSuffix(valueTypeDef), valueTypeDef);
-	}
-
-	private static String getTypeNameSuffix(GParamConfContainerDef valueTypeDef) {
-		return "_" + valueTypeDef.gGetShortName(); //$NON-NLS-1$
+	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef,
+			Collection<GParamConfContainerDef> destinationTypeDefs) {
+		super(context, choiceReferenceDef);
+		this.destinationTypeDefs = destinationTypeDefs;
 	}
 
 	@Override
 	protected Set<? extends Type> internalGetSuperTypes() {
 		return Collections.singleton(getContext().getMetaModel().getTypeForName(ChoiceReferenceDefType.TYPE_NAME));
+	}
+
+	@Override
+	protected Type getValueType() {
+		return getContext().getMetaModel().getTypeForName(ParamConfContainerDefType.TYPE_NAME);
+	}
+
+	@Override
+	protected Object internalGet(Object target) {
+		GReferenceValue value = (GReferenceValue) target;
+		if (value.gGetDefinition() == getEcucTypeDef()) {
+			GIdentifiable valueValue = value.gGetValue();
+			if (valueValue instanceof GContainer) {
+				if (destinationTypeDefs.contains(((GContainer) valueValue).gGetDefinition())) {
+					return valueValue;
+				}
+			}
+		}
+		return null;
 	}
 }

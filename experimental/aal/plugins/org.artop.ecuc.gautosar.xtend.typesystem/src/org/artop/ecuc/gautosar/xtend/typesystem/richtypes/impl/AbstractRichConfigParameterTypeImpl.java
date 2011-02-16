@@ -61,20 +61,7 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 		addFeature(new OperationImpl(this, "isConfigured", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
-				if (target != null) {
-					Object value = internalGet(target);
-					if (value != null) {
-						if (getTypeSystem().getStringType().equals(getValueType())) {
-							if (value instanceof String) {
-								String stringValue = (String) value;
-								return stringValue.length() > 0;
-							}
-						} else {
-							return true;
-						}
-					}
-				}
-				return false;
+				return internalIsSet(target);
 			}
 		});
 	}
@@ -99,6 +86,8 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 	// XXX Shouldn't we add a definition match check here - just as there is in
 	// AbstractRichConfigReferenceType.internalGet(Object)?
 	protected abstract Object internalGet(Object target);
+
+	protected abstract boolean internalIsSet(Object target);
 
 	protected abstract void internalSet(Object target, Object value);
 

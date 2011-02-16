@@ -53,4 +53,10 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 	protected void internalSet(Object target, Object value) {
 		((EcucTextualParamValue) target).setValue((String) value);
 	}
+
+	// TODO generation GAutosar with iSet Markers
+	@Override
+	protected boolean internalIsSet(Object target) {
+		return false;
+	}
 }

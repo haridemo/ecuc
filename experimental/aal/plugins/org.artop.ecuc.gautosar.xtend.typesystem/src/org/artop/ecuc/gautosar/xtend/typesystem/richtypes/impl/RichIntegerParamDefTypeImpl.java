@@ -57,4 +57,10 @@ public class RichIntegerParamDefTypeImpl extends AbstractRichConfigParameterType
 		// FIXME Provide dedicated type for BigInteger and remove BigInteger/Integer conversion
 		((GIntegerValue) target).gSetValue(BigInteger.valueOf((Integer) value));
 	}
+
+	// TODO generation GAutosar with iSet Markers
+	@Override
+	protected boolean internalIsSet(Object target) {
+		return false;
+	}
 }

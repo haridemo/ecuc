@@ -29,7 +29,6 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -79,45 +78,12 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 		return contents.isEmpty() ? null : contents;
 	}
 
-	@Override
-	protected void addBaseFeatures() {
-		super.addBaseFeatures();
-		addFeature(new OperationImpl(this, "isPresent", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
-			@Override
-			protected Object evaluateInternal(Object target, Object[] params) {
-				if (target != null) {
-					if (isMany(AbstractCompositeEcucRichTypeImpl.this)) {
-						List<EObject> contents = internalEContents((EObject) target);
-						if (contents != null) {
-							for (EObject content : contents) {
-								Object typeDef = null;
-								if (content instanceof GContainer) {
-									typeDef = ((GContainer) content).gGetDefinition();
-								} else if (content instanceof GParameterValue) {
-									typeDef = ((GParameterValue) content).gGetDefinition();
-								} else if (content instanceof GReferenceValue) {
-									typeDef = ((GReferenceValue) content).gGetDefinition();
-								}
-								if (typeDef == AbstractCompositeEcucRichTypeImpl.this.getEcucTypeDef()) {
-									return true;
-								}
-							}
-						}
-					} else {
-						return true;
-					}
-				}
-				return false;
-			}
-		});
-	}
-
 	public void addChildAccessorFeatures(final CompositeEcucRichType childType) {
 		Assert.isNotNull(childType);
 		String propertyName = childType.getSimpleName();
-		// if (isMany(childType)) {
-		// propertyName = getPluralOf(childType.getSimpleName());
-		// }
+		if (isMany(childType)) {
+			propertyName = getPluralOf(childType.getSimpleName());
+		}
 		addFeature(new PropertyImpl(this, propertyName, getChildAccessorReturnType(childType)) {
 			public Object get(Object target) {
 				List<EObject> values = null;
@@ -192,8 +158,13 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 		}
 
 		if (typeDef instanceof GParamConfMultiplicity) {
-			String upperMultiplicity = ((GParamConfMultiplicity) typeDef).gGetUpperMultiplicityAsString();
-			return upperMultiplicity != null && !"1".equals(upperMultiplicity); //$NON-NLS-1$
+			GParamConfMultiplicity multiplicity = (GParamConfMultiplicity) typeDef;
+			if (multiplicity.gGetUpperMultiplicityInfinite()) {
+				return true;
+			} else {
+				String upperMultiplicity = multiplicity.gGetUpperMultiplicityAsString();
+				return upperMultiplicity != null && !"1".equals(upperMultiplicity); //$NON-NLS-1$
+			}
 		}
 
 		return false;

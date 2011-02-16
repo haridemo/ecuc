@@ -37,6 +37,7 @@ import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -247,9 +248,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GChoiceReferenceDef) {
 			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
-			for (GParamConfContainerDef destination : choiceReferenceDef.gGetDestinations()) {
-				configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef, destination));
-			}
+				configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef, choiceReferenceDef.gGetDestinations()));
 		} else {
 			throw new UnsupportedOperationException("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -260,8 +259,8 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 		return new RichReferenceDefTypeImpl(context, referenceDef, referenceDef.gGetDestination());
 	}
 
-	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef, GParamConfContainerDef destination) {
-		return new RichChoiceReferenceDefTypeImpl(context, choiceReferenceDef, destination);
+	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef, Collection<GParamConfContainerDef> destinations) {
+		return new RichChoiceReferenceDefTypeImpl(context, choiceReferenceDef, destinations);
 	}
 
 	protected void registerType(EcucRichType type, GIdentifiable identifiable) {

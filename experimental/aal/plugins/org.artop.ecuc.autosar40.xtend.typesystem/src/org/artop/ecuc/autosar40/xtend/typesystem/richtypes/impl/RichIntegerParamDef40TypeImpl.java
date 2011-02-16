@@ -35,4 +35,10 @@ public class RichIntegerParamDef40TypeImpl extends AbstractRichNumericalParamDef
 	protected Type getValueType() {
 		return getTypeSystem().getIntegerType();
 	}
+
+	// TODO generation GAutosar with iSet Markers
+	@Override
+	protected boolean internalIsSet(Object target) {
+		return false;
+	}
 }

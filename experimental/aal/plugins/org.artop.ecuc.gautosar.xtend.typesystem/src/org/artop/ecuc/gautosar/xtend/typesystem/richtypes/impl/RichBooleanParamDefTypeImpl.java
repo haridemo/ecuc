@@ -48,4 +48,10 @@ public class RichBooleanParamDefTypeImpl extends AbstractRichConfigParameterType
 	protected void internalSet(Object target, Object value) {
 		((GBooleanValue) target).gSetValue((Boolean) value);
 	}
+
+	// TODO generation GAutosar with iSet Markers
+	@Override
+	protected boolean internalIsSet(Object target) {
+		return false;
+	}
 }

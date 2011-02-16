@@ -42,4 +42,10 @@ public class RichStringParamDefTypeImpl extends AbstractRichAbstractStringParamD
 	protected void internalSet(Object target, Object value) {
 		((GStringValue) target).gSetValue((String) value);
 	}
+
+	// TODO generationGAutosar with iSet Markers on GStringValue
+	@Override
+	protected boolean internalIsSet(Object target) {
+		return false;
+	}
 }

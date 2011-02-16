@@ -14,10 +14,8 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
-import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucparameterdef.GConfigReference;
-import gautosar.gecucparameterdef.GParamConfContainerDef;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.Collections;
@@ -25,7 +23,6 @@ import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigReferenceType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
@@ -37,16 +34,8 @@ import org.eclipse.xtend.typesystem.Type;
 
 public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichConfigReferenceType {
 
-	protected GParamConfContainerDef valueTypeDef;
-
-	public AbstractRichConfigReferenceTypeImpl(EcucContext context, GConfigReference configReference, GParamConfContainerDef valueTypeDef) {
-		this(context, configReference, null, valueTypeDef);
-	}
-
-	public AbstractRichConfigReferenceTypeImpl(EcucContext context, GConfigReference configReference, String typeNameSuffix,
-			GParamConfContainerDef valueTypeDef) {
-		super(context, configReference, typeNameSuffix);
-		this.valueTypeDef = valueTypeDef;
+	public AbstractRichConfigReferenceTypeImpl(EcucContext context, GConfigReference configReference) {
+		super(context, configReference);
 	}
 
 	@Override
@@ -55,10 +44,7 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 		addFeature(new OperationImpl(this, "isConfigured", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
-				if (target != null) {
-					return internalGet(target) != null;
-				}
-				return false;
+				return internalIsSet(target);
 			}
 		});
 	}
@@ -67,18 +53,19 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 	protected Property createShortNameFeature() {
 		return new PropertyImpl(this, "shortName", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
-				String typeName = getOwner().getName();
-				int idx = typeName.lastIndexOf("::"); //$NON-NLS-1$
-				if (idx != -1) {
-					if (idx + 2 < typeName.length()) {
-						return typeName.substring(idx + 2);
+				if (target instanceof GReferenceValue) {
+					GReferenceValue referenceValue = (GReferenceValue) target;
+					GConfigReference configReference = referenceValue.gGetDefinition();
+					if (configReference != null) {
+						return configReference.gGetShortName();
 					}
-					return ""; //$NON-NLS-1$
 				}
-				return typeName;
+				return null;
 			}
 		};
 	}
+
+	protected abstract Type getValueType();
 
 	public void addValueAccessorFeatures() {
 		addFeature(new PropertyImpl(this, "value", getValueType()) { //$NON-NLS-1$
@@ -100,32 +87,14 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 		});
 	}
 
-	protected Object internalGet(Object target) {
-		GReferenceValue value = (GReferenceValue) target;
-		if (value.gGetDefinition() == getEcucTypeDef()) {
-			GIdentifiable valueValue = value.gGetValue();
-			if (valueValue instanceof GContainer) {
-				if (valueTypeDef == ((GContainer) valueValue).gGetDefinition()) {
-					return valueValue;
-				}
-			}
-		}
-		return null;
-	}
+	protected abstract Object internalGet(Object target);
 
 	protected void internalSet(Object target, Object value) {
 		((GReferenceValue) target).gSetValue((GIdentifiable) value);
 	}
 
-	protected Type getValueType() {
-		Type valueType = null;
-		if (valueTypeDef != null) {
-			valueType = getContext().getMetaModel().getTypeForName(getTypeName(valueTypeDef));
-		}
-		if (valueType == null) {
-			valueType = getContext().getMetaModel().getTypeForName(ParamConfContainerDefType.TYPE_NAME);
-		}
-		return valueType;
+	protected boolean internalIsSet(Object target) {
+		return internalGet(target) != null;
 	}
 
 	@Override
