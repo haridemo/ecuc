@@ -1,0 +1,50 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION extensions::util»
+«EXTENSION extensions::constants»
+
+«DEFINE RichModuleDefType FOR EPD::Vehicle -»
+
+DATE «dateString()»
+
+/*****************************************************************************/
+/*      Rich Module Def Type                                                 */
+/*****************************************************************************/
+
+«ENDDEFINE»
+
+«DEFINE RichContainerDefType FOR EPD::Vehicle -»
+
+/*****************************************************************************/
+/*      Rich Container Def Type                                              */
+/*****************************************************************************/
+
+List of owners:
+«FOREACH GeneralInfo.Owners.Owners AS owner -»
+  «owner.shortName» 	«IF owner.FirstName.value != null»«owner.FirstName.value» «ENDIF»«owner.LastName.value»
+«ENDFOREACH -»
+«ENDDEFINE»
+
+«DEFINE RichConfigParameterType FOR EPD::Vehicle -»
+
+/*****************************************************************************/
+/*      Rich Config Parameter Type                                           */
+/*****************************************************************************/
+
+«ENDDEFINE»
+
+«DEFINE RichConfigReferenceType FOR EPD::Vehicle -»
+
+/*****************************************************************************/
+/*      Rich Config Reference Type                                           */
+/*****************************************************************************/
+
+«LET GeneralInfo.FinitionLevel.value AS reference -»
+«IF reference.metaType.isInstance(Options.FinitionLevels.High) -»
+Finition level is "«((EPD::Vehicle::Options::FinitionLevels::High) reference).shortName»".
+«ELSEIF GeneralInfo.FinitionLevel.value.metaType.isInstance(Options.FinitionLevels.Low)»
+Finition level is "Low".
+«ENDIF»
+«ENDLET»
+
+«ENDDEFINE»

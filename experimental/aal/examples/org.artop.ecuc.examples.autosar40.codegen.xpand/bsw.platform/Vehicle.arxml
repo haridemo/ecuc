@@ -100,7 +100,7 @@
                     <ECUC-PARAM-CONF-CONTAINER-DEF>
                       <SHORT-NAME>Owner</SHORT-NAME>
                       <LOWER-MULTIPLICITY SHORT-LABEL="Lower">1</LOWER-MULTIPLICITY>
-                      <UPPER-MULTIPLICITY-INFINITE SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY-INFINITE>
+                      <UPPER-MULTIPLICITY-INFINITE SHORT-LABEL="Upper">true</UPPER-MULTIPLICITY-INFINITE>
                       <PARAMETERS>
                         <ECUC-STRING-PARAM-DEF>
                           <SHORT-NAME>FirstName</SHORT-NAME>

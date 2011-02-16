@@ -32,24 +32,26 @@ It does not exist.
 «ENDIF»
 «ENDREM»
 
+«REM»
 List of owners:
 «FOREACH GeneralInfo.Owners.Owner AS owner»
   «owner.shortName»
 «ENDFOREACH»
+«ENDREM»
 
 /* References */
 Current Owner: «GeneralInfo.CurrentOwner.value.FirstName.value» «GeneralInfo.CurrentOwner.value.LastName.value»
-Finition Level: «GeneralInfo.FinitionLevel_High.value.shortName»
+Finition Level: «GeneralInfo.FinitionLevel.value.shortName»
 
 /*
  * Anybody home? 
  */
 
  - Does the "High" finition level exist?
- - «IF Options.FinitionLevels.High.isPresent()»Yes, it does«ELSE»No, it doesn't«ENDIF».
+ - «IF Options.FinitionLevels.High != null»Yes, it does«ELSE»No, it doesn't«ENDIF».
 
  - What about "Medium"?
- - «IF Options.FinitionLevels.Medium != null»It exists«ELSE»It doesn't exist«ENDIF».
+ - «IF Options.FinitionLevels.Medium != null»It exists«ELSE»It doesnot exist«ENDIF».
 
 «REM»
 «IF Options.FinitionLevels.Medium.isPresent()»
