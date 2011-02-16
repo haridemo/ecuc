@@ -14,6 +14,10 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 
+import gautosar.gecucdescription.GModuleConfiguration;
+
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +26,7 @@ import org.artop.aal.workspace.ui.preferences.PreferenceAndPropertyPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.preference.PreferenceDialog;
+import org.eclipse.sphinx.xpand.ExecutionContextRequest;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
 import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
 import org.eclipse.swt.SWT;
@@ -42,6 +47,20 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	}
 
 	@Override
+	protected void createTemplateBlock(Composite parent) {
+		if (modelObject instanceof GModuleConfiguration) {
+			super.createTemplateBlock(parent);
+		} else {
+			createTemplateTableViewer(parent);
+		}
+	}
+
+	// TODO (aakar)Create the template table viewer here
+	protected void createTemplateTableViewer(Composite parent) {
+
+	}
+
+	@Override
 	protected void createOutputBlock(Composite parent) {
 
 		Group outputGroup = new Group(parent, SWT.SHADOW_NONE);
@@ -54,6 +73,15 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 
 		Link link = createLink(outputGroup, AutosarPreferenceMessages.AutosarPreferencePage_configureProjectSpecificSettings);
 		link.setLayoutData(new GridData(GridData.END, GridData.END, true, true));
+	}
+
+	@Override
+	public Collection<ExecutionContextRequest> getExecutionContextRequests() {
+		if (modelObject instanceof GModuleConfiguration) {
+			return super.getExecutionContextRequests();
+		}
+		// TODO (aakar) Create a collection of requests from template table viewer
+		return Collections.emptyList();
 	}
 
 	@Override

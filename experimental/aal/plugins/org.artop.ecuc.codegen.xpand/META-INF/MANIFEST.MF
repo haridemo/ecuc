@@ -11,8 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  org.eclipse.emf.common.ui,
- org.eclipse.xpand,
- org.artop.ecl.emf;visibility:=reexport
+ org.eclipse.sphinx.xpand;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.artop.ecuc.codegen.xpand,

@@ -109,7 +109,7 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 						}
 					}
 				}
-				return moduleDef != null && !moduleDef.eIsProxy() && !getQualifiedTemplateNameToEObjectMap().isEmpty();
+				return moduleDef != null && !moduleDef.eIsProxy() && !getExecutionContextRequests().isEmpty();
 			}
 		}
 		return false;
@@ -174,6 +174,7 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 
 	@Override
 	public void run() {
+		// TODO (aakar) always open the wizard and fill programmatically text fields from settings
 		if (!existsTemplateFile()) {
 			EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getScopingResourceLoader(),
 					getDefaultOutletURI());

@@ -19,9 +19,7 @@ import gautosar.gecucparameterdef.GModuleDef;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.artop.ecl.emf.model.IModelDescriptor;
 import org.artop.ecl.emf.model.ModelDescriptorRegistry;
@@ -35,7 +33,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -46,6 +43,7 @@ import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sphinx.xpand.ExecutionContextRequest;
 import org.eclipse.sphinx.xpand.ui.actions.AbstractM2TAction;
 import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xpand2.output.Outlet;
@@ -117,7 +115,7 @@ public class LaunchEcucCodeGen40Action extends AbstractM2TAction {
 						}
 					}
 				}
-				return !isProxy && !ecucModulesConfigurationValues.isEmpty() && !getQualifiedTemplateNameToEObjectMap().isEmpty();
+				return !isProxy && !ecucModulesConfigurationValues.isEmpty() && !getExecutionContextRequests().isEmpty();
 			}
 		}
 		return false;
@@ -160,16 +158,16 @@ public class LaunchEcucCodeGen40Action extends AbstractM2TAction {
 	}
 
 	@Override
-	protected Map<String, EObject> getQualifiedTemplateNameToEObjectMap() {
-		Map<String, EObject> result = new HashMap<String, EObject>();
+	protected Collection<ExecutionContextRequest> getExecutionContextRequests() {
+		List<ExecutionContextRequest> requests = new ArrayList<ExecutionContextRequest>();
 		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
 			IFile templateFile = getTemplateFile(moduleConf.gGetDefinition());
 			if (templateFile != null && templateFile.exists()) {
 				String qualifiedTemplateName = getScopingResourceLoader().getQualifiedTemplateName(templateFile, getRootDefineName());
-				result.put(qualifiedTemplateName, moduleConf);
+				requests.add(new ExecutionContextRequest(qualifiedTemplateName, moduleConf));
 			}
 		}
-		return result;
+		return requests;
 	}
 
 	@Override
