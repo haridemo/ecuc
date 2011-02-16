@@ -1,7 +1,7 @@
 extension extensions::com;
 
 context ARRoot::Com ERROR "must contain at least one filereference" :
-	ComGeneral.ComRteCbkIncludeFile.size >= 1;
+	ComGeneral.ComRteCbkIncludeFiles.size >= 1;
 	
 
 context ARRoot::Com ERROR shortName + " must have a shortname longer than 15 but has " + shortName.length + " only" :

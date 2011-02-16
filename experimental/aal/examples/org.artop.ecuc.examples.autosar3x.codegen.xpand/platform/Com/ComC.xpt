@@ -16,7 +16,7 @@
 #include "<%value%>"
 <%}%>
 «ENDREM»
-«FOREACH ComGeneral.ComRteCbkIncludeFile AS file -»
+«FOREACH ComGeneral.ComRteCbkIncludeFiles AS file -»
 #include "«file.value»"
 «ENDFOREACH -»
 

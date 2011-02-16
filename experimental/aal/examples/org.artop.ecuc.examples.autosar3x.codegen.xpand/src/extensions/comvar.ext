@@ -8,9 +8,9 @@ Integer filterOccurenceIdxNumber(Object o) :
 
 //	returns the greatest ComFilterPeriodFactor inside of this module
 private cached Integer maxFilterOccurenceValue(ARRoot::Com com) :
-	com.ComConfig.ComSignal.ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).ComFilterPeriodFactor.value.
+	com.ComConfig.ComSignals.ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).ComFilterPeriodFactor.value.
 	addAll(
-	    com.ComConfig.ComSignalGroup.ComGroupSignal.ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).ComFilterPeriodFactor.value).
+	    com.ComConfig.ComSignalGroups.ComGroupSignals.ComFilter.select(e|e.ComFilterAlgorithm.isONE_EVERY_N()).ComFilterPeriodFactor.value).
 	sortBy(e|e.toInteger()).last();
 	
 cached Integer maxFilterOccurenceValueBits(ARRoot::Com com) :

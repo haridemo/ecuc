@@ -7,12 +7,12 @@ extension extensions::common;
 // <%script type="autosar.ARRoot_Com" name="gceIPdu"%>
 // <%evalWithCache("ComConfig.ComIPdu")%>
 cached gceIPdu(ARRoot::Com com) :
-	com.ComConfig.ComIPdu;
+	com.ComConfig.ComIPdus;
 
 // <%script type="autosar.ARRoot_Com" name="gceRxIPdu"%>
 // <%evalWithCache("ComConfig.ComIPdu[ComIpduDirection.isRECEIVE]")%>
 cached gceRxIPdu(ARRoot::Com com) :
-	com.ComConfig.ComIPdu.select(e|e.ComIpduDirection.isRECEIVE());
+	com.ComConfig.ComIPdus.select(e|e.ComIpduDirection.isRECEIVE());
 
 // <%script type="autosar.ARRoot_Com" name="gceRxIPduSort"%>
 // <%evalWithCache("gceRxIPdu().nSort("ComIPduRxHandleId.value")")%>
@@ -22,22 +22,22 @@ cached gceRxIPduSort(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceTxIPdu"%>
 // <%evalWithCache("ComConfig.ComIPdu[ComIpduDirection.isSEND]")%>
 cached gceTxIPdu(ARRoot::Com com) :
-	com.ComConfig.ComIPdu.select(e|e.ComIpduDirection.isSEND());
+	com.ComConfig.ComIPdus.select(e|e.ComIpduDirection.isSEND());
 
 // <%script type="autosar.ARRoot_Com" name="gceIPDuGroupSort"%>
 // <%evalWithCache("ComConfig.ComIPduGroup.nSort("ComIPduGroupHandleId.value")")%>
 cached gceIPDuGroupSort(ARRoot::Com com) :
-	com.ComConfig.ComIPduGroup.sortBy(e|e.ComIPduGroupHandleId.value);
+	com.ComConfig.ComIPduGroups.sortBy(e|e.ComIPduGroupHandleId.value);
 
 // <%script type="autosar.ARRoot_Com" name="gceSignalSort"%>
 // <%evalWithCache("ComConfig.ComSignal.nSort("ComHandleId.value")")%>
 cached gceSignalSort(ARRoot::Com com) :
-	com.ComConfig.ComSignal.sortBy(e|e.ComHandleId.value);
+	com.ComConfig.ComSignals.sortBy(e|e.ComHandleId.value);
 
 //<%script type="autosar.ARRoot_Com" name="gceRxSignal"%>
 //<%evalWithCache("gceRxIPdu().ComIPduSignalRef.referenced_ComSignal")%>
 cached gceRxSignal(ARRoot::Com com) :
-	gceRxIPdu(com).collect(e|e.ComIPduSignalRef);
+	gceRxIPdu(com).collect(e|e.ComIPduSignalRefs);
 
 // <%script type="autosar.ARRoot_Com" name="gceRxSignalSort"%>
 // <%evalWithCache("gceRxSignal().nSort("ComHandleId.value")")%>
@@ -47,7 +47,7 @@ cached gceRxSignalSort(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceTxSignal"%>
 // <%evalWithCache("gceTxIPdu().ComIPduSignalRef.referenced_ComSignal")%>
 cached gceTxSignal(ARRoot::Com com) :
-	gceTxIPdu(com).ComIPduSignalRef;
+	gceTxIPdu(com).ComIPduSignalRefs;
 
 // <%script type="autosar.ARRoot_Com" name="gceTxSignalSort"%>
 // <%evalWithCache("gceTxSignal().nSort("ComHandleId.value")")%>
@@ -57,12 +57,12 @@ cached gceTxSignalSort(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceSignalGroupSort"%>
 // <%evalWithCache("ComConfig.ComSignalGroup.nSort("ComHandleId.value")")%>
 cached gceSignalGroupSort(ARRoot::Com com) : 
-	com.ComConfig.ComSignalGroup.sortBy(e|e.ComHandleId.value);
+	com.ComConfig.ComSignalGroups.sortBy(e|e.ComHandleId.value);
 
 // <%script type="autosar.ARRoot_Com" name="gceRxSignalGroup"%>
 // <%evalWithCache("gceRxIPdu().ComIPduSignalGroupRef.referenced_ComSignalGroup")%>
 cached gceRxSignalGroup(ARRoot::Com com) :
-	com.gceRxIPdu().ComIPduSignalGroupRef;
+	com.gceRxIPdu().ComIPduSignalGroupRefs;
 
 // <%script type="autosar.ARRoot_Com" name="gceRxSignalGroupSort"%>
 // <%evalWithCache("gceRxSignalGroup().nSort("ComHandleId.value")")%>
@@ -72,7 +72,7 @@ cached gceRxSignalGroupSort(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceTxSignalGroup"%>
 // <%evalWithCache("gceTxIPdu().ComIPduSignalGroupRef.referenced_ComSignalGroup")%>
 cached gceTxSignalGroup(ARRoot::Com com) :
-	com.gceTxIPdu().collect(e|e.ComIPduSignalGroupRef);
+	com.gceTxIPdu().collect(e|e.ComIPduSignalGroupRefs);
 	
 // <%script type="autosar.ARRoot_Com" name="gceTxSignalGroupSort"%>
 // <%evalWithCache("gceTxSignalGroup().nSort("ComHandleId.value")")%>
@@ -82,12 +82,12 @@ cached gceTxSignalGroupSort(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceGroupSignalSort"%>
 // <%evalWithCache("ComConfig.ComSignalGroup.ComGroupSignal.nSort("ComHandleId.value")")%>
 cached gceGroupSignalSort(ARRoot::Com com) :
-	com.ComConfig.ComSignalGroup.ComGroupSignal.sortBy(e|e.ComHandleId.value);
+	com.ComConfig.ComSignalGroups.ComGroupSignals.sortBy(e|e.ComHandleId.value);
 
 // <%script type="autosar.ARRoot_Com" name="gceRxGroupSignal"%>
 // <%evalWithCache("gceRxSignalGroup().ComGroupSignal")%>
 cached gceRxGroupSignal(ARRoot::Com com) :
-	com.gceRxSignalGroup().collect(e|e.value.ComGroupSignal);
+	com.gceRxSignalGroup().collect(e|e.value.ComGroupSignals);
 
 // <%script type="autosar.ARRoot_Com" name="gceRxGroupSignalSort"%>
 // <%evalWithCache("gceRxGroupSignal().nSort("ComHandleId.value")")%>
@@ -97,7 +97,7 @@ cached gceRxGroupSignalSort(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceTxGroupSignal"%>
 // <%evalWithCache("gceTxSignalGroup().ComGroupSignal")%>
 cached gceTxGroupSignal(ARRoot::Com com) :
-	com.gceTxSignalGroup().flatten().collect(e|e.value.ComGroupSignal);
+	com.gceTxSignalGroup().flatten().collect(e|e.value.ComGroupSignals);
 	
 // <%script type="autosar.ARRoot_Com" name="gceTxGroupSignalSort"%>
 // <%evalWithCache("gceTxGroupSignal().nSort("ComHandleId.value")")%>
@@ -112,17 +112,17 @@ cached gceFilter(ARRoot::Com com) :
 // <%script type="autosar.ARRoot_Com" name="gceSignalRoute"%>
 // <%evalWithCache("ComConfig.ComGwMapping.ComGwSignalDest.ComGwSignalRef[referenced_ComSignal.isPresent()]")%>
 cached gceSignalRoute(ARRoot::Com com) :
-	com.ComConfig.ComGwMapping.ComGwSignalDest.ComGwSignalRef_ComSignal;
+	com.ComConfig.ComGwMappings.ComGwSignalDests.ComGwSignalRef;
 	
 // <%script type="autosar.ARRoot_Com" name="gceSignalGroupRoute"%>
 // <%evalWithCache("ComConfig.ComGwMapping.ComGwSignalDest.ComGwSignalRef[referenced_ComSignalGroup.isPresent()]")%>
 cached gceSignalGroupRoute(ARRoot::Com com) :
-	com.ComConfig.ComGwMapping.ComGwSignalDest.ComGwSignalRef_ComSignalGroup;
+	com.ComConfig.ComGwMappings.ComGwSignalDests.ComGwSignalRef;
 
 // <%script type="autosar.ARRoot_Com" name="gceGroupSignalRoute"%>
 // <%evalWithCache("ComConfig.ComGwMapping.ComGwSignalDest.ComGwSignalRef[referenced_ComGroupSignal.isPresent()]")%>
 cached gceGroupSignalRoute(ARRoot::Com com) :
-	com.ComConfig.ComGwMapping.ComGwSignalDest.ComGwSignalRef_ComGroupSignal;	
+	com.ComConfig.ComGwMappings.ComGwSignalDests.ComGwSignalRef;	
 
 // <%script type="autosar.ARRoot_Com" name="gceConfigurationIdHexa"%>
 // <%printf("%X",ComConfig.ComConfigurationId.value)%>

@@ -107,10 +107,10 @@
 <%}%>
 «ENDREM»
 «FOREACH gceRxIPdu() AS rxIPdu»
-	«FOREACH rxIPdu.ComIPduSignalGroupRef AS signalGroupRef»
+	«FOREACH rxIPdu.ComIPduSignalGroupRefs AS signalGroupRef»
 		«signalGroupRef.mapPut("direction", "Rx")»
 	«ENDFOREACH»
-	«FOREACH rxIPdu.ComIPduSignalRef AS signalRef»
+	«FOREACH rxIPdu.ComIPduSignalRefs AS signalRef»
 		«signalRef.mapPut("direction", "Rx")»
 	«ENDFOREACH»
 «ENDFOREACH»
@@ -125,10 +125,10 @@
 <%}%>
 «ENDREM»
 «FOREACH gceTxIPdu() AS txIPdu»
-	«FOREACH txIPdu.ComIPduSignalGroupRef AS signalGroupRef»
+	«FOREACH txIPdu.ComIPduSignalGroupRefs AS signalGroupRef»
 		«signalGroupRef.mapPut("direction", "Tx")»
 	«ENDFOREACH»
-	«FOREACH txIPdu.ComIPduSignalRef AS signalRef»
+	«FOREACH txIPdu.ComIPduSignalRefs AS signalRef»
 		«signalRef.mapPut("direction", "Tx")»
 	«ENDFOREACH»
 «ENDFOREACH»
@@ -364,7 +364,7 @@
 «ENDREM»
 «FOREACH gceIPdu() AS ipdu»
 	«ipdu.push()»
-	«FOREACH ipdu.ComIPduSignalGroupRef.sortBy(e|e.value.ComHandleId) AS signalGroup»
+	«FOREACH ipdu.ComIPduSignalGroupRefs.sortBy(e|e.value.ComHandleId) AS signalGroup»
 		«signalGroup.mapAdd("referencingComIPdu", peek())»
 		
 		«IF ((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGet("referencingComSignalGroups") != null»
@@ -373,7 +373,7 @@
 		«ENDIF»
 		«((ARRoot::Com::ComConfig::ComIPdu) peek()).mapAdd("referencingComSignalGroups", signalGroup)»
 	«ENDFOREACH»
-	«FOREACH ipdu.ComIPduSignalRef.sortBy(e|e.value.ComHandleId) AS signal»
+	«FOREACH ipdu.ComIPduSignalRefs.sortBy(e|e.value.ComHandleId) AS signal»
 		«signal.mapAdd("referencingComIPdu", peek())»
 
 		«IF ((ARRoot::Com::ComConfig::ComIPdu) peek()).mapGet("referencingComSignals") != null»
@@ -893,7 +893,7 @@
 «ENDREM»
 «IF ComGeneral.ComPduRGeneralRef.value.PduRZeroCostOperation.value == true»
     «IF ComGeneral.ComPduRGeneralRef.value.PduRSingleIf.isCAN_IF()»
-    	«FOREACH ComGeneral.ComCanIfInitConfigurationRef.value.CanIfTxPduConfig AS txPduId»
+    	«FOREACH ComGeneral.ComCanIfInitConfigurationRef.value.CanIfTxPduConfigs AS txPduId»
     		«txPduId.PduIdRef.mapPut("PduId", txPduId.CanIfCanTxPduId.value)»
     	«ENDFOREACH»
     «ENDIF»
@@ -909,7 +909,7 @@
     «ENDIF»
 «ELSE»
     «REM» Problem «ENDREM»
-    «FOREACH ComGeneral.ComPduRGeneralRef.value.parent.PduRGlobalConfig.PduRRoutingTable.PduRRoutingPath.PduRSrcPdu AS txPduId»
+    «FOREACH ComGeneral.ComPduRGeneralRef.value.parent.PduRGlobalConfig.PduRRoutingTable.PduRRoutingPaths.PduRSrcPdu AS txPduId»
     	«txPduId.SrcPduRef.mapPut("PduId", txPduId.HandleId.value)»
     «ENDFOREACH»
 «ENDIF»
@@ -930,7 +930,7 @@
 	<%nPop()%>
 <%}%>
 «ENDREM»
-«FOREACH  ComConfig.ComGwMapping AS gw»
+«FOREACH  ComConfig.ComGwMappings AS gw»
 	«gw.push()»
 	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComGroupSignal AS groupSignal»
 		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComGroupSignal.mapAdd("gatewayDest", groupSignal)»
@@ -1021,7 +1021,7 @@
 «ENDREM»
 «varSet("RxIPduNumber", gceRxIPdu().size)»
 «varSet("TxIPduNumber", gceTxIPdu().size)»
-«varSet("IPduGroupNumber", ComConfig.ComIPduGroup.size)»
+«varSet("IPduGroupNumber", ComConfig.ComIPduGroups.size)»
 «varSet("RxSignalNumber", gceRxSignal().size)»
 «varSet("TxSignalNumber", gceTxSignal().size)»
 «varSet("RxGroupSignalNumber", gceRxGroupSignal().size)»
@@ -1029,7 +1029,7 @@
 «varSet("RxSignalGroupNumber", gceRxSignalGroup().size)»
 «varSet("TxSignalGroupNumber", gceTxSignalGroup().size)»
 «varSet("AllSignalNumber", intVarGet("RxSignalNumber") + intVarGet("TxSignalNumber") + intVarGet("RxGroupSignalNumber") + intVarGet("TxGroupSignalNumber"))»
-«varSet("AllSignalGroupNumber", ComConfig.ComSignalGroup.size)»
+«varSet("AllSignalGroupNumber", ComConfig.ComSignalGroups.size)»
 «varSet("FilterNumber", gceFilter().size)»
 «varSet("RxSignalFilterNumber", gceRxSignal().flatten().select(e|e.value.ComFilter != null).value.ComFilter.select(e|e.ComFilterAlgorithm.isALWAYS()).size)»
 «varSet("TxSignalFilterNumber", gceTxSignal().select(e|e.value.ComFilter != null).value.ComFilter.select(e|e.ComFilterAlgorithm.isNEVER()).size)»
@@ -1232,7 +1232,7 @@
 <%}%>
 «ENDREM»
 «varSet("MaxMDTValue", 0)»
-«FOREACH ComConfig.ComIPdu AS ipdu»
+«FOREACH ComConfig.ComIPdus AS ipdu»
     «IF ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value > intVarGet("MaxMDTValue")»
         «varSet("MaxMDTValue", ipdu.ComTxIPdu.ComTxIPduMinimumDelayTimeFactor.value)»
     «ENDIF»
@@ -1487,7 +1487,7 @@
     <%}%>
 <%}%>
 «ENDREM»
-«FOREACH  ComConfig.ComIPdu AS ipdu»
+«FOREACH  ComConfig.ComIPdus AS ipdu»
     «IF ((int)ipdu.mapGet("FirstTimeoutFactor")) > intVarGet("MaxFirstTimeoutFactorValue")»
         «varSet("MaxFirstTimeoutFactorValue", (int)ipdu.mapGet("FirstTimeoutFactor"))»
     «ENDIF»
@@ -1652,7 +1652,7 @@
     <%}%>
 <%}%>
 «ENDREM»
-«FOREACH ComConfig.ComIPdu.ComTxIPdu.select(e|e.ComTxModeFalse != null).ComTxModeFalse.ComTxMode AS mode»
+«FOREACH ComConfig.ComIPdus.ComTxIPdu.select(e|e.ComTxModeFalse != null).ComTxModeFalse.ComTxMode AS mode»
     «IF mode.ComTxModeTimePeriodFactor.value > intVarGet("MaxTimePeriodFactorValue")»
         «varSet("MaxTimePeriodFactorValue", mode.ComTxModeTimePeriodFactor.value)»
     «ENDIF»
@@ -1677,7 +1677,7 @@
     <%}%>
 <%}%>
 «ENDREM»
-«FOREACH ComConfig.ComIPdu.ComTxIPdu.select(e|e.ComTxModeTrue != null).ComTxModeTrue.ComTxMode AS mode»
+«FOREACH ComConfig.ComIPdus.ComTxIPdu.select(e|e.ComTxModeTrue != null).ComTxModeTrue.ComTxMode AS mode»
     «IF mode.ComTxModeTimePeriodFactor.value > intVarGet("MaxTimePeriodFactorValue")»
         «varSet("MaxTimePeriodFactorValue", mode.ComTxModeTimePeriodFactor.value)»
     «ENDIF»
