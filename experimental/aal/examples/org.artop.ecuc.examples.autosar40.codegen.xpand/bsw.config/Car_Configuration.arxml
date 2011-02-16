@@ -78,6 +78,9 @@
                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/CurrentOwner</DEFINITION-REF>
                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/GeneralInfo/Owners/FifthHand</VALUE-REF>
                 </ECUC-REFERENCE-VALUE>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/FirstHand</DEFINITION-REF>
+                </ECUC-REFERENCE-VALUE>
               </REFERENCE-VALUES>
               <SUB-CONTAINERS>
                 <ECUC-CONTAINER-VALUE>

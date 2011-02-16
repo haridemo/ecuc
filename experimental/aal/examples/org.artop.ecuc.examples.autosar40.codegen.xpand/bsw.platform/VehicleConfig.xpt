@@ -39,12 +39,17 @@ List of owners:
 /*      Rich Config Reference Type                                           */
 /*****************************************************************************/
 
-«LET GeneralInfo.FinitionLevel.value AS reference -»
-«IF reference.metaType.isInstance(Options.FinitionLevels.High) -»
-Finition level is "«((EPD::Vehicle::Options::FinitionLevels::High) reference).shortName»".
+«LET GeneralInfo.FinitionLevel.value AS referenceValue -»
+«IF EPD::Vehicle::Options::FinitionLevels::High.isInstance(referenceValue) -»
+Finition level is "«((EPD::Vehicle::Options::FinitionLevels::High) referenceValue).shortName»".
 «ELSEIF GeneralInfo.FinitionLevel.value.metaType.isInstance(Options.FinitionLevels.Low)»
 Finition level is "Low".
-«ENDIF»
-«ENDLET»
+«ENDIF -»
+«ENDLET -»
+
+Is reference to current owner configured?     «IF GeneralInfo.CurrentOwner.isConfigured()»Yes«ELSE»No«ENDIF».
+Is reference to first hand owner configured?  «IF GeneralInfo.FirstHand.isConfigured()»Yes«ELSE»No«ENDIF».
+
+Is reference to revision owner configured?    «IF GeneralInfo.Revisons.OwnerAtThatTime != null && GeneralInfo.Revisons.OwnerAtThatTime.isConfigured()»Yes«ELSE»No«ENDIF».
 
 «ENDDEFINE»
