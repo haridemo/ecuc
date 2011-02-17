@@ -21,6 +21,7 @@ import java.util.List;
 import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
 import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.EcucM2TConfigurationPage;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
@@ -37,6 +38,7 @@ public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
 
 	public EcucM2TConfigurationWizard(EObject modelObject, MetaModel metaModel, IScopingResourceLoader scopingResourceLoader, URI defaultOutletURI) {
 		super(modelObject, metaModel, scopingResourceLoader, defaultOutletURI);
+		setDialogSettings(Activator.getDefault().getDialogSettings());
 	}
 
 	@Override

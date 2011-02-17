@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.aal.workspace.ui.preferences.AutosarPreferenceMessages;
 import org.artop.aal.workspace.ui.preferences.PreferenceAndPropertyPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
@@ -117,5 +118,10 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 			PreferenceDialog dialog = PreferencesUtil.createPropertyDialogOn(getShell(), project, id, new String[] { id }, data);
 			dialog.open();
 		}
+	}
+
+	@Override
+	protected String getTemplatePathDialogSettingsKey() {
+		return STORE_TEMPLATE_PATH + AutosarURIFactory.getAbsoluteQualifiedName(modelObject);
 	}
 }
