@@ -44,12 +44,18 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 
 	// Test Model Objects uri fragments
 	public static final String URI_FRAGMENT_EPC_CAR = "/EPC/Car?type=EcucModuleConfigurationValues";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_GENERALINFO = "/EPC/Car/GeneralInfo?type=EcucContainerValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_ENGINE_TYPE_CHOICE_GASOLINE = "/EPC/Car/GeneralInfo/@referenceValues.0?type=EcucReferenceValue";//$NON-NLS-1$
+
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO = "/EPC/Car/GeneralInfo?type=EcucContainerValue";//$NON-NLS-1$
+
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL = "/EPC/Car/GeneralInfo/@referenceValues.0?type=EcucReferenceValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER = "/EPC/Car/GeneralInfo/@referenceValues.1?type=EcucReferenceValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_2_FIRSTHAND = "/EPC/Car/GeneralInfo/@referenceValues.2?type=EcucReferenceValue";//$NON-NLS-1$
+
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME = "/EPC/Car/GeneralInfo/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER = "/EPC/Car/GeneralInfo/@parameterValues.1?type=EcucNumericalParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_2_MANUFACTURER = "/EPC/Car/GeneralInfo/@parameterValues.2?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_3_YEAR = "/EPC/Car/GeneralInfo/@parameterValues.3?type=EcucNumericalParamValue";//$NON-NLS-1$
+
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS = "/EPC/Car/GeneralInfo/Owners?type=EcucContainerValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND = "/EPC/Car/GeneralInfo/Owners/FirstHand?type=EcucContainerValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_LASTNAME = "/EPC/Car/GeneralInfo/Owners/FirstHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
@@ -64,20 +70,30 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND = "/EPC/Car/GeneralInfo/Owners/FifthHand?type=EcucContainerValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND_PARAMETER_VALUES_0_FIRSTNAME = "/EPC/Car/GeneralInfo/Owners/FifthHand/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND_PARAMETER_VALUES_1_LASTNAME = "/EPC/Car/GeneralInfo/Owners/FifthHand/@parameterValues.1?type=EcucTextualParamValue";//$NON-NLS-1$
+
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS = "/EPC/Car/GeneralInfo/Revisions?type=EcucContainerValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_0_DATE_20071215 = "/EPC/Car/GeneralInfo/Revisions/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_1_DATE_20080106 = "/EPC/Car/GeneralInfo/Revisions/@parameterValues.1?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_2_DATE_20080605 = "/EPC/Car/GeneralInfo/Revisions/@parameterValues.2?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_3_DATE_20090707 = "/EPC/Car/GeneralInfo/Revisions/@parameterValues.3?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918 = "/EPC/Car/GeneralInfo/Revisions/@parameterValues.4?type=EcucTextualParamValue";//$NON-NLS-1$
+
 	public static final String URI_FRAGMENT_EPC_CAR_ENGINE = "/EPC/Car/Engine?type=EcucContainerValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE = "/EPC/Car/Engine/Type?type=EcucContainerValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_2_SPARK_PLUG_MODEL = "/EPC/Car/Engine/Type/Gasoline/@parameterValues.2?type=EcucTextualParamValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE = "/EPC/Car/Engine/Type/Gasoline/@parameterValues.1?type=EcucNumericalParamValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_0_SPARK_PLUG_NUMBER = "/EPC/Car/Engine/Type/Gasoline/@parameterValues.0?type=EcucNumericalParamValue";//$NON-NLS-1$
-	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE = "/EPC/Car/Engine/Type/Gasoline?type=EcucContainerValue";//$NON-NLS-1$
+
 	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE = "/EPC/Car/Engine/@parameterValues.0?type=EcucTextualParamValue";//$NON-NLS-1$
 	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC = "/EPC/Car/Engine/@parameterValues.1?type=EcucNumericalParamValue";//$NON-NLS-1$
+
+	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE = "/EPC/Car/Engine/Type?type=EcucContainerValue";//$NON-NLS-1$
+
+	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE = "/EPC/Car/Engine/Type/Gasoline?type=EcucContainerValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_0_SPARK_PLUG_NUMBER = "/EPC/Car/Engine/Type/Gasoline/@parameterValues.0?type=EcucNumericalParamValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE = "/EPC/Car/Engine/Type/Gasoline/@parameterValues.1?type=EcucNumericalParamValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_2_SPARK_PLUG_MODEL = "/EPC/Car/Engine/Type/Gasoline/@parameterValues.2?type=EcucTextualParamValue";//$NON-NLS-1$
+
+	public static final String URI_FRAGMENT_EPC_CAR_OPTIONS = "/EPC/Car/Options?type=EcucContainerValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS = "/EPC/Car/Options/FinitionLevels?type=EcucContainerValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH = "/EPC/Car/Options/FinitionLevels/High?type=EcucContainerValue";//$NON-NLS-1$
+	public static final String URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_LOW = "/EPC/Car/Options/FinitionLevels/Low?type=EcucContainerValue";//$NON-NLS-1$
 
 	// Type Qualified Names definitions
 	public static final String METATYPE_AR_CONFIG_REFERENCE_TYPE = "AR::ConfigReferenceType";//$NON-NLS-1$
@@ -94,8 +110,11 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 
 	public static final String RICH_TYPE_EPD_VEHICLE = "EPD::Vehicle";//$NON-NLS-1$
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO = "EPD::Vehicle::GeneralInfo";//$NON-NLS-1$
-	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE = "EPD::Vehicle::GeneralInfo::EngineTypeChoice_Gasoline";//$NON-NLS-1$
-	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_DIESEL = "EPD::Vehicle::GeneralInfo::EngineTypeChoice_Diesel";//$NON-NLS-1$
+
+	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER = "EPD::Vehicle::GeneralInfo::CurrentOwner";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL = "EPD::Vehicle::GeneralInfo::FinitionLevel";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND = "EPD::Vehicle::GeneralInfo::FirstHand";//$NON-NLS-1$
+
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME = "EPD::Vehicle::GeneralInfo::VehicleName";//$NON-NLS-1$
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER = "EPD::Vehicle::GeneralInfo::SerialNumber";//$NON-NLS-1$
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER = "EPD::Vehicle::GeneralInfo::Manufacturer";//$NON-NLS-1$
@@ -103,6 +122,14 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS = "EPD::Vehicle::GeneralInfo::Revisons";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE = "EPD::Vehicle::GeneralInfo::Revisons::RevisionDate";
+	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_OWNER_AT_THAT_TIME = "EPD::Vehicle::GeneralInfo::Revisons::OwnerAtThatTime";
+
+	public static final String RICH_TYPE_EPD_VEHICLE_OPTIONS = "EPD::Vehicle::Options";
+	public static final String RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS = "EPD::Vehicle::Options::FinitionLevels";
+	public static final String RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH = "EPD::Vehicle::Options::FinitionLevels::High";
+	public static final String RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_MEDIUM = "EPD::Vehicle::Options::FinitionLevels::Medium";
+	public static final String RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW = "EPD::Vehicle::Options::FinitionLevels::Low";
+
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS = "EPD::Vehicle::GeneralInfo::Owners";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER = "EPD::Vehicle::GeneralInfo::Owners::Owner";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME = "EPD::Vehicle::GeneralInfo::Owners::Owner::FirstName";
@@ -120,6 +147,16 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	public static final String RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE = "EPD::Vehicle::Engine::EngineType";//$NON-NLS-1$
 	public static final String RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC = "EPD::Vehicle::Engine::Automatic";//$NON-NLS-1$
 
+	public static final String RICH_TYPE_EPD_ATTRIBUTES = "EPD::Attributes";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS = "EPD::Attributes::AvailableColors";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CHARCOAL = "EPD::Attributes::AvailableColors::CharCoal";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CORNFLOWERBLUE = "EPD::Attributes::AvailableColors::CornflowerBlue";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_GOLD = "EPD::Attributes::AvailableColors::Gold";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_HOTPINK = "EPD::Attributes::AvailableColors::HotPink";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_NAVYBLUE = "EPD::Attributes::AvailableColors::NavyBlue";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_PAPAYAWHIP = "EPD::Attributes::AvailableColors::PapayaWhip";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SALSARED = "EPD::Attributes::AvailableColors::SalsaRed";//$NON-NLS-1$
+	public static final String RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SILVER = "EPD::Attributes::AvailableColors::silver";//$NON-NLS-1$
 	// PropertyNamesDefiniton
 	public static final String COMMON_TYPE_PROPERTY_SHORTNAME = "shortName";//$NON-NLS-1$
 	public static final String COMMON_TYPE_PROPERTY_ABSOLUTE_QUALIFIED_NAME = "absoluteQualifiedName";//$NON-NLS-1$

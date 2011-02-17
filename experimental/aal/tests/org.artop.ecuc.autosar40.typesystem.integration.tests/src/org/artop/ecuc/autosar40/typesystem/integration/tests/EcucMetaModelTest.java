@@ -19,7 +19,6 @@ import java.util.List;
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
-import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichEnumerationParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
@@ -38,7 +37,6 @@ import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucparameterdef.EcucBooleanParamDef;
 import autosar40.ecucparameterdef.EcucChoiceContainerDef;
-import autosar40.ecucparameterdef.EcucChoiceReferenceDef;
 import autosar40.ecucparameterdef.EcucEnumerationParamDef;
 import autosar40.ecucparameterdef.EcucFloatParamDef;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
@@ -67,14 +65,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		// From EPD package
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_DIESEL);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
@@ -92,6 +90,22 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_DIESEL_FILTER_MODEL);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_MAX_COUPLE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_MEDIUM);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CHARCOAL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CORNFLOWERBLUE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_GOLD);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_HOTPINK);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_NAVYBLUE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_PAPAYAWHIP);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SALSARED);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SILVER);
+
 	}
 
 	/**
@@ -120,16 +134,18 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertReturnedEcucMetaModelTypeNameEquals(
 				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_2_SPARK_PLUG_MODEL,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERALINFO,
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_3_YEAR,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
-		// TODO Investigate reasons of test failure : returned type by EcucMetaModel is not the expected one
-		// assertReturnedEcucMetaModelTypeNameEquals(
-		// EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_ENGINE_TYPE_CHOICE_GASOLINE,
-		// EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_2_FIRSTHAND,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND);
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
 		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_2_MANUFACTURER,
@@ -189,11 +205,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertReturnedEcucMetaModelTypeNameEquals(
 				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918,
 				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_LOW,
+				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW);
+
 	}
 
-	// Tests On Module
+	/** 1_RichModuleDefType **/
 	public void testModuleDef() {
-		/** 1_1 Check Rich type consistency */
+		/** Check Rich type consistency */
 		EObject carObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR);
 		Type vehiculeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
 		assertTrue(vehiculeType instanceof RichModuleDefType);
@@ -201,7 +226,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(vehiculeRichType.getEcucTypeDef() instanceof EcucModuleDef);
 		/********************************************************************/
 
-		/** 1_2 Get shortname **/
+		/** 1_1 Property shortname **/
 		Property shortNameProperty = vehiculeRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -210,8 +235,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals("Car", shortName); //$NON-NLS-1$
 		/********************************************************************/
 
-		// TODO Investigate reasons of test failure
-		/** 1_3 Get absoluteQualifiedName **/
+		/** 1_2 Property absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = vehiculeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
@@ -219,7 +243,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(absoluteQualifiedName instanceof String);
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
 		/********************************************************************/
-		/** 1_4 Get EcucContainerValue of module definition **/
+
+		/** 1_3 Property <GParamConfContainerDef.shortName> **/
 		Property engineProperty = vehiculeRichType.getProperty("Engine"); //$NON-NLS-1$
 		assertNotNull(engineProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE), engineProperty.getReturnType());
@@ -227,22 +252,48 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(engineObject instanceof EcucContainerValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE), engineObject);
 		/********************************************************************/
+
+		/** 1_4 Property <Plural of GParamConfContainerDef.shortName> **/
+		/********************************************************************/
+
 	}
 
-	// Tests On Containers
-	// Containers
-	// RichParamConfContainerDefType.java
-	// RichChoiceContainerDefType.java
+	/** 20_RichContainerDefType **/
+
+	/** 21_RichParamConfContainerDefType **/
 	public void testParamConfContainerDef() {
-		/** 2_1 Check Rich type consistency **/
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
 		EObject engineObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE);
 		Type engineType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE);
 		assertTrue(engineType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType engineRichType = (RichParamConfContainerDefType) engineType;
 		assertTrue(engineRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
-		/********************************************************************/
+		/** -------------------------------------------------- **/
+		/** --Check generalInfoRichType consistency-- **/
+		EObject generalInfoObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO);
+		Type generalInfoType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertTrue(generalInfoType instanceof RichParamConfContainerDefType);
+		RichParamConfContainerDefType generalInfoRichType = (RichParamConfContainerDefType) generalInfoType;
+		assertTrue(generalInfoRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
+		/** -------------------------------------------------- **/
+		/** --Check generalInfoOwnersRichType consistency-- **/
+		EObject generalInfoOwnersObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS);
+		Type generalInfoOwnersType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
+		assertTrue(generalInfoOwnersType instanceof RichParamConfContainerDefType);
+		RichParamConfContainerDefType generalInfoOwnersRichType = (RichParamConfContainerDefType) generalInfoOwnersType;
+		assertTrue(generalInfoOwnersRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
+		/** -------------------------------------------------- **/
+		/** --Check Rich type consistency-- **/
+		EObject revisionsObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS);
+		Type revisionsType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
+		assertTrue(revisionsType instanceof RichParamConfContainerDefType);
+		RichParamConfContainerDefType revisionsRichType = (RichParamConfContainerDefType) revisionsType;
+		assertTrue(revisionsRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 2_2 Get shortName **/
+		/** 21_1 Property shortName **/
 		Property shortNameProperty = engineRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -251,7 +302,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals("Engine", shortName); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 2_3 Get absoluteQualifiedName **/
+		/** 21_2 Property absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = engineRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
@@ -260,17 +311,74 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineObject), absoluteQualifiedName);
 		/********************************************************************/
 
-		/** 2_4 Get EnumerationParamDef **/
-		Property engineTypeProperty = engineRichType.getProperty("EngineType"); //$NON-NLS-1$
-		assertNotNull(engineTypeProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE),
-				engineTypeProperty.getReturnType());
-		Object engineTypeObject = engineTypeProperty.get(engineObject);
-		assertTrue(engineTypeObject instanceof EcucTextualParamValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE), engineTypeObject);
+		/** 21_3#A 21_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 21_3#A lowerMultiplicity **/
+		// Not yet available
 		/********************************************************************/
 
-		/** 2_5 Get BooleanParamDef **/
+		/** 21_4#A upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 21_3#B 21_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 21_3#B lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 21_4#B upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 21_5 property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 21_6 property <GParamConfContainerDef.shortName> **/
+		Property ownersProperty = generalInfoRichType.getProperty("Owners"); //$NON-NLS-1$
+		assertNotNull(ownersProperty);
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS),
+				ownersProperty.getReturnType());
+		Object ownersObject = ownersProperty.get(generalInfoObject);
+		assertTrue(ownersObject instanceof EcucContainerValue);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS), ownersObject);
+
+		/** 21_7 property <Plural of GParamConfContainerDef.shortName> **/
+		Property ownersOwnersProperty = generalInfoOwnersRichType.getProperty("Owners"); //$NON-NLS-1$
+		assertNotNull(ownersOwnersProperty);
+		assertEquals(
+				ecucMetaModel.getTypeSystem().getListType(
+						ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER)),
+				ownersOwnersProperty.getReturnType());
+		Object ownersOwnersObject = ownersOwnersProperty.get(generalInfoOwnersObject);
+		assertTrue(ownersOwnersObject instanceof List<?>);
+		List<?> ownersOwnersList = (List<?>) ownersOwnersObject;
+		assertTrue(ownersOwnersList.get(0) instanceof EcucContainerValue);
+		List<EcucContainerValue> ownersOwnersEcucContainerValueList = (List<EcucContainerValue>) ownersOwnersObject;
+		assertEquals(5, ownersOwnersEcucContainerValueList.size());
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND)));
+		/********************************************************************/
+
+		/** 21_8 property <GChoiceContainerDef.shortName> **/
+		Property typeProperty = engineRichType.getProperty("Type"); //$NON-NLS-1$
+		assertNotNull(typeProperty);
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE), typeProperty.getReturnType());
+		Object typeObject = typeProperty.get(engineObject);
+		assertTrue(typeObject instanceof EcucContainerValue);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE), typeObject);
+		/********************************************************************/
+
+		/** 21_9 property <Plural of GChoiceContainerDef.shortName> **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 21_10 property <GConfigParameter.shortName> **/
 		Property automaticProperty = engineRichType.getProperty("Automatic"); //$NON-NLS-1$
 		assertNotNull(automaticProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC),
@@ -279,92 +387,45 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(automaticObject instanceof EcucNumericalParamValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC), automaticObject);
 		/********************************************************************/
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = engineRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		Object value = isPresentOperation.evaluate(engineObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
+
+		/** 21_11 property <Plural of GConfigParameter.shortName> **/
+		Property revisionDatesProperty = revisionsRichType.getProperty("RevisionDates"); //$NON-NLS-1$
+		assertNotNull(revisionDatesProperty);
+		assertEquals(
+				ecucMetaModel.getTypeSystem().getListType(
+						ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE)),
+				revisionDatesProperty.getReturnType());
+		Object revisionDatesObject = ownersOwnersProperty.get(revisionsObject);
+		assertTrue(revisionDatesObject instanceof List<?>);
+		List<?> revisionDatesList = (List<?>) revisionDatesObject;
+		assertTrue(revisionDatesList.get(0) instanceof EcucTextualParamValue);
+		List<EcucTextualParamValue> revisionDatesEcucTextualParamValueList = (List<EcucTextualParamValue>) revisionDatesObject;
+		assertEquals(5, revisionDatesEcucTextualParamValueList.size());
+		assertTrue(revisionDatesEcucTextualParamValueList
+				.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_0_DATE_20071215)));
+		assertTrue(revisionDatesEcucTextualParamValueList
+				.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_1_DATE_20080106)));
+		assertTrue(revisionDatesEcucTextualParamValueList
+				.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_2_DATE_20080605)));
+		assertTrue(revisionDatesEcucTextualParamValueList
+				.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_3_DATE_20090707)));
+		assertTrue(revisionDatesEcucTextualParamValueList
+				.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918)));
 		/********************************************************************/
 
-		/** 2_6 Get ChoiceContainerDef **/
-		//		Property typeProperty = engineRichType.getProperty("Type"); //$NON-NLS-1$
-		// assertNotNull(typeProperty);
-		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE),
-		// typeProperty.getReturnType());
-		// Object typeObject = typeProperty.get(engineObject);
-		// assertTrue(typeObject instanceof EcucContainerValue);
-		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE),
-		// typeObject);
+		/** 21_12 property <GConfigReference.shortName> **/
+		Property currentOwnerProperty = generalInfoRichType.getProperty("CurrentOwner"); //$NON-NLS-1$
+		assertNotNull(currentOwnerProperty);
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER),
+				currentOwnerProperty.getReturnType());
+		Object currentOwnerObject = currentOwnerProperty.get(engineObject);
+		assertTrue(currentOwnerObject instanceof EcucContainerValue);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND), currentOwnerObject);
 		/********************************************************************/
 
-		/** 2_7 Get and Check Multiplicity on [0 .. 1] parameter container **/
-		/** Get Multiplicity on Container **/
-		Property lowerMultiplicityProperty = engineRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
-		assertNotNull(lowerMultiplicityProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), lowerMultiplicityProperty.getReturnType());
-		Object lowerMultiplicityObject = lowerMultiplicityProperty.get(engineObject);
-		assertTrue(lowerMultiplicityObject instanceof String);
-		assertEquals(lowerMultiplicityObject, "0"); //$NON-NLS-1$
-
-		Property upperMultiplicityProperty = engineRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
-		assertNotNull(upperMultiplicityProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), upperMultiplicityProperty.getReturnType());
-		Object upperMultiplicityObject = upperMultiplicityProperty.get(engineObject);
-		assertTrue(upperMultiplicityObject instanceof String);
-		assertEquals(upperMultiplicityObject, "1"); //$NON-NLS-1$
+		/** 21_13 property <Plural of GConfigReference.shortName> **/
+		// Not yet available
 		/********************************************************************/
-
-		/** 2_8 Get Multiplicity and Check on [n .. n] parameter container **/
-		/* Not yet implemented in Example Model */
-		/********************************************************************/
-
-		/** 2_9 Get Multiplicity and Check on [n .. *] parameter container **/
-		// we retrieve types necessary for testing
-		Type ownerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
-		assertTrue(ownerType instanceof RichParamConfContainerDefType);
-		RichParamConfContainerDefType ownerRichType = (RichParamConfContainerDefType) ownerType;
-		assertTrue(ownerRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
-		Type ownersType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
-		assertTrue(ownersType instanceof RichParamConfContainerDefType);
-		RichParamConfContainerDefType ownersRichType = (RichParamConfContainerDefType) ownersType;
-		assertTrue(ownersRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
-
-		/** Check Multiplicity is respected by getting childContainers **/
-		EObject ownersObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS);
-		Property ownersProperty = ownersRichType.getProperty("Owner"); //$NON-NLS-1$
-		assertNotNull(ownersProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getListType(ownerType), ownersProperty.getReturnType());
-		Object ownersList = ownersProperty.get(ownersObject);
-		assertNotNull(ownersList);
-		assertTrue(ownersList instanceof List<?>);
-		/** Get Multiplicity on Container **/
-		EObject ownerFirstHandObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND);
-		lowerMultiplicityProperty = ownerRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
-		assertNotNull(lowerMultiplicityProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), lowerMultiplicityProperty.getReturnType());
-		lowerMultiplicityObject = lowerMultiplicityProperty.get(ownerFirstHandObject);
-		assertTrue(lowerMultiplicityObject instanceof String);
-		assertEquals(lowerMultiplicityObject, "0"); //$NON-NLS-1$
-
-		upperMultiplicityProperty = ownerRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
-		assertNotNull(upperMultiplicityProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), upperMultiplicityProperty.getReturnType());
-		upperMultiplicityObject = upperMultiplicityProperty.get(ownerFirstHandObject);
-		assertTrue(upperMultiplicityObject instanceof String);
-		assertEquals(upperMultiplicityObject, "*"); //$NON-NLS-1$
-		/********************************************************************/
-
-		/** 3_1_5 check isPresent **/
-		isPresentOperation = ownerRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(ownerFirstHandObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
 	}
 
 	// 3_ChoiceContainer
@@ -775,61 +836,63 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	// 4_Reference
 	// 4_1 ChoiceReference
 	public void testChoiceReferenceDef() {
-		EObject engineTypeChoiceObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_ENGINE_TYPE_CHOICE_GASOLINE);
-		Type engineTypeChoiceType = ecucMetaModel
-				.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
-
-		/** 4_1_1 Check Rich type consistency **/
-		assertTrue(engineTypeChoiceType instanceof RichChoiceReferenceDefType);
-		RichChoiceReferenceDefType engineTypeChoiceRichType = (RichChoiceReferenceDefType) engineTypeChoiceType;
-		assertTrue(engineTypeChoiceRichType.getEcucTypeDef() instanceof EcucChoiceReferenceDef);
-		/********************************************************************/
-
-		/** 4_1_2 Get shortName **/
-		Property shortNameProperty = engineTypeChoiceRichType.getProperty("shortName"); //$NON-NLS-1$
-		assertNotNull(shortNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-		Object shortName = shortNameProperty.get(engineTypeChoiceObject);
-		assertTrue(shortName instanceof String);
-		assertEquals(engineTypeChoiceRichType.getSimpleName(), shortName);
-		/********************************************************************/
-
-		/** 4_1_3 Get absoluteQualifiedName **/
-		Property absoluteQualifiedNameProperty = engineTypeChoiceRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineTypeChoiceObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineTypeChoiceObject), absoluteQualifiedName);
-		/********************************************************************/
-
-		/** 4_1_4 Get value **/
-		Property valueProperty = engineTypeChoiceRichType.getProperty("value"); //$NON-NLS-1$
-		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
-				valueProperty.getReturnType());
-		Object value = valueProperty.get(engineTypeChoiceObject);
-		assertTrue(value instanceof EcucContainerValue);
-		assertEquals(value, getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE));
-		/********************************************************************/
-
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = engineTypeChoiceRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(engineTypeChoiceObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
-		/** 3_1_6 check is_configured **/
-		Operation isConfiguredOperation = engineTypeChoiceRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
-		assertNotNull(isConfiguredOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
-		value = isConfiguredOperation.evaluate(engineTypeChoiceObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
+		// EObject engineTypeChoiceObject =
+		// getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_ENGINE_TYPE_CHOICE_GASOLINE);
+		// Type engineTypeChoiceType = ecucMetaModel
+		// .getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
+		//
+		// /** 4_1_1 Check Rich type consistency **/
+		// assertTrue(engineTypeChoiceType instanceof RichChoiceReferenceDefType);
+		// RichChoiceReferenceDefType engineTypeChoiceRichType = (RichChoiceReferenceDefType) engineTypeChoiceType;
+		// assertTrue(engineTypeChoiceRichType.getEcucTypeDef() instanceof EcucChoiceReferenceDef);
+		// /********************************************************************/
+		//
+		// /** 4_1_2 Get shortName **/
+		//		Property shortNameProperty = engineTypeChoiceRichType.getProperty("shortName"); //$NON-NLS-1$
+		// assertNotNull(shortNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		// Object shortName = shortNameProperty.get(engineTypeChoiceObject);
+		// assertTrue(shortName instanceof String);
+		// assertEquals(engineTypeChoiceRichType.getSimpleName(), shortName);
+		// /********************************************************************/
+		//
+		// /** 4_1_3 Get absoluteQualifiedName **/
+		//		Property absoluteQualifiedNameProperty = engineTypeChoiceRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		// assertNotNull(absoluteQualifiedNameProperty);
+		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineTypeChoiceObject);
+		// assertTrue(absoluteQualifiedName instanceof String);
+		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineTypeChoiceObject), absoluteQualifiedName);
+		// /********************************************************************/
+		//
+		// /** 4_1_4 Get value **/
+		//		Property valueProperty = engineTypeChoiceRichType.getProperty("value"); //$NON-NLS-1$
+		// assertNotNull(valueProperty);
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
+		// valueProperty.getReturnType());
+		// Object value = valueProperty.get(engineTypeChoiceObject);
+		// assertTrue(value instanceof EcucContainerValue);
+		// assertEquals(value,
+		// getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE));
+		// /********************************************************************/
+		//
+		// /** 3_1_5 check isPresent **/
+		//		Operation isPresentOperation = engineTypeChoiceRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
+		// assertNotNull(isPresentOperation);
+		// assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
+		// value = isPresentOperation.evaluate(engineTypeChoiceObject, null);
+		// assertTrue(value instanceof Boolean);
+		// assertTrue((Boolean) value);
+		// /********************************************************************/
+		//
+		// /** 3_1_6 check is_configured **/
+		//		Operation isConfiguredOperation = engineTypeChoiceRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		// assertNotNull(isConfiguredOperation);
+		// assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		// value = isConfiguredOperation.evaluate(engineTypeChoiceObject, null);
+		// assertTrue(value instanceof Boolean);
+		// assertTrue((Boolean) value);
+		// /********************************************************************/
 	}
 
 	// 4_2 ChoiceReference
