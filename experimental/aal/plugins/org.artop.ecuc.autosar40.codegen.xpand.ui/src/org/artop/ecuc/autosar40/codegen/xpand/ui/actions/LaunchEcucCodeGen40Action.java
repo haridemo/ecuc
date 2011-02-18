@@ -80,12 +80,14 @@ public class LaunchEcucCodeGen40Action extends AbstractM2TAction {
 				EList<EcucModuleConfigurationValuesRefConditional> ecucValues = ecucValueCollection.getEcucValues();
 				for (EcucModuleConfigurationValuesRefConditional ref : ecucValues) {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = ref.getEcucModuleConfigurationValues();
-					if (ecucModuleConfigurationValues.eIsProxy() || ecucModuleConfigurationValues.getDefinition() != null
-							&& ecucModuleConfigurationValues.getDefinition().eIsProxy()) {
-						isProxy = true;
-						// break;
-					} else {
-						ecucModulesConfigurationValues.add(ecucModuleConfigurationValues);
+					if (ecucModuleConfigurationValues != null) {
+						if (ecucModuleConfigurationValues.eIsProxy() || ecucModuleConfigurationValues.getDefinition() != null
+								&& ecucModuleConfigurationValues.getDefinition().eIsProxy()) {
+							isProxy = true;
+							// break;
+						} else {
+							ecucModulesConfigurationValues.add(ecucModuleConfigurationValues);
+						}
 					}
 				}
 				if (isProxy) {
