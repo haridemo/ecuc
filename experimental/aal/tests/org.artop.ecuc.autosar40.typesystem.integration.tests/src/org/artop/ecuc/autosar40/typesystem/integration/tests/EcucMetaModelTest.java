@@ -17,8 +17,11 @@ package org.artop.ecuc.autosar40.typesystem.integration.tests;
 import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichEnumerationParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
@@ -37,20 +40,22 @@ import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucparameterdef.EcucBooleanParamDef;
 import autosar40.ecucparameterdef.EcucChoiceContainerDef;
+import autosar40.ecucparameterdef.EcucChoiceReferenceDef;
 import autosar40.ecucparameterdef.EcucEnumerationParamDef;
 import autosar40.ecucparameterdef.EcucFloatParamDef;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
 import autosar40.ecucparameterdef.EcucModuleDef;
 import autosar40.ecucparameterdef.EcucParamConfContainerDef;
+import autosar40.ecucparameterdef.EcucReferenceDef;
 import autosar40.ecucparameterdef.EcucStringParamDef;
 
 public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 	/** 0_1 Test if the types defined in module definition are registered in EcucMetaModel */
 	public void testEcucMetaModelGeneratedTypes() {
-		// Check for expected types in ecucMetaModel
+		/** Check for expected types in ecucMetaModel **/
 
-		// MetaTypes
+		/** MetaTypes **/
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_AR_OBJECT_TYPE);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_AR_PACKAGE_TYPE);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_AUTOSAR_TYPE);
@@ -63,7 +68,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CONFIG_PARAMETER_TYPE);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CONFIG_REFERENCE_TYPE);
 
-		// From EPD package
+		/** From EPD package **/
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
@@ -216,8 +221,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 	}
 
-	/** 1_RichModuleDefType **/
-	public void testModuleDef() {
+	/** 10_RichModuleDefType **/
+	public void testRichModuleDefType() {
 		/** Check Rich type consistency */
 		EObject carObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR);
 		Type vehiculeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
@@ -226,7 +231,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(vehiculeRichType.getEcucTypeDef() instanceof EcucModuleDef);
 		/********************************************************************/
 
-		/** 1_1 Property shortname **/
+		/** 10_1 Property shortname **/
 		Property shortNameProperty = vehiculeRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -235,7 +240,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals("Car", shortName); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 1_2 Property absoluteQualifiedName **/
+		/** 10_2 Property absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = vehiculeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
@@ -244,7 +249,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(carObject), absoluteQualifiedName);
 		/********************************************************************/
 
-		/** 1_3 Property <GParamConfContainerDef.shortName> **/
+		/** 10_3 Property <GParamConfContainerDef.shortName> **/
 		Property engineProperty = vehiculeRichType.getProperty("Engine"); //$NON-NLS-1$
 		assertNotNull(engineProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE), engineProperty.getReturnType());
@@ -253,15 +258,16 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE), engineObject);
 		/********************************************************************/
 
-		/** 1_4 Property <Plural of GParamConfContainerDef.shortName> **/
+		/** 10_4 Property <Plural of GParamConfContainerDef.shortName> **/
+		// Not yet available
 		/********************************************************************/
 
 	}
 
-	/** 20_RichContainerDefType **/
+	/** 2_RichContainerDefType **/
 
 	/** 21_RichParamConfContainerDefType **/
-	public void testParamConfContainerDef() {
+	public void testRichParamConfContainerDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
 		EObject engineObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE);
@@ -312,31 +318,31 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/********************************************************************/
 
 		/** 21_3#A 21_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
-		/** 21_3#A lowerMultiplicity **/
+		/** 21_3#A Property lowerMultiplicity **/
 		// Not yet available
 		/********************************************************************/
 
-		/** 21_4#A upperMultiplicity **/
+		/** 21_4#A Property upperMultiplicity **/
 		// Not yet available
 		/********************************************************************/
 		/****************************************************************************************/
 
 		/** 21_3#B 21_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
 		// Not yet available
-		/** 21_3#B lowerMultiplicity **/
+		/** 21_3#B Property lowerMultiplicity **/
 		// Not yet available
 		/********************************************************************/
 
-		/** 21_4#B upperMultiplicity **/
+		/** 21_4#B Property upperMultiplicity **/
 		// Not yet available
 		/********************************************************************/
 		/****************************************************************************************/
 
-		/** 21_5 property definition **/
+		/** 21_5 Property definition **/
 		// Not yet available
 		/********************************************************************/
 
-		/** 21_6 property <GParamConfContainerDef.shortName> **/
+		/** 21_6 Property <GParamConfContainerDef.shortName> **/
 		Property ownersProperty = generalInfoRichType.getProperty("Owners"); //$NON-NLS-1$
 		assertNotNull(ownersProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS),
@@ -374,11 +380,11 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE), typeObject);
 		/********************************************************************/
 
-		/** 21_9 property <Plural of GChoiceContainerDef.shortName> **/
+		/** 21_9 Property <Plural of GChoiceContainerDef.shortName> **/
 		// Not yet available
 		/********************************************************************/
 
-		/** 21_10 property <GConfigParameter.shortName> **/
+		/** 21_10 Property <GConfigParameter.shortName> **/
 		Property automaticProperty = engineRichType.getProperty("Automatic"); //$NON-NLS-1$
 		assertNotNull(automaticProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC),
@@ -388,7 +394,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC), automaticObject);
 		/********************************************************************/
 
-		/** 21_11 property <Plural of GConfigParameter.shortName> **/
+		/** 21_11 Property <Plural of GConfigParameter.shortName> **/
 		Property revisionDatesProperty = revisionsRichType.getProperty("RevisionDates"); //$NON-NLS-1$
 		assertNotNull(revisionDatesProperty);
 		assertEquals(
@@ -413,7 +419,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 				.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918)));
 		/********************************************************************/
 
-		/** 21_12 property <GConfigReference.shortName> **/
+		/** 21_12 Property <GConfigReference.shortName> **/
 		Property currentOwnerProperty = generalInfoRichType.getProperty("CurrentOwner"); //$NON-NLS-1$
 		assertNotNull(currentOwnerProperty);
 		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER),
@@ -423,22 +429,24 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND), currentOwnerObject);
 		/********************************************************************/
 
-		/** 21_13 property <Plural of GConfigReference.shortName> **/
+		/** 21_13 Property <Plural of GConfigReference.shortName> **/
 		// Not yet available
 		/********************************************************************/
 	}
 
-	// 3_ChoiceContainer
-	public void testChoiceContainerDef() {
-		/** 3_1 Check Rich type consistency **/
+	/** 22_RichChoiceContainerDefType **/
+	public void testRichChoiceContainerDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
 		EObject typeObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE);
 		Type typeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
 		assertTrue(typeType instanceof RichChoiceContainerDefType);
 		RichChoiceContainerDefType typeRichType = (RichChoiceContainerDefType) typeType;
 		assertTrue(typeRichType.getEcucTypeDef() instanceof EcucChoiceContainerDef);
-		/********************************************************************/
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 3_2 Get shortName **/
+		/** 22_1 Property shortName **/
 		Property shortNameProperty = typeRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -447,7 +455,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals("Type", shortName); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 3_3 Get absoluteQualifiedName **/
+		/** 22_2 Property absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = typeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
@@ -456,40 +464,76 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(typeObject), absoluteQualifiedName);
 		/********************************************************************/
 
-		/** 3_4 get Value **/
-		//		Property gasolineProperty = typeRichType.getProperty("Gasoline"); //$NON-NLS-1$
-		// assertNotNull(gasolineProperty);
-		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
-		// gasolineProperty.getReturnType());
-		// Object gasoline = absoluteQualifiedNameProperty.get(typeObject);
-		// assertTrue(gasoline instanceof EcucParamConfContainerDef);
-		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE),
-		// gasoline);
+		/** 22_3#A 22_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 22_3#A lowerMultiplicity **/
+		// Not yet available
 		/********************************************************************/
 
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = typeRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		Object value = isPresentOperation.evaluate(typeObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
+		/** 22_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 22_3#B 21_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 22_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 22_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 22_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 22_6 Property <GParamConfContainerDef.shortName> **/
+		Property gasolineProperty = typeRichType.getProperty("Gasoline"); //$NON-NLS-1$
+		assertNotNull(gasolineProperty);
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
+				gasolineProperty.getReturnType());
+		Object gasoline = absoluteQualifiedNameProperty.get(typeObject);
+		assertTrue(gasoline instanceof EcucParamConfContainerDef);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE), gasoline);
+		/********************************************************************/
+
+		/** 22_7 Property <Plural of GParamConfContainerDef.shortName> **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 22_8 Property <GConfigParameter.shortName> **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 22_9 Property <Plural of GConfigParameter.shortName> **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 22_10 Property <GConfigReference.shortName> **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 22_11 Property <Plural of GConfigReference.shortName> **/
+		// Not yet available
 		/********************************************************************/
 	}
 
-	// 3_Parameter
-	// 3_1 Boolean Parameter
-	public void testBooleanParameterDef() {
+	/** 3_RichConfigParameterType **/
+	/** 31_RichBooleanParameterDefType **/
+	public void testRichBooleanParameterDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
 		EObject automaticObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC);
 		Type automaticType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
-
-		/** 3_1_1 Check Rich type consistency **/
 		assertTrue(automaticType instanceof RichBooleanParamDefType);
 		RichBooleanParamDefType automaticRichType = (RichBooleanParamDefType) automaticType;
 		assertTrue(automaticRichType.getEcucTypeDef() instanceof EcucBooleanParamDef);
-		/********************************************************************/
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 3_1_2 Get shortName **/
+		/** 31_1_1 Property shortName **/
 		Property shortNameProperty = automaticRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -498,7 +542,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(automaticRichType.getSimpleName(), shortName);
 		/********************************************************************/
 
-		/** 3_1_3 Get absoluteQualifiedName **/
+		/** 31_1_2 Property absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = automaticRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
@@ -507,7 +551,32 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(automaticObject), absoluteQualifiedName);
 		/********************************************************************/
 
-		/** 3_1_4 Get Value **/
+		/** 31_1_3#A 31_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 31_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 31_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 31_1_3#B 31_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 31_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 31_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 31_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 31_1_6 Property value **/
 		Property valueProperty = automaticRichType.getProperty("value"); //$NON-NLS-1$
 		assertNotNull(valueProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), valueProperty.getReturnType());
@@ -516,17 +585,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertFalse((Boolean) value);
 		/********************************************************************/
 
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = automaticRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(automaticObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
-		/** 3_1_6 check is_configured **/
-		Operation isConfiguredOperation = automaticRichType.getOperation("isConfigured", new Type[0]);
+		/** 31_2_1 Operation is_configured **/
+		Operation isConfiguredOperation = automaticRichType.getOperation("isConfigured", new Type[0]); //$NON-NLS-1$
 		assertNotNull(isConfiguredOperation);
 		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
 		value = isConfiguredOperation.evaluate(automaticObject, null);
@@ -536,190 +596,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 	}
 
-	// 3_2 Integer Parameter
-	public void testIntegerParameterDef() {
-		EObject serialNumberObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER);
-		Type serialNumberType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
-
-		/** 3_2_1 Check Rich type consistency **/
-		assertTrue(serialNumberType instanceof RichIntegerParamDefType);
-		RichIntegerParamDefType serialNumberRichType = (RichIntegerParamDefType) serialNumberType;
-		assertTrue(serialNumberRichType.getEcucTypeDef() instanceof EcucIntegerParamDef);
-		/********************************************************************/
-
-		/** 3_2_2 Get shortName **/
-		Property shortNameProperty = serialNumberRichType.getProperty("shortName"); //$NON-NLS-1$
-		assertNotNull(shortNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-		Object shortName = shortNameProperty.get(serialNumberObject);
-		assertTrue(shortName instanceof String);
-		assertEquals(serialNumberRichType.getSimpleName(), shortName);
-		/********************************************************************/
-
-		/** 3_2_3 Get absoluteQualifiedName **/
-		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
-		/********************************************************************/
-
-		/** 3_2_4 Get value of integer parameter value **/
-		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
-		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
-		Object value = valueProperty.get(serialNumberObject);
-		assertTrue(value instanceof Integer);
-		assertTrue(((Integer) value).intValue() == 879055672);
-		/********************************************************************/
-
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = serialNumberRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(serialNumberObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
-		/** 3_1_6 check is_configured **/
-		Operation isConfiguredOperation = serialNumberRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
-		assertNotNull(isConfiguredOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
-		value = isConfiguredOperation.evaluate(serialNumberObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-	}
-
-	// 3_3 Float Parameter
-	public void testFloatParameterDef() {
-		EObject sparkPlugVoltageObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE);
-		Type sparkPlugVoltageType = ecucMetaModel
-				.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
-
-		/** 3_3_1 Check Rich type consistency **/
-		assertTrue(sparkPlugVoltageType instanceof RichFloatParamDefType);
-		RichFloatParamDefType sparkPlugVoltageRichType = (RichFloatParamDefType) sparkPlugVoltageType;
-		assertTrue(sparkPlugVoltageRichType.getEcucTypeDef() instanceof EcucFloatParamDef);
-		/********************************************************************/
-
-		/** 3_3_2 Get shortName **/
-		Property shortNameProperty = sparkPlugVoltageRichType.getProperty("shortName"); //$NON-NLS-1$
-		assertNotNull(shortNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-		Object shortName = shortNameProperty.get(sparkPlugVoltageObject);
-		assertTrue(shortName instanceof String);
-		assertEquals(sparkPlugVoltageRichType.getSimpleName(), shortName);
-		/********************************************************************/
-
-		/** 3_3_3 Get absoluteQualifiedName **/
-		Property absoluteQualifiedNameProperty = sparkPlugVoltageRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(sparkPlugVoltageObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(sparkPlugVoltageObject), absoluteQualifiedName);
-		/********************************************************************/
-
-		/** 3_3_4 Get value **/
-		Property valueProperty = sparkPlugVoltageRichType.getProperty("value"); //$NON-NLS-1$
-		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getRealType(), valueProperty.getReturnType());
-		Object value = valueProperty.get(sparkPlugVoltageObject);
-		assertTrue(value instanceof Double);
-		assertTrue(((Double) value).doubleValue() == 4.45);
-		/********************************************************************/
-
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = sparkPlugVoltageRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(sparkPlugVoltageObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
-		/** 3_1_6 check is_configured **/
-		Operation isConfiguredOperation = sparkPlugVoltageRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
-		assertNotNull(isConfiguredOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
-		value = isConfiguredOperation.evaluate(sparkPlugVoltageObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-	}
-
-	// 3_4 String Parameter
-	public void testStringParameterDef() {
-		EObject vehicleNameObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME);
-		Type vehicleNameType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
-
-		/** 3_4_1 Check Rich type consistency **/
-		assertTrue(vehicleNameType instanceof RichStringParamDefType);
-		RichStringParamDefType vehicleNameRichType = (RichStringParamDefType) vehicleNameType;
-		assertTrue(vehicleNameRichType.getEcucTypeDef() instanceof EcucStringParamDef);
-		/********************************************************************/
-
-		/** 3_4_2 Get shortName **/
-		Property shortNameProperty = vehicleNameRichType.getProperty("shortName"); //$NON-NLS-1$
-		assertNotNull(shortNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-		Object shortName = shortNameProperty.get(vehicleNameObject);
-		assertTrue(shortName instanceof String);
-		assertEquals(vehicleNameRichType.getSimpleName(), shortName);
-		/********************************************************************/
-
-		/** 3_4_3 Get absoluteQualifiedName **/
-		Property absoluteQualifiedNameProperty = vehicleNameRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		assertNotNull(absoluteQualifiedNameProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(vehicleNameObject);
-		assertTrue(absoluteQualifiedName instanceof String);
-		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(vehicleNameObject), absoluteQualifiedName);
-		/********************************************************************/
-
-		/** 3_4_4 Get value **/
-		Property valueProperty = vehicleNameRichType.getProperty("value"); //$NON-NLS-1$
-		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), valueProperty.getReturnType());
-		Object value = valueProperty.get(vehicleNameObject);
-		assertTrue(value instanceof String);
-		assertEquals((String) value, "Saxo"); //$NON-NLS-1$
-		/********************************************************************/
-
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = vehicleNameRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(vehicleNameObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
-		/** 3_1_6 check is_configured **/
-		Operation isConfiguredOperation = vehicleNameRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
-		assertNotNull(isConfiguredOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
-		value = isConfiguredOperation.evaluate(vehicleNameObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-	}
-
-	// 3_5 Enumeration Parameter
-	public void testEnumerationParameterDef() {
+	/** 32_RichEnumerationParameterDefType **/
+	public void testRichEnumerationParameterDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
 		EObject engineTypeObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE);
 		Type engineTypeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
-
-		/** 3_5_1 Check Rich type consistency **/
 		assertTrue(engineTypeType instanceof RichEnumerationParamDefType);
 		RichEnumerationParamDefType engineTypeRichType = (RichEnumerationParamDefType) engineTypeType;
 		assertTrue(engineTypeRichType.getEcucTypeDef() instanceof EcucEnumerationParamDef);
-		/********************************************************************/
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 3_5_2 Get shortName **/
+		/** 32_1_1 Property shortName **/
 		Property shortNameProperty = engineTypeRichType.getProperty("shortName"); //$NON-NLS-1$
 		assertNotNull(shortNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
@@ -728,7 +617,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(engineTypeRichType.getSimpleName(), shortName);
 		/********************************************************************/
 
-		/** 3_5_3 Get absoluteQualifiedName **/
+		/** 32_1_2 Property absoluteQualifiedName **/
 		Property absoluteQualifiedNameProperty = engineTypeRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
 		assertNotNull(absoluteQualifiedNameProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
@@ -737,7 +626,32 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineTypeObject), absoluteQualifiedName);
 		/********************************************************************/
 
-		/** 3_5_4 Get value **/
+		/** 32_1_3#A 32_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 32_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 32_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 32_1_3#B 32_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 32_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 32_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 32_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 32_1_6 Property value **/
 		Property valueProperty = engineTypeRichType.getProperty("value"); //$NON-NLS-1$
 		assertNotNull(valueProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), valueProperty.getReturnType());
@@ -746,16 +660,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals((String) value, "Gasoline"); //$NON-NLS-1$
 		/********************************************************************/
 
-		/** 3_1_5 check isPresent **/
-		Operation isPresentOperation = engineTypeRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		assertNotNull(isPresentOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		value = isPresentOperation.evaluate(engineTypeObject, null);
-		assertTrue(value instanceof Boolean);
-		assertTrue((Boolean) value);
-		/********************************************************************/
-
-		/** 3_1_6 check is_configured **/
+		/** 32_2_1 Operation is_configured **/
 		Operation isConfiguredOperation = engineTypeRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
 		assertNotNull(isConfiguredOperation);
 		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
@@ -765,170 +670,684 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/********************************************************************/
 	}
 
-	// 3_6 FunctionName Parameter
-	public void testFunctionNameDef() {
-		// RichFunctionNameDefType.java
-		/* Not yet implemented */
-		/** 3_6_1 Check Rich type consistency **/
+	/** 33_RichFloatParameterDefType **/
+	public void testRichFloatParameterDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
+		EObject sparkPlugVoltageObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE);
+		Type sparkPlugVoltageType = ecucMetaModel
+				.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+		assertTrue(sparkPlugVoltageType instanceof RichFloatParamDefType);
+		RichFloatParamDefType sparkPlugVoltageRichType = (RichFloatParamDefType) sparkPlugVoltageType;
+		assertTrue(sparkPlugVoltageRichType.getEcucTypeDef() instanceof EcucFloatParamDef);
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 3_6_2 Get shortName **/
+		/** 33_1_1 Property shortName **/
+		Property shortNameProperty = sparkPlugVoltageRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(sparkPlugVoltageObject);
+		assertTrue(shortName instanceof String);
+		assertEquals(sparkPlugVoltageRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
-		/** 3_6_3 Get absoluteQualifiedName **/
+		/** 33_1_2 Property absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = sparkPlugVoltageRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(sparkPlugVoltageObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(sparkPlugVoltageObject), absoluteQualifiedName);
+		/********************************************************************/
 
-		/** 3_6_4 Get value **/
+		/** 33_1_3#A 33_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 33_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_6_5 check isPresent **/
+		/** 33_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
 
-		/** 3_6_6 check is_configured **/
+		/** 33_1_3#B 33_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 33_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 33_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 33_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 33_1_6 Property value **/
+		Property valueProperty = sparkPlugVoltageRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getRealType(), valueProperty.getReturnType());
+		Object value = valueProperty.get(sparkPlugVoltageObject);
+		assertTrue(value instanceof Double);
+		assertTrue(((Double) value).doubleValue() == 4.45);
+		/********************************************************************/
+
+		/** 33_2_1 Operation is_configured **/
+		Operation isConfiguredOperation = sparkPlugVoltageRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(sparkPlugVoltageObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
-	// 3_7 LinkerSymbol Parameter
-	public void testLinkerSymbolDef() {
-		// RichLinkerSymbolDefType.java
-		/* Not yet implemented */
-		/** 3_7_1 Check Rich type consistency **/
+	/** 34_RichIntegerParameterDefType **/
+	public void testRichIntegerParameterDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
+		EObject serialNumberObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER);
+		Type serialNumberType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		assertTrue(serialNumberType instanceof RichIntegerParamDefType);
+		RichIntegerParamDefType serialNumberRichType = (RichIntegerParamDefType) serialNumberType;
+		assertTrue(serialNumberRichType.getEcucTypeDef() instanceof EcucIntegerParamDef);
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 3_7_2 Get shortName **/
+		/** 34_1_1 Property shortName **/
+		Property shortNameProperty = serialNumberRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(serialNumberObject);
+		assertTrue(shortName instanceof String);
+		assertEquals(serialNumberRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
-		/** 3_7_3 Get absoluteQualifiedName **/
+		/** 34_1_2 Property absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = serialNumberRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(serialNumberObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(serialNumberObject), absoluteQualifiedName);
+		/********************************************************************/
 
-		/** 3_7_4 Get value **/
+		/** 34_1_3#A 34_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 34_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_7_5 check isPresent **/
+		/** 34_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
 
-		/** 3_7_6 check is_configured **/
+		/** 34_1_3#B 34_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 34_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 34_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 34_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 34_1_6 Property value **/
+		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
+		Object value = valueProperty.get(serialNumberObject);
+		assertTrue(value instanceof Integer);
+		assertTrue(((Integer) value).intValue() == 879055672);
+		/********************************************************************/
+
+		/** 34_2_1 Operation is_configured **/
+		Operation isConfiguredOperation = serialNumberRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(serialNumberObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
-	// 3_8 MultilineString Parameter
-	public void testMultilineStringParamDef() {
-		// MultilineStringParam => n/a in 3.x
-		/* Not yet implemented */
-		/** 3_8_1 Check Rich type consistency **/
+	/** 35_RichStringParameterDefType **/
+	public void testRichStringParameterDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
+		EObject vehicleNameObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME);
+		Type vehicleNameType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertTrue(vehicleNameType instanceof RichStringParamDefType);
+		RichStringParamDefType vehicleNameRichType = (RichStringParamDefType) vehicleNameType;
+		assertTrue(vehicleNameRichType.getEcucTypeDef() instanceof EcucStringParamDef);
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
 
-		/** 3_8_2 Get shortName **/
+		/** 35_1_1 Property shortName **/
+		Property shortNameProperty = vehicleNameRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(vehicleNameObject);
+		assertTrue(shortName instanceof String);
+		assertEquals(vehicleNameRichType.getSimpleName(), shortName);
+		/********************************************************************/
 
-		/** 3_8_3 Get absoluteQualifiedName **/
+		/** 35_1_2 Property absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = vehicleNameRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(vehicleNameObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(vehicleNameObject), absoluteQualifiedName);
+		/********************************************************************/
 
-		/** 3_8_4 Get value **/
+		/** 35_1_3#A 35_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 35_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_8_5 check isPresent **/
+		/** 35_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
 
-		/** 3_8_6 check is_configured **/
+		/** 35_1_3#B 35_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 35_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 35_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 35_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 35_1_6 Property value **/
+		Property valueProperty = vehicleNameRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), valueProperty.getReturnType());
+		Object value = valueProperty.get(vehicleNameObject);
+		assertTrue(value instanceof String);
+		assertEquals((String) value, "Saxo"); //$NON-NLS-1$
+		/********************************************************************/
+
+		/** 35_2_1 Operation is_configured **/
+		Operation isConfiguredOperation = vehicleNameRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(vehicleNameObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
-	// 3_9 AddInfo Parameter
-	public void testAddInfoParameterDef() {
-		// AddInfoParameter => n/a in 3.x
-		/* Not yet implemented */
-		/** 3_9_1 Check Rich type consistency **/
+	/** 36_RichMultilineStringParamDefType **/
+	public void testRichMultilineStringParamDefType() {
+		/** 36_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_9_2 Get shortName **/
+		/** 36_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_9_3 Get absoluteQualifiedName **/
+		/** 36_1_3#A 36_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 36_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_9_4 Get value **/
+		/** 36_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
 
-		/** 3_9_5 check isPresent **/
+		/** 36_1_3#B 36_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 36_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 3_9_6 check is_configured **/
+		/** 36_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 36_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 36_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 36_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
 	}
 
-	// 4_Reference
-	// 4_1 ChoiceReference
-	public void testChoiceReferenceDef() {
-		// EObject engineTypeChoiceObject =
-		// getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_ENGINE_TYPE_CHOICE_GASOLINE);
-		// Type engineTypeChoiceType = ecucMetaModel
-		// .getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_ENGINE_TYPE_CHOICE_GASOLINE);
-		//
-		// /** 4_1_1 Check Rich type consistency **/
-		// assertTrue(engineTypeChoiceType instanceof RichChoiceReferenceDefType);
-		// RichChoiceReferenceDefType engineTypeChoiceRichType = (RichChoiceReferenceDefType) engineTypeChoiceType;
-		// assertTrue(engineTypeChoiceRichType.getEcucTypeDef() instanceof EcucChoiceReferenceDef);
-		// /********************************************************************/
-		//
-		// /** 4_1_2 Get shortName **/
-		//		Property shortNameProperty = engineTypeChoiceRichType.getProperty("shortName"); //$NON-NLS-1$
-		// assertNotNull(shortNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
-		// Object shortName = shortNameProperty.get(engineTypeChoiceObject);
-		// assertTrue(shortName instanceof String);
-		// assertEquals(engineTypeChoiceRichType.getSimpleName(), shortName);
-		// /********************************************************************/
-		//
-		// /** 4_1_3 Get absoluteQualifiedName **/
-		//		Property absoluteQualifiedNameProperty = engineTypeChoiceRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
-		// assertNotNull(absoluteQualifiedNameProperty);
-		// assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
-		// Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(engineTypeChoiceObject);
-		// assertTrue(absoluteQualifiedName instanceof String);
-		// assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(engineTypeChoiceObject), absoluteQualifiedName);
-		// /********************************************************************/
-		//
-		// /** 4_1_4 Get value **/
-		//		Property valueProperty = engineTypeChoiceRichType.getProperty("value"); //$NON-NLS-1$
-		// assertNotNull(valueProperty);
-		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
+	/** 37_RichAddInfoParameterDefType **/
+	public void testRichAddInfoParameterDefType() {
+		/** 37_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 37_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 37_1_3#A 37_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 37_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 37_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 37_1_3#B 37_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 37_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 37_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 37_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 37_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 37_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
+	}
+
+	/** 38_RichFunctionNameDefType **/
+	public void testRichFunctionNameDefType() {
+		/** 38_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 38_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 38_1_3#A 38_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 38_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 38_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 38_1_3#B 38_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 38_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 38_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 38_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 38_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 38_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
+	}
+
+	/** 39_RichLinkerSymbolDefType **/
+	public void testRichLinkerSymbolDefType() {
+		/** 39_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 39_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 39_1_3#A 39_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 39_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 39_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 39_1_3#B 39_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 39_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 39_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 39_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 39_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 39_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
+	}
+
+	/** 4_RichConfigReferenceType **/
+	/** 41_RichChoiceReferenceDefType **/
+	public void testRichChoiceReferenceDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
+		EObject finitionLevelObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL);
+		Type finitionLevelType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
+		assertTrue(finitionLevelType instanceof RichChoiceReferenceDefType);
+		RichChoiceReferenceDefType finitionLevelRichType = (RichChoiceReferenceDefType) finitionLevelType;
+		assertTrue(finitionLevelRichType.getEcucTypeDef() instanceof EcucChoiceReferenceDef);
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
+		/** 41_1_1 Property shortName **/
+		Property shortNameProperty = finitionLevelRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(finitionLevelObject);
+		assertTrue(shortName instanceof String);
+		assertEquals(finitionLevelRichType.getSimpleName(), shortName);
+		/********************************************************************/
+
+		/** 41_1_2 Property absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = finitionLevelRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(finitionLevelObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(finitionLevelObject), absoluteQualifiedName);
+		/********************************************************************/
+
+		/** 41_1_3#A 41_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 41_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 41_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 41_1_3#B 41_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 41_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 41_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 41_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 41_1_6 Property value **/
+		Property valueProperty = finitionLevelRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		assertEquals(ecucMetaModel.getTypeForName(ParamConfContainerDefType.TYPE_NAME), valueProperty.getReturnType());
+		Object value = valueProperty.get(finitionLevelObject);
+		assertTrue(value instanceof EcucContainerValue);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH), value);
+		/********************************************************************/
+
+		/** 41_2_1 Operation is_configured **/
+		Operation isConfiguredOperation = finitionLevelRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(finitionLevelObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
+	}
+
+	/** 42_RichForeignReferenceDefType **/
+	public void testRichForeignReferenceDefType() {
+		/** 42_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 42_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 42_1_3#A 42_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 42_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 42_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 42_1_3#B 42_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 42_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 42_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 42_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 42_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 42_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
+	}
+
+	/** 43_RichInstanceReferenceDefType **/
+	public void testRichInstanceReferenceDefType() {
+		/** 43_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 43_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 43_1_3#A 43_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 43_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 43_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 43_1_3#B 43_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 43_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 43_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 43_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 43_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 43_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
+	}
+
+	/** 44_RichReferenceDefType **/
+	public void testRichReferenceDefType() {
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
+		EObject currentOwnerObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER);
+		Type currentOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
+		assertTrue(currentOwnerType instanceof RichConfigReferenceType);
+		RichConfigReferenceType currentOwnerRichType = (RichConfigReferenceType) currentOwnerType;
+		assertTrue(currentOwnerRichType.getEcucTypeDef() instanceof EcucReferenceDef);
+		/** -------------------------------------------------- **/
+		/** --------------------------------------------------------------------------- **/
+		/** 44_1_1 Property shortName **/
+		Property shortNameProperty = currentOwnerRichType.getProperty("shortName"); //$NON-NLS-1$
+		assertNotNull(shortNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), shortNameProperty.getReturnType());
+		Object shortName = shortNameProperty.get(currentOwnerObject);
+		assertTrue(shortName instanceof String);
+		assertEquals(currentOwnerRichType.getSimpleName(), shortName);
+		/********************************************************************/
+
+		/** 44_1_2 Property absoluteQualifiedName **/
+		Property absoluteQualifiedNameProperty = currentOwnerRichType.getProperty("absoluteQualifiedName"); //$NON-NLS-1$
+		assertNotNull(absoluteQualifiedNameProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), absoluteQualifiedNameProperty.getReturnType());
+		Object absoluteQualifiedName = absoluteQualifiedNameProperty.get(currentOwnerObject);
+		assertTrue(absoluteQualifiedName instanceof String);
+		assertEquals(AutosarURIFactory.getAbsoluteQualifiedName(currentOwnerObject), absoluteQualifiedName);
+		/********************************************************************/
+
+		/** 44_1_3#A 44_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 44_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 44_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 44_1_3#B 44_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 44_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 44_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
+
+		/** 44_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
+
+		/** 44_1_6 Property value **/
+		Property valueProperty = currentOwnerRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		// TODO define correct Destination type in Example model
+		// assertEquals(ecucMetaModel.getTypeForName(ParamConfContainerDefType.TYPE_NAME),
 		// valueProperty.getReturnType());
-		// Object value = valueProperty.get(engineTypeChoiceObject);
-		// assertTrue(value instanceof EcucContainerValue);
-		// assertEquals(value,
-		// getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE));
-		// /********************************************************************/
-		//
-		// /** 3_1_5 check isPresent **/
-		//		Operation isPresentOperation = engineTypeChoiceRichType.getOperation("isPresent", new Type[0]); //$NON-NLS-1$
-		// assertNotNull(isPresentOperation);
-		// assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isPresentOperation.getReturnType());
-		// value = isPresentOperation.evaluate(engineTypeChoiceObject, null);
-		// assertTrue(value instanceof Boolean);
-		// assertTrue((Boolean) value);
-		// /********************************************************************/
-		//
-		// /** 3_1_6 check is_configured **/
-		//		Operation isConfiguredOperation = engineTypeChoiceRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
-		// assertNotNull(isConfiguredOperation);
-		// assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
-		// value = isConfiguredOperation.evaluate(engineTypeChoiceObject, null);
-		// assertTrue(value instanceof Boolean);
-		// assertTrue((Boolean) value);
-		// /********************************************************************/
+		Object value = valueProperty.get(currentOwnerObject);
+		assertTrue(value instanceof EcucContainerValue);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND), value);
+		/********************************************************************/
+
+		/** 44_2_1 Operation is_configured **/
+		Operation isConfiguredOperation = currentOwnerRichType.getOperation("isConfigured", new Type[0]);//$NON-NLS-1$
+		assertNotNull(isConfiguredOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getBooleanType(), isConfiguredOperation.getReturnType());
+		value = isConfiguredOperation.evaluate(currentOwnerObject, null);
+		assertTrue(value instanceof Boolean);
+		assertTrue((Boolean) value);
+		/********************************************************************/
 	}
 
-	// 4_2 ChoiceReference
-	public void testSymbolicNameReferenceDef() {
-		/* Not yet implemented */
-		/** 4_2_1 Check Rich type consistency **/
+	/** 45_RichSymbolicNameReferenceType **/
+	public void testRichSymbolicNameReferenceType() {
+		/** 45_1_1 Property shortName **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 4_2_2 Get shortName **/
+		/** 45_1_2 Property absoluteQualifiedName **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 4_2_3 Get absoluteQualifiedName **/
+		/** 45_1_3#A 45_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
+		/** 45_1_3#A lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 4_2_4 Get value **/
-	}
+		/** 45_1_4#A Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
 
-	// 4_3 ChoiceReference
-	public void testForeignReferenceDef() {
-		/* Not yet implemented */
-		/** 4_3_1 Check Rich type consistency **/
+		/** 45_1_3#B 45_1_4#B multiplicity on RichParamConfContainerDefType with multiplicity [n..n] **/
+		// Not yet available
+		/** 45_1_3#B Property lowerMultiplicity **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 4_3_2 Get shortName **/
+		/** 45_1_4#B Property upperMultiplicity **/
+		// Not yet available
+		/********************************************************************/
+		/****************************************************************************************/
 
-		/** 4_3_3 Get absoluteQualifiedName **/
+		/** 45_1_5 Property definition **/
+		// Not yet available
+		/********************************************************************/
 
-		/** 4_3_4 Get value **/
-	}
+		/** 45_1_6 Property value **/
+		// Not yet available
+		/********************************************************************/
 
-	// 4_4 ChoiceReference
-	public void testInstanceReferenceDef() {
-		/* Not yet implemented */
-		/** 4_4_1 Check Rich type consistency **/
-
-		/** 4_4_2 Get shortName **/
-
-		/** 4_4_3 Get absoluteQualifiedName **/
-
-		/** 4_4_4 Get value **/
+		/** 45_2_1 Operation is_configured **/
+		// Not yet available
+		/********************************************************************/
 	}
 
 }
