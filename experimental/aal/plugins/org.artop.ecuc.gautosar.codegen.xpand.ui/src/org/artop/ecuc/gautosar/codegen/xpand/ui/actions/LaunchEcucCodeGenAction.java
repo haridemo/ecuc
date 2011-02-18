@@ -154,7 +154,7 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 	protected String getQualifiedTemplateName() {
 		IFile templateFile = getTemplateFile();
 		if (templateFile != null) {
-			return getScopingResourceLoader().getQualifiedTemplateName(templateFile, getRootDefineName());
+			return getScopingResourceLoader().getDefinitionName(templateFile, getRootDefineName());
 		}
 		return UNKNOWN_TEMPLATE_NAME;
 	}

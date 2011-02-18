@@ -165,8 +165,8 @@ public class LaunchEcucCodeGen40Action extends AbstractM2TAction {
 		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
 			IFile templateFile = getTemplateFile(moduleConf.gGetDefinition());
 			if (templateFile != null && templateFile.exists()) {
-				String qualifiedTemplateName = getScopingResourceLoader().getQualifiedTemplateName(templateFile, getRootDefineName());
-				requests.add(new ExecutionContextRequest(qualifiedTemplateName, moduleConf));
+				String definitionName = getScopingResourceLoader().getDefinitionName(templateFile, getRootDefineName());
+				requests.add(new ExecutionContextRequest(definitionName, moduleConf));
 			}
 		}
 		return requests;
