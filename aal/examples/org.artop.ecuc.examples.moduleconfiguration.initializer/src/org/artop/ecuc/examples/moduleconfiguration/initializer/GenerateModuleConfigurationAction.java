@@ -17,12 +17,12 @@ package org.artop.ecuc.examples.moduleconfiguration.initializer;
 import gautosar.gecucparameterdef.GModuleDef;
 import gautosar.ggenericstructure.ginfrastructure.GARPackage;
 
-import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
 import org.artop.ecuc.moduleconfiguration.initializer.GenerateModuleConfiguration;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ITreeSelection;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
