@@ -174,23 +174,10 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 
 	@Override
 	public void run() {
-		// TODO (aakar) always open the wizard and fill programmatically text fields from settings
-		if (!existsTemplateFile()) {
-			EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getScopingResourceLoader(),
-					getDefaultOutletURI());
-			WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
-			wizardDialog.open();
-			return;
-		}
-		super.run();
-	}
-
-	protected boolean existsTemplateFile() {
-		IFile templateFile = getTemplateFile();
-		if (templateFile != null) {
-			return templateFile.exists();
-		}
-		return false;
+		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getScopingResourceLoader(),
+				getDefaultOutletURI());
+		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
+		wizardDialog.open();
 	}
 
 	@Override
