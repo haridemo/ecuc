@@ -44,7 +44,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.xpand.ExecutionContextRequest;
-import org.eclipse.sphinx.xpand.ui.actions.AbstractM2TAction;
+import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
 import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.typesystem.MetaModel;
@@ -53,7 +53,7 @@ import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucModuleConfigurationValuesRefConditional;
 import autosar40.ecucdescription.EcucValueCollection;
 
-public class LaunchEcucCodeGen40Action extends AbstractM2TAction {
+public class LaunchEcucCodeGen40Action extends BasicM2TAction {
 
 	public static final String DEFAULT_ROOT_DEFINE_NAME = "main"; //$NON-NLS-1$
 	public static final String UNKNOWN_TEMPLATE_NAME = "unknown"; //$NON-NLS-1$
@@ -173,7 +173,7 @@ public class LaunchEcucCodeGen40Action extends AbstractM2TAction {
 	}
 
 	@Override
-	protected String getQualifiedTemplateName() {
+	protected String getDefinitionName() {
 		return UNKNOWN_TEMPLATE_NAME;
 	}
 

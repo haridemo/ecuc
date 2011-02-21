@@ -46,15 +46,12 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
-import org.eclipse.sphinx.xpand.ui.actions.AbstractM2TAction;
+import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
 import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.typesystem.MetaModel;
 
-public class LaunchEcucCodeGenAction extends AbstractM2TAction {
-
-	public static final String DEFAULT_ROOT_DEFINE_NAME = "main"; //$NON-NLS-1$
-	public static final String UNKNOWN_TEMPLATE_NAME = "unknown"; //$NON-NLS-1$
+public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
 	protected GModuleConfiguration moduleConfiguration;
 	protected GModuleDef moduleDef;
@@ -151,14 +148,6 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 	}
 
 	@Override
-	protected String getQualifiedTemplateName() {
-		IFile templateFile = getTemplateFile();
-		if (templateFile != null) {
-			return getScopingResourceLoader().getDefinitionName(templateFile, getRootDefineName());
-		}
-		return UNKNOWN_TEMPLATE_NAME;
-	}
-
 	protected IFile getTemplateFile() {
 		IFile moduleDefFile = EcorePlatformUtil.getFile(moduleDef);
 		if (moduleDefFile != null) {
@@ -166,10 +155,6 @@ public class LaunchEcucCodeGenAction extends AbstractM2TAction {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(templatePath);
 		}
 		return null;
-	}
-
-	protected String getRootDefineName() {
-		return DEFAULT_ROOT_DEFINE_NAME;
 	}
 
 	@Override

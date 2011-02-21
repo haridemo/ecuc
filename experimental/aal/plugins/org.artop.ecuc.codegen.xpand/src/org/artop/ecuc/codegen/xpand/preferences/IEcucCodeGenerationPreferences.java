@@ -17,7 +17,6 @@ package org.artop.ecuc.codegen.xpand.preferences;
 import org.artop.ecuc.codegen.xpand.Activator;
 import org.eclipse.core.internal.resources.projectvariables.ProjectLocationVariableResolver;
 import org.eclipse.core.internal.resources.projectvariables.WorkspaceLocationVariableResolver;
-import org.eclipse.sphinx.xpand.jobs.BasicM2TJob;
 
 @SuppressWarnings("restriction")
 public interface IEcucCodeGenerationPreferences {
@@ -33,7 +32,7 @@ public interface IEcucCodeGenerationPreferences {
 	String PREF_OUTLETS = QUALIFIER + ".outletNameAndPathExpression"; //$NON-NLS-1$
 
 	// Default values
-	String PREF_OUTLETS_DEFAULT = "@${project_loc}/" + BasicM2TJob.DEFAULT_OUTLET_PATH + ";COUTLET@${project_loc}/coutlet;HOUTLET@${project_loc}/houtlet"; //$NON-NLS-1$ //$NON-NLS-2$
+	String PREF_OUTLETS_DEFAULT = "@${project_loc}/gen;COUTLET@${project_loc}/coutlet;HOUTLET@${project_loc}/houtlet"; //$NON-NLS-1$ 
 
 	ProjectOutletPreference OUTLETS = new ProjectOutletPreference(XtendXpandNatureId, QUALIFIER, PREF_OUTLETS, PREF_OUTLETS_DEFAULT);
 }
