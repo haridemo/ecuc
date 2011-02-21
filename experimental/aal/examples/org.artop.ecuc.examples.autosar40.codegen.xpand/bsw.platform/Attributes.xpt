@@ -1,0 +1,42 @@
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION org::eclipse::xtend::util::stdlib::properties»
+«EXTENSION extensions::util»
+
+«DEFINE main FOR EPD::Attributes»
+«FILE "AttibutesConfig.txt" -»
+DATE «dateString()»
+«EXPAND RichModuleDefType»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE RichModuleDefType FOR EPD::Attributes »
+/*****************************************************************************/
+/*      Rich Module Def Type                                                 */
+/*****************************************************************************/
+
++----------
+| 10_1_1
+
+Module Configuration's short name: «this.shortName»
+
++----------
+| 10_1_2
+
+Module Configuration's AQN: «this.absoluteQualifiedName»
+
++----------
+| 10_1_3
+
+Child Container: «IF this.Configurator != null»«Configurator.shortName»«ELSE»NULL«ENDIF»
+
++----------
+| 10_1_4
+
+Children Containers: 
+«IF !this.Constants.isEmpty -»
+«FOREACH Constants AS Cst -»
+ - «Cst.shortName -»
+«ENDFOREACH -»
+«ELSE»EMPTY«ENDIF -»
+«ENDDEFINE»

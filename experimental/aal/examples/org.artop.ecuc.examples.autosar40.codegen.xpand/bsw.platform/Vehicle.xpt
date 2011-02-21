@@ -3,23 +3,22 @@
 «EXTENSION org::eclipse::xtend::util::stdlib::properties»
 
 «DEFINE main FOR EPD::Vehicle»
-	«EXPAND hFile»
-	«EXPAND ConfigFile»
+	«EXPAND ConfigureVehicle»
+«ENDDEFINE»
+
+«DEFINE ConfigureVehicle FOR EPD::Vehicle»
+	«FILE "VehicleConfig.txt" -»
+		«EXPAND VehicleConfig::RichModuleDefType»
+		«EXPAND VehicleConfig::RichContainerDefType»
+		«EXPAND VehicleConfig::RichConfigParameterType»
+		«EXPAND VehicleConfig::RichConfigReferenceType»
+	«ENDFILE»
 «ENDDEFINE»
 
 «DEFINE hFile FOR EPD::Vehicle»
 	«FILE "Vehicle_Cfg.h" -»
 		«EXPAND VehicleH::inclusions»
 		«EXPAND VehicleH::symbolicName»
-	«ENDFILE»
-«ENDDEFINE»
-
-«DEFINE ConfigFile FOR EPD::Vehicle»
-	«FILE "VehicleConfig.txt" -»
-		«EXPAND VehicleConfig::RichModuleDefType»
-		«EXPAND VehicleConfig::RichContainerDefType»
-		«EXPAND VehicleConfig::RichConfigParameterType»
-		«EXPAND VehicleConfig::RichConfigReferenceType»
 	«ENDFILE»
 «ENDDEFINE»
 

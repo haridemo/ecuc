@@ -122,29 +122,65 @@
                   </SUB-CONTAINERS>
                 </ECUC-PARAM-CONF-CONTAINER-DEF>
                 <ECUC-PARAM-CONF-CONTAINER-DEF>
-                  <SHORT-NAME>Revisons</SHORT-NAME>
+                  <SHORT-NAME>Revisions</SHORT-NAME>
                   <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
                   <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
                   <PARAMETERS>
                     <ECUC-STRING-PARAM-DEF>
                       <SHORT-NAME>RevisionDate</SHORT-NAME>
-                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
-                      <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+                      <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE SHORT-LABEL="Upper">true</UPPER-MULTIPLICITY-INFINITE>
                     </ECUC-STRING-PARAM-DEF>
                   </PARAMETERS>
-                  <REFERENCES>
-                    <ECUC-REFERENCE-DEF UUID="da40d2fa-9dd7-4255-8df8-8052ebbf4985">
-                      <SHORT-NAME>OwnerAtThatTime</SHORT-NAME>
-                      <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
-                      <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
-                    </ECUC-REFERENCE-DEF>
-                  </REFERENCES>
                 </ECUC-PARAM-CONF-CONTAINER-DEF>
               </SUB-CONTAINERS>
             </ECUC-PARAM-CONF-CONTAINER-DEF>
             <ECUC-PARAM-CONF-CONTAINER-DEF UUID="601ac44d-5e6e-4cbf-9a98-6ede923d9265">
               <SHORT-NAME>Options</SHORT-NAME>
               <SUB-CONTAINERS>
+                <ECUC-CHOICE-CONTAINER-DEF UUID="01a1186c-7292-450a-a40b-0f3fc981a87a">
+                  <SHORT-NAME>Color</SHORT-NAME>
+                  <UPPER-MULTIPLICITY SHORT-LABEL="Upper">5</UPPER-MULTIPLICITY>
+                  <CHOICES>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="5c539ba3-aecc-4555-bc27-ed816e319a55">
+                      <SHORT-NAME>UnifiedColor</SHORT-NAME>
+                      <REFERENCES>
+                        <ECUC-CHOICE-REFERENCE-DEF UUID="b797c4a0-548d-44cd-ac86-589adca79bbd">
+                          <SHORT-NAME>ColorRef</SHORT-NAME>
+                          <DESTINATION-REFS>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/CharCoal</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/CornflowerBlue</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/Gold</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/HotPink</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/NavyBlue</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/PapayaWhip</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/SalsaRed</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/Silver</DESTINATION-REF>
+                          </DESTINATION-REFS>
+                        </ECUC-CHOICE-REFERENCE-DEF>
+                      </REFERENCES>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="b010a3aa-08ef-443b-b961-96f557db4dd3">
+                      <SHORT-NAME>MixedColors</SHORT-NAME>
+                      <REFERENCES>
+                        <ECUC-CHOICE-REFERENCE-DEF UUID="b797c4a0-548d-44cd-ac86-589adca79bbd">
+                          <SHORT-NAME>ColorRef</SHORT-NAME>
+                          <UPPER-MULTIPLICITY-INFINITE SHORT-LABEL="Upper">true</UPPER-MULTIPLICITY-INFINITE>
+                          <DESTINATION-REFS>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/CharCoal</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/CornflowerBlue</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/Gold</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/HotPink</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/NavyBlue</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/PapayaWhip</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/SalsaRed</DESTINATION-REF>
+                            <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/Silver</DESTINATION-REF>
+                          </DESTINATION-REFS>
+                        </ECUC-CHOICE-REFERENCE-DEF>
+                      </REFERENCES>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                  </CHOICES>
+                </ECUC-CHOICE-CONTAINER-DEF>
                 <ECUC-PARAM-CONF-CONTAINER-DEF UUID="7f0bb98e-5e48-40d0-8988-c0c359929ba4">
                   <SHORT-NAME>FinitionLevels</SHORT-NAME>
                   <SUB-CONTAINERS>
@@ -195,6 +231,44 @@
                 </ECUC-PARAM-CONF-CONTAINER-DEF>
               </SUB-CONTAINERS>
             </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="3f768050-b919-4b39-a3c7-108845f3f61d">
+              <SHORT-NAME>Constant</SHORT-NAME>
+              <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY-INFINITE SHORT-LABEL="Upper">true</UPPER-MULTIPLICITY-INFINITE>
+              <PARAMETERS>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="e63e5b6e-6389-446a-9492-40942a3103f7">
+                  <SHORT-NAME>Type</SHORT-NAME>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF UUID="69d175b7-a242-4a0c-9e09-b747bdad3f35">
+                      <SHORT-NAME>Integer</SHORT-NAME>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF UUID="32b58c69-527c-44d8-92a7-80a347ae47fe">
+                      <SHORT-NAME>String</SHORT-NAME>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF UUID="a04da177-3c0f-4a36-956a-ed802e59ac3d">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="8057df72-8578-4cae-94b7-e2445af4791d">
+                  <SHORT-NAME>Value</SHORT-NAME>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="45b7f270-ee27-477d-86cb-dbd703deeeb8">
+                  <SHORT-NAME>Name</SHORT-NAME>
+                </ECUC-STRING-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="47b3eb24-b994-4d97-8189-c82e26cef12b">
+              <SHORT-NAME>Configurator</SHORT-NAME>
+              <PARAMETERS>
+                <ECUC-STRING-PARAM-DEF UUID="8a551ddf-7513-46a0-b64d-78f1dd2cc08a">
+                  <SHORT-NAME>Name</SHORT-NAME>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="9b12a63a-d24a-4806-8e2d-5e56358daa4c">
+                  <SHORT-NAME>Id</SHORT-NAME>
+                </ECUC-STRING-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
           </CONTAINERS>
         </ECUC-MODULE-DEF>
       </ELEMENTS>
@@ -208,11 +282,24 @@
           <VENDOR-API-INFIX></VENDOR-API-INFIX>
           <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/EPD/Vehicle</VENDOR-SPECIFIC-MODULE-DEF-REF>
         </BSW-IMPLEMENTATION>
+        <BSW-IMPLEMENTATION UUID="7f3dbfbb-1c4e-460f-894e-009c715b70ee">
+          <SHORT-NAME>Attributes</SHORT-NAME>
+          <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/BMD/Attributes/Attributes</BEHAVIOR-REF>
+          <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/EPD/Attributes</VENDOR-SPECIFIC-MODULE-DEF-REF>
+        </BSW-IMPLEMENTATION>
         <BSW-MODULE-DESCRIPTION UUID="fdeaa252-71ea-4fd7-bd72-1c4ad81b97a8">
           <SHORT-NAME>Vehicle</SHORT-NAME>
           <INTERNAL-BEHAVIORS>
             <BSW-INTERNAL-BEHAVIOR UUID="aa427d0c-9d4d-4c4e-b97d-6a2770f0f708">
               <SHORT-NAME>Vehicle</SHORT-NAME>
+            </BSW-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </BSW-MODULE-DESCRIPTION>
+        <BSW-MODULE-DESCRIPTION>
+          <SHORT-NAME>Attributes</SHORT-NAME>
+          <INTERNAL-BEHAVIORS>
+            <BSW-INTERNAL-BEHAVIOR>
+              <SHORT-NAME>Attributes</SHORT-NAME>
             </BSW-INTERNAL-BEHAVIOR>
           </INTERNAL-BEHAVIORS>
         </BSW-MODULE-DESCRIPTION>
