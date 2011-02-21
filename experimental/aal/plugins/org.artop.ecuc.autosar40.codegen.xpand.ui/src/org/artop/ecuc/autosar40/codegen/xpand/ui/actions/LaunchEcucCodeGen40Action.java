@@ -25,6 +25,7 @@ import org.artop.ecl.emf.model.IModelDescriptor;
 import org.artop.ecl.emf.model.ModelDescriptorRegistry;
 import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
+import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
 import org.artop.ecuc.autosar40.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
 import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
@@ -44,6 +45,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.xpand.ExecutionContextRequest;
+import org.eclipse.sphinx.xpand.jobs.BasicM2TJob;
 import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
 import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xpand2.output.Outlet;
@@ -53,10 +55,8 @@ import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucModuleConfigurationValuesRefConditional;
 import autosar40.ecucdescription.EcucValueCollection;
 
+// TODO aakar should extend LaunchEcucCodeGenAction
 public class LaunchEcucCodeGen40Action extends BasicM2TAction {
-
-	public static final String DEFAULT_ROOT_DEFINE_NAME = "main"; //$NON-NLS-1$
-	public static final String UNKNOWN_TEMPLATE_NAME = "unknown"; //$NON-NLS-1$
 
 	protected List<GModuleConfiguration> ecucModulesConfigurationValues = new ArrayList<GModuleConfiguration>();
 
@@ -149,7 +149,6 @@ public class LaunchEcucCodeGen40Action extends BasicM2TAction {
 		};
 	}
 
-	@Override
 	protected MetaModel getMetaModel() {
 		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(getSelectedModelObject());
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
@@ -172,11 +171,7 @@ public class LaunchEcucCodeGen40Action extends BasicM2TAction {
 		return requests;
 	}
 
-	@Override
-	protected String getDefinitionName() {
-		return UNKNOWN_TEMPLATE_NAME;
-	}
-
+	// TODO aakar review this
 	protected IFile getTemplateFile(GModuleDef moduleDef) {
 		IFile moduleDefFile = EcorePlatformUtil.getFile(moduleDef);
 		if (moduleDefFile != null) {
@@ -186,21 +181,16 @@ public class LaunchEcucCodeGen40Action extends BasicM2TAction {
 		return null;
 	}
 
-	protected String getRootDefineName() {
-		return DEFAULT_ROOT_DEFINE_NAME;
-	}
-
 	@Override
 	public void run() {
-		// if (!existsTemplateFile()) {
-		// EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel(),
-		// getScopingResourceLoader(),
-		// getDefaultOutletURI());
-		// WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
-		// wizardDialog.open();
-		// return;
-		// }
-		super.run();
+		if (getDefinitionName() != null) {
+			BasicM2TJob job = createM2TJob();
+			// Show console and make sure that all system output produced during execution gets displayed there
+			ExtendedPlatformUI.showSystemConsole();
+			job.setMetaModel(getMetaModel());
+			job.schedule();
+			return;
+		}
 	}
 
 	@Override

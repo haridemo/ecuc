@@ -137,7 +137,6 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		return moduleConfiguration;
 	}
 
-	@Override
 	protected MetaModel getMetaModel() {
 		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(moduleConfiguration);
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
@@ -159,8 +158,9 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
 	@Override
 	public void run() {
-		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel(), getScopingResourceLoader(),
+		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getScopingResourceLoader(),
 				getDefaultOutletURI());
+		wizard.setMetaModel(getMetaModel());
 		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
 		wizardDialog.open();
 	}

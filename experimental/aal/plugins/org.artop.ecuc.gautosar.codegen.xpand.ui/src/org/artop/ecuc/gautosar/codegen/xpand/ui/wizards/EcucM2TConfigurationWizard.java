@@ -31,13 +31,11 @@ import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
 import org.eclipse.sphinx.xpand.ui.wizards.M2TConfigurationWizard;
 import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
 import org.eclipse.xpand2.output.Outlet;
-import org.eclipse.xtend.typesystem.MetaModel;
 
-@SuppressWarnings("restriction")
 public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
 
-	public EcucM2TConfigurationWizard(EObject modelObject, MetaModel metaModel, IScopingResourceLoader scopingResourceLoader, URI defaultOutletURI) {
-		super(modelObject, metaModel, scopingResourceLoader, defaultOutletURI);
+	public EcucM2TConfigurationWizard(EObject modelObject, IScopingResourceLoader scopingResourceLoader, URI defaultOutletURI) {
+		super(modelObject, scopingResourceLoader, defaultOutletURI);
 		setDialogSettings(Activator.getDefault().getDialogSettings());
 	}
 
@@ -58,7 +56,7 @@ public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
 	@Override
 	protected M2TConfigurationPage createM2TConfigurationPage() {
 		EcucM2TConfigurationPage m2TPage = new EcucM2TConfigurationPage(Messages.label_configPageName);
-		m2TPage.init(modelObject, metaModel, defaultOutletURI);
+		m2TPage.init(modelObject, getMetaModel(), defaultOutletURI);
 		return m2TPage;
 	}
 }
