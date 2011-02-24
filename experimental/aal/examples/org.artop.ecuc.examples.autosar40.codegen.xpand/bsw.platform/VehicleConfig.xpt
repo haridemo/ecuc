@@ -15,6 +15,14 @@
 | 10_1_2	Module Configuration's AQN: «this.absoluteQualifiedName»
 +----------
 | 10_1_3	Child Container: «GeneralInfo.shortName»
+«REM»
++----------
+| 10_2_1	Does "" have a PRE-COMPILE Config Variant? «IF this.isPreCompile()»Yes«ELSE»No«ENDIF».
++----------
+| 10_2_2	Does "" have a LINK-TIME Config Variant? «IF this.isLinkTime()»Yes«ELSE»No«ENDIF».
++----------
+| 10_2_3	Does "" have a POST-BUILD Config Variant? «IF this.isPostBuild()»Yes«ELSE»No«ENDIF».
+«ENDREM»
 «ENDDEFINE»
 
 «DEFINE RichContainerDefType FOR EPD::Vehicle -»
@@ -42,7 +50,7 @@
 			 - «GeneralInfo.Owners.Owner.upperMultiplicity»
 +----------
 | 21_1_5	Container's definition: «GeneralInfo.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 21_1_6	Sub-container (AQN): «GeneralInfo.Revisions.absoluteQualifiedName»
 +----------
@@ -55,7 +63,7 @@
 | 21_1_8	Child Choice Container (AQN): «Engine.Type.absoluteQualifiedName»
 +----------
 | 21_1_9	Children Choice Containers (AQN): N/A
-«ENDREM -»
+«ENDREM»
 +----------
 | 21_1_10	Child Parameter: «GeneralInfo.VehicleName.shortName» [«GeneralInfo.VehicleName.absoluteQualifiedName»]
 +----------
@@ -71,7 +79,7 @@
 «FOREACH Options.Color.MixedColors.ColorRefs AS colorRef -»
 			 - «IF colorRef.value != null»«colorRef.value.shortName»«ELSE»NULL«ENDIF»
 «ENDFOREACH -»
-«ENDREM -»
+«ENDREM»
 «ENDDEFINE»
 
 «DEFINE RichConfigParameterType FOR EPD::Vehicle -»
@@ -93,7 +101,7 @@
 | 31_1_3	Boolean Parameter's upper multiplicity: «Engine.Automatic.upperMultiplicity»
 +----------
 | 31_1_5	Boolean Parameter's definition: «Engine.Automatic.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 31_1_6	Boolean Parameter's value: «Engine.Automatic.value»
 +----------
@@ -112,7 +120,7 @@
 | 32_1_3	Enumeration Parameter's upper multiplicity: «Engine.EngineType.upperMultiplicity»
 +----------
 | 32_1_5	Enumeration Parameter's definition: «Engine.EngineType.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 32_1_6	Enumeration Parameter's value: «Engine.EngineType.value»
 +----------
@@ -139,7 +147,7 @@
 +----------
 | 33_2_1	Is Float Parameter configured? «IF Engine.Type.Gasoline.SparkPlugVoltage.isConfigured()»Yes«ELSE»No«ENDIF».
 
-«ENDREM -»
+«ENDREM»
 +-----------------------------------------------------------------------------+
   34 _ Rich Integer Parameter Def Type
 +----------
@@ -153,7 +161,7 @@
 | 34_1_3	Integer Parameter's upper multiplicity: «GeneralInfo.SerialNumber.upperMultiplicity»
 +----------
 | 34_1_5	Integer Parameter's definition: «GeneralInfo.SerialNumber.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 34_1_6	Integer Parameter's value: «GeneralInfo.SerialNumber.value»
 +----------
@@ -172,7 +180,7 @@
 | 35_1_3	String Parameter's upper multiplicity: «GeneralInfo.Manufacturer.upperMultiplicity»
 +----------
 | 35_1_5	String Parameter's definition: «GeneralInfo.Manufacturer.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 35_1_6	String Parameter's value: «GeneralInfo.Manufacturer.value»
 +----------
@@ -186,7 +194,7 @@
   38 _ Rich Function Name Parameter Def Type
 +-----------------------------------------------------------------------------+
   39 _ Rich Linker Symbol Parameter Def Type
-«ENDREM -»
+«ENDREM»
 «ENDDEFINE»
 
 «DEFINE RichConfigReferenceType FOR EPD::Vehicle -»
@@ -208,7 +216,7 @@
 | 41_1_3	Choice Reference's upper multiplicity: «GeneralInfo.FinitionLevel.upperMultiplicity»
 +----------
 | 41_1_5	Choice Reference's definition: «GeneralInfo.FinitionLevel.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 41_1_6	Choice Reference's value (AQN): «GeneralInfo.FinitionLevel.value.absoluteQualifiedName»
 +----------
@@ -219,7 +227,7 @@
   42 _ Rich Foreign Reference Def Type
 +-----------------------------------------------------------------------------+
   43 _ Rich Instance Reference Def Type
-«ENDREM -»
+«ENDREM»
 +-----------------------------------------------------------------------------+
   44 _ Rich Reference Def Type
 +----------
@@ -233,7 +241,7 @@
 | 44_1_3	Reference's upper multiplicity: «GeneralInfo.CurrentOwner.upperMultiplicity»
 +----------
 | 44_1_5	Reference's definition: «GeneralInfo.CurrentOwner.definition»
-«ENDREM -»
+«ENDREM»
 +----------
 | 44_1_6	Reference's value (AQN): «GeneralInfo.CurrentOwner.value.absoluteQualifiedName»
 +----------
@@ -242,5 +250,5 @@
 «REM»
 +-----------------------------------------------------------------------------+
   45 _ Rich Symbolic Name Reference Def Type
-«ENDREM -»
+«ENDREM»
 «ENDDEFINE»
