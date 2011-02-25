@@ -15,7 +15,6 @@
 package org.artop.ecuc.autosar40.codegen.xpand.ui.actions;
 
 import gautosar.gecucdescription.GModuleConfiguration;
-import gautosar.gecucparameterdef.GModuleDef;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,40 +26,22 @@ import org.artop.ecl.emf.util.EcorePlatformUtil;
 import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
 import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
 import org.artop.ecuc.autosar40.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
-import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
-import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.actions.LaunchEcucCodeGenAction;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.transaction.NotificationFilter;
-import org.eclipse.emf.transaction.ResourceSetChangeEvent;
-import org.eclipse.emf.transaction.ResourceSetListener;
-import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.xpand.ExecutionContextRequest;
 import org.eclipse.sphinx.xpand.jobs.BasicM2TJob;
-import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
-import org.eclipse.xpand2.XpandUtil;
-import org.eclipse.xpand2.output.Outlet;
-import org.eclipse.xtend.typesystem.MetaModel;
 
 import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucModuleConfigurationValuesRefConditional;
 import autosar40.ecucdescription.EcucValueCollection;
 
-// TODO aakar should extend LaunchEcucCodeGenAction
-public class LaunchEcucCodeGen40Action extends BasicM2TAction {
+public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 
 	protected List<GModuleConfiguration> ecucModulesConfigurationValues = new ArrayList<GModuleConfiguration>();
-
-	private ResourceSetListener resourceChangedListener = null;
 
 	public LaunchEcucCodeGen40Action() {
 		super(Messages.menuItem_launchEcucCodeGen);
@@ -129,56 +110,17 @@ public class LaunchEcucCodeGen40Action extends BasicM2TAction {
 		super.clearCache();
 	}
 
-	/**
-	 * Creates a ResourceSetListener that detects (re-)loaded resources and updates this action's selection.
-	 */
-	protected ResourceSetListener createResourceChangedListener() {
-		return new ResourceSetListenerImpl(NotificationFilter
-				.createFeatureFilter(EcorePackage.eINSTANCE.getEResource(), Resource.RESOURCE__IS_LOADED).or(
-						NotificationFilter.createFeatureFilter(EcorePackage.eINSTANCE.getEResourceSet(), ResourceSet.RESOURCE_SET__RESOURCES))) {
-			@Override
-			public void resourceSetChanged(ResourceSetChangeEvent event) {
-				// Update this action's selection state
-				selectionChanged(getStructuredSelection());
-			}
-
-			@Override
-			public boolean isPostcommitOnly() {
-				return true;
-			}
-		};
-	}
-
-	protected MetaModel getMetaModel() {
-		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(getSelectedModelObject());
-		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
-		if (moduleDefModelDescriptor != null) {
-			return (MetaModel) moduleDefModelDescriptor.getAdapter(EcucMetaModel.class);
-		}
-		return null;
-	}
-
 	@Override
 	protected Collection<ExecutionContextRequest> getExecutionContextRequests() {
 		List<ExecutionContextRequest> requests = new ArrayList<ExecutionContextRequest>();
 		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
-			IFile templateFile = getTemplateFile(moduleConf.gGetDefinition());
+			IFile templateFile = getTemplateFile();
 			if (templateFile != null && templateFile.exists()) {
 				String definitionName = getScopingResourceLoader().getDefinitionName(templateFile, getRootDefineName());
 				requests.add(new ExecutionContextRequest(definitionName, moduleConf));
 			}
 		}
 		return requests;
-	}
-
-	// TODO aakar review this
-	protected IFile getTemplateFile(GModuleDef moduleDef) {
-		IFile moduleDefFile = EcorePlatformUtil.getFile(moduleDef);
-		if (moduleDefFile != null) {
-			IPath templatePath = moduleDefFile.getFullPath().removeFileExtension().addFileExtension(XpandUtil.TEMPLATE_EXTENSION);
-			return ResourcesPlugin.getWorkspace().getRoot().getFile(templatePath);
-		}
-		return null;
 	}
 
 	@Override
@@ -191,19 +133,5 @@ public class LaunchEcucCodeGen40Action extends BasicM2TAction {
 			job.schedule();
 			return;
 		}
-	}
-
-	@Override
-	protected Collection<Outlet> getOutlets() {
-		IFile file = EcorePlatformUtil.getFile(getSelectedModelObject());
-		if (file != null && file.getProject() != null) {
-			List<Outlet> result = new ArrayList<Outlet>();
-			Collection<ExtendedOutlet> outlets = IEcucCodeGenerationPreferences.OUTLETS.get(file.getProject());
-			for (ExtendedOutlet outlet : outlets) {
-				result.add(outlet);
-			}
-			return result;
-		}
-		return super.getOutlets();
 	}
 }

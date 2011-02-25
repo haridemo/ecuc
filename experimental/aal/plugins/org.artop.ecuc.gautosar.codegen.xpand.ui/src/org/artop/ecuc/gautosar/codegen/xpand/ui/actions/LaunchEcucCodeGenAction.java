@@ -56,7 +56,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	protected GModuleConfiguration moduleConfiguration;
 	protected GModuleDef moduleDef;
 
-	private ResourceSetListener resourceChangedListener = null;
+	protected ResourceSetListener resourceChangedListener = null;
 
 	public LaunchEcucCodeGenAction() {
 		super(Messages.menuItem_launchEcucCodeGen);
@@ -138,7 +138,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	}
 
 	protected MetaModel getMetaModel() {
-		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(moduleConfiguration);
+		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(getSelectedModelObject());
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
 		if (moduleDefModelDescriptor != null) {
 			return (MetaModel) moduleDefModelDescriptor.getAdapter(EcucMetaModel.class);
@@ -148,10 +148,12 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
 	@Override
 	protected IFile getTemplateFile() {
-		IFile moduleDefFile = EcorePlatformUtil.getFile(moduleDef);
-		if (moduleDefFile != null) {
-			IPath templatePath = moduleDefFile.getFullPath().removeFileExtension().addFileExtension(XpandUtil.TEMPLATE_EXTENSION);
-			return ResourcesPlugin.getWorkspace().getRoot().getFile(templatePath);
+		if (getSelectedModelObject() instanceof GModuleConfiguration) {
+			IFile moduleDefFile = EcorePlatformUtil.getFile(((GModuleConfiguration) getSelectedModelObject()).gGetDefinition());
+			if (moduleDefFile != null) {
+				IPath templatePath = moduleDefFile.getFullPath().removeFileExtension().addFileExtension(XpandUtil.TEMPLATE_EXTENSION);
+				return ResourcesPlugin.getWorkspace().getRoot().getFile(templatePath);
+			}
 		}
 		return null;
 	}
