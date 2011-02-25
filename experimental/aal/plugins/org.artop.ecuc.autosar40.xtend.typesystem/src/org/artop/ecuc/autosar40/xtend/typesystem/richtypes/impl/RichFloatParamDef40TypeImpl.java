@@ -35,10 +35,4 @@ public class RichFloatParamDef40TypeImpl extends AbstractRichNumericalParamDef40
 	protected Type getValueType() {
 		return getTypeSystem().getRealType();
 	}
-
-	// TODO generation GAutosar with iSet Markers
-	@Override
-	protected boolean internalIsSet(Object target) {
-		return false;
-	}
 }

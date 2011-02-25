@@ -41,9 +41,4 @@ public class RichBooleanParamDef40TypeImpl extends AbstractRichNumericalParamDef
 		return getTypeSystem().getBooleanType();
 	}
 
-	// TODO generation GAutosar with iSet Markers
-	@Override
-	protected boolean internalIsSet(Object target) {
-		return false;
-	}
 }

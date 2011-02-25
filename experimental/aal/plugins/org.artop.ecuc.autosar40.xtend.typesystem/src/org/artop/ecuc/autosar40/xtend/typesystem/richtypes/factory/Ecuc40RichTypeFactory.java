@@ -19,6 +19,7 @@ import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.gecucparameterdef.GEnumerationParamDef;
 import gautosar.gecucparameterdef.GFloatParamDef;
 import gautosar.gecucparameterdef.GIntegerParamDef;
+import gautosar.gecucparameterdef.GModuleDef;
 
 import java.util.Map;
 
@@ -26,6 +27,7 @@ import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichBooleanParam
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichEnumerationParamDef40TypeImpl;
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichFloatParamDef40TypeImpl;
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichIntegerParamDef40TypeImpl;
+import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichModuleDef40TypeImpl;
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichTextualParamDef40TypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
@@ -35,6 +37,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFunctionNameDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichLinkerSymbolDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.EcucRichTypeFactory;
 import org.eclipse.xtend.typesystem.Type;
@@ -61,6 +64,12 @@ public class Ecuc40RichTypeFactory extends EcucRichTypeFactory {
 			configParameterType = super.createConfigParameterType(parameter);
 		}
 		return configParameterType;
+	}
+
+	@Override
+	protected RichModuleDefType createRichModuleDefType(GModuleDef moduleDef) {
+
+		return new RichModuleDef40TypeImpl(context, (GModuleDef) moduleDef);
 	}
 
 	@Override
