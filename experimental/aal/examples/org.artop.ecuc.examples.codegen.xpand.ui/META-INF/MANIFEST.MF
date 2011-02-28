@@ -8,5 +8,5 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.resources,
- org.artop.ecuc.codegen.xpand.ui,
+ org.artop.ecuc.gautosar.codegen.xpand.ui,
  org.artop.aal.examples.explorer

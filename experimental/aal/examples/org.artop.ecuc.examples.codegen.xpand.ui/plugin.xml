@@ -35,7 +35,7 @@ Contributors:
             id="org.artop.ecuc.examples.codegen.xpand.ui.convertToBSWPlatformProject"
             objectClass="org.eclipse.core.resources.IProject">
          <action
-               class="org.artop.ecuc.codegen.xpand.ui.actions.ConvertToBSWPlatformProjectAction"
+               class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.ConvertToBSWPlatformProjectAction"
                id="org.artop.ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject"
                label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject.label">
          </action>
@@ -45,7 +45,7 @@ Contributors:
          point="org.eclipse.ui.newWizards">
           <wizard
                 category="org.artop.aal.workspace.ui.newWizards.category.autosar"
-                class="org.artop.ecuc.codegen.xpand.ui.wizards.BSWPlatformProjectWizard"
+                class="org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.BSWPlatformProjectWizard"
                 finalPerspective="org.artop.aal.examples.common.ui.perspectives.artop"
                 icon="$nl$/icons/full/etool16/newbswpprj_wiz.gif"
                 id="org.artop.ecuc.examples.codegen.xpand.ui.newWizards.bswPlatformProject"
