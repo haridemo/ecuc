@@ -23,7 +23,7 @@ Contributors:
             viewerId="org.artop.aal.examples.explorer.views.autosarExplorer">
          <includes>
             <actionExtension
-                  pattern="org.artop.ecuc.codegen.xpand.ui.ecucCodeGenActionProvider">
+                  pattern="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucCodeGenActionProvider">
             </actionExtension>
          </includes>
       </viewerActionBinding>
