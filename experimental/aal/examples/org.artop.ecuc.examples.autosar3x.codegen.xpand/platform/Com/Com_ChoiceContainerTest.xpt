@@ -5,10 +5,10 @@
 
 CONST(Com_SignalRouteType,COM_CONST) Com_SignalRoute[<%varGet("SignalRouteNumber")%>] =
 {
-«FOREACH ComConfig.ComGwMapping.ComGwSignalDest.select(e|e.ComGwSignalRef_ComSignal != null) AS signalDest SEPARATOR ','»
+«FOREACH ComConfig.ComGwMappings.ComGwSignalDests.select(e|e.ComGwSignalRef.value_ComSignal != null) AS signalDest SEPARATOR ','»
   {
-    /*SourceIdx*/ «signalDest.parent.ComGwSignalSrc.ComGwSignalRef_ComSignal.value.ComHandleId»
-    /*DestIdx*/   «signalDest.ComGwSignalRef_ComSignal.value.ComHandleId»
+    /*SourceIdx*/ «signalDest.parent.ComGwSignalSrc.ComGwSignalRef.value_ComSignal.ComHandleId»
+    /*DestIdx*/   «signalDest.ComGwSignalRef.value_ComSignal.ComHandleId»
   }
 «ENDFOREACH»
 };

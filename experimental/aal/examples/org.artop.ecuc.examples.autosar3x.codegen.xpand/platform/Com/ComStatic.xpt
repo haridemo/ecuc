@@ -932,14 +932,14 @@
 «ENDREM»
 «FOREACH  ComConfig.ComGwMappings AS gw»
 	«gw.push()»
-	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComGroupSignal AS groupSignal»
-		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComGroupSignal.mapAdd("gatewayDest", groupSignal)»
+	«FOREACH gw.ComGwSignalDests.ComGwSignalRef.value_ComGroupSignal AS groupSignal»
+		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef.value_ComGroupSignal.mapAdd("gatewayDest", groupSignal)»
 	«ENDFOREACH»
-	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComSignal AS signal»
-		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComSignal.mapAdd("gatewayDest", signal)»
+	«FOREACH gw.ComGwSignalDests.ComGwSignalRef.value_ComSignal AS signal»
+		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef.value_ComSignal.mapAdd("gatewayDest", signal)»
 	«ENDFOREACH»
-	«FOREACH gw.ComGwSignalDest.ComGwSignalRef_ComSignalGroup AS signalGroup»
-		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef_ComSignalGroup.mapAdd("gatewayDest", signalGroup)»
+	«FOREACH gw.ComGwSignalDests.ComGwSignalRef.value_ComSignalGroup AS signalGroup»
+		«((ARRoot::Com::ComConfig::ComGwMapping) peek()).ComGwSignalSrc.ComGwSignalRef.value_ComSignalGroup.mapAdd("gatewayDest", signalGroup)»
 	«ENDFOREACH»
 	«pop()»
 «ENDFOREACH»
