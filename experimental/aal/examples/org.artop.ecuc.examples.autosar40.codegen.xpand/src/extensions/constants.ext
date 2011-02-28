@@ -1,9 +1,0 @@
-
-/*
- * Variables declarations
- */
-
-// Store the more recent date of revision that can be found
-String lastRevisionDate() : "LAST_REV_DATE";
-// Store the total number of owners (size of list 'owners')
-String numberOfOwners() : "OWNERS_NB";
