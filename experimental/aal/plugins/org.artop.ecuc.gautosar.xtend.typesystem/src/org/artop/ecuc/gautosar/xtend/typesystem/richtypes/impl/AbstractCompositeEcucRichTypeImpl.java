@@ -66,6 +66,39 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 	}
 
 	@Override
+	protected void addBaseFeatures() {
+		super.addBaseFeatures();
+		addFeature(new PropertyImpl(this, "lowerMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				GIdentifiable ecucTypeDef = getEcucTypeDef();
+				if (ecucTypeDef instanceof GParamConfMultiplicity) {
+					GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
+					String lowerMultiplicity = gParamConfMultiplicity.gGetLowerMultiplicityAsString();
+					return Integer.valueOf(lowerMultiplicity);
+				}
+				return 0;
+			}
+
+		});
+		addFeature(new PropertyImpl(this, "upperMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				GIdentifiable ecucTypeDef = getEcucTypeDef();
+				if (ecucTypeDef instanceof GParamConfMultiplicity) {
+					GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
+					if (gParamConfMultiplicity.gGetUpperMultiplicityInfinite()) {
+						return -1;
+					} else {
+						String upperMultiplicity = gParamConfMultiplicity.gGetUpperMultiplicityAsString();
+						return Integer.valueOf(upperMultiplicity);
+					}
+				}
+				return 0;
+			}
+
+		});
+	}
+
+	@Override
 	protected List<EObject> internalEContents(EObject object) {
 		List<EObject> contents = new ArrayList<EObject>();
 		if (object instanceof GModuleConfiguration) {
