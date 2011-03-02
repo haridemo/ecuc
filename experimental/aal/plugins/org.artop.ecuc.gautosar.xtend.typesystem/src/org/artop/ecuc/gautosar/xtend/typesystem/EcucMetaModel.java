@@ -141,9 +141,12 @@ public class EcucMetaModel implements MetaModel {
 		long start = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
 		createCounter++;
 
-		// First define the meta types
-		createMetaTypes();
+		// First define the base types
 		createBaseTypes();
+
+		// Second define the meta types
+		createMetaTypes();
+
 		// Then create rich types for all module definitions and their respective contents in context model
 		try {
 			IRichTypeFactory richTypeFactory = createRichTypeFactory();
@@ -157,6 +160,12 @@ public class EcucMetaModel implements MetaModel {
 		System.out.println("Created " + types.size() + " types in " + (stop - start) / 1000000 + " ms (#run " + createCounter + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 	}
 
+	protected void createBaseTypes() {
+		MultiplicityAwareListType baseType = new MultiplicityAwareListTypeImpl(getTypeSystem().getObjectType(), getTypeSystem(),
+				MultiplicityAwareListType.TYPE_NAME);
+		types.put(baseType.getName(), baseType);
+	}
+
 	/**
 	 * Creates the meta types for the BSW configuration type system. Enables model nodes to be identified as AUTOSAR
 	 * top-level structure type (i.e., AUTOSAR, ARPackage, etc.), BMD-related type (i.e., ModuleDef,
@@ -164,7 +173,6 @@ public class EcucMetaModel implements MetaModel {
 	 */
 	protected void createMetaTypes() {
 		// Create meta types and register them; order does matter!
-		// XXX How does order matter?
 		registerType(new ARObjectTypeImpl(context));
 		registerType(new ContainerDefTypeImpl(context));
 		registerType(new ParamConfContainerDefTypeImpl(context));
@@ -176,12 +184,6 @@ public class EcucMetaModel implements MetaModel {
 		registerType(new ModuleDefTypeImpl(context));
 		registerType(new ARPackageTypeImpl(context));
 		registerType(new AUTOSARTypeImpl(context));
-	}
-
-	protected void createBaseTypes() {
-		MultiplicityAwareListTypeImpl multiplicityAwareListTypeImpl = new MultiplicityAwareListTypeImpl(getTypeSystem().getObjectType(),
-				getTypeSystem(), "MultiplicityAwareList"); //$NON-NLS-1$
-		types.put(multiplicityAwareListTypeImpl.getName(), multiplicityAwareListTypeImpl);
 	}
 
 	protected IRichTypeFactory createRichTypeFactory() {

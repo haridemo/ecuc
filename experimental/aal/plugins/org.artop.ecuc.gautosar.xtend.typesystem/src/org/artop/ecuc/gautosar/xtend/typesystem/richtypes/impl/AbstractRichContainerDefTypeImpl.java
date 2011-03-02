@@ -69,7 +69,7 @@ public abstract class AbstractRichContainerDefTypeImpl extends AbstractComposite
 	protected void addBaseFeatures() {
 		super.addBaseFeatures();
 		addFeature(new PropertyImpl(this,
-				"referencingParentContainers", getTypeSystem().getListType(getContext().getMetaModel().getTypeForName(ContainerDefType.TYPE_NAME))) { //$NON-NLS-1$
+				"referencingContainers", getTypeSystem().getListType(getContext().getMetaModel().getTypeForName(ContainerDefType.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EObject) {
 					Collection<Setting> inverseReferences = getInverseReferences((EObject) target, false);
@@ -92,6 +92,8 @@ public abstract class AbstractRichContainerDefTypeImpl extends AbstractComposite
 		});
 	}
 
+	// TODO Remove this method and replace by EObjectUtil.getInverseRevferences(EObject,boolean) when migration to Artop
+	// 3.0 is made.
 	protected Collection<Setting> getInverseReferences(EObject object, boolean resolve) {
 		Notifier context = null;
 		EObject modelRoot = EcoreUtil.getRootContainer(object);

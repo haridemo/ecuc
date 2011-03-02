@@ -14,19 +14,17 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl;
 
-import gautosar.gecucparameterdef.GParamConfMultiplicity;
-
 import java.util.Collections;
 import java.util.Set;
 
+import org.artop.ecuc.gautosar.xtend.typesystem.MultiplicityAwareListType;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.internal.xtend.type.baseimpl.types.ListTypeImpl;
 import org.eclipse.xtend.expression.TypeSystem;
 import org.eclipse.xtend.typesystem.Feature;
 import org.eclipse.xtend.typesystem.Type;
 
-public class MultiplicityAwareListTypeImpl extends ListTypeImpl {
-	private GParamConfMultiplicity ecucTypeDef;
+public class MultiplicityAwareListTypeImpl extends ListTypeImpl implements MultiplicityAwareListType {
 
 	public MultiplicityAwareListTypeImpl(Type innerType, TypeSystem ts, String name) {
 		super(innerType, ts, name);
@@ -42,21 +40,18 @@ public class MultiplicityAwareListTypeImpl extends ListTypeImpl {
 		return new Feature[] { new PropertyImpl(this, "lowerMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
 					public Object get(Object target) {
 						if (target instanceof MultiplicityAwareList) {
-							MultiplicityAwareList multiplicityAwareList = (MultiplicityAwareList) target;
-
+							MultiplicityAwareList<?> multiplicityAwareList = (MultiplicityAwareList<?>) target;
 							return multiplicityAwareList.getLowerMultiplicity();
 						}
-						return -2;
+						return MultiplicityAwareList.NO_MULTIPLICITY;
 					}
-
 				}, new PropertyImpl(this, "upperMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
 					public Object get(Object target) {
 						if (target instanceof MultiplicityAwareList) {
-							MultiplicityAwareList multiplicityAwareList = (MultiplicityAwareList) target;
-
+							MultiplicityAwareList<?> multiplicityAwareList = (MultiplicityAwareList<?>) target;
 							return multiplicityAwareList.getUpperMultiplicity();
 						}
-						return -2;
+						return MultiplicityAwareList.NO_MULTIPLICITY;
 					}
 				} };
 	}
