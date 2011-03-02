@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.artop.ecl.platform.util.PlatformLogUtil;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareListTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ARObjectTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ARPackageTypeImpl;
@@ -142,7 +143,7 @@ public class EcucMetaModel implements MetaModel {
 
 		// First define the meta types
 		createMetaTypes();
-
+		createBaseTypes();
 		// Then create rich types for all module definitions and their respective contents in context model
 		try {
 			IRichTypeFactory richTypeFactory = createRichTypeFactory();
@@ -175,6 +176,12 @@ public class EcucMetaModel implements MetaModel {
 		registerType(new ModuleDefTypeImpl(context));
 		registerType(new ARPackageTypeImpl(context));
 		registerType(new AUTOSARTypeImpl(context));
+	}
+
+	protected void createBaseTypes() {
+		MultiplicityAwareListTypeImpl multiplicityAwareListTypeImpl = new MultiplicityAwareListTypeImpl(getTypeSystem().getObjectType(),
+				getTypeSystem(), "MultiplicityAwareList"); //$NON-NLS-1$
+		types.put(multiplicityAwareListTypeImpl.getName(), multiplicityAwareListTypeImpl);
 	}
 
 	protected IRichTypeFactory createRichTypeFactory() {

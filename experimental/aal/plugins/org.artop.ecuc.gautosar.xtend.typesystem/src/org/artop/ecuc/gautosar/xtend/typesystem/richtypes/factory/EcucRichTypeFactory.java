@@ -248,7 +248,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GChoiceReferenceDef) {
 			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
-				configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef, choiceReferenceDef.gGetDestinations()));
+			configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef, choiceReferenceDef.gGetDestinations()));
 		} else {
 			throw new UnsupportedOperationException("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -259,7 +259,8 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 		return new RichReferenceDefTypeImpl(context, referenceDef, referenceDef.gGetDestination());
 	}
 
-	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef, Collection<GParamConfContainerDef> destinations) {
+	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef,
+			Collection<GParamConfContainerDef> destinations) {
 		return new RichChoiceReferenceDefTypeImpl(context, choiceReferenceDef, destinations);
 	}
 

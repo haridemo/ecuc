@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareList;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareListTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
@@ -40,6 +42,12 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 
 	public AbstractCompositeEcucRichTypeImpl(EcucContext context, GIdentifiable ecucTypeDef) {
 		super(context, ecucTypeDef);
+		/*
+		 * !! Important Note !! The multiplicity features are added at this moment because we need to access the
+		 * ecucTypeDef wich is not accessible when feature creation is made in addBaseFeature because addBaseFeature is
+		 * call from AbstractEcucMetaType super Type constructor where ecucTypeDef has not been set yet.
+		 */
+		addMultiplicityFeatures();
 	}
 
 	public AbstractCompositeEcucRichTypeImpl(EcucContext context, GIdentifiable ecucTypeDef, String typeNameSuffix) {
@@ -65,37 +73,38 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 		this.parentType = parentType;
 	}
 
-	@Override
-	protected void addBaseFeatures() {
-		super.addBaseFeatures();
-		addFeature(new PropertyImpl(this, "lowerMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
-			public Object get(Object target) {
-				GIdentifiable ecucTypeDef = getEcucTypeDef();
-				if (ecucTypeDef instanceof GParamConfMultiplicity) {
-					GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
-					String lowerMultiplicity = gParamConfMultiplicity.gGetLowerMultiplicityAsString();
-					return Integer.valueOf(lowerMultiplicity);
-				}
-				return 0;
-			}
-
-		});
-		addFeature(new PropertyImpl(this, "upperMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
-			public Object get(Object target) {
-				GIdentifiable ecucTypeDef = getEcucTypeDef();
-				if (ecucTypeDef instanceof GParamConfMultiplicity) {
-					GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
-					if (gParamConfMultiplicity.gGetUpperMultiplicityInfinite()) {
-						return -1;
-					} else {
-						String upperMultiplicity = gParamConfMultiplicity.gGetUpperMultiplicityAsString();
-						return Integer.valueOf(upperMultiplicity);
+	protected void addMultiplicityFeatures() {
+		if (!isMany(this)) {
+			addFeature(new PropertyImpl(this, "lowerMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
+				public Object get(Object target) {
+					GIdentifiable ecucTypeDef = getEcucTypeDef();
+					if (ecucTypeDef instanceof GParamConfMultiplicity) {
+						GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
+						String lowerMultiplicity = gParamConfMultiplicity.gGetLowerMultiplicityAsString();
+						return Integer.valueOf(lowerMultiplicity);
 					}
+					return 0;
 				}
-				return 0;
-			}
 
-		});
+			});
+			addFeature(new PropertyImpl(this, "upperMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
+				public Object get(Object target) {
+					GIdentifiable ecucTypeDef = getEcucTypeDef();
+					if (ecucTypeDef instanceof GParamConfMultiplicity) {
+						GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
+						if (gParamConfMultiplicity.gGetUpperMultiplicityInfinite()) {
+							return -1;
+						} else {
+							String upperMultiplicity = gParamConfMultiplicity.gGetUpperMultiplicityAsString();
+							return Integer.valueOf(upperMultiplicity);
+						}
+					}
+					return 0;
+				}
+
+			});
+		}
+
 	}
 
 	@Override
@@ -122,7 +131,18 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 				List<EObject> values = null;
 				boolean many = isMany(childType);
 				if (many) {
-					values = new ArrayList<EObject>();
+					GIdentifiable childEcucTypeDef = childType.getEcucTypeDef();
+					if (childEcucTypeDef instanceof GParamConfMultiplicity) {
+						GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) childEcucTypeDef;
+						int lowerMultiplicity = Integer.valueOf(gParamConfMultiplicity.gGetLowerMultiplicityAsString());
+						int upperMultiplicity = -1;
+						if (!gParamConfMultiplicity.gGetUpperMultiplicityInfinite()) {
+							upperMultiplicity = Integer.valueOf(gParamConfMultiplicity.gGetUpperMultiplicityAsString());
+						}
+						values = new MultiplicityAwareList<EObject>(lowerMultiplicity, upperMultiplicity);
+					} else {
+						values = new ArrayList<EObject>();
+					}
 				}
 				List<EObject> contents = internalEContents((EObject) target);
 				if (contents != null) {
@@ -175,7 +195,16 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 	}
 
 	private Type getChildAccessorReturnType(CompositeEcucRichType childType) {
-		return isMany(childType) ? getTypeSystem().getListType(childType) : childType;
+		if (isMany(childType)) {
+			GIdentifiable ecucTypeDef = childType.getEcucTypeDef();
+			if (ecucTypeDef instanceof GParamConfMultiplicity) {
+				return new MultiplicityAwareListTypeImpl(childType, getTypeSystem(), "MultiplicityAwareListType");
+			} else {
+				return getTypeSystem().getListType(childType);
+			}
+		} else {
+			return childType;
+		}
 	}
 
 	private boolean isMany(CompositeEcucRichType compositeType) {

@@ -64,6 +64,17 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 				return internalIsSet(target);
 			}
 		});
+
+		addFeature(new PropertyImpl(this, "definition", this) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof GParameterValue) {
+					GParameterValue gTarget = (GParameterValue) target;
+					return gTarget.gGetDefinition();
+				}
+				return "";//$NON-NLS-1$
+			}
+
+		});
 	}
 
 	@Override

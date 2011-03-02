@@ -21,10 +21,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefTyp
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.AbstractRichConfigParameterTypeImpl;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.FeatureMap;
-import org.eclipse.emf.ecore.util.FeatureMapUtil;
 
 import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucdescription.EcucdescriptionPackage;
@@ -69,25 +66,11 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 		return object.toString();
 	}
 
-	protected boolean isSetMixedText(FeatureMap mixed) {
-		Assert.isNotNull(mixed);
-
-		Object textObject = mixed.get(org.eclipse.emf.ecore.xml.type.XMLTypePackage.eINSTANCE.getXMLTypeDocumentRoot_Text(), true);
-		if (textObject instanceof FeatureMapUtil.FeatureEList<?>) {
-			FeatureMapUtil.FeatureEList<?> featureEList = (FeatureMapUtil.FeatureEList<?>) textObject;
-			if (featureEList.size() != 0) {
-				Object text = featureEList.get(0);
-				return text instanceof String;
-			}
-		}
-		return false;
-	}
-
 	@Override
 	protected boolean internalIsSet(Object target) {
 		NumericalValueVariationPoint numericalValueVariationPoint = ((EcucNumericalParamValue) target).getValue();
 		if (numericalValueVariationPoint != null) {
-			return isSetMixedText(numericalValueVariationPoint.getMixed());
+			return numericalValueVariationPoint.getMixedText().length() > 0;
 		}
 		return false;
 	}
