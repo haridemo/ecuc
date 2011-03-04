@@ -9,6 +9,7 @@ Require-Bundle: org.eclipse.xtend;bundle-version="1.0.1";visibility:=reexport,
  org.artop.aal.common;bundle-version="2.1.1",
  org.artop.ecl.emf.workspace;bundle-version="2.2.1"
 Export-Package: org.artop.ecuc.gautosar.xtend.typesystem,
+ org.artop.ecuc.gautosar.xtend.typesystem.basetypes,
  org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl,
  org.artop.ecuc.gautosar.xtend.typesystem.internal;x-internal:=true,
  org.artop.ecuc.gautosar.xtend.typesystem.metatypes,

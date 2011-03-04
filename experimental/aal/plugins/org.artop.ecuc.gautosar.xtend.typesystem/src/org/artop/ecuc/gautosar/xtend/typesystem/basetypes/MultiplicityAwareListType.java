@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.gautosar.xtend.typesystem;
+package org.artop.ecuc.gautosar.xtend.typesystem.basetypes;
 
 import org.eclipse.xtend.typesystem.Type;
 

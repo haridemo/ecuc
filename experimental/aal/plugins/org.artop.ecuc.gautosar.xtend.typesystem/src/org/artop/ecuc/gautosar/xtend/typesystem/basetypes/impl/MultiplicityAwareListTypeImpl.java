@@ -17,7 +17,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl;
 import java.util.Collections;
 import java.util.Set;
 
-import org.artop.ecuc.gautosar.xtend.typesystem.MultiplicityAwareListType;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.MultiplicityAwareListType;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.internal.xtend.type.baseimpl.types.ListTypeImpl;
 import org.eclipse.xtend.expression.TypeSystem;

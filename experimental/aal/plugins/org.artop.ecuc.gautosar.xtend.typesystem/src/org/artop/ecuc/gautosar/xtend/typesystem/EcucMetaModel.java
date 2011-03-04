@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.artop.ecl.platform.util.PlatformLogUtil;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.MultiplicityAwareListType;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareListTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ARObjectTypeImpl;

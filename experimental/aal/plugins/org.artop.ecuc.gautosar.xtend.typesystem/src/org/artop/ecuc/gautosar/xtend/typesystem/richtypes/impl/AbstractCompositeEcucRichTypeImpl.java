@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.MultiplicityAwareListType;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.MultiplicityAwareListType;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareList;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareListTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
@@ -82,7 +82,11 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 					if (ecucTypeDef instanceof GParamConfMultiplicity) {
 						GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
 						String lowerMultiplicity = gParamConfMultiplicity.gGetLowerMultiplicityAsString();
-						return Integer.valueOf(lowerMultiplicity);
+						if (lowerMultiplicity != null) {
+							return Integer.valueOf(lowerMultiplicity);
+						}
+						return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
+
 					}
 					return 0;
 				}
@@ -97,7 +101,10 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 							return -1;
 						} else {
 							String upperMultiplicity = gParamConfMultiplicity.gGetUpperMultiplicityAsString();
-							return Integer.valueOf(upperMultiplicity);
+							if (upperMultiplicity != null) {
+								return Integer.valueOf(upperMultiplicity);
+							}
+							return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
 						}
 					}
 					return 0;
@@ -130,10 +137,19 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 					GIdentifiable childEcucTypeDef = childType.getEcucTypeDef();
 					if (childEcucTypeDef instanceof GParamConfMultiplicity) {
 						GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) childEcucTypeDef;
-						int lowerMultiplicity = Integer.valueOf(gParamConfMultiplicity.gGetLowerMultiplicityAsString());
+						String lowerMultiplicityString = gParamConfMultiplicity.gGetLowerMultiplicityAsString();
+						int lowerMultiplicity = MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
+						if (lowerMultiplicityString != null) {
+							lowerMultiplicity = Integer.valueOf(lowerMultiplicityString);
+						}
 						int upperMultiplicity = MultiplicityAwareList.MULTIPLICITY_INFINITE;
 						if (!gParamConfMultiplicity.gGetUpperMultiplicityInfinite()) {
-							upperMultiplicity = Integer.valueOf(gParamConfMultiplicity.gGetUpperMultiplicityAsString());
+							String upperMultiplicityString = gParamConfMultiplicity.gGetUpperMultiplicityAsString();
+							if (upperMultiplicityString != null) {
+								upperMultiplicity = Integer.valueOf(upperMultiplicityString);
+							} else {
+								upperMultiplicity = MultiplicityAwareList.NO_MULTIPLICITY;
+							}
 						}
 						values = new MultiplicityAwareList<EObject>();
 						((MultiplicityAwareList<EObject>) values).setLowerMultiplicity(lowerMultiplicity);
@@ -214,7 +230,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 		}
 	}
 
-	private boolean isMany(CompositeEcucRichType compositeType) {
+	public boolean isMany(CompositeEcucRichType compositeType) {
 		Assert.isNotNull(compositeType);
 
 		GIdentifiable typeDef;
@@ -232,7 +248,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 				return true;
 			} else {
 				String upperMultiplicity = multiplicity.gGetUpperMultiplicityAsString();
-				return upperMultiplicity != null && !"1".equals(upperMultiplicity); //$NON-NLS-1$
+				return upperMultiplicity != null && upperMultiplicity.length() > 0 && !"1".equals(upperMultiplicity); //$NON-NLS-1$
 			}
 		}
 

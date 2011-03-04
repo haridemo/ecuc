@@ -91,10 +91,18 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 		createRichModuleDefTypes();
 
 		for (RichModuleDefType rootType : rootTypes) {
-			rootType.accept(new AddChildAccessorFeaturesVisitor());
-			rootType.accept(new AddParentAccessorFeaturesVisitor());
+			rootType.accept(createAddChildAccessorFeaturesVisitor());
+			rootType.accept(createAddParentAccessorFeaturesVisitor());
 			rootType.accept(new AddConfigReferenceValueAccessorFeaturesVisitor());
 		}
+	}
+
+	protected IEcucRichTypeHierarchyVisitor createAddChildAccessorFeaturesVisitor() {
+		return new AddChildAccessorFeaturesVisitor();
+	}
+
+	protected IEcucRichTypeHierarchyVisitor createAddParentAccessorFeaturesVisitor() {
+		return new AddParentAccessorFeaturesVisitor();
 	}
 
 	protected void createRichModuleDefTypes() {
