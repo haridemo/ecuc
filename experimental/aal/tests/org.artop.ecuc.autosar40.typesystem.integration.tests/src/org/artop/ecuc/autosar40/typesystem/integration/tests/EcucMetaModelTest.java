@@ -17,6 +17,7 @@ package org.artop.ecuc.autosar40.typesystem.integration.tests;
 import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
@@ -110,7 +111,6 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_PAPAYAWHIP);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SALSARED);
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SILVER);
-
 	}
 
 	/**
@@ -297,6 +297,13 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		RichParamConfContainerDefType revisionsRichType = (RichParamConfContainerDefType) revisionsType;
 		assertTrue(revisionsRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 		/** -------------------------------------------------- **/
+		/** --Check generalInfoOwnersOwnerRichType consistency-- **/
+		EObject fifthHandOwnerObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND);
+		Type generalInfoOwnersOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+		assertTrue(generalInfoOwnersOwnerType instanceof RichParamConfContainerDefType);
+		RichParamConfContainerDefType generalInfoOwnersOwnerRichType = (RichParamConfContainerDefType) generalInfoOwnersOwnerType;
+		assertTrue(generalInfoOwnersRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
+		/** -------------------------------------------------- **/
 		/** --------------------------------------------------------------------------- **/
 
 		/** 21_1 Property shortName **/
@@ -319,11 +326,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 21_3#A 21_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 21_3#A Property lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = engineRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(engineObject);
+		assertEquals(0, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 21_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = engineRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(engineObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -432,6 +447,17 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** 21_13 Property <Plural of GConfigReference.shortName> **/
 		// Not yet available
 		/********************************************************************/
+
+		/** 21_12 Property referencingContainers **/
+		Property referencingContainersProperty = generalInfoOwnersOwnerRichType.getProperty("referencingContainers"); //$NON-NLS-1$
+		assertNotNull(referencingContainersProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getListType(ecucMetaModel.getTypeForName(ContainerDefType.TYPE_NAME)),
+				referencingContainersProperty.getReturnType());
+		Object referencingContainers = referencingContainersProperty.get(fifthHandOwnerObject);
+		assertTrue(referencingContainers instanceof List);
+		assertEquals(1, ((List<?>) referencingContainers).size());
+		assertTrue(((List<?>) referencingContainers).contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO)));
+		/********************************************************************/
 	}
 
 	/** 22_RichChoiceContainerDefType **/
@@ -466,11 +492,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 22_3#A 22_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 22_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = typeRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(typeObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 22_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = typeRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(typeObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -553,11 +587,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 31_1_3#A 31_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 31_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = automaticRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(automaticObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 31_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = automaticRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(automaticObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -628,11 +670,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 32_1_3#A 32_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 32_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = engineTypeRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(engineTypeObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 32_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = engineTypeRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(engineTypeObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -703,11 +753,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 33_1_3#A 33_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 33_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = sparkPlugVoltageRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(sparkPlugVoltageObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 33_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = sparkPlugVoltageRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(sparkPlugVoltageObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -777,11 +835,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 34_1_3#A 34_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 34_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = serialNumberRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(serialNumberObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 34_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = serialNumberRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(serialNumberObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -851,11 +917,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 35_1_3#A 35_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 35_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = vehicleNameRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(vehicleNameObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 35_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = vehicleNameRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = upperMultiplicityProperty.get(vehicleNameObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -1101,11 +1175,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 41_1_3#A 41_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 41_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = finitionLevelRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(finitionLevelObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 41_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = finitionLevelRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = lowerMultiplicityProperty.get(finitionLevelObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
@@ -1262,11 +1344,19 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 		/** 44_1_3#A 44_1_4#A multiplicity on RichParamConfContainerDefType with multiplicity [n..1] **/
 		/** 44_1_3#A lowerMultiplicity **/
-		// Not yet available
+		Property lowerMultiplicityProperty = currentOwnerRichType.getProperty("lowerMultiplicity"); //$NON-NLS-1$
+		assertNotNull(lowerMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object lowerMultiplicity = lowerMultiplicityProperty.get(currentOwnerObject);
+		assertEquals(1, lowerMultiplicity);
 		/********************************************************************/
 
 		/** 44_1_4#A Property upperMultiplicity **/
-		// Not yet available
+		Property upperMultiplicityProperty = currentOwnerRichType.getProperty("upperMultiplicity"); //$NON-NLS-1$
+		assertNotNull(upperMultiplicityProperty);
+		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), absoluteQualifiedNameProperty.getReturnType());
+		Object upperMultiplicity = lowerMultiplicityProperty.get(currentOwnerObject);
+		assertEquals(1, upperMultiplicity);
 		/********************************************************************/
 		/****************************************************************************************/
 
