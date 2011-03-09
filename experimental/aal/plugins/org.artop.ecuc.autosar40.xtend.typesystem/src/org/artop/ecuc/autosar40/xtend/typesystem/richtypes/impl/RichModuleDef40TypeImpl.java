@@ -45,7 +45,6 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 						if (split.length > 0) {
 							return split[0];
 						}
-						return swVersion;
 					}
 				}
 				return ""; //$NON-NLS-1$
@@ -63,7 +62,6 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 						if (split.length > 1) {
 							return split[1];
 						}
-						return swVersion;
 					}
 				}
 				return ""; //$NON-NLS-1$
@@ -81,7 +79,6 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 						if (split.length > 2) {
 							return split[2];
 						}
-						return swVersion;
 					}
 				}
 				return ""; //$NON-NLS-1$
