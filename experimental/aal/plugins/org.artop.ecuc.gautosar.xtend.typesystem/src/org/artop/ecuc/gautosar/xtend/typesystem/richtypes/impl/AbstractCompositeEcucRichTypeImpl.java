@@ -83,12 +83,16 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 						GParamConfMultiplicity gParamConfMultiplicity = (GParamConfMultiplicity) ecucTypeDef;
 						String lowerMultiplicity = gParamConfMultiplicity.gGetLowerMultiplicityAsString();
 						if (lowerMultiplicity != null) {
-							return Integer.valueOf(lowerMultiplicity);
+							try {
+								return Integer.valueOf(lowerMultiplicity);
+							} catch (NumberFormatException ex) {
+								return 1;
+							}
 						}
 						return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
 
 					}
-					return 0;
+					return 1;
 				}
 
 			});
@@ -102,12 +106,16 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 						} else {
 							String upperMultiplicity = gParamConfMultiplicity.gGetUpperMultiplicityAsString();
 							if (upperMultiplicity != null) {
-								return Integer.valueOf(upperMultiplicity);
+								try {
+									return Integer.valueOf(upperMultiplicity);
+								} catch (NumberFormatException ex) {
+									return 1;
+								}
 							}
 							return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
 						}
 					}
-					return 0;
+					return 1;
 				}
 
 			});
