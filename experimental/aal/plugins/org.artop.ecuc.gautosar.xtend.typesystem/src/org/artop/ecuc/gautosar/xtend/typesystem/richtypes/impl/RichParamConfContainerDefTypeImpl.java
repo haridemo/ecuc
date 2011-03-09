@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
+import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
 
 import java.util.Collections;
@@ -22,12 +23,17 @@ import java.util.Set;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichParamConfContainerDefTypeImpl extends AbstractRichContainerDefTypeImpl implements RichParamConfContainerDefType {
 
 	public RichParamConfContainerDefTypeImpl(EcucContext context, GParamConfContainerDef paramConfContainerDef) {
 		super(context, paramConfContainerDef);
+	}
+
+	public EClass getEcucValueType() {
+		return GecucdescriptionPackage.eINSTANCE.getGContainer();
 	}
 
 	@Override
