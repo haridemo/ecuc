@@ -29,7 +29,7 @@ import org.apache.commons.cli.PosixParser;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
-public abstract class CLIApplication implements IApplication {
+public abstract class AbstractCLIApplication implements IApplication {
 	private static String HELP_OPTION = "help"; //$NON-NLS-1$
 
 	private Options options = new Options();
@@ -37,18 +37,23 @@ public abstract class CLIApplication implements IApplication {
 	private String[] applicationArgs;
 	private CommandLine commandLine = null;
 
-	public Object start(IApplicationContext context) throws Exception {
-		retrieveApplicationArgs(context);
-		// Definition Stage
-		defineOptions();
+	public Object start(IApplicationContext context) {
+		try {
+			initApplicationArgs(context);
 
-		// Parsing Stage
-		parse();
+			// Definition stage
+			defineOptions();
 
-		// Interrogation Stage
-		interrogate();
+			// Parsing stage
+			parse();
 
-		return null;
+			// Interrogation stage
+			return interrogate();
+
+		} catch (Throwable t) {
+			handleError(t);
+		}
+		return 0;
 	}
 
 	/**
@@ -65,8 +70,8 @@ public abstract class CLIApplication implements IApplication {
 	 * 
 	 * @param context
 	 */
-	private void retrieveApplicationArgs(IApplicationContext context) {
-		Map arguments = context.getArguments();
+	private void initApplicationArgs(IApplicationContext context) {
+		Map<?, ?> arguments = context.getArguments();
 		Object applicationArgs = arguments.get(IApplicationContext.APPLICATION_ARGS);
 		if (applicationArgs instanceof String[]) {
 			this.applicationArgs = (String[]) applicationArgs;
@@ -126,7 +131,7 @@ public abstract class CLIApplication implements IApplication {
 	}
 
 	/**
-	 * Let define the set of {@link Option}s used for parsing the application arguments. see {@link Options} for more
+	 * Lets define the set of {@link Option}s used for parsing the application arguments. see {@link Options} for more
 	 * details.Note that the help option is defined by default, user wanting to keep that option defined must overload
 	 * this method and call super.defineOptions() inside overloaded method.
 	 */
@@ -137,13 +142,11 @@ public abstract class CLIApplication implements IApplication {
 
 	/**
 	 * Implements parsing operation on application arguments.
+	 * 
+	 * @throws ParseException
 	 */
-	protected void parse() {
-		try {
-			commandLine = getParser().parse(options, applicationArgs);
-		} catch (ParseException exp) {
-			System.out.println("Parse Exception : " + exp.getMessage()); //$NON-NLS-1$
-		}
+	protected void parse() throws ParseException {
+		commandLine = getParser().parse(options, applicationArgs);
 	}
 
 	/**
@@ -152,12 +155,20 @@ public abstract class CLIApplication implements IApplication {
 	 * behavior is applied, user wanting to keep that default behavior must overload this method and call
 	 * super.interrogate() in overloaded method.
 	 */
-	protected void interrogate() {
+	protected Object interrogate() throws Throwable {
 		if (commandLine != null) {
 			if (commandLine.hasOption(HELP_OPTION)) {
 				printHelp();
 			}
 		}
+		return 1;
+	}
+
+	/**
+	 * @param ex
+	 */
+	protected void handleError(Throwable t) {
+		System.err.println(t.getMessage());
 	}
 
 	/**
@@ -168,7 +179,9 @@ public abstract class CLIApplication implements IApplication {
 		formatter.printHelp(getApplicationName(), options);
 	}
 
+	/*
+	 * @see org.eclipse.equinox.app.IApplication#stop()
+	 */
 	public void stop() {
-
 	}
 }

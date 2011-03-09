@@ -37,7 +37,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
@@ -49,30 +48,25 @@ import org.eclipse.sphinx.xpand.jobs.BasicM2TJob;
 import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.typesystem.MetaModel;
 
-public class EcucCodeGenApplication extends CLIApplication {
+public class EcucCodeGenApplication extends AbstractCLIApplication {
 	// Ecuc CodeGen Options names definition
 	private static String PROJECT_OPTION = "project"; //$NON-NLS-1$
 	private static String MODULE_OPTION = "module"; //$NON-NLS-1$
-	private static String TEMPLATE_OPTION = "template"; //$NON-NLS-1$
-	private static String DEFINE_BLOCK_OPTION = "defineblock"; //$NON-NLS-1$
-	private static String OUTPUTFOLDER_OPTION = "output"; //$NON-NLS-1$
+	private static String DEFINITION_OPTION = "definition"; //$NON-NLS-1$
+	private static String OUTPUT_OPTION = "output"; //$NON-NLS-1$
 
 	// Generation constants
 	public static final String DEFAULT_ROOT_DEFINE_NAME = "main"; //$NON-NLS-1$
 	public static final String DEFAULT_OUTLET_PATH = "gen"; //$NON-NLS-1$
 
 	// CodeGeneration variables definition
-	private String projectName;
-	private IProject generationProject;
-	private String moduleConfAbsoluteQualifiedName;
-	private String definitionfilePath;
-	private IFile definitionFile;
+	private IProject project;
 	private String outputFolderPath;
-	private String defineBlock;
+	private String definitionName;
 	private GModuleConfiguration moduleConfiguration;
 
 	/*
-	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.CLIApplication#defineOptions()
+	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.AbstractCLIApplication#defineOptions()
 	 */
 	@Override
 	protected void defineOptions() {
@@ -92,33 +86,26 @@ public class EcucCodeGenApplication extends CLIApplication {
 		Option project = OptionBuilder.create(PROJECT_OPTION);
 
 		OptionBuilder.isRequired();
-		OptionBuilder.withArgName("templatePath");//$NON-NLS-1$
+		OptionBuilder.withArgName("definitionName");//$NON-NLS-1$
 		OptionBuilder.hasArgs(1);
 		OptionBuilder.withValueSeparator();
-		OptionBuilder.withDescription("Path of the template definition file"); //$NON-NLS-1$
-		Option template = OptionBuilder.create(TEMPLATE_OPTION);
-
-		OptionBuilder.withArgName("definitionBlock");//$NON-NLS-1$
-		OptionBuilder.hasArgs(1);
-		OptionBuilder.withValueSeparator();
-		OptionBuilder.withDescription("Name of the definition file"); //$NON-NLS-1$
-		Option defineBlock = OptionBuilder.create(DEFINE_BLOCK_OPTION);
+		OptionBuilder.withDescription("Name of the definition to be applied"); //$NON-NLS-1$
+		Option defineBlock = OptionBuilder.create(DEFINITION_OPTION);
 
 		OptionBuilder.withArgName("outputFolderName");//$NON-NLS-1$
 		OptionBuilder.hasArgs(1);
 		OptionBuilder.withValueSeparator();
 		OptionBuilder.withDescription("Path used for generation output"); //$NON-NLS-1$
-		Option outputFolder = OptionBuilder.create(OUTPUTFOLDER_OPTION);
+		Option outputFolder = OptionBuilder.create(OUTPUT_OPTION);
 
 		addOption(project);
 		addOption(moduleconf);
-		addOption(template);
 		addOption(defineBlock);
 		addOption(outputFolder);
 	}
 
 	/*
-	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.CLIApplication#createParser()
+	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.AbstractCLIApplication#createParser()
 	 */
 	@Override
 	protected CommandLineParser createParser() {
@@ -126,7 +113,7 @@ public class EcucCodeGenApplication extends CLIApplication {
 	}
 
 	/*
-	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.CLIApplication#getApplicationName()
+	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.AbstractCLIApplication#getApplicationName()
 	 */
 	@Override
 	protected String getApplicationName() {
@@ -134,100 +121,66 @@ public class EcucCodeGenApplication extends CLIApplication {
 	}
 
 	/*
-	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.CLIApplication#interrogate()
+	 * @see org.artop.ecuc.examples.gautosar.codegen.xpand.headless.AbstractCLIApplication#interrogate()
 	 */
 	@Override
-	protected void interrogate() {
+	protected Object interrogate() throws Throwable {
 		super.interrogate();
 		CommandLine commandLine = getCommandLine();
-		if (commandLine != null) {
-			if (commandLine.hasOption(PROJECT_OPTION)) {
-				projectName = commandLine.getOptionValue(PROJECT_OPTION);
-				if (getAndLoadProject()) {
-					if (commandLine.hasOption(TEMPLATE_OPTION)) {
-						definitionfilePath = commandLine.getOptionValue(TEMPLATE_OPTION);
-						if (getdefinitionFile()) {
-							if (commandLine.hasOption(MODULE_OPTION)) {
-								moduleConfAbsoluteQualifiedName = commandLine.getOptionValue(MODULE_OPTION);
-								if (getModuleConfObject()) {
 
-									if (commandLine.hasOption(OUTPUTFOLDER_OPTION)) {
-										outputFolderPath = commandLine.getOptionValue(OUTPUTFOLDER_OPTION);
-									}
-									if (commandLine.hasOption(DEFINE_BLOCK_OPTION)) {
-										defineBlock = commandLine.getOptionValue(DEFINE_BLOCK_OPTION);
-									}
-									launchGeneration();
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		loadProject(commandLine.getOptionValue(PROJECT_OPTION));
+
+		definitionName = commandLine.getOptionValue(DEFINITION_OPTION);
+
+		moduleConfiguration = getModuleConfObject(commandLine.getOptionValue(MODULE_OPTION));
+
+		outputFolderPath = commandLine.getOptionValue(OUTPUT_OPTION);
+
+		return launchGeneration();
+
 	}
 
-	private void launchGeneration() {
+	private Object launchGeneration() throws Throwable {
 		BasicM2TJob m2TJob = createM2TJob();
-		try {
-			IStatus status = m2TJob.runInWorkspace(new NullProgressMonitor());
-			if (!status.equals(Status.OK_STATUS)) {
-				System.out.println("Code generarion Failed: " + status.getMessage()); //$NON-NLS-1$
+		IStatus status = m2TJob.runInWorkspace(new NullProgressMonitor());
+		if (!status.equals(Status.OK_STATUS)) {
+			Throwable exception = status.getException();
+			if (exception != null) {
+				throw exception;
+			} else {
+				throw new RuntimeException("Code Generation failed");//$NON-NLS-1$ 
 			}
-		} catch (Exception ex) {
-			System.out.println("Exception during code generarion: " + ex.getMessage()); //$NON-NLS-1$
-
 		}
+		return status.getCode();
+
 	}
 
-	private boolean getAndLoadProject() {
-		generationProject = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
-		if (!generationProject.exists()) {
-			System.out.println("Project: " + projectName + " does not exist in workspace"); //$NON-NLS-1$ //$NON-NLS-2$
-			return false;
+	private void loadProject(String projectName) {
+		project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
+		if (!project.exists()) {
+			throw new RuntimeException("Project '" + projectName + "' does not exist in workspace");//$NON-NLS-1$ //$NON-NLS-2$
 		}
-		ModelLoadManager.INSTANCE.loadProject(generationProject, true, false, null);
-		return true;
+		ModelLoadManager.INSTANCE.loadProject(project, true, false, null);
 	}
 
-	private boolean getdefinitionFile() {
-		definitionFile = generationProject.getFile(new Path(definitionfilePath));
-		if (definitionFile.exists()) {
-			return true;
-		}
-		System.out.println("Template file " + projectName + " does not exist"); //$NON-NLS-1$ //$NON-NLS-2$
-		return false;
-	}
-
-	private boolean getModuleConfObject() {
-		Collection<IModelDescriptor> models = ModelDescriptorRegistry.INSTANCE.getModels(generationProject);
-		String uriFragment = AutosarURIFactory.createURIFragment(moduleConfAbsoluteQualifiedName, "EcucModuleConfigurationValues"); //$NON-NLS-1$
+	private GModuleConfiguration getModuleConfObject(String moduleName) {
+		Collection<IModelDescriptor> models = ModelDescriptorRegistry.INSTANCE.getModels(project);
+		String uriFragment = AutosarURIFactory.createURIFragment(moduleName, GModuleConfiguration.class.getSimpleName());
 		for (IModelDescriptor model : models) {
 			Collection<Resource> loadedResources = model.getLoadedResources(false);
 			for (Resource resource : loadedResources) {
 				EObject eObject = resource.getEObject(uriFragment);
 				if (eObject instanceof GModuleConfiguration) {
-					moduleConfiguration = (GModuleConfiguration) eObject;
-					return true;
+					return (GModuleConfiguration) eObject;
 				}
-
 			}
 		}
-		System.out.println("Module configuration object " + moduleConfAbsoluteQualifiedName + " does not exist"); //$NON-NLS-1$ //$NON-NLS-2$
-		return false;
-	}
-
-	protected String getQualifiedTemplateName() {
-		String defineBlock = DEFAULT_ROOT_DEFINE_NAME;
-		if (this.defineBlock != null && defineBlock.length() > 0) {
-			defineBlock = this.defineBlock;
-		}
-		return definitionFile.getProjectRelativePath().removeFileExtension().append(defineBlock).toString().replaceAll("/", "::");
+		throw new RuntimeException("Module configuration object '" + moduleName + "' does not exist");//$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	public Collection<ExecutionContextRequest> getExecutionContextRequests() {
 		List<ExecutionContextRequest> requests = new ArrayList<ExecutionContextRequest>();
-		requests.add(new ExecutionContextRequest(getQualifiedTemplateName(), moduleConfiguration));
+		requests.add(new ExecutionContextRequest(definitionName, moduleConfiguration));
 		return requests;
 	}
 
@@ -238,7 +191,7 @@ public class EcucCodeGenApplication extends CLIApplication {
 		job.getOutlets().addAll(getOutlets());
 		job.setMetaModel(getMetaModel());
 		job.setPriority(Job.BUILD);
-		job.setRule(generationProject);
+		job.setRule(project);
 		return job;
 	}
 
@@ -257,9 +210,9 @@ public class EcucCodeGenApplication extends CLIApplication {
 
 	protected URI getDefaultOutletURI() {
 		if (outputFolderPath != null && outputFolderPath.length() > 0) {
-			return EcorePlatformUtil.createURI(generationProject.getFolder(outputFolderPath).getFullPath());
+			return EcorePlatformUtil.createURI(project.getFolder(outputFolderPath).getFullPath());
 		} else {
-			return EcorePlatformUtil.createURI(generationProject.getFolder(DEFAULT_OUTLET_PATH).getFullPath());
+			return EcorePlatformUtil.createURI(project.getFolder(DEFAULT_OUTLET_PATH).getFullPath());
 		}
 	}
 
