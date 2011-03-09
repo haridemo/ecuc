@@ -41,9 +41,11 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
 					if (moduleDescription != null) {
 						String swVersion = moduleDescription.getSwVersion();
-						String[] split = swVersion.split("."); //$NON-NLS-1$
-						if (split.length > 0) {
-							return split[0];
+						if (swVersion != null && swVersion.length() > 0) {
+							String[] split = swVersion.split("\\."); //$NON-NLS-1$
+							if (split.length > 0) {
+								return split[0].trim();
+							}
 						}
 					}
 				}
@@ -58,9 +60,11 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
 					if (moduleDescription != null) {
 						String swVersion = moduleDescription.getSwVersion();
-						String[] split = swVersion.split("."); //$NON-NLS-1$
-						if (split.length > 1) {
-							return split[1];
+						if (swVersion != null && swVersion.length() > 0) {
+							String[] split = swVersion.split("\\."); //$NON-NLS-1$
+							if (split.length > 1) {
+								return split[1];
+							}
 						}
 					}
 				}
@@ -75,9 +79,11 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
 					if (moduleDescription != null) {
 						String swVersion = moduleDescription.getSwVersion();
-						String[] split = swVersion.split("."); //$NON-NLS-1$
-						if (split.length > 2) {
-							return split[2];
+						if (swVersion != null && swVersion.length() > 0) {
+							String[] split = swVersion.split("\\."); //$NON-NLS-1$
+							if (split.length > 2) {
+								return split[2];
+							}
 						}
 					}
 				}
@@ -133,5 +139,4 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 		});
 
 	}
-
 }
