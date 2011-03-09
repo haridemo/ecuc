@@ -26,7 +26,6 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigParameterType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Property;
@@ -102,13 +101,11 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 
 	protected abstract void internalSet(Object target, Object value);
 
-	protected abstract EClass getParameterValueType();
-
 	protected abstract Type getValueType();
 
 	@Override
 	public boolean isInstance(Object target) {
-		if (target instanceof GParameterValue && getParameterValueType().isInstance(target)) {
+		if (target instanceof GParameterValue && getEcucValueType().isInstance(target)) {
 			GConfigParameter parameterDef = ((GParameterValue) target).gGetDefinition();
 			if (parameterDef == getEcucTypeDef()) {
 				return true;

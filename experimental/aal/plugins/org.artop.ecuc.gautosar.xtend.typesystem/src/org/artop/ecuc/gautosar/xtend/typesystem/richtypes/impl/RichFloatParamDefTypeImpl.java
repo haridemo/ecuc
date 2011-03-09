@@ -29,8 +29,7 @@ public class RichFloatParamDefTypeImpl extends AbstractRichConfigParameterTypeIm
 		super(context, floatParamDef);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGFloatValue();
 	}
 

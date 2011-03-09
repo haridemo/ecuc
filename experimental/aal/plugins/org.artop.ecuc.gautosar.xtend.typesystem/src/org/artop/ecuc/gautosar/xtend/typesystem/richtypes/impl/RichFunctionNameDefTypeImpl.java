@@ -28,8 +28,7 @@ public class RichFunctionNameDefTypeImpl extends AbstractRichAbstractStringParam
 		super(context, functionNameDef);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGFunctionNameValue();
 	}
 

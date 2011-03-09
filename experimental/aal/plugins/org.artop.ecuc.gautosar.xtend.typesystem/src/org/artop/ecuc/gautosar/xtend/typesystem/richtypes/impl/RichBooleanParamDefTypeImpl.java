@@ -29,8 +29,7 @@ public class RichBooleanParamDefTypeImpl extends AbstractRichConfigParameterType
 		super(context, booleanParamDef);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGBooleanValue();
 	}
 

@@ -31,8 +31,7 @@ public class RichIntegerParamDefTypeImpl extends AbstractRichConfigParameterType
 		super(context, integerParamDef);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGIntegerValue();
 	}
 

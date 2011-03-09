@@ -28,8 +28,7 @@ public class RichStringParamDefTypeImpl extends AbstractRichAbstractStringParamD
 		super(context, stringParamDef);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGStringValue();
 	}
 

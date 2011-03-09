@@ -46,8 +46,7 @@ public class RichEnumerationParamDefTypeImpl extends AbstractRichConfigParameter
 		});
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGEnumerationValue();
 	}
 

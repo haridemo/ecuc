@@ -15,6 +15,7 @@
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GModuleConfiguration;
+import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GModuleDef;
 
 import java.util.Collections;
@@ -26,12 +27,17 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichModuleDefType {
 
 	public RichModuleDefTypeImpl(EcucContext context, GModuleDef moduleDef) {
 		super(context, moduleDef);
+	}
+
+	public EClass getEcucValueType() {
+		return GecucdescriptionPackage.eINSTANCE.getGModuleConfiguration();
 	}
 
 	@Override

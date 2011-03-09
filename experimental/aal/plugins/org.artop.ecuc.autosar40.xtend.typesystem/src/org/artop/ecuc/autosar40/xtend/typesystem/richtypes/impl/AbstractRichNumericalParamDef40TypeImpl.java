@@ -35,8 +35,7 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 		super(context, configParameter);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return EcucdescriptionPackage.eINSTANCE.getEcucNumericalParamValue();
 	}
 

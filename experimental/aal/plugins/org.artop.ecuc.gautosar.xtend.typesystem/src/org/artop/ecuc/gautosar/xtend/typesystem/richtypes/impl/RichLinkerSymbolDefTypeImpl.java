@@ -28,8 +28,7 @@ public class RichLinkerSymbolDefTypeImpl extends AbstractRichAbstractStringParam
 		super(context, linkerSymbolDef);
 	}
 
-	@Override
-	protected EClass getParameterValueType() {
+	public EClass getEcucValueType() {
 		return GecucdescriptionPackage.eINSTANCE.getGLinkerSymbolValue();
 	}
 

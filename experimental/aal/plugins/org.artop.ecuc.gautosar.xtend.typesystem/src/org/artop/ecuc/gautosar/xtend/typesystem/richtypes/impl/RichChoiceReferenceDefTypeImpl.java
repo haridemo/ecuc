@@ -16,6 +16,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GReferenceValue;
+import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GChoiceReferenceDef;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
@@ -29,6 +30,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -39,6 +41,10 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 			Collection<GParamConfContainerDef> destinationTypeDefs) {
 		super(context, choiceReferenceDef);
 		this.destinationTypeDefs = destinationTypeDefs;
+	}
+
+	public EClass getEcucValueType() {
+		return GecucdescriptionPackage.eINSTANCE.getGReferenceValue();
 	}
 
 	@Override

@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
+import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GChoiceContainerDef;
 
 import java.util.Collections;
@@ -22,6 +23,7 @@ import java.util.Set;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend.typesystem.Type;
 
 /**
@@ -32,6 +34,10 @@ public class RichChoiceContainerDefTypeImpl extends AbstractRichContainerDefType
 
 	public RichChoiceContainerDefTypeImpl(EcucContext context, GChoiceContainerDef choiceContainerDef) {
 		super(context, choiceContainerDef);
+	}
+
+	public EClass getEcucValueType() {
+		return GecucdescriptionPackage.eINSTANCE.getGContainer();
 	}
 
 	@Override
