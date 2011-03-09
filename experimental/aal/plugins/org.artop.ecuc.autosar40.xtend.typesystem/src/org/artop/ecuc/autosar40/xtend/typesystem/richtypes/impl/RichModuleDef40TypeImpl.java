@@ -30,10 +30,65 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 						return moduleDescription.getSwVersion();
 					}
 				}
-				return "";
+				return ""; //$NON-NLS-1$
 			}
 
 		});
+		addFeature(new PropertyImpl(this, "swMajorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						String swVersion = moduleDescription.getSwVersion();
+						String[] split = swVersion.split("."); //$NON-NLS-1$
+						if (split.length > 0) {
+							return split[0];
+						}
+						return swVersion;
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+
+		});
+		addFeature(new PropertyImpl(this, "swMinorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						String swVersion = moduleDescription.getSwVersion();
+						String[] split = swVersion.split("."); //$NON-NLS-1$
+						if (split.length > 1) {
+							return split[1];
+						}
+						return swVersion;
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+
+		});
+		addFeature(new PropertyImpl(this, "swPatchVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						String swVersion = moduleDescription.getSwVersion();
+						String[] split = swVersion.split("."); //$NON-NLS-1$
+						if (split.length > 2) {
+							return split[2];
+						}
+						return swVersion;
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+
+		});
+
 		addFeature(new OperationImpl(this, "isPreCompile", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
