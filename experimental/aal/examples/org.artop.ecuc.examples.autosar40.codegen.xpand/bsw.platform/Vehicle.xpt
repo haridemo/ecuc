@@ -1,6 +1,7 @@
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 «EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
 «EXTENSION org::eclipse::xtend::util::stdlib::properties»
+«EXTENSION extensions::util»
 
 «DEFINE main FOR EPD::Vehicle»
 	«EXPAND ConfigureVehicle»
@@ -8,6 +9,7 @@
 
 «DEFINE ConfigureVehicle FOR EPD::Vehicle»
 	«FILE "VehicleConfig.txt" -»
+DATE «dateString()»
 		«EXPAND VehicleConfig::RichModuleDefType»
 		«EXPAND VehicleConfig::RichContainerDefType»
 		«EXPAND VehicleConfig::RichConfigParameterType»
