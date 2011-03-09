@@ -22,6 +22,7 @@ public class MultiplicityAwareList<E> extends ArrayList<E> {
 	public static final int MULTIPLICITY_INFINITE = -1;
 	public static final int NO_MULTIPLICITY = -2;
 	public static final int DEFAULT_LOWER_MULTIPLICITY = 1;
+	public static final int DEFAULT_UPPER_MULTIPLICITY = 1;
 	private static final long serialVersionUID = -8254228878120340483L;
 
 	private int lowerMultiplicity = NO_MULTIPLICITY;

@@ -86,13 +86,10 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 							try {
 								return Integer.valueOf(lowerMultiplicity);
 							} catch (NumberFormatException ex) {
-								return 1;
 							}
 						}
-						return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
-
 					}
-					return 1;
+					return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
 				}
 
 			});
@@ -109,13 +106,11 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 								try {
 									return Integer.valueOf(upperMultiplicity);
 								} catch (NumberFormatException ex) {
-									return 1;
 								}
 							}
-							return MultiplicityAwareList.DEFAULT_LOWER_MULTIPLICITY;
 						}
 					}
-					return 1;
+					return MultiplicityAwareList.DEFAULT_UPPER_MULTIPLICITY;
 				}
 
 			});
