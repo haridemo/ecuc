@@ -17,8 +17,8 @@ package org.artop.ecuc.gautosar.xtend.typesystem.workflow;
 import java.util.Collections;
 import java.util.Set;
 
-import org.artop.ecl.emf.model.IModelDescriptor;
-import org.artop.ecl.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;

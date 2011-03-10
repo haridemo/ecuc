@@ -22,10 +22,10 @@ import java.util.Map;
 import java.util.Set;
 
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
-import org.artop.ecl.emf.metamodel.IMetaModelDescriptor;
-import org.artop.ecl.emf.model.IModelDescriptor;
-import org.artop.ecl.emf.model.ModelDescriptorRegistry;
-import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
+import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.gautosar.xtend.typesystem.IEcucMetaModelFactory;

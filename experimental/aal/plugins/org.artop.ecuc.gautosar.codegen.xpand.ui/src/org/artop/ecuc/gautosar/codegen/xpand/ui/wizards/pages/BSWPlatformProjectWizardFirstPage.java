@@ -14,13 +14,16 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
-import org.artop.ecl.platform.ui.util.SWTUtil;
-import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
-import org.artop.ecuc.codegen.xpand.preferences.ProjectOutletProvider;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.OutletsBlock;
+import org.eclipse.sphinx.platform.ui.util.SWTUtil;
+import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
+import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xpand.ui.blocks.OutletsBlock;
+import org.eclipse.sphinx.xpand.ui.providers.OutletProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -32,45 +35,59 @@ import org.eclipse.swt.widgets.Listener;
 
 public class BSWPlatformProjectWizardFirstPage extends AutosarProjectWizardFirstPage {
 
+	private OutletsPreference outletsPreference;
+	private OutletProvider outletProvider;
+	private OutletsBlock outletsBlock;
+
 	private Button restoreDefaultButton;
 
-	public BSWPlatformProjectWizardFirstPage(String pageName) {
+	public BSWPlatformProjectWizardFirstPage(String pageName, OutletsPreference outletsPreference) {
 		super(pageName);
+		this.outletsPreference = outletsPreference;
 	}
-
-	ProjectOutletProvider outletProvider;
-	OutletsBlock outletBlock;
 
 	@Override
 	protected void createAdditionalGroups(Composite parent) {
-		Group group = new Group(parent, SWT.None);
-		group.setText("Outlets");
-		GridLayout groupLayout = new GridLayout();
-		groupLayout.numColumns = 2;
-		group.setLayout(groupLayout);
-		group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		if (outletsPreference != null) {
+			Group group = new Group(parent, SWT.None);
+			group.setText("Outlets");
+			GridLayout groupLayout = new GridLayout();
+			groupLayout.numColumns = 2;
+			group.setLayout(groupLayout);
+			group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
-		outletProvider = new ProjectOutletProvider();
-
-		outletBlock = new OutletsBlock(group, outletProvider, true);
-
-		restoreDefaultButton = SWTUtil.createButton(outletBlock.getButtonsComposite(), "Restore Defaults", SWT.PUSH); //$NON-NLS-1$
-		restoreDefaultButton.addListener(SWT.Selection, new Listener() {
-
-			public void handleEvent(Event event) {
-				if (event.widget == restoreDefaultButton) {
-					restoreDefaults();
-				}
+			outletProvider = new OutletProvider(outletsPreference);
+			for (ExtendedOutlet outlet : getInitialNamedOutlets()) {
+				outletProvider.addOutlet(outlet);
 			}
-		});
+			outletsBlock = new OutletsBlock(group, outletProvider, true);
+			restoreDefaultButton = SWTUtil.createButton(outletsBlock.getButtonsComposite(), "Restore Defaults", SWT.PUSH);
+			restoreDefaultButton.addListener(SWT.Selection, new Listener() {
+				public void handleEvent(Event event) {
+					if (event.widget == restoreDefaultButton) {
+						restoreDefaults();
+					}
+				}
+			});
+		}
 	}
 
+	protected Collection<ExtendedOutlet> getInitialNamedOutlets() {
+		Collection<ExtendedOutlet> outlets = new ArrayList<ExtendedOutlet>(2);
+		outlets.add(new ExtendedOutlet("COUTLET", "${project_loc}/coutlet", false)); //$NON-NLS-1$ //$NON-NLS-2$
+		outlets.add(new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet", false)); //$NON-NLS-1$ //$NON-NLS-2$
+		return outlets;
+	}
+
+	// TODO Make sure that this takes initialNamedOutlets() into account
 	protected void restoreDefaults() {
-		outletProvider.setToDefault();
-		outletBlock.getTableViewer().refresh();
+		if (outletProvider != null) {
+			outletProvider.setToDefault();
+			outletsBlock.getTableViewer().refresh();
+		}
 	}
 
 	public Collection<ExtendedOutlet> getOutlets() {
-		return outletProvider.getOutlets();
+		return outletProvider != null ? outletProvider.getOutlets() : Collections.<ExtendedOutlet> emptyList();
 	}
 }

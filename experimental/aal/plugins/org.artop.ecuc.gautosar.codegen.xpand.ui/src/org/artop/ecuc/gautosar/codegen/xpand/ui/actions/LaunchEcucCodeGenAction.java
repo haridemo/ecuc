@@ -17,17 +17,6 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.actions;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucparameterdef.GModuleDef;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.artop.ecl.emf.model.IModelDescriptor;
-import org.artop.ecl.emf.model.ModelDescriptorRegistry;
-import org.artop.ecl.emf.util.EcorePlatformUtil;
-import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
-import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
-import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
-import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.EcucM2TConfigurationWizard;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
@@ -46,9 +35,14 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
+import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
+import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
+import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
 import org.eclipse.xpand2.XpandUtil;
-import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 public class LaunchEcucCodeGenAction extends BasicM2TAction {
@@ -62,7 +56,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		super(Messages.menuItem_launchEcucCodeGen);
 	}
 
-	protected LaunchEcucCodeGenAction(String text) {
+	public LaunchEcucCodeGenAction(String text) {
 		super(text);
 	}
 
@@ -106,7 +100,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 						}
 					}
 				}
-				return moduleDef != null && !moduleDef.eIsProxy() && !getExecutionContextRequests().isEmpty();
+				return moduleDef != null && !moduleDef.eIsProxy() && !getXpandEvaluationRequests().isEmpty();
 			}
 		}
 		return false;
@@ -137,6 +131,18 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		return moduleConfiguration;
 	}
 
+	@Override
+	public void run() {
+		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel());
+		wizard.setM2TJobName(getM2TJobName());
+		wizard.setScopingResourceLoader(getScopingResourceLoader());
+		wizard.setOutletsPreference(getOutletsPreference());
+		wizard.setDefaultOutlet(getDefaultOutlet());
+		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
+		wizardDialog.open();
+	}
+
+	@Override
 	protected MetaModel getMetaModel() {
 		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(getSelectedModelObject());
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
@@ -159,25 +165,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	}
 
 	@Override
-	public void run() {
-		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getScopingResourceLoader(),
-				getDefaultOutletURI());
-		wizard.setMetaModel(getMetaModel());
-		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
-		wizardDialog.open();
-	}
-
-	@Override
-	protected Collection<Outlet> getOutlets() {
-		IFile file = EcorePlatformUtil.getFile(getSelectedModelObject());
-		if (file != null && file.getProject() != null) {
-			List<Outlet> result = new ArrayList<Outlet>();
-			Collection<ExtendedOutlet> outlets = IEcucCodeGenerationPreferences.OUTLETS.get(file.getProject());
-			for (ExtendedOutlet outlet : outlets) {
-				result.add(outlet);
-			}
-			return result;
-		}
-		return super.getOutlets();
+	protected OutletsPreference getOutletsPreference() {
+		return OutletsPreference.INSTANCE;
 	}
 }

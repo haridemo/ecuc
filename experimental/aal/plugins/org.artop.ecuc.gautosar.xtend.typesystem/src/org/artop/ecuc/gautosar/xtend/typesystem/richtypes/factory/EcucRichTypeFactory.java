@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
-import org.artop.ecl.emf.util.EObjectUtil;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;

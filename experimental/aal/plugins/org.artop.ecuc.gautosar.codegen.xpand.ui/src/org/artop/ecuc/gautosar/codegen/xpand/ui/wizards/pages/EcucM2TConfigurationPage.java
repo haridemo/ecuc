@@ -25,9 +25,11 @@ import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.aal.workspace.ui.preferences.AutosarPreferenceMessages;
 import org.artop.aal.workspace.ui.preferences.PreferenceAndPropertyPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.preference.PreferenceDialog;
-import org.eclipse.sphinx.xpand.ExecutionContextRequest;
+import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
+import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
 import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
 import org.eclipse.swt.SWT;
@@ -40,7 +42,6 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.ui.dialogs.PreferencesUtil;
 
-@SuppressWarnings("restriction")
 public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 
 	public EcucM2TConfigurationPage(String pageName) {
@@ -77,9 +78,9 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	}
 
 	@Override
-	public Collection<ExecutionContextRequest> getExecutionContextRequests() {
+	public Collection<XpandEvaluationRequest> getXpandEvaluationRequests() {
 		if (modelObject instanceof GModuleConfiguration) {
-			return super.getExecutionContextRequests();
+			return super.getXpandEvaluationRequests();
 		}
 		// TODO (aakar) Create a collection of requests from template table viewer
 		return Collections.emptyList();
@@ -109,7 +110,10 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	protected void doLinkActivated(Link link) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put(PreferenceAndPropertyPage.DATA_NO_LINK, Boolean.TRUE);
-		openProjectProperties(getContextProject(), data);
+		IFile file = EcorePlatformUtil.getFile(modelObject);
+		if (file != null) {
+			openProjectProperties(file.getProject(), data);
+		}
 	}
 
 	protected void openProjectProperties(IProject project, Object data) {

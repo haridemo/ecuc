@@ -14,8 +14,6 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers;
 
-import org.artop.ecl.emf.ui.actions.providers.BasicActionProvider;
-import org.artop.ecl.platform.ui.util.SelectionUtil;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.IEcucMenuConstants;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.actions.LaunchEcucCodeGenAction;
 import org.eclipse.jface.action.ActionContributionItem;
@@ -23,6 +21,8 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sphinx.emf.ui.actions.providers.BasicActionProvider;
+import org.eclipse.sphinx.platform.ui.util.SelectionUtil;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 
 public class EcucCodeGenActionProvider extends BasicActionProvider {

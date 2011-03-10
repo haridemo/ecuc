@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtend.shared.ui,
  org.eclipse.xtend.typesystem.emf,
  org.apache.commons.logging,
- org.artop.ecl.emf.ui,
+ org.eclipse.sphinx.emf.ui,
  org.artop.aal.workspace.ui,
  org.artop.ecuc.gautosar.xtend.typesystem
 Export-Package: org.artop.ecuc.xtend.typesystem.ui.internal;x-internal:=true

@@ -17,7 +17,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.artop.ecl.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
 import org.eclipse.xtend.expression.TypeSystem;
 import org.eclipse.xtend.expression.TypeSystemImpl;
 

@@ -19,8 +19,8 @@ import java.util.Set;
 
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.aal.workspace.preferences.IAutosarWorkspacePreferences;
-import org.artop.ecl.emf.model.IModelDescriptor;
-import org.artop.ecl.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Assert;

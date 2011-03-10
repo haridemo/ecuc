@@ -19,7 +19,7 @@ import java.util.Set;
 
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.aal.workspace.natures.AutosarNature;
-import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
+import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.EMFPlugin;

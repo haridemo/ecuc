@@ -27,11 +27,11 @@ import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
 import java.util.List;
 import java.util.Map;
 
-import org.artop.ecl.emf.util.EObjectUtil;
-import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
-import org.artop.ecl.emf.util.WorkspaceTransactionUtil;
-import org.artop.ecl.platform.util.PlatformLogUtil;
-import org.artop.ecl.platform.util.ReflectUtil;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
+import org.eclipse.sphinx.platform.util.ReflectUtil;
 import org.artop.ecuc.gautosar.initializers.internal.Activator;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Assert;

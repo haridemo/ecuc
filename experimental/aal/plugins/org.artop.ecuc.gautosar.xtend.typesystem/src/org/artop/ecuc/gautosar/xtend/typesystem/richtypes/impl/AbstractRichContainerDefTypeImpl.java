@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.artop.ecl.emf.workspace.referentialintegrity.ECrossReferenceAdapterFactory;
+import org.eclipse.sphinx.emf.workspace.referentialintegrity.ECrossReferenceAdapterFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichContainerDefType;

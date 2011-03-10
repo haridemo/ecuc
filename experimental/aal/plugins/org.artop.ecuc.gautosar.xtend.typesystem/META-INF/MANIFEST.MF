@@ -5,9 +5,9 @@ Bundle-SymbolicName: org.artop.ecuc.gautosar.xtend.typesystem;singleton:=true
 Bundle-Version: 3.1.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Require-Bundle: org.eclipse.xtend;bundle-version="1.0.1";visibility:=reexport,
- org.artop.aal.common;bundle-version="2.1.1",
- org.artop.ecl.emf.workspace;bundle-version="2.2.1"
+Require-Bundle: org.eclipse.xtend;visibility:=reexport,
+ org.artop.aal.common,
+ org.eclipse.sphinx.emf.workspace
 Export-Package: org.artop.ecuc.gautosar.xtend.typesystem,
  org.artop.ecuc.gautosar.xtend.typesystem.basetypes,
  org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl,

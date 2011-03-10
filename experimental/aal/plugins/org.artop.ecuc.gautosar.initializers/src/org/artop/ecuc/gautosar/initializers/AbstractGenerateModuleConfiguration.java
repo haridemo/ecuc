@@ -32,10 +32,10 @@ import java.util.List;
 import java.util.Vector;
 
 import org.artop.aal.common.util.IdentifiableUtil;
-import org.artop.ecl.emf.util.EObjectUtil;
-import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
-import org.artop.ecl.emf.util.WorkspaceTransactionUtil;
-import org.artop.ecl.platform.util.PlatformLogUtil;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.artop.ecuc.gautosar.initializers.internal.Activator;
 import org.artop.ecuc.gautosar.initializers.util.ModuleConfigurationUtil;
 import org.eclipse.core.commands.ExecutionException;

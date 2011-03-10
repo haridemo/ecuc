@@ -18,8 +18,6 @@ import java.net.URI;
 
 import org.artop.aal.workspace.jobs.CreateArtopProjectJob;
 import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
-import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
-import org.artop.ecuc.codegen.xpand.preferences.IEcucCodeGenerationPreferences;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
@@ -33,6 +31,8 @@ import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
+import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
@@ -49,6 +49,10 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	 * The config element which declares this wizard.
 	 */
 	private IConfigurationElement configElement;
+
+	public OutletsPreference getOutletsPreference() {
+		return OutletsPreference.INSTANCE;
+	}
 
 	/**
 	 * Updates the perspective for the active page within the window.
@@ -95,7 +99,11 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 						@Override
 						public void done(IJobChangeEvent event) {
 							if (event.getResult().getSeverity() == IStatus.OK) {
-								IEcucCodeGenerationPreferences.OUTLETS.set(projectHandle, mainPage.getOutlets());
+								OutletsPreference outletsPreference = getOutletsPreference();
+								if (outletsPreference != null) {
+									outletsPreference.setInProject(projectHandle, mainPage.getOutlets());
+								}
+
 								Display display = ExtendedPlatformUI.getDisplay();
 								if (display != null) {
 									display.asyncExec(new Runnable() {
@@ -131,7 +139,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	 */
 	@Override
 	public void addPages() {
-		mainPage = new BSWPlatformProjectWizardFirstPage("basicNewProjectPage"); //$NON-NLS-1$
+		mainPage = new BSWPlatformProjectWizardFirstPage("basicNewProjectPage", getOutletsPreference()); //$NON-NLS-1$
 		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
 		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
 		addPage(mainPage);

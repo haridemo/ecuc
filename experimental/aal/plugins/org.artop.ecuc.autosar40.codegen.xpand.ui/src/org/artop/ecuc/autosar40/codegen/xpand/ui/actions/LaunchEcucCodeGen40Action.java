@@ -20,11 +20,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.artop.ecl.emf.model.IModelDescriptor;
-import org.artop.ecl.emf.model.ModelDescriptorRegistry;
-import org.artop.ecl.emf.util.EcorePlatformUtil;
-import org.artop.ecl.emf.workspace.loading.ModelLoadManager;
-import org.artop.ecl.platform.ui.util.ExtendedPlatformUI;
 import org.artop.ecuc.autosar40.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.actions.LaunchEcucCodeGenAction;
 import org.eclipse.core.resources.IFile;
@@ -32,8 +27,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.sphinx.xpand.ExecutionContextRequest;
-import org.eclipse.sphinx.xpand.jobs.BasicM2TJob;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
+import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
+import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
+import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
+import org.eclipse.sphinx.xpand.jobs.M2TJob;
 
 import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucModuleConfigurationValuesRefConditional;
@@ -98,7 +98,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 						}
 					}
 				}
-				return !isProxy && !ecucModulesConfigurationValues.isEmpty() && !getExecutionContextRequests().isEmpty();
+				return !isProxy && !ecucModulesConfigurationValues.isEmpty() && !getXpandEvaluationRequests().isEmpty();
 			}
 		}
 		return false;
@@ -111,13 +111,13 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 	}
 
 	@Override
-	protected Collection<ExecutionContextRequest> getExecutionContextRequests() {
-		List<ExecutionContextRequest> requests = new ArrayList<ExecutionContextRequest>();
+	protected Collection<XpandEvaluationRequest> getXpandEvaluationRequests() {
+		List<XpandEvaluationRequest> requests = new ArrayList<XpandEvaluationRequest>();
 		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
 			IFile templateFile = getTemplateFile();
 			if (templateFile != null && templateFile.exists()) {
-				String definitionName = getScopingResourceLoader().getDefinitionName(templateFile, getRootDefineName());
-				requests.add(new ExecutionContextRequest(definitionName, moduleConf));
+				String definitionName = getScopingResourceLoader().getDefinitionName(templateFile, getTemplateName());
+				requests.add(new XpandEvaluationRequest(definitionName, moduleConf));
 			}
 		}
 		return requests;
@@ -126,10 +126,9 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 	@Override
 	public void run() {
 		if (getDefinitionName() != null) {
-			BasicM2TJob job = createM2TJob();
+			M2TJob job = createM2TJob();
 			// Show console and make sure that all system output produced during execution gets displayed there
 			ExtendedPlatformUI.showSystemConsole();
-			job.setMetaModel(getMetaModel());
 			job.schedule();
 			return;
 		}

@@ -21,7 +21,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.artop.aal.workspace.natures.AutosarNature;
-import org.artop.ecl.platform.util.ExtendedPlatform;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.eclipse.core.resources.ICommand;
 import org.eclipse.core.resources.IContainer;
@@ -50,6 +49,7 @@ import org.eclipse.pde.internal.core.bundle.WorkspaceBundlePluginModel;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.internal.core.project.PDEProject;
 import org.eclipse.pde.internal.ui.wizards.tools.ConvertProjectToPluginOperation;
+import org.eclipse.sphinx.platform.util.ExtendedPlatform;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.eclipse.xtend.shared.ui.core.builder.XtendXpandNature;
 import org.eclipse.xtend.shared.ui.core.preferences.PreferenceConstants;

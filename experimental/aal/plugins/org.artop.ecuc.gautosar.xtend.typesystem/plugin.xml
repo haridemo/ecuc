@@ -20,7 +20,7 @@ Contributors:
    <extension
          point="org.eclipse.core.runtime.adapters">
       <factory
-            adaptableType="org.artop.ecl.emf.model.IModelDescriptor"
+            adaptableType="org.eclipse.sphinx.emf.model.IModelDescriptor"
             class="org.artop.ecuc.gautosar.xtend.typesystem.internal.ModelDescriptorAdapterFactory">
          <adapter
                type="org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel">

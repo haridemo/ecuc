@@ -25,7 +25,15 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
 public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate {
-	ISelection selection;
+
+	protected ISelection selection;
+
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+	}
+
+	public void selectionChanged(IAction action, ISelection selection) {
+		this.selection = selection;
+	}
 
 	public void run(IAction action) {
 		if (selection instanceof StructuredSelection) {
@@ -36,20 +44,13 @@ public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate 
 				project = (IProject) firstElement;
 				ConvertToBSWPlatformProjectJob convertToBSWPlatformProjectJob = new ConvertToBSWPlatformProjectJob(
 						Messages.job_convertToBSWPlatformProject, project);
+				// FIXME Run job asynchronously (i.e., call schedule() instead of runInWorkspace())
 				try {
 					convertToBSWPlatformProjectJob.runInWorkspace(null);
 				} catch (CoreException ex) {
 				}
+				// TODO Add JobChangeAdapter for adding outlet preference with COUTLET and HOUTLET
 			}
 		}
-	}
-
-	public void selectionChanged(IAction action, ISelection selection) {
-		this.selection = selection;
-
-	}
-
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-
 	}
 }
