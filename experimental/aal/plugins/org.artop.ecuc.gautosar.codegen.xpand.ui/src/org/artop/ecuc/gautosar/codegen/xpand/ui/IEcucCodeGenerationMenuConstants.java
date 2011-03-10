@@ -17,7 +17,7 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 
-public interface IEcucMenuConstants {
+public interface IEcucCodeGenerationMenuConstants {
 
 	/**
 	 * Identifier of the Generate sub menu.

@@ -45,8 +45,8 @@ public class EcucCodeGenerationPreferencePage extends PreferenceAndPropertyPage 
 		super(GRID);
 	}
 
-	public OutletsPreference getOutletsPreference() {
-		return OutletsPreference.INSTANCE;
+	protected OutletsPreference getOutletsPreference() {
+		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 
 	@Override

@@ -15,7 +15,7 @@
 package org.artop.ecuc.autosar40.codegen.xpand.ui.actions.providers;
 
 import org.artop.ecuc.autosar40.codegen.xpand.ui.actions.LaunchEcucCodeGen40Action;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.IEcucMenuConstants;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.IEcucCodeGenerationMenuConstants;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
@@ -53,9 +53,9 @@ public class EcucCodeGen40ActionProvider extends BasicActionProvider {
 	 */
 	@Override
 	protected IMenuManager addSubMenu(IMenuManager contextMenuManager) {
-		IMenuManager subMenuManager = contextMenuManager.findMenuUsingPath(IEcucMenuConstants.MENU_GENERATE_ID);
+		IMenuManager subMenuManager = contextMenuManager.findMenuUsingPath(IEcucCodeGenerationMenuConstants.MENU_GENERATE_ID);
 		if (subMenuManager == null) {
-			subMenuManager = new MenuManager(IEcucMenuConstants.MENU_GENERATE_LABEL, IEcucMenuConstants.MENU_GENERATE_ID);
+			subMenuManager = new MenuManager(IEcucCodeGenerationMenuConstants.MENU_GENERATE_LABEL, IEcucCodeGenerationMenuConstants.MENU_GENERATE_ID);
 			contextMenuManager.appendToGroup(ICommonMenuConstants.GROUP_ADDITIONS, subMenuManager);
 		}
 		return subMenuManager;

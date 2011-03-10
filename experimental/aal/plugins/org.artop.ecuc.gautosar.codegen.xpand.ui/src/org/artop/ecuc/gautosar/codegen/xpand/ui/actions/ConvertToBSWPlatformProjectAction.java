@@ -16,17 +16,25 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.actions;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
 public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate {
 
 	protected ISelection selection;
+
+	protected OutletsPreference getOutletsPreference() {
+		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
+	}
 
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 	}
@@ -35,21 +43,28 @@ public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate 
 		this.selection = selection;
 	}
 
+	// TODO Support simultaneous conversion of multiple projects
 	public void run(IAction action) {
 		if (selection instanceof StructuredSelection) {
 			StructuredSelection structuredSelection = (StructuredSelection) selection;
-			Object firstElement = structuredSelection.getFirstElement();
-			IProject project = null;
-			if (firstElement instanceof IProject) {
-				project = (IProject) firstElement;
-				ConvertToBSWPlatformProjectJob convertToBSWPlatformProjectJob = new ConvertToBSWPlatformProjectJob(
-						Messages.job_convertToBSWPlatformProject, project);
-				// FIXME Run job asynchronously (i.e., call schedule() instead of runInWorkspace())
-				try {
-					convertToBSWPlatformProjectJob.runInWorkspace(null);
-				} catch (CoreException ex) {
-				}
-				// TODO Add JobChangeAdapter for adding outlet preference with COUTLET and HOUTLET
+			Object selected = structuredSelection.getFirstElement();
+			if (selected instanceof IProject) {
+				final IProject project = (IProject) selected;
+				ConvertToBSWPlatformProjectJob job = new ConvertToBSWPlatformProjectJob(Messages.job_convertToBSWPlatformProject, project);
+
+				// Add ECU Configuration specific outlets after conversion
+				job.addJobChangeListener(new JobChangeAdapter() {
+					@Override
+					public void done(IJobChangeEvent event) {
+						if (event.getResult().getSeverity() == IStatus.OK) {
+							OutletsPreference outletsPreference = getOutletsPreference();
+							if (outletsPreference != null) {
+								outletsPreference.setInProject(project, IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS);
+							}
+						}
+					}
+				});
+				job.schedule();
 			}
 		}
 	}

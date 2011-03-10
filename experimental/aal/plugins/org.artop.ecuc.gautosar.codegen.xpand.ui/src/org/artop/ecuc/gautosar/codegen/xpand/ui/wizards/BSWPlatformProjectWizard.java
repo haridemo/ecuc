@@ -21,6 +21,7 @@ import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.BSWPlatformProjectWizardFirstPage;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -50,8 +51,8 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	 */
 	private IConfigurationElement configElement;
 
-	public OutletsPreference getOutletsPreference() {
-		return OutletsPreference.INSTANCE;
+	protected OutletsPreference getOutletsPreference() {
+		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 
 	/**
@@ -83,19 +84,19 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 		IProject[] referencedProjects = referencePage != null ? referencePage.getReferencedProjects() : null;
 		final IProject projectHandle = mainPage.getProjectHandle();
 
-		final CreateArtopProjectJob job = new CreateArtopProjectJob(Messages.job_creatingAutosarProject, projectHandle, location,
+		final CreateArtopProjectJob createJob = new CreateArtopProjectJob(Messages.job_creatingAutosarProject, projectHandle, location,
 				mainPage.getRelease());
-		job.setReferencedProjects(referencedProjects);
-		job.getImportedAutosarLibraries().addAll(mainPage.getImportedAutosarLibraryDescriptors());
-		job.setUiInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
-		job.addJobChangeListener(new JobChangeAdapter() {
+		createJob.setReferencedProjects(referencedProjects);
+		createJob.getImportedAutosarLibraries().addAll(mainPage.getImportedAutosarLibraryDescriptors());
+		createJob.setUiInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
+		createJob.addJobChangeListener(new JobChangeAdapter() {
 			@Override
 			public void done(IJobChangeEvent event) {
 				if (event.getResult().getSeverity() == IStatus.OK) {
-					ConvertToBSWPlatformProjectJob convertToEcuConfigurationProjectJob = new ConvertToBSWPlatformProjectJob(
-							Messages.job_convertToBSWPlatformProject, projectHandle);
-					// reveal the project after creation
-					convertToEcuConfigurationProjectJob.addJobChangeListener(new JobChangeAdapter() {
+					ConvertToBSWPlatformProjectJob convertJob = new ConvertToBSWPlatformProjectJob(Messages.job_convertToBSWPlatformProject,
+							projectHandle);
+					// Commit outlets and reveal new project after creation
+					convertJob.addJobChangeListener(new JobChangeAdapter() {
 						@Override
 						public void done(IJobChangeEvent event) {
 							if (event.getResult().getSeverity() == IStatus.OK) {
@@ -116,11 +117,11 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 							}
 						}
 					});
-					convertToEcuConfigurationProjectJob.schedule();
+					convertJob.schedule();
 				}
 			}
 		});
-		job.schedule();
+		createJob.schedule();
 
 		return true;
 	}

@@ -14,11 +14,11 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
 import org.eclipse.sphinx.platform.ui.util.SWTUtil;
 import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
@@ -57,7 +57,7 @@ public class BSWPlatformProjectWizardFirstPage extends AutosarProjectWizardFirst
 			group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
 			outletProvider = new OutletProvider(outletsPreference);
-			for (ExtendedOutlet outlet : getInitialNamedOutlets()) {
+			for (ExtendedOutlet outlet : IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS) {
 				outletProvider.addOutlet(outlet);
 			}
 			outletsBlock = new OutletsBlock(group, outletProvider, true);
@@ -72,17 +72,12 @@ public class BSWPlatformProjectWizardFirstPage extends AutosarProjectWizardFirst
 		}
 	}
 
-	protected Collection<ExtendedOutlet> getInitialNamedOutlets() {
-		Collection<ExtendedOutlet> outlets = new ArrayList<ExtendedOutlet>(2);
-		outlets.add(new ExtendedOutlet("COUTLET", "${project_loc}/coutlet", false)); //$NON-NLS-1$ //$NON-NLS-2$
-		outlets.add(new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet", false)); //$NON-NLS-1$ //$NON-NLS-2$
-		return outlets;
-	}
-
-	// TODO Make sure that this takes initialNamedOutlets() into account
 	protected void restoreDefaults() {
 		if (outletProvider != null) {
 			outletProvider.setToDefault();
+			for (ExtendedOutlet outlet : IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS) {
+				outletProvider.addOutlet(outlet);
+			}
 			outletsBlock.getTableViewer().refresh();
 		}
 	}

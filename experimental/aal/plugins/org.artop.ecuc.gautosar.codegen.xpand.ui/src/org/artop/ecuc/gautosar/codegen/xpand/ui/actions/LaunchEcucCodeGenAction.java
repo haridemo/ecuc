@@ -18,6 +18,7 @@ import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucparameterdef.GModuleDef;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.EcucM2TConfigurationWizard;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
@@ -166,6 +167,6 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
 	@Override
 	protected OutletsPreference getOutletsPreference() {
-		return OutletsPreference.INSTANCE;
+		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 }
