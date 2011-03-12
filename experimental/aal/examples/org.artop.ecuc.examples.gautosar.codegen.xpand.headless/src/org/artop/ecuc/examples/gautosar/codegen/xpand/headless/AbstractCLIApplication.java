@@ -169,6 +169,8 @@ public abstract class AbstractCLIApplication implements IApplication {
 		CommandLine commandLine = getCommandLine();
 		if (commandLine.hasOption(HELP_OPTION)) {
 			printHelp();
+
+			// TODO Implement appropriate exit strategy (e.g., ExitException())
 		}
 
 		return NO_ERROR;

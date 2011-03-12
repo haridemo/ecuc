@@ -105,7 +105,6 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 	 */
 	@Override
 	protected Object interrogate() throws Throwable {
-		// TODO Implement some exit strategy (e.g., ExitException())
 		super.interrogate();
 
 		// Retrieve arguments
