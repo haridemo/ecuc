@@ -26,12 +26,14 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.Parser;
 import org.apache.commons.cli.PosixParser;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
 public abstract class AbstractCLIApplication implements IApplication {
 
 	public static final Object NO_ERROR = 0;
+	public static final Object UNSPECIFIED_ERROR = 1;
 
 	private static String HELP_OPTION = "help"; //$NON-NLS-1$
 
@@ -92,9 +94,8 @@ public abstract class AbstractCLIApplication implements IApplication {
 			return interrogate();
 
 		} catch (Throwable t) {
-			handleError(t);
+			return handleError(t);
 		}
-		return NO_ERROR;
 	}
 
 	/*
@@ -169,8 +170,7 @@ public abstract class AbstractCLIApplication implements IApplication {
 		CommandLine commandLine = getCommandLine();
 		if (commandLine.hasOption(HELP_OPTION)) {
 			printHelp();
-
-			// TODO Implement appropriate exit strategy (e.g., ExitException())
+			throw new OperationCanceledException();
 		}
 
 		return NO_ERROR;
@@ -184,7 +184,11 @@ public abstract class AbstractCLIApplication implements IApplication {
 		formatter.printHelp(getApplicationName(), getOptions());
 	}
 
-	protected void handleError(Throwable t) {
-		System.err.println(t.getMessage());
+	protected Object handleError(Throwable t) {
+		if (!(t instanceof OperationCanceledException)) {
+			System.err.println(t.getMessage());
+		}
+
+		return UNSPECIFIED_ERROR;
 	}
 }
