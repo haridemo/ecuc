@@ -28,6 +28,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.ProjectScope;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -74,7 +75,7 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 	public ConvertToBSWPlatformProjectJob(String name, IProject project) {
 		super(name);
 		setPriority(Job.BUILD);
-		setRule(project);
+		setRule(ResourcesPlugin.getWorkspace().getRoot());
 		this.project = project;
 	}
 
