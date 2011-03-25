@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GAUTOSAR ECUC Initializer tests
+Bundle-SymbolicName: org.artop.ecuc.gautosar.initializers.tests
+Bundle-Version: 3.1.0.qualifier
+Bundle-Vendor: Artop.org
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.junit,
+ org.artop.ecuc.autosar3x.initializers;bundle-version="2.2.1",
+ org.artop.ecuc.autosar40.initializers;bundle-version="2.2.1",
+ org.artop.ecuc.gautosar.initializers;bundle-version="2.2.1",
+ org.artop.aal.gautosar.services;bundle-version="3.0.0",
+ org.artop.aal.gautosar;bundle-version="3.0.0",
+ org.eclipse.sphinx.emf;bundle-version="0.7.0",
+ org.artop.aal.autosar40;bundle-version="3.0.0",
+ org.artop.aal.autosar3x;bundle-version="3.0.0",
+ org.artop.aal.autosar3x.services;bundle-version="3.0.0",
+ org.artop.aal.autosar40.services;bundle-version="3.0.0"
