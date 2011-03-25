@@ -11,9 +11,6 @@ import org.junit.BeforeClass;
 import autosar3x.util.Autosar3xPackage;
 import autosar3x.util.Autosar3xReleaseDescriptor;
 import autosar3x.util.Autosar3xResourceFactoryImpl;
-import autosar3x.util.Autosar3xPackage;
-import autosar3x.util.Autosar3xReleaseDescriptor;
-import autosar3x.util.Autosar3xResourceFactoryImpl;
 
 public class EcucInitializerAr3xTest extends AbstractInitializerTest {
 
