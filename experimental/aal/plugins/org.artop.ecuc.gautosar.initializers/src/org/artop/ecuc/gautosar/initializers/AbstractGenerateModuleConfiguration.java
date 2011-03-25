@@ -15,6 +15,7 @@
  */
 package org.artop.ecuc.gautosar.initializers;
 
+import static java.util.Collections.emptyList;
 import gautosar.gecucdescription.GConfigReferenceValue;
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GModuleConfiguration;
@@ -32,20 +33,21 @@ import java.util.List;
 import java.util.Vector;
 
 import org.artop.aal.common.util.IdentifiableUtil;
-import org.eclipse.sphinx.emf.util.EObjectUtil;
-import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
-import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
-import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.artop.ecuc.gautosar.initializers.internal.Activator;
 import org.artop.ecuc.gautosar.initializers.util.ModuleConfigurationUtil;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 
 /**
  * The class for initializing the configuration from the definition
@@ -149,23 +151,23 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				GARObject configurationObject = null;
 
 				public void run() {
-					do {
-						/*
-						 * Getting the lower and upper multiplicity if present for the object
-						 */
-						if (definitionObject instanceof GParamConfMultiplicity) {
-							try {
-								lowerMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetLowerMultiplicityAsString());
-							} catch (NumberFormatException e) {
-								lowerMultiplicity = 0;
-							}
-
-							try {
-								upperMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetUpperMultiplicityAsString());
-							} catch (NumberFormatException e) {
-								upperMultiplicity = Integer.MAX_VALUE;
-							}
+					/*
+					 * Getting the lower and upper multiplicity if present for the object
+					 */
+					if (definitionObject instanceof GParamConfMultiplicity) {
+						try {
+							lowerMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetLowerMultiplicityAsString());
+						} catch (NumberFormatException e) {
+							lowerMultiplicity = 0;
 						}
+
+						try {
+							upperMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetUpperMultiplicityAsString());
+						} catch (NumberFormatException e) {
+							upperMultiplicity = Integer.MAX_VALUE;
+						}
+					}
+					do {
 
 						EClass description = getDescription(definitionObject.eClass());
 						if (description != null) {
@@ -192,7 +194,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 							/*
 							 * Checking for the possible child configuration and initialize if needed
 							 */
-							Collection<?> children = editingDomain.getChildren(definitionObject);
+							EList<EObject> children = definitionObject.eContents();
 
 							if (children.size() > 0) {
 								for (Object child : children) {
@@ -216,6 +218,8 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				} catch (ExecutionException ex) {
 					PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 				}
+			} else {
+				runnable.run();
 			}
 		}
 		return initialModuleConfiguration;
@@ -532,11 +536,14 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 		}
 
 		/* Checking the uniqueness of the name */
-		TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(configurationObject);
-		Object parentObject = editingDomain.getParent(configurationObject);
-		Collection<?> children = editingDomain.getChildren(parentObject);
+		EObject parent = configurationObject.eContainer();
+		List<EObject> children;
+		if (parent == null) {
+			children = emptyList();
+		} else {
+			children = parent.eContents();
+		}
 		int configIndex = children.size();
-
 		for (Object childConfiguration : children) {
 			// Remove suffix number from short name: refer to https://bugzilla01.geensys.com/show_bug.cgi?id=142
 			// String tempName = name + index;
