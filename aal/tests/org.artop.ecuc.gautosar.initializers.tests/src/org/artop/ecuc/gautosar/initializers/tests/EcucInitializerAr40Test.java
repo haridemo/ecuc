@@ -11,9 +11,6 @@ import org.junit.BeforeClass;
 import autosar40.util.Autosar40Package;
 import autosar40.util.Autosar40ReleaseDescriptor;
 import autosar40.util.Autosar40ResourceFactoryImpl;
-import autosar40.util.Autosar40Package;
-import autosar40.util.Autosar40ReleaseDescriptor;
-import autosar40.util.Autosar40ResourceFactoryImpl;
 
 public class EcucInitializerAr40Test extends AbstractInitializerTest {
 
