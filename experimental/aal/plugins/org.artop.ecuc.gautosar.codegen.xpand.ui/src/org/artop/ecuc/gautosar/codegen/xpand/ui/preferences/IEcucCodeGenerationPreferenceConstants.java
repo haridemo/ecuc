@@ -22,9 +22,9 @@ import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 
 public interface IEcucCodeGenerationPreferenceConstants {
 
-	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet", false); //$NON-NLS-1$ //$NON-NLS-2$
+	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet", null); //$NON-NLS-1$ //$NON-NLS-2$
 
-	ExtendedOutlet HOUTLET = new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet", false); //$NON-NLS-1$ //$NON-NLS-2$
+	ExtendedOutlet HOUTLET = new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet", null); //$NON-NLS-1$ //$NON-NLS-2$
 
 	Collection<ExtendedOutlet> ECUC_OUTLETS = Arrays.asList(new ExtendedOutlet[] { COUTLET, HOUTLET });
 
