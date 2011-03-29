@@ -61,6 +61,11 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		super(text);
 	}
 
+	/*
+	 * @see
+	 * org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#updateSelection(org.eclipse.jface.viewers.IStructuredSelection
+	 * )
+	 */
 	@Override
 	protected boolean updateSelection(IStructuredSelection selection) {
 		if (selection.size() == 1) {
@@ -127,11 +132,17 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		};
 	}
 
+	/*
+	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getSelectedModelObject()
+	 */
 	@Override
 	protected EObject getSelectedModelObject() {
 		return moduleConfiguration;
 	}
 
+	/*
+	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#run()
+	 */
 	@Override
 	public void run() {
 		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel());
@@ -143,6 +154,9 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		wizardDialog.open();
 	}
 
+	/*
+	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getMetaModel()
+	 */
 	@Override
 	protected MetaModel getMetaModel() {
 		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(getSelectedModelObject());
@@ -153,6 +167,9 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		return null;
 	}
 
+	/*
+	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getTemplateFile()
+	 */
 	@Override
 	protected IFile getTemplateFile() {
 		if (getSelectedModelObject() instanceof GModuleConfiguration) {
@@ -165,6 +182,9 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		return null;
 	}
 
+	/*
+	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getOutletsPreference()
+	 */
 	@Override
 	protected OutletsPreference getOutletsPreference() {
 		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;

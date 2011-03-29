@@ -55,16 +55,18 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 
-	/**
-	 * Updates the perspective for the active page within the window.
+	/*
+	 * @see org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard#init(org.eclipse.ui.IWorkbench,
+	 * org.eclipse.jface.viewers.IStructuredSelection)
 	 */
 	@Override
-	protected void updatePerspective() {
-		updatePerspective(configElement);
+	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
+		super.init(workbench, currentSelection);
+		setWindowTitle(Messages.BSWPlatformProjectWizzardTitle);
 	}
 
 	/*
-	 * Method declared on BasicNewResourceWizard.
+	 * @see org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard#initializeDefaultPageImageDescriptor()
 	 */
 	@Override
 	protected void initializeDefaultPageImageDescriptor() {
@@ -73,7 +75,25 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	}
 
 	/*
-	 * Method declared on IWizard.
+	 * @see org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard#addPages()
+	 */
+	@Override
+	public void addPages() {
+		mainPage = new BSWPlatformProjectWizardFirstPage("basicNewProjectPage", getOutletsPreference()); //$NON-NLS-1$
+		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
+		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
+		addPage(mainPage);
+		// only add page if there are already projects in the workspace
+		if (ResourcesPlugin.getWorkspace().getRoot().getProjects().length > 0) {
+			referencePage = new WizardNewProjectReferencePage("basicReferenceProjectPage"); //$NON-NLS-1$
+			referencePage.setTitle(Messages.BSWPlatformProjectWizzardReferencePageTitle);
+			referencePage.setDescription(Messages.BSWPlatformProjectWizzardReferencePageDescription);
+			addPage(referencePage);
+		}
+	}
+
+	/*
+	 * @see org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard#performFinish()
 	 */
 	@Override
 	public boolean performFinish() {
@@ -127,38 +147,19 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	}
 
 	/*
-	 * (non-Javadoc) Method declared on IWorkbenchWizard.
-	 */
-	@Override
-	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
-		super.init(workbench, currentSelection);
-		setWindowTitle(Messages.BSWPlatformProjectWizzardTitle);
-	}
-
-	/*
-	 * (non-Javadoc) Method declared on IWizard.
-	 */
-	@Override
-	public void addPages() {
-		mainPage = new BSWPlatformProjectWizardFirstPage("basicNewProjectPage", getOutletsPreference()); //$NON-NLS-1$
-		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
-		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
-		addPage(mainPage);
-		// only add page if there are already projects in the workspace
-		if (ResourcesPlugin.getWorkspace().getRoot().getProjects().length > 0) {
-			referencePage = new WizardNewProjectReferencePage("basicReferenceProjectPage"); //$NON-NLS-1$
-			referencePage.setTitle(Messages.BSWPlatformProjectWizzardReferencePageTitle);
-			referencePage.setDescription(Messages.BSWPlatformProjectWizzardReferencePageDescription);
-			addPage(referencePage);
-		}
-	}
-
-	/**
-	 * Stores the configuration element for the wizard. The config element will be used in <code>performFinish</code> to
-	 * set the result perspective.
+	 * @see org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard#setInitializationData(org.eclipse.core.runtime.
+	 * IConfigurationElement, java.lang.String, java.lang.Object)
 	 */
 	@Override
 	public void setInitializationData(IConfigurationElement cfig, String propertyName, Object data) {
 		configElement = cfig;
+	}
+
+	/*
+	 * @see org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard#updatePerspective()
+	 */
+	@Override
+	protected void updatePerspective() {
+		updatePerspective(configElement);
 	}
 }

@@ -36,13 +36,24 @@ public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate 
 		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 
+	/*
+	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction,
+	 * org.eclipse.ui.IWorkbenchPart)
+	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 	}
 
+	/*
+	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction,
+	 * org.eclipse.jface.viewers.ISelection)
+	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		this.selection = selection;
 	}
 
+	/*
+	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
+	 */
 	// TODO Support simultaneous conversion of multiple projects
 	public void run(IAction action) {
 		if (selection instanceof StructuredSelection) {
