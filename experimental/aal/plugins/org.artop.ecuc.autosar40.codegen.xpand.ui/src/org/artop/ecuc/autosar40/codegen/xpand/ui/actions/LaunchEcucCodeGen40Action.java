@@ -116,7 +116,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
 			IFile templateFile = getTemplateFile();
 			if (templateFile != null && templateFile.exists()) {
-				String definitionName = getScopingResourceLoader().getDefinitionName(templateFile, getTemplateName());
+				String definitionName = getScopingResourceLoader().getQualifiedName(templateFile, getTemplateName());
 				requests.add(new XpandEvaluationRequest(definitionName, moduleConf));
 			}
 		}
