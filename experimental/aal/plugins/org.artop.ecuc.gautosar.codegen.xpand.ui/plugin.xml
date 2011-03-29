@@ -51,5 +51,18 @@ Contributors:
             </adapt></and>
       </enabledWhen>
    </page>
-</extension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            class="org.artop.ecuc.gautosar.codegen.xpand.ui.decorators.EcucOutletFolderLabelDecorator"
+            id="org.artop.ecuc.gautosar.codegen.xpand.ui.decorators.outletFolder"
+            label="%ecuc.gautosar.codegen.xpand.ui.decorators.outletFolder.label"
+            lightweight="true"
+            state="true">
+         <description>
+            %ecuc.gautosar.codegen.xpand.ui.decorators.outletFolder.description
+         </description>
+      </decorator>
+   </extension>
 </plugin>
