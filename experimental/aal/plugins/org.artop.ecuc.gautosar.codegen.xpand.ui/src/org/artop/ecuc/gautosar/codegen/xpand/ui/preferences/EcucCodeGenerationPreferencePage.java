@@ -21,13 +21,10 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
-import org.eclipse.sphinx.xpand.ui.blocks.OutletsBlock;
+import org.eclipse.sphinx.xpand.ui.groups.OutletsGroup;
 import org.eclipse.sphinx.xpand.ui.providers.OutletProvider;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Group;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 // TODO Consider to add a generalized extract of this class to org.eclipse.sphinx.xpand.ui
@@ -35,7 +32,7 @@ public class EcucCodeGenerationPreferencePage extends PreferenceAndPropertyPage 
 
 	public static final String PROP_PAGE_ID = "ecuc.codegen.propertyPages.ecucCodeGen"; //$NON-NLS-1$
 
-	private Group outletsGroup;
+	private OutletsGroup outletsGroup;
 
 	private TableViewer tableViewer;
 
@@ -65,34 +62,10 @@ public class EcucCodeGenerationPreferencePage extends PreferenceAndPropertyPage 
 	}
 
 	protected void addOutletsGroup(Composite parent) {
-		outletsGroup = new Group(parent, SWT.None);
-		outletsGroup.setText("Outlets");
-
-		GridLayout layout = new GridLayout();
-		layout.numColumns = 2;
-		layout.marginHeight = 5;
-		layout.marginWidth = 5;
-		outletsGroup.setLayout(layout);
-		GridData gridData = new GridData(GridData.FILL, GridData.FILL, true, true);
-		outletsGroup.setLayoutData(gridData);
-
-		Composite innerParent = new Composite(outletsGroup, SWT.NONE);
-		GridLayout innerLayout = new GridLayout();
-		innerLayout.numColumns = 2;
-		innerLayout.marginHeight = 0;
-		innerLayout.marginWidth = 0;
-		innerParent.setLayout(innerLayout);
-		GridData gd = new GridData(GridData.FILL_BOTH);
-		gd.horizontalSpan = 2;
-		innerParent.setLayoutData(gd);
-
 		outletProvider = new OutletProvider((IProject) getElement(), getOutletsPreference());
-
-		OutletsBlock outletsBlock = new OutletsBlock(innerParent, outletProvider, true);
-		tableViewer = outletsBlock.getTableViewer();
-
+		outletsGroup = new OutletsGroup(parent, "Outlets", outletProvider, 2, true);
+		tableViewer = outletsGroup.getTableViewer();
 		Dialog.applyDialogFont(parent);
-		innerParent.layout();
 	}
 
 	@Override
