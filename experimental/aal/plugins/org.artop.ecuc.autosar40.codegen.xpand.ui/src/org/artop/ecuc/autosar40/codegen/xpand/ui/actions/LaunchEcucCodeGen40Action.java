@@ -33,7 +33,7 @@ import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
-import org.eclipse.sphinx.xpand.jobs.M2TJob;
+import org.eclipse.sphinx.xpand.jobs.XpandJob;
 
 import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucModuleConfigurationValuesRefConditional;
@@ -98,7 +98,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 						}
 					}
 				}
-				return !isProxy && !ecucModulesConfigurationValues.isEmpty() && !getXpandEvaluationRequests().isEmpty();
+				return !isProxy && !ecucModulesConfigurationValues.isEmpty();
 			}
 		}
 		return false;
@@ -126,7 +126,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 	@Override
 	public void run() {
 		if (getDefinitionName() != null) {
-			M2TJob job = createM2TJob();
+			XpandJob job = createM2TJob();
 			// Show console and make sure that all system output produced during execution gets displayed there
 			ExtendedPlatformUI.showSystemConsole();
 			job.schedule();
