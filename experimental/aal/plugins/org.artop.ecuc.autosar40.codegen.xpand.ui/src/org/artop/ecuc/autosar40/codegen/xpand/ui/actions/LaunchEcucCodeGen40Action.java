@@ -114,7 +114,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 	protected Collection<XpandEvaluationRequest> getXpandEvaluationRequests() {
 		List<XpandEvaluationRequest> requests = new ArrayList<XpandEvaluationRequest>();
 		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
-			IFile templateFile = getTemplateFile();
+			IFile templateFile = getTemplateFile(moduleConf);
 			if (templateFile != null && templateFile.exists()) {
 				String definitionName = getScopingResourceLoader().getQualifiedName(templateFile, getTemplateName());
 				requests.add(new XpandEvaluationRequest(definitionName, moduleConf));
@@ -125,7 +125,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 
 	@Override
 	public void run() {
-		if (getDefinitionName() != null) {
+		if (getDefinitionName(getSelectedModelObject()) != null) {
 			XpandJob job = createM2TJob();
 			// Show console and make sure that all system output produced during execution gets displayed there
 			ExtendedPlatformUI.showSystemConsole();

@@ -22,7 +22,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xpand.ui.groups.OutletsGroup;
-import org.eclipse.sphinx.xpand.ui.providers.OutletProvider;
+import org.eclipse.sphinx.xpand.ui.outlet.providers.OutletProvider;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;

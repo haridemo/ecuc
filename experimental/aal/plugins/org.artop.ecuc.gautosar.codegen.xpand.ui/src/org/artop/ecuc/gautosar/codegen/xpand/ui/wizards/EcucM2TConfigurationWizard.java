@@ -19,7 +19,7 @@ import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.EcucM2TConfigurati
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
 import org.eclipse.sphinx.xpand.ui.wizards.M2TConfigurationWizard;
-import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
+import org.eclipse.sphinx.xpand.ui.wizards.pages.XpandConfigurationPage;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
@@ -30,7 +30,7 @@ public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
 	}
 
 	@Override
-	protected M2TConfigurationPage createM2TConfigurationPage() {
+	protected XpandConfigurationPage createXpandConfigurationPage() {
 		EcucM2TConfigurationPage m2TPage = new EcucM2TConfigurationPage(Messages.label_configPageName);
 		m2TPage.init(modelObject, metaModel, getOutletsPreference(), getDefaultOutlet());
 		return m2TPage;

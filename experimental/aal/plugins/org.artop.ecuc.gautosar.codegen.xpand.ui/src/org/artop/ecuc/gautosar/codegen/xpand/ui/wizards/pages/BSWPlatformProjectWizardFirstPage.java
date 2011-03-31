@@ -23,7 +23,7 @@ import org.eclipse.sphinx.platform.ui.util.SWTUtil;
 import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xpand.ui.groups.OutletsGroup;
-import org.eclipse.sphinx.xpand.ui.providers.OutletProvider;
+import org.eclipse.sphinx.xpand.ui.outlet.providers.OutletProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;

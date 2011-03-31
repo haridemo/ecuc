@@ -14,10 +14,6 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 
-import gautosar.gecucdescription.GModuleConfiguration;
-
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,11 +23,12 @@ import org.artop.aal.workspace.ui.preferences.PreferenceAndPropertyPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
-import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
+import org.eclipse.sphinx.xpand.ui.groups.TemplateGroup;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
-import org.eclipse.sphinx.xpand.ui.wizards.pages.M2TConfigurationPage;
+import org.eclipse.sphinx.xpand.ui.wizards.pages.XpandConfigurationPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -42,7 +39,7 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.ui.dialogs.PreferencesUtil;
 
-public class EcucM2TConfigurationPage extends M2TConfigurationPage {
+public class EcucM2TConfigurationPage extends XpandConfigurationPage {
 
 	public EcucM2TConfigurationPage(String pageName) {
 		super(pageName);
@@ -50,16 +47,20 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 
 	@Override
 	protected void createTemplateGroup(Composite parent) {
-		if (modelObject instanceof GModuleConfiguration) {
-			super.createTemplateGroup(parent);
-		} else {
-			createTemplateTableViewer(parent);
-		}
-	}
+		templateGroup = new TemplateGroup(parent, Messages.label_template, 3, modelObject, metaModel) {
 
-	// TODO (aakar)Create the template table viewer here
-	protected void createTemplateTableViewer(Composite parent) {
+			@Override
+			protected String getTemplatePathDialogSettingsKey(EObject object) {
+				return TemplateGroup.STORE_TEMPLATE_PATH + AutosarURIFactory.getAbsoluteQualifiedName(object);
+			}
 
+			@Override
+			protected void groupChanged(Group group) {
+				getWizard().getContainer().updateButtons();
+			};
+		};
+		templateGroup.setDialogSettings(getDialogSettings());
+		templateGroup.loadGroupSettings();
 	}
 
 	@Override
@@ -78,16 +79,7 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	}
 
 	@Override
-	public Collection<XpandEvaluationRequest> getXpandEvaluationRequests() {
-		if (modelObject instanceof GModuleConfiguration) {
-			return super.getXpandEvaluationRequests();
-		}
-		// TODO (aakar) Create a collection of requests from template table viewer
-		return Collections.emptyList();
-	}
-
-	@Override
-	protected boolean isOutputBlockComplete() {
+	protected boolean isOutputGroupComplete() {
 		return true;
 	}
 
@@ -122,10 +114,5 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 			PreferenceDialog dialog = PreferencesUtil.createPropertyDialogOn(getShell(), project, id, new String[] { id }, data);
 			dialog.open();
 		}
-	}
-
-	@Override
-	protected String getTemplatePathDialogSettingsKey() {
-		return STORE_TEMPLATE_PATH + AutosarURIFactory.getAbsoluteQualifiedName(modelObject);
 	}
 }

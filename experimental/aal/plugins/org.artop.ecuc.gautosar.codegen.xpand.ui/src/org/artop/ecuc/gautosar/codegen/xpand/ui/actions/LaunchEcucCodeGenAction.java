@@ -133,14 +133,6 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	}
 
 	/*
-	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getSelectedModelObject()
-	 */
-	@Override
-	protected EObject getSelectedModelObject() {
-		return moduleConfiguration;
-	}
-
-	/*
 	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#run()
 	 */
 	@Override
@@ -159,8 +151,8 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	 */
 	@Override
 	protected MetaModel getMetaModel() {
-		IFile moduleConfigurationFile = EcorePlatformUtil.getFile(getSelectedModelObject());
-		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleConfigurationFile);
+		IFile selectedModelObjectFile = EcorePlatformUtil.getFile(getSelectedModelObject());
+		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(selectedModelObjectFile);
 		if (moduleDefModelDescriptor != null) {
 			return (MetaModel) moduleDefModelDescriptor.getAdapter(EcucMetaModel.class);
 		}
@@ -171,9 +163,9 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getTemplateFile()
 	 */
 	@Override
-	protected IFile getTemplateFile() {
-		if (getSelectedModelObject() instanceof GModuleConfiguration) {
-			IFile moduleDefFile = EcorePlatformUtil.getFile(((GModuleConfiguration) getSelectedModelObject()).gGetDefinition());
+	protected IFile getTemplateFile(EObject modelObject) {
+		if (modelObject instanceof GModuleConfiguration) {
+			IFile moduleDefFile = EcorePlatformUtil.getFile(((GModuleConfiguration) modelObject).gGetDefinition());
 			if (moduleDefFile != null) {
 				IPath templatePath = moduleDefFile.getFullPath().removeFileExtension().addFileExtension(XpandUtil.TEMPLATE_EXTENSION);
 				return ResourcesPlugin.getWorkspace().getRoot().getFile(templatePath);
