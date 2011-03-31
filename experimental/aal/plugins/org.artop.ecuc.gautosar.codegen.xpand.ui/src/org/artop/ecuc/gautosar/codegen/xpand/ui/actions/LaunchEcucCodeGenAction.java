@@ -106,7 +106,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 						}
 					}
 				}
-				return moduleDef != null && !moduleDef.eIsProxy() && !getXpandEvaluationRequests().isEmpty();
+				return moduleDef != null && !moduleDef.eIsProxy();
 			}
 		}
 		return false;
