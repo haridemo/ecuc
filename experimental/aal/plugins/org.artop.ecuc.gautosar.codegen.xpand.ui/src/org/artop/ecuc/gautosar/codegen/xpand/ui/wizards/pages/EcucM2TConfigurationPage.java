@@ -49,9 +49,9 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	}
 
 	@Override
-	protected void createTemplateBlock(Composite parent) {
+	protected void createTemplateGroup(Composite parent) {
 		if (modelObject instanceof GModuleConfiguration) {
-			super.createTemplateBlock(parent);
+			super.createTemplateGroup(parent);
 		} else {
 			createTemplateTableViewer(parent);
 		}
@@ -63,7 +63,7 @@ public class EcucM2TConfigurationPage extends M2TConfigurationPage {
 	}
 
 	@Override
-	protected void createOutputBlock(Composite parent) {
+	protected void createOutputGroup(Composite parent) {
 
 		Group outputGroup = new Group(parent, SWT.SHADOW_NONE);
 		outputGroup.setText(Messages.label_output);
