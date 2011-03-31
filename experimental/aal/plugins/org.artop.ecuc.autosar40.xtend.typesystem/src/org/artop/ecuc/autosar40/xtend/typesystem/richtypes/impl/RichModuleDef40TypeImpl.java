@@ -92,6 +92,19 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 
 		});
 
+		addFeature(new PropertyImpl(this, "ArReleaseVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						return moduleDescription.getArReleaseVersion();
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+		});
+
 		addFeature(new OperationImpl(this, "isPreCompile", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
