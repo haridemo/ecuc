@@ -65,9 +65,8 @@ public class RichEnumerationParamDefTypeImpl extends AbstractRichConfigParameter
 		((GEnumerationValue) target).gSetValue((String) value);
 	}
 
-	// TODO generation GAutosar with iSet Markers
 	@Override
 	protected boolean internalIsSet(Object target) {
-		return false;
+		return ((GEnumerationValue) target).gIsSetValue();
 	}
 }

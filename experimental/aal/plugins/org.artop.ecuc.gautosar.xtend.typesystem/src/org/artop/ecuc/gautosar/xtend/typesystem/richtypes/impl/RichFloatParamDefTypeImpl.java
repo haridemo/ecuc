@@ -48,9 +48,8 @@ public class RichFloatParamDefTypeImpl extends AbstractRichConfigParameterTypeIm
 		((GFloatValue) target).gSetValue((Double) value);
 	}
 
-	// TODO generation GAutosar with iSet Markers
 	@Override
 	protected boolean internalIsSet(Object target) {
-		return false;
+		return ((GFloatValue) target).gIsSetValue();
 	}
 }

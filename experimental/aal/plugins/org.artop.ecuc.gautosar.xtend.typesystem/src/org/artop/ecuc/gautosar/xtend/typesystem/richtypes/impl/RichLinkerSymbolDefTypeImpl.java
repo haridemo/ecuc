@@ -42,9 +42,8 @@ public class RichLinkerSymbolDefTypeImpl extends AbstractRichAbstractStringParam
 		((GLinkerSymbolValue) target).gSetValue((String) value);
 	}
 
-	// TODO generationGAutosar with iSet Markers on GLinkerSymbolValue
 	@Override
 	protected boolean internalIsSet(Object target) {
-		return false;
+		return ((GLinkerSymbolValue) target).gIsSetValue();
 	}
 }

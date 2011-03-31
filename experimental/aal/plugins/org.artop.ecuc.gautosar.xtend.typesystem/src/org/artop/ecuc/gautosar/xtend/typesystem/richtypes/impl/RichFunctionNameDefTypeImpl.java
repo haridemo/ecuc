@@ -42,9 +42,8 @@ public class RichFunctionNameDefTypeImpl extends AbstractRichAbstractStringParam
 		((GFunctionNameValue) target).gSetValue((String) value);
 	}
 
-	// TODO generationGAutosar with iSet Markers on GFunctionNameValue
 	@Override
 	protected boolean internalIsSet(Object target) {
-		return false;
+		return ((GFunctionNameValue) target).gIsSetValue();
 	}
 }
