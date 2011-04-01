@@ -92,7 +92,7 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 
 		});
 
-		addFeature(new PropertyImpl(this, "ArReleaseVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+		addFeature(new PropertyImpl(this, "arReleaseVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
