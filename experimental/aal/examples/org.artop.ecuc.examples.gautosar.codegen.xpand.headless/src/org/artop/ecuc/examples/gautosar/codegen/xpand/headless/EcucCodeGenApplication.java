@@ -24,9 +24,9 @@ import org.apache.commons.cli.OptionBuilder;
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -39,8 +39,8 @@ import org.eclipse.sphinx.emf.mwe.resources.BasicWorkspaceResourceLoader;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
-import org.eclipse.sphinx.xpand.jobs.M2TJob;
-import org.eclipse.xpand2.output.Outlet;
+import org.eclipse.sphinx.xpand.jobs.XpandJob;
+import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 public class EcucCodeGenApplication extends AbstractCLIApplication {
@@ -136,9 +136,9 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 		MetaModel metaModel = getMetaModel(moduleConfiguration);
 		XpandEvaluationRequest evaluationRequest = new XpandEvaluationRequest(templateName, moduleConfiguration);
 		BasicWorkspaceResourceLoader resourceLoader = new BasicWorkspaceResourceLoader();
-		Outlet outlet = getOutlet(project, outputFolderPath);
+		ExtendedOutlet outlet = getOutlet(project, outputFolderPath);
 
-		M2TJob job = new M2TJob("Generating ECUC code", metaModel, evaluationRequest);
+		XpandJob job = new XpandJob("Generating ECUC code", metaModel, evaluationRequest);
 		job.setScopingResourceLoader(resourceLoader);
 		job.getOutlets().add(outlet);
 
@@ -178,11 +178,10 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 		return null;
 	}
 
-	protected Outlet getOutlet(IProject project, String outputFolderPath) {
+	protected ExtendedOutlet getOutlet(IProject project, String outputFolderPath) {
 		if (outputFolderPath == null || outputFolderPath.length() == 0) {
 			outputFolderPath = DEFAULT_OUTPUT_FOLDER_PATH;
 		}
-		IResource outletContainer = project.getFolder(outputFolderPath);
-		return new Outlet(outletContainer.getLocation().toFile().getAbsolutePath());
+		return new ExtendedOutlet(project.getFolder(outputFolderPath));
 	}
 }
