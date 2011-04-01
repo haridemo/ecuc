@@ -14,7 +14,6 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards;
 
-import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.EcucM2TConfigurationPage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.xpand.ui.internal.messages.Messages;
@@ -26,7 +25,6 @@ public class EcucM2TConfigurationWizard extends M2TConfigurationWizard {
 
 	public EcucM2TConfigurationWizard(EObject modelObject, MetaModel metaModel) {
 		super(modelObject, metaModel);
-		setDialogSettings(Activator.getDefault().getDialogSettings());
 	}
 
 	@Override

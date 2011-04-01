@@ -47,7 +47,7 @@ public class EcucM2TConfigurationPage extends XpandConfigurationPage {
 
 	@Override
 	protected void createTemplateGroup(Composite parent) {
-		templateGroup = new TemplateGroup(parent, Messages.label_template, 3, modelObject, metaModel) {
+		templateGroup = new TemplateGroup(Messages.label_template, modelObject, metaModel) {
 
 			@Override
 			protected String getTemplatePathDialogSettingsKey(EObject object) {
@@ -60,7 +60,7 @@ public class EcucM2TConfigurationPage extends XpandConfigurationPage {
 			};
 		};
 		templateGroup.setDialogSettings(getDialogSettings());
-		templateGroup.loadGroupSettings();
+		templateGroup.createContent(parent, 3);
 	}
 
 	@Override
