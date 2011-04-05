@@ -106,6 +106,16 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	protected abstract void setReferenceValue(GConfigReferenceValue referenceValue, Object value);
 
 	/**
+	 * Sets the value of the parameter value object with the default value of its definition.
+	 */
+	protected abstract void setParameterWithDefaultValue(GParameterValue parameterValue, GConfigParameter parameterDef);
+
+	/**
+	 * Gets the default value of the given parameter definition.
+	 */
+	protected abstract Object getParamDefDefaultValue(GConfigParameter parameterDef);
+
+	/**
 	 * Constructor of the class
 	 */
 	public AbstractGenerateModuleConfiguration(GModuleConfiguration initialModuleConfiguration) {
@@ -238,7 +248,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            for generating unique short name
 	 */
 	private void setShortName(GARObject definitionObject, GARObject configurationObject, int upperMultiplicity, int index) {
-		if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+		if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 			String name = ConfigurationConstants.EMPTY_STRING;
 			/*
 			 * Getting the short name of the definition object.
@@ -296,7 +306,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					/*
 					 * Setting the definition of the configuration.
 					 */
-					if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
+					if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
 						EStructuralFeature definitionFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_DEFINITION);
 						ModuleConfigurationUtil.setPropertyValue(configurationObject, definitionFeature, definitionObject);
@@ -305,10 +315,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					/*
 					 * Setting the default value of the configuration.
 					 */
-					if (true == ModuleConfigurationUtil.isPropertyExist(definitionObject, ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE)) {
-						EStructuralFeature defaultValueFeature = EObjectUtil.getEStructuralFeature(configurationObject,
-								ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE);
-						setDefaultValue(configurationObject, defaultValueFeature, definitionObject);
+					if (ModuleConfigurationUtil.isPropertyExist(definitionObject, ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE)
+							&& definitionObject instanceof GConfigParameter && configurationObject instanceof GParameterValue) {
+						setParameterWithDefaultValue((GParameterValue) configurationObject, (GConfigParameter) definitionObject);
 					}
 
 					/*
@@ -327,24 +336,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			} catch (ExecutionException ex) {
 				PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 			}
-		}
-	}
-
-	/**
-	 * For setting the default value of the object
-	 * 
-	 * @param configurationObject
-	 *            the description object
-	 * @param feature
-	 *            the feature
-	 * @param definitionObject
-	 *            the definition object
-	 */
-	private void setDefaultValue(GARObject configurationObject, EStructuralFeature feature, GARObject definitionObject) {
-		Object propertyValue = null;
-		propertyValue = ModuleConfigurationUtil.getPropertyValue(definitionObject, feature);
-		if (null != propertyValue && null != feature) {
-			ModuleConfigurationUtil.setPropertyValue(configurationObject, feature, propertyValue);
 		}
 	}
 
@@ -412,7 +403,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						}
 					}
 
-					if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+					if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 						EStructuralFeature shortNameFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_SHORT_NAME);
 						ModuleConfigurationUtil.setPropertyValue(configurationObject, shortNameFeature, shortName);
@@ -502,7 +493,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						}
 					}
 
-					if (true == ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+					if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 						String shortName = getUniqueShortName(definitionObject, configurationObject, index);
 						EStructuralFeature shortNameFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_SHORT_NAME);
@@ -548,7 +539,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			// Remove suffix number from short name: refer to https://bugzilla01.geensys.com/show_bug.cgi?id=142
 			// String tempName = name + index;
 			String tempName = name;
-			if (true == ModuleConfigurationUtil.isPropertyExist((GARObject) childConfiguration, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
+			if (ModuleConfigurationUtil.isPropertyExist((GARObject) childConfiguration, ConfigurationConstants.PROPERTY_ID_SHORT_NAME)) {
 				String currentName = ConfigurationConstants.EMPTY_STRING;
 				shortName = ModuleConfigurationUtil.getPropertyValue((GARObject) childConfiguration, shortNameFeature);
 				if (null != shortName) {

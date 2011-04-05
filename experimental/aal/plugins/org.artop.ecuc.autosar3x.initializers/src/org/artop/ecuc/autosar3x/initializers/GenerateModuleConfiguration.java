@@ -18,11 +18,13 @@ package org.artop.ecuc.autosar3x.initializers;
 import gautosar.gecucdescription.GConfigReferenceValue;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucdescription.GParameterValue;
+import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.ggenericstructure.ginfrastructure.GARObject;
 
 import java.math.BigInteger;
 
 import org.artop.ecuc.gautosar.initializers.AbstractGenerateModuleConfiguration;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
 
 import autosar3x.ecucdescription.BooleanValue;
@@ -31,9 +33,17 @@ import autosar3x.ecucdescription.FloatValue;
 import autosar3x.ecucdescription.FunctionNameValue;
 import autosar3x.ecucdescription.InstanceReferenceValue;
 import autosar3x.ecucdescription.IntegerValue;
+import autosar3x.ecucdescription.ParameterValue;
 import autosar3x.ecucdescription.ReferenceValue;
 import autosar3x.ecucdescription.StringValue;
 import autosar3x.ecucdescription.instanceref.InstanceReferenceValueValue;
+import autosar3x.ecucparameterdef.BooleanParamDef;
+import autosar3x.ecucparameterdef.ConfigParameter;
+import autosar3x.ecucparameterdef.EnumerationParamDef;
+import autosar3x.ecucparameterdef.FloatParamDef;
+import autosar3x.ecucparameterdef.FunctionNameDef;
+import autosar3x.ecucparameterdef.IntegerParamDef;
+import autosar3x.ecucparameterdef.StringParamDef;
 import autosar3x.genericstructure.infrastructure.identifiable.Identifiable;
 import autosar3x.util.Autosar3xFactory;
 
@@ -140,4 +150,43 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		}
 	}
 
+	@Override
+	protected Object getParamDefDefaultValue(GConfigParameter parameterDef) {
+		if (parameterDef instanceof BooleanParamDef) {
+			return ((BooleanParamDef) parameterDef).getDefaultValue();
+		}
+
+		if (parameterDef instanceof IntegerParamDef) {
+			return ((IntegerParamDef) parameterDef).getDefaultValue();
+		}
+		if (parameterDef instanceof FloatParamDef) {
+			return ((FloatParamDef) parameterDef).getDefaultValue();
+		}
+		if (parameterDef instanceof EnumerationParamDef) {
+			return ((EnumerationParamDef) parameterDef).getDefaultValue();
+		}
+
+		if (parameterDef instanceof StringParamDef) {
+			return ((StringParamDef) parameterDef).getDefaultValue();
+		}
+
+		if (parameterDef instanceof FunctionNameDef) {
+			return ((FunctionNameDef) parameterDef).getDefaultValue();
+		}
+
+		return null;
+	}
+
+	@Override
+	protected void setParameterWithDefaultValue(GParameterValue parameterValue, GConfigParameter parameterDef) {
+		Assert.isNotNull(parameterValue);
+		Assert.isNotNull(parameterDef);
+
+		if (parameterValue instanceof ParameterValue && parameterDef instanceof ConfigParameter) {
+			Object defaultValue = getParamDefDefaultValue(parameterDef);
+			if (null != defaultValue) {
+				setParameterValue(parameterValue, defaultValue);
+			}
+		}
+	}
 }
