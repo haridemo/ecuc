@@ -19,7 +19,6 @@ import gautosar.gecucparameterdef.GModuleDef;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.EcucM2TConfigurationWizard;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -43,6 +42,7 @@ import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
+import org.eclipse.sphinx.xpand.ui.wizards.M2TConfigurationWizard;
 import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xtend.typesystem.MetaModel;
 
@@ -137,7 +137,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	 */
 	@Override
 	public void run() {
-		EcucM2TConfigurationWizard wizard = new EcucM2TConfigurationWizard(getSelectedModelObject(), getMetaModel());
+		M2TConfigurationWizard wizard = new M2TConfigurationWizard(getSelectedModelObject(), getMetaModel());
 		wizard.setM2TJobName(getM2TJobName());
 		wizard.setScopingResourceLoader(getScopingResourceLoader());
 		wizard.setOutletsPreference(getOutletsPreference());

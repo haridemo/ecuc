@@ -126,7 +126,7 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 	@Override
 	public void run() {
 		if (getDefinitionName(getSelectedModelObject()) != null) {
-			XpandJob job = createM2TJob();
+			XpandJob job = createXpandJob();
 			// Show console and make sure that all system output produced during execution gets displayed there
 			ExtendedPlatformUI.showSystemConsole();
 			job.schedule();

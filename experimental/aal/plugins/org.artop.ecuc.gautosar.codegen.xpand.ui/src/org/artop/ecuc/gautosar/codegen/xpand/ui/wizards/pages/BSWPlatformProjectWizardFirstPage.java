@@ -50,7 +50,8 @@ public class BSWPlatformProjectWizardFirstPage extends AutosarProjectWizardFirst
 			for (ExtendedOutlet outlet : IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS) {
 				outletProvider.addOutlet(outlet);
 			}
-			outletsGroup = new OutletsGroup(parent, "Outlets", outletProvider, 2, true);
+			outletsGroup = new OutletsGroup("Outlets", outletProvider);
+			outletsGroup.createContent(parent, 2);
 			restoreDefaultButton = SWTUtil.createButton(outletsGroup.getButtonsComposite(), "Restore Defaults", SWT.PUSH);
 			restoreDefaultButton.addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
