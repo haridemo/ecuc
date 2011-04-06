@@ -65,14 +65,4 @@ Contributors:
          </description>
       </decorator>
    </extension>
-   <extension
-         point="org.eclipse.core.runtime.adapters">
-      <factory
-            adaptableType="org.eclipse.sphinx.xpand.preferences.OutletsPreference"
-            class="org.artop.ecuc.gautosar.codegen.xpand.ui.internal.OutletsPreferenceAdapterFactory">
-         <adapter
-               type="org.eclipse.sphinx.platform.ui.preferences.IPropertyPageIdProvider">
-         </adapter>
-      </factory>
-   </extension>
 </plugin>
