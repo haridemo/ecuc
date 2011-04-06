@@ -64,4 +64,13 @@ Contributors:
          </adapter>
       </factory>
    </extension>
+  <extension
+      point="org.eclipse.ui.preferencePages">
+   <page
+         category="org.artop.aal.workspace.ui.preferencePages.autosar"
+         class="org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage"
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferencePage.ecucCodeGen"
+         name="%ecuc.examples.codegen.xpand.ui.preferencePages.ecucCodeGen">
+   </page>
+</extension>
 </plugin>
