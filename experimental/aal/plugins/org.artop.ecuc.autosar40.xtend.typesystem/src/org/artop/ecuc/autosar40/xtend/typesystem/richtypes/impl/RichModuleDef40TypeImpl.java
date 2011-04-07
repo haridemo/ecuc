@@ -1,16 +1,9 @@
 package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
-import gautosar.gecucparameterdef.GModuleDef;
-
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichModuleDefTypeImpl;
-import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
-import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
-import org.eclipse.xtend.typesystem.Type;
 
-import autosar40.bswmodule.bswimplementation.BswImplementation;
-import autosar40.ecucdescription.EcucModuleConfigurationValues;
-import autosar40.ecucparameterdef.EcucConfigurationVariantEnum;
+import com.sun.xml.internal.bind.v2.model.impl.ElementInfoImpl.PropertyImpl;
 
 public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 
@@ -103,6 +96,63 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
+		});
+		addFeature(new PropertyImpl(this, "arReleaseMajorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						String ArReleaseVersion = moduleDescription.getArReleaseVersion();
+						if (ArReleaseVersion != null && ArReleaseVersion.length() > 0) {
+							String[] split = ArReleaseVersion.split("\\."); //$NON-NLS-1$
+							if (split.length > 0) {
+								return split[0].trim();
+							}
+						}
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+
+		});
+		addFeature(new PropertyImpl(this, "arReleaseMinorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						String ArReleaseVersion = moduleDescription.getArReleaseVersion();
+						if (ArReleaseVersion != null && ArReleaseVersion.length() > 0) {
+							String[] split = ArReleaseVersion.split("\\."); //$NON-NLS-1$
+							if (split.length > 1) {
+								return split[1];
+							}
+						}
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+
+		});
+		addFeature(new PropertyImpl(this, "arReleasePatchVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+					if (moduleDescription != null) {
+						String ArReleaseVersion = moduleDescription.getArReleaseVersion();
+						if (ArReleaseVersion != null && ArReleaseVersion.length() > 0) {
+							String[] split = ArReleaseVersion.split("\\."); //$NON-NLS-1$
+							if (split.length > 2) {
+								return split[2];
+							}
+						}
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+
 		});
 
 		addFeature(new OperationImpl(this, "isPreCompile", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
