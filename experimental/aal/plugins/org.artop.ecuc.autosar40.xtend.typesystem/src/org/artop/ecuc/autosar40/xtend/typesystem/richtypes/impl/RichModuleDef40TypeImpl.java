@@ -1,9 +1,16 @@
 package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
+import gautosar.gecucparameterdef.GModuleDef;
+
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichModuleDefTypeImpl;
+import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
+import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
+import org.eclipse.xtend.typesystem.Type;
 
-import com.sun.xml.internal.bind.v2.model.impl.ElementInfoImpl.PropertyImpl;
+import autosar40.bswmodule.bswimplementation.BswImplementation;
+import autosar40.ecucdescription.EcucModuleConfigurationValues;
+import autosar40.ecucparameterdef.EcucConfigurationVariantEnum;
 
 public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 
