@@ -68,9 +68,34 @@ Contributors:
       point="org.eclipse.ui.preferencePages">
    <page
          category="org.artop.aal.workspace.ui.preferencePages.autosar"
-         class="org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage"
-         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferencePage.ecucCodeGen"
+         class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage"
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferencePages.ecucCodeGen"
          name="%ecuc.examples.codegen.xpand.ui.preferencePages.ecucCodeGen">
    </page>
 </extension>
+ <extension
+      point="org.eclipse.ui.propertyPages">
+   <page
+         class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage"
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.propertyPages.ecucCodeGen"
+         name="%ecuc.examples.codegen.xpand.ui.propertyPages.ecucCodeGen">
+      <enabledWhen>
+         <and>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+               <test
+                     property="org.eclipse.core.resources.projectNature"
+                     value="org.eclipse.xtend.shared.ui.xtendXPandNature">
+               </test>
+            </adapt>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+               <test
+                     property="org.eclipse.core.resources.projectNature"
+                     value="org.eclipse.jdt.core.javanature">
+               </test>
+            </adapt></and>
+      </enabledWhen>
+   </page>
+   </extension>
 </plugin>

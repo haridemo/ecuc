@@ -14,7 +14,7 @@
  */
 package org.artop.ecuc.examples.gautosar.codegen.xpand.ui.internal;
 
-import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.EcucCodeGenerationPreferencePage;
+import org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.sphinx.platform.ui.preferences.IPropertyPageIdProvider;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
@@ -29,7 +29,7 @@ public class OutletsPreferenceAdapterFactory implements IAdapterFactory {
 			if (adaptableObject instanceof IPropertyPageIdProvider) {
 				return new IPropertyPageIdProvider() {
 					public String getPropertyPageId() {
-						return EcucCodeGenerationPreferencePage.PROP_PAGE_ID;
+						return EcucOutletsPreferencePage.PROPERTY_PAGE_ID;
 					}
 				};
 			}
