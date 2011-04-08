@@ -14,7 +14,6 @@
  */
 package org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences;
 
-import org.artop.aal.workspace.natures.AutosarNature;
 import org.eclipse.sphinx.xpand.ui.preferences.AbstractOutletsPreferencePage;
 
 public class EcucOutletsPreferencePage extends AbstractOutletsPreferencePage {
@@ -22,10 +21,6 @@ public class EcucOutletsPreferencePage extends AbstractOutletsPreferencePage {
 	public static final String PREFERENCE_PAGE_ID = "org.artop.ecuc.examples.gautosar.codegen.ui.preferencePages.ecucOutlets"; //$NON-NLS-1$
 
 	public static final String PROPERTY_PAGE_ID = "org.artop.ecuc.examples.gautosar.codegen.ui.propertyPages.ecucOutlets"; //$NON-NLS-1$
-
-	public EcucOutletsPreferencePage() {
-		super(AutosarNature.ID, GRID);
-	}
 
 	@Override
 	protected String getPreferencePageID() {
