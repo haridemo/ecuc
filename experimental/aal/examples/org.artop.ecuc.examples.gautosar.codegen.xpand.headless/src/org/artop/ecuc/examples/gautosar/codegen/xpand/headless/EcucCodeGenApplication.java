@@ -19,12 +19,10 @@ import gautosar.gecucdescription.GModuleConfiguration;
 import java.util.Collection;
 
 import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -72,32 +70,27 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 		OptionBuilder.hasArgs(1);
 		OptionBuilder.withValueSeparator();
 		OptionBuilder.withDescription("Name of project in which code generation is to be run"); //$NON-NLS-1$
-		Option prjOption = OptionBuilder.create(PRJ_OPTION);
+		addOption(OptionBuilder.create(PRJ_OPTION));
 
 		OptionBuilder.isRequired();
 		OptionBuilder.withArgName("moduleName");//$NON-NLS-1$
 		OptionBuilder.hasArgs(1);
 		OptionBuilder.withValueSeparator();
 		OptionBuilder.withDescription("Absolute qualified name of ModuleConfiguration to generate code for"); //$NON-NLS-1$
-		Option modOption = OptionBuilder.create(MOD_OPTION);
+		addOption(OptionBuilder.create(MOD_OPTION));
 
 		OptionBuilder.isRequired();
 		OptionBuilder.withArgName("templateName");//$NON-NLS-1$
 		OptionBuilder.hasArgs(1);
 		OptionBuilder.withValueSeparator();
 		OptionBuilder.withDescription("Qualified name of code generation template to be applied"); //$NON-NLS-1$
-		Option tplOption = OptionBuilder.create(TPL_OPTION);
+		addOption(OptionBuilder.create(TPL_OPTION));
 
 		OptionBuilder.withArgName("outputFolderPath");//$NON-NLS-1$
 		OptionBuilder.hasArgs(1);
 		OptionBuilder.withValueSeparator();
 		OptionBuilder.withDescription("Project-relative path to location where the generated code is to be placed"); //$NON-NLS-1$
-		Option outOption = OptionBuilder.create(OUT_OPTION);
-
-		addOption(prjOption);
-		addOption(modOption);
-		addOption(tplOption);
-		addOption(outOption);
+		addOption(OptionBuilder.create(OUT_OPTION));
 	}
 
 	/*
@@ -107,7 +100,7 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 	protected Object interrogate() throws Throwable {
 		super.interrogate();
 
-		// Retrieve arguments
+		// Retrieve options
 		CommandLine commandLine = getCommandLine();
 		String projectName = commandLine.getOptionValue(PRJ_OPTION);
 		String moduleName = commandLine.getOptionValue(MOD_OPTION);
