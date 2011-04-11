@@ -40,7 +40,9 @@ import autosar40.genericstructure.generaltemplateclasses.anyinstanceref.AnyInsta
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock;
 import autosar40.genericstructure.generaltemplateclasses.identifiable.Identifiable;
 import autosar40.genericstructure.varianthandling.BooleanValueVariationPoint;
+import autosar40.genericstructure.varianthandling.FloatValueVariationPoint;
 import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
+import autosar40.genericstructure.varianthandling.UnlimitedIntegerValueVariationPoint;
 import autosar40.genericstructure.varianthandling.VarianthandlingFactory;
 import autosar40.util.Autosar40Factory;
 
@@ -146,10 +148,15 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof EcucParameterValue && parameterDef instanceof EcucParameterDef) {
 			Object defaultValue = getParamDefDefaultValue(parameterDef);
 			if (null != defaultValue) {
-				if (parameterDef instanceof EcucBooleanParamDef || parameterDef instanceof EcucFloatParamDef
-						|| parameterDef instanceof EcucIntegerParamDef) {
-					NumericalValueVariationPoint numericalValueVariationPoint = VarianthandlingFactory.eINSTANCE.createNumericalValueVariationPoint();
+				NumericalValueVariationPoint numericalValueVariationPoint = VarianthandlingFactory.eINSTANCE.createNumericalValueVariationPoint();
+				if (parameterDef instanceof EcucBooleanParamDef) {
 					numericalValueVariationPoint.setMixedText(((BooleanValueVariationPoint) defaultValue).getMixedText());
+					setParameterValue(parameterValue, numericalValueVariationPoint);
+				} else if (parameterDef instanceof EcucFloatParamDef) {
+					numericalValueVariationPoint.setMixedText(((FloatValueVariationPoint) defaultValue).getMixedText());
+					setParameterValue(parameterValue, numericalValueVariationPoint);
+				} else if (parameterDef instanceof EcucIntegerParamDef) {
+					numericalValueVariationPoint.setMixedText(((UnlimitedIntegerValueVariationPoint) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
 				} else if (parameterDef instanceof EcucEnumerationParamDef) {
 					setParameterValue(parameterValue, defaultValue.toString());
