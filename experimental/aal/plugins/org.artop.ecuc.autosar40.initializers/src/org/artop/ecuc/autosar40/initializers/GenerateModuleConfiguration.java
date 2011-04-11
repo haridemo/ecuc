@@ -149,13 +149,13 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 			Object defaultValue = getParamDefDefaultValue(parameterDef);
 			if (null != defaultValue) {
 				NumericalValueVariationPoint numericalValueVariationPoint = VarianthandlingFactory.eINSTANCE.createNumericalValueVariationPoint();
-				if (parameterDef instanceof EcucBooleanParamDef) {
+				if (parameterDef instanceof EcucBooleanParamDef && defaultValue instanceof BooleanValueVariationPoint) {
 					numericalValueVariationPoint.setMixedText(((BooleanValueVariationPoint) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
-				} else if (parameterDef instanceof EcucFloatParamDef) {
+				} else if (parameterDef instanceof EcucFloatParamDef && defaultValue instanceof FloatValueVariationPoint) {
 					numericalValueVariationPoint.setMixedText(((FloatValueVariationPoint) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
-				} else if (parameterDef instanceof EcucIntegerParamDef) {
+				} else if (parameterDef instanceof EcucIntegerParamDef && defaultValue instanceof UnlimitedIntegerValueVariationPoint) {
 					numericalValueVariationPoint.setMixedText(((UnlimitedIntegerValueVariationPoint) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
 				} else if (parameterDef instanceof EcucEnumerationParamDef) {
