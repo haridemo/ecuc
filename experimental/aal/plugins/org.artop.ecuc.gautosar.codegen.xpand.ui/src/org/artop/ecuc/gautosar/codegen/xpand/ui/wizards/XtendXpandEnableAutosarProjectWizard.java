@@ -18,11 +18,12 @@ import java.net.URI;
 
 import org.artop.aal.workspace.jobs.CreateArtopProjectJob;
 import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
+import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.BSWPlatformProjectWizardFirstPage;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.OutletsConfigurationPage;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -40,11 +41,13 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewProjectReferencePage;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 
-public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implements IExecutableExtension {
+public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWizard implements IExecutableExtension {
 
-	private BSWPlatformProjectWizardFirstPage mainPage;
+	protected AutosarProjectWizardFirstPage mainPage;
 
-	private WizardNewProjectReferencePage referencePage;
+	protected OutletsConfigurationPage outletsPage;
+
+	protected WizardNewProjectReferencePage referencePage;
 
 	/**
 	 * The config element which declares this wizard.
@@ -79,17 +82,38 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 	 */
 	@Override
 	public void addPages() {
-		mainPage = new BSWPlatformProjectWizardFirstPage("basicNewProjectPage", getOutletsPreference()); //$NON-NLS-1$
+		// Add an AutosarProjectWizardFirstPage
+		mainPage = new AutosarProjectWizardFirstPage("basicNewProjectPage"); //$NON-NLS-1$
 		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
 		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
 		addPage(mainPage);
+
+		// Add an OutletsConfigurationPage
+		outletsPage = createOutletsConfigurationPage(
+				"basicNewProjectPage", Messages.BSWPlatformProjectWizzardFirstPageTitle, Messages.BSWPlatformProjectWizzardFirstPageDescription, "Add Xtend/Xpand/Check support", getOutletsPreference()); //$NON-NLS-1$
+		addPage(outletsPage);
+
 		// only add page if there are already projects in the workspace
 		if (ResourcesPlugin.getWorkspace().getRoot().getProjects().length > 0) {
-			referencePage = new WizardNewProjectReferencePage("basicReferenceProjectPage"); //$NON-NLS-1$
-			referencePage.setTitle(Messages.BSWPlatformProjectWizzardReferencePageTitle);
-			referencePage.setDescription(Messages.BSWPlatformProjectWizzardReferencePageDescription);
+			referencePage = createProjectReferencePage("basicReferenceProjectPage", Messages.BSWPlatformProjectWizzardReferencePageTitle, //$NON-NLS-1$
+					Messages.BSWPlatformProjectWizzardReferencePageDescription);
 			addPage(referencePage);
 		}
+	}
+
+	protected OutletsConfigurationPage createOutletsConfigurationPage(String pageName, String pageTitle, String pageDesc, String enableText,
+			OutletsPreference outletPreference) {
+		OutletsConfigurationPage outletsPage = new OutletsConfigurationPage(pageName, enableText, outletPreference);
+		outletsPage.setTitle(pageTitle);
+		outletsPage.setDescription(pageDesc);
+		return outletsPage;
+	}
+
+	protected WizardNewProjectReferencePage createProjectReferencePage(String pageName, String pageTitle, String pageDesc) {
+		WizardNewProjectReferencePage referencePage = new WizardNewProjectReferencePage(pageName);
+		referencePage.setTitle(pageTitle);
+		referencePage.setDescription(pageDesc);
+		return referencePage;
 	}
 
 	/*
@@ -122,7 +146,7 @@ public class BSWPlatformProjectWizard extends BasicAutosarProjectWizard implemen
 							if (event.getResult().getSeverity() == IStatus.OK) {
 								OutletsPreference outletsPreference = getOutletsPreference();
 								if (outletsPreference != null) {
-									outletsPreference.setInProject(projectHandle, mainPage.getOutlets());
+									outletsPreference.setInProject(projectHandle, outletsPage.getOutlets());
 								}
 
 								Display display = ExtendedPlatformUI.getDisplay();

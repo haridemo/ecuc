@@ -20,8 +20,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.artop.aal.workspace.natures.AutosarNature;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
+import org.artop.ecuc.xtend.typesystem.ui.internal.EcucMetamodelContributor;
 import org.eclipse.core.resources.ICommand;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFolder;
@@ -57,6 +57,7 @@ import org.eclipse.xtend.shared.ui.core.builder.XtendXpandNature;
 import org.eclipse.xtend.shared.ui.core.preferences.PreferenceConstants;
 import org.eclipse.xtend.shared.ui.internal.XtendLog;
 
+//TODO: move this class to Sphinx
 @SuppressWarnings("restriction")
 public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 
@@ -70,7 +71,6 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 	private static String SOURCE_PACKAGE_NAME = "src"; //$NON-NLS-1$
 	private static String REQUIRED_BUNDLES = "org.eclipse.jdt.core,org.eclipse.xtend.profiler,org.apache.commons.logging,org.apache.log4j,com.ibm.icu,org.antlr.runtime,org.eclipse.core.runtime,org.eclipse.emf.ecore.xmi,org.eclipse.jface.text,org.eclipse.xtend,org.eclipse.xtend.typesystem.emf,org.eclipse.xtend.backend,org.eclipse.xtend.middleend.xpand,org.eclipse.xtend.middleend.xtend,org.eclipse.xtend.util.stdlib,org.eclipse.emf.mwe.activities,org.eclipse.xpand"; //$NON-NLS-1$
 	private static String REQUIRED_EXECUTION_ENVIRONMENT = "J2SE-1.5"; //$NON-NLS-1$
-	private static String METAMODEL_CONTRIBUTOR_ECUCMETAMODELCONTRIBUTOR = "org.artop.ecuc.xtend.typesystem.ui.internal.EcucMetamodelContributor"; //$NON-NLS-1$
 
 	public ConvertToBSWPlatformProjectJob(String name, IProject project) {
 		super(name);
@@ -233,7 +233,7 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 		IPreferenceStore store;
 		store = new ScopedPreferenceStore(new ProjectScope(project), org.eclipse.xtend.shared.ui.Activator.getId());
 		store.setValue(PreferenceConstants.PROJECT_SPECIFIC_METAMODEL, true);
-		store.setValue(PreferenceConstants.METAMODELCONTRIBUTORS, METAMODEL_CONTRIBUTOR_ECUCMETAMODELCONTRIBUTOR);
+		store.setValue(PreferenceConstants.METAMODELCONTRIBUTORS, EcucMetamodelContributor.class.getName());
 		progress.worked(1);
 		try {
 			((ScopedPreferenceStore) store).save();
@@ -245,40 +245,36 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 
 	@Override
 	public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
-
-		if (project.hasNature(AutosarNature.ID)) {
-			SubMonitor progress = SubMonitor.convert(monitor, 5);
-			progress.setTaskName(Messages.task_ConvertToBSWPlatformProject);
-			if (progress.isCanceled()) {
-				throw new OperationCanceledException();
-			}
-			// we add java nature plugin nature and Xtend Xpand nature
-			addNaturesToProject(progress);
-			progress.worked(1);
-			// We convert project into plugin project
-			ConvertProjectToPluginOperation convertProjectToPluginOperation = new ConvertProjectToPluginOperation(new IProject[] { project });
-			try {
-				convertProjectToPluginOperation.run(progress);
-			} catch (InvocationTargetException ex) {
-				progress.done();
-			} catch (InterruptedException ex) {
-				progress.done();
-			}
-			progress.worked(1);
-			// We convert Project into Java plugin project
-			convertToJavaPluginProject(progress);
-			progress.worked(1);
-			// we create default package extension
-			createSubPackageExtensions(progress);
-			progress.worked(1);
-			// we add necessary external dependencies
-			addDependencies(progress);
-			// we add xtend metamodel contributor property
-			addMetamodelContributor(progress);
-			progress.worked(1);
-			progress.done();
-
+		SubMonitor progress = SubMonitor.convert(monitor, 5);
+		progress.setTaskName(Messages.task_ConvertToBSWPlatformProject);
+		if (progress.isCanceled()) {
+			throw new OperationCanceledException();
 		}
+		// we add java nature plugin nature and Xtend Xpand nature
+		addNaturesToProject(progress);
+		progress.worked(1);
+		// We convert project into plugin project
+		ConvertProjectToPluginOperation convertProjectToPluginOperation = new ConvertProjectToPluginOperation(new IProject[] { project });
+		try {
+			convertProjectToPluginOperation.run(progress);
+		} catch (InvocationTargetException ex) {
+			progress.done();
+		} catch (InterruptedException ex) {
+			progress.done();
+		}
+		progress.worked(1);
+		// We convert Project into Java plugin project
+		convertToJavaPluginProject(progress);
+		progress.worked(1);
+		// we create default package extension
+		createSubPackageExtensions(progress);
+		progress.worked(1);
+		// we add necessary external dependencies
+		addDependencies(progress);
+		// we add xtend metamodel contributor property
+		addMetamodelContributor(progress);
+		progress.worked(1);
+		progress.done();
 
 		return Status.OK_STATUS;
 	}
