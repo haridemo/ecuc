@@ -21,7 +21,7 @@ import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
 import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToXtendXpandEnableAutosarProjectJob;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.OutletsConfigurationPage;
 import org.eclipse.core.resources.IProject;
@@ -137,7 +137,7 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 			@Override
 			public void done(IJobChangeEvent event) {
 				if (event.getResult().getSeverity() == IStatus.OK) {
-					ConvertToBSWPlatformProjectJob convertJob = new ConvertToBSWPlatformProjectJob(Messages.job_convertToBSWPlatformProject,
+					ConvertToXtendXpandEnableAutosarProjectJob convertJob = new ConvertToXtendXpandEnableAutosarProjectJob(Messages.job_convertToXtendXpandEnableAutosarProject,
 							projectHandle);
 					// Commit outlets and reveal new project after creation
 					convertJob.addJobChangeListener(new JobChangeAdapter() {

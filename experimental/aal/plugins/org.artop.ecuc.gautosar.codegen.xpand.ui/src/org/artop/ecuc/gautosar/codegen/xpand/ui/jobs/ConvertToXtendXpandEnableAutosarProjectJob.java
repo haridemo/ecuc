@@ -59,7 +59,7 @@ import org.eclipse.xtend.shared.ui.internal.XtendLog;
 
 //TODO: move this class to Sphinx
 @SuppressWarnings("restriction")
-public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
+public class ConvertToXtendXpandEnableAutosarProjectJob extends WorkspaceJob {
 
 	protected static final String PDE_MANIFEST_BUILDER = "org.eclipse.pde.ManifestBuilder"; //$NON-NLS-1$
 	protected static final String PDE_SCHEMA_BUILDER = "org.eclipse.pde.SchemaBuilder"; //$NON-NLS-1$
@@ -72,7 +72,7 @@ public class ConvertToBSWPlatformProjectJob extends WorkspaceJob {
 	private static String REQUIRED_BUNDLES = "org.eclipse.jdt.core,org.eclipse.xtend.profiler,org.apache.commons.logging,org.apache.log4j,com.ibm.icu,org.antlr.runtime,org.eclipse.core.runtime,org.eclipse.emf.ecore.xmi,org.eclipse.jface.text,org.eclipse.xtend,org.eclipse.xtend.typesystem.emf,org.eclipse.xtend.backend,org.eclipse.xtend.middleend.xpand,org.eclipse.xtend.middleend.xtend,org.eclipse.xtend.util.stdlib,org.eclipse.emf.mwe.activities,org.eclipse.xpand"; //$NON-NLS-1$
 	private static String REQUIRED_EXECUTION_ENVIRONMENT = "J2SE-1.5"; //$NON-NLS-1$
 
-	public ConvertToBSWPlatformProjectJob(String name, IProject project) {
+	public ConvertToXtendXpandEnableAutosarProjectJob(String name, IProject project) {
 		super(name);
 		setPriority(Job.BUILD);
 		setRule(ResourcesPlugin.getWorkspace().getRoot());

@@ -15,7 +15,7 @@
 package org.artop.ecuc.gautosar.codegen.xpand.ui.actions;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToBSWPlatformProjectJob;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToXtendXpandEnableAutosarProjectJob;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IStatus;
@@ -28,7 +28,7 @@ import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate {
+public class ConvertToXtendXpandEnableAutosarProjectAction implements IObjectActionDelegate {
 
 	protected ISelection selection;
 
@@ -61,7 +61,7 @@ public class ConvertToBSWPlatformProjectAction implements IObjectActionDelegate 
 			Object selected = structuredSelection.getFirstElement();
 			if (selected instanceof IProject) {
 				final IProject project = (IProject) selected;
-				ConvertToBSWPlatformProjectJob job = new ConvertToBSWPlatformProjectJob(Messages.job_convertToBSWPlatformProject, project);
+				ConvertToXtendXpandEnableAutosarProjectJob job = new ConvertToXtendXpandEnableAutosarProjectJob(Messages.job_convertToXtendXpandEnableAutosarProject, project);
 
 				// Add ECU Configuration specific outlets after conversion
 				job.addJobChangeListener(new JobChangeAdapter() {

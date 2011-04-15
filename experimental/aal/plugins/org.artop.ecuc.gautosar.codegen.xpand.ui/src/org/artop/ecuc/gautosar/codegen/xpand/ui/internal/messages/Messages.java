@@ -34,7 +34,7 @@ public class Messages extends NLS {
 	public static String BSWPlatformProjectWizzardFirstPageDescription;
 	public static String BSWPlatformProjectWizzardReferencePageTitle;
 	public static String BSWPlatformProjectWizzardReferencePageDescription;
-	public static String job_convertToBSWPlatformProject;
+	public static String job_convertToXtendXpandEnableAutosarProject;
 	public static String job_ImportEcucParamDef;
 	public static String job_creatingAutosarProject;
 

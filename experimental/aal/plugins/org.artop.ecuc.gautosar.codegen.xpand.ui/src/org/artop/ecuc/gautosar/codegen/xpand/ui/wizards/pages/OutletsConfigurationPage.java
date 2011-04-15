@@ -162,6 +162,10 @@ public class OutletsConfigurationPage extends AbstractWizardPage {
 		return outletProvider != null ? outletProvider.getOutlets() : Collections.<ExtendedOutlet> emptyList();
 	}
 
+	protected OutletsPreference getOutletsPreference() {
+		return outletsPreference;
+	}
+
 	@Override
 	protected String doGetDescription() throws MissingResourceException {
 		return "Configure the outlets";
