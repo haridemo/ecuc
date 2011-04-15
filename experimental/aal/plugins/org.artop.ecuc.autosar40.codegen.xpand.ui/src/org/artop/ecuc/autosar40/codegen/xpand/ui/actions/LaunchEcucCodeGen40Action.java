@@ -17,7 +17,6 @@ package org.artop.ecuc.autosar40.codegen.xpand.ui.actions;
 import gautosar.gecucdescription.GModuleConfiguration;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.artop.ecuc.autosar40.codegen.xpand.ui.internal.messages.Messages;
@@ -31,9 +30,6 @@ import org.eclipse.sphinx.emf.model.IModelDescriptor;
 import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
-import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
-import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
-import org.eclipse.sphinx.xpand.jobs.XpandJob;
 
 import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucModuleConfigurationValuesRefConditional;
@@ -108,29 +104,5 @@ public class LaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 	protected void clearCache() {
 		ecucModulesConfigurationValues.clear();
 		super.clearCache();
-	}
-
-	@Override
-	protected Collection<XpandEvaluationRequest> getXpandEvaluationRequests() {
-		List<XpandEvaluationRequest> requests = new ArrayList<XpandEvaluationRequest>();
-		for (GModuleConfiguration moduleConf : ecucModulesConfigurationValues) {
-			IFile templateFile = getTemplateFile(moduleConf);
-			if (templateFile != null && templateFile.exists()) {
-				String definitionName = getScopingResourceLoader().getQualifiedName(templateFile, getTemplateName());
-				requests.add(new XpandEvaluationRequest(definitionName, moduleConf));
-			}
-		}
-		return requests;
-	}
-
-	@Override
-	public void run() {
-		if (getDefinitionName(getSelectedModelObject()) != null) {
-			XpandJob job = createXpandJob();
-			// Show console and make sure that all system output produced during execution gets displayed there
-			ExtendedPlatformUI.showSystemConsole();
-			job.schedule();
-			return;
-		}
 	}
 }
