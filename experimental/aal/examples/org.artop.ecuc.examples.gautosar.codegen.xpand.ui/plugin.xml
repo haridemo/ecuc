@@ -69,7 +69,7 @@ Contributors:
    <page
          category="org.artop.aal.workspace.ui.preferencePages.autosar"
          class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage"
-         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferencePages.ecucCodeGen"
+         id="org.artop.ecuc.examples.gautosar.codegen.ui.preferencePages.ecucOutlets"
          name="%ecuc.examples.codegen.xpand.ui.preferencePages.ecucCodeGen">
    </page>
 </extension>
@@ -77,7 +77,7 @@ Contributors:
       point="org.eclipse.ui.propertyPages">
    <page
          class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage"
-         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.propertyPages.ecucCodeGen"
+         id="org.artop.ecuc.examples.gautosar.codegen.ui.propertyPages.ecucOutlets"
          name="%ecuc.examples.codegen.xpand.ui.propertyPages.ecucCodeGen">
       <enabledWhen>
          <adapt
