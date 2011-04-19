@@ -41,8 +41,8 @@ import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
-import org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction;
-import org.eclipse.sphinx.xpand.ui.wizards.M2TConfigurationWizard;
+import org.eclipse.sphinx.xtendxpand.ui.actions.BasicM2TAction;
+import org.eclipse.sphinx.xtendxpand.ui.wizards.M2TConfigurationWizard;
 import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xtend.typesystem.MetaModel;
 
