@@ -26,6 +26,26 @@ Contributors:
 	        <instanceof value="gautosar.gecucdescription.GModuleConfiguration" />
          </enablement>
       </actionProvider>
+      <actionProvider
+            class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers.EcucAutoConfigureActionProvider"
+            id="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucAutoConfigureActionProvider">
+         <enablement>
+            <or>
+               <instanceof
+                     value="gautosar.gecucdescription.GModuleConfiguration">
+               </instanceof>
+               <instanceof
+                     value="gautosar.gecucdescription.GContainer">
+               </instanceof>
+               <instanceof
+                     value="gautosar.gecucdescription.GParameterValue">
+               </instanceof>
+               <instanceof
+                     value="gautosar.gecucdescription.GConfigReferenceValue">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
    </extension>
    <extension
          point="org.eclipse.ui.decorators">
