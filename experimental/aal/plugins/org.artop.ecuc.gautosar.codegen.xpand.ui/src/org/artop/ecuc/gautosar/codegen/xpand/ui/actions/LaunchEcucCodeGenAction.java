@@ -18,7 +18,7 @@ import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucparameterdef.GModuleDef;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -37,13 +37,13 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
 import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.mwe.IXtendXpandConstants;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.actions.BasicM2TAction;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.M2TConfigurationWizard;
-import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 public class LaunchEcucCodeGenAction extends BasicM2TAction {
@@ -139,7 +139,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	public void run() {
 		M2TConfigurationWizard wizard = new M2TConfigurationWizard(getSelectedModelObject(), getMetaModel());
 		wizard.setM2TJobName(getM2TJobName());
-		wizard.setScopingResourceLoader(getScopingResourceLoader());
+		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
 		wizard.setOutletsPreference(getOutletsPreference());
 		wizard.setDefaultOutlet(getDefaultOutlet());
 		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
@@ -167,7 +167,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		if (modelObject instanceof GModuleConfiguration) {
 			IFile moduleDefFile = EcorePlatformUtil.getFile(((GModuleConfiguration) modelObject).gGetDefinition());
 			if (moduleDefFile != null) {
-				IPath templatePath = moduleDefFile.getFullPath().removeFileExtension().addFileExtension(XpandUtil.TEMPLATE_EXTENSION);
+				IPath templatePath = moduleDefFile.getFullPath().removeFileExtension().addFileExtension(IXtendXpandConstants.TEMPLATE_EXTENSION);
 				return ResourcesPlugin.getWorkspace().getRoot().getFile(templatePath);
 			}
 		}
@@ -179,6 +179,6 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	 */
 	@Override
 	protected OutletsPreference getOutletsPreference() {
-		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
+		return IOutletsPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 }

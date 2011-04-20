@@ -20,7 +20,7 @@ import java.util.Collection;
 import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 
-public interface IEcucCodeGenerationPreferenceConstants {
+public interface IOutletsPreferenceConstants {
 
 	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet"); //$NON-NLS-1$ //$NON-NLS-2$
 

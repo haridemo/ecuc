@@ -21,9 +21,9 @@ import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
 import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.jobs.ConvertToXtendXpandEnableAutosarProjectJob;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.OutletsConfigurationPage;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.EcucOutletsConfigurationPage;
+import org.artop.ecuc.xtend.typesystem.ui.EcucMetamodelContributor;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -35,6 +35,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xtendxpand.ui.jobs.ConvertToXtendXpandEnabledProjectJob;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
@@ -45,7 +46,7 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 
 	protected AutosarProjectWizardFirstPage mainPage;
 
-	protected OutletsConfigurationPage outletsPage;
+	protected EcucOutletsConfigurationPage outletsPage;
 
 	protected WizardNewProjectReferencePage referencePage;
 
@@ -55,7 +56,7 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 	private IConfigurationElement configElement;
 
 	protected OutletsPreference getOutletsPreference() {
-		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
+		return IOutletsPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 
 	/*
@@ -90,7 +91,7 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 
 		// Add an OutletsConfigurationPage
 		outletsPage = createOutletsConfigurationPage(
-				"basicNewProjectPage", Messages.BSWPlatformProjectWizzardFirstPageTitle, Messages.BSWPlatformProjectWizzardFirstPageDescription, "Add Xtend/Xpand/Check support", getOutletsPreference()); //$NON-NLS-1$
+				"basicNewProjectPage", Messages.BSWPlatformProjectWizzardFirstPageTitle, Messages.BSWPlatformProjectWizzardFirstPageDescription, Messages.label_addXtendXpandCheckSupportEnableButton, getOutletsPreference()); //$NON-NLS-1$
 		addPage(outletsPage);
 
 		// only add page if there are already projects in the workspace
@@ -101,9 +102,9 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 		}
 	}
 
-	protected OutletsConfigurationPage createOutletsConfigurationPage(String pageName, String pageTitle, String pageDesc, String enableText,
+	protected EcucOutletsConfigurationPage createOutletsConfigurationPage(String pageName, String pageTitle, String pageDesc, String enableText,
 			OutletsPreference outletPreference) {
-		OutletsConfigurationPage outletsPage = new OutletsConfigurationPage(pageName, enableText, outletPreference);
+		EcucOutletsConfigurationPage outletsPage = new EcucOutletsConfigurationPage(pageName, enableText, outletPreference);
 		outletsPage.setTitle(pageTitle);
 		outletsPage.setDescription(pageDesc);
 		return outletsPage;
@@ -137,8 +138,8 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 			@Override
 			public void done(IJobChangeEvent event) {
 				if (event.getResult().getSeverity() == IStatus.OK) {
-					ConvertToXtendXpandEnableAutosarProjectJob convertJob = new ConvertToXtendXpandEnableAutosarProjectJob(Messages.job_convertToXtendXpandEnableAutosarProject,
-							projectHandle);
+					ConvertToXtendXpandEnabledProjectJob convertJob = new ConvertToXtendXpandEnabledProjectJob(
+							Messages.job_convertToXtendXpandEnableAutosarProject, EcucMetamodelContributor.class, projectHandle);
 					// Commit outlets and reveal new project after creation
 					convertJob.addJobChangeListener(new JobChangeAdapter() {
 						@Override

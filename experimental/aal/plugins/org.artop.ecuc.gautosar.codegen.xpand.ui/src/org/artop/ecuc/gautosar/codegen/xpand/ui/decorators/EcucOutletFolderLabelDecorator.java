@@ -14,7 +14,7 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.decorators;
 
-import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IEcucCodeGenerationPreferenceConstants;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
 import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.decorators.BasicOutletFolderLabelDecorator;
 
@@ -22,6 +22,6 @@ public class EcucOutletFolderLabelDecorator extends BasicOutletFolderLabelDecora
 
 	@Override
 	protected OutletsPreference getOutletsPreference() {
-		return IEcucCodeGenerationPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
+		return IOutletsPreferenceConstants.ECUC_OUTLETS_PREFERENCE;
 	}
 }
