@@ -20,7 +20,7 @@ Contributors:
    <extension
          point="org.eclipse.xtend.shared.ui.metamodelContributor">
       <metamodelContributor
-            class="org.artop.ecuc.xtend.typesystem.ui.internal.EcucMetamodelContributor"
+            class="org.artop.ecuc.xtend.typesystem.ui.EcucMetamodelContributor"
             name="ECU Configuration Typesystem">
       </metamodelContributor>
    </extension>

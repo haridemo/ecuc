@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.xtend.typesystem.ui.internal;
+package org.artop.ecuc.xtend.typesystem.ui;
 
 import java.util.HashSet;
 import java.util.Set;
