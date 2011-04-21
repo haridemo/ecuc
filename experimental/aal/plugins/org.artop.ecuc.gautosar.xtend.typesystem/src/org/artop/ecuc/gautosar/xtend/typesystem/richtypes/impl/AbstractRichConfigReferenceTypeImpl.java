@@ -78,7 +78,7 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 				internalSet(target, newValue);
 			}
 		});
-		addFeature(new OperationImpl(this, "set", getTypeSystem().getVoidType(), getValueType()) { //$NON-NLS-1$
+		addFeature(new OperationImpl(this, "setValue", getTypeSystem().getVoidType(), getValueType()) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				internalSet(target, params != null && params.length == 1 ? params[0] : null);
