@@ -14,10 +14,6 @@
  */
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
-import org.artop.ecl.emf.model.IModelDescriptor;
-import org.artop.ecl.emf.model.ModelDescriptorRegistry;
-import org.artop.ecl.emf.util.EcorePlatformUtil;
-import org.artop.ecl.testutils.integration.AbstractIntegrationTestCase;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
 import org.eclipse.core.resources.IFile;
@@ -26,6 +22,10 @@ import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
+import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
+import org.eclipse.sphinx.testutils.integration.AbstractIntegrationTestCase;
 import org.eclipse.xtend.typesystem.Type;
 
 @SuppressWarnings("nls")

@@ -14,13 +14,13 @@
  */
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
-import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
-import org.artop.ecl.testutils.integration.AbstractReferenceWorkspace;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
+import org.eclipse.sphinx.testutils.integration.AbstractReferenceWorkspace;
 
 import autosar40.util.Autosar40ReleaseDescriptor;
 
