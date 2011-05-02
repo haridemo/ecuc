@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
+import gautosar.gecucdescription.GConfigReferenceValue;
 import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
@@ -124,5 +125,17 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 	@Override
 	public void addChildType(CompositeEcucRichType childType) {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Object newInstance() {
+		Object configReferenceValue = super.newInstance();
+		if (configReferenceValue != null) {
+			GIdentifiable referenceDef = getEcucTypeDef();
+			if (configReferenceValue instanceof GConfigReferenceValue && referenceDef instanceof GConfigReference) {
+				((GConfigReferenceValue) configReferenceValue).gSetDefinition(((GConfigReference) referenceDef));
+			}
+		}
+		return configReferenceValue;
 	}
 }

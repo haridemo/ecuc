@@ -17,6 +17,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GModuleDef;
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.Collections;
 import java.util.Set;
@@ -74,5 +75,18 @@ public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl imp
 	@Override
 	public void setParentType(CompositeEcucRichType parentType) {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Object newInstance() {
+		Object moduleConfiguration = super.newInstance();
+		if (moduleConfiguration != null) {
+			GIdentifiable moduleDef = getEcucTypeDef();
+			if (moduleConfiguration instanceof GModuleConfiguration && moduleDef instanceof GModuleDef) {
+				((GModuleConfiguration) moduleConfiguration).gSetShortName(((GModuleDef) moduleDef).gGetShortName());
+				((GModuleConfiguration) moduleConfiguration).gSetDefinition(((GModuleDef) moduleDef));
+			}
+		}
+		return moduleConfiguration;
 	}
 }

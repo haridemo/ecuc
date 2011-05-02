@@ -17,7 +17,6 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
 import java.util.List;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * this is only a marker interface to better support building of the type hierarchy.
@@ -37,6 +36,4 @@ public interface CompositeEcucRichType extends EcucRichType {
 	void addParentAccessorFeatures(CompositeEcucRichType parentType);
 
 	void accept(IEcucRichTypeHierarchyVisitor visitor);
-
-	EClass getEcucValueType();
 }

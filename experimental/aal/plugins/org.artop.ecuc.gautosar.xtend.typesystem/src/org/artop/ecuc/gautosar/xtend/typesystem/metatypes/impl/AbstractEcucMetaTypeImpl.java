@@ -25,6 +25,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.EcucMetaType;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.AbstractTypeImpl;
 import org.eclipse.xtend.typesystem.Feature;
@@ -112,6 +113,7 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 				return AutosarURIFactory.getAbsoluteQualifiedName(target);
 			}
 		});
+		addFeature(createSetShortNameOperation());
 	}
 
 	protected Property createShortNameFeature() {
@@ -123,6 +125,22 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 				return null;
 			}
 		};
+	}
+
+	protected OperationImpl createSetShortNameOperation() {
+		return new OperationImpl(this, "setShortName", getTypeSystem().getVoidType(), getTypeSystem().getStringType()) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				internalSetShortName(target, params != null && params.length == 1 ? params[0] : null);
+				return null;
+			}
+		};
+	}
+
+	protected void internalSetShortName(Object target, Object value) {
+		if (target instanceof GIdentifiable && value instanceof String) {
+			((GIdentifiable) target).gSetShortName((String) value);
+		}
 	}
 
 	protected List<EObject> internalEContents(EObject object) {

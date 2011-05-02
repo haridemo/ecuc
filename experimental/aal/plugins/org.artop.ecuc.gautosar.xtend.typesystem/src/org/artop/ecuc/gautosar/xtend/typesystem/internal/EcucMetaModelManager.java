@@ -22,10 +22,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
-import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
-import org.eclipse.sphinx.emf.model.IModelDescriptor;
-import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
-import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.gautosar.xtend.typesystem.IEcucMetaModelFactory;
@@ -38,10 +34,13 @@ import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 
 public class EcucMetaModelManager {
 
-	protected ResourceSetListener resourceChangedListener;
+	protected ResourceSetListener ecucTypeDefChangedListener;
 
 	/** The singleton instance of the WorkspaceEditingDomainManager. */
 	public static final EcucMetaModelManager INSTANCE = new EcucMetaModelManager();
@@ -80,7 +79,7 @@ public class EcucMetaModelManager {
 
 				// Register new ECU configuration metamodel
 				ecucMetaModels.put(modelDescriptor, metaModel);
-				addTransactionalEditingDomainListeners(WorkspaceEditingDomainUtil.getEditingDomain(modelDescriptor));
+				addTransactionalEditingDomainListeners(modelDescriptor.getEditingDomain());
 			}
 		}
 		return metaModel;
@@ -98,21 +97,21 @@ public class EcucMetaModelManager {
 	protected void addTransactionalEditingDomainListeners(TransactionalEditingDomain editingDomain) {
 		Assert.isNotNull(editingDomain);
 
-		if (resourceChangedListener == null) {
-			resourceChangedListener = createResourceChangedListener();
-			Assert.isNotNull(resourceChangedListener);
+		if (ecucTypeDefChangedListener == null) {
+			ecucTypeDefChangedListener = createEcucTypeDefChangedListener();
+			Assert.isNotNull(ecucTypeDefChangedListener);
 		}
-		editingDomain.addResourceSetListener(resourceChangedListener);
+		editingDomain.addResourceSetListener(ecucTypeDefChangedListener);
 	}
 
 	/**
-	 * Creates a ResourceSetChangedListener that invalidates ECUC metamodel each time a configuration definition
+	 * Creates a {@link ResourceSetListener} that invalidates ECUC metamodel each time a configuration definition
 	 * relevant model element is changed.
 	 */
-	protected ResourceSetListener createResourceChangedListener() {
+	protected ResourceSetListener createEcucTypeDefChangedListener() {
 		return new ResourceSetListenerImpl(NotificationFilter.createNotifierTypeFilter(GecucparameterdefPackage.eINSTANCE.getGModuleDef())
 				.or(NotificationFilter.createNotifierTypeFilter(GecucparameterdefPackage.eINSTANCE.getGContainerDef()))
-				.or(NotificationFilter.createNotifierTypeFilter(GecucparameterdefPackage.eINSTANCE.getGConfigReference()))
+				.or(NotificationFilter.createNotifierTypeFilter(GecucparameterdefPackage.eINSTANCE.getGConfigParameter()))
 				.or(NotificationFilter.createNotifierTypeFilter(GecucparameterdefPackage.eINSTANCE.getGConfigReference()))) {
 			@Override
 			public void resourceSetChanged(ResourceSetChangeEvent event) {

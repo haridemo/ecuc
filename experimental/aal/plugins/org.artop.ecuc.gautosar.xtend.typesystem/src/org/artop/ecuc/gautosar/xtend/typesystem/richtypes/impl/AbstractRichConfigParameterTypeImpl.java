@@ -16,6 +16,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucdescription.GParameterValue;
 import gautosar.gecucparameterdef.GConfigParameter;
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.Collections;
 import java.util.Set;
@@ -130,5 +131,17 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 	@Override
 	public void addChildType(CompositeEcucRichType childType) {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Object newInstance() {
+		Object parameterValue = super.newInstance();
+		if (parameterValue != null) {
+			GIdentifiable parameterDef = getEcucTypeDef();
+			if (parameterValue instanceof GParameterValue && parameterDef instanceof GConfigParameter) {
+				((GParameterValue) parameterValue).gSetDefinition(((GConfigParameter) parameterDef));
+			}
+		}
+		return parameterValue;
 	}
 }

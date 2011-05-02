@@ -32,26 +32,26 @@ public class MultiplicityAwareListTypeImpl extends ListTypeImpl implements Multi
 
 	@Override
 	public boolean isInstance(Object o) {
-		return o instanceof MultiplicityAwareList;
+		return o instanceof AbstractMultiplicityAwareFilteringEList;
 	}
 
 	@Override
 	public Feature[] getContributedFeatures() {
 		return new Feature[] { new PropertyImpl(this, "lowerMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
 					public Object get(Object target) {
-						if (target instanceof MultiplicityAwareList) {
-							MultiplicityAwareList<?> multiplicityAwareList = (MultiplicityAwareList<?>) target;
+						if (target instanceof AbstractMultiplicityAwareFilteringEList) {
+							AbstractMultiplicityAwareFilteringEList<?> multiplicityAwareList = (AbstractMultiplicityAwareFilteringEList<?>) target;
 							return multiplicityAwareList.getLowerMultiplicity();
 						}
-						return MultiplicityAwareList.NO_MULTIPLICITY;
+						return AbstractMultiplicityAwareFilteringEList.NO_MULTIPLICITY;
 					}
 				}, new PropertyImpl(this, "upperMultiplicity", getTypeSystem().getIntegerType()) { //$NON-NLS-1$
 					public Object get(Object target) {
-						if (target instanceof MultiplicityAwareList) {
-							MultiplicityAwareList<?> multiplicityAwareList = (MultiplicityAwareList<?>) target;
+						if (target instanceof AbstractMultiplicityAwareFilteringEList) {
+							AbstractMultiplicityAwareFilteringEList<?> multiplicityAwareList = (AbstractMultiplicityAwareFilteringEList<?>) target;
 							return multiplicityAwareList.getUpperMultiplicity();
 						}
-						return MultiplicityAwareList.NO_MULTIPLICITY;
+						return AbstractMultiplicityAwareFilteringEList.NO_MULTIPLICITY;
 					}
 				} };
 	}

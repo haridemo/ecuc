@@ -14,30 +14,23 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
-public class MultiplicityAwareList<E> extends ArrayList<E> {
+public abstract class AbstractMultiplicityAwareFilteringEList<E> extends AbstractFilteringEList<E> {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final int MULTIPLICITY_INFINITE = -1;
 	public static final int NO_MULTIPLICITY = -2;
 	public static final int DEFAULT_LOWER_MULTIPLICITY = 1;
 	public static final int DEFAULT_UPPER_MULTIPLICITY = 1;
-	private static final long serialVersionUID = -8254228878120340483L;
 
 	private int lowerMultiplicity = NO_MULTIPLICITY;
 	private int upperMultiplicity = NO_MULTIPLICITY;
 
-	public MultiplicityAwareList() {
-		super();
-	}
-
-	public MultiplicityAwareList(Collection<? extends E> c) {
-		super(c);
-	}
-
-	public MultiplicityAwareList(int initialCapacity) {
-		super(initialCapacity);
+	public AbstractMultiplicityAwareFilteringEList(EObject targetOwner, EStructuralFeature targetFeature) {
+		super(targetOwner, targetFeature);
 	}
 
 	public int getLowerMultiplicity() {
@@ -55,5 +48,4 @@ public class MultiplicityAwareList<E> extends ArrayList<E> {
 	public void setUpperMultiplicity(int upperMultiplicity) {
 		this.upperMultiplicity = upperMultiplicity;
 	}
-
 }

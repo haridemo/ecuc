@@ -16,9 +16,12 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
+import org.artop.aal.gautosar.services.DefaultMetaModelServiceProvider;
+import org.artop.aal.gautosar.services.factories.IGAutosarFactoryService;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.AbstractEcucMetaTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
 
 public abstract class AbstractEcucRichTypeImpl extends AbstractEcucMetaTypeImpl implements EcucRichType {
 
@@ -43,5 +46,25 @@ public abstract class AbstractEcucRichTypeImpl extends AbstractEcucMetaTypeImpl 
 
 	public GIdentifiable getEcucTypeDef() {
 		return ecucTypeDef;
+	}
+
+	@Override
+	public Object newInstance() {
+		IGAutosarFactoryService factory = getAutosarFactoryService();
+		if (factory != null) {
+			return factory.create(getEcucValueType());
+		}
+		return null;
+	}
+
+	protected IGAutosarFactoryService getAutosarFactoryService() {
+		EcucContext context = getContext();
+		if (context != null) {
+			IModelDescriptor modelDescriptor = context.getModuleDefModelDescriptor();
+			if (modelDescriptor != null) {
+				return new DefaultMetaModelServiceProvider().getService(modelDescriptor.getMetaModelDescriptor(), IGAutosarFactoryService.class);
+			}
+		}
+		return null;
 	}
 }

@@ -17,6 +17,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 import gautosar.gecucdescription.GConfigReferenceValue;
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucparameterdef.GContainerDef;
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -93,5 +94,18 @@ public abstract class AbstractRichContainerDefTypeImpl extends AbstractComposite
 
 		super.accept(visitor);
 		visitor.visit(this);
+	}
+
+	@Override
+	public Object newInstance() {
+		Object container = super.newInstance();
+		if (container != null) {
+			GIdentifiable containerDef = getEcucTypeDef();
+			if (container instanceof GContainer && containerDef instanceof GContainerDef) {
+				((GContainer) container).gSetShortName(((GContainerDef) containerDef).gGetShortName());
+				((GContainer) container).gSetDefinition((GContainerDef) containerDef);
+			}
+		}
+		return container;
 	}
 }
