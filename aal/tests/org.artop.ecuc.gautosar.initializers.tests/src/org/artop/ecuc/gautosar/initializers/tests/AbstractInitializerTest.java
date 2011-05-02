@@ -24,17 +24,12 @@ import gautosar.gecucdescription.GParameterValue;
 import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GModuleDef;
-
-import org.artop.aal.autosar3x.services.builder.internal.Autosar3xBuilderFragmentProvider;
-import org.artop.aal.autosar40.services.builder.internal.Autosar40BuilderFragmentProvider;
 import org.artop.aal.gautosar.services.IMetaModelServiceProvider;
-import org.artop.aal.gautosar.services.StandaloneMetamodelServiceProvider;
 import org.artop.aal.gautosar.services.builder.GResourceSetBuilder;
 import org.artop.aal.gautosar.services.builder.ecucparameterdef.GContainerBuilder;
 import org.artop.aal.gautosar.services.builder.ecucparameterdef.GModuleDefBuilder;
 import org.artop.aal.gautosar.services.builder.ecucparameterdef.GParameterBuilder;
 import org.artop.aal.gautosar.services.builder.gst.GArPackageBuilder;
-import org.artop.aal.gautosar.services.builder.internal.IGBuilderFragmentProvider;
 import org.artop.aal.gautosar.services.util.EObjects;
 import org.artop.ecuc.gautosar.initializers.IConfigurationGeneration;
 import org.eclipse.emf.ecore.EObject;
@@ -46,9 +41,6 @@ import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.internal.matchers.TypeSafeMatcher;
-
-import autosar3x.util.Autosar3xReleaseDescriptor;
-import autosar40.util.Autosar40ReleaseDescriptor;
 
 @SuppressWarnings("restriction")
 public abstract class AbstractInitializerTest {
@@ -153,17 +145,6 @@ public abstract class AbstractInitializerTest {
 				targetPackage.get());
 	}
 
-	private IMetaModelServiceProvider standaloneServiceProvider() {
-		StandaloneMetamodelServiceProvider result = new StandaloneMetamodelServiceProvider();
-		result.register(Autosar3xReleaseDescriptor.INSTANCE,
-				IGBuilderFragmentProvider.class,
-				new Autosar3xBuilderFragmentProvider());
-		result.register(Autosar40ReleaseDescriptor.INSTANCE,
-				IGBuilderFragmentProvider.class,
-				new Autosar40BuilderFragmentProvider());
-		return result;
-	}
-
 	private void attachEditingDomain(GResourceSetBuilder resourceSet) {
 		TransactionalEditingDomain.Factory.INSTANCE
 				.createEditingDomain(resourceSet.get());
@@ -174,6 +155,8 @@ public abstract class AbstractInitializerTest {
 	protected abstract IConfigurationGeneration createFixture();
 
 	protected abstract Resource.Factory createResourceFactory();
+	
+	protected abstract IMetaModelServiceProvider standaloneServiceProvider();
 
 	@Test
 	public void shouldInstantiateModuleDef() throws Exception {
