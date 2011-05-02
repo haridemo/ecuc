@@ -29,13 +29,11 @@ public class EcucOutletsConfigurationPage extends OutletsConfigurationPage {
 
 	@Override
 	protected void createOutletsGroupContent(Composite parent) {
-		super.createOutletsGroupContent(parent);
+		outletProvider = new OutletProvider(getOutletsPreference());
 		for (ExtendedOutlet outlet : IOutletsPreferenceConstants.ECUC_OUTLETS) {
-			OutletProvider outletProvider = getOutletProvider();
-			if (outletProvider != null) {
-				outletProvider.addOutlet(outlet);
-			}
+			outletProvider.addOutlet(outlet);
 		}
+		super.createOutletsGroupContent(parent);
 	};
 
 	@Override
