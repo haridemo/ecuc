@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.autosar40.initializers.tests;singleton:=true
+Bundle-Version: 3.1.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.junit,
+ org.artop.ecuc.gautosar.initializers.tests,
+ org.artop.aal.autosar40,
+ org.artop.aal.autosar40.services,
+ org.artop.ecuc.autosar40.initializers
+Export-Package: org.artop.ecuc.autosar40.initializers.tests
+Bundle-Activator: org.artop.ecuc.autosar40.initializers.tests.internal.Activator$Implementation
