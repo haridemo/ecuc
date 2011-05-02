@@ -36,6 +36,7 @@ import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.eclipse.sphinx.emf.mwe.resources.BasicWorkspaceResourceLoader;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
+import org.eclipse.sphinx.platform.cli.AbstractCLIApplication;
 import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
 import org.eclipse.sphinx.xpand.jobs.XpandJob;
 import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
@@ -132,7 +133,7 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 		ExtendedOutlet outlet = getOutlet(project, outputFolderPath);
 
 		XpandJob job = new XpandJob("Generating ECUC code", metaModel, evaluationRequest);
-		job.setScopingResourceLoader(resourceLoader);
+		job.setWorkspaceResourceLoader(resourceLoader);
 		job.getOutlets().add(outlet);
 
 		IStatus status = job.runInWorkspace(new NullProgressMonitor());
