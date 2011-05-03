@@ -17,7 +17,7 @@ package org.artop.ecuc.examples.gautosar.codegen.xpand.ui.internal;
 import org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.sphinx.platform.ui.preferences.IPropertyPageIdProvider;
-import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 
 public class OutletsPreferenceAdapterFactory implements IAdapterFactory {
 
