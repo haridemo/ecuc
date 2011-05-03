@@ -34,7 +34,7 @@ import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
-import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.jobs.ConvertToXtendXpandEnabledProjectJob;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;

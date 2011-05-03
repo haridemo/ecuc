@@ -24,7 +24,7 @@ import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.jobs.ConvertToXtendXpandEnabledProjectJob;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;

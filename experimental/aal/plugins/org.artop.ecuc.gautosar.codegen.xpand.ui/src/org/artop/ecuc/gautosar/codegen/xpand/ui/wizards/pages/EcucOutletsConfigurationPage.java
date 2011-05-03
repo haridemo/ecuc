@@ -15,11 +15,10 @@
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
-import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
-import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xtendxpand.outlet.ExtendedOutlet;
+import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.outlet.providers.OutletProvider;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.pages.OutletsConfigurationPage;
-import org.eclipse.swt.widgets.Composite;
 
 public class EcucOutletsConfigurationPage extends OutletsConfigurationPage {
 
@@ -28,13 +27,13 @@ public class EcucOutletsConfigurationPage extends OutletsConfigurationPage {
 	}
 
 	@Override
-	protected void createOutletsGroupContent(Composite parent) {
-		outletProvider = new OutletProvider(getOutletsPreference());
+	protected OutletProvider createOutletProvider() {
+		OutletProvider outletProvider = new OutletProvider(getOutletsPreference());
 		for (ExtendedOutlet outlet : IOutletsPreferenceConstants.ECUC_OUTLETS) {
 			outletProvider.addOutlet(outlet);
 		}
-		super.createOutletsGroupContent(parent);
-	};
+		return outletProvider;
+	}
 
 	@Override
 	protected void restoreDefaults() {

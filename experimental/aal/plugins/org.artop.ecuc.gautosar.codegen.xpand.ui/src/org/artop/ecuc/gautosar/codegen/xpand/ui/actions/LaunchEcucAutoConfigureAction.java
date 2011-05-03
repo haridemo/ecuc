@@ -14,6 +14,9 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.actions;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
@@ -41,7 +44,7 @@ public class LaunchEcucAutoConfigureAction extends BasicM2MAction {
 	 */
 	@Override
 	public void run() {
-		M2MConfigurationWizard wizard = new M2MConfigurationWizard(getSelectedModelObject(), getMetaModel());
+		M2MConfigurationWizard wizard = new M2MConfigurationWizard(getSelectedModelObject(), getMetaModels());
 		wizard.setM2MJobName(getM2MJobName());
 		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
 		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
@@ -49,14 +52,16 @@ public class LaunchEcucAutoConfigureAction extends BasicM2MAction {
 	}
 
 	/*
-	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2MAction#getMetaModel()
+	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2MAction#getMetaModels()
 	 */
 	@Override
-	protected MetaModel getMetaModel() {
+	protected Collection<MetaModel> getMetaModels() {
+		Collection<MetaModel> metaModels = new HashSet<MetaModel>();
 		IFile selectedModelObjectFile = EcorePlatformUtil.getFile(getSelectedModelObject());
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(selectedModelObjectFile);
 		if (moduleDefModelDescriptor != null) {
-			return (MetaModel) moduleDefModelDescriptor.getAdapter(EcucMetaModel.class);
+			metaModels.add((MetaModel) moduleDefModelDescriptor.getAdapter(EcucMetaModel.class));
+			return metaModels;
 		}
 		return null;
 	}

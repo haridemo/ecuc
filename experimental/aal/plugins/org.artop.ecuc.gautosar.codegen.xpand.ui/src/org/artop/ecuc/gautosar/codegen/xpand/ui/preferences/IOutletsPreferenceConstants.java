@@ -17,8 +17,8 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.preferences;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
-import org.eclipse.sphinx.xpand.preferences.OutletsPreference;
+import org.eclipse.sphinx.xtendxpand.outlet.ExtendedOutlet;
+import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 
 public interface IOutletsPreferenceConstants {
 
