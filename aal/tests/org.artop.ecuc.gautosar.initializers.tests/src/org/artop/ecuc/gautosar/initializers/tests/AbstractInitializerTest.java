@@ -17,13 +17,14 @@ import static org.artop.aal.gautosar.services.builder.ecucparameterdef.GParamCon
 import static org.artop.aal.gautosar.services.builder.ecucparameterdef.GStringParamDefBuilder.string;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import junit.framework.Assert;
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucdescription.GParameterValue;
 import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GModuleDef;
+import junit.framework.Assert;
+
 import org.artop.aal.gautosar.services.IMetaModelServiceProvider;
 import org.artop.aal.gautosar.services.builder.GResourceSetBuilder;
 import org.artop.aal.gautosar.services.builder.ecucparameterdef.GContainerBuilder;
@@ -45,8 +46,7 @@ import org.junit.internal.matchers.TypeSafeMatcher;
 @SuppressWarnings("restriction")
 public abstract class AbstractInitializerTest {
 
-	private final class ParameterValueMatcher extends
-			TypeSafeMatcher<GParameterValue> {
+	private final class ParameterValueMatcher extends TypeSafeMatcher<GParameterValue> {
 		private final GConfigParameter parameterDef;
 
 		private ParameterValueMatcher(GConfigParameter parameterDef) {
@@ -54,8 +54,8 @@ public abstract class AbstractInitializerTest {
 		}
 
 		public void describeTo(Description description) {
-			description.appendText("value of " + parameterDef.gGetShortName()
-					+ " (" + value(parameterDef) + ")");
+			description.appendText("value of " + parameterDef.gGetShortName() //$NON-NLS-1$
+					+ " (" + value(parameterDef) + ")"); //$NON-NLS-1$//$NON-NLS-2$
 		}
 
 		@Override
@@ -66,15 +66,14 @@ public abstract class AbstractInitializerTest {
 			Object defaultValue = value(parameterDef);
 			Object actualValue = value(item);
 			if (!defaultValue.equals(actualValue)) {
-				System.out.println(defaultValue + " != " + actualValue);
+				System.out.println(defaultValue + " != " + actualValue); //$NON-NLS-1$
 				return false;
 			}
 			return true;
 		}
 	}
 
-	private final class ContainerValueMatcher extends
-			TypeSafeMatcher<GContainer> {
+	private final class ContainerValueMatcher extends TypeSafeMatcher<GContainer> {
 		private final GContainerDef containerDef;
 
 		private ContainerValueMatcher(GContainerDef containerDef) {
@@ -82,7 +81,7 @@ public abstract class AbstractInitializerTest {
 		}
 
 		public void describeTo(Description description) {
-			description.appendText("value of " + containerDef.gGetShortName());
+			description.appendText("value of " + containerDef.gGetShortName()); //$NON-NLS-1$
 		}
 
 		@Override
@@ -94,8 +93,7 @@ public abstract class AbstractInitializerTest {
 		}
 	}
 
-	private final class ModuleConfigurationMatcher extends
-			TypeSafeMatcher<GModuleConfiguration> {
+	private final class ModuleConfigurationMatcher extends TypeSafeMatcher<GModuleConfiguration> {
 		private final GModuleDef moduleDef;
 
 		private ModuleConfigurationMatcher(GModuleDef moduleDef) {
@@ -103,7 +101,7 @@ public abstract class AbstractInitializerTest {
 		}
 
 		public void describeTo(Description description) {
-			description.appendText("value of " + moduleDef.gGetShortName());
+			description.appendText("value of " + moduleDef.gGetShortName()); //$NON-NLS-1$
 		}
 
 		@Override
@@ -111,8 +109,7 @@ public abstract class AbstractInitializerTest {
 			if (!moduleDef.equals(moduleConfiguration.gGetDefinition())) {
 				return false;
 			}
-			if (!moduleDef.gGetShortName().equals(
-					moduleConfiguration.gGetShortName())) {
+			if (!moduleDef.gGetShortName().equals(moduleConfiguration.gGetShortName())) {
 				return false;
 			}
 			return true;
@@ -127,27 +124,23 @@ public abstract class AbstractInitializerTest {
 	}
 
 	protected GModuleConfiguration initialize(GModuleDefBuilder source) {
-		GArPackageBuilder sourcePackage = arPackage("sourcePackage").with(
+		GArPackageBuilder sourcePackage = arPackage("sourcePackage").with( //$NON-NLS-1$
 				source);
-		GArPackageBuilder targetPackage = arPackage("targetPackage");
+		GArPackageBuilder targetPackage = arPackage("targetPackage"); //$NON-NLS-1$
 
-		GResourceSetBuilder resourceSet = resourceSet(resource("Source.arxml")
-				.content(autosar(sourcePackage)), resource("Target.arxml")
-				.content(autosar(targetPackage)));
+		GResourceSetBuilder resourceSet = resourceSet(resource("Source.arxml") //$NON-NLS-1$
+				.content(autosar(sourcePackage)), resource("Target.arxml").content(autosar(targetPackage))); //$NON-NLS-1$
 
-		make(autosarRelease()).with(standaloneServiceProvider()).from(
-				resourceSet);
+		make(autosarRelease()).with(standaloneServiceProvider()).from(resourceSet);
 
 		// FIXME remove editing domain
 		attachEditingDomain(resourceSet);
 
-		return fixture.generateECUConfiguration(source.get(),
-				targetPackage.get());
+		return fixture.generateECUConfiguration(source.get(), targetPackage.get());
 	}
 
 	private void attachEditingDomain(GResourceSetBuilder resourceSet) {
-		TransactionalEditingDomain.Factory.INSTANCE
-				.createEditingDomain(resourceSet.get());
+		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet.get());
 	}
 
 	protected abstract IMetaModelDescriptor autosarRelease();
@@ -155,45 +148,36 @@ public abstract class AbstractInitializerTest {
 	protected abstract IConfigurationGeneration createFixture();
 
 	protected abstract Resource.Factory createResourceFactory();
-	
+
 	protected abstract IMetaModelServiceProvider standaloneServiceProvider();
 
 	@Test
 	public void shouldInstantiateModuleDef() throws Exception {
-		GModuleDefBuilder module = moduleDef("MyModule");
+		GModuleDefBuilder module = moduleDef("MyModule"); //$NON-NLS-1$
 		assertThat(initialize(module), is(valueOf(module)));
 	}
 
 	@Test
 	public void shouldInstantiateContainerDef() throws Exception {
-		GContainerBuilder<?> paramContainer = paramContainer("MyContainer1");
-		GContainerBuilder<?> choiceContainer = choice("MyContainer2")
-				.lowerLimit(2).upperLimit(2);
+		GContainerBuilder<?> paramContainer = paramContainer("MyContainer1"); //$NON-NLS-1$
+		GContainerBuilder<?> choiceContainer = choice("MyContainer2").lowerLimit(2).upperLimit(2); //$NON-NLS-1$
 
-		GModuleDefBuilder module = moduleDef("MyModule").with(paramContainer,
-				choiceContainer);
+		GModuleDefBuilder module = moduleDef("MyModule").with(paramContainer, choiceContainer); //$NON-NLS-1$
 
 		GModuleConfiguration moduleConfiguration = initialize(module);
-		assertThat(subContainer(moduleConfiguration, 0),
-				is(valueOf(paramContainer)));
-		assertThat(subContainer(moduleConfiguration, 1),
-				is(valueOf(choiceContainer)));
-		assertThat(subContainer(moduleConfiguration, 2),
-				is(valueOf(choiceContainer)));
+		assertThat(subContainer(moduleConfiguration, 0), is(valueOf(paramContainer)));
+		assertThat(subContainer(moduleConfiguration, 1), is(valueOf(choiceContainer)));
+		assertThat(subContainer(moduleConfiguration, 2), is(valueOf(choiceContainer)));
 	}
 
 	@Test
 	public void shouldInstantiateParamsWithDefaultValues() throws Exception {
-		GParameterBuilder[] params = { boolParam("param1").value(true),
-				intParam("param2").value(42),
-				enumParam("param3").value("aaaa"),
-				floatParam("param4").value(1.1),
-				functionName("param5").value("myFunct"),
-				linkerSymbol("param6").value("bbbb"),
-				string("param7").value("cccc") };
+		GParameterBuilder[] params = { boolParam("param1").value(true), intParam("param2").value(42), //$NON-NLS-1$ //$NON-NLS-2$
+				enumParam("param3").value("aaaa"), //$NON-NLS-1$//$NON-NLS-2$
+				floatParam("param4").value(1.1), functionName("param5").value("myFunct"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				linkerSymbol("param6").value("bbbb"), string("param7").value("cccc") }; //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$ //$NON-NLS-4$
 
-		GModuleDefBuilder module = moduleDef("MyModule").with(
-				paramContainer("MyContainer1").params(params));
+		GModuleDefBuilder module = moduleDef("MyModule").with(paramContainer("MyContainer1").params(params)); //$NON-NLS-1$//$NON-NLS-2$
 
 		GModuleConfiguration moduleConfiguration = initialize(module);
 		GContainer myContainer = subContainer(moduleConfiguration, 0);
@@ -207,20 +191,16 @@ public abstract class AbstractInitializerTest {
 
 	@Test
 	public void shouldInstantiateSubContainers() throws Exception {
-		GContainerBuilder<?>[] subContainers = { choice("container1"),
-				paramContainer("container2") };
+		GContainerBuilder<?>[] subContainers = { choice("container1"), paramContainer("container2") }; //$NON-NLS-1$//$NON-NLS-2$
 
-		GModuleDefBuilder module = moduleDef("MyModule").with(
-				paramContainer("MyContainer1").subContainer(subContainers));
+		GModuleDefBuilder module = moduleDef("MyModule").with(paramContainer("MyContainer1").subContainer(subContainers)); //$NON-NLS-1$ //$NON-NLS-2$
 
 		GModuleConfiguration moduleConfiguration = initialize(module);
 		GContainer myContainer = subContainer(moduleConfiguration, 0);
 
-		assertThat(myContainer.gGetSubContainers().size(),
-				is(subContainers.length));
+		assertThat(myContainer.gGetSubContainers().size(), is(subContainers.length));
 		for (int i = 0; i < subContainers.length; i++) {
-			assertThat(subContainer(myContainer, i),
-					is(valueOf(subContainers[i])));
+			assertThat(subContainer(myContainer, i), is(valueOf(subContainers[i])));
 		}
 	}
 
@@ -231,12 +211,12 @@ public abstract class AbstractInitializerTest {
 	private String value(EObject item) {
 		Object value = null;
 		try {
-			value = EObjects.get(item, "value");
+			value = EObjects.get(item, "value"); //$NON-NLS-1$
 		} catch (IllegalArgumentException e) {
 			try {
-				value = EObjects.get(item, "defaultValue");
+				value = EObjects.get(item, "defaultValue"); //$NON-NLS-1$
 			} catch (IllegalArgumentException ex) {
-				Assert.fail("Unknown value feature for " + item);
+				Assert.fail("Unknown value feature for " + item); //$NON-NLS-1$
 			}
 		}
 		return String.valueOf(value);
@@ -246,8 +226,7 @@ public abstract class AbstractInitializerTest {
 		return myContainer.gGetParameterValues().get(i);
 	}
 
-	private GContainer subContainer(GModuleConfiguration moduleConfiguration,
-			int i) {
+	private GContainer subContainer(GModuleConfiguration moduleConfiguration, int i) {
 		return moduleConfiguration.gGetContainers().get(i);
 	}
 
