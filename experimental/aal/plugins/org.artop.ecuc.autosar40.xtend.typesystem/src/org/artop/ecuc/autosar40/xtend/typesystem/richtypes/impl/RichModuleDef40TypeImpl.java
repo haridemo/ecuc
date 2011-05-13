@@ -21,6 +21,33 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 	@Override
 	protected void addBaseFeatures() {
 		super.addBaseFeatures();
+
+		addFeature(new PropertyImpl(this, "vendorId", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation bswImplementation = ecucModuleConfigurationValues.getModuleDescription();
+					if (bswImplementation != null) {
+						bswImplementation.getVendorId();
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+		});
+
+		addFeature(new PropertyImpl(this, "vendorApiInfix", getTypeSystem().getStringType()) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof EcucModuleConfigurationValues) {
+					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+					BswImplementation bswImplementation = ecucModuleConfigurationValues.getModuleDescription();
+					if (bswImplementation != null) {
+						bswImplementation.getVendorApiInfix();
+					}
+				}
+				return ""; //$NON-NLS-1$
+			}
+		});
+
 		addFeature(new PropertyImpl(this, "swVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
@@ -32,8 +59,8 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
+
 		addFeature(new PropertyImpl(this, "swMajorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
@@ -51,8 +78,8 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
+
 		addFeature(new PropertyImpl(this, "swMinorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
@@ -70,8 +97,8 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
+
 		addFeature(new PropertyImpl(this, "swPatchVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
@@ -89,7 +116,6 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
 
 		addFeature(new PropertyImpl(this, "arReleaseVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
@@ -104,15 +130,16 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				return ""; //$NON-NLS-1$
 			}
 		});
+
 		addFeature(new PropertyImpl(this, "arReleaseMajorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
 					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
 					if (moduleDescription != null) {
-						String ArReleaseVersion = moduleDescription.getArReleaseVersion();
-						if (ArReleaseVersion != null && ArReleaseVersion.length() > 0) {
-							String[] split = ArReleaseVersion.split("\\."); //$NON-NLS-1$
+						String arReleaseVersion = moduleDescription.getArReleaseVersion();
+						if (arReleaseVersion != null && arReleaseVersion.length() > 0) {
+							String[] split = arReleaseVersion.split("\\."); //$NON-NLS-1$
 							if (split.length > 0) {
 								return split[0].trim();
 							}
@@ -121,17 +148,17 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
+
 		addFeature(new PropertyImpl(this, "arReleaseMinorVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
 					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
 					if (moduleDescription != null) {
-						String ArReleaseVersion = moduleDescription.getArReleaseVersion();
-						if (ArReleaseVersion != null && ArReleaseVersion.length() > 0) {
-							String[] split = ArReleaseVersion.split("\\."); //$NON-NLS-1$
+						String arReleaseVersion = moduleDescription.getArReleaseVersion();
+						if (arReleaseVersion != null && arReleaseVersion.length() > 0) {
+							String[] split = arReleaseVersion.split("\\."); //$NON-NLS-1$
 							if (split.length > 1) {
 								return split[1];
 							}
@@ -140,17 +167,17 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
+
 		addFeature(new PropertyImpl(this, "arReleasePatchVersion", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof EcucModuleConfigurationValues) {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
 					BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
 					if (moduleDescription != null) {
-						String ArReleaseVersion = moduleDescription.getArReleaseVersion();
-						if (ArReleaseVersion != null && ArReleaseVersion.length() > 0) {
-							String[] split = ArReleaseVersion.split("\\."); //$NON-NLS-1$
+						String arReleaseVersion = moduleDescription.getArReleaseVersion();
+						if (arReleaseVersion != null && arReleaseVersion.length() > 0) {
+							String[] split = arReleaseVersion.split("\\."); //$NON-NLS-1$
 							if (split.length > 2) {
 								return split[2];
 							}
@@ -159,7 +186,6 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				}
 				return ""; //$NON-NLS-1$
 			}
-
 		});
 
 		addFeature(new OperationImpl(this, "isPreCompile", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
@@ -177,6 +203,7 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				return false;
 			}
 		});
+
 		addFeature(new OperationImpl(this, "isLinkTime", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
@@ -192,6 +219,7 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				return false;
 			}
 		});
+
 		addFeature(new OperationImpl(this, "isPostBuild", getTypeSystem().getBooleanType(), new Type[0]) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
@@ -207,6 +235,5 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				return false;
 			}
 		});
-
 	}
 }
