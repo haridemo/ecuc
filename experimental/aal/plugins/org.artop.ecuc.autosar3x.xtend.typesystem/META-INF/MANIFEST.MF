@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.autosar3x.xtend.typesystem;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Activator: org.artop.ecuc.autosar3x.xtend.typesystem.internal.Activator$Implementation
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.common,
+ org.eclipse.emf.common.ui,
+ org.artop.ecuc.gautosar.xtend.typesystem,
+ org.artop.aal.autosar3x
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.artop.ecuc.autosar3x.xtend.typesystem.internal;x-internal:=true
+Bundle-Localization: plugin
