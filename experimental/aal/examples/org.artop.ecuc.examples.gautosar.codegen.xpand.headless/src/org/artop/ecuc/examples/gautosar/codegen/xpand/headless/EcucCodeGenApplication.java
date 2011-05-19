@@ -121,7 +121,7 @@ public class EcucCodeGenApplication extends AbstractCLIApplication {
 		// Unload project
 		ModelLoadManager.INSTANCE.unloadProject(project, true, AutosarReleaseDescriptor.INSTANCE, false, null);
 
-		return NO_ERROR;
+		return ERROR_NO;
 	}
 
 	protected void generate(IProject project, String moduleName, String templateName, String outputFolderPath) throws Throwable {
