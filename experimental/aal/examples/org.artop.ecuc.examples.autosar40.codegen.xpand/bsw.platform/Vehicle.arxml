@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AUTOSAR xmlns="http://autosar.org/schema/r4.0"><AR-PACKAGES>
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-1.xsd"><AR-PACKAGES>
     <AR-PACKAGE>
       <SHORT-NAME>EPD</SHORT-NAME>
       <ELEMENTS>
@@ -163,6 +163,13 @@
                   <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
                   <UPPER-MULTIPLICITY SHORT-LABEL="Upper">1</UPPER-MULTIPLICITY>
                   <PARAMETERS>
+                    <ECUC-MULTILINE-STRING-PARAM-DEF UUID="f47ba448-9f43-49a1-a33e-7f279bd4b595">
+                      <SHORT-NAME>RevisionsReport</SHORT-NAME>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>false</UPPER-MULTIPLICITY-INFINITE>
+                      <ORIGIN></ORIGIN>
+                    </ECUC-MULTILINE-STRING-PARAM-DEF>
                     <ECUC-STRING-PARAM-DEF>
                       <SHORT-NAME>RevisionDate</SHORT-NAME>
                       <LOWER-MULTIPLICITY SHORT-LABEL="Lower">0</LOWER-MULTIPLICITY>
@@ -332,13 +339,11 @@
           <SW-VERSION>1.2.0</SW-VERSION>
           <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/BMD/Vehicle/Vehicle</BEHAVIOR-REF>
           <VENDOR-API-INFIX></VENDOR-API-INFIX>
-          <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/EPD/Vehicle</VENDOR-SPECIFIC-MODULE-DEF-REF>
         </BSW-IMPLEMENTATION>
         <BSW-IMPLEMENTATION UUID="7f3dbfbb-1c4e-460f-894e-009c715b70ee">
           <SHORT-NAME>Attributes</SHORT-NAME>
           <SW-VERSION>10.1.18a</SW-VERSION>
           <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/BMD/Attributes/Attributes</BEHAVIOR-REF>
-          <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/EPD/Attributes</VENDOR-SPECIFIC-MODULE-DEF-REF>
         </BSW-IMPLEMENTATION>
         <BSW-MODULE-DESCRIPTION UUID="fdeaa252-71ea-4fd7-bd72-1c4ad81b97a8">
           <SHORT-NAME>Vehicle</SHORT-NAME>
