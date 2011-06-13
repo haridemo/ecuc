@@ -1,14 +1,14 @@
 /**
  * <copyright>
  * 
- * Copyright (c) Geensys and others.
+ * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
  * 
  * Contributors: 
- *     Geensys - Initial API and implementation
+ *     See4sys - Initial API and implementation
  * 
  * </copyright>
  */
@@ -19,12 +19,12 @@ import java.util.Set;
 
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.aal.workspace.natures.AutosarNature;
-import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.xtend.shared.ui.core.builder.XtendXpandNature;
 import org.osgi.framework.BundleContext;
 
