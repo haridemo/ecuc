@@ -46,8 +46,8 @@ public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl imp
 		// model must be named MODULE-CONFIGURATION
 		// and must contain an REF to this definition
 		/*
-		 * <MODULE-CONFIGURATION UUID="DCE:412708e8-6c0f-6b7b-b2ad-368a38ec4552"> <SHORT-NAME>GeensysCom</SHORT-NAME>
-		 * <LONG-NAME> <L-4 L="FOR-ALL">GeensysCom</L-4> </LONG-NAME> <DEFINITION-REF
+		 * <MODULE-CONFIGURATION UUID="DCE:412708e8-6c0f-6b7b-b2ad-368a38ec4552"> <SHORT-NAME>See4sysCom</SHORT-NAME>
+		 * <LONG-NAME> <L-4 L="FOR-ALL">See4sysCom</L-4> </LONG-NAME> <DEFINITION-REF
 		 * DEST="MODULE-DEF">/ARRoot/Com</DEFINITION-REF>
 		 */
 		if (target instanceof GModuleConfiguration) {
