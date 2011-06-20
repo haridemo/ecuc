@@ -98,5 +98,15 @@ public abstract class AbstractFilteringEList<E> extends DelegatingEList<E> {
 		return delegateList().remove(index);
 	}
 
+	@Override
+	protected Object[] delegateToArray() {
+		return getFilteredEList().toArray();
+	}
+
+	@Override
+	protected <T> T[] delegateToArray(T[] array) {
+		return getFilteredEList().toArray(array);
+	}
+
 	protected abstract boolean accept(E item);
 }
