@@ -37,9 +37,9 @@ import org.eclipse.sphinx.emf.mwe.resources.BasicWorkspaceResourceLoader;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.cli.AbstractCLIApplication;
-import org.eclipse.sphinx.xpand.XpandEvaluationRequest;
-import org.eclipse.sphinx.xpand.jobs.XpandJob;
-import org.eclipse.sphinx.xpand.outlet.ExtendedOutlet;
+import org.eclipse.sphinx.xtendxpand.XpandEvaluationRequest;
+import org.eclipse.sphinx.xtendxpand.jobs.XpandJob;
+import org.eclipse.sphinx.xtendxpand.outlet.ExtendedOutlet;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 public class EcucCodeGenApplication extends AbstractCLIApplication {

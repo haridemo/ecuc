@@ -7,10 +7,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.core.resources,
- org.eclipse.sphinx.emf.workspace,
- org.eclipse.sphinx.xpand,
- org.artop.aal.common,
- org.artop.aal.gautosar,
- org.artop.ecuc.gautosar.xtend.typesystem
+Require-Bundle: org.eclipse.sphinx.emf.workspace;visibility:=reexport,
+ org.artop.aal.common;visibility:=reexport,
+ org.eclipse.sphinx.xtendxpand;visibility:=reexport,
+ org.artop.ecuc.gautosar.xtend.typesystem;visibility:=reexport
