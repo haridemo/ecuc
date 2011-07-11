@@ -30,6 +30,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -134,41 +135,49 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 		createJob.setReferencedProjects(referencedProjects);
 		createJob.getImportedAutosarLibraries().addAll(mainPage.getImportedAutosarLibraryDescriptors());
 		createJob.setUiInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
-		createJob.addJobChangeListener(new JobChangeAdapter() {
+		addCreateJobChangeListener(createJob, projectHandle);
+		createJob.schedule();
+
+		return true;
+	}
+
+	protected void addCreateJobChangeListener(Job job, final IProject projectHandle) {
+		job.addJobChangeListener(new JobChangeAdapter() {
 			@Override
 			public void done(IJobChangeEvent event) {
 				if (event.getResult().getSeverity() == IStatus.OK) {
 					ConvertToXtendXpandEnabledProjectJob convertJob = new ConvertToXtendXpandEnabledProjectJob(
 							Messages.job_convertToXtendXpandEnableAutosarProject, EcucMetamodelContributor.class, projectHandle);
-					// Commit outlets and reveal new project after creation
-					convertJob.addJobChangeListener(new JobChangeAdapter() {
-						@Override
-						public void done(IJobChangeEvent event) {
-							if (event.getResult().getSeverity() == IStatus.OK) {
-								OutletsPreference outletsPreference = getOutletsPreference();
-								if (outletsPreference != null) {
-									outletsPreference.setInProject(projectHandle, outletsPage.getOutlets());
-								}
-
-								Display display = ExtendedPlatformUI.getDisplay();
-								if (display != null) {
-									display.asyncExec(new Runnable() {
-										public void run() {
-											updatePerspective();
-											selectAndReveal(projectHandle, PlatformUI.getWorkbench().getActiveWorkbenchWindow());
-										}
-									});
-								}
-							}
-						}
-					});
+					addConvertJobChangeListener(convertJob, projectHandle);
 					convertJob.schedule();
 				}
 			}
 		});
-		createJob.schedule();
+	}
 
-		return true;
+	protected void addConvertJobChangeListener(Job job, final IProject projectHandle) {
+		// Commit outlets and reveal new project after creation
+		job.addJobChangeListener(new JobChangeAdapter() {
+			@Override
+			public void done(IJobChangeEvent event) {
+				if (event.getResult().getSeverity() == IStatus.OK) {
+					OutletsPreference outletsPreference = getOutletsPreference();
+					if (outletsPreference != null) {
+						outletsPreference.setInProject(projectHandle, outletsPage.getOutlets());
+					}
+
+					Display display = ExtendedPlatformUI.getDisplay();
+					if (display != null) {
+						display.asyncExec(new Runnable() {
+							public void run() {
+								updatePerspective();
+								selectAndReveal(projectHandle, PlatformUI.getWorkbench().getActiveWorkbenchWindow());
+							}
+						});
+					}
+				}
+			}
+		});
 	}
 
 	/*
