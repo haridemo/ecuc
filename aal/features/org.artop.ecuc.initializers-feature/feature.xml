@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.artop.examples.ecuc"
+      id="org.artop.ecuc.initializers"
       label="%featureName"
       version="3.1.0.qualifier"
       provider-name="%providerName">
@@ -18,14 +18,21 @@
    </license>
 
    <plugin
-         id="org.artop.ecuc.examples.moduleconfiguration.initializer"
+         id="org.artop.ecuc.autosar3x.initializers"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.artop.ecuc.examples.ui"
+         id="org.artop.ecuc.autosar40.initializers"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.gautosar.initializers"
          download-size="0"
          install-size="0"
          version="0.0.0"
