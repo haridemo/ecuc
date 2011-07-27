@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+<copyright>
+
+Copyright (c) See4sys and others.
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the Artop Software License Based on AUTOSAR
+Released Material (ASLR) which accompanies this distribution, and is
+available at http://www.artop.org/aslr.html
+ 
+Contributors: 
+    See4sys - Initial API and implementation
+
+</copyright>
+-->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerActionBinding
+            viewerId="org.artop.aal.examples.explorer.views.autosarExplorer">
+         <includes>
+            <actionExtension
+                  pattern="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucCodeGenActionProvider">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.convertToBSWPlatformProject"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.ConvertToBSWPlatformProjectAction"
+               id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject"
+               label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject.label">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+          <wizard
+                category="org.artop.aal.workspace.ui.newWizards.category.autosar"
+                class="org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.BSWPlatformProjectWizard"
+                finalPerspective="org.artop.aal.examples.common.ui.perspectives.artop"
+                icon="$nl$/icons/full/etool16/newbswpprj_wiz.gif"
+                id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.newWizards.bswPlatformProject"
+                name="%ecuc.examples.codegen.xpand.ui.newWizards.bswPlatformProject.name"
+                preferredPerspectives="org.artop.aal.examples.common.ui.perspectives.artop"
+                project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.sphinx.xpand.preferences.OutletsPreference"
+            class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.internal.OutletsPreferenceAdapterFactory">
+         <adapter
+               type="org.eclipse.sphinx.platform.ui.preferences.IPropertyPageIdProvider">
+         </adapter>
+      </factory>
+   </extension>
+  <extension
+      point="org.eclipse.ui.preferencePages">
+   <page
+         category="org.artop.aal.workspace.ui.preferencePages.autosar"
+         class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage"
+         id="org.artop.ecuc.examples.gautosar.codegen.ui.preferencePages.ecucOutlets"
+         name="%ecuc.examples.codegen.xpand.ui.preferencePages.ecucCodeGen">
+   </page>
+</extension>
+ <extension
+      point="org.eclipse.ui.propertyPages">
+   <page
+         class="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.preferences.EcucOutletsPreferencePage"
+         id="org.artop.ecuc.examples.gautosar.codegen.ui.propertyPages.ecucOutlets"
+         name="%ecuc.examples.codegen.xpand.ui.propertyPages.ecucCodeGen">
+      <enabledWhen>
+         <adapt
+               type="org.eclipse.core.resources.IProject">
+               <test
+                  property="org.eclipse.core.resources.projectNature"
+                  value="org.eclipse.xtend.shared.ui.xtendXPandNature">
+               </test>
+         </adapt>
+      </enabledWhen>
+   </page>
+   </extension>
+</plugin>

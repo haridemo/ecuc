@@ -1,0 +1,8 @@
+extension org::eclipse::xtend::util::stdlib::globalvar;
+extension org::eclipse::xtend::util::stdlib::properties;
+
+String dateString() :
+	JAVA extensions.ExtensionHelper.dateString();
+
+String getNameFromAbsQualName(String absQualName) :
+	JAVA extensions.Util.getNameFromAbsQualName(java.lang.String);
