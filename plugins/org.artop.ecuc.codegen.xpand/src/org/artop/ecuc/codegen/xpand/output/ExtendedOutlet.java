@@ -16,7 +16,6 @@ package org.artop.ecuc.codegen.xpand.output;
 
 import java.io.File;
 
-import org.artop.ecl.platform.util.PlatformLogUtil;
 import org.artop.ecuc.codegen.xpand.Activator;
 import org.artop.ecuc.codegen.xpand.adapter.factories.EObjectAdapaterFactory;
 import org.eclipse.core.resources.IResource;
@@ -30,6 +29,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.variables.IStringVariableManager;
 import org.eclipse.core.variables.VariablesPlugin;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xpand2.output.Outlet;
 
 public class ExtendedOutlet extends Outlet {
