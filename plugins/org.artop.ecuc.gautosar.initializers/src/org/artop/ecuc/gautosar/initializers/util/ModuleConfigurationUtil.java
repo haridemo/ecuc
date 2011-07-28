@@ -16,22 +16,12 @@ package org.artop.ecuc.gautosar.initializers.util;
 
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GModuleConfiguration;
-import gautosar.gecucdescription.GParameterValue;
-import gautosar.gecucdescription.GReferenceValue;
-import gautosar.gecucparameterdef.GConfigParameter;
-import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.ggenericstructure.ginfrastructure.GARObject;
-import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
 
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.sphinx.emf.util.EObjectUtil;
-import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
-import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
-import org.eclipse.sphinx.platform.util.PlatformLogUtil;
-import org.eclipse.sphinx.platform.util.ReflectUtil;
 import org.artop.ecuc.gautosar.initializers.internal.Activator;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Assert;
@@ -40,82 +30,15 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
+import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
+import org.eclipse.sphinx.platform.util.ReflectUtil;
 
 public class ModuleConfigurationUtil {
 
-	/**
-	 * Preconfigured configuration marker key.
-	 */
-	public static final String PRECONFIGURED_MARKER_KEY = "[P]"; //$NON-NLS-1$
-
-	/**
-	 * Recommended configuration marker key.
-	 */
-	public static final String RECOMMENDED_MARKER_KEY = "[R]"; //$NON-NLS-1$
-
-	public final static String GET_EXTENSIONS_OPERATION_NAME = "getExtensions";//$NON-NLS-1$
-
-	/**
-	 * Verify if the given parameter or reference value is preconfigured.
-	 * 
-	 * @param parameterReferenceValue
-	 *            a parameter or reference value.
-	 * @return true if the given parameter or reference value is preconfigured or false else.
-	 */
-	public static boolean isPreconfigured(Object parameterReferenceValue) {
-		Assert.isNotNull(parameterReferenceValue);
-		TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(parameterReferenceValue);
-		if (editingDomain != null && parameterReferenceValue instanceof EObject) {
-			Object value = ((EObject) parameterReferenceValue).eGet(GinfrastructurePackage.eINSTANCE.getGARObject_GChecksum());
-			if (value != null && value.toString().endsWith(PRECONFIGURED_MARKER_KEY)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Verify if the given parameter or reference value is recommended.
-	 * 
-	 * @param parameterReferenceValue
-	 *            a parameter or reference value.
-	 * @return true if the given parameter or reference value is recommended or false else.
-	 */
-	public static boolean isRecommended(Object parameterReferenceValue) {
-		Assert.isNotNull(parameterReferenceValue);
-		TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(parameterReferenceValue);
-		if (editingDomain != null && parameterReferenceValue instanceof EObject) {
-			Object value = ((EObject) parameterReferenceValue).eGet(GinfrastructurePackage.eINSTANCE.getGARObject_GChecksum());
-			if (value != null && value.toString().endsWith(RECOMMENDED_MARKER_KEY)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Marks as preconfigured or recommended the given parameter or reference value.
-	 * 
-	 * @param parameterReferenceValue
-	 *            a parameter or reference value.
-	 * @param marker
-	 */
-	public static void markAsPreconfiguredRecommended(Object parameterReferenceValue, String marker) {
-		Assert.isNotNull(parameterReferenceValue);
-		if (parameterReferenceValue instanceof GParameterValue) {
-			GConfigParameter definition = ((GParameterValue) parameterReferenceValue).gGetDefinition();
-			if (definition != null) {
-				setPropertyValue((GParameterValue) parameterReferenceValue, GinfrastructurePackage.eINSTANCE.getGARObject_GChecksum(),
-						((GParameterValue) parameterReferenceValue).gGetDefinition().gGetShortName() + " " + marker); //$NON-NLS-1$
-			}
-		} else if (parameterReferenceValue instanceof GReferenceValue) {
-			GConfigReference definition = ((GReferenceValue) parameterReferenceValue).gGetDefinition();
-			if (definition != null) {
-				setPropertyValue((GReferenceValue) parameterReferenceValue, GinfrastructurePackage.eINSTANCE.getGARObject_GChecksum(),
-						((GReferenceValue) parameterReferenceValue).gGetDefinition().gGetShortName() + " " + marker); //$NON-NLS-1$
-			}
-		}
-	}
+	private static final String GET_EXTENSIONS_OPERATION_NAME = "getExtensions";//$NON-NLS-1$
 
 	/**
 	 * For setting the property value of the object
