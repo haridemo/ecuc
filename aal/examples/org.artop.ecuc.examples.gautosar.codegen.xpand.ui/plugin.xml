@@ -35,7 +35,7 @@ Contributors:
             id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.convertToBSWPlatformProject"
             objectClass="org.eclipse.core.resources.IProject">
          <action
-               class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.ConvertToBSWPlatformProjectAction"
+               class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.ConvertToXtendXpandEnableAutosarProjectAction"
                id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject"
                label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject.label">
          </action>
