@@ -17,6 +17,14 @@
       %license
    </license>
 
+   <requires>
+      <import feature="org.eclipse.emf.mwe.core" version="1.1.0"/>
+      <import feature="org.artop.ecuc.xtendxpand" version="3.1.0"/>
+      <import feature="org.artop.examples.demonstrator" version="3.1.0"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.antlr.runtime"/>
+   </requires>
 
    <plugin
          id="org.artop.ecuc.examples.autosar40.codegen.xpand"
