@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.artop.ecuc.examples.autosar40.codegen.xpand
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 3.1.0.qualifier
 Require-Bundle: org.eclipse.jdt.core,
  org.eclipse.xtend.profiler,
  org.apache.commons.logging,
