@@ -45,7 +45,7 @@ Contributors:
          point="org.eclipse.ui.newWizards">
           <wizard
                 category="org.artop.aal.workspace.ui.newWizards.category.autosar"
-                class="org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.BSWPlatformProjectWizard"
+                class="org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.XtendXpandEnableAutosarProjectWizard"
                 finalPerspective="org.artop.aal.examples.common.ui.perspectives.artop"
                 icon="$nl$/icons/full/etool16/newbswpprj_wiz.gif"
                 id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.newWizards.bswPlatformProject"
