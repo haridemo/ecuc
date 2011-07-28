@@ -19,12 +19,14 @@ import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activato
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
 import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
+import org.eclipse.sphinx.platform.IExtendedPlatformConstants;
 import org.eclipse.sphinx.testutils.integration.AbstractIntegrationTestCase;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -114,4 +116,28 @@ public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase
 		return target;
 	}
 
+	@Override
+	protected void waitForModelLoading() {
+		Thread t = new Thread() {
+			@Override
+			public void run() {
+				try {
+					Job.getJobManager().join(IExtendedPlatformConstants.FAMILY_MODEL_LOADING, null);
+				} catch (Exception ex) {
+					// Ignore exception
+				}
+			}
+		};
+		t.start();
+
+		try {
+			t.join(5 * 60 * 1000);
+		} catch (InterruptedException ex) {
+			// TODO Auto-generated catch block
+		}
+
+		if (t.isAlive()) {
+			throw new RuntimeException("Timeout while waiting for model loading.");
+		}
+	}
 }
