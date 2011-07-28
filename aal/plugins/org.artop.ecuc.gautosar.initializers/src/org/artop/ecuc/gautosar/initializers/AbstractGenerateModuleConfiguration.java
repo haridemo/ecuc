@@ -260,7 +260,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				if (null != shortName) {
 					name = shortName.toString();
 				}
-				// Remove suffix number from short name: refer to https://bugzilla01.geensys.com/show_bug.cgi?id=142
+				// Remove suffix number from short name
 				// if (upperMultiplicity > 1) {
 				// name = name + index;
 				// }
@@ -658,8 +658,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				for (GParameterValue containerParamValue : containerValue.gGetParameterValues()) {
 					if (containerParamValue.gGetDefinition().equals(parameterDef)) {
 						setParameterValue(containerParamValue, newValue);
-						// mark the parameter value as preconfigured or recommended
-						ModuleConfigurationUtil.markAsPreconfiguredRecommended(containerParamValue, preconfiguredRecommendedMarker);
+						addAddtionalInformation(containerParamValue, preconfiguredRecommendedMarker);
 						break;
 					}
 				}
@@ -679,13 +678,26 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				for (GConfigReferenceValue containerReferenceValue : containerValue.gGetReferenceValues()) {
 					if (containerReferenceValue.gGetDefinition().equals(referenceDef)) {
 						setReferenceValue(containerReferenceValue, newValue);
-						// mark the reference value as preconfigured or recommended
-						ModuleConfigurationUtil.markAsPreconfiguredRecommended(containerReferenceValue, preconfiguredRecommendedMarker);
+						addAddtionalInformation(containerReferenceValue, preconfiguredRecommendedMarker);
 						break;
 					}
 				}
 			}
 		}
+	}
+
+	/**
+	 * This is a hook method for subclasses to add additional information for the given parameter or reference value.
+	 * For example, user can use the 'checksum' attribute to mark parameter or reference as preconfigured or
+	 * recommended.
+	 * 
+	 * @param parameterReferenceValue
+	 *            the parameter or reference value.
+	 * @param marker
+	 *            the string value to be used as marker for given parameter or reference value.
+	 */
+	protected void addAddtionalInformation(GARObject parameterReferenceValue, String marker) {
+		// Do nothing by default.
 	}
 
 	/**
@@ -707,5 +719,4 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	public void setInitialModuleConfiguration(GARObject initialModuleConfiguration) {
 		this.initialModuleConfiguration = initialModuleConfiguration;
 	}
-
 }
