@@ -17,6 +17,17 @@
       %license
    </license>
 
+   <requires>
+      <import feature="org.eclipse.jdt" version="3.6.0"/>
+      <import feature="org.eclipse.pde" version="3.6.0"/>
+      <import feature="org.eclipse.xtend" version="1.1.0"/>
+      <import feature="org.eclipse.xpand" version="1.1.0"/>
+      <import feature="org.eclipse.sphinx.xtendxpand" version="0.7.0"/>
+      <import feature="org.artop.core" version="3.1.0"/>
+      <import feature="org.artop.workspace" version="3.1.0"/>
+      <import plugin="org.apache.commons.logging"/>
+   </requires>
+
    <plugin
          id="org.artop.ecuc.autosar3x.xtend.typesystem"
          download-size="0"
