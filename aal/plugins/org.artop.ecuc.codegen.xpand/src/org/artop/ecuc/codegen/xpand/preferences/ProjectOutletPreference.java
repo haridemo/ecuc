@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.artop.ecl.platform.preferences.AbstractProjectPreference;
 import org.artop.ecuc.codegen.xpand.output.ExtendedOutlet;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.sphinx.platform.preferences.AbstractProjectPreference;
 
 public class ProjectOutletPreference extends AbstractProjectPreference<Collection<ExtendedOutlet>> {
 
