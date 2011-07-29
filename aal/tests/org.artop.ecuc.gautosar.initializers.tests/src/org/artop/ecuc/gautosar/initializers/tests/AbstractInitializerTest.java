@@ -172,14 +172,10 @@ public abstract class AbstractInitializerTest {
 
 	@Test
 	public void shouldInstantiateParamsWithDefaultValues() throws Exception {
-		GParameterBuilder[] params = { 
-				boolParam("param1").value(true), 
-				intParam("param2").value(42), //$NON-NLS-1$ //$NON-NLS-2$
-				enumParam("param3").value("aaaa").literals("aaaa", "bbbb"), //$NON-NLS-1$//$NON-NLS-2$
-				floatParam("param4").value(1.1), 
-				functionName("param5").value("myFunct"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				linkerSymbol("param6").value("bbbb"), 
-				stringParam("param7").value("cccc") }; //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$ //$NON-NLS-4$
+		GParameterBuilder[] params = { boolParam("param1").value(true), intParam("param2").value(42), //$NON-NLS-1$ //$NON-NLS-2$ 
+				enumParam("param3").value("aaaa").literals("aaaa", "bbbb"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+				floatParam("param4").value(1.1), functionName("param5").value("myFunct"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ 
+				linkerSymbol("param6").value("bbbb"), stringParam("param7").value("cccc") }; //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
 		GModuleDefBuilder module = moduleDef("MyModule").with(paramContainer("MyContainer1").params(params)); //$NON-NLS-1$//$NON-NLS-2$
 
