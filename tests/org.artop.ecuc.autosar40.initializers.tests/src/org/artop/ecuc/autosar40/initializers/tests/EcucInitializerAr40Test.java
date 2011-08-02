@@ -15,11 +15,13 @@ import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
 import org.junit.BeforeClass;
 
 import autosar40.ecucdescription.EcucNumericalParamValue;
+import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucparameterdef.EcucBooleanParamDef;
 import autosar40.ecucparameterdef.EcucFloatParamDef;
 import autosar40.ecucparameterdef.EcucFunctionNameDef;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
 import autosar40.ecucparameterdef.EcucLinkerSymbolDef;
+import autosar40.ecucparameterdef.EcucStringParamDef;
 import autosar40.genericstructure.varianthandling.FloatValueVariationPoint;
 import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
 import autosar40.util.Autosar40Package;
@@ -92,6 +94,14 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 		if (item instanceof EcucLinkerSymbolDef) {
 			EcucLinkerSymbolDef linkerSymbolDef = (EcucLinkerSymbolDef) item;
 			return linkerSymbolDef.getEcucLinkerSymbolDefVariants().get(0).getDefaultValue();
+		}
+		if (item instanceof EcucStringParamDef) {
+			EcucStringParamDef paramDef = (EcucStringParamDef) item;
+			return paramDef.getEcucStringParamDefVariants().get(0).getDefaultValue();
+		}
+		if (item instanceof EcucTextualParamValue) {
+			EcucTextualParamValue paramDef = (EcucTextualParamValue) item;
+			return paramDef.getValue();
 		}
 		return super.value(item);
 	}

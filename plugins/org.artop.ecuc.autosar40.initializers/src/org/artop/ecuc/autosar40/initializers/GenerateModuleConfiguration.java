@@ -38,7 +38,11 @@ import autosar40.ecucparameterdef.EcucFloatParamDef;
 import autosar40.ecucparameterdef.EcucFunctionNameDef;
 import autosar40.ecucparameterdef.EcucFunctionNameDefConditional;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
+import autosar40.ecucparameterdef.EcucLinkerSymbolDef;
+import autosar40.ecucparameterdef.EcucLinkerSymbolDefConditional;
 import autosar40.ecucparameterdef.EcucParameterDef;
+import autosar40.ecucparameterdef.EcucStringParamDef;
+import autosar40.ecucparameterdef.EcucStringParamDefConditional;
 import autosar40.genericstructure.generaltemplateclasses.anyinstanceref.AnyInstanceRef;
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock;
 import autosar40.genericstructure.generaltemplateclasses.identifiable.Identifiable;
@@ -146,13 +150,45 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 				for (EcucFunctionNameDefConditional functionNameDefConditional : functionNameDefVariants) {
 					VariationPoint variationPoint = functionNameDefConditional.getVariationPoint();
 					// If variationPoint not null and variationPoint.getSwSyscond() null then the model is invalid
-					if (variationPoint != null && variationPoint.getSwSyscond() != null) {
+					if (variationPoint == null) {
+						return functionNameDefConditional.getDefaultValue();
+					}
+					if (variationPoint.getSwSyscond() == null) {
 						return functionNameDefConditional.getDefaultValue();
 					}
 				}
 			}
 		}
-
+		if (parameterDef instanceof EcucLinkerSymbolDef) {
+			EList<EcucLinkerSymbolDefConditional> functionNameDefVariants = ((EcucLinkerSymbolDef) parameterDef).getEcucLinkerSymbolDefVariants();
+			if (functionNameDefVariants != null) {
+				for (EcucLinkerSymbolDefConditional functionNameDefConditional : functionNameDefVariants) {
+					VariationPoint variationPoint = functionNameDefConditional.getVariationPoint();
+					// If variationPoint not null and variationPoint.getSwSyscond() null then the model is invalid
+					if (variationPoint == null) {
+						return functionNameDefConditional.getDefaultValue();
+					}
+					if (variationPoint.getSwSyscond() == null) {
+						return functionNameDefConditional.getDefaultValue();
+					}
+				}
+			}
+		}
+		if (parameterDef instanceof EcucStringParamDef) {
+			EList<EcucStringParamDefConditional> functionNameDefVariants = ((EcucStringParamDef) parameterDef).getEcucStringParamDefVariants();
+			if (functionNameDefVariants != null) {
+				for (EcucStringParamDefConditional functionNameDefConditional : functionNameDefVariants) {
+					VariationPoint variationPoint = functionNameDefConditional.getVariationPoint();
+					// If variationPoint not null and variationPoint.getSwSyscond() null then the model is invalid
+					if (variationPoint == null) {
+						return functionNameDefConditional.getDefaultValue();
+					}
+					if (variationPoint.getSwSyscond() == null) {
+						return functionNameDefConditional.getDefaultValue();
+					}
+				}
+			}
+		}
 		return null;
 	}
 
@@ -177,6 +213,10 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 				} else if (parameterDef instanceof EcucEnumerationParamDef) {
 					setParameterValue(parameterValue, defaultValue.toString());
 				} else if (parameterDef instanceof EcucFunctionNameDef) {
+					setParameterValue(parameterValue, defaultValue.toString());
+				} else if (parameterDef instanceof EcucLinkerSymbolDef) {
+					setParameterValue(parameterValue, defaultValue.toString());
+				} else if (parameterDef instanceof EcucStringParamDef) {
 					setParameterValue(parameterValue, defaultValue.toString());
 				}
 			}
