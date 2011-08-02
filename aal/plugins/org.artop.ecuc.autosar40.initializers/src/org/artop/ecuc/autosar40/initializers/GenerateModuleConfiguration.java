@@ -23,6 +23,7 @@ import gautosar.ggenericstructure.ginfrastructure.GARObject;
 
 import org.artop.ecuc.gautosar.initializers.AbstractGenerateModuleConfiguration;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import autosar40.ecucdescription.EcucAddInfoParamValue;
@@ -34,6 +35,8 @@ import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucparameterdef.EcucBooleanParamDef;
 import autosar40.ecucparameterdef.EcucEnumerationParamDef;
 import autosar40.ecucparameterdef.EcucFloatParamDef;
+import autosar40.ecucparameterdef.EcucFunctionNameDef;
+import autosar40.ecucparameterdef.EcucFunctionNameDefConditional;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
 import autosar40.ecucparameterdef.EcucParameterDef;
 import autosar40.genericstructure.generaltemplateclasses.anyinstanceref.AnyInstanceRef;
@@ -44,6 +47,7 @@ import autosar40.genericstructure.varianthandling.FloatValueVariationPoint;
 import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
 import autosar40.genericstructure.varianthandling.UnlimitedIntegerValueVariationPoint;
 import autosar40.genericstructure.varianthandling.VarianthandlingFactory;
+import autosar40.genericstructure.varianthandling.VariationPoint;
 import autosar40.util.Autosar40Factory;
 
 public class GenerateModuleConfiguration extends AbstractGenerateModuleConfiguration {
@@ -136,6 +140,18 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterDef instanceof EcucIntegerParamDef) {
 			return ((EcucIntegerParamDef) parameterDef).getDefaultValue();
 		}
+		if (parameterDef instanceof EcucFunctionNameDef) {
+			EList<EcucFunctionNameDefConditional> functionNameDefVariants = ((EcucFunctionNameDef) parameterDef).getEcucFunctionNameDefVariants();
+			if (functionNameDefVariants != null) {
+				for (EcucFunctionNameDefConditional functionNameDefConditional : functionNameDefVariants) {
+					VariationPoint variationPoint = functionNameDefConditional.getVariationPoint();
+					// If variationPoint not null and variationPoint.getSwSyscond() null then the model is invalid
+					if (variationPoint != null && variationPoint.getSwSyscond() != null) {
+						return functionNameDefConditional.getDefaultValue();
+					}
+				}
+			}
+		}
 
 		return null;
 	}
@@ -147,7 +163,7 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 
 		if (parameterValue instanceof EcucParameterValue && parameterDef instanceof EcucParameterDef) {
 			Object defaultValue = getParamDefDefaultValue(parameterDef);
-			if (null != defaultValue) {
+			if (defaultValue != null) {
 				NumericalValueVariationPoint numericalValueVariationPoint = VarianthandlingFactory.eINSTANCE.createNumericalValueVariationPoint();
 				if (parameterDef instanceof EcucBooleanParamDef && defaultValue instanceof BooleanValueVariationPoint) {
 					numericalValueVariationPoint.setMixedText(((BooleanValueVariationPoint) defaultValue).getMixedText());
@@ -159,6 +175,8 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 					numericalValueVariationPoint.setMixedText(((UnlimitedIntegerValueVariationPoint) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
 				} else if (parameterDef instanceof EcucEnumerationParamDef) {
+					setParameterValue(parameterValue, defaultValue.toString());
+				} else if (parameterDef instanceof EcucFunctionNameDef) {
 					setParameterValue(parameterValue, defaultValue.toString());
 				}
 			}
