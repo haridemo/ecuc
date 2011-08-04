@@ -163,7 +163,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			final TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(parentObject);
 			final Runnable runnable = new Runnable() {
 				int lowerMultiplicity = 0;
-				int upperMultiplicity = 0;
 				GARObject configurationObject = null;
 
 				public void run() {
@@ -173,12 +172,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 							lowerMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetLowerMultiplicityAsString());
 						} catch (NumberFormatException ex) {
 							lowerMultiplicity = 0;
-						}
-
-						try {
-							upperMultiplicity = Integer.parseInt(((GParamConfMultiplicity) definitionObject).gGetUpperMultiplicityAsString());
-						} catch (NumberFormatException ex) {
-							upperMultiplicity = Integer.MAX_VALUE;
 						}
 					}
 
