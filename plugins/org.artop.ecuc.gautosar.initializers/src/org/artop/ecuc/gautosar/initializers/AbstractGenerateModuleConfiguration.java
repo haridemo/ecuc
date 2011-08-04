@@ -193,14 +193,17 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 								owner = configurationObject.eContainer();
 							}
 							generateConfiguration(editingDomain, owner, feature, configurationObject, definitionObject);
-							if (!useGivenModuleConfigurationName) {
-								setShortName(definitionObject, configurationObject);
+							if (!useGivenModuleConfigurationName && configurationObject instanceof GReferrable
+									&& definitionObject instanceof GReferrable) {
+								// Getting the short name of the definition object
+								String shortName = ((GReferrable) definitionObject).gGetShortName();
+								// Setting the short name of the configuration
+								((GReferrable) configurationObject).gSetShortName(shortName);
 							}
 							lowerMultiplicity--;
 
 							// Checking for the possible child configuration and initialize if needed
 							EList<EObject> children = definitionObject.eContents();
-
 							if (children.size() > 0) {
 								for (Object child : children) {
 									generateConfiguration((GARObject) child, configurationObject);
@@ -231,23 +234,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	}
 
 	/**
-	 * For setting the short name of the generated configuration object.
-	 * 
-	 * @param definitionObject
-	 *            the corresponding definition object
-	 * @param configurationObject
-	 *            the generated configuration object
-	 */
-	private void setShortName(GARObject definitionObject, GARObject configurationObject) {
-		if (configurationObject instanceof GReferrable && definitionObject instanceof GReferrable) {
-			// Getting the short name of the definition object
-			String shortName = ((GReferrable) definitionObject).gGetShortName();
-			// Setting the short name of the configuration
-			((GReferrable) configurationObject).gSetShortName(shortName);
-		}
-	}
-
-	/**
 	 * Function for generating the description of the definition object.
 	 * 
 	 * @param editingDomain
@@ -274,8 +260,8 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						((EObject) owner).eSet(feature, configurationObject);
 					}
 
-					// Setting the definition of the configuration object
 					// TODO: should use GAUTOSAR API for setting definition
+					// Setting the definition of the configuration object
 					if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
 						EStructuralFeature definitionFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_DEFINITION);
@@ -287,7 +273,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						setParameterWithDefaultValue((GParameterValue) configurationObject, (GConfigParameter) definitionObject);
 					}
 
-					// Setting UUID
+					// Setting UUID of the configuration object
 					IdentifiableUtil.setUUID(configurationObject, IdentifiableUtil.generateUUID());
 				}
 			}
@@ -355,7 +341,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 						// Checking for the possible child configuration and initialize if needed
 						Collection<?> children = editingDomain.getChildren(definitionObject);
-
 						if (children.size() > 0) {
 							for (Object child : children) {
 								generateConfiguration((GARObject) child, configurationObject);
