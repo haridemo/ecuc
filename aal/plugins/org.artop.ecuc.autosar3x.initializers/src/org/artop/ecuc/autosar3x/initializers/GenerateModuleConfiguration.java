@@ -173,7 +173,7 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 
 		if (parameterValue instanceof ParameterValue && parameterDef instanceof ConfigParameter) {
 			Object defaultValue = getParamDefDefaultValue(parameterDef);
-			if (null != defaultValue) {
+			if (defaultValue != null) {
 				setParameterValue(parameterValue, defaultValue);
 			}
 		}

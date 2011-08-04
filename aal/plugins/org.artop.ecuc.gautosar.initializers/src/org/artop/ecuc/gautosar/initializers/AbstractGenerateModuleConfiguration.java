@@ -15,7 +15,6 @@
  */
 package org.artop.ecuc.gautosar.initializers;
 
-import static java.util.Collections.emptyList;
 import gautosar.gecucdescription.GConfigReferenceValue;
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GModuleConfiguration;
@@ -78,6 +77,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * Gets the value of the given parameter value.
 	 * 
 	 * @param parameterValue
+	 *            the parameter value.
 	 * @return the value of the given parameter value.
 	 */
 	protected abstract Object getParameterValue(GParameterValue parameterValue);
@@ -86,14 +86,17 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * Sets the value of the given parameter value.
 	 * 
 	 * @param parameterValue
+	 *            the parameter value.
 	 * @param value
+	 *            the new value of the given parameter value.
 	 */
 	protected abstract void setParameterValue(GParameterValue parameterValue, Object value);
 
 	/**
 	 * Gets the value of the given reference value.
 	 * 
-	 * @param parameterValue
+	 * @param referenceValue
+	 *            the reference value.
 	 * @return the value of the given reference value.
 	 */
 	protected abstract Object getReferenceValue(GConfigReferenceValue referenceValue);
@@ -102,7 +105,9 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * Sets the value of the given reference value.
 	 * 
 	 * @param referenceValue
+	 *            the reference value.
 	 * @param value
+	 *            the new value of the given reference value.
 	 */
 	protected abstract void setReferenceValue(GConfigReferenceValue referenceValue, Object value);
 
@@ -117,14 +122,14 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	protected abstract Object getParamDefDefaultValue(GConfigParameter parameterDef);
 
 	/**
-	 * Constructor of the class
+	 * This construct a module configuration generator.
 	 */
 	public AbstractGenerateModuleConfiguration(GModuleConfiguration initialModuleConfiguration) {
 		this.initialModuleConfiguration = initialModuleConfiguration;
 	}
 
 	/**
-	 * Default Constructor
+	 * Default Constructor.
 	 */
 	public AbstractGenerateModuleConfiguration() {
 		this(null);
@@ -140,7 +145,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * @return configuration description object
 	 */
 	public GModuleConfiguration generateECUConfiguration(GModuleDef definitionObject, GARPackage targetPackage) {
-		return (GModuleConfiguration) generateConfiguration(0, definitionObject, targetPackage);
+		return (GModuleConfiguration) generateConfiguration(definitionObject, targetPackage);
 	}
 
 	/**
@@ -152,7 +157,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            the parent description node
 	 * @return the description object
 	 */
-	private GARObject generateConfiguration(final int index, final GARObject definitionObject, final GARObject parentObject) {
+	private GARObject generateConfiguration(final GARObject definitionObject, final GARObject parentObject) {
 		if (definitionObject != null && parentObject != null) {
 			final TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(parentObject);
 			final Runnable runnable = new Runnable() {
@@ -195,7 +200,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 							}
 							generateConfiguration(editingDomain, owner, feature, configurationObject, definitionObject);
 							if (!useGivenModuleConfigurationName) {
-								setShortName(definitionObject, configurationObject, upperMultiplicity, index);
+								setShortName(definitionObject, configurationObject);
 							}
 							lowerMultiplicity--;
 
@@ -204,7 +209,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 							if (children.size() > 0) {
 								for (Object child : children) {
-									generateConfiguration(index, (GARObject) child, configurationObject);
+									generateConfiguration((GARObject) child, configurationObject);
 								}
 							}
 						}
@@ -238,20 +243,13 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 *            the corresponding definition object
 	 * @param configurationObject
 	 *            the generated configuration object
-	 * @param upperMultiplicity
-	 *            the upper multiplicity of configuration object
-	 * @param index
-	 *            for generating unique short name
 	 */
-	private void setShortName(GARObject definitionObject, GARObject configurationObject, int upperMultiplicity, int index) {
-		if (configurationObject instanceof GReferrable) {
+	private void setShortName(GARObject definitionObject, GARObject configurationObject) {
+		if (configurationObject instanceof GReferrable && definitionObject instanceof GReferrable) {
 			// Getting the short name of the definition object
-			String name = getUniqueShortName(definitionObject, configurationObject, index);
-			if (name == null && definitionObject instanceof GReferrable && ((GReferrable) definitionObject).gGetShortName() != null) {
-				name = ((GReferrable) definitionObject).gGetShortName();
-			}
+			String shortName = ((GReferrable) definitionObject).gGetShortName();
 			// Setting the short name of the configuration
-			((GReferrable) configurationObject).gSetShortName(name);
+			((GReferrable) configurationObject).gSetShortName(shortName);
 		}
 	}
 
@@ -289,9 +287,8 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						ModuleConfigurationUtil.setPropertyValue(configurationObject, definitionFeature, definitionObject);
 					}
 
-					// Setting the default value of the configuration
-					if (ModuleConfigurationUtil.isPropertyExist(definitionObject, ConfigurationConstants.PROPERTY_ID_DEFAULT_VALUE)
-							&& definitionObject instanceof GConfigParameter && configurationObject instanceof GParameterValue) {
+					// Setting the default value of the configuration (for parameter values)
+					if (definitionObject instanceof GConfigParameter && configurationObject instanceof GParameterValue) {
 						setParameterWithDefaultValue((GParameterValue) configurationObject, (GConfigParameter) definitionObject);
 					}
 
@@ -366,7 +363,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 						if (children.size() > 0) {
 							for (Object child : children) {
-								generateConfiguration(0, (GARObject) child, configurationObject);
+								generateConfiguration((GARObject) child, configurationObject);
 							}
 						}
 					}
@@ -446,11 +443,11 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					Collection<?> children = editingDomain.getChildren(definitionObject);
 					if (children.size() > 0) {
 						for (Object child : children) {
-							generateConfiguration(index, (GARObject) child, configurationObject);
+							generateConfiguration((GARObject) child, configurationObject);
 						}
 					}
-					if (configurationObject instanceof GReferrable) {
-						String shortName = getUniqueShortName(definitionObject, configurationObject, index);
+					if (configurationObject instanceof GReferrable && definitionObject instanceof GReferrable) {
+						String shortName = ((GReferrable) definitionObject).gGetShortName();
 						((GReferrable) configurationObject).gSetShortName(shortName);
 					}
 					iter.add((GModuleConfiguration) configurationObject);
@@ -458,54 +455,6 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			}
 		}
 		return iter;
-	}
-
-	/**
-	 * For getting the unique name for the object.
-	 * 
-	 * @param definitionObject
-	 *            the definition object name
-	 * @param configurationObject
-	 *            the generated configuration object
-	 * @param index
-	 *            the index of the item
-	 * @return the name
-	 */
-	private String getUniqueShortName(GARObject definitionObject, GARObject configurationObject, int index) {
-		String name = ConfigurationConstants.EMPTY_STRING;
-		if (definitionObject instanceof GReferrable) {
-			if (((GReferrable) definitionObject).gGetShortName() != null) {
-				name = ((GReferrable) definitionObject).gGetShortName();
-			}
-		}
-
-		// Checking the uniqueness of the name
-		EObject parent = configurationObject.eContainer();
-		List<EObject> children;
-		if (parent == null) {
-			children = emptyList();
-		} else {
-			children = parent.eContents();
-		}
-		int configIndex = children.size();
-		for (Object childConfiguration : children) {
-			String tempName = name;
-			if (childConfiguration instanceof GReferrable) {
-				String currentName = ConfigurationConstants.EMPTY_STRING;
-				if (((GReferrable) childConfiguration).gGetShortName() != null) {
-					currentName = ((GReferrable) childConfiguration).gGetShortName();
-				}
-				if (currentName.equalsIgnoreCase(tempName)) {
-					index++;
-				}
-				configIndex--;
-				if (configIndex == 0) {
-					return tempName;
-				}
-			}
-		}
-
-		return null;
 	}
 
 	/**
