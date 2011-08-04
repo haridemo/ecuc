@@ -23,11 +23,6 @@ public class ConfigurationConstants {
 
 	public static final String UPPER_MULTIPLICITY_MAX = "*"; //$NON-NLS-1$
 
-	/* property ID */
-	public static final String PROPERTY_ID_SHORT_NAME = "shortName"; //$NON-NLS-1$
-
 	public static final String PROPERTY_ID_DEFINITION = "definition"; //$NON-NLS-1$
-
-	public static final String PROPERTY_ID_DEFAULT_VALUE = "defaultValue"; //$NON-NLS-1$
 
 }
