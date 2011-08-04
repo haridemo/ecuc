@@ -281,6 +281,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 					}
 
 					// Setting the definition of the configuration object
+					// TODO: should use GAUTOSAR API for setting definition
 					if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
 						EStructuralFeature definitionFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_DEFINITION);
