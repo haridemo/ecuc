@@ -34,6 +34,7 @@ import java.util.Vector;
 
 import org.artop.aal.common.util.IdentifiableUtil;
 import org.artop.ecuc.gautosar.initializers.internal.Activator;
+import org.artop.ecuc.gautosar.initializers.internal.messages.Messages;
 import org.artop.ecuc.gautosar.initializers.util.ModuleConfigurationUtil;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Assert;
@@ -223,7 +224,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 			if (editingDomain != null) {
 				try {
-					WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "generate module configuration"); //$NON-NLS-1$
+					WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, Messages.job_generateModuleConfiguration);
 				} catch (OperationCanceledException ex) {
 
 				} catch (ExecutionException ex) {
@@ -301,7 +302,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 		if (editingDomain != null) {
 			try {
-				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Add Configuration Object"); //$NON-NLS-1$
+				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, Messages.job_addConfigurationElement);
 			} catch (OperationCanceledException ex) {
 
 			} catch (ExecutionException ex) {
@@ -380,7 +381,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 			if (editingDomain != null) {
 				try {
-					WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Generate Module Configuration"); //$NON-NLS-1$
+					WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, Messages.job_generateModuleConfiguration);
 				} catch (OperationCanceledException ex) {
 
 				} catch (ExecutionException ex) {
@@ -520,7 +521,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 
 		if (editingDomain != null) {
 			try {
-				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, "Initialize Module Configuration"); //$NON-NLS-1$
+				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, Messages.job_initializeModuleConfiguration);
 			} catch (OperationCanceledException ex) {
 
 			} catch (ExecutionException ex) {
