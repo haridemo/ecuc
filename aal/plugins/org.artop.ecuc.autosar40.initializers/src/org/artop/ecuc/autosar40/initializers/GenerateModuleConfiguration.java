@@ -79,11 +79,9 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof EcucNumericalParamValue) {
 			return ((EcucNumericalParamValue) parameterValue).getValue();
 		}
-
 		if (parameterValue instanceof EcucTextualParamValue) {
 			return ((EcucTextualParamValue) parameterValue).getValue();
 		}
-
 		if (parameterValue instanceof EcucAddInfoParamValue) {
 			return ((EcucAddInfoParamValue) parameterValue).getValue();
 		}
@@ -96,11 +94,9 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof EcucNumericalParamValue) {
 			((EcucNumericalParamValue) parameterValue).setValue((NumericalValueVariationPoint) value);
 		}
-
 		if (parameterValue instanceof EcucTextualParamValue) {
 			((EcucTextualParamValue) parameterValue).setValue((String) value);
 		}
-
 		if (parameterValue instanceof EcucAddInfoParamValue) {
 			((EcucAddInfoParamValue) parameterValue).setValue((DocumentationBlock) value);
 		}
@@ -111,7 +107,6 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (referenceValue instanceof EcucReferenceValue) {
 			return ((EcucReferenceValue) referenceValue).getValue();
 		}
-
 		if (referenceValue instanceof EcucInstanceReferenceValue) {
 			return ((EcucInstanceReferenceValue) referenceValue).getValue();
 		}

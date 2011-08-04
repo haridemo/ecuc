@@ -37,26 +37,6 @@ public class DefinitionDescriptionMap {
 	}
 
 	/**
-	 * Map for keeping the definition and description values
-	 */
-	static {
-		/*
-		 * GAUTOSAR types
-		 */
-		// FIXME: use EClass instead String
-		//		definitionDescriptionMap.put("GARPackage", "GARPackage"); //$NON-NLS-1$//$NON-NLS-2$
-		//		definitionDescriptionMap.put("GModuleDef", "GModuleConfiguration"); //$NON-NLS-1$//$NON-NLS-2$
-		//		definitionDescriptionMap.put("GParamConfContainerDef", "GContainer"); //$NON-NLS-1$//$NON-NLS-2$
-		//		definitionDescriptionMap.put("GReferenceDef", "GReferenceValue"); //$NON-NLS-1$//$NON-NLS-2$
-		//		definitionDescriptionMap.put("GChoiceContainerDef", "GContainer"); //$NON-NLS-1$//$NON-NLS-2$
-		//		definitionDescriptionMap.put("GConfigReference", "GConfigReferenceValue"); //$NON-NLS-1$//$NON-NLS-2$
-
-		// FIXME: check if these are needed
-		//definitionDescriptionMap.put("ARPackage", "ARPackage"); //$NON-NLS-1$//$NON-NLS-2$
-		//definitionDescriptionMap.put("Short Name", "Short Name"); //$NON-NLS-1$//$NON-NLS-2$
-	}
-
-	/**
 	 * For getting the description node EClass for a particular definition node.
 	 * 
 	 * @param definition

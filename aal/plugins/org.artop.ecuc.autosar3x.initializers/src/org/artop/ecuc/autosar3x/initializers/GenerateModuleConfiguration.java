@@ -73,7 +73,6 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof BooleanValue) {
 			return ((BooleanValue) parameterValue).getValue();
 		}
-
 		if (parameterValue instanceof IntegerValue) {
 			return ((IntegerValue) parameterValue).getValue();
 		}
@@ -86,11 +85,9 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof BooleanValue) {
 			return ((BooleanValue) parameterValue).getValue();
 		}
-
 		if (parameterValue instanceof StringValue) {
 			return ((StringValue) parameterValue).getValue();
 		}
-
 		if (parameterValue instanceof FunctionNameValue) {
 			return ((FunctionNameValue) parameterValue).getValue();
 		}
@@ -103,7 +100,6 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof BooleanValue) {
 			((BooleanValue) parameterValue).setValue((Boolean) value);
 		}
-
 		if (parameterValue instanceof IntegerValue) {
 			((IntegerValue) parameterValue).setValue((BigInteger) value);
 		}
@@ -116,11 +112,9 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof BooleanValue) {
 			((BooleanValue) parameterValue).setValue((Boolean) value);
 		}
-
 		if (parameterValue instanceof StringValue) {
 			((StringValue) parameterValue).setValue((String) value);
 		}
-
 		if (parameterValue instanceof FunctionNameValue) {
 			((FunctionNameValue) parameterValue).setValue((String) value);
 		}
@@ -131,7 +125,6 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (referenceValue instanceof ReferenceValue) {
 			return ((ReferenceValue) referenceValue).getValue();
 		}
-
 		if (referenceValue instanceof InstanceReferenceValue) {
 			return ((InstanceReferenceValue) referenceValue).getValue();
 		}
@@ -144,7 +137,6 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (referenceValue instanceof ReferenceValue) {
 			((ReferenceValue) referenceValue).setValue((Identifiable) value);
 		}
-
 		if (referenceValue instanceof InstanceReferenceValue) {
 			((InstanceReferenceValue) referenceValue).setValue((InstanceReferenceValueValue) value);
 		}
@@ -155,7 +147,6 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterDef instanceof BooleanParamDef) {
 			return ((BooleanParamDef) parameterDef).getDefaultValue();
 		}
-
 		if (parameterDef instanceof IntegerParamDef) {
 			return ((IntegerParamDef) parameterDef).getDefaultValue();
 		}
@@ -165,11 +156,9 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterDef instanceof EnumerationParamDef) {
 			return ((EnumerationParamDef) parameterDef).getDefaultValue();
 		}
-
 		if (parameterDef instanceof StringParamDef) {
 			return ((StringParamDef) parameterDef).getDefaultValue();
 		}
-
 		if (parameterDef instanceof FunctionNameDef) {
 			return ((FunctionNameDef) parameterDef).getDefaultValue();
 		}
