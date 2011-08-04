@@ -280,14 +280,14 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 						((EObject) owner).eSet(feature, configurationObject);
 					}
 
-					// Setting the definition of the configuration
+					// Setting the definition of the configuration object
 					if (ModuleConfigurationUtil.isPropertyExist(configurationObject, ConfigurationConstants.PROPERTY_ID_DEFINITION)) {
 						EStructuralFeature definitionFeature = EObjectUtil.getEStructuralFeature(configurationObject,
 								ConfigurationConstants.PROPERTY_ID_DEFINITION);
 						ModuleConfigurationUtil.setPropertyValue(configurationObject, definitionFeature, definitionObject);
 					}
 
-					// Setting the default value of the configuration (for parameter values)
+					// Setting the default value of the configuration object (for parameter values)
 					if (definitionObject instanceof GConfigParameter && configurationObject instanceof GParameterValue) {
 						setParameterWithDefaultValue((GParameterValue) configurationObject, (GConfigParameter) definitionObject);
 					}
