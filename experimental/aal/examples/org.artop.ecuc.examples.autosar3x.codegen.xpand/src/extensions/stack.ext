@@ -1,7 +1,0 @@
-Void push(AR::ARObjectType type) :
-	JAVA extensions.StackHelper.push(java.lang.Object);
-
-AR::ARObjectType peek() :
-	JAVA extensions.StackHelper.peek();
-AR::ARObjectType pop() :
-    JAVA extensions.StackHelper.pop();	
