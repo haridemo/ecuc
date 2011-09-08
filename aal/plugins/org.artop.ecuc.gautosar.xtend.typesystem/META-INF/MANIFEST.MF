@@ -4,6 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.artop.ecuc.gautosar.xtend.typesystem;singleton:=true
 Bundle-Version: 3.1.0.qualifier
 Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.xtend;visibility:=reexport,
  org.artop.aal.common,
