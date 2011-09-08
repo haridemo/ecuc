@@ -28,28 +28,28 @@
    </requires>
 
    <plugin
-         id="org.artop.ecuc.autosar3x.xtend.typesystem"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.artop.ecuc.autosar40.xtend.typesystem"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.artop.ecuc.gautosar.xtend.typesystem"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+         
    <plugin
          id="org.artop.ecuc.xtend.typesystem.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.artop.ecuc.gautosar.codegen.xpand.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.artop.ecuc.autosar3x.xtend.typesystem"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -61,16 +61,16 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+         
    <plugin
-         id="org.artop.ecuc.autosar40.codegen.xpand.ui"
+         id="org.artop.ecuc.autosar40.xtend.typesystem"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.artop.ecuc.gautosar.codegen.xpand.ui"
+         id="org.artop.ecuc.autosar40.codegen.xpand.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
