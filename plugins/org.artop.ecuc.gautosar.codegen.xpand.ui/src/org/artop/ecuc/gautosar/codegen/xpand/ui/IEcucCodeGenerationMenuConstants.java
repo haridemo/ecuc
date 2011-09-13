@@ -22,10 +22,10 @@ public interface IEcucCodeGenerationMenuConstants {
 	/**
 	 * Identifier of the Generate sub menu.
 	 */
-	public static final String MENU_GENERATE_ID = Activator.getPlugin().getSymbolicName() + ".menus.generate"; //$NON-NLS-1$
+	String MENU_GENERATE_ID = Activator.getPlugin().getSymbolicName() + ".menus.generate"; //$NON-NLS-1$
 
 	/**
 	 * Label of the Generate sub menu.
 	 */
-	public static final String MENU_GENERATE_LABEL = Messages.menu_generate;
+	String MENU_GENERATE_LABEL = Messages.menu_generate;
 }
