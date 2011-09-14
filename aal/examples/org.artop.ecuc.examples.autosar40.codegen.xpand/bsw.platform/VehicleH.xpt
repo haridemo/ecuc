@@ -21,7 +21,7 @@
 
 «GeneralInfo.VehicleName.shortName»: «GeneralInfo.VehicleName.value»
 
-// Absolute Qualifed Name of GeneralInfo Container
+// Absolute Qualified Name of GeneralInfo Container
 AQN: «GeneralInfo.absoluteQualifiedName»
 
 «REM»
