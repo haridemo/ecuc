@@ -18,6 +18,16 @@ Contributors:
 
 <plugin>
    <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <actionProvider
+            class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers.EcucCodeGenActionProvider"
+            id="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucCodeGenActionProvider">
+         <enablement>
+	        <instanceof value="gautosar.gecucdescription.GModuleConfiguration" />
+         </enablement>
+      </actionProvider>
+   </extension>
+   <extension
          point="org.eclipse.ui.decorators">
       <decorator
             class="org.artop.ecuc.gautosar.codegen.xpand.ui.decorators.EcucOutletFolderLabelDecorator"
