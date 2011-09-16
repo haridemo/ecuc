@@ -32,7 +32,7 @@ Contributors:
          point="org.eclipse.ui.navigator.navigatorContent">
       <actionProvider
             class="org.artop.ecuc.examples.autosar40.transform.xtend.ui.actions.providers.EcucAutoConfigure40ActionProvider"
-            id="org.artop.ecuc.examples.autosar40.transform.xtend.ui.actions.providers.ecucAutoConfigure40ActionProvider">
+            id="org.artop.ecuc.examples.autosar40.transform.xtend.ui.ecucAutoConfigure40ActionProvider">
          <enablement>
             <or>
                <instanceof
