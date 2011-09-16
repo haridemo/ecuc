@@ -22,9 +22,7 @@ public class Messages extends NLS {
 
 	public static String menu_generate;
 	public static String menuItem_launchEcucCodeGen;
-	public static String menuItem_launchAutoConfigure;
 
-	public static String label_newBSWPlatformProjectWindowTitle;
 	public static String label_addXtendXpandCheckSupportEnableButton;
 
 	public static String BSWPlatformProjectWizzardTitle;
@@ -34,7 +32,6 @@ public class Messages extends NLS {
 	public static String BSWPlatformProjectWizzardReferencePageDescription;
 
 	public static String job_convertToXtendXpandEnableAutosarProject;
-	public static String job_ImportEcucParamDef;
 	public static String job_creatingAutosarProject;
 
 	static {

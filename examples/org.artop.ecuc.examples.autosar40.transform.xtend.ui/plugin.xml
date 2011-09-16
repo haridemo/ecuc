@@ -23,10 +23,7 @@ Contributors:
             viewerId="org.artop.aal.examples.explorer.views.autosarExplorer">
          <includes>
             <actionExtension
-                  pattern="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucAutoConfigureActionProvider">
-            </actionExtension>
-            <actionExtension
-                  pattern="org.artop.ecuc.examples.autosar40.transform.xtend.ui.ecucAutoConfigure40ActionProvider">
+                  pattern="org.artop.ecuc.examples.autosar40.transform.xtend.ui.actions.providers.ecucAutoConfigure40ActionProvider">
             </actionExtension>
          </includes>
       </viewerActionBinding>
@@ -34,10 +31,29 @@ Contributors:
       <extension
          point="org.eclipse.ui.navigator.navigatorContent">
       <actionProvider
-            class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers.EcucAutoConfigureActionProvider"
-            id="org.artop.ecuc.examples.autosar40.transform.xtend.ui.ecucAutoConfigure40ActionProvider">
+            class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers.EcucCodeGenActionProvider"
+            id="org.artop.ecuc.gautosar.codegen.xpand.ui.ecucCodeGenActionProvider">
+         <enablement>
+	        <instanceof value="gautosar.gecucdescription.GModuleConfiguration" />
+         </enablement>
+      </actionProvider>
+      <actionProvider
+            class="org.artop.ecuc.examples.autosar40.transform.xtend.ui.actions.providers.EcucAutoConfigure40ActionProvider"
+            id="org.artop.ecuc.examples.autosar40.transform.xtend.ui.actions.providers.ecucAutoConfigure40ActionProvider">
          <enablement>
             <or>
+               <instanceof
+                     value="gautosar.gecucdescription.GModuleConfiguration">
+               </instanceof>
+               <instanceof
+                     value="gautosar.gecucdescription.GContainer">
+               </instanceof>
+               <instanceof
+                     value="gautosar.gecucdescription.GParameterValue">
+               </instanceof>
+               <instanceof
+                     value="gautosar.gecucdescription.GConfigReferenceValue">
+               </instanceof>
                <instanceof
                      value="autosar40.system.fibex.fibexcore.coretopology.EcuInstance">
                </instanceof>
