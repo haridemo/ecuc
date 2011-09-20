@@ -26,12 +26,15 @@ import java.util.Collections;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
+import org.eclipse.xtend.typesystem.Feature;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
@@ -61,27 +64,32 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 	public void addValueAccessorFeatures() {
 		super.addValueAccessorFeatures();
 		for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {
-			String propertyValueName = "value_" + destinationTypeDef.gGetShortName(); //$NON-NLS-1$
+			// Do not add property for proxy destinationTypeDef
+			if (!destinationTypeDef.eIsProxy()) {
+				String propertyValueName = "value_" + destinationTypeDef.gGetShortName(); //$NON-NLS-1$
 
-			addFeature(new PropertyImpl(this, propertyValueName, getContext().getMetaModel().getTypeForName(getTypeName(destinationTypeDef))) {
+				addFeature(new PropertyImpl(this, propertyValueName, getContext().getMetaModel().getTypeForName(getTypeName(destinationTypeDef))) {
 
-				public Object get(Object target) {
-					Type returnType = getReturnType();
-					if (returnType instanceof RichParamConfContainerDefType) {
-						RichParamConfContainerDefType richType = (RichParamConfContainerDefType) returnType;
-						GIdentifiable destinationTypeDef = richType.getEcucTypeDef();
-						if (destinationTypeDef instanceof GParamConfContainerDef) {
-							return internalGet(target, (GParamConfContainerDef) destinationTypeDef);
+					public Object get(Object target) {
+						Type returnType = getReturnType();
+						if (returnType instanceof RichParamConfContainerDefType) {
+							RichParamConfContainerDefType richType = (RichParamConfContainerDefType) returnType;
+							GIdentifiable destinationTypeDef = richType.getEcucTypeDef();
+							if (destinationTypeDef instanceof GParamConfContainerDef) {
+								return internalGet(target, (GParamConfContainerDef) destinationTypeDef);
+							}
 						}
+						return null;
 					}
-					return null;
-				}
 
-				@Override
-				public void set(Object target, Object newValue) {
-					internalSet(target, newValue);
-				}
-			});
+					@Override
+					public void set(Object target, Object newValue) {
+						internalSet(target, newValue);
+					}
+				});
+			} else {
+				PlatformLogUtil.logAsWarning(Activator.getDefault(), "Unresolved proxy object: " + destinationTypeDef.toString()); //$NON-NLS-1$
+			}
 		}
 	}
 
@@ -110,5 +118,11 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 			}
 		}
 		return null;
+	}
+
+	// TODO (aakar) Delete this
+	@Override
+	public Feature[] getContributedFeatures() {
+		return super.getContributedFeatures();
 	}
 }
