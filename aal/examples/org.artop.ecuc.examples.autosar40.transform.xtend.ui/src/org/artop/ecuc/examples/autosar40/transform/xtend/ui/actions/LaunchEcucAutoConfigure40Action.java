@@ -18,10 +18,8 @@ package org.artop.ecuc.examples.autosar40.transform.xtend.ui.actions;
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.ecuc.examples.autosar40.transform.xtend.ui.internal.messages.Messages;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.jobs.IJobChangeListener;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
-import org.eclipse.sphinx.xtendxpand.jobs.XtendJob;
 import org.eclipse.sphinx.xtendxpand.ui.actions.BasicM2MAction;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.M2MConfigurationWizard;
 
@@ -40,16 +38,16 @@ public class LaunchEcucAutoConfigure40Action extends BasicM2MAction {
 	 */
 	@Override
 	public void run() {
-		M2MConfigurationWizard wizard = new M2MConfigurationWizard(getSelectedModelObject(), getMetaModels()) {
-			@Override
-			protected IJobChangeListener createResultObjectHandler(XtendJob xtendJob) {
-				SaveAsNewAutosarFileHandler handler = new SaveAsNewAutosarFileHandler(xtendJob);
-				handler.setDefaultProjectRelativeResultPath(new Path("bsw.config").append("Car_Configuration").addFileExtension(AutosarReleaseDescriptor.ARXML_DEFAULT_FILE_EXTENSION)); //$NON-NLS-1$ //$NON-NLS-2$
-				return handler;
-			}
-		};
+		M2MConfigurationWizard wizard = new M2MConfigurationWizard(getSelectedModelObject(), getMetaModels());
 		wizard.setM2MJobName(getM2MJobName());
 		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
+
+		SaveAsNewAutosarFileHandler handler = new SaveAsNewAutosarFileHandler();
+		handler.setDefaultProjectRelativeResultPath(new Path("bsw.config").append("Car_Configuration").addFileExtension(AutosarReleaseDescriptor.ARXML_DEFAULT_FILE_EXTENSION)); //$NON-NLS-1$ //$NON-NLS-2$
+		wizard.setResultObjectHandler(handler);
+
+		wizard.setResultMessageHandler(createResultMessageHandler());
+
 		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
 		wizardDialog.open();
 	}
