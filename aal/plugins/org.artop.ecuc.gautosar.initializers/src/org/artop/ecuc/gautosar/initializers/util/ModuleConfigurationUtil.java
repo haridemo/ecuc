@@ -128,13 +128,15 @@ public class ModuleConfigurationUtil {
 	}
 
 	/**
-	 * Returns the feature name that is defined between the given EClasses
+	 * Returns the {@linkplain EStructuralFeature structural feature} of the specified {@link EClass ownerEClass} whom
+	 * type if the given {@link EClass childEClass}. This method only considers <em>containment</em> relation between
+	 * these two types.
 	 * 
 	 * @param ownerEClass
-	 *            the parent EClass
+	 *            The parent {@link EClass}.
 	 * @param childEClass
-	 *            the child EClass
-	 * @return the feature name that is defined between the given EClasses
+	 *            The child {@link EClass}.
+	 * @return The containment feature that links the two given {@linkplain EClass EClasses}.
 	 */
 	public static EStructuralFeature getEStructuralFeature(EClass ownerEClass, EClass childEClass) {
 		EStructuralFeature feature = null;
@@ -183,6 +185,7 @@ public class ModuleConfigurationUtil {
 	 *            the property to be checked
 	 * @return true if the property exist else false
 	 */
+	// TODO Rename exists
 	public static boolean isPropertyExist(GARObject object, String propertyId) {
 		if (object != null && EObjectUtil.getEStructuralFeature(object, propertyId) != null) {
 			return true;
