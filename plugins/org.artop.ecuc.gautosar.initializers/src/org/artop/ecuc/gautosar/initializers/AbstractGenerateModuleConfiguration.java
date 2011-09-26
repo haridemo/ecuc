@@ -458,16 +458,16 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 		return iter;
 	}
 
-	/**
-	 * Initialize the given <code>moduleConfigurationToInitialize</code> module configuration with parameter and
-	 * reference values of <code>moduleConfiguration</code> module configuration
+	/*
+	 * @see org.artop.ecuc.gautosar.initializers.IConfigurationGeneration#initializeModuleConfigurationValues(gautosar.
+	 * gecucdescription.GModuleConfiguration, gautosar.gecucdescription.GModuleConfiguration, java.lang.String)
 	 */
 	public GModuleConfiguration initializeModuleConfigurationValues(final GModuleConfiguration moduleConfigurationToInitialize,
 			final GModuleConfiguration moduleConfiguration, final String preconfiguredRecommendedMarker) {
 		Assert.isNotNull(moduleConfigurationToInitialize);
 		Assert.isNotNull(moduleConfiguration);
 
-		final TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(moduleConfigurationToInitialize);
+		// Runnable to be executed in a write-transaction on the editing domain
 		final Runnable runnable = new Runnable() {
 			public void run() {
 				for (GContainer container : moduleConfigurationToInitialize.gGetContainers()) {
@@ -475,33 +475,34 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				}
 			}
 
-			private void intializeConfigurationValues(GContainer container, String preconfiguredRecommendedMarker) {
+			private void intializeConfigurationValues(GContainer container, String marker) {
 				GContainerDef containerDef = container.gGetDefinition();
 				GContainer moduleConfContainerValue = ModuleConfigurationUtil.getContainerFromDefinition(containerDef, moduleConfiguration);
 				if (moduleConfContainerValue != null) {
-					// initialize configuration parameter values
+					// Initialize configuration parameter values
 					for (GParameterValue parameterValue : moduleConfContainerValue.gGetParameterValues()) {
-						initializeContainerValues(container, parameterValue, preconfiguredRecommendedMarker);
+						initializeContainerValues(container, parameterValue, marker);
 					}
 
-					// initialize configuration reference values
+					// Initialize configuration reference values
 					for (GConfigReferenceValue referenceValue : moduleConfContainerValue.gGetReferenceValues()) {
-						initializeContainerValues(container, referenceValue, preconfiguredRecommendedMarker);
+						initializeContainerValues(container, referenceValue, marker);
 					}
 
-					// iterate sub containers for initializing contained parameter and reference values
+					// Iterate on sub-containers for initializing contained parameter and reference values
 					for (GContainer subContainer : container.gGetSubContainers()) {
-						intializeConfigurationValues(subContainer, preconfiguredRecommendedMarker);
+						intializeConfigurationValues(subContainer, marker);
 					}
 				}
 			}
 		};
 
+		final TransactionalEditingDomain editingDomain = WorkspaceEditingDomainUtil.getEditingDomain(moduleConfigurationToInitialize);
 		if (editingDomain != null) {
 			try {
 				WorkspaceTransactionUtil.executeInWriteTransaction(editingDomain, runnable, Messages.job_initializeModuleConfiguration);
 			} catch (OperationCanceledException ex) {
-
+				// Do not log exception
 			} catch (ExecutionException ex) {
 				PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 			}

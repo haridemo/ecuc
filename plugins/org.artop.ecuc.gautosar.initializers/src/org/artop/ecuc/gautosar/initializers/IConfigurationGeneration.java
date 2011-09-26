@@ -75,16 +75,23 @@ public interface IConfigurationGeneration {
 	Iterable<GModuleConfiguration> generateECUConfigurations(GModuleDef definitionObject, GARPackage targetPackage, String[] shortNames);
 
 	/**
-	 * Initialize module configuration with parameter and reference values of the given 'moduleConfiguration' module
-	 * configuration.
+	 * Initializes the specified {@linkplain GModuleConfiguration Module Configuration} with Parameter and Reference
+	 * values of the given {@link GModuleConfiguration moduleConfiguration} which may either be a <em>Preconfigured</em>
+	 * or <em>Recommended</em> Module Configuration.
+	 * <p>
+	 * Parameters and/or References which are initialized can be marked as <em>Preconfigured</em> or
+	 * <em>Recommended</em> with the additional {@link String extensionKey} argument (e.g. [P] or [R]).
 	 * 
 	 * @param moduleConfigurationToInitialize
-	 *            the initial module definition object
+	 *            The {@linkplain GModuleConfiguration Module Configuration} to initialize.
 	 * @param moduleConfiguration
-	 *            the module definition object to be use for initializing values
-	 * @return initialized module configuration
+	 *            The Preconfigured or Recommended Module Configuration to consider for initializing Parameter values
+	 *            and Reference values.
+	 * @param extensionKey
+	 *            The marker to use for identifying preconfigured or recommended values of Parameters and/or References.
+	 * @return The initialized {@linkplain GModuleConfiguration Module Configuration}.
 	 */
+	// FIXME This method could return 'void'
 	GModuleConfiguration initializeModuleConfigurationValues(GModuleConfiguration moduleConfigurationToInitialize,
 			GModuleConfiguration moduleConfiguration, String extensionKey);
-
 }
