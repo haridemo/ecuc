@@ -16,7 +16,6 @@ package org.artop.ecuc.gautosar.xtend.typesystem.internal;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
 
 /**
