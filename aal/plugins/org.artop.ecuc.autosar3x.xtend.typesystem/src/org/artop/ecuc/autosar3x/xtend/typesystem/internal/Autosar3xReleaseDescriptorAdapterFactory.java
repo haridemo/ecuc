@@ -19,8 +19,6 @@ import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.gautosar.xtend.typesystem.IEcucMetaModelFactory;
 import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.emf.common.notify.AdapterFactory;
-
 import autosar3x.util.Autosar3xReleaseDescriptor;
 
 /**

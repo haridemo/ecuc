@@ -32,7 +32,6 @@ import org.eclipse.core.runtime.jobs.IJobChangeListener;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
 import org.eclipse.sphinx.emf.metamodel.MetaModelDescriptorRegistry;
-import org.eclipse.sphinx.xtendxpand.jobs.M2MJob;
 import org.eclipse.sphinx.xtendxpand.jobs.SaveAsNewFileHandler;
 import org.eclipse.sphinx.xtendxpand.jobs.XtendJob;
 
