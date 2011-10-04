@@ -64,27 +64,35 @@ public abstract class AbstractRichContainerDefTypeImpl extends AbstractComposite
 	@Override
 	protected void addBaseFeatures() {
 		super.addBaseFeatures();
-		addFeature(new PropertyImpl(this,
-				"referencingContainers", getTypeSystem().getListType(getContext().getMetaModel().getTypeForName(ContainerDefType.TYPE_NAME))) { //$NON-NLS-1$
+		Type typeForName = getContext().getMetaModel().getTypeForName(ContainerDefType.TYPE_NAME);
+		addFeature(new PropertyImpl(this, "referencingContainers", getTypeSystem().getListType(typeForName)) { //$NON-NLS-1$
+			/*
+			 * The 'referencingContainers' operation retrieves inverse references to the specified target Container and
+			 * returns the parent Container of each ReferenceValue referencing this target Container.
+			 */
 			public Object get(Object target) {
+				// The referencing Containers to return
+				Collection<GContainer> containers = new HashSet<GContainer>();
 				if (target instanceof EObject) {
-					Collection<Setting> inverseReferences = EObjectUtil.getInverseReferences((EObject) target, false);
-					Collection<GContainer> containers = new HashSet<GContainer>();
+					// Get inverse references (proxy references included)
+					Collection<Setting> inverseReferences = EObjectUtil.getInverseReferences((EObject) target, true);
 					for (Setting inverseReference : inverseReferences) {
 						EObject eObject = inverseReference.getEObject();
 						if (eObject instanceof GConfigReferenceValue) {
+							// After having retrieved ReferenceValue, get its parent Container
 							GConfigReferenceValue configReferenceValue = (GConfigReferenceValue) eObject;
 							EObject eContainer = configReferenceValue.eContainer();
-							if (eContainer instanceof GContainer) {
-								containers.add((GContainer) eContainer);
+							// Exclude Container which are proxy; exclude 'target' also
+							if (!eContainer.eIsProxy() && eContainer != target) {
+								if (eContainer instanceof GContainer) {
+									containers.add((GContainer) eContainer);
+								}
 							}
 						}
 					}
-					return containers;
 				}
-				return Collections.emptyList();
+				return containers;
 			}
-
 		});
 	}
 
