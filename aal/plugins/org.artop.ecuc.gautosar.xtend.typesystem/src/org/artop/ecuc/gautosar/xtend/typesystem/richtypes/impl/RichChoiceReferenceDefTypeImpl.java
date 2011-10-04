@@ -34,7 +34,6 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainer
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.sphinx.platform.util.PlatformLogUtil;
-import org.eclipse.xtend.typesystem.Feature;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
@@ -118,11 +117,5 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 			}
 		}
 		return null;
-	}
-
-	// TODO (aakar) Delete this
-	@Override
-	public Feature[] getContributedFeatures() {
-		return super.getContributedFeatures();
 	}
 }
