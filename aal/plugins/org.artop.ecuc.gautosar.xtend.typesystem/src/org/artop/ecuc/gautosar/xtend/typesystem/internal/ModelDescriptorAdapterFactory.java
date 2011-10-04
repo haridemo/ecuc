@@ -16,12 +16,11 @@ package org.artop.ecuc.gautosar.xtend.typesystem.internal;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
 
 /**
- * An {@link AdapterFactory adapter factory} for {@link IModelDescriptor model descriptor}s that supports the following
- * adapter types:
+ * An {@link org.eclipse.emf.common.notify.AdapterFactory adapter factory} for {@link IModelDescriptor model descriptor}
+ * s that supports the following adapter types:
  * <ul>
  * <li>{@link EcucMetaModel}</li>
  * </ul>
