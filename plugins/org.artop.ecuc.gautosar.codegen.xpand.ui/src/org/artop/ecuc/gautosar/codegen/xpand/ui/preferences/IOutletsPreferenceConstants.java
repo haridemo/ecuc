@@ -20,7 +20,7 @@ import java.util.Collection;
 import org.eclipse.sphinx.xtendxpand.outlet.ExtendedOutlet;
 import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 
-// TODO (aakar) Should be moved to a non-UI plugin
+// TODO (aakar & seberle) Should be moved to a new non-UI plug-in named org.artop.ecuc.gautosar.codegen.xpand
 public interface IOutletsPreferenceConstants {
 
 	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet"); //$NON-NLS-1$ //$NON-NLS-2$
