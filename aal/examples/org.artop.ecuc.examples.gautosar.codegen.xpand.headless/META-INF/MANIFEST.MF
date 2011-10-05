@@ -10,4 +10,5 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.sphinx.emf.workspace;visibility:=reexport,
  org.artop.aal.common;visibility:=reexport,
  org.eclipse.sphinx.xtendxpand;visibility:=reexport,
- org.artop.ecuc.gautosar.xtend.typesystem;visibility:=reexport
+ org.artop.ecuc.gautosar.xtend.typesystem;visibility:=reexport,
+ org.eclipse.emf.mwe.core
