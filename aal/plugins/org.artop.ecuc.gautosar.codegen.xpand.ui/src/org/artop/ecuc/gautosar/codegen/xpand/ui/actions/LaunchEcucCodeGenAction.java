@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,6 +9,7 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - Adapted to changes in Sphinx
  * 
  * </copyright>
  */
@@ -17,12 +18,8 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.actions;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucparameterdef.GModuleDef;
 
-import java.util.Collection;
-import java.util.HashSet;
-
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
-import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -47,7 +44,6 @@ import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.actions.BasicM2TAction;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.M2TConfigurationWizard;
-import org.eclipse.xtend.typesystem.MetaModel;
 
 public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
@@ -145,23 +141,10 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
 		wizard.setOutletsPreference(getOutletsPreference());
 		wizard.setDefaultOutlet(getDefaultOutlet());
+		wizard.setResultMessageHandler(createResultMessageHandler());
+
 		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
 		wizardDialog.open();
-	}
-
-	/*
-	 * @see org.eclipse.sphinx.xpand.ui.actions.BasicM2TAction#getMetaModels()
-	 */
-	@Override
-	protected Collection<MetaModel> getMetaModels() {
-		Collection<MetaModel> metaModels = new HashSet<MetaModel>();
-		IFile selectedModelObjectFile = EcorePlatformUtil.getFile(getSelectedModelObject());
-		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(selectedModelObjectFile);
-		if (moduleDefModelDescriptor != null) {
-			metaModels.add((MetaModel) moduleDefModelDescriptor.getAdapter(EcucMetaModel.class));
-			return metaModels;
-		}
-		return null;
 	}
 
 	/*

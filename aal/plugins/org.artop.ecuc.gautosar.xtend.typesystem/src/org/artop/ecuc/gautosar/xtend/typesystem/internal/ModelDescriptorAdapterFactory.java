@@ -19,8 +19,8 @@ import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
 
 /**
- * An {@link org.eclipse.emf.common.notify.AdapterFactory adapter factory} for {@link IModelDescriptor model descriptor}
- * s that supports the following adapter types:
+ * An {@link AdapterFactory adapter factory} for {@link IModelDescriptor model descriptor}s that supports the following
+ * adapter types:
  * <ul>
  * <li>{@link EcucMetaModel}</li>
  * </ul>

@@ -35,9 +35,10 @@ Contributors:
             id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.convertToBSWPlatformProject"
             objectClass="org.eclipse.core.resources.IProject">
          <action
-               class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.ConvertToXtendXpandEnableAutosarProjectAction"
+               class="org.artop.ecuc.gautosar.codegen.xpand.ui.actions.ConvertToXtendXpandEnabledAutosarProjectAction"
                id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject"
-               label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject.label">
+               label="%ecuc.examples.codegen.xpand.ui.popupMenuActions.convertToBSWPlatformProject.label"
+               menubarPath="org.eclipse.ui.projectConfigure/additions">
          </action>
       </objectContribution>
    </extension>
@@ -45,7 +46,7 @@ Contributors:
          point="org.eclipse.ui.newWizards">
           <wizard
                 category="org.artop.aal.workspace.ui.newWizards.category.autosar"
-                class="org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.XtendXpandEnableAutosarProjectWizard"
+                class="org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.XtendXpandEnabledAutosarProjectWizard"
                 finalPerspective="org.artop.aal.examples.common.ui.perspectives.artop"
                 icon="$nl$/icons/full/etool16/newbswpprj_wiz.gif"
                 id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.newWizards.bswPlatformProject"
