@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-2.xsd"><AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ARRoot</SHORT-NAME>
+      <ELEMENTS>
+        <I-SIGNAL-I-PDU>
+          <SHORT-NAME>MyISignalIPdu</SHORT-NAME>
+          <I-SIGNAL-TO-PDU-MAPPINGS>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>MyISignalToIPduMapping1</SHORT-NAME>
+              <START-POSITION>5</START-POSITION>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+            <I-SIGNAL-TO-I-PDU-MAPPING>
+              <SHORT-NAME>MyISignalToIPduMapping2</SHORT-NAME>
+              <START-POSITION>9</START-POSITION>
+            </I-SIGNAL-TO-I-PDU-MAPPING>
+          </I-SIGNAL-TO-PDU-MAPPINGS>
+        </I-SIGNAL-I-PDU>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES></AUTOSAR>
