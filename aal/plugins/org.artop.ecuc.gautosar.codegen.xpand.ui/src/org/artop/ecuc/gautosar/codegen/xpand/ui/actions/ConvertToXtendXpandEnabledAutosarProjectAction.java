@@ -24,12 +24,12 @@ import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.sphinx.xtendxpand.jobs.ConvertToXtendXpandEnabledPluginProjectJob;
 import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
-import org.eclipse.sphinx.xtendxpand.ui.jobs.ConvertToXtendXpandEnabledProjectJob;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-public class ConvertToXtendXpandEnableAutosarProjectAction implements IObjectActionDelegate {
+public class ConvertToXtendXpandEnabledAutosarProjectAction implements IObjectActionDelegate {
 
 	protected ISelection selection;
 
@@ -62,8 +62,9 @@ public class ConvertToXtendXpandEnableAutosarProjectAction implements IObjectAct
 			Object selected = structuredSelection.getFirstElement();
 			if (selected instanceof IProject) {
 				final IProject project = (IProject) selected;
-				ConvertToXtendXpandEnabledProjectJob job = new ConvertToXtendXpandEnabledProjectJob(
-						Messages.job_convertToXtendXpandEnableAutosarProject, EcucMetamodelContributor.class, project);
+				ConvertToXtendXpandEnabledPluginProjectJob job = new ConvertToXtendXpandEnabledPluginProjectJob(
+						Messages.job_convertingToXtendXpandEnabledAutosarProject, project);
+				job.getEnabledMetamodelContributorTypeNames().add(EcucMetamodelContributor.class.getName());
 
 				// Add ECU Configuration specific outlets after conversion
 				job.addJobChangeListener(new JobChangeAdapter() {
