@@ -35,15 +35,15 @@ import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
+import org.eclipse.sphinx.xtendxpand.jobs.ConvertToXtendXpandEnabledPluginProjectJob;
 import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
-import org.eclipse.sphinx.xtendxpand.ui.jobs.ConvertToXtendXpandEnabledProjectJob;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewProjectReferencePage;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 
-public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWizard implements IExecutableExtension {
+public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWizard implements IExecutableExtension {
 
 	protected AutosarProjectWizardFirstPage mainPage;
 
@@ -146,8 +146,9 @@ public class XtendXpandEnableAutosarProjectWizard extends BasicAutosarProjectWiz
 			@Override
 			public void done(IJobChangeEvent event) {
 				if (event.getResult().getSeverity() == IStatus.OK) {
-					ConvertToXtendXpandEnabledProjectJob convertJob = new ConvertToXtendXpandEnabledProjectJob(
-							Messages.job_convertToXtendXpandEnableAutosarProject, EcucMetamodelContributor.class, projectHandle);
+					ConvertToXtendXpandEnabledPluginProjectJob convertJob = new ConvertToXtendXpandEnabledPluginProjectJob(
+							Messages.job_convertingToXtendXpandEnabledAutosarProject, projectHandle);
+					convertJob.getEnabledMetamodelContributorTypeNames().add(EcucMetamodelContributor.class.getName());
 					addConvertJobChangeListener(convertJob, projectHandle);
 					convertJob.schedule();
 				}
