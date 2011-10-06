@@ -15,6 +15,8 @@
 package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.artop.aal.workspace.jobs.CreateArtopProjectJob;
 import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
@@ -35,6 +37,7 @@ import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
+import org.eclipse.sphinx.xtend.typesystem.emf.ui.SphinxManagedEmfMetamodelContributor;
 import org.eclipse.sphinx.xtendxpand.jobs.ConvertToXtendXpandEnabledPluginProjectJob;
 import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 import org.eclipse.swt.widgets.Display;
@@ -148,12 +151,23 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 				if (event.getResult().getSeverity() == IStatus.OK) {
 					ConvertToXtendXpandEnabledPluginProjectJob convertJob = new ConvertToXtendXpandEnabledPluginProjectJob(
 							Messages.job_convertingToXtendXpandEnabledAutosarProject, projectHandle);
-					convertJob.getEnabledMetamodelContributorTypeNames().add(EcucMetamodelContributor.class.getName());
+					convertJob.getEnabledMetamodelContributorTypeNames().addAll(getMetamodelContributors());
 					addConvertJobChangeListener(convertJob, projectHandle);
 					convertJob.schedule();
 				}
 			}
 		});
+	}
+
+	/**
+	 * Returns the metamodel contributors to be activated by default for Xtend/Xpand enabled AUTOSAR projects i.e., BSW
+	 * Platform projects.
+	 */
+	protected List<String> getMetamodelContributors() {
+		List<String> metaModelContributors = new ArrayList<String>();
+		metaModelContributors.add(EcucMetamodelContributor.class.getName());
+		metaModelContributors.add(SphinxManagedEmfMetamodelContributor.class.getName());
+		return metaModelContributors;
 	}
 
 	protected void addConvertJobChangeListener(Job job, final IProject projectHandle) {
