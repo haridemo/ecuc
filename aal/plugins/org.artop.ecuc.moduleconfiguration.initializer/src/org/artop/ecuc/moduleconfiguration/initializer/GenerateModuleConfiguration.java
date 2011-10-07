@@ -24,7 +24,6 @@ import java.util.Collection;
 import java.util.UUID;
 import java.util.Vector;
 
-import org.artop.ecl.emf.util.WorkspaceEditingDomainUtil;
 import org.artop.ecuc.moduleconfiguration.initializer.internal.ConfigurationConstants;
 import org.artop.ecuc.moduleconfiguration.initializer.internal.DescriptionDefinitionMap;
 import org.eclipse.emf.common.command.Command;
@@ -32,9 +31,9 @@ import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.command.CreateChildCommand;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor.PropertyValueWrapper;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 
