@@ -14,9 +14,11 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.actions.providers;
 
+import org.artop.ecuc.gautosar.codegen.xpand.ui.IEcucCodeGenerationMenuConstants;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.actions.LaunchEcucCodeGenAction;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.emf.ui.actions.providers.BasicActionProvider;
@@ -46,9 +48,20 @@ public class EcucCodeGenActionProvider extends BasicActionProvider {
 	}
 
 	@Override
+	protected IMenuManager addSubMenu(IMenuManager contextMenuManager) {
+		IMenuManager subMenuManager = contextMenuManager.findMenuUsingPath(IEcucCodeGenerationMenuConstants.MENU_GENERATE_ID);
+		if (subMenuManager == null) {
+			subMenuManager = new MenuManager(IEcucCodeGenerationMenuConstants.MENU_GENERATE_LABEL, IEcucCodeGenerationMenuConstants.MENU_GENERATE_ID);
+			contextMenuManager.appendToGroup(ICommonMenuConstants.GROUP_ADDITIONS, subMenuManager);
+		}
+		return subMenuManager;
+
+	}
+
+	@Override
 	protected void fillSubMenu(IMenuManager subMenuManager) {
 		if (launchCodeGenAction != null) {
-			subMenuManager.appendToGroup(ICommonMenuConstants.GROUP_ADDITIONS, new ActionContributionItem(launchCodeGenAction));
+			subMenuManager.add(new ActionContributionItem(launchCodeGenAction));
 		}
 	}
 
