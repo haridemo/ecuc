@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.autosar40.codegen.xpand.ui.actions.providers;
 
+import org.artop.ecuc.autosar40.codegen.xpand.ui.actions.AdvancedLaunchEcucCodeGen40Action;
 import org.artop.ecuc.autosar40.codegen.xpand.ui.actions.LaunchEcucCodeGen40Action;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.IEcucCodeGenerationMenuConstants;
 import org.eclipse.jface.action.ActionContributionItem;
@@ -28,22 +29,30 @@ import org.eclipse.ui.navigator.ICommonMenuConstants;
 public class EcucCodeGen40ActionProvider extends BasicActionProvider {
 
 	protected LaunchEcucCodeGen40Action launchCodeGen40Action;
+	protected AdvancedLaunchEcucCodeGen40Action advancedLaunchCodeGen40Action;
 
 	@Override
 	public void doInit() {
 		launchCodeGen40Action = createLaunchEcucCodeGenAction();
+		advancedLaunchCodeGen40Action = createAdvancedLaunchEcucCodeGen();
 		if (selectionProvider != null) {
 			selectionProvider.addSelectionChangedListener(launchCodeGen40Action);
+			selectionProvider.addSelectionChangedListener(advancedLaunchCodeGen40Action);
 
 			ISelection selection = selectionProvider.getSelection();
 			IStructuredSelection structuredSelection = SelectionUtil.getStructuredSelection(selection);
 
 			launchCodeGen40Action.selectionChanged(structuredSelection);
+			advancedLaunchCodeGen40Action.selectionChanged(structuredSelection);
 		}
 	}
 
 	protected LaunchEcucCodeGen40Action createLaunchEcucCodeGenAction() {
 		return new LaunchEcucCodeGen40Action();
+	}
+
+	protected AdvancedLaunchEcucCodeGen40Action createAdvancedLaunchEcucCodeGen() {
+		return new AdvancedLaunchEcucCodeGen40Action();
 	}
 
 	/*
@@ -66,6 +75,9 @@ public class EcucCodeGen40ActionProvider extends BasicActionProvider {
 		if (launchCodeGen40Action != null) {
 			subMenuManager.add(new ActionContributionItem(launchCodeGen40Action));
 		}
+		if (advancedLaunchCodeGen40Action != null) {
+			subMenuManager.add(new ActionContributionItem(advancedLaunchCodeGen40Action));
+		}
 	}
 
 	@Override
@@ -75,6 +87,9 @@ public class EcucCodeGen40ActionProvider extends BasicActionProvider {
 		if (selectionProvider != null) {
 			if (launchCodeGen40Action != null) {
 				selectionProvider.removeSelectionChangedListener(launchCodeGen40Action);
+			}
+			if (advancedLaunchCodeGen40Action != null) {
+				selectionProvider.removeSelectionChangedListener(advancedLaunchCodeGen40Action);
 			}
 		}
 	}

@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.autosar3x.codegen.xpand.ui.actions.providers;
 
+import org.artop.ecuc.autosar3x.codegen.xpand.ui.actions.AdvancedLaunchEcucCodeGen3xAction;
 import org.artop.ecuc.autosar3x.codegen.xpand.ui.actions.LaunchEcucCodeGen3xAction;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.IEcucCodeGenerationMenuConstants;
 import org.eclipse.jface.action.ActionContributionItem;
@@ -28,22 +29,30 @@ import org.eclipse.ui.navigator.ICommonMenuConstants;
 public class EcucCodeGen3xActionProvider extends BasicActionProvider {
 
 	protected LaunchEcucCodeGen3xAction launchCodeGen3xAction;
+	protected AdvancedLaunchEcucCodeGen3xAction advancedLaunchCodeGen3xAction;
 
 	@Override
 	public void doInit() {
 		launchCodeGen3xAction = createLaunchEcucCodeGenAction();
+		advancedLaunchCodeGen3xAction = createAdvancedLaunchEcucCodeGenAction();
 		if (selectionProvider != null) {
 			selectionProvider.addSelectionChangedListener(launchCodeGen3xAction);
+			selectionProvider.addSelectionChangedListener(advancedLaunchCodeGen3xAction);
 
 			ISelection selection = selectionProvider.getSelection();
 			IStructuredSelection structuredSelection = SelectionUtil.getStructuredSelection(selection);
 
 			launchCodeGen3xAction.selectionChanged(structuredSelection);
+			advancedLaunchCodeGen3xAction.selectionChanged(structuredSelection);
 		}
 	}
 
 	protected LaunchEcucCodeGen3xAction createLaunchEcucCodeGenAction() {
 		return new LaunchEcucCodeGen3xAction();
+	}
+
+	protected AdvancedLaunchEcucCodeGen3xAction createAdvancedLaunchEcucCodeGenAction() {
+		return new AdvancedLaunchEcucCodeGen3xAction();
 	}
 
 	/*
@@ -66,6 +75,9 @@ public class EcucCodeGen3xActionProvider extends BasicActionProvider {
 		if (launchCodeGen3xAction != null) {
 			subMenuManager.add(new ActionContributionItem(launchCodeGen3xAction));
 		}
+		if (advancedLaunchCodeGen3xAction != null) {
+			subMenuManager.add(new ActionContributionItem(advancedLaunchCodeGen3xAction));
+		}
 	}
 
 	@Override
@@ -75,6 +87,9 @@ public class EcucCodeGen3xActionProvider extends BasicActionProvider {
 		if (selectionProvider != null) {
 			if (launchCodeGen3xAction != null) {
 				selectionProvider.removeSelectionChangedListener(launchCodeGen3xAction);
+			}
+			if (advancedLaunchCodeGen3xAction != null) {
+				selectionProvider.removeSelectionChangedListener(advancedLaunchCodeGen3xAction);
 			}
 		}
 	}
