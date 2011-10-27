@@ -23,11 +23,13 @@ import java.util.Collections;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.internal.messages.Messages;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Property;
@@ -46,6 +48,11 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				return internalIsSet(target);
+			}
+
+			@Override
+			public String getDocumentation() {
+				return Messages.doc_RichConfigReferenceType_isConfigured;
 			}
 		});
 	}
@@ -94,8 +101,22 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 		((GReferenceValue) target).gSetValue((GIdentifiable) value);
 	}
 
+	/**
+	 * Checks if specified <code>target</code> elements has been set or not and if its value is proxy or not.
+	 * 
+	 * @param target
+	 *            The Reference Value whose set state must be checked.
+	 * @return <ul>
+	 *         <li><code><b>true</b>&nbsp;&nbsp;</code> if target value is not <code>null</code> nor proxy;</li>
+	 *         <li><code><b>false</b>&nbsp;</code> otherwise.</li>
+	 *         </ul>
+	 */
 	protected boolean internalIsSet(Object target) {
-		return internalGet(target) != null;
+		Object obj = internalGet(target);
+		if (obj instanceof EObject) {
+			return !((EObject) obj).eIsProxy();
+		}
+		return obj != null;
 	}
 
 	@Override
@@ -133,7 +154,7 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 		if (configReferenceValue != null) {
 			GIdentifiable referenceDef = getEcucTypeDef();
 			if (configReferenceValue instanceof GConfigReferenceValue && referenceDef instanceof GConfigReference) {
-				((GConfigReferenceValue) configReferenceValue).gSetDefinition(((GConfigReference) referenceDef));
+				((GConfigReferenceValue) configReferenceValue).gSetDefinition((GConfigReference) referenceDef);
 			}
 		}
 		return configReferenceValue;
