@@ -64,14 +64,13 @@ public class ModuleConfigurationUtil {
 	}
 
 	/**
-	 * For setting the property value of the object
+	 * For getting the property value of the object.
 	 * 
 	 * @param object
-	 *            the description object
+	 *            the description object.
 	 * @param feature
-	 *            the feature
-	 * @param valueObject
-	 *            the value to be set
+	 *            the feature to be used.
+	 * @return the property value of the object for given feature.
 	 */
 	public static Object getPropertyValue(GARObject object, EStructuralFeature feature) {
 		if (object != null && feature != null) {
