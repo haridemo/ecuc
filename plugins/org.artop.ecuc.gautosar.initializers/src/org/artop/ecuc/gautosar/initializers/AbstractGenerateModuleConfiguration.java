@@ -237,15 +237,15 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * Function for generating the description of the definition object.
 	 * 
 	 * @param editingDomain
-	 *            the standard editing domain object
+	 *            the standard editing domain object.
 	 * @param owner
-	 *            the parent description object
+	 *            the parent description object.
 	 * @param feature
 	 *            the feature
 	 * @param configurationObject
-	 *            the possible child
+	 *            the possible child.
 	 * @param definitionObject
-	 *            the definition object
+	 *            the definition object.
 	 */
 	private void generateConfiguration(TransactionalEditingDomain editingDomain, final Object owner, final EStructuralFeature feature,
 			final GARObject configurationObject, final GARObject definitionObject) {
@@ -521,7 +521,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 	 * @param extensionValue
 	 */
 	private void initializeContainerValues(GContainer containerValue, GARObject parameterReferenceValue, String preconfiguredRecommendedMarker) {
-		// parameterValue case
+		// ParameterValue case
 		if (parameterReferenceValue != null && parameterReferenceValue instanceof GParameterValue) {
 			GConfigParameter parameterDef = ((GParameterValue) parameterReferenceValue).gGetDefinition();
 			Object value = getParameterValue((GParameterValue) parameterReferenceValue);
@@ -530,7 +530,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				if (value instanceof EObject) {
 					newValue = EcoreUtil.copy((EObject) value);
 				}
-				// set the parameter value contained in containerDef
+				// Set the parameter value contained in containerDef
 				for (GParameterValue containerParamValue : containerValue.gGetParameterValues()) {
 					if (containerParamValue.gGetDefinition().equals(parameterDef)) {
 						setParameterValue(containerParamValue, newValue);
@@ -541,7 +541,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 			}
 		}
 
-		// referenceValue case
+		// ReferenceValue case
 		if (parameterReferenceValue != null && parameterReferenceValue instanceof GConfigReferenceValue) {
 			GConfigReference referenceDef = ((GConfigReferenceValue) parameterReferenceValue).gGetDefinition();
 			Object value = getReferenceValue((GConfigReferenceValue) parameterReferenceValue);
@@ -550,7 +550,7 @@ public abstract class AbstractGenerateModuleConfiguration implements IConfigurat
 				if (value instanceof EObject) {
 					newValue = EcoreUtil.copy((EObject) value);
 				}
-				// set the reference value contained in containerDef
+				// Set the reference value contained in containerDef
 				for (GConfigReferenceValue containerReferenceValue : containerValue.gGetReferenceValues()) {
 					if (containerReferenceValue.gGetDefinition().equals(referenceDef)) {
 						setReferenceValue(containerReferenceValue, newValue);
