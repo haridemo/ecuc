@@ -43,7 +43,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
-import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;
@@ -73,6 +72,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichModuleDefType
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichParamConfContainerDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichStringParamDefTypeImpl;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.eclipse.xtend.typesystem.Type;
 
 public class EcucRichTypeFactory implements IRichTypeFactory {
@@ -188,12 +188,12 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			configParameterType = createRichFloatParamDefType(parameter);
 		} else if (parameter instanceof GBooleanParamDef) {
 			configParameterType = createRichBooleanParamDefType(parameter);
-		} else if (parameter instanceof GStringParamDef) {
-			configParameterType = createRichStringParamDefType(parameter);
-		} else if (parameter instanceof GLinkerSymbolDef) {
-			configParameterType = createRichLinkerSymbolDefType(parameter);
 		} else if (parameter instanceof GFunctionNameDef) {
 			configParameterType = createRichFunctionNameDefType(parameter);
+		} else if (parameter instanceof GLinkerSymbolDef) {
+			configParameterType = createRichLinkerSymbolDefType(parameter);
+		} else if (parameter instanceof GStringParamDef) {
+			configParameterType = createRichStringParamDefType(parameter);
 		} else if (parameter instanceof GEnumerationParamDef) {
 			RichEnumerationParamDefType enumerationParamDefType = createEnumerationParamDefType((GEnumerationParamDef) parameter);
 			for (GEnumerationLiteralDef literal : ((GEnumerationParamDef) parameter).gGetLiterals()) {
