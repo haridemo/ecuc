@@ -37,7 +37,8 @@ import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
-	Collection<GParamConfContainerDef> destinationTypeDefs;
+
+	protected Collection<GParamConfContainerDef> destinationTypeDefs;
 
 	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef) {
 		this(context, choiceReferenceDef, choiceReferenceDef.gGetDestinations());

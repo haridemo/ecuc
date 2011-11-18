@@ -44,7 +44,7 @@ public class RichForeignReferenceDefTypeImpl extends AbstractRichConfigReference
 
 	public RichForeignReferenceDefTypeImpl(EcucContext context, GForeignReferenceDef foreignReferenceDef, String destinationType) {
 		super(context, foreignReferenceDef);
-		destinationType = foreignReferenceDef.gGetDestinationType();
+		this.destinationType = foreignReferenceDef.gGetDestinationType();
 	}
 
 	public EClass getEcucValueType() {
