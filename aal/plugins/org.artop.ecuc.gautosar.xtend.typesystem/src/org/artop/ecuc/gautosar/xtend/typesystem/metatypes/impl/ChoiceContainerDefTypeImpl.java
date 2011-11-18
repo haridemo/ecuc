@@ -32,11 +32,6 @@ public class ChoiceContainerDefTypeImpl extends ContainerDefTypeImpl implements 
 		super(context, typeName);
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */

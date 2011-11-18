@@ -46,4 +46,9 @@ public class RichLinkerSymbolDefTypeImpl extends AbstractRichAbstractStringParam
 	protected boolean internalIsSet(Object target) {
 		return ((GLinkerSymbolValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

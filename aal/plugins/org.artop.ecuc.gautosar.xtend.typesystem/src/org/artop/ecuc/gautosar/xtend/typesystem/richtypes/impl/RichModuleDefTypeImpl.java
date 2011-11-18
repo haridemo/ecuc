@@ -89,4 +89,9 @@ public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl imp
 		}
 		return moduleConfiguration;
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

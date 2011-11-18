@@ -52,4 +52,9 @@ public class RichFloatParamDefTypeImpl extends AbstractRichConfigParameterTypeIm
 	protected boolean internalIsSet(Object target) {
 		return ((GFloatValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

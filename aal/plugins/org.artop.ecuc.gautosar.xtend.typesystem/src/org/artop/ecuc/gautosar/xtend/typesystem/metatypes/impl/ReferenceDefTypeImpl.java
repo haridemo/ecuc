@@ -32,11 +32,6 @@ public class ReferenceDefTypeImpl extends ConfigReferenceTypeImpl implements Ref
 		super(context, typeName);
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */

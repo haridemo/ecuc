@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARPackageType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.AUTOSARType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Feature;
@@ -79,6 +79,6 @@ public class AUTOSARTypeImpl extends AbstractEcucMetaTypeImpl implements AUTOSAR
 	 */
 	@Override
 	protected Set<? extends Type> internalGetSuperTypes() {
-		return Collections.singleton(getContext().getMetaModel().getTypeForName(ContainerDefType.TYPE_NAME));
+		return Collections.singleton(getContext().getMetaModel().getTypeForName(ARObjectType.TYPE_NAME));
 	}
 }

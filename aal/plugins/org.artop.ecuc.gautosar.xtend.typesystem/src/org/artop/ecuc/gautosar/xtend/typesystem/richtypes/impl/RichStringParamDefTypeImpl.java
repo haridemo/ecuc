@@ -46,4 +46,9 @@ public class RichStringParamDefTypeImpl extends AbstractRichAbstractStringParamD
 	protected boolean internalIsSet(Object target) {
 		return ((GStringValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

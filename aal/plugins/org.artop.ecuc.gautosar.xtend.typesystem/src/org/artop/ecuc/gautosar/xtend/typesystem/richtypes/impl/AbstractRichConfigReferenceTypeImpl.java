@@ -76,7 +76,8 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 	protected abstract Type getValueType();
 
 	public void addValueAccessorFeatures() {
-		addFeature(new PropertyImpl(this, "value", getValueType()) { //$NON-NLS-1$
+		Type valueType = getValueType();
+		addFeature(new PropertyImpl(this, "value", valueType) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return internalGet(target);
 			}
@@ -86,7 +87,7 @@ public abstract class AbstractRichConfigReferenceTypeImpl extends AbstractCompos
 				internalSet(target, newValue);
 			}
 		});
-		addFeature(new OperationImpl(this, "setValue", getTypeSystem().getVoidType(), getValueType()) { //$NON-NLS-1$
+		addFeature(new OperationImpl(this, "setValue", getTypeSystem().getVoidType(), valueType) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				internalSet(target, params != null && params.length == 1 ? params[0] : null);

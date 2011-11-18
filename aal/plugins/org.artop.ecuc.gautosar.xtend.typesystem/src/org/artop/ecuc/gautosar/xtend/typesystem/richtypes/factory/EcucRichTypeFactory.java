@@ -37,13 +37,13 @@ import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.EcucRichType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
@@ -53,6 +53,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigParameterTyp
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichEnumerationParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichForeignReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFunctionNameDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichLinkerSymbolDefType;
@@ -65,6 +66,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichChoiceContain
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichChoiceReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichEnumerationParamDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichFloatParamDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichForeignReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichFunctionNameDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichIntegerParamDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichLinkerSymbolDefTypeImpl;
@@ -73,6 +75,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichParamConfCont
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichStringParamDefTypeImpl;
 import org.eclipse.sphinx.emf.util.EObjectUtil;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xtend.typesystem.Type;
 
 public class EcucRichTypeFactory implements IRichTypeFactory {
@@ -245,10 +248,8 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			// getRichTypeName(reference));
 			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GForeignReferenceDef) {
-			// TODO Provide support for GForeignReferenceDef
-			// configReferenceType.add(new RichForeignReferenceDefType(context, reference,
-			// getRichTypeName(reference));
-			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			GForeignReferenceDef foreignReferenceDef = (GForeignReferenceDef) reference;
+			configReferenceTypes.add(createRichForeignReferenceDefType(foreignReferenceDef));
 		} else if (reference instanceof GInstanceReferenceDef) {
 			// TODO Provide support for GInstanceReferenceDef
 			// configReferenceType.add(new RichInstanceReferenceDefType(context, reference,
@@ -256,26 +257,30 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GChoiceReferenceDef) {
 			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
-			configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef, choiceReferenceDef.gGetDestinations()));
+			configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef));
 		} else {
 			throw new UnsupportedOperationException("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configReferenceTypes;
 	}
 
-	protected RichReferenceDefType createRichReferenceDefType(GReferenceDef referenceDef) {
-		return new RichReferenceDefTypeImpl(context, referenceDef, referenceDef.gGetDestination());
+	protected RichForeignReferenceDefType createRichForeignReferenceDefType(GForeignReferenceDef foreignReferenceDef) {
+		return new RichForeignReferenceDefTypeImpl(context, foreignReferenceDef);
 	}
 
-	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef,
-			Collection<GParamConfContainerDef> destinations) {
-		return new RichChoiceReferenceDefTypeImpl(context, choiceReferenceDef, destinations);
+	protected RichReferenceDefType createRichReferenceDefType(GReferenceDef referenceDef) {
+		return new RichReferenceDefTypeImpl(context, referenceDef);
+	}
+
+	protected RichChoiceReferenceDefType createRichChoiceReferenceDefType(GChoiceReferenceDef choiceReferenceDef) {
+		return new RichChoiceReferenceDefTypeImpl(context, choiceReferenceDef);
 	}
 
 	protected void registerType(EcucRichType type, GIdentifiable identifiable) {
 		Type previousType = types.put(type.getName(), type);
 		if (previousType != null) {
-			throw new IllegalStateException("Type name conflict: " + type.getName()); //$NON-NLS-1$
+			PlatformLogUtil.logAsError(Activator.getPlugin(), new IllegalStateException(
+					"Type name conflict: " + type.getName() + " Please adjust your Model !")); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		if (type instanceof RichModuleDefType) {
 			rootTypes.add((RichModuleDefType) type);
