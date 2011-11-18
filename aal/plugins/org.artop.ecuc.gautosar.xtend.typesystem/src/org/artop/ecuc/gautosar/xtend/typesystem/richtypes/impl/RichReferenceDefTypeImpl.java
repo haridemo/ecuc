@@ -41,7 +41,7 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 
 	public RichReferenceDefTypeImpl(EcucContext context, GReferenceDef referenceDef, GParamConfContainerDef destinationTypeDef) {
 		super(context, referenceDef);
-		destinationTypeDef = referenceDef.gGetDestination();
+		this.destinationTypeDef = referenceDef.gGetDestination();
 	}
 
 	public EClass getEcucValueType() {
