@@ -44,4 +44,9 @@ public class RichChoiceContainerDefTypeImpl extends AbstractRichContainerDefType
 	protected Set<? extends Type> internalGetSuperTypes() {
 		return Collections.singleton(getContext().getMetaModel().getTypeForName(ChoiceContainerDefType.TYPE_NAME));
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

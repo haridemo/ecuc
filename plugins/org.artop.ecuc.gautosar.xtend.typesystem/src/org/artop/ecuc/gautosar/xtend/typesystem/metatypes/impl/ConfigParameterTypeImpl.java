@@ -32,11 +32,6 @@ public class ConfigParameterTypeImpl extends AbstractEcucMetaTypeImpl implements
 		super(context, typeName);
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */

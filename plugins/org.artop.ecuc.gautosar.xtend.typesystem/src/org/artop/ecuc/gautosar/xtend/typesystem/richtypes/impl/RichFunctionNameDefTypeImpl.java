@@ -46,4 +46,9 @@ public class RichFunctionNameDefTypeImpl extends AbstractRichAbstractStringParam
 	protected boolean internalIsSet(Object target) {
 		return ((GFunctionNameValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

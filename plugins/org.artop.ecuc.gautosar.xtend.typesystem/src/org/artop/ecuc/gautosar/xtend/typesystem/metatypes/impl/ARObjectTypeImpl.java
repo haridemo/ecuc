@@ -29,9 +29,4 @@ public class ARObjectTypeImpl extends AbstractEcucMetaTypeImpl implements ARObje
 	private ARObjectTypeImpl(EcucContext context, String typeName) {
 		super(context, typeName);
 	}
-
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
 }

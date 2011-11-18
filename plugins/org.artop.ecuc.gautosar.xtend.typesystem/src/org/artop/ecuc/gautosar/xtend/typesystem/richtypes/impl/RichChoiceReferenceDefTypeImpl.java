@@ -39,6 +39,10 @@ import org.eclipse.xtend.typesystem.Type;
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
 	Collection<GParamConfContainerDef> destinationTypeDefs;
 
+	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef) {
+		this(context, choiceReferenceDef, choiceReferenceDef.gGetDestinations());
+	}
+
 	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef,
 			Collection<GParamConfContainerDef> destinationTypeDefs) {
 		super(context, choiceReferenceDef);
@@ -117,5 +121,10 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
 	}
 }

@@ -69,4 +69,9 @@ public class RichEnumerationParamDefTypeImpl extends AbstractRichConfigParameter
 	protected boolean internalIsSet(Object target) {
 		return ((GEnumerationValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

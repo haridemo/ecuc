@@ -22,7 +22,7 @@ import java.util.Set;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
@@ -57,16 +57,11 @@ public class ModuleDefTypeImpl extends AbstractEcucMetaTypeImpl implements Modul
 		return target instanceof GModuleConfiguration;
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Set<? extends Type> internalGetSuperTypes() {
-		return Collections.singleton(getContext().getMetaModel().getTypeForName(ContainerDefType.TYPE_NAME));
+		return Collections.singleton(getContext().getMetaModel().getTypeForName(ARObjectType.TYPE_NAME));
 	}
 }

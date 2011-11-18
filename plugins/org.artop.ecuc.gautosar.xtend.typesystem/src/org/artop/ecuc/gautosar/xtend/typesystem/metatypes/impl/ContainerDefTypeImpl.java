@@ -32,11 +32,6 @@ public class ContainerDefTypeImpl extends AbstractEcucMetaTypeImpl implements Co
 		super(context, typeName);
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */

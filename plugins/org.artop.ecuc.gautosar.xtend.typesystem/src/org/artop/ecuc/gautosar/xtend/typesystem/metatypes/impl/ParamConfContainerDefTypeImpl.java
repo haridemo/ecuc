@@ -32,11 +32,6 @@ public class ParamConfContainerDefTypeImpl extends ContainerDefTypeImpl implemen
 		super(context, typeName);
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */

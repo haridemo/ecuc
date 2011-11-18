@@ -18,17 +18,17 @@ import java.util.Collections;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigReferenceType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ForeignReferenceDefType;
 import org.eclipse.xtend.typesystem.Type;
 
-public class ChoiceReferenceDefTypeImpl extends ConfigReferenceTypeImpl implements ChoiceReferenceDefType {
+public class ForeignReferenceDefTypeImpl extends ConfigReferenceTypeImpl implements ForeignReferenceDefType {
 
-	public ChoiceReferenceDefTypeImpl(final EcucContext context) {
-		this(context, ChoiceReferenceDefType.TYPE_NAME);
+	public ForeignReferenceDefTypeImpl(final EcucContext context) {
+		this(context, ForeignReferenceDefType.TYPE_NAME);
 	}
 
-	private ChoiceReferenceDefTypeImpl(EcucContext context, String typeName) {
+	private ForeignReferenceDefTypeImpl(EcucContext context, String typeName) {
 		super(context, typeName);
 	}
 

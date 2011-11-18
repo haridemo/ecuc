@@ -52,4 +52,9 @@ public class RichBooleanParamDefTypeImpl extends AbstractRichConfigParameterType
 	protected boolean internalIsSet(Object target) {
 		return ((GBooleanValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

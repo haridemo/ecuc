@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.MultiplicityAwareListType;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareListTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
@@ -35,12 +34,14 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ChoiceReferenceDe
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ConfigParameterTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ConfigReferenceTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ContainerDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ForeignReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ModuleDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ParamConfContainerDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.EcucRichTypeFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IRichTypeFactory;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xtend.expression.TypeSystem;
 import org.eclipse.xtend.typesystem.MetaModel;
 import org.eclipse.xtend.typesystem.Type;
@@ -182,6 +183,7 @@ public class EcucMetaModel implements MetaModel {
 		registerType(new ConfigReferenceTypeImpl(context));
 		registerType(new ReferenceDefTypeImpl(context));
 		registerType(new ChoiceReferenceDefTypeImpl(context));
+		registerType(new ForeignReferenceDefTypeImpl(context));
 		registerType(new ModuleDefTypeImpl(context));
 		registerType(new ARPackageTypeImpl(context));
 		registerType(new AUTOSARTypeImpl(context));

@@ -191,6 +191,14 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
+	public boolean isAbstract() {
+		return true;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	public Object newInstance() {
 		throw new UnsupportedOperationException();
 	}

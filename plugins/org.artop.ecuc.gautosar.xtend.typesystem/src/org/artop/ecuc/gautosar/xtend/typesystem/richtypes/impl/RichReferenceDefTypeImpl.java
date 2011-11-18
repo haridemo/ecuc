@@ -35,9 +35,13 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 
 	protected GParamConfContainerDef destinationTypeDef;
 
+	public RichReferenceDefTypeImpl(EcucContext context, GReferenceDef referenceDef) {
+		this(context, referenceDef, referenceDef.gGetDestination());
+	}
+
 	public RichReferenceDefTypeImpl(EcucContext context, GReferenceDef referenceDef, GParamConfContainerDef destinationTypeDef) {
 		super(context, referenceDef);
-		this.destinationTypeDef = destinationTypeDef;
+		destinationTypeDef = referenceDef.gGetDestination();
 	}
 
 	public EClass getEcucValueType() {
@@ -73,5 +77,10 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 			valueType = getContext().getMetaModel().getTypeForName(ParamConfContainerDefType.TYPE_NAME);
 		}
 		return valueType;
+	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
 	}
 }

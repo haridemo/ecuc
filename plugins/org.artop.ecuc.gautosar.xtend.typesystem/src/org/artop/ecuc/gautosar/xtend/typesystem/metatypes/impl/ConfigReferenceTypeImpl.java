@@ -32,11 +32,6 @@ public class ConfigReferenceTypeImpl extends AbstractEcucMetaTypeImpl implements
 		super(context, typeName);
 	}
 
-	@Override
-	public boolean isAbstract() {
-		return true;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */

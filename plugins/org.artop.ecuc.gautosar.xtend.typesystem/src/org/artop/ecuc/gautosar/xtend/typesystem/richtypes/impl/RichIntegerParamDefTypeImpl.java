@@ -61,4 +61,9 @@ public class RichIntegerParamDefTypeImpl extends AbstractRichConfigParameterType
 	protected boolean internalIsSet(Object target) {
 		return ((GIntegerValue) target).gIsSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }
