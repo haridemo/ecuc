@@ -15,6 +15,7 @@
 package org.artop.ecuc.gautosar.codegen.xpand.ui.dialogs;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptor;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -36,7 +37,7 @@ public class EditXpandEvaluationRequestDialog extends StatusDialog {
 
 	public EditXpandEvaluationRequestDialog(Shell parent, XpandEvaluationRequestDescriptor requestToEdit, TypeSystem typeSystem) {
 		super(parent);
-		setTitle("Code Generation");
+		setTitle(Messages.title_editXpandEvaluationRequestDialog);
 		this.requestToEdit = requestToEdit;
 		this.typeSystem = typeSystem;
 	}
@@ -44,8 +45,8 @@ public class EditXpandEvaluationRequestDialog extends StatusDialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		Control composite = super.createDialogArea(parent);
-		final TemplateGroup templateGroup = new TemplateGroup("Template", (EObject) requestToEdit.getTargetObject(), typeSystem, Activator
-				.getPlugin().getDialogSettings());
+		final TemplateGroup templateGroup = new TemplateGroup(Messages.label_templateGroupName, (EObject) requestToEdit.getTargetObject(),
+				typeSystem, Activator.getPlugin().getDialogSettings());
 		templateGroup.createContent(parent, 3);
 		templateGroup.getTemplateFileField().setText(requestToEdit.getTemplateFile().getFullPath().makeRelative().toString());
 		templateGroup.updateDefinitionFieldItems(requestToEdit.getTemplateFile());

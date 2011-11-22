@@ -20,6 +20,7 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 import java.util.Collection;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.groups.TemplateTableGroup;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptorProvider;
 import org.eclipse.sphinx.platform.ui.fields.IField;
 import org.eclipse.sphinx.platform.ui.groups.IGroupListener;
@@ -40,8 +41,8 @@ public class AdvancedXpandConfigurationPage extends XpandConfigurationPage {
 	 */
 	@Override
 	protected void createTemplateGroup(Composite parent) {
-		templateTableGroup = new TemplateTableGroup("Templates", new XpandEvaluationRequestDescriptorProvider(modelObject), typeSystem,
-				getDialogSettings());
+		templateTableGroup = new TemplateTableGroup(Messages.label_templateTableGroupName, new XpandEvaluationRequestDescriptorProvider(modelObject),
+				typeSystem, getDialogSettings());
 		templateTableGroup.createContent(parent, 3);
 		templateTableGroup.addGroupListener(new IGroupListener() {
 

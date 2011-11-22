@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.dialogs.EditXpandEvaluationRequestDialog;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.TemplateTableContentProvider;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.TemplateTableLabelProvider;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptor;
@@ -128,18 +129,18 @@ public class TemplateTableGroup extends AbstractGroup {
 		table.setLinesVisible(true);
 
 		TableColumn moduleColumn = new TableColumn(table, SWT.NONE);
-		moduleColumn.setText("Module");
-		int minWidth = computeMinimumColumnWidth(gc, "Module");
+		moduleColumn.setText(Messages.label_moduleTableColumn);
+		int minWidth = computeMinimumColumnWidth(gc, Messages.label_moduleTableColumn);
 		columnLayout.setColumnData(moduleColumn, new ColumnWeightData(2, minWidth, true));
 
 		TableColumn templateColumn = new TableColumn(table, SWT.NONE);
-		templateColumn.setText("Template Path");
-		minWidth = computeMinimumColumnWidth(gc, "Template Path");
+		templateColumn.setText(Messages.label_templatePathTableColumn);
+		minWidth = computeMinimumColumnWidth(gc, Messages.label_templatePathTableColumn);
 		columnLayout.setColumnData(templateColumn, new ColumnWeightData(4, minWidth, true));
 
 		TableColumn defineBlockColumn = new TableColumn(table, SWT.NONE);
-		defineBlockColumn.setText("Define Block");
-		minWidth = computeMinimumColumnWidth(gc, "Define Block");
+		defineBlockColumn.setText(Messages.label_defineBlockTableColumn);
+		minWidth = computeMinimumColumnWidth(gc, Messages.label_defineBlockTableColumn);
 		columnLayout.setColumnData(defineBlockColumn, new ColumnWeightData(2, minWidth, true));
 
 		gc.dispose();
@@ -178,13 +179,13 @@ public class TemplateTableGroup extends AbstractGroup {
 		blayout.marginWidth = 0;
 		buttonsComposite.setLayout(blayout);
 
-		editButton = SWTUtil.createButton(buttonsComposite, "Edit", SWT.PUSH);
+		editButton = SWTUtil.createButton(buttonsComposite, Messages.label_editButton, SWT.PUSH);
 		editButton.addListener(SWT.Selection, listener);
 
-		selectAllButton = SWTUtil.createButton(buttonsComposite, "Select All", SWT.PUSH);
+		selectAllButton = SWTUtil.createButton(buttonsComposite, Messages.label_selectAllButton, SWT.PUSH);
 		selectAllButton.addListener(SWT.Selection, listener);
 
-		deselectAllButton = SWTUtil.createButton(buttonsComposite, "Deselect All", SWT.PUSH);
+		deselectAllButton = SWTUtil.createButton(buttonsComposite, Messages.label_deselectAllButton, SWT.PUSH);
 		deselectAllButton.addListener(SWT.Selection, listener);
 		updateButtons();
 	}
