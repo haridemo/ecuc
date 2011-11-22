@@ -23,16 +23,27 @@ public class Messages extends NLS {
 	public static String menu_generate;
 	public static String menuItem_launchEcucCodeGen;
 
+	public static String label_editButton;
+	public static String label_selectAllButton;
+	public static String label_deselectAllButton;
+	public static String label_templateGroupName;
+	public static String label_templateTableGroupName;
+	public static String label_moduleTableColumn;
+	public static String label_defineBlockTableColumn;
+	public static String label_templatePathTableColumn;
+
 	public static String label_addXtendXpandCheckSupportEnableButton;
+
+	public static String title_editXpandEvaluationRequestDialog;
 
 	public static String BSWPlatformProjectWizzardTitle;
 	public static String BSWPlatformProjectWizzardFirstPageTitle;
-	public static String BSWPlatformProjectWizzardFirstPageDescription;
 	public static String BSWPlatformProjectWizzardReferencePageTitle;
+	public static String BSWPlatformProjectWizzardFirstPageDescription;
 	public static String BSWPlatformProjectWizzardReferencePageDescription;
 
-	public static String job_convertingToXtendXpandEnabledAutosarProject;
 	public static String job_creatingAutosarProject;
+	public static String job_convertingToXtendXpandEnabledAutosarProject;
 
 	static {
 		// Initialize resource bundle
