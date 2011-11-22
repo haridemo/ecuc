@@ -31,8 +31,11 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
+import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -67,6 +70,7 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 	@Override
 	public void addValueAccessorFeatures() {
 		super.addValueAccessorFeatures();
+
 		for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {
 			// Do not add property for proxy destinationTypeDef
 			if (!destinationTypeDef.eIsProxy()) {
@@ -92,7 +96,20 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 					}
 				});
 			} else {
-				PlatformLogUtil.logAsWarning(Activator.getDefault(), "Unresolved proxy object: " + destinationTypeDef.toString()); //$NON-NLS-1$
+				String destTypeDef = destinationTypeDef.toString();
+				IPath filePath = null;
+
+				GIdentifiable typeDefObj = getEcucTypeDef();
+				if (typeDefObj != null) {
+					Resource eResource = typeDefObj.eResource();
+					if (eResource != null) {
+						filePath = EcorePlatformUtil.createPath(eResource.getURI());
+					}
+				}
+				String message = "Unresolved proxy object: " + destTypeDef + " in <" + filePath + ">"; //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
+				// TODO (aakar) Use below message in newer Sphinx release
+				// String message = NLS.bind(PlatformMessages.warning_unresolvedProxyObject, destTypeDef, filePath);
+				PlatformLogUtil.logAsWarning(Activator.getDefault(), message);
 			}
 		}
 	}
