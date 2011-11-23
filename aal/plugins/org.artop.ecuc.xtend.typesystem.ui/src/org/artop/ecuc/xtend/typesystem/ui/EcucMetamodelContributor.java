@@ -19,13 +19,15 @@ import java.util.Set;
 
 import org.artop.aal.common.metamodel.AutosarReleaseDescriptor;
 import org.artop.aal.workspace.preferences.IAutosarWorkspacePreferences;
-import org.eclipse.sphinx.emf.model.IModelDescriptor;
-import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
+import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
+import org.artop.ecuc.gautosar.xtend.typesystem.IEcucMetaModelFactory;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.eclipse.xtend.expression.TypeSystem;
 import org.eclipse.xtend.shared.ui.MetamodelContributor;
 import org.eclipse.xtend.typesystem.MetaModel;
@@ -48,6 +50,15 @@ public class EcucMetamodelContributor implements MetamodelContributor {
 			EcucMetaModel metaModel = getEcucMetaModel(autosarModel, typeSystem);
 			if (metaModel != null) {
 				metaModels.add(metaModel);
+			}
+		}
+		// Add an EcucMetaModel even if there is no ModelDescriptor for the project (see https://www.artop.org/bugs/show_bug.cgi?id=1509)
+		if (metaModels.size() == 0) {
+			IEcucMetaModelFactory ecucMetaModelFactory = (IEcucMetaModelFactory) autosarRelease.getAdapter(IEcucMetaModelFactory.class);
+			if (ecucMetaModelFactory != null) {
+				metaModels.add(ecucMetaModelFactory.createEcucMetaModel(new EcucContext()));
+			} else {
+				metaModels.add(new EcucMetaModel(new EcucContext()));
 			}
 		}
 
