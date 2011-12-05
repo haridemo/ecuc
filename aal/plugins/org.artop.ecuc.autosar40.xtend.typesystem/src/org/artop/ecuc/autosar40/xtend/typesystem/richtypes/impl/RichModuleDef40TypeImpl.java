@@ -33,6 +33,11 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 	}
 
 	@Override
+	public boolean isAbstract() {
+		return false;
+	}
+
+	@Override
 	protected void addBaseFeatures() {
 		super.addBaseFeatures();
 

@@ -35,4 +35,9 @@ public class RichFloatParamDef40TypeImpl extends AbstractRichNumericalParamDef40
 	protected Type getValueType() {
 		return getTypeSystem().getRealType();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

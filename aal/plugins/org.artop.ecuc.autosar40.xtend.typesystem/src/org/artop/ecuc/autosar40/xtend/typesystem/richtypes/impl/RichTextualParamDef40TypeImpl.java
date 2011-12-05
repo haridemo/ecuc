@@ -39,6 +39,11 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 	}
 
 	@Override
+	public boolean isAbstract() {
+		return false;
+	}
+
+	@Override
 	protected Type getValueType() {
 		return getTypeSystem().getStringType();
 	}

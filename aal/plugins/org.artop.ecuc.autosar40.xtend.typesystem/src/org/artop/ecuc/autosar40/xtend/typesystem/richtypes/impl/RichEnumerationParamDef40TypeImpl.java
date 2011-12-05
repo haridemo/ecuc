@@ -41,4 +41,9 @@ public class RichEnumerationParamDef40TypeImpl extends RichTextualParamDef40Type
 			}
 		});
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }
