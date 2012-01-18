@@ -1,3 +1,0 @@
-#Wed Mar 23 13:49:57 CET 2011
-eclipse.preferences.version=1
-xpand.outlets=@${project_loc}/gen;COUTLET@${project_loc}/coutlet;HOUTLET@${project_loc}/houtlet
