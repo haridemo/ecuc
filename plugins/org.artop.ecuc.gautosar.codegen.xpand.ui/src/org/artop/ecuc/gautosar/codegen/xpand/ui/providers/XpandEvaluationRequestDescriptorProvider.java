@@ -76,7 +76,7 @@ public class XpandEvaluationRequestDescriptorProvider {
 		List<IFile> result = new ArrayList<IFile>();
 		Collection<IFile> allFiles = ExtendedPlatform.getAllFiles(arProject, true);
 		for (IFile file : allFiles) {
-			if (file.getFileExtension().equals(XpandUtil.TEMPLATE_EXTENSION)) {
+			if (XpandUtil.TEMPLATE_EXTENSION.equals(file.getFileExtension())) {
 				result.add(file);
 			}
 		}
