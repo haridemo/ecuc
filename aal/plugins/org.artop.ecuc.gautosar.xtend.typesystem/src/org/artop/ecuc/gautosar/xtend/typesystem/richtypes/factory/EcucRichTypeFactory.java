@@ -55,6 +55,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichEnumerationParamDe
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichForeignReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFunctionNameDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichInstanceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichLinkerSymbolDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
@@ -68,6 +69,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichEnumerationPa
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichFloatParamDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichForeignReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichFunctionNameDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichInstanceReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichIntegerParamDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichLinkerSymbolDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichModuleDefTypeImpl;
@@ -251,10 +253,8 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			GForeignReferenceDef foreignReferenceDef = (GForeignReferenceDef) reference;
 			configReferenceTypes.add(createRichForeignReferenceDefType(foreignReferenceDef));
 		} else if (reference instanceof GInstanceReferenceDef) {
-			// TODO Provide support for GInstanceReferenceDef
-			// configReferenceType.add(new RichInstanceReferenceDefType(context, reference,
-			// getRichTypeName(reference));
-			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			GInstanceReferenceDef instanceReferenceDef = (GInstanceReferenceDef) reference;
+			configReferenceTypes.add(createRichInstanceReferenceDefType(instanceReferenceDef));
 		} else if (reference instanceof GChoiceReferenceDef) {
 			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
 			configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef));
@@ -266,6 +266,10 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 
 	protected RichForeignReferenceDefType createRichForeignReferenceDefType(GForeignReferenceDef foreignReferenceDef) {
 		return new RichForeignReferenceDefTypeImpl(context, foreignReferenceDef);
+	}
+
+	protected RichInstanceReferenceDefType createRichInstanceReferenceDefType(GInstanceReferenceDef instanceReferenceDef) {
+		return new RichInstanceReferenceDefTypeImpl(context, instanceReferenceDef);
 	}
 
 	protected RichReferenceDefType createRichReferenceDefType(GReferenceDef referenceDef) {
