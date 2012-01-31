@@ -39,11 +39,6 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 	}
 
 	@Override
-	public boolean isAbstract() {
-		return false;
-	}
-
-	@Override
 	protected Type getValueType() {
 		return getTypeSystem().getStringType();
 	}
@@ -61,5 +56,10 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((EcucTextualParamValue) target).isSetValue();
+	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
 	}
 }
