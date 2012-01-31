@@ -73,5 +73,4 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 		}
 		return false;
 	}
-
 }

@@ -57,4 +57,9 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 	protected boolean internalIsSet(Object target) {
 		return ((EcucTextualParamValue) target).isSetValue();
 	}
+
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }

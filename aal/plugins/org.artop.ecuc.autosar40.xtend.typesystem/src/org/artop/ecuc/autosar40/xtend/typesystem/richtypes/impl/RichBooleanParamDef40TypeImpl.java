@@ -41,4 +41,8 @@ public class RichBooleanParamDef40TypeImpl extends AbstractRichNumericalParamDef
 		return getTypeSystem().getBooleanType();
 	}
 
+	@Override
+	public boolean isAbstract() {
+		return false;
+	}
 }
