@@ -48,6 +48,8 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeH
 import org.eclipse.xtend.typesystem.Type;
 
 import autosar40.ecucparameterdef.EcucAddInfoParamDef;
+import autosar40.ecucparameterdef.EcucFunctionNameDef;
+import autosar40.ecucparameterdef.EcucLinkerSymbolDef;
 import autosar40.ecucparameterdef.EcucMultilineStringParamDef;
 
 public class Ecuc40RichTypeFactory extends EcucRichTypeFactory {
@@ -64,6 +66,15 @@ public class Ecuc40RichTypeFactory extends EcucRichTypeFactory {
 		} else if (parameter instanceof EcucAddInfoParamDef) {
 			// TODO Provide support for RichAddInfoParamDef40Type
 			// configParameterType = new RichAddInfoParamDef40Type(context, parameter);
+			System.err.println("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (parameter instanceof EcucMultilineStringParamDef) {
+			// TODO Provide support for RichMultilineStringParamDef40Type
+			System.err.println("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (parameter instanceof EcucFunctionNameDef) {
+			// TODO Provide support for RichFunctionNameDef40Type
+			System.err.println("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (parameter instanceof EcucLinkerSymbolDef) {
+			// TODO Provide support for RichLinkerSymbolDef40Type
 			System.err.println("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else {
 			configParameterType = super.createConfigParameterType(parameter);
