@@ -27,7 +27,9 @@ public interface IOutletsPreferenceConstants {
 
 	ExtendedOutlet HOUTLET = new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet"); //$NON-NLS-1$ //$NON-NLS-2$
 
-	Collection<ExtendedOutlet> ECUC_OUTLETS = Arrays.asList(new ExtendedOutlet[] { COUTLET, HOUTLET });
+	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet("MAKEOUTLET", "${project_loc}/makeoutlet"); //$NON-NLS-1$ //$NON-NLS-2$
+
+	Collection<ExtendedOutlet> ECUC_OUTLETS = Arrays.asList(new ExtendedOutlet[] { COUTLET, HOUTLET, MAKEOUTLET });
 
 	OutletsPreference ECUC_OUTLETS_PREFERENCE = OutletsPreference.INSTANCE;
 }
