@@ -78,7 +78,8 @@ public abstract class AbstractRichContainerDefTypeImpl extends AbstractComposite
 					Collection<Setting> inverseReferences = EObjectUtil.getInverseReferences((EObject) target, true);
 					for (Setting inverseReference : inverseReferences) {
 						EObject eObject = inverseReference.getEObject();
-						if (eObject instanceof GConfigReferenceValue) {
+						// Check that inverse reference object is not a proxy and is a Reference Value
+						if (!eObject.eIsProxy() && eObject instanceof GConfigReferenceValue) {
 							// After having retrieved ReferenceValue, get its parent Container
 							GConfigReferenceValue configReferenceValue = (GConfigReferenceValue) eObject;
 							EObject eContainer = configReferenceValue.eContainer();
