@@ -42,7 +42,7 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
 					BswImplementation bswImplementation = ecucModuleConfigurationValues.getModuleDescription();
 					if (bswImplementation != null) {
-						bswImplementation.getVendorId();
+						return bswImplementation.getVendorId();
 					}
 				}
 				return ""; //$NON-NLS-1$
@@ -55,7 +55,7 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 					EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
 					BswImplementation bswImplementation = ecucModuleConfigurationValues.getModuleDescription();
 					if (bswImplementation != null) {
-						bswImplementation.getVendorApiInfix();
+						return bswImplementation.getVendorApiInfix();
 					}
 				}
 				return ""; //$NON-NLS-1$
