@@ -41,7 +41,7 @@ public class RichModuleDef3xTypeImpl extends RichModuleDefTypeImpl {
 					ModuleConfiguration moduleConfiguration = (ModuleConfiguration) target;
 					BswImplementation bswImplementation = moduleConfiguration.getModuleDescription();
 					if (bswImplementation != null) {
-						bswImplementation.getVendorId();
+						return bswImplementation.getVendorId();
 					}
 				}
 				return ""; //$NON-NLS-1$
@@ -54,7 +54,7 @@ public class RichModuleDef3xTypeImpl extends RichModuleDefTypeImpl {
 					ModuleConfiguration moduleConfiguration = (ModuleConfiguration) target;
 					BswImplementation bswImplementation = moduleConfiguration.getModuleDescription();
 					if (bswImplementation != null) {
-						bswImplementation.getVendorApiInfix();
+						return bswImplementation.getVendorApiInfix();
 					}
 				}
 				return ""; //$NON-NLS-1$
