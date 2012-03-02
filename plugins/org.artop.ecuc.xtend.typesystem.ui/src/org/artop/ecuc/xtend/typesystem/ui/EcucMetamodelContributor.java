@@ -46,22 +46,26 @@ public class EcucMetamodelContributor implements MetamodelContributor {
 		Set<EcucMetaModel> metaModels = new HashSet<EcucMetaModel>();
 		final IProject project = javaProject.getProject();
 		AutosarReleaseDescriptor autosarRelease = IAutosarWorkspacePreferences.AUTOSAR_RELEASE.get(project);
-		for (IModelDescriptor autosarModel : ModelDescriptorRegistry.INSTANCE.getModels(project, autosarRelease)) {
-			EcucMetaModel metaModel = getEcucMetaModel(autosarModel, typeSystem);
-			if (metaModel != null) {
-				metaModels.add(metaModel);
+		// Ecuc Metamodel Contributor can be activated on non-AUTOSAR project, the below if is to prevent a NPE in this
+		// case, because the returned release is null.
+		if (autosarRelease != null) {
+			for (IModelDescriptor autosarModel : ModelDescriptorRegistry.INSTANCE.getModels(project, autosarRelease)) {
+				EcucMetaModel metaModel = getEcucMetaModel(autosarModel, typeSystem);
+				if (metaModel != null) {
+					metaModels.add(metaModel);
+				}
+			}
+			// Add an EcucMetaModel even if there is no ModelDescriptor for the project (see
+			// https://www.artop.org/bugs/show_bug.cgi?id=1509)
+			if (metaModels.size() == 0) {
+				IEcucMetaModelFactory ecucMetaModelFactory = (IEcucMetaModelFactory) autosarRelease.getAdapter(IEcucMetaModelFactory.class);
+				if (ecucMetaModelFactory != null) {
+					metaModels.add(ecucMetaModelFactory.createEcucMetaModel(new EcucContext()));
+				} else {
+					metaModels.add(new EcucMetaModel(new EcucContext()));
+				}
 			}
 		}
-		// Add an EcucMetaModel even if there is no ModelDescriptor for the project (see https://www.artop.org/bugs/show_bug.cgi?id=1509)
-		if (metaModels.size() == 0) {
-			IEcucMetaModelFactory ecucMetaModelFactory = (IEcucMetaModelFactory) autosarRelease.getAdapter(IEcucMetaModelFactory.class);
-			if (ecucMetaModelFactory != null) {
-				metaModels.add(ecucMetaModelFactory.createEcucMetaModel(new EcucContext()));
-			} else {
-				metaModels.add(new EcucMetaModel(new EcucContext()));
-			}
-		}
-
 		return metaModels.toArray(new EcucMetaModel[metaModels.size()]);
 	}
 
