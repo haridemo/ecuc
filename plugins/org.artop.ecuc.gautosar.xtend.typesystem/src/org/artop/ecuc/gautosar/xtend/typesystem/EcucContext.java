@@ -31,6 +31,9 @@ public class EcucContext {
 	public TypeSystem getTypeSystem() {
 		if (typeSystem == null) {
 			typeSystem = new TypeSystemImpl();
+			if (metaModel != null) {
+				((TypeSystemImpl) typeSystem).getMetaModels().add(metaModel);
+			}
 		}
 		return typeSystem;
 	}
