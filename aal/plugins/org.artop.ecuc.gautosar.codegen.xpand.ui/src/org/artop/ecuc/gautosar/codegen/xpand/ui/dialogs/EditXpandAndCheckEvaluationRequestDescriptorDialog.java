@@ -14,9 +14,10 @@
  */
 package org.artop.ecuc.gautosar.codegen.xpand.ui.dialogs;
 
+import org.artop.ecuc.gautosar.codegen.xpand.ui.groups.CheckFilesGroup;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptor;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandAndCheckEvaluationRequestDescriptor;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
@@ -30,12 +31,13 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.xtend.expression.TypeSystem;
 
-public class EditXpandEvaluationRequestDialog extends StatusDialog {
+public class EditXpandAndCheckEvaluationRequestDescriptorDialog extends StatusDialog {
 
-	private XpandEvaluationRequestDescriptor requestToEdit;
+	private XpandAndCheckEvaluationRequestDescriptor requestToEdit;
 	private TypeSystem typeSystem;
 
-	public EditXpandEvaluationRequestDialog(Shell parent, XpandEvaluationRequestDescriptor requestToEdit, TypeSystem typeSystem) {
+	public EditXpandAndCheckEvaluationRequestDescriptorDialog(Shell parent, XpandAndCheckEvaluationRequestDescriptor requestToEdit,
+			TypeSystem typeSystem) {
 		super(parent);
 		setTitle(Messages.title_editXpandEvaluationRequestDialog);
 		this.requestToEdit = requestToEdit;
@@ -45,10 +47,11 @@ public class EditXpandEvaluationRequestDialog extends StatusDialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		Control composite = super.createDialogArea(parent);
-		final TemplateGroup templateGroup = new TemplateGroup(Messages.label_templateGroupName, (EObject) requestToEdit.getTargetObject(),
+		final TemplateGroup templateGroup = new TemplateGroup(Messages.label_xpandTemplateGroupName, (EObject) requestToEdit.getTargetObject(),
 				typeSystem, Activator.getPlugin().getDialogSettings());
 		templateGroup.createContent(parent, 3);
-		templateGroup.getTemplateFileField().setText(requestToEdit.getTemplateFile().getFullPath().makeRelative().toString());
+		templateGroup.getTemplateFileField().setText(
+				requestToEdit.getTemplateFile() != null ? requestToEdit.getTemplateFile().getFullPath().makeRelative().toString() : "");
 		templateGroup.updateDefinitionFieldItems(requestToEdit.getTemplateFile());
 		String[] items = templateGroup.getDefinitionField().getItems();
 		for (String item : items) {
@@ -69,6 +72,9 @@ public class EditXpandEvaluationRequestDialog extends StatusDialog {
 				requestToEdit.setDefineBlock(templateGroup.getSelectedDefinitionFieldItem());
 			}
 		});
+
+		CheckFilesGroup checkFilesGroup = new CheckFilesGroup("Check Files", requestToEdit, Activator.getPlugin().getDialogSettings());
+		checkFilesGroup.createContent(parent, 3);
 		return composite;
 	}
 
@@ -83,7 +89,7 @@ public class EditXpandEvaluationRequestDialog extends StatusDialog {
 		return null;
 	}
 
-	public XpandEvaluationRequestDescriptor getXpandEvaluationRequestDescriptor() {
+	public XpandAndCheckEvaluationRequestDescriptor getXpandAndCheckEvaluationRequestDescriptor() {
 		return requestToEdit;
 	}
 }

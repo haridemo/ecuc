@@ -20,8 +20,8 @@ public class TemplateTableContentProvider extends ArrayContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		if (inputElement instanceof XpandEvaluationRequestDescriptorProvider) {
-			return ((XpandEvaluationRequestDescriptorProvider) inputElement).getXpandEvaluationRequestDescriptors().toArray();
+		if (inputElement instanceof XpandAndCheckEvaluationRequestDescriptorProvider) {
+			return ((XpandAndCheckEvaluationRequestDescriptorProvider) inputElement).getXpandAndCheckEvaluationRequestDescriptors().toArray();
 		}
 		return super.getElements(inputElement);
 	}
