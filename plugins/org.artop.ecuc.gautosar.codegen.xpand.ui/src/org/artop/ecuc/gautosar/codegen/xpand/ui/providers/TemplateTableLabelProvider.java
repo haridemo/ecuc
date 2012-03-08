@@ -16,6 +16,9 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.providers;
 
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -28,17 +31,17 @@ public class TemplateTableLabelProvider extends LabelProvider implements ITableL
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		if (element instanceof XpandEvaluationRequestDescriptor) {
-			XpandEvaluationRequestDescriptor requestDescriptor = (XpandEvaluationRequestDescriptor) element;
+		if (element instanceof XpandAndCheckEvaluationRequestDescriptor) {
+			XpandAndCheckEvaluationRequestDescriptor requestDescriptor = (XpandAndCheckEvaluationRequestDescriptor) element;
 			switch (columnIndex) {
 			case 0:
 				String shortName = ((GIdentifiable) requestDescriptor.getTargetObject()).gGetShortName();
 				return shortName == null || shortName.trim().length() == 0 ? "<...>" : shortName;//$NON-NLS-1$
 			case 1:
 				IFile templateFile = requestDescriptor.getTemplateFile();
-				return templateFile == null ? "<.?.>" : templateFile.getFullPath().makeRelative().toString(); //$NON-NLS-1$
+				return templateFile == null ? "" : templateFile.getFullPath().removeFileExtension().lastSegment() + org.eclipse.xpand2.XpandUtil.NS_DELIM + requestDescriptor.getDefineBlock(); //$NON-NLS-1$
 			case 2:
-				return requestDescriptor.getDefineBlock();
+				return toColumnText(requestDescriptor.getCheckFiles());
 			default:
 				return ""; //$NON-NLS-1$
 			}
@@ -46,4 +49,15 @@ public class TemplateTableLabelProvider extends LabelProvider implements ITableL
 		return element.toString();
 	}
 
+	private String toColumnText(Collection<IFile> checkFiles) {
+		StringBuffer buffer = new StringBuffer();
+		for (Iterator<IFile> iterator = checkFiles.iterator(); iterator.hasNext();) {
+			IFile file = iterator.next();
+			buffer.append(file.getName());
+			if (iterator.hasNext()) {
+				buffer.append(", "); //$NON-NLS-1$
+			}
+		}
+		return buffer.toString();
+	}
 }

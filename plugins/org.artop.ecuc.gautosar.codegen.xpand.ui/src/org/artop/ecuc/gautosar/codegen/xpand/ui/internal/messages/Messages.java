@@ -26,11 +26,11 @@ public class Messages extends NLS {
 	public static String label_editButton;
 	public static String label_selectAllButton;
 	public static String label_deselectAllButton;
-	public static String label_templateGroupName;
-	public static String label_templateTableGroupName;
-	public static String label_moduleTableColumn;
-	public static String label_defineBlockTableColumn;
-	public static String label_templatePathTableColumn;
+	public static String label_xpandTemplateGroupName;
+	public static String label_xpandTemplateTableGroupName;
+	public static String label_bswModuleTableColumn;
+	public static String label_xpandTemplateTableColumn;
+	public static String label_checkFilesTableColumn;
 
 	public static String label_addXtendXpandCheckSupportEnableButton;
 
