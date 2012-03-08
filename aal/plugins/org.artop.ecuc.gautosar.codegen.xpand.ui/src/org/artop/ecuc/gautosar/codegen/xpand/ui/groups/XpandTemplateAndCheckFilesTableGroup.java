@@ -18,12 +18,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.artop.ecuc.gautosar.codegen.xpand.ui.dialogs.EditXpandEvaluationRequestDialog;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.dialogs.EditXpandAndCheckEvaluationRequestDescriptorDialog;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.TemplateTableContentProvider;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.TemplateTableLabelProvider;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptor;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptorProvider;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandAndCheckEvaluationRequestDescriptor;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandAndCheckEvaluationRequestDescriptorProvider;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogSettings;
@@ -39,6 +40,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.window.Window;
 import org.eclipse.sphinx.platform.ui.groups.AbstractGroup;
 import org.eclipse.sphinx.platform.ui.util.SWTUtil;
+import org.eclipse.sphinx.xtendxpand.CheckEvaluationRequest;
 import org.eclipse.sphinx.xtendxpand.XpandEvaluationRequest;
 import org.eclipse.sphinx.xtendxpand.util.XtendXpandUtil;
 import org.eclipse.swt.SWT;
@@ -53,7 +55,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.xtend.expression.TypeSystem;
 
-public class TemplateTableGroup extends AbstractGroup {
+public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 
 	/**
 	 * The table presenting the outlets.
@@ -76,9 +78,9 @@ public class TemplateTableGroup extends AbstractGroup {
 	private Button editButton;
 
 	/**
-	 * The outlet provider.
+	 * The The {@link XpandAndCheckEvaluationRequestDescriptor} provider.
 	 */
-	private XpandEvaluationRequestDescriptorProvider requestDescriptorProvider;
+	private XpandAndCheckEvaluationRequestDescriptorProvider requestDescriptorProvider;
 
 	/**
 	 * The TypeSystem used to get the type of the target object.
@@ -100,8 +102,8 @@ public class TemplateTableGroup extends AbstractGroup {
 		}
 	};
 
-	public TemplateTableGroup(String groupName, XpandEvaluationRequestDescriptorProvider requestDescriptorProvider, TypeSystem typeSystem,
-			IDialogSettings dialogSettings) {
+	public XpandTemplateAndCheckFilesTableGroup(String groupName, XpandAndCheckEvaluationRequestDescriptorProvider requestDescriptorProvider,
+			TypeSystem typeSystem, IDialogSettings dialogSettings) {
 		super(groupName, dialogSettings);
 		this.requestDescriptorProvider = requestDescriptorProvider;
 		this.typeSystem = typeSystem;
@@ -129,19 +131,19 @@ public class TemplateTableGroup extends AbstractGroup {
 		table.setLinesVisible(true);
 
 		TableColumn moduleColumn = new TableColumn(table, SWT.NONE);
-		moduleColumn.setText(Messages.label_moduleTableColumn);
-		int minWidth = computeMinimumColumnWidth(gc, Messages.label_moduleTableColumn);
+		moduleColumn.setText(Messages.label_bswModuleTableColumn);
+		int minWidth = computeMinimumColumnWidth(gc, Messages.label_bswModuleTableColumn);
 		columnLayout.setColumnData(moduleColumn, new ColumnWeightData(2, minWidth, true));
 
-		TableColumn templateColumn = new TableColumn(table, SWT.NONE);
-		templateColumn.setText(Messages.label_templatePathTableColumn);
-		minWidth = computeMinimumColumnWidth(gc, Messages.label_templatePathTableColumn);
-		columnLayout.setColumnData(templateColumn, new ColumnWeightData(4, minWidth, true));
+		TableColumn templateAndDefineBlockColumn = new TableColumn(table, SWT.NONE);
+		templateAndDefineBlockColumn.setText(Messages.label_xpandTemplateTableColumn);
+		minWidth = computeMinimumColumnWidth(gc, Messages.label_xpandTemplateTableColumn);
+		columnLayout.setColumnData(templateAndDefineBlockColumn, new ColumnWeightData(4, minWidth, true));
 
-		TableColumn defineBlockColumn = new TableColumn(table, SWT.NONE);
-		defineBlockColumn.setText(Messages.label_defineBlockTableColumn);
-		minWidth = computeMinimumColumnWidth(gc, Messages.label_defineBlockTableColumn);
-		columnLayout.setColumnData(defineBlockColumn, new ColumnWeightData(2, minWidth, true));
+		TableColumn checkBlockColumn = new TableColumn(table, SWT.NONE);
+		checkBlockColumn.setText(Messages.label_checkFilesTableColumn);
+		minWidth = computeMinimumColumnWidth(gc, Messages.label_checkFilesTableColumn);
+		columnLayout.setColumnData(checkBlockColumn, new ColumnWeightData(4, minWidth, true));
 
 		gc.dispose();
 
@@ -219,14 +221,17 @@ public class TemplateTableGroup extends AbstractGroup {
 
 	protected void edit() {
 		IStructuredSelection selection = (IStructuredSelection) tableViewer.getSelection();
-		XpandEvaluationRequestDescriptor selectedRequestDescriptor = (XpandEvaluationRequestDescriptor) selection.getFirstElement();
-		XpandEvaluationRequestDescriptor requestToEdit = new XpandEvaluationRequestDescriptor(selectedRequestDescriptor.getTargetObject(),
-				selectedRequestDescriptor.getTemplateFile(), selectedRequestDescriptor.getDefineBlock());
-		XpandEvaluationRequestDescriptor editedRequestDescriptor = editXpandEvaluationRequestDescriptor(requestToEdit);
+		XpandAndCheckEvaluationRequestDescriptor selectedRequestDescriptor = (XpandAndCheckEvaluationRequestDescriptor) selection.getFirstElement();
+		XpandAndCheckEvaluationRequestDescriptor requestToEdit = new XpandAndCheckEvaluationRequestDescriptor(
+				selectedRequestDescriptor.getTargetObject(), selectedRequestDescriptor.getTemplateFile(), selectedRequestDescriptor.getDefineBlock(),
+				new ArrayList<IFile>(selectedRequestDescriptor.getCheckFiles()));
+		XpandAndCheckEvaluationRequestDescriptor editedRequestDescriptor = editXpandAndCheckEvaluationRequestDescriptor(requestToEdit);
 		if (editedRequestDescriptor != null) {
 			selectedRequestDescriptor.setTargetObject(editedRequestDescriptor.getTargetObject());
 			selectedRequestDescriptor.setTemplateFile(editedRequestDescriptor.getTemplateFile());
 			selectedRequestDescriptor.setDefineBlock(editedRequestDescriptor.getDefineBlock());
+			selectedRequestDescriptor.getCheckFiles().clear();
+			selectedRequestDescriptor.getCheckFiles().addAll(editedRequestDescriptor.getCheckFiles());
 			tableViewer.refresh();
 		}
 	}
@@ -240,11 +245,12 @@ public class TemplateTableGroup extends AbstractGroup {
 
 	}
 
-	protected XpandEvaluationRequestDescriptor editXpandEvaluationRequestDescriptor(XpandEvaluationRequestDescriptor requestToEdit) {
-		EditXpandEvaluationRequestDialog dialog = new EditXpandEvaluationRequestDialog(getTableViewer().getControl().getShell(), requestToEdit,
-				typeSystem);
+	protected XpandAndCheckEvaluationRequestDescriptor editXpandAndCheckEvaluationRequestDescriptor(
+			XpandAndCheckEvaluationRequestDescriptor requestToEdit) {
+		EditXpandAndCheckEvaluationRequestDescriptorDialog dialog = new EditXpandAndCheckEvaluationRequestDescriptorDialog(getTableViewer()
+				.getControl().getShell(), requestToEdit, typeSystem);
 		if (dialog.open() == Window.OK) {
-			return dialog.getXpandEvaluationRequestDescriptor();
+			return dialog.getXpandAndCheckEvaluationRequestDescriptor();
 		}
 		return null;
 	}
@@ -276,9 +282,19 @@ public class TemplateTableGroup extends AbstractGroup {
 		List<XpandEvaluationRequest> requests = new ArrayList<XpandEvaluationRequest>();
 		Object[] checkedElements = getTableViewer().getCheckedElements();
 		for (Object element : checkedElements) {
-			XpandEvaluationRequestDescriptor requestDescriptor = (XpandEvaluationRequestDescriptor) element;
+			XpandAndCheckEvaluationRequestDescriptor requestDescriptor = (XpandAndCheckEvaluationRequestDescriptor) element;
 			String qualifiedName = XtendXpandUtil.getQualifiedName(requestDescriptor.getTemplateFile(), requestDescriptor.getDefineBlock());
 			requests.add(new XpandEvaluationRequest(qualifiedName, requestDescriptor.getTargetObject()));
+		}
+		return requests;
+	}
+
+	public Collection<CheckEvaluationRequest> getCheckEvaluationRequests() {
+		List<CheckEvaluationRequest> requests = new ArrayList<CheckEvaluationRequest>();
+		Object[] checkedElements = getTableViewer().getCheckedElements();
+		for (Object element : checkedElements) {
+			XpandAndCheckEvaluationRequestDescriptor requestDescriptor = (XpandAndCheckEvaluationRequestDescriptor) element;
+			requests.add(new CheckEvaluationRequest(requestDescriptor.getCheckFiles(), requestDescriptor.getTargetObject()));
 		}
 		return requests;
 	}

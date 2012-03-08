@@ -29,8 +29,9 @@ import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.platform.util.ExtendedPlatform;
 import org.eclipse.xpand2.XpandUtil;
+import org.eclipse.xtend.check.CheckUtils;
 
-public class XpandEvaluationRequestDescriptorProvider {
+public class XpandAndCheckEvaluationRequestDescriptorProvider {
 
 	private String ECU_CONFIGURATION = "EcuConfiguration"; //$NON-NLS-1$
 	private String ECU_CONFIGURATION__MODULES = "modules"; //$NON-NLS-1$
@@ -39,9 +40,9 @@ public class XpandEvaluationRequestDescriptorProvider {
 	private String ECUC_VALUE_COLLECTION__ECUC_VALUES = "ecucValues"; //$NON-NLS-1$
 	private String ECUC_MODULE_CONFIGURATION_VALUES_REF_CONDITIONAL__ECUC_MODULE_CONFIGURATION_VALUES = "ecucModuleConfigurationValues"; //$NON-NLS-1$
 
-	private Collection<XpandEvaluationRequestDescriptor> requestDescriptors = new ArrayList<XpandEvaluationRequestDescriptor>();
+	private Collection<XpandAndCheckEvaluationRequestDescriptor> requestDescriptors = new ArrayList<XpandAndCheckEvaluationRequestDescriptor>();
 
-	public XpandEvaluationRequestDescriptorProvider(Object targetObject) {
+	public XpandAndCheckEvaluationRequestDescriptorProvider(Object targetObject) {
 		init(targetObject);
 	}
 
@@ -55,21 +56,42 @@ public class XpandEvaluationRequestDescriptorProvider {
 				modules.addAll(getModules40(target));
 			}
 			if (!modules.isEmpty()) {
-				List<IFile> allXpandTemplate = getAllXpandTemplate(EcorePlatformUtil.getFile(targetObject).getProject());
+				List<IFile> allXpandTemplates = getAllXpandTemplate(EcorePlatformUtil.getFile(targetObject).getProject());
+				List<IFile> allCheckFilesTemplates = getAllCheckFiles(EcorePlatformUtil.getFile(targetObject).getProject());
+
 				for (GModuleConfiguration moduleConf : modules) {
-					for (IFile template : allXpandTemplate) {
-						if (template.getName().equals(moduleConf.gGetDefinition().gGetShortName() + "." + XpandUtil.TEMPLATE_EXTENSION)) { //$NON-NLS-1$
-							requestDescriptors.add(new XpandEvaluationRequestDescriptor(moduleConf, template));
-							break;
-						}
+					IFile applicableXpandTemplate = getApplicableXpandTemplate(moduleConf, allXpandTemplates);
+					Collection<IFile> applicableCheckFiles = getApplicableCheckFiles(moduleConf, allCheckFilesTemplates);
+					if (applicableXpandTemplate != null || !applicableCheckFiles.isEmpty()) {
+						requestDescriptors
+								.add(new XpandAndCheckEvaluationRequestDescriptor(moduleConf, applicableXpandTemplate, applicableCheckFiles));
 					}
 				}
 			}
 		}
 	}
 
-	public Collection<XpandEvaluationRequestDescriptor> getXpandEvaluationRequestDescriptors() {
+	public Collection<XpandAndCheckEvaluationRequestDescriptor> getXpandAndCheckEvaluationRequestDescriptors() {
 		return Collections.unmodifiableCollection(requestDescriptors);
+	}
+
+	private IFile getApplicableXpandTemplate(GModuleConfiguration moduleConf, Collection<IFile> xpandTemplates) {
+		for (IFile template : xpandTemplates) {
+			if (template.getName().equals(moduleConf.gGetDefinition().gGetShortName() + "." + XpandUtil.TEMPLATE_EXTENSION)) { //$NON-NLS-1$
+				return template;
+			}
+		}
+		return null;
+	}
+
+	private Collection<IFile> getApplicableCheckFiles(GModuleConfiguration moduleConf, Collection<IFile> checkFiles) {
+		List<IFile> result = new ArrayList<IFile>();
+		for (IFile checkFile : checkFiles) {
+			if (checkFile.getName().startsWith(moduleConf.gGetDefinition().gGetShortName())) {
+				result.add(checkFile);
+			}
+		}
+		return result;
 	}
 
 	private List<IFile> getAllXpandTemplate(IProject arProject) {
@@ -77,6 +99,17 @@ public class XpandEvaluationRequestDescriptorProvider {
 		Collection<IFile> allFiles = ExtendedPlatform.getAllFiles(arProject, true);
 		for (IFile file : allFiles) {
 			if (XpandUtil.TEMPLATE_EXTENSION.equals(file.getFileExtension())) {
+				result.add(file);
+			}
+		}
+		return result;
+	}
+
+	private List<IFile> getAllCheckFiles(IProject arProject) {
+		List<IFile> result = new ArrayList<IFile>();
+		Collection<IFile> allFiles = ExtendedPlatform.getAllFiles(arProject, true);
+		for (IFile file : allFiles) {
+			if (CheckUtils.FILE_EXTENSION.equals(file.getFileExtension())) {
 				result.add(file);
 			}
 		}

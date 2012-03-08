@@ -19,18 +19,19 @@ package org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages;
 
 import java.util.Collection;
 
-import org.artop.ecuc.gautosar.codegen.xpand.ui.groups.TemplateTableGroup;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.groups.XpandTemplateAndCheckFilesTableGroup;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
-import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandEvaluationRequestDescriptorProvider;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.providers.XpandAndCheckEvaluationRequestDescriptorProvider;
 import org.eclipse.sphinx.platform.ui.fields.IField;
 import org.eclipse.sphinx.platform.ui.groups.IGroupListener;
+import org.eclipse.sphinx.xtendxpand.CheckEvaluationRequest;
 import org.eclipse.sphinx.xtendxpand.XpandEvaluationRequest;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.pages.XpandConfigurationPage;
 import org.eclipse.swt.widgets.Composite;
 
 public class AdvancedXpandConfigurationPage extends XpandConfigurationPage {
 
-	protected TemplateTableGroup templateTableGroup;
+	protected XpandTemplateAndCheckFilesTableGroup templateTableGroup;
 
 	public AdvancedXpandConfigurationPage(String pageName) {
 		super(pageName);
@@ -41,8 +42,8 @@ public class AdvancedXpandConfigurationPage extends XpandConfigurationPage {
 	 */
 	@Override
 	protected void createTemplateGroup(Composite parent) {
-		templateTableGroup = new TemplateTableGroup(Messages.label_templateTableGroupName, new XpandEvaluationRequestDescriptorProvider(modelObject),
-				typeSystem, getDialogSettings());
+		templateTableGroup = new XpandTemplateAndCheckFilesTableGroup(Messages.label_xpandTemplateTableGroupName, new XpandAndCheckEvaluationRequestDescriptorProvider(
+				modelObject), typeSystem, getDialogSettings());
 		templateTableGroup.createContent(parent, 3);
 		templateTableGroup.addGroupListener(new IGroupListener() {
 
@@ -55,6 +56,10 @@ public class AdvancedXpandConfigurationPage extends XpandConfigurationPage {
 	@Override
 	public Collection<XpandEvaluationRequest> getXpandEvaluationRequests() {
 		return templateTableGroup.getXpandEvaluationRequests();
+	}
+
+	public Collection<CheckEvaluationRequest> getCheckEvaluationRequests() {
+		return templateTableGroup.getCheckEvaluationRequests();
 	}
 
 	@Override
