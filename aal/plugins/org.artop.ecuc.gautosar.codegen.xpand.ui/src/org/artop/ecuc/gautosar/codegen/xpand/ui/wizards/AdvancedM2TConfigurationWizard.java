@@ -24,11 +24,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.xtendxpand.CheckEvaluationRequest;
 import org.eclipse.sphinx.xtendxpand.jobs.CheckJob;
-import org.eclipse.sphinx.xtendxpand.ui.wizards.M2TConfigurationWizard;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.pages.XpandConfigurationPage;
 import org.eclipse.xtend.typesystem.MetaModel;
 
-public class AdvancedM2TConfigurationWizard extends M2TConfigurationWizard {
+public class AdvancedM2TConfigurationWizard extends ExtendedM2TConfigurationWizard {
 
 	public AdvancedM2TConfigurationWizard(EObject modelObject, List<MetaModel> metaModels) {
 		super(modelObject, metaModels);
