@@ -133,7 +133,7 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 		TableColumn moduleColumn = new TableColumn(table, SWT.NONE);
 		moduleColumn.setText(Messages.label_bswModuleTableColumn);
 		int minWidth = computeMinimumColumnWidth(gc, Messages.label_bswModuleTableColumn);
-		columnLayout.setColumnData(moduleColumn, new ColumnWeightData(2, minWidth, true));
+		columnLayout.setColumnData(moduleColumn, new ColumnWeightData(4, minWidth, true));
 
 		TableColumn templateAndDefineBlockColumn = new TableColumn(table, SWT.NONE);
 		templateAndDefineBlockColumn.setText(Messages.label_xpandTemplateTableColumn);
