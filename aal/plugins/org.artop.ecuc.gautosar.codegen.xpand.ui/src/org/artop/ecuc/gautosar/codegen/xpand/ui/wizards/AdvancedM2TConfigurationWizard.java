@@ -27,6 +27,7 @@ import org.eclipse.sphinx.xtendxpand.jobs.CheckJob;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.pages.XpandConfigurationPage;
 import org.eclipse.xtend.typesystem.MetaModel;
 
+// FIXME Make this class inherit from M2TConfigurationWizard (as soon as Sphinx creates non-existing outlet directory when protected region is set to true).
 public class AdvancedM2TConfigurationWizard extends ExtendedM2TConfigurationWizard {
 
 	public AdvancedM2TConfigurationWizard(EObject modelObject, List<MetaModel> metaModels) {

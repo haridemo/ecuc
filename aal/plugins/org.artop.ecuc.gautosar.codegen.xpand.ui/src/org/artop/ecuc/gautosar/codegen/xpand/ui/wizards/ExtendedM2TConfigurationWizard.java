@@ -27,6 +27,8 @@ import org.eclipse.xtend.typesystem.MetaModel;
  * Extended M2T Configuration wizard which has the capability to create directories (if not already existing) of outlets
  * whose protected region is set to <code>true</code>.
  */
+// FIXME This class should be deleted as soon as M2TConfigurationWizard will be able to create outlet directory when it
+// does not already exist (which should be the case in the next Sphinx SDK build).
 public class ExtendedM2TConfigurationWizard extends M2TConfigurationWizard {
 
 	/**

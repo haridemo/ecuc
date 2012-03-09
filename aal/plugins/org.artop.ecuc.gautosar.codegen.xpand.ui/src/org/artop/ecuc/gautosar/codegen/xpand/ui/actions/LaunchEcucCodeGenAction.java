@@ -136,6 +136,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	 */
 	@Override
 	public void run() {
+		// FIXME M2TConfigurationWizard could be used as soon as new version of Sphinx will be made available.
 		ExtendedM2TConfigurationWizard wizard = new ExtendedM2TConfigurationWizard(getSelectedModelObject(), getMetaModels());
 		wizard.setM2TJobName(getM2TJobName());
 		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
