@@ -283,8 +283,11 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 		Object[] checkedElements = getTableViewer().getCheckedElements();
 		for (Object element : checkedElements) {
 			XpandAndCheckEvaluationRequestDescriptor requestDescriptor = (XpandAndCheckEvaluationRequestDescriptor) element;
-			String qualifiedName = XtendXpandUtil.getQualifiedName(requestDescriptor.getTemplateFile(), requestDescriptor.getDefineBlock());
-			requests.add(new XpandEvaluationRequest(qualifiedName, requestDescriptor.getTargetObject()));
+			if (requestDescriptor.getTemplateFile() != null && requestDescriptor.getDefineBlock() != null
+					&& requestDescriptor.getDefineBlock().trim().length() > 0) {
+				String qualifiedName = XtendXpandUtil.getQualifiedName(requestDescriptor.getTemplateFile(), requestDescriptor.getDefineBlock());
+				requests.add(new XpandEvaluationRequest(qualifiedName, requestDescriptor.getTargetObject()));
+			}
 		}
 		return requests;
 	}
@@ -294,7 +297,9 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 		Object[] checkedElements = getTableViewer().getCheckedElements();
 		for (Object element : checkedElements) {
 			XpandAndCheckEvaluationRequestDescriptor requestDescriptor = (XpandAndCheckEvaluationRequestDescriptor) element;
-			requests.add(new CheckEvaluationRequest(requestDescriptor.getCheckFiles(), requestDescriptor.getTargetObject()));
+			if (!requestDescriptor.getCheckFiles().isEmpty()) {
+				requests.add(new CheckEvaluationRequest(requestDescriptor.getCheckFiles(), requestDescriptor.getTargetObject()));
+			}
 		}
 		return requests;
 	}
