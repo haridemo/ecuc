@@ -20,6 +20,7 @@ import gautosar.gecucparameterdef.GModuleDef;
 
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
+import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.ExtendedM2TConfigurationWizard;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -43,7 +44,6 @@ import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.ui.util.ExtendedPlatformUI;
 import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 import org.eclipse.sphinx.xtendxpand.ui.actions.BasicM2TAction;
-import org.eclipse.sphinx.xtendxpand.ui.wizards.M2TConfigurationWizard;
 
 public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
@@ -136,7 +136,8 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 	 */
 	@Override
 	public void run() {
-		M2TConfigurationWizard wizard = new M2TConfigurationWizard(getSelectedModelObject(), getMetaModels());
+		// FIXME M2TConfigurationWizard could be used as soon as new version of Sphinx will be made available.
+		ExtendedM2TConfigurationWizard wizard = new ExtendedM2TConfigurationWizard(getSelectedModelObject(), getMetaModels());
 		wizard.setM2TJobName(getM2TJobName());
 		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
 		wizard.setOutletsPreference(getOutletsPreference());
