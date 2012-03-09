@@ -51,7 +51,7 @@ public class EditXpandAndCheckEvaluationRequestDescriptorDialog extends StatusDi
 				typeSystem, Activator.getPlugin().getDialogSettings());
 		templateGroup.createContent(parent, 3);
 		templateGroup.getTemplateFileField().setText(
-				requestToEdit.getTemplateFile() != null ? requestToEdit.getTemplateFile().getFullPath().makeRelative().toString() : "");
+				requestToEdit.getTemplateFile() != null ? requestToEdit.getTemplateFile().getFullPath().makeRelative().toString() : ""); //$NON-NLS-1$
 		templateGroup.updateDefinitionFieldItems(requestToEdit.getTemplateFile());
 		String[] items = templateGroup.getDefinitionField().getItems();
 		for (String item : items) {
@@ -73,7 +73,8 @@ public class EditXpandAndCheckEvaluationRequestDescriptorDialog extends StatusDi
 			}
 		});
 
-		CheckFilesGroup checkFilesGroup = new CheckFilesGroup("Check Files", requestToEdit, Activator.getPlugin().getDialogSettings());
+		CheckFilesGroup checkFilesGroup = new CheckFilesGroup(Messages.label_checkFilesGroupName, requestToEdit, Activator.getPlugin()
+				.getDialogSettings());
 		checkFilesGroup.createContent(parent, 3);
 		return composite;
 	}
