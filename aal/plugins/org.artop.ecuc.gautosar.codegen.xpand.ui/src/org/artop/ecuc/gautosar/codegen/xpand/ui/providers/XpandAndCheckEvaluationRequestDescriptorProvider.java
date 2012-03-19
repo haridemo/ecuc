@@ -21,10 +21,15 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import org.artop.aal.common.resource.AutosarURIFactory;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.jface.dialogs.DialogSettings;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.viewers.CheckboxTableViewer;
 import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.sphinx.platform.util.ExtendedPlatform;
@@ -32,6 +37,15 @@ import org.eclipse.xpand2.XpandUtil;
 import org.eclipse.xtend.check.CheckUtils;
 
 public class XpandAndCheckEvaluationRequestDescriptorProvider {
+
+	private Object targetObject;
+	private IDialogSettings dialogSettings;
+
+	private final String CODE_GEN_SECTION = "CODEGEN_SECTION"; //$NON-NLS-1$
+	private final String XPAND_TEMPLATE_KEY = "XPAND_TEMPLATE"; //$NON-NLS-1$
+	private final String DEFINE_BLOCK_KEY = "DEFINE_BLOCK"; //$NON-NLS-1$
+	private final String CHECK_FILES_KEY = "CHECK_FILES"; //$NON-NLS-1$
+	private final String IS_CHECKED_KEY = "IS_CHECKED"; //$NON-NLS-1$
 
 	private String ECU_CONFIGURATION = "EcuConfiguration"; //$NON-NLS-1$
 	private String ECU_CONFIGURATION__MODULES = "modules"; //$NON-NLS-1$
@@ -42,11 +56,13 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 
 	private Collection<XpandAndCheckEvaluationRequestDescriptor> requestDescriptors = new ArrayList<XpandAndCheckEvaluationRequestDescriptor>();
 
-	public XpandAndCheckEvaluationRequestDescriptorProvider(Object targetObject) {
-		init(targetObject);
+	public XpandAndCheckEvaluationRequestDescriptorProvider(Object targetObject, IDialogSettings dialogSettings) {
+		this.targetObject = targetObject;
+		this.dialogSettings = dialogSettings;
+		initDefault();
 	}
 
-	protected void init(Object targetObject) {
+	protected void initDefault() {
 		if (targetObject instanceof EObject) {
 			EObject target = (EObject) targetObject;
 			List<GModuleConfiguration> modules = new ArrayList<GModuleConfiguration>();
@@ -150,5 +166,107 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 			}
 		}
 		return modules;
+	}
+
+	public void restoreDefaults() {
+		requestDescriptors.clear();
+		initDefault();
+		clearSettings();
+	}
+
+	private void clearSettings() {
+		if (dialogSettings != null) {
+			IDialogSettings topLevelSection = dialogSettings.getSection(CODE_GEN_SECTION);
+			if (topLevelSection != null) {
+				String ecuAqn = AutosarURIFactory.getAbsoluteQualifiedName(targetObject);
+				topLevelSection.addNewSection(ecuAqn);
+			}
+		}
+	}
+
+	public void restoreState(CheckboxTableViewer viewer) {
+		if (dialogSettings != null) {
+			IDialogSettings topLevelSection = dialogSettings.getSection(CODE_GEN_SECTION);
+			if (topLevelSection != null) {
+				String ecuAqn = AutosarURIFactory.getAbsoluteQualifiedName(targetObject);
+				IDialogSettings ecuSection = topLevelSection.getSection(ecuAqn);
+				if (ecuSection != null) {
+					for (XpandAndCheckEvaluationRequestDescriptor descriptor : requestDescriptors) {
+						GModuleConfiguration moduleConf = (GModuleConfiguration) descriptor.getTargetObject();
+						String moduleConfAqn = AutosarURIFactory.getAbsoluteQualifiedName(moduleConf);
+						IDialogSettings moduleConfSection = ecuSection.getSection(moduleConfAqn);
+						IProject project = EcorePlatformUtil.getFile(moduleConf).getProject();
+						if (moduleConfSection != null) {
+							boolean isChecked = moduleConfSection.getBoolean(IS_CHECKED_KEY);
+							if (isChecked) {
+								viewer.setChecked(descriptor, isChecked);
+							}
+							String templateFilePath = moduleConfSection.get(XPAND_TEMPLATE_KEY);
+							if (templateFilePath != null) {
+								if (templateFilePath.length() == 0) {
+									descriptor.setTemplateFile(null);
+									descriptor.setDefineBlock(null);
+								} else if (project.getFile(new Path(templateFilePath)).exists()) {
+									descriptor.setTemplateFile(project.getFile(new Path(templateFilePath)));
+									if (moduleConfSection.get(DEFINE_BLOCK_KEY) != null) {
+										descriptor.setDefineBlock(moduleConfSection.get(DEFINE_BLOCK_KEY));
+									}
+								}
+							} else if (moduleConfSection.get(DEFINE_BLOCK_KEY) != null) {
+								descriptor.setDefineBlock(moduleConfSection.get(DEFINE_BLOCK_KEY));
+
+							}
+							String[] array = moduleConfSection.getArray(CHECK_FILES_KEY);
+							if (array != null) {
+								for (String checkFilePath : array) {
+									if (project.getFile(new Path(checkFilePath)).exists()) {
+										descriptor.getCheckFiles().add(project.getFile(new Path(checkFilePath)));
+									}
+								}
+							}
+						}
+					}
+					viewer.refresh();
+				}
+			}
+		}
+	}
+
+	public void saveState(List<Object> checkedElements) {
+		if (dialogSettings != null) {
+			IDialogSettings topLevelSection = DialogSettings.getOrCreateSection(dialogSettings, CODE_GEN_SECTION);
+
+			// ECU section, the key is the aqn of the ECU
+			String ecuAqn = AutosarURIFactory.getAbsoluteQualifiedName(targetObject);
+			IDialogSettings ecuSection = DialogSettings.getOrCreateSection(topLevelSection, ecuAqn);
+
+			for (XpandAndCheckEvaluationRequestDescriptor descriptor : requestDescriptors) {
+				GModuleConfiguration moduleConf = (GModuleConfiguration) descriptor.getTargetObject();
+				String moduleConfAqn = AutosarURIFactory.getAbsoluteQualifiedName(moduleConf);
+				IDialogSettings moduleConfSection = DialogSettings.getOrCreateSection(ecuSection, moduleConfAqn);
+
+				if (checkedElements.contains(descriptor)) {
+					moduleConfSection.put(IS_CHECKED_KEY, Boolean.TRUE);
+				}
+				if (!XpandAndCheckEvaluationRequestDescriptor.DEFAULT_DEFINE_BLOCK.equals(descriptor.getDefineBlock())) {
+					moduleConfSection.put(DEFINE_BLOCK_KEY, descriptor.getDefineBlock());
+				}
+				if (descriptor.getTemplateFile() == null
+						|| !descriptor.getTemplateFile().getName()
+								.equals(moduleConf.gGetDefinition().gGetShortName() + "." + XpandUtil.TEMPLATE_EXTENSION)) { //$NON-NLS-1$
+					moduleConfSection.put(XPAND_TEMPLATE_KEY, descriptor.getTemplateFile() == null ? "" : descriptor.getTemplateFile().getFullPath() //$NON-NLS-1$
+							.toString());
+				}
+				List<String> userAddedCheckFiles = new ArrayList<String>();
+				for (IFile checkFile : descriptor.getCheckFiles()) {
+					if (!checkFile.getName().startsWith(moduleConf.gGetDefinition().gGetShortName())) {
+						userAddedCheckFiles.add(checkFile.getProjectRelativePath().toString());
+					}
+				}
+				if (!userAddedCheckFiles.isEmpty()) {
+					moduleConfSection.put(CHECK_FILES_KEY, userAddedCheckFiles.toArray(new String[userAddedCheckFiles.size()]));
+				}
+			}
+		}
 	}
 }

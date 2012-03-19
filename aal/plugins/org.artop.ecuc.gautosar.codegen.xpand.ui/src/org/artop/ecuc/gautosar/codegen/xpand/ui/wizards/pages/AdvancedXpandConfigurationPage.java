@@ -42,8 +42,8 @@ public class AdvancedXpandConfigurationPage extends XpandConfigurationPage {
 	 */
 	@Override
 	protected void createTemplateGroup(Composite parent) {
-		templateTableGroup = new XpandTemplateAndCheckFilesTableGroup(Messages.label_xpandTemplateTableGroupName, new XpandAndCheckEvaluationRequestDescriptorProvider(
-				modelObject), typeSystem, getDialogSettings());
+		templateTableGroup = new XpandTemplateAndCheckFilesTableGroup(Messages.label_xpandTemplateTableGroupName,
+				new XpandAndCheckEvaluationRequestDescriptorProvider(modelObject, getDialogSettings()), typeSystem, getDialogSettings());
 		templateTableGroup.createContent(parent, 3);
 		templateTableGroup.addGroupListener(new IGroupListener() {
 

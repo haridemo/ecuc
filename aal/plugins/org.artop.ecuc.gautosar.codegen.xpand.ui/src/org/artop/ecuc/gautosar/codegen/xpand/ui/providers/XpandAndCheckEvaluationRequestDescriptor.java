@@ -22,7 +22,7 @@ import org.eclipse.core.resources.IFile;
 
 public class XpandAndCheckEvaluationRequestDescriptor {
 
-	private static final String DEFAULT_DEFINE_BLOCK = "main"; //$NON-NLS-1$
+	public static final String DEFAULT_DEFINE_BLOCK = "main"; //$NON-NLS-1$
 	private Object targetObject;
 	private IFile templateFile;
 	private String defineBlock;
