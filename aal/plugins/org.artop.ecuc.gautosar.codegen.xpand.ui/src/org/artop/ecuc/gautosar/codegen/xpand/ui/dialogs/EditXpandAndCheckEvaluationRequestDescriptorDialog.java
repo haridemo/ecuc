@@ -26,8 +26,11 @@ import org.eclipse.jface.dialogs.StatusDialog;
 import org.eclipse.sphinx.platform.ui.fields.IField;
 import org.eclipse.sphinx.platform.ui.fields.IFieldListener;
 import org.eclipse.sphinx.xtendxpand.ui.groups.TemplateGroup;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.xtend.expression.TypeSystem;
 
@@ -59,9 +62,9 @@ public class EditXpandAndCheckEvaluationRequestDescriptorDialog extends StatusDi
 				templateGroup.getDefinitionField().selectItem(item);
 			}
 		}
-		templateGroup.getTemplateFileField().addFieldListener(new IFieldListener() {
+		templateGroup.getTemplateFileField().getTextControl().addListener(SWT.Modify, new Listener() {
 
-			public void dialogFieldChanged(IField field) {
+			public void handleEvent(Event event) {
 				// requestToEdit.setTemplateFile(templateGroup.getFile(templateGroup.getTemplateFileField().getText()));
 				requestToEdit.setTemplateFile(getFile(templateGroup.getTemplateFileField().getText()));
 			}
