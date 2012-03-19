@@ -15,6 +15,7 @@
 package org.artop.ecuc.gautosar.codegen.xpand.ui.groups;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -78,6 +79,11 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 	private Button editButton;
 
 	/**
+	 * The restore defaults button.
+	 */
+	private Button restoreDefaultsButton;
+
+	/**
 	 * The {@link XpandAndCheckEvaluationRequestDescriptor} provider.
 	 */
 	private XpandAndCheckEvaluationRequestDescriptorProvider requestDescriptorProvider;
@@ -98,6 +104,8 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 			} else if (event.widget == deselectAllButton) {
 				deselectAll();
 				updateButtons();
+			} else if (event.widget == restoreDefaultsButton) {
+				restoreDefaults();
 			}
 		}
 	};
@@ -154,6 +162,8 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 
 		addTableViewerListener();
 		addButtons(parent);
+
+		loadGroupSettings();
 	}
 
 	protected void addTableViewerListener() {
@@ -189,6 +199,10 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 
 		deselectAllButton = SWTUtil.createButton(buttonsComposite, Messages.label_deselectAllButton, SWT.PUSH);
 		deselectAllButton.addListener(SWT.Selection, listener);
+
+		restoreDefaultsButton = SWTUtil.createButton(buttonsComposite, Messages.label_restoreDefaultsButton, SWT.PUSH);
+		restoreDefaultsButton.addListener(SWT.Selection, listener);
+
 		updateButtons();
 	}
 
@@ -242,7 +256,12 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 
 	protected void deselectAll() {
 		getTableViewer().setAllChecked(false);
+	}
 
+	protected void restoreDefaults() {
+		requestDescriptorProvider.restoreDefaults();
+		getTableViewer().setAllChecked(false);
+		getTableViewer().refresh();
 	}
 
 	protected XpandAndCheckEvaluationRequestDescriptor editXpandAndCheckEvaluationRequestDescriptor(
@@ -304,4 +323,13 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 		return requests;
 	}
 
+	@Override
+	public void saveGroupSettings() {
+		requestDescriptorProvider.saveState(Arrays.asList(getTableViewer().getCheckedElements()));
+	}
+
+	@Override
+	protected void loadGroupSettings() {
+		requestDescriptorProvider.restoreState(getTableViewer());
+	}
 }
