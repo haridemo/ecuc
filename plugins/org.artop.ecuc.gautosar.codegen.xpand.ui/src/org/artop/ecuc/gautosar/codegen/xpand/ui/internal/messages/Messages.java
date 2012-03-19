@@ -26,6 +26,7 @@ public class Messages extends NLS {
 	public static String label_editButton;
 	public static String label_selectAllButton;
 	public static String label_deselectAllButton;
+	public static String label_restoreDefaultsButton;
 	public static String label_xpandTemplateGroupName;
 	public static String label_xpandTemplateTableGroupName;
 	public static String label_bswModuleTableColumn;
