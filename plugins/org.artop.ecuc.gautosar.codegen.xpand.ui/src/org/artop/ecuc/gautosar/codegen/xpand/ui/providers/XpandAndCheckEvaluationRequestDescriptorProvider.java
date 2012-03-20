@@ -27,7 +27,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.jface.dialogs.DialogSettings;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.CheckboxTableViewer;
 import org.eclipse.sphinx.emf.util.EObjectUtil;
@@ -234,16 +233,16 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 
 	public void saveState(List<Object> checkedElements) {
 		if (dialogSettings != null) {
-			IDialogSettings topLevelSection = DialogSettings.getOrCreateSection(dialogSettings, CODE_GEN_SECTION);
+			IDialogSettings topLevelSection = getOrCreateSection(dialogSettings, CODE_GEN_SECTION);
 
 			// ECU section, the key is the aqn of the ECU
 			String ecuAqn = AutosarURIFactory.getAbsoluteQualifiedName(targetObject);
-			IDialogSettings ecuSection = DialogSettings.getOrCreateSection(topLevelSection, ecuAqn);
+			IDialogSettings ecuSection = getOrCreateSection(topLevelSection, ecuAqn);
 
 			for (XpandAndCheckEvaluationRequestDescriptor descriptor : requestDescriptors) {
 				GModuleConfiguration moduleConf = (GModuleConfiguration) descriptor.getTargetObject();
 				String moduleConfAqn = AutosarURIFactory.getAbsoluteQualifiedName(moduleConf);
-				IDialogSettings moduleConfSection = DialogSettings.getOrCreateSection(ecuSection, moduleConfAqn);
+				IDialogSettings moduleConfSection = getOrCreateSection(ecuSection, moduleConfAqn);
 
 				if (checkedElements.contains(descriptor)) {
 					moduleConfSection.put(IS_CHECKED_KEY, Boolean.TRUE);
@@ -268,5 +267,14 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 				}
 			}
 		}
+	}
+
+	// TODO (aakar) Replace this by DialogSettings.getOrCreateSection when Eclipse 3.6 is no longer supported
+	public IDialogSettings getOrCreateSection(IDialogSettings settings, String sectionName) {
+		IDialogSettings section = settings.getSection(sectionName);
+		if (section == null) {
+			section = settings.addNewSection(sectionName);
+		}
+		return section;
 	}
 }
