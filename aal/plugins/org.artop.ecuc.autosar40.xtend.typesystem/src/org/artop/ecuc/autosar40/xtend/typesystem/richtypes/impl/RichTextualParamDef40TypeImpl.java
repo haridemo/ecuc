@@ -34,7 +34,7 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 		super(context, configParameter);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return EcucdescriptionPackage.eINSTANCE.getEcucTextualParamValue();
 	}
 
@@ -56,10 +56,5 @@ public class RichTextualParamDef40TypeImpl extends AbstractRichConfigParameterTy
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((EcucTextualParamValue) target).isSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

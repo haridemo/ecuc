@@ -7,6 +7,8 @@ Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.artop.ecuc.autosar40.xtend.typesystem,
  org.artop.ecuc.autosar40.xtend.typesystem.internal;x-internal:=true,
+ org.artop.ecuc.autosar40.xtend.typesystem.metatypes.concrete,
+ org.artop.ecuc.autosar40.xtend.typesystem.metatypes.concrete.impl,
  org.artop.ecuc.autosar40.xtend.typesystem.richtypes.factory,
  org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl
 Bundle-Activator: org.artop.ecuc.autosar40.xtend.typesystem.internal.Activator$Implementation

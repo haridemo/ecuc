@@ -29,7 +29,7 @@ public class RichFloatParamDefTypeImpl extends AbstractRichConfigParameterTypeIm
 		super(context, floatParamDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGFloatValue();
 	}
 
@@ -51,10 +51,5 @@ public class RichFloatParamDefTypeImpl extends AbstractRichConfigParameterTypeIm
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GFloatValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

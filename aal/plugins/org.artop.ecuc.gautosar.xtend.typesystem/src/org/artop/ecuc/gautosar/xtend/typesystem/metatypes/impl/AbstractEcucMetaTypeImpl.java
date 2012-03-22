@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,6 +9,7 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
  * 
  * </copyright>
  */
@@ -107,13 +108,15 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 				return internalEAllContents((EObject) target);
 			}
 		});
+
 		addFeature(createShortNameFeature());
+		addFeature(createSetShortNameOperation());
+
 		addFeature(new PropertyImpl(this, "absoluteQualifiedName", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
 				return AutosarURIFactory.getAbsoluteQualifiedName(target);
 			}
 		});
-		addFeature(createSetShortNameOperation());
 	}
 
 	protected Property createShortNameFeature() {
@@ -123,6 +126,11 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 					return ((GIdentifiable) target).gGetShortName();
 				}
 				return null;
+			}
+
+			@Override
+			public void set(Object target, Object newValue) {
+				internalSetShortName(target, newValue);
 			}
 		};
 	}

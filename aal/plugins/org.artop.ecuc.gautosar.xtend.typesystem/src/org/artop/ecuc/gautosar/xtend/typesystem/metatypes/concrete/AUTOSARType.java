@@ -12,16 +12,9 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.gautosar.xtend.typesystem.richtypes;
+package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete;
 
-import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
+public interface AUTOSARType extends EcucConcreteMetaType {
 
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.EcucMetaType;
-import org.eclipse.emf.ecore.EClass;
-
-public interface EcucRichType extends EcucMetaType {
-
-	GIdentifiable getEcucTypeDef();
-
-	EClass getEcucType();
+	String TYPE_NAME = META_NAMESPACE + TYPE_NAME_SEGMENT_SEPARATOR + "AUTOSARType"; //$NON-NLS-1$
 }

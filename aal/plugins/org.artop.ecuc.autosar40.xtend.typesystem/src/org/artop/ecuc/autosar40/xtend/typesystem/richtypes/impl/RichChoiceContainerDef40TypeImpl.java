@@ -49,5 +49,4 @@ public class RichChoiceContainerDef40TypeImpl extends RichChoiceContainerDefType
 
 		return false;
 	}
-
 }

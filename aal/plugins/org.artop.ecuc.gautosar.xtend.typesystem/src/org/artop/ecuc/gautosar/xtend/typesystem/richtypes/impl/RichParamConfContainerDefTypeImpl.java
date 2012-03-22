@@ -32,17 +32,12 @@ public class RichParamConfContainerDefTypeImpl extends AbstractRichContainerDefT
 		super(context, paramConfContainerDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGContainer();
 	}
 
 	@Override
 	protected Set<? extends Type> internalGetSuperTypes() {
 		return Collections.singleton(getContext().getMetaModel().getTypeForName(ParamConfContainerDefType.TYPE_NAME));
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

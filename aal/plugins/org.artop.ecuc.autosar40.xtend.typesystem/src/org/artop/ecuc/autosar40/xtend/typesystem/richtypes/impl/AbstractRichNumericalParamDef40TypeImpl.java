@@ -35,7 +35,7 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 		super(context, configParameter);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return EcucdescriptionPackage.eINSTANCE.getEcucNumericalParamValue();
 	}
 
@@ -73,4 +73,5 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 		}
 		return false;
 	}
+
 }

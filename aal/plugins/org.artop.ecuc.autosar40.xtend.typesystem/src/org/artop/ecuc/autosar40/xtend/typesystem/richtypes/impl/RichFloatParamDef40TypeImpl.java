@@ -28,16 +28,17 @@ public class RichFloatParamDef40TypeImpl extends AbstractRichNumericalParamDef40
 
 	@Override
 	protected Object convertFromEcucValue(String text) {
-		return Double.parseDouble(text);
+		try {
+			return Double.parseDouble(text);
+		} catch (NumberFormatException ex) {
+			// Fail Silent, it's on the behave of the validation to inform the Configurator about an unset value in the
+			// model.
+		}
+		return null;
 	}
 
 	@Override
 	protected Type getValueType() {
 		return getTypeSystem().getRealType();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

@@ -53,7 +53,7 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 		this.destinationTypeDefs = destinationTypeDefs;
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGReferenceValue();
 	}
 
@@ -139,10 +139,5 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 			}
 		}
 		return null;
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

@@ -47,7 +47,7 @@ public class RichInstanceReferenceDefTypeImpl extends AbstractRichConfigReferenc
 		this.destinationType = instanceReferenceDef.gGetDestinationType();
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGReferenceValue();
 	}
 
@@ -102,10 +102,5 @@ public class RichInstanceReferenceDefTypeImpl extends AbstractRichConfigReferenc
 		} else {
 			return getFqnRec(ele.eContainer(), getElementName((ENamedElement) ele) + SyntaxConstants.NS_DELIM + suffix);
 		}
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

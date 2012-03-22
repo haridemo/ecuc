@@ -31,7 +31,7 @@ public class RichIntegerParamDefTypeImpl extends AbstractRichConfigParameterType
 		super(context, integerParamDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGIntegerValue();
 	}
 
@@ -60,10 +60,5 @@ public class RichIntegerParamDefTypeImpl extends AbstractRichConfigParameterType
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GIntegerValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

@@ -28,16 +28,17 @@ public class RichIntegerParamDef40TypeImpl extends AbstractRichNumericalParamDef
 
 	@Override
 	protected Object convertFromEcucValue(String text) {
-		return Integer.parseInt(text);
+		try {
+			return Integer.parseInt(text);
+		} catch (Exception ex) {
+			// Fail Silent, it's on the behave of the validation to inform the Configurator about an unset value in the
+			// model.
+		}
+		return null;
 	}
 
 	@Override
 	protected Type getValueType() {
 		return getTypeSystem().getIntegerType();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }
