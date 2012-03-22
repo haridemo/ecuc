@@ -29,7 +29,7 @@ public class RichBooleanParamDefTypeImpl extends AbstractRichConfigParameterType
 		super(context, booleanParamDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGBooleanValue();
 	}
 
@@ -51,10 +51,5 @@ public class RichBooleanParamDefTypeImpl extends AbstractRichConfigParameterType
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GBooleanValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

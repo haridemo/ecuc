@@ -1,65 +1,63 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
  * 
  * Contributors: 
- *     See4sys - Initial API and implementation
+ *     itemis - Initial API and implementation
  * 
  * </copyright>
  */
-package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl;
-
-import gautosar.gecucdescription.GecucdescriptionPackage;
-import gautosar.ggenericstructure.ginfrastructure.GARPackage;
+package org.artop.ecuc.autosar40.xtend.typesystem.metatypes.concrete.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import org.artop.ecuc.autosar40.xtend.typesystem.metatypes.concrete.EcucDefinitionCollectionType;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARPackageType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.impl.AbstractEcucConcreteMetaTypeImpl;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Feature;
 import org.eclipse.xtend.typesystem.Type;
 
-public class ARPackageTypeImpl extends AbstractEcucMetaTypeImpl implements ARPackageType {
+import autosar40.ecucparameterdef.EcucDefinitionCollection;
+import autosar40.ecucparameterdef.EcucparameterdefPackage;
 
-	public ARPackageTypeImpl(final EcucContext context) {
-		this(context, TYPE_NAME);
+public class EcucDefinitionCollectionTypeImpl extends AbstractEcucConcreteMetaTypeImpl implements EcucDefinitionCollectionType {
+
+	public EcucDefinitionCollectionTypeImpl(final EcucContext context) {
+		this(context, EcucDefinitionCollectionType.TYPE_NAME);
 	}
 
-	private ARPackageTypeImpl(final EcucContext confContext, final String name) {
+	private EcucDefinitionCollectionTypeImpl(final EcucContext confContext, final String name) {
 		super(confContext, name);
-		createBaseFeatures();
 	}
 
-	/**
-	 * Creates the base features like name, shortName, longName and fullQualifiedName
-	 */
-	private void createBaseFeatures() {
-		super.addFeature(createModulesProperty());
+	public EClass getEcucType() {
+		return EcucparameterdefPackage.eINSTANCE.getEcucDefinitionCollection();
 	}
 
-	/**
-	 * @return the attribute 'eContents' of type string with the implementation of an oaw property that is able to fetch
-	 *         the direct child items
-	 */
-	protected Feature createModulesProperty() {
+	@Override
+	protected void addBaseFeatures() {
+		super.addBaseFeatures();
+		addFeature(createModulesProperty());
+	}
+
+	private Feature createModulesProperty() {
 		return new PropertyImpl(this, "modules", getTypeSystem().getListType(getTypeSystem().getTypeForName(ModuleDefType.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
-				if (target instanceof GARPackage) {
-					return EcoreUtil.getObjectsByType(((GARPackage) target).gGetElements(),
-							GecucdescriptionPackage.eINSTANCE.getGModuleConfiguration());
+				if (target instanceof EcucDefinitionCollection) {
+					return ((EcucDefinitionCollection) target).getModules();
 				}
 				return Collections.emptyList();
 			}
@@ -67,10 +65,9 @@ public class ARPackageTypeImpl extends AbstractEcucMetaTypeImpl implements ARPac
 	}
 
 	@Override
-	protected final List<EObject> internalEContents(EObject object) {
+	protected List<EObject> internalEContents(EObject object) {
 		List<EObject> contents = new ArrayList<EObject>();
-		contents.addAll(EcoreUtil.<EObject> getObjectsByType(((GARPackage) object).gGetElements(),
-				GecucdescriptionPackage.eINSTANCE.getGModuleConfiguration()));
+		contents.addAll(((EcucDefinitionCollection) object).getModules());
 		return contents;
 	}
 
@@ -79,7 +76,7 @@ public class ARPackageTypeImpl extends AbstractEcucMetaTypeImpl implements ARPac
 	 */
 	@Override
 	public boolean isInstance(final Object target) {
-		return target instanceof GARPackage;
+		return target instanceof EcucDefinitionCollection;
 	}
 
 	/**

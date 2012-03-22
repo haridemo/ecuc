@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,12 +9,14 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
  * 
  * </copyright>
  */
-package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl;
+package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.impl;
 
 import gautosar.ggenericstructure.ginfrastructure.GAUTOSAR;
+import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,14 +25,15 @@ import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARPackageType;
-import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.AUTOSARType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.ARPackageType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.AUTOSARType;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Feature;
 import org.eclipse.xtend.typesystem.Type;
 
-public class AUTOSARTypeImpl extends AbstractEcucMetaTypeImpl implements AUTOSARType {
+public class AUTOSARTypeImpl extends AbstractEcucConcreteMetaTypeImpl implements AUTOSARType {
 
 	public AUTOSARTypeImpl(final EcucContext context) {
 		this(context, AUTOSARType.TYPE_NAME);
@@ -38,14 +41,16 @@ public class AUTOSARTypeImpl extends AbstractEcucMetaTypeImpl implements AUTOSAR
 
 	private AUTOSARTypeImpl(final EcucContext confContext, final String name) {
 		super(confContext, name);
-		createBaseFeatures();
 	}
 
-	/**
-	 * Creates the base features like name, shortName, longName and fullQualifiedName
-	 */
-	private void createBaseFeatures() {
-		super.addFeature(createPackagesProperty());
+	public EClass getEcucType() {
+		return GinfrastructurePackage.eINSTANCE.getGAUTOSAR();
+	}
+
+	@Override
+	protected void addBaseFeatures() {
+		super.addBaseFeatures();
+		addFeature(createPackagesProperty());
 	}
 
 	private Feature createPackagesProperty() {

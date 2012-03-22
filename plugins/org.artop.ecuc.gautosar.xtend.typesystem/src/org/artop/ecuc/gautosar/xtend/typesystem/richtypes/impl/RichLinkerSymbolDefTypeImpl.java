@@ -28,7 +28,7 @@ public class RichLinkerSymbolDefTypeImpl extends AbstractRichAbstractStringParam
 		super(context, linkerSymbolDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGLinkerSymbolValue();
 	}
 
@@ -45,10 +45,5 @@ public class RichLinkerSymbolDefTypeImpl extends AbstractRichAbstractStringParam
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GLinkerSymbolValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

@@ -86,7 +86,6 @@ public class Ecuc40RichTypeFactory extends EcucRichTypeFactory {
 
 	@Override
 	protected RichModuleDefType createRichModuleDefType(GModuleDef moduleDef) {
-
 		return new RichModuleDef40TypeImpl(context, moduleDef);
 	}
 

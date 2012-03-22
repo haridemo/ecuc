@@ -36,17 +36,12 @@ public class RichChoiceContainerDefTypeImpl extends AbstractRichContainerDefType
 		super(context, choiceContainerDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGContainer();
 	}
 
 	@Override
 	protected Set<? extends Type> internalGetSuperTypes() {
 		return Collections.singleton(getContext().getMetaModel().getTypeForName(ChoiceContainerDefType.TYPE_NAME));
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }
