@@ -46,7 +46,7 @@ public class RichEnumerationParamDefTypeImpl extends AbstractRichConfigParameter
 		});
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGEnumerationValue();
 	}
 
@@ -68,10 +68,5 @@ public class RichEnumerationParamDefTypeImpl extends AbstractRichConfigParameter
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GEnumerationValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

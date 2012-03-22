@@ -28,7 +28,7 @@ public class RichFunctionNameDefTypeImpl extends AbstractRichAbstractStringParam
 		super(context, functionNameDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGFunctionNameValue();
 	}
 
@@ -45,10 +45,5 @@ public class RichFunctionNameDefTypeImpl extends AbstractRichAbstractStringParam
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GFunctionNameValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

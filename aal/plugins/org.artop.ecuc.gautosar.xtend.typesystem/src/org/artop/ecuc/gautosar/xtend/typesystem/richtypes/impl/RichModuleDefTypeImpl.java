@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,6 +9,7 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
  * 
  * </copyright>
  */
@@ -29,6 +30,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl implements RichModuleDefType {
@@ -37,8 +39,23 @@ public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl imp
 		super(context, moduleDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGModuleConfiguration();
+	}
+
+	@Override
+	protected void addBaseFeatures() {
+		super.addBaseFeatures();
+
+		addFeature(new PropertyImpl(this, "definition", this) { //$NON-NLS-1$
+			public Object get(Object target) {
+				if (target instanceof GModuleConfiguration) {
+					GModuleConfiguration gTarget = (GModuleConfiguration) target;
+					return gTarget.gGetDefinition();
+				}
+				return "";//$NON-NLS-1$
+			}
+		});
 	}
 
 	@Override
@@ -84,14 +101,9 @@ public class RichModuleDefTypeImpl extends AbstractCompositeEcucRichTypeImpl imp
 			GIdentifiable moduleDef = getEcucTypeDef();
 			if (moduleConfiguration instanceof GModuleConfiguration && moduleDef instanceof GModuleDef) {
 				((GModuleConfiguration) moduleConfiguration).gSetShortName(((GModuleDef) moduleDef).gGetShortName());
-				((GModuleConfiguration) moduleConfiguration).gSetDefinition(((GModuleDef) moduleDef));
+				((GModuleConfiguration) moduleConfiguration).gSetDefinition((GModuleDef) moduleDef);
 			}
 		}
 		return moduleConfiguration;
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

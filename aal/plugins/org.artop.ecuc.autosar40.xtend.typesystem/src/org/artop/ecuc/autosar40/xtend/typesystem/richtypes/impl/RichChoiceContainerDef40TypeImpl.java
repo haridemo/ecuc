@@ -49,9 +49,4 @@ public class RichChoiceContainerDef40TypeImpl extends RichChoiceContainerDefType
 
 		return false;
 	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
-	}
 }

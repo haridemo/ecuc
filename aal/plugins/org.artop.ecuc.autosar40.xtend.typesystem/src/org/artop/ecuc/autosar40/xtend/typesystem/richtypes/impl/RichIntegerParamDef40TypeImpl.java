@@ -41,9 +41,4 @@ public class RichIntegerParamDef40TypeImpl extends AbstractRichNumericalParamDef
 	protected Type getValueType() {
 		return getTypeSystem().getIntegerType();
 	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
-	}
 }

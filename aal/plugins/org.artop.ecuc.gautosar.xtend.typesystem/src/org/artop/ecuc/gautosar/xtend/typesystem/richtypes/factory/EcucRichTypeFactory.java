@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,6 +9,7 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
  * 
  * </copyright>
  */
@@ -123,7 +124,6 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 
 			// TODO Surround with appropriate tracing option
 			long stop = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
-			;
 			System.out
 					.println("Created " + (types.size() - typesBefore) + " types in " + (stop - start) / 1000000 + " ms for " + AutosarURIFactory.getAbsoluteQualifiedName(moduleDef)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}

@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,6 +9,7 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
  * 
  * </copyright>
  */
@@ -74,7 +75,6 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 				}
 				return "";//$NON-NLS-1$
 			}
-
 		});
 	}
 
@@ -107,7 +107,7 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 
 	@Override
 	public boolean isInstance(Object target) {
-		if (target instanceof GParameterValue && getEcucValueType().isInstance(target)) {
+		if (target instanceof GParameterValue && getEcucType().isInstance(target)) {
 			GConfigParameter parameterDef = ((GParameterValue) target).gGetDefinition();
 			if (parameterDef == getEcucTypeDef()) {
 				return true;
@@ -140,7 +140,7 @@ public abstract class AbstractRichConfigParameterTypeImpl extends AbstractCompos
 		if (parameterValue != null) {
 			GIdentifiable parameterDef = getEcucTypeDef();
 			if (parameterValue instanceof GParameterValue && parameterDef instanceof GConfigParameter) {
-				((GParameterValue) parameterValue).gSetDefinition(((GConfigParameter) parameterDef));
+				((GParameterValue) parameterValue).gSetDefinition((GConfigParameter) parameterDef);
 			}
 		}
 		return parameterValue;

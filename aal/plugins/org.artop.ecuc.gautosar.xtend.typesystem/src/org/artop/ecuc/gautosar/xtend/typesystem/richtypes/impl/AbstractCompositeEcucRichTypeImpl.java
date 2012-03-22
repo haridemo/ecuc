@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -9,6 +9,7 @@
  * 
  * Contributors: 
  *     See4sys - Initial API and implementation
+ *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
  * 
  * </copyright>
  */
@@ -144,7 +145,6 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 
 			});
 		}
-
 	}
 
 	@Override
@@ -184,7 +184,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 							}
 						}
 						values = new AbstractMultiplicityAwareFilteringEList<EObject>((EObject) target, getEContainingFeature((EObject) target,
-								childType.getEcucValueType())) {
+								childType.getEcucType())) {
 
 							private static final long serialVersionUID = 1L;
 
@@ -197,7 +197,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 						((AbstractMultiplicityAwareFilteringEList<EObject>) values).setUpperMultiplicity(upperMultiplicity);
 					} else {
 						values = new AbstractFilteringEList<EObject>((EObject) target, getEContainingFeature((EObject) target,
-								childType.getEcucValueType())) {
+								childType.getEcucType())) {
 
 							private static final long serialVersionUID = 1L;
 
@@ -217,8 +217,8 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 					return values;
 				} else {
 					@SuppressWarnings("unchecked")
-					List<EObject> children = (List<EObject>) ((EObject) target).eGet(getEContainingFeature((EObject) target,
-							childType.getEcucValueType()));
+					List<EObject> children = (List<EObject>) ((EObject) target)
+							.eGet(getEContainingFeature((EObject) target, childType.getEcucType()));
 					for (EObject child : children) {
 						if (internalAcceptChild(child, childType)) {
 							return child;
@@ -331,7 +331,7 @@ public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRich
 	private void internalSet(Object target, CompositeEcucRichType childType, Object newValue) {
 		// Retrieve target list on target object in which child is hosted
 		@SuppressWarnings("unchecked")
-		List<EObject> children = (List<EObject>) ((EObject) target).eGet(getEContainingFeature((EObject) target, childType.getEcucValueType()));
+		List<EObject> children = (List<EObject>) ((EObject) target).eGet(getEContainingFeature((EObject) target, childType.getEcucType()));
 
 		// Remove old child any such is present
 		for (Iterator<EObject> iter = children.iterator(); iter.hasNext();) {

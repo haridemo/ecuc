@@ -28,7 +28,7 @@ public class RichStringParamDefTypeImpl extends AbstractRichAbstractStringParamD
 		super(context, stringParamDef);
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGStringValue();
 	}
 
@@ -45,10 +45,5 @@ public class RichStringParamDefTypeImpl extends AbstractRichAbstractStringParamD
 	@Override
 	protected boolean internalIsSet(Object target) {
 		return ((GStringValue) target).gIsSetValue();
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }

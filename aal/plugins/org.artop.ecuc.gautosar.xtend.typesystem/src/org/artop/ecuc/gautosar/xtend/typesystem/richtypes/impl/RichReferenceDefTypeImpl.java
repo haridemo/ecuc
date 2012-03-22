@@ -44,7 +44,7 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 		this.destinationTypeDef = referenceDef.gGetDestination();
 	}
 
-	public EClass getEcucValueType() {
+	public EClass getEcucType() {
 		return GecucdescriptionPackage.eINSTANCE.getGReferenceValue();
 	}
 
@@ -77,10 +77,5 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 			valueType = getContext().getMetaModel().getTypeForName(ParamConfContainerDefType.TYPE_NAME);
 		}
 		return valueType;
-	}
-
-	@Override
-	public boolean isAbstract() {
-		return false;
 	}
 }
