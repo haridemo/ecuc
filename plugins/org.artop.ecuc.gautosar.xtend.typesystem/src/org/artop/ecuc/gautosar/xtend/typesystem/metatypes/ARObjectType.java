@@ -19,5 +19,5 @@ package org.artop.ecuc.gautosar.xtend.typesystem.metatypes;
  */
 public interface ARObjectType extends EcucMetaType {
 
-	String TYPE_NAME = META_NAMESPACE + TYPE_NAME_SEGMENT_SEPARATOR + "ARObjectType"; //$NON-NLS-1$
+	String TYPE_NAME = META_NAMESPACE + TYPE_NAME_SEGMENT_SEPARATOR + "ARObject"; //$NON-NLS-1$
 }
