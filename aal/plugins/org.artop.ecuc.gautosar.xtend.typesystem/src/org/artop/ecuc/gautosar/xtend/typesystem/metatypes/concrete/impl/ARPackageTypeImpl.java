@@ -15,8 +15,10 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.impl;
 
+import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.ggenericstructure.ginfrastructure.GARPackage;
+import gautosar.ggenericstructure.ginfrastructure.GPackageableElement;
 import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
 
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.AbstractFilteringEList;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.ARPackageType;
@@ -63,8 +66,17 @@ public class ARPackageTypeImpl extends AbstractEcucConcreteMetaTypeImpl implemen
 		return new PropertyImpl(this, "modules", getTypeSystem().getListType(getTypeSystem().getTypeForName(ModuleDefType.TYPE_NAME))) { //$NON-NLS-1$
 			public Object get(Object target) {
 				if (target instanceof GARPackage) {
-					return EcoreUtil.getObjectsByType(((GARPackage) target).gGetElements(),
-							GecucdescriptionPackage.eINSTANCE.getGModuleConfiguration());
+					@SuppressWarnings("serial")
+					List<GPackageableElement> elements = new AbstractFilteringEList<GPackageableElement>((GARPackage) target, ((EObject) target)
+							.eClass().getEStructuralFeature("elements")) { //$NON-NLS-1$
+
+						@Override
+						protected boolean accept(GPackageableElement element) {
+							return element instanceof GModuleConfiguration;
+						}
+					};
+
+					return elements;
 				}
 				return Collections.emptyList();
 			}
