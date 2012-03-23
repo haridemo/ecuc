@@ -18,5 +18,5 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.EcucMetaType;
 
 public interface EcucDefinitionCollectionType extends EcucMetaType {
 
-	String TYPE_NAME = META_NAMESPACE + TYPE_NAME_SEGMENT_SEPARATOR + "EcucDefinitionCollectionType"; //$NON-NLS-1$
+	String TYPE_NAME = "ECUC" + TYPE_NAME_SEGMENT_SEPARATOR + "EcucDefinitionCollection"; //$NON-NLS-1$ //$NON-NLS-2$
 }
