@@ -20,7 +20,7 @@ import org.eclipse.xtend.typesystem.Type;
 
 public interface EcucMetaType extends Type {
 
-	String META_NAMESPACE = "AR"; //$NON-NLS-1$
+	String META_NAMESPACE = "ECUC"; //$NON-NLS-1$
 	String TYPE_NAME_SEGMENT_SEPARATOR = "::"; //$NON-NLS-1$
 
 	String getNamespace();
