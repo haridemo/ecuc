@@ -17,8 +17,17 @@ package org.artop.ecuc.autosar40.typesystem.integration.tests;
 import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigParameterType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ConfigReferenceType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ReferenceDefType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.ARPackageType;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.AUTOSARType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
@@ -56,17 +65,17 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** Check for expected types in ecucMetaModel **/
 
 		/** MetaTypes **/
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_AR_OBJECT_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_AR_PACKAGE_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_AUTOSAR_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_REFERENCE_DEF_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CHOICE_CONTAINER_DEF_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_PARAM_CONF_CONTAINER_DEF_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_MODULE_DEF_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CONTAINER_DEF_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CHOICE_REFERENCE_DEF_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CONFIG_PARAMETER_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.METATYPE_AR_CONFIG_REFERENCE_TYPE);
+		assertExistsTypeInEcucMetaModel(ARObjectType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ARPackageType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(AUTOSARType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ReferenceDefType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ChoiceContainerDefType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ParamConfContainerDefType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ModuleDefType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ContainerDefType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ChoiceReferenceDefType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ConfigParameterType.TYPE_NAME);
+		assertExistsTypeInEcucMetaModel(ConfigReferenceType.TYPE_NAME);
 
 		/** From EPD package **/
 		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);

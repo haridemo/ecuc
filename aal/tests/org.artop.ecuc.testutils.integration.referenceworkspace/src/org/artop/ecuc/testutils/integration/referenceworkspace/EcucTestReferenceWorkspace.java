@@ -96,18 +96,6 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	public static final String URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_LOW = "/EPC/Car/Options/FinitionLevels/Low?type=EcucContainerValue";//$NON-NLS-1$
 
 	// Type Qualified Names definitions
-	public static final String METATYPE_AR_CONFIG_REFERENCE_TYPE = "AR::ConfigReferenceType";//$NON-NLS-1$
-	public static final String METATYPE_AR_CONFIG_PARAMETER_TYPE = "AR::ConfigParameterType";//$NON-NLS-1$
-	public static final String METATYPE_AR_CHOICE_REFERENCE_DEF_TYPE = "AR::ChoiceReferenceDefType";//$NON-NLS-1$
-	public static final String METATYPE_AR_CONTAINER_DEF_TYPE = "AR::ContainerDefType";//$NON-NLS-1$
-	public static final String METATYPE_AR_MODULE_DEF_TYPE = "AR::ModuleDefType";//$NON-NLS-1$
-	public static final String METATYPE_AR_PARAM_CONF_CONTAINER_DEF_TYPE = "AR::ParamConfContainerDefType";//$NON-NLS-1$
-	public static final String METATYPE_AR_CHOICE_CONTAINER_DEF_TYPE = "AR::ChoiceContainerDefType";//$NON-NLS-1$
-	public static final String METATYPE_AR_REFERENCE_DEF_TYPE = "AR::ReferenceDefType";//$NON-NLS-1$
-	public static final String METATYPE_AR_AUTOSAR_TYPE = "AR::AUTOSARType";//$NON-NLS-1$
-	public static final String METATYPE_AR_AR_PACKAGE_TYPE = "AR::ARPackageType";//$NON-NLS-1$
-	public static final String METATYPE_AR_AR_OBJECT_TYPE = "AR::ARObjectType";//$NON-NLS-1$
-
 	public static final String RICH_TYPE_EPD_VEHICLE = "EPD::Vehicle";//$NON-NLS-1$
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO = "EPD::Vehicle::GeneralInfo";//$NON-NLS-1$
 
