@@ -24,8 +24,10 @@ import org.artop.ecuc.gautosar.codegen.xpand.ui.actions.LaunchEcucCodeGenAction;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.AdvancedM2TConfigurationWizard;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
@@ -106,6 +108,18 @@ public class AdvancedLaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 
 	@Override
 	public void run() {
+		if (hasProxyModule(getSelectedModelObject())) {
+			boolean run = MessageDialog.openQuestion(ExtendedPlatformUI.getActiveShell(), "Question",
+					"Selected ECU Configuration refers to unresolved proxy Module Configuration\n Do you to continue code generation ?");
+			if (run) {
+				doRun();
+			}
+		} else {
+			doRun();
+		}
+	}
+
+	protected void doRun() {
 		AdvancedM2TConfigurationWizard wizard = new AdvancedM2TConfigurationWizard(getSelectedModelObject(), getMetaModels());
 		wizard.setM2TJobName(getM2TJobName());
 		wizard.setWorkspaceResourceLoader(getWorkspaceResourceLoader());
@@ -115,6 +129,21 @@ public class AdvancedLaunchEcucCodeGen40Action extends LaunchEcucCodeGenAction {
 
 		WizardDialog wizardDialog = new WizardDialog(ExtendedPlatformUI.getDisplay().getActiveShell(), wizard);
 		wizardDialog.open();
+	}
+
+	protected boolean hasProxyModule(EObject selectedModelObject) {
+		EcucValueCollection ecucValueCollection = (EcucValueCollection) selectedModelObject;
+		EList<EcucModuleConfigurationValuesRefConditional> ecucValues = ecucValueCollection.getEcucValues();
+		for (EcucModuleConfigurationValuesRefConditional ref : ecucValues) {
+			EcucModuleConfigurationValues ecucModuleConfigurationValues = ref.getEcucModuleConfigurationValues();
+			if (ecucModuleConfigurationValues != null) {
+				if (ecucModuleConfigurationValues.eIsProxy() || ecucModuleConfigurationValues.getDefinition() != null
+						&& ecucModuleConfigurationValues.getDefinition().eIsProxy()) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	@Override
