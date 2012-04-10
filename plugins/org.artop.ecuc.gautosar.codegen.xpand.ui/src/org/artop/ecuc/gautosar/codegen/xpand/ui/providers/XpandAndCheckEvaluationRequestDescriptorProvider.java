@@ -135,7 +135,14 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 	private Collection<GModuleConfiguration> getModules3x(EObject ecuConfiguration) {
 		EStructuralFeature modulesFeature = EObjectUtil.getEStructuralFeature(ecuConfiguration, ECU_CONFIGURATION__MODULES);
 		if (modulesFeature != null) {
-			return (Collection<GModuleConfiguration>) ecuConfiguration.eGet(modulesFeature);
+			Collection<GModuleConfiguration> modules = (Collection<GModuleConfiguration>) ecuConfiguration.eGet(modulesFeature);
+			// Remove Proxy module
+			for (GModuleConfiguration module : new ArrayList<GModuleConfiguration>(modules)) {
+				if (module.eIsProxy()) {
+					modules.remove(module);
+				}
+			}
+			return modules;
 		}
 		return Collections.emptyList();
 	}
@@ -156,7 +163,7 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 				if (ecucModuleConfigurationValuesFeature != null) {
 					GModuleConfiguration module = (GModuleConfiguration) ecucModuleConfigurationValuesRefConditional
 							.eGet(ecucModuleConfigurationValuesFeature);
-					if (module != null) {
+					if (module != null && !module.eIsProxy()) {
 						modules.add(module);
 					}
 				} else {

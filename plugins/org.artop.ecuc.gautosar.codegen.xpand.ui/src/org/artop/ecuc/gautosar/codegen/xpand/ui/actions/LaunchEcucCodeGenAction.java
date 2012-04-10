@@ -47,6 +47,7 @@ import org.eclipse.sphinx.xtendxpand.ui.actions.BasicM2TAction;
 
 public class LaunchEcucCodeGenAction extends BasicM2TAction {
 
+	protected boolean isLoadModelTriggered = false;
 	protected GModuleConfiguration moduleConfiguration;
 	protected GModuleDef moduleDef;
 
@@ -77,7 +78,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 				// Referenced module definition not available? (this can be the case when the AUTOSAR model behind the
 				// selected element has not been fully loaded yet or the referenced module definition is really missing)
 				if (moduleDef != null) {
-					if (moduleDef.eIsProxy()) {
+					if (moduleDef.eIsProxy() && !isLoadModelTriggered) {
 						// Trigger asynchronous loading of underlying AUTOSAR model including referenced AUTOSAR models
 						// in BSW Platform projects (i.e., AUTOSAR projects with Xpand/Xtend nature) to make sure that
 						// referenced module definition has a chance to get resolved
@@ -94,6 +95,7 @@ public class LaunchEcucCodeGenAction extends BasicM2TAction {
 							}
 							editingDomain.addResourceSetListener(resourceChangedListener);
 						}
+						isLoadModelTriggered = true;
 					} else {
 						// Uninstall resource changed listener in case there is any
 						if (resourceChangedListener != null) {
