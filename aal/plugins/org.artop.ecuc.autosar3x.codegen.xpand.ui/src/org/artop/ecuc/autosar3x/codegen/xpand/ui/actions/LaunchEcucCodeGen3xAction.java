@@ -61,7 +61,7 @@ public class LaunchEcucCodeGen3xAction extends LaunchEcucCodeGenAction {
 						moduleConfigurations.add(moduleConf);
 					}
 				}
-				if (isProxy) {
+				if (isProxy && !isLoadModelTriggered) {
 					// Trigger asynchronous loading of underlying AUTOSAR model including referenced AUTOSAR models in
 					// BSW Platform projects (i.e., AUTOSAR projects with Xpand/Xtend nature) to make sure that
 					// referenced module definition has a chance to get resolved
@@ -78,6 +78,7 @@ public class LaunchEcucCodeGen3xAction extends LaunchEcucCodeGenAction {
 						}
 						editingDomain.addResourceSetListener(resourceChangedListener);
 					}
+					isLoadModelTriggered = true;
 				} else {
 					// Uninstall resource changed listener in case there is any
 					if (resourceChangedListener != null) {
@@ -88,7 +89,7 @@ public class LaunchEcucCodeGen3xAction extends LaunchEcucCodeGenAction {
 						}
 					}
 				}
-				return !isProxy && !moduleConfigurations.isEmpty();
+				return (!isProxy || isLoadModelTriggered) && !moduleConfigurations.isEmpty();
 			}
 		}
 		return false;
