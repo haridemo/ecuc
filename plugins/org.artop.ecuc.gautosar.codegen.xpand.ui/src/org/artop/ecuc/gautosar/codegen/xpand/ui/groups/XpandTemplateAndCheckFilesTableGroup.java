@@ -331,5 +331,6 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 	@Override
 	protected void loadGroupSettings() {
 		requestDescriptorProvider.restoreState(getTableViewer());
+		updateButtons();
 	}
 }
