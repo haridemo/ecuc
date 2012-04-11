@@ -228,6 +228,7 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 							}
 							String[] array = moduleConfSection.getArray(CHECK_FILES_KEY);
 							if (array != null) {
+								descriptor.getCheckFiles().clear();
 								for (String checkFilePath : array) {
 									if (project.getFile(new Path(checkFilePath)).exists()) {
 										descriptor.getCheckFiles().add(project.getFile(new Path(checkFilePath)));
@@ -267,14 +268,12 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 					moduleConfSection.put(XPAND_TEMPLATE_KEY, descriptor.getTemplateFile() == null ? "" : descriptor.getTemplateFile().getFullPath() //$NON-NLS-1$
 							.toString());
 				}
-				List<String> userAddedCheckFiles = new ArrayList<String>();
+				List<String> checkFiles = new ArrayList<String>();
 				for (IFile checkFile : descriptor.getCheckFiles()) {
-					if (!checkFile.getName().startsWith(moduleConf.gGetDefinition().gGetShortName())) {
-						userAddedCheckFiles.add(checkFile.getProjectRelativePath().toString());
-					}
+					checkFiles.add(checkFile.getProjectRelativePath().toString());
 				}
-				if (!userAddedCheckFiles.isEmpty()) {
-					moduleConfSection.put(CHECK_FILES_KEY, userAddedCheckFiles.toArray(new String[userAddedCheckFiles.size()]));
+				if (!checkFiles.isEmpty()) {
+					moduleConfSection.put(CHECK_FILES_KEY, checkFiles.toArray(new String[checkFiles.size()]));
 				}
 			}
 		}
