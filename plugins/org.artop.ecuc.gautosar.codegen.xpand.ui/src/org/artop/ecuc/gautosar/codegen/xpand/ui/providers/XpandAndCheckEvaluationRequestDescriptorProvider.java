@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.eclipse.core.resources.IFile;
@@ -101,8 +103,10 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 
 	private Collection<IFile> getApplicableCheckFiles(GModuleConfiguration moduleConf, Collection<IFile> checkFiles) {
 		List<IFile> result = new ArrayList<IFile>();
+		Pattern pattern = Pattern.compile(moduleConf.gGetDefinition().gGetShortName() + "((_)?\\w+)?" + "\\." + CheckUtils.FILE_EXTENSION); //$NON-NLS-1$ //$NON-NLS-2$
 		for (IFile checkFile : checkFiles) {
-			if (checkFile.getName().startsWith(moduleConf.gGetDefinition().gGetShortName())) {
+			Matcher matcher = pattern.matcher(checkFile.getName());
+			if (matcher.matches()) {
 				result.add(checkFile);
 			}
 		}
