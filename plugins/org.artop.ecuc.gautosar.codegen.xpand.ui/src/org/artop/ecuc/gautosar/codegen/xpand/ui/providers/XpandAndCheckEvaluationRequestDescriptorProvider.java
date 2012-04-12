@@ -103,7 +103,7 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 
 	private Collection<IFile> getApplicableCheckFiles(GModuleConfiguration moduleConf, Collection<IFile> checkFiles) {
 		List<IFile> result = new ArrayList<IFile>();
-		Pattern pattern = Pattern.compile(moduleConf.gGetDefinition().gGetShortName() + "((_)?\\w+)?" + "\\." + CheckUtils.FILE_EXTENSION); //$NON-NLS-1$ //$NON-NLS-2$
+		Pattern pattern = Pattern.compile(moduleConf.gGetDefinition().gGetShortName() + "(_\\w+)?" + "\\." + CheckUtils.FILE_EXTENSION); //$NON-NLS-1$ //$NON-NLS-2$
 		for (IFile checkFile : checkFiles) {
 			Matcher matcher = pattern.matcher(checkFile.getName());
 			if (matcher.matches()) {
