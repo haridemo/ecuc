@@ -258,6 +258,8 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 
 				if (checkedElements.contains(descriptor)) {
 					moduleConfSection.put(IS_CHECKED_KEY, Boolean.TRUE);
+				} else {
+					moduleConfSection.put(IS_CHECKED_KEY, Boolean.FALSE);
 				}
 				if (!XpandAndCheckEvaluationRequestDescriptor.DEFAULT_DEFINE_BLOCK.equals(descriptor.getDefineBlock())) {
 					moduleConfSection.put(DEFINE_BLOCK_KEY, descriptor.getDefineBlock());
@@ -272,9 +274,7 @@ public class XpandAndCheckEvaluationRequestDescriptorProvider {
 				for (IFile checkFile : descriptor.getCheckFiles()) {
 					checkFiles.add(checkFile.getProjectRelativePath().toString());
 				}
-				if (!checkFiles.isEmpty()) {
-					moduleConfSection.put(CHECK_FILES_KEY, checkFiles.toArray(new String[checkFiles.size()]));
-				}
+				moduleConfSection.put(CHECK_FILES_KEY, checkFiles.toArray(new String[checkFiles.size()]));
 			}
 		}
 	}
