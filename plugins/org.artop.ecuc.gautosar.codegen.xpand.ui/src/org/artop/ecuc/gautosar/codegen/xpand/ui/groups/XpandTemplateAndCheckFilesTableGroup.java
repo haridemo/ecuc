@@ -262,6 +262,7 @@ public class XpandTemplateAndCheckFilesTableGroup extends AbstractGroup {
 		requestDescriptorProvider.restoreDefaults();
 		getTableViewer().setAllChecked(false);
 		getTableViewer().refresh();
+		updateButtons();
 	}
 
 	protected XpandAndCheckEvaluationRequestDescriptor editXpandAndCheckEvaluationRequestDescriptor(
