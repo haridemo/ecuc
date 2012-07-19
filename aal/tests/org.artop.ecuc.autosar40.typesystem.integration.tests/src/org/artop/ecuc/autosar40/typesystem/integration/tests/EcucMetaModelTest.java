@@ -889,6 +889,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertNotNull(valueProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
 		Object value = valueProperty.get(serialNumberObject);
+		System.out.println(">>> Value Type: " + value.getClass());
 		assertTrue(value instanceof Integer);
 		assertTrue(((Integer) value).intValue() == 879055672);
 		/********************************************************************/
