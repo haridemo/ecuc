@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) 4, 2012ee4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -14,13 +14,19 @@
  */
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
+import static org.osgi.framework.FrameworkUtil.getBundle;
+
+import org.artop.aal.testutils.integration.referenceworkspace.IRefWorkspace;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
 import org.eclipse.sphinx.testutils.integration.AbstractReferenceWorkspace;
+import org.osgi.framework.Bundle;
 
 import autosar40.util.Autosar40ReleaseDescriptor;
 
@@ -28,7 +34,11 @@ import autosar40.util.Autosar40ReleaseDescriptor;
  * 
  */
 @SuppressWarnings("nls")
-public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
+public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace implements IRefWorkspace {
+
+	private static final String REFERENCE_WORKSPACE_NAME = "ecucReferenceWorkspace";
+
+	private static final Path ARCHIVE_PATH = new Path("resources" + IPath.SEPARATOR + "input" + IPath.SEPARATOR + "referenceWorkspace.zip");
 
 	protected static final String ECUC_TEST_REFERENCE_WORKSPACE_ARCHIVE_FILE_NAME = "referenceWorkspace.zip";
 
@@ -160,7 +170,7 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	public static final String TYPE_EPD_VEHICLE_ENGINE_PROPERTY_AUTOMATIC = "Automatic";//$NON-NLS-1$
 	public static final String TYPE_EPD_VEHICLE_ENGINE_PROPERTY_ENGINETYPE = "EngineType";//$NON-NLS-1$
 
-	public EcucTestReferenceWorkspace(String[] referenceProjectNames) {
+	public EcucTestReferenceWorkspace(String... referenceProjectNames) {
 		super(referenceProjectNames);
 	}
 
@@ -196,4 +206,17 @@ public class EcucTestReferenceWorkspace extends AbstractReferenceWorkspace {
 	protected String[] getReferenceProjectsNames() {
 		return new String[] { XPAND_AUTOSAR_40_PROJECT_NAME };
 	}
+
+	public String getName() {
+		return REFERENCE_WORKSPACE_NAME;
+	}
+
+	public IPath getArchivePath() {
+		return ARCHIVE_PATH;
+	}
+
+	public Bundle getSrcBundle() {
+		return getBundle(EcucTestReferenceWorkspace.class);
+	}
+
 }
