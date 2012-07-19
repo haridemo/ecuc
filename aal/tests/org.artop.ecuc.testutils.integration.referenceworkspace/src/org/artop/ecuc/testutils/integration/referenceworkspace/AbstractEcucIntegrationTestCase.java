@@ -1,7 +1,7 @@
 /**
  * <copyright>
  * 
- * Copyright (c) See4sys and others.
+ * Copyright (c) 4, 2012ee4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
@@ -14,6 +14,9 @@
  */
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
+import static org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_PROJECT_NAME;
+
+import org.artop.aal.testutils.integration.referenceworkspace.IntegrationTestCase;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
 import org.eclipse.core.resources.IFile;
@@ -25,11 +28,10 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
 import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
-import org.eclipse.sphinx.testutils.integration.AbstractIntegrationTestCase;
 import org.eclipse.xtend.typesystem.Type;
 
-@SuppressWarnings("nls")
-public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase<EcucTestReferenceWorkspace> {
+public class AbstractEcucIntegrationTestCase extends IntegrationTestCase<EcucTestReferenceWorkspace> {
+
 	// Error message Definitions
 	private static final String TYPE_IS_MISSING = "type {0} is missing"; //$NON-NLS-1$
 	private static final String TYPE_NOT_RETURNED_FOR_OBJECT = "Expected type : {0} for Object :{1} is not returned by EcucMetaModel";//$NON-NLS-1$
@@ -37,17 +39,12 @@ public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase
 	private static final String TYPE_RETURNED_NOT_EQUALS_TO_EXPECTED = "Type returned :{0} is not equal to expected type :{1}";//$NON-NLS-1$
 
 	public AbstractEcucIntegrationTestCase() {
-		super("EcucTestReferenceWorkspace");
+		super(new EcucTestReferenceWorkspace(XPAND_AUTOSAR_40_PROJECT_NAME));
 	}
 
 	@Override
 	protected Plugin getTestPlugin() {
 		return Activator.getPlugin();
-	}
-
-	@Override
-	protected EcucTestReferenceWorkspace doCreateReferenceWorkspace(String[] referenceProjectNames) {
-		return new EcucTestReferenceWorkspace(referenceProjectNames);
 	}
 
 	// EcucMetaModel Type system global instance
@@ -61,12 +58,12 @@ public class AbstractEcucIntegrationTestCase extends AbstractIntegrationTestCase
 		// long start = System.currentTimeMillis();
 		super.setUp();
 		// System.out.println("Super.setUp time : "+start-System.currentTimeMillis());
-		IFile moduleDefFile = refWks.xPandAutosar40Project.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
+		IFile moduleDefFile = getRefWks().xPandAutosar40Project.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleDefFile);
 		assertNotNull(moduleDefModelDescriptor);
 		ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager().loadAdapter(moduleDefModelDescriptor, EcucMetaModel.class.getName());
 		assertNotNull(ecucMetaModel);
-		moduleConfResource = EcorePlatformUtil.getResource(refWks.xPandAutosar40Project
+		moduleConfResource = EcorePlatformUtil.getResource(getRefWks().xPandAutosar40Project
 				.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
 		assertNotNull(moduleConfResource);
 	}
