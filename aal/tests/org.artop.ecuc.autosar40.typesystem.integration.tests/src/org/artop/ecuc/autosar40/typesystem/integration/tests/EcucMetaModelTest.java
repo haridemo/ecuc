@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.autosar40.typesystem.integration.tests;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
@@ -889,8 +890,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertNotNull(valueProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
 		Object value = valueProperty.get(serialNumberObject);
-		assertTrue(value instanceof Integer);
-		assertTrue(((Integer) value).intValue() == 879055672);
+		assertTrue(value instanceof BigInteger);
+		assertTrue(((BigInteger) value).intValue() == 879055672);
 		/********************************************************************/
 
 		/** 34_2_1 Operation is_configured **/
