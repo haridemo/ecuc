@@ -887,6 +887,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** 34_1_6 Property value **/
 		Property valueProperty = serialNumberRichType.getProperty("value"); //$NON-NLS-1$
 		assertNotNull(valueProperty);
+		System.out.println(">>> Value Property: " + valueProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getIntegerType(), valueProperty.getReturnType());
 		Object value = valueProperty.get(serialNumberObject);
 		System.out.println(">>> Value Type: " + value.getClass());
