@@ -40,7 +40,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
 import org.artop.ecuc.testutils.integration.referenceworkspace.AbstractEcucIntegrationTestCase;
-import org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspace;
+import org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspaceDescriptor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend.typesystem.Operation;
 import org.eclipse.xtend.typesystem.Property;
@@ -79,48 +79,48 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertExistsTypeInEcucMetaModel(ConfigReferenceType.TYPE_NAME);
 
 		/** From EPD package **/
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_DIESEL_FILTER_MODEL);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_MAX_COUPLE);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_MEDIUM);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS);
-		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CHARCOAL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_DIESEL_FILTER_MODEL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_DIESEL_MAX_COUPLE);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_MEDIUM);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_ATTRIBUTES);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS);
+		assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CHARCOAL);
 		/** FIXME Review Test model and adapt test accordingly **/
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CORNFLOWERBLUE);
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_GOLD);
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_HOTPINK);
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_NAVYBLUE);
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_PAPAYAWHIP);
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SALSARED);
-		// assertExistsTypeInEcucMetaModel(EcucTestReferenceWorkspace.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SILVER);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_CORNFLOWERBLUE);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_GOLD);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_HOTPINK);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_NAVYBLUE);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_PAPAYAWHIP);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SALSARED);
+		// assertExistsTypeInEcucMetaModel(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_ATTRIBUTES_AVAILABLECOLORS_SILVER);
 	}
 
 	/**
@@ -129,113 +129,113 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	 */
 	public void testEcucMetaModelReturnedTypeForEObjectInModuleConfiguration() {
 
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR, EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR, EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_0_SPARK_PLUG_NUMBER,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_0_SPARK_PLUG_NUMBER,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_NUMBER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_2_SPARK_PLUG_MODEL,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_3_YEAR,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_2_FIRSTHAND,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_2_MANUFACTURER,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_2_SPARK_PLUG_MODEL,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_MODEL);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_3_YEAR,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_YEAR);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_2_FIRSTHAND,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_2_MANUFACTURER,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_MANUFACTURER);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_LASTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND_PARAMETER_VALUES_0_LASTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
 
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_0_LASTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND_PARAMETER_VALUES_0_LASTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
 
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND_PARAMETER_VALUES_0_FIRSTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND_PARAMETER_VALUES_0_FIRSTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND_PARAMETER_VALUES_1_LASTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND_PARAMETER_VALUES_1_LASTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND_PARAMETER_VALUES_0_FIRSTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND_PARAMETER_VALUES_0_FIRSTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND_PARAMETER_VALUES_1_LASTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND_PARAMETER_VALUES_1_LASTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND_PARAMETER_VALUES_0_FIRSTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND_PARAMETER_VALUES_0_FIRSTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_FIRSTNAME);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND_PARAMETER_VALUES_1_LASTNAME,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND_PARAMETER_VALUES_1_LASTNAME,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER_LASTNAME);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_0_DATE_20071215,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_0_DATE_20071215,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_1_DATE_20080106,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_1_DATE_20080106,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_2_DATE_20080605,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_2_DATE_20080605,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_3_DATE_20090707,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_3_DATE_20090707,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
 		assertReturnedEcucMetaModelTypeNameEquals(
-				EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH);
-		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_LOW,
-				EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW);
+				EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_OPTIONS,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_HIGH);
+		assertReturnedEcucMetaModelTypeNameEquals(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_LOW,
+				EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_OPTIONS_FINITION_LEVELS_LOW);
 
 	}
 
 	/** 10_RichModuleDefType **/
 	public void testRichModuleDefType() {
 		/** Check Rich type consistency */
-		EObject carObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR);
-		Type vehiculeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE);
+		EObject carObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR);
+		Type vehiculeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE);
 		assertTrue(vehiculeType instanceof RichModuleDefType);
 		RichModuleDefType vehiculeRichType = (RichModuleDefType) vehiculeType;
 		assertTrue(vehiculeRichType.getEcucTypeDef() instanceof EcucModuleDef);
@@ -262,10 +262,10 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** 10_3 Property <GParamConfContainerDef.shortName> **/
 		Property engineProperty = vehiculeRichType.getProperty("Engine"); //$NON-NLS-1$
 		assertNotNull(engineProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE), engineProperty.getReturnType());
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE), engineProperty.getReturnType());
 		Object engineObject = engineProperty.get(carObject);
 		assertTrue(engineObject instanceof EcucContainerValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE), engineObject);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE), engineObject);
 		/********************************************************************/
 
 		/** 10_4 Property <Plural of GParamConfContainerDef.shortName> **/
@@ -280,36 +280,36 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichParamConfContainerDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject engineObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE);
-		Type engineType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE);
+		EObject engineObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE);
+		Type engineType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE);
 		assertTrue(engineType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType engineRichType = (RichParamConfContainerDefType) engineType;
 		assertTrue(engineRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 		/** -------------------------------------------------- **/
 		/** --Check generalInfoRichType consistency-- **/
-		EObject generalInfoObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO);
-		Type generalInfoType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
+		EObject generalInfoObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO);
+		Type generalInfoType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO);
 		assertTrue(generalInfoType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType generalInfoRichType = (RichParamConfContainerDefType) generalInfoType;
 		assertTrue(generalInfoRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 		/** -------------------------------------------------- **/
 		/** --Check generalInfoOwnersRichType consistency-- **/
-		EObject generalInfoOwnersObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS);
-		Type generalInfoOwnersType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
+		EObject generalInfoOwnersObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS);
+		Type generalInfoOwnersType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS);
 		assertTrue(generalInfoOwnersType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType generalInfoOwnersRichType = (RichParamConfContainerDefType) generalInfoOwnersType;
 		assertTrue(generalInfoOwnersRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 		/** -------------------------------------------------- **/
 		/** --Check Rich type consistency-- **/
-		EObject revisionsObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS);
-		Type revisionsType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
+		EObject revisionsObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS);
+		Type revisionsType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS);
 		assertTrue(revisionsType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType revisionsRichType = (RichParamConfContainerDefType) revisionsType;
 		assertTrue(revisionsRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
 		/** -------------------------------------------------- **/
 		/** --Check generalInfoOwnersOwnerRichType consistency-- **/
-		EObject fifthHandOwnerObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND);
-		Type generalInfoOwnersOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
+		EObject fifthHandOwnerObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND);
+		Type generalInfoOwnersOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER);
 		assertTrue(generalInfoOwnersOwnerType instanceof RichParamConfContainerDefType);
 		RichParamConfContainerDefType generalInfoOwnersOwnerRichType = (RichParamConfContainerDefType) generalInfoOwnersOwnerType;
 		assertTrue(generalInfoOwnersRichType.getEcucTypeDef() instanceof EcucParamConfContainerDef);
@@ -370,11 +370,10 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** 21_6 Property <GParamConfContainerDef.shortName> **/
 		Property ownersProperty = generalInfoRichType.getProperty("Owners"); //$NON-NLS-1$
 		assertNotNull(ownersProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS),
-				ownersProperty.getReturnType());
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS), ownersProperty.getReturnType());
 		Object ownersObject = ownersProperty.get(generalInfoObject);
 		assertTrue(ownersObject instanceof EcucContainerValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS), ownersObject);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS), ownersObject);
 
 		/** 21_7 property <Plural of GParamConfContainerDef.shortName> **/
 		Property ownersOwnersProperty = generalInfoOwnersRichType.getProperty("Owners"); //$NON-NLS-1$
@@ -382,7 +381,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** FIXME Review this part of the test to ensure return type is MultiplicityAwareList of expected inner type */
 		// assertEquals(
 		// ecucMetaModel.getTypeSystem().getListType(
-		// ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER)),
+		// ecucMetaModel.getTypeForName(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_OWNER)),
 		// ownersOwnersProperty.getReturnType());
 		Object ownersOwnersObject = ownersOwnersProperty.get(generalInfoOwnersObject);
 		assertTrue(ownersOwnersObject instanceof List<?>);
@@ -390,20 +389,20 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertTrue(ownersOwnersList.get(0) instanceof EcucContainerValue);
 		List<EcucContainerValue> ownersOwnersEcucContainerValueList = (List<EcucContainerValue>) ownersOwnersObject;
 		assertEquals(5, ownersOwnersEcucContainerValueList.size());
-		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND)));
-		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND)));
-		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND)));
-		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND)));
-		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIRSTHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_SECONDHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_THIRDHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FOURTHHAND)));
+		assertTrue(ownersOwnersList.contains(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND)));
 		/********************************************************************/
 
 		/** 21_8 property <GChoiceContainerDef.shortName> **/
 		Property typeProperty = engineRichType.getProperty("Type"); //$NON-NLS-1$
 		assertNotNull(typeProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE), typeProperty.getReturnType());
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE), typeProperty.getReturnType());
 		Object typeObject = typeProperty.get(engineObject);
 		assertTrue(typeObject instanceof EcucContainerValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE), typeObject);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE), typeObject);
 		/********************************************************************/
 
 		/** 21_9 Property <Plural of GChoiceContainerDef.shortName> **/
@@ -413,11 +412,10 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** 21_10 Property <GConfigParameter.shortName> **/
 		Property automaticProperty = engineRichType.getProperty("Automatic"); //$NON-NLS-1$
 		assertNotNull(automaticProperty);
-		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC),
-				automaticProperty.getReturnType());
+		assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC), automaticProperty.getReturnType());
 		Object automaticObject = automaticProperty.get(engineObject);
 		assertTrue(automaticObject instanceof EcucNumericalParamValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC), automaticObject);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC), automaticObject);
 		/********************************************************************/
 
 		/** 21_11 Property <Plural of GConfigParameter.shortName> **/
@@ -426,7 +424,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// assertNotNull(revisionDatesProperty);
 		// assertEquals(
 		// ecucMetaModel.getTypeSystem().getListType(
-		// ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE)),
+		// ecucMetaModel.getTypeForName(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_REVISIONS_REVISIONDATE)),
 		// revisionDatesProperty.getReturnType());
 		// Object revisionDatesObject = ownersOwnersProperty.get(revisionsObject);
 		// assertTrue(revisionDatesObject instanceof List<?>);
@@ -436,26 +434,26 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// revisionDatesObject;
 		// assertEquals(5, revisionDatesEcucTextualParamValueList.size());
 		// assertTrue(revisionDatesEcucTextualParamValueList
-		// .contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_0_DATE_20071215)));
+		// .contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_0_DATE_20071215)));
 		// assertTrue(revisionDatesEcucTextualParamValueList
-		// .contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_1_DATE_20080106)));
+		// .contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_1_DATE_20080106)));
 		// assertTrue(revisionDatesEcucTextualParamValueList
-		// .contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_2_DATE_20080605)));
+		// .contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_2_DATE_20080605)));
 		// assertTrue(revisionDatesEcucTextualParamValueList
-		// .contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_3_DATE_20090707)));
+		// .contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_3_DATE_20090707)));
 		// assertTrue(revisionDatesEcucTextualParamValueList
-		// .contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918)));
+		// .contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REVISIONS_PARAMETER_VALUES_4_DATE_20100918)));
 		/********************************************************************/
 
 		/** 21_12 Property <GConfigReference.shortName> **/
 		/** FIXME Review Test accroding modification on Test model */
 		//		Property currentOwnerProperty = generalInfoRichType.getProperty("CurrentOwner"); //$NON-NLS-1$
 		// assertNotNull(currentOwnerProperty);
-		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_CURRENTOWNER),
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_OWNERS_CURRENTOWNER),
 		// currentOwnerProperty.getReturnType());
 		// Object currentOwnerObject = currentOwnerProperty.get(engineObject);
 		// assertTrue(currentOwnerObject instanceof EcucContainerValue);
-		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND),
+		// assertEquals(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND),
 		// currentOwnerObject);
 		/********************************************************************/
 
@@ -473,7 +471,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// assertTrue(referencingContainers instanceof List);
 		// assertEquals(1, ((List<?>) referencingContainers).size());
 		// assertTrue(((List<?>)
-		// referencingContainers).contains(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO)));
+		// referencingContainers).contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO)));
 		/********************************************************************/
 	}
 
@@ -481,8 +479,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichChoiceContainerDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject typeObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE);
-		Type typeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
+		EObject typeObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE);
+		Type typeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE);
 		assertTrue(typeType instanceof RichChoiceContainerDefType);
 		RichChoiceContainerDefType typeRichType = (RichChoiceContainerDefType) typeType;
 		assertTrue(typeRichType.getEcucTypeDef() instanceof EcucChoiceContainerDef);
@@ -544,11 +542,11 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** FIXME review test according modification on Test model */
 		//		Property gasolineProperty = typeRichType.getProperty("Gasoline"); //$NON-NLS-1$
 		// assertNotNull(gasolineProperty);
-		// assertEquals(ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
+		// assertEquals(ecucMetaModel.getTypeForName(EcucTestRefWorkspaceInfo.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE),
 		// gasolineProperty.getReturnType());
 		// Object gasoline = gasolineProperty.get(typeObject);
 		// assertTrue(gasoline instanceof EcucParamConfContainerDef);
-		// assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE),
+		// assertEquals(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE),
 		// gasoline);
 		/********************************************************************/
 
@@ -578,8 +576,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichBooleanParameterDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject automaticObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC);
-		Type automaticType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
+		EObject automaticObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_1_AUTOMATIC);
+		Type automaticType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_AUTOMATIC);
 		assertTrue(automaticType instanceof RichBooleanParamDefType);
 		RichBooleanParamDefType automaticRichType = (RichBooleanParamDefType) automaticType;
 		assertTrue(automaticRichType.getEcucTypeDef() instanceof EcucBooleanParamDef);
@@ -661,8 +659,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichEnumerationParameterDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject engineTypeObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE);
-		Type engineTypeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
+		EObject engineTypeObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_PARAMETER_VALUES_0_ENGINETYPE);
+		Type engineTypeType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_ENGINETYPE);
 		assertTrue(engineTypeType instanceof RichEnumerationParamDefType);
 		RichEnumerationParamDefType engineTypeRichType = (RichEnumerationParamDefType) engineTypeType;
 		assertTrue(engineTypeRichType.getEcucTypeDef() instanceof EcucEnumerationParamDef);
@@ -743,9 +741,9 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichFloatParameterDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject sparkPlugVoltageObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE);
+		EObject sparkPlugVoltageObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_ENGINE_TYPE_GASOLINE_PARAMETER_VALUES_1_SPARK_PLUG_VOLTAGE);
 		Type sparkPlugVoltageType = ecucMetaModel
-				.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
+				.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_ENGINE_TYPE_GASOLINE_SPARK_PLUG_VOLTAGE);
 		assertTrue(sparkPlugVoltageType instanceof RichFloatParamDefType);
 		RichFloatParamDefType sparkPlugVoltageRichType = (RichFloatParamDefType) sparkPlugVoltageType;
 		assertTrue(sparkPlugVoltageRichType.getEcucTypeDef() instanceof EcucFloatParamDef);
@@ -826,8 +824,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichIntegerParameterDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject serialNumberObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER);
-		Type serialNumberType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
+		EObject serialNumberObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER);
+		Type serialNumberType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_SERIAL_NUMBER);
 		assertTrue(serialNumberType instanceof RichIntegerParamDefType);
 		RichIntegerParamDefType serialNumberRichType = (RichIntegerParamDefType) serialNumberType;
 		assertTrue(serialNumberRichType.getEcucTypeDef() instanceof EcucIntegerParamDef);
@@ -910,8 +908,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichStringParameterDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject vehicleNameObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME);
-		Type vehicleNameType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
+		EObject vehicleNameObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME);
+		Type vehicleNameType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_VEHICLE_NAME);
 		assertTrue(vehicleNameType instanceof RichStringParamDefType);
 		RichStringParamDefType vehicleNameRichType = (RichStringParamDefType) vehicleNameType;
 		assertTrue(vehicleNameRichType.getEcucTypeDef() instanceof EcucStringParamDef);
@@ -1169,8 +1167,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichChoiceReferenceDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject finitionLevelObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL);
-		Type finitionLevelType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
+		EObject finitionLevelObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL);
+		Type finitionLevelType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL);
 		assertTrue(finitionLevelType instanceof RichChoiceReferenceDefType);
 		RichChoiceReferenceDefType finitionLevelRichType = (RichChoiceReferenceDefType) finitionLevelType;
 		assertTrue(finitionLevelRichType.getEcucTypeDef() instanceof EcucChoiceReferenceDef);
@@ -1233,7 +1231,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertEquals(ecucMetaModel.getTypeForName(ParamConfContainerDefType.TYPE_NAME), valueProperty.getReturnType());
 		Object value = valueProperty.get(finitionLevelObject);
 		assertTrue(value instanceof EcucContainerValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH), value);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH), value);
 		/********************************************************************/
 
 		/** 41_2_1 Operation is_configured **/
@@ -1338,8 +1336,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 	public void testRichReferenceDefType() {
 		/** ---------------------Test variables definition----------------------------- **/
 		/** --Check engineRichType consistency-- **/
-		EObject currentOwnerObject = getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER);
-		Type currentOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspace.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
+		EObject currentOwnerObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER);
+		Type currentOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER);
 		assertTrue(currentOwnerType instanceof RichConfigReferenceType);
 		RichConfigReferenceType currentOwnerRichType = (RichConfigReferenceType) currentOwnerType;
 		assertTrue(currentOwnerRichType.getEcucTypeDef() instanceof EcucReferenceDef);
@@ -1404,7 +1402,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// valueProperty.getReturnType());
 		Object value = valueProperty.get(currentOwnerObject);
 		assertTrue(value instanceof EcucContainerValue);
-		assertEquals(getConfigurationObject(EcucTestReferenceWorkspace.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND), value);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND), value);
 		/********************************************************************/
 
 		/** 44_2_1 Operation is_configured **/

@@ -14,7 +14,9 @@
  */
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
-import static org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_PROJECT_NAME;
+import static org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspaceDescriptor.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION;
+import static org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspaceDescriptor.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE;
+import static org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspaceDescriptor.XPAND_AUTOSAR_40_PROJECT_NAME;
 
 import org.artop.aal.testutils.integration.referenceworkspace.IntegrationTestCase;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucMetaModel;
@@ -30,7 +32,7 @@ import org.eclipse.sphinx.emf.model.ModelDescriptorRegistry;
 import org.eclipse.sphinx.emf.util.EcorePlatformUtil;
 import org.eclipse.xtend.typesystem.Type;
 
-public class AbstractEcucIntegrationTestCase extends IntegrationTestCase<EcucTestReferenceWorkspace> {
+public abstract class AbstractEcucIntegrationTestCase extends IntegrationTestCase<EcucTestReferenceWorkspace> {
 
 	// Error message Definitions
 	private static final String TYPE_IS_MISSING = "type {0} is missing"; //$NON-NLS-1$
@@ -58,13 +60,13 @@ public class AbstractEcucIntegrationTestCase extends IntegrationTestCase<EcucTes
 		// long start = System.currentTimeMillis();
 		super.setUp();
 		// System.out.println("Super.setUp time : "+start-System.currentTimeMillis());
-		IFile moduleDefFile = getRefWks().xPandAutosar40Project.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
+		IFile moduleDefFile = getRefWks().xPandAutosar40Project.getFile(XPAND_AUTOSAR_40_AR_FILE_PATH_VEHICLE);
 		IModelDescriptor moduleDefModelDescriptor = ModelDescriptorRegistry.INSTANCE.getModel(moduleDefFile);
 		assertNotNull(moduleDefModelDescriptor);
 		ecucMetaModel = (EcucMetaModel) Platform.getAdapterManager().loadAdapter(moduleDefModelDescriptor, EcucMetaModel.class.getName());
 		assertNotNull(ecucMetaModel);
-		moduleConfResource = EcorePlatformUtil.getResource(getRefWks().xPandAutosar40Project
-				.getFile(EcucTestReferenceWorkspace.XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
+		moduleConfResource = EcorePlatformUtil
+				.getResource(getRefWks().xPandAutosar40Project.getFile(XPAND_AUTOSAR_40_AR_FILE_PATH_CAR_CONFIGURATION));
 		assertNotNull(moduleConfResource);
 	}
 
