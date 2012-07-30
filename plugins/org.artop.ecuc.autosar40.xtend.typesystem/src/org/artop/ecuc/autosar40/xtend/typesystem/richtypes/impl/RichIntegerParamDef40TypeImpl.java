@@ -16,8 +16,6 @@ package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GIntegerParamDef;
 
-import java.math.BigInteger;
-
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichIntegerParamDefType;
 import org.eclipse.xtend.typesystem.Type;
@@ -31,7 +29,7 @@ public class RichIntegerParamDef40TypeImpl extends AbstractRichNumericalParamDef
 	@Override
 	protected Object convertFromEcucValue(String text) {
 		try {
-			return new BigInteger(text);
+			return Long.valueOf(text);
 		} catch (Exception ex) {
 			// Fail Silent, it's on the behave of the validation to inform the Configurator about an unset value in the
 			// model.
