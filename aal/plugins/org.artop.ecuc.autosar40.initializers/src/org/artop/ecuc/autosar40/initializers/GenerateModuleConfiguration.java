@@ -21,6 +21,7 @@ import gautosar.gecucdescription.GParameterValue;
 import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.ggenericstructure.ginfrastructure.GARObject;
 
+import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
 import org.artop.ecuc.gautosar.initializers.AbstractGenerateModuleConfiguration;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.EList;
@@ -43,14 +44,10 @@ import autosar40.ecucparameterdef.EcucLinkerSymbolDefConditional;
 import autosar40.ecucparameterdef.EcucParameterDef;
 import autosar40.ecucparameterdef.EcucStringParamDef;
 import autosar40.ecucparameterdef.EcucStringParamDefConditional;
+import autosar40.genericstructure.formulalanguage.FormulaExpression;
 import autosar40.genericstructure.generaltemplateclasses.anyinstanceref.AnyInstanceRef;
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock;
 import autosar40.genericstructure.generaltemplateclasses.identifiable.Identifiable;
-import autosar40.genericstructure.varianthandling.BooleanValueVariationPoint;
-import autosar40.genericstructure.varianthandling.FloatValueVariationPoint;
-import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
-import autosar40.genericstructure.varianthandling.UnlimitedIntegerValueVariationPoint;
-import autosar40.genericstructure.varianthandling.VarianthandlingFactory;
 import autosar40.genericstructure.varianthandling.VariationPoint;
 import autosar40.util.Autosar40Factory;
 
@@ -92,7 +89,7 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 	@Override
 	protected void setParameterValue(GParameterValue parameterValue, Object value) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
-			((EcucNumericalParamValue) parameterValue).setValue((NumericalValueVariationPoint) value);
+			new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) parameterValue).setValueVariationPoint((FormulaExpression) value);
 		}
 		if (parameterValue instanceof EcucTextualParamValue) {
 			((EcucTextualParamValue) parameterValue).setValue((String) value);
@@ -195,15 +192,10 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 		if (parameterValue instanceof EcucParameterValue && parameterDef instanceof EcucParameterDef) {
 			Object defaultValue = getParamDefDefaultValue(parameterDef);
 			if (defaultValue != null) {
-				NumericalValueVariationPoint numericalValueVariationPoint = VarianthandlingFactory.eINSTANCE.createNumericalValueVariationPoint();
-				if (parameterDef instanceof EcucBooleanParamDef && defaultValue instanceof BooleanValueVariationPoint) {
-					numericalValueVariationPoint.setMixedText(((BooleanValueVariationPoint) defaultValue).getMixedText());
-					setParameterValue(parameterValue, numericalValueVariationPoint);
-				} else if (parameterDef instanceof EcucFloatParamDef && defaultValue instanceof FloatValueVariationPoint) {
-					numericalValueVariationPoint.setMixedText(((FloatValueVariationPoint) defaultValue).getMixedText());
-					setParameterValue(parameterValue, numericalValueVariationPoint);
-				} else if (parameterDef instanceof EcucIntegerParamDef && defaultValue instanceof UnlimitedIntegerValueVariationPoint) {
-					numericalValueVariationPoint.setMixedText(((UnlimitedIntegerValueVariationPoint) defaultValue).getMixedText());
+				if ((parameterDef instanceof EcucBooleanParamDef || parameterDef instanceof EcucFloatParamDef || parameterDef instanceof EcucIntegerParamDef)
+						&& defaultValue instanceof FormulaExpression) {
+					FormulaExpression numericalValueVariationPoint = Autosar40Factory.eINSTANCE.createNumericalValueVariationPoint();
+					numericalValueVariationPoint.setMixedText(((FormulaExpression) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
 				} else if (parameterDef instanceof EcucEnumerationParamDef) {
 					setParameterValue(parameterValue, defaultValue.toString());
