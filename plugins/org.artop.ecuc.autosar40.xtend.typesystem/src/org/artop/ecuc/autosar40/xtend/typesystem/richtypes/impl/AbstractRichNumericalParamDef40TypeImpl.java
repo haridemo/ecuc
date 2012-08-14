@@ -16,6 +16,7 @@ package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GConfigParameter;
 
+import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichBooleanParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichFloatParamDefType;
@@ -25,8 +26,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucdescription.EcucdescriptionPackage;
-import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
-import autosar40.genericstructure.varianthandling.VarianthandlingFactory;
+import autosar40.genericstructure.formulalanguage.FormulaExpression;
 
 public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRichConfigParameterTypeImpl implements RichBooleanParamDefType,
 		RichIntegerParamDefType, RichFloatParamDefType {
@@ -41,7 +41,7 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected Object internalGet(Object target) {
-		NumericalValueVariationPoint numericalValueVariationPoint = ((EcucNumericalParamValue) target).getValue();
+		FormulaExpression numericalValueVariationPoint = ((EcucNumericalParamValue) target).getValue();
 		if (numericalValueVariationPoint != null) {
 			String text = numericalValueVariationPoint.getMixedText();
 			return convertFromEcucValue(text);
@@ -51,12 +51,8 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected void internalSet(Object target, Object value) {
-		NumericalValueVariationPoint numericalValueVariationPoint = ((EcucNumericalParamValue) target).getValue();
-		if (numericalValueVariationPoint == null) {
-			numericalValueVariationPoint = VarianthandlingFactory.eINSTANCE.createNumericalValueVariationPoint();
-			((EcucNumericalParamValue) target).setValue(numericalValueVariationPoint);
-		}
-		numericalValueVariationPoint.setMixedText(convertToEcucValue(value));
+		GEcucNumericalParamValue40XAdapter paramValue = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target);
+		paramValue.setValue(convertToEcucValue(value));
 	}
 
 	protected abstract Object convertFromEcucValue(String text);
@@ -67,9 +63,9 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected boolean internalIsSet(Object target) {
-		NumericalValueVariationPoint numericalValueVariationPoint = ((EcucNumericalParamValue) target).getValue();
-		if (numericalValueVariationPoint != null) {
-			return numericalValueVariationPoint.getMixedText().length() > 0;
+		FormulaExpression value = ((EcucNumericalParamValue) target).getValue();
+		if (value != null) {
+			return value.getMixedText().length() > 0;
 		}
 		return false;
 	}

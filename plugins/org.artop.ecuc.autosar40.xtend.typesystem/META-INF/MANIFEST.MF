@@ -14,4 +14,5 @@ Export-Package: org.artop.ecuc.autosar40.xtend.typesystem,
 Bundle-Activator: org.artop.ecuc.autosar40.xtend.typesystem.internal.Activator$Implementation
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.artop.aal.autosar40,
- org.artop.ecuc.gautosar.xtend.typesystem
+ org.artop.ecuc.gautosar.xtend.typesystem,
+ org.artop.aal.autosar40.services
