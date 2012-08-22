@@ -48,7 +48,7 @@ public class RichInstanceReferenceDefTypeImpl extends AbstractRichConfigReferenc
 	}
 
 	public EClass getEcucType() {
-		return GecucdescriptionPackage.eINSTANCE.getGReferenceValue();
+		return GecucdescriptionPackage.eINSTANCE.getGInstanceReferenceValue();
 	}
 
 	@Override
