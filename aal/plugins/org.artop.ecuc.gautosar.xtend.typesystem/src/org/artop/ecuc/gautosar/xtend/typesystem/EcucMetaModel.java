@@ -35,6 +35,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ConfigParameterTy
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ConfigReferenceTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ContainerDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ForeignReferenceDefTypeImpl;
+import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.InstanceReferenceDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ModuleDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ParamConfContainerDefTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl.ReferenceDefTypeImpl;
@@ -184,6 +185,7 @@ public class EcucMetaModel implements MetaModel {
 		registerType(new ReferenceDefTypeImpl(context));
 		registerType(new ChoiceReferenceDefTypeImpl(context));
 		registerType(new ForeignReferenceDefTypeImpl(context));
+		registerType(new InstanceReferenceDefTypeImpl(context));
 		registerType(new ModuleDefTypeImpl(context));
 		registerType(new ARPackageTypeImpl(context));
 		registerType(new AUTOSARTypeImpl(context));
