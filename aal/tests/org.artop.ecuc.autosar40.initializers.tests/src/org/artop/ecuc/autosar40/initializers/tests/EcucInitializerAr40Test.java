@@ -22,8 +22,7 @@ import autosar40.ecucparameterdef.EcucFunctionNameDef;
 import autosar40.ecucparameterdef.EcucIntegerParamDef;
 import autosar40.ecucparameterdef.EcucLinkerSymbolDef;
 import autosar40.ecucparameterdef.EcucStringParamDef;
-import autosar40.genericstructure.varianthandling.FloatValueVariationPoint;
-import autosar40.genericstructure.varianthandling.NumericalValueVariationPoint;
+import autosar40.genericstructure.formulalanguage.FormulaExpression;
 import autosar40.util.Autosar40Package;
 import autosar40.util.Autosar40ReleaseDescriptor;
 import autosar40.util.Autosar40ResourceFactoryImpl;
@@ -67,13 +66,9 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 			EcucBooleanParamDef booleanParamDef = (EcucBooleanParamDef) item;
 			return booleanParamDef.getDefaultValue().getMixedText();
 		}
-		if (item instanceof NumericalValueVariationPoint) {
-			NumericalValueVariationPoint valueVariationPoint = (NumericalValueVariationPoint) item;
-			return valueVariationPoint.getMixedText();
-		}
-		if (item instanceof FloatValueVariationPoint) {
-			FloatValueVariationPoint valueVariationPoint = (FloatValueVariationPoint) item;
-			return valueVariationPoint.getMixedText();
+		if (item instanceof FormulaExpression) {
+			FormulaExpression formulaExpression = (FormulaExpression) item;
+			return formulaExpression.getMixedText();
 		}
 		if (item instanceof EcucNumericalParamValue) {
 			EcucNumericalParamValue numericalParamValue = (EcucNumericalParamValue) item;
