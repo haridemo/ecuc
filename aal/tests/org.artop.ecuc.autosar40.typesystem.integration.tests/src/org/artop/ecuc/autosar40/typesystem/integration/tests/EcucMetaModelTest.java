@@ -14,6 +14,7 @@
  */
 package org.artop.ecuc.autosar40.typesystem.integration.tests;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
@@ -807,8 +808,8 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		assertNotNull(valueProperty);
 		assertEquals(ecucMetaModel.getTypeSystem().getRealType(), valueProperty.getReturnType());
 		Object value = valueProperty.get(sparkPlugVoltageObject);
-		assertTrue(value instanceof Double);
-		assertTrue(((Double) value).doubleValue() == 4.45);
+		assertTrue(value instanceof BigDecimal);
+		assertTrue(((BigDecimal) value).doubleValue() == 4.45);
 		/********************************************************************/
 
 		/** 33_2_1 Operation is_configured **/
