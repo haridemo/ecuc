@@ -41,7 +41,7 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected Object internalGet(Object target) {
-		FormulaExpression numericalValueVariationPoint = ((EcucNumericalParamValue) target).getValue();
+		FormulaExpression numericalValueVariationPoint = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target).getValue();
 		if (numericalValueVariationPoint != null) {
 			String text = numericalValueVariationPoint.getMixedText();
 			return convertFromEcucValue(text);
@@ -63,7 +63,7 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected boolean internalIsSet(Object target) {
-		FormulaExpression value = ((EcucNumericalParamValue) target).getValue();
+		FormulaExpression value = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target).getValue();
 		if (value != null) {
 			return value.getMixedText().length() > 0;
 		}

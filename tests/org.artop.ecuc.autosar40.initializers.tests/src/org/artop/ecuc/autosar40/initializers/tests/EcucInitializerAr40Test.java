@@ -1,5 +1,7 @@
 package org.artop.ecuc.autosar40.initializers.tests;
 
+import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucFloatParamDef40XAdapter;
+import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucIntegerParamDef40XAdapter;
 import org.artop.aal.autosar40.services.builder.internal.Autosar40BuilderFragmentProvider;
 import org.artop.aal.gautosar.services.IMetaModelServiceProvider;
 import org.artop.aal.gautosar.services.StandaloneMetamodelServiceProvider;
@@ -75,11 +77,11 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 			return numericalParamValue.getValue().getMixedText();
 		}
 		if (item instanceof EcucIntegerParamDef) {
-			EcucIntegerParamDef paramDef = (EcucIntegerParamDef) item;
+			GEcucIntegerParamDef40XAdapter paramDef = new GEcucIntegerParamDef40XAdapter((EcucIntegerParamDef) item);
 			return paramDef.getDefaultValue().getMixedText();
 		}
 		if (item instanceof EcucFloatParamDef) {
-			EcucFloatParamDef floatParamDef = (EcucFloatParamDef) item;
+			GEcucFloatParamDef40XAdapter floatParamDef = new GEcucFloatParamDef40XAdapter((EcucFloatParamDef) item);
 			return floatParamDef.getDefaultValue().getMixedText();
 		}
 		if (item instanceof EcucFunctionNameDef) {
