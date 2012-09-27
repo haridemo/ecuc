@@ -22,6 +22,8 @@ import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.ggenericstructure.ginfrastructure.GARObject;
 
 import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
+import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucFloatParamDef40XAdapter;
+import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucIntegerParamDef40XAdapter;
 import org.artop.ecuc.gautosar.initializers.AbstractGenerateModuleConfiguration;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.EList;
@@ -131,10 +133,10 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 			return ((EcucEnumerationParamDef) parameterDef).getDefaultValue();
 		}
 		if (parameterDef instanceof EcucFloatParamDef) {
-			return ((EcucFloatParamDef) parameterDef).getDefaultValue();
+			return new GEcucFloatParamDef40XAdapter((EcucFloatParamDef) parameterDef).getDefaultValue();
 		}
 		if (parameterDef instanceof EcucIntegerParamDef) {
-			return ((EcucIntegerParamDef) parameterDef).getDefaultValue();
+			return new GEcucIntegerParamDef40XAdapter((EcucIntegerParamDef) parameterDef).getDefaultValue();
 		}
 		if (parameterDef instanceof EcucFunctionNameDef) {
 			EList<EcucFunctionNameDefConditional> functionNameDefVariants = ((EcucFunctionNameDef) parameterDef).getEcucFunctionNameDefVariants();
