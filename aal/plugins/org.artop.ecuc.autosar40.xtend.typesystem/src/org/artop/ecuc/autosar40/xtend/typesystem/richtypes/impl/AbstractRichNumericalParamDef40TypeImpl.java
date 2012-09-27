@@ -15,6 +15,7 @@
 package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GConfigParameter;
+import gautosar.ggenericstructure.gformulalanguage.GFormulaExpression;
 
 import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucdescription.EcucdescriptionPackage;
-import autosar40.genericstructure.formulalanguage.FormulaExpression;
 
 public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRichConfigParameterTypeImpl implements RichBooleanParamDefType,
 		RichIntegerParamDefType, RichFloatParamDefType {
@@ -41,9 +41,9 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected Object internalGet(Object target) {
-		FormulaExpression numericalValueVariationPoint = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target).getValue();
+		GFormulaExpression numericalValueVariationPoint = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target).getValue();
 		if (numericalValueVariationPoint != null) {
-			String text = numericalValueVariationPoint.getMixedText();
+			String text = numericalValueVariationPoint.gGetMixedText();
 			return convertFromEcucValue(text);
 		}
 		return null;
@@ -63,9 +63,9 @@ public abstract class AbstractRichNumericalParamDef40TypeImpl extends AbstractRi
 
 	@Override
 	protected boolean internalIsSet(Object target) {
-		FormulaExpression value = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target).getValue();
+		GFormulaExpression value = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) target).getValue();
 		if (value != null) {
-			return value.getMixedText().length() > 0;
+			return value.gGetMixedText().length() > 0;
 		}
 		return false;
 	}

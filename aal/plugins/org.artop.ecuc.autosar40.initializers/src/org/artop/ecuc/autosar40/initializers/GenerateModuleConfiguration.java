@@ -20,10 +20,12 @@ import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucdescription.GParameterValue;
 import gautosar.gecucparameterdef.GConfigParameter;
 import gautosar.ggenericstructure.ginfrastructure.GARObject;
+import gautosar.ggenericstructure.gvarianthandling.GAttributeValueVariationPoint;
 
 import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucFloatParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucIntegerParamDef40XAdapter;
+import org.artop.aal.autosar40.gautosar40.util.GAutosar40Factory40XAdapter;
 import org.artop.ecuc.gautosar.initializers.AbstractGenerateModuleConfiguration;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.EList;
@@ -91,7 +93,8 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 	@Override
 	protected void setParameterValue(GParameterValue parameterValue, Object value) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
-			new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) parameterValue).setValueVariationPoint((FormulaExpression) value);
+			new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) parameterValue)
+					.setValueVariationPoint((GAttributeValueVariationPoint) value);
 		}
 		if (parameterValue instanceof EcucTextualParamValue) {
 			((EcucTextualParamValue) parameterValue).setValue((String) value);
@@ -196,8 +199,9 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 			if (defaultValue != null) {
 				if ((parameterDef instanceof EcucBooleanParamDef || parameterDef instanceof EcucFloatParamDef || parameterDef instanceof EcucIntegerParamDef)
 						&& defaultValue instanceof FormulaExpression) {
-					FormulaExpression numericalValueVariationPoint = Autosar40Factory.eINSTANCE.createNumericalValueVariationPoint();
-					numericalValueVariationPoint.setMixedText(((FormulaExpression) defaultValue).getMixedText());
+					GAttributeValueVariationPoint numericalValueVariationPoint = new GAutosar40Factory40XAdapter(Autosar40Factory.eINSTANCE)
+							.createNumericalValueVariationPoint();
+					numericalValueVariationPoint.gSetMixedText(((FormulaExpression) defaultValue).getMixedText());
 					setParameterValue(parameterValue, numericalValueVariationPoint);
 				} else if (parameterDef instanceof EcucEnumerationParamDef) {
 					setParameterValue(parameterValue, defaultValue.toString());
