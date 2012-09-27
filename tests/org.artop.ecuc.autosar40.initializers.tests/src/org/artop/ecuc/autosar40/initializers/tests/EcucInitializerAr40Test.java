@@ -78,11 +78,11 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 		}
 		if (item instanceof EcucIntegerParamDef) {
 			GEcucIntegerParamDef40XAdapter paramDef = new GEcucIntegerParamDef40XAdapter((EcucIntegerParamDef) item);
-			return paramDef.getDefaultValue().getMixedText();
+			return paramDef.getDefaultValue().gGetMixedText();
 		}
 		if (item instanceof EcucFloatParamDef) {
 			GEcucFloatParamDef40XAdapter floatParamDef = new GEcucFloatParamDef40XAdapter((EcucFloatParamDef) item);
-			return floatParamDef.getDefaultValue().getMixedText();
+			return floatParamDef.getDefaultValue().gGetMixedText();
 		}
 		if (item instanceof EcucFunctionNameDef) {
 			EcucFunctionNameDef functionNameDef = (EcucFunctionNameDef) item;
