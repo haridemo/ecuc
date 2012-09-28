@@ -23,6 +23,7 @@ import gautosar.ggenericstructure.ginfrastructure.GARObject;
 import gautosar.ggenericstructure.gvarianthandling.GAttributeValueVariationPoint;
 
 import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
+import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucBooleanParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucFloatParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucIntegerParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.util.GAutosar40Factory40XAdapter;
@@ -130,7 +131,7 @@ public class GenerateModuleConfiguration extends AbstractGenerateModuleConfigura
 	@Override
 	protected Object getParamDefDefaultValue(GConfigParameter parameterDef) {
 		if (parameterDef instanceof EcucBooleanParamDef) {
-			return ((EcucBooleanParamDef) parameterDef).getDefaultValue();
+			return new GEcucBooleanParamDef40XAdapter((EcucBooleanParamDef) parameterDef).getDefaultValue();
 		}
 		if (parameterDef instanceof EcucEnumerationParamDef) {
 			return ((EcucEnumerationParamDef) parameterDef).getDefaultValue();
