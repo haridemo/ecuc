@@ -1,5 +1,6 @@
 package org.artop.ecuc.autosar40.initializers.tests;
 
+import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamValue40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucBooleanParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucFloatParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucIntegerParamDef40XAdapter;
@@ -66,16 +67,16 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 	@Override
 	protected String value(EObject item) {
 		if (item instanceof EcucBooleanParamDef) {
-			EcucBooleanParamDef booleanParamDef = (EcucBooleanParamDef) item;
-			return new GEcucBooleanParamDef40XAdapter(booleanParamDef).getDefaultValue().gGetMixedText();
+			GEcucBooleanParamDef40XAdapter booleanParamDef = new GEcucBooleanParamDef40XAdapter((EcucBooleanParamDef) item);
+			return booleanParamDef.getDefaultValue().gGetMixedText();
 		}
 		if (item instanceof FormulaExpression) {
 			FormulaExpression formulaExpression = (FormulaExpression) item;
 			return formulaExpression.getMixedText();
 		}
 		if (item instanceof EcucNumericalParamValue) {
-			EcucNumericalParamValue numericalParamValue = (EcucNumericalParamValue) item;
-			return numericalParamValue.getValue().getMixedText();
+			GEcucNumericalParamValue40XAdapter numericalParamValue = new GEcucNumericalParamValue40XAdapter((EcucNumericalParamValue) item);
+			return numericalParamValue.getValue().gGetMixedText();
 		}
 		if (item instanceof EcucIntegerParamDef) {
 			GEcucIntegerParamDef40XAdapter paramDef = new GEcucIntegerParamDef40XAdapter((EcucIntegerParamDef) item);
