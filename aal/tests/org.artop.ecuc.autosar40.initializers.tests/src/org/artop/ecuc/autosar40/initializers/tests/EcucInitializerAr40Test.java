@@ -1,5 +1,6 @@
 package org.artop.ecuc.autosar40.initializers.tests;
 
+import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucBooleanParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucFloatParamDef40XAdapter;
 import org.artop.aal.autosar40.gautosar40.ecucparameterdef.GEcucIntegerParamDef40XAdapter;
 import org.artop.aal.autosar40.services.builder.internal.Autosar40BuilderFragmentProvider;
@@ -66,7 +67,7 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 	protected String value(EObject item) {
 		if (item instanceof EcucBooleanParamDef) {
 			EcucBooleanParamDef booleanParamDef = (EcucBooleanParamDef) item;
-			return booleanParamDef.getDefaultValue().getMixedText();
+			return new GEcucBooleanParamDef40XAdapter(booleanParamDef).getDefaultValue().gGetMixedText();
 		}
 		if (item instanceof FormulaExpression) {
 			FormulaExpression formulaExpression = (FormulaExpression) item;
