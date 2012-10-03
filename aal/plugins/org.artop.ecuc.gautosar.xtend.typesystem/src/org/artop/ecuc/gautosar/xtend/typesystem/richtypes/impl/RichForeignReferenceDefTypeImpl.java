@@ -61,7 +61,8 @@ public class RichForeignReferenceDefTypeImpl extends AbstractRichConfigReference
 		GReferenceValue referenceValue = (GReferenceValue) target;
 		if (referenceValue.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable referenceValueValue = referenceValue.gGetValue();
-			if (ExtendedMetaData.INSTANCE.getName(referenceValueValue.eClass()).equals(destinationType)) {
+			if (referenceValueValue != null && !referenceValueValue.eIsProxy()
+					&& ExtendedMetaData.INSTANCE.getName(referenceValueValue.eClass()).equals(destinationType)) {
 				return referenceValueValue;
 			}
 		}
