@@ -38,11 +38,11 @@ public class Messages extends NLS {
 
 	public static String title_editXpandEvaluationRequestDialog;
 
-	public static String BSWPlatformProjectWizzardTitle;
-	public static String BSWPlatformProjectWizzardFirstPageTitle;
-	public static String BSWPlatformProjectWizzardReferencePageTitle;
-	public static String BSWPlatformProjectWizzardFirstPageDescription;
-	public static String BSWPlatformProjectWizzardReferencePageDescription;
+	public static String BSWPlatformProjectWizardTitle;
+	public static String BSWPlatformProjectWizardFirstPageTitle;
+	public static String BSWPlatformProjectWizardReferencePageTitle;
+	public static String BSWPlatformProjectWizardFirstPageDescription;
+	public static String BSWPlatformProjectWizardReferencePageDescription;
 
 	public static String job_creatingAutosarProject;
 	public static String job_convertingToXtendXpandEnabledAutosarProject;

@@ -70,7 +70,7 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
 		super.init(workbench, currentSelection);
-		setWindowTitle(Messages.BSWPlatformProjectWizzardTitle);
+		setWindowTitle(Messages.BSWPlatformProjectWizardTitle);
 	}
 
 	/*
@@ -89,19 +89,19 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 	public void addPages() {
 		// Add an AutosarProjectWizardFirstPage
 		mainPage = new AutosarProjectWizardFirstPage("basicNewProjectPage"); //$NON-NLS-1$
-		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
-		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
+		mainPage.setTitle(Messages.BSWPlatformProjectWizardFirstPageTitle);
+		mainPage.setDescription(Messages.BSWPlatformProjectWizardFirstPageDescription);
 		addPage(mainPage);
 
 		// Add an OutletsConfigurationPage
 		outletsPage = createOutletsConfigurationPage(
-				"basicNewProjectPage", Messages.BSWPlatformProjectWizzardFirstPageTitle, Messages.BSWPlatformProjectWizzardFirstPageDescription, Messages.label_addXtendXpandCheckSupportEnableButton, getOutletsPreference()); //$NON-NLS-1$
+				"basicNewProjectPage", Messages.BSWPlatformProjectWizardFirstPageTitle, Messages.BSWPlatformProjectWizardFirstPageDescription, Messages.label_addXtendXpandCheckSupportEnableButton, getOutletsPreference()); //$NON-NLS-1$
 		addPage(outletsPage);
 
 		// only add page if there are already projects in the workspace
 		if (ResourcesPlugin.getWorkspace().getRoot().getProjects().length > 0) {
-			referencePage = createProjectReferencePage("basicReferenceProjectPage", Messages.BSWPlatformProjectWizzardReferencePageTitle, //$NON-NLS-1$
-					Messages.BSWPlatformProjectWizzardReferencePageDescription);
+			referencePage = createProjectReferencePage("basicReferenceProjectPage", Messages.BSWPlatformProjectWizardReferencePageTitle, //$NON-NLS-1$
+					Messages.BSWPlatformProjectWizardReferencePageDescription);
 			addPage(referencePage);
 		}
 	}
