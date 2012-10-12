@@ -23,11 +23,11 @@ import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 // TODO (aakar & seberle) Should be moved to a new non-UI plug-in named org.artop.ecuc.gautosar.codegen.xpand
 public interface IOutletsPreferenceConstants {
 
-	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet"); //$NON-NLS-1$ //$NON-NLS-2$
+	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet", true); //$NON-NLS-1$ //$NON-NLS-2$
 
-	ExtendedOutlet HOUTLET = new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet"); //$NON-NLS-1$ //$NON-NLS-2$
+	ExtendedOutlet HOUTLET = new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet", true); //$NON-NLS-1$ //$NON-NLS-2$
 
-	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet("MAKEOUTLET", "${project_loc}/makeoutlet"); //$NON-NLS-1$ //$NON-NLS-2$
+	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet("MAKEOUTLET", "${project_loc}/makeoutlet", true); //$NON-NLS-1$ //$NON-NLS-2$
 
 	Collection<ExtendedOutlet> ECUC_OUTLETS = Arrays.asList(new ExtendedOutlet[] { COUTLET, HOUTLET, MAKEOUTLET });
 
