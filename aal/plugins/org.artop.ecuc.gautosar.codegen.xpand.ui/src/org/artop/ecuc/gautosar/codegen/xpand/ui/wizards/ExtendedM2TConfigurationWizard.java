@@ -18,9 +18,11 @@ import java.io.File;
 import java.util.Collection;
 import java.util.List;
 
+import org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.ExtendedXpandConfigurationPage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.xtendxpand.outlet.ExtendedOutlet;
 import org.eclipse.sphinx.xtendxpand.ui.wizards.M2TConfigurationWizard;
+import org.eclipse.sphinx.xtendxpand.ui.wizards.pages.XpandConfigurationPage;
 import org.eclipse.xtend.typesystem.MetaModel;
 
 /**
@@ -29,7 +31,12 @@ import org.eclipse.xtend.typesystem.MetaModel;
  */
 // FIXME This class should be deleted as soon as M2TConfigurationWizard will be able to create outlet directory when it
 // does not already exist (which should be the case in the next Sphinx SDK build).
+// FIXME Actually it should be kept for letting XpandConfigurationPage be extended (in order to provide the
+// ExtendedTemplateGroup that automatically computes default applicable Xpand template).
 public class ExtendedM2TConfigurationWizard extends M2TConfigurationWizard {
+
+	/** The name of the Extended Xpand Configuration Page. */
+	private static final String XPAND_CONFIGURATION_PAGE_NAME = "org.artop.ecuc.gautosar.codegen.xpand.ui.wizards.pages.ExtendedXpandConfigurationPage"; //$NON-NLS-1$
 
 	/**
 	 * Constructor.
@@ -68,5 +75,13 @@ public class ExtendedM2TConfigurationWizard extends M2TConfigurationWizard {
 		}
 
 		return prSrcPaths;
+	}
+
+	@Override
+	protected XpandConfigurationPage createXpandConfigurationPage() {
+		// Override XpandConfigurationPage for providing a custom Xpand template group (ExtendedTemplateGroup)
+		ExtendedXpandConfigurationPage xpandPage = new ExtendedXpandConfigurationPage(XPAND_CONFIGURATION_PAGE_NAME);
+		xpandPage.init(modelObject, typeSystem, getOutletsPreference(), getDefaultOutlet());
+		return xpandPage;
 	}
 }
