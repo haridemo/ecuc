@@ -31,6 +31,7 @@ public class Messages extends NLS {
 	public static String label_xpandTemplateTableGroupName;
 	public static String label_bswModuleTableColumn;
 	public static String label_xpandTemplateTableColumn;
+	public static String label_checkFilesEnableButton;
 	public static String label_checkFilesGroupName;
 	public static String label_checkFilesTableColumn;
 
