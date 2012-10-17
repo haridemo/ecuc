@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * Extended Xpand configuration page that inherits from {@link XpandConfigurationPage} in order to extend creation of
  * {@linkplain org.eclipse.sphinx.xtendxpand.ui.groups.TemplateGroup Template Group} to let one default Xpand template
- * be suggested user when wizard opens.
+ * be suggested to user when wizard opens.
  */
 public class ExtendedXpandConfigurationPage extends XpandConfigurationPage {
 
@@ -38,6 +38,14 @@ public class ExtendedXpandConfigurationPage extends XpandConfigurationPage {
 		super(pageName);
 	}
 
+	/**
+	 * Overrides default implementation in order to instantiate a {@link ExtendedTemplateGroup} that has the capability
+	 * to suggest default applicable Xpand template, if any.
+	 * 
+	 * @param parent
+	 *            The parent composite within which group must be created.
+	 * @see org.eclipse.sphinx.xtendxpand.ui.wizards.pages.XpandConfigurationPage#createTemplateGroup(org.eclipse.swt.widgets.Composite)
+	 */
 	@Override
 	protected void createTemplateGroup(Composite parent) {
 		templateGroup = new ExtendedTemplateGroup(Messages.label_xpandTemplateGroupName, modelObject, typeSystem, getDialogSettings());

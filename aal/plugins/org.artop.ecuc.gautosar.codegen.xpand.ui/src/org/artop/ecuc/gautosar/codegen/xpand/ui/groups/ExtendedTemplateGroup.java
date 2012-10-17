@@ -110,7 +110,7 @@ public class ExtendedTemplateGroup extends TemplateGroup {
 	 * criteria are applied to Xpand file, which must:
 	 * <ul>
 	 * <li>Belong to the same project as model object resource's one, or to one referenced project;</li>
-	 * <li>Have a name that starts with the typesystem name of the model object;</li>
+	 * <li>Have a name that starts with the type-system name of the model object;</li>
 	 * <li>Contain a <tt>main</tt> definition template, applicable to meta-type of model object.</li>
 	 * </ul>
 	 * <p>
