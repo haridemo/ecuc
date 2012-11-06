@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.examples.autosar40.transform.xtend.ui;singleton:=true
+Bundle-Version: 3.3.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.resources,
+ org.artop.aal.autosar40,
+ org.artop.ecuc.gautosar.codegen.xpand.ui,
+ org.artop.aal.examples.explorer

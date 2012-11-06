@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.gautosar.initializers.tests
+Bundle-Version: 3.3.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.artop.aal.gautosar,
+ org.artop.aal.gautosar.services,
+ org.artop.ecuc.gautosar.initializers,
+ org.eclipse.sphinx.emf,
+ org.artop.aal.testutils
+Export-Package: org.artop.ecuc.gautosar.initializers.tests

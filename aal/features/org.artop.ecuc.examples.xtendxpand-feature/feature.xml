@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.artop.ecuc.examples.xtendxpand"
+      label="%featureName"
+      version="3.3.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.emf.mwe.core" version="1.1.0"/>
+      <import feature="org.artop.ecuc.xtendxpand" version="3.3.0"/>
+      <import feature="org.artop.core.examples.demonstrator" version="3.3.0"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.antlr.runtime"/>
+   </requires>
+
+   <plugin
+         id="org.artop.ecuc.examples.autosar40.codegen.xpand"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.headless"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.autosar40.transform.xtend"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.autosar40.transform.xtend.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
