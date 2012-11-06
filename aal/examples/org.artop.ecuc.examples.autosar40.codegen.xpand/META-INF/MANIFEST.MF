@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.artop.ecuc.examples.autosar40.codegen.xpand
-Bundle-Version: 3.3.0.qualifier
+Bundle-Version: 4.0.0.qualifier
 Require-Bundle: org.eclipse.xtend.util.stdlib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
