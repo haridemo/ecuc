@@ -17,7 +17,7 @@ package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucdescription.GecucdescriptionPackage;
-import gautosar.gecucparameterdef.GParamConfContainerDef;
+import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GReferenceDef;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
@@ -33,15 +33,15 @@ import org.eclipse.xtend.typesystem.Type;
 
 public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichReferenceDefType {
 
-	protected GParamConfContainerDef destinationTypeDef;
+	protected GContainerDef destinationTypeDef;
 
 	public RichReferenceDefTypeImpl(EcucContext context, GReferenceDef referenceDef) {
-		this(context, referenceDef, referenceDef.gGetDestination());
+		this(context, referenceDef, referenceDef.gGetRefDestination());
 	}
 
-	public RichReferenceDefTypeImpl(EcucContext context, GReferenceDef referenceDef, GParamConfContainerDef destinationTypeDef) {
+	public RichReferenceDefTypeImpl(EcucContext context, GReferenceDef referenceDef, GContainerDef destinationTypeDef) {
 		super(context, referenceDef);
-		this.destinationTypeDef = referenceDef.gGetDestination();
+		this.destinationTypeDef = referenceDef.gGetRefDestination();
 	}
 
 	public EClass getEcucType() {
