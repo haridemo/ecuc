@@ -31,6 +31,7 @@ public class Messages extends NLS {
 	public static String label_xpandTemplateTableGroupName;
 	public static String label_bswModuleTableColumn;
 	public static String label_xpandTemplateTableColumn;
+	public static String label_checkFilesEnableButton;
 	public static String label_checkFilesGroupName;
 	public static String label_checkFilesTableColumn;
 
@@ -38,11 +39,11 @@ public class Messages extends NLS {
 
 	public static String title_editXpandEvaluationRequestDialog;
 
-	public static String BSWPlatformProjectWizzardTitle;
-	public static String BSWPlatformProjectWizzardFirstPageTitle;
-	public static String BSWPlatformProjectWizzardReferencePageTitle;
-	public static String BSWPlatformProjectWizzardFirstPageDescription;
-	public static String BSWPlatformProjectWizzardReferencePageDescription;
+	public static String BSWPlatformProjectWizardTitle;
+	public static String BSWPlatformProjectWizardFirstPageTitle;
+	public static String BSWPlatformProjectWizardReferencePageTitle;
+	public static String BSWPlatformProjectWizardFirstPageDescription;
+	public static String BSWPlatformProjectWizardReferencePageDescription;
 
 	public static String job_creatingAutosarProject;
 	public static String job_convertingToXtendXpandEnabledAutosarProject;
