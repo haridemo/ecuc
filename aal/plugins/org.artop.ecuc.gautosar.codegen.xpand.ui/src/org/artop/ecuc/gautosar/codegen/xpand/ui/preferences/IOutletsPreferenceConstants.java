@@ -35,11 +35,11 @@ public interface IOutletsPreferenceConstants {
 
 	String MAKEOUTLET_DEFAULT_NAME = "MAKEOUTLET"; //$NON-NLS-1$
 
-	ExtendedOutlet COUTLET = new ExtendedOutlet(COUTLET_DEFAULT_NAME, COUTLET_DEFAULT_PATH, true);
+	ExtendedOutlet COUTLET = new ExtendedOutlet(COUTLET_DEFAULT_NAME, COUTLET_DEFAULT_PATH);
 
-	ExtendedOutlet HOUTLET = new ExtendedOutlet(HOUTLET_DEFAULT_NAME, HOUTLET_DEFAULT_PATH, true);
+	ExtendedOutlet HOUTLET = new ExtendedOutlet(HOUTLET_DEFAULT_NAME, HOUTLET_DEFAULT_PATH);
 
-	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet(MAKEOUTLET_DEFAULT_NAME, MAKEOUTLET_DEFAULT_PATH, true);
+	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet(MAKEOUTLET_DEFAULT_NAME, MAKEOUTLET_DEFAULT_PATH);
 
 	Collection<ExtendedOutlet> ECUC_OUTLETS = Arrays.asList(new ExtendedOutlet[] { COUTLET, HOUTLET, MAKEOUTLET });
 
