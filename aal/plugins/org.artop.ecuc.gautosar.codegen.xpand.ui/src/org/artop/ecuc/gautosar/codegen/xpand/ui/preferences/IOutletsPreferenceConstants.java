@@ -23,11 +23,23 @@ import org.eclipse.sphinx.xtendxpand.preferences.OutletsPreference;
 // TODO (aakar & seberle) Should be moved to a new non-UI plug-in named org.artop.ecuc.gautosar.codegen.xpand
 public interface IOutletsPreferenceConstants {
 
-	ExtendedOutlet COUTLET = new ExtendedOutlet("COUTLET", "${project_loc}/coutlet"); //$NON-NLS-1$ //$NON-NLS-2$
+	String COUTLET_DEFAULT_PATH = "${project_loc}/coutlet"; //$NON-NLS-1$
 
-	ExtendedOutlet HOUTLET = new ExtendedOutlet("HOUTLET", "${project_loc}/houtlet"); //$NON-NLS-1$ //$NON-NLS-2$
+	String HOUTLET_DEFAULT_PATH = "${project_loc}/houtlet"; //$NON-NLS-1$
 
-	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet("MAKEOUTLET", "${project_loc}/makeoutlet"); //$NON-NLS-1$ //$NON-NLS-2$
+	String MAKEOUTLET_DEFAULT_PATH = "${project_loc}/makeoutlet"; //$NON-NLS-1$
+
+	String COUTLET_DEFAULT_NAME = "COUTLET"; //$NON-NLS-1$
+
+	String HOUTLET_DEFAULT_NAME = "HOUTLET"; //$NON-NLS-1$
+
+	String MAKEOUTLET_DEFAULT_NAME = "MAKEOUTLET"; //$NON-NLS-1$
+
+	ExtendedOutlet COUTLET = new ExtendedOutlet(COUTLET_DEFAULT_NAME, COUTLET_DEFAULT_PATH);
+
+	ExtendedOutlet HOUTLET = new ExtendedOutlet(HOUTLET_DEFAULT_NAME, HOUTLET_DEFAULT_PATH);
+
+	ExtendedOutlet MAKEOUTLET = new ExtendedOutlet(MAKEOUTLET_DEFAULT_NAME, MAKEOUTLET_DEFAULT_PATH);
 
 	Collection<ExtendedOutlet> ECUC_OUTLETS = Arrays.asList(new ExtendedOutlet[] { COUTLET, HOUTLET, MAKEOUTLET });
 
