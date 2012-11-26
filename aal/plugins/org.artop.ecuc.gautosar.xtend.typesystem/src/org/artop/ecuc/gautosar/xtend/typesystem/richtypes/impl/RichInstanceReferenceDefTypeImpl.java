@@ -14,10 +14,10 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
 
-import gautosar.gecucdescription.GReferenceValue;
+import gautosar.gecucdescription.GInstanceReferenceValue;
 import gautosar.gecucdescription.GecucdescriptionPackage;
+import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GInstanceReferenceDef;
-import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.Collections;
 import java.util.Set;
@@ -29,9 +29,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.internal.xtend.expression.parser.SyntaxConstants;
 import org.eclipse.sphinx.emf.model.IModelDescriptor;
+import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.eclipse.xtend.typesystem.Type;
 
 public class RichInstanceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichInstanceReferenceDefType {
@@ -57,12 +59,40 @@ public class RichInstanceReferenceDefTypeImpl extends AbstractRichConfigReferenc
 	}
 
 	@Override
+	public boolean isInstance(Object target) {
+		if (target instanceof GInstanceReferenceValue) {
+			GConfigReference referenceDef = ((GInstanceReferenceValue) target).gGetDefinition();
+			if (referenceDef == getEcucTypeDef()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
 	protected Object internalGet(Object target) {
-		GReferenceValue referenceValue = (GReferenceValue) target;
+		GInstanceReferenceValue referenceValue = (GInstanceReferenceValue) target;
 		if (referenceValue.gGetDefinition() == getEcucTypeDef()) {
-			GIdentifiable referenceValueValue = referenceValue.gGetValue();
-			if (ExtendedMetaData.INSTANCE.getName(referenceValueValue.eClass()).equals(destinationType)) {
-				return referenceValueValue;
+			EStructuralFeature valueFeature = EObjectUtil.getEStructuralFeature(referenceValue, "value");
+			if (valueFeature != null) {
+				Object value = referenceValue.eGet(valueFeature);
+				if (value != null && value instanceof EObject) {
+					EObject referenceValueValue = (EObject) value;
+					// Two possibilities here, the feature name is "value" for AR 2.1 et AR 3.x while for AR 4.x the
+					// feature name is "target"
+					EStructuralFeature valueValueFeature = EObjectUtil.getEStructuralFeature(referenceValueValue, "value");
+					if (valueValueFeature == null) {
+						valueValueFeature = EObjectUtil.getEStructuralFeature(referenceValueValue, "target");
+					}
+					if (valueValueFeature != null) {
+						EObject instanceRef = (EObject) referenceValueValue.eGet(valueValueFeature);
+						// Handle both cases for AR 3.x and AR 4.x
+						if (ExtendedMetaData.INSTANCE.getName(instanceRef.eClass()).equals(destinationType)
+								|| instanceRef.eClass().getName().equals(destinationType)) {
+							return instanceRef;
+						}
+					}
+				}
 			}
 		}
 		return null;
