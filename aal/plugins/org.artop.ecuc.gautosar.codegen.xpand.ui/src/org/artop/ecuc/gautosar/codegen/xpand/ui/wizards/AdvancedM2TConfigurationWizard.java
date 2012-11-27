@@ -147,7 +147,13 @@ public class AdvancedM2TConfigurationWizard extends ExtendedM2TConfigurationWiza
 										diagnostics.addAll(Arrays.asList(diagIssues.getWarnings()));
 										for (Iterator<MWEDiagnostic> iterator = diagnostics.iterator(); iterator.hasNext();) {
 											MWEDiagnostic diagnostic = iterator.next();
-											String message = diagnostic.getMessage() + (iterator.hasNext() ? "" : "\n"); //$NON-NLS-1$ //$NON-NLS-2$
+											// Prepare message in order to display relevant information in Console
+											String diagnosticMsg = diagnostic.getMessage();
+											String exceptionMsg = new String();
+											if (diagnostic.getException() != null) {
+												exceptionMsg = "\n\t" + diagnostic.getException();//$NON-NLS-1$ 
+											}
+											String message = diagnosticMsg + exceptionMsg + (iterator.hasNext() ? "" : "\n"); //$NON-NLS-1$ //$NON-NLS-2$
 											switch (diagnostic.getSeverity()) {
 											case IStatus.ERROR:
 												log.error(message);
