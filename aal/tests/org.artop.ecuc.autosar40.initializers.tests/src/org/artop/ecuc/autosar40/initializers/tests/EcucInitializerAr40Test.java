@@ -16,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
+import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 import autosar40.ecucdescription.EcucNumericalParamValue;
 import autosar40.ecucdescription.EcucTextualParamValue;
@@ -55,6 +57,11 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 	@Override
 	protected Factory createResourceFactory() {
 		return new Autosar40ResourceFactoryImpl();
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		doSetUp();
 	}
 
 	@Override
@@ -103,5 +110,25 @@ public class EcucInitializerAr40Test extends AbstractInitializerTest {
 			return paramDef.getValue();
 		}
 		return super.value(item);
+	}
+
+	@Test
+	public void shouldInstantiateModuleDef() throws Exception {
+		doShouldInstantiateModuleDef();
+	}
+
+	@Test
+	public void shouldInstantiateContainerDef() throws Exception {
+		doShouldInstantiateContainerDef();
+	}
+
+	@Test
+	public void shouldInstantiateParamsWithDefaultValues() throws Exception {
+		doShouldInstantiateParamsWithDefaultValues();
+	}
+
+	@Test
+	public void shouldInstantiateSubContainers() throws Exception {
+		doShouldInstantiateSubContainers();
 	}
 }

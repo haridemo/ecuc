@@ -11,7 +11,9 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
+import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 import autosar3x.util.Autosar3xPackage;
 import autosar3x.util.Autosar3xReleaseDescriptor;
@@ -47,5 +49,30 @@ public class EcucInitializerAr3xTest extends AbstractInitializerTest {
 		StandaloneMetamodelServiceProvider result = new StandaloneMetamodelServiceProvider();
 		result.register(Autosar3xReleaseDescriptor.INSTANCE, IGBuilderFragmentProvider.class, new Autosar3xBuilderFragmentProvider());
 		return result;
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		doSetUp();
+	}
+
+	@Test
+	public void shouldInstantiateModuleDef() throws Exception {
+		doShouldInstantiateModuleDef();
+	}
+
+	@Test
+	public void shouldInstantiateContainerDef() throws Exception {
+		doShouldInstantiateContainerDef();
+	}
+
+	@Test
+	public void shouldInstantiateParamsWithDefaultValues() throws Exception {
+		doShouldInstantiateParamsWithDefaultValues();
+	}
+
+	@Test
+	public void shouldInstantiateSubContainers() throws Exception {
+		doShouldInstantiateSubContainers();
 	}
 }

@@ -17,37 +17,27 @@
       %license
    </license>
 
-   <requires>
-      <import feature="org.eclipse.jdt" version="3.6.0"/>
-      <import feature="org.eclipse.pde" version="3.6.0"/>
-      <import feature="org.eclipse.xtend" version="1.1.0"/>
-      <import feature="org.eclipse.xpand" version="1.1.0"/>
-      <import feature="org.eclipse.sphinx.xtendxpand" version="0.7.0"/>
-      <import feature="org.artop.core.workspace" version="4.0.0"/>
-      <import plugin="org.apache.commons.logging"/>
-   </requires>
-
    <plugin
          id="org.artop.ecuc.gautosar.xtend.typesystem"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.artop.ecuc.xtend.typesystem.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.artop.ecuc.gautosar.codegen.xpand.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.artop.ecuc.autosar3x.xtend.typesystem"
          download-size="0"
@@ -61,7 +51,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.artop.ecuc.autosar40.xtend.typesystem"
          download-size="0"

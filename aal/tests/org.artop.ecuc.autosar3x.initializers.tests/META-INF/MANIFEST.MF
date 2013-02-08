@@ -7,7 +7,9 @@ Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.artop.ecuc.gautosar.initializers.tests,
  org.artop.aal.autosar3x,
+ org.artop.aal.autosar321,
  org.artop.aal.autosar3x.services,
+ org.artop.aal.autosar321.services,
  org.artop.ecuc.autosar3x.initializers,
  org.artop.aal.testutils
 Export-Package: org.artop.ecuc.autosar3x.initializers.tests
