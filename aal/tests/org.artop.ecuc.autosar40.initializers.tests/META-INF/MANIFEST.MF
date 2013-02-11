@@ -8,6 +8,7 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.artop.ecuc.gautosar.initializers.tests,
  org.artop.aal.autosar40,
  org.artop.aal.autosar40.services,
+ org.artop.aal.autosar403.services,
  org.artop.ecuc.autosar40.initializers,
  org.artop.aal.testutils
 Export-Package: org.artop.ecuc.autosar40.initializers.tests
