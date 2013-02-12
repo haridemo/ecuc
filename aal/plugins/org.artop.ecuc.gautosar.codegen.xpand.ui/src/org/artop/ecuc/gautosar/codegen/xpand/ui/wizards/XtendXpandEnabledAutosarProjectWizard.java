@@ -18,9 +18,9 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.artop.aal.workspace.jobs.CreateArtopProjectJob;
+import org.artop.aal.workspace.jobs.CreateNewAutosarProjectJob;
 import org.artop.aal.workspace.ui.wizards.BasicAutosarProjectWizard;
-import org.artop.aal.workspace.ui.wizards.pages.AutosarProjectWizardFirstPage;
+import org.artop.aal.workspace.ui.wizards.pages.NewAutosarProjectCreationPage;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.Activator;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.internal.messages.Messages;
 import org.artop.ecuc.gautosar.codegen.xpand.ui.preferences.IOutletsPreferenceConstants;
@@ -48,7 +48,7 @@ import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 
 public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWizard implements IExecutableExtension {
 
-	protected AutosarProjectWizardFirstPage mainPage;
+	protected NewAutosarProjectCreationPage mainPage;
 
 	protected EcucOutletsConfigurationPage outletsPage;
 
@@ -78,8 +78,8 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 	 */
 	@Override
 	protected void initializeDefaultPageImageDescriptor() {
-		ImageDescriptor desc = Activator.getPlugin().getImageDescriptor("full/wizban/newbswpprj_wiz.png");//$NON-NLS-1$
-		setDefaultPageImageDescriptor(desc);
+		ImageDescriptor descriptor = Activator.getPlugin().getImageDescriptor("full/wizban/newbswpprj_wiz.png");//$NON-NLS-1$
+		setDefaultPageImageDescriptor(descriptor);
 	}
 
 	/*
@@ -88,7 +88,7 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 	@Override
 	public void addPages() {
 		// Add an AutosarProjectWizardFirstPage
-		mainPage = new AutosarProjectWizardFirstPage("basicNewProjectPage"); //$NON-NLS-1$
+		mainPage = new NewAutosarProjectCreationPage("basicNewProjectPage"); //$NON-NLS-1$
 		mainPage.setTitle(Messages.BSWPlatformProjectWizzardFirstPageTitle);
 		mainPage.setDescription(Messages.BSWPlatformProjectWizzardFirstPageDescription);
 		addPage(mainPage);
@@ -133,11 +133,11 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 		IProject[] referencedProjects = referencePage != null ? referencePage.getReferencedProjects() : null;
 		final IProject projectHandle = mainPage.getProjectHandle();
 
-		final CreateArtopProjectJob createJob = new CreateArtopProjectJob(Messages.job_creatingAutosarProject, projectHandle, location,
+		final CreateNewAutosarProjectJob createJob = new CreateNewAutosarProjectJob(Messages.job_creatingAutosarProject, projectHandle, location,
 				mainPage.getRelease());
 		createJob.setReferencedProjects(referencedProjects);
 		createJob.getImportedAutosarLibraries().addAll(mainPage.getImportedAutosarLibraryDescriptors());
-		createJob.setUiInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
+		createJob.setUIInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
 		addCreateJobChangeListener(createJob, projectHandle);
 		createJob.schedule();
 

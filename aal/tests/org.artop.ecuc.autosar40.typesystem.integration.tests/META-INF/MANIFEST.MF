@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tests
 Bundle-SymbolicName: org.artop.ecuc.autosar40.typesystem.integration.tests;singleton:=true
-Bundle-Version: 3.2.2.qualifier
-Bundle-Activator: org.artop.ecuc.autosar40.typesystem.integration.tests.internal.Activator
+Bundle-Version: 3.2.3.qualifier
+Bundle-Activator: org.artop.ecuc.autosar40.typesystem.integration.tests.internal.Activator$Implementation
 Require-Bundle: org.eclipse.core.runtime,
  org.artop.ecuc.testutils.integration.referenceworkspace,
  org.artop.ecuc.autosar40.xtend.typesystem

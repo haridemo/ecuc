@@ -39,8 +39,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sphinx.emf.metamodel.IMetaModelDescriptor;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.internal.matchers.TypeSafeMatcher;
 
 @SuppressWarnings("restriction")
@@ -117,8 +115,7 @@ public abstract class AbstractInitializerTest {
 
 	private IConfigurationGeneration fixture;
 
-	@Before
-	public void setUp() throws Exception {
+	public void doSetUp() throws Exception {
 		fixture = createFixture();
 	}
 
@@ -150,14 +147,12 @@ public abstract class AbstractInitializerTest {
 
 	protected abstract IMetaModelServiceProvider standaloneServiceProvider();
 
-	@Test
-	public void shouldInstantiateModuleDef() throws Exception {
+	public void doShouldInstantiateModuleDef() throws Exception {
 		GModuleDefBuilder module = moduleDef("MyModule"); //$NON-NLS-1$
 		assertThat(initialize(module), is(valueOf(module)));
 	}
 
-	@Test
-	public void shouldInstantiateContainerDef() throws Exception {
+	public void doShouldInstantiateContainerDef() throws Exception {
 		GContainerBuilder<?> paramContainer = paramContainer("MyContainer1"); //$NON-NLS-1$
 		GContainerBuilder<?> choiceContainer = choice("MyContainer2").lowerLimit(2).upperLimit(2); //$NON-NLS-1$
 
@@ -169,8 +164,7 @@ public abstract class AbstractInitializerTest {
 		assertThat(subContainer(moduleConfiguration, 2), is(valueOf(choiceContainer)));
 	}
 
-	@Test
-	public void shouldInstantiateParamsWithDefaultValues() throws Exception {
+	public void doShouldInstantiateParamsWithDefaultValues() throws Exception {
 		GParameterBuilder[] params = { boolParam("param1").value(true), intParam("param2").value(42), //$NON-NLS-1$ 
 				enumParam("param3").value("aaaa").literals("aaaa", "bbbb"), //$NON-NLS-1$//$NON-NLS-2$
 				floatParam("param4").value(1.1), functionName("param5").value("myFunct"), //$NON-NLS-1$ //$NON-NLS-2$ 
@@ -188,8 +182,7 @@ public abstract class AbstractInitializerTest {
 
 	}
 
-	@Test
-	public void shouldInstantiateSubContainers() throws Exception {
+	public void doShouldInstantiateSubContainers() throws Exception {
 		GContainerBuilder<?>[] subContainers = { choice("container1"), paramContainer("container2") }; //$NON-NLS-1$//$NON-NLS-2$
 
 		GModuleDefBuilder module = moduleDef("MyModule").with(paramContainer("MyContainer1").subContainer(subContainers)); //$NON-NLS-1$ //$NON-NLS-2$
