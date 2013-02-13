@@ -17,15 +17,6 @@
       %license
    </license>
 
-   <requires>
-      <import feature="org.eclipse.emf.mwe.core" version="1.1.0"/>
-      <import feature="org.artop.ecuc.xtendxpand" version="3.3.2"/>
-      <import feature="org.artop.core.examples.demonstrator" version="3.3.2"/>
-      <import plugin="org.apache.commons.logging"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.antlr.runtime"/>
-   </requires>
-
    <plugin
          id="org.artop.ecuc.examples.autosar40.codegen.xpand"
          download-size="0"
@@ -56,6 +47,41 @@
 
    <plugin
          id="org.artop.ecuc.examples.autosar40.transform.xtend.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.artop.ecuc.examples.autosar40.codegen.xpand.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.headless.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.gautosar.codegen.xpand.ui.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.autosar40.transform.xtend.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.artop.ecuc.examples.autosar40.transform.xtend.ui.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
