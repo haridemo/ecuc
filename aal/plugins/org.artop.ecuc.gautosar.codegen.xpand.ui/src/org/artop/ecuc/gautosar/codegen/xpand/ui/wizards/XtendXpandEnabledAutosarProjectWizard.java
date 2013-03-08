@@ -134,7 +134,7 @@ public class XtendXpandEnabledAutosarProjectWizard extends BasicAutosarProjectWi
 		final IProject projectHandle = mainPage.getProjectHandle();
 
 		final CreateNewAutosarProjectJob createJob = new CreateNewAutosarProjectJob(Messages.job_creatingAutosarProject, projectHandle, location,
-				mainPage.getRelease());
+				mainPage.getMetaModelVersionDescriptor());
 		createJob.setReferencedProjects(referencedProjects);
 		createJob.getImportedAutosarLibraries().addAll(mainPage.getImportedAutosarLibraryDescriptors());
 		createJob.setUIInfoAdaptable(WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
