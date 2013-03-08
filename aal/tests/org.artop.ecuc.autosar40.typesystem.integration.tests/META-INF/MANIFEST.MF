@@ -6,7 +6,8 @@ Bundle-Version: 4.0.0.qualifier
 Bundle-Activator: org.artop.ecuc.autosar40.typesystem.integration.tests.internal.Activator$Implementation
 Require-Bundle: org.eclipse.core.runtime,
  org.artop.ecuc.testutils.integration.referenceworkspace,
- org.artop.ecuc.autosar40.xtend.typesystem
+ org.artop.ecuc.autosar40.xtend.typesystem,
+ org.artop.aal.autosar403.services
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.artop.ecuc.autosar40.typesystem.integration.tests,
  org.artop.ecuc.autosar40.typesystem.integration.tests.internal
