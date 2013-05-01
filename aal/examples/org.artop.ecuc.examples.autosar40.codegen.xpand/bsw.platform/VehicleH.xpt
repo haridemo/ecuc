@@ -1,0 +1,87 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) 2011 See4sys and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors: 
+ *     See4sys - Initial API and implementation
+ * 
+ * </copyright>
+ */
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION extensions::util»
+«EXTENSION extensions::constants»
+
+«DEFINE inclusions FOR EPD::Vehicle -»
+
+/*****************************************************************************/
+/* INCLUSIONS                                                                */
+/*****************************************************************************/
+#include "SimpleLib.h"
+
+#define DATE «dateString()»
+«ENDDEFINE»
+
+«DEFINE symbolicName FOR EPD::Vehicle -»
+/*****************************************************************************/
+/* VEHICLE ATTRIBUTES                                                        */
+/*****************************************************************************/
+/* General Information */
+
+«GeneralInfo.VehicleName.shortName»: «GeneralInfo.VehicleName.value»
+
+// Absolute Qualified Name of GeneralInfo Container
+AQN: «GeneralInfo.absoluteQualifiedName»
+
+«REM»
+«IF Engine.exists()»
+It exists.
+«ELSE»
+It does not exist.
+«ENDIF»
+«ENDREM»
+
+«REM»
+List of owners:
+«FOREACH GeneralInfo.Owners.Owner AS owner»
+  «owner.shortName»
+«ENDFOREACH»
+«ENDREM»
+
+/* References */
+Current Owner: «GeneralInfo.CurrentOwner.value.FirstName.value» «GeneralInfo.CurrentOwner.value.LastName.value»
+Finition Level: «GeneralInfo.FinitionLevel.value.shortName»
+
+/*
+ * Anybody home? 
+ */
+
+ - Does the "High" finition level exist?
+ - «IF Options.FinitionLevels.High != null»Yes, it does«ELSE»No, it doesn't«ENDIF».
+
+ - What about "Medium"?
+ - «IF Options.FinitionLevels.Medium != null»It exists«ELSE»It doesnot exist«ENDIF».
+
+«REM»
+«IF Options.FinitionLevels.Medium.isPresent()»
+Medium exists.
+«ELSE»
+Medium does not exist.
+«ENDIF»
+«ENDREM»
+
+/* Definition and use of a global variable */
+
+// Last date of vehicle revision
+«lastRevisionDate().storeGlobalVar("2011-02-28") -> "" -»
+«lastRevisionDate()» = «lastRevisionDate().getGlobalVar()»
+// Total number of vehicle owners
+«numberOfOwners().storeGlobalVar(7) -> "" -»
+«numberOfOwners()» = «numberOfOwners().getGlobalVar()»
+
+«ENDDEFINE»

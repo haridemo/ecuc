@@ -1,0 +1,294 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) 2011 See4sys and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors: 
+ *     See4sys - Initial API and implementation
+ * 
+ * </copyright>
+ */
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION extensions::util»
+«EXTENSION extensions::constants»
+
+«DEFINE RichModuleDefType FOR EPD::Vehicle -»
+
+/* ************************************************************************* */
+/*      Rich Module Def Type                                                 */
+/* ************************************************************************* */
+
++----------
+| 10_1_1	Module Configuration's short name: «this.shortName»
++----------
+| 10_1_2	Module Configuration's AQN: «this.absoluteQualifiedName»
++----------
+| 10_1_3	Child Container: «GeneralInfo.shortName»
+«REM»
++----------
+| 10_1_4	Children Containers:
+«FOREACH this.XXX AS xxx -»
+			 - «xxx.shortName»
+«ENDFOREACH -»
+«ENDREM»
++----------
+| 10_1_5	Module's lower multiplicity: «this.lowerMultiplicity»
++----------
+| 10_1_6	Module's upper multiplicity: «this.upperMultiplicity»
++----------
+| 10_1_7	Module's SW Version: «this.swVersion»
++----------
+| 10_1_8	Module's SW Major Version: «this.swMajorVersion»
++----------
+| 10_1_9	Module's SW Minor Version: «this.swMinorVersion»
++----------
+| 10_1_10	Module's SW Patch Version: «this.swPatchVersion»
++----------
+| 10_2_1	Does "«this.shortName»" have a PRE-COMPILE Config Variant? «IF this.isPreCompile()»Yes«ELSE»No«ENDIF».
++----------
+| 10_2_2	Does "«this.shortName»" have a LINK-TIME Config Variant? «IF this.isLinkTime()»Yes«ELSE»No«ENDIF».
++----------
+| 10_2_3	Does "«this.shortName»" have a POST-BUILD Config Variant? «IF this.isPostBuild()»Yes«ELSE»No«ENDIF».
+«ENDDEFINE»
+
+«DEFINE RichContainerDefType FOR EPD::Vehicle -»
+
+/* ************************************************************************* */
+/*      Rich Container Def Type                                              */
+/* ************************************************************************* */
+
++-----------------------------------------------------------------------------+
+  21 _ Rich Param Conf Container Def Type
++----------
+| 21_1_1	Container's short name: «GeneralInfo.shortName»
++----------
+| 21_1_2	Container's AQN: «GeneralInfo.absoluteQualifiedName»
++----------
+| 21_1_3	Container's lower multiplicity: 
+			 - «Engine.lowerMultiplicity» for «Engine.absoluteQualifiedName»
+			 - «GeneralInfo.lowerMultiplicity» for «GeneralInfo.absoluteQualifiedName»
+			 - «GeneralInfo.Owners.lowerMultiplicity» for «GeneralInfo.Owners.absoluteQualifiedName»
+			 - «GeneralInfo.Owners.Owners.lowerMultiplicity» for «GeneralInfo.Owners.Owners.absoluteQualifiedName»
++----------
+| 21_1_4	Container's upper multiplicity: 
+			 - «Engine.upperMultiplicity» for «Engine.absoluteQualifiedName»
+			 - «GeneralInfo.upperMultiplicity» for «GeneralInfo.absoluteQualifiedName»
+			 - «GeneralInfo.Owners.upperMultiplicity» for «GeneralInfo.Owners.absoluteQualifiedName»
+			 - «GeneralInfo.Owners.Owners.upperMultiplicity» for «GeneralInfo.Owners.Owners.absoluteQualifiedName»
++----------
+| 21_1_5	Referencing Containers of «Options.FinitionLevels.High.absoluteQualifiedName»
+«FOREACH Options.FinitionLevels.High.referencingContainers AS referencingContainer -»
+			 - «referencingContainer.shortName» [«referencingContainer.absoluteQualifiedName»]
+«ENDFOREACH -»
++----------
+| 21_1_6	Sub-container (AQN): «GeneralInfo.Revisions.absoluteQualifiedName»
++----------
+| 21_1_7	Sub-containers of «GeneralInfo.Owners.absoluteQualifiedName»:
+«FOREACH GeneralInfo.Owners.Owners AS owner -»
+			 - «owner.shortName» 	«IF owner.FirstName.value != null»«owner.FirstName.value» «ENDIF»«owner.LastName.value»
+«ENDFOREACH -»
++----------
+| 21_1_8	Child Choice Container (AQN): «Engine.Type.absoluteQualifiedName»
++----------
+| 21_1_9	Children Choice Containers of «Options.absoluteQualifiedName»:
+«FOREACH Options.Colors AS color -»
+			 - «color.shortName»
+«ENDFOREACH -»
++----------
+| 21_1_10	Child Parameter: «GeneralInfo.VehicleName.shortName» [«GeneralInfo.VehicleName.absoluteQualifiedName»]
++----------
+| 21_1_11	Children Parameters of «GeneralInfo.Revisions.absoluteQualifiedName»:
+«FOREACH GeneralInfo.Revisions.RevisionDates AS revDate -»
+			 - «IF revDate.value != null»«revDate.value»«ELSE»NULL«ENDIF»
+«ENDFOREACH -»
++----------
+| 21_1_12	Child Reference: «GeneralInfo.CurrentOwner.shortName» [«GeneralInfo.CurrentOwner.absoluteQualifiedName»]
++----------
+| 21_1_13	Children References of «FOREACH Options.Colors AS color»«IF color.MixedColors != null»«color.MixedColors.absoluteQualifiedName»:
+«FOREACH color.MixedColors.ColorRefs AS colorRef -»
+			 - «IF colorRef.value != null»«colorRef.value.shortName»«ELSE»NULL«ENDIF»
+«ENDFOREACH -»«ENDIF -»«ENDFOREACH -»
+
++-----------------------------------------------------------------------------+
+  22 _ Rich Choice Container Def Type
++----------
+| 22_1_1	Choice Container's short name: «Engine.Type.shortName»
++----------
+| 22_1_2	Choice Container's AQN: «Engine.Type.absoluteQualifiedName»
++----------
+| 22_1_3	Choice Container's lower multiplicity:
+			 - «Engine.Type.lowerMultiplicity» for «Engine.Type.absoluteQualifiedName»
+			 - «Options.Colors.lowerMultiplicity» for «Options.Colors.absoluteQualifiedName»
++----------
+| 22_1_4	Choice Container's upper multiplicity:
+			 - «Engine.Type.upperMultiplicity» for «Engine.Type.absoluteQualifiedName»
+			 - «Options.Colors.upperMultiplicity» for «Options.Colors.absoluteQualifiedName»
++----------
+| 21_1_5	Referencing Containers ... N/A (for the moment)
++----------
+| 21_1_6	Chosen sub-container (AQN): «LET Engine.Type AS enginetype -»
+«IF enginetype.Diesel != null -»«enginetype.Diesel.absoluteQualifiedName»
+«ELSEIF enginetype.Gasoline != null -»«enginetype.Gasoline.absoluteQualifiedName»«ENDIF»«ENDLET»
+«ENDDEFINE»
+
+«DEFINE RichConfigParameterType FOR EPD::Vehicle -»
+
+/* ************************************************************************* */
+/*      Rich Config Parameter Type                                           */
+/* ************************************************************************* */
+
++-----------------------------------------------------------------------------+
+  31 _ Rich Boolean Parameter Def Type
++----------
+| 31_1_1	Boolean Parameter's short name: «Engine.Automatic.shortName»
++----------
+| 31_1_2	Boolean Parameter's AQN: «Engine.Automatic.absoluteQualifiedName»
+«REM»
++----------
+| 31_1_3	Boolean Parameter's lower multiplicity: «Engine.Automatic.lowerMultiplicity»
++----------
+| 31_1_4	Boolean Parameter's upper multiplicity: «Engine.Automatic.upperMultiplicity»
+«ENDREM»
++----------
+| 31_1_5	Boolean Parameter's value: «Engine.Automatic.value»
++----------
+| 31_2_1	Is Boolean Parameter configured? «IF Engine.Automatic.isConfigured()»Yes«ELSE»No«ENDIF».
+
++-----------------------------------------------------------------------------+
+  32 _ Rich Enumeration Parameter Def Type
++----------
+| 32_1_1	Enumeration Parameter's short name: «Engine.EngineType.shortName»
++----------
+| 32_1_2	Enumeration Parameter's AQN: «Engine.EngineType.absoluteQualifiedName»
+«REM»
++----------
+| 32_1_3	Enumeration Parameter's lower multiplicity: «Engine.EngineType.lowerMultiplicity»
++----------
+| 32_1_4	Enumeration Parameter's upper multiplicity: «Engine.EngineType.upperMultiplicity»
+«ENDREM»
++----------
+| 32_1_5	Enumeration Parameter's value: «Engine.EngineType.value»
++----------
+| 32_2_1	Is Enumeration Parameter configured? «IF Engine.EngineType.isConfigured()»Yes«ELSE»No«ENDIF».
++----------
+| 32_3_1	Is value 'Diesel'?   «IF Engine.EngineType.isDIESEL()»Yes«ELSE»No«ENDIF».
+			Is value 'Gasoline'? «IF Engine.EngineType.isGASOLINE()»Yes«ELSE»No«ENDIF».
+
+«REM»
++-----------------------------------------------------------------------------+
+  33 _ Rich Float Parameter Def Type
++----------
+| 33_1_1	Float Parameter's short name: «Engine.Type.Gasoline.SparkPlugVoltage.shortName»
++----------
+| 33_1_2	Float Parameter's AQN: «Engine.Type.Gasoline.SparkPlugVoltage.absoluteQualifiedName»
++----------
+| 33_1_3	Float Parameter's lower multiplicity: «Engine.Type.Gasoline.SparkPlugVoltage.lowerMultiplicity»
++----------
+| 33_1_4	Float Parameter's upper multiplicity: «Engine.Type.Gasoline.SparkPlugVoltage.upperMultiplicity»
++----------
+| 33_1_5	Float Parameter's value: «Engine.Type.Gasoline.SparkPlugVoltage.value»
++----------
+| 33_2_1	Is Float Parameter configured? «IF Engine.Type.Gasoline.SparkPlugVoltage.isConfigured()»Yes«ELSE»No«ENDIF».
+
+«ENDREM»
++-----------------------------------------------------------------------------+
+  34 _ Rich Integer Parameter Def Type
++----------
+| 34_1_1	Integer Parameter's short name: «GeneralInfo.SerialNumber.shortName»
++----------
+| 34_1_2	Integer Parameter's AQN: «GeneralInfo.SerialNumber.absoluteQualifiedName»
+«REM»
++----------
+| 34_1_3	Integer Parameter's lower multiplicity: «GeneralInfo.SerialNumber.lowerMultiplicity»
++----------
+| 34_1_4	Integer Parameter's upper multiplicity: «GeneralInfo.SerialNumber.upperMultiplicity»
+«ENDREM»
++----------
+| 34_1_5	Integer Parameter's value: «GeneralInfo.SerialNumber.value»
++----------
+| 34_2_1	Is Integer Parameter configured? «IF GeneralInfo.SerialNumber.isConfigured()»Yes«ELSE»No«ENDIF».
+
++-----------------------------------------------------------------------------+
+  35 _ Rich String Parameter Def Type
++----------
+| 35_1_1	String Parameter's short name: «GeneralInfo.Manufacturer.shortName»
++----------
+| 35_1_2	String Parameter's AQN: «GeneralInfo.Manufacturer.absoluteQualifiedName»
+«REM»
++----------
+| 35_1_3	String Parameter's lower multiplicity: «GeneralInfo.Manufacturer.lowerMultiplicity»
++----------
+| 35_1_4	String Parameter's upper multiplicity: «GeneralInfo.Manufacturer.upperMultiplicity»
+«ENDREM»
++----------
+| 35_1_5	String Parameter's value: «GeneralInfo.Manufacturer.value»
++----------
+| 35_2_1	Is String Parameter configured? «IF GeneralInfo.Manufacturer.isConfigured()»Yes«ELSE»No«ENDIF».
+«REM»
++-----------------------------------------------------------------------------+
+  36 _ Rich Multiline String Parameter Def Type
++-----------------------------------------------------------------------------+
+  37 _ Rich Add Info Parameter Def Type
++-----------------------------------------------------------------------------+
+  38 _ Rich Function Name Parameter Def Type
++-----------------------------------------------------------------------------+
+  39 _ Rich Linker Symbol Parameter Def Type
+«ENDREM»
+«ENDDEFINE»
+
+«DEFINE RichConfigReferenceType FOR EPD::Vehicle -»
+
+/* ************************************************************************* */
+/*      Rich Config Reference Type                                           */
+/* ************************************************************************* */
+
++-----------------------------------------------------------------------------+
+  41 _ Rich Choice Reference Def Type
++----------
+| 41_1_1	Choice Reference's short name: «GeneralInfo.FinitionLevel.shortName»
++----------
+| 41_1_2	Choice Reference's AQN: «GeneralInfo.FinitionLevel.absoluteQualifiedName»
+«REM»
++----------
+| 41_1_3	Choice Reference's lower multiplicity: «GeneralInfo.FinitionLevel.lowerMultiplicity»
++----------
+| 41_1_4	Choice Reference's upper multiplicity: «GeneralInfo.FinitionLevel.upperMultiplicity»
+«ENDREM»
++----------
+| 41_1_5	Choice Reference's value (AQN): «GeneralInfo.FinitionLevel.value.absoluteQualifiedName»
++----------
+| 41_2_1	Is Finition Level configured? «IF GeneralInfo.FinitionLevel.isConfigured()»Yes«ELSE»No«ENDIF».
+
+«REM»
++-----------------------------------------------------------------------------+
+  42 _ Rich Foreign Reference Def Type
++-----------------------------------------------------------------------------+
+  43 _ Rich Instance Reference Def Type
+«ENDREM»
++-----------------------------------------------------------------------------+
+  44 _ Rich Reference Def Type
++----------
+| 44_1_1	Reference's short name: «GeneralInfo.CurrentOwner.shortName»
++----------
+| 44_1_2	Reference's AQN: «GeneralInfo.CurrentOwner.absoluteQualifiedName»
+«REM»
++----------
+| 44_1_3	Reference's lower multiplicity: «GeneralInfo.CurrentOwner.lowerMultiplicity»
++----------
+| 44_1_4	Reference's upper multiplicity: «GeneralInfo.CurrentOwner.upperMultiplicity»
+«ENDREM»
++----------
+| 44_1_5	Reference's value (AQN): «GeneralInfo.CurrentOwner.value.absoluteQualifiedName»
++----------
+| 44_2_1	Is Current Owner reference configured? «IF GeneralInfo.CurrentOwner.isConfigured()»Yes«ELSE»No«ENDIF».
+			Is First Hand reference configured?    «IF GeneralInfo.FirstHand.isConfigured()»Yes«ELSE»No«ENDIF».
+«REM»
++-----------------------------------------------------------------------------+
+  45 _ Rich Symbolic Name Reference Def Type
+«ENDREM»
+«ENDDEFINE»
