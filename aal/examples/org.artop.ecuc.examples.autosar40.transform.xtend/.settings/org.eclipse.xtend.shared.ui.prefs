@@ -1,0 +1,4 @@
+#Wed Sep 14 15:41:49 CEST 2011
+eclipse.preferences.version=1
+metamodelContributor=org.artop.ecuc.xtend.typesystem.ui.EcucMetamodelContributor,org.eclipse.sphinx.xtend.typesystem.emf.ui.SphinxManagedEmfMetamodelContributor
+project.specific.metamodel=true

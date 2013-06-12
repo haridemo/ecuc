@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-1.xsd"><AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>EPC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-VALUE-COLLECTION UUID="e95e2d4b-844e-40e2-a458-298df03a4218">
+          <SHORT-NAME>ECU_Car</SHORT-NAME>
+          <ECUC-VALUES>
+            <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+              <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/EPC/Car</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+            </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+            <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+              <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/EPC/CarAttributes</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+            </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+          </ECUC-VALUES>
+        </ECUC-VALUE-COLLECTION>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="da8db81d-90d8-4fff-813d-9d29a5886f72">
+          <SHORT-NAME>Car</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/EPD/Vehicle</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/BMD/Vehicle</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="5290b560-1196-4fa5-a5c6-2e78b8a80c33">
+              <SHORT-NAME>Engine</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Engine</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/EPD/Vehicle/Engine/EngineType</DEFINITION-REF>
+                  <VALUE>Gasoline</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/EPD/Vehicle/Engine/Automatic</DEFINITION-REF>
+                  <VALUE SHORT-LABEL="Automatic">0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="608965af-1fd5-4068-a5e2-55b75b1621c7">
+                  <SHORT-NAME>Type</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/EPD/Vehicle/Engine/Type</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="908575d6-e776-4b75-9114-6908a231f4f4">
+                      <SHORT-NAME>Gasoline</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Engine/Type/Gasoline</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/EPD/Vehicle/Engine/Type/Gasoline/SparkPlugNumber</DEFINITION-REF>
+                          <VALUE SHORT-LABEL="SparkPlugNumber">12</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/EPD/Vehicle/Engine/Type/Gasoline/SparkPlugVoltage</DEFINITION-REF>
+                          <VALUE SHORT-LABEL="SparkPlugVoltage">4.45</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/Engine/Type/Gasoline/SparkPlugModel</DEFINITION-REF>
+                          <VALUE>Tartanpion Powa Boost</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="12766340-c30d-48f6-ae1f-996f2d05680f">
+              <SHORT-NAME>GeneralInfo</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/VehicleName</DEFINITION-REF>
+                  <VALUE>Saxo</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/EPD/Vehicle/GeneralInfo/SerialNumber</DEFINITION-REF>
+                  <VALUE SHORT-LABEL="SerialNumber">879055672</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Manufacturer</DEFINITION-REF>
+                  <VALUE>Citroën</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Year</DEFINITION-REF>
+                  <VALUE SHORT-LABEL="Year">2000</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/FinitionLevel</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/Options/FinitionLevels/High</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/CurrentOwner</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/Car/GeneralInfo/Owners/FifthHand</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/EPD/Vehicle/GeneralInfo/FirstHand</DEFINITION-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>Owners</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>FirstHand</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/LastName</DEFINITION-REF>
+                          <VALUE>Geensys</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>SecondHand</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/LastName</DEFINITION-REF>
+                          <VALUE>See4sys</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>ThirdHand</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/FirstName</DEFINITION-REF>
+                          <VALUE>John</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/LastName</DEFINITION-REF>
+                          <VALUE>Coltrane</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>FourthHand</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/FirstName</DEFINITION-REF>
+                          <VALUE>Adderley</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/LastName</DEFINITION-REF>
+                          <VALUE>Cannonball</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>FifthHand</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/FirstName</DEFINITION-REF>
+                          <VALUE>Herbie</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Owners/Owner/LastName</DEFINITION-REF>
+                          <VALUE>Hancock</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>Revisions</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/GeneralInfo/Revisions</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisions/RevisionDate</DEFINITION-REF>
+                      <VALUE>2007-12-15</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisions/RevisionDate</DEFINITION-REF>
+                      <VALUE>2008-01-06</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisions/RevisionDate</DEFINITION-REF>
+                      <VALUE>2008-06-05</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisions/RevisionDate</DEFINITION-REF>
+                      <VALUE>2009-07-07</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisions/RevisionDate</DEFINITION-REF>
+                      <VALUE>2010-09-18</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-MULTILINE-STRING-PARAM-DEF">/EPD/Vehicle/GeneralInfo/Revisions/RevisionsReport</DEFINITION-REF>
+                      <VALUE>This report gathers all the things that have been preformed durgin each revision of that car.</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="be1f8f35-8c45-41c6-95c0-ffe8da93f033">
+              <SHORT-NAME>Options</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="5201116d-7084-4a67-bd1c-ef0877535437">
+                  <SHORT-NAME>FinitionLevels</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/FinitionLevels</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="8a3bf43c-bc9b-426a-98ea-db157517a0d7">
+                      <SHORT-NAME>High</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/FinitionLevels/High</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="bcfbeddb-dd1a-428a-b86f-19a70e22539b">
+                      <SHORT-NAME>Low</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/FinitionLevels/Low</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="fe5af92b-df44-4854-bf96-cf152a5ce4c8">
+                  <SHORT-NAME>ColorStd</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/EPD/Vehicle/Options/Color</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="c7f885f6-0b00-4a14-8a40-056ec5662ab4">
+                      <SHORT-NAME>UnifiedColor</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/Color/UnifiedColor</DEFINITION-REF>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/EPD/Vehicle/Options/Color/UnifiedColor/ColorRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/CarAttributes/AvailableColors/Gold</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b38b70d9-e8b5-45e5-9605-0f28e5d6a0bc">
+                  <SHORT-NAME>ColorExt</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/EPD/Vehicle/Options/Color</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="831ff79f-0b57-466a-905b-93fa1f7eed76">
+                      <SHORT-NAME>MixedColors</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Vehicle/Options/Color/MixedColors</DEFINITION-REF>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/EPD/Vehicle/Options/Color/MixedColors/ColorRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/CarAttributes/AvailableColors/Silver</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/EPD/Vehicle/Options/Color/MixedColors/ColorRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/EPC/CarAttributes/AvailableColors/SalsaRed</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="9a83f918-1af5-4bb9-b791-ac8776772b97">
+          <SHORT-NAME>CarAttributes</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/EPD/Attributes</DEFINITION-REF>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/BMD/Attributes</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="ba46593e-3e5c-43b0-8c64-8fe4cfa51ef7">
+              <SHORT-NAME>AvailableColors</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="989a67f7-58d8-4b82-ab38-163254be2bf7">
+                  <SHORT-NAME>Gold</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/Gold</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e4be5df5-3491-4389-b231-762f23d19d3e">
+                  <SHORT-NAME>Silver</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/Silver</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c158935b-e96c-4612-9f34-5740e7cfa31e">
+                  <SHORT-NAME>PapayaWhip</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/PapayaWhip</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c8b0f9ee-a62a-418e-99bb-783b1e73d65e">
+                  <SHORT-NAME>SalsaRed</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/AvailableColors/SalsaRed</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="dc647617-3a39-4572-b2fc-eefae088aa60">
+              <SHORT-NAME>Constant_NbWheels</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/Constant</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/EPD/Attributes/Constant/Type</DEFINITION-REF>
+                  <VALUE>Integer</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Attributes/Constant/Value</DEFINITION-REF>
+                  <VALUE>4</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Attributes/Constant/Name</DEFINITION-REF>
+                  <VALUE>NumberOfWheels</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="afb8b6b3-9b18-4b95-9a73-2d401e7832a5">
+              <SHORT-NAME>Configurator</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/EPD/Attributes/Configurator</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Attributes/Configurator/Id</DEFINITION-REF>
+                  <VALUE>1234-5678</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/EPD/Attributes/Configurator/Name</DEFINITION-REF>
+                  <VALUE>See4sys</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES></AUTOSAR>
