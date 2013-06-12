@@ -1,0 +1,50 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) 2011-2013 See4sys, itemis and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors: 
+ *     See4sys - Initial API and implementation
+ *     itemis - [1584] ECUC Metatypes & RichTypes namespace should be renamed
+ * 
+ * </copyright>
+ */
+«EXTENSION org::eclipse::xtend::util::stdlib::io»
+«EXTENSION org::eclipse::xtend::util::stdlib::globalvar»
+«EXTENSION org::eclipse::xtend::util::stdlib::properties»
+«EXTENSION extensions::util»
+
+«DEFINE main FOR EPD::Vehicle»
+	«EXPAND ConfigureVehicle»
+«ENDDEFINE»
+
+«DEFINE ConfigureVehicle FOR EPD::Vehicle»
+	«FILE "VehicleConfig.txt" -»
+DATE «dateString()»
+		«EXPAND VehicleConfig::RichModuleDefType»
+		«EXPAND VehicleConfig::RichContainerDefType»
+		«EXPAND VehicleConfig::RichConfigParameterType»
+		«EXPAND VehicleConfig::RichConfigReferenceType»
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE hFile FOR EPD::Vehicle»
+	«FILE "Vehicle_Cfg.h" -»
+		«EXPAND VehicleH::inclusions»
+		«EXPAND VehicleH::symbolicName»
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE main FOR ECUC::ModuleDef»
+// throw Exception for unhandled moduledeftype
+    «info( "Unhandled ModuleDefType \"" + metaType.toString() + "\" encountered in Com.xpt")»
+«ENDDEFINE»
+
+«DEFINE main FOR Object»
+// throw Exception for unhandled object type
+    «info( "Unhandled object type \"" + metaType.toString() + "\" encountered in Com.xpt")»
+«ENDDEFINE»

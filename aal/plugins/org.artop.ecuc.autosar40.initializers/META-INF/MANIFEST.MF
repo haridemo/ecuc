@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.autosar40.initializers;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: org.artop.ecuc.autosar40.initializers.internal.Activator$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.artop.aal.autosar40,
+ org.artop.ecuc.gautosar.initializers;visibility:=reexport,
+ org.artop.aal.autosar40.services
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: org.artop.ecuc.autosar40.initializers,
+ org.artop.ecuc.autosar40.initializers.internal;x-internal:=true
