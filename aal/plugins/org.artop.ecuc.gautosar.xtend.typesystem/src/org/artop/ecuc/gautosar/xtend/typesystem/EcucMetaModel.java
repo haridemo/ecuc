@@ -14,6 +14,12 @@
  */
 package org.artop.ecuc.gautosar.xtend.typesystem;
 
+import gautosar.gecucdescription.GConfigReferenceValue;
+import gautosar.gecucdescription.GContainer;
+import gautosar.gecucdescription.GModuleConfiguration;
+import gautosar.gecucdescription.GParameterValue;
+import gautosar.ggenericstructure.ginfrastructure.GARObject;
+
 import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,8 +57,19 @@ public class EcucMetaModel implements MetaModel {
 
 	protected EcucContext context;
 
+	// contains Meta Types
 	protected List<Type> metaTypes;
+	// contains Base Types and Rich Types
 	protected Map<String, Type> types;
+
+	/* for faster access for getTypeForName */
+	private Map<String, Type> metaTypesForName;
+	/* caching on access to getKnownTypes() */
+	private Set<Type> knownTypes;
+	/* union map of 'types' and 'metaTypesForName', lazy initialized in getTypes() */
+	private Map<String, Type> allTypes;
+	// additional cache to access the type for parameter values faster
+	private Map<GARObject, Type> value2DefinitionType;
 
 	// Debug only
 	private static int createCounter = 0;
@@ -93,13 +110,31 @@ public class EcucMetaModel implements MetaModel {
 	 * @see org.eclipse.xtend.typesystem.MetaModel#getType(java.lang.Object)
 	 */
 	public Type getType(Object target) {
+		// Fast return, if type system does not handle this object!
+		if (target == null || !(target instanceof GARObject)) {
+			return null;
+		}
+
+		// ensure that types and metaTypes are initialized
+		createTypes();
+
+		// faster execution for config parameters
+		final GARObject definition = getDefinition(target);
+		if (definition != null) {
+			Type type = value2DefinitionType.get(definition);
+			if (type != null) {
+				return type;
+			}
+		}
 		// Try to find matching type that is a rich type first; try to find
 		// matching meta type only when no such exists
-		for (Type type : getTypes().values()) {
-			if (!metaTypes.contains(type)) {
-				if (type.isInstance(target)) {
-					return type;
+		for (Type type : types.values()) {
+			if (type.isInstance(target)) {
+				if (definition != null) {
+					// cache the type
+					value2DefinitionType.put(definition, type);
 				}
+				return type;
 			}
 		}
 
@@ -113,12 +148,44 @@ public class EcucMetaModel implements MetaModel {
 		return null;
 	}
 
+	/**
+	 * Determines the definition for these target types:
+	 * <ul>
+	 * <li>GParameterValue
+	 * <li>GConfigReferenceValue
+	 * <li>GContainer
+	 * <li>GParameterValue
+	 * </ul>
+	 * 
+	 * @param target
+	 *            Target object
+	 * @return Definition for target, <code>null</code> for unhandled types
+	 */
+	private GARObject getDefinition(Object target) {
+		if (target instanceof GParameterValue) {
+			return ((GParameterValue) target).gGetDefinition();
+		} else if (target instanceof GConfigReferenceValue) {
+			return ((GConfigReferenceValue) target).gGetDefinition();
+		} else if (target instanceof GContainer) {
+			return ((GContainer) target).gGetDefinition();
+		} else if (target instanceof GModuleConfiguration) {
+			return ((GModuleConfiguration) target).gGetDefinition();
+		}
+		return null;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.xtend.typesystem.MetaModel#getTypeForName(java.lang.String)
 	 */
 	public Type getTypeForName(String typeName) {
-		return getTypes().get(typeName);
+		createTypes(); // ensure initialization
+
+		Type type = types.get(typeName);
+		if (type == null) {
+			type = metaTypesForName.get(typeName);
+		}
+		return type;
 	}
 
 	/*
@@ -126,19 +193,37 @@ public class EcucMetaModel implements MetaModel {
 	 * @see org.eclipse.xtend.typesystem.MetaModel#getKnownTypes()
 	 */
 	public Set<? extends Type> getKnownTypes() {
-		return Collections.unmodifiableSet(new HashSet<Type>(getTypes().values()));
+		// ensure initialization
+		createTypes();
+		if (knownTypes == null) {
+			knownTypes = new HashSet<Type>(types.values());
+			knownTypes.addAll(metaTypes);
+			knownTypes = Collections.unmodifiableSet(knownTypes);
+		}
+		return knownTypes;
 	}
 
 	protected Map<String, Type> getTypes() {
-		if (types == null) {
-			metaTypes = new ArrayList<Type>();
-			types = new HashMap<String, Type>();
-			createTypes();
+		createTypes();
+		if (allTypes == null) {
+			allTypes = new HashMap<String, Type>(types);
+			for (Type metaType : metaTypes) {
+				allTypes.put(metaType.getName(), metaType);
+			}
+			allTypes = Collections.unmodifiableMap(allTypes);
 		}
-		return Collections.unmodifiableMap(types);
+		return allTypes;
 	}
 
 	protected void createTypes() {
+		if (types != null) {
+			return;
+		}
+
+		metaTypes = new ArrayList<Type>();
+		metaTypesForName = new HashMap<String, Type>();
+		types = new HashMap<String, Type>();
+		value2DefinitionType = new HashMap<GARObject, Type>();
 
 		// TODO Surround with appropriate tracing option
 		long start = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
@@ -195,8 +280,8 @@ public class EcucMetaModel implements MetaModel {
 		return new EcucRichTypeFactory(context, types);
 	}
 
-	protected void registerType(Type type) {
-		types.put(type.getName(), type);
+	protected final void registerType(Type type) {
+		metaTypesForName.put(type.getName(), type);
 		metaTypes.add(0, type);
 	}
 }
