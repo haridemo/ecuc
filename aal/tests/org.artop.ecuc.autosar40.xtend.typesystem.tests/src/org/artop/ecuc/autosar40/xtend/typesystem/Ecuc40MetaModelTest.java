@@ -188,7 +188,7 @@ public class Ecuc40MetaModelTest {
 		
 		// Mock the ModelDescriptor
 		IModelDescriptor moduleDefModelDescriptor = (IModelDescriptor) Proxy.newProxyInstance(getClass().getClassLoader(), new Class[]{IModelDescriptor.class}, new InvocationHandler() {
-			@Override
+
 			public Object invoke(Object proxy, Method method, Object[] args)
 					throws Throwable {
 				if (method.getName().equals("getLoadedResources")) {
