@@ -1,10 +1,8 @@
 package org.artop.ecuc.testutils.integration.referenceworkspace;
 
-import static org.osgi.framework.FrameworkUtil.getBundle;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import org.artop.aal.testutils.integration.referenceworkspace.IRefWorkspaceDescriptor;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -13,6 +11,7 @@ import org.eclipse.sphinx.testutils.integration.AbstractReferenceWorkspace;
 import org.osgi.framework.Bundle;
 
 import autosar40.util.Autosar40ReleaseDescriptor;
+import bin.org.artop.aal.testutils.integration.referenceworkspace.IRefWorkspaceDescriptor;
 
 @SuppressWarnings("nls")
 public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorkspace implements IRefWorkspaceDescriptor {
@@ -179,10 +178,5 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 
 	public Bundle getSrcBundle() {
 		return getBundle(EcucTestReferenceWorkspace.class);
-	}
-
-	@Override
-	public int getInitialReferenceEditingDomainsCount() {
-		return super.getInitialReferenceEditingDomainCount();
 	}
 }
