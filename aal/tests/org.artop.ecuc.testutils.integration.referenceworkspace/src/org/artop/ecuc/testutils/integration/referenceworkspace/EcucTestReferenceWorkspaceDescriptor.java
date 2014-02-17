@@ -181,7 +181,6 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 		return getBundle(EcucTestReferenceWorkspace.class);
 	}
 	
-	@Override
 	public int getInitialReferenceEditingDomainsCount() {
 		return super.getInitialReferenceEditingDomainCount();
 	}	
