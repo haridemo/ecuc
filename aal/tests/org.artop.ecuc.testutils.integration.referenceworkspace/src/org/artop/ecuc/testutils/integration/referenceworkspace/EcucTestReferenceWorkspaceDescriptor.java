@@ -180,4 +180,9 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 	public Bundle getSrcBundle() {
 		return getBundle(EcucTestReferenceWorkspace.class);
 	}
+	
+	@Override
+	public int getInitialReferenceEditingDomainsCount() {
+		return super.getInitialReferenceEditingDomainCount();
+	}	
 }
