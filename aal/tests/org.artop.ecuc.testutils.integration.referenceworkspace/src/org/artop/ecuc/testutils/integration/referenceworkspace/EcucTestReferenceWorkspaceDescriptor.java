@@ -2,6 +2,9 @@ package org.artop.ecuc.testutils.integration.referenceworkspace;
 
 import static org.osgi.framework.FrameworkUtil.getBundle;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import org.artop.aal.testutils.integration.referenceworkspace.IRefWorkspaceDescriptor;
 import org.artop.ecuc.testutils.integration.referenceworkspace.internal.Activator;
 import org.eclipse.core.runtime.IPath;
@@ -145,7 +148,7 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 	public static final String TYPE_EPD_VEHICLE_ENGINE_PROPERTY_ENGINETYPE = "EngineType";
 
 	public EcucTestReferenceWorkspaceDescriptor(String[] referenceProjectNames) {
-		super(referenceProjectNames);
+		super(new HashSet<String>(Arrays.asList(referenceProjectNames)));
 	}
 
 	public Plugin getReferenceWorkspacePlugin() {
@@ -179,4 +182,9 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 		return getBundle(EcucTestReferenceWorkspace.class);
 	}
 
+	@Override
+	public int getInitialReferenceEditingDomainCount() {
+		// is mandatory due to interface, uses implementation from abstract parent
+		return super.getInitialReferenceEditingDomainCount();
+	}
 }
