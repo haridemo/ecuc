@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.examples.gautosar.redirect.destref.to.vsmd;singleton:=true
+Bundle-Version: 3.3.0.qualifier
+Bundle-Activator: org.artop.ecuc.examples.gautosar.redirect.destref.to.vsmd.internal.Activator$Implementation
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.common,
+ org.eclipse.sphinx.emf.workspace,
+ org.eclipse.sphinx.gmf.workspace,
+ org.artop.aal.workspace
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.artop.ecuc.examples.gautosar.redirect.destref.to.vsmd.internal;x-internal:=true
+Bundle-Localization: plugin
+Import-Package: org.artop.aal.common.resource.impl
