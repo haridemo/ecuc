@@ -1,15 +1,15 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
- * 
+ *
  */
 public abstract class AbstractFilteringEList<E> extends DelegatingEList<E> {
 
@@ -45,15 +45,10 @@ public abstract class AbstractFilteringEList<E> extends DelegatingEList<E> {
 	/*
 	 * @see org.eclipse.emf.common.util.DelegatingEList#delegateList()
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	protected List<E> delegateList() {
-		return (List<E>) targetOwner.eGet(targetFeature);
-	}
-
-	protected List<E> getFilteredEList() {
 		EList<E> filteredEList = new BasicEList<E>();
-		for (E item : delegateList()) {
+		for (E item : getUnfilteredEList()) {
 			if (accept(item)) {
 				filteredEList.add(item);
 			}
@@ -61,32 +56,25 @@ public abstract class AbstractFilteringEList<E> extends DelegatingEList<E> {
 		return filteredEList;
 	}
 
-	/*
-	 * @see org.eclipse.emf.common.util.DelegatingEList#delegateSize()
-	 */
-	@Override
-	protected int delegateSize() {
-		return getFilteredEList().size();
-	}
-
-	/*
-	 * @see org.eclipse.emf.common.util.DelegatingEList#delegateGet(int)
-	 */
-	@Override
-	protected E delegateGet(int index) {
-		return getFilteredEList().get(index);
-	}
-
-	@Override
-	protected E delegateSet(int index, E object) {
-		return getFilteredEList().set(index, object);
+	@SuppressWarnings("unchecked")
+	protected List<E> getUnfilteredEList() {
+		return (List<E>) targetOwner.eGet(targetFeature);
 	}
 
 	@Override
 	protected void delegateAdd(int index, E object) {
-		// Add the new object in the delegate list and also in the filtered list
-		getFilteredEList().add(index, object);
-		delegateList().add(index, object);
+		// Calculate index in raw list by getting 'rawIndex' of the element at 'index'
+		int rawIndex;
+		if (index == delegateSize()) {
+			// Adding after last element
+			rawIndex = getUnfilteredEList().indexOf(delegateGet(index - 1)) + 1;
+		} else {
+			// Adding inside list - delegateGet should also give us the right exceptions here
+			rawIndex = getUnfilteredEList().indexOf(delegateGet(index));
+		}
+
+		// Add the new object in the raw list
+		getUnfilteredEList().add(rawIndex, object);
 	}
 
 	@Override
@@ -94,18 +82,8 @@ public abstract class AbstractFilteringEList<E> extends DelegatingEList<E> {
 		// Retrieve the index of this object in delegateList() and remove it. Then remove the object also in the
 		// filtering list.
 		E object = delegateGet(index);
-		delegateList().remove(object);
-		return delegateList().remove(index);
-	}
-
-	@Override
-	protected Object[] delegateToArray() {
-		return getFilteredEList().toArray();
-	}
-
-	@Override
-	protected <T> T[] delegateToArray(T[] array) {
-		return getFilteredEList().toArray(array);
+		getUnfilteredEList().remove(object);
+		return object;
 	}
 
 	protected abstract boolean accept(E item);
