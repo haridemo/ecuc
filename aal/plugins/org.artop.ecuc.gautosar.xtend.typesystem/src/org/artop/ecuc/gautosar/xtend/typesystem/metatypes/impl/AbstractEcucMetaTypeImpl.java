@@ -1,16 +1,16 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
  *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.impl;
@@ -19,6 +19,7 @@ import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
@@ -111,6 +112,8 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 
 		addFeature(createShortNameFeature());
 		addFeature(createSetShortNameOperation());
+		addFeature(createGetExtensionOperation());
+		addFeature(createSetExtensionOperation());
 
 		addFeature(new PropertyImpl(this, "absoluteQualifiedName", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
@@ -140,6 +143,45 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				internalSetShortName(target, params != null && params.length == 1 ? params[0] : null);
+				return null;
+			}
+		};
+	}
+
+	protected OperationImpl createGetExtensionOperation() {
+		return new OperationImpl(this, "getExtension", getTypeSystem().getStringType(), getTypeSystem().getStringType()) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				if (!(target instanceof GIdentifiable) || params == null || params.length != 1 || params[0] == null) {
+					return null;
+				}
+
+				GIdentifiable identifiable = (GIdentifiable) target;
+				Map<String, Object> extensions = identifiable.gGetExtensions();
+				if (extensions != null && extensions.containsKey(params[0])) {
+					return extensions.get(params[0]);
+				}
+
+				return null;
+			}
+		};
+	}
+
+	protected OperationImpl createSetExtensionOperation() {
+		return new OperationImpl(this,
+				"setExtension", getTypeSystem().getVoidType(), getTypeSystem().getStringType(), getTypeSystem().getStringType()) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				if (!(target instanceof GIdentifiable) || params == null || params.length != 2 || params[0] == null) {
+					return null;
+				}
+
+				GIdentifiable identifiable = (GIdentifiable) target;
+				Map<String, Object> extensions = identifiable.gGetExtensions();
+				if (extensions != null) {
+					return extensions.put((String) params[0], params[1]);
+				}
+
 				return null;
 			}
 		};
