@@ -314,6 +314,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Not yet available
 		/********************************************************************/
 
+		/** Operation getBswImplementationExtension **/
+		Operation bswImplementationExtensionOperation = vehiculeRichType.getOperation("getImplementationExtension", new Type[] { ecucMetaModel
+				.getTypeSystem().getStringType() });
+		assertNotNull(bswImplementationExtensionOperation);
+		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), bswImplementationExtensionOperation.getReturnType());
+		String result = (String) bswImplementationExtensionOperation.evaluate(carObject, new Object[] { "BSW_IMPL_EXTENSION_KEY" });
+		assertEquals(result, "BSW_IMPL_EXTENSION_VALUE");
+
 		doTestSetAndGetExtension(carObject, vehiculeRichType);
 	}
 
