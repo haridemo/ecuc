@@ -14,6 +14,8 @@
  */
 package org.artop.ecuc.autosar40.typesystem.integration.tests;
 
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -42,6 +44,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType
 import org.artop.ecuc.testutils.integration.referenceworkspace.AbstractEcucIntegrationTestCase;
 import org.artop.ecuc.testutils.integration.referenceworkspace.EcucTestReferenceWorkspaceDescriptor;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.emf.util.WorkspaceEditingDomainUtil;
@@ -242,17 +245,15 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 	}
 
-	private void doTestSetAndGetExtension(final Object target, Type type) {
+	private void doTestGetExtension(final Object target, Type type) {
 		/** This method will test operation setExtension and getExtension on the provided target **/
 		/** Operation setExtension **/
-		final Operation setExtensionOperation = type.getOperation(
-				"setExtension", new Type[] { ecucMetaModel.getTypeSystem().getStringType(), ecucMetaModel.getTypeSystem().getStringType() }); //$NON-NLS-1$
-		assertNotNull(setExtensionOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getVoidType(), setExtensionOperation.getReturnType());
+		Assert.isTrue(target instanceof GIdentifiable);
 
 		Runnable setExtensionRunnable = new Runnable() {
 			public void run() {
-				setExtensionOperation.evaluate(target, new Object[] { "KEY", "VALUE" });
+				((GIdentifiable) target).gGetExtensions().put("KEY_1", "VALUE");
+				((GIdentifiable) target).gGetExtensions().put("KEY_2", new Double(11.7));
 			}
 		};
 		try {
@@ -267,10 +268,14 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** Operation getExtension **/
 		Operation getExtensionOperation = type.getOperation("getExtension", new Type[] { ecucMetaModel.getTypeSystem().getStringType() }); //$NON-NLS-1$
 		assertNotNull(getExtensionOperation);
-		assertEquals(ecucMetaModel.getTypeSystem().getStringType(), getExtensionOperation.getReturnType());
-		Object value = getExtensionOperation.evaluate(target, new Object[] { "KEY" });
+		assertEquals(ecucMetaModel.getTypeSystem().getObjectType(), getExtensionOperation.getReturnType());
+		Object value = getExtensionOperation.evaluate(target, new Object[] { "KEY_1" });
 		assertTrue(value instanceof String);
 		assertEquals(value, "VALUE");
+
+		value = getExtensionOperation.evaluate(target, new Object[] { "KEY_2" });
+		assertTrue(value instanceof Double);
+		assertEquals(value, 11.7);
 	}
 
 	/** 10_RichModuleDefType **/
@@ -322,7 +327,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		String result = (String) bswImplementationExtensionOperation.evaluate(carObject, new Object[] { "BSW_IMPL_EXTENSION_KEY" });
 		assertEquals(result, "BSW_IMPL_EXTENSION_VALUE");
 
-		doTestSetAndGetExtension(carObject, vehiculeRichType);
+		doTestGetExtension(carObject, vehiculeRichType);
 	}
 
 	/** 2_RichContainerDefType **/
@@ -535,7 +540,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// referencingContainers).contains(getConfigurationObject(EcucTestRefWorkspaceInfo.URI_FRAGMENT_EPC_CAR_GENERAL_INFO)));
 		/********************************************************************/
 
-		doTestSetAndGetExtension(engineObject, engineType);
+		doTestGetExtension(engineObject, engineType);
 	}
 
 	/** 22_RichChoiceContainerDefType **/
@@ -633,7 +638,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		// Not yet available
 		/********************************************************************/
 
-		doTestSetAndGetExtension(typeObject, typeType);
+		doTestGetExtension(typeObject, typeType);
 	}
 
 	/** 3_RichConfigParameterType **/

@@ -113,7 +113,6 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 		addFeature(createShortNameFeature());
 		addFeature(createSetShortNameOperation());
 		addFeature(createGetExtensionOperation());
-		addFeature(createSetExtensionOperation());
 
 		addFeature(new PropertyImpl(this, "absoluteQualifiedName", getTypeSystem().getStringType()) { //$NON-NLS-1$
 			public Object get(Object target) {
@@ -149,7 +148,7 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 	}
 
 	protected OperationImpl createGetExtensionOperation() {
-		return new OperationImpl(this, "getExtension", getTypeSystem().getStringType(), getTypeSystem().getStringType()) { //$NON-NLS-1$
+		return new OperationImpl(this, "getExtension", getTypeSystem().getObjectType(), getTypeSystem().getStringType()) { //$NON-NLS-1$
 			@Override
 			protected Object evaluateInternal(Object target, Object[] params) {
 				if (!(target instanceof GIdentifiable) || params == null || params.length != 1 || params[0] == null) {
@@ -160,26 +159,6 @@ public abstract class AbstractEcucMetaTypeImpl extends AbstractTypeImpl implemen
 				Map<String, Object> extensions = identifiable.gGetExtensions();
 				if (extensions != null && extensions.containsKey(params[0])) {
 					return extensions.get(params[0]);
-				}
-
-				return null;
-			}
-		};
-	}
-
-	protected OperationImpl createSetExtensionOperation() {
-		return new OperationImpl(this,
-				"setExtension", getTypeSystem().getVoidType(), getTypeSystem().getStringType(), getTypeSystem().getStringType()) { //$NON-NLS-1$
-			@Override
-			protected Object evaluateInternal(Object target, Object[] params) {
-				if (!(target instanceof GIdentifiable) || params == null || params.length != 2 || params[0] == null) {
-					return null;
-				}
-
-				GIdentifiable identifiable = (GIdentifiable) target;
-				Map<String, Object> extensions = identifiable.gGetExtensions();
-				if (extensions != null) {
-					return extensions.put((String) params[0], params[1]);
 				}
 
 				return null;
