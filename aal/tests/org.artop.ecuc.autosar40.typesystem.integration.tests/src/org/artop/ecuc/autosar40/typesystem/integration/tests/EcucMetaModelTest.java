@@ -1486,6 +1486,31 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 
 	}
 
+	/** 44_RichReferenceDefType **/
+	public void testRichReferenceDefType_alternateDestinationType() {
+		// This will test the case when the definition of the reference value has a destination in a module def pointed.
+		// to by the refined module def attribute. bug1678
+		/** ---------------------Test variables definition----------------------------- **/
+		/** --Check engineRichType consistency-- **/
+		EObject currentOwnerObject = getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_3_PREVIOUS_OWNER);
+		Type currentOwnerType = ecucMetaModel.getTypeForName(EcucTestReferenceWorkspaceDescriptor.RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_PREVIOUS_OWNER);
+		assertTrue(currentOwnerType instanceof RichConfigReferenceType);
+		RichConfigReferenceType currentOwnerRichType = (RichConfigReferenceType) currentOwnerType;
+		assertTrue(currentOwnerRichType.getEcucTypeDef() instanceof EcucReferenceDef);
+
+		/** 44_1_6 Property value **/
+		Property valueProperty = currentOwnerRichType.getProperty("value"); //$NON-NLS-1$
+		assertNotNull(valueProperty);
+		// TODO define correct Destination type in Example model
+		// assertEquals(ecucMetaModel.getTypeForName(ParamConfContainerDefType.TYPE_NAME),
+		// valueProperty.getReturnType());
+		Object value = valueProperty.get(currentOwnerObject);
+		assertTrue(value instanceof EcucContainerValue);
+		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_GENERAL_INFO_OWNERS_FIFTHAND), value);
+		/********************************************************************/
+
+	}
+
 	/** 45_RichSymbolicNameReferenceType **/
 	public void testRichSymbolicNameReferenceType() {
 		/** 45_1_1 Property shortName **/
