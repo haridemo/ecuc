@@ -37,6 +37,7 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_0_FINITION_LEVEL = "/EPC/Car/GeneralInfo/@referenceValues.0?type=EcucReferenceValue";
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_1_CURRENT_OWNER = "/EPC/Car/GeneralInfo/@referenceValues.1?type=EcucReferenceValue";
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_2_FIRSTHAND = "/EPC/Car/GeneralInfo/@referenceValues.2?type=EcucReferenceValue";
+	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_REFERENCE_VALUES_3_PREVIOUS_OWNER = "/EPC/Car/GeneralInfo/@referenceValues.3?type=EcucReferenceValue";
 
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_0_VEHICLE_NAME = "/EPC/Car/GeneralInfo/@parameterValues.0?type=EcucTextualParamValue";
 	public static final String URI_FRAGMENT_EPC_CAR_GENERAL_INFO_PARAMETER_VALUES_1_SERIAL_NUMBER = "/EPC/Car/GeneralInfo/@parameterValues.1?type=EcucNumericalParamValue";
@@ -87,6 +88,7 @@ public class EcucTestReferenceWorkspaceDescriptor extends AbstractReferenceWorks
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO = "EPD::Vehicle::GeneralInfo";
 
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_CURRENT_OWNER = "EPD::Vehicle::GeneralInfo::CurrentOwner";
+	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_PREVIOUS_OWNER = "EPD::Vehicle::GeneralInfo::PreviousOwner";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FINITION_LEVEL = "EPD::Vehicle::GeneralInfo::FinitionLevel";
 	public static final String RICH_TYPE_EPD_VEHICLE_GENERAL_INFO_FIRSTHAND = "EPD::Vehicle::GeneralInfo::FirstHand";
 
