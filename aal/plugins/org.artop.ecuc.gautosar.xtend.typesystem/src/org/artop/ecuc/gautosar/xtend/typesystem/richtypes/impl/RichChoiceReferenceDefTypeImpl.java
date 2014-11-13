@@ -1,15 +1,15 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
@@ -31,6 +31,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ChoiceReferenceDefType
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichChoiceReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichParamConfContainerDefType;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -115,11 +116,13 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 	}
 
 	protected Object internalGet(Object target, GParamConfContainerDef destinationTypeDef) {
+		Assert.isNotNull(destinationTypeDef);
+		Assert.isNotNull(destinationTypeDef.gGetShortName());
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer) {
-				if (((GContainer) valueValue).gGetDefinition() == destinationTypeDef) {
+				if (destinationTypeDef.gGetShortName().equals(((GContainer) valueValue).gGetDefinition().gGetShortName())) {
 					return valueValue;
 				}
 			}
@@ -133,8 +136,11 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 		if (value.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer) {
-				if (destinationTypeDefs.contains(((GContainer) valueValue).gGetDefinition())) {
-					return valueValue;
+				String targetDefShortName = ((GContainer) valueValue).gGetDefinition().gGetShortName();
+				for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {
+					if (destinationTypeDef.gGetShortName().equals(targetDefShortName)) {
+						return valueValue;
+					}
 				}
 			}
 		}

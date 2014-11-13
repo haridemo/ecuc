@@ -1,20 +1,22 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl;
 
 import gautosar.gecucparameterdef.GModuleDef;
+
+import java.util.Map;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl.RichModuleDefTypeImpl;
@@ -249,5 +251,31 @@ public class RichModuleDef40TypeImpl extends RichModuleDefTypeImpl {
 				return false;
 			}
 		});
+
+		addFeature(new OperationImpl(this,
+				"getImplementationExtension", getTypeSystem().getStringType(), new Type[] { getTypeSystem().getStringType() }) { //$NON-NLS-1$
+			@Override
+			protected Object evaluateInternal(Object target, Object[] params) {
+				if (target == null || params.length == 0 || params[0] == null) {
+					return null;
+				}
+				if (!(target instanceof EcucModuleConfigurationValues)) {
+					return null;
+				}
+
+				EcucModuleConfigurationValues ecucModuleConfigurationValues = (EcucModuleConfigurationValues) target;
+				BswImplementation moduleDescription = ecucModuleConfigurationValues.getModuleDescription();
+				if (moduleDescription == null) {
+					return null;
+				}
+
+				Map<String, Object> extensions = moduleDescription.getExtensions();
+				if (extensions == null) {
+					return null;
+				}
+				return extensions.get(params[0]);
+			}
+		});
+
 	}
 }
