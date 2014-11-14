@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.autosar4x.accessors.lib;singleton:=true
+Bundle-Version: 4.3.0.qualifier
+Bundle-Activator: org.artop.ecuc.autosar4x.accessors.lib.internal.Activator$Implementation
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.xtend.lib,
+ org.eclipse.xtext.xbase.lib,
+ org.artop.ecuc.gautosar.accessors.lib;visibility:=reexport,
+ org.artop.aal.autosar40,
+ org.artop.aal.autosar40.services
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.artop.ecuc.autosar4x.accessors.lib,
+ org.artop.ecuc.autosar4x.accessors.lib.internal;x-internal:=true
+Bundle-Localization: plugin

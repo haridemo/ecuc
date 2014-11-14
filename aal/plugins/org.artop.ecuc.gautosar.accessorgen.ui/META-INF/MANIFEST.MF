@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.gautosar.accessorgen.ui;singleton:=true
+Bundle-Version: 4.3.0.qualifier
+Bundle-Activator: org.artop.ecuc.gautosar.accessorgen.ui.internal.Activator$Implementation
+Require-Bundle: org.eclipse.emf.common.ui,
+ org.eclipse.sphinx.platform.ui,
+ org.artop.ecuc.gautosar.accessorgen;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.artop.ecuc.gautosar.accessorgen.ui.actions,
+ org.artop.ecuc.gautosar.accessorgen.ui.handlers,
+ org.artop.ecuc.gautosar.accessorgen.ui.internal;x-internal:=true
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
