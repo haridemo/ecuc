@@ -21,8 +21,8 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
 import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
@@ -40,7 +40,7 @@ import gautosar.gecucparameterdef.GConfigParameter
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
-import static extension org.artop.ecuc.gautosar.accessors.lib.ParameterValueAccessorUtil.*
+import static extension org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil.*
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
@@ -141,11 +141,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvAutoNegotiationEnabled"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvAutoNegotiationEnabled"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def EthTrcvConnNeg getEthTrcvConnNeg(){
@@ -157,11 +157,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvConnNeg"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvConnNeg"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum EthTrcvConnNeg {
@@ -180,11 +180,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setEthTrcvConnNegValue(GParameterValue paramValue, EthTrcvConnNeg value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			def Integer getEthTrcvCtrlIdx(){
-				ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"])
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"])
 			}
 			
 			def void setEthTrcvCtrlIdx(Integer value){
@@ -192,11 +192,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvCtrlIdx"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvCtrlIdx"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def EthTrcvDuplexMode getEthTrcvDuplexMode(){
@@ -208,11 +208,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDuplexMode"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDuplexMode"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum EthTrcvDuplexMode {
@@ -229,11 +229,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setEthTrcvDuplexModeValue(GParameterValue paramValue, EthTrcvDuplexMode value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			def Integer getEthTrcvIdx(){
-				ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"])
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"])
 			}
 			
 			def void setEthTrcvIdx(Integer value){
@@ -241,15 +241,15 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIdx"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIdx"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def Integer getEthTrcvMiiIdx(){
-				ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"])
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"])
 			}
 			
 			def void setEthTrcvMiiIdx(Integer value){
@@ -257,11 +257,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMiiIdx"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMiiIdx"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def EthTrcvPhysLayerType getEthTrcvPhysLayerType(){
@@ -273,11 +273,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvPhysLayerType"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvPhysLayerType"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum EthTrcvPhysLayerType {
@@ -294,7 +294,7 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setEthTrcvPhysLayerTypeValue(GParameterValue paramValue, EthTrcvPhysLayerType value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			def EthTrcvSpeed getEthTrcvSpeed(){
@@ -306,11 +306,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSpeed"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSpeed"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum EthTrcvSpeed {
@@ -329,7 +329,7 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setEthTrcvSpeedValue(GParameterValue paramValue, EthTrcvSpeed value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			
@@ -409,11 +409,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDevErrorDetect"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDevErrorDetect"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvGetBaudRateApi(){
@@ -425,11 +425,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetBaudRateApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetBaudRateApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvGetDuplexModeApi(){
@@ -441,11 +441,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetDuplexModeApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetDuplexModeApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvGetLinkStateApi(){
@@ -457,11 +457,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetLinkStateApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetLinkStateApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvGetTransceiverModeApi(){
@@ -473,15 +473,15 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetTransceiverModeApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetTransceiverModeApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getEthTrcvIndex(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"])
 		}
 		
 		def void setEthTrcvIndex(Integer value){
@@ -489,15 +489,15 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIndex"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIndex"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getEthTrcvMaxTrcvsSupported(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"])
 		}
 		
 		def void setEthTrcvMaxTrcvsSupported(Integer value){
@@ -505,11 +505,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMaxTrcvsSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMaxTrcvsSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvSetTransceiverModeApi(){
@@ -521,11 +521,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSetTransceiverModeApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSetTransceiverModeApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvStartAutoNegotiationApi(){
@@ -537,11 +537,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvStartAutoNegotiationApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvStartAutoNegotiationApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvVersionInfoApi(){
@@ -553,11 +553,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getEthTrcvVersionInfoApiMacro(){
@@ -569,11 +569,11 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApiMacro"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApiMacro"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		

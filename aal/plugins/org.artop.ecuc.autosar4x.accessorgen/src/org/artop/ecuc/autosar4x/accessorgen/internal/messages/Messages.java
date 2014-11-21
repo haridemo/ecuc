@@ -20,7 +20,7 @@ public class Messages extends NLS {
 
 	private static final String BUNDLE_NAME = "org.artop.ecuc.autosar4x.accessorgen.internal.messages.messages"; //$NON-NLS-1$
 
-	public static String operation_generateParameterValueAccessor_label;
+	public static String operation_generateEcucValueAccessor_label;
 
 	static {
 		// initialize resource bundle

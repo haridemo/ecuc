@@ -21,8 +21,8 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
 import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
@@ -40,7 +40,7 @@ import gautosar.gecucparameterdef.GConfigParameter
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
-import static extension org.artop.ecuc.gautosar.accessors.lib.ParameterValueAccessorUtil.*
+import static extension org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil.*
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
@@ -110,7 +110,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def String getMemMapCompilerMemClassSymbolImpl(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
 		}
 		
 		def void setMemMapCompilerMemClassSymbolImpl(String value){
@@ -118,11 +118,11 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def List<String> getMemMapSupportedAddressingMethodOptions(){
@@ -151,7 +151,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					override protected wrap(MemMapSupportedMemoryAllocationKeywordPolicy object) throws CoreException {
 						val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
 						parameterValue.gSetDefinition(parameterDef)
-						ParameterValueAccessor4xUtil.setParameterValue(parameterValue, object)
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
 						parameterValue
 					}
 					
@@ -176,7 +176,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setMemMapSupportedMemoryAllocationKeywordPolicyValue(GParameterValue paramValue, MemMapSupportedMemoryAllocationKeywordPolicy value){
-			ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 		}
 		
 		def List<String> getMemMapSupportedSectionInitializationPolicies(){
@@ -205,7 +205,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					override protected wrap(MemMapSupportedSectionType object) throws CoreException {
 						val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
 						parameterValue.gSetDefinition(parameterDef)
-						ParameterValueAccessor4xUtil.setParameterValue(parameterValue, object)
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
 						parameterValue
 					}
 					
@@ -250,7 +250,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setMemMapSupportedSectionTypeValue(GParameterValue paramValue, MemMapSupportedSectionType value){
-			ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 		}
 		
 		
@@ -285,7 +285,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def String getMemMapAddressingModeStart(){
-				ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStart"])
+				EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStart"])
 			}
 			
 			def void setMemMapAddressingModeStart(String value){
@@ -293,15 +293,15 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStart"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStart"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def String getMemMapAddressingModeStop(){
-				ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStop"])
+				EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStop"])
 			}
 			
 			def void setMemMapAddressingModeStop(String value){
@@ -309,11 +309,11 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStop"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStop"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def List<String> getMemMapAlignmentSelectors(){
@@ -468,7 +468,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def String getMemMapGenericCompilerMemClassSymbolImpl(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
 		}
 		
 		def void setMemMapGenericCompilerMemClassSymbolImpl(String value){
@@ -476,11 +476,11 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		

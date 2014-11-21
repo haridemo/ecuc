@@ -21,8 +21,8 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
 import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
@@ -40,7 +40,7 @@ import gautosar.gecucparameterdef.GConfigParameter
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
-import static extension org.artop.ecuc.gautosar.accessors.lib.ParameterValueAccessorUtil.*
+import static extension org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil.*
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
@@ -118,11 +118,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockCrcType"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockCrcType"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		enum NvMBlockCrcType {
@@ -141,11 +141,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setNvMBlockCrcTypeValue(GParameterValue paramValue, NvMBlockCrcType value){
-			ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 		}
 		
 		def String getNvMBlockHeaderInclude(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockHeaderInclude"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockHeaderInclude"])
 		}
 		
 		def void setNvMBlockHeaderInclude(String value){
@@ -153,15 +153,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockHeaderInclude"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockHeaderInclude"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMBlockJobPriority(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockJobPriority"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockJobPriority"])
 		}
 		
 		def void setNvMBlockJobPriority(Integer value){
@@ -169,11 +169,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockJobPriority"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockJobPriority"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def NvMBlockManagementType getNvMBlockManagementType(){
@@ -185,11 +185,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockManagementType"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockManagementType"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		enum NvMBlockManagementType {
@@ -208,7 +208,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setNvMBlockManagementTypeValue(GParameterValue paramValue, NvMBlockManagementType value){
-			ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 		}
 		
 		def Boolean getNvMBlockUseAutoValidation(){
@@ -220,11 +220,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseAutoValidation"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseAutoValidation"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMBlockUseCRCCompMechanism(){
@@ -236,11 +236,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseCRCCompMechanism"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseCRCCompMechanism"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMBlockUseCrc(){
@@ -252,11 +252,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseCrc"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseCrc"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMBlockUseSetRamBlockStatus(){
@@ -268,11 +268,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseSetRamBlockStatus"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseSetRamBlockStatus"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMBlockUseSyncMechanism(){
@@ -284,11 +284,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseSyncMechanism"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseSyncMechanism"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMBlockWriteProt(){
@@ -300,11 +300,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockWriteProt"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockWriteProt"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMBswMBlockStatusInformation(){
@@ -316,11 +316,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBswMBlockStatusInformation"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBswMBlockStatusInformation"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMCalcRamBlockCrc(){
@@ -332,15 +332,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMCalcRamBlockCrc"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMCalcRamBlockCrc"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMInitBlockCallback(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMInitBlockCallback"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMInitBlockCallback"])
 		}
 		
 		def void setNvMInitBlockCallback(String value){
@@ -348,15 +348,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMInitBlockCallback"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMInitBlockCallback"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMMaxNumOfReadRetries(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMaxNumOfReadRetries"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMaxNumOfReadRetries"])
 		}
 		
 		def void setNvMMaxNumOfReadRetries(Integer value){
@@ -364,15 +364,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMaxNumOfReadRetries"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMaxNumOfReadRetries"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMMaxNumOfWriteRetries(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMaxNumOfWriteRetries"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMaxNumOfWriteRetries"])
 		}
 		
 		def void setNvMMaxNumOfWriteRetries(Integer value){
@@ -380,15 +380,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMaxNumOfWriteRetries"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMaxNumOfWriteRetries"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMNvBlockBaseNumber(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockBaseNumber"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockBaseNumber"])
 		}
 		
 		def void setNvMNvBlockBaseNumber(Integer value){
@@ -396,15 +396,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockBaseNumber"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockBaseNumber"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMNvBlockLength(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockLength"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockLength"])
 		}
 		
 		def void setNvMNvBlockLength(Integer value){
@@ -412,15 +412,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockLength"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockLength"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMNvBlockNum(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockNum"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockNum"])
 		}
 		
 		def void setNvMNvBlockNum(Integer value){
@@ -428,15 +428,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockNum"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockNum"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMNvramBlockIdentifier(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvramBlockIdentifier"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvramBlockIdentifier"])
 		}
 		
 		def void setNvMNvramBlockIdentifier(Integer value){
@@ -444,15 +444,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvramBlockIdentifier"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvramBlockIdentifier"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMNvramDeviceId(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvramDeviceId"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvramDeviceId"])
 		}
 		
 		def void setNvMNvramDeviceId(Integer value){
@@ -460,15 +460,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvramDeviceId"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvramDeviceId"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMRamBlockDataAddress(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRamBlockDataAddress"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRamBlockDataAddress"])
 		}
 		
 		def void setNvMRamBlockDataAddress(String value){
@@ -476,15 +476,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRamBlockDataAddress"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRamBlockDataAddress"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMReadRamBlockFromNvCallback(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMReadRamBlockFromNvCallback"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMReadRamBlockFromNvCallback"])
 		}
 		
 		def void setNvMReadRamBlockFromNvCallback(String value){
@@ -492,11 +492,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMReadRamBlockFromNvCallback"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMReadRamBlockFromNvCallback"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMResistantToChangedSw(){
@@ -508,15 +508,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMResistantToChangedSw"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMResistantToChangedSw"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMRomBlockDataAddress(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRomBlockDataAddress"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRomBlockDataAddress"])
 		}
 		
 		def void setNvMRomBlockDataAddress(String value){
@@ -524,15 +524,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRomBlockDataAddress"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRomBlockDataAddress"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMRomBlockNum(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRomBlockNum"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRomBlockNum"])
 		}
 		
 		def void setNvMRomBlockNum(Integer value){
@@ -540,11 +540,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRomBlockNum"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRomBlockNum"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMSelectBlockForReadAll(){
@@ -556,11 +556,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSelectBlockForReadAll"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSelectBlockForReadAll"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMSelectBlockForWriteAll(){
@@ -572,15 +572,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSelectBlockForWriteAll"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSelectBlockForWriteAll"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMSingleBlockCallback(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSingleBlockCallback"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSingleBlockCallback"])
 		}
 		
 		def void setNvMSingleBlockCallback(String value){
@@ -588,11 +588,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSingleBlockCallback"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSingleBlockCallback"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMStaticBlockIDCheck(){
@@ -604,11 +604,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMStaticBlockIDCheck"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMStaticBlockIDCheck"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMWriteBlockOnce(){
@@ -620,15 +620,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteBlockOnce"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteBlockOnce"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMWriteRamBlockToNvCallback(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteRamBlockToNvCallback"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteRamBlockToNvCallback"])
 		}
 		
 		def void setNvMWriteRamBlockToNvCallback(String value){
@@ -636,11 +636,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteRamBlockToNvCallback"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteRamBlockToNvCallback"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMWriteVerification(){
@@ -652,15 +652,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteVerification"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteVerification"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMWriteVerificationDataSize(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteVerificationDataSize"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteVerificationDataSize"])
 		}
 		
 		def void setNvMWriteVerificationDataSize(Integer value){
@@ -668,11 +668,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteVerificationDataSize"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteVerificationDataSize"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		
@@ -821,11 +821,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMApiConfigClass"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMApiConfigClass"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		enum NvMApiConfigClass {
@@ -844,7 +844,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setNvMApiConfigClassValue(GParameterValue paramValue, NvMApiConfigClass value){
-			ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 		}
 		
 		def Boolean getNvMBswMMultiBlockJobStatusInformation(){
@@ -856,15 +856,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBswMMultiBlockJobStatusInformation"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMBswMMultiBlockJobStatusInformation"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMCompiledConfigId(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCompiledConfigId"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCompiledConfigId"])
 		}
 		
 		def void setNvMCompiledConfigId(Integer value){
@@ -872,15 +872,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMCompiledConfigId"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMCompiledConfigId"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMCrcNumOfBytes(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCrcNumOfBytes"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCrcNumOfBytes"])
 		}
 		
 		def void setNvMCrcNumOfBytes(Integer value){
@@ -888,15 +888,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMCrcNumOfBytes"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMCrcNumOfBytes"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMDatasetSelectionBits(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMDatasetSelectionBits"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMDatasetSelectionBits"])
 		}
 		
 		def void setNvMDatasetSelectionBits(Integer value){
@@ -904,11 +904,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDatasetSelectionBits"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDatasetSelectionBits"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMDevErrorDetect(){
@@ -920,11 +920,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDevErrorDetect"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDevErrorDetect"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMDrvModeSwitch(){
@@ -936,11 +936,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDrvModeSwitch"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDrvModeSwitch"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMDynamicConfiguration(){
@@ -952,11 +952,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDynamicConfiguration"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMDynamicConfiguration"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMJobPrioritization(){
@@ -968,15 +968,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMJobPrioritization"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMJobPrioritization"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Float getNvMMainFunctionPeriod(){
-			ParameterValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMainFunctionPeriod"])
+			EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMainFunctionPeriod"])
 		}
 		
 		def void setNvMMainFunctionPeriod(Float value){
@@ -984,15 +984,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMainFunctionPeriod"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMainFunctionPeriod"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def String getNvMMultiBlockCallback(){
-			ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMultiBlockCallback"])
+			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMultiBlockCallback"])
 		}
 		
 		def void setNvMMultiBlockCallback(String value){
@@ -1000,11 +1000,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMultiBlockCallback"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMMultiBlockCallback"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMPollingMode(){
@@ -1016,15 +1016,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMPollingMode"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMPollingMode"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMRepeatMirrorOperations(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRepeatMirrorOperations"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRepeatMirrorOperations"])
 		}
 		
 		def void setNvMRepeatMirrorOperations(Integer value){
@@ -1032,11 +1032,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRepeatMirrorOperations"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMRepeatMirrorOperations"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMSetRamBlockStatusApi(){
@@ -1048,15 +1048,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSetRamBlockStatusApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSetRamBlockStatusApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMSizeImmediateJobQueue(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSizeImmediateJobQueue"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSizeImmediateJobQueue"])
 		}
 		
 		def void setNvMSizeImmediateJobQueue(Integer value){
@@ -1064,15 +1064,15 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSizeImmediateJobQueue"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSizeImmediateJobQueue"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getNvMSizeStandardJobQueue(){
-			ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSizeStandardJobQueue"])
+			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSizeStandardJobQueue"])
 		}
 		
 		def void setNvMSizeStandardJobQueue(Integer value){
@@ -1080,11 +1080,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSizeStandardJobQueue"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMSizeStandardJobQueue"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getNvMVersionInfoApi(){
@@ -1096,11 +1096,11 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMVersionInfoApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "NvMVersionInfoApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		

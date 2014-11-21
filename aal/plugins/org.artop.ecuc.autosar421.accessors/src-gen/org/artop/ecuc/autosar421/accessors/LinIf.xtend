@@ -21,8 +21,8 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.ParameterValueAccessor4xUtil
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
 import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
 import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
@@ -40,7 +40,7 @@ import gautosar.gecucparameterdef.GConfigParameter
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
-import static extension org.artop.ecuc.gautosar.accessors.lib.ParameterValueAccessorUtil.*
+import static extension org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil.*
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
@@ -110,11 +110,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfCancelTransmitSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfCancelTransmitSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinIfDevErrorDetect(){
@@ -126,11 +126,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfDevErrorDetect"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfDevErrorDetect"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinIfMultipleDriversSupported(){
@@ -142,11 +142,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMultipleDriversSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMultipleDriversSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinIfMultipleTrcvDriverSupported(){
@@ -158,11 +158,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMultipleTrcvDriverSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMultipleTrcvDriverSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinIfNcOptionalRequestSupported(){
@@ -174,11 +174,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfNcOptionalRequestSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfNcOptionalRequestSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def List<String> getLinIfPublicCddHeaderFiles(){
@@ -203,11 +203,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTpSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTpSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinIfTrcvDriverSupported(){
@@ -219,11 +219,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTrcvDriverSupported"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTrcvDriverSupported"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinIfVersionInfoApi(){
@@ -235,11 +235,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfVersionInfoApi"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfVersionInfoApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		
@@ -266,7 +266,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		def Float getLinIfTimeBase(){
-			ParameterValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTimeBase"])
+			EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTimeBase"])
 		}
 		
 		def void setLinIfTimeBase(Float value){
@@ -274,11 +274,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTimeBase"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTimeBase"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		
@@ -321,11 +321,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfGotoSleepConfirmationUL"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfGotoSleepConfirmationUL"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum LinIfGotoSleepConfirmationUL {
@@ -342,11 +342,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setLinIfGotoSleepConfirmationULValue(GParameterValue paramValue, LinIfGotoSleepConfirmationUL value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			def Integer getLinIfMaxFrameCnt(){
-				ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMaxFrameCnt"])
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMaxFrameCnt"])
 			}
 			
 			def void setLinIfMaxFrameCnt(Integer value){
@@ -354,11 +354,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMaxFrameCnt"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMaxFrameCnt"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def LinIfScheduleRequestConfirmationUL getLinIfScheduleRequestConfirmationUL(){
@@ -370,11 +370,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleRequestConfirmationUL"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleRequestConfirmationUL"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum LinIfScheduleRequestConfirmationUL {
@@ -391,7 +391,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setLinIfScheduleRequestConfirmationULValue(GParameterValue paramValue, LinIfScheduleRequestConfirmationUL value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			def LinIfStartupState getLinIfStartupState(){
@@ -403,11 +403,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfStartupState"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfStartupState"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum LinIfStartupState {
@@ -424,7 +424,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setLinIfStartupStateValue(GParameterValue paramValue, LinIfStartupState value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			def LinIfWakeupConfirmationUL getLinIfWakeupConfirmationUL(){
@@ -436,11 +436,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfWakeupConfirmationUL"])
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfWakeupConfirmationUL"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			enum LinIfWakeupConfirmationUL {
@@ -457,7 +457,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setLinIfWakeupConfirmationULValue(GParameterValue paramValue, LinIfWakeupConfirmationUL value){
-				ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 			}
 			
 			
@@ -548,11 +548,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfChecksumType"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfChecksumType"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				enum LinIfChecksumType {
@@ -569,11 +569,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				def void setLinIfChecksumTypeValue(GParameterValue paramValue, LinIfChecksumType value){
-					ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 				}
 				
 				def Integer getLinIfFrameId(){
-					ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameId"])
+					EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameId"])
 				}
 				
 				def void setLinIfFrameId(Integer value){
@@ -581,11 +581,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFrameId"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFrameId"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				def LinIfFrameType getLinIfFrameType(){
@@ -597,11 +597,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFrameType"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFrameType"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				enum LinIfFrameType {
@@ -638,7 +638,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				def void setLinIfFrameTypeValue(GParameterValue paramValue, LinIfFrameType value){
-					ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 				}
 				
 				
@@ -720,7 +720,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						def Integer getLinIfFixedFrameSduBytePos(){
-							ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduBytePos"])
+							EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduBytePos"])
 						}
 						
 						def void setLinIfFixedFrameSduBytePos(Integer value){
@@ -728,15 +728,15 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFixedFrameSduBytePos"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFixedFrameSduBytePos"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						def Integer getLinIfFixedFrameSduByteVal(){
-							ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduByteVal"])
+							EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduByteVal"])
 						}
 						
 						def void setLinIfFixedFrameSduByteVal(Integer value){
@@ -744,11 +744,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFixedFrameSduByteVal"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFixedFrameSduByteVal"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						
@@ -850,7 +850,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						def String getLinIfRxIndicationUL(){
-							ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfRxIndicationUL"])
+							EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfRxIndicationUL"])
 						}
 						
 						def void setLinIfRxIndicationUL(String value){
@@ -858,11 +858,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfRxIndicationUL"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfRxIndicationUL"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						def LinIfUserRxIndicationUL getLinIfUserRxIndicationUL(){
@@ -874,11 +874,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfUserRxIndicationUL"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfUserRxIndicationUL"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						enum LinIfUserRxIndicationUL {
@@ -895,7 +895,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						def void setLinIfUserRxIndicationULValue(GParameterValue paramValue, LinIfUserRxIndicationUL value){
-							ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 						}
 						
 						
@@ -958,7 +958,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						def String getLinIfTxConfirmationUL(){
-							ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxConfirmationUL"])
+							EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxConfirmationUL"])
 						}
 						
 						def void setLinIfTxConfirmationUL(String value){
@@ -966,15 +966,15 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxConfirmationUL"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxConfirmationUL"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						def Integer getLinIfTxPduId(){
-							ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxPduId"])
+							EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxPduId"])
 						}
 						
 						def void setLinIfTxPduId(Integer value){
@@ -982,15 +982,15 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxPduId"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxPduId"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						def String getLinIfTxTriggerTransmitUL(){
-							ParameterValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxTriggerTransmitUL"])
+							EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxTriggerTransmitUL"])
 						}
 						
 						def void setLinIfTxTriggerTransmitUL(String value){
@@ -998,11 +998,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxTriggerTransmitUL"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxTriggerTransmitUL"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						def LinIfUserTxUL getLinIfUserTxUL(){
@@ -1014,11 +1014,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfUserTxUL"])
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfUserTxUL"])
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
 						enum LinIfUserTxUL {
@@ -1035,7 +1035,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						def void setLinIfUserTxULValue(GParameterValue paramValue, LinIfUserTxUL value){
-							ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+							EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 						}
 						
 						
@@ -1076,7 +1076,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					def Integer getLinIfFramePriority(){
-						ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"])
+						EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"])
 					}
 					
 					def void setLinIfFramePriority(Integer value){
@@ -1084,11 +1084,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFramePriority"])
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFramePriority"])
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
 					
@@ -1129,7 +1129,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				def Float getLinIfJitter(){
-					ParameterValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"])
+					EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"])
 				}
 				
 				def void setLinIfJitter(Float value){
@@ -1137,11 +1137,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfJitter"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfJitter"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				
@@ -1177,11 +1177,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfResumePosition"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfResumePosition"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				enum LinIfResumePosition {
@@ -1198,7 +1198,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				def void setLinIfResumePositionValue(GParameterValue paramValue, LinIfResumePosition value){
-					ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 				}
 				
 				def LinIfRunMode getLinIfRunMode(){
@@ -1210,11 +1210,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfRunMode"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfRunMode"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				enum LinIfRunMode {
@@ -1231,11 +1231,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				def void setLinIfRunModeValue(GParameterValue paramValue, LinIfRunMode value){
-					ParameterValueAccessor4xUtil.setParameterValue(paramValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 				}
 				
 				def Integer getLinIfScheduleTableIndex(){
-					ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleTableIndex"])
+					EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleTableIndex"])
 				}
 				
 				def void setLinIfScheduleTableIndex(Integer value){
@@ -1243,11 +1243,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleTableIndex"])
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleTableIndex"])
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				
@@ -1282,7 +1282,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					def Float getLinIfDelay(){
-						ParameterValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"])
+						EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"])
 					}
 					
 					def void setLinIfDelay(Float value){
@@ -1290,15 +1290,15 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfDelay"])
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfDelay"])
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
 					def Integer getLinIfEntryIndex(){
-						ParameterValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfEntryIndex"])
+						EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfEntryIndex"])
 					}
 					
 					def void setLinIfEntryIndex(Integer value){
@@ -1306,11 +1306,11 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = ParameterValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfEntryIndex"])
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinIfEntryIndex"])
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						ParameterValueAccessor4xUtil.setParameterValue(parameterValue, value)
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
 					

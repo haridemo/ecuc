@@ -1,0 +1,136 @@
+/**
+ * <copyright>
+ * 
+ * Copyright (c) itemis and others.
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
+ * 
+ * Contributors: 
+ *     itemis - Initial API and implementation
+ * 
+ * </copyright>
+ */
+package org.artop.ecuc.autosar4x.accessors.lib
+
+import autosar40.ecucdescription.EcucAddInfoParamValue
+import autosar40.ecucdescription.EcucNumericalParamValue
+import autosar40.ecucdescription.EcucTextualParamValue
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
+import autosar40.util.Autosar40Factory
+import gautosar.gecucparameterdef.GConfigParameter
+import java.util.List
+import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil
+import org.eclipse.core.runtime.CoreException
+import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
+
+class IntegerValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, Integer> {
+	
+	private GConfigParameter parameterDef
+	
+	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<Integer> targetType, GConfigParameter parameterDef) {
+		super(delegateList, wrapperType, targetType)
+		
+		this.parameterDef = parameterDef
+	}
+	
+	override protected wrap(Integer object) throws CoreException {
+		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
+		parameterValue.gSetDefinition(parameterDef)
+		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		parameterValue
+	}
+	
+	override protected unwrap(EcucNumericalParamValue parameterValue) {
+		EcucValueAccessorUtil.toInteger(parameterValue.value?.mixedText)
+	}
+}
+
+class FloatValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, Float> {
+	
+	private GConfigParameter parameterDef
+	
+	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<Float> targetType, GConfigParameter parameterDef) {
+		super(delegateList, wrapperType, targetType)
+		
+		this.parameterDef = parameterDef
+	}
+	
+	override protected wrap(Float object) throws CoreException {
+		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
+		parameterValue.gSetDefinition(parameterDef)
+		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		parameterValue
+	}
+	
+	override protected unwrap(EcucNumericalParamValue parameterValue) {
+		EcucValueAccessorUtil.toFloat(parameterValue.value?.mixedText)
+	}
+}
+
+class BooleanValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, Boolean> {
+	
+	private GConfigParameter parameterDef
+	
+	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<Boolean> targetType, GConfigParameter parameterDef) {
+		super(delegateList, wrapperType, targetType)
+		
+		this.parameterDef = parameterDef
+	}
+	
+	override protected wrap(Boolean object) throws CoreException {
+		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
+		parameterValue.gSetDefinition(parameterDef)
+		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		parameterValue
+	}
+	
+	override protected unwrap(EcucNumericalParamValue parameterValue) {
+		EcucValueAccessorUtil.toBoolean(parameterValue.value?.mixedText)
+	}
+}
+
+class StringValueUnwrappingEList extends AbstractUnwrappingEList<EcucTextualParamValue, String> {
+	
+	private GConfigParameter parameterDef
+	
+	new(List<EcucTextualParamValue> delegateList, Class<EcucTextualParamValue> wrapperType, Class<String> targetType, GConfigParameter parameterDef) {
+		super(delegateList, wrapperType, targetType)
+		
+		this.parameterDef = parameterDef
+	}
+	
+	override protected wrap(String object) throws CoreException {
+		val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
+		parameterValue.gSetDefinition(parameterDef)
+		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		parameterValue
+	}
+	
+	override protected unwrap(EcucTextualParamValue parameterValue) {
+		parameterValue.value
+	}
+}
+
+class DocumentationBlockValueUnwrappingEList extends AbstractUnwrappingEList<EcucAddInfoParamValue, DocumentationBlock> {
+	
+	private GConfigParameter parameterDef
+	
+	new(List<EcucAddInfoParamValue> delegateList, Class<EcucAddInfoParamValue> wrapperType, Class<DocumentationBlock> targetType, GConfigParameter parameterDef) {
+		super(delegateList, wrapperType, targetType)
+		
+		this.parameterDef = parameterDef
+	}
+	
+	override protected wrap(DocumentationBlock object) throws CoreException {
+		val parameterValue = Autosar40Factory.eINSTANCE.createEcucAddInfoParamValue
+		parameterValue.gSetDefinition(parameterDef)
+		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		parameterValue
+	}
+	
+	override protected unwrap(EcucAddInfoParamValue parameterValue) {
+		parameterValue.value
+	}
+}

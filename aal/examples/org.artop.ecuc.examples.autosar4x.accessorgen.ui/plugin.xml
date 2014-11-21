@@ -23,14 +23,14 @@ Contributors:
    <extension point="org.eclipse.ui.navigator.viewer">
       <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
-            <actionExtension pattern="org.artop.ecuc.examples.autosar4x.parametervalueaccessorgen.ui.actions" />
+            <actionExtension pattern="org.artop.ecuc.examples.autosar4x.ecucvalueaccessorgen.ui.actions" />
          </includes>
       </viewerActionBinding>
       <viewerActionBinding
             viewerId="org.artop.aal.examples.explorer.views.autosarExplorer">
          <includes>
             <actionExtension
-                  pattern="org.artop.ecuc.examples.autosar4x.parametervalueaccessorgen.ui.actions">
+                  pattern="org.artop.ecuc.examples.autosar4x.ecucvalueaccessorgen.ui.actions">
             </actionExtension>
          </includes>
       </viewerActionBinding>
@@ -41,8 +41,8 @@ Contributors:
    <extension
          point="org.eclipse.ui.navigator.navigatorContent">
       <actionProvider
-            class="org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.providers.ParameterValueAccessorGenActionProvider"
-            id="org.artop.ecuc.examples.autosar4x.parametervalueaccessorgen.ui.actions">
+            class="org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.providers.EcucValueAccessorGenActionProvider"
+            id="org.artop.ecuc.examples.autosar4x.ecucvalueaccessorgen.ui.actions">
          <enablement>
             <or></or>
          </enablement>

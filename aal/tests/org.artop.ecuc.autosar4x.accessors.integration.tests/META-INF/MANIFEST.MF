@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ECUC Parameter Value Accessors Integration Tests
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.artop.ecuc.autosar4x.accessors.integration.tests;singleton:=true
 Bundle-Version: 4.3.0.qualifier
 Bundle-Activator: org.artop.ecuc.autosar4x.accessors.integration.tests.internal.Activator$Implementation
@@ -12,3 +12,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.artop.ecuc.autosar4x.accessors.integration.tests,
  org.artop.ecuc.autosar4x.accessors.integration.tests.internal
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName

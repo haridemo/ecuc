@@ -1,15 +1,15 @@
 /**
  * <copyright>
- *
+ * 
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- *
- * Contributors:
+ * 
+ * Contributors: 
  *     See4sys - Initial API and implementation
- *
+ * 
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
@@ -28,7 +28,6 @@ import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichReferenceDefType;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -56,13 +55,11 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 
 	@Override
 	protected Object internalGet(Object target) {
-		Assert.isNotNull(destinationTypeDef);
-		Assert.isNotNull(destinationTypeDef.gGetShortName());
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer) {
-				if (destinationTypeDef.gGetShortName().equals(((GContainer) valueValue).gGetDefinition().gGetShortName())) {
+				if (((GContainer) valueValue).gGetDefinition() == destinationTypeDef) {
 					return valueValue;
 				}
 			}

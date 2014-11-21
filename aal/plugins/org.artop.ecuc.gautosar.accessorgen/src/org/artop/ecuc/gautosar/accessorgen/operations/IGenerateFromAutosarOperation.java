@@ -1,15 +1,15 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.accessorgen.operations;
@@ -24,7 +24,7 @@ import org.eclipse.sphinx.platform.operations.IWorkspaceOperation;
 
 public interface IGenerateFromAutosarOperation extends IWorkspaceOperation {
 
-	// FIXME model descriptor
+	// FIXME Add methods using model descriptor
 	// + EMF resource
 	void generate(GARPackage arPackage, IProject targetProject, IProgressMonitor monitor) throws CoreException, OperationCanceledException;
 }
