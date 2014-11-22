@@ -1,16 +1,16 @@
 /**
  * <copyright>
- *
+ * 
  * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- *
- * Contributors:
+ * 
+ * Contributors: 
  *     See4sys - Initial API and implementation
  *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
- *
+ * 
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.impl;
@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.AbstractFilteringEList;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ARObjectType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.concrete.ARPackageType;
@@ -34,7 +35,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
-import org.eclipse.sphinx.emf.util.AbstractFilteringEList;
 import org.eclipse.xtend.typesystem.Feature;
 import org.eclipse.xtend.typesystem.Type;
 

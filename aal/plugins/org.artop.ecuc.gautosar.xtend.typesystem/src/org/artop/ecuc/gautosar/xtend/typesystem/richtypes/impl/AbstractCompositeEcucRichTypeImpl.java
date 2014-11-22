@@ -1,16 +1,16 @@
 /**
  * <copyright>
- *
+ * 
  * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- *
- * Contributors:
+ * 
+ * Contributors: 
  *     See4sys - Initial API and implementation
  *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
- *
+ * 
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
@@ -27,6 +27,7 @@ import java.util.List;
 
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.MultiplicityAwareListType;
+import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.AbstractFilteringEList;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.AbstractMultiplicityAwareFilteringEList;
 import org.artop.ecuc.gautosar.xtend.typesystem.basetypes.impl.MultiplicityAwareListTypeImpl;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.internal.xtend.type.baseimpl.OperationImpl;
 import org.eclipse.internal.xtend.type.baseimpl.PropertyImpl;
-import org.eclipse.sphinx.emf.util.AbstractFilteringEList;
 import org.eclipse.xtend.typesystem.Type;
 
 public abstract class AbstractCompositeEcucRichTypeImpl extends AbstractEcucRichTypeImpl implements CompositeEcucRichType {
