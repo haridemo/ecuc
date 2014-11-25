@@ -12,9 +12,9 @@
  *
  * </copyright>
  */
-package org.artop.ecuc.examples.autosar4x.accessorgen.ui;
+package org.artop.ecuc.examples.autosar421.accessorgen.ui;
 
-import org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal.messages.Messages;
+import org.artop.ecuc.examples.autosar421.accessorgen.ui.internal.messages.Messages;
 
 /**
  * Defines constants for AUTOSAR ECUC Value accessor generation example menus and groups.

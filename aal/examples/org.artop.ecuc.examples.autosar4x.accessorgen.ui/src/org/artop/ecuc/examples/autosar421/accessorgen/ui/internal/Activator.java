@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal;
+package org.artop.ecuc.examples.autosar421.accessorgen.ui.internal;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;

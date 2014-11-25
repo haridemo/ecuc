@@ -12,7 +12,7 @@
  *
  * </copyright>
  */
-package org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions;
+package org.artop.ecuc.examples.autosar421.accessorgen.ui.actions;
 
 import org.artop.ecuc.autosar4x.accessorgen.internal.messages.Messages;
 import org.artop.ecuc.autosar4x.accessorgen.operations.GenerateEcucValueAccessorOperation;

@@ -78,7 +78,13 @@ public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGener
   public String getParameterValueTypeName(final GConfigParameter parameterDef) {
     String _xifexpression = null;
     boolean _or = false;
-    if (((parameterDef instanceof GIntegerParamDef) || (parameterDef instanceof GFloatParamDef))) {
+    boolean _or_1 = false;
+    if ((parameterDef instanceof GIntegerParamDef)) {
+      _or_1 = true;
+    } else {
+      _or_1 = (parameterDef instanceof GFloatParamDef);
+    }
+    if (_or_1) {
       _or = true;
     } else {
       _or = (parameterDef instanceof GBooleanParamDef);

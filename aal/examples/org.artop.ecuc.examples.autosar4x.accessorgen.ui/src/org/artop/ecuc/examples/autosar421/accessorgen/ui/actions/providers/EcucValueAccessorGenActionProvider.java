@@ -12,12 +12,12 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.providers;
+package org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.providers;
 
 import org.artop.aal.examples.actions.providers.AbstractArtopExampleActionProvider;
 import org.artop.aal.examples.common.ui.IArtopExampleMenuConstants;
-import org.artop.ecuc.examples.autosar4x.accessorgen.ui.IAutosarEcucValueAccessorGenExampleMenuConstants;
-import org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.GenerateEcucValueAccessorGenAction;
+import org.artop.ecuc.examples.autosar421.accessorgen.ui.IAutosarEcucValueAccessorGenExampleMenuConstants;
+import org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.GenerateEcucValueAccessorGenAction;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;

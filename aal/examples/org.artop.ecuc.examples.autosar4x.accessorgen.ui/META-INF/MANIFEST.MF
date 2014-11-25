@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.artop.ecuc.examples.autosar4x.accessorgen.ui;singleton:=true
+Bundle-SymbolicName: org.artop.ecuc.examples.autosar421.accessorgen.ui;singleton:=true
 Bundle-Version: 4.3.0.qualifier
-Bundle-Activator: org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal.Activator$Implementation
+Bundle-Activator: org.artop.ecuc.examples.autosar421.accessorgen.ui.internal.Activator$Implementation
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.sphinx.emf.ui,
  org.artop.ecuc.gautosar.accessorgen.ui,
@@ -13,10 +13,10 @@ Require-Bundle: org.eclipse.sphinx.emf.ui,
  org.artop.aal.autosar421
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.artop.ecuc.examples.autosar4x.accessorgen.ui,
- org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions,
- org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.providers,
- org.artop.ecuc.examples.autosar4x.accessorgen.ui.handlers,
- org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal;x-internal:=true,
- org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal.messages;x-internal:=true
+Export-Package: org.artop.ecuc.examples.autosar421.accessorgen.ui,
+ org.artop.ecuc.examples.autosar421.accessorgen.ui.actions,
+ org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.providers,
+ org.artop.ecuc.examples.autosar421.accessorgen.ui.handlers,
+ org.artop.ecuc.examples.autosar421.accessorgen.ui.internal;x-internal:=true,
+ org.artop.ecuc.examples.autosar421.accessorgen.ui.internal.messages;x-internal:=true
 Bundle-Localization: plugin

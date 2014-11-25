@@ -12,7 +12,6 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.artop.ecuc.autosar4x.accessorgen,
  org.artop.ecuc.autosar4x.accessorgen.internal;x-internal:=true,
- org.artop.ecuc.autosar4x.accessorgen.internal.messages;x-friends:="org.artop.ecuc.examples.autosar4x.accessorgen.ui",
- org.artop.ecuc.autosar4x.accessorgen.operations,
- org.artop.ecuc.autosar4x.accessorgen
+ org.artop.ecuc.autosar4x.accessorgen.internal.messages;x-friends:="org.artop.ecuc.examples.autosar421.accessorgen.ui",
+ org.artop.ecuc.autosar4x.accessorgen.operations
 Bundle-Localization: plugin

@@ -12,10 +12,10 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.examples.autosar4x.accessorgen.ui.handlers;
+package org.artop.ecuc.examples.autosar421.accessorgen.ui.handlers;
 
 import org.artop.ecuc.autosar4x.accessorgen.operations.GenerateEcucValueAccessorOperation;
-import org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.GenerateEcucValueAccessorGenAction;
+import org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.GenerateEcucValueAccessorGenAction;
 import org.artop.ecuc.gautosar.accessorgen.ui.handlers.AbstractGenerateFromAutosarHandler;
 import org.eclipse.core.commands.IHandler2;
 import org.eclipse.core.resources.IFile;

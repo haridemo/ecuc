@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal.messages;
+package org.artop.ecuc.examples.autosar421.accessorgen.ui.internal.messages;
 
 import org.eclipse.osgi.util.NLS;
 

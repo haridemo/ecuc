@@ -41,7 +41,7 @@ Contributors:
    <extension
          point="org.eclipse.ui.navigator.navigatorContent">
       <actionProvider
-            class="org.artop.ecuc.examples.autosar4x.accessorgen.ui.actions.providers.EcucValueAccessorGenActionProvider"
+            class="org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.providers.EcucValueAccessorGenActionProvider"
             id="org.artop.ecuc.examples.autosar4x.ecucvalueaccessorgen.ui.actions">
          <enablement>
             <or></or>
