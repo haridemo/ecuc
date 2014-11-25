@@ -28,6 +28,7 @@ import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ParamConfContainerDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.metatypes.ReferenceDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichReferenceDefType;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend.typesystem.Type;
 
@@ -55,11 +56,13 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 
 	@Override
 	protected Object internalGet(Object target) {
+		Assert.isNotNull(destinationTypeDef);
+		Assert.isNotNull(destinationTypeDef.gGetShortName());
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer) {
-				if (((GContainer) valueValue).gGetDefinition() == destinationTypeDef) {
+				if (destinationTypeDef.gGetShortName().equals(((GContainer) valueValue).gGetDefinition().gGetShortName())) {
 					return valueValue;
 				}
 			}

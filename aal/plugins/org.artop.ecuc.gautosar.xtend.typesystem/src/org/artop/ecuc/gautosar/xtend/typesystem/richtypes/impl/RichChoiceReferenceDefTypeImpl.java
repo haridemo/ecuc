@@ -133,8 +133,11 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 		if (value.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer) {
-				if (destinationTypeDefs.contains(((GContainer) valueValue).gGetDefinition())) {
-					return valueValue;
+				String targetDefShortName = ((GContainer) valueValue).gGetDefinition().gGetShortName();
+				for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {
+					if (destinationTypeDef.gGetShortName().equals(targetDefShortName)) {
+						return valueValue;
+					}
 				}
 			}
 		}
