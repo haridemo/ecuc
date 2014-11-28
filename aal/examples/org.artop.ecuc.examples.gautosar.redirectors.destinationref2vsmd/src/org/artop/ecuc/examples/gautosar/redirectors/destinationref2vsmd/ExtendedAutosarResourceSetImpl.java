@@ -14,6 +14,8 @@
  */
 package org.artop.ecuc.examples.gautosar.redirectors.destinationref2vsmd;
 
+import gautosar.gecucparameterdef.GChoiceReferenceDef;
+import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GModuleDef;
 import gautosar.gecucparameterdef.GReferenceDef;
@@ -48,28 +50,39 @@ public class ExtendedAutosarResourceSetImpl extends AutosarResourceSetImpl {
 	public EObject getEObject(EObject proxy, EObject contextObject, boolean loadOnDemand) {
 		if (contextObject instanceof GReferenceDef) {
 			GReferenceDef referenceDef = (GReferenceDef) contextObject;
-			GContainerDef destination = getRefDestination(referenceDef);
+			GContainerDef destination = getDestination(referenceDef);
 			if (proxy == destination) {
-				GModuleDef moduleDef = getModuleDef(referenceDef);
-				if (isVSMD(moduleDef)) {
-					String aqn = AutosarURIFactory.getAbsoluteQualifiedName(proxy);
-					String containerDefName = aqn.substring(aqn.lastIndexOf(AutosarURIFactory.SEGMENT_SEPARATOR) + 1);
-					// First search in the scope of the current ModuleDef
-					destination = getContainerDef(Collections.singletonList(moduleDef), containerDefName);
-					// If the ContainerDef if not found in the current ModuleDef, search in the scope of all
-					// ModuleDef(s) and return the first one found
-					if (destination == null) {
-						List<GModuleDef> allModuleDefs = EObjectUtil.getAllInstancesOf(moduleDef.eResource(), GModuleDef.class, false);
-						destination = getContainerDef(allModuleDefs, containerDefName);
-					}
-					if (destination != null) {
-						return destination;
-					}
+				EObject resolvedDestination = resolveDestination(proxy, referenceDef);
+				if (resolvedDestination != null) {
+					return resolvedDestination;
 				}
 			}
+		} else if (contextObject instanceof GChoiceReferenceDef) {
+			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) contextObject;
+			EObject resolvedDestination = resolveDestination(proxy, choiceReferenceDef);
+			if (resolvedDestination != null) {
+				return resolvedDestination;
+			}
 		}
-
 		return super.getEObject(proxy, contextObject, loadOnDemand);
+	}
+
+	private EObject resolveDestination(EObject proxy, GConfigReference contextReference) {
+		GModuleDef moduleDef = getModuleDef(contextReference);
+		if (isVSMD(moduleDef)) {
+			String aqn = AutosarURIFactory.getAbsoluteQualifiedName(proxy);
+			String containerDefName = aqn.substring(aqn.lastIndexOf(AutosarURIFactory.SEGMENT_SEPARATOR) + 1);
+			// First search in the scope of the current ModuleDef
+			GContainerDef destination = getContainerDef(Collections.singletonList(moduleDef), containerDefName);
+			// If the ContainerDef if not found in the current ModuleDef, search in the scope of all
+			// ModuleDef(s) and return the first one found
+			if (destination == null) {
+				List<GModuleDef> allModuleDefs = EObjectUtil.getAllInstancesOf(moduleDef.eResource(), GModuleDef.class, false);
+				destination = getContainerDef(allModuleDefs, containerDefName);
+			}
+			return destination;
+		}
+		return null;
 	}
 
 	private GContainerDef getContainerDef(List<GModuleDef> moduleDefs, String containerDefName) {
@@ -89,17 +102,17 @@ public class ExtendedAutosarResourceSetImpl extends AutosarResourceSetImpl {
 		return result;
 	}
 
-	private GContainerDef getRefDestination(GReferenceDef referenceDef) {
+	private GContainerDef getDestination(GReferenceDef referenceDef) {
 		try {
 			// !!! Do not use gGetRefDestination() to prevent StackOverflow !!!
 			return (GContainerDef) ReflectUtil.getInvisibleFieldValue(referenceDef, "destination"); //$NON-NLS-1$
 		} catch (Exception ex) {
 			PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 		}
-		return referenceDef.gGetRefDestination();
+		return null;
 	}
 
-	private GModuleDef getModuleDef(GReferenceDef referenceDef) {
+	private GModuleDef getModuleDef(GConfigReference referenceDef) {
 		EObject container = referenceDef.eContainer();
 		while (container != null && !(container instanceof GModuleDef)) {
 			container = container.eContainer();
