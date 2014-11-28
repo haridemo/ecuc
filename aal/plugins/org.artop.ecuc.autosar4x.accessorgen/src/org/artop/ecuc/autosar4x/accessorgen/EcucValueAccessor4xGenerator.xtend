@@ -27,6 +27,8 @@ import gautosar.gecucparameterdef.GFloatParamDef
 import gautosar.gecucparameterdef.GIntegerParamDef
 import org.artop.ecuc.gautosar.accessorgen.AbstractEcucValueAccessorGenerator
 import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
+import gautosar.gecucparameterdef.GConfigReference
+import autosar40.ecucdescription.EcucReferenceValue
 
 public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGenerator {
 	
@@ -65,6 +67,10 @@ public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGener
 		} else {
 			EcucTextualParamValue.simpleName
 		}
+	}
+	
+	def override String getReferenceValueTypeName(){
+		EcucReferenceValue.simpleName
 	}
 	
 	def dispatch String getParameterValueValueTypeName(EcucAddInfoParamDef p, EcucParamConfContainerDef cont){

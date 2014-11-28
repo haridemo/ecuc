@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -670,14 +672,36 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList getXcpEventChannelTriggeredDaqListRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList), "XcpEventChannelTriggeredDaqListRef")
-			}
-					
-			def void setXcpEventChannelTriggeredDaqListRef(org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList object){
+			def List<org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList> getXcpEventChannelTriggeredDaqListRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "XcpEventChannelTriggeredDaqListRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "XcpEventChannelTriggeredDaqListRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "XcpEventChannelTriggeredDaqListRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

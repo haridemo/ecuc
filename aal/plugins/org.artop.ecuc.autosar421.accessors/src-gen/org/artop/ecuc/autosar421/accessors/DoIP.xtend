@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -795,14 +797,36 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress getDoIPTargetAddressRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress), "DoIPTargetAddressRef")
-			}
-					
-			def void setDoIPTargetAddressRef(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress object){
+			def List<org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress> getDoIPTargetAddressRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DoIPTargetAddressRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DoIPTargetAddressRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DoIPTargetAddressRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -1022,14 +1046,36 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation getDoIPRoutingActivationRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation), "DoIPRoutingActivationRef")
-			}
-					
-			def void setDoIPRoutingActivationRef(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation object){
+			def List<org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation> getDoIPRoutingActivationRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DoIPRoutingActivationRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DoIPRoutingActivationRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DoIPRoutingActivationRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

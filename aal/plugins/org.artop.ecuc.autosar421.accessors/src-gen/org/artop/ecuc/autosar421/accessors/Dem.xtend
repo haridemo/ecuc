@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -245,14 +247,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent getDemImmediateChildComponentRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent), "DemImmediateChildComponentRef")
-			}
-					
-			def void setDemImmediateChildComponentRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent object){
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent> getDemImmediateChildComponentRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemImmediateChildComponentRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemImmediateChildComponentRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemImmediateChildComponentRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -1943,14 +1967,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode getDemJ1939NmNodeRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode), "DemJ1939NmNodeRef")
-			}
-					
-			def void setDemJ1939NmNodeRef(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode object){
+			def List<org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode> getDemJ1939NmNodeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939NmNodeRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939NmNodeRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemJ1939NmNodeRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -4255,14 +4301,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition getDemEnableConditionRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition), "DemEnableConditionRef")
-			}
-					
-			def void setDemEnableConditionRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition object){
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition> getDemEnableConditionRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemEnableConditionRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemEnableConditionRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemEnableConditionRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -4290,14 +4358,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass getDemExtendedDataRecordClassRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass), "DemExtendedDataRecordClassRef")
-			}
-					
-			def void setDemExtendedDataRecordClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass object){
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass> getDemExtendedDataRecordClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemExtendedDataRecordClassRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemExtendedDataRecordClassRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemExtendedDataRecordClassRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -4440,14 +4530,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass getDemDidClassRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass), "DemDidClassRef")
-			}
-					
-			def void setDemDidClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass object){
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass> getDemDidClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDidClassRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemDidClassRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemDidClassRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -4475,14 +4587,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass getDemFreezeFrameRecordClassRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass), "DemFreezeFrameRecordClassRef")
-			}
-					
-			def void setDemFreezeFrameRecordClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass object){
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass> getDemFreezeFrameRecordClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameRecordClassRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameRecordClassRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemFreezeFrameRecordClassRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -4886,14 +5020,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass getDemSPNClassRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass), "DemSPNClassRef")
-				}
-						
-				def void setDemSPNClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass object){
+				def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass> getDemSPNClassRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemSPNClassRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "DemSPNClassRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "DemSPNClassRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -5625,14 +5781,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def org.artop.ecuc.autosar421.accessors.FiM.FiMFID getDemSecondaryFunctionIdRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMFID), "DemSecondaryFunctionIdRef")
-			}
-					
-			def void setDemSecondaryFunctionIdRef(org.artop.ecuc.autosar421.accessors.FiM.FiMFID object){
+			def List<org.artop.ecuc.autosar421.accessors.FiM.FiMFID> getDemSecondaryFunctionIdRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemSecondaryFunctionIdRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemSecondaryFunctionIdRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemSecondaryFunctionIdRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.FiM.FiMFID>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMFID)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.FiM.FiMFID object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.FiM.FiMFID(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -5727,14 +5905,36 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition getDemStorageConditionRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition), "DemStorageConditionRef")
-			}
-					
-			def void setDemStorageConditionRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition object){
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition> getDemStorageConditionRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemStorageConditionRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

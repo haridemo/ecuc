@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -461,14 +463,36 @@ class J1939Rm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel getJ1939RmNodeChannelRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel), "J1939RmNodeChannelRef")
-			}
-					
-			def void setJ1939RmNodeChannelRef(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel object){
+			def List<org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel> getJ1939RmNodeChannelRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmNodeChannelRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmNodeChannelRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "J1939RmNodeChannelRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

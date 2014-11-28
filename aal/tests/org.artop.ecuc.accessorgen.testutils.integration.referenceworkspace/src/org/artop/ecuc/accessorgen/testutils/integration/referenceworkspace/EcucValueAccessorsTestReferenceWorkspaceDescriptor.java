@@ -45,6 +45,7 @@ public class EcucValueAccessorsTestReferenceWorkspaceDescriptor extends Abstract
 
 	// Test Model Objects uri fragments
 	public static final String URI_FRAGMENT_ADC_MODULE_CONFIGURATION = "/Values/AdcValues?type=EcucModuleConfigurationValues";
+	public static final String URI_FRAGMENT_ADC_CHANNEL2_CONTAINER_VALUE = "/Values/AdcValues/AdcConfigSetValues/AdcHwUnitValues/AdcChannelValues2?type=EcucContainerValue";
 	public static final String URI_FRAGMENT_NVM_MODULE_CONFIGURATION = "/Values/NvMValues?type=EcucModuleConfigurationValues";
 	public static final String URI_FRAGMENT_BSW_MODULE_CONFIGURATION = "/Values/BswMValues?type=EcucModuleConfigurationValues";
 	public static final String URI_FRAGMENT_BSWMODEVALUES_CONTAINER_VALUE = "/Values/BswMValues/BswMConfigValues/BswMArbitrationValues/BswMModeConditionValues/BswMConditionValueVals/BswModeValues?type=EcucContainerValue";

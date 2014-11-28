@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -909,14 +911,36 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob getSpiJobAssignment(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob), "SpiJobAssignment")
-			}
-					
-			def void setSpiJobAssignment(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob object){
+			def List<org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob> getSpiJobAssignments(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SpiJobAssignment"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "SpiJobAssignment"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "SpiJobAssignment")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiJob(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

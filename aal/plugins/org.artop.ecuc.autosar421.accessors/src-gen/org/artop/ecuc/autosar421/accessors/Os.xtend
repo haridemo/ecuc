@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -182,14 +184,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsAlarmAccessingApplication(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsAlarmAccessingApplication")
-		}
-				
-		def void setOsAlarmAccessingApplication(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsAlarmAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmAccessingApplication"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmAccessingApplication"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsAlarmAccessingApplication")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsApplication(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -513,14 +537,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Os.OsAppMode getOsAlarmAppModeRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode), "OsAlarmAppModeRef")
-			}
-					
-			def void setOsAlarmAppModeRef(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object){
+			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsAlarmAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmAppModeRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmAppModeRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "OsAlarmAppModeRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAppMode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Os.OsAppMode(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -620,25 +666,69 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsAlarm getOsAppAlarmRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsAlarm), "OsAppAlarmRef")
-		}
-				
-		def void setOsAppAlarmRef(org.artop.ecuc.autosar421.accessors.Os.OsAlarm object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsAlarm> getOsAppAlarmRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppAlarmRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppAlarmRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsAppAlarmRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAlarm>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAlarm)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAlarm object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsAlarm(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsCounter getOsAppCounterRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter), "OsAppCounterRef")
-		}
-				
-		def void setOsAppCounterRef(org.artop.ecuc.autosar421.accessors.Os.OsCounter object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsCounter> getOsAppCounterRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppCounterRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppCounterRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsAppCounterRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsCounter>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsCounter object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsCounter(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -653,36 +743,102 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsIsr getOsAppIsrRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsIsr), "OsAppIsrRef")
-		}
-				
-		def void setOsAppIsrRef(org.artop.ecuc.autosar421.accessors.Os.OsIsr object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsIsr> getOsAppIsrRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppIsrRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppIsrRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsAppIsrRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsIsr>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsIsr)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsIsr object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsIsr(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable getOsAppScheduleTableRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable), "OsAppScheduleTableRef")
-		}
-				
-		def void setOsAppScheduleTableRef(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable> getOsAppScheduleTableRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppScheduleTableRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppScheduleTableRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsAppScheduleTableRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsAppTaskRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsAppTaskRef")
-		}
-				
-		def void setOsAppTaskRef(org.artop.ecuc.autosar421.accessors.Os.OsTask object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsTask> getOsAppTaskRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppTaskRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppTaskRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsAppTaskRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsTask>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsTask object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsTask(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -957,14 +1113,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsCounterAccessingApplication(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsCounterAccessingApplication")
-		}
-				
-		def void setOsCounterAccessingApplication(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsCounterAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsCounterAccessingApplication"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsCounterAccessingApplication"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsCounterAccessingApplication")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsApplication(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -1483,14 +1661,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsResource getOsIsrResourceRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource), "OsIsrResourceRef")
-		}
-				
-		def void setOsIsrResourceRef(org.artop.ecuc.autosar421.accessors.Os.OsResource object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsResource> getOsIsrResourceRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsIsrResourceRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsIsrResourceRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsIsrResourceRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsResource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsResource object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsResource(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -2009,14 +2209,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsResourceAccessingApplication(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsResourceAccessingApplication")
-		}
-				
-		def void setOsResourceAccessingApplication(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsResourceAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsResourceAccessingApplication"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsResourceAccessingApplication"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsResourceAccessingApplication")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsApplication(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -2086,14 +2308,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsSchTblAccessingApplication(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsSchTblAccessingApplication")
-		}
-				
-		def void setOsSchTblAccessingApplication(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsSchTblAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsSchTblAccessingApplication"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsSchTblAccessingApplication"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsSchTblAccessingApplication")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsApplication(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -2206,14 +2450,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Os.OsAppMode getOsScheduleTableAppModeRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode), "OsScheduleTableAppModeRef")
-			}
-					
-			def void setOsScheduleTableAppModeRef(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object){
+			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsScheduleTableAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableAppModeRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableAppModeRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "OsScheduleTableAppModeRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAppMode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Os.OsAppMode(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -2557,14 +2823,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsSpinlockAccessingApplication(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsSpinlockAccessingApplication")
-		}
-				
-		def void setOsSpinlockAccessingApplication(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsSpinlockAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsSpinlockAccessingApplication"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsSpinlockAccessingApplication"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsSpinlockAccessingApplication")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsApplication(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -2667,36 +2955,102 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsTaskAccessingApplication(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsTaskAccessingApplication")
-		}
-				
-		def void setOsTaskAccessingApplication(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsTaskAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskAccessingApplication"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskAccessingApplication"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsTaskAccessingApplication")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsApplication(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsEvent getOsTaskEventRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsEvent), "OsTaskEventRef")
-		}
-				
-		def void setOsTaskEventRef(org.artop.ecuc.autosar421.accessors.Os.OsEvent object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsEvent> getOsTaskEventRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskEventRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskEventRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsTaskEventRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsEvent>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsEvent)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsEvent object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsEvent(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
-		def org.artop.ecuc.autosar421.accessors.Os.OsResource getOsTaskResourceRef(){
-			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource), "OsTaskResourceRef")
-		}
-				
-		def void setOsTaskResourceRef(org.artop.ecuc.autosar421.accessors.Os.OsResource object){
+		def List<org.artop.ecuc.autosar421.accessors.Os.OsResource> getOsTaskResourceRefs(){
 			val containerDef = containerValue.gGetDefinition
-			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskResourceRef"], object.getTarget())
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskResourceRef"] else null
+							
+			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+				override protected accept(GReferenceValue item) {
+					return accept(item, typeof(GConfigReference), "OsTaskResourceRef")
+				}
+			}
+			
+			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsResource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource)) {
+				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsResource object) throws CoreException {
+					if (object != null) {
+						val container = object.getTarget()
+						val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+						referenceValue.gSetDefinition(referenceValueDef)
+						referenceValue.gSetValue(container)
+						return referenceValue
+					}
+				}
+				
+				override protected unwrap(GReferenceValue referenceValue) {
+					if (referenceValue != null) {
+						val referenceValueValue = referenceValue.gGetValue
+						if (referenceValueValue instanceof GContainer) {
+							return new org.artop.ecuc.autosar421.accessors.Os.OsResource(referenceValueValue as GContainer)
+						}
+					}
+				}
 			}
 		}
 		
@@ -2738,14 +3092,36 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Os.OsAppMode getOsTaskAppModeRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode), "OsTaskAppModeRef")
-			}
-					
-			def void setOsTaskAppModeRef(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object){
+			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsTaskAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskAppModeRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskAppModeRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "OsTaskAppModeRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAppMode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Os.OsAppMode(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

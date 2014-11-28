@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -541,14 +543,36 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						def org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence getCanTrcvSpiSequenceName(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence), "CanTrcvSpiSequenceName")
-						}
-								
-						def void setCanTrcvSpiSequenceName(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence object){
+						def List<org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence> getCanTrcvSpiSequenceNames(){
 							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvSpiSequenceName"], object.getTarget())
+							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+								containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvSpiSequenceName"] else null
+											
+							val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+								override protected accept(GReferenceValue item) {
+									return accept(item, typeof(GConfigReference), "CanTrcvSpiSequenceName")
+								}
+							}
+							
+							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence)) {
+								override protected wrap(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence object) throws CoreException {
+									if (object != null) {
+										val container = object.getTarget()
+										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+										referenceValue.gSetDefinition(referenceValueDef)
+										referenceValue.gSetValue(container)
+										return referenceValue
+									}
+								}
+								
+								override protected unwrap(GReferenceValue referenceValue) {
+									if (referenceValue != null) {
+										val referenceValueValue = referenceValue.gGetValue
+										if (referenceValueValue instanceof GContainer) {
+											return new org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence(referenceValueValue as GContainer)
+										}
+									}
+								}
 							}
 						}
 						

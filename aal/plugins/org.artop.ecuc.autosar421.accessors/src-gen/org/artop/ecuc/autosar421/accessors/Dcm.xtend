@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -415,25 +417,69 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDsdSidTabSecurityLevelRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDsdSidTabSecurityLevelRef")
-					}
-							
-					def void setDcmDsdSidTabSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDsdSidTabSecurityLevelRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSidTabSecurityLevelRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSidTabSecurityLevelRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDsdSidTabSecurityLevelRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow getDcmDsdSidTabSessionLevelRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow), "DcmDsdSidTabSessionLevelRef")
-					}
-							
-					def void setDcmDsdSidTabSessionLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow> getDcmDsdSidTabSessionLevelRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSidTabSessionLevelRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSidTabSessionLevelRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDsdSidTabSessionLevelRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
@@ -527,25 +573,69 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							}
 						}
 						
-						def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDsdSubServiceSecurityLevelRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDsdSubServiceSecurityLevelRef")
-						}
-								
-						def void setDcmDsdSubServiceSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+						def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDsdSubServiceSecurityLevelRefs(){
 							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSubServiceSecurityLevelRef"], object.getTarget())
+							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+								containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSubServiceSecurityLevelRef"] else null
+											
+							val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+								override protected accept(GReferenceValue item) {
+									return accept(item, typeof(GConfigReference), "DcmDsdSubServiceSecurityLevelRef")
+								}
+							}
+							
+							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+								override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+									if (object != null) {
+										val container = object.getTarget()
+										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+										referenceValue.gSetDefinition(referenceValueDef)
+										referenceValue.gSetValue(container)
+										return referenceValue
+									}
+								}
+								
+								override protected unwrap(GReferenceValue referenceValue) {
+									if (referenceValue != null) {
+										val referenceValueValue = referenceValue.gGetValue
+										if (referenceValueValue instanceof GContainer) {
+											return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+										}
+									}
+								}
 							}
 						}
 						
-						def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow getDcmDsdSubServiceSessionLevelRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow), "DcmDsdSubServiceSessionLevelRef")
-						}
-								
-						def void setDcmDsdSubServiceSessionLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object){
+						def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow> getDcmDsdSubServiceSessionLevelRefs(){
 							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSubServiceSessionLevelRef"], object.getTarget())
+							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+								containerDef.gGetReferences.findFirst[gGetShortName == "DcmDsdSubServiceSessionLevelRef"] else null
+											
+							val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+								override protected accept(GReferenceValue item) {
+									return accept(item, typeof(GConfigReference), "DcmDsdSubServiceSessionLevelRef")
+								}
+							}
+							
+							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow)) {
+								override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object) throws CoreException {
+									if (object != null) {
+										val container = object.getTarget()
+										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+										referenceValue.gSetDefinition(referenceValueDef)
+										referenceValue.gSetValue(container)
+										return referenceValue
+									}
+								}
+								
+								override protected unwrap(GReferenceValue referenceValue) {
+									if (referenceValue != null) {
+										val referenceValueValue = referenceValue.gGetValue
+										if (referenceValueValue instanceof GContainer) {
+											return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow(referenceValueValue as GContainer)
+										}
+									}
+								}
 							}
 						}
 						
@@ -2126,25 +2216,69 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDspCommonAuthorizationSecurityLevelRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDspCommonAuthorizationSecurityLevelRef")
-				}
-						
-				def void setDcmDspCommonAuthorizationSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+				def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDspCommonAuthorizationSecurityLevelRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspCommonAuthorizationSecurityLevelRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspCommonAuthorizationSecurityLevelRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "DcmDspCommonAuthorizationSecurityLevelRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow getDcmDspCommonAuthorizationSessionRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow), "DcmDspCommonAuthorizationSessionRef")
-				}
-						
-				def void setDcmDspCommonAuthorizationSessionRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object){
+				def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow> getDcmDspCommonAuthorizationSessionRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspCommonAuthorizationSessionRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspCommonAuthorizationSessionRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "DcmDspCommonAuthorizationSessionRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -3252,14 +3386,36 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid getDcmDspDidRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid), "DcmDspDidRef")
-				}
-						
-				def void setDcmDspDidRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid object){
+				def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid> getDcmDspDidRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "DcmDspDidRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspDid(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -3484,25 +3640,69 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDspDidControlSecurityLevelRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDspDidControlSecurityLevelRef")
-					}
-							
-					def void setDcmDspDidControlSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDspDidControlSecurityLevelRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidControlSecurityLevelRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidControlSecurityLevelRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDspDidControlSecurityLevelRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow getDcmDspDidControlSessionRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow), "DcmDspDidControlSessionRef")
-					}
-							
-					def void setDcmDspDidControlSessionRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow> getDcmDspDidControlSessionRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidControlSessionRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidControlSessionRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDspDidControlSessionRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
@@ -3541,25 +3741,69 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDspDidReadSecurityLevelRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDspDidReadSecurityLevelRef")
-					}
-							
-					def void setDcmDspDidReadSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDspDidReadSecurityLevelRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidReadSecurityLevelRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidReadSecurityLevelRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDspDidReadSecurityLevelRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow getDcmDspDidReadSessionRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow), "DcmDspDidReadSessionRef")
-					}
-							
-					def void setDcmDspDidReadSessionRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow> getDcmDspDidReadSessionRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidReadSessionRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidReadSessionRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDspDidReadSessionRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
@@ -3598,25 +3842,69 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDspDidWriteSecurityLevelRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDspDidWriteSecurityLevelRef")
-					}
-							
-					def void setDcmDspDidWriteSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDspDidWriteSecurityLevelRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidWriteSecurityLevelRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidWriteSecurityLevelRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDspDidWriteSecurityLevelRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow getDcmDspDidWriteSessionRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow), "DcmDspDidWriteSessionRef")
-					}
-							
-					def void setDcmDspDidWriteSessionRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object){
+					def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow> getDcmDspDidWriteSessionRefs(){
 						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidWriteSessionRef"], object.getTarget())
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspDidWriteSessionRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "DcmDspDidWriteSessionRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSession.DcmDspSessionRow(referenceValueValue as GContainer)
+									}
+								}
+							}
 						}
 					}
 					
@@ -3984,14 +4272,36 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							}
 						}
 						
-						def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDspReadMemoryRangeSecurityLevelRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDspReadMemoryRangeSecurityLevelRef")
-						}
-								
-						def void setDcmDspReadMemoryRangeSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+						def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDspReadMemoryRangeSecurityLevelRefs(){
 							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspReadMemoryRangeSecurityLevelRef"], object.getTarget())
+							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+								containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspReadMemoryRangeSecurityLevelRef"] else null
+											
+							val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+								override protected accept(GReferenceValue item) {
+									return accept(item, typeof(GConfigReference), "DcmDspReadMemoryRangeSecurityLevelRef")
+								}
+							}
+							
+							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+								override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+									if (object != null) {
+										val container = object.getTarget()
+										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+										referenceValue.gSetDefinition(referenceValueDef)
+										referenceValue.gSetValue(container)
+										return referenceValue
+									}
+								}
+								
+								override protected unwrap(GReferenceValue referenceValue) {
+									if (referenceValue != null) {
+										val referenceValueValue = referenceValue.gGetValue
+										if (referenceValueValue instanceof GContainer) {
+											return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+										}
+									}
+								}
 							}
 						}
 						
@@ -4062,14 +4372,36 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							}
 						}
 						
-						def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow getDcmDspWriteMemoryRangeSecurityLevelRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow), "DcmDspWriteMemoryRangeSecurityLevelRef")
-						}
-								
-						def void setDcmDspWriteMemoryRangeSecurityLevelRef(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object){
+						def List<org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow> getDcmDspWriteMemoryRangeSecurityLevelRefs(){
 							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspWriteMemoryRangeSecurityLevelRef"], object.getTarget())
+							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+								containerDef.gGetReferences.findFirst[gGetShortName == "DcmDspWriteMemoryRangeSecurityLevelRef"] else null
+											
+							val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+								override protected accept(GReferenceValue item) {
+									return accept(item, typeof(GConfigReference), "DcmDspWriteMemoryRangeSecurityLevelRef")
+								}
+							}
+							
+							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow)) {
+								override protected wrap(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow object) throws CoreException {
+									if (object != null) {
+										val container = object.getTarget()
+										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+										referenceValue.gSetDefinition(referenceValueDef)
+										referenceValue.gSetValue(container)
+										return referenceValue
+									}
+								}
+								
+								override protected unwrap(GReferenceValue referenceValue) {
+									if (referenceValue != null) {
+										val referenceValueValue = referenceValue.gGetValue
+										if (referenceValueValue instanceof GContainer) {
+											return new org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmDsp.DcmDspSecurity.DcmDspSecurityRow(referenceValueValue as GContainer)
+										}
+									}
+								}
 							}
 						}
 						

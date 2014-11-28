@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -772,14 +774,36 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel getAdcGroupDefinition(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel), "AdcGroupDefinition")
-				}
-						
-				def void setAdcGroupDefinition(org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel object){
+				def List<org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel> getAdcGroupDefinitions(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "AdcGroupDefinition"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "AdcGroupDefinition"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "AdcGroupDefinition")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				

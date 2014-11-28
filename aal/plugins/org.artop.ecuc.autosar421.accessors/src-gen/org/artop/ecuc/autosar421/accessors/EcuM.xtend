@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -191,14 +193,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def org.artop.ecuc.autosar421.accessors.Os.OsResource getEcuMOSResource(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource), "EcuMOSResource")
-			}
-					
-			def void setEcuMOSResource(org.artop.ecuc.autosar421.accessors.Os.OsResource object){
+			def List<org.artop.ecuc.autosar421.accessors.Os.OsResource> getEcuMOSResources(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMOSResource"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "EcuMOSResource"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "EcuMOSResource")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsResource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsResource object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Os.OsResource(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -665,14 +689,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getEcuMWakeupSourceMask(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "EcuMWakeupSourceMask")
-				}
-						
-				def void setEcuMWakeupSourceMask(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object){
+				def List<org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource> getEcuMWakeupSourceMasks(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMWakeupSourceMask"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "EcuMWakeupSourceMask"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "EcuMWakeupSourceMask")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -775,14 +821,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf getEcuMResetReasonRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf), "EcuMResetReasonRef")
-				}
-						
-				def void setEcuMResetReasonRef(org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf object){
+				def List<org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf> getEcuMResetReasonRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMResetReasonRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "EcuMResetReasonRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "EcuMResetReasonRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -860,14 +928,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getEcuMComMCommunicationAllowedList(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "EcuMComMCommunicationAllowedList")
-			}
-					
-			def void setEcuMComMCommunicationAllowedList(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
+			def List<org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel> getEcuMComMCommunicationAllowedLists(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMComMCommunicationAllowedList"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "EcuMComMCommunicationAllowedList"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "EcuMComMCommunicationAllowedList")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -1221,14 +1311,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 			
 			
-			def org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition getEcuMPartitionRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition), "EcuMPartitionRef")
-			}
-					
-			def void setEcuMPartitionRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition object){
+			def List<org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition> getEcuMPartitionRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMPartitionRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "EcuMPartitionRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "EcuMPartitionRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -1435,14 +1547,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig getEcuMGoDownAllowedUserRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig), "EcuMGoDownAllowedUserRef")
-				}
-						
-				def void setEcuMGoDownAllowedUserRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig object){
+				def List<org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig> getEcuMGoDownAllowedUserRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMGoDownAllowedUserRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "EcuMGoDownAllowedUserRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "EcuMGoDownAllowedUserRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -1510,14 +1644,36 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig getEcuMSetClockAllowedUserRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig), "EcuMSetClockAllowedUserRef")
-				}
-						
-				def void setEcuMSetClockAllowedUserRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig object){
+				def List<org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig> getEcuMSetClockAllowedUserRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EcuMSetClockAllowedUserRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "EcuMSetClockAllowedUserRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "EcuMSetClockAllowedUserRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				

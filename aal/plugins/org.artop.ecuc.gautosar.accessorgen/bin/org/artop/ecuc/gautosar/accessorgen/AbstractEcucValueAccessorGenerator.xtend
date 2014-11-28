@@ -50,6 +50,8 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	
 	def abstract String getParameterValueTypeName(GConfigParameter p)
 	
+	def abstract String getReferenceValueTypeName()
+	
 	def abstract String getAutosarFactoryClassName()
 	
 	def String writeImportStatements()'''
@@ -65,6 +67,8 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	import gautosar.gecucdescription.GParameterValue
 	import gautosar.gecucdescription.GecucdescriptionPackage
 	import gautosar.gecucparameterdef.GConfigParameter
+	import gautosar.gecucparameterdef.GConfigReference
+	import gautosar.gecucdescription.GReferenceValue
 	import gautosar.gecucparameterdef.GContainerDef
 	import gautosar.gecucparameterdef.GParamConfContainerDef
 	import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -297,6 +301,40 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	def dispatch getReferenceContents(GReferenceDef referenceDef)'''
 	«IF referenceDef.gGetRefDestination != null»
 	«val refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, referenceDef.gGetRefDestination)»
+	«IF EcucValueAccessorUtil.isMany(referenceDef)»
+	def List<«refDestinationClassName»> get«referenceDef.gGetShortName.toFirstUpper.pluralOf»(){
+		val containerDef = containerValue.gGetDefinition
+		val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			containerDef.gGetReferences.findFirst[gGetShortName == "«referenceDef.gGetShortName»"] else null
+						
+		val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+			override protected accept(GReferenceValue item) {
+				return accept(item, typeof(GConfigReference), "«referenceDef.gGetShortName»")
+			}
+		}
+		
+		return new AbstractUnwrappingEList<GReferenceValue, «refDestinationClassName»>(filteredReferenceValues, typeof(GReferenceValue), typeof(«refDestinationClassName»)) {
+			override protected wrap(«refDestinationClassName» object) throws CoreException {
+				if (object != null) {
+					val container = object.getTarget()
+					val referenceValue = «autosarFactoryClassName».eINSTANCE.create«referenceValueTypeName»
+					referenceValue.gSetDefinition(referenceValueDef)
+					referenceValue.gSetValue(container)
+					return referenceValue
+				}
+			}
+			
+			override protected unwrap(GReferenceValue referenceValue) {
+				if (referenceValue != null) {
+					val referenceValueValue = referenceValue.gGetValue
+					if (referenceValueValue instanceof GContainer) {
+						return new «refDestinationClassName»(referenceValueValue as GContainer)
+					}
+				}
+			}
+		}
+	}
+	«ELSE»
 	def «refDestinationClassName» get«referenceDef.gGetShortName»(){
 		containerValue.getReference(typeof(«refDestinationClassName»), "«referenceDef.gGetShortName»")
 	}
@@ -307,6 +345,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 			containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "«referenceDef.gGetShortName»"], object.getTarget())
 		}
 	}
+	«ENDIF»
 	«ENDIF»
 	'''
 	

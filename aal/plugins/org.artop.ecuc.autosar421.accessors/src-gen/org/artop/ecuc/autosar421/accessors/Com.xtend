@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -1050,36 +1052,102 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup getComIPduGroupRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup), "ComIPduGroupRef")
-			}
-					
-			def void setComIPduGroupRef(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object){
+			def List<org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup> getComIPduGroupRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduGroupRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduGroupRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "ComIPduGroupRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
-			def org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup getComIPduSignalGroupRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup), "ComIPduSignalGroupRef")
-			}
-					
-			def void setComIPduSignalGroupRef(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup object){
+			def List<org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup> getComIPduSignalGroupRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduSignalGroupRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduSignalGroupRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "ComIPduSignalGroupRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignalGroup(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
-			def org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal getComIPduSignalRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal), "ComIPduSignalRef")
-			}
-					
-			def void setComIPduSignalRef(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal object){
+			def List<org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal> getComIPduSignalRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduSignalRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduSignalRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "ComIPduSignalRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComSignal(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
@@ -1244,14 +1312,36 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getComIPduReplicaRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "ComIPduReplicaRef")
-				}
-						
-				def void setComIPduReplicaRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
+				def List<org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu> getComIPduReplicaRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduReplicaRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduReplicaRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "ComIPduReplicaRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -1718,14 +1808,36 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup getComIPduGroupGroupRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup), "ComIPduGroupGroupRef")
-			}
-					
-			def void setComIPduGroupGroupRef(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object){
+			def List<org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup> getComIPduGroupGroupRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduGroupGroupRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "ComIPduGroupGroupRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "ComIPduGroupGroupRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			

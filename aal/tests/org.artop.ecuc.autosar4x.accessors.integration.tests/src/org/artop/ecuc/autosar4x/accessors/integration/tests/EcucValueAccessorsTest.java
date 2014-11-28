@@ -21,6 +21,8 @@ import org.artop.ecuc.accessorgen.testutils.integration.referenceworkspace.EcucV
 import org.artop.ecuc.autosar421.accessors.Adc;
 import org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet;
 import org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit;
+import org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel;
+import org.artop.ecuc.autosar421.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcGroup;
 import org.artop.ecuc.autosar421.accessors.BswM;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMArbitration;
@@ -527,6 +529,48 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 		} catch (ExecutionException ex) {
 			fail(ex.getLocalizedMessage());
 		}
+	}
 
+	public void testReferenceValueAccessorsMany() {
+		EObject adcModuleConfiguration = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_ADC_MODULE_CONFIGURATION);
+		assertTrue(adcModuleConfiguration instanceof EcucModuleConfigurationValues);
+		Adc adc = new Adc((EcucModuleConfigurationValues) adcModuleConfiguration);
+		AdcConfigSet adcConfigSet = adc.getAdcConfigSet();
+		assertNotNull(adcConfigSet);
+
+		List<AdcHwUnit> adcHwUnits = adcConfigSet.getAdcHwUnits();
+		assertNotNull(adcHwUnits);
+		assertTrue(!adcHwUnits.isEmpty());
+		AdcHwUnit adcHwUnit = adcHwUnits.get(0);
+		assertNotNull(adcHwUnit);
+
+		List<AdcGroup> adcGroups = adcHwUnit.getAdcGroups();
+		assertNotNull(adcGroups);
+		assertTrue(!adcGroups.isEmpty());
+		final AdcGroup adcGroup = adcGroups.get(0);
+		assertNotNull(adcGroup);
+
+		final List<AdcChannel> adcGroupDefinitions = adcGroup.getAdcGroupDefinitions();
+		assertNotNull(adcGroupDefinitions);
+		assertTrue(!adcGroupDefinitions.isEmpty());
+
+		int oldSize = adcGroupDefinitions.size();
+
+		Runnable runnable = new Runnable() {
+			public void run() {
+				EObject adcChanel2 = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_ADC_CHANNEL2_CONTAINER_VALUE);
+				assertTrue(adcChanel2 instanceof EcucContainerValue);
+				adcGroupDefinitions.add(new AdcChannel((EcucContainerValue) adcChanel2));
+			}
+		};
+
+		try {
+			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Adding ReferenceValue Value");
+			assertTrue(adcGroupDefinitions.size() == oldSize + 1);
+		} catch (OperationCanceledException ex) {
+
+		} catch (ExecutionException ex) {
+			fail(ex.getLocalizedMessage());
+		}
 	}
 }

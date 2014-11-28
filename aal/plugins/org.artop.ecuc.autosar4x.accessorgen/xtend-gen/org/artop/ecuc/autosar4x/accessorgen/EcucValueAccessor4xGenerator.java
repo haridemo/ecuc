@@ -16,6 +16,7 @@ package org.artop.ecuc.autosar4x.accessorgen;
 
 import autosar40.ecucdescription.EcucAddInfoParamValue;
 import autosar40.ecucdescription.EcucNumericalParamValue;
+import autosar40.ecucdescription.EcucReferenceValue;
 import autosar40.ecucdescription.EcucTextualParamValue;
 import autosar40.ecucparameterdef.EcucAddInfoParamDef;
 import autosar40.ecucparameterdef.EcucParamConfContainerDef;
@@ -78,13 +79,7 @@ public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGener
   public String getParameterValueTypeName(final GConfigParameter parameterDef) {
     String _xifexpression = null;
     boolean _or = false;
-    boolean _or_1 = false;
-    if ((parameterDef instanceof GIntegerParamDef)) {
-      _or_1 = true;
-    } else {
-      _or_1 = (parameterDef instanceof GFloatParamDef);
-    }
-    if (_or_1) {
+    if (((parameterDef instanceof GIntegerParamDef) || (parameterDef instanceof GFloatParamDef))) {
       _or = true;
     } else {
       _or = (parameterDef instanceof GBooleanParamDef);
@@ -101,6 +96,10 @@ public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGener
       _xifexpression = _xifexpression_1;
     }
     return _xifexpression;
+  }
+  
+  public String getReferenceValueTypeName() {
+    return EcucReferenceValue.class.getSimpleName();
   }
   
   protected String _getParameterValueValueTypeName(final EcucAddInfoParamDef p, final EcucParamConfContainerDef cont) {

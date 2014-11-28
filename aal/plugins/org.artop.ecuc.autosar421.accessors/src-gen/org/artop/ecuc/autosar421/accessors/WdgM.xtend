@@ -37,6 +37,8 @@ import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GParameterValue
 import gautosar.gecucdescription.GecucdescriptionPackage
 import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucparameterdef.GContainerDef
 import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
@@ -501,25 +503,69 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint getWdgMExternalCheckpointFinalRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint), "WdgMExternalCheckpointFinalRef")
-				}
-						
-				def void setWdgMExternalCheckpointFinalRef(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object){
+				def List<org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint> getWdgMExternalCheckpointFinalRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "WdgMExternalCheckpointFinalRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "WdgMExternalCheckpointFinalRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "WdgMExternalCheckpointFinalRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint getWdgMExternalCheckpointInitialRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint), "WdgMExternalCheckpointInitialRef")
-				}
-						
-				def void setWdgMExternalCheckpointInitialRef(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object){
+				def List<org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint> getWdgMExternalCheckpointInitialRefs(){
 					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "WdgMExternalCheckpointInitialRef"], object.getTarget())
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+						containerDef.gGetReferences.findFirst[gGetShortName == "WdgMExternalCheckpointInitialRef"] else null
+									
+					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+						override protected accept(GReferenceValue item) {
+							return accept(item, typeof(GConfigReference), "WdgMExternalCheckpointInitialRef")
+						}
+					}
+					
+					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint)) {
+						override protected wrap(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object) throws CoreException {
+							if (object != null) {
+								val container = object.getTarget()
+								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+								referenceValue.gSetDefinition(referenceValueDef)
+								referenceValue.gSetValue(container)
+								return referenceValue
+							}
+						}
+						
+						override protected unwrap(GReferenceValue referenceValue) {
+							if (referenceValue != null) {
+								val referenceValueValue = referenceValue.gGetValue
+								if (referenceValueValue instanceof GContainer) {
+									return new org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint(referenceValueValue as GContainer)
+								}
+							}
+						}
 					}
 				}
 				
@@ -983,14 +1029,36 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint getWdgMInternallCheckpointFinalRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint), "WdgMInternallCheckpointFinalRef")
-			}
-					
-			def void setWdgMInternallCheckpointFinalRef(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object){
+			def List<org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint> getWdgMInternallCheckpointFinalRefs(){
 				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "WdgMInternallCheckpointFinalRef"], object.getTarget())
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "WdgMInternallCheckpointFinalRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "WdgMInternallCheckpointFinalRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint(referenceValueValue as GContainer)
+							}
+						}
+					}
 				}
 			}
 			
