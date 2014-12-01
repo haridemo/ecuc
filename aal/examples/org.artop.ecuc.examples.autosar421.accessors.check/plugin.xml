@@ -2,11 +2,14 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.sphinx.emf.check.checkvalidator">
+         point="org.eclipse.sphinx.emf.check.checkvalidators">
       <validator
             class="org.artop.ecuc.examples.autosar421.accessors.check.EcucValueAccessor421CheckValidator"
-            model="model/EcucValueAcessors421.check">
+            catalog="model/EcucValueAcessors421.checkcatalog">
       </validator>
+      <ePackageMapping
+            packagaNamePrefix="org.artop.ecuc.autosar421.accessors"
+            className="autosar40.ecucdescription.EcucdescriptionPackage">
+      </ePackageMapping>
    </extension>
-
 </plugin>
