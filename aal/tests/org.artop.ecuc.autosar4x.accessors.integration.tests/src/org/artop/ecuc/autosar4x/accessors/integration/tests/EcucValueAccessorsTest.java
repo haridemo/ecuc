@@ -40,6 +40,8 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.emf.util.WorkspaceTransactionUtil;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 import autosar40.ecucdescription.EcucContainerValue;
 import autosar40.ecucdescription.EcucModuleConfigurationValues;
@@ -572,5 +574,24 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 		} catch (ExecutionException ex) {
 			fail(ex.getLocalizedMessage());
 		}
+	}
+
+	public void testSortBy() {
+		EObject adcModuleConfiguration = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_ADC_MODULE_CONFIGURATION);
+		assertTrue(adcModuleConfiguration instanceof EcucModuleConfigurationValues);
+		Adc adc = new Adc((EcucModuleConfigurationValues) adcModuleConfiguration);
+
+		Adc.AdcConfigSet adcConfigSet = adc.getAdcConfigSet();
+		List<Adc.AdcConfigSet.AdcHwUnit> adcHwUnits = adcConfigSet.getAdcHwUnits();
+		Adc.AdcConfigSet.AdcHwUnit adcHwUnit = adcHwUnits.get(0);
+		final List<Adc.AdcConfigSet.AdcHwUnit.AdcChannel> adcChannels = adcHwUnit.getAdcChannels();
+
+		final Function1<Adc.AdcConfigSet.AdcHwUnit.AdcChannel, String> function = new Function1<Adc.AdcConfigSet.AdcHwUnit.AdcChannel, String>() {
+			public String apply(final Adc.AdcConfigSet.AdcHwUnit.AdcChannel adcChannel) {
+				return adcChannel.getShortName();
+			}
+		};
+
+		IterableExtensions.<Adc.AdcConfigSet.AdcHwUnit.AdcChannel, String> sortBy(adcChannels, function);
 	}
 }
