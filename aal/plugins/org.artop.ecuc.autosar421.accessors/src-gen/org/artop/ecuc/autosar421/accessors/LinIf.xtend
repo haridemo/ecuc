@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class LinIf implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "LinIfGlobalConfig")
 	}
 	
-	static class LinIfGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class LinIfGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -248,7 +249,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class LinIfGlobalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class LinIfGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -295,7 +296,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class LinIfChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class LinIfChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -522,7 +523,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class LinIfFrame implements BasicWrappingEList.IWrapper<GContainer> {
+			static class LinIfFrame implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -671,7 +672,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class LinIfFixedFrameSdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class LinIfFixedFrameSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -702,7 +703,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class LinIfFixedFrameSduByte implements BasicWrappingEList.IWrapper<GContainer> {
+					static class LinIfFixedFrameSduByte implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -760,7 +761,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class LinIfPduDirection implements BasicWrappingEList.IWrapper<GContainer> {
+				static class LinIfPduDirection implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -808,7 +809,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "LinIfTxPdu")
 					}
 					
-					static class LinIfInternalPdu implements BasicWrappingEList.IWrapper<GContainer> {
+					static class LinIfInternalPdu implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -832,7 +833,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class LinIfRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+					static class LinIfRxPdu implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -916,7 +917,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class LinIfSlaveToSlavePdu implements BasicWrappingEList.IWrapper<GContainer> {
+					static class LinIfSlaveToSlavePdu implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -940,7 +941,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class LinIfTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+					static class LinIfTxPdu implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1058,7 +1059,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class LinIfSubstitutionFrames implements BasicWrappingEList.IWrapper<GContainer> {
+				static class LinIfSubstitutionFrames implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1111,7 +1112,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class LinIfMaster implements BasicWrappingEList.IWrapper<GContainer> {
+			static class LinIfMaster implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1151,7 +1152,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class LinIfScheduleTable implements BasicWrappingEList.IWrapper<GContainer> {
+			static class LinIfScheduleTable implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1264,7 +1265,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class LinIfEntry implements BasicWrappingEList.IWrapper<GContainer> {
+				static class LinIfEntry implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1344,7 +1345,7 @@ class LinIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class LinIfTransceiverDrvConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class LinIfTransceiverDrvConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

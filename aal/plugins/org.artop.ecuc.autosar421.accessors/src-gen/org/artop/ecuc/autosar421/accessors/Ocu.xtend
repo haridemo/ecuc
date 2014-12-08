@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Ocu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "OcuGeneral")
 	}
 	
-	static class OcuConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OcuConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -173,7 +174,7 @@ class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OcuChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OcuChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -374,7 +375,7 @@ class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OcuGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OcuGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -447,7 +448,7 @@ class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OcuHWSpecificSettings implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OcuHWSpecificSettings implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -530,7 +531,7 @@ class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OcuConfigurationOfOptionalApis implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OcuConfigurationOfOptionalApis implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -681,7 +682,7 @@ class Ocu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class OcuGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OcuGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Sd implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "SdGeneral")
 	}
 	
-	static class SdConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SdConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -115,7 +116,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class SdInstance implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SdInstance implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -213,7 +214,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class SdClientService implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdClientService implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -368,7 +369,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class SdClientCapabilityRecord implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SdClientCapabilityRecord implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -424,7 +425,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class SdConsumedEventGroup implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SdConsumedEventGroup implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -547,7 +548,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class SdClientCapabilityRecord implements BasicWrappingEList.IWrapper<GContainer> {
+					static class SdClientCapabilityRecord implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -605,7 +606,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class SdConsumedMethods implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SdConsumedMethods implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -664,7 +665,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SdClientTimer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdClientTimer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -800,7 +801,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SdInstanceMulticastRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdInstanceMulticastRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -851,7 +852,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SdInstanceTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdInstanceTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -886,7 +887,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SdInstanceUnicastRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdInstanceUnicastRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -937,7 +938,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SdServerService implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdServerService implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1092,7 +1093,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class SdEventHandler implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SdEventHandler implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1208,7 +1209,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class SdEventHandlerMulticast implements BasicWrappingEList.IWrapper<GContainer> {
+					static class SdEventHandlerMulticast implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1243,53 +1244,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class SdEventHandlerTcp implements BasicWrappingEList.IWrapper<GContainer> {
-						private GContainer containerValue
-						
-						new(GContainer containerValue){
-							this.containerValue = containerValue
-						}
-						
-						def String getShortName(){
-							containerValue?.gGetShortName
-						}
-						
-						def void setShortName(String name){
-							containerValue?.gSetShortName(name)
-						}
-						
-						override def GContainer getTarget(){
-							containerValue
-						}
-						
-						
-						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdEventActivationRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdEventActivationRef")
-						}
-								
-						def void setSdEventActivationRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup object){
-							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdEventActivationRef"], object.getTarget())
-							}
-						}
-						
-						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdEventTriggeringRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdEventTriggeringRef")
-						}
-								
-						def void setSdEventTriggeringRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup object){
-							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdEventTriggeringRef"], object.getTarget())
-							}
-						}
-						
-						
-						
-					}
-					
-					static class SdEventHandlerUdp implements BasicWrappingEList.IWrapper<GContainer> {
+					static class SdEventHandlerTcp implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1335,7 +1290,53 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class SdServerCapabilityRecord implements BasicWrappingEList.IWrapper<GContainer> {
+					static class SdEventHandlerUdp implements IWrapper<GContainer> {
+						private GContainer containerValue
+						
+						new(GContainer containerValue){
+							this.containerValue = containerValue
+						}
+						
+						def String getShortName(){
+							containerValue?.gGetShortName
+						}
+						
+						def void setShortName(String name){
+							containerValue?.gSetShortName(name)
+						}
+						
+						override def GContainer getTarget(){
+							containerValue
+						}
+						
+						
+						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdEventActivationRef(){
+							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdEventActivationRef")
+						}
+								
+						def void setSdEventActivationRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup object){
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdEventActivationRef"], object.getTarget())
+							}
+						}
+						
+						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdEventTriggeringRef(){
+							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdEventTriggeringRef")
+						}
+								
+						def void setSdEventTriggeringRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup object){
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdEventTriggeringRef"], object.getTarget())
+							}
+						}
+						
+						
+						
+					}
+					
+					static class SdServerCapabilityRecord implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1393,7 +1394,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class SdProvidedMethods implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SdProvidedMethods implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1450,7 +1451,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class SdServerCapabilityRecord implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SdServerCapabilityRecord implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1508,7 +1509,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SdServerTimer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SdServerTimer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1663,7 +1664,7 @@ class Sd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class SdGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SdGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

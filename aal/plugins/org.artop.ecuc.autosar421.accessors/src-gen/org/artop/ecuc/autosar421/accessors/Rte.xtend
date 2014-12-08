@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Rte implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -148,7 +149,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<RteSwComponentType, GContainer>(filteredContainers, typeof(RteSwComponentType), typeof(GContainer))
 	}
 	
-	static class RteBswGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteBswGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -203,7 +204,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RteBswModuleInstance implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteBswModuleInstance implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -299,7 +300,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class RteBswEventToTaskMapping implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswEventToTaskMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -473,7 +474,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswExclusiveAreaImpl implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswExclusiveAreaImpl implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -559,7 +560,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswExternalTriggerConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswExternalTriggerConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -600,7 +601,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswInternalTriggerConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswInternalTriggerConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -641,7 +642,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswRequiredClientServerConnection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswRequiredClientServerConnection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -678,7 +679,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswRequiredModeGroupConnection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswRequiredModeGroupConnection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -716,7 +717,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswRequiredSenderReceiverConnection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswRequiredSenderReceiverConnection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -753,7 +754,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteBswRequiredTriggerConnection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteBswRequiredTriggerConnection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -791,7 +792,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class RteGeneration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteGeneration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1137,7 +1138,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RteImplicitCommunication implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteImplicitCommunication implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1195,7 +1196,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RteInitializationBehavior implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteInitializationBehavior implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1268,7 +1269,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RteInitializationRunnableBatch implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteInitializationRunnableBatch implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1291,7 +1292,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RteOsInteraction implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteOsInteraction implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1340,7 +1341,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class RteModeToScheduleTableMapping implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteModeToScheduleTableMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1390,7 +1391,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class RteModeSchtblMapBsw implements BasicWrappingEList.IWrapper<GContainer> {
+			static class RteModeSchtblMapBsw implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1426,7 +1427,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class RteModeSchtblMapSwc implements BasicWrappingEList.IWrapper<GContainer> {
+			static class RteModeSchtblMapSwc implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1464,7 +1465,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteSyncPoint implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteSyncPoint implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1488,7 +1489,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteUsedOsActivation implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteUsedOsActivation implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1578,7 +1579,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class RtePostBuildVariantConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RtePostBuildVariantConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1602,7 +1603,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RteSwComponentInstance implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteSwComponentInstance implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1670,7 +1671,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class RteEventToTaskMapping implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteEventToTaskMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1866,7 +1867,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteExclusiveAreaImplementation implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteExclusiveAreaImplementation implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1941,7 +1942,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteExternalTriggerConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteExternalTriggerConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1982,7 +1983,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteInternalTriggerConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteInternalTriggerConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2023,7 +2024,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RteNvRamAllocation implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteNvRamAllocation implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2093,7 +2094,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class RteSwComponentType implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RteSwComponentType implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2141,7 +2142,7 @@ class Rte implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class RteComponentTypeCalibration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RteComponentTypeCalibration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

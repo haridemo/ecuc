@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CanSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CanSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class CanSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CanSMGeneral")
 	}
 	
-	static class CanSMConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanSMConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -147,7 +148,7 @@ class CanSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanSMManagerNetwork implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanSMManagerNetwork implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -304,7 +305,7 @@ class CanSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanSMController implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanSMController implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -339,7 +340,7 @@ class CanSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanSMDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanSMDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -377,7 +378,7 @@ class CanSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanSMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanSMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

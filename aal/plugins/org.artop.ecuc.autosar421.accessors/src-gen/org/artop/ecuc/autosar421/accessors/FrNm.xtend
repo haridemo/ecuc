@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FrNm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FrNmGlobalConfig")
 	}
 	
-	static class FrNmChannelConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrNmChannelConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -115,7 +116,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrNmChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrNmChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -153,7 +154,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrNmChannelIdentifiers implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrNmChannelIdentifiers implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -453,7 +454,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrNmRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrNmRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -536,7 +537,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class FrNmTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrNmTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -619,7 +620,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class FrNmUserDataTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrNmUserDataTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -672,7 +673,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrNmChannelTiming implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrNmChannelTiming implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -924,7 +925,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class FrNmGlobalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrNmGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -970,7 +971,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrNmGlobalConstants implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrNmGlobalConstants implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1010,7 +1011,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrNmGlobalFeatures implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrNmGlobalFeatures implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1339,7 +1340,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrNmPnInfo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrNmPnInfo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1402,7 +1403,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrNmPnFilterMaskByte implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrNmPnFilterMaskByte implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1462,7 +1463,7 @@ class FrNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrNmGlobalProperties implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrNmGlobalProperties implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

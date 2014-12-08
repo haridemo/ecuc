@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class LinTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "LinTrcvGeneral")
 	}
 	
-	static class LinTrcvChannel implements BasicWrappingEList.IWrapper<GContainer> {
+	static class LinTrcvChannel implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -219,7 +220,7 @@ class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class LinTrcvAccess implements BasicWrappingEList.IWrapper<GContainer> {
+		static class LinTrcvAccess implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -253,7 +254,7 @@ class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "LinTrcvSpiSequence")
 			}
 			
-			static class LinTrcvDioAccess implements BasicWrappingEList.IWrapper<GContainer> {
+			static class LinTrcvDioAccess implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -284,7 +285,7 @@ class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class LinTrcvDioChannelAccess implements BasicWrappingEList.IWrapper<GContainer> {
+				static class LinTrcvDioChannelAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -327,7 +328,7 @@ class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class LinTrcvSpiSequence implements BasicWrappingEList.IWrapper<GContainer> {
+			static class LinTrcvSpiSequence implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -365,7 +366,7 @@ class LinTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class LinTrcvGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class LinTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

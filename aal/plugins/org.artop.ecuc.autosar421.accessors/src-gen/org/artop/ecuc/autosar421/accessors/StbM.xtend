@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class StbM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class StbM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class StbM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<StbMTriggeredCustomer, GContainer>(filteredContainers, typeof(StbMTriggeredCustomer), typeof(GContainer))
 	}
 	
-	static class StbMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class StbMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -211,7 +212,7 @@ class StbM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class StbMSynchronizedTimeBase implements BasicWrappingEList.IWrapper<GContainer> {
+	static class StbMSynchronizedTimeBase implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -412,7 +413,7 @@ class StbM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class StbMTriggeredCustomer implements BasicWrappingEList.IWrapper<GContainer> {
+	static class StbMTriggeredCustomer implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

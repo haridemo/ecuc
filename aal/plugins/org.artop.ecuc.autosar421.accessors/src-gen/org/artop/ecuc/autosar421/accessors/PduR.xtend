@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class PduR implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "PduRRoutingTables")
 	}
 	
-	static class PduRBswModules implements BasicWrappingEList.IWrapper<GContainer> {
+	static class PduRBswModules implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -292,7 +293,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class PduRGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class PduRGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -379,7 +380,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class PduRRoutingTables implements BasicWrappingEList.IWrapper<GContainer> {
+	static class PduRRoutingTables implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -499,7 +500,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class PduRRoutingPathGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class PduRRoutingPathGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -588,7 +589,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class PduRRoutingTable implements BasicWrappingEList.IWrapper<GContainer> {
+		static class PduRRoutingTable implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -619,7 +620,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class PduRRoutingPath implements BasicWrappingEList.IWrapper<GContainer> {
+			static class PduRRoutingPath implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -658,7 +659,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class PduRDestPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class PduRDestPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -791,7 +792,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class PduRDefaultValue implements BasicWrappingEList.IWrapper<GContainer> {
+					static class PduRDefaultValue implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -822,7 +823,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class PduRDefaultValueElement implements BasicWrappingEList.IWrapper<GContainer> {
+						static class PduRDefaultValueElement implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -882,7 +883,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class PduRSrcPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class PduRSrcPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -953,7 +954,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class PduRTpBufferTable implements BasicWrappingEList.IWrapper<GContainer> {
+		static class PduRTpBufferTable implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -984,7 +985,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class PduRTpBuffer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class PduRTpBuffer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1026,7 +1027,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class PduRTxBufferTable implements BasicWrappingEList.IWrapper<GContainer> {
+		static class PduRTxBufferTable implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1057,7 +1058,7 @@ class PduR implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class PduRTxBuffer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class PduRTxBuffer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

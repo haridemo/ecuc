@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class DoIP implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "DoIPGeneral")
 	}
 	
-	static class DoIPConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DoIPConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -189,7 +190,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DoIPChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -249,7 +250,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DoIPPduRRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPPduRRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -300,7 +301,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DoIPPduRTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPPduRTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -386,7 +387,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DoIPConnections implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPConnections implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -435,7 +436,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DoIPTargetAddress implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPTargetAddress implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -475,7 +476,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DoIPTcpConnection implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPTcpConnection implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -513,7 +514,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DoIPSoAdRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DoIPSoAdRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -564,7 +565,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DoIPSoAdTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DoIPSoAdTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -617,7 +618,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DoIPUdpConnection implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPUdpConnection implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -655,7 +656,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DoIPSoAdRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DoIPSoAdRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -706,7 +707,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DoIPSoAdTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DoIPSoAdTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -761,7 +762,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DoIPRoutingActivation implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPRoutingActivation implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -848,7 +849,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DoIPRoutingActivationAuthenticationCallback implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPRoutingActivationAuthenticationCallback implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -920,7 +921,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DoIPRoutingActivationConfirmationCallback implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DoIPRoutingActivationConfirmationCallback implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -994,7 +995,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DoIPTester implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPTester implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1084,7 +1085,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DoIPGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DoIPGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1512,7 +1513,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DoIPGetGidCallback implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPGetGidCallback implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1552,7 +1553,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DoIPPowerModeCallback implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPPowerModeCallback implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1592,7 +1593,7 @@ class DoIP implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DoIPTriggerGidSyncCallback implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DoIPTriggerGidSyncCallback implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

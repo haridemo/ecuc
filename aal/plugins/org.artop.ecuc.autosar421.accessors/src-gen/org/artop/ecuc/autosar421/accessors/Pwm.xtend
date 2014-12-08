@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Pwm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Pwm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Pwm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "PwmGeneral")
 	}
 	
-	static class PwmChannelConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class PwmChannelConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -123,7 +124,7 @@ class Pwm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class PwmChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class PwmChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -324,7 +325,7 @@ class Pwm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class PwmConfigurationOfOptApiServices implements BasicWrappingEList.IWrapper<GContainer> {
+	static class PwmConfigurationOfOptApiServices implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -443,7 +444,7 @@ class Pwm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class PwmGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class PwmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -586,7 +587,7 @@ class Pwm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class PwmPowerStateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class PwmPowerStateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

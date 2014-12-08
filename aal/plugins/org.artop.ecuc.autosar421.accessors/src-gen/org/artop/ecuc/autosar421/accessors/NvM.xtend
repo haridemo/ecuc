@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class NvM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "NvmDemEventParameterRefs")
 	}
 	
-	static class NvMBlockDescriptor implements BasicWrappingEList.IWrapper<GContainer> {
+	static class NvMBlockDescriptor implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -688,7 +689,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class NvMTargetBlockReference implements BasicWrappingEList.IWrapper<GContainer> {
+		static class NvMTargetBlockReference implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -722,7 +723,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "NvMFeeRef")
 			}
 			
-			static class NvMEaRef implements BasicWrappingEList.IWrapper<GContainer> {
+			static class NvMEaRef implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -757,7 +758,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class NvMFeeRef implements BasicWrappingEList.IWrapper<GContainer> {
+			static class NvMFeeRef implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -795,7 +796,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class NvMCommon implements BasicWrappingEList.IWrapper<GContainer> {
+	static class NvMCommon implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1109,7 +1110,7 @@ class NvM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class NvmDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class NvmDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

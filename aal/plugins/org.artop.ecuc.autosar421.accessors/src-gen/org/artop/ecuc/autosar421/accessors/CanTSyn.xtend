@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CanTSyn implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<CanTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeDomain), typeof(GContainer))
 	}
 	
-	static class CanTSynGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanTSynGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -186,7 +187,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanTSynGlobalTimeFupDataIDList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTSynGlobalTimeFupDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -217,7 +218,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTSynGlobalTimeFupDataIDListElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTSynGlobalTimeFupDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -275,7 +276,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanTSynGlobalTimeOfnsDataIDList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTSynGlobalTimeOfnsDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -306,7 +307,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTSynGlobalTimeOfnsDataIDListElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTSynGlobalTimeOfnsDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -364,7 +365,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanTSynGlobalTimeOfsDataIDList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTSynGlobalTimeOfsDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -395,7 +396,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTSynGlobalTimeOfsDataIDListElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTSynGlobalTimeOfsDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -453,7 +454,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanTSynGlobalTimeSyncDataIDList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTSynGlobalTimeSyncDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -484,7 +485,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTSynGlobalTimeSyncDataIDListElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTSynGlobalTimeSyncDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -543,7 +544,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanTSynGlobalTimeDomain implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanTSynGlobalTimeDomain implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -640,7 +641,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanTSynGlobalTimeMaster implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTSynGlobalTimeMaster implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -767,7 +768,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTSynGlobalTimeMasterPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTSynGlobalTimeMasterPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -820,7 +821,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanTSynGlobalTimeSlave implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTSynGlobalTimeSlave implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -885,7 +886,7 @@ class CanTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTSynGlobalTimeSlavePdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTSynGlobalTimeSlavePdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

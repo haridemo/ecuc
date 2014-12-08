@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EcuC implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -116,7 +117,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EcucVariationResolver")
 	}
 	
-	static class EcucConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcucConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -146,7 +147,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EcucPduCollection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EcucPduCollection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -245,7 +246,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class Pdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class Pdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -306,7 +307,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EcucHardware implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcucHardware implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -337,7 +338,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EcucCoreDefinition implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EcucCoreDefinition implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -379,7 +380,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EcucPartitionCollection implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcucPartitionCollection implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -410,7 +411,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EcucPartition implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EcucPartition implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -485,7 +486,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EcucPostBuildVariants implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcucPostBuildVariants implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -509,7 +510,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EcucUnitGroupAssignment implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcucUnitGroupAssignment implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -533,7 +534,7 @@ class EcuC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EcucVariationResolver implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcucVariationResolver implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

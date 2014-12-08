@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class TcpIp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "TcpIpGeneral")
 	}
 	
-	static class TcpIpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class TcpIpConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -156,7 +157,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class TcpIpCtrl implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpCtrl implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -221,7 +222,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class TcpIpCtrlDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpCtrlDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -344,7 +345,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class TcpIpIpVXCtrl implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpIpVXCtrl implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -378,7 +379,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "TcpIpIpV6Ctrl")
 				}
 				
-				static class TcpIpIpV4Ctrl implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpIpV4Ctrl implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -446,7 +447,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpIpV6Ctrl implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpIpV6Ctrl implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -509,7 +510,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class TcpIpIpV6MtuConfig implements BasicWrappingEList.IWrapper<GContainer> {
+					static class TcpIpIpV6MtuConfig implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -587,7 +588,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class TcpIpIpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpIpConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -625,7 +626,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class TcpIpIpV4Config implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpIpV4Config implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -691,7 +692,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class TcpIpArpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpArpConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -779,7 +780,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpAutoIpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpAutoIpConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -819,7 +820,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpDhcpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpDhcpConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -843,7 +844,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpIcmpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpIcmpConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -889,7 +890,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class TcpIpIcmpMsgHandler implements BasicWrappingEList.IWrapper<GContainer> {
+					static class TcpIpIcmpMsgHandler implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -947,7 +948,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpIpFragmentationConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpIpFragmentationConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1037,7 +1038,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class TcpIpIpV6Config implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpIpV6Config implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1094,7 +1095,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class TcpIpDhcpV6Config implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpDhcpV6Config implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1214,7 +1215,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpIcmpV6Config implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpIcmpV6Config implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1324,7 +1325,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class TcpIpIcmpV6MsgHandler implements BasicWrappingEList.IWrapper<GContainer> {
+					static class TcpIpIcmpV6MsgHandler implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1382,7 +1383,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpIpV6FragmentationConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpIpV6FragmentationConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1502,7 +1503,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class TcpIpNdpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class TcpIpNdpConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1548,7 +1549,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class TcpIpNdpArNudConfig implements BasicWrappingEList.IWrapper<GContainer> {
+					static class TcpIpNdpArNudConfig implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1732,7 +1733,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class TcpIpNdpPrefixRouterDiscoveryConfig implements BasicWrappingEList.IWrapper<GContainer> {
+					static class TcpIpNdpPrefixRouterDiscoveryConfig implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1932,7 +1933,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class TcpIpNdpSlaacConfig implements BasicWrappingEList.IWrapper<GContainer> {
+					static class TcpIpNdpSlaacConfig implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2026,7 +2027,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class TcpIpLocalAddr implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpLocalAddr implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2158,7 +2159,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class TcpIpAddrAssignment implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpAddrAssignment implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2270,7 +2271,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class TcpIpStaticIpAddressConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpStaticIpAddressConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2344,7 +2345,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class TcpIpPhysAddrConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpPhysAddrConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2374,7 +2375,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class TcpIpPhysAddrChgHandler implements BasicWrappingEList.IWrapper<GContainer> {
+			static class TcpIpPhysAddrChgHandler implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2432,7 +2433,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class TcpIpTcpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpTcpConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2728,7 +2729,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class TcpIpUdpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpUdpConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2769,7 +2770,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class TcpIpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class TcpIpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2970,7 +2971,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class TcpIpIpV4General implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpIpV4General implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3106,7 +3107,7 @@ class TcpIp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class TcpIpIpV6General implements BasicWrappingEList.IWrapper<GContainer> {
+		static class TcpIpIpV6General implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

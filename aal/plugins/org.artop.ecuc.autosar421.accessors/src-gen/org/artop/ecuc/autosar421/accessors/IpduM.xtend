@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class IpduM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "IpduMPublishedInformation")
 	}
 	
-	static class IpduMConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class IpduMConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -164,7 +165,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class IpduMRxPathway implements BasicWrappingEList.IWrapper<GContainer> {
+		static class IpduMRxPathway implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -194,7 +195,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class IpduMRxIndication implements BasicWrappingEList.IWrapper<GContainer> {
+			static class IpduMRxIndication implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -319,7 +320,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class IpduMRxDynamicPart implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMRxDynamicPart implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -370,7 +371,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMRxDynamicSegment implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMRxDynamicSegment implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -426,7 +427,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMRxStaticPart implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMRxStaticPart implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -461,7 +462,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMRxStaticSegment implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMRxStaticSegment implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -517,7 +518,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMSelectorField implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMSelectorField implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -577,7 +578,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class IpduMTxPathway implements BasicWrappingEList.IWrapper<GContainer> {
+		static class IpduMTxPathway implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -607,7 +608,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class IpduMTxRequest implements BasicWrappingEList.IWrapper<GContainer> {
+			static class IpduMTxRequest implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -812,7 +813,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class IpduMSelectorField implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMSelectorField implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -868,7 +869,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMTxDynamicPart implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMTxDynamicPart implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -951,7 +952,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMTxDynamicSegment implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMTxDynamicSegment implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1007,7 +1008,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMTxStaticPart implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMTxStaticPart implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1090,7 +1091,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class IpduMTxStaticSegment implements BasicWrappingEList.IWrapper<GContainer> {
+				static class IpduMTxStaticSegment implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1151,7 +1152,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class IpduMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class IpduMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1238,7 +1239,7 @@ class IpduM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class IpduMPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class IpduMPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

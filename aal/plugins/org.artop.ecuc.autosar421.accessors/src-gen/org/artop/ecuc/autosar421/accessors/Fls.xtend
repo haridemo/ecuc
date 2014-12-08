@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Fls implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FlsPublishedInformation")
 	}
 	
-	static class FlsConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -331,7 +332,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FlsDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FlsDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -410,7 +411,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FlsExternalDriver implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FlsExternalDriver implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -467,7 +468,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FlsSectorList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FlsSectorList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -498,7 +499,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FlsSector implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FlsSector implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -589,7 +590,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class FlsGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -820,7 +821,7 @@ class Fls implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FlsPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

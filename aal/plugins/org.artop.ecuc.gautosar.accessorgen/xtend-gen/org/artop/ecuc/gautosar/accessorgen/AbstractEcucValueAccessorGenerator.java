@@ -80,6 +80,8 @@ public abstract class AbstractEcucValueAccessorGenerator {
     _builder.newLine();
     _builder.append("import org.eclipse.sphinx.emf.util.BasicWrappingEList");
     _builder.newLine();
+    _builder.append("import org.eclipse.sphinx.emf.util.IWrapper");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("import gautosar.gecucdescription.GContainer");
     _builder.newLine();
@@ -190,7 +192,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
     _builder.append("class ");
     String _moduleTypeName = this.getModuleTypeName(module);
     _builder.append(_moduleTypeName, "");
-    _builder.append(" implements BasicWrappingEList.IWrapper<GModuleConfiguration> {");
+    _builder.append(" implements IWrapper<GModuleConfiguration> {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("protected GModuleConfiguration moduleConfiguration");
@@ -408,7 +410,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
     _builder.append("static class ");
     String _gGetShortName = cont.gGetShortName();
     _builder.append(_gGetShortName, "");
-    _builder.append(" implements BasicWrappingEList.IWrapper<GContainer> {");
+    _builder.append(" implements IWrapper<GContainer> {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("private GContainer containerValue");

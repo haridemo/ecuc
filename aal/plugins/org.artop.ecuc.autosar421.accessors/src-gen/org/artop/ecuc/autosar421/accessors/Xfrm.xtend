@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Xfrm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<XfrmImplementationMapping, GContainer>(filteredContainers, typeof(XfrmImplementationMapping), typeof(GContainer))
 	}
 	
-	static class XfrmGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class XfrmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -123,7 +124,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class XfrmImplementationMapping implements BasicWrappingEList.IWrapper<GContainer> {
+	static class XfrmImplementationMapping implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -165,7 +166,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class XfrmDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class XfrmDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -200,7 +201,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class XfrmSignal implements BasicWrappingEList.IWrapper<GContainer> {
+		static class XfrmSignal implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -230,7 +231,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class XfrmSignalChoice implements BasicWrappingEList.IWrapper<GContainer> {
+			static class XfrmSignalChoice implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -264,7 +265,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "XfrmISignalRefChoice")
 				}
 				
-				static class XfrmISignalGroupRefChoice implements BasicWrappingEList.IWrapper<GContainer> {
+				static class XfrmISignalGroupRefChoice implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -289,7 +290,7 @@ class Xfrm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class XfrmISignalRefChoice implements BasicWrappingEList.IWrapper<GContainer> {
+				static class XfrmISignalRefChoice implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){

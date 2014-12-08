@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CanTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CanTpGeneral")
 	}
 	
-	static class CanTpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanTpConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -147,7 +148,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanTpChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTpChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -220,7 +221,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTpRxNSdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTpRxNSdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -510,7 +511,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CanTpNAe implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpNAe implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -550,7 +551,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpNSa implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpNSa implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -590,7 +591,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpNTa implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpNTa implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -630,7 +631,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpRxNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpRxNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -681,7 +682,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpTxFcNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpTxFcNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -734,7 +735,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanTpTxNSdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTpTxNSdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -992,7 +993,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CanTpNAe implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpNAe implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1032,7 +1033,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpNSa implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpNSa implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1072,7 +1073,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpNTa implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpNTa implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1112,7 +1113,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpRxFcNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpRxFcNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1163,7 +1164,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTpTxNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTpTxNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1219,7 +1220,7 @@ class CanTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanTpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanTpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

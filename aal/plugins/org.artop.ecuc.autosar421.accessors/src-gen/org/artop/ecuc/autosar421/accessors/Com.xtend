@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Com implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "ComGeneral")
 	}
 	
-	static class ComConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class ComConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -191,7 +192,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class ComGwMapping implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComGwMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -230,7 +231,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class ComGwDestination implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComGwDestination implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -264,7 +265,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "ComGwSignal")
 				}
 				
-				static class ComGwDestinationDescription implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComGwDestinationDescription implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -427,7 +428,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class ComFilter implements BasicWrappingEList.IWrapper<GContainer> {
+					static class ComFilter implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -594,7 +595,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class ComGwSignal implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComGwSignal implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -621,7 +622,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class ComGwSource implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComGwSource implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -655,7 +656,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "ComGwSourceDescription")
 				}
 				
-				static class ComGwSignal implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComGwSignal implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -680,7 +681,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class ComGwSourceDescription implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComGwSourceDescription implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -869,7 +870,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComIPdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComIPdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1188,7 +1189,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class ComIPduCounter implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComIPduCounter implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1276,7 +1277,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class ComIPduReplication implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComIPduReplication implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1349,7 +1350,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class ComTxIPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComTxIPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1454,7 +1455,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class ComTxModeFalse implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComTxModeFalse implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1484,7 +1485,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class ComTxMode implements BasicWrappingEList.IWrapper<GContainer> {
+					static class ComTxMode implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1611,7 +1612,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class ComTxModeTrue implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComTxModeTrue implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1641,7 +1642,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class ComTxMode implements BasicWrappingEList.IWrapper<GContainer> {
+					static class ComTxMode implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1772,7 +1773,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComIPduGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComIPduGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1845,7 +1846,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComSignal implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComSignal implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2291,7 +2292,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class ComFilter implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComFilter implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2458,7 +2459,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComSignalGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComSignalGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2755,7 +2756,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class ComGroupSignal implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComGroupSignal implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -3001,7 +3002,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class ComFilter implements BasicWrappingEList.IWrapper<GContainer> {
+				static class ComFilter implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3170,7 +3171,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComTimeBase implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComTimeBase implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3243,7 +3244,7 @@ class Com implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class ComGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class ComGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

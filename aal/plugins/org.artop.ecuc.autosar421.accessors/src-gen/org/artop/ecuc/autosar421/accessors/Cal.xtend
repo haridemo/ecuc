@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Cal implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -284,7 +285,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CalSymKeyWrapSym")
 	}
 	
-	static class CalAsymDecrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalAsymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -347,7 +348,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalAsymDecryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalAsymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -404,7 +405,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalAsymEncrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalAsymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -467,7 +468,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalAsymEncryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalAsymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -524,7 +525,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalAsymPrivateKeyExtract implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalAsymPrivateKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -587,7 +588,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalAsymPrivateKeyExtractConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalAsymPrivateKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -644,7 +645,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalAsymPrivateKeyWrapAsym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalAsymPrivateKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -723,7 +724,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalAsymPrivateKeyWrapAsymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalAsymPrivateKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -780,7 +781,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalAsymPrivateKeyWrapSym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalAsymPrivateKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -859,7 +860,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalAsymPrivateKeyWrapSymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalAsymPrivateKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -916,7 +917,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalAsymPublicKeyExtract implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalAsymPublicKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -979,7 +980,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalAsymPublicKeyExtractConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalAsymPublicKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1036,7 +1037,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalChecksum implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalChecksum implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1083,7 +1084,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalChecksumConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalChecksumConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1140,7 +1141,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalCompression implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalCompression implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1187,7 +1188,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalCompressionConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalCompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1244,7 +1245,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalDecompression implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalDecompression implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1291,7 +1292,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalDecompressionConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalDecompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1348,7 +1349,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1403,7 +1404,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class CalHash implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalHash implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1450,7 +1451,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalHashConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalHashConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1507,7 +1508,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalKeyDerive implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalKeyDerive implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1570,7 +1571,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalKeyDeriveConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalKeyDeriveConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1627,7 +1628,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalKeyExchangeCalcPubVal implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalKeyExchangeCalcPubVal implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1706,7 +1707,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalKeyExchangeCalcPubValConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalKeyExchangeCalcPubValConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1763,7 +1764,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalKeyExchangeCalcSecret implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalKeyExchangeCalcSecret implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1842,7 +1843,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalKeyExchangeCalcSecretConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalKeyExchangeCalcSecretConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1899,7 +1900,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalMacGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalMacGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1962,7 +1963,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalMacGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalMacGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2019,7 +2020,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalMacVerify implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalMacVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2082,7 +2083,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalMacVerifyConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalMacVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2139,7 +2140,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalRandomGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalRandomGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2170,7 +2171,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalRandomGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalRandomGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2227,7 +2228,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalRandomSeed implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalRandomSeed implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2274,7 +2275,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalRandomSeedConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalRandomSeedConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2331,7 +2332,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSignatureGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSignatureGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2394,7 +2395,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSignatureGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSignatureGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2451,7 +2452,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSignatureVerify implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSignatureVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2514,7 +2515,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSignatureVerifyConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSignatureVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2571,7 +2572,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymBlockDecrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymBlockDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2634,7 +2635,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymBlockDecryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymBlockDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2691,7 +2692,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymBlockEncrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymBlockEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2754,7 +2755,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymBlockEncryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymBlockEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2811,7 +2812,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymDecrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2874,7 +2875,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymDecryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2931,7 +2932,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymEncrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2994,7 +2995,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymEncryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3051,7 +3052,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymKeyExtract implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3114,7 +3115,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymKeyExtractConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3171,7 +3172,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymKeyWrapAsym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3250,7 +3251,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymKeyWrapAsymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3307,7 +3308,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CalSymKeyWrapSym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CalSymKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3370,7 +3371,7 @@ class Cal implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CalSymKeyWrapSymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CalSymKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

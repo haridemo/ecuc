@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FrTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FrTpMultipleConfig")
 	}
 	
-	static class FrTpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrTpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -251,7 +252,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FrTpMultipleConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrTpMultipleConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -325,7 +326,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrTpConnection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTpConnection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -460,7 +461,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTpRxSdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTpRxSdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -511,7 +512,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrTpTxSdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTpTxSdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -564,7 +565,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTpConnectionControl implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTpConnectionControl implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -893,7 +894,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTpRxPduPool implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTpRxPduPool implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -924,7 +925,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTpRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTpRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -977,7 +978,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTpTxPduPool implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTpTxPduPool implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1008,7 +1009,7 @@ class FrTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTpTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTpTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

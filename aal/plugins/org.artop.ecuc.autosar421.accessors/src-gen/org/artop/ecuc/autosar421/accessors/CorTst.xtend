@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CorTst implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -108,7 +109,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CorTstGeneral")
 	}
 	
-	static class CorTstBackgroundConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CorTstBackgroundConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -138,7 +139,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CorTstSelect implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CorTstSelect implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -275,7 +276,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CorTstConfigApiServices implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CorTstConfigApiServices implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -410,7 +411,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class CorTstDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CorTstDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -444,7 +445,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class CorTstForegroundConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CorTstForegroundConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -490,7 +491,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CorTstSelect implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CorTstSelect implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -627,7 +628,7 @@ class CorTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CorTstGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CorTstGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

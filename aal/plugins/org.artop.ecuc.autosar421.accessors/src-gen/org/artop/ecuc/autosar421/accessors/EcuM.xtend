@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EcuM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EcuMGeneral")
 	}
 	
-	static class EcuMConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcuMConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -146,7 +147,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EcuMCommonConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EcuMCommonConfiguration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -278,7 +279,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EcuMDefaultShutdownTarget implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMDefaultShutdownTarget implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -359,7 +360,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMDriverInitListOne implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMDriverInitListOne implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -390,7 +391,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EcuMDriverInitItem implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EcuMDriverInitItem implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -448,7 +449,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMDriverInitListZero implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMDriverInitListZero implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -479,7 +480,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EcuMDriverInitItem implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EcuMDriverInitItem implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -537,7 +538,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMDriverRestartList implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMDriverRestartList implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -568,7 +569,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EcuMDriverInitItem implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EcuMDriverInitItem implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -626,7 +627,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMSleepMode implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMSleepMode implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -726,7 +727,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMWakeupSource implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMWakeupSource implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -860,7 +861,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EcuMFixedConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EcuMFixedConfiguration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1008,7 +1009,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EcuMDriverInitListThree implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMDriverInitListThree implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1039,7 +1040,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EcuMDriverInitItem implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EcuMDriverInitItem implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1097,7 +1098,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMDriverInitListTwo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMDriverInitListTwo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1128,7 +1129,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EcuMDriverInitItem implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EcuMDriverInitItem implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1186,7 +1187,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMFixedUserConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMFixedUserConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1226,7 +1227,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMTTII implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMTTII implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1290,7 +1291,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EcuMFlexConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EcuMFlexConfiguration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1409,7 +1410,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EcuMAlarmClock implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMAlarmClock implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1476,7 +1477,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMFlexUserConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMFlexUserConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1527,7 +1528,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMGoDownAllowedUsers implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMGoDownAllowedUsers implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1584,7 +1585,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMResetMode implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMResetMode implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1624,7 +1625,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMSetClockAllowedUsers implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMSetClockAllowedUsers implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1681,7 +1682,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EcuMShutdownCause implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EcuMShutdownCause implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1724,7 +1725,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EcuMFixedGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcuMFixedGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1790,7 +1791,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EcuMFlexGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcuMFlexGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1888,7 +1889,7 @@ class EcuM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EcuMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EcuMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

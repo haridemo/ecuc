@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FrArTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FrArTpMultipleConfig")
 	}
 	
-	static class FrArTpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrArTpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -219,7 +220,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FrArTpMultipleConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrArTpMultipleConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -250,7 +251,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrArTpChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrArTpChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -649,7 +650,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrArTpConnection implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrArTpConnection implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -751,7 +752,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrArTpRxSdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrArTpRxSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -802,7 +803,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class FrArTpTxSdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrArTpTxSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -855,7 +856,7 @@ class FrArTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrArTpPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrArTpPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

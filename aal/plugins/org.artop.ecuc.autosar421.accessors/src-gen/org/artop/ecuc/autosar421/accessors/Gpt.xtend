@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Gpt implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "GptDriverConfiguration")
 	}
 	
-	static class GptChannelConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class GptChannelConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -123,7 +124,7 @@ class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class GptChannelConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class GptChannelConfiguration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -277,7 +278,7 @@ class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class GptWakeupConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+			static class GptWakeupConfiguration implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -315,7 +316,7 @@ class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class GptConfigurationOfOptApiServices implements BasicWrappingEList.IWrapper<GContainer> {
+	static class GptConfigurationOfOptApiServices implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -434,7 +435,7 @@ class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class GptDriverConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class GptDriverConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -550,7 +551,7 @@ class Gpt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class GptClockReferencePoint implements BasicWrappingEList.IWrapper<GContainer> {
+		static class GptClockReferencePoint implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

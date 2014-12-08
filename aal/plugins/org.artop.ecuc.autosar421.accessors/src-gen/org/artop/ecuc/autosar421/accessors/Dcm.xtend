@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Dcm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "DcmGeneral")
 	}
 	
-	static class DcmConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DcmConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -146,7 +147,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DcmDsd implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DcmDsd implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -227,7 +228,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DcmDsdServiceRequestManufacturerNotification implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDsdServiceRequestManufacturerNotification implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -251,7 +252,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDsdServiceRequestSupplierNotification implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDsdServiceRequestSupplierNotification implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -275,7 +276,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDsdServiceTable implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDsdServiceTable implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -322,7 +323,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDsdService implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDsdService implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -494,7 +495,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDsdSubService implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDsdSubService implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -649,7 +650,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DcmDsl implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DcmDsl implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -705,7 +706,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DcmDslBuffer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDslBuffer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -745,7 +746,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDslCallbackDCMRequestService implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDslCallbackDCMRequestService implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -769,7 +770,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDslDiagResp implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDslDiagResp implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -825,7 +826,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDslProtocol implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDslProtocol implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -856,7 +857,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDslProtocolRow implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDslProtocolRow implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1148,7 +1149,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDslConnection implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDslConnection implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1189,7 +1190,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							containerValue.setContainer(subContainer, "DcmDslResponseOnEvent")
 						}
 						
-						static class DcmDslMainConnection implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDslMainConnection implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -1277,7 +1278,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							}
 							
 							
-							static class DcmDslProtocolRx implements BasicWrappingEList.IWrapper<GContainer> {
+							static class DcmDslProtocolRx implements IWrapper<GContainer> {
 								private GContainer containerValue
 								
 								new(GContainer containerValue){
@@ -1361,7 +1362,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 								
 							}
 							
-							static class DcmDslProtocolTx implements BasicWrappingEList.IWrapper<GContainer> {
+							static class DcmDslProtocolTx implements IWrapper<GContainer> {
 								private GContainer containerValue
 								
 								new(GContainer containerValue){
@@ -1414,7 +1415,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							
 						}
 						
-						static class DcmDslPeriodicTransmission implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDslPeriodicTransmission implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -1445,7 +1446,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							}
 							
 							
-							static class DcmDslPeriodicConnection implements BasicWrappingEList.IWrapper<GContainer> {
+							static class DcmDslPeriodicConnection implements IWrapper<GContainer> {
 								private GContainer containerValue
 								
 								new(GContainer containerValue){
@@ -1531,7 +1532,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							
 						}
 						
-						static class DcmDslResponseOnEvent implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDslResponseOnEvent implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -1590,7 +1591,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DcmDsp implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DcmDsp implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1906,7 +1907,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DcmDspComControl implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspComControl implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1963,7 +1964,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspComControlAllChannel implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspComControlAllChannel implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2014,7 +2015,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspComControlSetting implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspComControlSetting implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2049,7 +2050,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspComControlSpecificChannel implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspComControlSpecificChannel implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2116,7 +2117,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspComControlSubNode implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspComControlSubNode implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2185,7 +2186,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspCommonAuthorization implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspCommonAuthorization implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2286,7 +2287,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspControlDTCSetting implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspControlDTCSetting implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2337,7 +2338,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspData implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspData implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2746,7 +2747,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspDiagnosisScaling implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspDiagnosisScaling implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2787,7 +2788,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "DcmDspAlternativeDataType")
 					}
 					
-					static class DcmDspAlternativeDataInterface implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspAlternativeDataInterface implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2813,7 +2814,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspAlternativeDataProps implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspAlternativeDataProps implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2887,7 +2888,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspLinearScale implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspLinearScale implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -2975,7 +2976,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							
 						}
 						
-						static class DcmDspTextTableMapping implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspTextTableMapping implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -3033,7 +3034,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspAlternativeDataType implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspAlternativeDataType implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3065,7 +3066,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspTextTableMapping implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspTextTableMapping implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -3125,7 +3126,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspExternalSRDataElementClass implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspExternalSRDataElementClass implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3166,7 +3167,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "DcmSubElementInImplDataElementInstance")
 					}
 					
-					static class DcmDataElementInstance implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3191,7 +3192,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmSubElementInDataElementInstance implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmSubElementInDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3216,7 +3217,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmSubElementInImplDataElementInstance implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmSubElementInImplDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3245,7 +3246,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspDataInfo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspDataInfo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -3301,7 +3302,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspDid implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspDid implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -3430,7 +3431,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspDidSignal implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspDidSignal implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3483,7 +3484,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspDidInfo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspDidInfo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -3561,7 +3562,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspDidControl implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspDidControl implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3710,7 +3711,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspDidRead implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspDidRead implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3811,7 +3812,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspDidWrite implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspDidWrite implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3914,7 +3915,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspDidRange implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspDidRange implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4077,7 +4078,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspMemory implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspMemory implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4116,7 +4117,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspAddressAndLengthFormatIdentifier implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspAddressAndLengthFormatIdentifier implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -4153,7 +4154,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspMemoryIdInfo implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspMemoryIdInfo implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -4209,7 +4210,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDspReadMemoryRangeInfo implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspReadMemoryRangeInfo implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4309,7 +4310,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspWriteMemoryRangeInfo implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspWriteMemoryRangeInfo implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4413,7 +4414,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspPeriodicDidTransmission implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspPeriodicDidTransmission implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4453,7 +4454,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspPeriodicTransmission implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspPeriodicTransmission implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4525,7 +4526,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspPid implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspPid implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4648,7 +4649,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspPidData implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspPidData implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -4726,7 +4727,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDspPidDataSupportInfo implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspPidDataSupportInfo implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4777,7 +4778,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspPidService01 implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspPidService01 implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4930,7 +4931,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspPidService02 implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspPidService02 implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4967,7 +4968,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspPidSupportInfo implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspPidSupportInfo implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -5025,7 +5026,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspRequestControl implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspRequestControl implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5097,7 +5098,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspRequestFileTransfer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspRequestFileTransfer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5153,7 +5154,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspRoe implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspRoe implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5209,7 +5210,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspRoeEvent implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspRoeEvent implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -5288,7 +5289,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDspRoeEventProperties implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspRoeEventProperties implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -5322,7 +5323,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							containerValue.setContainer(subContainer, "DcmDspRoeOnDTCStatusChange")
 						}
 						
-						static class DcmDspRoeOnChangeOfDataIdentifier implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspRoeOnChangeOfDataIdentifier implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -5357,7 +5358,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							
 						}
 						
-						static class DcmDspRoeOnDTCStatusChange implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspRoeOnDTCStatusChange implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -5385,7 +5386,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspRoeEventWindowTime implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspRoeEventWindowTime implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -5462,7 +5463,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspRoutine implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspRoutine implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5578,7 +5579,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspRequestRoutineResults implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspRequestRoutineResults implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -5624,7 +5625,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDspRequestRoutineResultsOut implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspRequestRoutineResultsOut implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -5655,7 +5656,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspRequestRoutineResultsOutSignal implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspRequestRoutineResultsOutSignal implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -5795,7 +5796,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspStartRoutine implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspStartRoutine implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -5849,7 +5850,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDspStartRoutineIn implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspStartRoutineIn implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -5880,7 +5881,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspStartRoutineInSignal implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspStartRoutineInSignal implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -6018,7 +6019,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspStartRoutineOut implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspStartRoutineOut implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -6049,7 +6050,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspStartRoutineOutSignal implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspStartRoutineOutSignal implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -6189,7 +6190,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DcmDspStopRoutine implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspStopRoutine implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -6243,7 +6244,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DcmDspStopRoutineIn implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspStopRoutineIn implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -6274,7 +6275,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspStopRoutineInSignal implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspStopRoutineInSignal implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -6412,7 +6413,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DcmDspStopRoutineOut implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DcmDspStopRoutineOut implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -6443,7 +6444,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DcmDspStopRoutineOutSignal implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DcmDspStopRoutineOutSignal implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -6585,7 +6586,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspSecurity implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspSecurity implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -6616,7 +6617,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspSecurityRow implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspSecurityRow implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -6819,7 +6820,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspSession implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspSession implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -6850,7 +6851,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspSessionRow implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspSessionRow implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -6959,7 +6960,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmDspVehInfo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmDspVehInfo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -7006,7 +7007,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DcmDspVehInfoData implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DcmDspVehInfoData implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -7098,7 +7099,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DcmPageBufferCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DcmPageBufferCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -7154,7 +7155,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DcmProcessingConditions implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DcmProcessingConditions implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -7194,7 +7195,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DcmModeCondition implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmModeCondition implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -7273,7 +7274,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DcmModeRule implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DcmModeRule implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -7350,7 +7351,7 @@ class Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DcmGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DcmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

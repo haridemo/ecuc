@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Spi implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "SpiPublishedInformation")
 	}
 	
-	static class SpiDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SpiDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -134,7 +135,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class SpiDriver implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SpiDriver implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -240,7 +241,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class SpiChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SpiChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -410,7 +411,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SpiExternalDevice implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SpiExternalDevice implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -667,7 +668,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SpiJob implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SpiJob implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -790,7 +791,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class SpiChannelList implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SpiChannelList implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -843,7 +844,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SpiSequence implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SpiSequence implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -949,7 +950,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class SpiGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SpiGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1129,7 +1130,7 @@ class Spi implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class SpiPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SpiPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

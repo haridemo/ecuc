@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EthSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EthSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class EthSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<EthSMNetwork, GContainer>(filteredContainers, typeof(EthSMNetwork), typeof(GContainer))
 	}
 	
-	static class EthSMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthSMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -171,7 +172,7 @@ class EthSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EthSMNetwork implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthSMNetwork implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -223,7 +224,7 @@ class EthSM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthSMDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthSMDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

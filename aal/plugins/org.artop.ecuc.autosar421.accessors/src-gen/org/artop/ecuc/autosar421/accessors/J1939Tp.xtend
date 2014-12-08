@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class J1939Tp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "J1939TpGeneral")
 	}
 	
-	static class J1939TpConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939TpConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -124,7 +125,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class J1939TpRxChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class J1939TpRxChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -324,7 +325,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class J1939TpRxCmNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpRxCmNPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -375,7 +376,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939TpRxDtNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpRxDtNPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -426,7 +427,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939TpRxPg implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpRxPg implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -497,7 +498,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class J1939TpRxDirectNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class J1939TpRxDirectNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -548,7 +549,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class J1939TpRxNSdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class J1939TpRxNSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -601,7 +602,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939TpTxFcNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpTxFcNPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -654,7 +655,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class J1939TpTxChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class J1939TpTxChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -838,7 +839,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class J1939TpRxFcNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpRxFcNPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -889,7 +890,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939TpTxCmNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpTxCmNPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -940,7 +941,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939TpTxDtNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpTxDtNPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -991,7 +992,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939TpTxPg implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939TpTxPg implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1062,7 +1063,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class J1939TpTxDirectNPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class J1939TpTxDirectNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1113,7 +1114,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class J1939TpTxNSdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class J1939TpTxNSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1169,7 +1170,7 @@ class J1939Tp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class J1939TpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939TpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

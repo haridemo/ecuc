@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class WdgM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "WdgMGeneral")
 	}
 	
-	static class WdgMConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class WdgMConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -134,7 +135,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class WdgMDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgMDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -191,7 +192,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class WdgMMode implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgMMode implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -306,7 +307,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class WdgMAliveSupervision implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMAliveSupervision implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -405,7 +406,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class WdgMDeadlineSupervision implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMDeadlineSupervision implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -483,7 +484,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class WdgMExternalLogicalSupervision implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMExternalLogicalSupervision implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -580,7 +581,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class WdgMExternalTransition implements BasicWrappingEList.IWrapper<GContainer> {
+				static class WdgMExternalTransition implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -628,7 +629,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class WdgMLocalStatusParams implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMLocalStatusParams implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -679,7 +680,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class WdgMTrigger implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMTrigger implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -768,7 +769,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class WdgMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class WdgMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -912,7 +913,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class WdgMCallerIds implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgMCallerIds implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -949,7 +950,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class WdgMSupervisedEntity implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgMSupervisedEntity implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1082,7 +1083,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class WdgMCheckpoint implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMCheckpoint implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1122,7 +1123,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class WdgMInternalTransition implements BasicWrappingEList.IWrapper<GContainer> {
+			static class WdgMInternalTransition implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1170,7 +1171,7 @@ class WdgM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class WdgMWatchdog implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgMWatchdog implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

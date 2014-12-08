@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Fr implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FrMultipleConfiguration")
 	}
 	
-	static class FrGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -267,7 +268,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FrMultipleConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrMultipleConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -298,7 +299,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrController implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrController implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -952,7 +953,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrAbsoluteTimer implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrAbsoluteTimer implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -992,7 +993,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrControllerDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrControllerDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1027,7 +1028,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrFifo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrFifo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1189,7 +1190,7 @@ class Fr implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrRange implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrRange implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){

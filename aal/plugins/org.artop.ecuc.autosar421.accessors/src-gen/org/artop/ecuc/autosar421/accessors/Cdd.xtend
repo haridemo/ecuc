@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Cdd implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CddEcucPartitionInteraction")
 	}
 	
-	static class CddComStackContribution implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CddComStackContribution implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -162,7 +163,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CddComIfUpperLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddComIfUpperLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -202,7 +203,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddComIfUpperLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddComIfUpperLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -253,7 +254,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddComIfUpperLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddComIfUpperLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -306,7 +307,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CddComMLowerLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddComMLowerLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -337,7 +338,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddComMLowerLayerChannel implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddComMLowerLayerChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -374,7 +375,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CddGenericNmLowerLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddGenericNmLowerLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -405,7 +406,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddGenericNmLowerLayerChannel implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddGenericNmLowerLayerChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -442,7 +443,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CddPduRLowerLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddPduRLowerLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -482,7 +483,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddPduRLowerLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddPduRLowerLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -566,7 +567,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddPduRLowerLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddPduRLowerLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -652,7 +653,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CddPduRUpperLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddPduRUpperLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -692,7 +693,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddPduRUpperLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddPduRUpperLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -776,7 +777,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddPduRUpperLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddPduRUpperLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -862,7 +863,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CddSoAdUpperLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddSoAdUpperLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -902,7 +903,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddSoAdUpperLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddSoAdUpperLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -986,7 +987,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddSoAdUpperLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddSoAdUpperLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1073,7 +1074,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CddConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CddConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1111,7 +1112,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CddComStackContribution implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddComStackContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1181,7 +1182,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CddComIfUpperLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddComIfUpperLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1221,7 +1222,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CddComIfUpperLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddComIfUpperLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1272,7 +1273,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CddComIfUpperLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddComIfUpperLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1325,7 +1326,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddComMLowerLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddComMLowerLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1356,7 +1357,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CddComMLowerLayerChannel implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddComMLowerLayerChannel implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1393,7 +1394,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddGenericNmLowerLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddGenericNmLowerLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1424,7 +1425,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CddGenericNmLowerLayerChannel implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddGenericNmLowerLayerChannel implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1461,7 +1462,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddPduRLowerLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddPduRLowerLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1501,7 +1502,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CddPduRLowerLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddPduRLowerLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1585,7 +1586,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CddPduRLowerLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddPduRLowerLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1671,7 +1672,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddPduRUpperLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddPduRUpperLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1711,7 +1712,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CddPduRUpperLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddPduRUpperLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1795,7 +1796,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CddPduRUpperLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddPduRUpperLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1881,7 +1882,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CddSoAdUpperLayerContribution implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CddSoAdUpperLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1921,7 +1922,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CddSoAdUpperLayerRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddSoAdUpperLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2005,7 +2006,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CddSoAdUpperLayerTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CddSoAdUpperLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2093,7 +2094,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CddEcucPartitionInteraction implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CddEcucPartitionInteraction implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2145,7 +2146,7 @@ class Cdd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CddEcucPartitionInteraction implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CddEcucPartitionInteraction implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

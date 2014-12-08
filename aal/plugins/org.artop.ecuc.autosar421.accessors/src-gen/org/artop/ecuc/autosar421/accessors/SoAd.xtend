@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class SoAd implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "SoAdGeneral")
 	}
 	
-	static class SoAdBswModules implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SoAdBswModules implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -244,7 +245,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class SoAdConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SoAdConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -302,7 +303,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class SoAdPduRoute implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SoAdPduRoute implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -393,7 +394,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class SoAdPduRouteDest implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SoAdPduRouteDest implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -528,7 +529,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SoAdRoutingGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SoAdRoutingGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -600,7 +601,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SoAdSocketConnectionGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SoAdSocketConnectionGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -794,7 +795,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class SoAdSocketConnection implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SoAdSocketConnection implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -840,7 +841,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class SoAdSocketRemoteAddress implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SoAdSocketRemoteAddress implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -898,7 +899,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class SoAdSocketProtocol implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SoAdSocketProtocol implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -932,7 +933,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "SoAdSocketUdp")
 				}
 				
-				static class SoAdSocketTcp implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SoAdSocketTcp implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1084,7 +1085,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class SoAdSocketUdp implements BasicWrappingEList.IWrapper<GContainer> {
+				static class SoAdSocketUdp implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1176,7 +1177,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SoAdSocketRoute implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SoAdSocketRoute implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1233,7 +1234,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class SoAdSocketRouteDest implements BasicWrappingEList.IWrapper<GContainer> {
+			static class SoAdSocketRouteDest implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1353,7 +1354,7 @@ class SoAd implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class SoAdGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SoAdGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

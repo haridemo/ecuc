@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class J1939Dcm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "J1939DcmGeneral")
 	}
 	
-	static class J1939DcmConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939DcmConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -124,7 +125,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class J1939DcmChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class J1939DcmChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -204,7 +205,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class J1939DcmNode implements BasicWrappingEList.IWrapper<GContainer> {
+		static class J1939DcmNode implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -270,7 +271,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class J1939DcmDiagnosticMessageSupport implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939DcmDiagnosticMessageSupport implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -462,7 +463,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class J1939DcmRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class J1939DcmRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -513,7 +514,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class J1939DcmTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class J1939DcmTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -569,7 +570,7 @@ class J1939Dcm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class J1939DcmGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939DcmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

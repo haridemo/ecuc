@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CanNm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -76,7 +77,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CanNmGlobalConfig")
 	}
 	
-	static class CanNmGlobalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanNmGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -446,7 +447,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanNmChannelConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanNmChannelConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -937,7 +938,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanNmRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanNmRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -988,7 +989,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanNmTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanNmTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1039,7 +1040,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanNmUserDataTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanNmUserDataTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1092,7 +1093,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanNmPnInfo implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanNmPnInfo implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1155,7 +1156,7 @@ class CanNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanNmPnFilterMaskByte implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanNmPnFilterMaskByte implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Icu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "IcuOptionalApis")
 	}
 	
-	static class IcuConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class IcuConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -139,7 +140,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class IcuChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class IcuChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -297,7 +298,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class IcuSignalEdgeDetection implements BasicWrappingEList.IWrapper<GContainer> {
+			static class IcuSignalEdgeDetection implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -337,7 +338,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class IcuSignalMeasurement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class IcuSignalMeasurement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -398,7 +399,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class IcuTimestampMeasurement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class IcuTimestampMeasurement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -471,7 +472,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class IcuWakeup implements BasicWrappingEList.IWrapper<GContainer> {
+			static class IcuWakeup implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -509,7 +510,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class IcuGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class IcuGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -580,7 +581,7 @@ class Icu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class IcuOptionalApis implements BasicWrappingEList.IWrapper<GContainer> {
+	static class IcuOptionalApis implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

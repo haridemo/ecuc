@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class BswM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "BswMGeneral")
 	}
 	
-	static class BswMConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class BswMConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -141,7 +142,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class BswMArbitration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class BswMArbitration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -199,7 +200,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class BswMLogicalExpression implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMLogicalExpression implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -261,7 +262,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class BswMModeCondition implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMModeCondition implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -335,7 +336,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class BswMConditionValue implements BasicWrappingEList.IWrapper<GContainer> {
+				static class BswMConditionValue implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -369,7 +370,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "BswMModeDeclaration")
 					}
 					
-					static class BswMBswMode implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMBswMode implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -415,7 +416,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class BswMCompuScaleModeValue implements BasicWrappingEList.IWrapper<GContainer> {
+						static class BswMCompuScaleModeValue implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -458,7 +459,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMModeDeclaration implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMModeDeclaration implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -487,7 +488,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class BswMModeRequestPort implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMModeRequestPort implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -558,7 +559,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class BswMModeInitValue implements BasicWrappingEList.IWrapper<GContainer> {
+				static class BswMModeInitValue implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -604,7 +605,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class BswMCompuScaleModeValue implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMCompuScaleModeValue implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -647,7 +648,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class BswMModeRequestSource implements BasicWrappingEList.IWrapper<GContainer> {
+				static class BswMModeRequestSource implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -884,7 +885,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "BswMWdgMRequestPartitionReset")
 					}
 					
-					static class BswMBswMModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMBswMModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -909,7 +910,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMBswMModeSwitchNotification implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMBswMModeSwitchNotification implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -934,7 +935,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMBswModeNotification implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMBswModeNotification implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -959,7 +960,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMCanSMIcomIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMCanSMIcomIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1010,7 +1011,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMCanSMIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMCanSMIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1045,7 +1046,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMComMIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMComMIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1080,7 +1081,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMComMInitiateReset implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMComMInitiateReset implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1104,7 +1105,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMComMPncRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMComMPncRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1139,7 +1140,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMDcmApplicationUpdatedIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMDcmApplicationUpdatedIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1163,7 +1164,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMDcmComModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMDcmComModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1198,7 +1199,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1222,7 +1223,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMRUNRequestIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMRUNRequestIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1279,7 +1280,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMWakeupSource implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMWakeupSource implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1314,7 +1315,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEthSMIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEthSMIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1349,7 +1350,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMFrSMIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMFrSMIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1384,7 +1385,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMGenericRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMGenericRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1440,7 +1441,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMJ1939DcmBroadcastStatus implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMJ1939DcmBroadcastStatus implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1475,7 +1476,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMJ1939NmIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMJ1939NmIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1521,7 +1522,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMLinSMIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMLinSMIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1556,7 +1557,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMLinScheduleIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMLinScheduleIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1602,7 +1603,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMLinTpModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMLinTpModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1637,7 +1638,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMModeSwitchErrorEvent implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMModeSwitchErrorEvent implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1672,7 +1673,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMNvMJobModeIndication implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMNvMJobModeIndication implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1729,7 +1730,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMNvMRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMNvMRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1764,7 +1765,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMPartitionRestarted implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMPartitionRestarted implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1788,7 +1789,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSdClientServiceCurrentState implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSdClientServiceCurrentState implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1823,7 +1824,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSdConsumedEventGroupCurrentState implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSdConsumedEventGroupCurrentState implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1858,7 +1859,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSdEventHandlerCurrentState implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSdEventHandlerCurrentState implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1893,7 +1894,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSwcModeNotification implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSwcModeNotification implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1918,7 +1919,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSwcModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSwcModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1943,7 +1944,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMWdgMRequestPartitionReset implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMWdgMRequestPartitionReset implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1982,7 +1983,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class BswMRule implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMRule implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2092,7 +2093,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class BswMDataTypeMappingSets implements BasicWrappingEList.IWrapper<GContainer> {
+		static class BswMDataTypeMappingSets implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2117,7 +2118,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class BswMModeControl implements BasicWrappingEList.IWrapper<GContainer> {
+		static class BswMModeControl implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2175,7 +2176,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class BswMAction implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMAction implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2205,7 +2206,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class BswMAvailableActions implements BasicWrappingEList.IWrapper<GContainer> {
+				static class BswMAvailableActions implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2428,7 +2429,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "BswMUserCallout")
 					}
 					
-					static class BswMComMAllowCom implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMComMAllowCom implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2479,7 +2480,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMComMModeLimitation implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMComMModeLimitation implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2530,7 +2531,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMComMModeSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMComMModeSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2598,7 +2599,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMCoreHaltMode implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMCoreHaltMode implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2649,7 +2650,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMDeadlineMonitoringControl implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMDeadlineMonitoringControl implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2739,7 +2740,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMGoDown implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMGoDown implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2774,7 +2775,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMGoHalt implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMGoHalt implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2798,7 +2799,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMGoPoll implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMGoPoll implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2822,7 +2823,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMSelectShutdownTarget implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMSelectShutdownTarget implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2903,7 +2904,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMEcuMStateSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMEcuMStateSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -2966,7 +2967,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMFrSMAllSlots implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMFrSMAllSlots implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3001,7 +3002,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMJ1939DcmStateSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMJ1939DcmStateSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3080,7 +3081,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMJ1939RmStateSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMJ1939RmStateSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3159,7 +3160,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMLinScheduleSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMLinScheduleSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3194,7 +3195,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMNMControl implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMNMControl implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3262,7 +3263,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMPduGroupSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMPduGroupSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3368,7 +3369,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMPduRouterControl implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMPduRouterControl implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3474,7 +3475,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMRequestRemoteMode implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMRequestRemoteMode implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3511,7 +3512,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMRteModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMRteModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3547,7 +3548,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMRteSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMRteSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3583,7 +3584,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSchMSwitch implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSchMSwitch implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3609,7 +3610,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSdClientServiceModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSdClientServiceModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3677,7 +3678,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSdConsumedEventGroupModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSdConsumedEventGroupModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3745,7 +3746,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSdServerServiceModeRequest implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSdServerServiceModeRequest implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3813,7 +3814,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMSwitchIPduMode implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMSwitchIPduMode implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3864,7 +3865,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMTriggerIPduSend implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMTriggerIPduSend implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3921,7 +3922,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMTriggerSlaveRTEStop implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMTriggerSlaveRTEStop implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3956,7 +3957,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMTriggerStartUpPhase2 implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMTriggerStartUpPhase2 implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3991,7 +3992,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class BswMUserCallout implements BasicWrappingEList.IWrapper<GContainer> {
+					static class BswMUserCallout implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4035,7 +4036,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class BswMActionList implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMActionList implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4099,7 +4100,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class BswMActionListItem implements BasicWrappingEList.IWrapper<GContainer> {
+				static class BswMActionListItem implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -4169,7 +4170,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class BswMRteModeRequestPort implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMRteModeRequestPort implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4195,7 +4196,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class BswMSwitchPort implements BasicWrappingEList.IWrapper<GContainer> {
+			static class BswMSwitchPort implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4223,7 +4224,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class BswMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class BswMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -4541,7 +4542,7 @@ class BswM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class BswMUserIncludeFiles implements BasicWrappingEList.IWrapper<GContainer> {
+		static class BswMUserIncludeFiles implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

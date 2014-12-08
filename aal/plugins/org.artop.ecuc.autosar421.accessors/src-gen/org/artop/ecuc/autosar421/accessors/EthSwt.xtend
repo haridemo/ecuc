@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EthSwt implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EthSwtGeneral")
 	}
 	
-	static class EthSwtConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthSwtConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -155,7 +156,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthSwtDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthSwtDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -190,7 +191,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthSwtNvm implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthSwtNvm implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -225,7 +226,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthSwtPort implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthSwtPort implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -391,7 +392,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EthSwtPortEgress implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EthSwtPortEgress implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -460,7 +461,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EthSwtPortFifo implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EthSwtPortFifo implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -497,7 +498,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class EthSwtPortScheduler implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EthSwtPortScheduler implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -563,7 +564,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class EthSwtPortSchedulerPredecessor implements BasicWrappingEList.IWrapper<GContainer> {
+					static class EthSwtPortSchedulerPredecessor implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -606,7 +607,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class EthSwtPortShaper implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EthSwtPortShaper implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -657,7 +658,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class EthSwtPortVlanForwarding implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EthSwtPortVlanForwarding implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -750,7 +751,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class EthSwtPortIngress implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EthSwtPortIngress implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -822,7 +823,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class EthSwtPriorityRegeneration implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EthSwtPriorityRegeneration implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -878,7 +879,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class EthSwtPriorityTrafficClassAssignment implements BasicWrappingEList.IWrapper<GContainer> {
+				static class EthSwtPriorityTrafficClassAssignment implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -938,7 +939,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthSwtSpi implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthSwtSpi implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -969,7 +970,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EthSwtSpiSequence implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EthSwtSpiSequence implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1045,7 +1046,7 @@ class EthSwt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EthSwtGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthSwtGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

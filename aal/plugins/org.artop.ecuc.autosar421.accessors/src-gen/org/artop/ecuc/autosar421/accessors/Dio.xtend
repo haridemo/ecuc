@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Dio implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Dio implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Dio implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "DioGeneral")
 	}
 	
-	static class DioConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DioConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -115,7 +116,7 @@ class Dio implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DioPort implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DioPort implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -171,7 +172,7 @@ class Dio implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DioChannel implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DioChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -211,7 +212,7 @@ class Dio implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DioChannelGroup implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DioChannelGroup implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -286,7 +287,7 @@ class Dio implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DioGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DioGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

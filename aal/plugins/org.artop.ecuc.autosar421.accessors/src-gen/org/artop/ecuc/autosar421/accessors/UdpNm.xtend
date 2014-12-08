@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class UdpNm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -76,7 +77,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "UdpNmGlobalConfig")
 	}
 	
-	static class UdpNmGlobalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class UdpNmGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -454,7 +455,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class UdpNmChannelConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class UdpNmChannelConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -833,7 +834,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class UdpNmRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class UdpNmRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -884,7 +885,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class UdpNmTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class UdpNmTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -935,7 +936,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class UdpNmUserDataTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class UdpNmUserDataTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -988,7 +989,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class UdpNmDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class UdpNmDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1034,7 +1035,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class UdpNmPnInfo implements BasicWrappingEList.IWrapper<GContainer> {
+		static class UdpNmPnInfo implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1097,7 +1098,7 @@ class UdpNm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class UdpNmPnFilterMaskByte implements BasicWrappingEList.IWrapper<GContainer> {
+			static class UdpNmPnFilterMaskByte implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

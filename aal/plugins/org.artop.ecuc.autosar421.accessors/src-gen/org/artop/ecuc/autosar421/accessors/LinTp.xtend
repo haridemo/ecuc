@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class LinTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class LinTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class LinTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "LinTpGlobalConfig")
 	}
 	
-	static class LinTpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class LinTpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -139,7 +140,7 @@ class LinTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class LinTpGlobalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class LinTpGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -268,7 +269,7 @@ class LinTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class LinTpChannelConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class LinTpChannelConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -335,7 +336,7 @@ class LinTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class LinTpRxNSdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class LinTpRxNSdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -429,7 +430,7 @@ class LinTp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class LinTpTxNSdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class LinTpTxNSdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

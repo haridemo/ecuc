@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CanIf implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -116,7 +117,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<CanIfTrcvDrvCfg, GContainer>(filteredContainers, typeof(CanIfTrcvDrvCfg), typeof(GContainer))
 	}
 	
-	static class CanIfCtrlDrvCfg implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanIfCtrlDrvCfg implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -169,7 +170,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanIfCtrlCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfCtrlCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -237,7 +238,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanIfDispatchCfg implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanIfDispatchCfg implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -603,7 +604,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class CanIfInitCfg implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanIfInitCfg implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -725,7 +726,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanIfBufferCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfBufferCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -776,7 +777,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanIfInitHohCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfInitHohCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -816,7 +817,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanIfHrhCfg implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIfHrhCfg implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -885,7 +886,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CanIfHrhRangeCfg implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanIfHrhRangeCfg implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1008,7 +1009,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanIfHthCfg implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIfHthCfg implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1056,7 +1057,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanIfRxPduCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfRxPduCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1304,7 +1305,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanIfRxPduCanIdRange implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIfRxPduCanIdRange implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1360,7 +1361,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanIfTTRxFrameTriggering implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIfTTRxFrameTriggering implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1413,7 +1414,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanIfTxPduCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfTxPduCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1674,7 +1675,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanIfTTTxFrameTriggering implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIfTTTxFrameTriggering implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1728,7 +1729,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanIfPrivateCfg implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanIfPrivateCfg implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1843,7 +1844,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanIfTTGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfTTGeneral implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1905,7 +1906,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanIfTTDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIfTTDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1943,7 +1944,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanIfPublicCfg implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanIfPublicCfg implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2284,7 +2285,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class CanIfTrcvDrvCfg implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanIfTrcvDrvCfg implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2315,7 +2316,7 @@ class CanIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanIfTrcvCfg implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIfTrcvCfg implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

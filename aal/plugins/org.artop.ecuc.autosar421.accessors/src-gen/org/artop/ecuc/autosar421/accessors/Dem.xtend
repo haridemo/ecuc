@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Dem implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "DemGeneral")
 	}
 	
-	static class DemConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DemConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -195,7 +196,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DemComponent implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemComponent implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -284,7 +285,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDTC implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDTC implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -438,7 +439,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDTCAttributes implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDTCAttributes implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -696,7 +697,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDebounceCounterBasedClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDebounceCounterBasedClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -897,7 +898,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDebounceTimeBaseClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDebounceTimeBaseClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -986,7 +987,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDtr implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDtr implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1166,7 +1167,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemEventParameter implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemEventParameter implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1461,7 +1462,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DemCallbackClearEventAllowed implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemCallbackClearEventAllowed implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1534,7 +1535,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemCallbackEventDataChanged implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemCallbackEventDataChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1574,7 +1575,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemCallbackEventStatusChanged implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemCallbackEventStatusChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1614,7 +1615,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemCallbackInitMForE implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemCallbackInitMForE implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1654,7 +1655,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemDebounceAlgorithmClass implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemDebounceAlgorithmClass implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1695,7 +1696,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "DemDebounceTimeBase")
 				}
 				
-				static class DemDebounceCounterBased implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DemDebounceCounterBased implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1730,7 +1731,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DemDebounceMonitorInternal implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DemDebounceMonitorInternal implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1760,7 +1761,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class DemCallbackGetFDC implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemCallbackGetFDC implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1802,7 +1803,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DemDebounceTimeBase implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DemDebounceTimeBase implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1839,7 +1840,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemIndicatorAttribute implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemIndicatorAttribute implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1947,7 +1948,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemJ1939NodeAddress implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemJ1939NodeAddress implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2004,7 +2005,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemObdDTC implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemObdDTC implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2141,7 +2142,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemPidClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemPidClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2188,7 +2189,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DemPidDataElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemPidDataElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2216,7 +2217,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DemGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DemGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3309,7 +3310,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DemCallbackDTCStatusChanged implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemCallbackDTCStatusChanged implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3349,7 +3350,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDataElementClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDataElementClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3390,7 +3391,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "DemInternalDataElementClass")
 			}
 			
-			static class DemExternalCSDataElementClass implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemExternalCSDataElementClass implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -3462,7 +3463,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemExternalSRDataElementClass implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemExternalSRDataElementClass implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -3594,7 +3595,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class DemDiagnosisScaling implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DemDiagnosisScaling implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -3635,7 +3636,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "DemAlternativeDataType")
 					}
 					
-					static class DemAlternativeDataInterface implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemAlternativeDataInterface implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3661,7 +3662,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DemAlternativeDataProps implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemAlternativeDataProps implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3733,7 +3734,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DemLinearScale implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DemLinearScale implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -3821,7 +3822,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							
 						}
 						
-						static class DemTextTableMapping implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DemTextTableMapping implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -3879,7 +3880,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DemAlternativeDataType implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemAlternativeDataType implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -3911,7 +3912,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class DemTextTableMapping implements BasicWrappingEList.IWrapper<GContainer> {
+						static class DemTextTableMapping implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -3971,7 +3972,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DemSRDataElementClass implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DemSRDataElementClass implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -4012,7 +4013,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "DemSubElementInImplDataElementInstance")
 					}
 					
-					static class DemDataElementInstance implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4037,7 +4038,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DemSubElementInDataElementInstance implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemSubElementInDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4062,7 +4063,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						
 					}
 					
-					static class DemSubElementInImplDataElementInstance implements BasicWrappingEList.IWrapper<GContainer> {
+					static class DemSubElementInImplDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -4091,7 +4092,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemInternalDataElementClass implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemInternalDataElementClass implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -4184,7 +4185,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemDidClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemDidClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4225,7 +4226,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemEnableCondition implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemEnableCondition implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4281,7 +4282,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemEnableConditionGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemEnableConditionGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4338,7 +4339,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemExtendedDataClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemExtendedDataClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4395,7 +4396,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemExtendedDataRecordClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemExtendedDataRecordClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4510,7 +4511,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemFreezeFrameClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemFreezeFrameClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4567,7 +4568,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemFreezeFrameRecNumClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemFreezeFrameRecNumClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4624,7 +4625,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemFreezeFrameRecordClass implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemFreezeFrameRecordClass implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4734,7 +4735,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemGeneralJ1939 implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemGeneralJ1939 implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4960,7 +4961,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DemCallbackJ1939DTCStatusChanged implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemCallbackJ1939DTCStatusChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5000,7 +5001,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemJ1939FreezeFrameClass implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemJ1939FreezeFrameClass implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5057,7 +5058,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class DemSPNClass implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemSPNClass implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5100,7 +5101,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemGeneralOBD implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemGeneralOBD implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5238,7 +5239,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DemCallbackOBDDTCStatusChanged implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DemCallbackOBDDTCStatusChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -5280,7 +5281,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemGroupOfDTC implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemGroupOfDTC implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5320,7 +5321,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemIndicator implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemIndicator implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5360,7 +5361,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemMirrorMemory implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemMirrorMemory implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5400,7 +5401,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemNvRamBlockId implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemNvRamBlockId implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5435,7 +5436,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemOperationCycle implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemOperationCycle implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5548,7 +5549,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemPrimaryMemory implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemPrimaryMemory implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5588,7 +5589,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemRatio implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemRatio implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5818,7 +5819,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemStorageCondition implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemStorageCondition implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5885,7 +5886,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemStorageConditionGroup implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemStorageConditionGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -5942,7 +5943,7 @@ class Dem implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DemUserDefinedMemory implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DemUserDefinedMemory implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

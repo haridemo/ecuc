@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class CanTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CanTrcvGeneral")
 	}
 	
-	static class CanTrcvConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanTrcvConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -147,7 +148,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanTrcvChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanTrcvChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -368,7 +369,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanTrcvAccess implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTrcvAccess implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -402,7 +403,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "CanTrcvSpiAccess")
 				}
 				
-				static class CanTrcvDioAccess implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTrcvDioAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -433,7 +434,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class CanTrcvDioChannelAccess implements BasicWrappingEList.IWrapper<GContainer> {
+					static class CanTrcvDioChannelAccess implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -476,7 +477,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class CanTrcvSpiAccess implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTrcvSpiAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -507,7 +508,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class CanTrcvSpiSequence implements BasicWrappingEList.IWrapper<GContainer> {
+					static class CanTrcvSpiSequence implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -584,7 +585,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanTrcvDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTrcvDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -619,7 +620,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanTrcvPartialNetwork implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTrcvPartialNetwork implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -778,7 +779,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CanTrcvPnFrameDataMaskSpec implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanTrcvPnFrameDataMaskSpec implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -839,7 +840,7 @@ class CanTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanTrcvGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

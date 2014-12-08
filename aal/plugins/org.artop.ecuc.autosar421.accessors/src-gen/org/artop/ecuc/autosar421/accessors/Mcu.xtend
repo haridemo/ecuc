@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Mcu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "McuPublishedInformation")
 	}
 	
-	static class McuGeneralConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class McuGeneralConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -211,7 +212,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class McuModuleConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class McuModuleConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -349,7 +350,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class McuClockSettingConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class McuClockSettingConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -396,7 +397,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class McuClockReferencePoint implements BasicWrappingEList.IWrapper<GContainer> {
+			static class McuClockReferencePoint implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -438,7 +439,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class McuDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class McuDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -473,7 +474,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class McuModeSettingConf implements BasicWrappingEList.IWrapper<GContainer> {
+		static class McuModeSettingConf implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -513,7 +514,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class McuRamSectorSettingConf implements BasicWrappingEList.IWrapper<GContainer> {
+		static class McuRamSectorSettingConf implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -586,7 +587,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class McuPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class McuPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -617,7 +618,7 @@ class Mcu implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class McuResetReasonConf implements BasicWrappingEList.IWrapper<GContainer> {
+		static class McuResetReasonConf implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

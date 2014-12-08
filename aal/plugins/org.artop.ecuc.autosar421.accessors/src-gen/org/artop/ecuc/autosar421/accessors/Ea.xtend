@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Ea implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Ea implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Ea implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EaPublishedInformation")
 	}
 	
-	static class EaBlockConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EaBlockConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -190,7 +191,7 @@ class Ea implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EaGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EaGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -341,7 +342,7 @@ class Ea implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EaPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EaPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

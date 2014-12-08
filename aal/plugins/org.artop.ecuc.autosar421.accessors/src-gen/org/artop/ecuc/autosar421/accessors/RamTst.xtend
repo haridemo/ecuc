@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class RamTst implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "RamTstPublishedInformation")
 	}
 	
-	static class RamTstCommon implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RamTstCommon implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -386,7 +387,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class RamTstAlgorithms implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RamTstAlgorithms implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -506,7 +507,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class RamTstConfigParams implements BasicWrappingEList.IWrapper<GContainer> {
+		static class RamTstConfigParams implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -617,7 +618,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class RamTstAlgParams implements BasicWrappingEList.IWrapper<GContainer> {
+			static class RamTstAlgParams implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -769,7 +770,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class RamTstBlockParams implements BasicWrappingEList.IWrapper<GContainer> {
+				static class RamTstBlockParams implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -895,7 +896,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class RamTstDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RamTstDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -929,7 +930,7 @@ class RamTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class RamTstPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class RamTstPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

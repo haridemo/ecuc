@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FrIf implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FrIfGeneral")
 	}
 	
-	static class FrIfConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrIfConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -149,7 +150,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrIfCluster implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrIfCluster implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -829,7 +830,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrIfClusterDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrIfClusterDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -919,7 +920,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrIfController implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrIfController implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -995,7 +996,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrIfFrameTriggering implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrIfFrameTriggering implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1199,7 +1200,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class FrIfFrameTriggeringDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+					static class FrIfFrameTriggeringDemEventParameterRefs implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1236,7 +1237,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class FrIfLPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrIfLPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1303,7 +1304,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class FrIfTransceiver implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrIfTransceiver implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1373,7 +1374,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrIfJobList implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrIfJobList implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1415,7 +1416,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrIfJob implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrIfJob implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1494,7 +1495,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class FrIfCommunicationOperation implements BasicWrappingEList.IWrapper<GContainer> {
+					static class FrIfCommunicationOperation implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1612,7 +1613,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrIfFrameStructure implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrIfFrameStructure implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1676,7 +1677,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrIfPdusInFrame implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrIfPdusInFrame implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1745,7 +1746,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrIfPdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrIfPdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1775,7 +1776,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrIfPduDirection implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrIfPduDirection implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1809,7 +1810,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "FrIfTxPdu")
 				}
 				
-				static class FrIfRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrIfRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1901,7 +1902,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class FrIfTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrIfTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -2094,7 +2095,7 @@ class FrIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class FrIfGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrIfGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

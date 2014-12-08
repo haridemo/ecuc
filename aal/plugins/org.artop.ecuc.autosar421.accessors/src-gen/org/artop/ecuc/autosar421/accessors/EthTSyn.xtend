@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EthTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EthTSyn implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class EthTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<EthTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(EthTSynGlobalTimeDomain), typeof(GContainer))
 	}
 	
-	static class EthTSynGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthTSynGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -171,7 +172,7 @@ class EthTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EthTSynGlobalTimeDomain implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthTSynGlobalTimeDomain implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -252,7 +253,7 @@ class EthTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthTSynGlobalTimeMaster implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthTSynGlobalTimeMaster implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -351,7 +352,7 @@ class EthTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthTSynGlobalTimeSlave implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthTSynGlobalTimeSlave implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

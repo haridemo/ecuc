@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FlsTst implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FlsTstGeneral")
 	}
 	
-	static class FlsTstConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsTstConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -186,7 +187,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FlsTstBlockBgndConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FlsTstBlockBgndConfigSet implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -217,7 +218,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FlsTstBlock implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FlsTstBlock implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -364,7 +365,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FlsTstBlockFgndConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FlsTstBlockFgndConfigSet implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -395,7 +396,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FlsTstBlock implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FlsTstBlock implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -543,7 +544,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class FlsTstConfigurationOfOptApiServices implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsTstConfigurationOfOptApiServices implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -726,7 +727,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FlsTstDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsTstDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -760,7 +761,7 @@ class FlsTst implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FlsTstGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FlsTstGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

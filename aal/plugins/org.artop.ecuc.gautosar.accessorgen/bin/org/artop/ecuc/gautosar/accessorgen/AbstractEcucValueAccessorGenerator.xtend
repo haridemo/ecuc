@@ -61,6 +61,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	
 	import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 	import org.eclipse.sphinx.emf.util.BasicWrappingEList
+	import org.eclipse.sphinx.emf.util.IWrapper
 	
 	import gautosar.gecucdescription.GContainer
 	import gautosar.gecucdescription.GModuleConfiguration
@@ -108,7 +109,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	
 	«writeImportStatements»
 	
-	class «module.moduleTypeName» implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+	class «module.moduleTypeName» implements IWrapper<GModuleConfiguration> {
 		protected GModuleConfiguration moduleConfiguration
 		
 		new (GModuleConfiguration moduleConfiguration){
@@ -167,7 +168,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	'''
 	
 	def createContainerClass(GContainerDef cont)'''
-	static class «cont.gGetShortName» implements BasicWrappingEList.IWrapper<GContainer> {
+	static class «cont.gGetShortName» implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

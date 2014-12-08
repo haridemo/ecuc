@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Eep implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Eep implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Eep implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EepPublishedInformation")
 	}
 	
-	static class EepGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EepGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -195,7 +196,7 @@ class Eep implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class EepInitConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EepInitConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -410,7 +411,7 @@ class Eep implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EepDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EepDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -478,7 +479,7 @@ class Eep implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EepExternalDriver implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EepExternalDriver implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -536,7 +537,7 @@ class Eep implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EepPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EepPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

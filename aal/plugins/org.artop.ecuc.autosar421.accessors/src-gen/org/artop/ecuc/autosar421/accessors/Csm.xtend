@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Csm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -332,7 +333,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CsmSymKeyWrapSym")
 	}
 	
-	static class CsmAsymDecrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -379,7 +380,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymDecryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -452,7 +453,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymEncrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -499,7 +500,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymEncryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -572,7 +573,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymPrivateKeyExtract implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymPrivateKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -619,7 +620,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymPrivateKeyExtractConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymPrivateKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -692,7 +693,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymPrivateKeyUpdate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymPrivateKeyUpdate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -739,7 +740,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymPrivateKeyUpdateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymPrivateKeyUpdateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -812,7 +813,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymPrivateKeyWrapAsym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymPrivateKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -875,7 +876,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymPrivateKeyWrapAsymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymPrivateKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -948,7 +949,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymPrivateKeyWrapSym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymPrivateKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1011,7 +1012,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymPrivateKeyWrapSymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymPrivateKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1084,7 +1085,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymPublicKeyExtract implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymPublicKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1131,7 +1132,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymPublicKeyExtractConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymPublicKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1204,7 +1205,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmAsymPublicKeyUpdate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmAsymPublicKeyUpdate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1251,7 +1252,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmAsymPublicKeyUpdateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmAsymPublicKeyUpdateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1324,7 +1325,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmChecksum implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmChecksum implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1355,7 +1356,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmChecksumConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmChecksumConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1428,7 +1429,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmCompression implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmCompression implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1459,7 +1460,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmCompressionConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmCompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1532,7 +1533,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmDecompression implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmDecompression implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1563,7 +1564,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmDecompressionConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmDecompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1636,7 +1637,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1739,7 +1740,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class CsmHash implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmHash implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1770,7 +1771,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmHashConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmHashConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1843,7 +1844,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmKeyDerive implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmKeyDerive implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1890,7 +1891,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmKeyDeriveConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmKeyDeriveConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1963,7 +1964,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmKeyDeriveSymKey implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmKeyDeriveSymKey implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2010,7 +2011,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmKeyDeriveSymKeyConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmKeyDeriveSymKeyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2083,7 +2084,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmKeyExchangeCalcPubVal implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmKeyExchangeCalcPubVal implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2146,7 +2147,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmKeyExchangeCalcPubValConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmKeyExchangeCalcPubValConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2219,7 +2220,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmKeyExchangeCalcSecret implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmKeyExchangeCalcSecret implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2282,7 +2283,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmKeyExchangeCalcSecretConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmKeyExchangeCalcSecretConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2355,7 +2356,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmKeyExchangeCalcSymKey implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmKeyExchangeCalcSymKey implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2434,7 +2435,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmKeyExchangeCalcSymKeyConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmKeyExchangeCalcSymKeyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2507,7 +2508,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmMacGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmMacGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2554,7 +2555,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmMacGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmMacGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2627,7 +2628,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmMacVerify implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmMacVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2674,7 +2675,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmMacVerifyConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmMacVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2747,7 +2748,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmRandomGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmRandomGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2778,7 +2779,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmRandomGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmRandomGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2851,7 +2852,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmRandomSeed implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmRandomSeed implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2882,7 +2883,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmRandomSeedConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmRandomSeedConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2955,7 +2956,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSignatureGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSignatureGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3002,7 +3003,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSignatureGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSignatureGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3075,7 +3076,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSignatureVerify implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSignatureVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3122,7 +3123,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSignatureVerifyConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSignatureVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3195,7 +3196,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymBlockDecrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymBlockDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3242,7 +3243,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymBlockDecryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymBlockDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3315,7 +3316,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymBlockEncrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymBlockEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3362,7 +3363,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymBlockEncryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymBlockEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3435,7 +3436,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymDecrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3482,7 +3483,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymDecryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3555,7 +3556,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymEncrypt implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3602,7 +3603,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymEncryptConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3675,7 +3676,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymKeyExtract implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3722,7 +3723,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymKeyExtractConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3795,7 +3796,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymKeyGenerate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymKeyGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3842,7 +3843,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymKeyGenerateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymKeyGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3915,7 +3916,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymKeyUpdate implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymKeyUpdate implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3962,7 +3963,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymKeyUpdateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymKeyUpdateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4035,7 +4036,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymKeyWrapAsym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -4098,7 +4099,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymKeyWrapAsymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -4171,7 +4172,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CsmSymKeyWrapSym implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CsmSymKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -4218,7 +4219,7 @@ class Csm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CsmSymKeyWrapSymConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CsmSymKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

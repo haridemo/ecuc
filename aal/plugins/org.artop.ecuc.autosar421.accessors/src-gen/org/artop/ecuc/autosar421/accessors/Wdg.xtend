@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Wdg implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "WdgSettingsConfig")
 	}
 	
-	static class WdgDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class WdgDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -145,7 +146,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class WdgGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class WdgGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -313,7 +314,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class WdgPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class WdgPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -371,7 +372,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class WdgSettingsConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class WdgSettingsConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -460,7 +461,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class WdgExternalConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgExternalConfiguration implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -485,7 +486,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class WdgSettingsFast implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgSettingsFast implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -509,7 +510,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class WdgSettingsOff implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgSettingsOff implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -533,7 +534,7 @@ class Wdg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class WdgSettingsSlow implements BasicWrappingEList.IWrapper<GContainer> {
+		static class WdgSettingsSlow implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

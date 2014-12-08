@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EthTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EthTrcvGeneral")
 	}
 	
-	static class EthTrcvConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthTrcvConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -115,7 +116,7 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthTrcvConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthTrcvConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -345,7 +346,7 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EthTrcvDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EthTrcvDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -383,7 +384,7 @@ class EthTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EthTrcvGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

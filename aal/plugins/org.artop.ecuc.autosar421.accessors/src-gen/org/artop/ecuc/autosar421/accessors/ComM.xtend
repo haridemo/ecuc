@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class ComM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "ComMGeneral")
 	}
 	
-	static class ComMConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class ComMConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -149,7 +150,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class ComMChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComMChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -374,7 +375,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class ComMNetworkManagement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComMNetworkManagement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -467,7 +468,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class ComMUserPerChannel implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComMUserPerChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -504,7 +505,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComMPnc implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComMPnc implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -617,7 +618,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class ComMPncComSignal implements BasicWrappingEList.IWrapper<GContainer> {
+			static class ComMPncComSignal implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -731,7 +732,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class ComMUser implements BasicWrappingEList.IWrapper<GContainer> {
+		static class ComMUser implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -783,7 +784,7 @@ class ComM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class ComMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class ComMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

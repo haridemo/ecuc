@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Nm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "NmGlobalConfig")
 	}
 	
-	static class NmChannelConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class NmChannelConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -216,7 +217,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class NmBusType implements BasicWrappingEList.IWrapper<GContainer> {
+		static class NmBusType implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -250,7 +251,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "NmStandardBusNmConfig")
 			}
 			
-			static class NmGenericBusNmConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class NmGenericBusNmConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -306,7 +307,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class NmStandardBusNmConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class NmStandardBusNmConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -372,7 +373,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class NmGlobalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class NmGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -418,7 +419,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class NmGlobalConstants implements BasicWrappingEList.IWrapper<GContainer> {
+		static class NmGlobalConstants implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -458,7 +459,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class NmGlobalFeatures implements BasicWrappingEList.IWrapper<GContainer> {
+		static class NmGlobalFeatures implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -738,7 +739,7 @@ class Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class NmGlobalProperties implements BasicWrappingEList.IWrapper<GContainer> {
+		static class NmGlobalProperties implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

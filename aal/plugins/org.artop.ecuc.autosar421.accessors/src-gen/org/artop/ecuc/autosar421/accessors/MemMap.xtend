@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class MemMap implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<MemMapGenericCompilerMemClass, GContainer>(filteredContainers, typeof(MemMapGenericCompilerMemClass), typeof(GContainer))
 	}
 	
-	static class MemMapAddressingModeSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class MemMapAddressingModeSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -267,7 +268,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class MemMapAddressingMode implements BasicWrappingEList.IWrapper<GContainer> {
+		static class MemMapAddressingMode implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -337,7 +338,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class MemMapAllocation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class MemMapAllocation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -377,7 +378,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class MemMapGenericMapping implements BasicWrappingEList.IWrapper<GContainer> {
+		static class MemMapGenericMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -413,7 +414,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class MemMapSectionSpecificMapping implements BasicWrappingEList.IWrapper<GContainer> {
+		static class MemMapSectionSpecificMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -450,7 +451,7 @@ class MemMap implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class MemMapGenericCompilerMemClass implements BasicWrappingEList.IWrapper<GContainer> {
+	static class MemMapGenericCompilerMemClass implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

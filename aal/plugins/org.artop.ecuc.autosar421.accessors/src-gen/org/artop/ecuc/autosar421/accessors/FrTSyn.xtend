@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FrTSyn implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<FrTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeDomain), typeof(GContainer))
 	}
 	
-	static class FrTSynGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrTSynGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -170,7 +171,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrTSynGlobalTimeOfsDataIDList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTSynGlobalTimeOfsDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -201,7 +202,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTSynGlobalTimeOfsDataIDListElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTSynGlobalTimeOfsDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -259,7 +260,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTSynGlobalTimeSyncDataIDList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTSynGlobalTimeSyncDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -290,7 +291,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTSynGlobalTimeSyncDataIDListElement implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTSynGlobalTimeSyncDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -349,7 +350,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class FrTSynGlobalTimeDomain implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrTSynGlobalTimeDomain implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -430,7 +431,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrTSynGlobalTimeMaster implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTSynGlobalTimeMaster implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -525,7 +526,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTSynGlobalTimeMasterPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTSynGlobalTimeMasterPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -578,7 +579,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTSynGlobalTimeSlave implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTSynGlobalTimeSlave implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -643,7 +644,7 @@ class FrTSyn implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class FrTSynGlobalTimeSlavePdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTSynGlobalTimeSlavePdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

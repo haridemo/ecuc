@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Dbg implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -116,7 +117,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "DbgTimestampConfiguration")
 	}
 	
-	static class DbgBuffering implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DbgBuffering implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -221,7 +222,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class DbgCommunication implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DbgCommunication implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -259,7 +260,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DbgRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DbgRxPdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -310,7 +311,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DbgTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DbgTxPdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -362,7 +363,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DbgDIDConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DbgDIDConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -418,7 +419,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DbgPredefinedDID implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DbgPredefinedDID implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -556,7 +557,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DbgPredefinedDIDAddInfo implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DbgPredefinedDIDAddInfo implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -604,7 +605,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "DbgAddInfoVfbSignal")
 				}
 				
-				static class DbgAddInfoComSignal implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgAddInfoComSignal implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -656,7 +657,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DbgAddInfoRteCall implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgAddInfoRteCall implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -746,7 +747,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DbgAddInfoRunnable implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgAddInfoRunnable implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -821,7 +822,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DbgAddInfoVfbSignal implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgAddInfoVfbSignal implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -915,7 +916,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DbgStaticDID implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DbgStaticDID implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1026,7 +1027,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class DbgStaticDIDData implements BasicWrappingEList.IWrapper<GContainer> {
+			static class DbgStaticDIDData implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1067,7 +1068,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					containerValue.setContainer(subContainer, "DbgLocalDebugData")
 				}
 				
-				static class DbgAddressSizePair implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgAddressSizePair implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1139,7 +1140,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DbgDebugData implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgDebugData implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1164,7 +1165,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					
 				}
 				
-				static class DbgLocalDebugData implements BasicWrappingEList.IWrapper<GContainer> {
+				static class DbgLocalDebugData implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1194,7 +1195,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DbgGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DbgGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1262,7 +1263,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class DbgPeriodicDataCollection implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DbgPeriodicDataCollection implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1312,7 +1313,7 @@ class Dbg implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class DbgTimestampConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DbgTimestampConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

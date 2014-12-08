@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Os implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -164,7 +165,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<OsTask, GContainer>(filteredContainers, typeof(OsTask), typeof(GContainer))
 	}
 	
-	static class OsAlarm implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsAlarm implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -246,7 +247,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsAlarmAction implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsAlarmAction implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -294,7 +295,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "OsAlarmSetEvent")
 			}
 			
-			static class OsAlarmActivateTask implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsAlarmActivateTask implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -329,7 +330,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsAlarmCallback implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsAlarmCallback implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -369,7 +370,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsAlarmIncrementCounter implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsAlarmIncrementCounter implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -404,7 +405,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsAlarmSetEvent implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsAlarmSetEvent implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -452,7 +453,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OsAlarmAutostart implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsAlarmAutostart implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -575,7 +576,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsAppMode implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsAppMode implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -598,7 +599,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class OsApplication implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsApplication implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -883,7 +884,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsApplicationHooks implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsApplicationHooks implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -955,7 +956,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OsApplicationTrustedFunction implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsApplicationTrustedFunction implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -996,7 +997,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsCounter implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsCounter implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1165,7 +1166,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsDriver implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsDriver implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1200,7 +1201,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OsTimeConstant implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsTimeConstant implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1241,7 +1242,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsEvent implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsEvent implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1280,7 +1281,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class OsIoc implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsIoc implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1311,7 +1312,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsIocCommunication implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsIocCommunication implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1376,7 +1377,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class OsIocDataProperties implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsIocDataProperties implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1433,7 +1434,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsIocReceiverProperties implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsIocReceiverProperties implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1519,7 +1520,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsIocSenderProperties implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsIocSenderProperties implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1608,7 +1609,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsIsr implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsIsr implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1704,7 +1705,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsIsrTimingProtection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsIsrTimingProtection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1799,7 +1800,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class OsIsrResourceLock implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsIsrResourceLock implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1853,7 +1854,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsOS implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsOS implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2033,7 +2034,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsHooks implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsHooks implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2154,7 +2155,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsResource implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsResource implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2256,7 +2257,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class OsScheduleTable implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsScheduleTable implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2379,7 +2380,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsScheduleTableAutostart implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsScheduleTableAutostart implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2487,7 +2488,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OsScheduleTableExpiryPoint implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsScheduleTableExpiryPoint implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2551,7 +2552,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class OsScheduleTableEventSetting implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsScheduleTableEventSetting implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2597,7 +2598,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsScheduleTableTaskActivation implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsScheduleTableTaskActivation implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2632,7 +2633,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class OsScheduleTblAdjustableExpPoint implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsScheduleTblAdjustableExpPoint implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -2690,7 +2691,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OsScheduleTableSync implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsScheduleTableSync implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2766,7 +2767,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class OsSpinlock implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsSpinlock implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2870,7 +2871,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class OsTask implements BasicWrappingEList.IWrapper<GContainer> {
+	static class OsTask implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -3072,7 +3073,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class OsTaskAutostart implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsTaskAutostart implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3129,7 +3130,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class OsTaskTimingProtection implements BasicWrappingEList.IWrapper<GContainer> {
+		static class OsTaskTimingProtection implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -3224,7 +3225,7 @@ class Os implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class OsTaskResourceLock implements BasicWrappingEList.IWrapper<GContainer> {
+			static class OsTaskResourceLock implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){

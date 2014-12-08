@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Det implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Det implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Det implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "DetNotification")
 	}
 	
-	static class DetConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DetConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -123,7 +124,7 @@ class Det implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DetModule implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DetModule implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -164,7 +165,7 @@ class Det implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DetGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DetGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -251,7 +252,7 @@ class Det implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class DetNotification implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DetNotification implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

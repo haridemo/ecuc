@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class EthIf implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EthIfGeneral")
 	}
 	
-	static class EthIfConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthIfConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -151,7 +152,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthIfController implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthIfController implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -261,7 +262,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthIfFrameOwnerConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthIfFrameOwnerConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -317,7 +318,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthIfRxIndicationConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthIfRxIndicationConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -357,7 +358,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthIfTrcvLinkStateChgConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthIfTrcvLinkStateChgConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -397,7 +398,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class EthIfTxConfirmationConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthIfTxConfirmationConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -438,7 +439,7 @@ class EthIf implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EthIfGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthIfGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

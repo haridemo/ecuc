@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class SecOC implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<SecOCTxPduProcessing, GContainer>(filteredContainers, typeof(SecOCTxPduProcessing), typeof(GContainer))
 	}
 	
-	static class SecOCGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SecOCGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -211,7 +212,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class SecOCRxPduProcessing implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SecOCRxPduProcessing implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -472,7 +473,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class SecOCRxAuthenticPduLayer implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SecOCRxAuthenticPduLayer implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -507,7 +508,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SecOCRxSecuredPduLayer implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SecOCRxSecuredPduLayer implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -559,7 +560,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class SecOCSameBufferPduCollection implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SecOCSameBufferPduCollection implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -598,7 +599,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class SecOCTxPduProcessing implements BasicWrappingEList.IWrapper<GContainer> {
+	static class SecOCTxPduProcessing implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -792,7 +793,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class SecOCTxAuthenticPduLayer implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SecOCTxAuthenticPduLayer implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -843,7 +844,7 @@ class SecOC implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class SecOCTxSecuredPduLayer implements BasicWrappingEList.IWrapper<GContainer> {
+		static class SecOCTxSecuredPduLayer implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

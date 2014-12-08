@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Eth implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Eth implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Eth implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "EthGeneral")
 	}
 	
-	static class EthConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -115,7 +116,7 @@ class Eth implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthCtrlConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthCtrlConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -289,7 +290,7 @@ class Eth implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class EthDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+			static class EthDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -415,7 +416,7 @@ class Eth implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class EthGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class EthGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -541,7 +542,7 @@ class Eth implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class EthCtrlOffloading implements BasicWrappingEList.IWrapper<GContainer> {
+		static class EthCtrlOffloading implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

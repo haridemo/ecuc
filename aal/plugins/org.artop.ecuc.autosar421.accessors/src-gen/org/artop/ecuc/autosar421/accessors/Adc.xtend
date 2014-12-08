@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Adc implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "AdcPublishedInformation")
 	}
 	
-	static class AdcConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class AdcConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -123,7 +124,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class AdcHwUnit implements BasicWrappingEList.IWrapper<GContainer> {
+		static class AdcHwUnit implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -237,7 +238,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class AdcChannel implements BasicWrappingEList.IWrapper<GContainer> {
+			static class AdcChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -474,7 +475,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class AdcGroup implements BasicWrappingEList.IWrapper<GContainer> {
+			static class AdcGroup implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -814,7 +815,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class AdcGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class AdcGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -1089,7 +1090,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class AdcPowerStateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+		static class AdcPowerStateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1146,7 +1147,7 @@ class Adc implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class AdcPublishedInformation implements BasicWrappingEList.IWrapper<GContainer> {
+	static class AdcPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

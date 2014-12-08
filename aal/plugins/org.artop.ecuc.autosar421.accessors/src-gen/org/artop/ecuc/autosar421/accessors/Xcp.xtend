@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Xcp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "XcpGeneral")
 	}
 	
-	static class XcpConfig implements BasicWrappingEList.IWrapper<GContainer> {
+	static class XcpConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -133,7 +134,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class XcpDaqList implements BasicWrappingEList.IWrapper<GContainer> {
+		static class XcpDaqList implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -256,7 +257,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class XcpDto implements BasicWrappingEList.IWrapper<GContainer> {
+			static class XcpDto implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -297,7 +298,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class XcpOdt implements BasicWrappingEList.IWrapper<GContainer> {
+			static class XcpOdt implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -371,7 +372,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class XcpOdtEntry implements BasicWrappingEList.IWrapper<GContainer> {
+				static class XcpOdtEntry implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -463,7 +464,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class XcpEventChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class XcpEventChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -709,7 +710,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class XcpPdu implements BasicWrappingEList.IWrapper<GContainer> {
+		static class XcpPdu implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -743,7 +744,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "XcpTxPdu")
 			}
 			
-			static class XcpRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class XcpRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -794,7 +795,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class XcpTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class XcpTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -848,7 +849,7 @@ class Xcp implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class XcpGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class XcpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

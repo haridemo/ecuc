@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FiM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FiM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class FiM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<FiMSummaryEvent, GContainer>(filteredContainers, typeof(FiMSummaryEvent), typeof(GContainer))
 	}
 	
-	static class FiMFID implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FiMFID implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -139,7 +140,7 @@ class FiM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FiMGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FiMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -322,7 +323,7 @@ class FiM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FiMInhibitionConfiguration implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FiMInhibitionConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -492,7 +493,7 @@ class FiM implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class FiMSummaryEvent implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FiMSummaryEvent implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

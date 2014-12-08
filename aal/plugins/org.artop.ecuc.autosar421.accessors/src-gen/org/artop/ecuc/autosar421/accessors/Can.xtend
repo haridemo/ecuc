@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Can implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "CanGeneral")
 	}
 	
-	static class CanConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -132,7 +133,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanController implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanController implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -416,7 +417,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanControllerBaudrateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanControllerBaudrateConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -542,7 +543,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CanControllerFdBaudrateConfig implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanControllerFdBaudrateConfig implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -680,7 +681,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanTTController implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTTController implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1030,7 +1031,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanHardwareObject implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanHardwareObject implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1225,7 +1226,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanHwFilter implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanHwFilter implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1281,7 +1282,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class CanTTHardwareObjectTrigger implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanTTHardwareObjectTrigger implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1412,7 +1413,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanIcom implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIcom implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -1443,7 +1444,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class CanIcomConfig implements BasicWrappingEList.IWrapper<GContainer> {
+			static class CanIcomConfig implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -1505,7 +1506,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class CanIcomWakeupCauses implements BasicWrappingEList.IWrapper<GContainer> {
+				static class CanIcomWakeupCauses implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -1536,7 +1537,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 					}
 					
 					
-					static class CanIcomRxMessage implements BasicWrappingEList.IWrapper<GContainer> {
+					static class CanIcomRxMessage implements IWrapper<GContainer> {
 						private GContainer containerValue
 						
 						new(GContainer containerValue){
@@ -1647,7 +1648,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 						}
 						
 						
-						static class CanIcomRxMessageSignalConfig implements BasicWrappingEList.IWrapper<GContainer> {
+						static class CanIcomRxMessageSignalConfig implements IWrapper<GContainer> {
 							private GContainer containerValue
 							
 							new(GContainer containerValue){
@@ -1739,7 +1740,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 							}
 							
 							
-							static class CanIcomSignalMask implements BasicWrappingEList.IWrapper<GContainer> {
+							static class CanIcomSignalMask implements IWrapper<GContainer> {
 								private GContainer containerValue
 								
 								new(GContainer containerValue){
@@ -1795,7 +1796,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 								
 							}
 							
-							static class CanIcomSignalValue implements BasicWrappingEList.IWrapper<GContainer> {
+							static class CanIcomSignalValue implements IWrapper<GContainer> {
 								private GContainer containerValue
 								
 								new(GContainer containerValue){
@@ -1862,7 +1863,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class CanGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class CanGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -2098,7 +2099,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class CanIcomGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanIcomGeneral implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -2190,7 +2191,7 @@ class Can implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class CanMainFunctionRWPeriods implements BasicWrappingEList.IWrapper<GContainer> {
+		static class CanMainFunctionRWPeriods implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){

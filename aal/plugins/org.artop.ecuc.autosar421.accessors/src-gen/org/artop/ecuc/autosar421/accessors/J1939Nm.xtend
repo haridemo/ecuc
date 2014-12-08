@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class J1939Nm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -92,7 +93,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "J1939NmGeneral")
 	}
 	
-	static class J1939NmConfigSet implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939NmConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -132,7 +133,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class J1939NmChannel implements BasicWrappingEList.IWrapper<GContainer> {
+		static class J1939NmChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -181,7 +182,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			static class J1939NmRxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939NmRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -232,7 +233,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class J1939NmTxPdu implements BasicWrappingEList.IWrapper<GContainer> {
+			static class J1939NmTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -285,7 +286,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class J1939NmNode implements BasicWrappingEList.IWrapper<GContainer> {
+		static class J1939NmNode implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -535,7 +536,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class J1939NmDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939NmDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -569,7 +570,7 @@ class J1939Nm implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class J1939NmGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class J1939NmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

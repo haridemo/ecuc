@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class Dlt implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -100,7 +101,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		return new BasicWrappingEList<DltVfbTrace, GContainer>(filteredContainers, typeof(DltVfbTrace), typeof(GContainer))
 	}
 	
-	static class DltGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DltGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -310,7 +311,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class DltMemory implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DltMemory implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -413,7 +414,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	static class DltMultipleConfigurationContainer implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DltMultipleConfigurationContainer implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -470,7 +471,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class DltBandwidth implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DltBandwidth implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -542,7 +543,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DltMessageFiltering implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DltMessageFiltering implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -630,7 +631,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class DltProtocol implements BasicWrappingEList.IWrapper<GContainer> {
+		static class DltProtocol implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -800,7 +801,7 @@ class Dlt implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class DltVfbTrace implements BasicWrappingEList.IWrapper<GContainer> {
+	static class DltVfbTrace implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){

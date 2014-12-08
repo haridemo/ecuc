@@ -31,6 +31,7 @@ import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingE
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
 
 import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
 
-class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
+class FrTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
 	
 	new (GModuleConfiguration moduleConfiguration){
@@ -84,7 +85,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 	    moduleConfiguration.setContainer(container, "FrTrcvGeneral")
 	}
 	
-	static class FrTrcvChannel implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrTrcvChannel implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
@@ -305,7 +306,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 		
-		static class FrTrcvAccess implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTrcvAccess implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -339,7 +340,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				containerValue.setContainer(subContainer, "FrTrcvSpiSequence")
 			}
 			
-			static class FrTrcvDioAccess implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTrcvDioAccess implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -370,7 +371,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				static class FrTrcvDioChannelAccess implements BasicWrappingEList.IWrapper<GContainer> {
+				static class FrTrcvDioChannelAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
 					
 					new(GContainer containerValue){
@@ -413,7 +414,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 				
 			}
 			
-			static class FrTrcvSpiSequence implements BasicWrappingEList.IWrapper<GContainer> {
+			static class FrTrcvSpiSequence implements IWrapper<GContainer> {
 				private GContainer containerValue
 				
 				new(GContainer containerValue){
@@ -450,7 +451,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTrcvBranchIdContainer implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTrcvBranchIdContainer implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -490,7 +491,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 			
 		}
 		
-		static class FrTrcvChannelDemEventParameterRefs implements BasicWrappingEList.IWrapper<GContainer> {
+		static class FrTrcvChannelDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
 			new(GContainer containerValue){
@@ -537,7 +538,7 @@ class FrTrcv implements BasicWrappingEList.IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	static class FrTrcvGeneral implements BasicWrappingEList.IWrapper<GContainer> {
+	static class FrTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
 		
 		new(GContainer containerValue){
