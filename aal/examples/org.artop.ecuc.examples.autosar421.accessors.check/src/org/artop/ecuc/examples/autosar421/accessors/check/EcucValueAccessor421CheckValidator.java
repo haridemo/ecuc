@@ -19,15 +19,21 @@ import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
 import java.util.regex.Pattern;
 
 import org.artop.ecuc.autosar421.accessors.Dem;
+import org.artop.ecuc.autosar421.accessors.EcucValueAccessor421Factory;
 import org.artop.ecuc.autosar421.accessors.NvM;
 import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor;
+import org.artop.ecuc.gautosar.accessors.check.AbstractEcucValueAccessorCheckValidator;
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.sphinx.emf.check.AbstractCheckValidator;
 import org.eclipse.sphinx.emf.check.Check;
 
+import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucdescriptionPackage;
 
-public class EcucValueAccessor421CheckValidator extends AbstractCheckValidator {
+public class EcucValueAccessor421CheckValidator extends AbstractEcucValueAccessorCheckValidator {
+
+	public EcucValueAccessor421CheckValidator() {
+		super(EcucValueAccessor421Factory.INSTANCE);
+	}
 
 	private static final Pattern ILLEGAL_CHARACTERS_PATTERN = Pattern.compile(".*[ \\t\\.,;].*"); //$NON-NLS-1$
 
@@ -57,6 +63,15 @@ public class EcucValueAccessor421CheckValidator extends AbstractCheckValidator {
 			if (nvMBlockDescriptor.getNvMBlockJobPriority() > 2) {
 				issue(nvMBlockDescriptor, EcucdescriptionPackage.Literals.ECUC_NUMERICAL_PARAM_VALUE__VALUE);
 			}
+		}
+	}
+
+	@Check(constraint = "ShortNameNotValid", categories = { "Category1" })
+	void checkModuleConfigurationShortName(EcucModuleConfigurationValues moduleConf) {
+		Assert.isNotNull(moduleConf);
+
+		if (!isValidShortName(moduleConf.getShortName())) {
+			issue(moduleConf, GinfrastructurePackage.Literals.GREFERRABLE__GSHORT_NAME);
 		}
 	}
 

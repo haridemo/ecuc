@@ -5,4 +5,5 @@
   <constraints id="DemShortNameNotValid" label="Dem ShortName Not Valid" severity="Warning" message="The name of the Dem module configuration is not valid" categories="Category1"/>
   <constraints id="NvMShortNameNotValid" label="NvM ShortName Not Valid" message="The name of the NvM module configuration is not valid" categories="Category1"/>
   <constraints id="NvMBlockJobPriorityNotValid" label="NvM Block Job Priority Not Valid" severity="Warning" message="The value of NvMBlockJobPriority is not valid" categories="Category2"/>
+  <constraints id="ShortNameNotValid" label="ShortName Not Valid" message="The name of the module configuration is not valid" categories="Category1"/>
 </checkcatalog:Catalog>

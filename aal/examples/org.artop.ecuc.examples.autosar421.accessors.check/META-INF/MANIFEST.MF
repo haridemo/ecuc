@@ -15,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.common,
  org.eclipse.emf.ecore,
  org.eclipse.sphinx.emf,
- org.eclipse.sphinx.emf.check,
+ org.artop.ecuc.gautosar.accessors.check,
+ org.artop.aal.autosar40,
  org.artop.ecuc.autosar421.accessors,
- org.artop.aal.autosar40
+ org.artop.ecuc.autosar4x.accessors.lib

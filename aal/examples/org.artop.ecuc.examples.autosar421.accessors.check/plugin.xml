@@ -8,8 +8,8 @@
             catalog="model/EcucValueAcessors421.checkcatalog">
       </validator>
       <ePackageMapping
-            packagaNamePrefix="org.artop.ecuc.autosar421.accessors"
-            className="autosar40.ecucdescription.EcucdescriptionPackage">
+            eObjectWrapperPackageName="org.artop.ecuc.autosar421.accessors"
+            ePackageNsURI="http://autosar.org/schema/r4.0/autosar40/ecucd">
       </ePackageMapping>
    </extension>
 </plugin>
