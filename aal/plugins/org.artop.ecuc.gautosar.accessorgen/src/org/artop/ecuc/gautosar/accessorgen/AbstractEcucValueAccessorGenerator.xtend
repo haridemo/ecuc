@@ -36,11 +36,14 @@ import org.eclipse.core.runtime.NullProgressMonitor
 
 import static extension org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil.getPluralOf
 import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil
+import java.text.MessageFormat
 
 public abstract class AbstractEcucValueAccessorGenerator {
 	
 	protected static final Set<String> RESERVED = #{"if", "while", "for", "else", "class", "interface", "enum"}
 	protected static final Set<String> KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES = #{"Integer", "String", "Float", "String", "Object", "DocumentationBlock"}
+	
+	private static final String ECUC_VALUE_ACCESSOR_FACTORY_CALSS_NAME = "EcucValueAccessor{0}Factory"
 	
 	private String javaPackageName;
 	
@@ -88,6 +91,11 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		for (mod : arPackage.gGetElements.filter[it instanceof GModuleDef]){
 			writeFile((mod as GModuleDef).createModuleClass(javaPackageName), mod.gGetShortName + ".xtend", srcFolderName, project)
 		}
+	}
+	
+	def void generateEcucValueAccessorFactoryClass(IProject project, String srcFolderName, String javaPackageName, String autosarRevision){
+		val ecucValueAccessorFactoryClassName = MessageFormat.format(ECUC_VALUE_ACCESSOR_FACTORY_CALSS_NAME, autosarRevision)
+		writeFile(EcucValueAccessorFactoryGenerator.generate(javaPackageName, ecucValueAccessorFactoryClassName), ecucValueAccessorFactoryClassName + ".java", srcFolderName, project)
 	}
 	
 	def createModuleClass(GModuleDef module, String javaPackageName)'''

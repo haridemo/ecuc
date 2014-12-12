@@ -46,6 +46,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 	protected IFile autosarFile;
 	protected String absoluteQualifiedARPackageName;
 	protected IProject targetProject;
+	protected String autosarRevision;
 
 	private static final Pattern AR_XSD_PATTERN = Pattern.compile(
 			"autosar_(\\d)-(\\d)-(\\d)(_(strict|compact|strict_compact))?\\.xsd", Pattern.CASE_INSENSITIVE); //$NON-NLS-1$
@@ -136,13 +137,13 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 			if (!schemaLocationEntries.isEmpty()) {
 				String arXSD = schemaLocationEntries.values().iterator().next();
 				if (AR_XSD_PATTERN.matcher(arXSD).matches()) {
-					final String arRevision = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1$2$3"); //$NON-NLS-1$
-					final String targetPluginName = MessageFormat.format(TARGET_PLUGIN_NAME, arRevision);
+					autosarRevision = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1$2$3"); //$NON-NLS-1$
+					final String targetPluginName = MessageFormat.format(TARGET_PLUGIN_NAME, autosarRevision);
 					IProject targetProject = ResourcesPlugin.getWorkspace().getRoot().getProject(targetPluginName);
 					// Create the target project if not exist yet
 					if (!targetProject.exists()) {
 						final String arVersion = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1") + "x"; //$NON-NLS-1$ //$NON-NLS-2$
-						targetProject = createTargetProject(targetPluginName, arVersion, arRevision, progress.newChild(40));
+						targetProject = createTargetProject(targetPluginName, arVersion, autosarRevision, progress.newChild(40));
 					} else {
 						progress.worked(40);
 					}
@@ -199,5 +200,26 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 			}
 		}
 		return null;
+	}
+
+	protected String getAutosarRevision(IProgressMonitor monitor) {
+		SubMonitor progress = SubMonitor.convert(monitor, 100);
+		if (progress.isCanceled()) {
+			throw new OperationCanceledException();
+		}
+
+		if (autosarRevision == null) {
+			Resource autosarResource = getModelResource(progress);
+			if (autosarResource != null) {
+				Map<String, String> schemaLocationEntries = EcoreResourceUtil.readSchemaLocationEntries(autosarResource);
+				if (!schemaLocationEntries.isEmpty()) {
+					String arXSD = schemaLocationEntries.values().iterator().next();
+					if (AR_XSD_PATTERN.matcher(arXSD).matches()) {
+						autosarRevision = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1$2$3"); //$NON-NLS-1$
+					}
+				}
+			}
+		}
+		return autosarRevision;
 	}
 }

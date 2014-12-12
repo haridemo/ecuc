@@ -25,21 +25,22 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.core.runtime.SubMonitor;
 
 import autosar40.genericstructure.generaltemplateclasses.arpackage.ARPackage;
 
 /**
  * A {@link IGenerateFromAutosarOperation operation} for generating the ECUC value accessors from an AUTOSAR model.
  */
-public class GenerateEcucValueAccessorOperation extends AbstractGenerateFromAutosarOperation {
+public class GenerateEcucValueAccessor4xOperation extends AbstractGenerateFromAutosarOperation {
 
 	private static final String SRC_GEN_PATH = "src-gen"; //$NON-NLS-1$
 
-	public GenerateEcucValueAccessorOperation(IFile autosarFile, String absoluteQualifiedARPackageName) {
+	public GenerateEcucValueAccessor4xOperation(IFile autosarFile, String absoluteQualifiedARPackageName) {
 		super(Messages.operation_generateEcucValueAccessor_label, autosarFile, absoluteQualifiedARPackageName);
 	}
 
-	public GenerateEcucValueAccessorOperation(String label, IFile autosarFile, String absoluteQualifiedARPackageName) {
+	public GenerateEcucValueAccessor4xOperation(String label, IFile autosarFile, String absoluteQualifiedARPackageName) {
 		super(label, autosarFile, absoluteQualifiedARPackageName);
 	}
 
@@ -51,11 +52,17 @@ public class GenerateEcucValueAccessorOperation extends AbstractGenerateFromAuto
 	@Override
 	public void generate(final GARPackage arPackage, final IProject targetProject, IProgressMonitor monitor) throws CoreException,
 			OperationCanceledException {
-		monitor.setTaskName("Generating EcucValue Accessors"); //$NON-NLS-1$
+		SubMonitor progress = SubMonitor.convert(monitor, "Generating EcucValue Accessors", 100); //$NON-NLS-1$
+		if (progress.isCanceled()) {
+			throw new OperationCanceledException();
+		}
+
 		if (targetProject != null && arPackage instanceof ARPackage) {
 			EcucValueAccessor4xGenerator ecucValueAccessorGenerator = createEcucValueAccessorGenerator();
-			ecucValueAccessorGenerator.writeAccessorClasses(arPackage,
-					SRC_GEN_PATH + "/" + targetProject.getName().replaceAll("\\.", "/"), targetProject.getName(), targetProject); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			String srcFolderName = SRC_GEN_PATH + "/" + targetProject.getName().replaceAll("\\.", "/"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			ecucValueAccessorGenerator.writeAccessorClasses(arPackage, srcFolderName, targetProject.getName(), targetProject);
+			ecucValueAccessorGenerator.generateEcucValueAccessorFactoryClass(targetProject, srcFolderName, targetProject.getName(),
+					getAutosarRevision(progress));
 		}
 	}
 

@@ -31,9 +31,11 @@ import gautosar.gecucparameterdef.GReferenceDef;
 import gautosar.ggenericstructure.ginfrastructure.GARPackage;
 import gautosar.ggenericstructure.ginfrastructure.GPackageableElement;
 import java.io.ByteArrayInputStream;
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
+import org.artop.ecuc.gautosar.accessorgen.EcucValueAccessorFactoryGenerator;
 import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -54,6 +56,8 @@ public abstract class AbstractEcucValueAccessorGenerator {
   protected final static Set<String> RESERVED = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("if", "while", "for", "else", "class", "interface", "enum"));
   
   protected final static Set<String> KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES = Collections.<String>unmodifiableSet(CollectionLiterals.<String>newHashSet("Integer", "String", "Float", "String", "Object", "DocumentationBlock"));
+  
+  private final static String ECUC_VALUE_ACCESSOR_FACTORY_CALSS_NAME = "EcucValueAccessor{0}Factory";
   
   private String javaPackageName;
   
@@ -136,6 +140,12 @@ public abstract class AbstractEcucValueAccessorGenerator {
       String _plus = (_gGetShortName + ".xtend");
       this.writeFile(_createModuleClass, _plus, srcFolderName, project);
     }
+  }
+  
+  public void generateEcucValueAccessorFactoryClass(final IProject project, final String srcFolderName, final String javaPackageName, final String autosarRevision) {
+    final String ecucValueAccessorFactoryClassName = MessageFormat.format(AbstractEcucValueAccessorGenerator.ECUC_VALUE_ACCESSOR_FACTORY_CALSS_NAME, autosarRevision);
+    CharSequence _generate = EcucValueAccessorFactoryGenerator.generate(javaPackageName, ecucValueAccessorFactoryClassName);
+    this.writeFile(_generate, (ecucValueAccessorFactoryClassName + ".java"), srcFolderName, project);
   }
   
   public CharSequence createModuleClass(final GModuleDef module, final String javaPackageName) {
