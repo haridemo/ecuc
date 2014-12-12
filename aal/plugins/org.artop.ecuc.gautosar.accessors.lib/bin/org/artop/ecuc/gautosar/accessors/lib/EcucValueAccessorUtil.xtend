@@ -122,7 +122,7 @@ class EcucValueAccessorUtil {
 		null
 	}
 	
-	def static String getAccessorClassQualifiedName(String javaPackageName, GContainerDef containerDef) {
+	def static String getAccessorClassQualifiedName(String javaPackageName, GContainerDef containerDef, String separator) {
 		Assert.isNotNull(containerDef)
 		
 		var StringBuilder builder = new StringBuilder
@@ -143,7 +143,7 @@ class EcucValueAccessorUtil {
 		for (i : segments.size >.. 0) {
 			builder.append(segments.get(i))
 			if (i !=0){
-				builder.append(".")
+				builder.append(separator)
 			}
 		}
 		

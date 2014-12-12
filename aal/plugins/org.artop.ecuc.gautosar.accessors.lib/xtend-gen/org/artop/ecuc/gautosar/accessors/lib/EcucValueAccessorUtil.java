@@ -270,7 +270,7 @@ public class EcucValueAccessorUtil {
     }
   }
   
-  public static String getAccessorClassQualifiedName(final String javaPackageName, final GContainerDef containerDef) {
+  public static String getAccessorClassQualifiedName(final String javaPackageName, final GContainerDef containerDef, final String separator) {
     String _xblockexpression = null;
     {
       Assert.isNotNull(containerDef);
@@ -299,7 +299,7 @@ public class EcucValueAccessorUtil {
           String _get = segments.get((i).intValue());
           builder.append(_get);
           if (((i).intValue() != 0)) {
-            builder.append(".");
+            builder.append(separator);
           }
         }
       }

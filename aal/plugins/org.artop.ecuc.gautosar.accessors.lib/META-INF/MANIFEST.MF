@@ -14,5 +14,7 @@ Require-Bundle: com.google.guava,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.artop.ecuc.gautosar.accessors.lib,
+ org.artop.ecuc.gautosar.accessors.lib.factory,
  org.artop.ecuc.gautosar.accessors.lib.internal;x-internal:=true
 Bundle-Localization: plugin
+Eclipse-BuddyPolicy: global, ext
