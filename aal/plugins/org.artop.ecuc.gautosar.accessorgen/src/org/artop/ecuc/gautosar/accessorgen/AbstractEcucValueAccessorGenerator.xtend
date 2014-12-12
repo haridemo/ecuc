@@ -301,7 +301,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	
 	def dispatch getReferenceContents(GReferenceDef referenceDef)'''
 	«IF referenceDef.gGetRefDestination != null»
-	«val refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, referenceDef.gGetRefDestination)»
+	«val refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, referenceDef.gGetRefDestination, ".")»
 	«IF EcucValueAccessorUtil.isMany(referenceDef)»
 	def List<«refDestinationClassName»> get«referenceDef.gGetShortName.toFirstUpper.pluralOf»(){
 		val containerDef = containerValue.gGetDefinition

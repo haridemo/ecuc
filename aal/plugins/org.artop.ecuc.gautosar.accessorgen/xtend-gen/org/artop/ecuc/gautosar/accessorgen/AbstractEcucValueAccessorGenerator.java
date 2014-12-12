@@ -895,7 +895,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
       boolean _notEquals = (!Objects.equal(_gGetRefDestination, null));
       if (_notEquals) {
         GContainerDef _gGetRefDestination_1 = referenceDef.gGetRefDestination();
-        final String refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, _gGetRefDestination_1);
+        final String refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, _gGetRefDestination_1, ".");
         _builder.newLineIfNotEmpty();
         {
           boolean _isMany = EcucValueAccessorUtil.isMany(referenceDef);
