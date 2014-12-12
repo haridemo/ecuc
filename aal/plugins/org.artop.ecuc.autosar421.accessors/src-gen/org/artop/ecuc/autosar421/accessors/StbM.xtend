@@ -112,22 +112,6 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Boolean getStbMAbsoluteTimeApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMAbsoluteTimeApi"])
-		}
-		
-		def void setStbMAbsoluteTimeApi(Boolean value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMAbsoluteTimeApi"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMAbsoluteTimeApi"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
 		def Boolean getStbMDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"])
 		}
@@ -176,22 +160,6 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getStbMTickTypeRange(){
-			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTickTypeRange"])
-		}
-		
-		def void setStbMTickTypeRange(Integer value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTickTypeRange"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMTickTypeRange"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
 		def Boolean getStbMVersionInfo(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMVersionInfo"])
 		}
@@ -231,32 +199,16 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getStbMGlobalTimeDomainId(){
-			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGlobalTimeDomainId"])
+		def Boolean getStbMIsSystemWideGlobalTimeMaster(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"])
 		}
 		
-		def void setStbMGlobalTimeDomainId(Integer value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGlobalTimeDomainId"]
+		def void setStbMIsSystemWideGlobalTimeMaster(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMGlobalTimeDomainId"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
-		def String getStbMGlobalTimeProviderCallout(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGlobalTimeProviderCallout"])
-		}
-		
-		def void setStbMGlobalTimeProviderCallout(String value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGlobalTimeProviderCallout"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMGlobalTimeProviderCallout"])
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMIsSystemWideGlobalTimeMaster"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
@@ -328,22 +280,6 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
-		def String getStbMSyncStateProviderCallout(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncStateProviderCallout"])
-		}
-		
-		def void setStbMSyncStateProviderCallout(String value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncStateProviderCallout"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncStateProviderCallout"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
 		def Integer getStbMSynchronizedTimeBaseIdentifier(){
 			EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSynchronizedTimeBaseIdentifier"])
 		}
@@ -354,22 +290,6 @@ class StbM implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMSynchronizedTimeBaseIdentifier"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
-		def String getStbMTickDurationProviderCallout(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTickDurationProviderCallout"])
-		}
-		
-		def void setStbMTickDurationProviderCallout(String value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTickDurationProviderCallout"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMTickDurationProviderCallout"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
@@ -430,54 +350,6 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
-		}
-		
-		def String getStbMGlobalTimeCustomerCallback(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGlobalTimeCustomerCallback"])
-		}
-		
-		def void setStbMGlobalTimeCustomerCallback(String value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGlobalTimeCustomerCallback"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMGlobalTimeCustomerCallback"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
-		def String getStbMSyncStateCustomerCallback(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncStateCustomerCallback"])
-		}
-		
-		def void setStbMSyncStateCustomerCallback(String value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncStateCustomerCallback"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncStateCustomerCallback"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-		}
-		
-		def Boolean getStbMTriggerInSyncState(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTriggerInSyncState"])
-		}
-		
-		def void setStbMTriggerInSyncState(Boolean value){
-			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTriggerInSyncState"]
-			if (parameterValue == null) {
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMTriggerInSyncState"])
-					containerValue.gGetParameterValues += parameterValue
-				}
-			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
 		def Integer getStbMTriggeredCustomerPeriod(){

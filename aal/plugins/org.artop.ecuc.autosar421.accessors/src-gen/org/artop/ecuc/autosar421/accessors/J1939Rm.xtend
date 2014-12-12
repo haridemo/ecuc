@@ -567,22 +567,6 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def Integer getJ1939RmUserComIPduRequestQueueSize(){
-					EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserComIPduRequestQueueSize"])
-				}
-				
-				def void setJ1939RmUserComIPduRequestQueueSize(Integer value){
-					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserComIPduRequestQueueSize"]
-					if (parameterValue == null) {
-						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserComIPduRequestQueueSize"])
-							containerValue.gGetParameterValues += parameterValue
-						}
-					}
-					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-				}
-				
 				def Integer getJ1939RmUserId(){
 					EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserId"])
 				}
@@ -747,22 +731,6 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939RmComIPduDA(){
-						EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduDA"])
-					}
-					
-					def void setJ1939RmComIPduDA(Integer value){
-						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduDA"]
-						if (parameterValue == null) {
-							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmComIPduDA"])
-								containerValue.gGetParameterValues += parameterValue
-							}
-						}
-						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-					}
-					
 					def Integer getJ1939RmComIPduPGN(){
 						EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"])
 					}
@@ -779,142 +747,19 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getJ1939RmComIPduSA(){
-						EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduSA"])
-					}
 					
-					def void setJ1939RmComIPduSA(Integer value){
-						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduSA"]
-						if (parameterValue == null) {
-							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmComIPduSA"])
-								containerValue.gGetParameterValues += parameterValue
-							}
+					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmComIPduRef(){
+						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmComIPduRef")
+					}
+							
+					def void setJ1939RmComIPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmComIPduRef"], object.getTarget())
 						}
-						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
 					
-					
-					def J1939RmLowerComIPdu getJ1939RmLowerComIPdu(){
-						containerValue.getByType(typeof(J1939RmLowerComIPdu))
-					}
-					
-					def void setJ1939RmLowerComIPdu(GContainer subContainer){
-						containerValue.setContainer(subContainer, "J1939RmLowerComIPdu")
-					}
-					
-					def J1939RmUpperComIPdu getJ1939RmUpperComIPdu(){
-						containerValue.getByType(typeof(J1939RmUpperComIPdu))
-					}
-					
-					def void setJ1939RmUpperComIPdu(GContainer subContainer){
-						containerValue.setContainer(subContainer, "J1939RmUpperComIPdu")
-					}
-					
-					
-					static class J1939RmLowerComIPdu implements IWrapper<GContainer> {
-						private GContainer containerValue
-						
-						new(GContainer containerValue){
-							this.containerValue = containerValue
-						}
-						
-						def String getShortName(){
-							containerValue?.gGetShortName
-						}
-						
-						def void setShortName(String name){
-							containerValue?.gSetShortName(name)
-						}
-						
-						override def GContainer getTarget(){
-							containerValue
-						}
-						
-						def Integer getJ1939RmLowerComIPduId(){
-							EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmLowerComIPduId"])
-						}
-						
-						def void setJ1939RmLowerComIPduId(Integer value){
-							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmLowerComIPduId"]
-							if (parameterValue == null) {
-								val containerDef = containerValue.gGetDefinition
-								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmLowerComIPduId"])
-									containerValue.gGetParameterValues += parameterValue
-								}
-							}
-							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-						}
-						
-						
-						def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmLowerComIPduRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmLowerComIPduRef")
-						}
-								
-						def void setJ1939RmLowerComIPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
-							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmLowerComIPduRef"], object.getTarget())
-							}
-						}
-						
-						
-						
-					}
-					
-					static class J1939RmUpperComIPdu implements IWrapper<GContainer> {
-						private GContainer containerValue
-						
-						new(GContainer containerValue){
-							this.containerValue = containerValue
-						}
-						
-						def String getShortName(){
-							containerValue?.gGetShortName
-						}
-						
-						def void setShortName(String name){
-							containerValue?.gSetShortName(name)
-						}
-						
-						override def GContainer getTarget(){
-							containerValue
-						}
-						
-						def Integer getJ1939RmUpperComIPduId(){
-							EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUpperComIPduId"])
-						}
-						
-						def void setJ1939RmUpperComIPduId(Integer value){
-							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUpperComIPduId"]
-							if (parameterValue == null) {
-								val containerDef = containerValue.gGetDefinition
-								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUpperComIPduId"])
-									containerValue.gGetParameterValues += parameterValue
-								}
-							}
-							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-						}
-						
-						
-						def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmUpperComIPduRef(){
-							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmUpperComIPduRef")
-						}
-								
-						def void setJ1939RmUpperComIPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
-							val containerDef = containerValue.gGetDefinition
-							if (containerDef instanceof GParamConfContainerDef) {
-								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmUpperComIPduRef"], object.getTarget())
-							}
-						}
-						
-						
-						
-					}
 					
 				}
 				

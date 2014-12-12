@@ -856,6 +856,22 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
+			def Boolean getCanNmRetryFirstMessageRequest(){
+				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRetryFirstMessageRequest"])
+			}
+			
+			def void setCanNmRetryFirstMessageRequest(Boolean value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRetryFirstMessageRequest"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanNmRetryFirstMessageRequest"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
 			def Float getCanNmTimeoutTime(){
 				EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTimeoutTime"])
 			}

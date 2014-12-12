@@ -115,6 +115,15 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			return new BasicWrappingEList<TcpIpCtrl, GContainer>(filteredContainers, typeof(TcpIpCtrl), typeof(GContainer))
 		}
 		
+		def List<TcpIpDhcpServerConfig> getTcpIpDhcpServerConfigs(){
+			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+				override protected accept(GContainer item) {
+					return accept(item, typeof(GContainerDef), "TcpIpDhcpServerConfig")
+				}
+			}
+			return new BasicWrappingEList<TcpIpDhcpServerConfig, GContainer>(filteredContainers, typeof(TcpIpDhcpServerConfig), typeof(GContainer))
+		}
+		
 		def TcpIpIpConfig getTcpIpIpConfig(){
 			containerValue.getByType(typeof(TcpIpIpConfig))
 		}
@@ -132,12 +141,28 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			return new BasicWrappingEList<TcpIpLocalAddr, GContainer>(filteredContainers, typeof(TcpIpLocalAddr), typeof(GContainer))
 		}
 		
+		def TcpIpNvmBlock getTcpIpNvmBlock(){
+			containerValue.getByType(typeof(TcpIpNvmBlock))
+		}
+		
+		def void setTcpIpNvmBlock(GContainer subContainer){
+			containerValue.setContainer(subContainer, "TcpIpNvmBlock")
+		}
+		
 		def TcpIpPhysAddrConfig getTcpIpPhysAddrConfig(){
 			containerValue.getByType(typeof(TcpIpPhysAddrConfig))
 		}
 		
 		def void setTcpIpPhysAddrConfig(GContainer subContainer){
 			containerValue.setContainer(subContainer, "TcpIpPhysAddrConfig")
+		}
+		
+		def TcpIpSocketOwnerConfig getTcpIpSocketOwnerConfig(){
+			containerValue.getByType(typeof(TcpIpSocketOwnerConfig))
+		}
+		
+		def void setTcpIpSocketOwnerConfig(GContainer subContainer){
+			containerValue.setContainer(subContainer, "TcpIpSocketOwnerConfig")
 		}
 		
 		def TcpIpTcpConfig getTcpIpTcpConfig(){
@@ -193,6 +218,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			
+			def org.artop.ecuc.autosar421.accessors.TcpIp.TcpIpConfig.TcpIpDhcpServerConfig getTcpIpDhcpServerConfigRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.TcpIp.TcpIpConfig.TcpIpDhcpServerConfig), "TcpIpDhcpServerConfigRef")
+			}
+					
+			def void setTcpIpDhcpServerConfigRef(org.artop.ecuc.autosar421.accessors.TcpIp.TcpIpConfig.TcpIpDhcpServerConfig object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TcpIpDhcpServerConfigRef"], object.getTarget())
+				}
+			}
+			
 			def org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfController getTcpIpEthIfCtrlRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfController), "TcpIpEthIfCtrlRef")
 			}
@@ -242,17 +278,6 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				}
 				
 				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_CONNABORTED(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_CONNABORTED")
-				}
-						
-				def void setTCPIP_E_CONNABORTED(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_CONNABORTED"], object.getTarget())
-					}
-				}
-				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_CONNREFUSED(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_CONNREFUSED")
 				}
@@ -261,28 +286,6 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_CONNREFUSED"], object.getTarget())
-					}
-				}
-				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_CONNRESET(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_CONNRESET")
-				}
-						
-				def void setTCPIP_E_CONNRESET(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_CONNRESET"], object.getTarget())
-					}
-				}
-				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_HOSTDOWN(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_HOSTDOWN")
-				}
-						
-				def void setTCPIP_E_HOSTDOWN(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_HOSTDOWN"], object.getTarget())
 					}
 				}
 				
@@ -297,36 +300,14 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_NETDOWN(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_NETDOWN")
+				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_PACKETTOBIG(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_PACKETTOBIG")
 				}
 						
-				def void setTCPIP_E_NETDOWN(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
+				def void setTCPIP_E_PACKETTOBIG(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_NETDOWN"], object.getTarget())
-					}
-				}
-				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_NETRESET(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_NETRESET")
-				}
-						
-				def void setTCPIP_E_NETRESET(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_NETRESET"], object.getTarget())
-					}
-				}
-				
-				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_NETUNREACH(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_NETUNREACH")
-				}
-						
-				def void setTCPIP_E_NETUNREACH(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_NETUNREACH"], object.getTarget())
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TCPIP_E_PACKETTOBIG"], object.getTarget())
 					}
 				}
 				
@@ -583,6 +564,149 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					}
 					
 				}
+				
+			}
+			
+		}
+		
+		static class TcpIpDhcpServerConfig implements IWrapper<GContainer> {
+			private GContainer containerValue
+			
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+			
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+			
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+			
+			override def GContainer getTarget(){
+				containerValue
+			}
+			
+			def String getTcpIpDhcpDefaultRouter(){
+				EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpDefaultRouter"])
+			}
+			
+			def void setTcpIpDhcpDefaultRouter(String value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpDefaultRouter"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpDhcpDefaultRouter"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
+			def Integer getTcpIpDhcpNetmask(){
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpNetmask"])
+			}
+			
+			def void setTcpIpDhcpNetmask(Integer value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpNetmask"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpDhcpNetmask"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
+			
+			def org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfSwitch getTcpIpDhcpEthIfSwitchRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfSwitch), "TcpIpDhcpEthIfSwitchRef")
+			}
+					
+			def void setTcpIpDhcpEthIfSwitchRef(org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfSwitch object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TcpIpDhcpEthIfSwitchRef"], object.getTarget())
+				}
+			}
+			
+			
+			def List<TcpIpDhcpAddressAssignment> getTcpIpDhcpAddressAssignments(){
+				val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+					override protected accept(GContainer item) {
+						return accept(item, typeof(GContainerDef), "TcpIpDhcpAddressAssignment")
+					}
+				}
+				return new BasicWrappingEList<TcpIpDhcpAddressAssignment, GContainer>(filteredContainers, typeof(TcpIpDhcpAddressAssignment), typeof(GContainer))
+			}
+			
+			
+			static class TcpIpDhcpAddressAssignment implements IWrapper<GContainer> {
+				private GContainer containerValue
+				
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+				
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+				
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+				
+				override def GContainer getTarget(){
+					containerValue
+				}
+				
+				def String getTcpIpDhcpAddressLowerBound(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpAddressLowerBound"])
+				}
+				
+				def void setTcpIpDhcpAddressLowerBound(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpAddressLowerBound"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpDhcpAddressLowerBound"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpDhcpAddressUpperBound(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpAddressUpperBound"])
+				}
+				
+				def void setTcpIpDhcpAddressUpperBound(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpAddressUpperBound"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpDhcpAddressUpperBound"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				
+				def org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig.EthSwtPort getTcpIpDhcpSwitchPortRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig.EthSwtPort), "TcpIpDhcpSwitchPortRef")
+				}
+						
+				def void setTcpIpDhcpSwitchPortRef(org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig.EthSwtPort object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TcpIpDhcpSwitchPortRef"], object.getTarget())
+					}
+				}
+				
+				
 				
 			}
 			
@@ -1712,6 +1836,22 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 						}
 						
+						def Boolean getTcpIpNdpPacketQueueEnabled(){
+							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpPacketQueueEnabled"])
+						}
+						
+						def void setTcpIpNdpPacketQueueEnabled(Boolean value){
+							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpPacketQueueEnabled"]
+							if (parameterValue == null) {
+								val containerDef = containerValue.gGetDefinition
+								if (containerDef instanceof GParamConfContainerDef) {
+									parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpNdpPacketQueueEnabled"])
+									containerValue.gGetParameterValues += parameterValue
+								}
+							}
+							EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+						}
+						
 						def Boolean getTcpIpNdpRandomReachableTimeEnabled(){
 							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpRandomReachableTimeEnabled"])
 						}
@@ -2178,6 +2318,39 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				def TcpIpAssignmentLifetime getTcpIpAssignmentLifetime(){
+					getTcpIpAssignmentLifetimeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpAssignmentLifetime"])
+				}
+				
+				def void setTcpIpAssignmentLifetime(TcpIpAssignmentLifetime value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpAssignmentLifetime"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpAssignmentLifetime"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				enum TcpIpAssignmentLifetime {
+					TCPIP_FORGET, 
+					TCPIP_STORE
+				}
+					
+				def TcpIpAssignmentLifetime getTcpIpAssignmentLifetimeValue(GParameterValue paramValue){
+					val castedParamValue = paramValue as EcucTextualParamValue
+					switch (castedParamValue.value){
+						case "TCPIP_FORGET" : TcpIpAssignmentLifetime.TCPIP_FORGET
+						case "TCPIP_STORE" : TcpIpAssignmentLifetime.TCPIP_STORE
+					}
+				}
+				
+				def void setTcpIpAssignmentLifetimeValue(GParameterValue paramValue, TcpIpAssignmentLifetime value){
+					EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+				}
+				
 				def TcpIpAssignmentMethod getTcpIpAssignmentMethod(){
 					getTcpIpAssignmentMethodValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpAssignmentMethod"])
 				}
@@ -2345,6 +2518,41 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+		static class TcpIpNvmBlock implements IWrapper<GContainer> {
+			private GContainer containerValue
+			
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+			
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+			
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+			
+			override def GContainer getTarget(){
+				containerValue
+			}
+			
+			
+			def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getTcpIpNvmBlockDescriptorRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "TcpIpNvmBlockDescriptorRef")
+			}
+					
+			def void setTcpIpNvmBlockDescriptorRef(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "TcpIpNvmBlockDescriptorRef"], object.getTarget())
+				}
+			}
+			
+			
+			
+		}
+		
 		static class TcpIpPhysAddrConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
@@ -2424,6 +2632,208 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				
+				
+				
+			}
+			
+		}
+		
+		static class TcpIpSocketOwnerConfig implements IWrapper<GContainer> {
+			private GContainer containerValue
+			
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+			
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+			
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+			
+			override def GContainer getTarget(){
+				containerValue
+			}
+			
+			
+			
+			def List<TcpIpSocketOwner> getTcpIpSocketOwners(){
+				val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+					override protected accept(GContainer item) {
+						return accept(item, typeof(GContainerDef), "TcpIpSocketOwner")
+					}
+				}
+				return new BasicWrappingEList<TcpIpSocketOwner, GContainer>(filteredContainers, typeof(TcpIpSocketOwner), typeof(GContainer))
+			}
+			
+			
+			static class TcpIpSocketOwner implements IWrapper<GContainer> {
+				private GContainer containerValue
+				
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+				
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+				
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+				
+				override def GContainer getTarget(){
+					containerValue
+				}
+				
+				def String getTcpIpSocketOwnerCopyTxDataName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerCopyTxDataName"])
+				}
+				
+				def void setTcpIpSocketOwnerCopyTxDataName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerCopyTxDataName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerCopyTxDataName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpSocketOwnerHeaderFileName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerHeaderFileName"])
+				}
+				
+				def void setTcpIpSocketOwnerHeaderFileName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerHeaderFileName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerHeaderFileName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpSocketOwnerLocalIpAddrAssignmentChgName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerLocalIpAddrAssignmentChgName"])
+				}
+				
+				def void setTcpIpSocketOwnerLocalIpAddrAssignmentChgName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerLocalIpAddrAssignmentChgName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerLocalIpAddrAssignmentChgName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpSocketOwnerRxIndicationName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerRxIndicationName"])
+				}
+				
+				def void setTcpIpSocketOwnerRxIndicationName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerRxIndicationName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerRxIndicationName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpSocketOwnerTcpAcceptedName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerTcpAcceptedName"])
+				}
+				
+				def void setTcpIpSocketOwnerTcpAcceptedName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerTcpAcceptedName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerTcpAcceptedName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpSocketOwnerTcpConnectedName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerTcpConnectedName"])
+				}
+				
+				def void setTcpIpSocketOwnerTcpConnectedName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerTcpConnectedName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerTcpConnectedName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def String getTcpIpSocketOwnerTxConfirmationName(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerTxConfirmationName"])
+				}
+				
+				def void setTcpIpSocketOwnerTxConfirmationName(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerTxConfirmationName"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerTxConfirmationName"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				def TcpIpSocketOwnerUpperLayerType getTcpIpSocketOwnerUpperLayerType(){
+					getTcpIpSocketOwnerUpperLayerTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerUpperLayerType"])
+				}
+				
+				def void setTcpIpSocketOwnerUpperLayerType(TcpIpSocketOwnerUpperLayerType value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpSocketOwnerUpperLayerType"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpSocketOwnerUpperLayerType"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
+				enum TcpIpSocketOwnerUpperLayerType {
+					CDD, 
+					SOAD
+				}
+					
+				def TcpIpSocketOwnerUpperLayerType getTcpIpSocketOwnerUpperLayerTypeValue(GParameterValue paramValue){
+					val castedParamValue = paramValue as EcucTextualParamValue
+					switch (castedParamValue.value){
+						case "CDD" : TcpIpSocketOwnerUpperLayerType.CDD
+						case "SOAD" : TcpIpSocketOwnerUpperLayerType.SOAD
+					}
+				}
+				
+				def void setTcpIpSocketOwnerUpperLayerTypeValue(GParameterValue paramValue, TcpIpSocketOwnerUpperLayerType value){
+					EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 				}
 				
 				
@@ -2821,6 +3231,22 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
+		def Boolean getTcpIpDhcpServerEnabled(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpServerEnabled"])
+		}
+		
+		def void setTcpIpDhcpServerEnabled(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpServerEnabled"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpDhcpServerEnabled"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
 		def Float getTcpIpMainFunctionPeriod(){
 			EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpMainFunctionPeriod"])
 		}
@@ -2831,6 +3257,22 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpMainFunctionPeriod"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
+		def Boolean getTcpIpResetIpAssignmentApi(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpResetIpAssignmentApi"])
+		}
+		
+		def void setTcpIpResetIpAssignmentApi(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpResetIpAssignmentApi"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "TcpIpResetIpAssignmentApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}

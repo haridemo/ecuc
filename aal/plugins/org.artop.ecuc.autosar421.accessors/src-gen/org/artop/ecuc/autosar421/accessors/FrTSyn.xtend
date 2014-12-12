@@ -499,22 +499,6 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
-			def Boolean getFrTSynIsSystemWideGlobalTimeMaster(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynIsSystemWideGlobalTimeMaster"])
-			}
-			
-			def void setFrTSynIsSystemWideGlobalTimeMaster(Boolean value){
-				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynIsSystemWideGlobalTimeMaster"]
-				if (parameterValue == null) {
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynIsSystemWideGlobalTimeMaster"])
-						containerValue.gGetParameterValues += parameterValue
-					}
-				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-			}
-			
 			
 			
 			def FrTSynGlobalTimeMasterPdu getFrTSynGlobalTimeMasterPdu(){

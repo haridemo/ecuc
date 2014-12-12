@@ -426,6 +426,41 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def EcuMModuleParameter getEcuMModuleParameter(){
+						getEcuMModuleParameterValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"])
+					}
+					
+					def void setEcuMModuleParameter(EcuMModuleParameter value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					enum EcuMModuleParameter {
+						NULL_PTR, 
+						POSTBUILD_PTR, 
+						VOID
+					}
+						
+					def EcuMModuleParameter getEcuMModuleParameterValue(GParameterValue paramValue){
+						val castedParamValue = paramValue as EcucTextualParamValue
+						switch (castedParamValue.value){
+							case "NULL_PTR" : EcuMModuleParameter.NULL_PTR
+							case "POSTBUILD_PTR" : EcuMModuleParameter.POSTBUILD_PTR
+							case "VOID" : EcuMModuleParameter.VOID
+						}
+					}
+					
+					def void setEcuMModuleParameterValue(GParameterValue paramValue, EcuMModuleParameter value){
+						EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+					}
+					
 					def String getEcuMModuleService(){
 						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"])
 					}
@@ -441,6 +476,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
+					
 					
 					
 					
@@ -515,6 +551,41 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def EcuMModuleParameter getEcuMModuleParameter(){
+						getEcuMModuleParameterValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"])
+					}
+					
+					def void setEcuMModuleParameter(EcuMModuleParameter value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					enum EcuMModuleParameter {
+						NULL_PTR, 
+						POSTBUILD_PTR, 
+						VOID
+					}
+						
+					def EcuMModuleParameter getEcuMModuleParameterValue(GParameterValue paramValue){
+						val castedParamValue = paramValue as EcucTextualParamValue
+						switch (castedParamValue.value){
+							case "NULL_PTR" : EcuMModuleParameter.NULL_PTR
+							case "POSTBUILD_PTR" : EcuMModuleParameter.POSTBUILD_PTR
+							case "VOID" : EcuMModuleParameter.VOID
+						}
+					}
+					
+					def void setEcuMModuleParameterValue(GParameterValue paramValue, EcuMModuleParameter value){
+						EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+					}
+					
 					def String getEcuMModuleService(){
 						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"])
 					}
@@ -530,6 +601,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
+					
 					
 					
 					
@@ -604,6 +676,41 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def EcuMModuleParameter getEcuMModuleParameter(){
+						getEcuMModuleParameterValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"])
+					}
+					
+					def void setEcuMModuleParameter(EcuMModuleParameter value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					enum EcuMModuleParameter {
+						NULL_PTR, 
+						POSTBUILD_PTR, 
+						VOID
+					}
+						
+					def EcuMModuleParameter getEcuMModuleParameterValue(GParameterValue paramValue){
+						val castedParamValue = paramValue as EcucTextualParamValue
+						switch (castedParamValue.value){
+							case "NULL_PTR" : EcuMModuleParameter.NULL_PTR
+							case "POSTBUILD_PTR" : EcuMModuleParameter.POSTBUILD_PTR
+							case "VOID" : EcuMModuleParameter.VOID
+						}
+					}
+					
+					def void setEcuMModuleParameterValue(GParameterValue paramValue, EcuMModuleParameter value){
+						EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+					}
+					
 					def String getEcuMModuleService(){
 						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"])
 					}
@@ -619,6 +726,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
+					
 					
 					
 					
@@ -1075,6 +1183,41 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def EcuMModuleParameter getEcuMModuleParameter(){
+						getEcuMModuleParameterValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"])
+					}
+					
+					def void setEcuMModuleParameter(EcuMModuleParameter value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					enum EcuMModuleParameter {
+						NULL_PTR, 
+						POSTBUILD_PTR, 
+						VOID
+					}
+						
+					def EcuMModuleParameter getEcuMModuleParameterValue(GParameterValue paramValue){
+						val castedParamValue = paramValue as EcucTextualParamValue
+						switch (castedParamValue.value){
+							case "NULL_PTR" : EcuMModuleParameter.NULL_PTR
+							case "POSTBUILD_PTR" : EcuMModuleParameter.POSTBUILD_PTR
+							case "VOID" : EcuMModuleParameter.VOID
+						}
+					}
+					
+					def void setEcuMModuleParameterValue(GParameterValue paramValue, EcuMModuleParameter value){
+						EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+					}
+					
 					def String getEcuMModuleService(){
 						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"])
 					}
@@ -1090,6 +1233,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
+					
 					
 					
 					
@@ -1164,6 +1308,41 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def EcuMModuleParameter getEcuMModuleParameter(){
+						getEcuMModuleParameterValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"])
+					}
+					
+					def void setEcuMModuleParameter(EcuMModuleParameter value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					enum EcuMModuleParameter {
+						NULL_PTR, 
+						POSTBUILD_PTR, 
+						VOID
+					}
+						
+					def EcuMModuleParameter getEcuMModuleParameterValue(GParameterValue paramValue){
+						val castedParamValue = paramValue as EcucTextualParamValue
+						switch (castedParamValue.value){
+							case "NULL_PTR" : EcuMModuleParameter.NULL_PTR
+							case "POSTBUILD_PTR" : EcuMModuleParameter.POSTBUILD_PTR
+							case "VOID" : EcuMModuleParameter.VOID
+						}
+					}
+					
+					def void setEcuMModuleParameterValue(GParameterValue paramValue, EcuMModuleParameter value){
+						EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+					}
+					
 					def String getEcuMModuleService(){
 						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"])
 					}
@@ -1179,6 +1358,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
+					
 					
 					
 					
@@ -1309,7 +1489,6 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition> getEcuMPartitionRefs(){

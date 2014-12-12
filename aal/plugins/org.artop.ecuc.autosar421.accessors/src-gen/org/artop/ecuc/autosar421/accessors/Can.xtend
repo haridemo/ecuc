@@ -1050,6 +1050,22 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			def Integer getCanFdPaddingValue(){
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"])
+			}
+			
+			def void setCanFdPaddingValue(Integer value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanFdPaddingValue"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
 			def CanHandleType getCanHandleType(){
 				getCanHandleTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHandleType"])
 			}
@@ -1181,6 +1197,22 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanObjectTypeValue(GParameterValue paramValue, CanObjectType value){
 				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			}
+			
+			def Boolean getCanTriggerTransmitEnable(){
+				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTriggerTransmitEnable"])
+			}
+			
+			def void setCanTriggerTransmitEnable(Boolean value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTriggerTransmitEnable"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTriggerTransmitEnable"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			
@@ -1667,6 +1699,22 @@ class Can implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							def Integer getCanIcomSignalMask(){
+								EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"])
+							}
+							
+							def void setCanIcomSignalMask(Integer value){
+								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"]
+								if (parameterValue == null) {
+									val containerDef = containerValue.gGetDefinition
+									if (containerDef instanceof GParamConfContainerDef) {
+										parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalMask"])
+										containerValue.gGetParameterValues += parameterValue
+									}
+								}
+								EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+							}
+							
 							def CanIcomSignalOperation getCanIcomSignalOperation(){
 								getCanIcomSignalOperationValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalOperation"])
 							}
@@ -1687,7 +1735,6 @@ class Can implements IWrapper<GModuleConfiguration> {
 								AND, 
 								EQUAL, 
 								GREATER, 
-								OR, 
 								SMALLER, 
 								XOR
 							}
@@ -1698,7 +1745,6 @@ class Can implements IWrapper<GModuleConfiguration> {
 									case "AND" : CanIcomSignalOperation.AND
 									case "EQUAL" : CanIcomSignalOperation.EQUAL
 									case "GREATER" : CanIcomSignalOperation.GREATER
-									case "OR" : CanIcomSignalOperation.OR
 									case "SMALLER" : CanIcomSignalOperation.SMALLER
 									case "XOR" : CanIcomSignalOperation.XOR
 								}
@@ -1706,6 +1752,22 @@ class Can implements IWrapper<GModuleConfiguration> {
 							
 							def void setCanIcomSignalOperationValue(GParameterValue paramValue, CanIcomSignalOperation value){
 								EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+							}
+							
+							def Integer getCanIcomSignalValue(){
+								EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValue"])
+							}
+							
+							def void setCanIcomSignalValue(Integer value){
+								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValue"]
+								if (parameterValue == null) {
+									val containerDef = containerValue.gGetDefinition
+									if (containerDef instanceof GParamConfContainerDef) {
+										parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalValue"])
+										containerValue.gGetParameterValues += parameterValue
+									}
+								}
+								EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 							}
 							
 							
@@ -1721,136 +1783,6 @@ class Can implements IWrapper<GModuleConfiguration> {
 							}
 							
 							
-							def List<CanIcomSignalMask> getCanIcomSignalMasks(){
-								val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
-									override protected accept(GContainer item) {
-										return accept(item, typeof(GContainerDef), "CanIcomSignalMask")
-									}
-								}
-								return new BasicWrappingEList<CanIcomSignalMask, GContainer>(filteredContainers, typeof(CanIcomSignalMask), typeof(GContainer))
-							}
-							
-							def List<CanIcomSignalValue> getCanIcomSignalValues(){
-								val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
-									override protected accept(GContainer item) {
-										return accept(item, typeof(GContainerDef), "CanIcomSignalValue")
-									}
-								}
-								return new BasicWrappingEList<CanIcomSignalValue, GContainer>(filteredContainers, typeof(CanIcomSignalValue), typeof(GContainer))
-							}
-							
-							
-							static class CanIcomSignalMask implements IWrapper<GContainer> {
-								private GContainer containerValue
-								
-								new(GContainer containerValue){
-									this.containerValue = containerValue
-								}
-								
-								def String getShortName(){
-									containerValue?.gGetShortName
-								}
-								
-								def void setShortName(String name){
-									containerValue?.gSetShortName(name)
-								}
-								
-								override def GContainer getTarget(){
-									containerValue
-								}
-								
-								def Integer getCanIcomSignalMaskIndex(){
-									EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMaskIndex"])
-								}
-								
-								def void setCanIcomSignalMaskIndex(Integer value){
-									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMaskIndex"]
-									if (parameterValue == null) {
-										val containerDef = containerValue.gGetDefinition
-										if (containerDef instanceof GParamConfContainerDef) {
-											parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalMaskIndex"])
-											containerValue.gGetParameterValues += parameterValue
-										}
-									}
-									EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-								}
-								
-								def Integer getCanIcomSignalMaskValue(){
-									EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMaskValue"])
-								}
-								
-								def void setCanIcomSignalMaskValue(Integer value){
-									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMaskValue"]
-									if (parameterValue == null) {
-										val containerDef = containerValue.gGetDefinition
-										if (containerDef instanceof GParamConfContainerDef) {
-											parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalMaskValue"])
-											containerValue.gGetParameterValues += parameterValue
-										}
-									}
-									EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-								}
-								
-								
-								
-								
-							}
-							
-							static class CanIcomSignalValue implements IWrapper<GContainer> {
-								private GContainer containerValue
-								
-								new(GContainer containerValue){
-									this.containerValue = containerValue
-								}
-								
-								def String getShortName(){
-									containerValue?.gGetShortName
-								}
-								
-								def void setShortName(String name){
-									containerValue?.gSetShortName(name)
-								}
-								
-								override def GContainer getTarget(){
-									containerValue
-								}
-								
-								def Integer getCanIcomSignalValueIndex(){
-									EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValueIndex"])
-								}
-								
-								def void setCanIcomSignalValueIndex(Integer value){
-									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValueIndex"]
-									if (parameterValue == null) {
-										val containerDef = containerValue.gGetDefinition
-										if (containerDef instanceof GParamConfContainerDef) {
-											parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalValueIndex"])
-											containerValue.gGetParameterValues += parameterValue
-										}
-									}
-									EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-								}
-								
-								def Integer getCanIcomSignalValueValue(){
-									EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValueValue"])
-								}
-								
-								def void setCanIcomSignalValueValue(Integer value){
-									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValueValue"]
-									if (parameterValue == null) {
-										val containerDef = containerValue.gGetDefinition
-										if (containerDef instanceof GParamConfContainerDef) {
-											parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalValueValue"])
-											containerValue.gGetParameterValues += parameterValue
-										}
-									}
-									EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-								}
-								
-								
-								
-								
-							}
 							
 						}
 						
@@ -2090,12 +2022,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 			containerValue.setContainer(subContainer, "CanIcomGeneral")
 		}
 		
-		def CanMainFunctionRWPeriods getCanMainFunctionRWPeriods(){
-			containerValue.getByType(typeof(CanMainFunctionRWPeriods))
-		}
-		
-		def void setCanMainFunctionRWPeriods(GContainer subContainer){
-			containerValue.setContainer(subContainer, "CanMainFunctionRWPeriods")
+		def List<CanMainFunctionRWPeriods> getCanMainFunctionRWPeriods(){
+			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+				override protected accept(GContainer item) {
+					return accept(item, typeof(GContainerDef), "CanMainFunctionRWPeriods")
+				}
+			}
+			return new BasicWrappingEList<CanMainFunctionRWPeriods, GContainer>(filteredContainers, typeof(CanMainFunctionRWPeriods), typeof(GContainer))
 		}
 		
 		

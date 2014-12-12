@@ -1465,39 +1465,6 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									containerValue
 								}
 								
-								def DcmDslPeriodicIfType getDcmDslPeriodicIfType(){
-									getDcmDslPeriodicIfTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslPeriodicIfType"])
-								}
-								
-								def void setDcmDslPeriodicIfType(DcmDslPeriodicIfType value){
-									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslPeriodicIfType"]
-									if (parameterValue == null) {
-										val containerDef = containerValue.gGetDefinition
-										if (containerDef instanceof GParamConfContainerDef) {
-											parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDslPeriodicIfType"])
-											containerValue.gGetParameterValues += parameterValue
-										}
-									}
-									EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-								}
-								
-								enum DcmDslPeriodicIfType {
-									DCM_PERIODIC_TRANSMISSION_IF, 
-									DCM_PERIODIC_TRANSMISSION_TP
-								}
-									
-								def DcmDslPeriodicIfType getDcmDslPeriodicIfTypeValue(GParameterValue paramValue){
-									val castedParamValue = paramValue as EcucTextualParamValue
-									switch (castedParamValue.value){
-										case "DCM_PERIODIC_TRANSMISSION_IF" : DcmDslPeriodicIfType.DCM_PERIODIC_TRANSMISSION_IF
-										case "DCM_PERIODIC_TRANSMISSION_TP" : DcmDslPeriodicIfType.DCM_PERIODIC_TRANSMISSION_TP
-									}
-								}
-								
-								def void setDcmDslPeriodicIfTypeValue(GParameterValue paramValue, DcmDslPeriodicIfType value){
-									EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
-								}
-								
 								def Integer getDcmDslPeriodicTxConfirmationPduId(){
 									EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslPeriodicTxConfirmationPduId"])
 								}
@@ -2603,11 +2570,18 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				enum DcmDspDataType {
 					BOOLEAN, 
 					SINT16, 
+					SINT16_N, 
 					SINT32, 
+					SINT32_N, 
 					SINT8, 
+					SINT8_N, 
 					UINT16, 
+					UINT16_N, 
 					UINT32, 
-					UINT8
+					UINT32_N, 
+					UINT8, 
+					UINT8_DYN, 
+					UINT8_N
 				}
 					
 				def DcmDspDataType getDcmDspDataTypeValue(GParameterValue paramValue){
@@ -2615,11 +2589,18 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					switch (castedParamValue.value){
 						case "BOOLEAN" : DcmDspDataType.BOOLEAN
 						case "SINT16" : DcmDspDataType.SINT16
+						case "SINT16_N" : DcmDspDataType.SINT16_N
 						case "SINT32" : DcmDspDataType.SINT32
+						case "SINT32_N" : DcmDspDataType.SINT32_N
 						case "SINT8" : DcmDspDataType.SINT8
+						case "SINT8_N" : DcmDspDataType.SINT8_N
 						case "UINT16" : DcmDspDataType.UINT16
+						case "UINT16_N" : DcmDspDataType.UINT16_N
 						case "UINT32" : DcmDspDataType.UINT32
+						case "UINT32_N" : DcmDspDataType.UINT32_N
 						case "UINT8" : DcmDspDataType.UINT8
+						case "UINT8_DYN" : DcmDspDataType.UINT8_DYN
+						case "UINT8_N" : DcmDspDataType.UINT8_N
 					}
 				}
 				
@@ -3263,22 +3244,6 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
-				}
-				
-				def Boolean getDcmDspDataFixedLength(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataFixedLength"])
-				}
-				
-				def void setDcmDspDataFixedLength(Boolean value){
-					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataFixedLength"]
-					if (parameterValue == null) {
-						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspDataFixedLength"])
-							containerValue.gGetParameterValues += parameterValue
-						}
-					}
-					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
 				def Integer getDcmDspDataScalingInfoSize(){
@@ -4867,11 +4832,18 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						enum DcmDspPidDataType {
 							BOOLEAN, 
 							SINT16, 
+							SINT16_N, 
 							SINT32, 
+							SINT32_N, 
 							SINT8, 
+							SINT8_N, 
 							UINT16, 
+							UINT16_N, 
 							UINT32, 
-							UINT8
+							UINT32_N, 
+							UINT8, 
+							UINT8_DYN, 
+							UINT8_N
 						}
 							
 						def DcmDspPidDataType getDcmDspPidDataTypeValue(GParameterValue paramValue){
@@ -4879,11 +4851,18 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							switch (castedParamValue.value){
 								case "BOOLEAN" : DcmDspPidDataType.BOOLEAN
 								case "SINT16" : DcmDspPidDataType.SINT16
+								case "SINT16_N" : DcmDspPidDataType.SINT16_N
 								case "SINT32" : DcmDspPidDataType.SINT32
+								case "SINT32_N" : DcmDspPidDataType.SINT32_N
 								case "SINT8" : DcmDspPidDataType.SINT8
+								case "SINT8_N" : DcmDspPidDataType.SINT8_N
 								case "UINT16" : DcmDspPidDataType.UINT16
+								case "UINT16_N" : DcmDspPidDataType.UINT16_N
 								case "UINT32" : DcmDspPidDataType.UINT32
+								case "UINT32_N" : DcmDspPidDataType.UINT32_N
 								case "UINT8" : DcmDspPidDataType.UINT8
+								case "UINT8_DYN" : DcmDspPidDataType.UINT8_DYN
+								case "UINT8_N" : DcmDspPidDataType.UINT8_N
 							}
 						}
 						
@@ -6652,6 +6631,22 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def Boolean getDcmDspSecurityAttemptCounterEnabled(){
+						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityAttemptCounterEnabled"])
+					}
+					
+					def void setDcmDspSecurityAttemptCounterEnabled(Boolean value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityAttemptCounterEnabled"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspSecurityAttemptCounterEnabled"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
 					def String getDcmDspSecurityCompareKeyFnc(){
 						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityCompareKeyFnc"])
 					}
@@ -6694,6 +6689,22 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspSecurityDelayTimeOnBoot"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					def String getDcmDspSecurityGetAttemptCounterFnc(){
+						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityGetAttemptCounterFnc"])
+					}
+					
+					def void setDcmDspSecurityGetAttemptCounterFnc(String value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityGetAttemptCounterFnc"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspSecurityGetAttemptCounterFnc"])
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
@@ -6774,6 +6785,22 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspSecuritySeedSize"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
+					def String getDcmDspSecuritySetAttemptCounterFnc(){
+						EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecuritySetAttemptCounterFnc"])
+					}
+					
+					def void setDcmDspSecuritySetAttemptCounterFnc(String value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecuritySetAttemptCounterFnc"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspSecuritySetAttemptCounterFnc"])
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}

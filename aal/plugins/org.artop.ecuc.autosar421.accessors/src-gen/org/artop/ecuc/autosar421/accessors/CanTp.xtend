@@ -409,6 +409,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				}
 				
 				enum CanTpRxTaType {
+					CANTP_CANFD_FUNCTIONAL, 
+					CANTP_CANFD_PHYSICAL, 
 					CANTP_FUNCTIONAL, 
 					CANTP_PHYSICAL
 				}
@@ -416,6 +418,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				def CanTpRxTaType getCanTpRxTaTypeValue(GParameterValue paramValue){
 					val castedParamValue = paramValue as EcucTextualParamValue
 					switch (castedParamValue.value){
+						case "CANTP_CANFD_FUNCTIONAL" : CanTpRxTaType.CANTP_CANFD_FUNCTIONAL
+						case "CANTP_CANFD_PHYSICAL" : CanTpRxTaType.CANTP_CANFD_PHYSICAL
 						case "CANTP_FUNCTIONAL" : CanTpRxTaType.CANTP_FUNCTIONAL
 						case "CANTP_PHYSICAL" : CanTpRxTaType.CANTP_PHYSICAL
 					}
@@ -1281,6 +1285,22 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpDynIdSupport"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
+		def Boolean getCanTpFlexibleDataRateSupport(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpFlexibleDataRateSupport"])
+		}
+		
+		def void setCanTpFlexibleDataRateSupport(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpFlexibleDataRateSupport"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpFlexibleDataRateSupport"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}

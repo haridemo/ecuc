@@ -1126,14 +1126,22 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			enum CanIfRxPduCanIdType {
 				EXTENDED_CAN, 
-				STANDARD_CAN
+				EXTENDED_FD_CAN, 
+				EXTENDED_NO_FD_CAN, 
+				STANDARD_CAN, 
+				STANDARD_FD_CAN, 
+				STANDARD_NO_FD_CAN
 			}
 				
 			def CanIfRxPduCanIdType getCanIfRxPduCanIdTypeValue(GParameterValue paramValue){
 				val castedParamValue = paramValue as EcucTextualParamValue
 				switch (castedParamValue.value){
 					case "EXTENDED_CAN" : CanIfRxPduCanIdType.EXTENDED_CAN
+					case "EXTENDED_FD_CAN" : CanIfRxPduCanIdType.EXTENDED_FD_CAN
+					case "EXTENDED_NO_FD_CAN" : CanIfRxPduCanIdType.EXTENDED_NO_FD_CAN
 					case "STANDARD_CAN" : CanIfRxPduCanIdType.STANDARD_CAN
+					case "STANDARD_FD_CAN" : CanIfRxPduCanIdType.STANDARD_FD_CAN
+					case "STANDARD_NO_FD_CAN" : CanIfRxPduCanIdType.STANDARD_NO_FD_CAN
 				}
 			}
 			
@@ -1240,6 +1248,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			enum CanIfRxPduUserRxIndicationUL {
 				CAN_NM, 
 				CAN_TP, 
+				CAN_TSYN, 
 				CDD, 
 				J1939NM, 
 				J1939TP, 
@@ -1252,6 +1261,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				switch (castedParamValue.value){
 					case "CAN_NM" : CanIfRxPduUserRxIndicationUL.CAN_NM
 					case "CAN_TP" : CanIfRxPduUserRxIndicationUL.CAN_TP
+					case "CAN_TSYN" : CanIfRxPduUserRxIndicationUL.CAN_TSYN
 					case "CDD" : CanIfRxPduUserRxIndicationUL.CDD
 					case "J1939NM" : CanIfRxPduUserRxIndicationUL.J1939NM
 					case "J1939TP" : CanIfRxPduUserRxIndicationUL.J1939TP
@@ -1550,6 +1560,22 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
+			def Boolean getCanIfTxPduTriggerTransmit(){
+				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduTriggerTransmit"])
+			}
+			
+			def void setCanIfTxPduTriggerTransmit(Boolean value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduTriggerTransmit"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduTriggerTransmit"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
 			def CanIfTxPduType getCanIfTxPduType(){
 				getCanIfTxPduTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduType"])
 			}
@@ -1581,6 +1607,22 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduTypeValue(GParameterValue paramValue, CanIfTxPduType value){
 				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			}
+			
+			def String getCanIfTxPduUserTriggerTransmitName(){
+				EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduUserTriggerTransmitName"])
+			}
+			
+			def void setCanIfTxPduUserTriggerTransmitName(String value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduUserTriggerTransmitName"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduUserTriggerTransmitName"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def String getCanIfTxPduUserTxConfirmationName(){
@@ -1618,6 +1660,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			enum CanIfTxPduUserTxConfirmationUL {
 				CAN_NM, 
 				CAN_TP, 
+				CAN_TSYN, 
 				CDD, 
 				J1939NM, 
 				J1939TP, 
@@ -1630,6 +1673,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				switch (castedParamValue.value){
 					case "CAN_NM" : CanIfTxPduUserTxConfirmationUL.CAN_NM
 					case "CAN_TP" : CanIfTxPduUserTxConfirmationUL.CAN_TP
+					case "CAN_TSYN" : CanIfTxPduUserTxConfirmationUL.CAN_TSYN
 					case "CDD" : CanIfTxPduUserTxConfirmationUL.CDD
 					case "J1939NM" : CanIfTxPduUserTxConfirmationUL.J1939NM
 					case "J1939TP" : CanIfTxPduUserTxConfirmationUL.J1939TP

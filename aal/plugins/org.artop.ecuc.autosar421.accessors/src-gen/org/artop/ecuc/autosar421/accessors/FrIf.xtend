@@ -2054,6 +2054,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						FR_AR_TP, 
 						FR_NM, 
 						FR_TP, 
+						FR_TSYN, 
 						PDUR, 
 						XCP
 					}
@@ -2065,6 +2066,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 							case "FR_AR_TP" : FrIfUserTxUL.FR_AR_TP
 							case "FR_NM" : FrIfUserTxUL.FR_NM
 							case "FR_TP" : FrIfUserTxUL.FR_TP
+							case "FR_TSYN" : FrIfUserTxUL.FR_TSYN
 							case "PDUR" : FrIfUserTxUL.PDUR
 							case "XCP" : FrIfUserTxUL.XCP
 						}

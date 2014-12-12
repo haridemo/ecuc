@@ -1369,6 +1369,22 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				def String getComMetaDataDefault(){
+					EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataDefault"])
+				}
+				
+				def void setComMetaDataDefault(String value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataDefault"]
+					if (parameterValue == null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "ComMetaDataDefault"])
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				}
+				
 				def Float getComMinimumDelayTime(){
 					EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMinimumDelayTime"])
 				}
@@ -3321,6 +3337,22 @@ class Com implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "ComEnableSignalGroupArrayApi"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
+		def Boolean getComMetaDataSupport(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataSupport"])
+		}
+		
+		def void setComMetaDataSupport(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataSupport"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "ComMetaDataSupport"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}

@@ -133,6 +133,15 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 			return new BasicWrappingEList<EthIfRxIndicationConfig, GContainer>(filteredContainers, typeof(EthIfRxIndicationConfig), typeof(GContainer))
 		}
 		
+		def List<EthIfSwitch> getEthIfSwitchs(){
+			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+				override protected accept(GContainer item) {
+					return accept(item, typeof(GContainerDef), "EthIfSwitch")
+				}
+			}
+			return new BasicWrappingEList<EthIfSwitch, GContainer>(filteredContainers, typeof(EthIfSwitch), typeof(GContainer))
+		}
+		
 		def List<EthIfTrcvLinkStateChgConfig> getEthIfTrcvLinkStateChgConfigs(){
 			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 				override protected accept(GContainer item) {
@@ -358,6 +367,57 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+		static class EthIfSwitch implements IWrapper<GContainer> {
+			private GContainer containerValue
+			
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+			
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+			
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+			
+			override def GContainer getTarget(){
+				containerValue
+			}
+			
+			def Integer getEthIfSwitchIdx(){
+				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfSwitchIdx"])
+			}
+			
+			def void setEthIfSwitchIdx(Integer value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfSwitchIdx"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthIfSwitchIdx"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
+			
+			def org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig getEthIfSwitchRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig), "EthIfSwitchRef")
+			}
+					
+			def void setEthIfSwitchRef(org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EthIfSwitchRef"], object.getTarget())
+				}
+			}
+			
+			
+			
+		}
+		
 		static class EthIfTrcvLinkStateChgConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
 			
@@ -538,6 +598,38 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 		}
 		
+		def Boolean getEthIfGetTransceiverWakeupModeApi(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfGetTransceiverWakeupModeApi"])
+		}
+		
+		def void setEthIfGetTransceiverWakeupModeApi(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfGetTransceiverWakeupModeApi"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthIfGetTransceiverWakeupModeApi"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
+		def Boolean getEthIfGlobalTimeSupport(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfGlobalTimeSupport"])
+		}
+		
+		def void setEthIfGlobalTimeSupport(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfGlobalTimeSupport"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthIfGlobalTimeSupport"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
 		def Float getEthIfMainFunctionPeriod(){
 			EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfMainFunctionPeriod"])
 		}
@@ -673,6 +765,22 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthIfVersionInfoApiMacro"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
+		def Boolean getEthIfWakeUpSupport(){
+			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfWakeUpSupport"])
+		}
+		
+		def void setEthIfWakeUpSupport(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfWakeUpSupport"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthIfWakeUpSupport"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}

@@ -320,22 +320,6 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
-			def Boolean getEthTSynIsSystemWideGlobalTimeMaster(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynIsSystemWideGlobalTimeMaster"])
-			}
-			
-			def void setEthTSynIsSystemWideGlobalTimeMaster(Boolean value){
-				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynIsSystemWideGlobalTimeMaster"]
-				if (parameterValue == null) {
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynIsSystemWideGlobalTimeMaster"])
-						containerValue.gGetParameterValues += parameterValue
-					}
-				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
-			}
-			
 			
 			def org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfController getEthTSynGlobalTimeEthIfRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthIf.EthIfConfigSet.EthIfController), "EthTSynGlobalTimeEthIfRef")

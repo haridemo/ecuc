@@ -166,6 +166,41 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
 		}
 		
+		def Crc32P4Mode getCrc32P4Mode(){
+			getCrc32P4ModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc32P4Mode"])
+		}
+		
+		def void setCrc32P4Mode(Crc32P4Mode value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc32P4Mode"]
+			if (parameterValue == null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc32P4Mode"])
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+		}
+		
+		enum Crc32P4Mode {
+			CRC_32P4_HARDWARE, 
+			CRC_32P4_RUNTIME, 
+			CRC_32P4_TABLE
+		}
+			
+		def Crc32P4Mode getCrc32P4ModeValue(GParameterValue paramValue){
+			val castedParamValue = paramValue as EcucTextualParamValue
+			switch (castedParamValue.value){
+				case "CRC_32P4_HARDWARE" : Crc32P4Mode.CRC_32P4_HARDWARE
+				case "CRC_32P4_RUNTIME" : Crc32P4Mode.CRC_32P4_RUNTIME
+				case "CRC_32P4_TABLE" : Crc32P4Mode.CRC_32P4_TABLE
+			}
+		}
+		
+		def void setCrc32P4ModeValue(GParameterValue paramValue, Crc32P4Mode value){
+			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+		}
+		
 		def Crc8H2FMode getCrc8H2FMode(){
 			getCrc8H2FModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc8H2FMode"])
 		}

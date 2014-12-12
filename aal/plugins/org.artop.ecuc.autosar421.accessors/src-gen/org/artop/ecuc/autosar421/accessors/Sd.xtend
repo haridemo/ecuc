@@ -171,6 +171,14 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				return new BasicWrappingEList<SdClientTimer, GContainer>(filteredContainers, typeof(SdClientTimer), typeof(GContainer))
 			}
 			
+			def SdInstanceDemEventParameterRefs getSdInstanceDemEventParameterRefs(){
+				containerValue.getByType(typeof(SdInstanceDemEventParameterRefs))
+			}
+			
+			def void setSdInstanceDemEventParameterRefs(GContainer subContainer){
+				containerValue.setContainer(subContainer, "SdInstanceDemEventParameterRefs")
+			}
+			
 			def SdInstanceMulticastRxPdu getSdInstanceMulticastRxPdu(){
 				containerValue.getByType(typeof(SdInstanceMulticastRxPdu))
 			}
@@ -330,6 +338,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				}
 				
 				
+				def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup getSdClientServiceTcpRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup), "SdClientServiceTcpRef")
+				}
+						
+				def void setSdClientServiceTcpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdClientServiceTcpRef"], object.getTarget())
+					}
+				}
+				
 				def org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdClientTimer getSdClientServiceTimerRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdClientTimer), "SdClientServiceTimerRef")
 				}
@@ -338,6 +357,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdClientServiceTimerRef"], object.getTarget())
+					}
+				}
+				
+				def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup getSdClientServiceUdpRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup), "SdClientServiceUdpRef")
+				}
+						
+				def void setSdClientServiceUdpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdClientServiceUdpRef"], object.getTarget())
 					}
 				}
 				
@@ -493,6 +523,39 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					}
 					
 					
+					def List<org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup> getSdConsumedEventGroupMulticastGroupRefs(){
+						val containerDef = containerValue.gGetDefinition
+						val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							containerDef.gGetReferences.findFirst[gGetShortName == "SdConsumedEventGroupMulticastGroupRef"] else null
+										
+						val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+							override protected accept(GReferenceValue item) {
+								return accept(item, typeof(GConfigReference), "SdConsumedEventGroupMulticastGroupRef")
+							}
+						}
+						
+						return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup)) {
+							override protected wrap(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object) throws CoreException {
+								if (object != null) {
+									val container = object.getTarget()
+									val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+									referenceValue.gSetDefinition(referenceValueDef)
+									referenceValue.gSetValue(container)
+									return referenceValue
+								}
+							}
+							
+							override protected unwrap(GReferenceValue referenceValue) {
+								if (referenceValue != null) {
+									val referenceValueValue = referenceValue.gGetValue
+									if (referenceValueValue instanceof GContainer) {
+										return new org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup(referenceValueValue as GContainer)
+									}
+								}
+							}
+						}
+					}
+					
 					def org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdClientTimer getSdConsumedEventGroupTimerRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdClientTimer), "SdConsumedEventGroupTimerRef")
 					}
@@ -637,28 +700,6 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					
-					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection getSdClientServiceTcpRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection), "SdClientServiceTcpRef")
-					}
-							
-					def void setSdClientServiceTcpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection object){
-						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdClientServiceTcpRef"], object.getTarget())
-						}
-					}
-					
-					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection getSdClientServiceUdpRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection), "SdClientServiceUdpRef")
-					}
-							
-					def void setSdClientServiceUdpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection object){
-						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdClientServiceUdpRef"], object.getTarget())
-						}
-					}
-					
 					
 					
 				}
@@ -796,6 +837,52 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 				}
 				
+				
+				
+				
+			}
+			
+			static class SdInstanceDemEventParameterRefs implements IWrapper<GContainer> {
+				private GContainer containerValue
+				
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+				
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+				
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+				
+				override def GContainer getTarget(){
+					containerValue
+				}
+				
+				
+				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getSD_E_MALFORMED_MSG(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "SD_E_MALFORMED_MSG")
+				}
+						
+				def void setSD_E_MALFORMED_MSG(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SD_E_MALFORMED_MSG"], object.getTarget())
+					}
+				}
+				
+				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getSD_E_OUT_OF_RES(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "SD_E_OUT_OF_RES")
+				}
+						
+				def void setSD_E_OUT_OF_RES(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SD_E_OUT_OF_RES"], object.getTarget())
+					}
+				}
 				
 				
 				
@@ -1054,6 +1141,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				}
 				
 				
+				def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup getSdServerServiceTcpRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup), "SdServerServiceTcpRef")
+				}
+						
+				def void setSdServerServiceTcpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdServerServiceTcpRef"], object.getTarget())
+					}
+				}
+				
 				def org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdServerTimer getSdServerServiceTimerRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdServerTimer), "SdServerServiceTimerRef")
 				}
@@ -1062,6 +1160,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdServerServiceTimerRef"], object.getTarget())
+					}
+				}
+				
+				def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup getSdServerServiceUdpRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup), "SdServerServiceUdpRef")
+				}
+						
+				def void setSdServerServiceUdpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdServerServiceUdpRef"], object.getTarget())
 					}
 				}
 				
@@ -1181,22 +1290,20 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue.setContainer(subContainer, "SdEventHandlerMulticast")
 					}
 					
-					def List<SdEventHandlerTcp> getSdEventHandlerTcps(){
-						val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
-							override protected accept(GContainer item) {
-								return accept(item, typeof(GContainerDef), "SdEventHandlerTcp")
-							}
-						}
-						return new BasicWrappingEList<SdEventHandlerTcp, GContainer>(filteredContainers, typeof(SdEventHandlerTcp), typeof(GContainer))
+					def SdEventHandlerTcp getSdEventHandlerTcp(){
+						containerValue.getByType(typeof(SdEventHandlerTcp))
 					}
 					
-					def List<SdEventHandlerUdp> getSdEventHandlerUdps(){
-						val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
-							override protected accept(GContainer item) {
-								return accept(item, typeof(GContainerDef), "SdEventHandlerUdp")
-							}
-						}
-						return new BasicWrappingEList<SdEventHandlerUdp, GContainer>(filteredContainers, typeof(SdEventHandlerUdp), typeof(GContainer))
+					def void setSdEventHandlerTcp(GContainer subContainer){
+						containerValue.setContainer(subContainer, "SdEventHandlerTcp")
+					}
+					
+					def SdEventHandlerUdp getSdEventHandlerUdp(){
+						containerValue.getByType(typeof(SdEventHandlerUdp))
+					}
+					
+					def void setSdEventHandlerUdp(GContainer subContainer){
+						containerValue.setContainer(subContainer, "SdEventHandlerUdp")
 					}
 					
 					def List<SdServerCapabilityRecord> getSdServerCapabilityRecords(){
@@ -1237,6 +1344,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdEventActivationRef"], object.getTarget())
+							}
+						}
+						
+						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection getSdMulticastEventSoConRef(){
+							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection), "SdMulticastEventSoConRef")
+						}
+								
+						def void setSdMulticastEventSoConRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection object){
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdMulticastEventSoConRef"], object.getTarget())
 							}
 						}
 						
@@ -1413,28 +1531,6 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					
-					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup getSdServerServiceTcpRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup), "SdServerServiceTcpRef")
-					}
-							
-					def void setSdServerServiceTcpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object){
-						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdServerServiceTcpRef"], object.getTarget())
-						}
-					}
-					
-					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup getSdServerServiceUdpRef(){
-						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup), "SdServerServiceUdpRef")
-					}
-							
-					def void setSdServerServiceUdpRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup object){
-						val containerDef = containerValue.gGetDefinition
-						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SdServerServiceUdpRef"], object.getTarget())
-						}
-					}
 					
 					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdServerServiceActivationRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdServerServiceActivationRef")

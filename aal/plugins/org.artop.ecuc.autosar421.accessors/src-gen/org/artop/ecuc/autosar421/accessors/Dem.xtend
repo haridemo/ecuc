@@ -1202,6 +1202,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
+			def Boolean getDemEventAvailable(){
+				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventAvailable"])
+			}
+			
+			def void setDemEventAvailable(Boolean value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventAvailable"]
+				if (parameterValue == null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventAvailable"])
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			}
+			
 			def Integer getDemEventFailureCycleCounterThreshold(){
 				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventFailureCycleCounterThreshold"])
 			}
@@ -1265,22 +1281,6 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			def void setDemEventKindValue(GParameterValue paramValue, DemEventKind value){
 				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
-			}
-			
-			def Boolean getDemEventSuppressed(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventSuppressed"])
-			}
-			
-			def void setDemEventSuppressed(Boolean value){
-				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventSuppressed"]
-				if (parameterValue == null) {
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventSuppressed"])
-						containerValue.gGetParameterValues += parameterValue
-					}
-				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 			}
 			
 			def Boolean getDemFFPrestorageSupported(){
@@ -1363,17 +1363,6 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemEnableConditionGroupRef"], object.getTarget())
-				}
-			}
-			
-			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle getDemEventFailureCycleRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle), "DemEventFailureCycleRef")
-			}
-					
-			def void setDemEventFailureCycleRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle object){
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemEventFailureCycleRef"], object.getTarget())
 				}
 			}
 			
@@ -2209,6 +2198,16 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 				
 				
+				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass getDemPidDataElementClassRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass), "DemPidDataElementClassRef")
+				}
+						
+				def void setDemPidDataElementClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemPidDataElementClassRef"], object.getTarget())
+					}
+				}
 				
 				
 				
@@ -4221,6 +4220,38 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass> getDemDidDataElementClassRefs(){
+				val containerDef = containerValue.gGetDefinition
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemDidDataElementClassRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemDidDataElementClassRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass(referenceValueValue as GContainer)
+							}
+						}
+					}
+				}
+			}
 			
 			
 			
@@ -4506,6 +4537,38 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			
+			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass> getDemDataElementClassRefs(){
+				val containerDef = containerValue.gGetDefinition
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					containerDef.gGetReferences.findFirst[gGetShortName == "DemDataElementClassRef"] else null
+								
+				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
+					override protected accept(GReferenceValue item) {
+						return accept(item, typeof(GConfigReference), "DemDataElementClassRef")
+					}
+				}
+				
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object) throws CoreException {
+						if (object != null) {
+							val container = object.getTarget()
+							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
+							referenceValue.gSetDefinition(referenceValueDef)
+							referenceValue.gSetValue(container)
+							return referenceValue
+						}
+					}
+					
+					override protected unwrap(GReferenceValue referenceValue) {
+						if (referenceValue != null) {
+							val referenceValueValue = referenceValue.gGetValue
+							if (referenceValueValue instanceof GContainer) {
+								return new org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass(referenceValueValue as GContainer)
+							}
+						}
+					}
+				}
+			}
 			
 			
 			
@@ -5094,6 +5157,16 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 				
 				
+				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass getDemSPNDataElementClassRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass), "DemSPNDataElementClassRef")
+				}
+						
+				def void setDemSPNDataElementClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemSPNDataElementClassRef"], object.getTarget())
+					}
+				}
 				
 				
 				
@@ -5771,18 +5844,18 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def org.artop.ecuc.autosar421.accessors.FiM.FiMFID getDemFunctionIdRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMFID), "DemFunctionIdRef")
+			def org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID getDemFunctionIdRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID), "DemFunctionIdRef")
 			}
 					
-			def void setDemFunctionIdRef(org.artop.ecuc.autosar421.accessors.FiM.FiMFID object){
+			def void setDemFunctionIdRef(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemFunctionIdRef"], object.getTarget())
 				}
 			}
 			
-			def List<org.artop.ecuc.autosar421.accessors.FiM.FiMFID> getDemSecondaryFunctionIdRefs(){
+			def List<org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID> getDemSecondaryFunctionIdRefs(){
 				val containerDef = containerValue.gGetDefinition
 				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemSecondaryFunctionIdRef"] else null
@@ -5793,8 +5866,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.FiM.FiMFID>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMFID)) {
-					override protected wrap(org.artop.ecuc.autosar421.accessors.FiM.FiMFID object) throws CoreException {
+				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID)) {
+					override protected wrap(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID object) throws CoreException {
 						if (object != null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
@@ -5808,7 +5881,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
-								return new org.artop.ecuc.autosar421.accessors.FiM.FiMFID(referenceValueValue as GContainer)
+								return new org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID(referenceValueValue as GContainer)
 							}
 						}
 					}

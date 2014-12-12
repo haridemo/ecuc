@@ -479,6 +479,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				}
 				
 				
+				
 				def List<org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup> getSoAdTxRoutingGroupRefs(){
 					val containerDef = containerValue.gGetDefinition
 					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
@@ -509,17 +510,6 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								}
 							}
 						}
-					}
-				}
-				
-				def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection getSoAdTxSocketConnectionRef(){
-					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection), "SoAdTxSocketConnectionRef")
-				}
-						
-				def void setSoAdTxSocketConnectionRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection object){
-					val containerDef = containerValue.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SoAdTxSocketConnectionRef"], object.getTarget())
 					}
 				}
 				
@@ -1136,6 +1126,22 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
 					}
 					
+					def Boolean getSoAdSocketUdpStrictHeaderLenCheckEnabled(){
+						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpStrictHeaderLenCheckEnabled"])
+					}
+					
+					def void setSoAdSocketUdpStrictHeaderLenCheckEnabled(Boolean value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpStrictHeaderLenCheckEnabled"]
+						if (parameterValue == null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "SoAdSocketUdpStrictHeaderLenCheckEnabled"])
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+					}
+					
 					def Float getSoAdSocketUdpTriggerTimeout(){
 						EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpTriggerTimeout"])
 					}
@@ -1213,16 +1219,6 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			}
 			
 			
-			def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection getSoAdRxSocketConnectionRef(){
-				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection), "SoAdRxSocketConnectionRef")
-			}
-					
-			def void setSoAdRxSocketConnectionRef(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdSocketConnectionGroup.SoAdSocketConnection object){
-				val containerDef = containerValue.gGetDefinition
-				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "SoAdRxSocketConnectionRef"], object.getTarget())
-				}
-			}
 			
 			
 			def SoAdSocketRouteDest getSoAdSocketRouteDest(){
