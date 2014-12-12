@@ -15,7 +15,7 @@
 package org.artop.ecuc.examples.autosar421.accessorgen.ui.actions;
 
 import org.artop.ecuc.autosar4x.accessorgen.internal.messages.Messages;
-import org.artop.ecuc.autosar4x.accessorgen.operations.GenerateEcucValueAccessorOperation;
+import org.artop.ecuc.autosar4x.accessorgen.operations.GenerateEcucValueAccessor4xOperation;
 import org.artop.ecuc.gautosar.accessorgen.ui.actions.AbstractGenerateFromAutosarAction;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.sphinx.platform.operations.IWorkspaceOperation;
@@ -43,6 +43,6 @@ public class GenerateEcucValueAccessorGenAction extends AbstractGenerateFromAuto
 	 */
 	@Override
 	protected IWorkspaceOperation createGenerateFromAutosarOperation(IFile autosarFile) {
-		return new GenerateEcucValueAccessorOperation(autosarFile, ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
+		return new GenerateEcucValueAccessor4xOperation(autosarFile, ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
 	}
 }
