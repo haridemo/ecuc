@@ -19,6 +19,7 @@ import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GModuleDef;
 import gautosar.gecucparameterdef.GReferenceDef;
+import gautosar.gecucparameterdef.GSymbolicNameReferenceDef;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -63,26 +64,42 @@ public class ExtendedAutosarResourceSetImpl extends AutosarResourceSetImpl {
 			if (resolvedDestination != null) {
 				return resolvedDestination;
 			}
+		} else if (contextObject instanceof GSymbolicNameReferenceDef) {
+			GSymbolicNameReferenceDef symbolicNameReferenceDef = (GSymbolicNameReferenceDef) contextObject;
+			getDestination(symbolicNameReferenceDef);
 		}
 		return super.getEObject(proxy, contextObject, loadOnDemand);
 	}
 
 	private EObject resolveDestination(EObject proxy, GConfigReference contextReference) {
+		GContainerDef destination = null;
 		GModuleDef moduleDef = getModuleDef(contextReference);
-		if (isVSMD(moduleDef)) {
+		if (moduleDef != null) {
 			String aqn = AutosarURIFactory.getAbsoluteQualifiedName(proxy);
 			String containerDefName = aqn.substring(aqn.lastIndexOf(AutosarURIFactory.SEGMENT_SEPARATOR) + 1);
-			// First search in the scope of the current ModuleDef
-			GContainerDef destination = getContainerDef(Collections.singletonList(moduleDef), containerDefName);
-			// If the ContainerDef if not found in the current ModuleDef, search in the scope of all
-			// ModuleDef(s) and return the first one found
-			if (destination == null) {
+			if (isVSMD(moduleDef)) {
+				// First search in the scope of the current ModuleDef
+				destination = getContainerDef(Collections.singletonList(moduleDef), containerDefName);
+				// If the ContainerDef if not found in the current ModuleDef, search in the scope of all
+				// ModuleDef(s) and return the first one found
+				if (destination == null) {
+					List<GModuleDef> allModuleDefs = EObjectUtil.getAllInstancesOf(moduleDef.eResource(), GModuleDef.class, false);
+					destination = getContainerDef(allModuleDefs, containerDefName);
+				}
+			} else {
+				// Look if the proxy refers to a VSMD
 				List<GModuleDef> allModuleDefs = EObjectUtil.getAllInstancesOf(moduleDef.eResource(), GModuleDef.class, false);
 				destination = getContainerDef(allModuleDefs, containerDefName);
+				if (destination != null) {
+					GModuleDef destinationModuleDef = getModuleDef(destination);
+					if (destinationModuleDef == null || !isVSMD(destinationModuleDef)) {
+						// If the referenced ModuleDef is not a VSMD, set destination to null
+						destination = null;
+					}
+				}
 			}
-			return destination;
 		}
-		return null;
+		return destination;
 	}
 
 	private GContainerDef getContainerDef(List<GModuleDef> moduleDefs, String containerDefName) {
@@ -112,8 +129,8 @@ public class ExtendedAutosarResourceSetImpl extends AutosarResourceSetImpl {
 		return null;
 	}
 
-	private GModuleDef getModuleDef(GConfigReference referenceDef) {
-		EObject container = referenceDef.eContainer();
+	private GModuleDef getModuleDef(EObject eObject) {
+		EObject container = eObject.eContainer();
 		while (container != null && !(container instanceof GModuleDef)) {
 			container = container.eContainer();
 		}
