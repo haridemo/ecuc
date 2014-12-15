@@ -14,6 +14,8 @@
  */
 package org.artop.ecuc.examples.autosar421.accessorgen.ui.actions;
 
+import gautosar.ggenericstructure.ginfrastructure.GARPackage;
+
 import org.artop.ecuc.autosar4x.accessorgen.internal.messages.Messages;
 import org.artop.ecuc.autosar4x.accessorgen.operations.GenerateEcucValueAccessor4xOperation;
 import org.artop.ecuc.gautosar.accessorgen.ui.actions.AbstractGenerateFromAutosarAction;
@@ -26,7 +28,7 @@ import org.eclipse.ui.actions.BaseSelectionListenerAction;
  */
 public class GenerateEcucValueAccessorGenAction extends AbstractGenerateFromAutosarAction {
 
-	public static final String ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME = "/AUTOSAR/EcucDefs"; //$NON-NLS-1$
+	public static final String DEFAULT_ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME = "/AUTOSAR/EcucDefs"; //$NON-NLS-1$
 
 	public GenerateEcucValueAccessorGenAction() {
 		super(Messages.operation_generateEcucValueAccessor_label);
@@ -43,6 +45,16 @@ public class GenerateEcucValueAccessorGenAction extends AbstractGenerateFromAuto
 	 */
 	@Override
 	protected IWorkspaceOperation createGenerateFromAutosarOperation(IFile autosarFile) {
-		return new GenerateEcucValueAccessor4xOperation(autosarFile, ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
+		return new GenerateEcucValueAccessor4xOperation(autosarFile, DEFAULT_ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
+	}
+
+	/*
+	 * @see
+	 * org.artop.ecuc.gautosar.accessorgen.ui.actions.AbstractGenerateFromAutosarAction#createGenerateFromAutosarOperation
+	 * (gautosar.ggenericstructure.ginfrastructure.GARPackage)
+	 */
+	@Override
+	protected IWorkspaceOperation createGenerateFromAutosarOperation(GARPackage arPackage) {
+		return new GenerateEcucValueAccessor4xOperation(arPackage);
 	}
 }

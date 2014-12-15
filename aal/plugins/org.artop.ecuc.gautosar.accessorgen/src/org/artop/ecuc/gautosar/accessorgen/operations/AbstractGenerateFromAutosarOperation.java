@@ -44,7 +44,8 @@ import org.eclipse.sphinx.platform.operations.AbstractWorkspaceOperation;
 public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorkspaceOperation implements IGenerateFromAutosarOperation {
 
 	protected IFile autosarFile;
-	protected String absoluteQualifiedARPackageName;
+	protected GARPackage arPackage;
+	protected String defaultAbsoluteQualifiedARPackageName;
 	protected IProject targetProject;
 	protected String autosarRevision;
 
@@ -60,10 +61,19 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 		super(label);
 	}
 
-	public AbstractGenerateFromAutosarOperation(String label, IFile autosarFile, String absoluteQualifiedARPackageName) {
+	public AbstractGenerateFromAutosarOperation(String label, IFile autosarFile, String defaultAbsoluteQualifiedARPackageName) {
 		super(label);
 		this.autosarFile = autosarFile;
-		this.absoluteQualifiedARPackageName = absoluteQualifiedARPackageName;
+		this.defaultAbsoluteQualifiedARPackageName = defaultAbsoluteQualifiedARPackageName;
+	}
+
+	public AbstractGenerateFromAutosarOperation(String label, GARPackage arPackage) {
+		super(label);
+		this.arPackage = arPackage;
+
+		if (arPackage != null) {
+			autosarFile = EcorePlatformUtil.getFile(arPackage);
+		}
 	}
 
 	/*
@@ -84,14 +94,18 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 			throw new OperationCanceledException();
 		}
 
-		GARPackage arPackage = getARPackage(absoluteQualifiedARPackageName, progress.newChild(5));
+		if (arPackage == null) {
+			arPackage = getARPackage(defaultAbsoluteQualifiedARPackageName, progress.newChild(5));
+		} else {
+			progress.worked(5);
+		}
 		targetProject = getTargetProject(progress.newChild(15));
 
 		if (progress.isCanceled()) {
 			throw new OperationCanceledException();
 		}
 
-		if (targetProject != null) {
+		if (targetProject != null && arPackage != null) {
 			generate(arPackage, targetProject, progress.newChild(80));
 		} else {
 			progress.worked(80);

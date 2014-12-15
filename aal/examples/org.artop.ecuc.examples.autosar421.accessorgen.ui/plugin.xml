@@ -44,7 +44,13 @@ Contributors:
             class="org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.providers.EcucValueAccessorGenActionProvider"
             id="org.artop.ecuc.examples.autosar4x.ecucvalueaccessorgen.ui.actions">
          <enablement>
-            <or></or>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+               <instanceof
+                     value="gautosar.ggenericstructure.ginfrastructure.GARPackage">
+               </instanceof></or>
          </enablement>
       </actionProvider>
    </extension>

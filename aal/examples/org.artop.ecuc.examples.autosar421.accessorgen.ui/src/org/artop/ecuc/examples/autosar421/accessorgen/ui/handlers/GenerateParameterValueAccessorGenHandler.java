@@ -33,6 +33,6 @@ public class GenerateParameterValueAccessorGenHandler extends AbstractGenerateFr
 	 */
 	@Override
 	protected IWorkspaceOperation createGenerateFromAutosarOperation(IFile autosarFile) {
-		return new GenerateEcucValueAccessor4xOperation(autosarFile, GenerateEcucValueAccessorGenAction.ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
+		return new GenerateEcucValueAccessor4xOperation(autosarFile, GenerateEcucValueAccessorGenAction.DEFAULT_ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
 	}
 }
