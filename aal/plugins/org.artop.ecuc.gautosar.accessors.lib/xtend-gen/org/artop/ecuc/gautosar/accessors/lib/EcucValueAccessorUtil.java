@@ -24,6 +24,7 @@ import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GModuleDef;
+import gautosar.gecucparameterdef.GParamConfContainerDef;
 import gautosar.gecucparameterdef.GParamConfMultiplicity;
 import gautosar.ggenericstructure.ginfrastructure.GARObject;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
@@ -142,25 +143,8 @@ public class EcucValueAccessorUtil {
         target.eSet(feature, container);
       }
     }
-    GModuleConfiguration moduleConf = null;
     if ((target instanceof GModuleConfiguration)) {
-      moduleConf = ((GModuleConfiguration)target);
-    } else {
-      if ((target instanceof GContainer)) {
-        EObject _eContainer = ((GContainer)target).eContainer();
-        moduleConf = ((GModuleConfiguration) _eContainer);
-      }
-    }
-    boolean _and_1 = false;
-    boolean _notEquals_1 = (!Objects.equal(moduleConf, null));
-    if (!_notEquals_1) {
-      _and_1 = false;
-    } else {
-      boolean _notEquals_2 = (!Objects.equal(container, null));
-      _and_1 = _notEquals_2;
-    }
-    if (_and_1) {
-      GModuleDef _gGetDefinition = moduleConf.gGetDefinition();
+      GModuleDef _gGetDefinition = ((GModuleConfiguration)target).gGetDefinition();
       EList<GContainerDef> _gGetContainers = null;
       if (_gGetDefinition!=null) {
         _gGetContainers=_gGetDefinition.gGetContainers();
@@ -171,8 +155,23 @@ public class EcucValueAccessorUtil {
           return Boolean.valueOf(_gGetShortName.equals(containerDefName));
         }
       };
-      GContainerDef containerDef = IterableExtensions.<GContainerDef>findFirst(_gGetContainers, _function);
+      final GContainerDef containerDef = IterableExtensions.<GContainerDef>findFirst(_gGetContainers, _function);
       container.gSetDefinition(containerDef);
+    } else {
+      if ((target instanceof GContainer)) {
+        final GContainerDef definition = ((GContainer)target).gGetDefinition();
+        if ((definition instanceof GParamConfContainerDef)) {
+          EList<GContainerDef> _gGetSubContainers = ((GParamConfContainerDef)definition).gGetSubContainers();
+          final Function1<GContainerDef, Boolean> _function_1 = new Function1<GContainerDef, Boolean>() {
+            public Boolean apply(final GContainerDef it) {
+              String _gGetShortName = it.gGetShortName();
+              return Boolean.valueOf(_gGetShortName.equals(containerDefName));
+            }
+          };
+          final GContainerDef containerDef_1 = IterableExtensions.<GContainerDef>findFirst(_gGetSubContainers, _function_1);
+          container.gSetDefinition(containerDef_1);
+        }
+      }
     }
   }
   

@@ -32,6 +32,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import gautosar.ggenericstructure.ginfrastructure.GReferrable
 import gautosar.gecucparameterdef.GModuleDef
+import gautosar.ggenericstructure.ginfrastructure.GPackageableElement
+import gautosar.gecucparameterdef.GParamConfContainerDef
 
 class EcucValueAccessorUtil {
 	
@@ -71,25 +73,24 @@ class EcucValueAccessorUtil {
 			if (feature.isMany()) {
 				(((target as EObject).eGet(feature)) as List<Object>).add(container)
 			} else {
-				target.eSet(feature, container);
+				target.eSet(feature, container)
 			}
 		}
 	
 		// Sets the right container definition if not yet done
-		var GModuleConfiguration moduleConf = null
 		if (target instanceof GModuleConfiguration){
-			moduleConf = target
-		} else if (target instanceof GContainer){
-			moduleConf = target.eContainer as GModuleConfiguration
-		}
-		
-		if (moduleConf != null && container != null) {
-			var containerDef = moduleConf.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals(containerDefName)]
+			val containerDef = target.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals(containerDefName)]
 			container.gSetDefinition(containerDef)
+		} else if (target instanceof GContainer){
+			val definition = target.gGetDefinition
+			if (definition instanceof GParamConfContainerDef) {
+				val containerDef = definition.gGetSubContainers.findFirst[gGetShortName.equals(containerDefName)]
+				container.gSetDefinition(containerDef)
+			} 
 		}
 	}
 		
-	def static EStructuralFeature getEContainingFeature(EObject target, EClass ecucValueType) {
+   def static EStructuralFeature getEContainingFeature(EObject target, EClass ecucValueType) {
 		if (target instanceof GModuleConfiguration && GecucdescriptionPackage.eINSTANCE.getGContainer().isSuperTypeOf(ecucValueType)) {
 			return target.eClass().getEStructuralFeature("containers") //$NON-NLS-1$
 		}

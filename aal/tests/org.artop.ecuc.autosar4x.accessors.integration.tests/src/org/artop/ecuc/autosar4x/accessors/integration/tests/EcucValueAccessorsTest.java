@@ -14,6 +14,9 @@
  */
 package org.artop.ecuc.autosar4x.accessors.integration.tests;
 
+import gautosar.gecucdescription.GContainer;
+import gautosar.gecucparameterdef.GContainerDef;
+
 import java.util.List;
 
 import org.artop.ecuc.accessorgen.testutils.integration.referenceworkspace.AbstractEcucValueAccessorsIntegrationTestCase;
@@ -29,6 +32,7 @@ import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMArbitration;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMArbitration.BswMModeCondition;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMArbitration.BswMModeCondition.BswMConditionValue;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMArbitration.BswMModeCondition.BswMConditionValue.BswMBswMode;
+import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMDataTypeMappingSets;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMGeneral;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMGeneral.BswMUserIncludeFiles;
 import org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition;
@@ -593,5 +597,45 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 		};
 
 		IterableExtensions.<Adc.AdcConfigSet.AdcHwUnit.AdcChannel, String> sortBy(adcChannels, function);
+	}
+
+	/*
+	 * ***********************************************************
+	 * ****** SubContainer Accessor's **************************
+	 * ***********************************************************
+	 */
+	public void testSetSubContainer() {
+		EObject bswModuleConfiguration = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_BSW_MODULE_CONFIGURATION);
+		assertTrue(bswModuleConfiguration instanceof EcucModuleConfigurationValues);
+
+		BswM bswM = new BswM((EcucModuleConfigurationValues) bswModuleConfiguration);
+		List<BswMConfig> bswMConfigs = bswM.getBswMConfigs();
+		assertNotNull(bswMConfigs);
+		assertTrue(!bswMConfigs.isEmpty());
+
+		final BswMConfig bswMConfig = bswMConfigs.get(0);
+		assertNotNull(bswMConfig);
+
+		Runnable runnable = new Runnable() {
+			public void run() {
+				EcucContainerValue containerValue = EcucdescriptionFactory.eINSTANCE.createEcucContainerValue();
+				containerValue.setShortName("test");
+				bswMConfig.setBswMDataTypeMappingSets(containerValue);
+			}
+		};
+
+		try {
+			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting SubContainer");
+			BswMDataTypeMappingSets bswMDataTypeMappingSets = bswMConfig.getBswMDataTypeMappingSets();
+			assertNotNull(bswMDataTypeMappingSets);
+			GContainer target = bswMDataTypeMappingSets.getTarget();
+			assertNotNull(target);
+			GContainerDef definition = target.gGetDefinition();
+			assertTrue(definition != null && "BswMDataTypeMappingSets".equals(definition.gGetShortName())); //$NON-NLS-1$
+		} catch (OperationCanceledException ex) {
+
+		} catch (ExecutionException ex) {
+			fail(ex.getLocalizedMessage());
+		}
 	}
 }
