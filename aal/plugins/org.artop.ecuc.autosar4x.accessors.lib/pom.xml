@@ -14,14 +14,14 @@
 	<packaging>eclipse-plugin</packaging>
 	<dependencies>
 		<dependency>
-			<groupId>org.artop.plugins</groupId>
+			<type>eclipse-plugin</type>
 			<artifactId>org.artop.aal.autosar${autosar4x.revision}</artifactId>
-			<version>4.5.0</version>
+			<version>0.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.artop.plugins</groupId>
+			<type>eclipse-plugin</type>
 			<artifactId>org.artop.aal.autosar${autosar4x.revision}.services</artifactId>
-			<version>4.5.0</version>
+			<version>0.0.0</version>
 		</dependency>
 	</dependencies>
 	<build>
