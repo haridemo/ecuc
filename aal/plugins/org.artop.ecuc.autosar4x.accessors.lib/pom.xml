@@ -12,6 +12,23 @@
 	<artifactId>org.artop.ecuc.autosar4x.accessors.lib</artifactId>
 	<version>4.5.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.artop.plugins</groupId>
+			<artifactId>org.artop.aal.autosar${autosar4x.revision}</artifactId>
+			<version>0.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.artop.plugins</groupId>
+			<artifactId>org.artop.aal.autosar${autosar4x.revision}.edit</artifactId>
+			<version>0.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.artop.plugins</groupId>
+			<artifactId>org.artop.aal.autosar${autosar4x.revision}.services</artifactId>
+			<version>0.0.0</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -41,30 +58,6 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-surefire-plugin</artifactId>
-				<version>${tycho.version}</version>
-				<configuration>
-					<dependencies>
-						<dependency>
-							<type>eclipse-plugin</type>							
-							<artifactId>org.artop.aal.autosar${autosar4x.revision}</artifactId>
-							<version>0.0.0</version>
-						</dependency>
-						<dependency>
-							<type>eclipse-plugin</type>							
-							<artifactId>org.artop.aal.autosar${autosar4x.revision}.edit</artifactId>
-							<version>0.0.0</version>
-						</dependency>												
-						<dependency>
-							<type>eclipse-plugin</type>							
-							<artifactId>org.artop.aal.autosar${autosar4x.revision}.services</artifactId>
-							<version>0.0.0</version>
-						</dependency>						
-					</dependencies>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
