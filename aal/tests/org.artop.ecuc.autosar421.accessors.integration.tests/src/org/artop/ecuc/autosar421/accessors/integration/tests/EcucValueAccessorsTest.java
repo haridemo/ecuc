@@ -12,7 +12,7 @@
  *
  * </copyright>
  */
-package org.artop.ecuc.autosar4x.accessors.integration.tests;
+package org.artop.ecuc.autosar421.accessors.integration.tests;
 
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucparameterdef.GContainerDef;

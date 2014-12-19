@@ -12,7 +12,7 @@
  *
  * </copyright>
  */
-package org.artop.ecuc.autosar4x.accessors.integration.tests.internal;
+package org.artop.ecuc.autosar421.accessors.integration.tests.internal;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
