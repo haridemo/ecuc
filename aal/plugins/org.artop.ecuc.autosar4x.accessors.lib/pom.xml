@@ -16,17 +16,12 @@
 		<dependency>
 			<groupId>org.artop.plugins</groupId>
 			<artifactId>org.artop.aal.autosar${autosar4x.revision}</artifactId>
-			<version>0.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.artop.plugins</groupId>
-			<artifactId>org.artop.aal.autosar${autosar4x.revision}.edit</artifactId>
-			<version>0.0.0</version>
+			<version>4.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.artop.plugins</groupId>
 			<artifactId>org.artop.aal.autosar${autosar4x.revision}.services</artifactId>
-			<version>0.0.0</version>
+			<version>4.5.0</version>
 		</dependency>
 	</dependencies>
 	<build>
