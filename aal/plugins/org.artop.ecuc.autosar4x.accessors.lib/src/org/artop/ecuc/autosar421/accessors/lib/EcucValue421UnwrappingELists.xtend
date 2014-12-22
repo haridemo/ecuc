@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.autosar4x.accessors.lib
+package org.artop.ecuc.autosar421.accessors.lib
 
 import autosar40.ecucdescription.EcucAddInfoParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
@@ -38,7 +38,7 @@ class IntegerValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalP
 	override protected wrap(Integer object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
 		parameterValue.gSetDefinition(parameterDef)
-		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
 		parameterValue
 	}
 	
@@ -60,7 +60,7 @@ class FloatValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalPar
 	override protected wrap(Float object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
 		parameterValue.gSetDefinition(parameterDef)
-		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
 		parameterValue
 	}
 	
@@ -82,7 +82,7 @@ class BooleanValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalP
 	override protected wrap(Boolean object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
 		parameterValue.gSetDefinition(parameterDef)
-		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
 		parameterValue
 	}
 	
@@ -104,7 +104,7 @@ class StringValueUnwrappingEList extends AbstractUnwrappingEList<EcucTextualPara
 	override protected wrap(String object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
 		parameterValue.gSetDefinition(parameterDef)
-		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
 		parameterValue
 	}
 	
@@ -126,7 +126,7 @@ class DocumentationBlockValueUnwrappingEList extends AbstractUnwrappingEList<Ecu
 	override protected wrap(DocumentationBlock object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucAddInfoParamValue
 		parameterValue.gSetDefinition(parameterDef)
-		EcucValueAccessor4xUtil.setParameterValue(parameterValue, object)
+		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
 		parameterValue
 	}
 	

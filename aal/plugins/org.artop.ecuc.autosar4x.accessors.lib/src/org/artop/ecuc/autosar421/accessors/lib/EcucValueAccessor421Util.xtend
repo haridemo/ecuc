@@ -12,7 +12,7 @@
  * 
  * </copyright>
  */
-package org.artop.ecuc.autosar4x.accessors.lib
+package org.artop.ecuc.autosar421.accessors.lib
 
 import autosar40.ecucdescription.EcucAddInfoParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
@@ -31,7 +31,7 @@ import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil
 import org.eclipse.core.runtime.Assert
 import autosar40.ecucparameterdef.EcucAddInfoParamDef
 
-class EcucValueAccessor4xUtil {
+class EcucValueAccessor421Util {
 
 	def static Integer getIntegerValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
