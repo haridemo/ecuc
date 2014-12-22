@@ -16,7 +16,7 @@ package org.artop.ecuc.autosar4x.accessorgen.operations;
 
 import gautosar.ggenericstructure.ginfrastructure.GARPackage;
 
-import org.artop.ecuc.autosar4x.accessorgen.EcucValueAccessor4xGenerator;
+import org.artop.ecuc.autosar4x.accessorgen.AbstractEcucValueAccessor4xGenerator;
 import org.artop.ecuc.autosar4x.accessorgen.internal.messages.Messages;
 import org.artop.ecuc.gautosar.accessorgen.operations.AbstractGenerateFromAutosarOperation;
 import org.artop.ecuc.gautosar.accessorgen.operations.IGenerateFromAutosarOperation;
@@ -30,23 +30,25 @@ import org.eclipse.core.runtime.SubMonitor;
 /**
  * A {@link IGenerateFromAutosarOperation operation} for generating the ECUC value accessors from an AUTOSAR model.
  */
-public class GenerateEcucValueAccessor4xOperation extends AbstractGenerateFromAutosarOperation {
+public abstract class AbstractGenerateEcucValueAccessor4xOperation extends AbstractGenerateFromAutosarOperation {
 
 	private static final String SRC_GEN_PATH = "src-gen"; //$NON-NLS-1$
 
-	public GenerateEcucValueAccessor4xOperation(IFile autosarFile, String defaultAbsoluteQualifiedARPackageName) {
+	protected abstract AbstractEcucValueAccessor4xGenerator createEcucValueAccessorGenerator();
+
+	public AbstractGenerateEcucValueAccessor4xOperation(IFile autosarFile, String defaultAbsoluteQualifiedARPackageName) {
 		super(Messages.operation_generateEcucValueAccessor_label, autosarFile, defaultAbsoluteQualifiedARPackageName);
 	}
 
-	public GenerateEcucValueAccessor4xOperation(String label, IFile autosarFile, String defaultAbsoluteQualifiedARPackageName) {
+	public AbstractGenerateEcucValueAccessor4xOperation(String label, IFile autosarFile, String defaultAbsoluteQualifiedARPackageName) {
 		super(label, autosarFile, defaultAbsoluteQualifiedARPackageName);
 	}
 
-	public GenerateEcucValueAccessor4xOperation(String label, GARPackage arPackage) {
+	public AbstractGenerateEcucValueAccessor4xOperation(String label, GARPackage arPackage) {
 		super(label, arPackage);
 	}
 
-	public GenerateEcucValueAccessor4xOperation(GARPackage arPackage) {
+	public AbstractGenerateEcucValueAccessor4xOperation(GARPackage arPackage) {
 		super(Messages.operation_generateEcucValueAccessor_label, arPackage);
 	}
 
@@ -64,15 +66,11 @@ public class GenerateEcucValueAccessor4xOperation extends AbstractGenerateFromAu
 		}
 
 		if (targetProject != null) {
-			EcucValueAccessor4xGenerator ecucValueAccessorGenerator = createEcucValueAccessorGenerator();
+			AbstractEcucValueAccessor4xGenerator ecucValueAccessorGenerator = createEcucValueAccessorGenerator();
 			String srcFolderName = SRC_GEN_PATH + "/" + targetProject.getName().replaceAll("\\.", "/"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			ecucValueAccessorGenerator.writeAccessorClasses(arPackage, srcFolderName, targetProject.getName(), targetProject);
 			ecucValueAccessorGenerator.generateEcucValueAccessorFactoryClass(targetProject, srcFolderName, targetProject.getName(),
 					getAutosarRevision(progress));
 		}
-	}
-
-	protected EcucValueAccessor4xGenerator createEcucValueAccessorGenerator() {
-		return new EcucValueAccessor4xGenerator();
 	}
 }

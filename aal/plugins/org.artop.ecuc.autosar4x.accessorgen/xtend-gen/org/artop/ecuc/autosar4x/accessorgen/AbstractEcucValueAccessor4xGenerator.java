@@ -30,12 +30,11 @@ import gautosar.gecucparameterdef.GFloatParamDef;
 import gautosar.gecucparameterdef.GIntegerParamDef;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
 import java.util.Arrays;
-import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil;
 import org.artop.ecuc.gautosar.accessorgen.AbstractEcucValueAccessorGenerator;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGenerator {
+public abstract class AbstractEcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGenerator {
   public String writeReleaseSpecificImportStatements() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import autosar40.ecucdescription.EcucTextualParamValue");
@@ -46,30 +45,11 @@ public class EcucValueAccessor4xGenerator extends AbstractEcucValueAccessorGener
     _builder.newLine();
     _builder.append("import autosar40.util.Autosar40Factory");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*");
-    _builder.newLine();
-    _builder.append("import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil");
-    _builder.newLine();
-    _builder.append("import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList");
-    _builder.newLine();
-    _builder.append("import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList");
-    _builder.newLine();
-    _builder.append("import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList");
-    _builder.newLine();
-    _builder.append("import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList");
-    _builder.newLine();
-    _builder.append("import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList");
-    _builder.newLine();
     return _builder.toString();
   }
   
   public String getEnumerationParameterValueTypeName() {
     return EcucTextualParamValue.class.getSimpleName();
-  }
-  
-  public String getEcucAccessorUtilClassName() {
-    return EcucValueAccessor4xUtil.class.getSimpleName();
   }
   
   public String getAutosarFactoryClassName() {

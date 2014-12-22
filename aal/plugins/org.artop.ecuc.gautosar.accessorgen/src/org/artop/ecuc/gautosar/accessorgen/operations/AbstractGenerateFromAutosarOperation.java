@@ -156,8 +156,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 					IProject targetProject = ResourcesPlugin.getWorkspace().getRoot().getProject(targetPluginName);
 					// Create the target project if not exist yet
 					if (!targetProject.exists()) {
-						final String arVersion = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1") + "x"; //$NON-NLS-1$ //$NON-NLS-2$
-						targetProject = createTargetProject(targetPluginName, arVersion, autosarRevision, progress.newChild(40));
+						targetProject = createTargetProject(targetPluginName, autosarRevision, progress.newChild(40));
 					} else {
 						progress.worked(40);
 					}
@@ -169,8 +168,8 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 		return null;
 	}
 
-	protected IProject createTargetProject(String targetPluginName, String autosarVersion, String autosarRevision, IProgressMonitor monitor)
-			throws CoreException, OperationCanceledException {
+	protected IProject createTargetProject(String targetPluginName, String autosarRevision, IProgressMonitor monitor) throws CoreException,
+			OperationCanceledException {
 		SubMonitor progress = SubMonitor.convert(monitor, 100);
 		if (progress.isCanceled()) {
 			throw new OperationCanceledException();
@@ -183,7 +182,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 
 			List<String> requiredBundleIds = new ArrayList<String>();
 			requiredBundleIds.add(SPHINX_EMF_PLUGIN_NAME);
-			requiredBundleIds.add(MessageFormat.format(AR_ECUC_ACCESSORS_LIB_PLUGIN_NAME, autosarVersion));
+			requiredBundleIds.add(MessageFormat.format(AR_ECUC_ACCESSORS_LIB_PLUGIN_NAME, autosarRevision));
 			requiredBundleIds.add(MessageFormat.format(AUTOSAR_REVISION_PLUGIN_NAME, autosarRevision));
 
 			ConvertToXtendEnabledPluginProjectJob convertProjectToXtendPluginOperation = new ConvertToXtendEnabledPluginProjectJob(targetProject,

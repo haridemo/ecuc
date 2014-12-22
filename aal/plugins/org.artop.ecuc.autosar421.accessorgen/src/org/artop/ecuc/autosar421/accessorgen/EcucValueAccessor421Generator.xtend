@@ -22,8 +22,8 @@ public class EcucValueAccessor421Generator extends AbstractEcucValueAccessor4xGe
 	def override String writeReleaseSpecificImportStatements()'''
 	«super.writeReleaseSpecificImportStatements»
 	
-	import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor4xUtil.*
-	import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor4xUtil
+	import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
+	import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
 	import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
 	import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
 	import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
