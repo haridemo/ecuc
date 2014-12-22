@@ -16,8 +16,8 @@ package org.artop.ecuc.examples.autosar421.accessorgen.ui.actions;
 
 import gautosar.ggenericstructure.ginfrastructure.GARPackage;
 
+import org.artop.ecuc.autosar421.accessorgen.operations.GenerateEcucValueAccessor421Operation;
 import org.artop.ecuc.autosar4x.accessorgen.internal.messages.Messages;
-import org.artop.ecuc.autosar4x.accessorgen.operations.GenerateEcucValueAccessor4xOperation;
 import org.artop.ecuc.gautosar.accessorgen.ui.actions.AbstractGenerateFromAutosarAction;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.sphinx.platform.operations.IWorkspaceOperation;
@@ -26,15 +26,15 @@ import org.eclipse.ui.actions.BaseSelectionListenerAction;
 /**
  * An {@link BaseSelectionListenerAction action} for generating an AUTSOAR ECUC value accessors from an AUTOSAR model.
  */
-public class GenerateEcucValueAccessorGenAction extends AbstractGenerateFromAutosarAction {
+public class GenerateEcucValueAccessor421GenAction extends AbstractGenerateFromAutosarAction {
 
 	public static final String DEFAULT_ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME = "/AUTOSAR/EcucDefs"; //$NON-NLS-1$
 
-	public GenerateEcucValueAccessorGenAction() {
+	public GenerateEcucValueAccessor421GenAction() {
 		super(Messages.operation_generateEcucValueAccessor_label);
 	}
 
-	public GenerateEcucValueAccessorGenAction(String text) {
+	public GenerateEcucValueAccessor421GenAction(String text) {
 		super(text);
 	}
 
@@ -45,7 +45,7 @@ public class GenerateEcucValueAccessorGenAction extends AbstractGenerateFromAuto
 	 */
 	@Override
 	protected IWorkspaceOperation createGenerateFromAutosarOperation(IFile autosarFile) {
-		return new GenerateEcucValueAccessor4xOperation(autosarFile, DEFAULT_ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
+		return new GenerateEcucValueAccessor421Operation(autosarFile, DEFAULT_ABSOLUTE_QUALIFIED_AR_PACKAGE_NAME);
 	}
 
 	/*
@@ -55,6 +55,6 @@ public class GenerateEcucValueAccessorGenAction extends AbstractGenerateFromAuto
 	 */
 	@Override
 	protected IWorkspaceOperation createGenerateFromAutosarOperation(GARPackage arPackage) {
-		return new GenerateEcucValueAccessor4xOperation(arPackage);
+		return new GenerateEcucValueAccessor421Operation(arPackage);
 	}
 }

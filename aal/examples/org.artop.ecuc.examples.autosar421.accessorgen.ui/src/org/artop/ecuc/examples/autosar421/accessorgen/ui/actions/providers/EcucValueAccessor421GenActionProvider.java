@@ -17,7 +17,7 @@ package org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.providers;
 import org.artop.aal.examples.actions.providers.AbstractArtopExampleActionProvider;
 import org.artop.aal.examples.common.ui.IArtopExampleMenuConstants;
 import org.artop.ecuc.examples.autosar421.accessorgen.ui.IAutosarEcucValueAccessorGenExampleMenuConstants;
-import org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.GenerateEcucValueAccessorGenAction;
+import org.artop.ecuc.examples.autosar421.accessorgen.ui.actions.GenerateEcucValueAccessor421GenAction;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
@@ -25,16 +25,16 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sphinx.platform.ui.util.SelectionUtil;
 
-public class EcucValueAccessorGenActionProvider extends AbstractArtopExampleActionProvider {
+public class EcucValueAccessor421GenActionProvider extends AbstractArtopExampleActionProvider {
 
-	private GenerateEcucValueAccessorGenAction generateEcucValueAccessorGenAction;
+	private GenerateEcucValueAccessor421GenAction generateEcucValueAccessorGenAction;
 
 	/*
 	 * @see org.eclipse.sphinx.emf.ui.actions.providers.BasicActionProvider#doInit()
 	 */
 	@Override
 	public void doInit() {
-		generateEcucValueAccessorGenAction = new GenerateEcucValueAccessorGenAction();
+		generateEcucValueAccessorGenAction = new GenerateEcucValueAccessor421GenAction();
 
 		if (selectionProvider != null) {
 			selectionProvider.addSelectionChangedListener(generateEcucValueAccessorGenAction);

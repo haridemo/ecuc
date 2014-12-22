@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.emf.common,
  org.eclipse.sphinx.emf.ui,
  org.eclipse.sphinx.emf.check.ui,
  org.artop.aal.gautosar,
- org.artop.ecuc.autosar4x.accessors.lib,
+ org.artop.ecuc.autosar421.accessors.lib,
  org.artop.ecuc.autosar421.accessors
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
