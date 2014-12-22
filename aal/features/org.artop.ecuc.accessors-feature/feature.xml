@@ -25,13 +25,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.artop.ecuc.autosar4x.accessors.lib"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.artop.ecuc.gautosar.accessorgen"
          download-size="0"
          install-size="0"
