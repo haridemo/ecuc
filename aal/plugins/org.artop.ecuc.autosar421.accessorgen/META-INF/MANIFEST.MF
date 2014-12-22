@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.autosar421.accessorgen;singleton:=true
+Bundle-Version: 4.5.0.qualifier
+Bundle-Activator: org.artop.ecuc.autosar421.accessorgen.internal.Activator$Implementation
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.artop.ecuc.autosar421.accessorgen.internal;x-internal:=true,
+ org.artop.ecuc.autosar421.accessorgen
+Bundle-Localization: plugin
+Require-Bundle: org.artop.ecuc.autosar4x.accessorgen;visibility:=reexport,
+ org.artop.ecuc.autosar421.accessors.lib
