@@ -30,24 +30,28 @@ import org.artop.aal.autosar40.gautosar40.ecucdescription.GEcucNumericalParamVal
 import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil
 import org.eclipse.core.runtime.Assert
 import autosar40.ecucparameterdef.EcucAddInfoParamDef
+import autosar40.genericstructure.varianthandling.attributevaluevariationpoints.NumericalValueVariationPoint
 
 class EcucValueAccessor421Util {
 
 	def static Integer getIntegerValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
-			return EcucValueAccessorUtil.toInteger(parameterValue.value?.mixedText)
+			val NumericalValueVariationPoint parameterValueValue = parameterValue.value
+			return EcucValueAccessorUtil.toInteger(parameterValueValue?.mixedText)
 		}
 	}
 
 	def static Float getFloatValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
-			EcucValueAccessorUtil.toFloat(parameterValue.value?.mixedText)
+			val NumericalValueVariationPoint parameterValueValue = parameterValue.value
+			EcucValueAccessorUtil.toFloat(parameterValueValue?.mixedText)
 		}
 	}
 	
 	def static Boolean getBooleanValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
-			EcucValueAccessorUtil.toBoolean(parameterValue.value?.mixedText)
+			val NumericalValueVariationPoint parameterValueValue = parameterValue.value
+			EcucValueAccessorUtil.toBoolean(parameterValueValue?.mixedText)
 		}
 	}
 	
