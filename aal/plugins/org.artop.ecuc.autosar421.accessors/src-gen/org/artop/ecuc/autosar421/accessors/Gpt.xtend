@@ -21,13 +21,13 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
-import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
+import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
+import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
+import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -144,7 +144,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Integer getGptChannelId(){
-				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelId"])
+				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelId"])
 			}
 			
 			def void setGptChannelId(Integer value){
@@ -152,11 +152,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelId"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelId"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			def GptChannelMode getGptChannelMode(){
@@ -168,11 +168,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelMode"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelMode"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			enum GptChannelMode {
@@ -189,11 +189,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def void setGptChannelModeValue(GParameterValue paramValue, GptChannelMode value){
-				EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
 			def Float getGptChannelTickFrequency(){
-				EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelTickFrequency"])
+				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelTickFrequency"])
 			}
 			
 			def void setGptChannelTickFrequency(Float value){
@@ -201,15 +201,15 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelTickFrequency"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelTickFrequency"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			def Integer getGptChannelTickValueMax(){
-				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelTickValueMax"])
+				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelTickValueMax"])
 			}
 			
 			def void setGptChannelTickValueMax(Integer value){
@@ -217,11 +217,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelTickValueMax"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelTickValueMax"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			def Boolean getGptEnableWakeup(){
@@ -233,15 +233,15 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptEnableWakeup"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptEnableWakeup"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			def String getGptNotification(){
-				EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptNotification"])
+				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptNotification"])
 			}
 			
 			def void setGptNotification(String value){
@@ -249,11 +249,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptNotification"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptNotification"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			
@@ -344,11 +344,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptDeinitApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptDeinitApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getGptEnableDisableNotificationApi(){
@@ -360,11 +360,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptEnableDisableNotificationApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptEnableDisableNotificationApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getGptTimeElapsedApi(){
@@ -376,11 +376,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptTimeElapsedApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptTimeElapsedApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getGptTimeRemainingApi(){
@@ -392,11 +392,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptTimeRemainingApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptTimeRemainingApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getGptVersionInfoApi(){
@@ -408,11 +408,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptVersionInfoApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptVersionInfoApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getGptWakeupFunctionalityApi(){
@@ -424,11 +424,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptWakeupFunctionalityApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptWakeupFunctionalityApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		
@@ -463,11 +463,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptDevErrorDetect"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptDevErrorDetect"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getGptPredefTimer100us32bitEnable(){
@@ -479,11 +479,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptPredefTimer100us32bitEnable"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptPredefTimer100us32bitEnable"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def GptPredefTimer1usEnablingGrade getGptPredefTimer1usEnablingGrade(){
@@ -495,11 +495,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptPredefTimer1usEnablingGrade"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptPredefTimer1usEnablingGrade"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		enum GptPredefTimer1usEnablingGrade {
@@ -520,7 +520,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setGptPredefTimer1usEnablingGradeValue(GParameterValue paramValue, GptPredefTimer1usEnablingGrade value){
-			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
 		def Boolean getGptReportWakeupSource(){
@@ -532,11 +532,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptReportWakeupSource"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "GptReportWakeupSource"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		

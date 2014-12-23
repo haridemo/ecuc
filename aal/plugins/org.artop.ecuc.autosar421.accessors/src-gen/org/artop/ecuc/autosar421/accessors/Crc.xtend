@@ -21,13 +21,13 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
-import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
+import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
+import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
+import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -105,11 +105,11 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc16Mode"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc16Mode"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		enum Crc16Mode {
@@ -128,7 +128,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setCrc16ModeValue(GParameterValue paramValue, Crc16Mode value){
-			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
 		def Crc32Mode getCrc32Mode(){
@@ -140,11 +140,11 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc32Mode"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc32Mode"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		enum Crc32Mode {
@@ -163,7 +163,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setCrc32ModeValue(GParameterValue paramValue, Crc32Mode value){
-			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
 		def Crc32P4Mode getCrc32P4Mode(){
@@ -175,11 +175,11 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc32P4Mode"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc32P4Mode"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		enum Crc32P4Mode {
@@ -198,7 +198,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setCrc32P4ModeValue(GParameterValue paramValue, Crc32P4Mode value){
-			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
 		def Crc8H2FMode getCrc8H2FMode(){
@@ -210,11 +210,11 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc8H2FMode"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc8H2FMode"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		enum Crc8H2FMode {
@@ -233,7 +233,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setCrc8H2FModeValue(GParameterValue paramValue, Crc8H2FMode value){
-			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
 		def Crc8Mode getCrc8Mode(){
@@ -245,11 +245,11 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc8Mode"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "Crc8Mode"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		enum Crc8Mode {
@@ -268,7 +268,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def void setCrc8ModeValue(GParameterValue paramValue, Crc8Mode value){
-			EcucValueAccessor4xUtil.setParameterValue(paramValue, value)
+			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
 		

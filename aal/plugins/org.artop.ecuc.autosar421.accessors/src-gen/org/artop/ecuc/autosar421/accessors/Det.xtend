@@ -21,13 +21,13 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
-import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
+import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
+import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
+import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -144,7 +144,7 @@ class Det implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Integer getDetModuleId(){
-				EcucValueAccessor4xUtil.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetModuleId"])
+				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetModuleId"])
 			}
 			
 			def void setDetModuleId(Integer value){
@@ -152,11 +152,11 @@ class Det implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetModuleId"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetModuleId"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			
@@ -193,15 +193,15 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetForwardToDlt"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetForwardToDlt"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def String getDetReportRuntimeErrorCallout(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportRuntimeErrorCallout"])
+			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportRuntimeErrorCallout"])
 		}
 		
 		def void setDetReportRuntimeErrorCallout(String value){
@@ -209,15 +209,15 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetReportRuntimeErrorCallout"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetReportRuntimeErrorCallout"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def String getDetReportTransientFaultCallout(){
-			EcucValueAccessor4xUtil.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportTransientFaultCallout"])
+			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportTransientFaultCallout"])
 		}
 		
 		def void setDetReportTransientFaultCallout(String value){
@@ -225,11 +225,11 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetReportTransientFaultCallout"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetReportTransientFaultCallout"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getDetVersionInfoApi(){
@@ -241,11 +241,11 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetVersionInfoApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetVersionInfoApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		

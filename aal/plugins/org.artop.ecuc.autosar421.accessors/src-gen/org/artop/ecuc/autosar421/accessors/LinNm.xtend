@@ -21,13 +21,13 @@ import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
 
-import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
-import org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil
-import org.artop.ecuc.autosar4x.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.FloatValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
+import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
+import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
+import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -105,11 +105,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmBusSynchronizationEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmBusSynchronizationEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmComControlEnabled(){
@@ -121,11 +121,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmComControlEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmComControlEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmComUserDataSupport(){
@@ -137,11 +137,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmComUserDataSupport"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmComUserDataSupport"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmCoordinatorSyncSupport(){
@@ -153,11 +153,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmCoordinatorSyncSupport"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmCoordinatorSyncSupport"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmDevErrorDetect(){
@@ -169,15 +169,15 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmDevErrorDetect"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmDevErrorDetect"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Float getLinNmMainFunctionPeriod(){
-			EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmMainFunctionPeriod"])
+			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmMainFunctionPeriod"])
 		}
 		
 		def void setLinNmMainFunctionPeriod(Float value){
@@ -185,11 +185,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmMainFunctionPeriod"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmMainFunctionPeriod"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmNodeDetectionEnabled(){
@@ -201,11 +201,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmNodeDetectionEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmNodeDetectionEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmNodeIdEnabled(){
@@ -217,11 +217,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmNodeIdEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmNodeIdEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmPassiveModeEnabled(){
@@ -233,11 +233,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmPassiveModeEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmPassiveModeEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmRemoteSleepIndicationEnabled(){
@@ -249,11 +249,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmRemoteSleepIndicationEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmRemoteSleepIndicationEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmStateChangeIndEnabled(){
@@ -265,11 +265,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmStateChangeIndEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmStateChangeIndEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmSynchronizationPointEnabled(){
@@ -281,11 +281,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmSynchronizationPointEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmSynchronizationPointEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmUserDataEnabled(){
@@ -297,11 +297,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmUserDataEnabled"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmUserDataEnabled"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		def Boolean getLinNmVersionInfoApi(){
@@ -313,11 +313,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmVersionInfoApi"])
+					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmVersionInfoApi"])
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
 		
@@ -352,7 +352,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Float getLinNmTimeoutTime(){
-				EcucValueAccessor4xUtil.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmTimeoutTime"])
+				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmTimeoutTime"])
 			}
 			
 			def void setLinNmTimeoutTime(Float value){
@@ -360,11 +360,11 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor4xUtil.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmTimeoutTime"])
+						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinNmTimeoutTime"])
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor4xUtil.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
 			
