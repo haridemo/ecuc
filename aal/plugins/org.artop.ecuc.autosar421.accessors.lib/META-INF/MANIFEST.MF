@@ -8,7 +8,7 @@ Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.xtext.xbase.lib,
  org.artop.ecuc.gautosar.accessors.lib;visibility:=reexport,
- org.artop.aal.autosar421,
+ org.artop.aal.autosar421;visibility:=reexport,
  org.artop.aal.autosar421.services
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
