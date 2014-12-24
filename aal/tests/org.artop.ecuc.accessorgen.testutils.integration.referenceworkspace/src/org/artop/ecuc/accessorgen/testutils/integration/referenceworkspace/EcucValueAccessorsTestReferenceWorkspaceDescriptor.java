@@ -48,6 +48,7 @@ public class EcucValueAccessorsTestReferenceWorkspaceDescriptor extends Abstract
 	public static final String URI_FRAGMENT_ADC_CHANNEL2_CONTAINER_VALUE = "/Values/AdcValues/AdcConfigSetValues/AdcHwUnitValues/AdcChannelValues2?type=EcucContainerValue";
 	public static final String URI_FRAGMENT_NVM_MODULE_CONFIGURATION = "/Values/NvMValues?type=EcucModuleConfigurationValues";
 	public static final String URI_FRAGMENT_BSW_MODULE_CONFIGURATION = "/Values/BswMValues?type=EcucModuleConfigurationValues";
+	public static final String URI_FRAGMENT_CANSM_MODULE_CONFIGURATION = "/Values/CanSMValues?type=EcucModuleConfigurationValues";
 	public static final String URI_FRAGMENT_BSWMODEVALUES_CONTAINER_VALUE = "/Values/BswMValues/BswMConfigValues/BswMArbitrationValues/BswMModeConditionValues/BswMConditionValueVals/BswModeValues?type=EcucContainerValue";
 	public static final String URI_FRAGMENT_ECUC_PARTITION_MODULE_CONFIGURATION = "/Values/EcuCValues/EcucPartitionCollectionValues/EcucPartitionValues?type=EcucContainerValue";
 

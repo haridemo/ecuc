@@ -35,6 +35,10 @@ import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMArbitration.BswMM
 import org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMDataTypeMappingSets;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMGeneral;
 import org.artop.ecuc.autosar421.accessors.BswM.BswMGeneral.BswMUserIncludeFiles;
+import org.artop.ecuc.autosar421.accessors.CanSM;
+import org.artop.ecuc.autosar421.accessors.CanSM.CanSMConfiguration;
+import org.artop.ecuc.autosar421.accessors.CanSM.CanSMConfiguration.CanSMManagerNetwork;
+import org.artop.ecuc.autosar421.accessors.CanSM.CanSMGeneral;
 import org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition;
 import org.artop.ecuc.autosar421.accessors.NvM;
 import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor;
@@ -632,6 +636,38 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 			assertNotNull(target);
 			GContainerDef definition = target.gGetDefinition();
 			assertTrue(definition != null && "BswMDataTypeMappingSets".equals(definition.gGetShortName())); //$NON-NLS-1$
+		} catch (OperationCanceledException ex) {
+
+		} catch (ExecutionException ex) {
+			fail(ex.getLocalizedMessage());
+		}
+	}
+
+	public void testAddSubContainer() {
+		EObject canSMModuleConfiguration = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_CANSM_MODULE_CONFIGURATION);
+		assertTrue(canSMModuleConfiguration instanceof EcucModuleConfigurationValues);
+
+		final CanSM canSM = new CanSM((EcucModuleConfigurationValues) canSMModuleConfiguration);
+		final CanSMGeneral canSMGeneral = new CanSMGeneral(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue());
+		final CanSMConfiguration canSMConfiguration = new CanSMConfiguration(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue());
+		final CanSMManagerNetwork canSMManagerNetwork = new CanSMManagerNetwork(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue());
+
+		Runnable runnable = new Runnable() {
+			public void run() {
+				canSM.setCanSMGeneral(canSMGeneral);
+				canSM.getCanSMGeneral().setShortName("CanSMGeneral0");
+				canSM.getCanSMGeneral().setCanSMDevErrorDetect(true);
+				canSM.getCanSMGeneral().setCanSMIcomSupport(false);
+				canSM.getCanSMGeneral().setCanSMMainFunctionTimePeriod((float) 0.05);
+				canSM.setCanSMConfiguration(canSMConfiguration);
+				canSM.getCanSMConfiguration().setShortName("CanSMConfiguration0");
+				canSM.getCanSMConfiguration().getCanSMManagerNetworks().add(canSMManagerNetwork);
+			}
+		};
+
+		try {
+			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting SubContainer");
+			assertFalse(canSM.getCanSMConfiguration().getCanSMManagerNetworks().isEmpty());
 		} catch (OperationCanceledException ex) {
 
 		} catch (ExecutionException ex) {
