@@ -41,6 +41,13 @@
 						</configuration>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>${project.groupId}</groupId>
+						<artifactId>org.artop.aal.autosar421</artifactId>
+						<version>${project.version}</version>
+					</dependency>
+			</dependencies>
 			</plugin>
 		</plugins>
 	</build>
