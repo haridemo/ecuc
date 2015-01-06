@@ -19,10 +19,14 @@ import gautosar.gecucdescription.GContainer
 import gautosar.gecucdescription.GModuleConfiguration
 import gautosar.gecucdescription.GReferenceValue
 import gautosar.gecucdescription.GecucdescriptionPackage
+import gautosar.gecucparameterdef.GChoiceContainerDef
 import gautosar.gecucparameterdef.GContainerDef
+import gautosar.gecucparameterdef.GModuleDef
+import gautosar.gecucparameterdef.GParamConfContainerDef
 import gautosar.gecucparameterdef.GParamConfMultiplicity
 import gautosar.ggenericstructure.ginfrastructure.GARObject
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
+import gautosar.ggenericstructure.ginfrastructure.GReferrable
 import java.util.ArrayList
 import java.util.List
 import java.util.Set
@@ -30,11 +34,6 @@ import org.eclipse.core.runtime.Assert
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
-import gautosar.ggenericstructure.ginfrastructure.GReferrable
-import gautosar.gecucparameterdef.GModuleDef
-import gautosar.ggenericstructure.ginfrastructure.GPackageableElement
-import gautosar.gecucparameterdef.GParamConfContainerDef
-import org.eclipse.sphinx.emf.util.IWrapper
 
 class EcucValueAccessorUtil {
 	
@@ -92,7 +91,13 @@ class EcucValueAccessorUtil {
 			val definition = parent.gGetDefinition
 			if (definition instanceof GParamConfContainerDef) {
 				return definition.gGetSubContainers.findFirst[gGetShortName.equals(containerDefName)]
-			} 
+			} else if (definition instanceof GChoiceContainerDef) {
+			  for (choiceDefinition : definition.gGetChoices) {
+					if (choiceDefinition.gGetShortName.equals(containerDefName)) {
+						return choiceDefinition
+					}
+				}
+			}
 		}
 		return null
 	}

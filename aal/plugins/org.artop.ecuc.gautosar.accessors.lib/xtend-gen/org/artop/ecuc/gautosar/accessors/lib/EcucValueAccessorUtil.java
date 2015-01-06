@@ -21,6 +21,7 @@ import gautosar.gecucdescription.GContainer;
 import gautosar.gecucdescription.GModuleConfiguration;
 import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucdescription.GecucdescriptionPackage;
+import gautosar.gecucparameterdef.GChoiceContainerDef;
 import gautosar.gecucparameterdef.GConfigReference;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GModuleDef;
@@ -174,6 +175,17 @@ public class EcucValueAccessorUtil {
             }
           };
           return IterableExtensions.<GContainerDef>findFirst(_gGetSubContainers, _function_1);
+        } else {
+          if ((definition instanceof GChoiceContainerDef)) {
+            EList<GParamConfContainerDef> _gGetChoices = ((GChoiceContainerDef)definition).gGetChoices();
+            for (final GParamConfContainerDef choiceDefinition : _gGetChoices) {
+              String _gGetShortName = choiceDefinition.gGetShortName();
+              boolean _equals = _gGetShortName.equals(containerDefName);
+              if (_equals) {
+                return choiceDefinition;
+              }
+            }
+          }
         }
       }
     }
