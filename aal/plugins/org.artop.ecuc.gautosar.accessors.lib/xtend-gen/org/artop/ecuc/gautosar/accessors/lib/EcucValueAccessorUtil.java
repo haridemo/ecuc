@@ -149,7 +149,6 @@ public class EcucValueAccessorUtil {
   }
   
   public static GContainerDef getContainerDefinition(final GARObject parent, final String containerDefName) {
-    Assert.isTrue(((parent instanceof GModuleConfiguration) || (parent instanceof GContainer)));
     if ((parent instanceof GModuleConfiguration)) {
       GModuleDef _gGetDefinition = ((GModuleConfiguration)parent).gGetDefinition();
       EList<GContainerDef> _gGetContainers = null;
