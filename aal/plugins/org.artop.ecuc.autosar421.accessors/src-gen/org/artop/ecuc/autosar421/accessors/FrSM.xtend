@@ -371,7 +371,8 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrSMClusterDemEventParameterRefs))
 			}
 			
-			def void setFrSMClusterDemEventParameterRefs(GContainer subContainer){
+			def void setFrSMClusterDemEventParameterRefs(FrSMClusterDemEventParameterRefs frSMClusterDemEventParameterRefs){
+				val GContainer subContainer = frSMClusterDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "FrSMClusterDemEventParameterRefs")
 			}
 			

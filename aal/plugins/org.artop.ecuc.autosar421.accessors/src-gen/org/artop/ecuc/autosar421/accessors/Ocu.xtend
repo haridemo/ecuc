@@ -169,7 +169,8 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OcuHWSpecificSettings))
 		}
 		
-		def void setOcuHWSpecificSettings(GContainer subContainer){
+		def void setOcuHWSpecificSettings(OcuHWSpecificSettings ocuHWSpecificSettings){
+			val GContainer subContainer = ocuHWSpecificSettings.getTarget()
 			containerValue.setContainer(subContainer, "OcuHWSpecificSettings")
 		}
 		

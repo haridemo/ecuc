@@ -240,7 +240,8 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthTSynGlobalTimeMaster))
 		}
 		
-		def void setEthTSynGlobalTimeMaster(GContainer subContainer){
+		def void setEthTSynGlobalTimeMaster(EthTSynGlobalTimeMaster ethTSynGlobalTimeMaster){
+			val GContainer subContainer = ethTSynGlobalTimeMaster.getTarget()
 			containerValue.setContainer(subContainer, "EthTSynGlobalTimeMaster")
 		}
 		
@@ -248,7 +249,8 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthTSynGlobalTimeSlave))
 		}
 		
-		def void setEthTSynGlobalTimeSlave(GContainer subContainer){
+		def void setEthTSynGlobalTimeSlave(EthTSynGlobalTimeSlave ethTSynGlobalTimeSlave){
+			val GContainer subContainer = ethTSynGlobalTimeSlave.getTarget()
 			containerValue.setContainer(subContainer, "EthTSynGlobalTimeSlave")
 		}
 		

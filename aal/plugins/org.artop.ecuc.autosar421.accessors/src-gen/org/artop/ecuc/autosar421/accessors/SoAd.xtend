@@ -780,7 +780,8 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(SoAdSocketProtocol))
 			}
 			
-			def void setSoAdSocketProtocol(GContainer subContainer){
+			def void setSoAdSocketProtocol(SoAdSocketProtocol soAdSocketProtocol){
+				val GContainer subContainer = soAdSocketProtocol.getTarget()
 				containerValue.setContainer(subContainer, "SoAdSocketProtocol")
 			}
 			
@@ -826,7 +827,8 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(SoAdSocketRemoteAddress))
 				}
 				
-				def void setSoAdSocketRemoteAddress(GContainer subContainer){
+				def void setSoAdSocketRemoteAddress(SoAdSocketRemoteAddress soAdSocketRemoteAddress){
+					val GContainer subContainer = soAdSocketRemoteAddress.getTarget()
 					containerValue.setContainer(subContainer, "SoAdSocketRemoteAddress")
 				}
 				
@@ -912,14 +914,16 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(SoAdSocketTcp))
 				}
 				
-				def void setSoAdSocketTcp(GContainer subContainer){
+				def void setSoAdSocketTcp(SoAdSocketTcp soAdSocketTcp){
+					val GContainer subContainer = soAdSocketTcp.getTarget()
 					containerValue.setContainer(subContainer, "SoAdSocketTcp")
 				}
 				def SoAdSocketUdp getSoAdSocketUdp(){
 					containerValue.getByType(typeof(SoAdSocketUdp))
 				}
 				
-				def void setSoAdSocketUdp(GContainer subContainer){
+				def void setSoAdSocketUdp(SoAdSocketUdp soAdSocketUdp){
+					val GContainer subContainer = soAdSocketUdp.getTarget()
 					containerValue.setContainer(subContainer, "SoAdSocketUdp")
 				}
 				
@@ -1225,7 +1229,8 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(SoAdSocketRouteDest))
 			}
 			
-			def void setSoAdSocketRouteDest(GContainer subContainer){
+			def void setSoAdSocketRouteDest(SoAdSocketRouteDest soAdSocketRouteDest){
+				val GContainer subContainer = soAdSocketRouteDest.getTarget()
 				containerValue.setContainer(subContainer, "SoAdSocketRouteDest")
 			}
 			

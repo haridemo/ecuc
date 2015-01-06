@@ -174,7 +174,8 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FlsTstBlockBgndConfigSet))
 		}
 		
-		def void setFlsTstBlockBgndConfigSet(GContainer subContainer){
+		def void setFlsTstBlockBgndConfigSet(FlsTstBlockBgndConfigSet flsTstBlockBgndConfigSet){
+			val GContainer subContainer = flsTstBlockBgndConfigSet.getTarget()
 			containerValue.setContainer(subContainer, "FlsTstBlockBgndConfigSet")
 		}
 		
@@ -182,7 +183,8 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FlsTstBlockFgndConfigSet))
 		}
 		
-		def void setFlsTstBlockFgndConfigSet(GContainer subContainer){
+		def void setFlsTstBlockFgndConfigSet(FlsTstBlockFgndConfigSet flsTstBlockFgndConfigSet){
+			val GContainer subContainer = flsTstBlockFgndConfigSet.getTarget()
 			containerValue.setContainer(subContainer, "FlsTstBlockFgndConfigSet")
 		}
 		

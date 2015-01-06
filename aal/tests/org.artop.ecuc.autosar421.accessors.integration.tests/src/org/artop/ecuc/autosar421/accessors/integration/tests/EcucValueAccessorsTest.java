@@ -624,7 +624,7 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 			public void run() {
 				EcucContainerValue containerValue = EcucdescriptionFactory.eINSTANCE.createEcucContainerValue();
 				containerValue.setShortName("test");
-				bswMConfig.setBswMDataTypeMappingSets(containerValue);
+				bswMConfig.setBswMDataTypeMappingSets(new BswMDataTypeMappingSets(containerValue));
 			}
 		};
 

@@ -143,8 +143,14 @@ public class EcucValueAccessorUtil {
         target.eSet(feature, container);
       }
     }
-    if ((target instanceof GModuleConfiguration)) {
-      GModuleDef _gGetDefinition = ((GModuleConfiguration)target).gGetDefinition();
+    GContainerDef _containerDefinition = EcucValueAccessorUtil.getContainerDefinition(target, containerDefName);
+    container.gSetDefinition(_containerDefinition);
+  }
+  
+  public static GContainerDef getContainerDefinition(final GARObject parent, final String containerDefName) {
+    Assert.isTrue(((parent instanceof GModuleConfiguration) || (parent instanceof GContainer)));
+    if ((parent instanceof GModuleConfiguration)) {
+      GModuleDef _gGetDefinition = ((GModuleConfiguration)parent).gGetDefinition();
       EList<GContainerDef> _gGetContainers = null;
       if (_gGetDefinition!=null) {
         _gGetContainers=_gGetDefinition.gGetContainers();
@@ -155,11 +161,10 @@ public class EcucValueAccessorUtil {
           return Boolean.valueOf(_gGetShortName.equals(containerDefName));
         }
       };
-      final GContainerDef containerDef = IterableExtensions.<GContainerDef>findFirst(_gGetContainers, _function);
-      container.gSetDefinition(containerDef);
+      return IterableExtensions.<GContainerDef>findFirst(_gGetContainers, _function);
     } else {
-      if ((target instanceof GContainer)) {
-        final GContainerDef definition = ((GContainer)target).gGetDefinition();
+      if ((parent instanceof GContainer)) {
+        final GContainerDef definition = ((GContainer)parent).gGetDefinition();
         if ((definition instanceof GParamConfContainerDef)) {
           EList<GContainerDef> _gGetSubContainers = ((GParamConfContainerDef)definition).gGetSubContainers();
           final Function1<GContainerDef, Boolean> _function_1 = new Function1<GContainerDef, Boolean>() {
@@ -168,11 +173,11 @@ public class EcucValueAccessorUtil {
               return Boolean.valueOf(_gGetShortName.equals(containerDefName));
             }
           };
-          final GContainerDef containerDef_1 = IterableExtensions.<GContainerDef>findFirst(_gGetSubContainers, _function_1);
-          container.gSetDefinition(containerDef_1);
+          return IterableExtensions.<GContainerDef>findFirst(_gGetSubContainers, _function_1);
         }
       }
     }
+    return null;
   }
   
   public static EStructuralFeature getEContainingFeature(final EObject target, final EClass ecucValueType) {

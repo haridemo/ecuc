@@ -487,7 +487,8 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(PduRTpBufferTable))
 		}
 		
-		def void setPduRTpBufferTable(GContainer subContainer){
+		def void setPduRTpBufferTable(PduRTpBufferTable pduRTpBufferTable){
+			val GContainer subContainer = pduRTpBufferTable.getTarget()
 			containerValue.setContainer(subContainer, "PduRTpBufferTable")
 		}
 		
@@ -495,7 +496,8 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(PduRTxBufferTable))
 		}
 		
-		def void setPduRTxBufferTable(GContainer subContainer){
+		def void setPduRTxBufferTable(PduRTxBufferTable pduRTxBufferTable){
+			val GContainer subContainer = pduRTxBufferTable.getTarget()
 			containerValue.setContainer(subContainer, "PduRTxBufferTable")
 		}
 		
@@ -654,7 +656,8 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(PduRSrcPdu))
 				}
 				
-				def void setPduRSrcPdu(GContainer subContainer){
+				def void setPduRSrcPdu(PduRSrcPdu pduRSrcPdu){
+					val GContainer subContainer = pduRSrcPdu.getTarget()
 					containerValue.setContainer(subContainer, "PduRSrcPdu")
 				}
 				
@@ -787,7 +790,8 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(PduRDefaultValue))
 					}
 					
-					def void setPduRDefaultValue(GContainer subContainer){
+					def void setPduRDefaultValue(PduRDefaultValue pduRDefaultValue){
+						val GContainer subContainer = pduRDefaultValue.getTarget()
 						containerValue.setContainer(subContainer, "PduRDefaultValue")
 					}
 					

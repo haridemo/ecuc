@@ -432,7 +432,8 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(WdgExternalConfiguration))
 		}
 		
-		def void setWdgExternalConfiguration(GContainer subContainer){
+		def void setWdgExternalConfiguration(WdgExternalConfiguration wdgExternalConfiguration){
+			val GContainer subContainer = wdgExternalConfiguration.getTarget()
 			containerValue.setContainer(subContainer, "WdgExternalConfiguration")
 		}
 		
@@ -440,7 +441,8 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(WdgSettingsFast))
 		}
 		
-		def void setWdgSettingsFast(GContainer subContainer){
+		def void setWdgSettingsFast(WdgSettingsFast wdgSettingsFast){
+			val GContainer subContainer = wdgSettingsFast.getTarget()
 			containerValue.setContainer(subContainer, "WdgSettingsFast")
 		}
 		
@@ -448,7 +450,8 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(WdgSettingsOff))
 		}
 		
-		def void setWdgSettingsOff(GContainer subContainer){
+		def void setWdgSettingsOff(WdgSettingsOff wdgSettingsOff){
+			val GContainer subContainer = wdgSettingsOff.getTarget()
 			containerValue.setContainer(subContainer, "WdgSettingsOff")
 		}
 		
@@ -456,7 +459,8 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(WdgSettingsSlow))
 		}
 		
-		def void setWdgSettingsSlow(GContainer subContainer){
+		def void setWdgSettingsSlow(WdgSettingsSlow wdgSettingsSlow){
+			val GContainer subContainer = wdgSettingsSlow.getTarget()
 			containerValue.setContainer(subContainer, "WdgSettingsSlow")
 		}
 		

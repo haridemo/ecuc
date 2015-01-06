@@ -273,7 +273,8 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(GptWakeupConfiguration))
 			}
 			
-			def void setGptWakeupConfiguration(GContainer subContainer){
+			def void setGptWakeupConfiguration(GptWakeupConfiguration gptWakeupConfiguration){
+				val GContainer subContainer = gptWakeupConfiguration.getTarget()
 				containerValue.setContainer(subContainer, "GptWakeupConfiguration")
 			}
 			

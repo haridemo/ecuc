@@ -215,7 +215,8 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(LinTrcvAccess))
 		}
 		
-		def void setLinTrcvAccess(GContainer subContainer){
+		def void setLinTrcvAccess(LinTrcvAccess linTrcvAccess){
+			val GContainer subContainer = linTrcvAccess.getTarget()
 			containerValue.setContainer(subContainer, "LinTrcvAccess")
 		}
 		
@@ -243,14 +244,16 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(LinTrcvDioAccess))
 			}
 			
-			def void setLinTrcvDioAccess(GContainer subContainer){
+			def void setLinTrcvDioAccess(LinTrcvDioAccess linTrcvDioAccess){
+				val GContainer subContainer = linTrcvDioAccess.getTarget()
 				containerValue.setContainer(subContainer, "LinTrcvDioAccess")
 			}
 			def LinTrcvSpiSequence getLinTrcvSpiSequence(){
 				containerValue.getByType(typeof(LinTrcvSpiSequence))
 			}
 			
-			def void setLinTrcvSpiSequence(GContainer subContainer){
+			def void setLinTrcvSpiSequence(LinTrcvSpiSequence linTrcvSpiSequence){
+				val GContainer subContainer = linTrcvSpiSequence.getTarget()
 				containerValue.setContainer(subContainer, "LinTrcvSpiSequence")
 			}
 			

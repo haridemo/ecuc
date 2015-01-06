@@ -1302,7 +1302,8 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanIfRxPduCanIdRange))
 			}
 			
-			def void setCanIfRxPduCanIdRange(GContainer subContainer){
+			def void setCanIfRxPduCanIdRange(CanIfRxPduCanIdRange canIfRxPduCanIdRange){
+				val GContainer subContainer = canIfRxPduCanIdRange.getTarget()
 				containerValue.setContainer(subContainer, "CanIfRxPduCanIdRange")
 			}
 			
@@ -1310,7 +1311,8 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanIfTTRxFrameTriggering))
 			}
 			
-			def void setCanIfTTRxFrameTriggering(GContainer subContainer){
+			def void setCanIfTTRxFrameTriggering(CanIfTTRxFrameTriggering canIfTTRxFrameTriggering){
+				val GContainer subContainer = canIfTTRxFrameTriggering.getTarget()
 				containerValue.setContainer(subContainer, "CanIfTTRxFrameTriggering")
 			}
 			
@@ -1714,7 +1716,8 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanIfTTTxFrameTriggering))
 			}
 			
-			def void setCanIfTTTxFrameTriggering(GContainer subContainer){
+			def void setCanIfTTTxFrameTriggering(CanIfTTTxFrameTriggering canIfTTTxFrameTriggering){
+				val GContainer subContainer = canIfTTTxFrameTriggering.getTarget()
 				containerValue.setContainer(subContainer, "CanIfTTTxFrameTriggering")
 			}
 			
@@ -1883,7 +1886,8 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanIfTTGeneral))
 		}
 		
-		def void setCanIfTTGeneral(GContainer subContainer){
+		def void setCanIfTTGeneral(CanIfTTGeneral canIfTTGeneral){
+			val GContainer subContainer = canIfTTGeneral.getTarget()
 			containerValue.setContainer(subContainer, "CanIfTTGeneral")
 		}
 		
@@ -1945,7 +1949,8 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanIfTTDemEventParameterRefs))
 			}
 			
-			def void setCanIfTTDemEventParameterRefs(GContainer subContainer){
+			def void setCanIfTTDemEventParameterRefs(CanIfTTDemEventParameterRefs canIfTTDemEventParameterRefs){
+				val GContainer subContainer = canIfTTDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "CanIfTTDemEventParameterRefs")
 			}
 			

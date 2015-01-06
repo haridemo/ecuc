@@ -219,7 +219,8 @@ class EthSM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthSMDemEventParameterRefs))
 		}
 		
-		def void setEthSMDemEventParameterRefs(GContainer subContainer){
+		def void setEthSMDemEventParameterRefs(EthSMDemEventParameterRefs ethSMDemEventParameterRefs){
+			val GContainer subContainer = ethSMDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "EthSMDemEventParameterRefs")
 		}
 		

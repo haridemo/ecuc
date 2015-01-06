@@ -285,7 +285,8 @@ class Eth implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EthDemEventParameterRefs))
 			}
 			
-			def void setEthDemEventParameterRefs(GContainer subContainer){
+			def void setEthDemEventParameterRefs(EthDemEventParameterRefs ethDemEventParameterRefs){
+				val GContainer subContainer = ethDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "EthDemEventParameterRefs")
 			}
 			
@@ -585,7 +586,8 @@ class Eth implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthCtrlOffloading))
 		}
 		
-		def void setEthCtrlOffloading(GContainer subContainer){
+		def void setEthCtrlOffloading(EthCtrlOffloading ethCtrlOffloading){
+			val GContainer subContainer = ethCtrlOffloading.getTarget()
 			containerValue.setContainer(subContainer, "EthCtrlOffloading")
 		}
 		

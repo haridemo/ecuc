@@ -348,7 +348,8 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanTrcvAccess))
 			}
 			
-			def void setCanTrcvAccess(GContainer subContainer){
+			def void setCanTrcvAccess(CanTrcvAccess canTrcvAccess){
+				val GContainer subContainer = canTrcvAccess.getTarget()
 				containerValue.setContainer(subContainer, "CanTrcvAccess")
 			}
 			
@@ -356,7 +357,8 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanTrcvDemEventParameterRefs))
 			}
 			
-			def void setCanTrcvDemEventParameterRefs(GContainer subContainer){
+			def void setCanTrcvDemEventParameterRefs(CanTrcvDemEventParameterRefs canTrcvDemEventParameterRefs){
+				val GContainer subContainer = canTrcvDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "CanTrcvDemEventParameterRefs")
 			}
 			
@@ -364,7 +366,8 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanTrcvPartialNetwork))
 			}
 			
-			def void setCanTrcvPartialNetwork(GContainer subContainer){
+			def void setCanTrcvPartialNetwork(CanTrcvPartialNetwork canTrcvPartialNetwork){
+				val GContainer subContainer = canTrcvPartialNetwork.getTarget()
 				containerValue.setContainer(subContainer, "CanTrcvPartialNetwork")
 			}
 			
@@ -392,14 +395,16 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTrcvDioAccess))
 				}
 				
-				def void setCanTrcvDioAccess(GContainer subContainer){
+				def void setCanTrcvDioAccess(CanTrcvDioAccess canTrcvDioAccess){
+					val GContainer subContainer = canTrcvDioAccess.getTarget()
 					containerValue.setContainer(subContainer, "CanTrcvDioAccess")
 				}
 				def CanTrcvSpiAccess getCanTrcvSpiAccess(){
 					containerValue.getByType(typeof(CanTrcvSpiAccess))
 				}
 				
-				def void setCanTrcvSpiAccess(GContainer subContainer){
+				def void setCanTrcvSpiAccess(CanTrcvSpiAccess canTrcvSpiAccess){
+					val GContainer subContainer = canTrcvSpiAccess.getTarget()
 					containerValue.setContainer(subContainer, "CanTrcvSpiAccess")
 				}
 				

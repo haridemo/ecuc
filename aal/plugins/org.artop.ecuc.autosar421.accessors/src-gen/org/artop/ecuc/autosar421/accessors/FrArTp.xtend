@@ -739,7 +739,8 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(FrArTpRxSdu))
 				}
 				
-				def void setFrArTpRxSdu(GContainer subContainer){
+				def void setFrArTpRxSdu(FrArTpRxSdu frArTpRxSdu){
+					val GContainer subContainer = frArTpRxSdu.getTarget()
 					containerValue.setContainer(subContainer, "FrArTpRxSdu")
 				}
 				
@@ -747,7 +748,8 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(FrArTpTxSdu))
 				}
 				
-				def void setFrArTpTxSdu(GContainer subContainer){
+				def void setFrArTpTxSdu(FrArTpTxSdu frArTpTxSdu){
+					val GContainer subContainer = frArTpTxSdu.getTarget()
 					containerValue.setContainer(subContainer, "FrArTpTxSdu")
 				}
 				

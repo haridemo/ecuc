@@ -327,7 +327,8 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(McuDemEventParameterRefs))
 		}
 		
-		def void setMcuDemEventParameterRefs(GContainer subContainer){
+		def void setMcuDemEventParameterRefs(McuDemEventParameterRefs mcuDemEventParameterRefs){
+			val GContainer subContainer = mcuDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "McuDemEventParameterRefs")
 		}
 		

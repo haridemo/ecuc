@@ -450,7 +450,8 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DltBandwidth))
 		}
 		
-		def void setDltBandwidth(GContainer subContainer){
+		def void setDltBandwidth(DltBandwidth dltBandwidth){
+			val GContainer subContainer = dltBandwidth.getTarget()
 			containerValue.setContainer(subContainer, "DltBandwidth")
 		}
 		
@@ -458,7 +459,8 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DltMessageFiltering))
 		}
 		
-		def void setDltMessageFiltering(GContainer subContainer){
+		def void setDltMessageFiltering(DltMessageFiltering dltMessageFiltering){
+			val GContainer subContainer = dltMessageFiltering.getTarget()
 			containerValue.setContainer(subContainer, "DltMessageFiltering")
 		}
 		
@@ -466,7 +468,8 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DltProtocol))
 		}
 		
-		def void setDltProtocol(GContainer subContainer){
+		def void setDltProtocol(DltProtocol dltProtocol){
+			val GContainer subContainer = dltProtocol.getTarget()
 			containerValue.setContainer(subContainer, "DltProtocol")
 		}
 		

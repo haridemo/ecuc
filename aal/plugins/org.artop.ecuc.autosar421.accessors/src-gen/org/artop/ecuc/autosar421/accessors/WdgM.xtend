@@ -121,7 +121,8 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(WdgMDemEventParameterRefs))
 		}
 		
-		def void setWdgMDemEventParameterRefs(GContainer subContainer){
+		def void setWdgMDemEventParameterRefs(WdgMDemEventParameterRefs wdgMDemEventParameterRefs){
+			val GContainer subContainer = wdgMDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "WdgMDemEventParameterRefs")
 		}
 		
@@ -890,7 +891,8 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(WdgMCallerIds))
 		}
 		
-		def void setWdgMCallerIds(GContainer subContainer){
+		def void setWdgMCallerIds(WdgMCallerIds wdgMCallerIds){
+			val GContainer subContainer = wdgMCallerIds.getTarget()
 			containerValue.setContainer(subContainer, "WdgMCallerIds")
 		}
 		

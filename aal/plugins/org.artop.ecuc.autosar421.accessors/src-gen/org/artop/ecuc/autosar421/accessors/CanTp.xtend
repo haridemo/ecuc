@@ -478,7 +478,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpNAe))
 				}
 				
-				def void setCanTpNAe(GContainer subContainer){
+				def void setCanTpNAe(CanTpNAe canTpNAe){
+					val GContainer subContainer = canTpNAe.getTarget()
 					containerValue.setContainer(subContainer, "CanTpNAe")
 				}
 				
@@ -486,7 +487,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpNSa))
 				}
 				
-				def void setCanTpNSa(GContainer subContainer){
+				def void setCanTpNSa(CanTpNSa canTpNSa){
+					val GContainer subContainer = canTpNSa.getTarget()
 					containerValue.setContainer(subContainer, "CanTpNSa")
 				}
 				
@@ -494,7 +496,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpNTa))
 				}
 				
-				def void setCanTpNTa(GContainer subContainer){
+				def void setCanTpNTa(CanTpNTa canTpNTa){
+					val GContainer subContainer = canTpNTa.getTarget()
 					containerValue.setContainer(subContainer, "CanTpNTa")
 				}
 				
@@ -502,7 +505,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpRxNPdu))
 				}
 				
-				def void setCanTpRxNPdu(GContainer subContainer){
+				def void setCanTpRxNPdu(CanTpRxNPdu canTpRxNPdu){
+					val GContainer subContainer = canTpRxNPdu.getTarget()
 					containerValue.setContainer(subContainer, "CanTpRxNPdu")
 				}
 				
@@ -510,7 +514,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpTxFcNPdu))
 				}
 				
-				def void setCanTpTxFcNPdu(GContainer subContainer){
+				def void setCanTpTxFcNPdu(CanTpTxFcNPdu canTpTxFcNPdu){
+					val GContainer subContainer = canTpTxFcNPdu.getTarget()
 					containerValue.setContainer(subContainer, "CanTpTxFcNPdu")
 				}
 				
@@ -960,7 +965,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpNAe))
 				}
 				
-				def void setCanTpNAe(GContainer subContainer){
+				def void setCanTpNAe(CanTpNAe canTpNAe){
+					val GContainer subContainer = canTpNAe.getTarget()
 					containerValue.setContainer(subContainer, "CanTpNAe")
 				}
 				
@@ -968,7 +974,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpNSa))
 				}
 				
-				def void setCanTpNSa(GContainer subContainer){
+				def void setCanTpNSa(CanTpNSa canTpNSa){
+					val GContainer subContainer = canTpNSa.getTarget()
 					containerValue.setContainer(subContainer, "CanTpNSa")
 				}
 				
@@ -976,7 +983,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpNTa))
 				}
 				
-				def void setCanTpNTa(GContainer subContainer){
+				def void setCanTpNTa(CanTpNTa canTpNTa){
+					val GContainer subContainer = canTpNTa.getTarget()
 					containerValue.setContainer(subContainer, "CanTpNTa")
 				}
 				
@@ -984,7 +992,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpRxFcNPdu))
 				}
 				
-				def void setCanTpRxFcNPdu(GContainer subContainer){
+				def void setCanTpRxFcNPdu(CanTpRxFcNPdu canTpRxFcNPdu){
+					val GContainer subContainer = canTpRxFcNPdu.getTarget()
 					containerValue.setContainer(subContainer, "CanTpRxFcNPdu")
 				}
 				
@@ -992,7 +1001,8 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanTpTxNPdu))
 				}
 				
-				def void setCanTpTxNPdu(GContainer subContainer){
+				def void setCanTpTxNPdu(CanTpTxNPdu canTpTxNPdu){
+					val GContainer subContainer = canTpTxNPdu.getTarget()
 					containerValue.setContainer(subContainer, "CanTpTxNPdu")
 				}
 				

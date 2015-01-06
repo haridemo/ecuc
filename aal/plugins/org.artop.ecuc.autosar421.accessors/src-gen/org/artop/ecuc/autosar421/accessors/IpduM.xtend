@@ -827,7 +827,8 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(IpduMRxIndication))
 			}
 			
-			def void setIpduMRxIndication(GContainer subContainer){
+			def void setIpduMRxIndication(IpduMRxIndication ipduMRxIndication){
+				val GContainer subContainer = ipduMRxIndication.getTarget()
 				containerValue.setContainer(subContainer, "IpduMRxIndication")
 			}
 			
@@ -935,7 +936,8 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(IpduMRxStaticPart))
 				}
 				
-				def void setIpduMRxStaticPart(GContainer subContainer){
+				def void setIpduMRxStaticPart(IpduMRxStaticPart ipduMRxStaticPart){
+					val GContainer subContainer = ipduMRxStaticPart.getTarget()
 					containerValue.setContainer(subContainer, "IpduMRxStaticPart")
 				}
 				
@@ -952,7 +954,8 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(IpduMSelectorField))
 				}
 				
-				def void setIpduMSelectorField(GContainer subContainer){
+				def void setIpduMSelectorField(IpduMSelectorField ipduMSelectorField){
+					val GContainer subContainer = ipduMSelectorField.getTarget()
 					containerValue.setContainer(subContainer, "IpduMSelectorField")
 				}
 				
@@ -1240,7 +1243,8 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(IpduMTxRequest))
 			}
 			
-			def void setIpduMTxRequest(GContainer subContainer){
+			def void setIpduMTxRequest(IpduMTxRequest ipduMTxRequest){
+				val GContainer subContainer = ipduMTxRequest.getTarget()
 				containerValue.setContainer(subContainer, "IpduMTxRequest")
 			}
 			
@@ -1410,7 +1414,8 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(IpduMSelectorField))
 				}
 				
-				def void setIpduMSelectorField(GContainer subContainer){
+				def void setIpduMSelectorField(IpduMSelectorField ipduMSelectorField){
+					val GContainer subContainer = ipduMSelectorField.getTarget()
 					containerValue.setContainer(subContainer, "IpduMSelectorField")
 				}
 				
@@ -1436,7 +1441,8 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(IpduMTxStaticPart))
 				}
 				
-				def void setIpduMTxStaticPart(GContainer subContainer){
+				def void setIpduMTxStaticPart(IpduMTxStaticPart ipduMTxStaticPart){
+					val GContainer subContainer = ipduMTxStaticPart.getTarget()
 					containerValue.setContainer(subContainer, "IpduMTxStaticPart")
 				}
 				

@@ -939,7 +939,8 @@ class Fr implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrControllerDemEventParameterRefs))
 			}
 			
-			def void setFrControllerDemEventParameterRefs(GContainer subContainer){
+			def void setFrControllerDemEventParameterRefs(FrControllerDemEventParameterRefs frControllerDemEventParameterRefs){
+				val GContainer subContainer = frControllerDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "FrControllerDemEventParameterRefs")
 			}
 			

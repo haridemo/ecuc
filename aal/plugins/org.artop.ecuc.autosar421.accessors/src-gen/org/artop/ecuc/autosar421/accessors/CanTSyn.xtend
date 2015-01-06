@@ -158,7 +158,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanTSynGlobalTimeFupDataIDList))
 		}
 		
-		def void setCanTSynGlobalTimeFupDataIDList(GContainer subContainer){
+		def void setCanTSynGlobalTimeFupDataIDList(CanTSynGlobalTimeFupDataIDList canTSynGlobalTimeFupDataIDList){
+			val GContainer subContainer = canTSynGlobalTimeFupDataIDList.getTarget()
 			containerValue.setContainer(subContainer, "CanTSynGlobalTimeFupDataIDList")
 		}
 		
@@ -166,7 +167,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanTSynGlobalTimeOfnsDataIDList))
 		}
 		
-		def void setCanTSynGlobalTimeOfnsDataIDList(GContainer subContainer){
+		def void setCanTSynGlobalTimeOfnsDataIDList(CanTSynGlobalTimeOfnsDataIDList canTSynGlobalTimeOfnsDataIDList){
+			val GContainer subContainer = canTSynGlobalTimeOfnsDataIDList.getTarget()
 			containerValue.setContainer(subContainer, "CanTSynGlobalTimeOfnsDataIDList")
 		}
 		
@@ -174,7 +176,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanTSynGlobalTimeOfsDataIDList))
 		}
 		
-		def void setCanTSynGlobalTimeOfsDataIDList(GContainer subContainer){
+		def void setCanTSynGlobalTimeOfsDataIDList(CanTSynGlobalTimeOfsDataIDList canTSynGlobalTimeOfsDataIDList){
+			val GContainer subContainer = canTSynGlobalTimeOfsDataIDList.getTarget()
 			containerValue.setContainer(subContainer, "CanTSynGlobalTimeOfsDataIDList")
 		}
 		
@@ -182,7 +185,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanTSynGlobalTimeSyncDataIDList))
 		}
 		
-		def void setCanTSynGlobalTimeSyncDataIDList(GContainer subContainer){
+		def void setCanTSynGlobalTimeSyncDataIDList(CanTSynGlobalTimeSyncDataIDList canTSynGlobalTimeSyncDataIDList){
+			val GContainer subContainer = canTSynGlobalTimeSyncDataIDList.getTarget()
 			containerValue.setContainer(subContainer, "CanTSynGlobalTimeSyncDataIDList")
 		}
 		
@@ -628,7 +632,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanTSynGlobalTimeMaster))
 		}
 		
-		def void setCanTSynGlobalTimeMaster(GContainer subContainer){
+		def void setCanTSynGlobalTimeMaster(CanTSynGlobalTimeMaster canTSynGlobalTimeMaster){
+			val GContainer subContainer = canTSynGlobalTimeMaster.getTarget()
 			containerValue.setContainer(subContainer, "CanTSynGlobalTimeMaster")
 		}
 		
@@ -636,7 +641,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanTSynGlobalTimeSlave))
 		}
 		
-		def void setCanTSynGlobalTimeSlave(GContainer subContainer){
+		def void setCanTSynGlobalTimeSlave(CanTSynGlobalTimeSlave canTSynGlobalTimeSlave){
+			val GContainer subContainer = canTSynGlobalTimeSlave.getTarget()
 			containerValue.setContainer(subContainer, "CanTSynGlobalTimeSlave")
 		}
 		
@@ -747,7 +753,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanTSynGlobalTimeMasterPdu))
 			}
 			
-			def void setCanTSynGlobalTimeMasterPdu(GContainer subContainer){
+			def void setCanTSynGlobalTimeMasterPdu(CanTSynGlobalTimeMasterPdu canTSynGlobalTimeMasterPdu){
+				val GContainer subContainer = canTSynGlobalTimeMasterPdu.getTarget()
 				containerValue.setContainer(subContainer, "CanTSynGlobalTimeMasterPdu")
 			}
 			
@@ -865,7 +872,8 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanTSynGlobalTimeSlavePdu))
 			}
 			
-			def void setCanTSynGlobalTimeSlavePdu(GContainer subContainer){
+			def void setCanTSynGlobalTimeSlavePdu(CanTSynGlobalTimeSlavePdu canTSynGlobalTimeSlavePdu){
+				val GContainer subContainer = canTSynGlobalTimeSlavePdu.getTarget()
 				containerValue.setContainer(subContainer, "CanTSynGlobalTimeSlavePdu")
 			}
 			

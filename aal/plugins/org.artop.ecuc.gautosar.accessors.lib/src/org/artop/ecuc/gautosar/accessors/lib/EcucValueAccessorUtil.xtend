@@ -34,6 +34,7 @@ import gautosar.ggenericstructure.ginfrastructure.GReferrable
 import gautosar.gecucparameterdef.GModuleDef
 import gautosar.ggenericstructure.ginfrastructure.GPackageableElement
 import gautosar.gecucparameterdef.GParamConfContainerDef
+import org.eclipse.sphinx.emf.util.IWrapper
 
 class EcucValueAccessorUtil {
 	
@@ -78,16 +79,22 @@ class EcucValueAccessorUtil {
 		}
 	
 		// Sets the right container definition if not yet done
-		if (target instanceof GModuleConfiguration){
-			val containerDef = target.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals(containerDefName)]
-			container.gSetDefinition(containerDef)
-		} else if (target instanceof GContainer){
-			val definition = target.gGetDefinition
+		container.gSetDefinition(getContainerDefinition(target, containerDefName))
+	}
+	
+	def static GContainerDef getContainerDefinition(GARObject parent, String containerDefName){
+		Assert.isTrue(parent instanceof GModuleConfiguration || parent instanceof GContainer)
+		
+		// Sets the right container definition if not yet done
+		if (parent instanceof GModuleConfiguration){
+			return parent.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals(containerDefName)]
+		} else if (parent instanceof GContainer){
+			val definition = parent.gGetDefinition
 			if (definition instanceof GParamConfContainerDef) {
-				val containerDef = definition.gGetSubContainers.findFirst[gGetShortName.equals(containerDefName)]
-				container.gSetDefinition(containerDef)
+				return definition.gGetSubContainers.findFirst[gGetShortName.equals(containerDefName)]
 			} 
 		}
+		return null
 	}
 		
    def static EStructuralFeature getEContainingFeature(EObject target, EClass ecucValueType) {

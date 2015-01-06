@@ -398,7 +398,8 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EepDemEventParameterRefs))
 		}
 		
-		def void setEepDemEventParameterRefs(GContainer subContainer){
+		def void setEepDemEventParameterRefs(EepDemEventParameterRefs eepDemEventParameterRefs){
+			val GContainer subContainer = eepDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "EepDemEventParameterRefs")
 		}
 		
@@ -406,7 +407,8 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EepExternalDriver))
 		}
 		
-		def void setEepExternalDriver(GContainer subContainer){
+		def void setEepExternalDriver(EepExternalDriver eepExternalDriver){
+			val GContainer subContainer = eepExternalDriver.getTarget()
 			containerValue.setContainer(subContainer, "EepExternalDriver")
 		}
 		

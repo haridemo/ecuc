@@ -121,7 +121,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(BswMArbitration))
 		}
 		
-		def void setBswMArbitration(GContainer subContainer){
+		def void setBswMArbitration(BswMArbitration bswMArbitration){
+			val GContainer subContainer = bswMArbitration.getTarget()
 			containerValue.setContainer(subContainer, "BswMArbitration")
 		}
 		
@@ -129,7 +130,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(BswMDataTypeMappingSets))
 		}
 		
-		def void setBswMDataTypeMappingSets(GContainer subContainer){
+		def void setBswMDataTypeMappingSets(BswMDataTypeMappingSets bswMDataTypeMappingSets){
+			val GContainer subContainer = bswMDataTypeMappingSets.getTarget()
 			containerValue.setContainer(subContainer, "BswMDataTypeMappingSets")
 		}
 		
@@ -137,7 +139,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(BswMModeControl))
 		}
 		
-		def void setBswMModeControl(GContainer subContainer){
+		def void setBswMModeControl(BswMModeControl bswMModeControl){
+			val GContainer subContainer = bswMModeControl.getTarget()
 			containerValue.setContainer(subContainer, "BswMModeControl")
 		}
 		
@@ -331,7 +334,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(BswMConditionValue))
 				}
 				
-				def void setBswMConditionValue(GContainer subContainer){
+				def void setBswMConditionValue(BswMConditionValue bswMConditionValue){
+					val GContainer subContainer = bswMConditionValue.getTarget()
 					containerValue.setContainer(subContainer, "BswMConditionValue")
 				}
 				
@@ -359,14 +363,16 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(BswMBswMode))
 					}
 					
-					def void setBswMBswMode(GContainer subContainer){
+					def void setBswMBswMode(BswMBswMode bswMBswMode){
+						val GContainer subContainer = bswMBswMode.getTarget()
 						containerValue.setContainer(subContainer, "BswMBswMode")
 					}
 					def BswMModeDeclaration getBswMModeDeclaration(){
 						containerValue.getByType(typeof(BswMModeDeclaration))
 					}
 					
-					def void setBswMModeDeclaration(GContainer subContainer){
+					def void setBswMModeDeclaration(BswMModeDeclaration bswMModeDeclaration){
+						val GContainer subContainer = bswMModeDeclaration.getTarget()
 						containerValue.setContainer(subContainer, "BswMModeDeclaration")
 					}
 					
@@ -411,7 +417,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue.getByType(typeof(BswMCompuScaleModeValue))
 						}
 						
-						def void setBswMCompuScaleModeValue(GContainer subContainer){
+						def void setBswMCompuScaleModeValue(BswMCompuScaleModeValue bswMCompuScaleModeValue){
+							val GContainer subContainer = bswMCompuScaleModeValue.getTarget()
 							containerValue.setContainer(subContainer, "BswMCompuScaleModeValue")
 						}
 						
@@ -546,7 +553,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(BswMModeInitValue))
 				}
 				
-				def void setBswMModeInitValue(GContainer subContainer){
+				def void setBswMModeInitValue(BswMModeInitValue bswMModeInitValue){
+					val GContainer subContainer = bswMModeInitValue.getTarget()
 					containerValue.setContainer(subContainer, "BswMModeInitValue")
 				}
 				
@@ -554,7 +562,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(BswMModeRequestSource))
 				}
 				
-				def void setBswMModeRequestSource(GContainer subContainer){
+				def void setBswMModeRequestSource(BswMModeRequestSource bswMModeRequestSource){
+					val GContainer subContainer = bswMModeRequestSource.getTarget()
 					containerValue.setContainer(subContainer, "BswMModeRequestSource")
 				}
 				
@@ -600,7 +609,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(BswMCompuScaleModeValue))
 					}
 					
-					def void setBswMCompuScaleModeValue(GContainer subContainer){
+					def void setBswMCompuScaleModeValue(BswMCompuScaleModeValue bswMCompuScaleModeValue){
+						val GContainer subContainer = bswMCompuScaleModeValue.getTarget()
 						containerValue.setContainer(subContainer, "BswMCompuScaleModeValue")
 					}
 					
@@ -671,217 +681,248 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(BswMBswMModeRequest))
 					}
 					
-					def void setBswMBswMModeRequest(GContainer subContainer){
+					def void setBswMBswMModeRequest(BswMBswMModeRequest bswMBswMModeRequest){
+						val GContainer subContainer = bswMBswMModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMBswMModeRequest")
 					}
 					def BswMBswMModeSwitchNotification getBswMBswMModeSwitchNotification(){
 						containerValue.getByType(typeof(BswMBswMModeSwitchNotification))
 					}
 					
-					def void setBswMBswMModeSwitchNotification(GContainer subContainer){
+					def void setBswMBswMModeSwitchNotification(BswMBswMModeSwitchNotification bswMBswMModeSwitchNotification){
+						val GContainer subContainer = bswMBswMModeSwitchNotification.getTarget()
 						containerValue.setContainer(subContainer, "BswMBswMModeSwitchNotification")
 					}
 					def BswMBswModeNotification getBswMBswModeNotification(){
 						containerValue.getByType(typeof(BswMBswModeNotification))
 					}
 					
-					def void setBswMBswModeNotification(GContainer subContainer){
+					def void setBswMBswModeNotification(BswMBswModeNotification bswMBswModeNotification){
+						val GContainer subContainer = bswMBswModeNotification.getTarget()
 						containerValue.setContainer(subContainer, "BswMBswModeNotification")
 					}
 					def BswMCanSMIcomIndication getBswMCanSMIcomIndication(){
 						containerValue.getByType(typeof(BswMCanSMIcomIndication))
 					}
 					
-					def void setBswMCanSMIcomIndication(GContainer subContainer){
+					def void setBswMCanSMIcomIndication(BswMCanSMIcomIndication bswMCanSMIcomIndication){
+						val GContainer subContainer = bswMCanSMIcomIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMCanSMIcomIndication")
 					}
 					def BswMCanSMIndication getBswMCanSMIndication(){
 						containerValue.getByType(typeof(BswMCanSMIndication))
 					}
 					
-					def void setBswMCanSMIndication(GContainer subContainer){
+					def void setBswMCanSMIndication(BswMCanSMIndication bswMCanSMIndication){
+						val GContainer subContainer = bswMCanSMIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMCanSMIndication")
 					}
 					def BswMComMIndication getBswMComMIndication(){
 						containerValue.getByType(typeof(BswMComMIndication))
 					}
 					
-					def void setBswMComMIndication(GContainer subContainer){
+					def void setBswMComMIndication(BswMComMIndication bswMComMIndication){
+						val GContainer subContainer = bswMComMIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMComMIndication")
 					}
 					def BswMComMInitiateReset getBswMComMInitiateReset(){
 						containerValue.getByType(typeof(BswMComMInitiateReset))
 					}
 					
-					def void setBswMComMInitiateReset(GContainer subContainer){
+					def void setBswMComMInitiateReset(BswMComMInitiateReset bswMComMInitiateReset){
+						val GContainer subContainer = bswMComMInitiateReset.getTarget()
 						containerValue.setContainer(subContainer, "BswMComMInitiateReset")
 					}
 					def BswMComMPncRequest getBswMComMPncRequest(){
 						containerValue.getByType(typeof(BswMComMPncRequest))
 					}
 					
-					def void setBswMComMPncRequest(GContainer subContainer){
+					def void setBswMComMPncRequest(BswMComMPncRequest bswMComMPncRequest){
+						val GContainer subContainer = bswMComMPncRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMComMPncRequest")
 					}
 					def BswMDcmApplicationUpdatedIndication getBswMDcmApplicationUpdatedIndication(){
 						containerValue.getByType(typeof(BswMDcmApplicationUpdatedIndication))
 					}
 					
-					def void setBswMDcmApplicationUpdatedIndication(GContainer subContainer){
+					def void setBswMDcmApplicationUpdatedIndication(BswMDcmApplicationUpdatedIndication bswMDcmApplicationUpdatedIndication){
+						val GContainer subContainer = bswMDcmApplicationUpdatedIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMDcmApplicationUpdatedIndication")
 					}
 					def BswMDcmComModeRequest getBswMDcmComModeRequest(){
 						containerValue.getByType(typeof(BswMDcmComModeRequest))
 					}
 					
-					def void setBswMDcmComModeRequest(GContainer subContainer){
+					def void setBswMDcmComModeRequest(BswMDcmComModeRequest bswMDcmComModeRequest){
+						val GContainer subContainer = bswMDcmComModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMDcmComModeRequest")
 					}
 					def BswMEcuMIndication getBswMEcuMIndication(){
 						containerValue.getByType(typeof(BswMEcuMIndication))
 					}
 					
-					def void setBswMEcuMIndication(GContainer subContainer){
+					def void setBswMEcuMIndication(BswMEcuMIndication bswMEcuMIndication){
+						val GContainer subContainer = bswMEcuMIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMIndication")
 					}
 					def BswMEcuMRUNRequestIndication getBswMEcuMRUNRequestIndication(){
 						containerValue.getByType(typeof(BswMEcuMRUNRequestIndication))
 					}
 					
-					def void setBswMEcuMRUNRequestIndication(GContainer subContainer){
+					def void setBswMEcuMRUNRequestIndication(BswMEcuMRUNRequestIndication bswMEcuMRUNRequestIndication){
+						val GContainer subContainer = bswMEcuMRUNRequestIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMRUNRequestIndication")
 					}
 					def BswMEcuMWakeupSource getBswMEcuMWakeupSource(){
 						containerValue.getByType(typeof(BswMEcuMWakeupSource))
 					}
 					
-					def void setBswMEcuMWakeupSource(GContainer subContainer){
+					def void setBswMEcuMWakeupSource(BswMEcuMWakeupSource bswMEcuMWakeupSource){
+						val GContainer subContainer = bswMEcuMWakeupSource.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMWakeupSource")
 					}
 					def BswMEthSMIndication getBswMEthSMIndication(){
 						containerValue.getByType(typeof(BswMEthSMIndication))
 					}
 					
-					def void setBswMEthSMIndication(GContainer subContainer){
+					def void setBswMEthSMIndication(BswMEthSMIndication bswMEthSMIndication){
+						val GContainer subContainer = bswMEthSMIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMEthSMIndication")
 					}
 					def BswMFrSMIndication getBswMFrSMIndication(){
 						containerValue.getByType(typeof(BswMFrSMIndication))
 					}
 					
-					def void setBswMFrSMIndication(GContainer subContainer){
+					def void setBswMFrSMIndication(BswMFrSMIndication bswMFrSMIndication){
+						val GContainer subContainer = bswMFrSMIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMFrSMIndication")
 					}
 					def BswMGenericRequest getBswMGenericRequest(){
 						containerValue.getByType(typeof(BswMGenericRequest))
 					}
 					
-					def void setBswMGenericRequest(GContainer subContainer){
+					def void setBswMGenericRequest(BswMGenericRequest bswMGenericRequest){
+						val GContainer subContainer = bswMGenericRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMGenericRequest")
 					}
 					def BswMJ1939DcmBroadcastStatus getBswMJ1939DcmBroadcastStatus(){
 						containerValue.getByType(typeof(BswMJ1939DcmBroadcastStatus))
 					}
 					
-					def void setBswMJ1939DcmBroadcastStatus(GContainer subContainer){
+					def void setBswMJ1939DcmBroadcastStatus(BswMJ1939DcmBroadcastStatus bswMJ1939DcmBroadcastStatus){
+						val GContainer subContainer = bswMJ1939DcmBroadcastStatus.getTarget()
 						containerValue.setContainer(subContainer, "BswMJ1939DcmBroadcastStatus")
 					}
 					def BswMJ1939NmIndication getBswMJ1939NmIndication(){
 						containerValue.getByType(typeof(BswMJ1939NmIndication))
 					}
 					
-					def void setBswMJ1939NmIndication(GContainer subContainer){
+					def void setBswMJ1939NmIndication(BswMJ1939NmIndication bswMJ1939NmIndication){
+						val GContainer subContainer = bswMJ1939NmIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMJ1939NmIndication")
 					}
 					def BswMLinSMIndication getBswMLinSMIndication(){
 						containerValue.getByType(typeof(BswMLinSMIndication))
 					}
 					
-					def void setBswMLinSMIndication(GContainer subContainer){
+					def void setBswMLinSMIndication(BswMLinSMIndication bswMLinSMIndication){
+						val GContainer subContainer = bswMLinSMIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMLinSMIndication")
 					}
 					def BswMLinScheduleIndication getBswMLinScheduleIndication(){
 						containerValue.getByType(typeof(BswMLinScheduleIndication))
 					}
 					
-					def void setBswMLinScheduleIndication(GContainer subContainer){
+					def void setBswMLinScheduleIndication(BswMLinScheduleIndication bswMLinScheduleIndication){
+						val GContainer subContainer = bswMLinScheduleIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMLinScheduleIndication")
 					}
 					def BswMLinTpModeRequest getBswMLinTpModeRequest(){
 						containerValue.getByType(typeof(BswMLinTpModeRequest))
 					}
 					
-					def void setBswMLinTpModeRequest(GContainer subContainer){
+					def void setBswMLinTpModeRequest(BswMLinTpModeRequest bswMLinTpModeRequest){
+						val GContainer subContainer = bswMLinTpModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMLinTpModeRequest")
 					}
 					def BswMModeSwitchErrorEvent getBswMModeSwitchErrorEvent(){
 						containerValue.getByType(typeof(BswMModeSwitchErrorEvent))
 					}
 					
-					def void setBswMModeSwitchErrorEvent(GContainer subContainer){
+					def void setBswMModeSwitchErrorEvent(BswMModeSwitchErrorEvent bswMModeSwitchErrorEvent){
+						val GContainer subContainer = bswMModeSwitchErrorEvent.getTarget()
 						containerValue.setContainer(subContainer, "BswMModeSwitchErrorEvent")
 					}
 					def BswMNvMJobModeIndication getBswMNvMJobModeIndication(){
 						containerValue.getByType(typeof(BswMNvMJobModeIndication))
 					}
 					
-					def void setBswMNvMJobModeIndication(GContainer subContainer){
+					def void setBswMNvMJobModeIndication(BswMNvMJobModeIndication bswMNvMJobModeIndication){
+						val GContainer subContainer = bswMNvMJobModeIndication.getTarget()
 						containerValue.setContainer(subContainer, "BswMNvMJobModeIndication")
 					}
 					def BswMNvMRequest getBswMNvMRequest(){
 						containerValue.getByType(typeof(BswMNvMRequest))
 					}
 					
-					def void setBswMNvMRequest(GContainer subContainer){
+					def void setBswMNvMRequest(BswMNvMRequest bswMNvMRequest){
+						val GContainer subContainer = bswMNvMRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMNvMRequest")
 					}
 					def BswMPartitionRestarted getBswMPartitionRestarted(){
 						containerValue.getByType(typeof(BswMPartitionRestarted))
 					}
 					
-					def void setBswMPartitionRestarted(GContainer subContainer){
+					def void setBswMPartitionRestarted(BswMPartitionRestarted bswMPartitionRestarted){
+						val GContainer subContainer = bswMPartitionRestarted.getTarget()
 						containerValue.setContainer(subContainer, "BswMPartitionRestarted")
 					}
 					def BswMSdClientServiceCurrentState getBswMSdClientServiceCurrentState(){
 						containerValue.getByType(typeof(BswMSdClientServiceCurrentState))
 					}
 					
-					def void setBswMSdClientServiceCurrentState(GContainer subContainer){
+					def void setBswMSdClientServiceCurrentState(BswMSdClientServiceCurrentState bswMSdClientServiceCurrentState){
+						val GContainer subContainer = bswMSdClientServiceCurrentState.getTarget()
 						containerValue.setContainer(subContainer, "BswMSdClientServiceCurrentState")
 					}
 					def BswMSdConsumedEventGroupCurrentState getBswMSdConsumedEventGroupCurrentState(){
 						containerValue.getByType(typeof(BswMSdConsumedEventGroupCurrentState))
 					}
 					
-					def void setBswMSdConsumedEventGroupCurrentState(GContainer subContainer){
+					def void setBswMSdConsumedEventGroupCurrentState(BswMSdConsumedEventGroupCurrentState bswMSdConsumedEventGroupCurrentState){
+						val GContainer subContainer = bswMSdConsumedEventGroupCurrentState.getTarget()
 						containerValue.setContainer(subContainer, "BswMSdConsumedEventGroupCurrentState")
 					}
 					def BswMSdEventHandlerCurrentState getBswMSdEventHandlerCurrentState(){
 						containerValue.getByType(typeof(BswMSdEventHandlerCurrentState))
 					}
 					
-					def void setBswMSdEventHandlerCurrentState(GContainer subContainer){
+					def void setBswMSdEventHandlerCurrentState(BswMSdEventHandlerCurrentState bswMSdEventHandlerCurrentState){
+						val GContainer subContainer = bswMSdEventHandlerCurrentState.getTarget()
 						containerValue.setContainer(subContainer, "BswMSdEventHandlerCurrentState")
 					}
 					def BswMSwcModeNotification getBswMSwcModeNotification(){
 						containerValue.getByType(typeof(BswMSwcModeNotification))
 					}
 					
-					def void setBswMSwcModeNotification(GContainer subContainer){
+					def void setBswMSwcModeNotification(BswMSwcModeNotification bswMSwcModeNotification){
+						val GContainer subContainer = bswMSwcModeNotification.getTarget()
 						containerValue.setContainer(subContainer, "BswMSwcModeNotification")
 					}
 					def BswMSwcModeRequest getBswMSwcModeRequest(){
 						containerValue.getByType(typeof(BswMSwcModeRequest))
 					}
 					
-					def void setBswMSwcModeRequest(GContainer subContainer){
+					def void setBswMSwcModeRequest(BswMSwcModeRequest bswMSwcModeRequest){
+						val GContainer subContainer = bswMSwcModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMSwcModeRequest")
 					}
 					def BswMWdgMRequestPartitionReset getBswMWdgMRequestPartitionReset(){
 						containerValue.getByType(typeof(BswMWdgMRequestPartitionReset))
 					}
 					
-					def void setBswMWdgMRequestPartitionReset(GContainer subContainer){
+					def void setBswMWdgMRequestPartitionReset(BswMWdgMRequestPartitionReset bswMWdgMRequestPartitionReset){
+						val GContainer subContainer = bswMWdgMRequestPartitionReset.getTarget()
 						containerValue.setContainer(subContainer, "BswMWdgMRequestPartitionReset")
 					}
 					
@@ -2201,7 +2242,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(BswMAvailableActions))
 				}
 				
-				def void setBswMAvailableActions(GContainer subContainer){
+				def void setBswMAvailableActions(BswMAvailableActions bswMAvailableActions){
+					val GContainer subContainer = bswMAvailableActions.getTarget()
 					containerValue.setContainer(subContainer, "BswMAvailableActions")
 				}
 				
@@ -2229,203 +2271,232 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(BswMComMAllowCom))
 					}
 					
-					def void setBswMComMAllowCom(GContainer subContainer){
+					def void setBswMComMAllowCom(BswMComMAllowCom bswMComMAllowCom){
+						val GContainer subContainer = bswMComMAllowCom.getTarget()
 						containerValue.setContainer(subContainer, "BswMComMAllowCom")
 					}
 					def BswMComMModeLimitation getBswMComMModeLimitation(){
 						containerValue.getByType(typeof(BswMComMModeLimitation))
 					}
 					
-					def void setBswMComMModeLimitation(GContainer subContainer){
+					def void setBswMComMModeLimitation(BswMComMModeLimitation bswMComMModeLimitation){
+						val GContainer subContainer = bswMComMModeLimitation.getTarget()
 						containerValue.setContainer(subContainer, "BswMComMModeLimitation")
 					}
 					def BswMComMModeSwitch getBswMComMModeSwitch(){
 						containerValue.getByType(typeof(BswMComMModeSwitch))
 					}
 					
-					def void setBswMComMModeSwitch(GContainer subContainer){
+					def void setBswMComMModeSwitch(BswMComMModeSwitch bswMComMModeSwitch){
+						val GContainer subContainer = bswMComMModeSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMComMModeSwitch")
 					}
 					def BswMCoreHaltMode getBswMCoreHaltMode(){
 						containerValue.getByType(typeof(BswMCoreHaltMode))
 					}
 					
-					def void setBswMCoreHaltMode(GContainer subContainer){
+					def void setBswMCoreHaltMode(BswMCoreHaltMode bswMCoreHaltMode){
+						val GContainer subContainer = bswMCoreHaltMode.getTarget()
 						containerValue.setContainer(subContainer, "BswMCoreHaltMode")
 					}
 					def BswMDeadlineMonitoringControl getBswMDeadlineMonitoringControl(){
 						containerValue.getByType(typeof(BswMDeadlineMonitoringControl))
 					}
 					
-					def void setBswMDeadlineMonitoringControl(GContainer subContainer){
+					def void setBswMDeadlineMonitoringControl(BswMDeadlineMonitoringControl bswMDeadlineMonitoringControl){
+						val GContainer subContainer = bswMDeadlineMonitoringControl.getTarget()
 						containerValue.setContainer(subContainer, "BswMDeadlineMonitoringControl")
 					}
 					def BswMEcuMGoDown getBswMEcuMGoDown(){
 						containerValue.getByType(typeof(BswMEcuMGoDown))
 					}
 					
-					def void setBswMEcuMGoDown(GContainer subContainer){
+					def void setBswMEcuMGoDown(BswMEcuMGoDown bswMEcuMGoDown){
+						val GContainer subContainer = bswMEcuMGoDown.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMGoDown")
 					}
 					def BswMEcuMGoHalt getBswMEcuMGoHalt(){
 						containerValue.getByType(typeof(BswMEcuMGoHalt))
 					}
 					
-					def void setBswMEcuMGoHalt(GContainer subContainer){
+					def void setBswMEcuMGoHalt(BswMEcuMGoHalt bswMEcuMGoHalt){
+						val GContainer subContainer = bswMEcuMGoHalt.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMGoHalt")
 					}
 					def BswMEcuMGoPoll getBswMEcuMGoPoll(){
 						containerValue.getByType(typeof(BswMEcuMGoPoll))
 					}
 					
-					def void setBswMEcuMGoPoll(GContainer subContainer){
+					def void setBswMEcuMGoPoll(BswMEcuMGoPoll bswMEcuMGoPoll){
+						val GContainer subContainer = bswMEcuMGoPoll.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMGoPoll")
 					}
 					def BswMEcuMSelectShutdownTarget getBswMEcuMSelectShutdownTarget(){
 						containerValue.getByType(typeof(BswMEcuMSelectShutdownTarget))
 					}
 					
-					def void setBswMEcuMSelectShutdownTarget(GContainer subContainer){
+					def void setBswMEcuMSelectShutdownTarget(BswMEcuMSelectShutdownTarget bswMEcuMSelectShutdownTarget){
+						val GContainer subContainer = bswMEcuMSelectShutdownTarget.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMSelectShutdownTarget")
 					}
 					def BswMEcuMStateSwitch getBswMEcuMStateSwitch(){
 						containerValue.getByType(typeof(BswMEcuMStateSwitch))
 					}
 					
-					def void setBswMEcuMStateSwitch(GContainer subContainer){
+					def void setBswMEcuMStateSwitch(BswMEcuMStateSwitch bswMEcuMStateSwitch){
+						val GContainer subContainer = bswMEcuMStateSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMEcuMStateSwitch")
 					}
 					def BswMFrSMAllSlots getBswMFrSMAllSlots(){
 						containerValue.getByType(typeof(BswMFrSMAllSlots))
 					}
 					
-					def void setBswMFrSMAllSlots(GContainer subContainer){
+					def void setBswMFrSMAllSlots(BswMFrSMAllSlots bswMFrSMAllSlots){
+						val GContainer subContainer = bswMFrSMAllSlots.getTarget()
 						containerValue.setContainer(subContainer, "BswMFrSMAllSlots")
 					}
 					def BswMJ1939DcmStateSwitch getBswMJ1939DcmStateSwitch(){
 						containerValue.getByType(typeof(BswMJ1939DcmStateSwitch))
 					}
 					
-					def void setBswMJ1939DcmStateSwitch(GContainer subContainer){
+					def void setBswMJ1939DcmStateSwitch(BswMJ1939DcmStateSwitch bswMJ1939DcmStateSwitch){
+						val GContainer subContainer = bswMJ1939DcmStateSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMJ1939DcmStateSwitch")
 					}
 					def BswMJ1939RmStateSwitch getBswMJ1939RmStateSwitch(){
 						containerValue.getByType(typeof(BswMJ1939RmStateSwitch))
 					}
 					
-					def void setBswMJ1939RmStateSwitch(GContainer subContainer){
+					def void setBswMJ1939RmStateSwitch(BswMJ1939RmStateSwitch bswMJ1939RmStateSwitch){
+						val GContainer subContainer = bswMJ1939RmStateSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMJ1939RmStateSwitch")
 					}
 					def BswMLinScheduleSwitch getBswMLinScheduleSwitch(){
 						containerValue.getByType(typeof(BswMLinScheduleSwitch))
 					}
 					
-					def void setBswMLinScheduleSwitch(GContainer subContainer){
+					def void setBswMLinScheduleSwitch(BswMLinScheduleSwitch bswMLinScheduleSwitch){
+						val GContainer subContainer = bswMLinScheduleSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMLinScheduleSwitch")
 					}
 					def BswMNMControl getBswMNMControl(){
 						containerValue.getByType(typeof(BswMNMControl))
 					}
 					
-					def void setBswMNMControl(GContainer subContainer){
+					def void setBswMNMControl(BswMNMControl bswMNMControl){
+						val GContainer subContainer = bswMNMControl.getTarget()
 						containerValue.setContainer(subContainer, "BswMNMControl")
 					}
 					def BswMPduGroupSwitch getBswMPduGroupSwitch(){
 						containerValue.getByType(typeof(BswMPduGroupSwitch))
 					}
 					
-					def void setBswMPduGroupSwitch(GContainer subContainer){
+					def void setBswMPduGroupSwitch(BswMPduGroupSwitch bswMPduGroupSwitch){
+						val GContainer subContainer = bswMPduGroupSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMPduGroupSwitch")
 					}
 					def BswMPduRouterControl getBswMPduRouterControl(){
 						containerValue.getByType(typeof(BswMPduRouterControl))
 					}
 					
-					def void setBswMPduRouterControl(GContainer subContainer){
+					def void setBswMPduRouterControl(BswMPduRouterControl bswMPduRouterControl){
+						val GContainer subContainer = bswMPduRouterControl.getTarget()
 						containerValue.setContainer(subContainer, "BswMPduRouterControl")
 					}
 					def BswMRequestRemoteMode getBswMRequestRemoteMode(){
 						containerValue.getByType(typeof(BswMRequestRemoteMode))
 					}
 					
-					def void setBswMRequestRemoteMode(GContainer subContainer){
+					def void setBswMRequestRemoteMode(BswMRequestRemoteMode bswMRequestRemoteMode){
+						val GContainer subContainer = bswMRequestRemoteMode.getTarget()
 						containerValue.setContainer(subContainer, "BswMRequestRemoteMode")
 					}
 					def BswMRteModeRequest getBswMRteModeRequest(){
 						containerValue.getByType(typeof(BswMRteModeRequest))
 					}
 					
-					def void setBswMRteModeRequest(GContainer subContainer){
+					def void setBswMRteModeRequest(BswMRteModeRequest bswMRteModeRequest){
+						val GContainer subContainer = bswMRteModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMRteModeRequest")
 					}
 					def BswMRteSwitch getBswMRteSwitch(){
 						containerValue.getByType(typeof(BswMRteSwitch))
 					}
 					
-					def void setBswMRteSwitch(GContainer subContainer){
+					def void setBswMRteSwitch(BswMRteSwitch bswMRteSwitch){
+						val GContainer subContainer = bswMRteSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMRteSwitch")
 					}
 					def BswMSchMSwitch getBswMSchMSwitch(){
 						containerValue.getByType(typeof(BswMSchMSwitch))
 					}
 					
-					def void setBswMSchMSwitch(GContainer subContainer){
+					def void setBswMSchMSwitch(BswMSchMSwitch bswMSchMSwitch){
+						val GContainer subContainer = bswMSchMSwitch.getTarget()
 						containerValue.setContainer(subContainer, "BswMSchMSwitch")
 					}
 					def BswMSdClientServiceModeRequest getBswMSdClientServiceModeRequest(){
 						containerValue.getByType(typeof(BswMSdClientServiceModeRequest))
 					}
 					
-					def void setBswMSdClientServiceModeRequest(GContainer subContainer){
+					def void setBswMSdClientServiceModeRequest(BswMSdClientServiceModeRequest bswMSdClientServiceModeRequest){
+						val GContainer subContainer = bswMSdClientServiceModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMSdClientServiceModeRequest")
 					}
 					def BswMSdConsumedEventGroupModeRequest getBswMSdConsumedEventGroupModeRequest(){
 						containerValue.getByType(typeof(BswMSdConsumedEventGroupModeRequest))
 					}
 					
-					def void setBswMSdConsumedEventGroupModeRequest(GContainer subContainer){
+					def void setBswMSdConsumedEventGroupModeRequest(BswMSdConsumedEventGroupModeRequest bswMSdConsumedEventGroupModeRequest){
+						val GContainer subContainer = bswMSdConsumedEventGroupModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMSdConsumedEventGroupModeRequest")
 					}
 					def BswMSdServerServiceModeRequest getBswMSdServerServiceModeRequest(){
 						containerValue.getByType(typeof(BswMSdServerServiceModeRequest))
 					}
 					
-					def void setBswMSdServerServiceModeRequest(GContainer subContainer){
+					def void setBswMSdServerServiceModeRequest(BswMSdServerServiceModeRequest bswMSdServerServiceModeRequest){
+						val GContainer subContainer = bswMSdServerServiceModeRequest.getTarget()
 						containerValue.setContainer(subContainer, "BswMSdServerServiceModeRequest")
 					}
 					def BswMSwitchIPduMode getBswMSwitchIPduMode(){
 						containerValue.getByType(typeof(BswMSwitchIPduMode))
 					}
 					
-					def void setBswMSwitchIPduMode(GContainer subContainer){
+					def void setBswMSwitchIPduMode(BswMSwitchIPduMode bswMSwitchIPduMode){
+						val GContainer subContainer = bswMSwitchIPduMode.getTarget()
 						containerValue.setContainer(subContainer, "BswMSwitchIPduMode")
 					}
 					def BswMTriggerIPduSend getBswMTriggerIPduSend(){
 						containerValue.getByType(typeof(BswMTriggerIPduSend))
 					}
 					
-					def void setBswMTriggerIPduSend(GContainer subContainer){
+					def void setBswMTriggerIPduSend(BswMTriggerIPduSend bswMTriggerIPduSend){
+						val GContainer subContainer = bswMTriggerIPduSend.getTarget()
 						containerValue.setContainer(subContainer, "BswMTriggerIPduSend")
 					}
 					def BswMTriggerSlaveRTEStop getBswMTriggerSlaveRTEStop(){
 						containerValue.getByType(typeof(BswMTriggerSlaveRTEStop))
 					}
 					
-					def void setBswMTriggerSlaveRTEStop(GContainer subContainer){
+					def void setBswMTriggerSlaveRTEStop(BswMTriggerSlaveRTEStop bswMTriggerSlaveRTEStop){
+						val GContainer subContainer = bswMTriggerSlaveRTEStop.getTarget()
 						containerValue.setContainer(subContainer, "BswMTriggerSlaveRTEStop")
 					}
 					def BswMTriggerStartUpPhase2 getBswMTriggerStartUpPhase2(){
 						containerValue.getByType(typeof(BswMTriggerStartUpPhase2))
 					}
 					
-					def void setBswMTriggerStartUpPhase2(GContainer subContainer){
+					def void setBswMTriggerStartUpPhase2(BswMTriggerStartUpPhase2 bswMTriggerStartUpPhase2){
+						val GContainer subContainer = bswMTriggerStartUpPhase2.getTarget()
 						containerValue.setContainer(subContainer, "BswMTriggerStartUpPhase2")
 					}
 					def BswMUserCallout getBswMUserCallout(){
 						containerValue.getByType(typeof(BswMUserCallout))
 					}
 					
-					def void setBswMUserCallout(GContainer subContainer){
+					def void setBswMUserCallout(BswMUserCallout bswMUserCallout){
+						val GContainer subContainer = bswMUserCallout.getTarget()
 						containerValue.setContainer(subContainer, "BswMUserCallout")
 					}
 					
@@ -4537,7 +4608,8 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(BswMUserIncludeFiles))
 		}
 		
-		def void setBswMUserIncludeFiles(GContainer subContainer){
+		def void setBswMUserIncludeFiles(BswMUserIncludeFiles bswMUserIncludeFiles){
+			val GContainer subContainer = bswMUserIncludeFiles.getTarget()
 			containerValue.setContainer(subContainer, "BswMUserIncludeFiles")
 		}
 		

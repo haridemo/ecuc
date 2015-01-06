@@ -501,7 +501,8 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(LinIfMaster))
 			}
 			
-			def void setLinIfMaster(GContainer subContainer){
+			def void setLinIfMaster(LinIfMaster linIfMaster){
+				val GContainer subContainer = linIfMaster.getTarget()
 				containerValue.setContainer(subContainer, "LinIfMaster")
 			}
 			
@@ -518,7 +519,8 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(LinIfTransceiverDrvConfig))
 			}
 			
-			def void setLinIfTransceiverDrvConfig(GContainer subContainer){
+			def void setLinIfTransceiverDrvConfig(LinIfTransceiverDrvConfig linIfTransceiverDrvConfig){
+				val GContainer subContainer = linIfTransceiverDrvConfig.getTarget()
 				containerValue.setContainer(subContainer, "LinIfTransceiverDrvConfig")
 			}
 			
@@ -650,7 +652,8 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(LinIfFixedFrameSdu))
 				}
 				
-				def void setLinIfFixedFrameSdu(GContainer subContainer){
+				def void setLinIfFixedFrameSdu(LinIfFixedFrameSdu linIfFixedFrameSdu){
+					val GContainer subContainer = linIfFixedFrameSdu.getTarget()
 					containerValue.setContainer(subContainer, "LinIfFixedFrameSdu")
 				}
 				
@@ -658,7 +661,8 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(LinIfPduDirection))
 				}
 				
-				def void setLinIfPduDirection(GContainer subContainer){
+				def void setLinIfPduDirection(LinIfPduDirection linIfPduDirection){
+					val GContainer subContainer = linIfPduDirection.getTarget()
 					containerValue.setContainer(subContainer, "LinIfPduDirection")
 				}
 				
@@ -784,28 +788,32 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(LinIfInternalPdu))
 					}
 					
-					def void setLinIfInternalPdu(GContainer subContainer){
+					def void setLinIfInternalPdu(LinIfInternalPdu linIfInternalPdu){
+						val GContainer subContainer = linIfInternalPdu.getTarget()
 						containerValue.setContainer(subContainer, "LinIfInternalPdu")
 					}
 					def LinIfRxPdu getLinIfRxPdu(){
 						containerValue.getByType(typeof(LinIfRxPdu))
 					}
 					
-					def void setLinIfRxPdu(GContainer subContainer){
+					def void setLinIfRxPdu(LinIfRxPdu linIfRxPdu){
+						val GContainer subContainer = linIfRxPdu.getTarget()
 						containerValue.setContainer(subContainer, "LinIfRxPdu")
 					}
 					def LinIfSlaveToSlavePdu getLinIfSlaveToSlavePdu(){
 						containerValue.getByType(typeof(LinIfSlaveToSlavePdu))
 					}
 					
-					def void setLinIfSlaveToSlavePdu(GContainer subContainer){
+					def void setLinIfSlaveToSlavePdu(LinIfSlaveToSlavePdu linIfSlaveToSlavePdu){
+						val GContainer subContainer = linIfSlaveToSlavePdu.getTarget()
 						containerValue.setContainer(subContainer, "LinIfSlaveToSlavePdu")
 					}
 					def LinIfTxPdu getLinIfTxPdu(){
 						containerValue.getByType(typeof(LinIfTxPdu))
 					}
 					
-					def void setLinIfTxPdu(GContainer subContainer){
+					def void setLinIfTxPdu(LinIfTxPdu linIfTxPdu){
+						val GContainer subContainer = linIfTxPdu.getTarget()
 						containerValue.setContainer(subContainer, "LinIfTxPdu")
 					}
 					

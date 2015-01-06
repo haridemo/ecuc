@@ -733,14 +733,16 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(XcpRxPdu))
 			}
 			
-			def void setXcpRxPdu(GContainer subContainer){
+			def void setXcpRxPdu(XcpRxPdu xcpRxPdu){
+				val GContainer subContainer = xcpRxPdu.getTarget()
 				containerValue.setContainer(subContainer, "XcpRxPdu")
 			}
 			def XcpTxPdu getXcpTxPdu(){
 				containerValue.getByType(typeof(XcpTxPdu))
 			}
 			
-			def void setXcpTxPdu(GContainer subContainer){
+			def void setXcpTxPdu(XcpTxPdu xcpTxPdu){
+				val GContainer subContainer = xcpTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "XcpTxPdu")
 			}
 			

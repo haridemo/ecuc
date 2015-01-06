@@ -442,7 +442,8 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanNmPnInfo))
 		}
 		
-		def void setCanNmPnInfo(GContainer subContainer){
+		def void setCanNmPnInfo(CanNmPnInfo canNmPnInfo){
+			val GContainer subContainer = canNmPnInfo.getTarget()
 			containerValue.setContainer(subContainer, "CanNmPnInfo")
 		}
 		
@@ -941,7 +942,8 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanNmTxPdu))
 			}
 			
-			def void setCanNmTxPdu(GContainer subContainer){
+			def void setCanNmTxPdu(CanNmTxPdu canNmTxPdu){
+				val GContainer subContainer = canNmTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "CanNmTxPdu")
 			}
 			
@@ -949,7 +951,8 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanNmUserDataTxPdu))
 			}
 			
-			def void setCanNmUserDataTxPdu(GContainer subContainer){
+			def void setCanNmUserDataTxPdu(CanNmUserDataTxPdu canNmUserDataTxPdu){
+				val GContainer subContainer = canNmUserDataTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "CanNmUserDataTxPdu")
 			}
 			

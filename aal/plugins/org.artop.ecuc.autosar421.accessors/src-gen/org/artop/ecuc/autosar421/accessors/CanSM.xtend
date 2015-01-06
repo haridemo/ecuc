@@ -300,7 +300,8 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanSMDemEventParameterRefs))
 			}
 			
-			def void setCanSMDemEventParameterRefs(GContainer subContainer){
+			def void setCanSMDemEventParameterRefs(CanSMDemEventParameterRefs canSMDemEventParameterRefs){
+				val GContainer subContainer = canSMDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "CanSMDemEventParameterRefs")
 			}
 			

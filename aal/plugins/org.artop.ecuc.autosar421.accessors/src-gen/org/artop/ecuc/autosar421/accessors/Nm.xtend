@@ -212,7 +212,8 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(NmBusType))
 		}
 		
-		def void setNmBusType(GContainer subContainer){
+		def void setNmBusType(NmBusType nmBusType){
+			val GContainer subContainer = nmBusType.getTarget()
 			containerValue.setContainer(subContainer, "NmBusType")
 		}
 		
@@ -240,14 +241,16 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(NmGenericBusNmConfig))
 			}
 			
-			def void setNmGenericBusNmConfig(GContainer subContainer){
+			def void setNmGenericBusNmConfig(NmGenericBusNmConfig nmGenericBusNmConfig){
+				val GContainer subContainer = nmGenericBusNmConfig.getTarget()
 				containerValue.setContainer(subContainer, "NmGenericBusNmConfig")
 			}
 			def NmStandardBusNmConfig getNmStandardBusNmConfig(){
 				containerValue.getByType(typeof(NmStandardBusNmConfig))
 			}
 			
-			def void setNmStandardBusNmConfig(GContainer subContainer){
+			def void setNmStandardBusNmConfig(NmStandardBusNmConfig nmStandardBusNmConfig){
+				val GContainer subContainer = nmStandardBusNmConfig.getTarget()
 				containerValue.setContainer(subContainer, "NmStandardBusNmConfig")
 			}
 			
@@ -398,7 +401,8 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(NmGlobalConstants))
 		}
 		
-		def void setNmGlobalConstants(GContainer subContainer){
+		def void setNmGlobalConstants(NmGlobalConstants nmGlobalConstants){
+			val GContainer subContainer = nmGlobalConstants.getTarget()
 			containerValue.setContainer(subContainer, "NmGlobalConstants")
 		}
 		
@@ -406,7 +410,8 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(NmGlobalFeatures))
 		}
 		
-		def void setNmGlobalFeatures(GContainer subContainer){
+		def void setNmGlobalFeatures(NmGlobalFeatures nmGlobalFeatures){
+			val GContainer subContainer = nmGlobalFeatures.getTarget()
 			containerValue.setContainer(subContainer, "NmGlobalFeatures")
 		}
 		
@@ -414,7 +419,8 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(NmGlobalProperties))
 		}
 		
-		def void setNmGlobalProperties(GContainer subContainer){
+		def void setNmGlobalProperties(NmGlobalProperties nmGlobalProperties){
+			val GContainer subContainer = nmGlobalProperties.getTarget()
 			containerValue.setContainer(subContainer, "NmGlobalProperties")
 		}
 		

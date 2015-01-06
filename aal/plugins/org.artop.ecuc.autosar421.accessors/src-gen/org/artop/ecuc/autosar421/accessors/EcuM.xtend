@@ -126,7 +126,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EcuMCommonConfiguration))
 		}
 		
-		def void setEcuMCommonConfiguration(GContainer subContainer){
+		def void setEcuMCommonConfiguration(EcuMCommonConfiguration ecuMCommonConfiguration){
+			val GContainer subContainer = ecuMCommonConfiguration.getTarget()
 			containerValue.setContainer(subContainer, "EcuMCommonConfiguration")
 		}
 		
@@ -134,7 +135,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EcuMFixedConfiguration))
 		}
 		
-		def void setEcuMFixedConfiguration(GContainer subContainer){
+		def void setEcuMFixedConfiguration(EcuMFixedConfiguration ecuMFixedConfiguration){
+			val GContainer subContainer = ecuMFixedConfiguration.getTarget()
 			containerValue.setContainer(subContainer, "EcuMFixedConfiguration")
 		}
 		
@@ -142,7 +144,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EcuMFlexConfiguration))
 		}
 		
-		def void setEcuMFlexConfiguration(GContainer subContainer){
+		def void setEcuMFlexConfiguration(EcuMFlexConfiguration ecuMFlexConfiguration){
+			val GContainer subContainer = ecuMFlexConfiguration.getTarget()
 			containerValue.setContainer(subContainer, "EcuMFlexConfiguration")
 		}
 		
@@ -232,7 +235,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMDefaultShutdownTarget))
 			}
 			
-			def void setEcuMDefaultShutdownTarget(GContainer subContainer){
+			def void setEcuMDefaultShutdownTarget(EcuMDefaultShutdownTarget ecuMDefaultShutdownTarget){
+				val GContainer subContainer = ecuMDefaultShutdownTarget.getTarget()
 				containerValue.setContainer(subContainer, "EcuMDefaultShutdownTarget")
 			}
 			
@@ -240,7 +244,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMDriverInitListOne))
 			}
 			
-			def void setEcuMDriverInitListOne(GContainer subContainer){
+			def void setEcuMDriverInitListOne(EcuMDriverInitListOne ecuMDriverInitListOne){
+				val GContainer subContainer = ecuMDriverInitListOne.getTarget()
 				containerValue.setContainer(subContainer, "EcuMDriverInitListOne")
 			}
 			
@@ -248,7 +253,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMDriverInitListZero))
 			}
 			
-			def void setEcuMDriverInitListZero(GContainer subContainer){
+			def void setEcuMDriverInitListZero(EcuMDriverInitListZero ecuMDriverInitListZero){
+				val GContainer subContainer = ecuMDriverInitListZero.getTarget()
 				containerValue.setContainer(subContainer, "EcuMDriverInitListZero")
 			}
 			
@@ -256,7 +262,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMDriverRestartList))
 			}
 			
-			def void setEcuMDriverRestartList(GContainer subContainer){
+			def void setEcuMDriverRestartList(EcuMDriverRestartList ecuMDriverRestartList){
+				val GContainer subContainer = ecuMDriverRestartList.getTarget()
 				containerValue.setContainer(subContainer, "EcuMDriverRestartList")
 			}
 			
@@ -1086,7 +1093,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMDriverInitListThree))
 			}
 			
-			def void setEcuMDriverInitListThree(GContainer subContainer){
+			def void setEcuMDriverInitListThree(EcuMDriverInitListThree ecuMDriverInitListThree){
+				val GContainer subContainer = ecuMDriverInitListThree.getTarget()
 				containerValue.setContainer(subContainer, "EcuMDriverInitListThree")
 			}
 			
@@ -1094,7 +1102,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMDriverInitListTwo))
 			}
 			
-			def void setEcuMDriverInitListTwo(GContainer subContainer){
+			def void setEcuMDriverInitListTwo(EcuMDriverInitListTwo ecuMDriverInitListTwo){
+				val GContainer subContainer = ecuMDriverInitListTwo.getTarget()
 				containerValue.setContainer(subContainer, "EcuMDriverInitListTwo")
 			}
 			
@@ -1558,7 +1567,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMGoDownAllowedUsers))
 			}
 			
-			def void setEcuMGoDownAllowedUsers(GContainer subContainer){
+			def void setEcuMGoDownAllowedUsers(EcuMGoDownAllowedUsers ecuMGoDownAllowedUsers){
+				val GContainer subContainer = ecuMGoDownAllowedUsers.getTarget()
 				containerValue.setContainer(subContainer, "EcuMGoDownAllowedUsers")
 			}
 			
@@ -1575,7 +1585,8 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EcuMSetClockAllowedUsers))
 			}
 			
-			def void setEcuMSetClockAllowedUsers(GContainer subContainer){
+			def void setEcuMSetClockAllowedUsers(EcuMSetClockAllowedUsers ecuMSetClockAllowedUsers){
+				val GContainer subContainer = ecuMSetClockAllowedUsers.getTarget()
 				containerValue.setContainer(subContainer, "EcuMSetClockAllowedUsers")
 			}
 			

@@ -368,7 +368,8 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EthTrcvDemEventParameterRefs))
 			}
 			
-			def void setEthTrcvDemEventParameterRefs(GContainer subContainer){
+			def void setEthTrcvDemEventParameterRefs(EthTrcvDemEventParameterRefs ethTrcvDemEventParameterRefs){
+				val GContainer subContainer = ethTrcvDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "EthTrcvDemEventParameterRefs")
 			}
 			

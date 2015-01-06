@@ -247,7 +247,8 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DbgRxPdu))
 		}
 		
-		def void setDbgRxPdu(GContainer subContainer){
+		def void setDbgRxPdu(DbgRxPdu dbgRxPdu){
+			val GContainer subContainer = dbgRxPdu.getTarget()
 			containerValue.setContainer(subContainer, "DbgRxPdu")
 		}
 		
@@ -255,7 +256,8 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DbgTxPdu))
 		}
 		
-		def void setDbgTxPdu(GContainer subContainer){
+		def void setDbgTxPdu(DbgTxPdu dbgTxPdu){
+			val GContainer subContainer = dbgTxPdu.getTarget()
 			containerValue.setContainer(subContainer, "DbgTxPdu")
 		}
 		
@@ -580,28 +582,32 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DbgAddInfoComSignal))
 				}
 				
-				def void setDbgAddInfoComSignal(GContainer subContainer){
+				def void setDbgAddInfoComSignal(DbgAddInfoComSignal dbgAddInfoComSignal){
+					val GContainer subContainer = dbgAddInfoComSignal.getTarget()
 					containerValue.setContainer(subContainer, "DbgAddInfoComSignal")
 				}
 				def DbgAddInfoRteCall getDbgAddInfoRteCall(){
 					containerValue.getByType(typeof(DbgAddInfoRteCall))
 				}
 				
-				def void setDbgAddInfoRteCall(GContainer subContainer){
+				def void setDbgAddInfoRteCall(DbgAddInfoRteCall dbgAddInfoRteCall){
+					val GContainer subContainer = dbgAddInfoRteCall.getTarget()
 					containerValue.setContainer(subContainer, "DbgAddInfoRteCall")
 				}
 				def DbgAddInfoRunnable getDbgAddInfoRunnable(){
 					containerValue.getByType(typeof(DbgAddInfoRunnable))
 				}
 				
-				def void setDbgAddInfoRunnable(GContainer subContainer){
+				def void setDbgAddInfoRunnable(DbgAddInfoRunnable dbgAddInfoRunnable){
+					val GContainer subContainer = dbgAddInfoRunnable.getTarget()
 					containerValue.setContainer(subContainer, "DbgAddInfoRunnable")
 				}
 				def DbgAddInfoVfbSignal getDbgAddInfoVfbSignal(){
 					containerValue.getByType(typeof(DbgAddInfoVfbSignal))
 				}
 				
-				def void setDbgAddInfoVfbSignal(GContainer subContainer){
+				def void setDbgAddInfoVfbSignal(DbgAddInfoVfbSignal dbgAddInfoVfbSignal){
+					val GContainer subContainer = dbgAddInfoVfbSignal.getTarget()
 					containerValue.setContainer(subContainer, "DbgAddInfoVfbSignal")
 				}
 				
@@ -1050,21 +1056,24 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DbgAddressSizePair))
 				}
 				
-				def void setDbgAddressSizePair(GContainer subContainer){
+				def void setDbgAddressSizePair(DbgAddressSizePair dbgAddressSizePair){
+					val GContainer subContainer = dbgAddressSizePair.getTarget()
 					containerValue.setContainer(subContainer, "DbgAddressSizePair")
 				}
 				def DbgDebugData getDbgDebugData(){
 					containerValue.getByType(typeof(DbgDebugData))
 				}
 				
-				def void setDbgDebugData(GContainer subContainer){
+				def void setDbgDebugData(DbgDebugData dbgDebugData){
+					val GContainer subContainer = dbgDebugData.getTarget()
 					containerValue.setContainer(subContainer, "DbgDebugData")
 				}
 				def DbgLocalDebugData getDbgLocalDebugData(){
 					containerValue.getByType(typeof(DbgLocalDebugData))
 				}
 				
-				def void setDbgLocalDebugData(GContainer subContainer){
+				def void setDbgLocalDebugData(DbgLocalDebugData dbgLocalDebugData){
+					val GContainer subContainer = dbgLocalDebugData.getTarget()
 					containerValue.setContainer(subContainer, "DbgLocalDebugData")
 				}
 				

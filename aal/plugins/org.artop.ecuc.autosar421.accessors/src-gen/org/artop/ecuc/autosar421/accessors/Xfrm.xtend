@@ -153,7 +153,8 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(XfrmDemEventParameterRefs))
 		}
 		
-		def void setXfrmDemEventParameterRefs(GContainer subContainer){
+		def void setXfrmDemEventParameterRefs(XfrmDemEventParameterRefs xfrmDemEventParameterRefs){
+			val GContainer subContainer = xfrmDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "XfrmDemEventParameterRefs")
 		}
 		
@@ -161,7 +162,8 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(XfrmSignal))
 		}
 		
-		def void setXfrmSignal(GContainer subContainer){
+		def void setXfrmSignal(XfrmSignal xfrmSignal){
+			val GContainer subContainer = xfrmSignal.getTarget()
 			containerValue.setContainer(subContainer, "XfrmSignal")
 		}
 		
@@ -226,7 +228,8 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(XfrmSignalChoice))
 			}
 			
-			def void setXfrmSignalChoice(GContainer subContainer){
+			def void setXfrmSignalChoice(XfrmSignalChoice xfrmSignalChoice){
+				val GContainer subContainer = xfrmSignalChoice.getTarget()
 				containerValue.setContainer(subContainer, "XfrmSignalChoice")
 			}
 			
@@ -254,14 +257,16 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(XfrmISignalGroupRefChoice))
 				}
 				
-				def void setXfrmISignalGroupRefChoice(GContainer subContainer){
+				def void setXfrmISignalGroupRefChoice(XfrmISignalGroupRefChoice xfrmISignalGroupRefChoice){
+					val GContainer subContainer = xfrmISignalGroupRefChoice.getTarget()
 					containerValue.setContainer(subContainer, "XfrmISignalGroupRefChoice")
 				}
 				def XfrmISignalRefChoice getXfrmISignalRefChoice(){
 					containerValue.getByType(typeof(XfrmISignalRefChoice))
 				}
 				
-				def void setXfrmISignalRefChoice(GContainer subContainer){
+				def void setXfrmISignalRefChoice(XfrmISignalRefChoice xfrmISignalRefChoice){
+					val GContainer subContainer = xfrmISignalRefChoice.getTarget()
 					containerValue.setContainer(subContainer, "XfrmISignalRefChoice")
 				}
 				

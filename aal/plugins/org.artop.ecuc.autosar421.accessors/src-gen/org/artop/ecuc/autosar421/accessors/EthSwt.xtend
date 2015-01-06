@@ -126,7 +126,8 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthSwtDemEventParameterRefs))
 		}
 		
-		def void setEthSwtDemEventParameterRefs(GContainer subContainer){
+		def void setEthSwtDemEventParameterRefs(EthSwtDemEventParameterRefs ethSwtDemEventParameterRefs){
+			val GContainer subContainer = ethSwtDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "EthSwtDemEventParameterRefs")
 		}
 		
@@ -134,7 +135,8 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthSwtNvm))
 		}
 		
-		def void setEthSwtNvm(GContainer subContainer){
+		def void setEthSwtNvm(EthSwtNvm ethSwtNvm){
+			val GContainer subContainer = ethSwtNvm.getTarget()
 			containerValue.setContainer(subContainer, "EthSwtNvm")
 		}
 		
@@ -151,7 +153,8 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EthSwtSpi))
 		}
 		
-		def void setEthSwtSpi(GContainer subContainer){
+		def void setEthSwtSpi(EthSwtSpi ethSwtSpi){
+			val GContainer subContainer = ethSwtSpi.getTarget()
 			containerValue.setContainer(subContainer, "EthSwtSpi")
 		}
 		
@@ -379,7 +382,8 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EthSwtPortEgress))
 			}
 			
-			def void setEthSwtPortEgress(GContainer subContainer){
+			def void setEthSwtPortEgress(EthSwtPortEgress ethSwtPortEgress){
+				val GContainer subContainer = ethSwtPortEgress.getTarget()
 				containerValue.setContainer(subContainer, "EthSwtPortEgress")
 			}
 			
@@ -387,7 +391,8 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(EthSwtPortIngress))
 			}
 			
-			def void setEthSwtPortIngress(GContainer subContainer){
+			def void setEthSwtPortIngress(EthSwtPortIngress ethSwtPortIngress){
+				val GContainer subContainer = ethSwtPortIngress.getTarget()
 				containerValue.setContainer(subContainer, "EthSwtPortIngress")
 			}
 			

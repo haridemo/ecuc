@@ -175,7 +175,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(SdInstanceDemEventParameterRefs))
 			}
 			
-			def void setSdInstanceDemEventParameterRefs(GContainer subContainer){
+			def void setSdInstanceDemEventParameterRefs(SdInstanceDemEventParameterRefs sdInstanceDemEventParameterRefs){
+				val GContainer subContainer = sdInstanceDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "SdInstanceDemEventParameterRefs")
 			}
 			
@@ -183,7 +184,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(SdInstanceMulticastRxPdu))
 			}
 			
-			def void setSdInstanceMulticastRxPdu(GContainer subContainer){
+			def void setSdInstanceMulticastRxPdu(SdInstanceMulticastRxPdu sdInstanceMulticastRxPdu){
+				val GContainer subContainer = sdInstanceMulticastRxPdu.getTarget()
 				containerValue.setContainer(subContainer, "SdInstanceMulticastRxPdu")
 			}
 			
@@ -191,7 +193,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(SdInstanceTxPdu))
 			}
 			
-			def void setSdInstanceTxPdu(GContainer subContainer){
+			def void setSdInstanceTxPdu(SdInstanceTxPdu sdInstanceTxPdu){
+				val GContainer subContainer = sdInstanceTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "SdInstanceTxPdu")
 			}
 			
@@ -199,7 +202,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(SdInstanceUnicastRxPdu))
 			}
 			
-			def void setSdInstanceUnicastRxPdu(GContainer subContainer){
+			def void setSdInstanceUnicastRxPdu(SdInstanceUnicastRxPdu sdInstanceUnicastRxPdu){
+				val GContainer subContainer = sdInstanceUnicastRxPdu.getTarget()
 				containerValue.setContainer(subContainer, "SdInstanceUnicastRxPdu")
 			}
 			
@@ -394,7 +398,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(SdConsumedMethods))
 				}
 				
-				def void setSdConsumedMethods(GContainer subContainer){
+				def void setSdConsumedMethods(SdConsumedMethods sdConsumedMethods){
+					val GContainer subContainer = sdConsumedMethods.getTarget()
 					containerValue.setContainer(subContainer, "SdConsumedMethods")
 				}
 				
@@ -1188,7 +1193,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(SdProvidedMethods))
 				}
 				
-				def void setSdProvidedMethods(GContainer subContainer){
+				def void setSdProvidedMethods(SdProvidedMethods sdProvidedMethods){
+					val GContainer subContainer = sdProvidedMethods.getTarget()
 					containerValue.setContainer(subContainer, "SdProvidedMethods")
 				}
 				
@@ -1286,7 +1292,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(SdEventHandlerMulticast))
 					}
 					
-					def void setSdEventHandlerMulticast(GContainer subContainer){
+					def void setSdEventHandlerMulticast(SdEventHandlerMulticast sdEventHandlerMulticast){
+						val GContainer subContainer = sdEventHandlerMulticast.getTarget()
 						containerValue.setContainer(subContainer, "SdEventHandlerMulticast")
 					}
 					
@@ -1294,7 +1301,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(SdEventHandlerTcp))
 					}
 					
-					def void setSdEventHandlerTcp(GContainer subContainer){
+					def void setSdEventHandlerTcp(SdEventHandlerTcp sdEventHandlerTcp){
+						val GContainer subContainer = sdEventHandlerTcp.getTarget()
 						containerValue.setContainer(subContainer, "SdEventHandlerTcp")
 					}
 					
@@ -1302,7 +1310,8 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(SdEventHandlerUdp))
 					}
 					
-					def void setSdEventHandlerUdp(GContainer subContainer){
+					def void setSdEventHandlerUdp(SdEventHandlerUdp sdEventHandlerUdp){
+						val GContainer subContainer = sdEventHandlerUdp.getTarget()
 						containerValue.setContainer(subContainer, "SdEventHandlerUdp")
 					}
 					

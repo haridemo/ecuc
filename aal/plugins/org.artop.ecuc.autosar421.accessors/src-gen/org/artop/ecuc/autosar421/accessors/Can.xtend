@@ -128,7 +128,8 @@ class Can implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanIcom))
 		}
 		
-		def void setCanIcom(GContainer subContainer){
+		def void setCanIcom(CanIcom canIcom){
+			val GContainer subContainer = canIcom.getTarget()
 			containerValue.setContainer(subContainer, "CanIcom")
 		}
 		
@@ -412,7 +413,8 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CanTTController))
 			}
 			
-			def void setCanTTController(GContainer subContainer){
+			def void setCanTTController(CanTTController canTTController){
+				val GContainer subContainer = canTTController.getTarget()
 				containerValue.setContainer(subContainer, "CanTTController")
 			}
 			
@@ -538,7 +540,8 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanControllerFdBaudrateConfig))
 				}
 				
-				def void setCanControllerFdBaudrateConfig(GContainer subContainer){
+				def void setCanControllerFdBaudrateConfig(CanControllerFdBaudrateConfig canControllerFdBaudrateConfig){
+					val GContainer subContainer = canControllerFdBaudrateConfig.getTarget()
 					containerValue.setContainer(subContainer, "CanControllerFdBaudrateConfig")
 				}
 				
@@ -1533,7 +1536,8 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(CanIcomWakeupCauses))
 				}
 				
-				def void setCanIcomWakeupCauses(GContainer subContainer){
+				def void setCanIcomWakeupCauses(CanIcomWakeupCauses canIcomWakeupCauses){
+					val GContainer subContainer = canIcomWakeupCauses.getTarget()
 					containerValue.setContainer(subContainer, "CanIcomWakeupCauses")
 				}
 				
@@ -2018,7 +2022,8 @@ class Can implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CanIcomGeneral))
 		}
 		
-		def void setCanIcomGeneral(GContainer subContainer){
+		def void setCanIcomGeneral(CanIcomGeneral canIcomGeneral){
+			val GContainer subContainer = canIcomGeneral.getTarget()
 			containerValue.setContainer(subContainer, "CanIcomGeneral")
 		}
 		

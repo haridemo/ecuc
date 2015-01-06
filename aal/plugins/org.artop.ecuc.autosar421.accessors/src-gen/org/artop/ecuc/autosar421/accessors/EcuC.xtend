@@ -142,7 +142,8 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(EcucPduCollection))
 		}
 		
-		def void setEcucPduCollection(GContainer subContainer){
+		def void setEcucPduCollection(EcucPduCollection ecucPduCollection){
+			val GContainer subContainer = ecucPduCollection.getTarget()
 			containerValue.setContainer(subContainer, "EcucPduCollection")
 		}
 		

@@ -295,7 +295,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939TpRxCmNPdu))
 			}
 			
-			def void setJ1939TpRxCmNPdu(GContainer subContainer){
+			def void setJ1939TpRxCmNPdu(J1939TpRxCmNPdu j1939TpRxCmNPdu){
+				val GContainer subContainer = j1939TpRxCmNPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939TpRxCmNPdu")
 			}
 			
@@ -303,7 +304,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939TpRxDtNPdu))
 			}
 			
-			def void setJ1939TpRxDtNPdu(GContainer subContainer){
+			def void setJ1939TpRxDtNPdu(J1939TpRxDtNPdu j1939TpRxDtNPdu){
+				val GContainer subContainer = j1939TpRxDtNPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939TpRxDtNPdu")
 			}
 			
@@ -320,7 +322,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939TpTxFcNPdu))
 			}
 			
-			def void setJ1939TpTxFcNPdu(GContainer subContainer){
+			def void setJ1939TpTxFcNPdu(J1939TpTxFcNPdu j1939TpTxFcNPdu){
+				val GContainer subContainer = j1939TpTxFcNPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939TpTxFcNPdu")
 			}
 			
@@ -484,7 +487,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(J1939TpRxDirectNPdu))
 				}
 				
-				def void setJ1939TpRxDirectNPdu(GContainer subContainer){
+				def void setJ1939TpRxDirectNPdu(J1939TpRxDirectNPdu j1939TpRxDirectNPdu){
+					val GContainer subContainer = j1939TpRxDirectNPdu.getTarget()
 					containerValue.setContainer(subContainer, "J1939TpRxDirectNPdu")
 				}
 				
@@ -809,7 +813,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939TpRxFcNPdu))
 			}
 			
-			def void setJ1939TpRxFcNPdu(GContainer subContainer){
+			def void setJ1939TpRxFcNPdu(J1939TpRxFcNPdu j1939TpRxFcNPdu){
+				val GContainer subContainer = j1939TpRxFcNPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939TpRxFcNPdu")
 			}
 			
@@ -817,7 +822,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939TpTxCmNPdu))
 			}
 			
-			def void setJ1939TpTxCmNPdu(GContainer subContainer){
+			def void setJ1939TpTxCmNPdu(J1939TpTxCmNPdu j1939TpTxCmNPdu){
+				val GContainer subContainer = j1939TpTxCmNPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939TpTxCmNPdu")
 			}
 			
@@ -825,7 +831,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939TpTxDtNPdu))
 			}
 			
-			def void setJ1939TpTxDtNPdu(GContainer subContainer){
+			def void setJ1939TpTxDtNPdu(J1939TpTxDtNPdu j1939TpTxDtNPdu){
+				val GContainer subContainer = j1939TpTxDtNPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939TpTxDtNPdu")
 			}
 			
@@ -1049,7 +1056,8 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(J1939TpTxDirectNPdu))
 				}
 				
-				def void setJ1939TpTxDirectNPdu(GContainer subContainer){
+				def void setJ1939TpTxDirectNPdu(J1939TpTxDirectNPdu j1939TpTxDirectNPdu){
+					val GContainer subContainer = j1939TpTxDirectNPdu.getTarget()
 					containerValue.setContainer(subContainer, "J1939TpTxDirectNPdu")
 				}
 				

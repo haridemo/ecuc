@@ -284,7 +284,8 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrTrcvAccess))
 		}
 		
-		def void setFrTrcvAccess(GContainer subContainer){
+		def void setFrTrcvAccess(FrTrcvAccess frTrcvAccess){
+			val GContainer subContainer = frTrcvAccess.getTarget()
 			containerValue.setContainer(subContainer, "FrTrcvAccess")
 		}
 		
@@ -301,7 +302,8 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrTrcvChannelDemEventParameterRefs))
 		}
 		
-		def void setFrTrcvChannelDemEventParameterRefs(GContainer subContainer){
+		def void setFrTrcvChannelDemEventParameterRefs(FrTrcvChannelDemEventParameterRefs frTrcvChannelDemEventParameterRefs){
+			val GContainer subContainer = frTrcvChannelDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "FrTrcvChannelDemEventParameterRefs")
 		}
 		
@@ -329,14 +331,16 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrTrcvDioAccess))
 			}
 			
-			def void setFrTrcvDioAccess(GContainer subContainer){
+			def void setFrTrcvDioAccess(FrTrcvDioAccess frTrcvDioAccess){
+				val GContainer subContainer = frTrcvDioAccess.getTarget()
 				containerValue.setContainer(subContainer, "FrTrcvDioAccess")
 			}
 			def FrTrcvSpiSequence getFrTrcvSpiSequence(){
 				containerValue.getByType(typeof(FrTrcvSpiSequence))
 			}
 			
-			def void setFrTrcvSpiSequence(GContainer subContainer){
+			def void setFrTrcvSpiSequence(FrTrcvSpiSequence frTrcvSpiSequence){
+				val GContainer subContainer = frTrcvSpiSequence.getTarget()
 				containerValue.setContainer(subContainer, "FrTrcvSpiSequence")
 			}
 			

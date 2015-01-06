@@ -684,7 +684,8 @@ class NvM implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(NvMTargetBlockReference))
 		}
 		
-		def void setNvMTargetBlockReference(GContainer subContainer){
+		def void setNvMTargetBlockReference(NvMTargetBlockReference nvMTargetBlockReference){
+			val GContainer subContainer = nvMTargetBlockReference.getTarget()
 			containerValue.setContainer(subContainer, "NvMTargetBlockReference")
 		}
 		
@@ -712,14 +713,16 @@ class NvM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(NvMEaRef))
 			}
 			
-			def void setNvMEaRef(GContainer subContainer){
+			def void setNvMEaRef(NvMEaRef nvMEaRef){
+				val GContainer subContainer = nvMEaRef.getTarget()
 				containerValue.setContainer(subContainer, "NvMEaRef")
 			}
 			def NvMFeeRef getNvMFeeRef(){
 				containerValue.getByType(typeof(NvMFeeRef))
 			}
 			
-			def void setNvMFeeRef(GContainer subContainer){
+			def void setNvMFeeRef(NvMFeeRef nvMFeeRef){
+				val GContainer subContainer = nvMFeeRef.getTarget()
 				containerValue.setContainer(subContainer, "NvMFeeRef")
 			}
 			

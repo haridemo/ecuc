@@ -442,7 +442,8 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(UdpNmDemEventParameterRefs))
 		}
 		
-		def void setUdpNmDemEventParameterRefs(GContainer subContainer){
+		def void setUdpNmDemEventParameterRefs(UdpNmDemEventParameterRefs udpNmDemEventParameterRefs){
+			val GContainer subContainer = udpNmDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "UdpNmDemEventParameterRefs")
 		}
 		
@@ -450,7 +451,8 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(UdpNmPnInfo))
 		}
 		
-		def void setUdpNmPnInfo(GContainer subContainer){
+		def void setUdpNmPnInfo(UdpNmPnInfo udpNmPnInfo){
+			val GContainer subContainer = udpNmPnInfo.getTarget()
 			containerValue.setContainer(subContainer, "UdpNmPnInfo")
 		}
 		
@@ -821,7 +823,8 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(UdpNmTxPdu))
 			}
 			
-			def void setUdpNmTxPdu(GContainer subContainer){
+			def void setUdpNmTxPdu(UdpNmTxPdu udpNmTxPdu){
+				val GContainer subContainer = udpNmTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "UdpNmTxPdu")
 			}
 			
@@ -829,7 +832,8 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(UdpNmUserDataTxPdu))
 			}
 			
-			def void setUdpNmUserDataTxPdu(GContainer subContainer){
+			def void setUdpNmUserDataTxPdu(UdpNmUserDataTxPdu udpNmUserDataTxPdu){
+				val GContainer subContainer = udpNmUserDataTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "UdpNmUserDataTxPdu")
 			}
 			

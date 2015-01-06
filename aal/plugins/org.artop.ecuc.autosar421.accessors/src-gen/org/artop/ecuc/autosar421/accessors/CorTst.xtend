@@ -134,7 +134,8 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CorTstSelect))
 		}
 		
-		def void setCorTstSelect(GContainer subContainer){
+		def void setCorTstSelect(CorTstSelect corTstSelect){
+			val GContainer subContainer = corTstSelect.getTarget()
 			containerValue.setContainer(subContainer, "CorTstSelect")
 		}
 		
@@ -486,7 +487,8 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CorTstSelect))
 		}
 		
-		def void setCorTstSelect(GContainer subContainer){
+		def void setCorTstSelect(CorTstSelect corTstSelect){
+			val GContainer subContainer = corTstSelect.getTarget()
 			containerValue.setContainer(subContainer, "CorTstSelect")
 		}
 		

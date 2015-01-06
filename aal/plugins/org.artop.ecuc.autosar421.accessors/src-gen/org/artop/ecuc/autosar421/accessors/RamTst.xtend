@@ -374,7 +374,8 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(RamTstAlgorithms))
 		}
 		
-		def void setRamTstAlgorithms(GContainer subContainer){
+		def void setRamTstAlgorithms(RamTstAlgorithms ramTstAlgorithms){
+			val GContainer subContainer = ramTstAlgorithms.getTarget()
 			containerValue.setContainer(subContainer, "RamTstAlgorithms")
 		}
 		
@@ -382,7 +383,8 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(RamTstConfigParams))
 		}
 		
-		def void setRamTstConfigParams(GContainer subContainer){
+		def void setRamTstConfigParams(RamTstConfigParams ramTstConfigParams){
+			val GContainer subContainer = ramTstConfigParams.getTarget()
 			containerValue.setContainer(subContainer, "RamTstConfigParams")
 		}
 		

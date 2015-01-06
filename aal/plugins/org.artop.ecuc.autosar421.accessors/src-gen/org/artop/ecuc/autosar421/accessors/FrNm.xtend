@@ -141,7 +141,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrNmChannelIdentifiers))
 			}
 			
-			def void setFrNmChannelIdentifiers(GContainer subContainer){
+			def void setFrNmChannelIdentifiers(FrNmChannelIdentifiers frNmChannelIdentifiers){
+				val GContainer subContainer = frNmChannelIdentifiers.getTarget()
 				containerValue.setContainer(subContainer, "FrNmChannelIdentifiers")
 			}
 			
@@ -149,7 +150,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrNmChannelTiming))
 			}
 			
-			def void setFrNmChannelTiming(GContainer subContainer){
+			def void setFrNmChannelTiming(FrNmChannelTiming frNmChannelTiming){
+				val GContainer subContainer = frNmChannelTiming.getTarget()
 				containerValue.setContainer(subContainer, "FrNmChannelTiming")
 			}
 			
@@ -449,7 +451,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(FrNmUserDataTxPdu))
 				}
 				
-				def void setFrNmUserDataTxPdu(GContainer subContainer){
+				def void setFrNmUserDataTxPdu(FrNmUserDataTxPdu frNmUserDataTxPdu){
+					val GContainer subContainer = frNmUserDataTxPdu.getTarget()
 					containerValue.setContainer(subContainer, "FrNmUserDataTxPdu")
 				}
 				
@@ -950,7 +953,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrNmGlobalConstants))
 		}
 		
-		def void setFrNmGlobalConstants(GContainer subContainer){
+		def void setFrNmGlobalConstants(FrNmGlobalConstants frNmGlobalConstants){
+			val GContainer subContainer = frNmGlobalConstants.getTarget()
 			containerValue.setContainer(subContainer, "FrNmGlobalConstants")
 		}
 		
@@ -958,7 +962,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrNmGlobalFeatures))
 		}
 		
-		def void setFrNmGlobalFeatures(GContainer subContainer){
+		def void setFrNmGlobalFeatures(FrNmGlobalFeatures frNmGlobalFeatures){
+			val GContainer subContainer = frNmGlobalFeatures.getTarget()
 			containerValue.setContainer(subContainer, "FrNmGlobalFeatures")
 		}
 		
@@ -966,7 +971,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrNmGlobalProperties))
 		}
 		
-		def void setFrNmGlobalProperties(GContainer subContainer){
+		def void setFrNmGlobalProperties(FrNmGlobalProperties frNmGlobalProperties){
+			val GContainer subContainer = frNmGlobalProperties.getTarget()
 			containerValue.setContainer(subContainer, "FrNmGlobalProperties")
 		}
 		
@@ -1335,7 +1341,8 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrNmPnInfo))
 			}
 			
-			def void setFrNmPnInfo(GContainer subContainer){
+			def void setFrNmPnInfo(FrNmPnInfo frNmPnInfo){
+				val GContainer subContainer = frNmPnInfo.getTarget()
 				containerValue.setContainer(subContainer, "FrNmPnInfo")
 			}
 			

@@ -269,7 +269,8 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(IcuSignalEdgeDetection))
 			}
 			
-			def void setIcuSignalEdgeDetection(GContainer subContainer){
+			def void setIcuSignalEdgeDetection(IcuSignalEdgeDetection icuSignalEdgeDetection){
+				val GContainer subContainer = icuSignalEdgeDetection.getTarget()
 				containerValue.setContainer(subContainer, "IcuSignalEdgeDetection")
 			}
 			
@@ -277,7 +278,8 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(IcuSignalMeasurement))
 			}
 			
-			def void setIcuSignalMeasurement(GContainer subContainer){
+			def void setIcuSignalMeasurement(IcuSignalMeasurement icuSignalMeasurement){
+				val GContainer subContainer = icuSignalMeasurement.getTarget()
 				containerValue.setContainer(subContainer, "IcuSignalMeasurement")
 			}
 			
@@ -285,7 +287,8 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(IcuTimestampMeasurement))
 			}
 			
-			def void setIcuTimestampMeasurement(GContainer subContainer){
+			def void setIcuTimestampMeasurement(IcuTimestampMeasurement icuTimestampMeasurement){
+				val GContainer subContainer = icuTimestampMeasurement.getTarget()
 				containerValue.setContainer(subContainer, "IcuTimestampMeasurement")
 			}
 			
@@ -293,7 +296,8 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(IcuWakeup))
 			}
 			
-			def void setIcuWakeup(GContainer subContainer){
+			def void setIcuWakeup(IcuWakeup icuWakeup){
+				val GContainer subContainer = icuWakeup.getTarget()
 				containerValue.setContainer(subContainer, "IcuWakeup")
 			}
 			

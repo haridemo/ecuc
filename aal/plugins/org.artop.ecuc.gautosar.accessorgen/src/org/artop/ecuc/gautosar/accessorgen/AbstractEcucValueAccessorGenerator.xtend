@@ -205,8 +205,9 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		containerValue.getByType(typeof(«sc.gGetShortName»))
 	}
 	
-	def void set«sc.gGetShortName.toFirstUpper»(GContainer subContainer){
-		containerValue.setContainer(subContainer, "«sc.gGetShortName.toFirstUpper»")
+	def void set«sc.containerTypeName.toFirstUpper»(«sc.containerTypeName.toFirstUpper» «sc.containerTypeName.toFirstLower»){
+		val GContainer subContainer = «sc.containerTypeName.toFirstLower».getTarget()
+		containerValue.setContainer(subContainer, "«sc.containerTypeName.toFirstUpper»")
 	}
 	«ENDFOR»
 	
@@ -294,8 +295,9 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		containerValue.getByType(typeof(«sc.gGetShortName»))
 	}
 	
-	def void set«sc.containerTypeName.toFirstUpper»(GContainer subContainer){
-		containerValue.setContainer(subContainer, "«sc.gGetShortName.toFirstUpper»")
+	def void set«sc.containerTypeName.toFirstUpper»(«sc.containerTypeName.toFirstUpper» «sc.containerTypeName.toFirstLower»){
+		val GContainer subContainer = «sc.containerTypeName.toFirstLower».getTarget()
+		containerValue.setContainer(subContainer, "«sc.containerTypeName.toFirstUpper»")
 	}
 	«ENDIF»
 	

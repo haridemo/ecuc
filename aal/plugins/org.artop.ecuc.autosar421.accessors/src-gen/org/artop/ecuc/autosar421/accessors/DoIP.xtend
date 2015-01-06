@@ -167,7 +167,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DoIPConnections))
 		}
 		
-		def void setDoIPConnections(GContainer subContainer){
+		def void setDoIPConnections(DoIPConnections doIPConnections){
+			val GContainer subContainer = doIPConnections.getTarget()
 			containerValue.setContainer(subContainer, "DoIPConnections")
 		}
 		
@@ -237,7 +238,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DoIPPduRRxPdu))
 			}
 			
-			def void setDoIPPduRRxPdu(GContainer subContainer){
+			def void setDoIPPduRRxPdu(DoIPPduRRxPdu doIPPduRRxPdu){
+				val GContainer subContainer = doIPPduRRxPdu.getTarget()
 				containerValue.setContainer(subContainer, "DoIPPduRRxPdu")
 			}
 			
@@ -245,7 +247,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DoIPPduRTxPdu))
 			}
 			
-			def void setDoIPPduRTxPdu(GContainer subContainer){
+			def void setDoIPPduRTxPdu(DoIPPduRTxPdu doIPPduRTxPdu){
+				val GContainer subContainer = doIPPduRTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "DoIPPduRTxPdu")
 			}
 			
@@ -501,7 +504,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DoIPSoAdRxPdu))
 				}
 				
-				def void setDoIPSoAdRxPdu(GContainer subContainer){
+				def void setDoIPSoAdRxPdu(DoIPSoAdRxPdu doIPSoAdRxPdu){
+					val GContainer subContainer = doIPSoAdRxPdu.getTarget()
 					containerValue.setContainer(subContainer, "DoIPSoAdRxPdu")
 				}
 				
@@ -509,7 +513,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DoIPSoAdTxPdu))
 				}
 				
-				def void setDoIPSoAdTxPdu(GContainer subContainer){
+				def void setDoIPSoAdTxPdu(DoIPSoAdTxPdu doIPSoAdTxPdu){
+					val GContainer subContainer = doIPSoAdTxPdu.getTarget()
 					containerValue.setContainer(subContainer, "DoIPSoAdTxPdu")
 				}
 				
@@ -643,7 +648,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DoIPSoAdRxPdu))
 				}
 				
-				def void setDoIPSoAdRxPdu(GContainer subContainer){
+				def void setDoIPSoAdRxPdu(DoIPSoAdRxPdu doIPSoAdRxPdu){
+					val GContainer subContainer = doIPSoAdRxPdu.getTarget()
 					containerValue.setContainer(subContainer, "DoIPSoAdRxPdu")
 				}
 				
@@ -651,7 +657,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DoIPSoAdTxPdu))
 				}
 				
-				def void setDoIPSoAdTxPdu(GContainer subContainer){
+				def void setDoIPSoAdTxPdu(DoIPSoAdTxPdu doIPSoAdTxPdu){
+					val GContainer subContainer = doIPSoAdTxPdu.getTarget()
 					containerValue.setContainer(subContainer, "DoIPSoAdTxPdu")
 				}
 				
@@ -836,7 +843,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DoIPRoutingActivationAuthenticationCallback))
 			}
 			
-			def void setDoIPRoutingActivationAuthenticationCallback(GContainer subContainer){
+			def void setDoIPRoutingActivationAuthenticationCallback(DoIPRoutingActivationAuthenticationCallback doIPRoutingActivationAuthenticationCallback){
+				val GContainer subContainer = doIPRoutingActivationAuthenticationCallback.getTarget()
 				containerValue.setContainer(subContainer, "DoIPRoutingActivationAuthenticationCallback")
 			}
 			
@@ -844,7 +852,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DoIPRoutingActivationConfirmationCallback))
 			}
 			
-			def void setDoIPRoutingActivationConfirmationCallback(GContainer subContainer){
+			def void setDoIPRoutingActivationConfirmationCallback(DoIPRoutingActivationConfirmationCallback doIPRoutingActivationConfirmationCallback){
+				val GContainer subContainer = doIPRoutingActivationConfirmationCallback.getTarget()
 				containerValue.setContainer(subContainer, "DoIPRoutingActivationConfirmationCallback")
 			}
 			
@@ -1492,7 +1501,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DoIPGetGidCallback))
 		}
 		
-		def void setDoIPGetGidCallback(GContainer subContainer){
+		def void setDoIPGetGidCallback(DoIPGetGidCallback doIPGetGidCallback){
+			val GContainer subContainer = doIPGetGidCallback.getTarget()
 			containerValue.setContainer(subContainer, "DoIPGetGidCallback")
 		}
 		
@@ -1500,7 +1510,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DoIPPowerModeCallback))
 		}
 		
-		def void setDoIPPowerModeCallback(GContainer subContainer){
+		def void setDoIPPowerModeCallback(DoIPPowerModeCallback doIPPowerModeCallback){
+			val GContainer subContainer = doIPPowerModeCallback.getTarget()
 			containerValue.setContainer(subContainer, "DoIPPowerModeCallback")
 		}
 		
@@ -1508,7 +1519,8 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DoIPTriggerGidSyncCallback))
 		}
 		
-		def void setDoIPTriggerGidSyncCallback(GContainer subContainer){
+		def void setDoIPTriggerGidSyncCallback(DoIPTriggerGidSyncCallback doIPTriggerGidSyncCallback){
+			val GContainer subContainer = doIPTriggerGidSyncCallback.getTarget()
 			containerValue.setContainer(subContainer, "DoIPTriggerGidSyncCallback")
 		}
 		

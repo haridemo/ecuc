@@ -234,7 +234,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsAlarmAction))
 		}
 		
-		def void setOsAlarmAction(GContainer subContainer){
+		def void setOsAlarmAction(OsAlarmAction osAlarmAction){
+			val GContainer subContainer = osAlarmAction.getTarget()
 			containerValue.setContainer(subContainer, "OsAlarmAction")
 		}
 		
@@ -242,7 +243,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsAlarmAutostart))
 		}
 		
-		def void setOsAlarmAutostart(GContainer subContainer){
+		def void setOsAlarmAutostart(OsAlarmAutostart osAlarmAutostart){
+			val GContainer subContainer = osAlarmAutostart.getTarget()
 			containerValue.setContainer(subContainer, "OsAlarmAutostart")
 		}
 		
@@ -270,28 +272,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(OsAlarmActivateTask))
 			}
 			
-			def void setOsAlarmActivateTask(GContainer subContainer){
+			def void setOsAlarmActivateTask(OsAlarmActivateTask osAlarmActivateTask){
+				val GContainer subContainer = osAlarmActivateTask.getTarget()
 				containerValue.setContainer(subContainer, "OsAlarmActivateTask")
 			}
 			def OsAlarmCallback getOsAlarmCallback(){
 				containerValue.getByType(typeof(OsAlarmCallback))
 			}
 			
-			def void setOsAlarmCallback(GContainer subContainer){
+			def void setOsAlarmCallback(OsAlarmCallback osAlarmCallback){
+				val GContainer subContainer = osAlarmCallback.getTarget()
 				containerValue.setContainer(subContainer, "OsAlarmCallback")
 			}
 			def OsAlarmIncrementCounter getOsAlarmIncrementCounter(){
 				containerValue.getByType(typeof(OsAlarmIncrementCounter))
 			}
 			
-			def void setOsAlarmIncrementCounter(GContainer subContainer){
+			def void setOsAlarmIncrementCounter(OsAlarmIncrementCounter osAlarmIncrementCounter){
+				val GContainer subContainer = osAlarmIncrementCounter.getTarget()
 				containerValue.setContainer(subContainer, "OsAlarmIncrementCounter")
 			}
 			def OsAlarmSetEvent getOsAlarmSetEvent(){
 				containerValue.getByType(typeof(OsAlarmSetEvent))
 			}
 			
-			def void setOsAlarmSetEvent(GContainer subContainer){
+			def void setOsAlarmSetEvent(OsAlarmSetEvent osAlarmSetEvent){
+				val GContainer subContainer = osAlarmSetEvent.getTarget()
 				containerValue.setContainer(subContainer, "OsAlarmSetEvent")
 			}
 			
@@ -870,7 +876,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsApplicationHooks))
 		}
 		
-		def void setOsApplicationHooks(GContainer subContainer){
+		def void setOsApplicationHooks(OsApplicationHooks osApplicationHooks){
+			val GContainer subContainer = osApplicationHooks.getTarget()
 			containerValue.setContainer(subContainer, "OsApplicationHooks")
 		}
 		
@@ -1152,7 +1159,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsDriver))
 		}
 		
-		def void setOsDriver(GContainer subContainer){
+		def void setOsDriver(OsDriver osDriver){
+			val GContainer subContainer = osDriver.getTarget()
 			containerValue.setContainer(subContainer, "OsDriver")
 		}
 		
@@ -1700,7 +1708,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsIsrTimingProtection))
 		}
 		
-		def void setOsIsrTimingProtection(GContainer subContainer){
+		def void setOsIsrTimingProtection(OsIsrTimingProtection osIsrTimingProtection){
+			val GContainer subContainer = osIsrTimingProtection.getTarget()
 			containerValue.setContainer(subContainer, "OsIsrTimingProtection")
 		}
 		
@@ -2029,7 +2038,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsHooks))
 		}
 		
-		def void setOsHooks(GContainer subContainer){
+		def void setOsHooks(OsHooks osHooks){
+			val GContainer subContainer = osHooks.getTarget()
 			containerValue.setContainer(subContainer, "OsHooks")
 		}
 		
@@ -2358,7 +2368,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsScheduleTableAutostart))
 		}
 		
-		def void setOsScheduleTableAutostart(GContainer subContainer){
+		def void setOsScheduleTableAutostart(OsScheduleTableAutostart osScheduleTableAutostart){
+			val GContainer subContainer = osScheduleTableAutostart.getTarget()
 			containerValue.setContainer(subContainer, "OsScheduleTableAutostart")
 		}
 		
@@ -2375,7 +2386,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsScheduleTableSync))
 		}
 		
-		def void setOsScheduleTableSync(GContainer subContainer){
+		def void setOsScheduleTableSync(OsScheduleTableSync osScheduleTableSync){
+			val GContainer subContainer = osScheduleTableSync.getTarget()
 			containerValue.setContainer(subContainer, "OsScheduleTableSync")
 		}
 		
@@ -2547,7 +2559,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(OsScheduleTblAdjustableExpPoint))
 			}
 			
-			def void setOsScheduleTblAdjustableExpPoint(GContainer subContainer){
+			def void setOsScheduleTblAdjustableExpPoint(OsScheduleTblAdjustableExpPoint osScheduleTblAdjustableExpPoint){
+				val GContainer subContainer = osScheduleTblAdjustableExpPoint.getTarget()
 				containerValue.setContainer(subContainer, "OsScheduleTblAdjustableExpPoint")
 			}
 			
@@ -3060,7 +3073,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsTaskAutostart))
 		}
 		
-		def void setOsTaskAutostart(GContainer subContainer){
+		def void setOsTaskAutostart(OsTaskAutostart osTaskAutostart){
+			val GContainer subContainer = osTaskAutostart.getTarget()
 			containerValue.setContainer(subContainer, "OsTaskAutostart")
 		}
 		
@@ -3068,7 +3082,8 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(OsTaskTimingProtection))
 		}
 		
-		def void setOsTaskTimingProtection(GContainer subContainer){
+		def void setOsTaskTimingProtection(OsTaskTimingProtection osTaskTimingProtection){
+			val GContainer subContainer = osTaskTimingProtection.getTarget()
 			containerValue.setContainer(subContainer, "OsTaskTimingProtection")
 		}
 		

@@ -1378,7 +1378,8 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(RteModeSchtblMapBsw))
 			}
 			
-			def void setRteModeSchtblMapBsw(GContainer subContainer){
+			def void setRteModeSchtblMapBsw(RteModeSchtblMapBsw rteModeSchtblMapBsw){
+				val GContainer subContainer = rteModeSchtblMapBsw.getTarget()
 				containerValue.setContainer(subContainer, "RteModeSchtblMapBsw")
 			}
 			
@@ -1386,7 +1387,8 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(RteModeSchtblMapSwc))
 			}
 			
-			def void setRteModeSchtblMapSwc(GContainer subContainer){
+			def void setRteModeSchtblMapSwc(RteModeSchtblMapSwc rteModeSchtblMapSwc){
+				val GContainer subContainer = rteModeSchtblMapSwc.getTarget()
 				containerValue.setContainer(subContainer, "RteModeSchtblMapSwc")
 			}
 			
@@ -2137,7 +2139,8 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(RteComponentTypeCalibration))
 		}
 		
-		def void setRteComponentTypeCalibration(GContainer subContainer){
+		def void setRteComponentTypeCalibration(RteComponentTypeCalibration rteComponentTypeCalibration){
+			val GContainer subContainer = rteComponentTypeCalibration.getTarget()
 			containerValue.setContainer(subContainer, "RteComponentTypeCalibration")
 		}
 		

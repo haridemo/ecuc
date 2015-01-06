@@ -169,7 +169,8 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939NmRxPdu))
 			}
 			
-			def void setJ1939NmRxPdu(GContainer subContainer){
+			def void setJ1939NmRxPdu(J1939NmRxPdu j1939NmRxPdu){
+				val GContainer subContainer = j1939NmRxPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939NmRxPdu")
 			}
 			
@@ -177,7 +178,8 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(J1939NmTxPdu))
 			}
 			
-			def void setJ1939NmTxPdu(GContainer subContainer){
+			def void setJ1939NmTxPdu(J1939NmTxPdu j1939NmTxPdu){
+				val GContainer subContainer = j1939NmTxPdu.getTarget()
 				containerValue.setContainer(subContainer, "J1939NmTxPdu")
 			}
 			

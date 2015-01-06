@@ -155,7 +155,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DemDtr))
 		}
 		
-		def void setDemDtr(GContainer subContainer){
+		def void setDemDtr(DemDtr demDtr){
+			val GContainer subContainer = demDtr.getTarget()
 			containerValue.setContainer(subContainer, "DemDtr")
 		}
 		
@@ -1404,7 +1405,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DemCallbackClearEventAllowed))
 			}
 			
-			def void setDemCallbackClearEventAllowed(GContainer subContainer){
+			def void setDemCallbackClearEventAllowed(DemCallbackClearEventAllowed demCallbackClearEventAllowed){
+				val GContainer subContainer = demCallbackClearEventAllowed.getTarget()
 				containerValue.setContainer(subContainer, "DemCallbackClearEventAllowed")
 			}
 			
@@ -1412,7 +1414,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DemCallbackEventDataChanged))
 			}
 			
-			def void setDemCallbackEventDataChanged(GContainer subContainer){
+			def void setDemCallbackEventDataChanged(DemCallbackEventDataChanged demCallbackEventDataChanged){
+				val GContainer subContainer = demCallbackEventDataChanged.getTarget()
 				containerValue.setContainer(subContainer, "DemCallbackEventDataChanged")
 			}
 			
@@ -1429,7 +1432,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DemCallbackInitMForE))
 			}
 			
-			def void setDemCallbackInitMForE(GContainer subContainer){
+			def void setDemCallbackInitMForE(DemCallbackInitMForE demCallbackInitMForE){
+				val GContainer subContainer = demCallbackInitMForE.getTarget()
 				containerValue.setContainer(subContainer, "DemCallbackInitMForE")
 			}
 			
@@ -1437,7 +1441,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DemDebounceAlgorithmClass))
 			}
 			
-			def void setDemDebounceAlgorithmClass(GContainer subContainer){
+			def void setDemDebounceAlgorithmClass(DemDebounceAlgorithmClass demDebounceAlgorithmClass){
+				val GContainer subContainer = demDebounceAlgorithmClass.getTarget()
 				containerValue.setContainer(subContainer, "DemDebounceAlgorithmClass")
 			}
 			
@@ -1667,21 +1672,24 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DemDebounceCounterBased))
 				}
 				
-				def void setDemDebounceCounterBased(GContainer subContainer){
+				def void setDemDebounceCounterBased(DemDebounceCounterBased demDebounceCounterBased){
+					val GContainer subContainer = demDebounceCounterBased.getTarget()
 					containerValue.setContainer(subContainer, "DemDebounceCounterBased")
 				}
 				def DemDebounceMonitorInternal getDemDebounceMonitorInternal(){
 					containerValue.getByType(typeof(DemDebounceMonitorInternal))
 				}
 				
-				def void setDemDebounceMonitorInternal(GContainer subContainer){
+				def void setDemDebounceMonitorInternal(DemDebounceMonitorInternal demDebounceMonitorInternal){
+					val GContainer subContainer = demDebounceMonitorInternal.getTarget()
 					containerValue.setContainer(subContainer, "DemDebounceMonitorInternal")
 				}
 				def DemDebounceTimeBase getDemDebounceTimeBase(){
 					containerValue.getByType(typeof(DemDebounceTimeBase))
 				}
 				
-				def void setDemDebounceTimeBase(GContainer subContainer){
+				def void setDemDebounceTimeBase(DemDebounceTimeBase demDebounceTimeBase){
+					val GContainer subContainer = demDebounceTimeBase.getTarget()
 					containerValue.setContainer(subContainer, "DemDebounceTimeBase")
 				}
 				
@@ -1745,7 +1753,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DemCallbackGetFDC))
 					}
 					
-					def void setDemCallbackGetFDC(GContainer subContainer){
+					def void setDemCallbackGetFDC(DemCallbackGetFDC demCallbackGetFDC){
+						val GContainer subContainer = demCallbackGetFDC.getTarget()
 						containerValue.setContainer(subContainer, "DemCallbackGetFDC")
 					}
 					
@@ -3208,7 +3217,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DemGeneralJ1939))
 		}
 		
-		def void setDemGeneralJ1939(GContainer subContainer){
+		def void setDemGeneralJ1939(DemGeneralJ1939 demGeneralJ1939){
+			val GContainer subContainer = demGeneralJ1939.getTarget()
 			containerValue.setContainer(subContainer, "DemGeneralJ1939")
 		}
 		
@@ -3216,7 +3226,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DemGeneralOBD))
 		}
 		
-		def void setDemGeneralOBD(GContainer subContainer){
+		def void setDemGeneralOBD(DemGeneralOBD demGeneralOBD){
+			val GContainer subContainer = demGeneralOBD.getTarget()
 			containerValue.setContainer(subContainer, "DemGeneralOBD")
 		}
 		
@@ -3242,7 +3253,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DemMirrorMemory))
 		}
 		
-		def void setDemMirrorMemory(GContainer subContainer){
+		def void setDemMirrorMemory(DemMirrorMemory demMirrorMemory){
+			val GContainer subContainer = demMirrorMemory.getTarget()
 			containerValue.setContainer(subContainer, "DemMirrorMemory")
 		}
 		
@@ -3268,7 +3280,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DemPrimaryMemory))
 		}
 		
-		def void setDemPrimaryMemory(GContainer subContainer){
+		def void setDemPrimaryMemory(DemPrimaryMemory demPrimaryMemory){
+			val GContainer subContainer = demPrimaryMemory.getTarget()
 			containerValue.setContainer(subContainer, "DemPrimaryMemory")
 		}
 		
@@ -3372,21 +3385,24 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DemExternalCSDataElementClass))
 			}
 			
-			def void setDemExternalCSDataElementClass(GContainer subContainer){
+			def void setDemExternalCSDataElementClass(DemExternalCSDataElementClass demExternalCSDataElementClass){
+				val GContainer subContainer = demExternalCSDataElementClass.getTarget()
 				containerValue.setContainer(subContainer, "DemExternalCSDataElementClass")
 			}
 			def DemExternalSRDataElementClass getDemExternalSRDataElementClass(){
 				containerValue.getByType(typeof(DemExternalSRDataElementClass))
 			}
 			
-			def void setDemExternalSRDataElementClass(GContainer subContainer){
+			def void setDemExternalSRDataElementClass(DemExternalSRDataElementClass demExternalSRDataElementClass){
+				val GContainer subContainer = demExternalSRDataElementClass.getTarget()
 				containerValue.setContainer(subContainer, "DemExternalSRDataElementClass")
 			}
 			def DemInternalDataElementClass getDemInternalDataElementClass(){
 				containerValue.getByType(typeof(DemInternalDataElementClass))
 			}
 			
-			def void setDemInternalDataElementClass(GContainer subContainer){
+			def void setDemInternalDataElementClass(DemInternalDataElementClass demInternalDataElementClass){
+				val GContainer subContainer = demInternalDataElementClass.getTarget()
 				containerValue.setContainer(subContainer, "DemInternalDataElementClass")
 			}
 			
@@ -3581,7 +3597,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DemDiagnosisScaling))
 				}
 				
-				def void setDemDiagnosisScaling(GContainer subContainer){
+				def void setDemDiagnosisScaling(DemDiagnosisScaling demDiagnosisScaling){
+					val GContainer subContainer = demDiagnosisScaling.getTarget()
 					containerValue.setContainer(subContainer, "DemDiagnosisScaling")
 				}
 				
@@ -3589,7 +3606,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DemSRDataElementClass))
 				}
 				
-				def void setDemSRDataElementClass(GContainer subContainer){
+				def void setDemSRDataElementClass(DemSRDataElementClass demSRDataElementClass){
+					val GContainer subContainer = demSRDataElementClass.getTarget()
 					containerValue.setContainer(subContainer, "DemSRDataElementClass")
 				}
 				
@@ -3617,21 +3635,24 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DemAlternativeDataInterface))
 					}
 					
-					def void setDemAlternativeDataInterface(GContainer subContainer){
+					def void setDemAlternativeDataInterface(DemAlternativeDataInterface demAlternativeDataInterface){
+						val GContainer subContainer = demAlternativeDataInterface.getTarget()
 						containerValue.setContainer(subContainer, "DemAlternativeDataInterface")
 					}
 					def DemAlternativeDataProps getDemAlternativeDataProps(){
 						containerValue.getByType(typeof(DemAlternativeDataProps))
 					}
 					
-					def void setDemAlternativeDataProps(GContainer subContainer){
+					def void setDemAlternativeDataProps(DemAlternativeDataProps demAlternativeDataProps){
+						val GContainer subContainer = demAlternativeDataProps.getTarget()
 						containerValue.setContainer(subContainer, "DemAlternativeDataProps")
 					}
 					def DemAlternativeDataType getDemAlternativeDataType(){
 						containerValue.getByType(typeof(DemAlternativeDataType))
 					}
 					
-					def void setDemAlternativeDataType(GContainer subContainer){
+					def void setDemAlternativeDataType(DemAlternativeDataType demAlternativeDataType){
+						val GContainer subContainer = demAlternativeDataType.getTarget()
 						containerValue.setContainer(subContainer, "DemAlternativeDataType")
 					}
 					
@@ -3719,7 +3740,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							containerValue.getByType(typeof(DemLinearScale))
 						}
 						
-						def void setDemLinearScale(GContainer subContainer){
+						def void setDemLinearScale(DemLinearScale demLinearScale){
+							val GContainer subContainer = demLinearScale.getTarget()
 							containerValue.setContainer(subContainer, "DemLinearScale")
 						}
 						
@@ -3994,21 +4016,24 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DemDataElementInstance))
 					}
 					
-					def void setDemDataElementInstance(GContainer subContainer){
+					def void setDemDataElementInstance(DemDataElementInstance demDataElementInstance){
+						val GContainer subContainer = demDataElementInstance.getTarget()
 						containerValue.setContainer(subContainer, "DemDataElementInstance")
 					}
 					def DemSubElementInDataElementInstance getDemSubElementInDataElementInstance(){
 						containerValue.getByType(typeof(DemSubElementInDataElementInstance))
 					}
 					
-					def void setDemSubElementInDataElementInstance(GContainer subContainer){
+					def void setDemSubElementInDataElementInstance(DemSubElementInDataElementInstance demSubElementInDataElementInstance){
+						val GContainer subContainer = demSubElementInDataElementInstance.getTarget()
 						containerValue.setContainer(subContainer, "DemSubElementInDataElementInstance")
 					}
 					def DemSubElementInImplDataElementInstance getDemSubElementInImplDataElementInstance(){
 						containerValue.getByType(typeof(DemSubElementInImplDataElementInstance))
 					}
 					
-					def void setDemSubElementInImplDataElementInstance(GContainer subContainer){
+					def void setDemSubElementInImplDataElementInstance(DemSubElementInImplDataElementInstance demSubElementInImplDataElementInstance){
+						val GContainer subContainer = demSubElementInImplDataElementInstance.getTarget()
 						containerValue.setContainer(subContainer, "DemSubElementInImplDataElementInstance")
 					}
 					

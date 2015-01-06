@@ -110,7 +110,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DcmDsd))
 		}
 		
-		def void setDcmDsd(GContainer subContainer){
+		def void setDcmDsd(DcmDsd dcmDsd){
+			val GContainer subContainer = dcmDsd.getTarget()
 			containerValue.setContainer(subContainer, "DcmDsd")
 		}
 		
@@ -118,7 +119,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DcmDsl))
 		}
 		
-		def void setDcmDsl(GContainer subContainer){
+		def void setDcmDsl(DcmDsl dcmDsl){
+			val GContainer subContainer = dcmDsl.getTarget()
 			containerValue.setContainer(subContainer, "DcmDsl")
 		}
 		
@@ -126,7 +128,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DcmDsp))
 		}
 		
-		def void setDcmDsp(GContainer subContainer){
+		def void setDcmDsp(DcmDsp dcmDsp){
+			val GContainer subContainer = dcmDsp.getTarget()
 			containerValue.setContainer(subContainer, "DcmDsp")
 		}
 		
@@ -134,7 +137,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DcmPageBufferCfg))
 		}
 		
-		def void setDcmPageBufferCfg(GContainer subContainer){
+		def void setDcmPageBufferCfg(DcmPageBufferCfg dcmPageBufferCfg){
+			val GContainer subContainer = dcmPageBufferCfg.getTarget()
 			containerValue.setContainer(subContainer, "DcmPageBufferCfg")
 		}
 		
@@ -142,7 +146,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(DcmProcessingConditions))
 		}
 		
-		def void setDcmProcessingConditions(GContainer subContainer){
+		def void setDcmProcessingConditions(DcmProcessingConditions dcmProcessingConditions){
+			val GContainer subContainer = dcmProcessingConditions.getTarget()
 			containerValue.setContainer(subContainer, "DcmProcessingConditions")
 		}
 		
@@ -693,7 +698,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDslDiagResp))
 			}
 			
-			def void setDcmDslDiagResp(GContainer subContainer){
+			def void setDcmDslDiagResp(DcmDslDiagResp dcmDslDiagResp){
+				val GContainer subContainer = dcmDslDiagResp.getTarget()
 				containerValue.setContainer(subContainer, "DcmDslDiagResp")
 			}
 			
@@ -701,7 +707,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDslProtocol))
 			}
 			
-			def void setDcmDslProtocol(GContainer subContainer){
+			def void setDcmDslProtocol(DcmDslProtocol dcmDslProtocol){
+				val GContainer subContainer = dcmDslProtocol.getTarget()
 				containerValue.setContainer(subContainer, "DcmDslProtocol")
 			}
 			
@@ -1172,21 +1179,24 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.getByType(typeof(DcmDslMainConnection))
 						}
 						
-						def void setDcmDslMainConnection(GContainer subContainer){
+						def void setDcmDslMainConnection(DcmDslMainConnection dcmDslMainConnection){
+							val GContainer subContainer = dcmDslMainConnection.getTarget()
 							containerValue.setContainer(subContainer, "DcmDslMainConnection")
 						}
 						def DcmDslPeriodicTransmission getDcmDslPeriodicTransmission(){
 							containerValue.getByType(typeof(DcmDslPeriodicTransmission))
 						}
 						
-						def void setDcmDslPeriodicTransmission(GContainer subContainer){
+						def void setDcmDslPeriodicTransmission(DcmDslPeriodicTransmission dcmDslPeriodicTransmission){
+							val GContainer subContainer = dcmDslPeriodicTransmission.getTarget()
 							containerValue.setContainer(subContainer, "DcmDslPeriodicTransmission")
 						}
 						def DcmDslResponseOnEvent getDcmDslResponseOnEvent(){
 							containerValue.getByType(typeof(DcmDslResponseOnEvent))
 						}
 						
-						def void setDcmDslResponseOnEvent(GContainer subContainer){
+						def void setDcmDslResponseOnEvent(DcmDslResponseOnEvent dcmDslResponseOnEvent){
+							val GContainer subContainer = dcmDslResponseOnEvent.getTarget()
 							containerValue.setContainer(subContainer, "DcmDslResponseOnEvent")
 						}
 						
@@ -1273,7 +1283,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.getByType(typeof(DcmDslProtocolTx))
 							}
 							
-							def void setDcmDslProtocolTx(GContainer subContainer){
+							def void setDcmDslProtocolTx(DcmDslProtocolTx dcmDslProtocolTx){
+								val GContainer subContainer = dcmDslProtocolTx.getTarget()
 								containerValue.setContainer(subContainer, "DcmDslProtocolTx")
 							}
 							
@@ -1715,7 +1726,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspComControl))
 			}
 			
-			def void setDcmDspComControl(GContainer subContainer){
+			def void setDcmDspComControl(DcmDspComControl dcmDspComControl){
+				val GContainer subContainer = dcmDspComControl.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspComControl")
 			}
 			
@@ -1732,7 +1744,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspControlDTCSetting))
 			}
 			
-			def void setDcmDspControlDTCSetting(GContainer subContainer){
+			def void setDcmDspControlDTCSetting(DcmDspControlDTCSetting dcmDspControlDTCSetting){
+				val GContainer subContainer = dcmDspControlDTCSetting.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspControlDTCSetting")
 			}
 			
@@ -1785,7 +1798,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspMemory))
 			}
 			
-			def void setDcmDspMemory(GContainer subContainer){
+			def void setDcmDspMemory(DcmDspMemory dcmDspMemory){
+				val GContainer subContainer = dcmDspMemory.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspMemory")
 			}
 			
@@ -1793,7 +1807,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspPeriodicDidTransmission))
 			}
 			
-			def void setDcmDspPeriodicDidTransmission(GContainer subContainer){
+			def void setDcmDspPeriodicDidTransmission(DcmDspPeriodicDidTransmission dcmDspPeriodicDidTransmission){
+				val GContainer subContainer = dcmDspPeriodicDidTransmission.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspPeriodicDidTransmission")
 			}
 			
@@ -1801,7 +1816,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspPeriodicTransmission))
 			}
 			
-			def void setDcmDspPeriodicTransmission(GContainer subContainer){
+			def void setDcmDspPeriodicTransmission(DcmDspPeriodicTransmission dcmDspPeriodicTransmission){
+				val GContainer subContainer = dcmDspPeriodicTransmission.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspPeriodicTransmission")
 			}
 			
@@ -1827,7 +1843,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspRequestFileTransfer))
 			}
 			
-			def void setDcmDspRequestFileTransfer(GContainer subContainer){
+			def void setDcmDspRequestFileTransfer(DcmDspRequestFileTransfer dcmDspRequestFileTransfer){
+				val GContainer subContainer = dcmDspRequestFileTransfer.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspRequestFileTransfer")
 			}
 			
@@ -1835,7 +1852,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspRoe))
 			}
 			
-			def void setDcmDspRoe(GContainer subContainer){
+			def void setDcmDspRoe(DcmDspRoe dcmDspRoe){
+				val GContainer subContainer = dcmDspRoe.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspRoe")
 			}
 			
@@ -1852,7 +1870,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspSecurity))
 			}
 			
-			def void setDcmDspSecurity(GContainer subContainer){
+			def void setDcmDspSecurity(DcmDspSecurity dcmDspSecurity){
+				val GContainer subContainer = dcmDspSecurity.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspSecurity")
 			}
 			
@@ -1860,7 +1879,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(DcmDspSession))
 			}
 			
-			def void setDcmDspSession(GContainer subContainer){
+			def void setDcmDspSession(DcmDspSession dcmDspSession){
+				val GContainer subContainer = dcmDspSession.getTarget()
 				containerValue.setContainer(subContainer, "DcmDspSession")
 			}
 			
@@ -1908,7 +1928,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspComControlSetting))
 				}
 				
-				def void setDcmDspComControlSetting(GContainer subContainer){
+				def void setDcmDspComControlSetting(DcmDspComControlSetting dcmDspComControlSetting){
+					val GContainer subContainer = dcmDspComControlSetting.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspComControlSetting")
 				}
 				
@@ -2715,7 +2736,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspDiagnosisScaling))
 				}
 				
-				def void setDcmDspDiagnosisScaling(GContainer subContainer){
+				def void setDcmDspDiagnosisScaling(DcmDspDiagnosisScaling dcmDspDiagnosisScaling){
+					val GContainer subContainer = dcmDspDiagnosisScaling.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspDiagnosisScaling")
 				}
 				
@@ -2723,7 +2745,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspExternalSRDataElementClass))
 				}
 				
-				def void setDcmDspExternalSRDataElementClass(GContainer subContainer){
+				def void setDcmDspExternalSRDataElementClass(DcmDspExternalSRDataElementClass dcmDspExternalSRDataElementClass){
+					val GContainer subContainer = dcmDspExternalSRDataElementClass.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspExternalSRDataElementClass")
 				}
 				
@@ -2751,21 +2774,24 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspAlternativeDataInterface))
 					}
 					
-					def void setDcmDspAlternativeDataInterface(GContainer subContainer){
+					def void setDcmDspAlternativeDataInterface(DcmDspAlternativeDataInterface dcmDspAlternativeDataInterface){
+						val GContainer subContainer = dcmDspAlternativeDataInterface.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspAlternativeDataInterface")
 					}
 					def DcmDspAlternativeDataProps getDcmDspAlternativeDataProps(){
 						containerValue.getByType(typeof(DcmDspAlternativeDataProps))
 					}
 					
-					def void setDcmDspAlternativeDataProps(GContainer subContainer){
+					def void setDcmDspAlternativeDataProps(DcmDspAlternativeDataProps dcmDspAlternativeDataProps){
+						val GContainer subContainer = dcmDspAlternativeDataProps.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspAlternativeDataProps")
 					}
 					def DcmDspAlternativeDataType getDcmDspAlternativeDataType(){
 						containerValue.getByType(typeof(DcmDspAlternativeDataType))
 					}
 					
-					def void setDcmDspAlternativeDataType(GContainer subContainer){
+					def void setDcmDspAlternativeDataType(DcmDspAlternativeDataType dcmDspAlternativeDataType){
+						val GContainer subContainer = dcmDspAlternativeDataType.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspAlternativeDataType")
 					}
 					
@@ -2855,7 +2881,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.getByType(typeof(DcmDspLinearScale))
 						}
 						
-						def void setDcmDspLinearScale(GContainer subContainer){
+						def void setDcmDspLinearScale(DcmDspLinearScale dcmDspLinearScale){
+							val GContainer subContainer = dcmDspLinearScale.getTarget()
 							containerValue.setContainer(subContainer, "DcmDspLinearScale")
 						}
 						
@@ -3130,21 +3157,24 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDataElementInstance))
 					}
 					
-					def void setDcmDataElementInstance(GContainer subContainer){
+					def void setDcmDataElementInstance(DcmDataElementInstance dcmDataElementInstance){
+						val GContainer subContainer = dcmDataElementInstance.getTarget()
 						containerValue.setContainer(subContainer, "DcmDataElementInstance")
 					}
 					def DcmSubElementInDataElementInstance getDcmSubElementInDataElementInstance(){
 						containerValue.getByType(typeof(DcmSubElementInDataElementInstance))
 					}
 					
-					def void setDcmSubElementInDataElementInstance(GContainer subContainer){
+					def void setDcmSubElementInDataElementInstance(DcmSubElementInDataElementInstance dcmSubElementInDataElementInstance){
+						val GContainer subContainer = dcmSubElementInDataElementInstance.getTarget()
 						containerValue.setContainer(subContainer, "DcmSubElementInDataElementInstance")
 					}
 					def DcmSubElementInImplDataElementInstance getDcmSubElementInImplDataElementInstance(){
 						containerValue.getByType(typeof(DcmSubElementInImplDataElementInstance))
 					}
 					
-					def void setDcmSubElementInImplDataElementInstance(GContainer subContainer){
+					def void setDcmSubElementInImplDataElementInstance(DcmSubElementInImplDataElementInstance dcmSubElementInImplDataElementInstance){
+						val GContainer subContainer = dcmSubElementInImplDataElementInstance.getTarget()
 						containerValue.setContainer(subContainer, "DcmSubElementInImplDataElementInstance")
 					}
 					
@@ -3506,7 +3536,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspDidControl))
 				}
 				
-				def void setDcmDspDidControl(GContainer subContainer){
+				def void setDcmDspDidControl(DcmDspDidControl dcmDspDidControl){
+					val GContainer subContainer = dcmDspDidControl.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspDidControl")
 				}
 				
@@ -3514,7 +3545,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspDidRead))
 				}
 				
-				def void setDcmDspDidRead(GContainer subContainer){
+				def void setDcmDspDidRead(DcmDspDidRead dcmDspDidRead){
+					val GContainer subContainer = dcmDspDidRead.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspDidRead")
 				}
 				
@@ -3522,7 +3554,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspDidWrite))
 				}
 				
-				def void setDcmDspDidWrite(GContainer subContainer){
+				def void setDcmDspDidWrite(DcmDspDidWrite dcmDspDidWrite){
+					val GContainer subContainer = dcmDspDidWrite.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspDidWrite")
 				}
 				
@@ -4068,7 +4101,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspAddressAndLengthFormatIdentifier))
 				}
 				
-				def void setDcmDspAddressAndLengthFormatIdentifier(GContainer subContainer){
+				def void setDcmDspAddressAndLengthFormatIdentifier(DcmDspAddressAndLengthFormatIdentifier dcmDspAddressAndLengthFormatIdentifier){
+					val GContainer subContainer = dcmDspAddressAndLengthFormatIdentifier.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspAddressAndLengthFormatIdentifier")
 				}
 				
@@ -4671,7 +4705,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspPidDataSupportInfo))
 					}
 					
-					def void setDcmDspPidDataSupportInfo(GContainer subContainer){
+					def void setDcmDspPidDataSupportInfo(DcmDspPidDataSupportInfo dcmDspPidDataSupportInfo){
+						val GContainer subContainer = dcmDspPidDataSupportInfo.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspPidDataSupportInfo")
 					}
 					
@@ -4679,7 +4714,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspPidService01))
 					}
 					
-					def void setDcmDspPidService01(GContainer subContainer){
+					def void setDcmDspPidService01(DcmDspPidService01 dcmDspPidService01){
+						val GContainer subContainer = dcmDspPidService01.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspPidService01")
 					}
 					
@@ -4687,7 +4723,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspPidService02))
 					}
 					
-					def void setDcmDspPidService02(GContainer subContainer){
+					def void setDcmDspPidService02(DcmDspPidService02 dcmDspPidService02){
+						val GContainer subContainer = dcmDspPidService02.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspPidService02")
 					}
 					
@@ -5263,7 +5300,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspRoeEventProperties))
 					}
 					
-					def void setDcmDspRoeEventProperties(GContainer subContainer){
+					def void setDcmDspRoeEventProperties(DcmDspRoeEventProperties dcmDspRoeEventProperties){
+						val GContainer subContainer = dcmDspRoeEventProperties.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspRoeEventProperties")
 					}
 					
@@ -5291,14 +5329,16 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.getByType(typeof(DcmDspRoeOnChangeOfDataIdentifier))
 						}
 						
-						def void setDcmDspRoeOnChangeOfDataIdentifier(GContainer subContainer){
+						def void setDcmDspRoeOnChangeOfDataIdentifier(DcmDspRoeOnChangeOfDataIdentifier dcmDspRoeOnChangeOfDataIdentifier){
+							val GContainer subContainer = dcmDspRoeOnChangeOfDataIdentifier.getTarget()
 							containerValue.setContainer(subContainer, "DcmDspRoeOnChangeOfDataIdentifier")
 						}
 						def DcmDspRoeOnDTCStatusChange getDcmDspRoeOnDTCStatusChange(){
 							containerValue.getByType(typeof(DcmDspRoeOnDTCStatusChange))
 						}
 						
-						def void setDcmDspRoeOnDTCStatusChange(GContainer subContainer){
+						def void setDcmDspRoeOnDTCStatusChange(DcmDspRoeOnDTCStatusChange dcmDspRoeOnDTCStatusChange){
+							val GContainer subContainer = dcmDspRoeOnDTCStatusChange.getTarget()
 							containerValue.setContainer(subContainer, "DcmDspRoeOnDTCStatusChange")
 						}
 						
@@ -5537,7 +5577,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspRequestRoutineResults))
 				}
 				
-				def void setDcmDspRequestRoutineResults(GContainer subContainer){
+				def void setDcmDspRequestRoutineResults(DcmDspRequestRoutineResults dcmDspRequestRoutineResults){
+					val GContainer subContainer = dcmDspRequestRoutineResults.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspRequestRoutineResults")
 				}
 				
@@ -5545,7 +5586,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspStartRoutine))
 				}
 				
-				def void setDcmDspStartRoutine(GContainer subContainer){
+				def void setDcmDspStartRoutine(DcmDspStartRoutine dcmDspStartRoutine){
+					val GContainer subContainer = dcmDspStartRoutine.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspStartRoutine")
 				}
 				
@@ -5553,7 +5595,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(DcmDspStopRoutine))
 				}
 				
-				def void setDcmDspStopRoutine(GContainer subContainer){
+				def void setDcmDspStopRoutine(DcmDspStopRoutine dcmDspStopRoutine){
+					val GContainer subContainer = dcmDspStopRoutine.getTarget()
 					containerValue.setContainer(subContainer, "DcmDspStopRoutine")
 				}
 				
@@ -5599,7 +5642,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspRequestRoutineResultsOut))
 					}
 					
-					def void setDcmDspRequestRoutineResultsOut(GContainer subContainer){
+					def void setDcmDspRequestRoutineResultsOut(DcmDspRequestRoutineResultsOut dcmDspRequestRoutineResultsOut){
+						val GContainer subContainer = dcmDspRequestRoutineResultsOut.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspRequestRoutineResultsOut")
 					}
 					
@@ -5816,7 +5860,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspStartRoutineIn))
 					}
 					
-					def void setDcmDspStartRoutineIn(GContainer subContainer){
+					def void setDcmDspStartRoutineIn(DcmDspStartRoutineIn dcmDspStartRoutineIn){
+						val GContainer subContainer = dcmDspStartRoutineIn.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspStartRoutineIn")
 					}
 					
@@ -5824,7 +5869,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspStartRoutineOut))
 					}
 					
-					def void setDcmDspStartRoutineOut(GContainer subContainer){
+					def void setDcmDspStartRoutineOut(DcmDspStartRoutineOut dcmDspStartRoutineOut){
+						val GContainer subContainer = dcmDspStartRoutineOut.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspStartRoutineOut")
 					}
 					
@@ -6210,7 +6256,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspStopRoutineIn))
 					}
 					
-					def void setDcmDspStopRoutineIn(GContainer subContainer){
+					def void setDcmDspStopRoutineIn(DcmDspStopRoutineIn dcmDspStopRoutineIn){
+						val GContainer subContainer = dcmDspStopRoutineIn.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspStopRoutineIn")
 					}
 					
@@ -6218,7 +6265,8 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(DcmDspStopRoutineOut))
 					}
 					
-					def void setDcmDspStopRoutineOut(GContainer subContainer){
+					def void setDcmDspStopRoutineOut(DcmDspStopRoutineOut dcmDspStopRoutineOut){
+						val GContainer subContainer = dcmDspStopRoutineOut.getTarget()
 						containerValue.setContainer(subContainer, "DcmDspStopRoutineOut")
 					}
 					

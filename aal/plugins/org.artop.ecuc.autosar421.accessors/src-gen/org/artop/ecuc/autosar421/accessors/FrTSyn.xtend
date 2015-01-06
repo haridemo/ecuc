@@ -158,7 +158,8 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrTSynGlobalTimeOfsDataIDList))
 		}
 		
-		def void setFrTSynGlobalTimeOfsDataIDList(GContainer subContainer){
+		def void setFrTSynGlobalTimeOfsDataIDList(FrTSynGlobalTimeOfsDataIDList frTSynGlobalTimeOfsDataIDList){
+			val GContainer subContainer = frTSynGlobalTimeOfsDataIDList.getTarget()
 			containerValue.setContainer(subContainer, "FrTSynGlobalTimeOfsDataIDList")
 		}
 		
@@ -166,7 +167,8 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrTSynGlobalTimeSyncDataIDList))
 		}
 		
-		def void setFrTSynGlobalTimeSyncDataIDList(GContainer subContainer){
+		def void setFrTSynGlobalTimeSyncDataIDList(FrTSynGlobalTimeSyncDataIDList frTSynGlobalTimeSyncDataIDList){
+			val GContainer subContainer = frTSynGlobalTimeSyncDataIDList.getTarget()
 			containerValue.setContainer(subContainer, "FrTSynGlobalTimeSyncDataIDList")
 		}
 		
@@ -418,7 +420,8 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrTSynGlobalTimeMaster))
 		}
 		
-		def void setFrTSynGlobalTimeMaster(GContainer subContainer){
+		def void setFrTSynGlobalTimeMaster(FrTSynGlobalTimeMaster frTSynGlobalTimeMaster){
+			val GContainer subContainer = frTSynGlobalTimeMaster.getTarget()
 			containerValue.setContainer(subContainer, "FrTSynGlobalTimeMaster")
 		}
 		
@@ -426,7 +429,8 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FrTSynGlobalTimeSlave))
 		}
 		
-		def void setFrTSynGlobalTimeSlave(GContainer subContainer){
+		def void setFrTSynGlobalTimeSlave(FrTSynGlobalTimeSlave frTSynGlobalTimeSlave){
+			val GContainer subContainer = frTSynGlobalTimeSlave.getTarget()
 			containerValue.setContainer(subContainer, "FrTSynGlobalTimeSlave")
 		}
 		
@@ -505,7 +509,8 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrTSynGlobalTimeMasterPdu))
 			}
 			
-			def void setFrTSynGlobalTimeMasterPdu(GContainer subContainer){
+			def void setFrTSynGlobalTimeMasterPdu(FrTSynGlobalTimeMasterPdu frTSynGlobalTimeMasterPdu){
+				val GContainer subContainer = frTSynGlobalTimeMasterPdu.getTarget()
 				containerValue.setContainer(subContainer, "FrTSynGlobalTimeMasterPdu")
 			}
 			
@@ -623,7 +628,8 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrTSynGlobalTimeSlavePdu))
 			}
 			
-			def void setFrTSynGlobalTimeSlavePdu(GContainer subContainer){
+			def void setFrTSynGlobalTimeSlavePdu(FrTSynGlobalTimeSlavePdu frTSynGlobalTimeSlavePdu){
+				val GContainer subContainer = frTSynGlobalTimeSlavePdu.getTarget()
 				containerValue.setContainer(subContainer, "FrTSynGlobalTimeSlavePdu")
 			}
 			

@@ -311,7 +311,8 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FlsDemEventParameterRefs))
 		}
 		
-		def void setFlsDemEventParameterRefs(GContainer subContainer){
+		def void setFlsDemEventParameterRefs(FlsDemEventParameterRefs flsDemEventParameterRefs){
+			val GContainer subContainer = flsDemEventParameterRefs.getTarget()
 			containerValue.setContainer(subContainer, "FlsDemEventParameterRefs")
 		}
 		
@@ -319,7 +320,8 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FlsExternalDriver))
 		}
 		
-		def void setFlsExternalDriver(GContainer subContainer){
+		def void setFlsExternalDriver(FlsExternalDriver flsExternalDriver){
+			val GContainer subContainer = flsExternalDriver.getTarget()
 			containerValue.setContainer(subContainer, "FlsExternalDriver")
 		}
 		
@@ -327,7 +329,8 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(FlsSectorList))
 		}
 		
-		def void setFlsSectorList(GContainer subContainer){
+		def void setFlsSectorList(FlsSectorList flsSectorList){
+			val GContainer subContainer = flsSectorList.getTarget()
 			containerValue.setContainer(subContainer, "FlsSectorList")
 		}
 		

@@ -808,7 +808,8 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrIfClusterDemEventParameterRefs))
 			}
 			
-			def void setFrIfClusterDemEventParameterRefs(GContainer subContainer){
+			def void setFrIfClusterDemEventParameterRefs(FrIfClusterDemEventParameterRefs frIfClusterDemEventParameterRefs){
+				val GContainer subContainer = frIfClusterDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "FrIfClusterDemEventParameterRefs")
 			}
 			
@@ -825,7 +826,8 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrIfJobList))
 			}
 			
-			def void setFrIfJobList(GContainer subContainer){
+			def void setFrIfJobList(FrIfJobList frIfJobList){
+				val GContainer subContainer = frIfJobList.getTarget()
 				containerValue.setContainer(subContainer, "FrIfJobList")
 			}
 			
@@ -1195,7 +1197,8 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(FrIfFrameTriggeringDemEventParameterRefs))
 					}
 					
-					def void setFrIfFrameTriggeringDemEventParameterRefs(GContainer subContainer){
+					def void setFrIfFrameTriggeringDemEventParameterRefs(FrIfFrameTriggeringDemEventParameterRefs frIfFrameTriggeringDemEventParameterRefs){
+						val GContainer subContainer = frIfFrameTriggeringDemEventParameterRefs.getTarget()
 						containerValue.setContainer(subContainer, "FrIfFrameTriggeringDemEventParameterRefs")
 					}
 					
@@ -1771,7 +1774,8 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(FrIfPduDirection))
 			}
 			
-			def void setFrIfPduDirection(GContainer subContainer){
+			def void setFrIfPduDirection(FrIfPduDirection frIfPduDirection){
+				val GContainer subContainer = frIfPduDirection.getTarget()
 				containerValue.setContainer(subContainer, "FrIfPduDirection")
 			}
 			
@@ -1799,14 +1803,16 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(FrIfRxPdu))
 				}
 				
-				def void setFrIfRxPdu(GContainer subContainer){
+				def void setFrIfRxPdu(FrIfRxPdu frIfRxPdu){
+					val GContainer subContainer = frIfRxPdu.getTarget()
 					containerValue.setContainer(subContainer, "FrIfRxPdu")
 				}
 				def FrIfTxPdu getFrIfTxPdu(){
 					containerValue.getByType(typeof(FrIfTxPdu))
 				}
 				
-				def void setFrIfTxPdu(GContainer subContainer){
+				def void setFrIfTxPdu(FrIfTxPdu frIfTxPdu){
+					val GContainer subContainer = frIfTxPdu.getTarget()
 					containerValue.setContainer(subContainer, "FrIfTxPdu")
 				}
 				

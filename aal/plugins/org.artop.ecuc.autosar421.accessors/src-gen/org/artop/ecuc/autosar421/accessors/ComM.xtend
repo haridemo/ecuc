@@ -361,7 +361,8 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(ComMNetworkManagement))
 			}
 			
-			def void setComMNetworkManagement(GContainer subContainer){
+			def void setComMNetworkManagement(ComMNetworkManagement comMNetworkManagement){
+				val GContainer subContainer = comMNetworkManagement.getTarget()
 				containerValue.setContainer(subContainer, "ComMNetworkManagement")
 			}
 			

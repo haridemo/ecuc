@@ -118,7 +118,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddComIfUpperLayerContribution))
 		}
 		
-		def void setCddComIfUpperLayerContribution(GContainer subContainer){
+		def void setCddComIfUpperLayerContribution(CddComIfUpperLayerContribution cddComIfUpperLayerContribution){
+			val GContainer subContainer = cddComIfUpperLayerContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddComIfUpperLayerContribution")
 		}
 		
@@ -126,7 +127,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddComMLowerLayerContribution))
 		}
 		
-		def void setCddComMLowerLayerContribution(GContainer subContainer){
+		def void setCddComMLowerLayerContribution(CddComMLowerLayerContribution cddComMLowerLayerContribution){
+			val GContainer subContainer = cddComMLowerLayerContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddComMLowerLayerContribution")
 		}
 		
@@ -134,7 +136,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddGenericNmLowerLayerContribution))
 		}
 		
-		def void setCddGenericNmLowerLayerContribution(GContainer subContainer){
+		def void setCddGenericNmLowerLayerContribution(CddGenericNmLowerLayerContribution cddGenericNmLowerLayerContribution){
+			val GContainer subContainer = cddGenericNmLowerLayerContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddGenericNmLowerLayerContribution")
 		}
 		
@@ -142,7 +145,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddPduRLowerLayerContribution))
 		}
 		
-		def void setCddPduRLowerLayerContribution(GContainer subContainer){
+		def void setCddPduRLowerLayerContribution(CddPduRLowerLayerContribution cddPduRLowerLayerContribution){
+			val GContainer subContainer = cddPduRLowerLayerContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddPduRLowerLayerContribution")
 		}
 		
@@ -150,7 +154,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddPduRUpperLayerContribution))
 		}
 		
-		def void setCddPduRUpperLayerContribution(GContainer subContainer){
+		def void setCddPduRUpperLayerContribution(CddPduRUpperLayerContribution cddPduRUpperLayerContribution){
+			val GContainer subContainer = cddPduRUpperLayerContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddPduRUpperLayerContribution")
 		}
 		
@@ -158,7 +163,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddSoAdUpperLayerContribution))
 		}
 		
-		def void setCddSoAdUpperLayerContribution(GContainer subContainer){
+		def void setCddSoAdUpperLayerContribution(CddSoAdUpperLayerContribution cddSoAdUpperLayerContribution){
+			val GContainer subContainer = cddSoAdUpperLayerContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddSoAdUpperLayerContribution")
 		}
 		
@@ -1099,7 +1105,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddComStackContribution))
 		}
 		
-		def void setCddComStackContribution(GContainer subContainer){
+		def void setCddComStackContribution(CddComStackContribution cddComStackContribution){
+			val GContainer subContainer = cddComStackContribution.getTarget()
 			containerValue.setContainer(subContainer, "CddComStackContribution")
 		}
 		
@@ -1107,7 +1114,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(CddEcucPartitionInteraction))
 		}
 		
-		def void setCddEcucPartitionInteraction(GContainer subContainer){
+		def void setCddEcucPartitionInteraction(CddEcucPartitionInteraction cddEcucPartitionInteraction){
+			val GContainer subContainer = cddEcucPartitionInteraction.getTarget()
 			containerValue.setContainer(subContainer, "CddEcucPartitionInteraction")
 		}
 		
@@ -1137,7 +1145,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CddComIfUpperLayerContribution))
 			}
 			
-			def void setCddComIfUpperLayerContribution(GContainer subContainer){
+			def void setCddComIfUpperLayerContribution(CddComIfUpperLayerContribution cddComIfUpperLayerContribution){
+				val GContainer subContainer = cddComIfUpperLayerContribution.getTarget()
 				containerValue.setContainer(subContainer, "CddComIfUpperLayerContribution")
 			}
 			
@@ -1145,7 +1154,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CddComMLowerLayerContribution))
 			}
 			
-			def void setCddComMLowerLayerContribution(GContainer subContainer){
+			def void setCddComMLowerLayerContribution(CddComMLowerLayerContribution cddComMLowerLayerContribution){
+				val GContainer subContainer = cddComMLowerLayerContribution.getTarget()
 				containerValue.setContainer(subContainer, "CddComMLowerLayerContribution")
 			}
 			
@@ -1153,7 +1163,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CddGenericNmLowerLayerContribution))
 			}
 			
-			def void setCddGenericNmLowerLayerContribution(GContainer subContainer){
+			def void setCddGenericNmLowerLayerContribution(CddGenericNmLowerLayerContribution cddGenericNmLowerLayerContribution){
+				val GContainer subContainer = cddGenericNmLowerLayerContribution.getTarget()
 				containerValue.setContainer(subContainer, "CddGenericNmLowerLayerContribution")
 			}
 			
@@ -1161,7 +1172,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CddPduRLowerLayerContribution))
 			}
 			
-			def void setCddPduRLowerLayerContribution(GContainer subContainer){
+			def void setCddPduRLowerLayerContribution(CddPduRLowerLayerContribution cddPduRLowerLayerContribution){
+				val GContainer subContainer = cddPduRLowerLayerContribution.getTarget()
 				containerValue.setContainer(subContainer, "CddPduRLowerLayerContribution")
 			}
 			
@@ -1169,7 +1181,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CddPduRUpperLayerContribution))
 			}
 			
-			def void setCddPduRUpperLayerContribution(GContainer subContainer){
+			def void setCddPduRUpperLayerContribution(CddPduRUpperLayerContribution cddPduRUpperLayerContribution){
+				val GContainer subContainer = cddPduRUpperLayerContribution.getTarget()
 				containerValue.setContainer(subContainer, "CddPduRUpperLayerContribution")
 			}
 			
@@ -1177,7 +1190,8 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(CddSoAdUpperLayerContribution))
 			}
 			
-			def void setCddSoAdUpperLayerContribution(GContainer subContainer){
+			def void setCddSoAdUpperLayerContribution(CddSoAdUpperLayerContribution cddSoAdUpperLayerContribution){
+				val GContainer subContainer = cddSoAdUpperLayerContribution.getTarget()
 				containerValue.setContainer(subContainer, "CddSoAdUpperLayerContribution")
 			}
 			

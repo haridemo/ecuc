@@ -460,7 +460,8 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(SecOCRxAuthenticPduLayer))
 		}
 		
-		def void setSecOCRxAuthenticPduLayer(GContainer subContainer){
+		def void setSecOCRxAuthenticPduLayer(SecOCRxAuthenticPduLayer secOCRxAuthenticPduLayer){
+			val GContainer subContainer = secOCRxAuthenticPduLayer.getTarget()
 			containerValue.setContainer(subContainer, "SecOCRxAuthenticPduLayer")
 		}
 		
@@ -468,7 +469,8 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(SecOCRxSecuredPduLayer))
 		}
 		
-		def void setSecOCRxSecuredPduLayer(GContainer subContainer){
+		def void setSecOCRxSecuredPduLayer(SecOCRxSecuredPduLayer secOCRxSecuredPduLayer){
+			val GContainer subContainer = secOCRxSecuredPduLayer.getTarget()
 			containerValue.setContainer(subContainer, "SecOCRxSecuredPduLayer")
 		}
 		
@@ -780,7 +782,8 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(SecOCTxAuthenticPduLayer))
 		}
 		
-		def void setSecOCTxAuthenticPduLayer(GContainer subContainer){
+		def void setSecOCTxAuthenticPduLayer(SecOCTxAuthenticPduLayer secOCTxAuthenticPduLayer){
+			val GContainer subContainer = secOCTxAuthenticPduLayer.getTarget()
 			containerValue.setContainer(subContainer, "SecOCTxAuthenticPduLayer")
 		}
 		
@@ -788,7 +791,8 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(SecOCTxSecuredPduLayer))
 		}
 		
-		def void setSecOCTxSecuredPduLayer(GContainer subContainer){
+		def void setSecOCTxSecuredPduLayer(SecOCTxSecuredPduLayer secOCTxSecuredPduLayer){
+			val GContainer subContainer = secOCTxSecuredPduLayer.getTarget()
 			containerValue.setContainer(subContainer, "SecOCTxSecuredPduLayer")
 		}
 		

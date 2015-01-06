@@ -128,7 +128,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpIpConfig))
 		}
 		
-		def void setTcpIpIpConfig(GContainer subContainer){
+		def void setTcpIpIpConfig(TcpIpIpConfig tcpIpIpConfig){
+			val GContainer subContainer = tcpIpIpConfig.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpIpConfig")
 		}
 		
@@ -145,7 +146,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpNvmBlock))
 		}
 		
-		def void setTcpIpNvmBlock(GContainer subContainer){
+		def void setTcpIpNvmBlock(TcpIpNvmBlock tcpIpNvmBlock){
+			val GContainer subContainer = tcpIpNvmBlock.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpNvmBlock")
 		}
 		
@@ -153,7 +155,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpPhysAddrConfig))
 		}
 		
-		def void setTcpIpPhysAddrConfig(GContainer subContainer){
+		def void setTcpIpPhysAddrConfig(TcpIpPhysAddrConfig tcpIpPhysAddrConfig){
+			val GContainer subContainer = tcpIpPhysAddrConfig.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpPhysAddrConfig")
 		}
 		
@@ -161,7 +164,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpSocketOwnerConfig))
 		}
 		
-		def void setTcpIpSocketOwnerConfig(GContainer subContainer){
+		def void setTcpIpSocketOwnerConfig(TcpIpSocketOwnerConfig tcpIpSocketOwnerConfig){
+			val GContainer subContainer = tcpIpSocketOwnerConfig.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpSocketOwnerConfig")
 		}
 		
@@ -169,7 +173,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpTcpConfig))
 		}
 		
-		def void setTcpIpTcpConfig(GContainer subContainer){
+		def void setTcpIpTcpConfig(TcpIpTcpConfig tcpIpTcpConfig){
+			val GContainer subContainer = tcpIpTcpConfig.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpTcpConfig")
 		}
 		
@@ -177,7 +182,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpUdpConfig))
 		}
 		
-		def void setTcpIpUdpConfig(GContainer subContainer){
+		def void setTcpIpUdpConfig(TcpIpUdpConfig tcpIpUdpConfig){
+			val GContainer subContainer = tcpIpUdpConfig.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpUdpConfig")
 		}
 		
@@ -245,7 +251,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(TcpIpCtrlDemEventParameterRefs))
 			}
 			
-			def void setTcpIpCtrlDemEventParameterRefs(GContainer subContainer){
+			def void setTcpIpCtrlDemEventParameterRefs(TcpIpCtrlDemEventParameterRefs tcpIpCtrlDemEventParameterRefs){
+				val GContainer subContainer = tcpIpCtrlDemEventParameterRefs.getTarget()
 				containerValue.setContainer(subContainer, "TcpIpCtrlDemEventParameterRefs")
 			}
 			
@@ -253,7 +260,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(TcpIpIpVXCtrl))
 			}
 			
-			def void setTcpIpIpVXCtrl(GContainer subContainer){
+			def void setTcpIpIpVXCtrl(TcpIpIpVXCtrl tcpIpIpVXCtrl){
+				val GContainer subContainer = tcpIpIpVXCtrl.getTarget()
 				containerValue.setContainer(subContainer, "TcpIpIpVXCtrl")
 			}
 			
@@ -349,14 +357,16 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(TcpIpIpV4Ctrl))
 				}
 				
-				def void setTcpIpIpV4Ctrl(GContainer subContainer){
+				def void setTcpIpIpV4Ctrl(TcpIpIpV4Ctrl tcpIpIpV4Ctrl){
+					val GContainer subContainer = tcpIpIpV4Ctrl.getTarget()
 					containerValue.setContainer(subContainer, "TcpIpIpV4Ctrl")
 				}
 				def TcpIpIpV6Ctrl getTcpIpIpV6Ctrl(){
 					containerValue.getByType(typeof(TcpIpIpV6Ctrl))
 				}
 				
-				def void setTcpIpIpV6Ctrl(GContainer subContainer){
+				def void setTcpIpIpV6Ctrl(TcpIpIpV6Ctrl tcpIpIpV6Ctrl){
+					val GContainer subContainer = tcpIpIpV6Ctrl.getTarget()
 					containerValue.setContainer(subContainer, "TcpIpIpV6Ctrl")
 				}
 				
@@ -486,7 +496,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(TcpIpIpV6MtuConfig))
 					}
 					
-					def void setTcpIpIpV6MtuConfig(GContainer subContainer){
+					def void setTcpIpIpV6MtuConfig(TcpIpIpV6MtuConfig tcpIpIpV6MtuConfig){
+						val GContainer subContainer = tcpIpIpV6MtuConfig.getTarget()
 						containerValue.setContainer(subContainer, "TcpIpIpV6MtuConfig")
 					}
 					
@@ -737,7 +748,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(TcpIpIpV4Config))
 			}
 			
-			def void setTcpIpIpV4Config(GContainer subContainer){
+			def void setTcpIpIpV4Config(TcpIpIpV4Config tcpIpIpV4Config){
+				val GContainer subContainer = tcpIpIpV4Config.getTarget()
 				containerValue.setContainer(subContainer, "TcpIpIpV4Config")
 			}
 			
@@ -745,7 +757,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(TcpIpIpV6Config))
 			}
 			
-			def void setTcpIpIpV6Config(GContainer subContainer){
+			def void setTcpIpIpV6Config(TcpIpIpV6Config tcpIpIpV6Config){
+				val GContainer subContainer = tcpIpIpV6Config.getTarget()
 				containerValue.setContainer(subContainer, "TcpIpIpV6Config")
 			}
 			
@@ -802,7 +815,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(TcpIpIcmpConfig))
 				}
 				
-				def void setTcpIpIcmpConfig(GContainer subContainer){
+				def void setTcpIpIcmpConfig(TcpIpIcmpConfig tcpIpIcmpConfig){
+					val GContainer subContainer = tcpIpIcmpConfig.getTarget()
 					containerValue.setContainer(subContainer, "TcpIpIcmpConfig")
 				}
 				
@@ -1009,7 +1023,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(TcpIpIcmpMsgHandler))
 					}
 					
-					def void setTcpIpIcmpMsgHandler(GContainer subContainer){
+					def void setTcpIpIcmpMsgHandler(TcpIpIcmpMsgHandler tcpIpIcmpMsgHandler){
+						val GContainer subContainer = tcpIpIcmpMsgHandler.getTarget()
 						containerValue.setContainer(subContainer, "TcpIpIcmpMsgHandler")
 					}
 					
@@ -1196,7 +1211,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(TcpIpIcmpV6Config))
 				}
 				
-				def void setTcpIpIcmpV6Config(GContainer subContainer){
+				def void setTcpIpIcmpV6Config(TcpIpIcmpV6Config tcpIpIcmpV6Config){
+					val GContainer subContainer = tcpIpIcmpV6Config.getTarget()
 					containerValue.setContainer(subContainer, "TcpIpIcmpV6Config")
 				}
 				
@@ -1444,7 +1460,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(TcpIpIcmpV6MsgHandler))
 					}
 					
-					def void setTcpIpIcmpV6MsgHandler(GContainer subContainer){
+					def void setTcpIpIcmpV6MsgHandler(TcpIpIcmpV6MsgHandler tcpIpIcmpV6MsgHandler){
+						val GContainer subContainer = tcpIpIcmpV6MsgHandler.getTarget()
 						containerValue.setContainer(subContainer, "TcpIpIcmpV6MsgHandler")
 					}
 					
@@ -1652,7 +1669,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(TcpIpNdpArNudConfig))
 					}
 					
-					def void setTcpIpNdpArNudConfig(GContainer subContainer){
+					def void setTcpIpNdpArNudConfig(TcpIpNdpArNudConfig tcpIpNdpArNudConfig){
+						val GContainer subContainer = tcpIpNdpArNudConfig.getTarget()
 						containerValue.setContainer(subContainer, "TcpIpNdpArNudConfig")
 					}
 					
@@ -1660,7 +1678,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(TcpIpNdpPrefixRouterDiscoveryConfig))
 					}
 					
-					def void setTcpIpNdpPrefixRouterDiscoveryConfig(GContainer subContainer){
+					def void setTcpIpNdpPrefixRouterDiscoveryConfig(TcpIpNdpPrefixRouterDiscoveryConfig tcpIpNdpPrefixRouterDiscoveryConfig){
+						val GContainer subContainer = tcpIpNdpPrefixRouterDiscoveryConfig.getTarget()
 						containerValue.setContainer(subContainer, "TcpIpNdpPrefixRouterDiscoveryConfig")
 					}
 					
@@ -1668,7 +1687,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(TcpIpNdpSlaacConfig))
 					}
 					
-					def void setTcpIpNdpSlaacConfig(GContainer subContainer){
+					def void setTcpIpNdpSlaacConfig(TcpIpNdpSlaacConfig tcpIpNdpSlaacConfig){
+						val GContainer subContainer = tcpIpNdpSlaacConfig.getTarget()
 						containerValue.setContainer(subContainer, "TcpIpNdpSlaacConfig")
 					}
 					
@@ -2294,7 +2314,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(TcpIpStaticIpAddressConfig))
 			}
 			
-			def void setTcpIpStaticIpAddressConfig(GContainer subContainer){
+			def void setTcpIpStaticIpAddressConfig(TcpIpStaticIpAddressConfig tcpIpStaticIpAddressConfig){
+				val GContainer subContainer = tcpIpStaticIpAddressConfig.getTarget()
 				containerValue.setContainer(subContainer, "TcpIpStaticIpAddressConfig")
 			}
 			
@@ -2578,7 +2599,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(TcpIpPhysAddrChgHandler))
 			}
 			
-			def void setTcpIpPhysAddrChgHandler(GContainer subContainer){
+			def void setTcpIpPhysAddrChgHandler(TcpIpPhysAddrChgHandler tcpIpPhysAddrChgHandler){
+				val GContainer subContainer = tcpIpPhysAddrChgHandler.getTarget()
 				containerValue.setContainer(subContainer, "TcpIpPhysAddrChgHandler")
 			}
 			
@@ -3400,7 +3422,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpIpV4General))
 		}
 		
-		def void setTcpIpIpV4General(GContainer subContainer){
+		def void setTcpIpIpV4General(TcpIpIpV4General tcpIpIpV4General){
+			val GContainer subContainer = tcpIpIpV4General.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpIpV4General")
 		}
 		
@@ -3408,7 +3431,8 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(TcpIpIpV6General))
 		}
 		
-		def void setTcpIpIpV6General(GContainer subContainer){
+		def void setTcpIpIpV6General(TcpIpIpV6General tcpIpIpV6General){
+			val GContainer subContainer = tcpIpIpV6General.getTarget()
 			containerValue.setContainer(subContainer, "TcpIpIpV6General")
 		}
 		

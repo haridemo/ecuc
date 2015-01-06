@@ -187,7 +187,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 			containerValue.getByType(typeof(ComTimeBase))
 		}
 		
-		def void setComTimeBase(GContainer subContainer){
+		def void setComTimeBase(ComTimeBase comTimeBase){
+			val GContainer subContainer = comTimeBase.getTarget()
 			containerValue.setContainer(subContainer, "ComTimeBase")
 		}
 		
@@ -226,7 +227,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(ComGwSource))
 			}
 			
-			def void setComGwSource(GContainer subContainer){
+			def void setComGwSource(ComGwSource comGwSource){
+				val GContainer subContainer = comGwSource.getTarget()
 				containerValue.setContainer(subContainer, "ComGwSource")
 			}
 			
@@ -254,14 +256,16 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(ComGwDestinationDescription))
 				}
 				
-				def void setComGwDestinationDescription(GContainer subContainer){
+				def void setComGwDestinationDescription(ComGwDestinationDescription comGwDestinationDescription){
+					val GContainer subContainer = comGwDestinationDescription.getTarget()
 					containerValue.setContainer(subContainer, "ComGwDestinationDescription")
 				}
 				def ComGwSignal getComGwSignal(){
 					containerValue.getByType(typeof(ComGwSignal))
 				}
 				
-				def void setComGwSignal(GContainer subContainer){
+				def void setComGwSignal(ComGwSignal comGwSignal){
+					val GContainer subContainer = comGwSignal.getTarget()
 					containerValue.setContainer(subContainer, "ComGwSignal")
 				}
 				
@@ -423,7 +427,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(ComFilter))
 					}
 					
-					def void setComFilter(GContainer subContainer){
+					def void setComFilter(ComFilter comFilter){
+						val GContainer subContainer = comFilter.getTarget()
 						containerValue.setContainer(subContainer, "ComFilter")
 					}
 					
@@ -645,14 +650,16 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(ComGwSignal))
 				}
 				
-				def void setComGwSignal(GContainer subContainer){
+				def void setComGwSignal(ComGwSignal comGwSignal){
+					val GContainer subContainer = comGwSignal.getTarget()
 					containerValue.setContainer(subContainer, "ComGwSignal")
 				}
 				def ComGwSourceDescription getComGwSourceDescription(){
 					containerValue.getByType(typeof(ComGwSourceDescription))
 				}
 				
-				def void setComGwSourceDescription(GContainer subContainer){
+				def void setComGwSourceDescription(ComGwSourceDescription comGwSourceDescription){
+					val GContainer subContainer = comGwSourceDescription.getTarget()
 					containerValue.setContainer(subContainer, "ComGwSourceDescription")
 				}
 				
@@ -1168,7 +1175,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(ComIPduCounter))
 			}
 			
-			def void setComIPduCounter(GContainer subContainer){
+			def void setComIPduCounter(ComIPduCounter comIPduCounter){
+				val GContainer subContainer = comIPduCounter.getTarget()
 				containerValue.setContainer(subContainer, "ComIPduCounter")
 			}
 			
@@ -1176,7 +1184,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(ComIPduReplication))
 			}
 			
-			def void setComIPduReplication(GContainer subContainer){
+			def void setComIPduReplication(ComIPduReplication comIPduReplication){
+				val GContainer subContainer = comIPduReplication.getTarget()
 				containerValue.setContainer(subContainer, "ComIPduReplication")
 			}
 			
@@ -1184,7 +1193,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(ComTxIPdu))
 			}
 			
-			def void setComTxIPdu(GContainer subContainer){
+			def void setComTxIPdu(ComTxIPdu comTxIPdu){
+				val GContainer subContainer = comTxIPdu.getTarget()
 				containerValue.setContainer(subContainer, "ComTxIPdu")
 			}
 			
@@ -1458,7 +1468,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(ComTxModeFalse))
 				}
 				
-				def void setComTxModeFalse(GContainer subContainer){
+				def void setComTxModeFalse(ComTxModeFalse comTxModeFalse){
+					val GContainer subContainer = comTxModeFalse.getTarget()
 					containerValue.setContainer(subContainer, "ComTxModeFalse")
 				}
 				
@@ -1466,7 +1477,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(ComTxModeTrue))
 				}
 				
-				def void setComTxModeTrue(GContainer subContainer){
+				def void setComTxModeTrue(ComTxModeTrue comTxModeTrue){
+					val GContainer subContainer = comTxModeTrue.getTarget()
 					containerValue.setContainer(subContainer, "ComTxModeTrue")
 				}
 				
@@ -1496,7 +1508,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(ComTxMode))
 					}
 					
-					def void setComTxMode(GContainer subContainer){
+					def void setComTxMode(ComTxMode comTxMode){
+						val GContainer subContainer = comTxMode.getTarget()
 						containerValue.setContainer(subContainer, "ComTxMode")
 					}
 					
@@ -1653,7 +1666,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.getByType(typeof(ComTxMode))
 					}
 					
-					def void setComTxMode(GContainer subContainer){
+					def void setComTxMode(ComTxMode comTxMode){
+						val GContainer subContainer = comTxMode.getTarget()
 						containerValue.setContainer(subContainer, "ComTxMode")
 					}
 					
@@ -2303,7 +2317,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue.getByType(typeof(ComFilter))
 			}
 			
-			def void setComFilter(GContainer subContainer){
+			def void setComFilter(ComFilter comFilter){
+				val GContainer subContainer = comFilter.getTarget()
 				containerValue.setContainer(subContainer, "ComFilter")
 			}
 			
@@ -3013,7 +3028,8 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.getByType(typeof(ComFilter))
 				}
 				
-				def void setComFilter(GContainer subContainer){
+				def void setComFilter(ComFilter comFilter){
+					val GContainer subContainer = comFilter.getTarget()
 					containerValue.setContainer(subContainer, "ComFilter")
 				}
 				
