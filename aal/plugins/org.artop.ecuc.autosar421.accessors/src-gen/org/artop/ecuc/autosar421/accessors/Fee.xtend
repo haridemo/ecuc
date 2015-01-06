@@ -74,7 +74,17 @@ class Fee implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "FeeBlockConfiguration")
 			}
 		}
-		return new BasicWrappingEList<FeeBlockConfiguration, GContainer>(filteredContainers, typeof(FeeBlockConfiguration), typeof(GContainer))
+		return new BasicWrappingEList<FeeBlockConfiguration, GContainer>(filteredContainers, typeof(FeeBlockConfiguration), typeof(GContainer)) {
+			override protected delegateAdd(FeeBlockConfiguration feeBlockConfiguration) {
+				feeBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FeeBlockConfiguration"))
+				super.delegateAdd(feeBlockConfiguration)
+			}
+		
+			override protected delegateAdd(int index, FeeBlockConfiguration feeBlockConfiguration) {
+				feeBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FeeBlockConfiguration"))
+				super.delegateAdd(index, feeBlockConfiguration)
+			}
+		}
 	}
 	def FeeGeneral getFeeGeneral(){
 		moduleConfiguration.getByType(typeof(FeeGeneral))

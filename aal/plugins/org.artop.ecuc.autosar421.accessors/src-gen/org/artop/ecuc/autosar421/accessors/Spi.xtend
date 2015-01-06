@@ -210,7 +210,17 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SpiChannel")
 				}
 			}
-			return new BasicWrappingEList<SpiChannel, GContainer>(filteredContainers, typeof(SpiChannel), typeof(GContainer))
+			return new BasicWrappingEList<SpiChannel, GContainer>(filteredContainers, typeof(SpiChannel), typeof(GContainer)) {
+				override protected delegateAdd(SpiChannel spiChannel) {
+					spiChannel.target?.gSetDefinition(containerValue.getContainerDefinition("SpiChannel"))
+					super.delegateAdd(spiChannel)
+				}
+				
+				override protected delegateAdd(int index, SpiChannel spiChannel) {
+					spiChannel.target?.gSetDefinition(containerValue.getContainerDefinition("SpiChannel"))
+					super.delegateAdd(index, spiChannel)
+				}	
+			}
 		}
 		
 		def List<SpiExternalDevice> getSpiExternalDevices(){
@@ -219,7 +229,17 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SpiExternalDevice")
 				}
 			}
-			return new BasicWrappingEList<SpiExternalDevice, GContainer>(filteredContainers, typeof(SpiExternalDevice), typeof(GContainer))
+			return new BasicWrappingEList<SpiExternalDevice, GContainer>(filteredContainers, typeof(SpiExternalDevice), typeof(GContainer)) {
+				override protected delegateAdd(SpiExternalDevice spiExternalDevice) {
+					spiExternalDevice.target?.gSetDefinition(containerValue.getContainerDefinition("SpiExternalDevice"))
+					super.delegateAdd(spiExternalDevice)
+				}
+				
+				override protected delegateAdd(int index, SpiExternalDevice spiExternalDevice) {
+					spiExternalDevice.target?.gSetDefinition(containerValue.getContainerDefinition("SpiExternalDevice"))
+					super.delegateAdd(index, spiExternalDevice)
+				}	
+			}
 		}
 		
 		def List<SpiJob> getSpiJobs(){
@@ -228,7 +248,17 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SpiJob")
 				}
 			}
-			return new BasicWrappingEList<SpiJob, GContainer>(filteredContainers, typeof(SpiJob), typeof(GContainer))
+			return new BasicWrappingEList<SpiJob, GContainer>(filteredContainers, typeof(SpiJob), typeof(GContainer)) {
+				override protected delegateAdd(SpiJob spiJob) {
+					spiJob.target?.gSetDefinition(containerValue.getContainerDefinition("SpiJob"))
+					super.delegateAdd(spiJob)
+				}
+				
+				override protected delegateAdd(int index, SpiJob spiJob) {
+					spiJob.target?.gSetDefinition(containerValue.getContainerDefinition("SpiJob"))
+					super.delegateAdd(index, spiJob)
+				}	
+			}
 		}
 		
 		def List<SpiSequence> getSpiSequences(){
@@ -237,7 +267,17 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SpiSequence")
 				}
 			}
-			return new BasicWrappingEList<SpiSequence, GContainer>(filteredContainers, typeof(SpiSequence), typeof(GContainer))
+			return new BasicWrappingEList<SpiSequence, GContainer>(filteredContainers, typeof(SpiSequence), typeof(GContainer)) {
+				override protected delegateAdd(SpiSequence spiSequence) {
+					spiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("SpiSequence"))
+					super.delegateAdd(spiSequence)
+				}
+				
+				override protected delegateAdd(int index, SpiSequence spiSequence) {
+					spiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("SpiSequence"))
+					super.delegateAdd(index, spiSequence)
+				}	
+			}
 		}
 		
 		
@@ -787,7 +827,17 @@ class Spi implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SpiChannelList")
 					}
 				}
-				return new BasicWrappingEList<SpiChannelList, GContainer>(filteredContainers, typeof(SpiChannelList), typeof(GContainer))
+				return new BasicWrappingEList<SpiChannelList, GContainer>(filteredContainers, typeof(SpiChannelList), typeof(GContainer)) {
+					override protected delegateAdd(SpiChannelList spiChannelList) {
+						spiChannelList.target?.gSetDefinition(containerValue.getContainerDefinition("SpiChannelList"))
+						super.delegateAdd(spiChannelList)
+					}
+					
+					override protected delegateAdd(int index, SpiChannelList spiChannelList) {
+						spiChannelList.target?.gSetDefinition(containerValue.getContainerDefinition("SpiChannelList"))
+						super.delegateAdd(index, spiChannelList)
+					}	
+				}
 			}
 			
 			

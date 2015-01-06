@@ -82,7 +82,17 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "XfrmImplementationMapping")
 			}
 		}
-		return new BasicWrappingEList<XfrmImplementationMapping, GContainer>(filteredContainers, typeof(XfrmImplementationMapping), typeof(GContainer))
+		return new BasicWrappingEList<XfrmImplementationMapping, GContainer>(filteredContainers, typeof(XfrmImplementationMapping), typeof(GContainer)) {
+			override protected delegateAdd(XfrmImplementationMapping xfrmImplementationMapping) {
+				xfrmImplementationMapping.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("XfrmImplementationMapping"))
+				super.delegateAdd(xfrmImplementationMapping)
+			}
+		
+			override protected delegateAdd(int index, XfrmImplementationMapping xfrmImplementationMapping) {
+				xfrmImplementationMapping.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("XfrmImplementationMapping"))
+				super.delegateAdd(index, xfrmImplementationMapping)
+			}
+		}
 	}
 	
 	static class XfrmGeneral implements IWrapper<GContainer> {

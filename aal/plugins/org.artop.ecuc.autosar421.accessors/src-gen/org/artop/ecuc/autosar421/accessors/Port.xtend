@@ -112,7 +112,17 @@ class Port implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "PortContainer")
 				}
 			}
-			return new BasicWrappingEList<PortContainer, GContainer>(filteredContainers, typeof(PortContainer), typeof(GContainer))
+			return new BasicWrappingEList<PortContainer, GContainer>(filteredContainers, typeof(PortContainer), typeof(GContainer)) {
+				override protected delegateAdd(PortContainer portContainer) {
+					portContainer.target?.gSetDefinition(containerValue.getContainerDefinition("PortContainer"))
+					super.delegateAdd(portContainer)
+				}
+				
+				override protected delegateAdd(int index, PortContainer portContainer) {
+					portContainer.target?.gSetDefinition(containerValue.getContainerDefinition("PortContainer"))
+					super.delegateAdd(index, portContainer)
+				}	
+			}
 		}
 		
 		
@@ -159,7 +169,17 @@ class Port implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "PortPin")
 					}
 				}
-				return new BasicWrappingEList<PortPin, GContainer>(filteredContainers, typeof(PortPin), typeof(GContainer))
+				return new BasicWrappingEList<PortPin, GContainer>(filteredContainers, typeof(PortPin), typeof(GContainer)) {
+					override protected delegateAdd(PortPin portPin) {
+						portPin.target?.gSetDefinition(containerValue.getContainerDefinition("PortPin"))
+						super.delegateAdd(portPin)
+					}
+					
+					override protected delegateAdd(int index, PortPin portPin) {
+						portPin.target?.gSetDefinition(containerValue.getContainerDefinition("PortPin"))
+						super.delegateAdd(index, portPin)
+					}	
+				}
 			}
 			
 			

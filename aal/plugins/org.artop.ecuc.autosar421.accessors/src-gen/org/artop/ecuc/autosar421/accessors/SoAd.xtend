@@ -74,7 +74,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "SoAdBswModules")
 			}
 		}
-		return new BasicWrappingEList<SoAdBswModules, GContainer>(filteredContainers, typeof(SoAdBswModules), typeof(GContainer))
+		return new BasicWrappingEList<SoAdBswModules, GContainer>(filteredContainers, typeof(SoAdBswModules), typeof(GContainer)) {
+			override protected delegateAdd(SoAdBswModules soAdBswModules) {
+				soAdBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SoAdBswModules"))
+				super.delegateAdd(soAdBswModules)
+			}
+		
+			override protected delegateAdd(int index, SoAdBswModules soAdBswModules) {
+				soAdBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SoAdBswModules"))
+				super.delegateAdd(index, soAdBswModules)
+			}
+		}
 	}
 	def SoAdConfig getSoAdConfig(){
 		moduleConfiguration.getByType(typeof(SoAdConfig))
@@ -272,7 +282,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SoAdPduRoute")
 				}
 			}
-			return new BasicWrappingEList<SoAdPduRoute, GContainer>(filteredContainers, typeof(SoAdPduRoute), typeof(GContainer))
+			return new BasicWrappingEList<SoAdPduRoute, GContainer>(filteredContainers, typeof(SoAdPduRoute), typeof(GContainer)) {
+				override protected delegateAdd(SoAdPduRoute soAdPduRoute) {
+					soAdPduRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRoute"))
+					super.delegateAdd(soAdPduRoute)
+				}
+				
+				override protected delegateAdd(int index, SoAdPduRoute soAdPduRoute) {
+					soAdPduRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRoute"))
+					super.delegateAdd(index, soAdPduRoute)
+				}	
+			}
 		}
 		
 		def List<SoAdRoutingGroup> getSoAdRoutingGroups(){
@@ -281,7 +301,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SoAdRoutingGroup")
 				}
 			}
-			return new BasicWrappingEList<SoAdRoutingGroup, GContainer>(filteredContainers, typeof(SoAdRoutingGroup), typeof(GContainer))
+			return new BasicWrappingEList<SoAdRoutingGroup, GContainer>(filteredContainers, typeof(SoAdRoutingGroup), typeof(GContainer)) {
+				override protected delegateAdd(SoAdRoutingGroup soAdRoutingGroup) {
+					soAdRoutingGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdRoutingGroup"))
+					super.delegateAdd(soAdRoutingGroup)
+				}
+				
+				override protected delegateAdd(int index, SoAdRoutingGroup soAdRoutingGroup) {
+					soAdRoutingGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdRoutingGroup"))
+					super.delegateAdd(index, soAdRoutingGroup)
+				}	
+			}
 		}
 		
 		def List<SoAdSocketConnectionGroup> getSoAdSocketConnectionGroups(){
@@ -290,7 +320,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SoAdSocketConnectionGroup")
 				}
 			}
-			return new BasicWrappingEList<SoAdSocketConnectionGroup, GContainer>(filteredContainers, typeof(SoAdSocketConnectionGroup), typeof(GContainer))
+			return new BasicWrappingEList<SoAdSocketConnectionGroup, GContainer>(filteredContainers, typeof(SoAdSocketConnectionGroup), typeof(GContainer)) {
+				override protected delegateAdd(SoAdSocketConnectionGroup soAdSocketConnectionGroup) {
+					soAdSocketConnectionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnectionGroup"))
+					super.delegateAdd(soAdSocketConnectionGroup)
+				}
+				
+				override protected delegateAdd(int index, SoAdSocketConnectionGroup soAdSocketConnectionGroup) {
+					soAdSocketConnectionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnectionGroup"))
+					super.delegateAdd(index, soAdSocketConnectionGroup)
+				}	
+			}
 		}
 		
 		def List<SoAdSocketRoute> getSoAdSocketRoutes(){
@@ -299,7 +339,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SoAdSocketRoute")
 				}
 			}
-			return new BasicWrappingEList<SoAdSocketRoute, GContainer>(filteredContainers, typeof(SoAdSocketRoute), typeof(GContainer))
+			return new BasicWrappingEList<SoAdSocketRoute, GContainer>(filteredContainers, typeof(SoAdSocketRoute), typeof(GContainer)) {
+				override protected delegateAdd(SoAdSocketRoute soAdSocketRoute) {
+					soAdSocketRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketRoute"))
+					super.delegateAdd(soAdSocketRoute)
+				}
+				
+				override protected delegateAdd(int index, SoAdSocketRoute soAdSocketRoute) {
+					soAdSocketRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketRoute"))
+					super.delegateAdd(index, soAdSocketRoute)
+				}	
+			}
 		}
 		
 		
@@ -390,7 +440,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SoAdPduRouteDest")
 					}
 				}
-				return new BasicWrappingEList<SoAdPduRouteDest, GContainer>(filteredContainers, typeof(SoAdPduRouteDest), typeof(GContainer))
+				return new BasicWrappingEList<SoAdPduRouteDest, GContainer>(filteredContainers, typeof(SoAdPduRouteDest), typeof(GContainer)) {
+					override protected delegateAdd(SoAdPduRouteDest soAdPduRouteDest) {
+						soAdPduRouteDest.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRouteDest"))
+						super.delegateAdd(soAdPduRouteDest)
+					}
+					
+					override protected delegateAdd(int index, SoAdPduRouteDest soAdPduRouteDest) {
+						soAdPduRouteDest.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRouteDest"))
+						super.delegateAdd(index, soAdPduRouteDest)
+					}	
+				}
 			}
 			
 			
@@ -773,7 +833,17 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SoAdSocketConnection")
 					}
 				}
-				return new BasicWrappingEList<SoAdSocketConnection, GContainer>(filteredContainers, typeof(SoAdSocketConnection), typeof(GContainer))
+				return new BasicWrappingEList<SoAdSocketConnection, GContainer>(filteredContainers, typeof(SoAdSocketConnection), typeof(GContainer)) {
+					override protected delegateAdd(SoAdSocketConnection soAdSocketConnection) {
+						soAdSocketConnection.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnection"))
+						super.delegateAdd(soAdSocketConnection)
+					}
+					
+					override protected delegateAdd(int index, SoAdSocketConnection soAdSocketConnection) {
+						soAdSocketConnection.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnection"))
+						super.delegateAdd(index, soAdSocketConnection)
+					}	
+				}
 			}
 			
 			def SoAdSocketProtocol getSoAdSocketProtocol(){

@@ -320,7 +320,17 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "McuClockSettingConfig")
 				}
 			}
-			return new BasicWrappingEList<McuClockSettingConfig, GContainer>(filteredContainers, typeof(McuClockSettingConfig), typeof(GContainer))
+			return new BasicWrappingEList<McuClockSettingConfig, GContainer>(filteredContainers, typeof(McuClockSettingConfig), typeof(GContainer)) {
+				override protected delegateAdd(McuClockSettingConfig mcuClockSettingConfig) {
+					mcuClockSettingConfig.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockSettingConfig"))
+					super.delegateAdd(mcuClockSettingConfig)
+				}
+				
+				override protected delegateAdd(int index, McuClockSettingConfig mcuClockSettingConfig) {
+					mcuClockSettingConfig.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockSettingConfig"))
+					super.delegateAdd(index, mcuClockSettingConfig)
+				}	
+			}
 		}
 		
 		def McuDemEventParameterRefs getMcuDemEventParameterRefs(){
@@ -338,7 +348,17 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "McuModeSettingConf")
 				}
 			}
-			return new BasicWrappingEList<McuModeSettingConf, GContainer>(filteredContainers, typeof(McuModeSettingConf), typeof(GContainer))
+			return new BasicWrappingEList<McuModeSettingConf, GContainer>(filteredContainers, typeof(McuModeSettingConf), typeof(GContainer)) {
+				override protected delegateAdd(McuModeSettingConf mcuModeSettingConf) {
+					mcuModeSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuModeSettingConf"))
+					super.delegateAdd(mcuModeSettingConf)
+				}
+				
+				override protected delegateAdd(int index, McuModeSettingConf mcuModeSettingConf) {
+					mcuModeSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuModeSettingConf"))
+					super.delegateAdd(index, mcuModeSettingConf)
+				}	
+			}
 		}
 		
 		def List<McuRamSectorSettingConf> getMcuRamSectorSettingConfs(){
@@ -347,7 +367,17 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "McuRamSectorSettingConf")
 				}
 			}
-			return new BasicWrappingEList<McuRamSectorSettingConf, GContainer>(filteredContainers, typeof(McuRamSectorSettingConf), typeof(GContainer))
+			return new BasicWrappingEList<McuRamSectorSettingConf, GContainer>(filteredContainers, typeof(McuRamSectorSettingConf), typeof(GContainer)) {
+				override protected delegateAdd(McuRamSectorSettingConf mcuRamSectorSettingConf) {
+					mcuRamSectorSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuRamSectorSettingConf"))
+					super.delegateAdd(mcuRamSectorSettingConf)
+				}
+				
+				override protected delegateAdd(int index, McuRamSectorSettingConf mcuRamSectorSettingConf) {
+					mcuRamSectorSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuRamSectorSettingConf"))
+					super.delegateAdd(index, mcuRamSectorSettingConf)
+				}	
+			}
 		}
 		
 		
@@ -394,7 +424,17 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "McuClockReferencePoint")
 					}
 				}
-				return new BasicWrappingEList<McuClockReferencePoint, GContainer>(filteredContainers, typeof(McuClockReferencePoint), typeof(GContainer))
+				return new BasicWrappingEList<McuClockReferencePoint, GContainer>(filteredContainers, typeof(McuClockReferencePoint), typeof(GContainer)) {
+					override protected delegateAdd(McuClockReferencePoint mcuClockReferencePoint) {
+						mcuClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockReferencePoint"))
+						super.delegateAdd(mcuClockReferencePoint)
+					}
+					
+					override protected delegateAdd(int index, McuClockReferencePoint mcuClockReferencePoint) {
+						mcuClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockReferencePoint"))
+						super.delegateAdd(index, mcuClockReferencePoint)
+					}	
+				}
 			}
 			
 			
@@ -615,7 +655,17 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "McuResetReasonConf")
 				}
 			}
-			return new BasicWrappingEList<McuResetReasonConf, GContainer>(filteredContainers, typeof(McuResetReasonConf), typeof(GContainer))
+			return new BasicWrappingEList<McuResetReasonConf, GContainer>(filteredContainers, typeof(McuResetReasonConf), typeof(GContainer)) {
+				override protected delegateAdd(McuResetReasonConf mcuResetReasonConf) {
+					mcuResetReasonConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuResetReasonConf"))
+					super.delegateAdd(mcuResetReasonConf)
+				}
+				
+				override protected delegateAdd(int index, McuResetReasonConf mcuResetReasonConf) {
+					mcuResetReasonConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuResetReasonConf"))
+					super.delegateAdd(index, mcuResetReasonConf)
+				}	
+			}
 		}
 		
 		

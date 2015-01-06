@@ -153,7 +153,17 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "OcuChannel")
 				}
 			}
-			return new BasicWrappingEList<OcuChannel, GContainer>(filteredContainers, typeof(OcuChannel), typeof(GContainer))
+			return new BasicWrappingEList<OcuChannel, GContainer>(filteredContainers, typeof(OcuChannel), typeof(GContainer)) {
+				override protected delegateAdd(OcuChannel ocuChannel) {
+					ocuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("OcuChannel"))
+					super.delegateAdd(ocuChannel)
+				}
+				
+				override protected delegateAdd(int index, OcuChannel ocuChannel) {
+					ocuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("OcuChannel"))
+					super.delegateAdd(index, ocuChannel)
+				}	
+			}
 		}
 		
 		def List<OcuGroup> getOcuGroups(){
@@ -162,7 +172,17 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "OcuGroup")
 				}
 			}
-			return new BasicWrappingEList<OcuGroup, GContainer>(filteredContainers, typeof(OcuGroup), typeof(GContainer))
+			return new BasicWrappingEList<OcuGroup, GContainer>(filteredContainers, typeof(OcuGroup), typeof(GContainer)) {
+				override protected delegateAdd(OcuGroup ocuGroup) {
+					ocuGroup.target?.gSetDefinition(containerValue.getContainerDefinition("OcuGroup"))
+					super.delegateAdd(ocuGroup)
+				}
+				
+				override protected delegateAdd(int index, OcuGroup ocuGroup) {
+					ocuGroup.target?.gSetDefinition(containerValue.getContainerDefinition("OcuGroup"))
+					super.delegateAdd(index, ocuGroup)
+				}	
+			}
 		}
 		
 		def OcuHWSpecificSettings getOcuHWSpecificSettings(){

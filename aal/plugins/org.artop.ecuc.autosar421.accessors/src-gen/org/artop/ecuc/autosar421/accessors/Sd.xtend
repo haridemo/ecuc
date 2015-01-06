@@ -112,7 +112,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "SdInstance")
 				}
 			}
-			return new BasicWrappingEList<SdInstance, GContainer>(filteredContainers, typeof(SdInstance), typeof(GContainer))
+			return new BasicWrappingEList<SdInstance, GContainer>(filteredContainers, typeof(SdInstance), typeof(GContainer)) {
+				override protected delegateAdd(SdInstance sdInstance) {
+					sdInstance.target?.gSetDefinition(containerValue.getContainerDefinition("SdInstance"))
+					super.delegateAdd(sdInstance)
+				}
+				
+				override protected delegateAdd(int index, SdInstance sdInstance) {
+					sdInstance.target?.gSetDefinition(containerValue.getContainerDefinition("SdInstance"))
+					super.delegateAdd(index, sdInstance)
+				}	
+			}
 		}
 		
 		
@@ -159,7 +169,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SdClientService")
 					}
 				}
-				return new BasicWrappingEList<SdClientService, GContainer>(filteredContainers, typeof(SdClientService), typeof(GContainer))
+				return new BasicWrappingEList<SdClientService, GContainer>(filteredContainers, typeof(SdClientService), typeof(GContainer)) {
+					override protected delegateAdd(SdClientService sdClientService) {
+						sdClientService.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientService"))
+						super.delegateAdd(sdClientService)
+					}
+					
+					override protected delegateAdd(int index, SdClientService sdClientService) {
+						sdClientService.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientService"))
+						super.delegateAdd(index, sdClientService)
+					}	
+				}
 			}
 			
 			def List<SdClientTimer> getSdClientTimers(){
@@ -168,7 +188,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SdClientTimer")
 					}
 				}
-				return new BasicWrappingEList<SdClientTimer, GContainer>(filteredContainers, typeof(SdClientTimer), typeof(GContainer))
+				return new BasicWrappingEList<SdClientTimer, GContainer>(filteredContainers, typeof(SdClientTimer), typeof(GContainer)) {
+					override protected delegateAdd(SdClientTimer sdClientTimer) {
+						sdClientTimer.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientTimer"))
+						super.delegateAdd(sdClientTimer)
+					}
+					
+					override protected delegateAdd(int index, SdClientTimer sdClientTimer) {
+						sdClientTimer.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientTimer"))
+						super.delegateAdd(index, sdClientTimer)
+					}	
+				}
 			}
 			
 			def SdInstanceDemEventParameterRefs getSdInstanceDemEventParameterRefs(){
@@ -213,7 +243,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SdServerService")
 					}
 				}
-				return new BasicWrappingEList<SdServerService, GContainer>(filteredContainers, typeof(SdServerService), typeof(GContainer))
+				return new BasicWrappingEList<SdServerService, GContainer>(filteredContainers, typeof(SdServerService), typeof(GContainer)) {
+					override protected delegateAdd(SdServerService sdServerService) {
+						sdServerService.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerService"))
+						super.delegateAdd(sdServerService)
+					}
+					
+					override protected delegateAdd(int index, SdServerService sdServerService) {
+						sdServerService.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerService"))
+						super.delegateAdd(index, sdServerService)
+					}	
+				}
 			}
 			
 			def List<SdServerTimer> getSdServerTimers(){
@@ -222,7 +262,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "SdServerTimer")
 					}
 				}
-				return new BasicWrappingEList<SdServerTimer, GContainer>(filteredContainers, typeof(SdServerTimer), typeof(GContainer))
+				return new BasicWrappingEList<SdServerTimer, GContainer>(filteredContainers, typeof(SdServerTimer), typeof(GContainer)) {
+					override protected delegateAdd(SdServerTimer sdServerTimer) {
+						sdServerTimer.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerTimer"))
+						super.delegateAdd(sdServerTimer)
+					}
+					
+					override protected delegateAdd(int index, SdServerTimer sdServerTimer) {
+						sdServerTimer.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerTimer"))
+						super.delegateAdd(index, sdServerTimer)
+					}	
+				}
 			}
 			
 			
@@ -382,7 +432,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "SdClientCapabilityRecord")
 						}
 					}
-					return new BasicWrappingEList<SdClientCapabilityRecord, GContainer>(filteredContainers, typeof(SdClientCapabilityRecord), typeof(GContainer))
+					return new BasicWrappingEList<SdClientCapabilityRecord, GContainer>(filteredContainers, typeof(SdClientCapabilityRecord), typeof(GContainer)) {
+						override protected delegateAdd(SdClientCapabilityRecord sdClientCapabilityRecord) {
+							sdClientCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientCapabilityRecord"))
+							super.delegateAdd(sdClientCapabilityRecord)
+						}
+						
+						override protected delegateAdd(int index, SdClientCapabilityRecord sdClientCapabilityRecord) {
+							sdClientCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientCapabilityRecord"))
+							super.delegateAdd(index, sdClientCapabilityRecord)
+						}	
+					}
 				}
 				
 				def List<SdConsumedEventGroup> getSdConsumedEventGroups(){
@@ -391,7 +451,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "SdConsumedEventGroup")
 						}
 					}
-					return new BasicWrappingEList<SdConsumedEventGroup, GContainer>(filteredContainers, typeof(SdConsumedEventGroup), typeof(GContainer))
+					return new BasicWrappingEList<SdConsumedEventGroup, GContainer>(filteredContainers, typeof(SdConsumedEventGroup), typeof(GContainer)) {
+						override protected delegateAdd(SdConsumedEventGroup sdConsumedEventGroup) {
+							sdConsumedEventGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SdConsumedEventGroup"))
+							super.delegateAdd(sdConsumedEventGroup)
+						}
+						
+						override protected delegateAdd(int index, SdConsumedEventGroup sdConsumedEventGroup) {
+							sdConsumedEventGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SdConsumedEventGroup"))
+							super.delegateAdd(index, sdConsumedEventGroup)
+						}	
+					}
 				}
 				
 				def SdConsumedMethods getSdConsumedMethods(){
@@ -612,7 +682,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "SdClientCapabilityRecord")
 							}
 						}
-						return new BasicWrappingEList<SdClientCapabilityRecord, GContainer>(filteredContainers, typeof(SdClientCapabilityRecord), typeof(GContainer))
+						return new BasicWrappingEList<SdClientCapabilityRecord, GContainer>(filteredContainers, typeof(SdClientCapabilityRecord), typeof(GContainer)) {
+							override protected delegateAdd(SdClientCapabilityRecord sdClientCapabilityRecord) {
+								sdClientCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientCapabilityRecord"))
+								super.delegateAdd(sdClientCapabilityRecord)
+							}
+							
+							override protected delegateAdd(int index, SdClientCapabilityRecord sdClientCapabilityRecord) {
+								sdClientCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdClientCapabilityRecord"))
+								super.delegateAdd(index, sdClientCapabilityRecord)
+							}	
+						}
 					}
 					
 					
@@ -1186,7 +1266,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "SdEventHandler")
 						}
 					}
-					return new BasicWrappingEList<SdEventHandler, GContainer>(filteredContainers, typeof(SdEventHandler), typeof(GContainer))
+					return new BasicWrappingEList<SdEventHandler, GContainer>(filteredContainers, typeof(SdEventHandler), typeof(GContainer)) {
+						override protected delegateAdd(SdEventHandler sdEventHandler) {
+							sdEventHandler.target?.gSetDefinition(containerValue.getContainerDefinition("SdEventHandler"))
+							super.delegateAdd(sdEventHandler)
+						}
+						
+						override protected delegateAdd(int index, SdEventHandler sdEventHandler) {
+							sdEventHandler.target?.gSetDefinition(containerValue.getContainerDefinition("SdEventHandler"))
+							super.delegateAdd(index, sdEventHandler)
+						}	
+					}
 				}
 				
 				def SdProvidedMethods getSdProvidedMethods(){
@@ -1204,7 +1294,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "SdServerCapabilityRecord")
 						}
 					}
-					return new BasicWrappingEList<SdServerCapabilityRecord, GContainer>(filteredContainers, typeof(SdServerCapabilityRecord), typeof(GContainer))
+					return new BasicWrappingEList<SdServerCapabilityRecord, GContainer>(filteredContainers, typeof(SdServerCapabilityRecord), typeof(GContainer)) {
+						override protected delegateAdd(SdServerCapabilityRecord sdServerCapabilityRecord) {
+							sdServerCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerCapabilityRecord"))
+							super.delegateAdd(sdServerCapabilityRecord)
+						}
+						
+						override protected delegateAdd(int index, SdServerCapabilityRecord sdServerCapabilityRecord) {
+							sdServerCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerCapabilityRecord"))
+							super.delegateAdd(index, sdServerCapabilityRecord)
+						}	
+					}
 				}
 				
 				
@@ -1321,7 +1421,17 @@ class Sd implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "SdServerCapabilityRecord")
 							}
 						}
-						return new BasicWrappingEList<SdServerCapabilityRecord, GContainer>(filteredContainers, typeof(SdServerCapabilityRecord), typeof(GContainer))
+						return new BasicWrappingEList<SdServerCapabilityRecord, GContainer>(filteredContainers, typeof(SdServerCapabilityRecord), typeof(GContainer)) {
+							override protected delegateAdd(SdServerCapabilityRecord sdServerCapabilityRecord) {
+								sdServerCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerCapabilityRecord"))
+								super.delegateAdd(sdServerCapabilityRecord)
+							}
+							
+							override protected delegateAdd(int index, SdServerCapabilityRecord sdServerCapabilityRecord) {
+								sdServerCapabilityRecord.target?.gSetDefinition(containerValue.getContainerDefinition("SdServerCapabilityRecord"))
+								super.delegateAdd(index, sdServerCapabilityRecord)
+							}	
+						}
 					}
 					
 					

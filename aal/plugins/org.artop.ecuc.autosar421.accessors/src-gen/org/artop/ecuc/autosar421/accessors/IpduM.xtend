@@ -152,7 +152,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IpduMContainedRxPdu")
 				}
 			}
-			return new BasicWrappingEList<IpduMContainedRxPdu, GContainer>(filteredContainers, typeof(IpduMContainedRxPdu), typeof(GContainer))
+			return new BasicWrappingEList<IpduMContainedRxPdu, GContainer>(filteredContainers, typeof(IpduMContainedRxPdu), typeof(GContainer)) {
+				override protected delegateAdd(IpduMContainedRxPdu ipduMContainedRxPdu) {
+					ipduMContainedRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainedRxPdu"))
+					super.delegateAdd(ipduMContainedRxPdu)
+				}
+				
+				override protected delegateAdd(int index, IpduMContainedRxPdu ipduMContainedRxPdu) {
+					ipduMContainedRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainedRxPdu"))
+					super.delegateAdd(index, ipduMContainedRxPdu)
+				}	
+			}
 		}
 		
 		def List<IpduMContainedTxPdu> getIpduMContainedTxPdus(){
@@ -161,7 +171,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IpduMContainedTxPdu")
 				}
 			}
-			return new BasicWrappingEList<IpduMContainedTxPdu, GContainer>(filteredContainers, typeof(IpduMContainedTxPdu), typeof(GContainer))
+			return new BasicWrappingEList<IpduMContainedTxPdu, GContainer>(filteredContainers, typeof(IpduMContainedTxPdu), typeof(GContainer)) {
+				override protected delegateAdd(IpduMContainedTxPdu ipduMContainedTxPdu) {
+					ipduMContainedTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainedTxPdu"))
+					super.delegateAdd(ipduMContainedTxPdu)
+				}
+				
+				override protected delegateAdd(int index, IpduMContainedTxPdu ipduMContainedTxPdu) {
+					ipduMContainedTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainedTxPdu"))
+					super.delegateAdd(index, ipduMContainedTxPdu)
+				}	
+			}
 		}
 		
 		def List<IpduMContainerRxPdu> getIpduMContainerRxPdus(){
@@ -170,7 +190,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IpduMContainerRxPdu")
 				}
 			}
-			return new BasicWrappingEList<IpduMContainerRxPdu, GContainer>(filteredContainers, typeof(IpduMContainerRxPdu), typeof(GContainer))
+			return new BasicWrappingEList<IpduMContainerRxPdu, GContainer>(filteredContainers, typeof(IpduMContainerRxPdu), typeof(GContainer)) {
+				override protected delegateAdd(IpduMContainerRxPdu ipduMContainerRxPdu) {
+					ipduMContainerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainerRxPdu"))
+					super.delegateAdd(ipduMContainerRxPdu)
+				}
+				
+				override protected delegateAdd(int index, IpduMContainerRxPdu ipduMContainerRxPdu) {
+					ipduMContainerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainerRxPdu"))
+					super.delegateAdd(index, ipduMContainerRxPdu)
+				}	
+			}
 		}
 		
 		def List<IpduMContainerTxPdu> getIpduMContainerTxPdus(){
@@ -179,7 +209,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IpduMContainerTxPdu")
 				}
 			}
-			return new BasicWrappingEList<IpduMContainerTxPdu, GContainer>(filteredContainers, typeof(IpduMContainerTxPdu), typeof(GContainer))
+			return new BasicWrappingEList<IpduMContainerTxPdu, GContainer>(filteredContainers, typeof(IpduMContainerTxPdu), typeof(GContainer)) {
+				override protected delegateAdd(IpduMContainerTxPdu ipduMContainerTxPdu) {
+					ipduMContainerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainerTxPdu"))
+					super.delegateAdd(ipduMContainerTxPdu)
+				}
+				
+				override protected delegateAdd(int index, IpduMContainerTxPdu ipduMContainerTxPdu) {
+					ipduMContainerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMContainerTxPdu"))
+					super.delegateAdd(index, ipduMContainerTxPdu)
+				}	
+			}
 		}
 		
 		def List<IpduMRxPathway> getIpduMRxPathways(){
@@ -188,7 +228,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IpduMRxPathway")
 				}
 			}
-			return new BasicWrappingEList<IpduMRxPathway, GContainer>(filteredContainers, typeof(IpduMRxPathway), typeof(GContainer))
+			return new BasicWrappingEList<IpduMRxPathway, GContainer>(filteredContainers, typeof(IpduMRxPathway), typeof(GContainer)) {
+				override protected delegateAdd(IpduMRxPathway ipduMRxPathway) {
+					ipduMRxPathway.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxPathway"))
+					super.delegateAdd(ipduMRxPathway)
+				}
+				
+				override protected delegateAdd(int index, IpduMRxPathway ipduMRxPathway) {
+					ipduMRxPathway.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxPathway"))
+					super.delegateAdd(index, ipduMRxPathway)
+				}	
+			}
 		}
 		
 		def List<IpduMTxPathway> getIpduMTxPathways(){
@@ -197,7 +247,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IpduMTxPathway")
 				}
 			}
-			return new BasicWrappingEList<IpduMTxPathway, GContainer>(filteredContainers, typeof(IpduMTxPathway), typeof(GContainer))
+			return new BasicWrappingEList<IpduMTxPathway, GContainer>(filteredContainers, typeof(IpduMTxPathway), typeof(GContainer)) {
+				override protected delegateAdd(IpduMTxPathway ipduMTxPathway) {
+					ipduMTxPathway.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxPathway"))
+					super.delegateAdd(ipduMTxPathway)
+				}
+				
+				override protected delegateAdd(int index, IpduMTxPathway ipduMTxPathway) {
+					ipduMTxPathway.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxPathway"))
+					super.delegateAdd(index, ipduMTxPathway)
+				}	
+			}
 		}
 		
 		
@@ -920,7 +980,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "IpduMRxDynamicPart")
 						}
 					}
-					return new BasicWrappingEList<IpduMRxDynamicPart, GContainer>(filteredContainers, typeof(IpduMRxDynamicPart), typeof(GContainer))
+					return new BasicWrappingEList<IpduMRxDynamicPart, GContainer>(filteredContainers, typeof(IpduMRxDynamicPart), typeof(GContainer)) {
+						override protected delegateAdd(IpduMRxDynamicPart ipduMRxDynamicPart) {
+							ipduMRxDynamicPart.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxDynamicPart"))
+							super.delegateAdd(ipduMRxDynamicPart)
+						}
+						
+						override protected delegateAdd(int index, IpduMRxDynamicPart ipduMRxDynamicPart) {
+							ipduMRxDynamicPart.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxDynamicPart"))
+							super.delegateAdd(index, ipduMRxDynamicPart)
+						}	
+					}
 				}
 				
 				def List<IpduMRxDynamicSegment> getIpduMRxDynamicSegments(){
@@ -929,7 +999,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "IpduMRxDynamicSegment")
 						}
 					}
-					return new BasicWrappingEList<IpduMRxDynamicSegment, GContainer>(filteredContainers, typeof(IpduMRxDynamicSegment), typeof(GContainer))
+					return new BasicWrappingEList<IpduMRxDynamicSegment, GContainer>(filteredContainers, typeof(IpduMRxDynamicSegment), typeof(GContainer)) {
+						override protected delegateAdd(IpduMRxDynamicSegment ipduMRxDynamicSegment) {
+							ipduMRxDynamicSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxDynamicSegment"))
+							super.delegateAdd(ipduMRxDynamicSegment)
+						}
+						
+						override protected delegateAdd(int index, IpduMRxDynamicSegment ipduMRxDynamicSegment) {
+							ipduMRxDynamicSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxDynamicSegment"))
+							super.delegateAdd(index, ipduMRxDynamicSegment)
+						}	
+					}
 				}
 				
 				def IpduMRxStaticPart getIpduMRxStaticPart(){
@@ -947,7 +1027,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "IpduMRxStaticSegment")
 						}
 					}
-					return new BasicWrappingEList<IpduMRxStaticSegment, GContainer>(filteredContainers, typeof(IpduMRxStaticSegment), typeof(GContainer))
+					return new BasicWrappingEList<IpduMRxStaticSegment, GContainer>(filteredContainers, typeof(IpduMRxStaticSegment), typeof(GContainer)) {
+						override protected delegateAdd(IpduMRxStaticSegment ipduMRxStaticSegment) {
+							ipduMRxStaticSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxStaticSegment"))
+							super.delegateAdd(ipduMRxStaticSegment)
+						}
+						
+						override protected delegateAdd(int index, IpduMRxStaticSegment ipduMRxStaticSegment) {
+							ipduMRxStaticSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMRxStaticSegment"))
+							super.delegateAdd(index, ipduMRxStaticSegment)
+						}	
+					}
 				}
 				
 				def IpduMSelectorField getIpduMSelectorField(){
@@ -1425,7 +1515,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "IpduMTxDynamicPart")
 						}
 					}
-					return new BasicWrappingEList<IpduMTxDynamicPart, GContainer>(filteredContainers, typeof(IpduMTxDynamicPart), typeof(GContainer))
+					return new BasicWrappingEList<IpduMTxDynamicPart, GContainer>(filteredContainers, typeof(IpduMTxDynamicPart), typeof(GContainer)) {
+						override protected delegateAdd(IpduMTxDynamicPart ipduMTxDynamicPart) {
+							ipduMTxDynamicPart.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxDynamicPart"))
+							super.delegateAdd(ipduMTxDynamicPart)
+						}
+						
+						override protected delegateAdd(int index, IpduMTxDynamicPart ipduMTxDynamicPart) {
+							ipduMTxDynamicPart.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxDynamicPart"))
+							super.delegateAdd(index, ipduMTxDynamicPart)
+						}	
+					}
 				}
 				
 				def List<IpduMTxDynamicSegment> getIpduMTxDynamicSegments(){
@@ -1434,7 +1534,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "IpduMTxDynamicSegment")
 						}
 					}
-					return new BasicWrappingEList<IpduMTxDynamicSegment, GContainer>(filteredContainers, typeof(IpduMTxDynamicSegment), typeof(GContainer))
+					return new BasicWrappingEList<IpduMTxDynamicSegment, GContainer>(filteredContainers, typeof(IpduMTxDynamicSegment), typeof(GContainer)) {
+						override protected delegateAdd(IpduMTxDynamicSegment ipduMTxDynamicSegment) {
+							ipduMTxDynamicSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxDynamicSegment"))
+							super.delegateAdd(ipduMTxDynamicSegment)
+						}
+						
+						override protected delegateAdd(int index, IpduMTxDynamicSegment ipduMTxDynamicSegment) {
+							ipduMTxDynamicSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxDynamicSegment"))
+							super.delegateAdd(index, ipduMTxDynamicSegment)
+						}	
+					}
 				}
 				
 				def IpduMTxStaticPart getIpduMTxStaticPart(){
@@ -1452,7 +1562,17 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "IpduMTxStaticSegment")
 						}
 					}
-					return new BasicWrappingEList<IpduMTxStaticSegment, GContainer>(filteredContainers, typeof(IpduMTxStaticSegment), typeof(GContainer))
+					return new BasicWrappingEList<IpduMTxStaticSegment, GContainer>(filteredContainers, typeof(IpduMTxStaticSegment), typeof(GContainer)) {
+						override protected delegateAdd(IpduMTxStaticSegment ipduMTxStaticSegment) {
+							ipduMTxStaticSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxStaticSegment"))
+							super.delegateAdd(ipduMTxStaticSegment)
+						}
+						
+						override protected delegateAdd(int index, IpduMTxStaticSegment ipduMTxStaticSegment) {
+							ipduMTxStaticSegment.target?.gSetDefinition(containerValue.getContainerDefinition("IpduMTxStaticSegment"))
+							super.delegateAdd(index, ipduMTxStaticSegment)
+						}	
+					}
 				}
 				
 				

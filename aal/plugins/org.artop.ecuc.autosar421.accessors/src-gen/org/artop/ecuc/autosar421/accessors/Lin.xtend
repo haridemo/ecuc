@@ -241,7 +241,17 @@ class Lin implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinChannel")
 				}
 			}
-			return new BasicWrappingEList<LinChannel, GContainer>(filteredContainers, typeof(LinChannel), typeof(GContainer))
+			return new BasicWrappingEList<LinChannel, GContainer>(filteredContainers, typeof(LinChannel), typeof(GContainer)) {
+				override protected delegateAdd(LinChannel linChannel) {
+					linChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinChannel"))
+					super.delegateAdd(linChannel)
+				}
+				
+				override protected delegateAdd(int index, LinChannel linChannel) {
+					linChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinChannel"))
+					super.delegateAdd(index, linChannel)
+				}	
+			}
 		}
 		
 		

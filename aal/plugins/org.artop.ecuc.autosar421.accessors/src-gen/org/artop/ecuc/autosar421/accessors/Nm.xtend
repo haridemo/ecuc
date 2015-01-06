@@ -74,7 +74,17 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "NmChannelConfig")
 			}
 		}
-		return new BasicWrappingEList<NmChannelConfig, GContainer>(filteredContainers, typeof(NmChannelConfig), typeof(GContainer))
+		return new BasicWrappingEList<NmChannelConfig, GContainer>(filteredContainers, typeof(NmChannelConfig), typeof(GContainer)) {
+			override protected delegateAdd(NmChannelConfig nmChannelConfig) {
+				nmChannelConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NmChannelConfig"))
+				super.delegateAdd(nmChannelConfig)
+			}
+		
+			override protected delegateAdd(int index, NmChannelConfig nmChannelConfig) {
+				nmChannelConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NmChannelConfig"))
+				super.delegateAdd(index, nmChannelConfig)
+			}
+		}
 	}
 	def NmGlobalConfig getNmGlobalConfig(){
 		moduleConfiguration.getByType(typeof(NmGlobalConfig))

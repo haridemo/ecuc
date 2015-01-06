@@ -82,7 +82,17 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "SecOCRxPduProcessing")
 			}
 		}
-		return new BasicWrappingEList<SecOCRxPduProcessing, GContainer>(filteredContainers, typeof(SecOCRxPduProcessing), typeof(GContainer))
+		return new BasicWrappingEList<SecOCRxPduProcessing, GContainer>(filteredContainers, typeof(SecOCRxPduProcessing), typeof(GContainer)) {
+			override protected delegateAdd(SecOCRxPduProcessing secOCRxPduProcessing) {
+				secOCRxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCRxPduProcessing"))
+				super.delegateAdd(secOCRxPduProcessing)
+			}
+		
+			override protected delegateAdd(int index, SecOCRxPduProcessing secOCRxPduProcessing) {
+				secOCRxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCRxPduProcessing"))
+				super.delegateAdd(index, secOCRxPduProcessing)
+			}
+		}
 	}
 	def List<SecOCSameBufferPduCollection> getSecOCSameBufferPduCollections(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -90,7 +100,17 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "SecOCSameBufferPduCollection")
 			}
 		}
-		return new BasicWrappingEList<SecOCSameBufferPduCollection, GContainer>(filteredContainers, typeof(SecOCSameBufferPduCollection), typeof(GContainer))
+		return new BasicWrappingEList<SecOCSameBufferPduCollection, GContainer>(filteredContainers, typeof(SecOCSameBufferPduCollection), typeof(GContainer)) {
+			override protected delegateAdd(SecOCSameBufferPduCollection secOCSameBufferPduCollection) {
+				secOCSameBufferPduCollection.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCSameBufferPduCollection"))
+				super.delegateAdd(secOCSameBufferPduCollection)
+			}
+		
+			override protected delegateAdd(int index, SecOCSameBufferPduCollection secOCSameBufferPduCollection) {
+				secOCSameBufferPduCollection.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCSameBufferPduCollection"))
+				super.delegateAdd(index, secOCSameBufferPduCollection)
+			}
+		}
 	}
 	def List<SecOCTxPduProcessing> getSecOCTxPduProcessings(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -98,7 +118,17 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "SecOCTxPduProcessing")
 			}
 		}
-		return new BasicWrappingEList<SecOCTxPduProcessing, GContainer>(filteredContainers, typeof(SecOCTxPduProcessing), typeof(GContainer))
+		return new BasicWrappingEList<SecOCTxPduProcessing, GContainer>(filteredContainers, typeof(SecOCTxPduProcessing), typeof(GContainer)) {
+			override protected delegateAdd(SecOCTxPduProcessing secOCTxPduProcessing) {
+				secOCTxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCTxPduProcessing"))
+				super.delegateAdd(secOCTxPduProcessing)
+			}
+		
+			override protected delegateAdd(int index, SecOCTxPduProcessing secOCTxPduProcessing) {
+				secOCTxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCTxPduProcessing"))
+				super.delegateAdd(index, secOCTxPduProcessing)
+			}
+		}
 	}
 	
 	static class SecOCGeneral implements IWrapper<GContainer> {

@@ -74,7 +74,17 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "CorTstBackgroundConfigSet")
 			}
 		}
-		return new BasicWrappingEList<CorTstBackgroundConfigSet, GContainer>(filteredContainers, typeof(CorTstBackgroundConfigSet), typeof(GContainer))
+		return new BasicWrappingEList<CorTstBackgroundConfigSet, GContainer>(filteredContainers, typeof(CorTstBackgroundConfigSet), typeof(GContainer)) {
+			override protected delegateAdd(CorTstBackgroundConfigSet corTstBackgroundConfigSet) {
+				corTstBackgroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstBackgroundConfigSet"))
+				super.delegateAdd(corTstBackgroundConfigSet)
+			}
+		
+			override protected delegateAdd(int index, CorTstBackgroundConfigSet corTstBackgroundConfigSet) {
+				corTstBackgroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstBackgroundConfigSet"))
+				super.delegateAdd(index, corTstBackgroundConfigSet)
+			}
+		}
 	}
 	def CorTstConfigApiServices getCorTstConfigApiServices(){
 		moduleConfiguration.getByType(typeof(CorTstConfigApiServices))
@@ -98,7 +108,17 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "CorTstForegroundConfigSet")
 			}
 		}
-		return new BasicWrappingEList<CorTstForegroundConfigSet, GContainer>(filteredContainers, typeof(CorTstForegroundConfigSet), typeof(GContainer))
+		return new BasicWrappingEList<CorTstForegroundConfigSet, GContainer>(filteredContainers, typeof(CorTstForegroundConfigSet), typeof(GContainer)) {
+			override protected delegateAdd(CorTstForegroundConfigSet corTstForegroundConfigSet) {
+				corTstForegroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstForegroundConfigSet"))
+				super.delegateAdd(corTstForegroundConfigSet)
+			}
+		
+			override protected delegateAdd(int index, CorTstForegroundConfigSet corTstForegroundConfigSet) {
+				corTstForegroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstForegroundConfigSet"))
+				super.delegateAdd(index, corTstForegroundConfigSet)
+			}
+		}
 	}
 	def CorTstGeneral getCorTstGeneral(){
 		moduleConfiguration.getByType(typeof(CorTstGeneral))

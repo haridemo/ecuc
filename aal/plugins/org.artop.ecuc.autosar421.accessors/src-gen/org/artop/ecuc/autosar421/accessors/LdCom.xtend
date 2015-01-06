@@ -112,7 +112,17 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LdComIPdu")
 				}
 			}
-			return new BasicWrappingEList<LdComIPdu, GContainer>(filteredContainers, typeof(LdComIPdu), typeof(GContainer))
+			return new BasicWrappingEList<LdComIPdu, GContainer>(filteredContainers, typeof(LdComIPdu), typeof(GContainer)) {
+				override protected delegateAdd(LdComIPdu ldComIPdu) {
+					ldComIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("LdComIPdu"))
+					super.delegateAdd(ldComIPdu)
+				}
+				
+				override protected delegateAdd(int index, LdComIPdu ldComIPdu) {
+					ldComIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("LdComIPdu"))
+					super.delegateAdd(index, ldComIPdu)
+				}	
+			}
 		}
 		
 		

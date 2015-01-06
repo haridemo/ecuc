@@ -408,7 +408,17 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DbgPredefinedDID")
 				}
 			}
-			return new BasicWrappingEList<DbgPredefinedDID, GContainer>(filteredContainers, typeof(DbgPredefinedDID), typeof(GContainer))
+			return new BasicWrappingEList<DbgPredefinedDID, GContainer>(filteredContainers, typeof(DbgPredefinedDID), typeof(GContainer)) {
+				override protected delegateAdd(DbgPredefinedDID dbgPredefinedDID) {
+					dbgPredefinedDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDID"))
+					super.delegateAdd(dbgPredefinedDID)
+				}
+				
+				override protected delegateAdd(int index, DbgPredefinedDID dbgPredefinedDID) {
+					dbgPredefinedDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDID"))
+					super.delegateAdd(index, dbgPredefinedDID)
+				}	
+			}
 		}
 		
 		def List<DbgStaticDID> getDbgStaticDIDs(){
@@ -417,7 +427,17 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DbgStaticDID")
 				}
 			}
-			return new BasicWrappingEList<DbgStaticDID, GContainer>(filteredContainers, typeof(DbgStaticDID), typeof(GContainer))
+			return new BasicWrappingEList<DbgStaticDID, GContainer>(filteredContainers, typeof(DbgStaticDID), typeof(GContainer)) {
+				override protected delegateAdd(DbgStaticDID dbgStaticDID) {
+					dbgStaticDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDID"))
+					super.delegateAdd(dbgStaticDID)
+				}
+				
+				override protected delegateAdd(int index, DbgStaticDID dbgStaticDID) {
+					dbgStaticDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDID"))
+					super.delegateAdd(index, dbgStaticDID)
+				}	
+			}
 		}
 		
 		
@@ -555,7 +575,17 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DbgPredefinedDIDAddInfo")
 					}
 				}
-				return new BasicWrappingEList<DbgPredefinedDIDAddInfo, GContainer>(filteredContainers, typeof(DbgPredefinedDIDAddInfo), typeof(GContainer))
+				return new BasicWrappingEList<DbgPredefinedDIDAddInfo, GContainer>(filteredContainers, typeof(DbgPredefinedDIDAddInfo), typeof(GContainer)) {
+					override protected delegateAdd(DbgPredefinedDIDAddInfo dbgPredefinedDIDAddInfo) {
+						dbgPredefinedDIDAddInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDIDAddInfo"))
+						super.delegateAdd(dbgPredefinedDIDAddInfo)
+					}
+					
+					override protected delegateAdd(int index, DbgPredefinedDIDAddInfo dbgPredefinedDIDAddInfo) {
+						dbgPredefinedDIDAddInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDIDAddInfo"))
+						super.delegateAdd(index, dbgPredefinedDIDAddInfo)
+					}	
+				}
 			}
 			
 			
@@ -1029,7 +1059,17 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DbgStaticDIDData")
 					}
 				}
-				return new BasicWrappingEList<DbgStaticDIDData, GContainer>(filteredContainers, typeof(DbgStaticDIDData), typeof(GContainer))
+				return new BasicWrappingEList<DbgStaticDIDData, GContainer>(filteredContainers, typeof(DbgStaticDIDData), typeof(GContainer)) {
+					override protected delegateAdd(DbgStaticDIDData dbgStaticDIDData) {
+						dbgStaticDIDData.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDIDData"))
+						super.delegateAdd(dbgStaticDIDData)
+					}
+					
+					override protected delegateAdd(int index, DbgStaticDIDData dbgStaticDIDData) {
+						dbgStaticDIDData.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDIDData"))
+						super.delegateAdd(index, dbgStaticDIDData)
+					}	
+				}
 			}
 			
 			

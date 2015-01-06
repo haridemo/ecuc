@@ -120,7 +120,17 @@ class Det implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DetModule")
 				}
 			}
-			return new BasicWrappingEList<DetModule, GContainer>(filteredContainers, typeof(DetModule), typeof(GContainer))
+			return new BasicWrappingEList<DetModule, GContainer>(filteredContainers, typeof(DetModule), typeof(GContainer)) {
+				override protected delegateAdd(DetModule detModule) {
+					detModule.target?.gSetDefinition(containerValue.getContainerDefinition("DetModule"))
+					super.delegateAdd(detModule)
+				}
+				
+				override protected delegateAdd(int index, DetModule detModule) {
+					detModule.target?.gSetDefinition(containerValue.getContainerDefinition("DetModule"))
+					super.delegateAdd(index, detModule)
+				}	
+			}
 		}
 		
 		

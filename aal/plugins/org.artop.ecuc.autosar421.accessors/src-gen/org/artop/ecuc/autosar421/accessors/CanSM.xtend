@@ -144,7 +144,17 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CanSMManagerNetwork")
 				}
 			}
-			return new BasicWrappingEList<CanSMManagerNetwork, GContainer>(filteredContainers, typeof(CanSMManagerNetwork), typeof(GContainer))
+			return new BasicWrappingEList<CanSMManagerNetwork, GContainer>(filteredContainers, typeof(CanSMManagerNetwork), typeof(GContainer)) {
+				override protected delegateAdd(CanSMManagerNetwork canSMManagerNetwork) {
+					canSMManagerNetwork.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMManagerNetwork"))
+					super.delegateAdd(canSMManagerNetwork)
+				}
+				
+				override protected delegateAdd(int index, CanSMManagerNetwork canSMManagerNetwork) {
+					canSMManagerNetwork.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMManagerNetwork"))
+					super.delegateAdd(index, canSMManagerNetwork)
+				}	
+			}
 		}
 		
 		
@@ -293,7 +303,17 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanSMController")
 					}
 				}
-				return new BasicWrappingEList<CanSMController, GContainer>(filteredContainers, typeof(CanSMController), typeof(GContainer))
+				return new BasicWrappingEList<CanSMController, GContainer>(filteredContainers, typeof(CanSMController), typeof(GContainer)) {
+					override protected delegateAdd(CanSMController canSMController) {
+						canSMController.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMController"))
+						super.delegateAdd(canSMController)
+					}
+					
+					override protected delegateAdd(int index, CanSMController canSMController) {
+						canSMController.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMController"))
+						super.delegateAdd(index, canSMController)
+					}	
+				}
 			}
 			
 			def CanSMDemEventParameterRefs getCanSMDemEventParameterRefs(){

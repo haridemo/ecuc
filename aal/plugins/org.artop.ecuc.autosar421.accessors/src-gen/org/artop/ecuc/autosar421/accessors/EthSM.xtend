@@ -82,7 +82,17 @@ class EthSM implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "EthSMNetwork")
 			}
 		}
-		return new BasicWrappingEList<EthSMNetwork, GContainer>(filteredContainers, typeof(EthSMNetwork), typeof(GContainer))
+		return new BasicWrappingEList<EthSMNetwork, GContainer>(filteredContainers, typeof(EthSMNetwork), typeof(GContainer)) {
+			override protected delegateAdd(EthSMNetwork ethSMNetwork) {
+				ethSMNetwork.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EthSMNetwork"))
+				super.delegateAdd(ethSMNetwork)
+			}
+		
+			override protected delegateAdd(int index, EthSMNetwork ethSMNetwork) {
+				ethSMNetwork.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EthSMNetwork"))
+				super.delegateAdd(index, ethSMNetwork)
+			}
+		}
 	}
 	
 	static class EthSMGeneral implements IWrapper<GContainer> {

@@ -120,7 +120,17 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "AdcHwUnit")
 				}
 			}
-			return new BasicWrappingEList<AdcHwUnit, GContainer>(filteredContainers, typeof(AdcHwUnit), typeof(GContainer))
+			return new BasicWrappingEList<AdcHwUnit, GContainer>(filteredContainers, typeof(AdcHwUnit), typeof(GContainer)) {
+				override protected delegateAdd(AdcHwUnit adcHwUnit) {
+					adcHwUnit.target?.gSetDefinition(containerValue.getContainerDefinition("AdcHwUnit"))
+					super.delegateAdd(adcHwUnit)
+				}
+				
+				override protected delegateAdd(int index, AdcHwUnit adcHwUnit) {
+					adcHwUnit.target?.gSetDefinition(containerValue.getContainerDefinition("AdcHwUnit"))
+					super.delegateAdd(index, adcHwUnit)
+				}	
+			}
 		}
 		
 		
@@ -225,7 +235,17 @@ class Adc implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "AdcChannel")
 					}
 				}
-				return new BasicWrappingEList<AdcChannel, GContainer>(filteredContainers, typeof(AdcChannel), typeof(GContainer))
+				return new BasicWrappingEList<AdcChannel, GContainer>(filteredContainers, typeof(AdcChannel), typeof(GContainer)) {
+					override protected delegateAdd(AdcChannel adcChannel) {
+						adcChannel.target?.gSetDefinition(containerValue.getContainerDefinition("AdcChannel"))
+						super.delegateAdd(adcChannel)
+					}
+					
+					override protected delegateAdd(int index, AdcChannel adcChannel) {
+						adcChannel.target?.gSetDefinition(containerValue.getContainerDefinition("AdcChannel"))
+						super.delegateAdd(index, adcChannel)
+					}	
+				}
 			}
 			
 			def List<AdcGroup> getAdcGroups(){
@@ -234,7 +254,17 @@ class Adc implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "AdcGroup")
 					}
 				}
-				return new BasicWrappingEList<AdcGroup, GContainer>(filteredContainers, typeof(AdcGroup), typeof(GContainer))
+				return new BasicWrappingEList<AdcGroup, GContainer>(filteredContainers, typeof(AdcGroup), typeof(GContainer)) {
+					override protected delegateAdd(AdcGroup adcGroup) {
+						adcGroup.target?.gSetDefinition(containerValue.getContainerDefinition("AdcGroup"))
+						super.delegateAdd(adcGroup)
+					}
+					
+					override protected delegateAdd(int index, AdcGroup adcGroup) {
+						adcGroup.target?.gSetDefinition(containerValue.getContainerDefinition("AdcGroup"))
+						super.delegateAdd(index, adcGroup)
+					}	
+				}
 			}
 			
 			
@@ -1086,7 +1116,17 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "AdcPowerStateConfig")
 				}
 			}
-			return new BasicWrappingEList<AdcPowerStateConfig, GContainer>(filteredContainers, typeof(AdcPowerStateConfig), typeof(GContainer))
+			return new BasicWrappingEList<AdcPowerStateConfig, GContainer>(filteredContainers, typeof(AdcPowerStateConfig), typeof(GContainer)) {
+				override protected delegateAdd(AdcPowerStateConfig adcPowerStateConfig) {
+					adcPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("AdcPowerStateConfig"))
+					super.delegateAdd(adcPowerStateConfig)
+				}
+				
+				override protected delegateAdd(int index, AdcPowerStateConfig adcPowerStateConfig) {
+					adcPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("AdcPowerStateConfig"))
+					super.delegateAdd(index, adcPowerStateConfig)
+				}	
+			}
 		}
 		
 		

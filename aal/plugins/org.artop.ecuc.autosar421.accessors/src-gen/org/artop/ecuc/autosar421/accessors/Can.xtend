@@ -112,7 +112,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CanController")
 				}
 			}
-			return new BasicWrappingEList<CanController, GContainer>(filteredContainers, typeof(CanController), typeof(GContainer))
+			return new BasicWrappingEList<CanController, GContainer>(filteredContainers, typeof(CanController), typeof(GContainer)) {
+				override protected delegateAdd(CanController canController) {
+					canController.target?.gSetDefinition(containerValue.getContainerDefinition("CanController"))
+					super.delegateAdd(canController)
+				}
+				
+				override protected delegateAdd(int index, CanController canController) {
+					canController.target?.gSetDefinition(containerValue.getContainerDefinition("CanController"))
+					super.delegateAdd(index, canController)
+				}	
+			}
 		}
 		
 		def List<CanHardwareObject> getCanHardwareObjects(){
@@ -121,7 +131,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CanHardwareObject")
 				}
 			}
-			return new BasicWrappingEList<CanHardwareObject, GContainer>(filteredContainers, typeof(CanHardwareObject), typeof(GContainer))
+			return new BasicWrappingEList<CanHardwareObject, GContainer>(filteredContainers, typeof(CanHardwareObject), typeof(GContainer)) {
+				override protected delegateAdd(CanHardwareObject canHardwareObject) {
+					canHardwareObject.target?.gSetDefinition(containerValue.getContainerDefinition("CanHardwareObject"))
+					super.delegateAdd(canHardwareObject)
+				}
+				
+				override protected delegateAdd(int index, CanHardwareObject canHardwareObject) {
+					canHardwareObject.target?.gSetDefinition(containerValue.getContainerDefinition("CanHardwareObject"))
+					super.delegateAdd(index, canHardwareObject)
+				}	
+			}
 		}
 		
 		def CanIcom getCanIcom(){
@@ -406,7 +426,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanControllerBaudrateConfig")
 					}
 				}
-				return new BasicWrappingEList<CanControllerBaudrateConfig, GContainer>(filteredContainers, typeof(CanControllerBaudrateConfig), typeof(GContainer))
+				return new BasicWrappingEList<CanControllerBaudrateConfig, GContainer>(filteredContainers, typeof(CanControllerBaudrateConfig), typeof(GContainer)) {
+					override protected delegateAdd(CanControllerBaudrateConfig canControllerBaudrateConfig) {
+						canControllerBaudrateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanControllerBaudrateConfig"))
+						super.delegateAdd(canControllerBaudrateConfig)
+					}
+					
+					override protected delegateAdd(int index, CanControllerBaudrateConfig canControllerBaudrateConfig) {
+						canControllerBaudrateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanControllerBaudrateConfig"))
+						super.delegateAdd(index, canControllerBaudrateConfig)
+					}	
+				}
 			}
 			
 			def CanTTController getCanTTController(){
@@ -1248,7 +1278,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanHwFilter")
 					}
 				}
-				return new BasicWrappingEList<CanHwFilter, GContainer>(filteredContainers, typeof(CanHwFilter), typeof(GContainer))
+				return new BasicWrappingEList<CanHwFilter, GContainer>(filteredContainers, typeof(CanHwFilter), typeof(GContainer)) {
+					override protected delegateAdd(CanHwFilter canHwFilter) {
+						canHwFilter.target?.gSetDefinition(containerValue.getContainerDefinition("CanHwFilter"))
+						super.delegateAdd(canHwFilter)
+					}
+					
+					override protected delegateAdd(int index, CanHwFilter canHwFilter) {
+						canHwFilter.target?.gSetDefinition(containerValue.getContainerDefinition("CanHwFilter"))
+						super.delegateAdd(index, canHwFilter)
+					}	
+				}
 			}
 			
 			def List<CanTTHardwareObjectTrigger> getCanTTHardwareObjectTriggers(){
@@ -1257,7 +1297,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanTTHardwareObjectTrigger")
 					}
 				}
-				return new BasicWrappingEList<CanTTHardwareObjectTrigger, GContainer>(filteredContainers, typeof(CanTTHardwareObjectTrigger), typeof(GContainer))
+				return new BasicWrappingEList<CanTTHardwareObjectTrigger, GContainer>(filteredContainers, typeof(CanTTHardwareObjectTrigger), typeof(GContainer)) {
+					override protected delegateAdd(CanTTHardwareObjectTrigger canTTHardwareObjectTrigger) {
+						canTTHardwareObjectTrigger.target?.gSetDefinition(containerValue.getContainerDefinition("CanTTHardwareObjectTrigger"))
+						super.delegateAdd(canTTHardwareObjectTrigger)
+					}
+					
+					override protected delegateAdd(int index, CanTTHardwareObjectTrigger canTTHardwareObjectTrigger) {
+						canTTHardwareObjectTrigger.target?.gSetDefinition(containerValue.getContainerDefinition("CanTTHardwareObjectTrigger"))
+						super.delegateAdd(index, canTTHardwareObjectTrigger)
+					}	
+				}
 			}
 			
 			
@@ -1475,7 +1525,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanIcomConfig")
 					}
 				}
-				return new BasicWrappingEList<CanIcomConfig, GContainer>(filteredContainers, typeof(CanIcomConfig), typeof(GContainer))
+				return new BasicWrappingEList<CanIcomConfig, GContainer>(filteredContainers, typeof(CanIcomConfig), typeof(GContainer)) {
+					override protected delegateAdd(CanIcomConfig canIcomConfig) {
+						canIcomConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomConfig"))
+						super.delegateAdd(canIcomConfig)
+					}
+					
+					override protected delegateAdd(int index, CanIcomConfig canIcomConfig) {
+						canIcomConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomConfig"))
+						super.delegateAdd(index, canIcomConfig)
+					}	
+				}
 			}
 			
 			
@@ -1569,7 +1629,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "CanIcomRxMessage")
 							}
 						}
-						return new BasicWrappingEList<CanIcomRxMessage, GContainer>(filteredContainers, typeof(CanIcomRxMessage), typeof(GContainer))
+						return new BasicWrappingEList<CanIcomRxMessage, GContainer>(filteredContainers, typeof(CanIcomRxMessage), typeof(GContainer)) {
+							override protected delegateAdd(CanIcomRxMessage canIcomRxMessage) {
+								canIcomRxMessage.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessage"))
+								super.delegateAdd(canIcomRxMessage)
+							}
+							
+							override protected delegateAdd(int index, CanIcomRxMessage canIcomRxMessage) {
+								canIcomRxMessage.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessage"))
+								super.delegateAdd(index, canIcomRxMessage)
+							}	
+						}
 					}
 					
 					
@@ -1680,7 +1750,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "CanIcomRxMessageSignalConfig")
 								}
 							}
-							return new BasicWrappingEList<CanIcomRxMessageSignalConfig, GContainer>(filteredContainers, typeof(CanIcomRxMessageSignalConfig), typeof(GContainer))
+							return new BasicWrappingEList<CanIcomRxMessageSignalConfig, GContainer>(filteredContainers, typeof(CanIcomRxMessageSignalConfig), typeof(GContainer)) {
+								override protected delegateAdd(CanIcomRxMessageSignalConfig canIcomRxMessageSignalConfig) {
+									canIcomRxMessageSignalConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessageSignalConfig"))
+									super.delegateAdd(canIcomRxMessageSignalConfig)
+								}
+								
+								override protected delegateAdd(int index, CanIcomRxMessageSignalConfig canIcomRxMessageSignalConfig) {
+									canIcomRxMessageSignalConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessageSignalConfig"))
+									super.delegateAdd(index, canIcomRxMessageSignalConfig)
+								}	
+							}
 						}
 						
 						
@@ -2033,7 +2113,17 @@ class Can implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CanMainFunctionRWPeriods")
 				}
 			}
-			return new BasicWrappingEList<CanMainFunctionRWPeriods, GContainer>(filteredContainers, typeof(CanMainFunctionRWPeriods), typeof(GContainer))
+			return new BasicWrappingEList<CanMainFunctionRWPeriods, GContainer>(filteredContainers, typeof(CanMainFunctionRWPeriods), typeof(GContainer)) {
+				override protected delegateAdd(CanMainFunctionRWPeriods canMainFunctionRWPeriods) {
+					canMainFunctionRWPeriods.target?.gSetDefinition(containerValue.getContainerDefinition("CanMainFunctionRWPeriods"))
+					super.delegateAdd(canMainFunctionRWPeriods)
+				}
+				
+				override protected delegateAdd(int index, CanMainFunctionRWPeriods canMainFunctionRWPeriods) {
+					canMainFunctionRWPeriods.target?.gSetDefinition(containerValue.getContainerDefinition("CanMainFunctionRWPeriods"))
+					super.delegateAdd(index, canMainFunctionRWPeriods)
+				}	
+			}
 		}
 		
 		

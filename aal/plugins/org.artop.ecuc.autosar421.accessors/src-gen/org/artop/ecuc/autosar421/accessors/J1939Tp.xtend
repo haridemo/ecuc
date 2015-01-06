@@ -112,7 +112,17 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "J1939TpRxChannel")
 				}
 			}
-			return new BasicWrappingEList<J1939TpRxChannel, GContainer>(filteredContainers, typeof(J1939TpRxChannel), typeof(GContainer))
+			return new BasicWrappingEList<J1939TpRxChannel, GContainer>(filteredContainers, typeof(J1939TpRxChannel), typeof(GContainer)) {
+				override protected delegateAdd(J1939TpRxChannel j1939TpRxChannel) {
+					j1939TpRxChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpRxChannel"))
+					super.delegateAdd(j1939TpRxChannel)
+				}
+				
+				override protected delegateAdd(int index, J1939TpRxChannel j1939TpRxChannel) {
+					j1939TpRxChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpRxChannel"))
+					super.delegateAdd(index, j1939TpRxChannel)
+				}	
+			}
 		}
 		
 		def List<J1939TpTxChannel> getJ1939TpTxChannels(){
@@ -121,7 +131,17 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "J1939TpTxChannel")
 				}
 			}
-			return new BasicWrappingEList<J1939TpTxChannel, GContainer>(filteredContainers, typeof(J1939TpTxChannel), typeof(GContainer))
+			return new BasicWrappingEList<J1939TpTxChannel, GContainer>(filteredContainers, typeof(J1939TpTxChannel), typeof(GContainer)) {
+				override protected delegateAdd(J1939TpTxChannel j1939TpTxChannel) {
+					j1939TpTxChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpTxChannel"))
+					super.delegateAdd(j1939TpTxChannel)
+				}
+				
+				override protected delegateAdd(int index, J1939TpTxChannel j1939TpTxChannel) {
+					j1939TpTxChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpTxChannel"))
+					super.delegateAdd(index, j1939TpTxChannel)
+				}	
+			}
 		}
 		
 		
@@ -315,7 +335,17 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "J1939TpRxPg")
 					}
 				}
-				return new BasicWrappingEList<J1939TpRxPg, GContainer>(filteredContainers, typeof(J1939TpRxPg), typeof(GContainer))
+				return new BasicWrappingEList<J1939TpRxPg, GContainer>(filteredContainers, typeof(J1939TpRxPg), typeof(GContainer)) {
+					override protected delegateAdd(J1939TpRxPg j1939TpRxPg) {
+						j1939TpRxPg.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpRxPg"))
+						super.delegateAdd(j1939TpRxPg)
+					}
+					
+					override protected delegateAdd(int index, J1939TpRxPg j1939TpRxPg) {
+						j1939TpRxPg.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpRxPg"))
+						super.delegateAdd(index, j1939TpRxPg)
+					}	
+				}
 			}
 			
 			def J1939TpTxFcNPdu getJ1939TpTxFcNPdu(){
@@ -498,7 +528,17 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "J1939TpRxNSdu")
 						}
 					}
-					return new BasicWrappingEList<J1939TpRxNSdu, GContainer>(filteredContainers, typeof(J1939TpRxNSdu), typeof(GContainer))
+					return new BasicWrappingEList<J1939TpRxNSdu, GContainer>(filteredContainers, typeof(J1939TpRxNSdu), typeof(GContainer)) {
+						override protected delegateAdd(J1939TpRxNSdu j1939TpRxNSdu) {
+							j1939TpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpRxNSdu"))
+							super.delegateAdd(j1939TpRxNSdu)
+						}
+						
+						override protected delegateAdd(int index, J1939TpRxNSdu j1939TpRxNSdu) {
+							j1939TpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpRxNSdu"))
+							super.delegateAdd(index, j1939TpRxNSdu)
+						}	
+					}
 				}
 				
 				
@@ -842,7 +882,17 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "J1939TpTxPg")
 					}
 				}
-				return new BasicWrappingEList<J1939TpTxPg, GContainer>(filteredContainers, typeof(J1939TpTxPg), typeof(GContainer))
+				return new BasicWrappingEList<J1939TpTxPg, GContainer>(filteredContainers, typeof(J1939TpTxPg), typeof(GContainer)) {
+					override protected delegateAdd(J1939TpTxPg j1939TpTxPg) {
+						j1939TpTxPg.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpTxPg"))
+						super.delegateAdd(j1939TpTxPg)
+					}
+					
+					override protected delegateAdd(int index, J1939TpTxPg j1939TpTxPg) {
+						j1939TpTxPg.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpTxPg"))
+						super.delegateAdd(index, j1939TpTxPg)
+					}	
+				}
 			}
 			
 			
@@ -1067,7 +1117,17 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "J1939TpTxNSdu")
 						}
 					}
-					return new BasicWrappingEList<J1939TpTxNSdu, GContainer>(filteredContainers, typeof(J1939TpTxNSdu), typeof(GContainer))
+					return new BasicWrappingEList<J1939TpTxNSdu, GContainer>(filteredContainers, typeof(J1939TpTxNSdu), typeof(GContainer)) {
+						override protected delegateAdd(J1939TpTxNSdu j1939TpTxNSdu) {
+							j1939TpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpTxNSdu"))
+							super.delegateAdd(j1939TpTxNSdu)
+						}
+						
+						override protected delegateAdd(int index, J1939TpTxNSdu j1939TpTxNSdu) {
+							j1939TpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("J1939TpTxNSdu"))
+							super.delegateAdd(index, j1939TpTxNSdu)
+						}	
+					}
 				}
 				
 				

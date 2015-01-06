@@ -177,13 +177,13 @@ public class EcucValueAccessorUtil {
         } else {
           if ((definition instanceof GChoiceContainerDef)) {
             EList<GParamConfContainerDef> _gGetChoices = ((GChoiceContainerDef)definition).gGetChoices();
-            for (final GParamConfContainerDef choiceDefinition : _gGetChoices) {
-              String _gGetShortName = choiceDefinition.gGetShortName();
-              boolean _equals = _gGetShortName.equals(containerDefName);
-              if (_equals) {
-                return choiceDefinition;
+            final Function1<GParamConfContainerDef, Boolean> _function_2 = new Function1<GParamConfContainerDef, Boolean>() {
+              public Boolean apply(final GParamConfContainerDef it) {
+                String _gGetShortName = it.gGetShortName();
+                return Boolean.valueOf(_gGetShortName.equals(containerDefName));
               }
-            }
+            };
+            return IterableExtensions.<GParamConfContainerDef>findFirst(_gGetChoices, _function_2);
           }
         }
       }

@@ -295,7 +295,17 @@ class Fr implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FrController")
 				}
 			}
-			return new BasicWrappingEList<FrController, GContainer>(filteredContainers, typeof(FrController), typeof(GContainer))
+			return new BasicWrappingEList<FrController, GContainer>(filteredContainers, typeof(FrController), typeof(GContainer)) {
+				override protected delegateAdd(FrController frController) {
+					frController.target?.gSetDefinition(containerValue.getContainerDefinition("FrController"))
+					super.delegateAdd(frController)
+				}
+				
+				override protected delegateAdd(int index, FrController frController) {
+					frController.target?.gSetDefinition(containerValue.getContainerDefinition("FrController"))
+					super.delegateAdd(index, frController)
+				}	
+			}
 		}
 		
 		
@@ -932,7 +942,17 @@ class Fr implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FrAbsoluteTimer")
 					}
 				}
-				return new BasicWrappingEList<FrAbsoluteTimer, GContainer>(filteredContainers, typeof(FrAbsoluteTimer), typeof(GContainer))
+				return new BasicWrappingEList<FrAbsoluteTimer, GContainer>(filteredContainers, typeof(FrAbsoluteTimer), typeof(GContainer)) {
+					override protected delegateAdd(FrAbsoluteTimer frAbsoluteTimer) {
+						frAbsoluteTimer.target?.gSetDefinition(containerValue.getContainerDefinition("FrAbsoluteTimer"))
+						super.delegateAdd(frAbsoluteTimer)
+					}
+					
+					override protected delegateAdd(int index, FrAbsoluteTimer frAbsoluteTimer) {
+						frAbsoluteTimer.target?.gSetDefinition(containerValue.getContainerDefinition("FrAbsoluteTimer"))
+						super.delegateAdd(index, frAbsoluteTimer)
+					}	
+				}
 			}
 			
 			def FrControllerDemEventParameterRefs getFrControllerDemEventParameterRefs(){
@@ -950,7 +970,17 @@ class Fr implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FrFifo")
 					}
 				}
-				return new BasicWrappingEList<FrFifo, GContainer>(filteredContainers, typeof(FrFifo), typeof(GContainer))
+				return new BasicWrappingEList<FrFifo, GContainer>(filteredContainers, typeof(FrFifo), typeof(GContainer)) {
+					override protected delegateAdd(FrFifo frFifo) {
+						frFifo.target?.gSetDefinition(containerValue.getContainerDefinition("FrFifo"))
+						super.delegateAdd(frFifo)
+					}
+					
+					override protected delegateAdd(int index, FrFifo frFifo) {
+						frFifo.target?.gSetDefinition(containerValue.getContainerDefinition("FrFifo"))
+						super.delegateAdd(index, frFifo)
+					}	
+				}
 			}
 			
 			
@@ -1187,7 +1217,17 @@ class Fr implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "FrRange")
 						}
 					}
-					return new BasicWrappingEList<FrRange, GContainer>(filteredContainers, typeof(FrRange), typeof(GContainer))
+					return new BasicWrappingEList<FrRange, GContainer>(filteredContainers, typeof(FrRange), typeof(GContainer)) {
+						override protected delegateAdd(FrRange frRange) {
+							frRange.target?.gSetDefinition(containerValue.getContainerDefinition("FrRange"))
+							super.delegateAdd(frRange)
+						}
+						
+						override protected delegateAdd(int index, FrRange frRange) {
+							frRange.target?.gSetDefinition(containerValue.getContainerDefinition("FrRange"))
+							super.delegateAdd(index, frRange)
+						}	
+					}
 				}
 				
 				

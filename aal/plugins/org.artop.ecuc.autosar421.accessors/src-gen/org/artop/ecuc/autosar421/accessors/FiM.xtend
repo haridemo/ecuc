@@ -112,7 +112,17 @@ class FiM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FiMFID")
 				}
 			}
-			return new BasicWrappingEList<FiMFID, GContainer>(filteredContainers, typeof(FiMFID), typeof(GContainer))
+			return new BasicWrappingEList<FiMFID, GContainer>(filteredContainers, typeof(FiMFID), typeof(GContainer)) {
+				override protected delegateAdd(FiMFID fiMFID) {
+					fiMFID.target?.gSetDefinition(containerValue.getContainerDefinition("FiMFID"))
+					super.delegateAdd(fiMFID)
+				}
+				
+				override protected delegateAdd(int index, FiMFID fiMFID) {
+					fiMFID.target?.gSetDefinition(containerValue.getContainerDefinition("FiMFID"))
+					super.delegateAdd(index, fiMFID)
+				}	
+			}
 		}
 		
 		def List<FiMInhibitionConfiguration> getFiMInhibitionConfigurations(){
@@ -121,7 +131,17 @@ class FiM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FiMInhibitionConfiguration")
 				}
 			}
-			return new BasicWrappingEList<FiMInhibitionConfiguration, GContainer>(filteredContainers, typeof(FiMInhibitionConfiguration), typeof(GContainer))
+			return new BasicWrappingEList<FiMInhibitionConfiguration, GContainer>(filteredContainers, typeof(FiMInhibitionConfiguration), typeof(GContainer)) {
+				override protected delegateAdd(FiMInhibitionConfiguration fiMInhibitionConfiguration) {
+					fiMInhibitionConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("FiMInhibitionConfiguration"))
+					super.delegateAdd(fiMInhibitionConfiguration)
+				}
+				
+				override protected delegateAdd(int index, FiMInhibitionConfiguration fiMInhibitionConfiguration) {
+					fiMInhibitionConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("FiMInhibitionConfiguration"))
+					super.delegateAdd(index, fiMInhibitionConfiguration)
+				}	
+			}
 		}
 		
 		def List<FiMSummaryEvent> getFiMSummaryEvents(){
@@ -130,7 +150,17 @@ class FiM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FiMSummaryEvent")
 				}
 			}
-			return new BasicWrappingEList<FiMSummaryEvent, GContainer>(filteredContainers, typeof(FiMSummaryEvent), typeof(GContainer))
+			return new BasicWrappingEList<FiMSummaryEvent, GContainer>(filteredContainers, typeof(FiMSummaryEvent), typeof(GContainer)) {
+				override protected delegateAdd(FiMSummaryEvent fiMSummaryEvent) {
+					fiMSummaryEvent.target?.gSetDefinition(containerValue.getContainerDefinition("FiMSummaryEvent"))
+					super.delegateAdd(fiMSummaryEvent)
+				}
+				
+				override protected delegateAdd(int index, FiMSummaryEvent fiMSummaryEvent) {
+					fiMSummaryEvent.target?.gSetDefinition(containerValue.getContainerDefinition("FiMSummaryEvent"))
+					super.delegateAdd(index, fiMSummaryEvent)
+				}	
+			}
 		}
 		
 		

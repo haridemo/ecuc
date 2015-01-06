@@ -144,7 +144,17 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CanTrcvChannel")
 				}
 			}
-			return new BasicWrappingEList<CanTrcvChannel, GContainer>(filteredContainers, typeof(CanTrcvChannel), typeof(GContainer))
+			return new BasicWrappingEList<CanTrcvChannel, GContainer>(filteredContainers, typeof(CanTrcvChannel), typeof(GContainer)) {
+				override protected delegateAdd(CanTrcvChannel canTrcvChannel) {
+					canTrcvChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvChannel"))
+					super.delegateAdd(canTrcvChannel)
+				}
+				
+				override protected delegateAdd(int index, CanTrcvChannel canTrcvChannel) {
+					canTrcvChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvChannel"))
+					super.delegateAdd(index, canTrcvChannel)
+				}	
+			}
 		}
 		
 		
@@ -435,7 +445,17 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "CanTrcvDioChannelAccess")
 							}
 						}
-						return new BasicWrappingEList<CanTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(CanTrcvDioChannelAccess), typeof(GContainer))
+						return new BasicWrappingEList<CanTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(CanTrcvDioChannelAccess), typeof(GContainer)) {
+							override protected delegateAdd(CanTrcvDioChannelAccess canTrcvDioChannelAccess) {
+								canTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvDioChannelAccess"))
+								super.delegateAdd(canTrcvDioChannelAccess)
+							}
+							
+							override protected delegateAdd(int index, CanTrcvDioChannelAccess canTrcvDioChannelAccess) {
+								canTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvDioChannelAccess"))
+								super.delegateAdd(index, canTrcvDioChannelAccess)
+							}	
+						}
 					}
 					
 					
@@ -509,7 +529,17 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "CanTrcvSpiSequence")
 							}
 						}
-						return new BasicWrappingEList<CanTrcvSpiSequence, GContainer>(filteredContainers, typeof(CanTrcvSpiSequence), typeof(GContainer))
+						return new BasicWrappingEList<CanTrcvSpiSequence, GContainer>(filteredContainers, typeof(CanTrcvSpiSequence), typeof(GContainer)) {
+							override protected delegateAdd(CanTrcvSpiSequence canTrcvSpiSequence) {
+								canTrcvSpiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvSpiSequence"))
+								super.delegateAdd(canTrcvSpiSequence)
+							}
+							
+							override protected delegateAdd(int index, CanTrcvSpiSequence canTrcvSpiSequence) {
+								canTrcvSpiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvSpiSequence"))
+								super.delegateAdd(index, canTrcvSpiSequence)
+							}	
+						}
 					}
 					
 					
@@ -780,7 +810,17 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CanTrcvPnFrameDataMaskSpec")
 						}
 					}
-					return new BasicWrappingEList<CanTrcvPnFrameDataMaskSpec, GContainer>(filteredContainers, typeof(CanTrcvPnFrameDataMaskSpec), typeof(GContainer))
+					return new BasicWrappingEList<CanTrcvPnFrameDataMaskSpec, GContainer>(filteredContainers, typeof(CanTrcvPnFrameDataMaskSpec), typeof(GContainer)) {
+						override protected delegateAdd(CanTrcvPnFrameDataMaskSpec canTrcvPnFrameDataMaskSpec) {
+							canTrcvPnFrameDataMaskSpec.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvPnFrameDataMaskSpec"))
+							super.delegateAdd(canTrcvPnFrameDataMaskSpec)
+						}
+						
+						override protected delegateAdd(int index, CanTrcvPnFrameDataMaskSpec canTrcvPnFrameDataMaskSpec) {
+							canTrcvPnFrameDataMaskSpec.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvPnFrameDataMaskSpec"))
+							super.delegateAdd(index, canTrcvPnFrameDataMaskSpec)
+						}	
+					}
 				}
 				
 				

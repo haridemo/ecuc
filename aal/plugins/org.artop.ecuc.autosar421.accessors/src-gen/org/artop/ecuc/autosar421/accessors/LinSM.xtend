@@ -128,7 +128,17 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinSMChannel")
 				}
 			}
-			return new BasicWrappingEList<LinSMChannel, GContainer>(filteredContainers, typeof(LinSMChannel), typeof(GContainer))
+			return new BasicWrappingEList<LinSMChannel, GContainer>(filteredContainers, typeof(LinSMChannel), typeof(GContainer)) {
+				override protected delegateAdd(LinSMChannel linSMChannel) {
+					linSMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMChannel"))
+					super.delegateAdd(linSMChannel)
+				}
+				
+				override protected delegateAdd(int index, LinSMChannel linSMChannel) {
+					linSMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMChannel"))
+					super.delegateAdd(index, linSMChannel)
+				}	
+			}
 		}
 		
 		
@@ -202,7 +212,17 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "LinSMSchedule")
 					}
 				}
-				return new BasicWrappingEList<LinSMSchedule, GContainer>(filteredContainers, typeof(LinSMSchedule), typeof(GContainer))
+				return new BasicWrappingEList<LinSMSchedule, GContainer>(filteredContainers, typeof(LinSMSchedule), typeof(GContainer)) {
+					override protected delegateAdd(LinSMSchedule linSMSchedule) {
+						linSMSchedule.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMSchedule"))
+						super.delegateAdd(linSMSchedule)
+					}
+					
+					override protected delegateAdd(int index, LinSMSchedule linSMSchedule) {
+						linSMSchedule.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMSchedule"))
+						super.delegateAdd(index, linSMSchedule)
+					}	
+				}
 			}
 			
 			

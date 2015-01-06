@@ -136,7 +136,17 @@ class Icu implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "IcuChannel")
 				}
 			}
-			return new BasicWrappingEList<IcuChannel, GContainer>(filteredContainers, typeof(IcuChannel), typeof(GContainer))
+			return new BasicWrappingEList<IcuChannel, GContainer>(filteredContainers, typeof(IcuChannel), typeof(GContainer)) {
+				override protected delegateAdd(IcuChannel icuChannel) {
+					icuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("IcuChannel"))
+					super.delegateAdd(icuChannel)
+				}
+				
+				override protected delegateAdd(int index, IcuChannel icuChannel) {
+					icuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("IcuChannel"))
+					super.delegateAdd(index, icuChannel)
+				}	
+			}
 		}
 		
 		

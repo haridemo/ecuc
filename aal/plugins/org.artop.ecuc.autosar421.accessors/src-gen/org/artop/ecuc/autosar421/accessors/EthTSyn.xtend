@@ -82,7 +82,17 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "EthTSynGlobalTimeDomain")
 			}
 		}
-		return new BasicWrappingEList<EthTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(EthTSynGlobalTimeDomain), typeof(GContainer))
+		return new BasicWrappingEList<EthTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(EthTSynGlobalTimeDomain), typeof(GContainer)) {
+			override protected delegateAdd(EthTSynGlobalTimeDomain ethTSynGlobalTimeDomain) {
+				ethTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EthTSynGlobalTimeDomain"))
+				super.delegateAdd(ethTSynGlobalTimeDomain)
+			}
+		
+			override protected delegateAdd(int index, EthTSynGlobalTimeDomain ethTSynGlobalTimeDomain) {
+				ethTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EthTSynGlobalTimeDomain"))
+				super.delegateAdd(index, ethTSynGlobalTimeDomain)
+			}
+		}
 	}
 	
 	static class EthTSynGeneral implements IWrapper<GContainer> {

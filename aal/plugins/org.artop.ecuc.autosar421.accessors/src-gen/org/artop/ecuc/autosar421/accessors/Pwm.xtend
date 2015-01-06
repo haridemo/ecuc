@@ -120,7 +120,17 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "PwmChannel")
 				}
 			}
-			return new BasicWrappingEList<PwmChannel, GContainer>(filteredContainers, typeof(PwmChannel), typeof(GContainer))
+			return new BasicWrappingEList<PwmChannel, GContainer>(filteredContainers, typeof(PwmChannel), typeof(GContainer)) {
+				override protected delegateAdd(PwmChannel pwmChannel) {
+					pwmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("PwmChannel"))
+					super.delegateAdd(pwmChannel)
+				}
+				
+				override protected delegateAdd(int index, PwmChannel pwmChannel) {
+					pwmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("PwmChannel"))
+					super.delegateAdd(index, pwmChannel)
+				}	
+			}
 		}
 		
 		
@@ -583,7 +593,17 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "PwmPowerStateConfig")
 				}
 			}
-			return new BasicWrappingEList<PwmPowerStateConfig, GContainer>(filteredContainers, typeof(PwmPowerStateConfig), typeof(GContainer))
+			return new BasicWrappingEList<PwmPowerStateConfig, GContainer>(filteredContainers, typeof(PwmPowerStateConfig), typeof(GContainer)) {
+				override protected delegateAdd(PwmPowerStateConfig pwmPowerStateConfig) {
+					pwmPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("PwmPowerStateConfig"))
+					super.delegateAdd(pwmPowerStateConfig)
+				}
+				
+				override protected delegateAdd(int index, PwmPowerStateConfig pwmPowerStateConfig) {
+					pwmPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("PwmPowerStateConfig"))
+					super.delegateAdd(index, pwmPowerStateConfig)
+				}	
+			}
 		}
 		
 		

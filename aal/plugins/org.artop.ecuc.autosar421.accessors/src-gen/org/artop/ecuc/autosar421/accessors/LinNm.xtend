@@ -328,7 +328,17 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinNmChannelConfig")
 				}
 			}
-			return new BasicWrappingEList<LinNmChannelConfig, GContainer>(filteredContainers, typeof(LinNmChannelConfig), typeof(GContainer))
+			return new BasicWrappingEList<LinNmChannelConfig, GContainer>(filteredContainers, typeof(LinNmChannelConfig), typeof(GContainer)) {
+				override protected delegateAdd(LinNmChannelConfig linNmChannelConfig) {
+					linNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinNmChannelConfig"))
+					super.delegateAdd(linNmChannelConfig)
+				}
+				
+				override protected delegateAdd(int index, LinNmChannelConfig linNmChannelConfig) {
+					linNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinNmChannelConfig"))
+					super.delegateAdd(index, linNmChannelConfig)
+				}	
+			}
 		}
 		
 		

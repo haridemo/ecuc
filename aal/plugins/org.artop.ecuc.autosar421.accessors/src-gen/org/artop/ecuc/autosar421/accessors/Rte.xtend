@@ -82,7 +82,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteBswModuleInstance")
 			}
 		}
-		return new BasicWrappingEList<RteBswModuleInstance, GContainer>(filteredContainers, typeof(RteBswModuleInstance), typeof(GContainer))
+		return new BasicWrappingEList<RteBswModuleInstance, GContainer>(filteredContainers, typeof(RteBswModuleInstance), typeof(GContainer)) {
+			override protected delegateAdd(RteBswModuleInstance rteBswModuleInstance) {
+				rteBswModuleInstance.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteBswModuleInstance"))
+				super.delegateAdd(rteBswModuleInstance)
+			}
+		
+			override protected delegateAdd(int index, RteBswModuleInstance rteBswModuleInstance) {
+				rteBswModuleInstance.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteBswModuleInstance"))
+				super.delegateAdd(index, rteBswModuleInstance)
+			}
+		}
 	}
 	def RteGeneration getRteGeneration(){
 		moduleConfiguration.getByType(typeof(RteGeneration))
@@ -98,7 +108,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteImplicitCommunication")
 			}
 		}
-		return new BasicWrappingEList<RteImplicitCommunication, GContainer>(filteredContainers, typeof(RteImplicitCommunication), typeof(GContainer))
+		return new BasicWrappingEList<RteImplicitCommunication, GContainer>(filteredContainers, typeof(RteImplicitCommunication), typeof(GContainer)) {
+			override protected delegateAdd(RteImplicitCommunication rteImplicitCommunication) {
+				rteImplicitCommunication.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteImplicitCommunication"))
+				super.delegateAdd(rteImplicitCommunication)
+			}
+		
+			override protected delegateAdd(int index, RteImplicitCommunication rteImplicitCommunication) {
+				rteImplicitCommunication.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteImplicitCommunication"))
+				super.delegateAdd(index, rteImplicitCommunication)
+			}
+		}
 	}
 	def List<RteInitializationBehavior> getRteInitializationBehaviors(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -106,7 +126,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteInitializationBehavior")
 			}
 		}
-		return new BasicWrappingEList<RteInitializationBehavior, GContainer>(filteredContainers, typeof(RteInitializationBehavior), typeof(GContainer))
+		return new BasicWrappingEList<RteInitializationBehavior, GContainer>(filteredContainers, typeof(RteInitializationBehavior), typeof(GContainer)) {
+			override protected delegateAdd(RteInitializationBehavior rteInitializationBehavior) {
+				rteInitializationBehavior.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteInitializationBehavior"))
+				super.delegateAdd(rteInitializationBehavior)
+			}
+		
+			override protected delegateAdd(int index, RteInitializationBehavior rteInitializationBehavior) {
+				rteInitializationBehavior.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteInitializationBehavior"))
+				super.delegateAdd(index, rteInitializationBehavior)
+			}
+		}
 	}
 	def List<RteInitializationRunnableBatch> getRteInitializationRunnableBatchs(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -114,7 +144,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteInitializationRunnableBatch")
 			}
 		}
-		return new BasicWrappingEList<RteInitializationRunnableBatch, GContainer>(filteredContainers, typeof(RteInitializationRunnableBatch), typeof(GContainer))
+		return new BasicWrappingEList<RteInitializationRunnableBatch, GContainer>(filteredContainers, typeof(RteInitializationRunnableBatch), typeof(GContainer)) {
+			override protected delegateAdd(RteInitializationRunnableBatch rteInitializationRunnableBatch) {
+				rteInitializationRunnableBatch.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteInitializationRunnableBatch"))
+				super.delegateAdd(rteInitializationRunnableBatch)
+			}
+		
+			override protected delegateAdd(int index, RteInitializationRunnableBatch rteInitializationRunnableBatch) {
+				rteInitializationRunnableBatch.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteInitializationRunnableBatch"))
+				super.delegateAdd(index, rteInitializationRunnableBatch)
+			}
+		}
 	}
 	def List<RteOsInteraction> getRteOsInteractions(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -122,7 +162,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteOsInteraction")
 			}
 		}
-		return new BasicWrappingEList<RteOsInteraction, GContainer>(filteredContainers, typeof(RteOsInteraction), typeof(GContainer))
+		return new BasicWrappingEList<RteOsInteraction, GContainer>(filteredContainers, typeof(RteOsInteraction), typeof(GContainer)) {
+			override protected delegateAdd(RteOsInteraction rteOsInteraction) {
+				rteOsInteraction.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteOsInteraction"))
+				super.delegateAdd(rteOsInteraction)
+			}
+		
+			override protected delegateAdd(int index, RteOsInteraction rteOsInteraction) {
+				rteOsInteraction.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteOsInteraction"))
+				super.delegateAdd(index, rteOsInteraction)
+			}
+		}
 	}
 	def RtePostBuildVariantConfiguration getRtePostBuildVariantConfiguration(){
 		moduleConfiguration.getByType(typeof(RtePostBuildVariantConfiguration))
@@ -138,7 +188,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteSwComponentInstance")
 			}
 		}
-		return new BasicWrappingEList<RteSwComponentInstance, GContainer>(filteredContainers, typeof(RteSwComponentInstance), typeof(GContainer))
+		return new BasicWrappingEList<RteSwComponentInstance, GContainer>(filteredContainers, typeof(RteSwComponentInstance), typeof(GContainer)) {
+			override protected delegateAdd(RteSwComponentInstance rteSwComponentInstance) {
+				rteSwComponentInstance.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteSwComponentInstance"))
+				super.delegateAdd(rteSwComponentInstance)
+			}
+		
+			override protected delegateAdd(int index, RteSwComponentInstance rteSwComponentInstance) {
+				rteSwComponentInstance.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteSwComponentInstance"))
+				super.delegateAdd(index, rteSwComponentInstance)
+			}
+		}
 	}
 	def List<RteSwComponentType> getRteSwComponentTypes(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -146,7 +206,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "RteSwComponentType")
 			}
 		}
-		return new BasicWrappingEList<RteSwComponentType, GContainer>(filteredContainers, typeof(RteSwComponentType), typeof(GContainer))
+		return new BasicWrappingEList<RteSwComponentType, GContainer>(filteredContainers, typeof(RteSwComponentType), typeof(GContainer)) {
+			override protected delegateAdd(RteSwComponentType rteSwComponentType) {
+				rteSwComponentType.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteSwComponentType"))
+				super.delegateAdd(rteSwComponentType)
+			}
+		
+			override protected delegateAdd(int index, RteSwComponentType rteSwComponentType) {
+				rteSwComponentType.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("RteSwComponentType"))
+				super.delegateAdd(index, rteSwComponentType)
+			}
+		}
 	}
 	
 	static class RteBswGeneral implements IWrapper<GContainer> {
@@ -233,7 +303,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswEventToTaskMapping")
 				}
 			}
-			return new BasicWrappingEList<RteBswEventToTaskMapping, GContainer>(filteredContainers, typeof(RteBswEventToTaskMapping), typeof(GContainer))
+			return new BasicWrappingEList<RteBswEventToTaskMapping, GContainer>(filteredContainers, typeof(RteBswEventToTaskMapping), typeof(GContainer)) {
+				override protected delegateAdd(RteBswEventToTaskMapping rteBswEventToTaskMapping) {
+					rteBswEventToTaskMapping.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswEventToTaskMapping"))
+					super.delegateAdd(rteBswEventToTaskMapping)
+				}
+				
+				override protected delegateAdd(int index, RteBswEventToTaskMapping rteBswEventToTaskMapping) {
+					rteBswEventToTaskMapping.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswEventToTaskMapping"))
+					super.delegateAdd(index, rteBswEventToTaskMapping)
+				}	
+			}
 		}
 		
 		def List<RteBswExclusiveAreaImpl> getRteBswExclusiveAreaImpls(){
@@ -242,7 +322,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswExclusiveAreaImpl")
 				}
 			}
-			return new BasicWrappingEList<RteBswExclusiveAreaImpl, GContainer>(filteredContainers, typeof(RteBswExclusiveAreaImpl), typeof(GContainer))
+			return new BasicWrappingEList<RteBswExclusiveAreaImpl, GContainer>(filteredContainers, typeof(RteBswExclusiveAreaImpl), typeof(GContainer)) {
+				override protected delegateAdd(RteBswExclusiveAreaImpl rteBswExclusiveAreaImpl) {
+					rteBswExclusiveAreaImpl.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswExclusiveAreaImpl"))
+					super.delegateAdd(rteBswExclusiveAreaImpl)
+				}
+				
+				override protected delegateAdd(int index, RteBswExclusiveAreaImpl rteBswExclusiveAreaImpl) {
+					rteBswExclusiveAreaImpl.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswExclusiveAreaImpl"))
+					super.delegateAdd(index, rteBswExclusiveAreaImpl)
+				}	
+			}
 		}
 		
 		def List<RteBswExternalTriggerConfig> getRteBswExternalTriggerConfigs(){
@@ -251,7 +341,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswExternalTriggerConfig")
 				}
 			}
-			return new BasicWrappingEList<RteBswExternalTriggerConfig, GContainer>(filteredContainers, typeof(RteBswExternalTriggerConfig), typeof(GContainer))
+			return new BasicWrappingEList<RteBswExternalTriggerConfig, GContainer>(filteredContainers, typeof(RteBswExternalTriggerConfig), typeof(GContainer)) {
+				override protected delegateAdd(RteBswExternalTriggerConfig rteBswExternalTriggerConfig) {
+					rteBswExternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswExternalTriggerConfig"))
+					super.delegateAdd(rteBswExternalTriggerConfig)
+				}
+				
+				override protected delegateAdd(int index, RteBswExternalTriggerConfig rteBswExternalTriggerConfig) {
+					rteBswExternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswExternalTriggerConfig"))
+					super.delegateAdd(index, rteBswExternalTriggerConfig)
+				}	
+			}
 		}
 		
 		def List<RteBswInternalTriggerConfig> getRteBswInternalTriggerConfigs(){
@@ -260,7 +360,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswInternalTriggerConfig")
 				}
 			}
-			return new BasicWrappingEList<RteBswInternalTriggerConfig, GContainer>(filteredContainers, typeof(RteBswInternalTriggerConfig), typeof(GContainer))
+			return new BasicWrappingEList<RteBswInternalTriggerConfig, GContainer>(filteredContainers, typeof(RteBswInternalTriggerConfig), typeof(GContainer)) {
+				override protected delegateAdd(RteBswInternalTriggerConfig rteBswInternalTriggerConfig) {
+					rteBswInternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswInternalTriggerConfig"))
+					super.delegateAdd(rteBswInternalTriggerConfig)
+				}
+				
+				override protected delegateAdd(int index, RteBswInternalTriggerConfig rteBswInternalTriggerConfig) {
+					rteBswInternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswInternalTriggerConfig"))
+					super.delegateAdd(index, rteBswInternalTriggerConfig)
+				}	
+			}
 		}
 		
 		def List<RteBswRequiredClientServerConnection> getRteBswRequiredClientServerConnections(){
@@ -269,7 +379,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswRequiredClientServerConnection")
 				}
 			}
-			return new BasicWrappingEList<RteBswRequiredClientServerConnection, GContainer>(filteredContainers, typeof(RteBswRequiredClientServerConnection), typeof(GContainer))
+			return new BasicWrappingEList<RteBswRequiredClientServerConnection, GContainer>(filteredContainers, typeof(RteBswRequiredClientServerConnection), typeof(GContainer)) {
+				override protected delegateAdd(RteBswRequiredClientServerConnection rteBswRequiredClientServerConnection) {
+					rteBswRequiredClientServerConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredClientServerConnection"))
+					super.delegateAdd(rteBswRequiredClientServerConnection)
+				}
+				
+				override protected delegateAdd(int index, RteBswRequiredClientServerConnection rteBswRequiredClientServerConnection) {
+					rteBswRequiredClientServerConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredClientServerConnection"))
+					super.delegateAdd(index, rteBswRequiredClientServerConnection)
+				}	
+			}
 		}
 		
 		def List<RteBswRequiredModeGroupConnection> getRteBswRequiredModeGroupConnections(){
@@ -278,7 +398,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswRequiredModeGroupConnection")
 				}
 			}
-			return new BasicWrappingEList<RteBswRequiredModeGroupConnection, GContainer>(filteredContainers, typeof(RteBswRequiredModeGroupConnection), typeof(GContainer))
+			return new BasicWrappingEList<RteBswRequiredModeGroupConnection, GContainer>(filteredContainers, typeof(RteBswRequiredModeGroupConnection), typeof(GContainer)) {
+				override protected delegateAdd(RteBswRequiredModeGroupConnection rteBswRequiredModeGroupConnection) {
+					rteBswRequiredModeGroupConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredModeGroupConnection"))
+					super.delegateAdd(rteBswRequiredModeGroupConnection)
+				}
+				
+				override protected delegateAdd(int index, RteBswRequiredModeGroupConnection rteBswRequiredModeGroupConnection) {
+					rteBswRequiredModeGroupConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredModeGroupConnection"))
+					super.delegateAdd(index, rteBswRequiredModeGroupConnection)
+				}	
+			}
 		}
 		
 		def List<RteBswRequiredSenderReceiverConnection> getRteBswRequiredSenderReceiverConnections(){
@@ -287,7 +417,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswRequiredSenderReceiverConnection")
 				}
 			}
-			return new BasicWrappingEList<RteBswRequiredSenderReceiverConnection, GContainer>(filteredContainers, typeof(RteBswRequiredSenderReceiverConnection), typeof(GContainer))
+			return new BasicWrappingEList<RteBswRequiredSenderReceiverConnection, GContainer>(filteredContainers, typeof(RteBswRequiredSenderReceiverConnection), typeof(GContainer)) {
+				override protected delegateAdd(RteBswRequiredSenderReceiverConnection rteBswRequiredSenderReceiverConnection) {
+					rteBswRequiredSenderReceiverConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredSenderReceiverConnection"))
+					super.delegateAdd(rteBswRequiredSenderReceiverConnection)
+				}
+				
+				override protected delegateAdd(int index, RteBswRequiredSenderReceiverConnection rteBswRequiredSenderReceiverConnection) {
+					rteBswRequiredSenderReceiverConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredSenderReceiverConnection"))
+					super.delegateAdd(index, rteBswRequiredSenderReceiverConnection)
+				}	
+			}
 		}
 		
 		def List<RteBswRequiredTriggerConnection> getRteBswRequiredTriggerConnections(){
@@ -296,7 +436,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteBswRequiredTriggerConnection")
 				}
 			}
-			return new BasicWrappingEList<RteBswRequiredTriggerConnection, GContainer>(filteredContainers, typeof(RteBswRequiredTriggerConnection), typeof(GContainer))
+			return new BasicWrappingEList<RteBswRequiredTriggerConnection, GContainer>(filteredContainers, typeof(RteBswRequiredTriggerConnection), typeof(GContainer)) {
+				override protected delegateAdd(RteBswRequiredTriggerConnection rteBswRequiredTriggerConnection) {
+					rteBswRequiredTriggerConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredTriggerConnection"))
+					super.delegateAdd(rteBswRequiredTriggerConnection)
+				}
+				
+				override protected delegateAdd(int index, RteBswRequiredTriggerConnection rteBswRequiredTriggerConnection) {
+					rteBswRequiredTriggerConnection.target?.gSetDefinition(containerValue.getContainerDefinition("RteBswRequiredTriggerConnection"))
+					super.delegateAdd(index, rteBswRequiredTriggerConnection)
+				}	
+			}
 		}
 		
 		
@@ -1319,7 +1469,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteModeToScheduleTableMapping")
 				}
 			}
-			return new BasicWrappingEList<RteModeToScheduleTableMapping, GContainer>(filteredContainers, typeof(RteModeToScheduleTableMapping), typeof(GContainer))
+			return new BasicWrappingEList<RteModeToScheduleTableMapping, GContainer>(filteredContainers, typeof(RteModeToScheduleTableMapping), typeof(GContainer)) {
+				override protected delegateAdd(RteModeToScheduleTableMapping rteModeToScheduleTableMapping) {
+					rteModeToScheduleTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("RteModeToScheduleTableMapping"))
+					super.delegateAdd(rteModeToScheduleTableMapping)
+				}
+				
+				override protected delegateAdd(int index, RteModeToScheduleTableMapping rteModeToScheduleTableMapping) {
+					rteModeToScheduleTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("RteModeToScheduleTableMapping"))
+					super.delegateAdd(index, rteModeToScheduleTableMapping)
+				}	
+			}
 		}
 		
 		def List<RteSyncPoint> getRteSyncPoints(){
@@ -1328,7 +1488,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteSyncPoint")
 				}
 			}
-			return new BasicWrappingEList<RteSyncPoint, GContainer>(filteredContainers, typeof(RteSyncPoint), typeof(GContainer))
+			return new BasicWrappingEList<RteSyncPoint, GContainer>(filteredContainers, typeof(RteSyncPoint), typeof(GContainer)) {
+				override protected delegateAdd(RteSyncPoint rteSyncPoint) {
+					rteSyncPoint.target?.gSetDefinition(containerValue.getContainerDefinition("RteSyncPoint"))
+					super.delegateAdd(rteSyncPoint)
+				}
+				
+				override protected delegateAdd(int index, RteSyncPoint rteSyncPoint) {
+					rteSyncPoint.target?.gSetDefinition(containerValue.getContainerDefinition("RteSyncPoint"))
+					super.delegateAdd(index, rteSyncPoint)
+				}	
+			}
 		}
 		
 		def List<RteUsedOsActivation> getRteUsedOsActivations(){
@@ -1337,7 +1507,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteUsedOsActivation")
 				}
 			}
-			return new BasicWrappingEList<RteUsedOsActivation, GContainer>(filteredContainers, typeof(RteUsedOsActivation), typeof(GContainer))
+			return new BasicWrappingEList<RteUsedOsActivation, GContainer>(filteredContainers, typeof(RteUsedOsActivation), typeof(GContainer)) {
+				override protected delegateAdd(RteUsedOsActivation rteUsedOsActivation) {
+					rteUsedOsActivation.target?.gSetDefinition(containerValue.getContainerDefinition("RteUsedOsActivation"))
+					super.delegateAdd(rteUsedOsActivation)
+				}
+				
+				override protected delegateAdd(int index, RteUsedOsActivation rteUsedOsActivation) {
+					rteUsedOsActivation.target?.gSetDefinition(containerValue.getContainerDefinition("RteUsedOsActivation"))
+					super.delegateAdd(index, rteUsedOsActivation)
+				}	
+			}
 		}
 		
 		
@@ -1633,7 +1813,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteEventToTaskMapping")
 				}
 			}
-			return new BasicWrappingEList<RteEventToTaskMapping, GContainer>(filteredContainers, typeof(RteEventToTaskMapping), typeof(GContainer))
+			return new BasicWrappingEList<RteEventToTaskMapping, GContainer>(filteredContainers, typeof(RteEventToTaskMapping), typeof(GContainer)) {
+				override protected delegateAdd(RteEventToTaskMapping rteEventToTaskMapping) {
+					rteEventToTaskMapping.target?.gSetDefinition(containerValue.getContainerDefinition("RteEventToTaskMapping"))
+					super.delegateAdd(rteEventToTaskMapping)
+				}
+				
+				override protected delegateAdd(int index, RteEventToTaskMapping rteEventToTaskMapping) {
+					rteEventToTaskMapping.target?.gSetDefinition(containerValue.getContainerDefinition("RteEventToTaskMapping"))
+					super.delegateAdd(index, rteEventToTaskMapping)
+				}	
+			}
 		}
 		
 		def List<RteExclusiveAreaImplementation> getRteExclusiveAreaImplementations(){
@@ -1642,7 +1832,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteExclusiveAreaImplementation")
 				}
 			}
-			return new BasicWrappingEList<RteExclusiveAreaImplementation, GContainer>(filteredContainers, typeof(RteExclusiveAreaImplementation), typeof(GContainer))
+			return new BasicWrappingEList<RteExclusiveAreaImplementation, GContainer>(filteredContainers, typeof(RteExclusiveAreaImplementation), typeof(GContainer)) {
+				override protected delegateAdd(RteExclusiveAreaImplementation rteExclusiveAreaImplementation) {
+					rteExclusiveAreaImplementation.target?.gSetDefinition(containerValue.getContainerDefinition("RteExclusiveAreaImplementation"))
+					super.delegateAdd(rteExclusiveAreaImplementation)
+				}
+				
+				override protected delegateAdd(int index, RteExclusiveAreaImplementation rteExclusiveAreaImplementation) {
+					rteExclusiveAreaImplementation.target?.gSetDefinition(containerValue.getContainerDefinition("RteExclusiveAreaImplementation"))
+					super.delegateAdd(index, rteExclusiveAreaImplementation)
+				}	
+			}
 		}
 		
 		def List<RteExternalTriggerConfig> getRteExternalTriggerConfigs(){
@@ -1651,7 +1851,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteExternalTriggerConfig")
 				}
 			}
-			return new BasicWrappingEList<RteExternalTriggerConfig, GContainer>(filteredContainers, typeof(RteExternalTriggerConfig), typeof(GContainer))
+			return new BasicWrappingEList<RteExternalTriggerConfig, GContainer>(filteredContainers, typeof(RteExternalTriggerConfig), typeof(GContainer)) {
+				override protected delegateAdd(RteExternalTriggerConfig rteExternalTriggerConfig) {
+					rteExternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteExternalTriggerConfig"))
+					super.delegateAdd(rteExternalTriggerConfig)
+				}
+				
+				override protected delegateAdd(int index, RteExternalTriggerConfig rteExternalTriggerConfig) {
+					rteExternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteExternalTriggerConfig"))
+					super.delegateAdd(index, rteExternalTriggerConfig)
+				}	
+			}
 		}
 		
 		def List<RteInternalTriggerConfig> getRteInternalTriggerConfigs(){
@@ -1660,7 +1870,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteInternalTriggerConfig")
 				}
 			}
-			return new BasicWrappingEList<RteInternalTriggerConfig, GContainer>(filteredContainers, typeof(RteInternalTriggerConfig), typeof(GContainer))
+			return new BasicWrappingEList<RteInternalTriggerConfig, GContainer>(filteredContainers, typeof(RteInternalTriggerConfig), typeof(GContainer)) {
+				override protected delegateAdd(RteInternalTriggerConfig rteInternalTriggerConfig) {
+					rteInternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteInternalTriggerConfig"))
+					super.delegateAdd(rteInternalTriggerConfig)
+				}
+				
+				override protected delegateAdd(int index, RteInternalTriggerConfig rteInternalTriggerConfig) {
+					rteInternalTriggerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("RteInternalTriggerConfig"))
+					super.delegateAdd(index, rteInternalTriggerConfig)
+				}	
+			}
 		}
 		
 		def List<RteNvRamAllocation> getRteNvRamAllocations(){
@@ -1669,7 +1889,17 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "RteNvRamAllocation")
 				}
 			}
-			return new BasicWrappingEList<RteNvRamAllocation, GContainer>(filteredContainers, typeof(RteNvRamAllocation), typeof(GContainer))
+			return new BasicWrappingEList<RteNvRamAllocation, GContainer>(filteredContainers, typeof(RteNvRamAllocation), typeof(GContainer)) {
+				override protected delegateAdd(RteNvRamAllocation rteNvRamAllocation) {
+					rteNvRamAllocation.target?.gSetDefinition(containerValue.getContainerDefinition("RteNvRamAllocation"))
+					super.delegateAdd(rteNvRamAllocation)
+				}
+				
+				override protected delegateAdd(int index, RteNvRamAllocation rteNvRamAllocation) {
+					rteNvRamAllocation.target?.gSetDefinition(containerValue.getContainerDefinition("RteNvRamAllocation"))
+					super.delegateAdd(index, rteNvRamAllocation)
+				}	
+			}
 		}
 		
 		

@@ -144,7 +144,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComGwMapping")
 				}
 			}
-			return new BasicWrappingEList<ComGwMapping, GContainer>(filteredContainers, typeof(ComGwMapping), typeof(GContainer))
+			return new BasicWrappingEList<ComGwMapping, GContainer>(filteredContainers, typeof(ComGwMapping), typeof(GContainer)) {
+				override protected delegateAdd(ComGwMapping comGwMapping) {
+					comGwMapping.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwMapping"))
+					super.delegateAdd(comGwMapping)
+				}
+				
+				override protected delegateAdd(int index, ComGwMapping comGwMapping) {
+					comGwMapping.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwMapping"))
+					super.delegateAdd(index, comGwMapping)
+				}	
+			}
 		}
 		
 		def List<ComIPdu> getComIPdus(){
@@ -153,7 +163,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComIPdu")
 				}
 			}
-			return new BasicWrappingEList<ComIPdu, GContainer>(filteredContainers, typeof(ComIPdu), typeof(GContainer))
+			return new BasicWrappingEList<ComIPdu, GContainer>(filteredContainers, typeof(ComIPdu), typeof(GContainer)) {
+				override protected delegateAdd(ComIPdu comIPdu) {
+					comIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPdu"))
+					super.delegateAdd(comIPdu)
+				}
+				
+				override protected delegateAdd(int index, ComIPdu comIPdu) {
+					comIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPdu"))
+					super.delegateAdd(index, comIPdu)
+				}	
+			}
 		}
 		
 		def List<ComIPduGroup> getComIPduGroups(){
@@ -162,7 +182,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComIPduGroup")
 				}
 			}
-			return new BasicWrappingEList<ComIPduGroup, GContainer>(filteredContainers, typeof(ComIPduGroup), typeof(GContainer))
+			return new BasicWrappingEList<ComIPduGroup, GContainer>(filteredContainers, typeof(ComIPduGroup), typeof(GContainer)) {
+				override protected delegateAdd(ComIPduGroup comIPduGroup) {
+					comIPduGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPduGroup"))
+					super.delegateAdd(comIPduGroup)
+				}
+				
+				override protected delegateAdd(int index, ComIPduGroup comIPduGroup) {
+					comIPduGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPduGroup"))
+					super.delegateAdd(index, comIPduGroup)
+				}	
+			}
 		}
 		
 		def List<ComSignal> getComSignals(){
@@ -171,7 +201,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComSignal")
 				}
 			}
-			return new BasicWrappingEList<ComSignal, GContainer>(filteredContainers, typeof(ComSignal), typeof(GContainer))
+			return new BasicWrappingEList<ComSignal, GContainer>(filteredContainers, typeof(ComSignal), typeof(GContainer)) {
+				override protected delegateAdd(ComSignal comSignal) {
+					comSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignal"))
+					super.delegateAdd(comSignal)
+				}
+				
+				override protected delegateAdd(int index, ComSignal comSignal) {
+					comSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignal"))
+					super.delegateAdd(index, comSignal)
+				}	
+			}
 		}
 		
 		def List<ComSignalGroup> getComSignalGroups(){
@@ -180,7 +220,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComSignalGroup")
 				}
 			}
-			return new BasicWrappingEList<ComSignalGroup, GContainer>(filteredContainers, typeof(ComSignalGroup), typeof(GContainer))
+			return new BasicWrappingEList<ComSignalGroup, GContainer>(filteredContainers, typeof(ComSignalGroup), typeof(GContainer)) {
+				override protected delegateAdd(ComSignalGroup comSignalGroup) {
+					comSignalGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignalGroup"))
+					super.delegateAdd(comSignalGroup)
+				}
+				
+				override protected delegateAdd(int index, ComSignalGroup comSignalGroup) {
+					comSignalGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignalGroup"))
+					super.delegateAdd(index, comSignalGroup)
+				}	
+			}
 		}
 		
 		def ComTimeBase getComTimeBase(){
@@ -220,7 +270,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "ComGwDestination")
 					}
 				}
-				return new BasicWrappingEList<ComGwDestination, GContainer>(filteredContainers, typeof(ComGwDestination), typeof(GContainer))
+				return new BasicWrappingEList<ComGwDestination, GContainer>(filteredContainers, typeof(ComGwDestination), typeof(GContainer)) {
+					override protected delegateAdd(ComGwDestination comGwDestination) {
+						comGwDestination.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwDestination"))
+						super.delegateAdd(comGwDestination)
+					}
+					
+					override protected delegateAdd(int index, ComGwDestination comGwDestination) {
+						comGwDestination.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwDestination"))
+						super.delegateAdd(index, comGwDestination)
+					}	
+				}
 			}
 			
 			def ComGwSource getComGwSource(){
@@ -2783,7 +2843,17 @@ class Com implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "ComGroupSignal")
 					}
 				}
-				return new BasicWrappingEList<ComGroupSignal, GContainer>(filteredContainers, typeof(ComGroupSignal), typeof(GContainer))
+				return new BasicWrappingEList<ComGroupSignal, GContainer>(filteredContainers, typeof(ComGroupSignal), typeof(GContainer)) {
+					override protected delegateAdd(ComGroupSignal comGroupSignal) {
+						comGroupSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComGroupSignal"))
+						super.delegateAdd(comGroupSignal)
+					}
+					
+					override protected delegateAdd(int index, ComGroupSignal comGroupSignal) {
+						comGroupSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComGroupSignal"))
+						super.delegateAdd(index, comGroupSignal)
+					}	
+				}
 			}
 			
 			

@@ -82,7 +82,17 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "FrTSynGlobalTimeDomain")
 			}
 		}
-		return new BasicWrappingEList<FrTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeDomain), typeof(GContainer))
+		return new BasicWrappingEList<FrTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeDomain), typeof(GContainer)) {
+			override protected delegateAdd(FrTSynGlobalTimeDomain frTSynGlobalTimeDomain) {
+				frTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTSynGlobalTimeDomain"))
+				super.delegateAdd(frTSynGlobalTimeDomain)
+			}
+		
+			override protected delegateAdd(int index, FrTSynGlobalTimeDomain frTSynGlobalTimeDomain) {
+				frTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTSynGlobalTimeDomain"))
+				super.delegateAdd(index, frTSynGlobalTimeDomain)
+			}
+		}
 	}
 	
 	static class FrTSynGeneral implements IWrapper<GContainer> {
@@ -200,7 +210,17 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FrTSynGlobalTimeOfsDataIDListElement")
 					}
 				}
-				return new BasicWrappingEList<FrTSynGlobalTimeOfsDataIDListElement, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeOfsDataIDListElement), typeof(GContainer))
+				return new BasicWrappingEList<FrTSynGlobalTimeOfsDataIDListElement, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeOfsDataIDListElement), typeof(GContainer)) {
+					override protected delegateAdd(FrTSynGlobalTimeOfsDataIDListElement frTSynGlobalTimeOfsDataIDListElement) {
+						frTSynGlobalTimeOfsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeOfsDataIDListElement"))
+						super.delegateAdd(frTSynGlobalTimeOfsDataIDListElement)
+					}
+					
+					override protected delegateAdd(int index, FrTSynGlobalTimeOfsDataIDListElement frTSynGlobalTimeOfsDataIDListElement) {
+						frTSynGlobalTimeOfsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeOfsDataIDListElement"))
+						super.delegateAdd(index, frTSynGlobalTimeOfsDataIDListElement)
+					}	
+				}
 			}
 			
 			
@@ -289,7 +309,17 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FrTSynGlobalTimeSyncDataIDListElement")
 					}
 				}
-				return new BasicWrappingEList<FrTSynGlobalTimeSyncDataIDListElement, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeSyncDataIDListElement), typeof(GContainer))
+				return new BasicWrappingEList<FrTSynGlobalTimeSyncDataIDListElement, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeSyncDataIDListElement), typeof(GContainer)) {
+					override protected delegateAdd(FrTSynGlobalTimeSyncDataIDListElement frTSynGlobalTimeSyncDataIDListElement) {
+						frTSynGlobalTimeSyncDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeSyncDataIDListElement"))
+						super.delegateAdd(frTSynGlobalTimeSyncDataIDListElement)
+					}
+					
+					override protected delegateAdd(int index, FrTSynGlobalTimeSyncDataIDListElement frTSynGlobalTimeSyncDataIDListElement) {
+						frTSynGlobalTimeSyncDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeSyncDataIDListElement"))
+						super.delegateAdd(index, frTSynGlobalTimeSyncDataIDListElement)
+					}	
+				}
 			}
 			
 			

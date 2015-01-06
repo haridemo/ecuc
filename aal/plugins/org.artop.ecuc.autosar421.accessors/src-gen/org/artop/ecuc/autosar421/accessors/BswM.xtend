@@ -74,7 +74,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "BswMConfig")
 			}
 		}
-		return new BasicWrappingEList<BswMConfig, GContainer>(filteredContainers, typeof(BswMConfig), typeof(GContainer))
+		return new BasicWrappingEList<BswMConfig, GContainer>(filteredContainers, typeof(BswMConfig), typeof(GContainer)) {
+			override protected delegateAdd(BswMConfig bswMConfig) {
+				bswMConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("BswMConfig"))
+				super.delegateAdd(bswMConfig)
+			}
+		
+			override protected delegateAdd(int index, BswMConfig bswMConfig) {
+				bswMConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("BswMConfig"))
+				super.delegateAdd(index, bswMConfig)
+			}
+		}
 	}
 	def BswMGeneral getBswMGeneral(){
 		moduleConfiguration.getByType(typeof(BswMGeneral))
@@ -172,7 +182,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMLogicalExpression")
 					}
 				}
-				return new BasicWrappingEList<BswMLogicalExpression, GContainer>(filteredContainers, typeof(BswMLogicalExpression), typeof(GContainer))
+				return new BasicWrappingEList<BswMLogicalExpression, GContainer>(filteredContainers, typeof(BswMLogicalExpression), typeof(GContainer)) {
+					override protected delegateAdd(BswMLogicalExpression bswMLogicalExpression) {
+						bswMLogicalExpression.target?.gSetDefinition(containerValue.getContainerDefinition("BswMLogicalExpression"))
+						super.delegateAdd(bswMLogicalExpression)
+					}
+					
+					override protected delegateAdd(int index, BswMLogicalExpression bswMLogicalExpression) {
+						bswMLogicalExpression.target?.gSetDefinition(containerValue.getContainerDefinition("BswMLogicalExpression"))
+						super.delegateAdd(index, bswMLogicalExpression)
+					}	
+				}
 			}
 			
 			def List<BswMModeCondition> getBswMModeConditions(){
@@ -181,7 +201,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMModeCondition")
 					}
 				}
-				return new BasicWrappingEList<BswMModeCondition, GContainer>(filteredContainers, typeof(BswMModeCondition), typeof(GContainer))
+				return new BasicWrappingEList<BswMModeCondition, GContainer>(filteredContainers, typeof(BswMModeCondition), typeof(GContainer)) {
+					override protected delegateAdd(BswMModeCondition bswMModeCondition) {
+						bswMModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeCondition"))
+						super.delegateAdd(bswMModeCondition)
+					}
+					
+					override protected delegateAdd(int index, BswMModeCondition bswMModeCondition) {
+						bswMModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeCondition"))
+						super.delegateAdd(index, bswMModeCondition)
+					}	
+				}
 			}
 			
 			def List<BswMModeRequestPort> getBswMModeRequestPorts(){
@@ -190,7 +220,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMModeRequestPort")
 					}
 				}
-				return new BasicWrappingEList<BswMModeRequestPort, GContainer>(filteredContainers, typeof(BswMModeRequestPort), typeof(GContainer))
+				return new BasicWrappingEList<BswMModeRequestPort, GContainer>(filteredContainers, typeof(BswMModeRequestPort), typeof(GContainer)) {
+					override protected delegateAdd(BswMModeRequestPort bswMModeRequestPort) {
+						bswMModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeRequestPort"))
+						super.delegateAdd(bswMModeRequestPort)
+					}
+					
+					override protected delegateAdd(int index, BswMModeRequestPort bswMModeRequestPort) {
+						bswMModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeRequestPort"))
+						super.delegateAdd(index, bswMModeRequestPort)
+					}	
+				}
 			}
 			
 			def List<BswMRule> getBswMRules(){
@@ -199,7 +239,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMRule")
 					}
 				}
-				return new BasicWrappingEList<BswMRule, GContainer>(filteredContainers, typeof(BswMRule), typeof(GContainer))
+				return new BasicWrappingEList<BswMRule, GContainer>(filteredContainers, typeof(BswMRule), typeof(GContainer)) {
+					override protected delegateAdd(BswMRule bswMRule) {
+						bswMRule.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRule"))
+						super.delegateAdd(bswMRule)
+					}
+					
+					override protected delegateAdd(int index, BswMRule bswMRule) {
+						bswMRule.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRule"))
+						super.delegateAdd(index, bswMRule)
+					}	
+				}
 			}
 			
 			
@@ -2186,7 +2236,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMAction")
 					}
 				}
-				return new BasicWrappingEList<BswMAction, GContainer>(filteredContainers, typeof(BswMAction), typeof(GContainer))
+				return new BasicWrappingEList<BswMAction, GContainer>(filteredContainers, typeof(BswMAction), typeof(GContainer)) {
+					override protected delegateAdd(BswMAction bswMAction) {
+						bswMAction.target?.gSetDefinition(containerValue.getContainerDefinition("BswMAction"))
+						super.delegateAdd(bswMAction)
+					}
+					
+					override protected delegateAdd(int index, BswMAction bswMAction) {
+						bswMAction.target?.gSetDefinition(containerValue.getContainerDefinition("BswMAction"))
+						super.delegateAdd(index, bswMAction)
+					}	
+				}
 			}
 			
 			def List<BswMActionList> getBswMActionLists(){
@@ -2195,7 +2255,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMActionList")
 					}
 				}
-				return new BasicWrappingEList<BswMActionList, GContainer>(filteredContainers, typeof(BswMActionList), typeof(GContainer))
+				return new BasicWrappingEList<BswMActionList, GContainer>(filteredContainers, typeof(BswMActionList), typeof(GContainer)) {
+					override protected delegateAdd(BswMActionList bswMActionList) {
+						bswMActionList.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionList"))
+						super.delegateAdd(bswMActionList)
+					}
+					
+					override protected delegateAdd(int index, BswMActionList bswMActionList) {
+						bswMActionList.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionList"))
+						super.delegateAdd(index, bswMActionList)
+					}	
+				}
 			}
 			
 			def List<BswMRteModeRequestPort> getBswMRteModeRequestPorts(){
@@ -2204,7 +2274,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMRteModeRequestPort")
 					}
 				}
-				return new BasicWrappingEList<BswMRteModeRequestPort, GContainer>(filteredContainers, typeof(BswMRteModeRequestPort), typeof(GContainer))
+				return new BasicWrappingEList<BswMRteModeRequestPort, GContainer>(filteredContainers, typeof(BswMRteModeRequestPort), typeof(GContainer)) {
+					override protected delegateAdd(BswMRteModeRequestPort bswMRteModeRequestPort) {
+						bswMRteModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRteModeRequestPort"))
+						super.delegateAdd(bswMRteModeRequestPort)
+					}
+					
+					override protected delegateAdd(int index, BswMRteModeRequestPort bswMRteModeRequestPort) {
+						bswMRteModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRteModeRequestPort"))
+						super.delegateAdd(index, bswMRteModeRequestPort)
+					}	
+				}
 			}
 			
 			def List<BswMSwitchPort> getBswMSwitchPorts(){
@@ -2213,7 +2293,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "BswMSwitchPort")
 					}
 				}
-				return new BasicWrappingEList<BswMSwitchPort, GContainer>(filteredContainers, typeof(BswMSwitchPort), typeof(GContainer))
+				return new BasicWrappingEList<BswMSwitchPort, GContainer>(filteredContainers, typeof(BswMSwitchPort), typeof(GContainer)) {
+					override protected delegateAdd(BswMSwitchPort bswMSwitchPort) {
+						bswMSwitchPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMSwitchPort"))
+						super.delegateAdd(bswMSwitchPort)
+					}
+					
+					override protected delegateAdd(int index, BswMSwitchPort bswMSwitchPort) {
+						bswMSwitchPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMSwitchPort"))
+						super.delegateAdd(index, bswMSwitchPort)
+					}	
+				}
 			}
 			
 			
@@ -4167,7 +4257,17 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "BswMActionListItem")
 						}
 					}
-					return new BasicWrappingEList<BswMActionListItem, GContainer>(filteredContainers, typeof(BswMActionListItem), typeof(GContainer))
+					return new BasicWrappingEList<BswMActionListItem, GContainer>(filteredContainers, typeof(BswMActionListItem), typeof(GContainer)) {
+						override protected delegateAdd(BswMActionListItem bswMActionListItem) {
+							bswMActionListItem.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionListItem"))
+							super.delegateAdd(bswMActionListItem)
+						}
+						
+						override protected delegateAdd(int index, BswMActionListItem bswMActionListItem) {
+							bswMActionListItem.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionListItem"))
+							super.delegateAdd(index, bswMActionListItem)
+						}	
+					}
 				}
 				
 				

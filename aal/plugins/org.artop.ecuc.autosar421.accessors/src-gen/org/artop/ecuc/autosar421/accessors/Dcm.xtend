@@ -211,7 +211,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDsdServiceRequestManufacturerNotification")
 					}
 				}
-				return new BasicWrappingEList<DcmDsdServiceRequestManufacturerNotification, GContainer>(filteredContainers, typeof(DcmDsdServiceRequestManufacturerNotification), typeof(GContainer))
+				return new BasicWrappingEList<DcmDsdServiceRequestManufacturerNotification, GContainer>(filteredContainers, typeof(DcmDsdServiceRequestManufacturerNotification), typeof(GContainer)) {
+					override protected delegateAdd(DcmDsdServiceRequestManufacturerNotification dcmDsdServiceRequestManufacturerNotification) {
+						dcmDsdServiceRequestManufacturerNotification.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdServiceRequestManufacturerNotification"))
+						super.delegateAdd(dcmDsdServiceRequestManufacturerNotification)
+					}
+					
+					override protected delegateAdd(int index, DcmDsdServiceRequestManufacturerNotification dcmDsdServiceRequestManufacturerNotification) {
+						dcmDsdServiceRequestManufacturerNotification.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdServiceRequestManufacturerNotification"))
+						super.delegateAdd(index, dcmDsdServiceRequestManufacturerNotification)
+					}	
+				}
 			}
 			
 			def List<DcmDsdServiceRequestSupplierNotification> getDcmDsdServiceRequestSupplierNotifications(){
@@ -220,7 +230,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDsdServiceRequestSupplierNotification")
 					}
 				}
-				return new BasicWrappingEList<DcmDsdServiceRequestSupplierNotification, GContainer>(filteredContainers, typeof(DcmDsdServiceRequestSupplierNotification), typeof(GContainer))
+				return new BasicWrappingEList<DcmDsdServiceRequestSupplierNotification, GContainer>(filteredContainers, typeof(DcmDsdServiceRequestSupplierNotification), typeof(GContainer)) {
+					override protected delegateAdd(DcmDsdServiceRequestSupplierNotification dcmDsdServiceRequestSupplierNotification) {
+						dcmDsdServiceRequestSupplierNotification.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdServiceRequestSupplierNotification"))
+						super.delegateAdd(dcmDsdServiceRequestSupplierNotification)
+					}
+					
+					override protected delegateAdd(int index, DcmDsdServiceRequestSupplierNotification dcmDsdServiceRequestSupplierNotification) {
+						dcmDsdServiceRequestSupplierNotification.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdServiceRequestSupplierNotification"))
+						super.delegateAdd(index, dcmDsdServiceRequestSupplierNotification)
+					}	
+				}
 			}
 			
 			def List<DcmDsdServiceTable> getDcmDsdServiceTables(){
@@ -229,7 +249,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDsdServiceTable")
 					}
 				}
-				return new BasicWrappingEList<DcmDsdServiceTable, GContainer>(filteredContainers, typeof(DcmDsdServiceTable), typeof(GContainer))
+				return new BasicWrappingEList<DcmDsdServiceTable, GContainer>(filteredContainers, typeof(DcmDsdServiceTable), typeof(GContainer)) {
+					override protected delegateAdd(DcmDsdServiceTable dcmDsdServiceTable) {
+						dcmDsdServiceTable.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdServiceTable"))
+						super.delegateAdd(dcmDsdServiceTable)
+					}
+					
+					override protected delegateAdd(int index, DcmDsdServiceTable dcmDsdServiceTable) {
+						dcmDsdServiceTable.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdServiceTable"))
+						super.delegateAdd(index, dcmDsdServiceTable)
+					}	
+				}
 			}
 			
 			
@@ -324,7 +354,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDsdService")
 						}
 					}
-					return new BasicWrappingEList<DcmDsdService, GContainer>(filteredContainers, typeof(DcmDsdService), typeof(GContainer))
+					return new BasicWrappingEList<DcmDsdService, GContainer>(filteredContainers, typeof(DcmDsdService), typeof(GContainer)) {
+						override protected delegateAdd(DcmDsdService dcmDsdService) {
+							dcmDsdService.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdService"))
+							super.delegateAdd(dcmDsdService)
+						}
+						
+						override protected delegateAdd(int index, DcmDsdService dcmDsdService) {
+							dcmDsdService.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdService"))
+							super.delegateAdd(index, dcmDsdService)
+						}	
+					}
 				}
 				
 				
@@ -496,7 +536,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "DcmDsdSubService")
 							}
 						}
-						return new BasicWrappingEList<DcmDsdSubService, GContainer>(filteredContainers, typeof(DcmDsdSubService), typeof(GContainer))
+						return new BasicWrappingEList<DcmDsdSubService, GContainer>(filteredContainers, typeof(DcmDsdSubService), typeof(GContainer)) {
+							override protected delegateAdd(DcmDsdSubService dcmDsdSubService) {
+								dcmDsdSubService.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdSubService"))
+								super.delegateAdd(dcmDsdSubService)
+							}
+							
+							override protected delegateAdd(int index, DcmDsdSubService dcmDsdSubService) {
+								dcmDsdSubService.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDsdSubService"))
+								super.delegateAdd(index, dcmDsdSubService)
+							}	
+						}
 					}
 					
 					
@@ -682,7 +732,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDslBuffer")
 					}
 				}
-				return new BasicWrappingEList<DcmDslBuffer, GContainer>(filteredContainers, typeof(DcmDslBuffer), typeof(GContainer))
+				return new BasicWrappingEList<DcmDslBuffer, GContainer>(filteredContainers, typeof(DcmDslBuffer), typeof(GContainer)) {
+					override protected delegateAdd(DcmDslBuffer dcmDslBuffer) {
+						dcmDslBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslBuffer"))
+						super.delegateAdd(dcmDslBuffer)
+					}
+					
+					override protected delegateAdd(int index, DcmDslBuffer dcmDslBuffer) {
+						dcmDslBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslBuffer"))
+						super.delegateAdd(index, dcmDslBuffer)
+					}	
+				}
 			}
 			
 			def List<DcmDslCallbackDCMRequestService> getDcmDslCallbackDCMRequestServices(){
@@ -691,7 +751,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDslCallbackDCMRequestService")
 					}
 				}
-				return new BasicWrappingEList<DcmDslCallbackDCMRequestService, GContainer>(filteredContainers, typeof(DcmDslCallbackDCMRequestService), typeof(GContainer))
+				return new BasicWrappingEList<DcmDslCallbackDCMRequestService, GContainer>(filteredContainers, typeof(DcmDslCallbackDCMRequestService), typeof(GContainer)) {
+					override protected delegateAdd(DcmDslCallbackDCMRequestService dcmDslCallbackDCMRequestService) {
+						dcmDslCallbackDCMRequestService.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslCallbackDCMRequestService"))
+						super.delegateAdd(dcmDslCallbackDCMRequestService)
+					}
+					
+					override protected delegateAdd(int index, DcmDslCallbackDCMRequestService dcmDslCallbackDCMRequestService) {
+						dcmDslCallbackDCMRequestService.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslCallbackDCMRequestService"))
+						super.delegateAdd(index, dcmDslCallbackDCMRequestService)
+					}	
+				}
 			}
 			
 			def DcmDslDiagResp getDcmDslDiagResp(){
@@ -860,7 +930,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDslProtocolRow")
 						}
 					}
-					return new BasicWrappingEList<DcmDslProtocolRow, GContainer>(filteredContainers, typeof(DcmDslProtocolRow), typeof(GContainer))
+					return new BasicWrappingEList<DcmDslProtocolRow, GContainer>(filteredContainers, typeof(DcmDslProtocolRow), typeof(GContainer)) {
+						override protected delegateAdd(DcmDslProtocolRow dcmDslProtocolRow) {
+							dcmDslProtocolRow.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslProtocolRow"))
+							super.delegateAdd(dcmDslProtocolRow)
+						}
+						
+						override protected delegateAdd(int index, DcmDslProtocolRow dcmDslProtocolRow) {
+							dcmDslProtocolRow.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslProtocolRow"))
+							super.delegateAdd(index, dcmDslProtocolRow)
+						}	
+					}
 				}
 				
 				
@@ -1152,7 +1232,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "DcmDslConnection")
 							}
 						}
-						return new BasicWrappingEList<DcmDslConnection, GContainer>(filteredContainers, typeof(DcmDslConnection), typeof(GContainer))
+						return new BasicWrappingEList<DcmDslConnection, GContainer>(filteredContainers, typeof(DcmDslConnection), typeof(GContainer)) {
+							override protected delegateAdd(DcmDslConnection dcmDslConnection) {
+								dcmDslConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslConnection"))
+								super.delegateAdd(dcmDslConnection)
+							}
+							
+							override protected delegateAdd(int index, DcmDslConnection dcmDslConnection) {
+								dcmDslConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslConnection"))
+								super.delegateAdd(index, dcmDslConnection)
+							}	
+						}
 					}
 					
 					
@@ -1276,7 +1366,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 										return accept(item, typeof(GContainerDef), "DcmDslProtocolRx")
 									}
 								}
-								return new BasicWrappingEList<DcmDslProtocolRx, GContainer>(filteredContainers, typeof(DcmDslProtocolRx), typeof(GContainer))
+								return new BasicWrappingEList<DcmDslProtocolRx, GContainer>(filteredContainers, typeof(DcmDslProtocolRx), typeof(GContainer)) {
+									override protected delegateAdd(DcmDslProtocolRx dcmDslProtocolRx) {
+										dcmDslProtocolRx.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslProtocolRx"))
+										super.delegateAdd(dcmDslProtocolRx)
+									}
+									
+									override protected delegateAdd(int index, DcmDslProtocolRx dcmDslProtocolRx) {
+										dcmDslProtocolRx.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslProtocolRx"))
+										super.delegateAdd(index, dcmDslProtocolRx)
+									}	
+								}
 							}
 							
 							def DcmDslProtocolTx getDcmDslProtocolTx(){
@@ -1453,7 +1553,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 										return accept(item, typeof(GContainerDef), "DcmDslPeriodicConnection")
 									}
 								}
-								return new BasicWrappingEList<DcmDslPeriodicConnection, GContainer>(filteredContainers, typeof(DcmDslPeriodicConnection), typeof(GContainer))
+								return new BasicWrappingEList<DcmDslPeriodicConnection, GContainer>(filteredContainers, typeof(DcmDslPeriodicConnection), typeof(GContainer)) {
+									override protected delegateAdd(DcmDslPeriodicConnection dcmDslPeriodicConnection) {
+										dcmDslPeriodicConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslPeriodicConnection"))
+										super.delegateAdd(dcmDslPeriodicConnection)
+									}
+									
+									override protected delegateAdd(int index, DcmDslPeriodicConnection dcmDslPeriodicConnection) {
+										dcmDslPeriodicConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDslPeriodicConnection"))
+										super.delegateAdd(index, dcmDslPeriodicConnection)
+									}	
+								}
 							}
 							
 							
@@ -1737,7 +1847,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspCommonAuthorization")
 					}
 				}
-				return new BasicWrappingEList<DcmDspCommonAuthorization, GContainer>(filteredContainers, typeof(DcmDspCommonAuthorization), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspCommonAuthorization, GContainer>(filteredContainers, typeof(DcmDspCommonAuthorization), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspCommonAuthorization dcmDspCommonAuthorization) {
+						dcmDspCommonAuthorization.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspCommonAuthorization"))
+						super.delegateAdd(dcmDspCommonAuthorization)
+					}
+					
+					override protected delegateAdd(int index, DcmDspCommonAuthorization dcmDspCommonAuthorization) {
+						dcmDspCommonAuthorization.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspCommonAuthorization"))
+						super.delegateAdd(index, dcmDspCommonAuthorization)
+					}	
+				}
 			}
 			
 			def DcmDspControlDTCSetting getDcmDspControlDTCSetting(){
@@ -1755,7 +1875,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspData")
 					}
 				}
-				return new BasicWrappingEList<DcmDspData, GContainer>(filteredContainers, typeof(DcmDspData), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspData, GContainer>(filteredContainers, typeof(DcmDspData), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspData dcmDspData) {
+						dcmDspData.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspData"))
+						super.delegateAdd(dcmDspData)
+					}
+					
+					override protected delegateAdd(int index, DcmDspData dcmDspData) {
+						dcmDspData.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspData"))
+						super.delegateAdd(index, dcmDspData)
+					}	
+				}
 			}
 			
 			def List<DcmDspDataInfo> getDcmDspDataInfos(){
@@ -1764,7 +1894,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspDataInfo")
 					}
 				}
-				return new BasicWrappingEList<DcmDspDataInfo, GContainer>(filteredContainers, typeof(DcmDspDataInfo), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspDataInfo, GContainer>(filteredContainers, typeof(DcmDspDataInfo), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspDataInfo dcmDspDataInfo) {
+						dcmDspDataInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDataInfo"))
+						super.delegateAdd(dcmDspDataInfo)
+					}
+					
+					override protected delegateAdd(int index, DcmDspDataInfo dcmDspDataInfo) {
+						dcmDspDataInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDataInfo"))
+						super.delegateAdd(index, dcmDspDataInfo)
+					}	
+				}
 			}
 			
 			def List<DcmDspDid> getDcmDspDids(){
@@ -1773,7 +1913,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspDid")
 					}
 				}
-				return new BasicWrappingEList<DcmDspDid, GContainer>(filteredContainers, typeof(DcmDspDid), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspDid, GContainer>(filteredContainers, typeof(DcmDspDid), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspDid dcmDspDid) {
+						dcmDspDid.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDid"))
+						super.delegateAdd(dcmDspDid)
+					}
+					
+					override protected delegateAdd(int index, DcmDspDid dcmDspDid) {
+						dcmDspDid.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDid"))
+						super.delegateAdd(index, dcmDspDid)
+					}	
+				}
 			}
 			
 			def List<DcmDspDidInfo> getDcmDspDidInfos(){
@@ -1782,7 +1932,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspDidInfo")
 					}
 				}
-				return new BasicWrappingEList<DcmDspDidInfo, GContainer>(filteredContainers, typeof(DcmDspDidInfo), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspDidInfo, GContainer>(filteredContainers, typeof(DcmDspDidInfo), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspDidInfo dcmDspDidInfo) {
+						dcmDspDidInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDidInfo"))
+						super.delegateAdd(dcmDspDidInfo)
+					}
+					
+					override protected delegateAdd(int index, DcmDspDidInfo dcmDspDidInfo) {
+						dcmDspDidInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDidInfo"))
+						super.delegateAdd(index, dcmDspDidInfo)
+					}	
+				}
 			}
 			
 			def List<DcmDspDidRange> getDcmDspDidRanges(){
@@ -1791,7 +1951,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspDidRange")
 					}
 				}
-				return new BasicWrappingEList<DcmDspDidRange, GContainer>(filteredContainers, typeof(DcmDspDidRange), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspDidRange, GContainer>(filteredContainers, typeof(DcmDspDidRange), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspDidRange dcmDspDidRange) {
+						dcmDspDidRange.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDidRange"))
+						super.delegateAdd(dcmDspDidRange)
+					}
+					
+					override protected delegateAdd(int index, DcmDspDidRange dcmDspDidRange) {
+						dcmDspDidRange.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDidRange"))
+						super.delegateAdd(index, dcmDspDidRange)
+					}	
+				}
 			}
 			
 			def DcmDspMemory getDcmDspMemory(){
@@ -1827,7 +1997,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspPid")
 					}
 				}
-				return new BasicWrappingEList<DcmDspPid, GContainer>(filteredContainers, typeof(DcmDspPid), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspPid, GContainer>(filteredContainers, typeof(DcmDspPid), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspPid dcmDspPid) {
+						dcmDspPid.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspPid"))
+						super.delegateAdd(dcmDspPid)
+					}
+					
+					override protected delegateAdd(int index, DcmDspPid dcmDspPid) {
+						dcmDspPid.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspPid"))
+						super.delegateAdd(index, dcmDspPid)
+					}	
+				}
 			}
 			
 			def List<DcmDspRequestControl> getDcmDspRequestControls(){
@@ -1836,7 +2016,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspRequestControl")
 					}
 				}
-				return new BasicWrappingEList<DcmDspRequestControl, GContainer>(filteredContainers, typeof(DcmDspRequestControl), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspRequestControl, GContainer>(filteredContainers, typeof(DcmDspRequestControl), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspRequestControl dcmDspRequestControl) {
+						dcmDspRequestControl.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRequestControl"))
+						super.delegateAdd(dcmDspRequestControl)
+					}
+					
+					override protected delegateAdd(int index, DcmDspRequestControl dcmDspRequestControl) {
+						dcmDspRequestControl.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRequestControl"))
+						super.delegateAdd(index, dcmDspRequestControl)
+					}	
+				}
 			}
 			
 			def DcmDspRequestFileTransfer getDcmDspRequestFileTransfer(){
@@ -1863,7 +2053,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspRoutine")
 					}
 				}
-				return new BasicWrappingEList<DcmDspRoutine, GContainer>(filteredContainers, typeof(DcmDspRoutine), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspRoutine, GContainer>(filteredContainers, typeof(DcmDspRoutine), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspRoutine dcmDspRoutine) {
+						dcmDspRoutine.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRoutine"))
+						super.delegateAdd(dcmDspRoutine)
+					}
+					
+					override protected delegateAdd(int index, DcmDspRoutine dcmDspRoutine) {
+						dcmDspRoutine.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRoutine"))
+						super.delegateAdd(index, dcmDspRoutine)
+					}	
+				}
 			}
 			
 			def DcmDspSecurity getDcmDspSecurity(){
@@ -1890,7 +2090,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmDspVehInfo")
 					}
 				}
-				return new BasicWrappingEList<DcmDspVehInfo, GContainer>(filteredContainers, typeof(DcmDspVehInfo), typeof(GContainer))
+				return new BasicWrappingEList<DcmDspVehInfo, GContainer>(filteredContainers, typeof(DcmDspVehInfo), typeof(GContainer)) {
+					override protected delegateAdd(DcmDspVehInfo dcmDspVehInfo) {
+						dcmDspVehInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspVehInfo"))
+						super.delegateAdd(dcmDspVehInfo)
+					}
+					
+					override protected delegateAdd(int index, DcmDspVehInfo dcmDspVehInfo) {
+						dcmDspVehInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspVehInfo"))
+						super.delegateAdd(index, dcmDspVehInfo)
+					}	
+				}
 			}
 			
 			
@@ -1921,7 +2131,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspComControlAllChannel")
 						}
 					}
-					return new BasicWrappingEList<DcmDspComControlAllChannel, GContainer>(filteredContainers, typeof(DcmDspComControlAllChannel), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspComControlAllChannel, GContainer>(filteredContainers, typeof(DcmDspComControlAllChannel), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspComControlAllChannel dcmDspComControlAllChannel) {
+							dcmDspComControlAllChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspComControlAllChannel"))
+							super.delegateAdd(dcmDspComControlAllChannel)
+						}
+						
+						override protected delegateAdd(int index, DcmDspComControlAllChannel dcmDspComControlAllChannel) {
+							dcmDspComControlAllChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspComControlAllChannel"))
+							super.delegateAdd(index, dcmDspComControlAllChannel)
+						}	
+					}
 				}
 				
 				def DcmDspComControlSetting getDcmDspComControlSetting(){
@@ -1939,7 +2159,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspComControlSpecificChannel")
 						}
 					}
-					return new BasicWrappingEList<DcmDspComControlSpecificChannel, GContainer>(filteredContainers, typeof(DcmDspComControlSpecificChannel), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspComControlSpecificChannel, GContainer>(filteredContainers, typeof(DcmDspComControlSpecificChannel), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspComControlSpecificChannel dcmDspComControlSpecificChannel) {
+							dcmDspComControlSpecificChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspComControlSpecificChannel"))
+							super.delegateAdd(dcmDspComControlSpecificChannel)
+						}
+						
+						override protected delegateAdd(int index, DcmDspComControlSpecificChannel dcmDspComControlSpecificChannel) {
+							dcmDspComControlSpecificChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspComControlSpecificChannel"))
+							super.delegateAdd(index, dcmDspComControlSpecificChannel)
+						}	
+					}
 				}
 				
 				def List<DcmDspComControlSubNode> getDcmDspComControlSubNodes(){
@@ -1948,7 +2178,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspComControlSubNode")
 						}
 					}
-					return new BasicWrappingEList<DcmDspComControlSubNode, GContainer>(filteredContainers, typeof(DcmDspComControlSubNode), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspComControlSubNode, GContainer>(filteredContainers, typeof(DcmDspComControlSubNode), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspComControlSubNode dcmDspComControlSubNode) {
+							dcmDspComControlSubNode.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspComControlSubNode"))
+							super.delegateAdd(dcmDspComControlSubNode)
+						}
+						
+						override protected delegateAdd(int index, DcmDspComControlSubNode dcmDspComControlSubNode) {
+							dcmDspComControlSubNode.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspComControlSubNode"))
+							super.delegateAdd(index, dcmDspComControlSubNode)
+						}	
+					}
 				}
 				
 				
@@ -2892,7 +3132,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspTextTableMapping")
 								}
 							}
-							return new BasicWrappingEList<DcmDspTextTableMapping, GContainer>(filteredContainers, typeof(DcmDspTextTableMapping), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspTextTableMapping, GContainer>(filteredContainers, typeof(DcmDspTextTableMapping), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspTextTableMapping dcmDspTextTableMapping) {
+									dcmDspTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspTextTableMapping"))
+									super.delegateAdd(dcmDspTextTableMapping)
+								}
+								
+								override protected delegateAdd(int index, DcmDspTextTableMapping dcmDspTextTableMapping) {
+									dcmDspTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspTextTableMapping"))
+									super.delegateAdd(index, dcmDspTextTableMapping)
+								}	
+							}
 						}
 						
 						
@@ -3070,7 +3320,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspTextTableMapping")
 								}
 							}
-							return new BasicWrappingEList<DcmDspTextTableMapping, GContainer>(filteredContainers, typeof(DcmDspTextTableMapping), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspTextTableMapping, GContainer>(filteredContainers, typeof(DcmDspTextTableMapping), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspTextTableMapping dcmDspTextTableMapping) {
+									dcmDspTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspTextTableMapping"))
+									super.delegateAdd(dcmDspTextTableMapping)
+								}
+								
+								override protected delegateAdd(int index, DcmDspTextTableMapping dcmDspTextTableMapping) {
+									dcmDspTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspTextTableMapping"))
+									super.delegateAdd(index, dcmDspTextTableMapping)
+								}	
+							}
 						}
 						
 						
@@ -3422,7 +3682,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspDidSignal")
 						}
 					}
-					return new BasicWrappingEList<DcmDspDidSignal, GContainer>(filteredContainers, typeof(DcmDspDidSignal), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspDidSignal, GContainer>(filteredContainers, typeof(DcmDspDidSignal), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspDidSignal dcmDspDidSignal) {
+							dcmDspDidSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDidSignal"))
+							super.delegateAdd(dcmDspDidSignal)
+						}
+						
+						override protected delegateAdd(int index, DcmDspDidSignal dcmDspDidSignal) {
+							dcmDspDidSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspDidSignal"))
+							super.delegateAdd(index, dcmDspDidSignal)
+						}	
+					}
 				}
 				
 				
@@ -4112,7 +4382,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspMemoryIdInfo")
 						}
 					}
-					return new BasicWrappingEList<DcmDspMemoryIdInfo, GContainer>(filteredContainers, typeof(DcmDspMemoryIdInfo), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspMemoryIdInfo, GContainer>(filteredContainers, typeof(DcmDspMemoryIdInfo), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspMemoryIdInfo dcmDspMemoryIdInfo) {
+							dcmDspMemoryIdInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspMemoryIdInfo"))
+							super.delegateAdd(dcmDspMemoryIdInfo)
+						}
+						
+						override protected delegateAdd(int index, DcmDspMemoryIdInfo dcmDspMemoryIdInfo) {
+							dcmDspMemoryIdInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspMemoryIdInfo"))
+							super.delegateAdd(index, dcmDspMemoryIdInfo)
+						}	
+					}
 				}
 				
 				
@@ -4196,7 +4476,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "DcmDspReadMemoryRangeInfo")
 							}
 						}
-						return new BasicWrappingEList<DcmDspReadMemoryRangeInfo, GContainer>(filteredContainers, typeof(DcmDspReadMemoryRangeInfo), typeof(GContainer))
+						return new BasicWrappingEList<DcmDspReadMemoryRangeInfo, GContainer>(filteredContainers, typeof(DcmDspReadMemoryRangeInfo), typeof(GContainer)) {
+							override protected delegateAdd(DcmDspReadMemoryRangeInfo dcmDspReadMemoryRangeInfo) {
+								dcmDspReadMemoryRangeInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspReadMemoryRangeInfo"))
+								super.delegateAdd(dcmDspReadMemoryRangeInfo)
+							}
+							
+							override protected delegateAdd(int index, DcmDspReadMemoryRangeInfo dcmDspReadMemoryRangeInfo) {
+								dcmDspReadMemoryRangeInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspReadMemoryRangeInfo"))
+								super.delegateAdd(index, dcmDspReadMemoryRangeInfo)
+							}	
+						}
 					}
 					
 					def List<DcmDspWriteMemoryRangeInfo> getDcmDspWriteMemoryRangeInfos(){
@@ -4205,7 +4495,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "DcmDspWriteMemoryRangeInfo")
 							}
 						}
-						return new BasicWrappingEList<DcmDspWriteMemoryRangeInfo, GContainer>(filteredContainers, typeof(DcmDspWriteMemoryRangeInfo), typeof(GContainer))
+						return new BasicWrappingEList<DcmDspWriteMemoryRangeInfo, GContainer>(filteredContainers, typeof(DcmDspWriteMemoryRangeInfo), typeof(GContainer)) {
+							override protected delegateAdd(DcmDspWriteMemoryRangeInfo dcmDspWriteMemoryRangeInfo) {
+								dcmDspWriteMemoryRangeInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspWriteMemoryRangeInfo"))
+								super.delegateAdd(dcmDspWriteMemoryRangeInfo)
+							}
+							
+							override protected delegateAdd(int index, DcmDspWriteMemoryRangeInfo dcmDspWriteMemoryRangeInfo) {
+								dcmDspWriteMemoryRangeInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspWriteMemoryRangeInfo"))
+								super.delegateAdd(index, dcmDspWriteMemoryRangeInfo)
+							}	
+						}
 					}
 					
 					
@@ -4635,7 +4935,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspPidData")
 						}
 					}
-					return new BasicWrappingEList<DcmDspPidData, GContainer>(filteredContainers, typeof(DcmDspPidData), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspPidData, GContainer>(filteredContainers, typeof(DcmDspPidData), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspPidData dcmDspPidData) {
+							dcmDspPidData.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspPidData"))
+							super.delegateAdd(dcmDspPidData)
+						}
+						
+						override protected delegateAdd(int index, DcmDspPidData dcmDspPidData) {
+							dcmDspPidData.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspPidData"))
+							super.delegateAdd(index, dcmDspPidData)
+						}	
+					}
 				}
 				
 				def List<DcmDspPidSupportInfo> getDcmDspPidSupportInfos(){
@@ -4644,7 +4954,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspPidSupportInfo")
 						}
 					}
-					return new BasicWrappingEList<DcmDspPidSupportInfo, GContainer>(filteredContainers, typeof(DcmDspPidSupportInfo), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspPidSupportInfo, GContainer>(filteredContainers, typeof(DcmDspPidSupportInfo), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspPidSupportInfo dcmDspPidSupportInfo) {
+							dcmDspPidSupportInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspPidSupportInfo"))
+							super.delegateAdd(dcmDspPidSupportInfo)
+						}
+						
+						override protected delegateAdd(int index, DcmDspPidSupportInfo dcmDspPidSupportInfo) {
+							dcmDspPidSupportInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspPidSupportInfo"))
+							super.delegateAdd(index, dcmDspPidSupportInfo)
+						}	
+					}
 				}
 				
 				
@@ -5213,7 +5533,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspRoeEvent")
 						}
 					}
-					return new BasicWrappingEList<DcmDspRoeEvent, GContainer>(filteredContainers, typeof(DcmDspRoeEvent), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspRoeEvent, GContainer>(filteredContainers, typeof(DcmDspRoeEvent), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspRoeEvent dcmDspRoeEvent) {
+							dcmDspRoeEvent.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRoeEvent"))
+							super.delegateAdd(dcmDspRoeEvent)
+						}
+						
+						override protected delegateAdd(int index, DcmDspRoeEvent dcmDspRoeEvent) {
+							dcmDspRoeEvent.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRoeEvent"))
+							super.delegateAdd(index, dcmDspRoeEvent)
+						}	
+					}
 				}
 				
 				def List<DcmDspRoeEventWindowTime> getDcmDspRoeEventWindowTimes(){
@@ -5222,7 +5552,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspRoeEventWindowTime")
 						}
 					}
-					return new BasicWrappingEList<DcmDspRoeEventWindowTime, GContainer>(filteredContainers, typeof(DcmDspRoeEventWindowTime), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspRoeEventWindowTime, GContainer>(filteredContainers, typeof(DcmDspRoeEventWindowTime), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspRoeEventWindowTime dcmDspRoeEventWindowTime) {
+							dcmDspRoeEventWindowTime.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRoeEventWindowTime"))
+							super.delegateAdd(dcmDspRoeEventWindowTime)
+						}
+						
+						override protected delegateAdd(int index, DcmDspRoeEventWindowTime dcmDspRoeEventWindowTime) {
+							dcmDspRoeEventWindowTime.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRoeEventWindowTime"))
+							super.delegateAdd(index, dcmDspRoeEventWindowTime)
+						}	
+					}
 				}
 				
 				
@@ -5675,7 +6015,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspRequestRoutineResultsOutSignal")
 								}
 							}
-							return new BasicWrappingEList<DcmDspRequestRoutineResultsOutSignal, GContainer>(filteredContainers, typeof(DcmDspRequestRoutineResultsOutSignal), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspRequestRoutineResultsOutSignal, GContainer>(filteredContainers, typeof(DcmDspRequestRoutineResultsOutSignal), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspRequestRoutineResultsOutSignal dcmDspRequestRoutineResultsOutSignal) {
+									dcmDspRequestRoutineResultsOutSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRequestRoutineResultsOutSignal"))
+									super.delegateAdd(dcmDspRequestRoutineResultsOutSignal)
+								}
+								
+								override protected delegateAdd(int index, DcmDspRequestRoutineResultsOutSignal dcmDspRequestRoutineResultsOutSignal) {
+									dcmDspRequestRoutineResultsOutSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspRequestRoutineResultsOutSignal"))
+									super.delegateAdd(index, dcmDspRequestRoutineResultsOutSignal)
+								}	
+							}
 						}
 						
 						
@@ -5902,7 +6252,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspStartRoutineInSignal")
 								}
 							}
-							return new BasicWrappingEList<DcmDspStartRoutineInSignal, GContainer>(filteredContainers, typeof(DcmDspStartRoutineInSignal), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspStartRoutineInSignal, GContainer>(filteredContainers, typeof(DcmDspStartRoutineInSignal), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspStartRoutineInSignal dcmDspStartRoutineInSignal) {
+									dcmDspStartRoutineInSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStartRoutineInSignal"))
+									super.delegateAdd(dcmDspStartRoutineInSignal)
+								}
+								
+								override protected delegateAdd(int index, DcmDspStartRoutineInSignal dcmDspStartRoutineInSignal) {
+									dcmDspStartRoutineInSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStartRoutineInSignal"))
+									super.delegateAdd(index, dcmDspStartRoutineInSignal)
+								}	
+							}
 						}
 						
 						
@@ -6071,7 +6431,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspStartRoutineOutSignal")
 								}
 							}
-							return new BasicWrappingEList<DcmDspStartRoutineOutSignal, GContainer>(filteredContainers, typeof(DcmDspStartRoutineOutSignal), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspStartRoutineOutSignal, GContainer>(filteredContainers, typeof(DcmDspStartRoutineOutSignal), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspStartRoutineOutSignal dcmDspStartRoutineOutSignal) {
+									dcmDspStartRoutineOutSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStartRoutineOutSignal"))
+									super.delegateAdd(dcmDspStartRoutineOutSignal)
+								}
+								
+								override protected delegateAdd(int index, DcmDspStartRoutineOutSignal dcmDspStartRoutineOutSignal) {
+									dcmDspStartRoutineOutSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStartRoutineOutSignal"))
+									super.delegateAdd(index, dcmDspStartRoutineOutSignal)
+								}	
+							}
 						}
 						
 						
@@ -6298,7 +6668,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspStopRoutineInSignal")
 								}
 							}
-							return new BasicWrappingEList<DcmDspStopRoutineInSignal, GContainer>(filteredContainers, typeof(DcmDspStopRoutineInSignal), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspStopRoutineInSignal, GContainer>(filteredContainers, typeof(DcmDspStopRoutineInSignal), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspStopRoutineInSignal dcmDspStopRoutineInSignal) {
+									dcmDspStopRoutineInSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStopRoutineInSignal"))
+									super.delegateAdd(dcmDspStopRoutineInSignal)
+								}
+								
+								override protected delegateAdd(int index, DcmDspStopRoutineInSignal dcmDspStopRoutineInSignal) {
+									dcmDspStopRoutineInSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStopRoutineInSignal"))
+									super.delegateAdd(index, dcmDspStopRoutineInSignal)
+								}	
+							}
 						}
 						
 						
@@ -6467,7 +6847,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DcmDspStopRoutineOutSignal")
 								}
 							}
-							return new BasicWrappingEList<DcmDspStopRoutineOutSignal, GContainer>(filteredContainers, typeof(DcmDspStopRoutineOutSignal), typeof(GContainer))
+							return new BasicWrappingEList<DcmDspStopRoutineOutSignal, GContainer>(filteredContainers, typeof(DcmDspStopRoutineOutSignal), typeof(GContainer)) {
+								override protected delegateAdd(DcmDspStopRoutineOutSignal dcmDspStopRoutineOutSignal) {
+									dcmDspStopRoutineOutSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStopRoutineOutSignal"))
+									super.delegateAdd(dcmDspStopRoutineOutSignal)
+								}
+								
+								override protected delegateAdd(int index, DcmDspStopRoutineOutSignal dcmDspStopRoutineOutSignal) {
+									dcmDspStopRoutineOutSignal.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspStopRoutineOutSignal"))
+									super.delegateAdd(index, dcmDspStopRoutineOutSignal)
+								}	
+							}
 						}
 						
 						
@@ -6640,7 +7030,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspSecurityRow")
 						}
 					}
-					return new BasicWrappingEList<DcmDspSecurityRow, GContainer>(filteredContainers, typeof(DcmDspSecurityRow), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspSecurityRow, GContainer>(filteredContainers, typeof(DcmDspSecurityRow), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspSecurityRow dcmDspSecurityRow) {
+							dcmDspSecurityRow.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspSecurityRow"))
+							super.delegateAdd(dcmDspSecurityRow)
+						}
+						
+						override protected delegateAdd(int index, DcmDspSecurityRow dcmDspSecurityRow) {
+							dcmDspSecurityRow.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspSecurityRow"))
+							super.delegateAdd(index, dcmDspSecurityRow)
+						}	
+					}
 				}
 				
 				
@@ -6922,7 +7322,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspSessionRow")
 						}
 					}
-					return new BasicWrappingEList<DcmDspSessionRow, GContainer>(filteredContainers, typeof(DcmDspSessionRow), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspSessionRow, GContainer>(filteredContainers, typeof(DcmDspSessionRow), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspSessionRow dcmDspSessionRow) {
+							dcmDspSessionRow.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspSessionRow"))
+							super.delegateAdd(dcmDspSessionRow)
+						}
+						
+						override protected delegateAdd(int index, DcmDspSessionRow dcmDspSessionRow) {
+							dcmDspSessionRow.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspSessionRow"))
+							super.delegateAdd(index, dcmDspSessionRow)
+						}	
+					}
 				}
 				
 				
@@ -7078,7 +7488,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "DcmDspVehInfoData")
 						}
 					}
-					return new BasicWrappingEList<DcmDspVehInfoData, GContainer>(filteredContainers, typeof(DcmDspVehInfoData), typeof(GContainer))
+					return new BasicWrappingEList<DcmDspVehInfoData, GContainer>(filteredContainers, typeof(DcmDspVehInfoData), typeof(GContainer)) {
+						override protected delegateAdd(DcmDspVehInfoData dcmDspVehInfoData) {
+							dcmDspVehInfoData.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspVehInfoData"))
+							super.delegateAdd(dcmDspVehInfoData)
+						}
+						
+						override protected delegateAdd(int index, DcmDspVehInfoData dcmDspVehInfoData) {
+							dcmDspVehInfoData.target?.gSetDefinition(containerValue.getContainerDefinition("DcmDspVehInfoData"))
+							super.delegateAdd(index, dcmDspVehInfoData)
+						}	
+					}
 				}
 				
 				
@@ -7257,7 +7677,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmModeCondition")
 					}
 				}
-				return new BasicWrappingEList<DcmModeCondition, GContainer>(filteredContainers, typeof(DcmModeCondition), typeof(GContainer))
+				return new BasicWrappingEList<DcmModeCondition, GContainer>(filteredContainers, typeof(DcmModeCondition), typeof(GContainer)) {
+					override protected delegateAdd(DcmModeCondition dcmModeCondition) {
+						dcmModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DcmModeCondition"))
+						super.delegateAdd(dcmModeCondition)
+					}
+					
+					override protected delegateAdd(int index, DcmModeCondition dcmModeCondition) {
+						dcmModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DcmModeCondition"))
+						super.delegateAdd(index, dcmModeCondition)
+					}	
+				}
 			}
 			
 			def List<DcmModeRule> getDcmModeRules(){
@@ -7266,7 +7696,17 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DcmModeRule")
 					}
 				}
-				return new BasicWrappingEList<DcmModeRule, GContainer>(filteredContainers, typeof(DcmModeRule), typeof(GContainer))
+				return new BasicWrappingEList<DcmModeRule, GContainer>(filteredContainers, typeof(DcmModeRule), typeof(GContainer)) {
+					override protected delegateAdd(DcmModeRule dcmModeRule) {
+						dcmModeRule.target?.gSetDefinition(containerValue.getContainerDefinition("DcmModeRule"))
+						super.delegateAdd(dcmModeRule)
+					}
+					
+					override protected delegateAdd(int index, DcmModeRule dcmModeRule) {
+						dcmModeRule.target?.gSetDefinition(containerValue.getContainerDefinition("DcmModeRule"))
+						super.delegateAdd(index, dcmModeRule)
+					}	
+				}
 			}
 			
 			

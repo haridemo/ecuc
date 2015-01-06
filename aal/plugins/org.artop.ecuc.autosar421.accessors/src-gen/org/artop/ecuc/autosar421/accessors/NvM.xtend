@@ -74,7 +74,17 @@ class NvM implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "NvMBlockDescriptor")
 			}
 		}
-		return new BasicWrappingEList<NvMBlockDescriptor, GContainer>(filteredContainers, typeof(NvMBlockDescriptor), typeof(GContainer))
+		return new BasicWrappingEList<NvMBlockDescriptor, GContainer>(filteredContainers, typeof(NvMBlockDescriptor), typeof(GContainer)) {
+			override protected delegateAdd(NvMBlockDescriptor nvMBlockDescriptor) {
+				nvMBlockDescriptor.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NvMBlockDescriptor"))
+				super.delegateAdd(nvMBlockDescriptor)
+			}
+		
+			override protected delegateAdd(int index, NvMBlockDescriptor nvMBlockDescriptor) {
+				nvMBlockDescriptor.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NvMBlockDescriptor"))
+				super.delegateAdd(index, nvMBlockDescriptor)
+			}
+		}
 	}
 	def NvMCommon getNvMCommon(){
 		moduleConfiguration.getByType(typeof(NvMCommon))

@@ -216,7 +216,17 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FlsTstBlock")
 					}
 				}
-				return new BasicWrappingEList<FlsTstBlock, GContainer>(filteredContainers, typeof(FlsTstBlock), typeof(GContainer))
+				return new BasicWrappingEList<FlsTstBlock, GContainer>(filteredContainers, typeof(FlsTstBlock), typeof(GContainer)) {
+					override protected delegateAdd(FlsTstBlock flsTstBlock) {
+						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
+						super.delegateAdd(flsTstBlock)
+					}
+					
+					override protected delegateAdd(int index, FlsTstBlock flsTstBlock) {
+						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
+						super.delegateAdd(index, flsTstBlock)
+					}	
+				}
 			}
 			
 			
@@ -394,7 +404,17 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FlsTstBlock")
 					}
 				}
-				return new BasicWrappingEList<FlsTstBlock, GContainer>(filteredContainers, typeof(FlsTstBlock), typeof(GContainer))
+				return new BasicWrappingEList<FlsTstBlock, GContainer>(filteredContainers, typeof(FlsTstBlock), typeof(GContainer)) {
+					override protected delegateAdd(FlsTstBlock flsTstBlock) {
+						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
+						super.delegateAdd(flsTstBlock)
+					}
+					
+					override protected delegateAdd(int index, FlsTstBlock flsTstBlock) {
+						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
+						super.delegateAdd(index, flsTstBlock)
+					}	
+				}
 			}
 			
 			

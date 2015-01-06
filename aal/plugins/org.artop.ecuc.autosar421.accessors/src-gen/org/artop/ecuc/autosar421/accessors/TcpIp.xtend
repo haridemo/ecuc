@@ -112,7 +112,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "TcpIpCtrl")
 				}
 			}
-			return new BasicWrappingEList<TcpIpCtrl, GContainer>(filteredContainers, typeof(TcpIpCtrl), typeof(GContainer))
+			return new BasicWrappingEList<TcpIpCtrl, GContainer>(filteredContainers, typeof(TcpIpCtrl), typeof(GContainer)) {
+				override protected delegateAdd(TcpIpCtrl tcpIpCtrl) {
+					tcpIpCtrl.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpCtrl"))
+					super.delegateAdd(tcpIpCtrl)
+				}
+				
+				override protected delegateAdd(int index, TcpIpCtrl tcpIpCtrl) {
+					tcpIpCtrl.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpCtrl"))
+					super.delegateAdd(index, tcpIpCtrl)
+				}	
+			}
 		}
 		
 		def List<TcpIpDhcpServerConfig> getTcpIpDhcpServerConfigs(){
@@ -121,7 +131,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "TcpIpDhcpServerConfig")
 				}
 			}
-			return new BasicWrappingEList<TcpIpDhcpServerConfig, GContainer>(filteredContainers, typeof(TcpIpDhcpServerConfig), typeof(GContainer))
+			return new BasicWrappingEList<TcpIpDhcpServerConfig, GContainer>(filteredContainers, typeof(TcpIpDhcpServerConfig), typeof(GContainer)) {
+				override protected delegateAdd(TcpIpDhcpServerConfig tcpIpDhcpServerConfig) {
+					tcpIpDhcpServerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpServerConfig"))
+					super.delegateAdd(tcpIpDhcpServerConfig)
+				}
+				
+				override protected delegateAdd(int index, TcpIpDhcpServerConfig tcpIpDhcpServerConfig) {
+					tcpIpDhcpServerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpServerConfig"))
+					super.delegateAdd(index, tcpIpDhcpServerConfig)
+				}	
+			}
 		}
 		
 		def TcpIpIpConfig getTcpIpIpConfig(){
@@ -139,7 +159,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "TcpIpLocalAddr")
 				}
 			}
-			return new BasicWrappingEList<TcpIpLocalAddr, GContainer>(filteredContainers, typeof(TcpIpLocalAddr), typeof(GContainer))
+			return new BasicWrappingEList<TcpIpLocalAddr, GContainer>(filteredContainers, typeof(TcpIpLocalAddr), typeof(GContainer)) {
+				override protected delegateAdd(TcpIpLocalAddr tcpIpLocalAddr) {
+					tcpIpLocalAddr.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpLocalAddr"))
+					super.delegateAdd(tcpIpLocalAddr)
+				}
+				
+				override protected delegateAdd(int index, TcpIpLocalAddr tcpIpLocalAddr) {
+					tcpIpLocalAddr.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpLocalAddr"))
+					super.delegateAdd(index, tcpIpLocalAddr)
+				}	
+			}
 		}
 		
 		def TcpIpNvmBlock getTcpIpNvmBlock(){
@@ -650,7 +680,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "TcpIpDhcpAddressAssignment")
 					}
 				}
-				return new BasicWrappingEList<TcpIpDhcpAddressAssignment, GContainer>(filteredContainers, typeof(TcpIpDhcpAddressAssignment), typeof(GContainer))
+				return new BasicWrappingEList<TcpIpDhcpAddressAssignment, GContainer>(filteredContainers, typeof(TcpIpDhcpAddressAssignment), typeof(GContainer)) {
+					override protected delegateAdd(TcpIpDhcpAddressAssignment tcpIpDhcpAddressAssignment) {
+						tcpIpDhcpAddressAssignment.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpAddressAssignment"))
+						super.delegateAdd(tcpIpDhcpAddressAssignment)
+					}
+					
+					override protected delegateAdd(int index, TcpIpDhcpAddressAssignment tcpIpDhcpAddressAssignment) {
+						tcpIpDhcpAddressAssignment.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpAddressAssignment"))
+						super.delegateAdd(index, tcpIpDhcpAddressAssignment)
+					}	
+				}
 			}
 			
 			
@@ -790,7 +830,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpArpConfig")
 						}
 					}
-					return new BasicWrappingEList<TcpIpArpConfig, GContainer>(filteredContainers, typeof(TcpIpArpConfig), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpArpConfig, GContainer>(filteredContainers, typeof(TcpIpArpConfig), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpArpConfig tcpIpArpConfig) {
+							tcpIpArpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpArpConfig"))
+							super.delegateAdd(tcpIpArpConfig)
+						}
+						
+						override protected delegateAdd(int index, TcpIpArpConfig tcpIpArpConfig) {
+							tcpIpArpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpArpConfig"))
+							super.delegateAdd(index, tcpIpArpConfig)
+						}	
+					}
 				}
 				
 				def List<TcpIpAutoIpConfig> getTcpIpAutoIpConfigs(){
@@ -799,7 +849,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpAutoIpConfig")
 						}
 					}
-					return new BasicWrappingEList<TcpIpAutoIpConfig, GContainer>(filteredContainers, typeof(TcpIpAutoIpConfig), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpAutoIpConfig, GContainer>(filteredContainers, typeof(TcpIpAutoIpConfig), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpAutoIpConfig tcpIpAutoIpConfig) {
+							tcpIpAutoIpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpAutoIpConfig"))
+							super.delegateAdd(tcpIpAutoIpConfig)
+						}
+						
+						override protected delegateAdd(int index, TcpIpAutoIpConfig tcpIpAutoIpConfig) {
+							tcpIpAutoIpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpAutoIpConfig"))
+							super.delegateAdd(index, tcpIpAutoIpConfig)
+						}	
+					}
 				}
 				
 				def List<TcpIpDhcpConfig> getTcpIpDhcpConfigs(){
@@ -808,7 +868,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpDhcpConfig")
 						}
 					}
-					return new BasicWrappingEList<TcpIpDhcpConfig, GContainer>(filteredContainers, typeof(TcpIpDhcpConfig), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpDhcpConfig, GContainer>(filteredContainers, typeof(TcpIpDhcpConfig), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpDhcpConfig tcpIpDhcpConfig) {
+							tcpIpDhcpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpConfig"))
+							super.delegateAdd(tcpIpDhcpConfig)
+						}
+						
+						override protected delegateAdd(int index, TcpIpDhcpConfig tcpIpDhcpConfig) {
+							tcpIpDhcpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpConfig"))
+							super.delegateAdd(index, tcpIpDhcpConfig)
+						}	
+					}
 				}
 				
 				def TcpIpIcmpConfig getTcpIpIcmpConfig(){
@@ -826,7 +896,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpIpFragmentationConfig")
 						}
 					}
-					return new BasicWrappingEList<TcpIpIpFragmentationConfig, GContainer>(filteredContainers, typeof(TcpIpIpFragmentationConfig), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpIpFragmentationConfig, GContainer>(filteredContainers, typeof(TcpIpIpFragmentationConfig), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpIpFragmentationConfig tcpIpIpFragmentationConfig) {
+							tcpIpIpFragmentationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpIpFragmentationConfig"))
+							super.delegateAdd(tcpIpIpFragmentationConfig)
+						}
+						
+						override protected delegateAdd(int index, TcpIpIpFragmentationConfig tcpIpIpFragmentationConfig) {
+							tcpIpIpFragmentationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpIpFragmentationConfig"))
+							super.delegateAdd(index, tcpIpIpFragmentationConfig)
+						}	
+					}
 				}
 				
 				
@@ -1204,7 +1284,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpDhcpV6Config")
 						}
 					}
-					return new BasicWrappingEList<TcpIpDhcpV6Config, GContainer>(filteredContainers, typeof(TcpIpDhcpV6Config), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpDhcpV6Config, GContainer>(filteredContainers, typeof(TcpIpDhcpV6Config), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpDhcpV6Config tcpIpDhcpV6Config) {
+							tcpIpDhcpV6Config.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpV6Config"))
+							super.delegateAdd(tcpIpDhcpV6Config)
+						}
+						
+						override protected delegateAdd(int index, TcpIpDhcpV6Config tcpIpDhcpV6Config) {
+							tcpIpDhcpV6Config.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpDhcpV6Config"))
+							super.delegateAdd(index, tcpIpDhcpV6Config)
+						}	
+					}
 				}
 				
 				def TcpIpIcmpV6Config getTcpIpIcmpV6Config(){
@@ -1222,7 +1312,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpIpV6FragmentationConfig")
 						}
 					}
-					return new BasicWrappingEList<TcpIpIpV6FragmentationConfig, GContainer>(filteredContainers, typeof(TcpIpIpV6FragmentationConfig), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpIpV6FragmentationConfig, GContainer>(filteredContainers, typeof(TcpIpIpV6FragmentationConfig), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpIpV6FragmentationConfig tcpIpIpV6FragmentationConfig) {
+							tcpIpIpV6FragmentationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpIpV6FragmentationConfig"))
+							super.delegateAdd(tcpIpIpV6FragmentationConfig)
+						}
+						
+						override protected delegateAdd(int index, TcpIpIpV6FragmentationConfig tcpIpIpV6FragmentationConfig) {
+							tcpIpIpV6FragmentationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpIpV6FragmentationConfig"))
+							super.delegateAdd(index, tcpIpIpV6FragmentationConfig)
+						}	
+					}
 				}
 				
 				def List<TcpIpNdpConfig> getTcpIpNdpConfigs(){
@@ -1231,7 +1331,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "TcpIpNdpConfig")
 						}
 					}
-					return new BasicWrappingEList<TcpIpNdpConfig, GContainer>(filteredContainers, typeof(TcpIpNdpConfig), typeof(GContainer))
+					return new BasicWrappingEList<TcpIpNdpConfig, GContainer>(filteredContainers, typeof(TcpIpNdpConfig), typeof(GContainer)) {
+						override protected delegateAdd(TcpIpNdpConfig tcpIpNdpConfig) {
+							tcpIpNdpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpNdpConfig"))
+							super.delegateAdd(tcpIpNdpConfig)
+						}
+						
+						override protected delegateAdd(int index, TcpIpNdpConfig tcpIpNdpConfig) {
+							tcpIpNdpConfig.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpNdpConfig"))
+							super.delegateAdd(index, tcpIpNdpConfig)
+						}	
+					}
 				}
 				
 				
@@ -2307,7 +2417,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "TcpIpAddrAssignment")
 					}
 				}
-				return new BasicWrappingEList<TcpIpAddrAssignment, GContainer>(filteredContainers, typeof(TcpIpAddrAssignment), typeof(GContainer))
+				return new BasicWrappingEList<TcpIpAddrAssignment, GContainer>(filteredContainers, typeof(TcpIpAddrAssignment), typeof(GContainer)) {
+					override protected delegateAdd(TcpIpAddrAssignment tcpIpAddrAssignment) {
+						tcpIpAddrAssignment.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpAddrAssignment"))
+						super.delegateAdd(tcpIpAddrAssignment)
+					}
+					
+					override protected delegateAdd(int index, TcpIpAddrAssignment tcpIpAddrAssignment) {
+						tcpIpAddrAssignment.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpAddrAssignment"))
+						super.delegateAdd(index, tcpIpAddrAssignment)
+					}	
+				}
 			}
 			
 			def TcpIpStaticIpAddressConfig getTcpIpStaticIpAddressConfig(){
@@ -2690,7 +2810,17 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "TcpIpSocketOwner")
 					}
 				}
-				return new BasicWrappingEList<TcpIpSocketOwner, GContainer>(filteredContainers, typeof(TcpIpSocketOwner), typeof(GContainer))
+				return new BasicWrappingEList<TcpIpSocketOwner, GContainer>(filteredContainers, typeof(TcpIpSocketOwner), typeof(GContainer)) {
+					override protected delegateAdd(TcpIpSocketOwner tcpIpSocketOwner) {
+						tcpIpSocketOwner.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpSocketOwner"))
+						super.delegateAdd(tcpIpSocketOwner)
+					}
+					
+					override protected delegateAdd(int index, TcpIpSocketOwner tcpIpSocketOwner) {
+						tcpIpSocketOwner.target?.gSetDefinition(containerValue.getContainerDefinition("TcpIpSocketOwner"))
+						super.delegateAdd(index, tcpIpSocketOwner)
+					}	
+				}
 			}
 			
 			

@@ -160,7 +160,17 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DoIPChannel")
 				}
 			}
-			return new BasicWrappingEList<DoIPChannel, GContainer>(filteredContainers, typeof(DoIPChannel), typeof(GContainer))
+			return new BasicWrappingEList<DoIPChannel, GContainer>(filteredContainers, typeof(DoIPChannel), typeof(GContainer)) {
+				override protected delegateAdd(DoIPChannel doIPChannel) {
+					doIPChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPChannel"))
+					super.delegateAdd(doIPChannel)
+				}
+				
+				override protected delegateAdd(int index, DoIPChannel doIPChannel) {
+					doIPChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPChannel"))
+					super.delegateAdd(index, doIPChannel)
+				}	
+			}
 		}
 		
 		def DoIPConnections getDoIPConnections(){
@@ -178,7 +188,17 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DoIPRoutingActivation")
 				}
 			}
-			return new BasicWrappingEList<DoIPRoutingActivation, GContainer>(filteredContainers, typeof(DoIPRoutingActivation), typeof(GContainer))
+			return new BasicWrappingEList<DoIPRoutingActivation, GContainer>(filteredContainers, typeof(DoIPRoutingActivation), typeof(GContainer)) {
+				override protected delegateAdd(DoIPRoutingActivation doIPRoutingActivation) {
+					doIPRoutingActivation.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPRoutingActivation"))
+					super.delegateAdd(doIPRoutingActivation)
+				}
+				
+				override protected delegateAdd(int index, DoIPRoutingActivation doIPRoutingActivation) {
+					doIPRoutingActivation.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPRoutingActivation"))
+					super.delegateAdd(index, doIPRoutingActivation)
+				}	
+			}
 		}
 		
 		def List<DoIPTester> getDoIPTesters(){
@@ -187,7 +207,17 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DoIPTester")
 				}
 			}
-			return new BasicWrappingEList<DoIPTester, GContainer>(filteredContainers, typeof(DoIPTester), typeof(GContainer))
+			return new BasicWrappingEList<DoIPTester, GContainer>(filteredContainers, typeof(DoIPTester), typeof(GContainer)) {
+				override protected delegateAdd(DoIPTester doIPTester) {
+					doIPTester.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTester"))
+					super.delegateAdd(doIPTester)
+				}
+				
+				override protected delegateAdd(int index, DoIPTester doIPTester) {
+					doIPTester.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTester"))
+					super.delegateAdd(index, doIPTester)
+				}	
+			}
 		}
 		
 		
@@ -417,7 +447,17 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DoIPTargetAddress")
 					}
 				}
-				return new BasicWrappingEList<DoIPTargetAddress, GContainer>(filteredContainers, typeof(DoIPTargetAddress), typeof(GContainer))
+				return new BasicWrappingEList<DoIPTargetAddress, GContainer>(filteredContainers, typeof(DoIPTargetAddress), typeof(GContainer)) {
+					override protected delegateAdd(DoIPTargetAddress doIPTargetAddress) {
+						doIPTargetAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTargetAddress"))
+						super.delegateAdd(doIPTargetAddress)
+					}
+					
+					override protected delegateAdd(int index, DoIPTargetAddress doIPTargetAddress) {
+						doIPTargetAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTargetAddress"))
+						super.delegateAdd(index, doIPTargetAddress)
+					}	
+				}
 			}
 			
 			def List<DoIPTcpConnection> getDoIPTcpConnections(){
@@ -426,7 +466,17 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DoIPTcpConnection")
 					}
 				}
-				return new BasicWrappingEList<DoIPTcpConnection, GContainer>(filteredContainers, typeof(DoIPTcpConnection), typeof(GContainer))
+				return new BasicWrappingEList<DoIPTcpConnection, GContainer>(filteredContainers, typeof(DoIPTcpConnection), typeof(GContainer)) {
+					override protected delegateAdd(DoIPTcpConnection doIPTcpConnection) {
+						doIPTcpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTcpConnection"))
+						super.delegateAdd(doIPTcpConnection)
+					}
+					
+					override protected delegateAdd(int index, DoIPTcpConnection doIPTcpConnection) {
+						doIPTcpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTcpConnection"))
+						super.delegateAdd(index, doIPTcpConnection)
+					}	
+				}
 			}
 			
 			def List<DoIPUdpConnection> getDoIPUdpConnections(){
@@ -435,7 +485,17 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DoIPUdpConnection")
 					}
 				}
-				return new BasicWrappingEList<DoIPUdpConnection, GContainer>(filteredContainers, typeof(DoIPUdpConnection), typeof(GContainer))
+				return new BasicWrappingEList<DoIPUdpConnection, GContainer>(filteredContainers, typeof(DoIPUdpConnection), typeof(GContainer)) {
+					override protected delegateAdd(DoIPUdpConnection doIPUdpConnection) {
+						doIPUdpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPUdpConnection"))
+						super.delegateAdd(doIPUdpConnection)
+					}
+					
+					override protected delegateAdd(int index, DoIPUdpConnection doIPUdpConnection) {
+						doIPUdpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPUdpConnection"))
+						super.delegateAdd(index, doIPUdpConnection)
+					}	
+				}
 			}
 			
 			

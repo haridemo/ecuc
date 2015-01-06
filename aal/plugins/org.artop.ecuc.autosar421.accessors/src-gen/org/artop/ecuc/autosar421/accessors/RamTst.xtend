@@ -616,7 +616,17 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "RamTstAlgParams")
 					}
 				}
-				return new BasicWrappingEList<RamTstAlgParams, GContainer>(filteredContainers, typeof(RamTstAlgParams), typeof(GContainer))
+				return new BasicWrappingEList<RamTstAlgParams, GContainer>(filteredContainers, typeof(RamTstAlgParams), typeof(GContainer)) {
+					override protected delegateAdd(RamTstAlgParams ramTstAlgParams) {
+						ramTstAlgParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstAlgParams"))
+						super.delegateAdd(ramTstAlgParams)
+					}
+					
+					override protected delegateAdd(int index, RamTstAlgParams ramTstAlgParams) {
+						ramTstAlgParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstAlgParams"))
+						super.delegateAdd(index, ramTstAlgParams)
+					}	
+				}
 			}
 			
 			
@@ -768,7 +778,17 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "RamTstBlockParams")
 						}
 					}
-					return new BasicWrappingEList<RamTstBlockParams, GContainer>(filteredContainers, typeof(RamTstBlockParams), typeof(GContainer))
+					return new BasicWrappingEList<RamTstBlockParams, GContainer>(filteredContainers, typeof(RamTstBlockParams), typeof(GContainer)) {
+						override protected delegateAdd(RamTstBlockParams ramTstBlockParams) {
+							ramTstBlockParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstBlockParams"))
+							super.delegateAdd(ramTstBlockParams)
+						}
+						
+						override protected delegateAdd(int index, RamTstBlockParams ramTstBlockParams) {
+							ramTstBlockParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstBlockParams"))
+							super.delegateAdd(index, ramTstBlockParams)
+						}	
+					}
 				}
 				
 				

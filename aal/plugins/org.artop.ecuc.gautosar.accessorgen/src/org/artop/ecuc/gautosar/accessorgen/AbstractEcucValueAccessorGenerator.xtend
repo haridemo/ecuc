@@ -144,7 +144,17 @@ public abstract class AbstractEcucValueAccessorGenerator {
 					return accept(item, typeof(GContainerDef), "«cont.containerTypeName»")
 				}
 			}
-			return new BasicWrappingEList<«cont.containerTypeName», GContainer>(filteredContainers, typeof(«cont.containerTypeName»), typeof(GContainer))
+			return new BasicWrappingEList<«cont.containerTypeName», GContainer>(filteredContainers, typeof(«cont.containerTypeName»), typeof(GContainer)) {
+				override protected delegateAdd(«cont.containerTypeName» «cont.containerTypeName.toFirstLower») {
+					«cont.containerTypeName.toFirstLower».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("«cont.containerTypeName»"))
+					super.delegateAdd(«cont.containerTypeName.toFirstLower»)
+				}
+			
+				override protected delegateAdd(int index, «cont.containerTypeName» «cont.containerTypeName.toFirstLower») {
+					«cont.containerTypeName.toFirstLower».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("«cont.containerTypeName»"))
+					super.delegateAdd(index, «cont.containerTypeName.toFirstLower»)
+				}
+			}
 		}
 		«ELSE»
 		def «cont.containerTypeName» get«cont.containerTypeName.toFirstUpper»(){
@@ -288,7 +298,17 @@ public abstract class AbstractEcucValueAccessorGenerator {
 				return accept(item, typeof(GContainerDef), "«sc.containerTypeName»")
 			}
 		}
-		return new BasicWrappingEList<«sc.containerTypeName», GContainer>(filteredContainers, typeof(«sc.containerTypeName»), typeof(GContainer))
+		return new BasicWrappingEList<«sc.containerTypeName», GContainer>(filteredContainers, typeof(«sc.containerTypeName»), typeof(GContainer)) {
+			override protected delegateAdd(«sc.containerTypeName» «sc.containerTypeName.toFirstLower») {
+				«sc.containerTypeName.toFirstLower».target?.gSetDefinition(containerValue.getContainerDefinition("«sc.containerTypeName»"))
+				super.delegateAdd(«sc.containerTypeName.toFirstLower»)
+			}
+			
+			override protected delegateAdd(int index, «sc.containerTypeName» «sc.containerTypeName.toFirstLower») {
+				«sc.containerTypeName.toFirstLower».target?.gSetDefinition(containerValue.getContainerDefinition("«sc.containerTypeName»"))
+				super.delegateAdd(index, «sc.containerTypeName.toFirstLower»)
+			}	
+		}
 	}
 	«ELSE»
 	def «sc.containerTypeName» get«sc.containerTypeName.toFirstUpper»(){

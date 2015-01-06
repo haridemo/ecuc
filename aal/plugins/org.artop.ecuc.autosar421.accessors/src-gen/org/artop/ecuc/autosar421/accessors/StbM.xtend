@@ -82,7 +82,17 @@ class StbM implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "StbMSynchronizedTimeBase")
 			}
 		}
-		return new BasicWrappingEList<StbMSynchronizedTimeBase, GContainer>(filteredContainers, typeof(StbMSynchronizedTimeBase), typeof(GContainer))
+		return new BasicWrappingEList<StbMSynchronizedTimeBase, GContainer>(filteredContainers, typeof(StbMSynchronizedTimeBase), typeof(GContainer)) {
+			override protected delegateAdd(StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
+				stbMSynchronizedTimeBase.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMSynchronizedTimeBase"))
+				super.delegateAdd(stbMSynchronizedTimeBase)
+			}
+		
+			override protected delegateAdd(int index, StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
+				stbMSynchronizedTimeBase.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMSynchronizedTimeBase"))
+				super.delegateAdd(index, stbMSynchronizedTimeBase)
+			}
+		}
 	}
 	def List<StbMTriggeredCustomer> getStbMTriggeredCustomers(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -90,7 +100,17 @@ class StbM implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "StbMTriggeredCustomer")
 			}
 		}
-		return new BasicWrappingEList<StbMTriggeredCustomer, GContainer>(filteredContainers, typeof(StbMTriggeredCustomer), typeof(GContainer))
+		return new BasicWrappingEList<StbMTriggeredCustomer, GContainer>(filteredContainers, typeof(StbMTriggeredCustomer), typeof(GContainer)) {
+			override protected delegateAdd(StbMTriggeredCustomer stbMTriggeredCustomer) {
+				stbMTriggeredCustomer.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMTriggeredCustomer"))
+				super.delegateAdd(stbMTriggeredCustomer)
+			}
+		
+			override protected delegateAdd(int index, StbMTriggeredCustomer stbMTriggeredCustomer) {
+				stbMTriggeredCustomer.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMTriggeredCustomer"))
+				super.delegateAdd(index, stbMTriggeredCustomer)
+			}
+		}
 	}
 	
 	static class StbMGeneral implements IWrapper<GContainer> {

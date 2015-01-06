@@ -112,7 +112,17 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "XcpDaqList")
 				}
 			}
-			return new BasicWrappingEList<XcpDaqList, GContainer>(filteredContainers, typeof(XcpDaqList), typeof(GContainer))
+			return new BasicWrappingEList<XcpDaqList, GContainer>(filteredContainers, typeof(XcpDaqList), typeof(GContainer)) {
+				override protected delegateAdd(XcpDaqList xcpDaqList) {
+					xcpDaqList.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDaqList"))
+					super.delegateAdd(xcpDaqList)
+				}
+				
+				override protected delegateAdd(int index, XcpDaqList xcpDaqList) {
+					xcpDaqList.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDaqList"))
+					super.delegateAdd(index, xcpDaqList)
+				}	
+			}
 		}
 		
 		def List<XcpEventChannel> getXcpEventChannels(){
@@ -121,7 +131,17 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "XcpEventChannel")
 				}
 			}
-			return new BasicWrappingEList<XcpEventChannel, GContainer>(filteredContainers, typeof(XcpEventChannel), typeof(GContainer))
+			return new BasicWrappingEList<XcpEventChannel, GContainer>(filteredContainers, typeof(XcpEventChannel), typeof(GContainer)) {
+				override protected delegateAdd(XcpEventChannel xcpEventChannel) {
+					xcpEventChannel.target?.gSetDefinition(containerValue.getContainerDefinition("XcpEventChannel"))
+					super.delegateAdd(xcpEventChannel)
+				}
+				
+				override protected delegateAdd(int index, XcpEventChannel xcpEventChannel) {
+					xcpEventChannel.target?.gSetDefinition(containerValue.getContainerDefinition("XcpEventChannel"))
+					super.delegateAdd(index, xcpEventChannel)
+				}	
+			}
 		}
 		
 		def List<XcpPdu> getXcpPdus(){
@@ -130,7 +150,17 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "XcpPdu")
 				}
 			}
-			return new BasicWrappingEList<XcpPdu, GContainer>(filteredContainers, typeof(XcpPdu), typeof(GContainer))
+			return new BasicWrappingEList<XcpPdu, GContainer>(filteredContainers, typeof(XcpPdu), typeof(GContainer)) {
+				override protected delegateAdd(XcpPdu xcpPdu) {
+					xcpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("XcpPdu"))
+					super.delegateAdd(xcpPdu)
+				}
+				
+				override protected delegateAdd(int index, XcpPdu xcpPdu) {
+					xcpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("XcpPdu"))
+					super.delegateAdd(index, xcpPdu)
+				}	
+			}
 		}
 		
 		
@@ -244,7 +274,17 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "XcpDto")
 					}
 				}
-				return new BasicWrappingEList<XcpDto, GContainer>(filteredContainers, typeof(XcpDto), typeof(GContainer))
+				return new BasicWrappingEList<XcpDto, GContainer>(filteredContainers, typeof(XcpDto), typeof(GContainer)) {
+					override protected delegateAdd(XcpDto xcpDto) {
+						xcpDto.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDto"))
+						super.delegateAdd(xcpDto)
+					}
+					
+					override protected delegateAdd(int index, XcpDto xcpDto) {
+						xcpDto.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDto"))
+						super.delegateAdd(index, xcpDto)
+					}	
+				}
 			}
 			
 			def List<XcpOdt> getXcpOdts(){
@@ -253,7 +293,17 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "XcpOdt")
 					}
 				}
-				return new BasicWrappingEList<XcpOdt, GContainer>(filteredContainers, typeof(XcpOdt), typeof(GContainer))
+				return new BasicWrappingEList<XcpOdt, GContainer>(filteredContainers, typeof(XcpOdt), typeof(GContainer)) {
+					override protected delegateAdd(XcpOdt xcpOdt) {
+						xcpOdt.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdt"))
+						super.delegateAdd(xcpOdt)
+					}
+					
+					override protected delegateAdd(int index, XcpOdt xcpOdt) {
+						xcpOdt.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdt"))
+						super.delegateAdd(index, xcpOdt)
+					}	
+				}
 			}
 			
 			
@@ -368,7 +418,17 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "XcpOdtEntry")
 						}
 					}
-					return new BasicWrappingEList<XcpOdtEntry, GContainer>(filteredContainers, typeof(XcpOdtEntry), typeof(GContainer))
+					return new BasicWrappingEList<XcpOdtEntry, GContainer>(filteredContainers, typeof(XcpOdtEntry), typeof(GContainer)) {
+						override protected delegateAdd(XcpOdtEntry xcpOdtEntry) {
+							xcpOdtEntry.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdtEntry"))
+							super.delegateAdd(xcpOdtEntry)
+						}
+						
+						override protected delegateAdd(int index, XcpOdtEntry xcpOdtEntry) {
+							xcpOdtEntry.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdtEntry"))
+							super.delegateAdd(index, xcpOdtEntry)
+						}	
+					}
 				}
 				
 				

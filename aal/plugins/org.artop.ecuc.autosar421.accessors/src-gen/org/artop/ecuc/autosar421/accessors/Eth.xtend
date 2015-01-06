@@ -112,7 +112,17 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthCtrlConfig")
 				}
 			}
-			return new BasicWrappingEList<EthCtrlConfig, GContainer>(filteredContainers, typeof(EthCtrlConfig), typeof(GContainer))
+			return new BasicWrappingEList<EthCtrlConfig, GContainer>(filteredContainers, typeof(EthCtrlConfig), typeof(GContainer)) {
+				override protected delegateAdd(EthCtrlConfig ethCtrlConfig) {
+					ethCtrlConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthCtrlConfig"))
+					super.delegateAdd(ethCtrlConfig)
+				}
+				
+				override protected delegateAdd(int index, EthCtrlConfig ethCtrlConfig) {
+					ethCtrlConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthCtrlConfig"))
+					super.delegateAdd(index, ethCtrlConfig)
+				}	
+			}
 		}
 		
 		

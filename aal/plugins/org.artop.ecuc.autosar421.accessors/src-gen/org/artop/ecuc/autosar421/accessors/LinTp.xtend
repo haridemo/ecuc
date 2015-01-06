@@ -247,7 +247,17 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinTpChannelConfig")
 				}
 			}
-			return new BasicWrappingEList<LinTpChannelConfig, GContainer>(filteredContainers, typeof(LinTpChannelConfig), typeof(GContainer))
+			return new BasicWrappingEList<LinTpChannelConfig, GContainer>(filteredContainers, typeof(LinTpChannelConfig), typeof(GContainer)) {
+				override protected delegateAdd(LinTpChannelConfig linTpChannelConfig) {
+					linTpChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpChannelConfig"))
+					super.delegateAdd(linTpChannelConfig)
+				}
+				
+				override protected delegateAdd(int index, LinTpChannelConfig linTpChannelConfig) {
+					linTpChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpChannelConfig"))
+					super.delegateAdd(index, linTpChannelConfig)
+				}	
+			}
 		}
 		
 		def List<LinTpRxNSdu> getLinTpRxNSdus(){
@@ -256,7 +266,17 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinTpRxNSdu")
 				}
 			}
-			return new BasicWrappingEList<LinTpRxNSdu, GContainer>(filteredContainers, typeof(LinTpRxNSdu), typeof(GContainer))
+			return new BasicWrappingEList<LinTpRxNSdu, GContainer>(filteredContainers, typeof(LinTpRxNSdu), typeof(GContainer)) {
+				override protected delegateAdd(LinTpRxNSdu linTpRxNSdu) {
+					linTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpRxNSdu"))
+					super.delegateAdd(linTpRxNSdu)
+				}
+				
+				override protected delegateAdd(int index, LinTpRxNSdu linTpRxNSdu) {
+					linTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpRxNSdu"))
+					super.delegateAdd(index, linTpRxNSdu)
+				}	
+			}
 		}
 		
 		def List<LinTpTxNSdu> getLinTpTxNSdus(){
@@ -265,7 +285,17 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinTpTxNSdu")
 				}
 			}
-			return new BasicWrappingEList<LinTpTxNSdu, GContainer>(filteredContainers, typeof(LinTpTxNSdu), typeof(GContainer))
+			return new BasicWrappingEList<LinTpTxNSdu, GContainer>(filteredContainers, typeof(LinTpTxNSdu), typeof(GContainer)) {
+				override protected delegateAdd(LinTpTxNSdu linTpTxNSdu) {
+					linTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpTxNSdu"))
+					super.delegateAdd(linTpTxNSdu)
+				}
+				
+				override protected delegateAdd(int index, LinTpTxNSdu linTpTxNSdu) {
+					linTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpTxNSdu"))
+					super.delegateAdd(index, linTpTxNSdu)
+				}	
+			}
 		}
 		
 		

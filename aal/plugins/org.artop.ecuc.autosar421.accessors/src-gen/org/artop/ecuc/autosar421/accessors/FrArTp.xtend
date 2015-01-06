@@ -247,7 +247,17 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FrArTpChannel")
 				}
 			}
-			return new BasicWrappingEList<FrArTpChannel, GContainer>(filteredContainers, typeof(FrArTpChannel), typeof(GContainer))
+			return new BasicWrappingEList<FrArTpChannel, GContainer>(filteredContainers, typeof(FrArTpChannel), typeof(GContainer)) {
+				override protected delegateAdd(FrArTpChannel frArTpChannel) {
+					frArTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpChannel"))
+					super.delegateAdd(frArTpChannel)
+				}
+				
+				override protected delegateAdd(int index, FrArTpChannel frArTpChannel) {
+					frArTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpChannel"))
+					super.delegateAdd(index, frArTpChannel)
+				}	
+			}
 		}
 		
 		
@@ -637,7 +647,17 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FrArTpConnection")
 					}
 				}
-				return new BasicWrappingEList<FrArTpConnection, GContainer>(filteredContainers, typeof(FrArTpConnection), typeof(GContainer))
+				return new BasicWrappingEList<FrArTpConnection, GContainer>(filteredContainers, typeof(FrArTpConnection), typeof(GContainer)) {
+					override protected delegateAdd(FrArTpConnection frArTpConnection) {
+						frArTpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpConnection"))
+						super.delegateAdd(frArTpConnection)
+					}
+					
+					override protected delegateAdd(int index, FrArTpConnection frArTpConnection) {
+						frArTpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpConnection"))
+						super.delegateAdd(index, frArTpConnection)
+					}	
+				}
 			}
 			
 			def List<FrArTpPdu> getFrArTpPdus(){
@@ -646,7 +666,17 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FrArTpPdu")
 					}
 				}
-				return new BasicWrappingEList<FrArTpPdu, GContainer>(filteredContainers, typeof(FrArTpPdu), typeof(GContainer))
+				return new BasicWrappingEList<FrArTpPdu, GContainer>(filteredContainers, typeof(FrArTpPdu), typeof(GContainer)) {
+					override protected delegateAdd(FrArTpPdu frArTpPdu) {
+						frArTpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpPdu"))
+						super.delegateAdd(frArTpPdu)
+					}
+					
+					override protected delegateAdd(int index, FrArTpPdu frArTpPdu) {
+						frArTpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpPdu"))
+						super.delegateAdd(index, frArTpPdu)
+					}	
+				}
 			}
 			
 			

@@ -112,7 +112,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemComponent")
 				}
 			}
-			return new BasicWrappingEList<DemComponent, GContainer>(filteredContainers, typeof(DemComponent), typeof(GContainer))
+			return new BasicWrappingEList<DemComponent, GContainer>(filteredContainers, typeof(DemComponent), typeof(GContainer)) {
+				override protected delegateAdd(DemComponent demComponent) {
+					demComponent.target?.gSetDefinition(containerValue.getContainerDefinition("DemComponent"))
+					super.delegateAdd(demComponent)
+				}
+				
+				override protected delegateAdd(int index, DemComponent demComponent) {
+					demComponent.target?.gSetDefinition(containerValue.getContainerDefinition("DemComponent"))
+					super.delegateAdd(index, demComponent)
+				}	
+			}
 		}
 		
 		def List<DemDTC> getDemDTCs(){
@@ -121,7 +131,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemDTC")
 				}
 			}
-			return new BasicWrappingEList<DemDTC, GContainer>(filteredContainers, typeof(DemDTC), typeof(GContainer))
+			return new BasicWrappingEList<DemDTC, GContainer>(filteredContainers, typeof(DemDTC), typeof(GContainer)) {
+				override protected delegateAdd(DemDTC demDTC) {
+					demDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTC"))
+					super.delegateAdd(demDTC)
+				}
+				
+				override protected delegateAdd(int index, DemDTC demDTC) {
+					demDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTC"))
+					super.delegateAdd(index, demDTC)
+				}	
+			}
 		}
 		
 		def List<DemDTCAttributes> getDemDTCAttributes(){
@@ -130,7 +150,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemDTCAttributes")
 				}
 			}
-			return new BasicWrappingEList<DemDTCAttributes, GContainer>(filteredContainers, typeof(DemDTCAttributes), typeof(GContainer))
+			return new BasicWrappingEList<DemDTCAttributes, GContainer>(filteredContainers, typeof(DemDTCAttributes), typeof(GContainer)) {
+				override protected delegateAdd(DemDTCAttributes demDTCAttributes) {
+					demDTCAttributes.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTCAttributes"))
+					super.delegateAdd(demDTCAttributes)
+				}
+				
+				override protected delegateAdd(int index, DemDTCAttributes demDTCAttributes) {
+					demDTCAttributes.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTCAttributes"))
+					super.delegateAdd(index, demDTCAttributes)
+				}	
+			}
 		}
 		
 		def List<DemDebounceCounterBasedClass> getDemDebounceCounterBasedClass(){
@@ -139,7 +169,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemDebounceCounterBasedClass")
 				}
 			}
-			return new BasicWrappingEList<DemDebounceCounterBasedClass, GContainer>(filteredContainers, typeof(DemDebounceCounterBasedClass), typeof(GContainer))
+			return new BasicWrappingEList<DemDebounceCounterBasedClass, GContainer>(filteredContainers, typeof(DemDebounceCounterBasedClass), typeof(GContainer)) {
+				override protected delegateAdd(DemDebounceCounterBasedClass demDebounceCounterBasedClass) {
+					demDebounceCounterBasedClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceCounterBasedClass"))
+					super.delegateAdd(demDebounceCounterBasedClass)
+				}
+				
+				override protected delegateAdd(int index, DemDebounceCounterBasedClass demDebounceCounterBasedClass) {
+					demDebounceCounterBasedClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceCounterBasedClass"))
+					super.delegateAdd(index, demDebounceCounterBasedClass)
+				}	
+			}
 		}
 		
 		def List<DemDebounceTimeBaseClass> getDemDebounceTimeBaseClass(){
@@ -148,7 +188,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemDebounceTimeBaseClass")
 				}
 			}
-			return new BasicWrappingEList<DemDebounceTimeBaseClass, GContainer>(filteredContainers, typeof(DemDebounceTimeBaseClass), typeof(GContainer))
+			return new BasicWrappingEList<DemDebounceTimeBaseClass, GContainer>(filteredContainers, typeof(DemDebounceTimeBaseClass), typeof(GContainer)) {
+				override protected delegateAdd(DemDebounceTimeBaseClass demDebounceTimeBaseClass) {
+					demDebounceTimeBaseClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceTimeBaseClass"))
+					super.delegateAdd(demDebounceTimeBaseClass)
+				}
+				
+				override protected delegateAdd(int index, DemDebounceTimeBaseClass demDebounceTimeBaseClass) {
+					demDebounceTimeBaseClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceTimeBaseClass"))
+					super.delegateAdd(index, demDebounceTimeBaseClass)
+				}	
+			}
 		}
 		
 		def DemDtr getDemDtr(){
@@ -166,7 +216,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemEventParameter")
 				}
 			}
-			return new BasicWrappingEList<DemEventParameter, GContainer>(filteredContainers, typeof(DemEventParameter), typeof(GContainer))
+			return new BasicWrappingEList<DemEventParameter, GContainer>(filteredContainers, typeof(DemEventParameter), typeof(GContainer)) {
+				override protected delegateAdd(DemEventParameter demEventParameter) {
+					demEventParameter.target?.gSetDefinition(containerValue.getContainerDefinition("DemEventParameter"))
+					super.delegateAdd(demEventParameter)
+				}
+				
+				override protected delegateAdd(int index, DemEventParameter demEventParameter) {
+					demEventParameter.target?.gSetDefinition(containerValue.getContainerDefinition("DemEventParameter"))
+					super.delegateAdd(index, demEventParameter)
+				}	
+			}
 		}
 		
 		def List<DemJ1939NodeAddress> getDemJ1939NodeAddress(){
@@ -175,7 +235,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemJ1939NodeAddress")
 				}
 			}
-			return new BasicWrappingEList<DemJ1939NodeAddress, GContainer>(filteredContainers, typeof(DemJ1939NodeAddress), typeof(GContainer))
+			return new BasicWrappingEList<DemJ1939NodeAddress, GContainer>(filteredContainers, typeof(DemJ1939NodeAddress), typeof(GContainer)) {
+				override protected delegateAdd(DemJ1939NodeAddress demJ1939NodeAddress) {
+					demJ1939NodeAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939NodeAddress"))
+					super.delegateAdd(demJ1939NodeAddress)
+				}
+				
+				override protected delegateAdd(int index, DemJ1939NodeAddress demJ1939NodeAddress) {
+					demJ1939NodeAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939NodeAddress"))
+					super.delegateAdd(index, demJ1939NodeAddress)
+				}	
+			}
 		}
 		
 		def List<DemObdDTC> getDemObdDTCs(){
@@ -184,7 +254,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemObdDTC")
 				}
 			}
-			return new BasicWrappingEList<DemObdDTC, GContainer>(filteredContainers, typeof(DemObdDTC), typeof(GContainer))
+			return new BasicWrappingEList<DemObdDTC, GContainer>(filteredContainers, typeof(DemObdDTC), typeof(GContainer)) {
+				override protected delegateAdd(DemObdDTC demObdDTC) {
+					demObdDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemObdDTC"))
+					super.delegateAdd(demObdDTC)
+				}
+				
+				override protected delegateAdd(int index, DemObdDTC demObdDTC) {
+					demObdDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemObdDTC"))
+					super.delegateAdd(index, demObdDTC)
+				}	
+			}
 		}
 		
 		def List<DemPidClass> getDemPidClass(){
@@ -193,7 +273,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemPidClass")
 				}
 			}
-			return new BasicWrappingEList<DemPidClass, GContainer>(filteredContainers, typeof(DemPidClass), typeof(GContainer))
+			return new BasicWrappingEList<DemPidClass, GContainer>(filteredContainers, typeof(DemPidClass), typeof(GContainer)) {
+				override protected delegateAdd(DemPidClass demPidClass) {
+					demPidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidClass"))
+					super.delegateAdd(demPidClass)
+				}
+				
+				override protected delegateAdd(int index, DemPidClass demPidClass) {
+					demPidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidClass"))
+					super.delegateAdd(index, demPidClass)
+				}	
+			}
 		}
 		
 		
@@ -1425,7 +1515,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemCallbackEventStatusChanged")
 					}
 				}
-				return new BasicWrappingEList<DemCallbackEventStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackEventStatusChanged), typeof(GContainer))
+				return new BasicWrappingEList<DemCallbackEventStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackEventStatusChanged), typeof(GContainer)) {
+					override protected delegateAdd(DemCallbackEventStatusChanged demCallbackEventStatusChanged) {
+						demCallbackEventStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackEventStatusChanged"))
+						super.delegateAdd(demCallbackEventStatusChanged)
+					}
+					
+					override protected delegateAdd(int index, DemCallbackEventStatusChanged demCallbackEventStatusChanged) {
+						demCallbackEventStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackEventStatusChanged"))
+						super.delegateAdd(index, demCallbackEventStatusChanged)
+					}	
+				}
 			}
 			
 			def DemCallbackInitMForE getDemCallbackInitMForE(){
@@ -1452,7 +1552,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemIndicatorAttribute")
 					}
 				}
-				return new BasicWrappingEList<DemIndicatorAttribute, GContainer>(filteredContainers, typeof(DemIndicatorAttribute), typeof(GContainer))
+				return new BasicWrappingEList<DemIndicatorAttribute, GContainer>(filteredContainers, typeof(DemIndicatorAttribute), typeof(GContainer)) {
+					override protected delegateAdd(DemIndicatorAttribute demIndicatorAttribute) {
+						demIndicatorAttribute.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicatorAttribute"))
+						super.delegateAdd(demIndicatorAttribute)
+					}
+					
+					override protected delegateAdd(int index, DemIndicatorAttribute demIndicatorAttribute) {
+						demIndicatorAttribute.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicatorAttribute"))
+						super.delegateAdd(index, demIndicatorAttribute)
+					}	
+				}
 			}
 			
 			
@@ -2183,7 +2293,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemPidDataElement")
 					}
 				}
-				return new BasicWrappingEList<DemPidDataElement, GContainer>(filteredContainers, typeof(DemPidDataElement), typeof(GContainer))
+				return new BasicWrappingEList<DemPidDataElement, GContainer>(filteredContainers, typeof(DemPidDataElement), typeof(GContainer)) {
+					override protected delegateAdd(DemPidDataElement demPidDataElement) {
+						demPidDataElement.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidDataElement"))
+						super.delegateAdd(demPidDataElement)
+					}
+					
+					override protected delegateAdd(int index, DemPidDataElement demPidDataElement) {
+						demPidDataElement.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidDataElement"))
+						super.delegateAdd(index, demPidDataElement)
+					}	
+				}
 			}
 			
 			
@@ -3129,7 +3249,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemCallbackDTCStatusChanged")
 				}
 			}
-			return new BasicWrappingEList<DemCallbackDTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackDTCStatusChanged), typeof(GContainer))
+			return new BasicWrappingEList<DemCallbackDTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackDTCStatusChanged), typeof(GContainer)) {
+				override protected delegateAdd(DemCallbackDTCStatusChanged demCallbackDTCStatusChanged) {
+					demCallbackDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackDTCStatusChanged"))
+					super.delegateAdd(demCallbackDTCStatusChanged)
+				}
+				
+				override protected delegateAdd(int index, DemCallbackDTCStatusChanged demCallbackDTCStatusChanged) {
+					demCallbackDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackDTCStatusChanged"))
+					super.delegateAdd(index, demCallbackDTCStatusChanged)
+				}	
+			}
 		}
 		
 		def List<DemDataElementClass> getDemDataElementClass(){
@@ -3138,7 +3268,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemDataElementClass")
 				}
 			}
-			return new BasicWrappingEList<DemDataElementClass, GContainer>(filteredContainers, typeof(DemDataElementClass), typeof(GContainer))
+			return new BasicWrappingEList<DemDataElementClass, GContainer>(filteredContainers, typeof(DemDataElementClass), typeof(GContainer)) {
+				override protected delegateAdd(DemDataElementClass demDataElementClass) {
+					demDataElementClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDataElementClass"))
+					super.delegateAdd(demDataElementClass)
+				}
+				
+				override protected delegateAdd(int index, DemDataElementClass demDataElementClass) {
+					demDataElementClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDataElementClass"))
+					super.delegateAdd(index, demDataElementClass)
+				}	
+			}
 		}
 		
 		def List<DemDidClass> getDemDidClass(){
@@ -3147,7 +3287,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemDidClass")
 				}
 			}
-			return new BasicWrappingEList<DemDidClass, GContainer>(filteredContainers, typeof(DemDidClass), typeof(GContainer))
+			return new BasicWrappingEList<DemDidClass, GContainer>(filteredContainers, typeof(DemDidClass), typeof(GContainer)) {
+				override protected delegateAdd(DemDidClass demDidClass) {
+					demDidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDidClass"))
+					super.delegateAdd(demDidClass)
+				}
+				
+				override protected delegateAdd(int index, DemDidClass demDidClass) {
+					demDidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDidClass"))
+					super.delegateAdd(index, demDidClass)
+				}	
+			}
 		}
 		
 		def List<DemEnableCondition> getDemEnableConditions(){
@@ -3156,7 +3306,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemEnableCondition")
 				}
 			}
-			return new BasicWrappingEList<DemEnableCondition, GContainer>(filteredContainers, typeof(DemEnableCondition), typeof(GContainer))
+			return new BasicWrappingEList<DemEnableCondition, GContainer>(filteredContainers, typeof(DemEnableCondition), typeof(GContainer)) {
+				override protected delegateAdd(DemEnableCondition demEnableCondition) {
+					demEnableCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableCondition"))
+					super.delegateAdd(demEnableCondition)
+				}
+				
+				override protected delegateAdd(int index, DemEnableCondition demEnableCondition) {
+					demEnableCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableCondition"))
+					super.delegateAdd(index, demEnableCondition)
+				}	
+			}
 		}
 		
 		def List<DemEnableConditionGroup> getDemEnableConditionGroups(){
@@ -3165,7 +3325,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemEnableConditionGroup")
 				}
 			}
-			return new BasicWrappingEList<DemEnableConditionGroup, GContainer>(filteredContainers, typeof(DemEnableConditionGroup), typeof(GContainer))
+			return new BasicWrappingEList<DemEnableConditionGroup, GContainer>(filteredContainers, typeof(DemEnableConditionGroup), typeof(GContainer)) {
+				override protected delegateAdd(DemEnableConditionGroup demEnableConditionGroup) {
+					demEnableConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableConditionGroup"))
+					super.delegateAdd(demEnableConditionGroup)
+				}
+				
+				override protected delegateAdd(int index, DemEnableConditionGroup demEnableConditionGroup) {
+					demEnableConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableConditionGroup"))
+					super.delegateAdd(index, demEnableConditionGroup)
+				}	
+			}
 		}
 		
 		def List<DemExtendedDataClass> getDemExtendedDataClass(){
@@ -3174,7 +3344,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemExtendedDataClass")
 				}
 			}
-			return new BasicWrappingEList<DemExtendedDataClass, GContainer>(filteredContainers, typeof(DemExtendedDataClass), typeof(GContainer))
+			return new BasicWrappingEList<DemExtendedDataClass, GContainer>(filteredContainers, typeof(DemExtendedDataClass), typeof(GContainer)) {
+				override protected delegateAdd(DemExtendedDataClass demExtendedDataClass) {
+					demExtendedDataClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataClass"))
+					super.delegateAdd(demExtendedDataClass)
+				}
+				
+				override protected delegateAdd(int index, DemExtendedDataClass demExtendedDataClass) {
+					demExtendedDataClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataClass"))
+					super.delegateAdd(index, demExtendedDataClass)
+				}	
+			}
 		}
 		
 		def List<DemExtendedDataRecordClass> getDemExtendedDataRecordClass(){
@@ -3183,7 +3363,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemExtendedDataRecordClass")
 				}
 			}
-			return new BasicWrappingEList<DemExtendedDataRecordClass, GContainer>(filteredContainers, typeof(DemExtendedDataRecordClass), typeof(GContainer))
+			return new BasicWrappingEList<DemExtendedDataRecordClass, GContainer>(filteredContainers, typeof(DemExtendedDataRecordClass), typeof(GContainer)) {
+				override protected delegateAdd(DemExtendedDataRecordClass demExtendedDataRecordClass) {
+					demExtendedDataRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataRecordClass"))
+					super.delegateAdd(demExtendedDataRecordClass)
+				}
+				
+				override protected delegateAdd(int index, DemExtendedDataRecordClass demExtendedDataRecordClass) {
+					demExtendedDataRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataRecordClass"))
+					super.delegateAdd(index, demExtendedDataRecordClass)
+				}	
+			}
 		}
 		
 		def List<DemFreezeFrameClass> getDemFreezeFrameClass(){
@@ -3192,7 +3382,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemFreezeFrameClass")
 				}
 			}
-			return new BasicWrappingEList<DemFreezeFrameClass, GContainer>(filteredContainers, typeof(DemFreezeFrameClass), typeof(GContainer))
+			return new BasicWrappingEList<DemFreezeFrameClass, GContainer>(filteredContainers, typeof(DemFreezeFrameClass), typeof(GContainer)) {
+				override protected delegateAdd(DemFreezeFrameClass demFreezeFrameClass) {
+					demFreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameClass"))
+					super.delegateAdd(demFreezeFrameClass)
+				}
+				
+				override protected delegateAdd(int index, DemFreezeFrameClass demFreezeFrameClass) {
+					demFreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameClass"))
+					super.delegateAdd(index, demFreezeFrameClass)
+				}	
+			}
 		}
 		
 		def List<DemFreezeFrameRecNumClass> getDemFreezeFrameRecNumClass(){
@@ -3201,7 +3401,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemFreezeFrameRecNumClass")
 				}
 			}
-			return new BasicWrappingEList<DemFreezeFrameRecNumClass, GContainer>(filteredContainers, typeof(DemFreezeFrameRecNumClass), typeof(GContainer))
+			return new BasicWrappingEList<DemFreezeFrameRecNumClass, GContainer>(filteredContainers, typeof(DemFreezeFrameRecNumClass), typeof(GContainer)) {
+				override protected delegateAdd(DemFreezeFrameRecNumClass demFreezeFrameRecNumClass) {
+					demFreezeFrameRecNumClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecNumClass"))
+					super.delegateAdd(demFreezeFrameRecNumClass)
+				}
+				
+				override protected delegateAdd(int index, DemFreezeFrameRecNumClass demFreezeFrameRecNumClass) {
+					demFreezeFrameRecNumClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecNumClass"))
+					super.delegateAdd(index, demFreezeFrameRecNumClass)
+				}	
+			}
 		}
 		
 		def List<DemFreezeFrameRecordClass> getDemFreezeFrameRecordClass(){
@@ -3210,7 +3420,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemFreezeFrameRecordClass")
 				}
 			}
-			return new BasicWrappingEList<DemFreezeFrameRecordClass, GContainer>(filteredContainers, typeof(DemFreezeFrameRecordClass), typeof(GContainer))
+			return new BasicWrappingEList<DemFreezeFrameRecordClass, GContainer>(filteredContainers, typeof(DemFreezeFrameRecordClass), typeof(GContainer)) {
+				override protected delegateAdd(DemFreezeFrameRecordClass demFreezeFrameRecordClass) {
+					demFreezeFrameRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecordClass"))
+					super.delegateAdd(demFreezeFrameRecordClass)
+				}
+				
+				override protected delegateAdd(int index, DemFreezeFrameRecordClass demFreezeFrameRecordClass) {
+					demFreezeFrameRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecordClass"))
+					super.delegateAdd(index, demFreezeFrameRecordClass)
+				}	
+			}
 		}
 		
 		def DemGeneralJ1939 getDemGeneralJ1939(){
@@ -3237,7 +3457,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemGroupOfDTC")
 				}
 			}
-			return new BasicWrappingEList<DemGroupOfDTC, GContainer>(filteredContainers, typeof(DemGroupOfDTC), typeof(GContainer))
+			return new BasicWrappingEList<DemGroupOfDTC, GContainer>(filteredContainers, typeof(DemGroupOfDTC), typeof(GContainer)) {
+				override protected delegateAdd(DemGroupOfDTC demGroupOfDTC) {
+					demGroupOfDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemGroupOfDTC"))
+					super.delegateAdd(demGroupOfDTC)
+				}
+				
+				override protected delegateAdd(int index, DemGroupOfDTC demGroupOfDTC) {
+					demGroupOfDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemGroupOfDTC"))
+					super.delegateAdd(index, demGroupOfDTC)
+				}	
+			}
 		}
 		
 		def List<DemIndicator> getDemIndicators(){
@@ -3246,7 +3476,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemIndicator")
 				}
 			}
-			return new BasicWrappingEList<DemIndicator, GContainer>(filteredContainers, typeof(DemIndicator), typeof(GContainer))
+			return new BasicWrappingEList<DemIndicator, GContainer>(filteredContainers, typeof(DemIndicator), typeof(GContainer)) {
+				override protected delegateAdd(DemIndicator demIndicator) {
+					demIndicator.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicator"))
+					super.delegateAdd(demIndicator)
+				}
+				
+				override protected delegateAdd(int index, DemIndicator demIndicator) {
+					demIndicator.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicator"))
+					super.delegateAdd(index, demIndicator)
+				}	
+			}
 		}
 		
 		def DemMirrorMemory getDemMirrorMemory(){
@@ -3264,7 +3504,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemNvRamBlockId")
 				}
 			}
-			return new BasicWrappingEList<DemNvRamBlockId, GContainer>(filteredContainers, typeof(DemNvRamBlockId), typeof(GContainer))
+			return new BasicWrappingEList<DemNvRamBlockId, GContainer>(filteredContainers, typeof(DemNvRamBlockId), typeof(GContainer)) {
+				override protected delegateAdd(DemNvRamBlockId demNvRamBlockId) {
+					demNvRamBlockId.target?.gSetDefinition(containerValue.getContainerDefinition("DemNvRamBlockId"))
+					super.delegateAdd(demNvRamBlockId)
+				}
+				
+				override protected delegateAdd(int index, DemNvRamBlockId demNvRamBlockId) {
+					demNvRamBlockId.target?.gSetDefinition(containerValue.getContainerDefinition("DemNvRamBlockId"))
+					super.delegateAdd(index, demNvRamBlockId)
+				}	
+			}
 		}
 		
 		def List<DemOperationCycle> getDemOperationCycles(){
@@ -3273,7 +3523,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemOperationCycle")
 				}
 			}
-			return new BasicWrappingEList<DemOperationCycle, GContainer>(filteredContainers, typeof(DemOperationCycle), typeof(GContainer))
+			return new BasicWrappingEList<DemOperationCycle, GContainer>(filteredContainers, typeof(DemOperationCycle), typeof(GContainer)) {
+				override protected delegateAdd(DemOperationCycle demOperationCycle) {
+					demOperationCycle.target?.gSetDefinition(containerValue.getContainerDefinition("DemOperationCycle"))
+					super.delegateAdd(demOperationCycle)
+				}
+				
+				override protected delegateAdd(int index, DemOperationCycle demOperationCycle) {
+					demOperationCycle.target?.gSetDefinition(containerValue.getContainerDefinition("DemOperationCycle"))
+					super.delegateAdd(index, demOperationCycle)
+				}	
+			}
 		}
 		
 		def DemPrimaryMemory getDemPrimaryMemory(){
@@ -3291,7 +3551,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemRatio")
 				}
 			}
-			return new BasicWrappingEList<DemRatio, GContainer>(filteredContainers, typeof(DemRatio), typeof(GContainer))
+			return new BasicWrappingEList<DemRatio, GContainer>(filteredContainers, typeof(DemRatio), typeof(GContainer)) {
+				override protected delegateAdd(DemRatio demRatio) {
+					demRatio.target?.gSetDefinition(containerValue.getContainerDefinition("DemRatio"))
+					super.delegateAdd(demRatio)
+				}
+				
+				override protected delegateAdd(int index, DemRatio demRatio) {
+					demRatio.target?.gSetDefinition(containerValue.getContainerDefinition("DemRatio"))
+					super.delegateAdd(index, demRatio)
+				}	
+			}
 		}
 		
 		def List<DemStorageCondition> getDemStorageConditions(){
@@ -3300,7 +3570,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemStorageCondition")
 				}
 			}
-			return new BasicWrappingEList<DemStorageCondition, GContainer>(filteredContainers, typeof(DemStorageCondition), typeof(GContainer))
+			return new BasicWrappingEList<DemStorageCondition, GContainer>(filteredContainers, typeof(DemStorageCondition), typeof(GContainer)) {
+				override protected delegateAdd(DemStorageCondition demStorageCondition) {
+					demStorageCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageCondition"))
+					super.delegateAdd(demStorageCondition)
+				}
+				
+				override protected delegateAdd(int index, DemStorageCondition demStorageCondition) {
+					demStorageCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageCondition"))
+					super.delegateAdd(index, demStorageCondition)
+				}	
+			}
 		}
 		
 		def List<DemStorageConditionGroup> getDemStorageConditionGroups(){
@@ -3309,7 +3589,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemStorageConditionGroup")
 				}
 			}
-			return new BasicWrappingEList<DemStorageConditionGroup, GContainer>(filteredContainers, typeof(DemStorageConditionGroup), typeof(GContainer))
+			return new BasicWrappingEList<DemStorageConditionGroup, GContainer>(filteredContainers, typeof(DemStorageConditionGroup), typeof(GContainer)) {
+				override protected delegateAdd(DemStorageConditionGroup demStorageConditionGroup) {
+					demStorageConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageConditionGroup"))
+					super.delegateAdd(demStorageConditionGroup)
+				}
+				
+				override protected delegateAdd(int index, DemStorageConditionGroup demStorageConditionGroup) {
+					demStorageConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageConditionGroup"))
+					super.delegateAdd(index, demStorageConditionGroup)
+				}	
+			}
 		}
 		
 		def List<DemUserDefinedMemory> getDemUserDefinedMemories(){
@@ -3318,7 +3608,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DemUserDefinedMemory")
 				}
 			}
-			return new BasicWrappingEList<DemUserDefinedMemory, GContainer>(filteredContainers, typeof(DemUserDefinedMemory), typeof(GContainer))
+			return new BasicWrappingEList<DemUserDefinedMemory, GContainer>(filteredContainers, typeof(DemUserDefinedMemory), typeof(GContainer)) {
+				override protected delegateAdd(DemUserDefinedMemory demUserDefinedMemory) {
+					demUserDefinedMemory.target?.gSetDefinition(containerValue.getContainerDefinition("DemUserDefinedMemory"))
+					super.delegateAdd(demUserDefinedMemory)
+				}
+				
+				override protected delegateAdd(int index, DemUserDefinedMemory demUserDefinedMemory) {
+					demUserDefinedMemory.target?.gSetDefinition(containerValue.getContainerDefinition("DemUserDefinedMemory"))
+					super.delegateAdd(index, demUserDefinedMemory)
+				}	
+			}
 		}
 		
 		
@@ -3751,7 +4051,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DemTextTableMapping")
 								}
 							}
-							return new BasicWrappingEList<DemTextTableMapping, GContainer>(filteredContainers, typeof(DemTextTableMapping), typeof(GContainer))
+							return new BasicWrappingEList<DemTextTableMapping, GContainer>(filteredContainers, typeof(DemTextTableMapping), typeof(GContainer)) {
+								override protected delegateAdd(DemTextTableMapping demTextTableMapping) {
+									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
+									super.delegateAdd(demTextTableMapping)
+								}
+								
+								override protected delegateAdd(int index, DemTextTableMapping demTextTableMapping) {
+									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
+									super.delegateAdd(index, demTextTableMapping)
+								}	
+							}
 						}
 						
 						
@@ -3929,7 +4239,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "DemTextTableMapping")
 								}
 							}
-							return new BasicWrappingEList<DemTextTableMapping, GContainer>(filteredContainers, typeof(DemTextTableMapping), typeof(GContainer))
+							return new BasicWrappingEList<DemTextTableMapping, GContainer>(filteredContainers, typeof(DemTextTableMapping), typeof(GContainer)) {
+								override protected delegateAdd(DemTextTableMapping demTextTableMapping) {
+									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
+									super.delegateAdd(demTextTableMapping)
+								}
+								
+								override protected delegateAdd(int index, DemTextTableMapping demTextTableMapping) {
+									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
+									super.delegateAdd(index, demTextTableMapping)
+								}	
+							}
 						}
 						
 						
@@ -5027,7 +5347,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemCallbackJ1939DTCStatusChanged")
 					}
 				}
-				return new BasicWrappingEList<DemCallbackJ1939DTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackJ1939DTCStatusChanged), typeof(GContainer))
+				return new BasicWrappingEList<DemCallbackJ1939DTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackJ1939DTCStatusChanged), typeof(GContainer)) {
+					override protected delegateAdd(DemCallbackJ1939DTCStatusChanged demCallbackJ1939DTCStatusChanged) {
+						demCallbackJ1939DTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackJ1939DTCStatusChanged"))
+						super.delegateAdd(demCallbackJ1939DTCStatusChanged)
+					}
+					
+					override protected delegateAdd(int index, DemCallbackJ1939DTCStatusChanged demCallbackJ1939DTCStatusChanged) {
+						demCallbackJ1939DTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackJ1939DTCStatusChanged"))
+						super.delegateAdd(index, demCallbackJ1939DTCStatusChanged)
+					}	
+				}
 			}
 			
 			def List<DemJ1939FreezeFrameClass> getDemJ1939FreezeFrameClass(){
@@ -5036,7 +5366,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemJ1939FreezeFrameClass")
 					}
 				}
-				return new BasicWrappingEList<DemJ1939FreezeFrameClass, GContainer>(filteredContainers, typeof(DemJ1939FreezeFrameClass), typeof(GContainer))
+				return new BasicWrappingEList<DemJ1939FreezeFrameClass, GContainer>(filteredContainers, typeof(DemJ1939FreezeFrameClass), typeof(GContainer)) {
+					override protected delegateAdd(DemJ1939FreezeFrameClass demJ1939FreezeFrameClass) {
+						demJ1939FreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939FreezeFrameClass"))
+						super.delegateAdd(demJ1939FreezeFrameClass)
+					}
+					
+					override protected delegateAdd(int index, DemJ1939FreezeFrameClass demJ1939FreezeFrameClass) {
+						demJ1939FreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939FreezeFrameClass"))
+						super.delegateAdd(index, demJ1939FreezeFrameClass)
+					}	
+				}
 			}
 			
 			def List<DemSPNClass> getDemSPNClass(){
@@ -5045,7 +5385,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemSPNClass")
 					}
 				}
-				return new BasicWrappingEList<DemSPNClass, GContainer>(filteredContainers, typeof(DemSPNClass), typeof(GContainer))
+				return new BasicWrappingEList<DemSPNClass, GContainer>(filteredContainers, typeof(DemSPNClass), typeof(GContainer)) {
+					override protected delegateAdd(DemSPNClass demSPNClass) {
+						demSPNClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemSPNClass"))
+						super.delegateAdd(demSPNClass)
+					}
+					
+					override protected delegateAdd(int index, DemSPNClass demSPNClass) {
+						demSPNClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemSPNClass"))
+						super.delegateAdd(index, demSPNClass)
+					}	
+				}
 			}
 			
 			
@@ -5333,7 +5683,17 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DemCallbackOBDDTCStatusChanged")
 					}
 				}
-				return new BasicWrappingEList<DemCallbackOBDDTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackOBDDTCStatusChanged), typeof(GContainer))
+				return new BasicWrappingEList<DemCallbackOBDDTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackOBDDTCStatusChanged), typeof(GContainer)) {
+					override protected delegateAdd(DemCallbackOBDDTCStatusChanged demCallbackOBDDTCStatusChanged) {
+						demCallbackOBDDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackOBDDTCStatusChanged"))
+						super.delegateAdd(demCallbackOBDDTCStatusChanged)
+					}
+					
+					override protected delegateAdd(int index, DemCallbackOBDDTCStatusChanged demCallbackOBDDTCStatusChanged) {
+						demCallbackOBDDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackOBDDTCStatusChanged"))
+						super.delegateAdd(index, demCallbackOBDDTCStatusChanged)
+					}	
+				}
 			}
 			
 			

@@ -243,7 +243,17 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "Pdu")
 					}
 				}
-				return new BasicWrappingEList<Pdu, GContainer>(filteredContainers, typeof(Pdu), typeof(GContainer))
+				return new BasicWrappingEList<Pdu, GContainer>(filteredContainers, typeof(Pdu), typeof(GContainer)) {
+					override protected delegateAdd(Pdu pdu) {
+						pdu.target?.gSetDefinition(containerValue.getContainerDefinition("Pdu"))
+						super.delegateAdd(pdu)
+					}
+					
+					override protected delegateAdd(int index, Pdu pdu) {
+						pdu.target?.gSetDefinition(containerValue.getContainerDefinition("Pdu"))
+						super.delegateAdd(index, pdu)
+					}	
+				}
 			}
 			
 			
@@ -335,7 +345,17 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EcucCoreDefinition")
 				}
 			}
-			return new BasicWrappingEList<EcucCoreDefinition, GContainer>(filteredContainers, typeof(EcucCoreDefinition), typeof(GContainer))
+			return new BasicWrappingEList<EcucCoreDefinition, GContainer>(filteredContainers, typeof(EcucCoreDefinition), typeof(GContainer)) {
+				override protected delegateAdd(EcucCoreDefinition ecucCoreDefinition) {
+					ecucCoreDefinition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucCoreDefinition"))
+					super.delegateAdd(ecucCoreDefinition)
+				}
+				
+				override protected delegateAdd(int index, EcucCoreDefinition ecucCoreDefinition) {
+					ecucCoreDefinition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucCoreDefinition"))
+					super.delegateAdd(index, ecucCoreDefinition)
+				}	
+			}
 		}
 		
 		
@@ -408,7 +428,17 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EcucPartition")
 				}
 			}
-			return new BasicWrappingEList<EcucPartition, GContainer>(filteredContainers, typeof(EcucPartition), typeof(GContainer))
+			return new BasicWrappingEList<EcucPartition, GContainer>(filteredContainers, typeof(EcucPartition), typeof(GContainer)) {
+				override protected delegateAdd(EcucPartition ecucPartition) {
+					ecucPartition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucPartition"))
+					super.delegateAdd(ecucPartition)
+				}
+				
+				override protected delegateAdd(int index, EcucPartition ecucPartition) {
+					ecucPartition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucPartition"))
+					super.delegateAdd(index, ecucPartition)
+				}	
+			}
 		}
 		
 		

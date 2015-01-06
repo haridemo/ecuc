@@ -82,7 +82,17 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "CanTSynGlobalTimeDomain")
 			}
 		}
-		return new BasicWrappingEList<CanTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeDomain), typeof(GContainer))
+		return new BasicWrappingEList<CanTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeDomain), typeof(GContainer)) {
+			override protected delegateAdd(CanTSynGlobalTimeDomain canTSynGlobalTimeDomain) {
+				canTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CanTSynGlobalTimeDomain"))
+				super.delegateAdd(canTSynGlobalTimeDomain)
+			}
+		
+			override protected delegateAdd(int index, CanTSynGlobalTimeDomain canTSynGlobalTimeDomain) {
+				canTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CanTSynGlobalTimeDomain"))
+				super.delegateAdd(index, canTSynGlobalTimeDomain)
+			}
+		}
 	}
 	
 	static class CanTSynGeneral implements IWrapper<GContainer> {
@@ -218,7 +228,17 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanTSynGlobalTimeFupDataIDListElement")
 					}
 				}
-				return new BasicWrappingEList<CanTSynGlobalTimeFupDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeFupDataIDListElement), typeof(GContainer))
+				return new BasicWrappingEList<CanTSynGlobalTimeFupDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeFupDataIDListElement), typeof(GContainer)) {
+					override protected delegateAdd(CanTSynGlobalTimeFupDataIDListElement canTSynGlobalTimeFupDataIDListElement) {
+						canTSynGlobalTimeFupDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeFupDataIDListElement"))
+						super.delegateAdd(canTSynGlobalTimeFupDataIDListElement)
+					}
+					
+					override protected delegateAdd(int index, CanTSynGlobalTimeFupDataIDListElement canTSynGlobalTimeFupDataIDListElement) {
+						canTSynGlobalTimeFupDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeFupDataIDListElement"))
+						super.delegateAdd(index, canTSynGlobalTimeFupDataIDListElement)
+					}	
+				}
 			}
 			
 			
@@ -307,7 +327,17 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanTSynGlobalTimeOfnsDataIDListElement")
 					}
 				}
-				return new BasicWrappingEList<CanTSynGlobalTimeOfnsDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeOfnsDataIDListElement), typeof(GContainer))
+				return new BasicWrappingEList<CanTSynGlobalTimeOfnsDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeOfnsDataIDListElement), typeof(GContainer)) {
+					override protected delegateAdd(CanTSynGlobalTimeOfnsDataIDListElement canTSynGlobalTimeOfnsDataIDListElement) {
+						canTSynGlobalTimeOfnsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeOfnsDataIDListElement"))
+						super.delegateAdd(canTSynGlobalTimeOfnsDataIDListElement)
+					}
+					
+					override protected delegateAdd(int index, CanTSynGlobalTimeOfnsDataIDListElement canTSynGlobalTimeOfnsDataIDListElement) {
+						canTSynGlobalTimeOfnsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeOfnsDataIDListElement"))
+						super.delegateAdd(index, canTSynGlobalTimeOfnsDataIDListElement)
+					}	
+				}
 			}
 			
 			
@@ -396,7 +426,17 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanTSynGlobalTimeOfsDataIDListElement")
 					}
 				}
-				return new BasicWrappingEList<CanTSynGlobalTimeOfsDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeOfsDataIDListElement), typeof(GContainer))
+				return new BasicWrappingEList<CanTSynGlobalTimeOfsDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeOfsDataIDListElement), typeof(GContainer)) {
+					override protected delegateAdd(CanTSynGlobalTimeOfsDataIDListElement canTSynGlobalTimeOfsDataIDListElement) {
+						canTSynGlobalTimeOfsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeOfsDataIDListElement"))
+						super.delegateAdd(canTSynGlobalTimeOfsDataIDListElement)
+					}
+					
+					override protected delegateAdd(int index, CanTSynGlobalTimeOfsDataIDListElement canTSynGlobalTimeOfsDataIDListElement) {
+						canTSynGlobalTimeOfsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeOfsDataIDListElement"))
+						super.delegateAdd(index, canTSynGlobalTimeOfsDataIDListElement)
+					}	
+				}
 			}
 			
 			
@@ -485,7 +525,17 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanTSynGlobalTimeSyncDataIDListElement")
 					}
 				}
-				return new BasicWrappingEList<CanTSynGlobalTimeSyncDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeSyncDataIDListElement), typeof(GContainer))
+				return new BasicWrappingEList<CanTSynGlobalTimeSyncDataIDListElement, GContainer>(filteredContainers, typeof(CanTSynGlobalTimeSyncDataIDListElement), typeof(GContainer)) {
+					override protected delegateAdd(CanTSynGlobalTimeSyncDataIDListElement canTSynGlobalTimeSyncDataIDListElement) {
+						canTSynGlobalTimeSyncDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeSyncDataIDListElement"))
+						super.delegateAdd(canTSynGlobalTimeSyncDataIDListElement)
+					}
+					
+					override protected delegateAdd(int index, CanTSynGlobalTimeSyncDataIDListElement canTSynGlobalTimeSyncDataIDListElement) {
+						canTSynGlobalTimeSyncDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("CanTSynGlobalTimeSyncDataIDListElement"))
+						super.delegateAdd(index, canTSynGlobalTimeSyncDataIDListElement)
+					}	
+				}
 			}
 			
 			

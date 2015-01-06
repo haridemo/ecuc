@@ -74,7 +74,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "MemMapAddressingModeSet")
 			}
 		}
-		return new BasicWrappingEList<MemMapAddressingModeSet, GContainer>(filteredContainers, typeof(MemMapAddressingModeSet), typeof(GContainer))
+		return new BasicWrappingEList<MemMapAddressingModeSet, GContainer>(filteredContainers, typeof(MemMapAddressingModeSet), typeof(GContainer)) {
+			override protected delegateAdd(MemMapAddressingModeSet memMapAddressingModeSet) {
+				memMapAddressingModeSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAddressingModeSet"))
+				super.delegateAdd(memMapAddressingModeSet)
+			}
+		
+			override protected delegateAdd(int index, MemMapAddressingModeSet memMapAddressingModeSet) {
+				memMapAddressingModeSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAddressingModeSet"))
+				super.delegateAdd(index, memMapAddressingModeSet)
+			}
+		}
 	}
 	def List<MemMapAllocation> getMemMapAllocations(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -82,7 +92,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "MemMapAllocation")
 			}
 		}
-		return new BasicWrappingEList<MemMapAllocation, GContainer>(filteredContainers, typeof(MemMapAllocation), typeof(GContainer))
+		return new BasicWrappingEList<MemMapAllocation, GContainer>(filteredContainers, typeof(MemMapAllocation), typeof(GContainer)) {
+			override protected delegateAdd(MemMapAllocation memMapAllocation) {
+				memMapAllocation.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAllocation"))
+				super.delegateAdd(memMapAllocation)
+			}
+		
+			override protected delegateAdd(int index, MemMapAllocation memMapAllocation) {
+				memMapAllocation.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAllocation"))
+				super.delegateAdd(index, memMapAllocation)
+			}
+		}
 	}
 	def List<MemMapGenericCompilerMemClass> getMemMapGenericCompilerMemClass(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -90,7 +110,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "MemMapGenericCompilerMemClass")
 			}
 		}
-		return new BasicWrappingEList<MemMapGenericCompilerMemClass, GContainer>(filteredContainers, typeof(MemMapGenericCompilerMemClass), typeof(GContainer))
+		return new BasicWrappingEList<MemMapGenericCompilerMemClass, GContainer>(filteredContainers, typeof(MemMapGenericCompilerMemClass), typeof(GContainer)) {
+			override protected delegateAdd(MemMapGenericCompilerMemClass memMapGenericCompilerMemClass) {
+				memMapGenericCompilerMemClass.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapGenericCompilerMemClass"))
+				super.delegateAdd(memMapGenericCompilerMemClass)
+			}
+		
+			override protected delegateAdd(int index, MemMapGenericCompilerMemClass memMapGenericCompilerMemClass) {
+				memMapGenericCompilerMemClass.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapGenericCompilerMemClass"))
+				super.delegateAdd(index, memMapGenericCompilerMemClass)
+			}
+		}
 	}
 	
 	static class MemMapAddressingModeSet implements IWrapper<GContainer> {
@@ -264,7 +294,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "MemMapAddressingMode")
 				}
 			}
-			return new BasicWrappingEList<MemMapAddressingMode, GContainer>(filteredContainers, typeof(MemMapAddressingMode), typeof(GContainer))
+			return new BasicWrappingEList<MemMapAddressingMode, GContainer>(filteredContainers, typeof(MemMapAddressingMode), typeof(GContainer)) {
+				override protected delegateAdd(MemMapAddressingMode memMapAddressingMode) {
+					memMapAddressingMode.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapAddressingMode"))
+					super.delegateAdd(memMapAddressingMode)
+				}
+				
+				override protected delegateAdd(int index, MemMapAddressingMode memMapAddressingMode) {
+					memMapAddressingMode.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapAddressingMode"))
+					super.delegateAdd(index, memMapAddressingMode)
+				}	
+			}
 		}
 		
 		
@@ -365,7 +405,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "MemMapGenericMapping")
 				}
 			}
-			return new BasicWrappingEList<MemMapGenericMapping, GContainer>(filteredContainers, typeof(MemMapGenericMapping), typeof(GContainer))
+			return new BasicWrappingEList<MemMapGenericMapping, GContainer>(filteredContainers, typeof(MemMapGenericMapping), typeof(GContainer)) {
+				override protected delegateAdd(MemMapGenericMapping memMapGenericMapping) {
+					memMapGenericMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapGenericMapping"))
+					super.delegateAdd(memMapGenericMapping)
+				}
+				
+				override protected delegateAdd(int index, MemMapGenericMapping memMapGenericMapping) {
+					memMapGenericMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapGenericMapping"))
+					super.delegateAdd(index, memMapGenericMapping)
+				}	
+			}
 		}
 		
 		def List<MemMapSectionSpecificMapping> getMemMapSectionSpecificMappings(){
@@ -374,7 +424,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "MemMapSectionSpecificMapping")
 				}
 			}
-			return new BasicWrappingEList<MemMapSectionSpecificMapping, GContainer>(filteredContainers, typeof(MemMapSectionSpecificMapping), typeof(GContainer))
+			return new BasicWrappingEList<MemMapSectionSpecificMapping, GContainer>(filteredContainers, typeof(MemMapSectionSpecificMapping), typeof(GContainer)) {
+				override protected delegateAdd(MemMapSectionSpecificMapping memMapSectionSpecificMapping) {
+					memMapSectionSpecificMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapSectionSpecificMapping"))
+					super.delegateAdd(memMapSectionSpecificMapping)
+				}
+				
+				override protected delegateAdd(int index, MemMapSectionSpecificMapping memMapSectionSpecificMapping) {
+					memMapSectionSpecificMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapSectionSpecificMapping"))
+					super.delegateAdd(index, memMapSectionSpecificMapping)
+				}	
+			}
 		}
 		
 		

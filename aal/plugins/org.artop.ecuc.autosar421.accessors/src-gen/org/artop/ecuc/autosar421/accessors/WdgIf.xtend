@@ -74,7 +74,17 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "WdgIfDevice")
 			}
 		}
-		return new BasicWrappingEList<WdgIfDevice, GContainer>(filteredContainers, typeof(WdgIfDevice), typeof(GContainer))
+		return new BasicWrappingEList<WdgIfDevice, GContainer>(filteredContainers, typeof(WdgIfDevice), typeof(GContainer)) {
+			override protected delegateAdd(WdgIfDevice wdgIfDevice) {
+				wdgIfDevice.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("WdgIfDevice"))
+				super.delegateAdd(wdgIfDevice)
+			}
+		
+			override protected delegateAdd(int index, WdgIfDevice wdgIfDevice) {
+				wdgIfDevice.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("WdgIfDevice"))
+				super.delegateAdd(index, wdgIfDevice)
+			}
+		}
 	}
 	def WdgIfGeneral getWdgIfGeneral(){
 		moduleConfiguration.getByType(typeof(WdgIfGeneral))

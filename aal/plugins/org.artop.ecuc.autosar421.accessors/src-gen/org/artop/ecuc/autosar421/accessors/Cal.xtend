@@ -344,7 +344,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalAsymDecryptConfig")
 				}
 			}
-			return new BasicWrappingEList<CalAsymDecryptConfig, GContainer>(filteredContainers, typeof(CalAsymDecryptConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalAsymDecryptConfig, GContainer>(filteredContainers, typeof(CalAsymDecryptConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalAsymDecryptConfig calAsymDecryptConfig) {
+					calAsymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymDecryptConfig"))
+					super.delegateAdd(calAsymDecryptConfig)
+				}
+				
+				override protected delegateAdd(int index, CalAsymDecryptConfig calAsymDecryptConfig) {
+					calAsymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymDecryptConfig"))
+					super.delegateAdd(index, calAsymDecryptConfig)
+				}	
+			}
 		}
 		
 		
@@ -464,7 +474,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalAsymEncryptConfig")
 				}
 			}
-			return new BasicWrappingEList<CalAsymEncryptConfig, GContainer>(filteredContainers, typeof(CalAsymEncryptConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalAsymEncryptConfig, GContainer>(filteredContainers, typeof(CalAsymEncryptConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalAsymEncryptConfig calAsymEncryptConfig) {
+					calAsymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymEncryptConfig"))
+					super.delegateAdd(calAsymEncryptConfig)
+				}
+				
+				override protected delegateAdd(int index, CalAsymEncryptConfig calAsymEncryptConfig) {
+					calAsymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymEncryptConfig"))
+					super.delegateAdd(index, calAsymEncryptConfig)
+				}	
+			}
 		}
 		
 		
@@ -584,7 +604,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalAsymPrivateKeyExtractConfig")
 				}
 			}
-			return new BasicWrappingEList<CalAsymPrivateKeyExtractConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyExtractConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalAsymPrivateKeyExtractConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyExtractConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalAsymPrivateKeyExtractConfig calAsymPrivateKeyExtractConfig) {
+					calAsymPrivateKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyExtractConfig"))
+					super.delegateAdd(calAsymPrivateKeyExtractConfig)
+				}
+				
+				override protected delegateAdd(int index, CalAsymPrivateKeyExtractConfig calAsymPrivateKeyExtractConfig) {
+					calAsymPrivateKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyExtractConfig"))
+					super.delegateAdd(index, calAsymPrivateKeyExtractConfig)
+				}	
+			}
 		}
 		
 		
@@ -720,7 +750,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalAsymPrivateKeyWrapAsymConfig")
 				}
 			}
-			return new BasicWrappingEList<CalAsymPrivateKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyWrapAsymConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalAsymPrivateKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyWrapAsymConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalAsymPrivateKeyWrapAsymConfig calAsymPrivateKeyWrapAsymConfig) {
+					calAsymPrivateKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapAsymConfig"))
+					super.delegateAdd(calAsymPrivateKeyWrapAsymConfig)
+				}
+				
+				override protected delegateAdd(int index, CalAsymPrivateKeyWrapAsymConfig calAsymPrivateKeyWrapAsymConfig) {
+					calAsymPrivateKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapAsymConfig"))
+					super.delegateAdd(index, calAsymPrivateKeyWrapAsymConfig)
+				}	
+			}
 		}
 		
 		
@@ -856,7 +896,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalAsymPrivateKeyWrapSymConfig")
 				}
 			}
-			return new BasicWrappingEList<CalAsymPrivateKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyWrapSymConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalAsymPrivateKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyWrapSymConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalAsymPrivateKeyWrapSymConfig calAsymPrivateKeyWrapSymConfig) {
+					calAsymPrivateKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapSymConfig"))
+					super.delegateAdd(calAsymPrivateKeyWrapSymConfig)
+				}
+				
+				override protected delegateAdd(int index, CalAsymPrivateKeyWrapSymConfig calAsymPrivateKeyWrapSymConfig) {
+					calAsymPrivateKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapSymConfig"))
+					super.delegateAdd(index, calAsymPrivateKeyWrapSymConfig)
+				}	
+			}
 		}
 		
 		
@@ -976,7 +1026,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalAsymPublicKeyExtractConfig")
 				}
 			}
-			return new BasicWrappingEList<CalAsymPublicKeyExtractConfig, GContainer>(filteredContainers, typeof(CalAsymPublicKeyExtractConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalAsymPublicKeyExtractConfig, GContainer>(filteredContainers, typeof(CalAsymPublicKeyExtractConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalAsymPublicKeyExtractConfig calAsymPublicKeyExtractConfig) {
+					calAsymPublicKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPublicKeyExtractConfig"))
+					super.delegateAdd(calAsymPublicKeyExtractConfig)
+				}
+				
+				override protected delegateAdd(int index, CalAsymPublicKeyExtractConfig calAsymPublicKeyExtractConfig) {
+					calAsymPublicKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPublicKeyExtractConfig"))
+					super.delegateAdd(index, calAsymPublicKeyExtractConfig)
+				}	
+			}
 		}
 		
 		
@@ -1080,7 +1140,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalChecksumConfig")
 				}
 			}
-			return new BasicWrappingEList<CalChecksumConfig, GContainer>(filteredContainers, typeof(CalChecksumConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalChecksumConfig, GContainer>(filteredContainers, typeof(CalChecksumConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalChecksumConfig calChecksumConfig) {
+					calChecksumConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalChecksumConfig"))
+					super.delegateAdd(calChecksumConfig)
+				}
+				
+				override protected delegateAdd(int index, CalChecksumConfig calChecksumConfig) {
+					calChecksumConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalChecksumConfig"))
+					super.delegateAdd(index, calChecksumConfig)
+				}	
+			}
 		}
 		
 		
@@ -1184,7 +1254,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalCompressionConfig")
 				}
 			}
-			return new BasicWrappingEList<CalCompressionConfig, GContainer>(filteredContainers, typeof(CalCompressionConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalCompressionConfig, GContainer>(filteredContainers, typeof(CalCompressionConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalCompressionConfig calCompressionConfig) {
+					calCompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalCompressionConfig"))
+					super.delegateAdd(calCompressionConfig)
+				}
+				
+				override protected delegateAdd(int index, CalCompressionConfig calCompressionConfig) {
+					calCompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalCompressionConfig"))
+					super.delegateAdd(index, calCompressionConfig)
+				}	
+			}
 		}
 		
 		
@@ -1288,7 +1368,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalDecompressionConfig")
 				}
 			}
-			return new BasicWrappingEList<CalDecompressionConfig, GContainer>(filteredContainers, typeof(CalDecompressionConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalDecompressionConfig, GContainer>(filteredContainers, typeof(CalDecompressionConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalDecompressionConfig calDecompressionConfig) {
+					calDecompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalDecompressionConfig"))
+					super.delegateAdd(calDecompressionConfig)
+				}
+				
+				override protected delegateAdd(int index, CalDecompressionConfig calDecompressionConfig) {
+					calDecompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalDecompressionConfig"))
+					super.delegateAdd(index, calDecompressionConfig)
+				}	
+			}
 		}
 		
 		
@@ -1447,7 +1537,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalHashConfig")
 				}
 			}
-			return new BasicWrappingEList<CalHashConfig, GContainer>(filteredContainers, typeof(CalHashConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalHashConfig, GContainer>(filteredContainers, typeof(CalHashConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalHashConfig calHashConfig) {
+					calHashConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalHashConfig"))
+					super.delegateAdd(calHashConfig)
+				}
+				
+				override protected delegateAdd(int index, CalHashConfig calHashConfig) {
+					calHashConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalHashConfig"))
+					super.delegateAdd(index, calHashConfig)
+				}	
+			}
 		}
 		
 		
@@ -1567,7 +1667,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalKeyDeriveConfig")
 				}
 			}
-			return new BasicWrappingEList<CalKeyDeriveConfig, GContainer>(filteredContainers, typeof(CalKeyDeriveConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalKeyDeriveConfig, GContainer>(filteredContainers, typeof(CalKeyDeriveConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalKeyDeriveConfig calKeyDeriveConfig) {
+					calKeyDeriveConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyDeriveConfig"))
+					super.delegateAdd(calKeyDeriveConfig)
+				}
+				
+				override protected delegateAdd(int index, CalKeyDeriveConfig calKeyDeriveConfig) {
+					calKeyDeriveConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyDeriveConfig"))
+					super.delegateAdd(index, calKeyDeriveConfig)
+				}	
+			}
 		}
 		
 		
@@ -1703,7 +1813,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalKeyExchangeCalcPubValConfig")
 				}
 			}
-			return new BasicWrappingEList<CalKeyExchangeCalcPubValConfig, GContainer>(filteredContainers, typeof(CalKeyExchangeCalcPubValConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalKeyExchangeCalcPubValConfig, GContainer>(filteredContainers, typeof(CalKeyExchangeCalcPubValConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalKeyExchangeCalcPubValConfig calKeyExchangeCalcPubValConfig) {
+					calKeyExchangeCalcPubValConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcPubValConfig"))
+					super.delegateAdd(calKeyExchangeCalcPubValConfig)
+				}
+				
+				override protected delegateAdd(int index, CalKeyExchangeCalcPubValConfig calKeyExchangeCalcPubValConfig) {
+					calKeyExchangeCalcPubValConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcPubValConfig"))
+					super.delegateAdd(index, calKeyExchangeCalcPubValConfig)
+				}	
+			}
 		}
 		
 		
@@ -1839,7 +1959,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalKeyExchangeCalcSecretConfig")
 				}
 			}
-			return new BasicWrappingEList<CalKeyExchangeCalcSecretConfig, GContainer>(filteredContainers, typeof(CalKeyExchangeCalcSecretConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalKeyExchangeCalcSecretConfig, GContainer>(filteredContainers, typeof(CalKeyExchangeCalcSecretConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalKeyExchangeCalcSecretConfig calKeyExchangeCalcSecretConfig) {
+					calKeyExchangeCalcSecretConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcSecretConfig"))
+					super.delegateAdd(calKeyExchangeCalcSecretConfig)
+				}
+				
+				override protected delegateAdd(int index, CalKeyExchangeCalcSecretConfig calKeyExchangeCalcSecretConfig) {
+					calKeyExchangeCalcSecretConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcSecretConfig"))
+					super.delegateAdd(index, calKeyExchangeCalcSecretConfig)
+				}	
+			}
 		}
 		
 		
@@ -1959,7 +2089,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalMacGenerateConfig")
 				}
 			}
-			return new BasicWrappingEList<CalMacGenerateConfig, GContainer>(filteredContainers, typeof(CalMacGenerateConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalMacGenerateConfig, GContainer>(filteredContainers, typeof(CalMacGenerateConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalMacGenerateConfig calMacGenerateConfig) {
+					calMacGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacGenerateConfig"))
+					super.delegateAdd(calMacGenerateConfig)
+				}
+				
+				override protected delegateAdd(int index, CalMacGenerateConfig calMacGenerateConfig) {
+					calMacGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacGenerateConfig"))
+					super.delegateAdd(index, calMacGenerateConfig)
+				}	
+			}
 		}
 		
 		
@@ -2079,7 +2219,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalMacVerifyConfig")
 				}
 			}
-			return new BasicWrappingEList<CalMacVerifyConfig, GContainer>(filteredContainers, typeof(CalMacVerifyConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalMacVerifyConfig, GContainer>(filteredContainers, typeof(CalMacVerifyConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalMacVerifyConfig calMacVerifyConfig) {
+					calMacVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacVerifyConfig"))
+					super.delegateAdd(calMacVerifyConfig)
+				}
+				
+				override protected delegateAdd(int index, CalMacVerifyConfig calMacVerifyConfig) {
+					calMacVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacVerifyConfig"))
+					super.delegateAdd(index, calMacVerifyConfig)
+				}	
+			}
 		}
 		
 		
@@ -2167,7 +2317,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalRandomGenerateConfig")
 				}
 			}
-			return new BasicWrappingEList<CalRandomGenerateConfig, GContainer>(filteredContainers, typeof(CalRandomGenerateConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalRandomGenerateConfig, GContainer>(filteredContainers, typeof(CalRandomGenerateConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalRandomGenerateConfig calRandomGenerateConfig) {
+					calRandomGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomGenerateConfig"))
+					super.delegateAdd(calRandomGenerateConfig)
+				}
+				
+				override protected delegateAdd(int index, CalRandomGenerateConfig calRandomGenerateConfig) {
+					calRandomGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomGenerateConfig"))
+					super.delegateAdd(index, calRandomGenerateConfig)
+				}	
+			}
 		}
 		
 		
@@ -2271,7 +2431,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalRandomSeedConfig")
 				}
 			}
-			return new BasicWrappingEList<CalRandomSeedConfig, GContainer>(filteredContainers, typeof(CalRandomSeedConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalRandomSeedConfig, GContainer>(filteredContainers, typeof(CalRandomSeedConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalRandomSeedConfig calRandomSeedConfig) {
+					calRandomSeedConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomSeedConfig"))
+					super.delegateAdd(calRandomSeedConfig)
+				}
+				
+				override protected delegateAdd(int index, CalRandomSeedConfig calRandomSeedConfig) {
+					calRandomSeedConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomSeedConfig"))
+					super.delegateAdd(index, calRandomSeedConfig)
+				}	
+			}
 		}
 		
 		
@@ -2391,7 +2561,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSignatureGenerateConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSignatureGenerateConfig, GContainer>(filteredContainers, typeof(CalSignatureGenerateConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSignatureGenerateConfig, GContainer>(filteredContainers, typeof(CalSignatureGenerateConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSignatureGenerateConfig calSignatureGenerateConfig) {
+					calSignatureGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureGenerateConfig"))
+					super.delegateAdd(calSignatureGenerateConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSignatureGenerateConfig calSignatureGenerateConfig) {
+					calSignatureGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureGenerateConfig"))
+					super.delegateAdd(index, calSignatureGenerateConfig)
+				}	
+			}
 		}
 		
 		
@@ -2511,7 +2691,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSignatureVerifyConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSignatureVerifyConfig, GContainer>(filteredContainers, typeof(CalSignatureVerifyConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSignatureVerifyConfig, GContainer>(filteredContainers, typeof(CalSignatureVerifyConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSignatureVerifyConfig calSignatureVerifyConfig) {
+					calSignatureVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureVerifyConfig"))
+					super.delegateAdd(calSignatureVerifyConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSignatureVerifyConfig calSignatureVerifyConfig) {
+					calSignatureVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureVerifyConfig"))
+					super.delegateAdd(index, calSignatureVerifyConfig)
+				}	
+			}
 		}
 		
 		
@@ -2631,7 +2821,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymBlockDecryptConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymBlockDecryptConfig, GContainer>(filteredContainers, typeof(CalSymBlockDecryptConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymBlockDecryptConfig, GContainer>(filteredContainers, typeof(CalSymBlockDecryptConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymBlockDecryptConfig calSymBlockDecryptConfig) {
+					calSymBlockDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockDecryptConfig"))
+					super.delegateAdd(calSymBlockDecryptConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymBlockDecryptConfig calSymBlockDecryptConfig) {
+					calSymBlockDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockDecryptConfig"))
+					super.delegateAdd(index, calSymBlockDecryptConfig)
+				}	
+			}
 		}
 		
 		
@@ -2751,7 +2951,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymBlockEncryptConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymBlockEncryptConfig, GContainer>(filteredContainers, typeof(CalSymBlockEncryptConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymBlockEncryptConfig, GContainer>(filteredContainers, typeof(CalSymBlockEncryptConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymBlockEncryptConfig calSymBlockEncryptConfig) {
+					calSymBlockEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockEncryptConfig"))
+					super.delegateAdd(calSymBlockEncryptConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymBlockEncryptConfig calSymBlockEncryptConfig) {
+					calSymBlockEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockEncryptConfig"))
+					super.delegateAdd(index, calSymBlockEncryptConfig)
+				}	
+			}
 		}
 		
 		
@@ -2871,7 +3081,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymDecryptConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymDecryptConfig, GContainer>(filteredContainers, typeof(CalSymDecryptConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymDecryptConfig, GContainer>(filteredContainers, typeof(CalSymDecryptConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymDecryptConfig calSymDecryptConfig) {
+					calSymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymDecryptConfig"))
+					super.delegateAdd(calSymDecryptConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymDecryptConfig calSymDecryptConfig) {
+					calSymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymDecryptConfig"))
+					super.delegateAdd(index, calSymDecryptConfig)
+				}	
+			}
 		}
 		
 		
@@ -2991,7 +3211,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymEncryptConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymEncryptConfig, GContainer>(filteredContainers, typeof(CalSymEncryptConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymEncryptConfig, GContainer>(filteredContainers, typeof(CalSymEncryptConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymEncryptConfig calSymEncryptConfig) {
+					calSymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymEncryptConfig"))
+					super.delegateAdd(calSymEncryptConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymEncryptConfig calSymEncryptConfig) {
+					calSymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymEncryptConfig"))
+					super.delegateAdd(index, calSymEncryptConfig)
+				}	
+			}
 		}
 		
 		
@@ -3111,7 +3341,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymKeyExtractConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymKeyExtractConfig, GContainer>(filteredContainers, typeof(CalSymKeyExtractConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymKeyExtractConfig, GContainer>(filteredContainers, typeof(CalSymKeyExtractConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymKeyExtractConfig calSymKeyExtractConfig) {
+					calSymKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyExtractConfig"))
+					super.delegateAdd(calSymKeyExtractConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymKeyExtractConfig calSymKeyExtractConfig) {
+					calSymKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyExtractConfig"))
+					super.delegateAdd(index, calSymKeyExtractConfig)
+				}	
+			}
 		}
 		
 		
@@ -3247,7 +3487,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymKeyWrapAsymConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CalSymKeyWrapAsymConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CalSymKeyWrapAsymConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymKeyWrapAsymConfig calSymKeyWrapAsymConfig) {
+					calSymKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapAsymConfig"))
+					super.delegateAdd(calSymKeyWrapAsymConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymKeyWrapAsymConfig calSymKeyWrapAsymConfig) {
+					calSymKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapAsymConfig"))
+					super.delegateAdd(index, calSymKeyWrapAsymConfig)
+				}	
+			}
 		}
 		
 		
@@ -3367,7 +3617,17 @@ class Cal implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CalSymKeyWrapSymConfig")
 				}
 			}
-			return new BasicWrappingEList<CalSymKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CalSymKeyWrapSymConfig), typeof(GContainer))
+			return new BasicWrappingEList<CalSymKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CalSymKeyWrapSymConfig), typeof(GContainer)) {
+				override protected delegateAdd(CalSymKeyWrapSymConfig calSymKeyWrapSymConfig) {
+					calSymKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapSymConfig"))
+					super.delegateAdd(calSymKeyWrapSymConfig)
+				}
+				
+				override protected delegateAdd(int index, CalSymKeyWrapSymConfig calSymKeyWrapSymConfig) {
+					calSymKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapSymConfig"))
+					super.delegateAdd(index, calSymKeyWrapSymConfig)
+				}	
+			}
 		}
 		
 		

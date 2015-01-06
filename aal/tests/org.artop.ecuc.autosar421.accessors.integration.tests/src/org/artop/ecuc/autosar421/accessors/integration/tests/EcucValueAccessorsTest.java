@@ -54,6 +54,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import autosar40.ecucdescription.EcucContainerValue;
 import autosar40.ecucdescription.EcucModuleConfigurationValues;
 import autosar40.ecucdescription.EcucdescriptionFactory;
+import autosar40.ecucparameterdef.EcucContainerDef;
 
 @SuppressWarnings("nls")
 public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegrationTestCase {
@@ -153,11 +154,6 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 
 				EcucContainerValue containerValue = EcucdescriptionFactory.eINSTANCE.createEcucContainerValue();
 				containerValue.setShortName("NvMBlockDescriptor2");
-				NvMBlockDescriptor definition = nvMBlockDescriptors.get(0);
-				if (definition != null && definition.getTarget() != null) {
-					containerValue.gSetDefinition(definition.getTarget().gGetDefinition());
-				}
-
 				NvMBlockDescriptor nvMBlockDescriptor = new NvMBlockDescriptor(containerValue);
 				nvMBlockDescriptors.add(nvMBlockDescriptor);
 
@@ -165,14 +161,19 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 				assertTrue(nvMBlockDescriptors.size() == oldSize + 1);
 
 				boolean inDelegatingList = false;
+				boolean definitionIsSet = false;
 				for (EcucContainerValue ecucContainerValue : ((EcucModuleConfigurationValues) nvmModuleConfiguration).getContainers()) {
 					if ("NvMBlockDescriptor2".equals(ecucContainerValue.getShortName())) {
 						inDelegatingList = true;
+						EcucContainerDef definition = ecucContainerValue.getDefinition();
+						if (definition != null && "NvMBlockDescriptor".equals(definition.getShortName())) {
+							definitionIsSet = true;
+						}
 						break;
 					}
 				}
-
 				assertTrue(inDelegatingList);
+				assertTrue(definitionIsSet);
 			}
 		};
 
@@ -662,6 +663,7 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 				canSM.setCanSMConfiguration(canSMConfiguration);
 				canSM.getCanSMConfiguration().setShortName("CanSMConfiguration0");
 				canSM.getCanSMConfiguration().getCanSMManagerNetworks().add(canSMManagerNetwork);
+				canSM.getCanSMConfiguration().getCanSMManagerNetworks().get(0).setCanSMBorCounterL1ToL2(100);
 			}
 		};
 

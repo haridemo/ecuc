@@ -74,7 +74,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsAlarm")
 			}
 		}
-		return new BasicWrappingEList<OsAlarm, GContainer>(filteredContainers, typeof(OsAlarm), typeof(GContainer))
+		return new BasicWrappingEList<OsAlarm, GContainer>(filteredContainers, typeof(OsAlarm), typeof(GContainer)) {
+			override protected delegateAdd(OsAlarm osAlarm) {
+				osAlarm.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAlarm"))
+				super.delegateAdd(osAlarm)
+			}
+		
+			override protected delegateAdd(int index, OsAlarm osAlarm) {
+				osAlarm.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAlarm"))
+				super.delegateAdd(index, osAlarm)
+			}
+		}
 	}
 	def List<OsAppMode> getOsAppModes(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -82,7 +92,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsAppMode")
 			}
 		}
-		return new BasicWrappingEList<OsAppMode, GContainer>(filteredContainers, typeof(OsAppMode), typeof(GContainer))
+		return new BasicWrappingEList<OsAppMode, GContainer>(filteredContainers, typeof(OsAppMode), typeof(GContainer)) {
+			override protected delegateAdd(OsAppMode osAppMode) {
+				osAppMode.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAppMode"))
+				super.delegateAdd(osAppMode)
+			}
+		
+			override protected delegateAdd(int index, OsAppMode osAppMode) {
+				osAppMode.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAppMode"))
+				super.delegateAdd(index, osAppMode)
+			}
+		}
 	}
 	def List<OsApplication> getOsApplications(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -90,7 +110,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsApplication")
 			}
 		}
-		return new BasicWrappingEList<OsApplication, GContainer>(filteredContainers, typeof(OsApplication), typeof(GContainer))
+		return new BasicWrappingEList<OsApplication, GContainer>(filteredContainers, typeof(OsApplication), typeof(GContainer)) {
+			override protected delegateAdd(OsApplication osApplication) {
+				osApplication.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsApplication"))
+				super.delegateAdd(osApplication)
+			}
+		
+			override protected delegateAdd(int index, OsApplication osApplication) {
+				osApplication.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsApplication"))
+				super.delegateAdd(index, osApplication)
+			}
+		}
 	}
 	def List<OsCounter> getOsCounters(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -98,7 +128,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsCounter")
 			}
 		}
-		return new BasicWrappingEList<OsCounter, GContainer>(filteredContainers, typeof(OsCounter), typeof(GContainer))
+		return new BasicWrappingEList<OsCounter, GContainer>(filteredContainers, typeof(OsCounter), typeof(GContainer)) {
+			override protected delegateAdd(OsCounter osCounter) {
+				osCounter.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsCounter"))
+				super.delegateAdd(osCounter)
+			}
+		
+			override protected delegateAdd(int index, OsCounter osCounter) {
+				osCounter.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsCounter"))
+				super.delegateAdd(index, osCounter)
+			}
+		}
 	}
 	def List<OsEvent> getOsEvents(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -106,7 +146,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsEvent")
 			}
 		}
-		return new BasicWrappingEList<OsEvent, GContainer>(filteredContainers, typeof(OsEvent), typeof(GContainer))
+		return new BasicWrappingEList<OsEvent, GContainer>(filteredContainers, typeof(OsEvent), typeof(GContainer)) {
+			override protected delegateAdd(OsEvent osEvent) {
+				osEvent.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsEvent"))
+				super.delegateAdd(osEvent)
+			}
+		
+			override protected delegateAdd(int index, OsEvent osEvent) {
+				osEvent.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsEvent"))
+				super.delegateAdd(index, osEvent)
+			}
+		}
 	}
 	def OsIoc getOsIoc(){
 		moduleConfiguration.getByType(typeof(OsIoc))
@@ -122,7 +172,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsIsr")
 			}
 		}
-		return new BasicWrappingEList<OsIsr, GContainer>(filteredContainers, typeof(OsIsr), typeof(GContainer))
+		return new BasicWrappingEList<OsIsr, GContainer>(filteredContainers, typeof(OsIsr), typeof(GContainer)) {
+			override protected delegateAdd(OsIsr osIsr) {
+				osIsr.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsIsr"))
+				super.delegateAdd(osIsr)
+			}
+		
+			override protected delegateAdd(int index, OsIsr osIsr) {
+				osIsr.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsIsr"))
+				super.delegateAdd(index, osIsr)
+			}
+		}
 	}
 	def OsOS getOsOS(){
 		moduleConfiguration.getByType(typeof(OsOS))
@@ -138,7 +198,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsResource")
 			}
 		}
-		return new BasicWrappingEList<OsResource, GContainer>(filteredContainers, typeof(OsResource), typeof(GContainer))
+		return new BasicWrappingEList<OsResource, GContainer>(filteredContainers, typeof(OsResource), typeof(GContainer)) {
+			override protected delegateAdd(OsResource osResource) {
+				osResource.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsResource"))
+				super.delegateAdd(osResource)
+			}
+		
+			override protected delegateAdd(int index, OsResource osResource) {
+				osResource.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsResource"))
+				super.delegateAdd(index, osResource)
+			}
+		}
 	}
 	def List<OsScheduleTable> getOsScheduleTables(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -146,7 +216,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsScheduleTable")
 			}
 		}
-		return new BasicWrappingEList<OsScheduleTable, GContainer>(filteredContainers, typeof(OsScheduleTable), typeof(GContainer))
+		return new BasicWrappingEList<OsScheduleTable, GContainer>(filteredContainers, typeof(OsScheduleTable), typeof(GContainer)) {
+			override protected delegateAdd(OsScheduleTable osScheduleTable) {
+				osScheduleTable.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsScheduleTable"))
+				super.delegateAdd(osScheduleTable)
+			}
+		
+			override protected delegateAdd(int index, OsScheduleTable osScheduleTable) {
+				osScheduleTable.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsScheduleTable"))
+				super.delegateAdd(index, osScheduleTable)
+			}
+		}
 	}
 	def List<OsSpinlock> getOsSpinlocks(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -154,7 +234,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsSpinlock")
 			}
 		}
-		return new BasicWrappingEList<OsSpinlock, GContainer>(filteredContainers, typeof(OsSpinlock), typeof(GContainer))
+		return new BasicWrappingEList<OsSpinlock, GContainer>(filteredContainers, typeof(OsSpinlock), typeof(GContainer)) {
+			override protected delegateAdd(OsSpinlock osSpinlock) {
+				osSpinlock.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsSpinlock"))
+				super.delegateAdd(osSpinlock)
+			}
+		
+			override protected delegateAdd(int index, OsSpinlock osSpinlock) {
+				osSpinlock.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsSpinlock"))
+				super.delegateAdd(index, osSpinlock)
+			}
+		}
 	}
 	def List<OsTask> getOsTasks(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
@@ -162,7 +252,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "OsTask")
 			}
 		}
-		return new BasicWrappingEList<OsTask, GContainer>(filteredContainers, typeof(OsTask), typeof(GContainer))
+		return new BasicWrappingEList<OsTask, GContainer>(filteredContainers, typeof(OsTask), typeof(GContainer)) {
+			override protected delegateAdd(OsTask osTask) {
+				osTask.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsTask"))
+				super.delegateAdd(osTask)
+			}
+		
+			override protected delegateAdd(int index, OsTask osTask) {
+				osTask.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsTask"))
+				super.delegateAdd(index, osTask)
+			}
+		}
 	}
 	
 	static class OsAlarm implements IWrapper<GContainer> {
@@ -887,7 +987,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "OsApplicationTrustedFunction")
 				}
 			}
-			return new BasicWrappingEList<OsApplicationTrustedFunction, GContainer>(filteredContainers, typeof(OsApplicationTrustedFunction), typeof(GContainer))
+			return new BasicWrappingEList<OsApplicationTrustedFunction, GContainer>(filteredContainers, typeof(OsApplicationTrustedFunction), typeof(GContainer)) {
+				override protected delegateAdd(OsApplicationTrustedFunction osApplicationTrustedFunction) {
+					osApplicationTrustedFunction.target?.gSetDefinition(containerValue.getContainerDefinition("OsApplicationTrustedFunction"))
+					super.delegateAdd(osApplicationTrustedFunction)
+				}
+				
+				override protected delegateAdd(int index, OsApplicationTrustedFunction osApplicationTrustedFunction) {
+					osApplicationTrustedFunction.target?.gSetDefinition(containerValue.getContainerDefinition("OsApplicationTrustedFunction"))
+					super.delegateAdd(index, osApplicationTrustedFunction)
+				}	
+			}
 		}
 		
 		
@@ -1170,7 +1280,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "OsTimeConstant")
 				}
 			}
-			return new BasicWrappingEList<OsTimeConstant, GContainer>(filteredContainers, typeof(OsTimeConstant), typeof(GContainer))
+			return new BasicWrappingEList<OsTimeConstant, GContainer>(filteredContainers, typeof(OsTimeConstant), typeof(GContainer)) {
+				override protected delegateAdd(OsTimeConstant osTimeConstant) {
+					osTimeConstant.target?.gSetDefinition(containerValue.getContainerDefinition("OsTimeConstant"))
+					super.delegateAdd(osTimeConstant)
+				}
+				
+				override protected delegateAdd(int index, OsTimeConstant osTimeConstant) {
+					osTimeConstant.target?.gSetDefinition(containerValue.getContainerDefinition("OsTimeConstant"))
+					super.delegateAdd(index, osTimeConstant)
+				}	
+			}
 		}
 		
 		
@@ -1316,7 +1436,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "OsIocCommunication")
 				}
 			}
-			return new BasicWrappingEList<OsIocCommunication, GContainer>(filteredContainers, typeof(OsIocCommunication), typeof(GContainer))
+			return new BasicWrappingEList<OsIocCommunication, GContainer>(filteredContainers, typeof(OsIocCommunication), typeof(GContainer)) {
+				override protected delegateAdd(OsIocCommunication osIocCommunication) {
+					osIocCommunication.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocCommunication"))
+					super.delegateAdd(osIocCommunication)
+				}
+				
+				override protected delegateAdd(int index, OsIocCommunication osIocCommunication) {
+					osIocCommunication.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocCommunication"))
+					super.delegateAdd(index, osIocCommunication)
+				}	
+			}
 		}
 		
 		
@@ -1363,7 +1493,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsIocDataProperties")
 					}
 				}
-				return new BasicWrappingEList<OsIocDataProperties, GContainer>(filteredContainers, typeof(OsIocDataProperties), typeof(GContainer))
+				return new BasicWrappingEList<OsIocDataProperties, GContainer>(filteredContainers, typeof(OsIocDataProperties), typeof(GContainer)) {
+					override protected delegateAdd(OsIocDataProperties osIocDataProperties) {
+						osIocDataProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocDataProperties"))
+						super.delegateAdd(osIocDataProperties)
+					}
+					
+					override protected delegateAdd(int index, OsIocDataProperties osIocDataProperties) {
+						osIocDataProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocDataProperties"))
+						super.delegateAdd(index, osIocDataProperties)
+					}	
+				}
 			}
 			
 			def List<OsIocReceiverProperties> getOsIocReceiverProperties(){
@@ -1372,7 +1512,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsIocReceiverProperties")
 					}
 				}
-				return new BasicWrappingEList<OsIocReceiverProperties, GContainer>(filteredContainers, typeof(OsIocReceiverProperties), typeof(GContainer))
+				return new BasicWrappingEList<OsIocReceiverProperties, GContainer>(filteredContainers, typeof(OsIocReceiverProperties), typeof(GContainer)) {
+					override protected delegateAdd(OsIocReceiverProperties osIocReceiverProperties) {
+						osIocReceiverProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocReceiverProperties"))
+						super.delegateAdd(osIocReceiverProperties)
+					}
+					
+					override protected delegateAdd(int index, OsIocReceiverProperties osIocReceiverProperties) {
+						osIocReceiverProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocReceiverProperties"))
+						super.delegateAdd(index, osIocReceiverProperties)
+					}	
+				}
 			}
 			
 			def List<OsIocSenderProperties> getOsIocSenderProperties(){
@@ -1381,7 +1531,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsIocSenderProperties")
 					}
 				}
-				return new BasicWrappingEList<OsIocSenderProperties, GContainer>(filteredContainers, typeof(OsIocSenderProperties), typeof(GContainer))
+				return new BasicWrappingEList<OsIocSenderProperties, GContainer>(filteredContainers, typeof(OsIocSenderProperties), typeof(GContainer)) {
+					override protected delegateAdd(OsIocSenderProperties osIocSenderProperties) {
+						osIocSenderProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocSenderProperties"))
+						super.delegateAdd(osIocSenderProperties)
+					}
+					
+					override protected delegateAdd(int index, OsIocSenderProperties osIocSenderProperties) {
+						osIocSenderProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocSenderProperties"))
+						super.delegateAdd(index, osIocSenderProperties)
+					}	
+				}
 			}
 			
 			
@@ -1805,7 +1965,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsIsrResourceLock")
 					}
 				}
-				return new BasicWrappingEList<OsIsrResourceLock, GContainer>(filteredContainers, typeof(OsIsrResourceLock), typeof(GContainer))
+				return new BasicWrappingEList<OsIsrResourceLock, GContainer>(filteredContainers, typeof(OsIsrResourceLock), typeof(GContainer)) {
+					override protected delegateAdd(OsIsrResourceLock osIsrResourceLock) {
+						osIsrResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsIsrResourceLock"))
+						super.delegateAdd(osIsrResourceLock)
+					}
+					
+					override protected delegateAdd(int index, OsIsrResourceLock osIsrResourceLock) {
+						osIsrResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsIsrResourceLock"))
+						super.delegateAdd(index, osIsrResourceLock)
+					}	
+				}
 			}
 			
 			
@@ -2379,7 +2549,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "OsScheduleTableExpiryPoint")
 				}
 			}
-			return new BasicWrappingEList<OsScheduleTableExpiryPoint, GContainer>(filteredContainers, typeof(OsScheduleTableExpiryPoint), typeof(GContainer))
+			return new BasicWrappingEList<OsScheduleTableExpiryPoint, GContainer>(filteredContainers, typeof(OsScheduleTableExpiryPoint), typeof(GContainer)) {
+				override protected delegateAdd(OsScheduleTableExpiryPoint osScheduleTableExpiryPoint) {
+					osScheduleTableExpiryPoint.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableExpiryPoint"))
+					super.delegateAdd(osScheduleTableExpiryPoint)
+				}
+				
+				override protected delegateAdd(int index, OsScheduleTableExpiryPoint osScheduleTableExpiryPoint) {
+					osScheduleTableExpiryPoint.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableExpiryPoint"))
+					super.delegateAdd(index, osScheduleTableExpiryPoint)
+				}	
+			}
 		}
 		
 		def OsScheduleTableSync getOsScheduleTableSync(){
@@ -2543,7 +2723,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsScheduleTableEventSetting")
 					}
 				}
-				return new BasicWrappingEList<OsScheduleTableEventSetting, GContainer>(filteredContainers, typeof(OsScheduleTableEventSetting), typeof(GContainer))
+				return new BasicWrappingEList<OsScheduleTableEventSetting, GContainer>(filteredContainers, typeof(OsScheduleTableEventSetting), typeof(GContainer)) {
+					override protected delegateAdd(OsScheduleTableEventSetting osScheduleTableEventSetting) {
+						osScheduleTableEventSetting.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableEventSetting"))
+						super.delegateAdd(osScheduleTableEventSetting)
+					}
+					
+					override protected delegateAdd(int index, OsScheduleTableEventSetting osScheduleTableEventSetting) {
+						osScheduleTableEventSetting.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableEventSetting"))
+						super.delegateAdd(index, osScheduleTableEventSetting)
+					}	
+				}
 			}
 			
 			def List<OsScheduleTableTaskActivation> getOsScheduleTableTaskActivations(){
@@ -2552,7 +2742,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsScheduleTableTaskActivation")
 					}
 				}
-				return new BasicWrappingEList<OsScheduleTableTaskActivation, GContainer>(filteredContainers, typeof(OsScheduleTableTaskActivation), typeof(GContainer))
+				return new BasicWrappingEList<OsScheduleTableTaskActivation, GContainer>(filteredContainers, typeof(OsScheduleTableTaskActivation), typeof(GContainer)) {
+					override protected delegateAdd(OsScheduleTableTaskActivation osScheduleTableTaskActivation) {
+						osScheduleTableTaskActivation.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableTaskActivation"))
+						super.delegateAdd(osScheduleTableTaskActivation)
+					}
+					
+					override protected delegateAdd(int index, OsScheduleTableTaskActivation osScheduleTableTaskActivation) {
+						osScheduleTableTaskActivation.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableTaskActivation"))
+						super.delegateAdd(index, osScheduleTableTaskActivation)
+					}	
+				}
 			}
 			
 			def OsScheduleTblAdjustableExpPoint getOsScheduleTblAdjustableExpPoint(){
@@ -3236,7 +3436,17 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "OsTaskResourceLock")
 					}
 				}
-				return new BasicWrappingEList<OsTaskResourceLock, GContainer>(filteredContainers, typeof(OsTaskResourceLock), typeof(GContainer))
+				return new BasicWrappingEList<OsTaskResourceLock, GContainer>(filteredContainers, typeof(OsTaskResourceLock), typeof(GContainer)) {
+					override protected delegateAdd(OsTaskResourceLock osTaskResourceLock) {
+						osTaskResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsTaskResourceLock"))
+						super.delegateAdd(osTaskResourceLock)
+					}
+					
+					override protected delegateAdd(int index, OsTaskResourceLock osTaskResourceLock) {
+						osTaskResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsTaskResourceLock"))
+						super.delegateAdd(index, osTaskResourceLock)
+					}	
+				}
 			}
 			
 			

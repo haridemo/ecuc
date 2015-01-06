@@ -435,7 +435,17 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "CanNmChannelConfig")
 				}
 			}
-			return new BasicWrappingEList<CanNmChannelConfig, GContainer>(filteredContainers, typeof(CanNmChannelConfig), typeof(GContainer))
+			return new BasicWrappingEList<CanNmChannelConfig, GContainer>(filteredContainers, typeof(CanNmChannelConfig), typeof(GContainer)) {
+				override protected delegateAdd(CanNmChannelConfig canNmChannelConfig) {
+					canNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanNmChannelConfig"))
+					super.delegateAdd(canNmChannelConfig)
+				}
+				
+				override protected delegateAdd(int index, CanNmChannelConfig canNmChannelConfig) {
+					canNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanNmChannelConfig"))
+					super.delegateAdd(index, canNmChannelConfig)
+				}	
+			}
 		}
 		
 		def CanNmPnInfo getCanNmPnInfo(){
@@ -935,7 +945,17 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanNmRxPdu")
 					}
 				}
-				return new BasicWrappingEList<CanNmRxPdu, GContainer>(filteredContainers, typeof(CanNmRxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CanNmRxPdu, GContainer>(filteredContainers, typeof(CanNmRxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CanNmRxPdu canNmRxPdu) {
+						canNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanNmRxPdu"))
+						super.delegateAdd(canNmRxPdu)
+					}
+					
+					override protected delegateAdd(int index, CanNmRxPdu canNmRxPdu) {
+						canNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanNmRxPdu"))
+						super.delegateAdd(index, canNmRxPdu)
+					}	
+				}
 			}
 			
 			def CanNmTxPdu getCanNmTxPdu(){
@@ -1171,7 +1191,17 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CanNmPnFilterMaskByte")
 					}
 				}
-				return new BasicWrappingEList<CanNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(CanNmPnFilterMaskByte), typeof(GContainer))
+				return new BasicWrappingEList<CanNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(CanNmPnFilterMaskByte), typeof(GContainer)) {
+					override protected delegateAdd(CanNmPnFilterMaskByte canNmPnFilterMaskByte) {
+						canNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("CanNmPnFilterMaskByte"))
+						super.delegateAdd(canNmPnFilterMaskByte)
+					}
+					
+					override protected delegateAdd(int index, CanNmPnFilterMaskByte canNmPnFilterMaskByte) {
+						canNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("CanNmPnFilterMaskByte"))
+						super.delegateAdd(index, canNmPnFilterMaskByte)
+					}	
+				}
 			}
 			
 			

@@ -74,7 +74,17 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "FrTrcvChannel")
 			}
 		}
-		return new BasicWrappingEList<FrTrcvChannel, GContainer>(filteredContainers, typeof(FrTrcvChannel), typeof(GContainer))
+		return new BasicWrappingEList<FrTrcvChannel, GContainer>(filteredContainers, typeof(FrTrcvChannel), typeof(GContainer)) {
+			override protected delegateAdd(FrTrcvChannel frTrcvChannel) {
+				frTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTrcvChannel"))
+				super.delegateAdd(frTrcvChannel)
+			}
+		
+			override protected delegateAdd(int index, FrTrcvChannel frTrcvChannel) {
+				frTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTrcvChannel"))
+				super.delegateAdd(index, frTrcvChannel)
+			}
+		}
 	}
 	def FrTrcvGeneral getFrTrcvGeneral(){
 		moduleConfiguration.getByType(typeof(FrTrcvGeneral))
@@ -295,7 +305,17 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FrTrcvBranchIdContainer")
 				}
 			}
-			return new BasicWrappingEList<FrTrcvBranchIdContainer, GContainer>(filteredContainers, typeof(FrTrcvBranchIdContainer), typeof(GContainer))
+			return new BasicWrappingEList<FrTrcvBranchIdContainer, GContainer>(filteredContainers, typeof(FrTrcvBranchIdContainer), typeof(GContainer)) {
+				override protected delegateAdd(FrTrcvBranchIdContainer frTrcvBranchIdContainer) {
+					frTrcvBranchIdContainer.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvBranchIdContainer"))
+					super.delegateAdd(frTrcvBranchIdContainer)
+				}
+				
+				override protected delegateAdd(int index, FrTrcvBranchIdContainer frTrcvBranchIdContainer) {
+					frTrcvBranchIdContainer.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvBranchIdContainer"))
+					super.delegateAdd(index, frTrcvBranchIdContainer)
+				}	
+			}
 		}
 		
 		def FrTrcvChannelDemEventParameterRefs getFrTrcvChannelDemEventParameterRefs(){
@@ -371,7 +391,17 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "FrTrcvDioChannelAccess")
 						}
 					}
-					return new BasicWrappingEList<FrTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(FrTrcvDioChannelAccess), typeof(GContainer))
+					return new BasicWrappingEList<FrTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(FrTrcvDioChannelAccess), typeof(GContainer)) {
+						override protected delegateAdd(FrTrcvDioChannelAccess frTrcvDioChannelAccess) {
+							frTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvDioChannelAccess"))
+							super.delegateAdd(frTrcvDioChannelAccess)
+						}
+						
+						override protected delegateAdd(int index, FrTrcvDioChannelAccess frTrcvDioChannelAccess) {
+							frTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvDioChannelAccess"))
+							super.delegateAdd(index, frTrcvDioChannelAccess)
+						}	
+					}
 				}
 				
 				

@@ -74,7 +74,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "EthSwtConfig")
 			}
 		}
-		return new BasicWrappingEList<EthSwtConfig, GContainer>(filteredContainers, typeof(EthSwtConfig), typeof(GContainer))
+		return new BasicWrappingEList<EthSwtConfig, GContainer>(filteredContainers, typeof(EthSwtConfig), typeof(GContainer)) {
+			override protected delegateAdd(EthSwtConfig ethSwtConfig) {
+				ethSwtConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EthSwtConfig"))
+				super.delegateAdd(ethSwtConfig)
+			}
+		
+			override protected delegateAdd(int index, EthSwtConfig ethSwtConfig) {
+				ethSwtConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EthSwtConfig"))
+				super.delegateAdd(index, ethSwtConfig)
+			}
+		}
 	}
 	def EthSwtGeneral getEthSwtGeneral(){
 		moduleConfiguration.getByType(typeof(EthSwtGeneral))
@@ -146,7 +156,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthSwtPort")
 				}
 			}
-			return new BasicWrappingEList<EthSwtPort, GContainer>(filteredContainers, typeof(EthSwtPort), typeof(GContainer))
+			return new BasicWrappingEList<EthSwtPort, GContainer>(filteredContainers, typeof(EthSwtPort), typeof(GContainer)) {
+				override protected delegateAdd(EthSwtPort ethSwtPort) {
+					ethSwtPort.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPort"))
+					super.delegateAdd(ethSwtPort)
+				}
+				
+				override protected delegateAdd(int index, EthSwtPort ethSwtPort) {
+					ethSwtPort.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPort"))
+					super.delegateAdd(index, ethSwtPort)
+				}	
+			}
 		}
 		
 		def EthSwtSpi getEthSwtSpi(){
@@ -435,7 +455,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EthSwtPortFifo")
 						}
 					}
-					return new BasicWrappingEList<EthSwtPortFifo, GContainer>(filteredContainers, typeof(EthSwtPortFifo), typeof(GContainer))
+					return new BasicWrappingEList<EthSwtPortFifo, GContainer>(filteredContainers, typeof(EthSwtPortFifo), typeof(GContainer)) {
+						override protected delegateAdd(EthSwtPortFifo ethSwtPortFifo) {
+							ethSwtPortFifo.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortFifo"))
+							super.delegateAdd(ethSwtPortFifo)
+						}
+						
+						override protected delegateAdd(int index, EthSwtPortFifo ethSwtPortFifo) {
+							ethSwtPortFifo.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortFifo"))
+							super.delegateAdd(index, ethSwtPortFifo)
+						}	
+					}
 				}
 				
 				def List<EthSwtPortScheduler> getEthSwtPortSchedulers(){
@@ -444,7 +474,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EthSwtPortScheduler")
 						}
 					}
-					return new BasicWrappingEList<EthSwtPortScheduler, GContainer>(filteredContainers, typeof(EthSwtPortScheduler), typeof(GContainer))
+					return new BasicWrappingEList<EthSwtPortScheduler, GContainer>(filteredContainers, typeof(EthSwtPortScheduler), typeof(GContainer)) {
+						override protected delegateAdd(EthSwtPortScheduler ethSwtPortScheduler) {
+							ethSwtPortScheduler.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortScheduler"))
+							super.delegateAdd(ethSwtPortScheduler)
+						}
+						
+						override protected delegateAdd(int index, EthSwtPortScheduler ethSwtPortScheduler) {
+							ethSwtPortScheduler.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortScheduler"))
+							super.delegateAdd(index, ethSwtPortScheduler)
+						}	
+					}
 				}
 				
 				def List<EthSwtPortShaper> getEthSwtPortShapers(){
@@ -453,7 +493,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EthSwtPortShaper")
 						}
 					}
-					return new BasicWrappingEList<EthSwtPortShaper, GContainer>(filteredContainers, typeof(EthSwtPortShaper), typeof(GContainer))
+					return new BasicWrappingEList<EthSwtPortShaper, GContainer>(filteredContainers, typeof(EthSwtPortShaper), typeof(GContainer)) {
+						override protected delegateAdd(EthSwtPortShaper ethSwtPortShaper) {
+							ethSwtPortShaper.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortShaper"))
+							super.delegateAdd(ethSwtPortShaper)
+						}
+						
+						override protected delegateAdd(int index, EthSwtPortShaper ethSwtPortShaper) {
+							ethSwtPortShaper.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortShaper"))
+							super.delegateAdd(index, ethSwtPortShaper)
+						}	
+					}
 				}
 				
 				def List<EthSwtPortVlanForwarding> getEthSwtPortVlanForwardings(){
@@ -462,7 +512,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EthSwtPortVlanForwarding")
 						}
 					}
-					return new BasicWrappingEList<EthSwtPortVlanForwarding, GContainer>(filteredContainers, typeof(EthSwtPortVlanForwarding), typeof(GContainer))
+					return new BasicWrappingEList<EthSwtPortVlanForwarding, GContainer>(filteredContainers, typeof(EthSwtPortVlanForwarding), typeof(GContainer)) {
+						override protected delegateAdd(EthSwtPortVlanForwarding ethSwtPortVlanForwarding) {
+							ethSwtPortVlanForwarding.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortVlanForwarding"))
+							super.delegateAdd(ethSwtPortVlanForwarding)
+						}
+						
+						override protected delegateAdd(int index, EthSwtPortVlanForwarding ethSwtPortVlanForwarding) {
+							ethSwtPortVlanForwarding.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortVlanForwarding"))
+							super.delegateAdd(index, ethSwtPortVlanForwarding)
+						}	
+					}
 				}
 				
 				
@@ -565,7 +625,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "EthSwtPortSchedulerPredecessor")
 							}
 						}
-						return new BasicWrappingEList<EthSwtPortSchedulerPredecessor, GContainer>(filteredContainers, typeof(EthSwtPortSchedulerPredecessor), typeof(GContainer))
+						return new BasicWrappingEList<EthSwtPortSchedulerPredecessor, GContainer>(filteredContainers, typeof(EthSwtPortSchedulerPredecessor), typeof(GContainer)) {
+							override protected delegateAdd(EthSwtPortSchedulerPredecessor ethSwtPortSchedulerPredecessor) {
+								ethSwtPortSchedulerPredecessor.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortSchedulerPredecessor"))
+								super.delegateAdd(ethSwtPortSchedulerPredecessor)
+							}
+							
+							override protected delegateAdd(int index, EthSwtPortSchedulerPredecessor ethSwtPortSchedulerPredecessor) {
+								ethSwtPortSchedulerPredecessor.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPortSchedulerPredecessor"))
+								super.delegateAdd(index, ethSwtPortSchedulerPredecessor)
+							}	
+						}
 					}
 					
 					
@@ -815,7 +885,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EthSwtPriorityRegeneration")
 						}
 					}
-					return new BasicWrappingEList<EthSwtPriorityRegeneration, GContainer>(filteredContainers, typeof(EthSwtPriorityRegeneration), typeof(GContainer))
+					return new BasicWrappingEList<EthSwtPriorityRegeneration, GContainer>(filteredContainers, typeof(EthSwtPriorityRegeneration), typeof(GContainer)) {
+						override protected delegateAdd(EthSwtPriorityRegeneration ethSwtPriorityRegeneration) {
+							ethSwtPriorityRegeneration.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPriorityRegeneration"))
+							super.delegateAdd(ethSwtPriorityRegeneration)
+						}
+						
+						override protected delegateAdd(int index, EthSwtPriorityRegeneration ethSwtPriorityRegeneration) {
+							ethSwtPriorityRegeneration.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPriorityRegeneration"))
+							super.delegateAdd(index, ethSwtPriorityRegeneration)
+						}	
+					}
 				}
 				
 				def List<EthSwtPriorityTrafficClassAssignment> getEthSwtPriorityTrafficClassAssignments(){
@@ -824,7 +904,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EthSwtPriorityTrafficClassAssignment")
 						}
 					}
-					return new BasicWrappingEList<EthSwtPriorityTrafficClassAssignment, GContainer>(filteredContainers, typeof(EthSwtPriorityTrafficClassAssignment), typeof(GContainer))
+					return new BasicWrappingEList<EthSwtPriorityTrafficClassAssignment, GContainer>(filteredContainers, typeof(EthSwtPriorityTrafficClassAssignment), typeof(GContainer)) {
+						override protected delegateAdd(EthSwtPriorityTrafficClassAssignment ethSwtPriorityTrafficClassAssignment) {
+							ethSwtPriorityTrafficClassAssignment.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPriorityTrafficClassAssignment"))
+							super.delegateAdd(ethSwtPriorityTrafficClassAssignment)
+						}
+						
+						override protected delegateAdd(int index, EthSwtPriorityTrafficClassAssignment ethSwtPriorityTrafficClassAssignment) {
+							ethSwtPriorityTrafficClassAssignment.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtPriorityTrafficClassAssignment"))
+							super.delegateAdd(index, ethSwtPriorityTrafficClassAssignment)
+						}	
+					}
 				}
 				
 				
@@ -971,7 +1061,17 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EthSwtSpiSequence")
 					}
 				}
-				return new BasicWrappingEList<EthSwtSpiSequence, GContainer>(filteredContainers, typeof(EthSwtSpiSequence), typeof(GContainer))
+				return new BasicWrappingEList<EthSwtSpiSequence, GContainer>(filteredContainers, typeof(EthSwtSpiSequence), typeof(GContainer)) {
+					override protected delegateAdd(EthSwtSpiSequence ethSwtSpiSequence) {
+						ethSwtSpiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtSpiSequence"))
+						super.delegateAdd(ethSwtSpiSequence)
+					}
+					
+					override protected delegateAdd(int index, EthSwtSpiSequence ethSwtSpiSequence) {
+						ethSwtSpiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("EthSwtSpiSequence"))
+						super.delegateAdd(index, ethSwtSpiSequence)
+					}	
+				}
 			}
 			
 			

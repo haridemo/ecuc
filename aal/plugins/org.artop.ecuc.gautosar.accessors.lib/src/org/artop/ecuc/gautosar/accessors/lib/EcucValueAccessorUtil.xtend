@@ -89,11 +89,7 @@ class EcucValueAccessorUtil {
 			if (definition instanceof GParamConfContainerDef) {
 				return definition.gGetSubContainers.findFirst[gGetShortName.equals(containerDefName)]
 			} else if (definition instanceof GChoiceContainerDef) {
-			  for (choiceDefinition : definition.gGetChoices) {
-					if (choiceDefinition.gGetShortName.equals(containerDefName)) {
-						return choiceDefinition
-					}
-				}
+				return definition.gGetChoices.findFirst[gGetShortName.equals(containerDefName)]
 			}
 		}
 		return null

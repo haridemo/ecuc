@@ -74,7 +74,17 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "LinTrcvChannel")
 			}
 		}
-		return new BasicWrappingEList<LinTrcvChannel, GContainer>(filteredContainers, typeof(LinTrcvChannel), typeof(GContainer))
+		return new BasicWrappingEList<LinTrcvChannel, GContainer>(filteredContainers, typeof(LinTrcvChannel), typeof(GContainer)) {
+			override protected delegateAdd(LinTrcvChannel linTrcvChannel) {
+				linTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("LinTrcvChannel"))
+				super.delegateAdd(linTrcvChannel)
+			}
+		
+			override protected delegateAdd(int index, LinTrcvChannel linTrcvChannel) {
+				linTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("LinTrcvChannel"))
+				super.delegateAdd(index, linTrcvChannel)
+			}
+		}
 	}
 	def LinTrcvGeneral getLinTrcvGeneral(){
 		moduleConfiguration.getByType(typeof(LinTrcvGeneral))
@@ -284,7 +294,17 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "LinTrcvDioChannelAccess")
 						}
 					}
-					return new BasicWrappingEList<LinTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(LinTrcvDioChannelAccess), typeof(GContainer))
+					return new BasicWrappingEList<LinTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(LinTrcvDioChannelAccess), typeof(GContainer)) {
+						override protected delegateAdd(LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
+							linTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("LinTrcvDioChannelAccess"))
+							super.delegateAdd(linTrcvDioChannelAccess)
+						}
+						
+						override protected delegateAdd(int index, LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
+							linTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("LinTrcvDioChannelAccess"))
+							super.delegateAdd(index, linTrcvDioChannelAccess)
+						}	
+					}
 				}
 				
 				

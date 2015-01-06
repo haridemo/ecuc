@@ -292,7 +292,17 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "LinIfChannel")
 				}
 			}
-			return new BasicWrappingEList<LinIfChannel, GContainer>(filteredContainers, typeof(LinIfChannel), typeof(GContainer))
+			return new BasicWrappingEList<LinIfChannel, GContainer>(filteredContainers, typeof(LinIfChannel), typeof(GContainer)) {
+				override protected delegateAdd(LinIfChannel linIfChannel) {
+					linIfChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfChannel"))
+					super.delegateAdd(linIfChannel)
+				}
+				
+				override protected delegateAdd(int index, LinIfChannel linIfChannel) {
+					linIfChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfChannel"))
+					super.delegateAdd(index, linIfChannel)
+				}	
+			}
 		}
 		
 		
@@ -494,7 +504,17 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "LinIfFrame")
 					}
 				}
-				return new BasicWrappingEList<LinIfFrame, GContainer>(filteredContainers, typeof(LinIfFrame), typeof(GContainer))
+				return new BasicWrappingEList<LinIfFrame, GContainer>(filteredContainers, typeof(LinIfFrame), typeof(GContainer)) {
+					override protected delegateAdd(LinIfFrame linIfFrame) {
+						linIfFrame.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFrame"))
+						super.delegateAdd(linIfFrame)
+					}
+					
+					override protected delegateAdd(int index, LinIfFrame linIfFrame) {
+						linIfFrame.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFrame"))
+						super.delegateAdd(index, linIfFrame)
+					}	
+				}
 			}
 			
 			def LinIfMaster getLinIfMaster(){
@@ -512,7 +532,17 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "LinIfScheduleTable")
 					}
 				}
-				return new BasicWrappingEList<LinIfScheduleTable, GContainer>(filteredContainers, typeof(LinIfScheduleTable), typeof(GContainer))
+				return new BasicWrappingEList<LinIfScheduleTable, GContainer>(filteredContainers, typeof(LinIfScheduleTable), typeof(GContainer)) {
+					override protected delegateAdd(LinIfScheduleTable linIfScheduleTable) {
+						linIfScheduleTable.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfScheduleTable"))
+						super.delegateAdd(linIfScheduleTable)
+					}
+					
+					override protected delegateAdd(int index, LinIfScheduleTable linIfScheduleTable) {
+						linIfScheduleTable.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfScheduleTable"))
+						super.delegateAdd(index, linIfScheduleTable)
+					}	
+				}
 			}
 			
 			def LinIfTransceiverDrvConfig getLinIfTransceiverDrvConfig(){
@@ -672,7 +702,17 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "LinIfSubstitutionFrames")
 						}
 					}
-					return new BasicWrappingEList<LinIfSubstitutionFrames, GContainer>(filteredContainers, typeof(LinIfSubstitutionFrames), typeof(GContainer))
+					return new BasicWrappingEList<LinIfSubstitutionFrames, GContainer>(filteredContainers, typeof(LinIfSubstitutionFrames), typeof(GContainer)) {
+						override protected delegateAdd(LinIfSubstitutionFrames linIfSubstitutionFrames) {
+							linIfSubstitutionFrames.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfSubstitutionFrames"))
+							super.delegateAdd(linIfSubstitutionFrames)
+						}
+						
+						override protected delegateAdd(int index, LinIfSubstitutionFrames linIfSubstitutionFrames) {
+							linIfSubstitutionFrames.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfSubstitutionFrames"))
+							super.delegateAdd(index, linIfSubstitutionFrames)
+						}	
+					}
 				}
 				
 				
@@ -703,7 +743,17 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 								return accept(item, typeof(GContainerDef), "LinIfFixedFrameSduByte")
 							}
 						}
-						return new BasicWrappingEList<LinIfFixedFrameSduByte, GContainer>(filteredContainers, typeof(LinIfFixedFrameSduByte), typeof(GContainer))
+						return new BasicWrappingEList<LinIfFixedFrameSduByte, GContainer>(filteredContainers, typeof(LinIfFixedFrameSduByte), typeof(GContainer)) {
+							override protected delegateAdd(LinIfFixedFrameSduByte linIfFixedFrameSduByte) {
+								linIfFixedFrameSduByte.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFixedFrameSduByte"))
+								super.delegateAdd(linIfFixedFrameSduByte)
+							}
+							
+							override protected delegateAdd(int index, LinIfFixedFrameSduByte linIfFixedFrameSduByte) {
+								linIfFixedFrameSduByte.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFixedFrameSduByte"))
+								super.delegateAdd(index, linIfFixedFrameSduByte)
+							}	
+						}
 					}
 					
 					
@@ -1269,7 +1319,17 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "LinIfEntry")
 						}
 					}
-					return new BasicWrappingEList<LinIfEntry, GContainer>(filteredContainers, typeof(LinIfEntry), typeof(GContainer))
+					return new BasicWrappingEList<LinIfEntry, GContainer>(filteredContainers, typeof(LinIfEntry), typeof(GContainer)) {
+						override protected delegateAdd(LinIfEntry linIfEntry) {
+							linIfEntry.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfEntry"))
+							super.delegateAdd(linIfEntry)
+						}
+						
+						override protected delegateAdd(int index, LinIfEntry linIfEntry) {
+							linIfEntry.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfEntry"))
+							super.delegateAdd(index, linIfEntry)
+						}	
+					}
 				}
 				
 				

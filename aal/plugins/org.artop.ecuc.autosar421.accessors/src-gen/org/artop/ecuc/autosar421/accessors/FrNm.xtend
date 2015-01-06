@@ -112,7 +112,17 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FrNmChannel")
 				}
 			}
-			return new BasicWrappingEList<FrNmChannel, GContainer>(filteredContainers, typeof(FrNmChannel), typeof(GContainer))
+			return new BasicWrappingEList<FrNmChannel, GContainer>(filteredContainers, typeof(FrNmChannel), typeof(GContainer)) {
+				override protected delegateAdd(FrNmChannel frNmChannel) {
+					frNmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmChannel"))
+					super.delegateAdd(frNmChannel)
+				}
+				
+				override protected delegateAdd(int index, FrNmChannel frNmChannel) {
+					frNmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmChannel"))
+					super.delegateAdd(index, frNmChannel)
+				}	
+			}
 		}
 		
 		
@@ -435,7 +445,17 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "FrNmRxPdu")
 						}
 					}
-					return new BasicWrappingEList<FrNmRxPdu, GContainer>(filteredContainers, typeof(FrNmRxPdu), typeof(GContainer))
+					return new BasicWrappingEList<FrNmRxPdu, GContainer>(filteredContainers, typeof(FrNmRxPdu), typeof(GContainer)) {
+						override protected delegateAdd(FrNmRxPdu frNmRxPdu) {
+							frNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmRxPdu"))
+							super.delegateAdd(frNmRxPdu)
+						}
+						
+						override protected delegateAdd(int index, FrNmRxPdu frNmRxPdu) {
+							frNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmRxPdu"))
+							super.delegateAdd(index, frNmRxPdu)
+						}	
+					}
 				}
 				
 				def List<FrNmTxPdu> getFrNmTxPdus(){
@@ -444,7 +464,17 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "FrNmTxPdu")
 						}
 					}
-					return new BasicWrappingEList<FrNmTxPdu, GContainer>(filteredContainers, typeof(FrNmTxPdu), typeof(GContainer))
+					return new BasicWrappingEList<FrNmTxPdu, GContainer>(filteredContainers, typeof(FrNmTxPdu), typeof(GContainer)) {
+						override protected delegateAdd(FrNmTxPdu frNmTxPdu) {
+							frNmTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmTxPdu"))
+							super.delegateAdd(frNmTxPdu)
+						}
+						
+						override protected delegateAdd(int index, FrNmTxPdu frNmTxPdu) {
+							frNmTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmTxPdu"))
+							super.delegateAdd(index, frNmTxPdu)
+						}	
+					}
 				}
 				
 				def FrNmUserDataTxPdu getFrNmUserDataTxPdu(){
@@ -1406,7 +1436,17 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "FrNmPnFilterMaskByte")
 						}
 					}
-					return new BasicWrappingEList<FrNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(FrNmPnFilterMaskByte), typeof(GContainer))
+					return new BasicWrappingEList<FrNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(FrNmPnFilterMaskByte), typeof(GContainer)) {
+						override protected delegateAdd(FrNmPnFilterMaskByte frNmPnFilterMaskByte) {
+							frNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmPnFilterMaskByte"))
+							super.delegateAdd(frNmPnFilterMaskByte)
+						}
+						
+						override protected delegateAdd(int index, FrNmPnFilterMaskByte frNmPnFilterMaskByte) {
+							frNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmPnFilterMaskByte"))
+							super.delegateAdd(index, frNmPnFilterMaskByte)
+						}	
+					}
 				}
 				
 				

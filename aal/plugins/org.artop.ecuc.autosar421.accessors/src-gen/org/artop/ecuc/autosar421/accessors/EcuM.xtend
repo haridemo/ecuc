@@ -273,7 +273,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMSleepMode")
 					}
 				}
-				return new BasicWrappingEList<EcuMSleepMode, GContainer>(filteredContainers, typeof(EcuMSleepMode), typeof(GContainer))
+				return new BasicWrappingEList<EcuMSleepMode, GContainer>(filteredContainers, typeof(EcuMSleepMode), typeof(GContainer)) {
+					override protected delegateAdd(EcuMSleepMode ecuMSleepMode) {
+						ecuMSleepMode.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMSleepMode"))
+						super.delegateAdd(ecuMSleepMode)
+					}
+					
+					override protected delegateAdd(int index, EcuMSleepMode ecuMSleepMode) {
+						ecuMSleepMode.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMSleepMode"))
+						super.delegateAdd(index, ecuMSleepMode)
+					}	
+				}
 			}
 			
 			def List<EcuMWakeupSource> getEcuMWakeupSources(){
@@ -282,7 +292,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMWakeupSource")
 					}
 				}
-				return new BasicWrappingEList<EcuMWakeupSource, GContainer>(filteredContainers, typeof(EcuMWakeupSource), typeof(GContainer))
+				return new BasicWrappingEList<EcuMWakeupSource, GContainer>(filteredContainers, typeof(EcuMWakeupSource), typeof(GContainer)) {
+					override protected delegateAdd(EcuMWakeupSource ecuMWakeupSource) {
+						ecuMWakeupSource.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMWakeupSource"))
+						super.delegateAdd(ecuMWakeupSource)
+					}
+					
+					override protected delegateAdd(int index, EcuMWakeupSource ecuMWakeupSource) {
+						ecuMWakeupSource.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMWakeupSource"))
+						super.delegateAdd(index, ecuMWakeupSource)
+					}	
+				}
 			}
 			
 			
@@ -394,7 +414,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EcuMDriverInitItem")
 						}
 					}
-					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer))
+					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer)) {
+						override protected delegateAdd(EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(ecuMDriverInitItem)
+						}
+						
+						override protected delegateAdd(int index, EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(index, ecuMDriverInitItem)
+						}	
+					}
 				}
 				
 				
@@ -519,7 +549,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EcuMDriverInitItem")
 						}
 					}
-					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer))
+					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer)) {
+						override protected delegateAdd(EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(ecuMDriverInitItem)
+						}
+						
+						override protected delegateAdd(int index, EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(index, ecuMDriverInitItem)
+						}	
+					}
 				}
 				
 				
@@ -644,7 +684,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EcuMDriverInitItem")
 						}
 					}
-					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer))
+					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer)) {
+						override protected delegateAdd(EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(ecuMDriverInitItem)
+						}
+						
+						override protected delegateAdd(int index, EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(index, ecuMDriverInitItem)
+						}	
+					}
 				}
 				
 				
@@ -1113,7 +1163,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMFixedUserConfig")
 					}
 				}
-				return new BasicWrappingEList<EcuMFixedUserConfig, GContainer>(filteredContainers, typeof(EcuMFixedUserConfig), typeof(GContainer))
+				return new BasicWrappingEList<EcuMFixedUserConfig, GContainer>(filteredContainers, typeof(EcuMFixedUserConfig), typeof(GContainer)) {
+					override protected delegateAdd(EcuMFixedUserConfig ecuMFixedUserConfig) {
+						ecuMFixedUserConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMFixedUserConfig"))
+						super.delegateAdd(ecuMFixedUserConfig)
+					}
+					
+					override protected delegateAdd(int index, EcuMFixedUserConfig ecuMFixedUserConfig) {
+						ecuMFixedUserConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMFixedUserConfig"))
+						super.delegateAdd(index, ecuMFixedUserConfig)
+					}	
+				}
 			}
 			
 			def List<EcuMTTII> getEcuMTTIIs(){
@@ -1122,7 +1182,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMTTII")
 					}
 				}
-				return new BasicWrappingEList<EcuMTTII, GContainer>(filteredContainers, typeof(EcuMTTII), typeof(GContainer))
+				return new BasicWrappingEList<EcuMTTII, GContainer>(filteredContainers, typeof(EcuMTTII), typeof(GContainer)) {
+					override protected delegateAdd(EcuMTTII ecuMTTII) {
+						ecuMTTII.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMTTII"))
+						super.delegateAdd(ecuMTTII)
+					}
+					
+					override protected delegateAdd(int index, EcuMTTII ecuMTTII) {
+						ecuMTTII.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMTTII"))
+						super.delegateAdd(index, ecuMTTII)
+					}	
+				}
 			}
 			
 			
@@ -1153,7 +1223,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EcuMDriverInitItem")
 						}
 					}
-					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer))
+					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer)) {
+						override protected delegateAdd(EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(ecuMDriverInitItem)
+						}
+						
+						override protected delegateAdd(int index, EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(index, ecuMDriverInitItem)
+						}	
+					}
 				}
 				
 				
@@ -1278,7 +1358,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "EcuMDriverInitItem")
 						}
 					}
-					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer))
+					return new BasicWrappingEList<EcuMDriverInitItem, GContainer>(filteredContainers, typeof(EcuMDriverInitItem), typeof(GContainer)) {
+						override protected delegateAdd(EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(ecuMDriverInitItem)
+						}
+						
+						override protected delegateAdd(int index, EcuMDriverInitItem ecuMDriverInitItem) {
+							ecuMDriverInitItem.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMDriverInitItem"))
+							super.delegateAdd(index, ecuMDriverInitItem)
+						}	
+					}
 				}
 				
 				
@@ -1551,7 +1641,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMAlarmClock")
 					}
 				}
-				return new BasicWrappingEList<EcuMAlarmClock, GContainer>(filteredContainers, typeof(EcuMAlarmClock), typeof(GContainer))
+				return new BasicWrappingEList<EcuMAlarmClock, GContainer>(filteredContainers, typeof(EcuMAlarmClock), typeof(GContainer)) {
+					override protected delegateAdd(EcuMAlarmClock ecuMAlarmClock) {
+						ecuMAlarmClock.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMAlarmClock"))
+						super.delegateAdd(ecuMAlarmClock)
+					}
+					
+					override protected delegateAdd(int index, EcuMAlarmClock ecuMAlarmClock) {
+						ecuMAlarmClock.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMAlarmClock"))
+						super.delegateAdd(index, ecuMAlarmClock)
+					}	
+				}
 			}
 			
 			def List<EcuMFlexUserConfig> getEcuMFlexUserConfigs(){
@@ -1560,7 +1660,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMFlexUserConfig")
 					}
 				}
-				return new BasicWrappingEList<EcuMFlexUserConfig, GContainer>(filteredContainers, typeof(EcuMFlexUserConfig), typeof(GContainer))
+				return new BasicWrappingEList<EcuMFlexUserConfig, GContainer>(filteredContainers, typeof(EcuMFlexUserConfig), typeof(GContainer)) {
+					override protected delegateAdd(EcuMFlexUserConfig ecuMFlexUserConfig) {
+						ecuMFlexUserConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMFlexUserConfig"))
+						super.delegateAdd(ecuMFlexUserConfig)
+					}
+					
+					override protected delegateAdd(int index, EcuMFlexUserConfig ecuMFlexUserConfig) {
+						ecuMFlexUserConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMFlexUserConfig"))
+						super.delegateAdd(index, ecuMFlexUserConfig)
+					}	
+				}
 			}
 			
 			def EcuMGoDownAllowedUsers getEcuMGoDownAllowedUsers(){
@@ -1578,7 +1688,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMResetMode")
 					}
 				}
-				return new BasicWrappingEList<EcuMResetMode, GContainer>(filteredContainers, typeof(EcuMResetMode), typeof(GContainer))
+				return new BasicWrappingEList<EcuMResetMode, GContainer>(filteredContainers, typeof(EcuMResetMode), typeof(GContainer)) {
+					override protected delegateAdd(EcuMResetMode ecuMResetMode) {
+						ecuMResetMode.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMResetMode"))
+						super.delegateAdd(ecuMResetMode)
+					}
+					
+					override protected delegateAdd(int index, EcuMResetMode ecuMResetMode) {
+						ecuMResetMode.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMResetMode"))
+						super.delegateAdd(index, ecuMResetMode)
+					}	
+				}
 			}
 			
 			def EcuMSetClockAllowedUsers getEcuMSetClockAllowedUsers(){
@@ -1596,7 +1716,17 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EcuMShutdownCause")
 					}
 				}
-				return new BasicWrappingEList<EcuMShutdownCause, GContainer>(filteredContainers, typeof(EcuMShutdownCause), typeof(GContainer))
+				return new BasicWrappingEList<EcuMShutdownCause, GContainer>(filteredContainers, typeof(EcuMShutdownCause), typeof(GContainer)) {
+					override protected delegateAdd(EcuMShutdownCause ecuMShutdownCause) {
+						ecuMShutdownCause.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMShutdownCause"))
+						super.delegateAdd(ecuMShutdownCause)
+					}
+					
+					override protected delegateAdd(int index, EcuMShutdownCause ecuMShutdownCause) {
+						ecuMShutdownCause.target?.gSetDefinition(containerValue.getContainerDefinition("EcuMShutdownCause"))
+						super.delegateAdd(index, ecuMShutdownCause)
+					}	
+				}
 			}
 			
 			

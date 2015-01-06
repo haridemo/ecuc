@@ -98,7 +98,17 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "DltVfbTrace")
 			}
 		}
-		return new BasicWrappingEList<DltVfbTrace, GContainer>(filteredContainers, typeof(DltVfbTrace), typeof(GContainer))
+		return new BasicWrappingEList<DltVfbTrace, GContainer>(filteredContainers, typeof(DltVfbTrace), typeof(GContainer)) {
+			override protected delegateAdd(DltVfbTrace dltVfbTrace) {
+				dltVfbTrace.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("DltVfbTrace"))
+				super.delegateAdd(dltVfbTrace)
+			}
+		
+			override protected delegateAdd(int index, DltVfbTrace dltVfbTrace) {
+				dltVfbTrace.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("DltVfbTrace"))
+				super.delegateAdd(index, dltVfbTrace)
+			}
+		}
 	}
 	
 	static class DltGeneral implements IWrapper<GContainer> {

@@ -435,7 +435,17 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "UdpNmChannelConfig")
 				}
 			}
-			return new BasicWrappingEList<UdpNmChannelConfig, GContainer>(filteredContainers, typeof(UdpNmChannelConfig), typeof(GContainer))
+			return new BasicWrappingEList<UdpNmChannelConfig, GContainer>(filteredContainers, typeof(UdpNmChannelConfig), typeof(GContainer)) {
+				override protected delegateAdd(UdpNmChannelConfig udpNmChannelConfig) {
+					udpNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmChannelConfig"))
+					super.delegateAdd(udpNmChannelConfig)
+				}
+				
+				override protected delegateAdd(int index, UdpNmChannelConfig udpNmChannelConfig) {
+					udpNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmChannelConfig"))
+					super.delegateAdd(index, udpNmChannelConfig)
+				}	
+			}
 		}
 		
 		def UdpNmDemEventParameterRefs getUdpNmDemEventParameterRefs(){
@@ -816,7 +826,17 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "UdpNmRxPdu")
 					}
 				}
-				return new BasicWrappingEList<UdpNmRxPdu, GContainer>(filteredContainers, typeof(UdpNmRxPdu), typeof(GContainer))
+				return new BasicWrappingEList<UdpNmRxPdu, GContainer>(filteredContainers, typeof(UdpNmRxPdu), typeof(GContainer)) {
+					override protected delegateAdd(UdpNmRxPdu udpNmRxPdu) {
+						udpNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmRxPdu"))
+						super.delegateAdd(udpNmRxPdu)
+					}
+					
+					override protected delegateAdd(int index, UdpNmRxPdu udpNmRxPdu) {
+						udpNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmRxPdu"))
+						super.delegateAdd(index, udpNmRxPdu)
+					}	
+				}
 			}
 			
 			def UdpNmTxPdu getUdpNmTxPdu(){
@@ -1098,7 +1118,17 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "UdpNmPnFilterMaskByte")
 					}
 				}
-				return new BasicWrappingEList<UdpNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(UdpNmPnFilterMaskByte), typeof(GContainer))
+				return new BasicWrappingEList<UdpNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(UdpNmPnFilterMaskByte), typeof(GContainer)) {
+					override protected delegateAdd(UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
+						udpNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmPnFilterMaskByte"))
+						super.delegateAdd(udpNmPnFilterMaskByte)
+					}
+					
+					override protected delegateAdd(int index, UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
+						udpNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmPnFilterMaskByte"))
+						super.delegateAdd(index, udpNmPnFilterMaskByte)
+					}	
+				}
 			}
 			
 			

@@ -74,7 +74,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "PduRBswModules")
 			}
 		}
-		return new BasicWrappingEList<PduRBswModules, GContainer>(filteredContainers, typeof(PduRBswModules), typeof(GContainer))
+		return new BasicWrappingEList<PduRBswModules, GContainer>(filteredContainers, typeof(PduRBswModules), typeof(GContainer)) {
+			override protected delegateAdd(PduRBswModules pduRBswModules) {
+				pduRBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("PduRBswModules"))
+				super.delegateAdd(pduRBswModules)
+			}
+		
+			override protected delegateAdd(int index, PduRBswModules pduRBswModules) {
+				pduRBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("PduRBswModules"))
+				super.delegateAdd(index, pduRBswModules)
+			}
+		}
 	}
 	def PduRGeneral getPduRGeneral(){
 		moduleConfiguration.getByType(typeof(PduRGeneral))
@@ -471,7 +481,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "PduRRoutingPathGroup")
 				}
 			}
-			return new BasicWrappingEList<PduRRoutingPathGroup, GContainer>(filteredContainers, typeof(PduRRoutingPathGroup), typeof(GContainer))
+			return new BasicWrappingEList<PduRRoutingPathGroup, GContainer>(filteredContainers, typeof(PduRRoutingPathGroup), typeof(GContainer)) {
+				override protected delegateAdd(PduRRoutingPathGroup pduRRoutingPathGroup) {
+					pduRRoutingPathGroup.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPathGroup"))
+					super.delegateAdd(pduRRoutingPathGroup)
+				}
+				
+				override protected delegateAdd(int index, PduRRoutingPathGroup pduRRoutingPathGroup) {
+					pduRRoutingPathGroup.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPathGroup"))
+					super.delegateAdd(index, pduRRoutingPathGroup)
+				}	
+			}
 		}
 		
 		def List<PduRRoutingTable> getPduRRoutingTables(){
@@ -480,7 +500,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "PduRRoutingTable")
 				}
 			}
-			return new BasicWrappingEList<PduRRoutingTable, GContainer>(filteredContainers, typeof(PduRRoutingTable), typeof(GContainer))
+			return new BasicWrappingEList<PduRRoutingTable, GContainer>(filteredContainers, typeof(PduRRoutingTable), typeof(GContainer)) {
+				override protected delegateAdd(PduRRoutingTable pduRRoutingTable) {
+					pduRRoutingTable.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingTable"))
+					super.delegateAdd(pduRRoutingTable)
+				}
+				
+				override protected delegateAdd(int index, PduRRoutingTable pduRRoutingTable) {
+					pduRRoutingTable.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingTable"))
+					super.delegateAdd(index, pduRRoutingTable)
+				}	
+			}
 		}
 		
 		def PduRTpBufferTable getPduRTpBufferTable(){
@@ -618,7 +648,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "PduRRoutingPath")
 					}
 				}
-				return new BasicWrappingEList<PduRRoutingPath, GContainer>(filteredContainers, typeof(PduRRoutingPath), typeof(GContainer))
+				return new BasicWrappingEList<PduRRoutingPath, GContainer>(filteredContainers, typeof(PduRRoutingPath), typeof(GContainer)) {
+					override protected delegateAdd(PduRRoutingPath pduRRoutingPath) {
+						pduRRoutingPath.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPath"))
+						super.delegateAdd(pduRRoutingPath)
+					}
+					
+					override protected delegateAdd(int index, PduRRoutingPath pduRRoutingPath) {
+						pduRRoutingPath.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPath"))
+						super.delegateAdd(index, pduRRoutingPath)
+					}	
+				}
 			}
 			
 			
@@ -649,7 +689,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "PduRDestPdu")
 						}
 					}
-					return new BasicWrappingEList<PduRDestPdu, GContainer>(filteredContainers, typeof(PduRDestPdu), typeof(GContainer))
+					return new BasicWrappingEList<PduRDestPdu, GContainer>(filteredContainers, typeof(PduRDestPdu), typeof(GContainer)) {
+						override protected delegateAdd(PduRDestPdu pduRDestPdu) {
+							pduRDestPdu.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDestPdu"))
+							super.delegateAdd(pduRDestPdu)
+						}
+						
+						override protected delegateAdd(int index, PduRDestPdu pduRDestPdu) {
+							pduRDestPdu.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDestPdu"))
+							super.delegateAdd(index, pduRDestPdu)
+						}	
+					}
 				}
 				
 				def PduRSrcPdu getPduRSrcPdu(){
@@ -823,7 +873,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 									return accept(item, typeof(GContainerDef), "PduRDefaultValueElement")
 								}
 							}
-							return new BasicWrappingEList<PduRDefaultValueElement, GContainer>(filteredContainers, typeof(PduRDefaultValueElement), typeof(GContainer))
+							return new BasicWrappingEList<PduRDefaultValueElement, GContainer>(filteredContainers, typeof(PduRDefaultValueElement), typeof(GContainer)) {
+								override protected delegateAdd(PduRDefaultValueElement pduRDefaultValueElement) {
+									pduRDefaultValueElement.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDefaultValueElement"))
+									super.delegateAdd(pduRDefaultValueElement)
+								}
+								
+								override protected delegateAdd(int index, PduRDefaultValueElement pduRDefaultValueElement) {
+									pduRDefaultValueElement.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDefaultValueElement"))
+									super.delegateAdd(index, pduRDefaultValueElement)
+								}	
+							}
 						}
 						
 						
@@ -985,7 +1045,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "PduRTpBuffer")
 					}
 				}
-				return new BasicWrappingEList<PduRTpBuffer, GContainer>(filteredContainers, typeof(PduRTpBuffer), typeof(GContainer))
+				return new BasicWrappingEList<PduRTpBuffer, GContainer>(filteredContainers, typeof(PduRTpBuffer), typeof(GContainer)) {
+					override protected delegateAdd(PduRTpBuffer pduRTpBuffer) {
+						pduRTpBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTpBuffer"))
+						super.delegateAdd(pduRTpBuffer)
+					}
+					
+					override protected delegateAdd(int index, PduRTpBuffer pduRTpBuffer) {
+						pduRTpBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTpBuffer"))
+						super.delegateAdd(index, pduRTpBuffer)
+					}	
+				}
 			}
 			
 			
@@ -1058,7 +1128,17 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "PduRTxBuffer")
 					}
 				}
-				return new BasicWrappingEList<PduRTxBuffer, GContainer>(filteredContainers, typeof(PduRTxBuffer), typeof(GContainer))
+				return new BasicWrappingEList<PduRTxBuffer, GContainer>(filteredContainers, typeof(PduRTxBuffer), typeof(GContainer)) {
+					override protected delegateAdd(PduRTxBuffer pduRTxBuffer) {
+						pduRTxBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTxBuffer"))
+						super.delegateAdd(pduRTxBuffer)
+					}
+					
+					override protected delegateAdd(int index, PduRTxBuffer pduRTxBuffer) {
+						pduRTxBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTxBuffer"))
+						super.delegateAdd(index, pduRTxBuffer)
+					}	
+				}
 			}
 			
 			

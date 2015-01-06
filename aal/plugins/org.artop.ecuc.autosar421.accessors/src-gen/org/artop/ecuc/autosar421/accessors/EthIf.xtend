@@ -112,7 +112,17 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthIfController")
 				}
 			}
-			return new BasicWrappingEList<EthIfController, GContainer>(filteredContainers, typeof(EthIfController), typeof(GContainer))
+			return new BasicWrappingEList<EthIfController, GContainer>(filteredContainers, typeof(EthIfController), typeof(GContainer)) {
+				override protected delegateAdd(EthIfController ethIfController) {
+					ethIfController.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfController"))
+					super.delegateAdd(ethIfController)
+				}
+				
+				override protected delegateAdd(int index, EthIfController ethIfController) {
+					ethIfController.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfController"))
+					super.delegateAdd(index, ethIfController)
+				}	
+			}
 		}
 		
 		def List<EthIfFrameOwnerConfig> getEthIfFrameOwnerConfigs(){
@@ -121,7 +131,17 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthIfFrameOwnerConfig")
 				}
 			}
-			return new BasicWrappingEList<EthIfFrameOwnerConfig, GContainer>(filteredContainers, typeof(EthIfFrameOwnerConfig), typeof(GContainer))
+			return new BasicWrappingEList<EthIfFrameOwnerConfig, GContainer>(filteredContainers, typeof(EthIfFrameOwnerConfig), typeof(GContainer)) {
+				override protected delegateAdd(EthIfFrameOwnerConfig ethIfFrameOwnerConfig) {
+					ethIfFrameOwnerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfFrameOwnerConfig"))
+					super.delegateAdd(ethIfFrameOwnerConfig)
+				}
+				
+				override protected delegateAdd(int index, EthIfFrameOwnerConfig ethIfFrameOwnerConfig) {
+					ethIfFrameOwnerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfFrameOwnerConfig"))
+					super.delegateAdd(index, ethIfFrameOwnerConfig)
+				}	
+			}
 		}
 		
 		def List<EthIfRxIndicationConfig> getEthIfRxIndicationConfigs(){
@@ -130,7 +150,17 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthIfRxIndicationConfig")
 				}
 			}
-			return new BasicWrappingEList<EthIfRxIndicationConfig, GContainer>(filteredContainers, typeof(EthIfRxIndicationConfig), typeof(GContainer))
+			return new BasicWrappingEList<EthIfRxIndicationConfig, GContainer>(filteredContainers, typeof(EthIfRxIndicationConfig), typeof(GContainer)) {
+				override protected delegateAdd(EthIfRxIndicationConfig ethIfRxIndicationConfig) {
+					ethIfRxIndicationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfRxIndicationConfig"))
+					super.delegateAdd(ethIfRxIndicationConfig)
+				}
+				
+				override protected delegateAdd(int index, EthIfRxIndicationConfig ethIfRxIndicationConfig) {
+					ethIfRxIndicationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfRxIndicationConfig"))
+					super.delegateAdd(index, ethIfRxIndicationConfig)
+				}	
+			}
 		}
 		
 		def List<EthIfSwitch> getEthIfSwitchs(){
@@ -139,7 +169,17 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthIfSwitch")
 				}
 			}
-			return new BasicWrappingEList<EthIfSwitch, GContainer>(filteredContainers, typeof(EthIfSwitch), typeof(GContainer))
+			return new BasicWrappingEList<EthIfSwitch, GContainer>(filteredContainers, typeof(EthIfSwitch), typeof(GContainer)) {
+				override protected delegateAdd(EthIfSwitch ethIfSwitch) {
+					ethIfSwitch.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfSwitch"))
+					super.delegateAdd(ethIfSwitch)
+				}
+				
+				override protected delegateAdd(int index, EthIfSwitch ethIfSwitch) {
+					ethIfSwitch.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfSwitch"))
+					super.delegateAdd(index, ethIfSwitch)
+				}	
+			}
 		}
 		
 		def List<EthIfTrcvLinkStateChgConfig> getEthIfTrcvLinkStateChgConfigs(){
@@ -148,7 +188,17 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthIfTrcvLinkStateChgConfig")
 				}
 			}
-			return new BasicWrappingEList<EthIfTrcvLinkStateChgConfig, GContainer>(filteredContainers, typeof(EthIfTrcvLinkStateChgConfig), typeof(GContainer))
+			return new BasicWrappingEList<EthIfTrcvLinkStateChgConfig, GContainer>(filteredContainers, typeof(EthIfTrcvLinkStateChgConfig), typeof(GContainer)) {
+				override protected delegateAdd(EthIfTrcvLinkStateChgConfig ethIfTrcvLinkStateChgConfig) {
+					ethIfTrcvLinkStateChgConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTrcvLinkStateChgConfig"))
+					super.delegateAdd(ethIfTrcvLinkStateChgConfig)
+				}
+				
+				override protected delegateAdd(int index, EthIfTrcvLinkStateChgConfig ethIfTrcvLinkStateChgConfig) {
+					ethIfTrcvLinkStateChgConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTrcvLinkStateChgConfig"))
+					super.delegateAdd(index, ethIfTrcvLinkStateChgConfig)
+				}	
+			}
 		}
 		
 		def List<EthIfTxConfirmationConfig> getEthIfTxConfirmationConfigs(){
@@ -157,7 +207,17 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthIfTxConfirmationConfig")
 				}
 			}
-			return new BasicWrappingEList<EthIfTxConfirmationConfig, GContainer>(filteredContainers, typeof(EthIfTxConfirmationConfig), typeof(GContainer))
+			return new BasicWrappingEList<EthIfTxConfirmationConfig, GContainer>(filteredContainers, typeof(EthIfTxConfirmationConfig), typeof(GContainer)) {
+				override protected delegateAdd(EthIfTxConfirmationConfig ethIfTxConfirmationConfig) {
+					ethIfTxConfirmationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTxConfirmationConfig"))
+					super.delegateAdd(ethIfTxConfirmationConfig)
+				}
+				
+				override protected delegateAdd(int index, EthIfTxConfirmationConfig ethIfTxConfirmationConfig) {
+					ethIfTxConfirmationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTxConfirmationConfig"))
+					super.delegateAdd(index, ethIfTxConfirmationConfig)
+				}	
+			}
 		}
 		
 		

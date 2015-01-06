@@ -74,7 +74,17 @@ class Ea implements IWrapper<GModuleConfiguration> {
 				return accept(item, typeof(GContainerDef), "EaBlockConfiguration")
 			}
 		}
-		return new BasicWrappingEList<EaBlockConfiguration, GContainer>(filteredContainers, typeof(EaBlockConfiguration), typeof(GContainer))
+		return new BasicWrappingEList<EaBlockConfiguration, GContainer>(filteredContainers, typeof(EaBlockConfiguration), typeof(GContainer)) {
+			override protected delegateAdd(EaBlockConfiguration eaBlockConfiguration) {
+				eaBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EaBlockConfiguration"))
+				super.delegateAdd(eaBlockConfiguration)
+			}
+		
+			override protected delegateAdd(int index, EaBlockConfiguration eaBlockConfiguration) {
+				eaBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EaBlockConfiguration"))
+				super.delegateAdd(index, eaBlockConfiguration)
+			}
+		}
 	}
 	def EaGeneral getEaGeneral(){
 		moduleConfiguration.getByType(typeof(EaGeneral))

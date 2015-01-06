@@ -498,7 +498,17 @@ class Fls implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "FlsSector")
 					}
 				}
-				return new BasicWrappingEList<FlsSector, GContainer>(filteredContainers, typeof(FlsSector), typeof(GContainer))
+				return new BasicWrappingEList<FlsSector, GContainer>(filteredContainers, typeof(FlsSector), typeof(GContainer)) {
+					override protected delegateAdd(FlsSector flsSector) {
+						flsSector.target?.gSetDefinition(containerValue.getContainerDefinition("FlsSector"))
+						super.delegateAdd(flsSector)
+					}
+					
+					override protected delegateAdd(int index, FlsSector flsSector) {
+						flsSector.target?.gSetDefinition(containerValue.getContainerDefinition("FlsSector"))
+						super.delegateAdd(index, flsSector)
+					}	
+				}
 			}
 			
 			

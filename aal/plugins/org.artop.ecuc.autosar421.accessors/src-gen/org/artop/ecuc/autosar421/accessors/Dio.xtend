@@ -112,7 +112,17 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "DioPort")
 				}
 			}
-			return new BasicWrappingEList<DioPort, GContainer>(filteredContainers, typeof(DioPort), typeof(GContainer))
+			return new BasicWrappingEList<DioPort, GContainer>(filteredContainers, typeof(DioPort), typeof(GContainer)) {
+				override protected delegateAdd(DioPort dioPort) {
+					dioPort.target?.gSetDefinition(containerValue.getContainerDefinition("DioPort"))
+					super.delegateAdd(dioPort)
+				}
+				
+				override protected delegateAdd(int index, DioPort dioPort) {
+					dioPort.target?.gSetDefinition(containerValue.getContainerDefinition("DioPort"))
+					super.delegateAdd(index, dioPort)
+				}	
+			}
 		}
 		
 		
@@ -159,7 +169,17 @@ class Dio implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DioChannel")
 					}
 				}
-				return new BasicWrappingEList<DioChannel, GContainer>(filteredContainers, typeof(DioChannel), typeof(GContainer))
+				return new BasicWrappingEList<DioChannel, GContainer>(filteredContainers, typeof(DioChannel), typeof(GContainer)) {
+					override protected delegateAdd(DioChannel dioChannel) {
+						dioChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannel"))
+						super.delegateAdd(dioChannel)
+					}
+					
+					override protected delegateAdd(int index, DioChannel dioChannel) {
+						dioChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannel"))
+						super.delegateAdd(index, dioChannel)
+					}	
+				}
 			}
 			
 			def List<DioChannelGroup> getDioChannelGroups(){
@@ -168,7 +188,17 @@ class Dio implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "DioChannelGroup")
 					}
 				}
-				return new BasicWrappingEList<DioChannelGroup, GContainer>(filteredContainers, typeof(DioChannelGroup), typeof(GContainer))
+				return new BasicWrappingEList<DioChannelGroup, GContainer>(filteredContainers, typeof(DioChannelGroup), typeof(GContainer)) {
+					override protected delegateAdd(DioChannelGroup dioChannelGroup) {
+						dioChannelGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannelGroup"))
+						super.delegateAdd(dioChannelGroup)
+					}
+					
+					override protected delegateAdd(int index, DioChannelGroup dioChannelGroup) {
+						dioChannelGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannelGroup"))
+						super.delegateAdd(index, dioChannelGroup)
+					}	
+				}
 			}
 			
 			

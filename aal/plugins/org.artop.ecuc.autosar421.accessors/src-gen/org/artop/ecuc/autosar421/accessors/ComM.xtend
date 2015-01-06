@@ -128,7 +128,17 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComMChannel")
 				}
 			}
-			return new BasicWrappingEList<ComMChannel, GContainer>(filteredContainers, typeof(ComMChannel), typeof(GContainer))
+			return new BasicWrappingEList<ComMChannel, GContainer>(filteredContainers, typeof(ComMChannel), typeof(GContainer)) {
+				override protected delegateAdd(ComMChannel comMChannel) {
+					comMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMChannel"))
+					super.delegateAdd(comMChannel)
+				}
+				
+				override protected delegateAdd(int index, ComMChannel comMChannel) {
+					comMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMChannel"))
+					super.delegateAdd(index, comMChannel)
+				}	
+			}
 		}
 		
 		def List<ComMPnc> getComMPncs(){
@@ -137,7 +147,17 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComMPnc")
 				}
 			}
-			return new BasicWrappingEList<ComMPnc, GContainer>(filteredContainers, typeof(ComMPnc), typeof(GContainer))
+			return new BasicWrappingEList<ComMPnc, GContainer>(filteredContainers, typeof(ComMPnc), typeof(GContainer)) {
+				override protected delegateAdd(ComMPnc comMPnc) {
+					comMPnc.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPnc"))
+					super.delegateAdd(comMPnc)
+				}
+				
+				override protected delegateAdd(int index, ComMPnc comMPnc) {
+					comMPnc.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPnc"))
+					super.delegateAdd(index, comMPnc)
+				}	
+			}
 		}
 		
 		def List<ComMUser> getComMUsers(){
@@ -146,7 +166,17 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "ComMUser")
 				}
 			}
-			return new BasicWrappingEList<ComMUser, GContainer>(filteredContainers, typeof(ComMUser), typeof(GContainer))
+			return new BasicWrappingEList<ComMUser, GContainer>(filteredContainers, typeof(ComMUser), typeof(GContainer)) {
+				override protected delegateAdd(ComMUser comMUser) {
+					comMUser.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUser"))
+					super.delegateAdd(comMUser)
+				}
+				
+				override protected delegateAdd(int index, ComMUser comMUser) {
+					comMUser.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUser"))
+					super.delegateAdd(index, comMUser)
+				}	
+			}
 		}
 		
 		
@@ -372,7 +402,17 @@ class ComM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "ComMUserPerChannel")
 					}
 				}
-				return new BasicWrappingEList<ComMUserPerChannel, GContainer>(filteredContainers, typeof(ComMUserPerChannel), typeof(GContainer))
+				return new BasicWrappingEList<ComMUserPerChannel, GContainer>(filteredContainers, typeof(ComMUserPerChannel), typeof(GContainer)) {
+					override protected delegateAdd(ComMUserPerChannel comMUserPerChannel) {
+						comMUserPerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUserPerChannel"))
+						super.delegateAdd(comMUserPerChannel)
+					}
+					
+					override protected delegateAdd(int index, ComMUserPerChannel comMUserPerChannel) {
+						comMUserPerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUserPerChannel"))
+						super.delegateAdd(index, comMUserPerChannel)
+					}	
+				}
 			}
 			
 			
@@ -615,7 +655,17 @@ class ComM implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "ComMPncComSignal")
 					}
 				}
-				return new BasicWrappingEList<ComMPncComSignal, GContainer>(filteredContainers, typeof(ComMPncComSignal), typeof(GContainer))
+				return new BasicWrappingEList<ComMPncComSignal, GContainer>(filteredContainers, typeof(ComMPncComSignal), typeof(GContainer)) {
+					override protected delegateAdd(ComMPncComSignal comMPncComSignal) {
+						comMPncComSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPncComSignal"))
+						super.delegateAdd(comMPncComSignal)
+					}
+					
+					override protected delegateAdd(int index, ComMPncComSignal comMPncComSignal) {
+						comMPncComSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPncComSignal"))
+						super.delegateAdd(index, comMPncComSignal)
+					}	
+				}
 			}
 			
 			

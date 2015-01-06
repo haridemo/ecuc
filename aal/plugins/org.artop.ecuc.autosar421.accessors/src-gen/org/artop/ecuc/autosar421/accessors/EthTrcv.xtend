@@ -112,7 +112,17 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "EthTrcvConfig")
 				}
 			}
-			return new BasicWrappingEList<EthTrcvConfig, GContainer>(filteredContainers, typeof(EthTrcvConfig), typeof(GContainer))
+			return new BasicWrappingEList<EthTrcvConfig, GContainer>(filteredContainers, typeof(EthTrcvConfig), typeof(GContainer)) {
+				override protected delegateAdd(EthTrcvConfig ethTrcvConfig) {
+					ethTrcvConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvConfig"))
+					super.delegateAdd(ethTrcvConfig)
+				}
+				
+				override protected delegateAdd(int index, EthTrcvConfig ethTrcvConfig) {
+					ethTrcvConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvConfig"))
+					super.delegateAdd(index, ethTrcvConfig)
+				}	
+			}
 		}
 		
 		
@@ -379,7 +389,17 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "EthTrcvWakeupMap")
 					}
 				}
-				return new BasicWrappingEList<EthTrcvWakeupMap, GContainer>(filteredContainers, typeof(EthTrcvWakeupMap), typeof(GContainer))
+				return new BasicWrappingEList<EthTrcvWakeupMap, GContainer>(filteredContainers, typeof(EthTrcvWakeupMap), typeof(GContainer)) {
+					override protected delegateAdd(EthTrcvWakeupMap ethTrcvWakeupMap) {
+						ethTrcvWakeupMap.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvWakeupMap"))
+						super.delegateAdd(ethTrcvWakeupMap)
+					}
+					
+					override protected delegateAdd(int index, EthTrcvWakeupMap ethTrcvWakeupMap) {
+						ethTrcvWakeupMap.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvWakeupMap"))
+						super.delegateAdd(index, ethTrcvWakeupMap)
+					}	
+				}
 			}
 			
 			

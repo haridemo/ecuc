@@ -112,7 +112,17 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "FrSMCluster")
 				}
 			}
-			return new BasicWrappingEList<FrSMCluster, GContainer>(filteredContainers, typeof(FrSMCluster), typeof(GContainer))
+			return new BasicWrappingEList<FrSMCluster, GContainer>(filteredContainers, typeof(FrSMCluster), typeof(GContainer)) {
+				override protected delegateAdd(FrSMCluster frSMCluster) {
+					frSMCluster.target?.gSetDefinition(containerValue.getContainerDefinition("FrSMCluster"))
+					super.delegateAdd(frSMCluster)
+				}
+				
+				override protected delegateAdd(int index, FrSMCluster frSMCluster) {
+					frSMCluster.target?.gSetDefinition(containerValue.getContainerDefinition("FrSMCluster"))
+					super.delegateAdd(index, frSMCluster)
+				}	
+			}
 		}
 		
 		

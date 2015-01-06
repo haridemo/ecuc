@@ -196,7 +196,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddComIfUpperLayerRxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddComIfUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerRxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddComIfUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerRxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+						cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
+						super.delegateAdd(cddComIfUpperLayerRxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+						cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
+						super.delegateAdd(index, cddComIfUpperLayerRxPdu)
+					}	
+				}
 			}
 			
 			def List<CddComIfUpperLayerTxPdu> getCddComIfUpperLayerTxPdus(){
@@ -205,7 +215,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddComIfUpperLayerTxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddComIfUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerTxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddComIfUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerTxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+						cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
+						super.delegateAdd(cddComIfUpperLayerTxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+						cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
+						super.delegateAdd(index, cddComIfUpperLayerTxPdu)
+					}	
+				}
 			}
 			
 			
@@ -340,7 +360,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddComMLowerLayerChannel")
 					}
 				}
-				return new BasicWrappingEList<CddComMLowerLayerChannel, GContainer>(filteredContainers, typeof(CddComMLowerLayerChannel), typeof(GContainer))
+				return new BasicWrappingEList<CddComMLowerLayerChannel, GContainer>(filteredContainers, typeof(CddComMLowerLayerChannel), typeof(GContainer)) {
+					override protected delegateAdd(CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+						cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
+						super.delegateAdd(cddComMLowerLayerChannel)
+					}
+					
+					override protected delegateAdd(int index, CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+						cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
+						super.delegateAdd(index, cddComMLowerLayerChannel)
+					}	
+				}
 			}
 			
 			
@@ -408,7 +438,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddGenericNmLowerLayerChannel")
 					}
 				}
-				return new BasicWrappingEList<CddGenericNmLowerLayerChannel, GContainer>(filteredContainers, typeof(CddGenericNmLowerLayerChannel), typeof(GContainer))
+				return new BasicWrappingEList<CddGenericNmLowerLayerChannel, GContainer>(filteredContainers, typeof(CddGenericNmLowerLayerChannel), typeof(GContainer)) {
+					override protected delegateAdd(CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+						cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
+						super.delegateAdd(cddGenericNmLowerLayerChannel)
+					}
+					
+					override protected delegateAdd(int index, CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+						cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
+						super.delegateAdd(index, cddGenericNmLowerLayerChannel)
+					}	
+				}
 			}
 			
 			
@@ -476,7 +516,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddPduRLowerLayerRxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddPduRLowerLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerRxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddPduRLowerLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerRxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+						cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
+						super.delegateAdd(cddPduRLowerLayerRxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+						cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
+						super.delegateAdd(index, cddPduRLowerLayerRxPdu)
+					}	
+				}
 			}
 			
 			def List<CddPduRLowerLayerTxPdu> getCddPduRLowerLayerTxPdus(){
@@ -485,7 +535,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddPduRLowerLayerTxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddPduRLowerLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerTxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddPduRLowerLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerTxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+						cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
+						super.delegateAdd(cddPduRLowerLayerTxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+						cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
+						super.delegateAdd(index, cddPduRLowerLayerTxPdu)
+					}	
+				}
 			}
 			
 			
@@ -686,7 +746,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddPduRUpperLayerRxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddPduRUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerRxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddPduRUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerRxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+						cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
+						super.delegateAdd(cddPduRUpperLayerRxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+						cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
+						super.delegateAdd(index, cddPduRUpperLayerRxPdu)
+					}	
+				}
 			}
 			
 			def List<CddPduRUpperLayerTxPdu> getCddPduRUpperLayerTxPdus(){
@@ -695,7 +765,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddPduRUpperLayerTxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddPduRUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerTxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddPduRUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerTxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+						cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
+						super.delegateAdd(cddPduRUpperLayerTxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+						cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
+						super.delegateAdd(index, cddPduRUpperLayerTxPdu)
+					}	
+				}
 			}
 			
 			
@@ -896,7 +976,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddSoAdUpperLayerRxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddSoAdUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerRxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddSoAdUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerRxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+						cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
+						super.delegateAdd(cddSoAdUpperLayerRxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+						cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
+						super.delegateAdd(index, cddSoAdUpperLayerRxPdu)
+					}	
+				}
 			}
 			
 			def List<CddSoAdUpperLayerTxPdu> getCddSoAdUpperLayerTxPdus(){
@@ -905,7 +995,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						return accept(item, typeof(GContainerDef), "CddSoAdUpperLayerTxPdu")
 					}
 				}
-				return new BasicWrappingEList<CddSoAdUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerTxPdu), typeof(GContainer))
+				return new BasicWrappingEList<CddSoAdUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerTxPdu), typeof(GContainer)) {
+					override protected delegateAdd(CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+						cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
+						super.delegateAdd(cddSoAdUpperLayerTxPdu)
+					}
+					
+					override protected delegateAdd(int index, CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+						cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
+						super.delegateAdd(index, cddSoAdUpperLayerTxPdu)
+					}	
+				}
 			}
 			
 			
@@ -1223,7 +1323,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddComIfUpperLayerRxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddComIfUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerRxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddComIfUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerRxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+							cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
+							super.delegateAdd(cddComIfUpperLayerRxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+							cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
+							super.delegateAdd(index, cddComIfUpperLayerRxPdu)
+						}	
+					}
 				}
 				
 				def List<CddComIfUpperLayerTxPdu> getCddComIfUpperLayerTxPdus(){
@@ -1232,7 +1342,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddComIfUpperLayerTxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddComIfUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerTxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddComIfUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerTxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+							cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
+							super.delegateAdd(cddComIfUpperLayerTxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+							cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
+							super.delegateAdd(index, cddComIfUpperLayerTxPdu)
+						}	
+					}
 				}
 				
 				
@@ -1367,7 +1487,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddComMLowerLayerChannel")
 						}
 					}
-					return new BasicWrappingEList<CddComMLowerLayerChannel, GContainer>(filteredContainers, typeof(CddComMLowerLayerChannel), typeof(GContainer))
+					return new BasicWrappingEList<CddComMLowerLayerChannel, GContainer>(filteredContainers, typeof(CddComMLowerLayerChannel), typeof(GContainer)) {
+						override protected delegateAdd(CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+							cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
+							super.delegateAdd(cddComMLowerLayerChannel)
+						}
+						
+						override protected delegateAdd(int index, CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+							cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
+							super.delegateAdd(index, cddComMLowerLayerChannel)
+						}	
+					}
 				}
 				
 				
@@ -1435,7 +1565,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddGenericNmLowerLayerChannel")
 						}
 					}
-					return new BasicWrappingEList<CddGenericNmLowerLayerChannel, GContainer>(filteredContainers, typeof(CddGenericNmLowerLayerChannel), typeof(GContainer))
+					return new BasicWrappingEList<CddGenericNmLowerLayerChannel, GContainer>(filteredContainers, typeof(CddGenericNmLowerLayerChannel), typeof(GContainer)) {
+						override protected delegateAdd(CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+							cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
+							super.delegateAdd(cddGenericNmLowerLayerChannel)
+						}
+						
+						override protected delegateAdd(int index, CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+							cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
+							super.delegateAdd(index, cddGenericNmLowerLayerChannel)
+						}	
+					}
 				}
 				
 				
@@ -1503,7 +1643,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddPduRLowerLayerRxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddPduRLowerLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerRxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddPduRLowerLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerRxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+							cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
+							super.delegateAdd(cddPduRLowerLayerRxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+							cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
+							super.delegateAdd(index, cddPduRLowerLayerRxPdu)
+						}	
+					}
 				}
 				
 				def List<CddPduRLowerLayerTxPdu> getCddPduRLowerLayerTxPdus(){
@@ -1512,7 +1662,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddPduRLowerLayerTxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddPduRLowerLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerTxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddPduRLowerLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerTxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+							cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
+							super.delegateAdd(cddPduRLowerLayerTxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+							cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
+							super.delegateAdd(index, cddPduRLowerLayerTxPdu)
+						}	
+					}
 				}
 				
 				
@@ -1713,7 +1873,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddPduRUpperLayerRxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddPduRUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerRxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddPduRUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerRxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+							cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
+							super.delegateAdd(cddPduRUpperLayerRxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+							cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
+							super.delegateAdd(index, cddPduRUpperLayerRxPdu)
+						}	
+					}
 				}
 				
 				def List<CddPduRUpperLayerTxPdu> getCddPduRUpperLayerTxPdus(){
@@ -1722,7 +1892,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddPduRUpperLayerTxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddPduRUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerTxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddPduRUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerTxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+							cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
+							super.delegateAdd(cddPduRUpperLayerTxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+							cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
+							super.delegateAdd(index, cddPduRUpperLayerTxPdu)
+						}	
+					}
 				}
 				
 				
@@ -1923,7 +2103,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddSoAdUpperLayerRxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddSoAdUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerRxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddSoAdUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerRxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+							cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
+							super.delegateAdd(cddSoAdUpperLayerRxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+							cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
+							super.delegateAdd(index, cddSoAdUpperLayerRxPdu)
+						}	
+					}
 				}
 				
 				def List<CddSoAdUpperLayerTxPdu> getCddSoAdUpperLayerTxPdus(){
@@ -1932,7 +2122,17 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 							return accept(item, typeof(GContainerDef), "CddSoAdUpperLayerTxPdu")
 						}
 					}
-					return new BasicWrappingEList<CddSoAdUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerTxPdu), typeof(GContainer))
+					return new BasicWrappingEList<CddSoAdUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerTxPdu), typeof(GContainer)) {
+						override protected delegateAdd(CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+							cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
+							super.delegateAdd(cddSoAdUpperLayerTxPdu)
+						}
+						
+						override protected delegateAdd(int index, CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+							cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
+							super.delegateAdd(index, cddSoAdUpperLayerTxPdu)
+						}	
+					}
 				}
 				
 				

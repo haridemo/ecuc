@@ -120,7 +120,17 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "GptChannelConfiguration")
 				}
 			}
-			return new BasicWrappingEList<GptChannelConfiguration, GContainer>(filteredContainers, typeof(GptChannelConfiguration), typeof(GContainer))
+			return new BasicWrappingEList<GptChannelConfiguration, GContainer>(filteredContainers, typeof(GptChannelConfiguration), typeof(GContainer)) {
+				override protected delegateAdd(GptChannelConfiguration gptChannelConfiguration) {
+					gptChannelConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("GptChannelConfiguration"))
+					super.delegateAdd(gptChannelConfiguration)
+				}
+				
+				override protected delegateAdd(int index, GptChannelConfiguration gptChannelConfiguration) {
+					gptChannelConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("GptChannelConfiguration"))
+					super.delegateAdd(index, gptChannelConfiguration)
+				}	
+			}
 		}
 		
 		
@@ -548,7 +558,17 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					return accept(item, typeof(GContainerDef), "GptClockReferencePoint")
 				}
 			}
-			return new BasicWrappingEList<GptClockReferencePoint, GContainer>(filteredContainers, typeof(GptClockReferencePoint), typeof(GContainer))
+			return new BasicWrappingEList<GptClockReferencePoint, GContainer>(filteredContainers, typeof(GptClockReferencePoint), typeof(GContainer)) {
+				override protected delegateAdd(GptClockReferencePoint gptClockReferencePoint) {
+					gptClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("GptClockReferencePoint"))
+					super.delegateAdd(gptClockReferencePoint)
+				}
+				
+				override protected delegateAdd(int index, GptClockReferencePoint gptClockReferencePoint) {
+					gptClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("GptClockReferencePoint"))
+					super.delegateAdd(index, gptClockReferencePoint)
+				}	
+			}
 		}
 		
 		
