@@ -82,9 +82,6 @@ class EcucValueAccessorUtil {
 	}
 	
 	def static GContainerDef getContainerDefinition(GARObject parent, String containerDefName){
-		Assert.isTrue(parent instanceof GModuleConfiguration || parent instanceof GContainer)
-		
-		// Sets the right container definition if not yet done
 		if (parent instanceof GModuleConfiguration){
 			return parent.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals(containerDefName)]
 		} else if (parent instanceof GContainer){
