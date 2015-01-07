@@ -64,7 +64,7 @@ public abstract class AbstractGenerateFromAutosarAction extends BaseSelectionLis
 				selectedFile = EcorePlatformUtil.getFile(selected);
 			}
 
-			String fileExtension = selectedFile.getFileExtension();
+			String fileExtension = selectedFile != null ? selectedFile.getFileExtension() : null;
 			if (fileExtension != null && fileExtension.equals(AutosarReleaseDescriptor.ARXML_DEFAULT_FILE_EXTENSION)) {
 				selectedAutosarFile = selectedFile;
 			}
