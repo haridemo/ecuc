@@ -113,12 +113,12 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<XcpDaqList, GContainer>(filteredContainers, typeof(XcpDaqList), typeof(GContainer)) {
-				override protected delegateAdd(XcpDaqList xcpDaqList) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList xcpDaqList) {
 					xcpDaqList.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDaqList"))
 					super.delegateAdd(xcpDaqList)
 				}
 				
-				override protected delegateAdd(int index, XcpDaqList xcpDaqList) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList xcpDaqList) {
 					xcpDaqList.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDaqList"))
 					super.delegateAdd(index, xcpDaqList)
 				}	
@@ -132,12 +132,12 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<XcpEventChannel, GContainer>(filteredContainers, typeof(XcpEventChannel), typeof(GContainer)) {
-				override protected delegateAdd(XcpEventChannel xcpEventChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpEventChannel xcpEventChannel) {
 					xcpEventChannel.target?.gSetDefinition(containerValue.getContainerDefinition("XcpEventChannel"))
 					super.delegateAdd(xcpEventChannel)
 				}
 				
-				override protected delegateAdd(int index, XcpEventChannel xcpEventChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpEventChannel xcpEventChannel) {
 					xcpEventChannel.target?.gSetDefinition(containerValue.getContainerDefinition("XcpEventChannel"))
 					super.delegateAdd(index, xcpEventChannel)
 				}	
@@ -151,12 +151,12 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<XcpPdu, GContainer>(filteredContainers, typeof(XcpPdu), typeof(GContainer)) {
-				override protected delegateAdd(XcpPdu xcpPdu) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpPdu xcpPdu) {
 					xcpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("XcpPdu"))
 					super.delegateAdd(xcpPdu)
 				}
 				
-				override protected delegateAdd(int index, XcpPdu xcpPdu) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpPdu xcpPdu) {
 					xcpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("XcpPdu"))
 					super.delegateAdd(index, xcpPdu)
 				}	
@@ -275,12 +275,12 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<XcpDto, GContainer>(filteredContainers, typeof(XcpDto), typeof(GContainer)) {
-					override protected delegateAdd(XcpDto xcpDto) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList$XcpDto xcpDto) {
 						xcpDto.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDto"))
 						super.delegateAdd(xcpDto)
 					}
 					
-					override protected delegateAdd(int index, XcpDto xcpDto) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList$XcpDto xcpDto) {
 						xcpDto.target?.gSetDefinition(containerValue.getContainerDefinition("XcpDto"))
 						super.delegateAdd(index, xcpDto)
 					}	
@@ -294,12 +294,12 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<XcpOdt, GContainer>(filteredContainers, typeof(XcpOdt), typeof(GContainer)) {
-					override protected delegateAdd(XcpOdt xcpOdt) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList$XcpOdt xcpOdt) {
 						xcpOdt.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdt"))
 						super.delegateAdd(xcpOdt)
 					}
 					
-					override protected delegateAdd(int index, XcpOdt xcpOdt) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList$XcpOdt xcpOdt) {
 						xcpOdt.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdt"))
 						super.delegateAdd(index, xcpOdt)
 					}	
@@ -419,12 +419,12 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<XcpOdtEntry, GContainer>(filteredContainers, typeof(XcpOdtEntry), typeof(GContainer)) {
-						override protected delegateAdd(XcpOdtEntry xcpOdtEntry) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList$XcpOdt$XcpOdtEntry xcpOdtEntry) {
 							xcpOdtEntry.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdtEntry"))
 							super.delegateAdd(xcpOdtEntry)
 						}
 						
-						override protected delegateAdd(int index, XcpOdtEntry xcpOdtEntry) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xcp$XcpConfig$XcpDaqList$XcpOdt$XcpOdtEntry xcpOdtEntry) {
 							xcpOdtEntry.target?.gSetDefinition(containerValue.getContainerDefinition("XcpOdtEntry"))
 							super.delegateAdd(index, xcpOdtEntry)
 						}	

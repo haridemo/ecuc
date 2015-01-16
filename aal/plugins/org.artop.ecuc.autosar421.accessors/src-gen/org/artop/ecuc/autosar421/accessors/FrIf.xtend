@@ -129,12 +129,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrIfCluster, GContainer>(filteredContainers, typeof(FrIfCluster), typeof(GContainer)) {
-				override protected delegateAdd(FrIfCluster frIfCluster) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster frIfCluster) {
 					frIfCluster.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfCluster"))
 					super.delegateAdd(frIfCluster)
 				}
 				
-				override protected delegateAdd(int index, FrIfCluster frIfCluster) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster frIfCluster) {
 					frIfCluster.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfCluster"))
 					super.delegateAdd(index, frIfCluster)
 				}	
@@ -148,12 +148,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrIfFrameStructure, GContainer>(filteredContainers, typeof(FrIfFrameStructure), typeof(GContainer)) {
-				override protected delegateAdd(FrIfFrameStructure frIfFrameStructure) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfFrameStructure frIfFrameStructure) {
 					frIfFrameStructure.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfFrameStructure"))
 					super.delegateAdd(frIfFrameStructure)
 				}
 				
-				override protected delegateAdd(int index, FrIfFrameStructure frIfFrameStructure) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfFrameStructure frIfFrameStructure) {
 					frIfFrameStructure.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfFrameStructure"))
 					super.delegateAdd(index, frIfFrameStructure)
 				}	
@@ -167,12 +167,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrIfPdu, GContainer>(filteredContainers, typeof(FrIfPdu), typeof(GContainer)) {
-				override protected delegateAdd(FrIfPdu frIfPdu) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfPdu frIfPdu) {
 					frIfPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfPdu"))
 					super.delegateAdd(frIfPdu)
 				}
 				
-				override protected delegateAdd(int index, FrIfPdu frIfPdu) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfPdu frIfPdu) {
 					frIfPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfPdu"))
 					super.delegateAdd(index, frIfPdu)
 				}	
@@ -850,12 +850,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrIfController, GContainer>(filteredContainers, typeof(FrIfController), typeof(GContainer)) {
-					override protected delegateAdd(FrIfController frIfController) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController frIfController) {
 						frIfController.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfController"))
 						super.delegateAdd(frIfController)
 					}
 					
-					override protected delegateAdd(int index, FrIfController frIfController) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController frIfController) {
 						frIfController.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfController"))
 						super.delegateAdd(index, frIfController)
 					}	
@@ -1017,12 +1017,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrIfFrameTriggering, GContainer>(filteredContainers, typeof(FrIfFrameTriggering), typeof(GContainer)) {
-						override protected delegateAdd(FrIfFrameTriggering frIfFrameTriggering) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController$FrIfFrameTriggering frIfFrameTriggering) {
 							frIfFrameTriggering.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfFrameTriggering"))
 							super.delegateAdd(frIfFrameTriggering)
 						}
 						
-						override protected delegateAdd(int index, FrIfFrameTriggering frIfFrameTriggering) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController$FrIfFrameTriggering frIfFrameTriggering) {
 							frIfFrameTriggering.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfFrameTriggering"))
 							super.delegateAdd(index, frIfFrameTriggering)
 						}	
@@ -1036,12 +1036,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrIfLPdu, GContainer>(filteredContainers, typeof(FrIfLPdu), typeof(GContainer)) {
-						override protected delegateAdd(FrIfLPdu frIfLPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController$FrIfLPdu frIfLPdu) {
 							frIfLPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfLPdu"))
 							super.delegateAdd(frIfLPdu)
 						}
 						
-						override protected delegateAdd(int index, FrIfLPdu frIfLPdu) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController$FrIfLPdu frIfLPdu) {
 							frIfLPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfLPdu"))
 							super.delegateAdd(index, frIfLPdu)
 						}	
@@ -1055,12 +1055,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrIfTransceiver, GContainer>(filteredContainers, typeof(FrIfTransceiver), typeof(GContainer)) {
-						override protected delegateAdd(FrIfTransceiver frIfTransceiver) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController$FrIfTransceiver frIfTransceiver) {
 							frIfTransceiver.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfTransceiver"))
 							super.delegateAdd(frIfTransceiver)
 						}
 						
-						override protected delegateAdd(int index, FrIfTransceiver frIfTransceiver) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfController$FrIfTransceiver frIfTransceiver) {
 							frIfTransceiver.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfTransceiver"))
 							super.delegateAdd(index, frIfTransceiver)
 						}	
@@ -1486,12 +1486,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrIfJob, GContainer>(filteredContainers, typeof(FrIfJob), typeof(GContainer)) {
-						override protected delegateAdd(FrIfJob frIfJob) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfJobList$FrIfJob frIfJob) {
 							frIfJob.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfJob"))
 							super.delegateAdd(frIfJob)
 						}
 						
-						override protected delegateAdd(int index, FrIfJob frIfJob) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfJobList$FrIfJob frIfJob) {
 							frIfJob.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfJob"))
 							super.delegateAdd(index, frIfJob)
 						}	
@@ -1575,12 +1575,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 							}
 						}
 						return new BasicWrappingEList<FrIfCommunicationOperation, GContainer>(filteredContainers, typeof(FrIfCommunicationOperation), typeof(GContainer)) {
-							override protected delegateAdd(FrIfCommunicationOperation frIfCommunicationOperation) {
+							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfJobList$FrIfJob$FrIfCommunicationOperation frIfCommunicationOperation) {
 								frIfCommunicationOperation.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfCommunicationOperation"))
 								super.delegateAdd(frIfCommunicationOperation)
 							}
 							
-							override protected delegateAdd(int index, FrIfCommunicationOperation frIfCommunicationOperation) {
+							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfCluster$FrIfJobList$FrIfJob$FrIfCommunicationOperation frIfCommunicationOperation) {
 								frIfCommunicationOperation.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfCommunicationOperation"))
 								super.delegateAdd(index, frIfCommunicationOperation)
 							}	
@@ -1767,12 +1767,12 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrIfPdusInFrame, GContainer>(filteredContainers, typeof(FrIfPdusInFrame), typeof(GContainer)) {
-					override protected delegateAdd(FrIfPdusInFrame frIfPdusInFrame) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfFrameStructure$FrIfPdusInFrame frIfPdusInFrame) {
 						frIfPdusInFrame.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfPdusInFrame"))
 						super.delegateAdd(frIfPdusInFrame)
 					}
 					
-					override protected delegateAdd(int index, FrIfPdusInFrame frIfPdusInFrame) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrIf$FrIfConfig$FrIfFrameStructure$FrIfPdusInFrame frIfPdusInFrame) {
 						frIfPdusInFrame.target?.gSetDefinition(containerValue.getContainerDefinition("FrIfPdusInFrame"))
 						super.delegateAdd(index, frIfPdusInFrame)
 					}	

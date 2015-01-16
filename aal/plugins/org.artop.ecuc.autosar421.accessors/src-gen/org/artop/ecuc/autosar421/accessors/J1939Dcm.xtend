@@ -113,12 +113,12 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<J1939DcmChannel, GContainer>(filteredContainers, typeof(J1939DcmChannel), typeof(GContainer)) {
-				override protected delegateAdd(J1939DcmChannel j1939DcmChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Dcm$J1939DcmConfigSet$J1939DcmChannel j1939DcmChannel) {
 					j1939DcmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmChannel"))
 					super.delegateAdd(j1939DcmChannel)
 				}
 				
-				override protected delegateAdd(int index, J1939DcmChannel j1939DcmChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Dcm$J1939DcmConfigSet$J1939DcmChannel j1939DcmChannel) {
 					j1939DcmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmChannel"))
 					super.delegateAdd(index, j1939DcmChannel)
 				}	
@@ -132,12 +132,12 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<J1939DcmNode, GContainer>(filteredContainers, typeof(J1939DcmNode), typeof(GContainer)) {
-				override protected delegateAdd(J1939DcmNode j1939DcmNode) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Dcm$J1939DcmConfigSet$J1939DcmNode j1939DcmNode) {
 					j1939DcmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmNode"))
 					super.delegateAdd(j1939DcmNode)
 				}
 				
-				override protected delegateAdd(int index, J1939DcmNode j1939DcmNode) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Dcm$J1939DcmConfigSet$J1939DcmNode j1939DcmNode) {
 					j1939DcmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmNode"))
 					super.delegateAdd(index, j1939DcmNode)
 				}	
@@ -288,12 +288,12 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<J1939DcmDiagnosticMessageSupport, GContainer>(filteredContainers, typeof(J1939DcmDiagnosticMessageSupport), typeof(GContainer)) {
-					override protected delegateAdd(J1939DcmDiagnosticMessageSupport j1939DcmDiagnosticMessageSupport) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Dcm$J1939DcmConfigSet$J1939DcmNode$J1939DcmDiagnosticMessageSupport j1939DcmDiagnosticMessageSupport) {
 						j1939DcmDiagnosticMessageSupport.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmDiagnosticMessageSupport"))
 						super.delegateAdd(j1939DcmDiagnosticMessageSupport)
 					}
 					
-					override protected delegateAdd(int index, J1939DcmDiagnosticMessageSupport j1939DcmDiagnosticMessageSupport) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Dcm$J1939DcmConfigSet$J1939DcmNode$J1939DcmDiagnosticMessageSupport j1939DcmDiagnosticMessageSupport) {
 						j1939DcmDiagnosticMessageSupport.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmDiagnosticMessageSupport"))
 						super.delegateAdd(index, j1939DcmDiagnosticMessageSupport)
 					}	

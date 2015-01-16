@@ -244,12 +244,12 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<Pdu, GContainer>(filteredContainers, typeof(Pdu), typeof(GContainer)) {
-					override protected delegateAdd(Pdu pdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC$EcucConfigSet$EcucPduCollection$Pdu pdu) {
 						pdu.target?.gSetDefinition(containerValue.getContainerDefinition("Pdu"))
 						super.delegateAdd(pdu)
 					}
 					
-					override protected delegateAdd(int index, Pdu pdu) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC$EcucConfigSet$EcucPduCollection$Pdu pdu) {
 						pdu.target?.gSetDefinition(containerValue.getContainerDefinition("Pdu"))
 						super.delegateAdd(index, pdu)
 					}	
@@ -346,12 +346,12 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EcucCoreDefinition, GContainer>(filteredContainers, typeof(EcucCoreDefinition), typeof(GContainer)) {
-				override protected delegateAdd(EcucCoreDefinition ecucCoreDefinition) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC$EcucHardware$EcucCoreDefinition ecucCoreDefinition) {
 					ecucCoreDefinition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucCoreDefinition"))
 					super.delegateAdd(ecucCoreDefinition)
 				}
 				
-				override protected delegateAdd(int index, EcucCoreDefinition ecucCoreDefinition) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC$EcucHardware$EcucCoreDefinition ecucCoreDefinition) {
 					ecucCoreDefinition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucCoreDefinition"))
 					super.delegateAdd(index, ecucCoreDefinition)
 				}	
@@ -429,12 +429,12 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EcucPartition, GContainer>(filteredContainers, typeof(EcucPartition), typeof(GContainer)) {
-				override protected delegateAdd(EcucPartition ecucPartition) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC$EcucPartitionCollection$EcucPartition ecucPartition) {
 					ecucPartition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucPartition"))
 					super.delegateAdd(ecucPartition)
 				}
 				
-				override protected delegateAdd(int index, EcucPartition ecucPartition) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC$EcucPartitionCollection$EcucPartition ecucPartition) {
 					ecucPartition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucPartition"))
 					super.delegateAdd(index, ecucPartition)
 				}	

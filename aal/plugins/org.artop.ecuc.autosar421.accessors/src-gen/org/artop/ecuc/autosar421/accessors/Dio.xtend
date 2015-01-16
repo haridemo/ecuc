@@ -113,12 +113,12 @@ class Dio implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DioPort, GContainer>(filteredContainers, typeof(DioPort), typeof(GContainer)) {
-				override protected delegateAdd(DioPort dioPort) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort dioPort) {
 					dioPort.target?.gSetDefinition(containerValue.getContainerDefinition("DioPort"))
 					super.delegateAdd(dioPort)
 				}
 				
-				override protected delegateAdd(int index, DioPort dioPort) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort dioPort) {
 					dioPort.target?.gSetDefinition(containerValue.getContainerDefinition("DioPort"))
 					super.delegateAdd(index, dioPort)
 				}	
@@ -170,12 +170,12 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DioChannel, GContainer>(filteredContainers, typeof(DioChannel), typeof(GContainer)) {
-					override protected delegateAdd(DioChannel dioChannel) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannel dioChannel) {
 						dioChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannel"))
 						super.delegateAdd(dioChannel)
 					}
 					
-					override protected delegateAdd(int index, DioChannel dioChannel) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannel dioChannel) {
 						dioChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannel"))
 						super.delegateAdd(index, dioChannel)
 					}	
@@ -189,12 +189,12 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DioChannelGroup, GContainer>(filteredContainers, typeof(DioChannelGroup), typeof(GContainer)) {
-					override protected delegateAdd(DioChannelGroup dioChannelGroup) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannelGroup dioChannelGroup) {
 						dioChannelGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannelGroup"))
 						super.delegateAdd(dioChannelGroup)
 					}
 					
-					override protected delegateAdd(int index, DioChannelGroup dioChannelGroup) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannelGroup dioChannelGroup) {
 						dioChannelGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannelGroup"))
 						super.delegateAdd(index, dioChannelGroup)
 					}	

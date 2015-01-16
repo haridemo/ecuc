@@ -137,12 +137,12 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<IcuChannel, GContainer>(filteredContainers, typeof(IcuChannel), typeof(GContainer)) {
-				override protected delegateAdd(IcuChannel icuChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Icu$IcuConfigSet$IcuChannel icuChannel) {
 					icuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("IcuChannel"))
 					super.delegateAdd(icuChannel)
 				}
 				
-				override protected delegateAdd(int index, IcuChannel icuChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Icu$IcuConfigSet$IcuChannel icuChannel) {
 					icuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("IcuChannel"))
 					super.delegateAdd(index, icuChannel)
 				}	

@@ -113,12 +113,12 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthTrcvConfig, GContainer>(filteredContainers, typeof(EthTrcvConfig), typeof(GContainer)) {
-				override protected delegateAdd(EthTrcvConfig ethTrcvConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig ethTrcvConfig) {
 					ethTrcvConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvConfig"))
 					super.delegateAdd(ethTrcvConfig)
 				}
 				
-				override protected delegateAdd(int index, EthTrcvConfig ethTrcvConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig ethTrcvConfig) {
 					ethTrcvConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvConfig"))
 					super.delegateAdd(index, ethTrcvConfig)
 				}	
@@ -390,12 +390,12 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<EthTrcvWakeupMap, GContainer>(filteredContainers, typeof(EthTrcvWakeupMap), typeof(GContainer)) {
-					override protected delegateAdd(EthTrcvWakeupMap ethTrcvWakeupMap) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig$EthTrcvWakeupMap ethTrcvWakeupMap) {
 						ethTrcvWakeupMap.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvWakeupMap"))
 						super.delegateAdd(ethTrcvWakeupMap)
 					}
 					
-					override protected delegateAdd(int index, EthTrcvWakeupMap ethTrcvWakeupMap) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig$EthTrcvWakeupMap ethTrcvWakeupMap) {
 						ethTrcvWakeupMap.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvWakeupMap"))
 						super.delegateAdd(index, ethTrcvWakeupMap)
 					}	

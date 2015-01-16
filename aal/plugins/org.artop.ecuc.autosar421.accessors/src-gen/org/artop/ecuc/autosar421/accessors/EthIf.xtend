@@ -113,12 +113,12 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthIfController, GContainer>(filteredContainers, typeof(EthIfController), typeof(GContainer)) {
-				override protected delegateAdd(EthIfController ethIfController) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfController ethIfController) {
 					ethIfController.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfController"))
 					super.delegateAdd(ethIfController)
 				}
 				
-				override protected delegateAdd(int index, EthIfController ethIfController) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfController ethIfController) {
 					ethIfController.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfController"))
 					super.delegateAdd(index, ethIfController)
 				}	
@@ -132,12 +132,12 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthIfFrameOwnerConfig, GContainer>(filteredContainers, typeof(EthIfFrameOwnerConfig), typeof(GContainer)) {
-				override protected delegateAdd(EthIfFrameOwnerConfig ethIfFrameOwnerConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfFrameOwnerConfig ethIfFrameOwnerConfig) {
 					ethIfFrameOwnerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfFrameOwnerConfig"))
 					super.delegateAdd(ethIfFrameOwnerConfig)
 				}
 				
-				override protected delegateAdd(int index, EthIfFrameOwnerConfig ethIfFrameOwnerConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfFrameOwnerConfig ethIfFrameOwnerConfig) {
 					ethIfFrameOwnerConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfFrameOwnerConfig"))
 					super.delegateAdd(index, ethIfFrameOwnerConfig)
 				}	
@@ -151,12 +151,12 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthIfRxIndicationConfig, GContainer>(filteredContainers, typeof(EthIfRxIndicationConfig), typeof(GContainer)) {
-				override protected delegateAdd(EthIfRxIndicationConfig ethIfRxIndicationConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfRxIndicationConfig ethIfRxIndicationConfig) {
 					ethIfRxIndicationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfRxIndicationConfig"))
 					super.delegateAdd(ethIfRxIndicationConfig)
 				}
 				
-				override protected delegateAdd(int index, EthIfRxIndicationConfig ethIfRxIndicationConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfRxIndicationConfig ethIfRxIndicationConfig) {
 					ethIfRxIndicationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfRxIndicationConfig"))
 					super.delegateAdd(index, ethIfRxIndicationConfig)
 				}	
@@ -170,12 +170,12 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthIfSwitch, GContainer>(filteredContainers, typeof(EthIfSwitch), typeof(GContainer)) {
-				override protected delegateAdd(EthIfSwitch ethIfSwitch) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfSwitch ethIfSwitch) {
 					ethIfSwitch.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfSwitch"))
 					super.delegateAdd(ethIfSwitch)
 				}
 				
-				override protected delegateAdd(int index, EthIfSwitch ethIfSwitch) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfSwitch ethIfSwitch) {
 					ethIfSwitch.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfSwitch"))
 					super.delegateAdd(index, ethIfSwitch)
 				}	
@@ -189,12 +189,12 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthIfTrcvLinkStateChgConfig, GContainer>(filteredContainers, typeof(EthIfTrcvLinkStateChgConfig), typeof(GContainer)) {
-				override protected delegateAdd(EthIfTrcvLinkStateChgConfig ethIfTrcvLinkStateChgConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfTrcvLinkStateChgConfig ethIfTrcvLinkStateChgConfig) {
 					ethIfTrcvLinkStateChgConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTrcvLinkStateChgConfig"))
 					super.delegateAdd(ethIfTrcvLinkStateChgConfig)
 				}
 				
-				override protected delegateAdd(int index, EthIfTrcvLinkStateChgConfig ethIfTrcvLinkStateChgConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfTrcvLinkStateChgConfig ethIfTrcvLinkStateChgConfig) {
 					ethIfTrcvLinkStateChgConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTrcvLinkStateChgConfig"))
 					super.delegateAdd(index, ethIfTrcvLinkStateChgConfig)
 				}	
@@ -208,12 +208,12 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthIfTxConfirmationConfig, GContainer>(filteredContainers, typeof(EthIfTxConfirmationConfig), typeof(GContainer)) {
-				override protected delegateAdd(EthIfTxConfirmationConfig ethIfTxConfirmationConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfTxConfirmationConfig ethIfTxConfirmationConfig) {
 					ethIfTxConfirmationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTxConfirmationConfig"))
 					super.delegateAdd(ethIfTxConfirmationConfig)
 				}
 				
-				override protected delegateAdd(int index, EthIfTxConfirmationConfig ethIfTxConfirmationConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthIf$EthIfConfigSet$EthIfTxConfirmationConfig ethIfTxConfirmationConfig) {
 					ethIfTxConfirmationConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthIfTxConfirmationConfig"))
 					super.delegateAdd(index, ethIfTxConfirmationConfig)
 				}	

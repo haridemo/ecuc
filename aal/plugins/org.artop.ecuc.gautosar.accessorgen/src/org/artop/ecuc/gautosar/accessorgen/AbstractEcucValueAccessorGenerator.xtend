@@ -145,12 +145,12 @@ public abstract class AbstractEcucValueAccessorGenerator {
 				}
 			}
 			return new BasicWrappingEList<«cont.containerTypeName», GContainer>(filteredContainers, typeof(«cont.containerTypeName»), typeof(GContainer)) {
-				override protected delegateAdd(«cont.containerTypeName» «cont.containerTypeName.toFirstLower») {
+				override protected delegateAdd(«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, cont, "$")» «cont.containerTypeName.toFirstLower») {
 					«cont.containerTypeName.toFirstLower».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("«cont.containerTypeName»"))
 					super.delegateAdd(«cont.containerTypeName.toFirstLower»)
 				}
 			
-				override protected delegateAdd(int index, «cont.containerTypeName» «cont.containerTypeName.toFirstLower») {
+				override protected delegateAdd(int index, «EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, cont, "$")» «cont.containerTypeName.toFirstLower») {
 					«cont.containerTypeName.toFirstLower».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("«cont.containerTypeName»"))
 					super.delegateAdd(index, «cont.containerTypeName.toFirstLower»)
 				}
@@ -299,12 +299,12 @@ public abstract class AbstractEcucValueAccessorGenerator {
 			}
 		}
 		return new BasicWrappingEList<«sc.containerTypeName», GContainer>(filteredContainers, typeof(«sc.containerTypeName»), typeof(GContainer)) {
-			override protected delegateAdd(«sc.containerTypeName» «sc.containerTypeName.toFirstLower») {
+			override protected delegateAdd(«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, sc, "$")» «sc.containerTypeName.toFirstLower») {
 				«sc.containerTypeName.toFirstLower».target?.gSetDefinition(containerValue.getContainerDefinition("«sc.containerTypeName»"))
 				super.delegateAdd(«sc.containerTypeName.toFirstLower»)
 			}
 			
-			override protected delegateAdd(int index, «sc.containerTypeName» «sc.containerTypeName.toFirstLower») {
+			override protected delegateAdd(int index, «EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, sc, "$")» «sc.containerTypeName.toFirstLower») {
 				«sc.containerTypeName.toFirstLower».target?.gSetDefinition(containerValue.getContainerDefinition("«sc.containerTypeName»"))
 				super.delegateAdd(index, «sc.containerTypeName.toFirstLower»)
 			}	

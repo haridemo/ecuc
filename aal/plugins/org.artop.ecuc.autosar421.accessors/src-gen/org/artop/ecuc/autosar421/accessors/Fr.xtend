@@ -296,12 +296,12 @@ class Fr implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrController, GContainer>(filteredContainers, typeof(FrController), typeof(GContainer)) {
-				override protected delegateAdd(FrController frController) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController frController) {
 					frController.target?.gSetDefinition(containerValue.getContainerDefinition("FrController"))
 					super.delegateAdd(frController)
 				}
 				
-				override protected delegateAdd(int index, FrController frController) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController frController) {
 					frController.target?.gSetDefinition(containerValue.getContainerDefinition("FrController"))
 					super.delegateAdd(index, frController)
 				}	
@@ -943,12 +943,12 @@ class Fr implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrAbsoluteTimer, GContainer>(filteredContainers, typeof(FrAbsoluteTimer), typeof(GContainer)) {
-					override protected delegateAdd(FrAbsoluteTimer frAbsoluteTimer) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController$FrAbsoluteTimer frAbsoluteTimer) {
 						frAbsoluteTimer.target?.gSetDefinition(containerValue.getContainerDefinition("FrAbsoluteTimer"))
 						super.delegateAdd(frAbsoluteTimer)
 					}
 					
-					override protected delegateAdd(int index, FrAbsoluteTimer frAbsoluteTimer) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController$FrAbsoluteTimer frAbsoluteTimer) {
 						frAbsoluteTimer.target?.gSetDefinition(containerValue.getContainerDefinition("FrAbsoluteTimer"))
 						super.delegateAdd(index, frAbsoluteTimer)
 					}	
@@ -971,12 +971,12 @@ class Fr implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrFifo, GContainer>(filteredContainers, typeof(FrFifo), typeof(GContainer)) {
-					override protected delegateAdd(FrFifo frFifo) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController$FrFifo frFifo) {
 						frFifo.target?.gSetDefinition(containerValue.getContainerDefinition("FrFifo"))
 						super.delegateAdd(frFifo)
 					}
 					
-					override protected delegateAdd(int index, FrFifo frFifo) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController$FrFifo frFifo) {
 						frFifo.target?.gSetDefinition(containerValue.getContainerDefinition("FrFifo"))
 						super.delegateAdd(index, frFifo)
 					}	
@@ -1218,12 +1218,12 @@ class Fr implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrRange, GContainer>(filteredContainers, typeof(FrRange), typeof(GContainer)) {
-						override protected delegateAdd(FrRange frRange) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController$FrFifo$FrRange frRange) {
 							frRange.target?.gSetDefinition(containerValue.getContainerDefinition("FrRange"))
 							super.delegateAdd(frRange)
 						}
 						
-						override protected delegateAdd(int index, FrRange frRange) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Fr$FrMultipleConfiguration$FrController$FrFifo$FrRange frRange) {
 							frRange.target?.gSetDefinition(containerValue.getContainerDefinition("FrRange"))
 							super.delegateAdd(index, frRange)
 						}	

@@ -75,12 +75,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<SoAdBswModules, GContainer>(filteredContainers, typeof(SoAdBswModules), typeof(GContainer)) {
-			override protected delegateAdd(SoAdBswModules soAdBswModules) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdBswModules soAdBswModules) {
 				soAdBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SoAdBswModules"))
 				super.delegateAdd(soAdBswModules)
 			}
 		
-			override protected delegateAdd(int index, SoAdBswModules soAdBswModules) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdBswModules soAdBswModules) {
 				soAdBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SoAdBswModules"))
 				super.delegateAdd(index, soAdBswModules)
 			}
@@ -283,12 +283,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<SoAdPduRoute, GContainer>(filteredContainers, typeof(SoAdPduRoute), typeof(GContainer)) {
-				override protected delegateAdd(SoAdPduRoute soAdPduRoute) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdPduRoute soAdPduRoute) {
 					soAdPduRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRoute"))
 					super.delegateAdd(soAdPduRoute)
 				}
 				
-				override protected delegateAdd(int index, SoAdPduRoute soAdPduRoute) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdPduRoute soAdPduRoute) {
 					soAdPduRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRoute"))
 					super.delegateAdd(index, soAdPduRoute)
 				}	
@@ -302,12 +302,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<SoAdRoutingGroup, GContainer>(filteredContainers, typeof(SoAdRoutingGroup), typeof(GContainer)) {
-				override protected delegateAdd(SoAdRoutingGroup soAdRoutingGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdRoutingGroup soAdRoutingGroup) {
 					soAdRoutingGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdRoutingGroup"))
 					super.delegateAdd(soAdRoutingGroup)
 				}
 				
-				override protected delegateAdd(int index, SoAdRoutingGroup soAdRoutingGroup) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdRoutingGroup soAdRoutingGroup) {
 					soAdRoutingGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdRoutingGroup"))
 					super.delegateAdd(index, soAdRoutingGroup)
 				}	
@@ -321,12 +321,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<SoAdSocketConnectionGroup, GContainer>(filteredContainers, typeof(SoAdSocketConnectionGroup), typeof(GContainer)) {
-				override protected delegateAdd(SoAdSocketConnectionGroup soAdSocketConnectionGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdSocketConnectionGroup soAdSocketConnectionGroup) {
 					soAdSocketConnectionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnectionGroup"))
 					super.delegateAdd(soAdSocketConnectionGroup)
 				}
 				
-				override protected delegateAdd(int index, SoAdSocketConnectionGroup soAdSocketConnectionGroup) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdSocketConnectionGroup soAdSocketConnectionGroup) {
 					soAdSocketConnectionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnectionGroup"))
 					super.delegateAdd(index, soAdSocketConnectionGroup)
 				}	
@@ -340,12 +340,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<SoAdSocketRoute, GContainer>(filteredContainers, typeof(SoAdSocketRoute), typeof(GContainer)) {
-				override protected delegateAdd(SoAdSocketRoute soAdSocketRoute) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdSocketRoute soAdSocketRoute) {
 					soAdSocketRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketRoute"))
 					super.delegateAdd(soAdSocketRoute)
 				}
 				
-				override protected delegateAdd(int index, SoAdSocketRoute soAdSocketRoute) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdSocketRoute soAdSocketRoute) {
 					soAdSocketRoute.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketRoute"))
 					super.delegateAdd(index, soAdSocketRoute)
 				}	
@@ -441,12 +441,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<SoAdPduRouteDest, GContainer>(filteredContainers, typeof(SoAdPduRouteDest), typeof(GContainer)) {
-					override protected delegateAdd(SoAdPduRouteDest soAdPduRouteDest) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdPduRoute$SoAdPduRouteDest soAdPduRouteDest) {
 						soAdPduRouteDest.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRouteDest"))
 						super.delegateAdd(soAdPduRouteDest)
 					}
 					
-					override protected delegateAdd(int index, SoAdPduRouteDest soAdPduRouteDest) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdPduRoute$SoAdPduRouteDest soAdPduRouteDest) {
 						soAdPduRouteDest.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdPduRouteDest"))
 						super.delegateAdd(index, soAdPduRouteDest)
 					}	
@@ -834,12 +834,12 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<SoAdSocketConnection, GContainer>(filteredContainers, typeof(SoAdSocketConnection), typeof(GContainer)) {
-					override protected delegateAdd(SoAdSocketConnection soAdSocketConnection) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdSocketConnectionGroup$SoAdSocketConnection soAdSocketConnection) {
 						soAdSocketConnection.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnection"))
 						super.delegateAdd(soAdSocketConnection)
 					}
 					
-					override protected delegateAdd(int index, SoAdSocketConnection soAdSocketConnection) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SoAd$SoAdConfig$SoAdSocketConnectionGroup$SoAdSocketConnection soAdSocketConnection) {
 						soAdSocketConnection.target?.gSetDefinition(containerValue.getContainerDefinition("SoAdSocketConnection"))
 						super.delegateAdd(index, soAdSocketConnection)
 					}	

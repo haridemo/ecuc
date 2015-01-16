@@ -145,12 +145,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComGwMapping, GContainer>(filteredContainers, typeof(ComGwMapping), typeof(GContainer)) {
-				override protected delegateAdd(ComGwMapping comGwMapping) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComGwMapping comGwMapping) {
 					comGwMapping.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwMapping"))
 					super.delegateAdd(comGwMapping)
 				}
 				
-				override protected delegateAdd(int index, ComGwMapping comGwMapping) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComGwMapping comGwMapping) {
 					comGwMapping.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwMapping"))
 					super.delegateAdd(index, comGwMapping)
 				}	
@@ -164,12 +164,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComIPdu, GContainer>(filteredContainers, typeof(ComIPdu), typeof(GContainer)) {
-				override protected delegateAdd(ComIPdu comIPdu) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComIPdu comIPdu) {
 					comIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPdu"))
 					super.delegateAdd(comIPdu)
 				}
 				
-				override protected delegateAdd(int index, ComIPdu comIPdu) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComIPdu comIPdu) {
 					comIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPdu"))
 					super.delegateAdd(index, comIPdu)
 				}	
@@ -183,12 +183,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComIPduGroup, GContainer>(filteredContainers, typeof(ComIPduGroup), typeof(GContainer)) {
-				override protected delegateAdd(ComIPduGroup comIPduGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComIPduGroup comIPduGroup) {
 					comIPduGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPduGroup"))
 					super.delegateAdd(comIPduGroup)
 				}
 				
-				override protected delegateAdd(int index, ComIPduGroup comIPduGroup) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComIPduGroup comIPduGroup) {
 					comIPduGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComIPduGroup"))
 					super.delegateAdd(index, comIPduGroup)
 				}	
@@ -202,12 +202,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComSignal, GContainer>(filteredContainers, typeof(ComSignal), typeof(GContainer)) {
-				override protected delegateAdd(ComSignal comSignal) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComSignal comSignal) {
 					comSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignal"))
 					super.delegateAdd(comSignal)
 				}
 				
-				override protected delegateAdd(int index, ComSignal comSignal) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComSignal comSignal) {
 					comSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignal"))
 					super.delegateAdd(index, comSignal)
 				}	
@@ -221,12 +221,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComSignalGroup, GContainer>(filteredContainers, typeof(ComSignalGroup), typeof(GContainer)) {
-				override protected delegateAdd(ComSignalGroup comSignalGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComSignalGroup comSignalGroup) {
 					comSignalGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignalGroup"))
 					super.delegateAdd(comSignalGroup)
 				}
 				
-				override protected delegateAdd(int index, ComSignalGroup comSignalGroup) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComSignalGroup comSignalGroup) {
 					comSignalGroup.target?.gSetDefinition(containerValue.getContainerDefinition("ComSignalGroup"))
 					super.delegateAdd(index, comSignalGroup)
 				}	
@@ -271,12 +271,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<ComGwDestination, GContainer>(filteredContainers, typeof(ComGwDestination), typeof(GContainer)) {
-					override protected delegateAdd(ComGwDestination comGwDestination) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComGwMapping$ComGwDestination comGwDestination) {
 						comGwDestination.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwDestination"))
 						super.delegateAdd(comGwDestination)
 					}
 					
-					override protected delegateAdd(int index, ComGwDestination comGwDestination) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComGwMapping$ComGwDestination comGwDestination) {
 						comGwDestination.target?.gSetDefinition(containerValue.getContainerDefinition("ComGwDestination"))
 						super.delegateAdd(index, comGwDestination)
 					}	
@@ -2844,12 +2844,12 @@ class Com implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<ComGroupSignal, GContainer>(filteredContainers, typeof(ComGroupSignal), typeof(GContainer)) {
-					override protected delegateAdd(ComGroupSignal comGroupSignal) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComSignalGroup$ComGroupSignal comGroupSignal) {
 						comGroupSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComGroupSignal"))
 						super.delegateAdd(comGroupSignal)
 					}
 					
-					override protected delegateAdd(int index, ComGroupSignal comGroupSignal) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Com$ComConfig$ComSignalGroup$ComGroupSignal comGroupSignal) {
 						comGroupSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComGroupSignal"))
 						super.delegateAdd(index, comGroupSignal)
 					}	

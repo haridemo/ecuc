@@ -75,12 +75,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<CanIfCtrlDrvCfg, GContainer>(filteredContainers, typeof(CanIfCtrlDrvCfg), typeof(GContainer)) {
-			override protected delegateAdd(CanIfCtrlDrvCfg canIfCtrlDrvCfg) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfCtrlDrvCfg canIfCtrlDrvCfg) {
 				canIfCtrlDrvCfg.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CanIfCtrlDrvCfg"))
 				super.delegateAdd(canIfCtrlDrvCfg)
 			}
 		
-			override protected delegateAdd(int index, CanIfCtrlDrvCfg canIfCtrlDrvCfg) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfCtrlDrvCfg canIfCtrlDrvCfg) {
 				canIfCtrlDrvCfg.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CanIfCtrlDrvCfg"))
 				super.delegateAdd(index, canIfCtrlDrvCfg)
 			}
@@ -125,12 +125,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<CanIfTrcvDrvCfg, GContainer>(filteredContainers, typeof(CanIfTrcvDrvCfg), typeof(GContainer)) {
-			override protected delegateAdd(CanIfTrcvDrvCfg canIfTrcvDrvCfg) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfTrcvDrvCfg canIfTrcvDrvCfg) {
 				canIfTrcvDrvCfg.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CanIfTrcvDrvCfg"))
 				super.delegateAdd(canIfTrcvDrvCfg)
 			}
 		
-			override protected delegateAdd(int index, CanIfTrcvDrvCfg canIfTrcvDrvCfg) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfTrcvDrvCfg canIfTrcvDrvCfg) {
 				canIfTrcvDrvCfg.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CanIfTrcvDrvCfg"))
 				super.delegateAdd(index, canIfTrcvDrvCfg)
 			}
@@ -187,12 +187,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanIfCtrlCfg, GContainer>(filteredContainers, typeof(CanIfCtrlCfg), typeof(GContainer)) {
-				override protected delegateAdd(CanIfCtrlCfg canIfCtrlCfg) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfCtrlDrvCfg$CanIfCtrlCfg canIfCtrlCfg) {
 					canIfCtrlCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfCtrlCfg"))
 					super.delegateAdd(canIfCtrlCfg)
 				}
 				
-				override protected delegateAdd(int index, CanIfCtrlCfg canIfCtrlCfg) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfCtrlDrvCfg$CanIfCtrlCfg canIfCtrlCfg) {
 					canIfCtrlCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfCtrlCfg"))
 					super.delegateAdd(index, canIfCtrlCfg)
 				}	
@@ -726,12 +726,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanIfBufferCfg, GContainer>(filteredContainers, typeof(CanIfBufferCfg), typeof(GContainer)) {
-				override protected delegateAdd(CanIfBufferCfg canIfBufferCfg) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfBufferCfg canIfBufferCfg) {
 					canIfBufferCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfBufferCfg"))
 					super.delegateAdd(canIfBufferCfg)
 				}
 				
-				override protected delegateAdd(int index, CanIfBufferCfg canIfBufferCfg) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfBufferCfg canIfBufferCfg) {
 					canIfBufferCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfBufferCfg"))
 					super.delegateAdd(index, canIfBufferCfg)
 				}	
@@ -745,12 +745,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanIfInitHohCfg, GContainer>(filteredContainers, typeof(CanIfInitHohCfg), typeof(GContainer)) {
-				override protected delegateAdd(CanIfInitHohCfg canIfInitHohCfg) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg canIfInitHohCfg) {
 					canIfInitHohCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfInitHohCfg"))
 					super.delegateAdd(canIfInitHohCfg)
 				}
 				
-				override protected delegateAdd(int index, CanIfInitHohCfg canIfInitHohCfg) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg canIfInitHohCfg) {
 					canIfInitHohCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfInitHohCfg"))
 					super.delegateAdd(index, canIfInitHohCfg)
 				}	
@@ -764,12 +764,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanIfRxPduCfg, GContainer>(filteredContainers, typeof(CanIfRxPduCfg), typeof(GContainer)) {
-				override protected delegateAdd(CanIfRxPduCfg canIfRxPduCfg) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfRxPduCfg canIfRxPduCfg) {
 					canIfRxPduCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfRxPduCfg"))
 					super.delegateAdd(canIfRxPduCfg)
 				}
 				
-				override protected delegateAdd(int index, CanIfRxPduCfg canIfRxPduCfg) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfRxPduCfg canIfRxPduCfg) {
 					canIfRxPduCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfRxPduCfg"))
 					super.delegateAdd(index, canIfRxPduCfg)
 				}	
@@ -783,12 +783,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanIfTxPduCfg, GContainer>(filteredContainers, typeof(CanIfTxPduCfg), typeof(GContainer)) {
-				override protected delegateAdd(CanIfTxPduCfg canIfTxPduCfg) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfTxPduCfg canIfTxPduCfg) {
 					canIfTxPduCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfTxPduCfg"))
 					super.delegateAdd(canIfTxPduCfg)
 				}
 				
-				override protected delegateAdd(int index, CanIfTxPduCfg canIfTxPduCfg) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfTxPduCfg canIfTxPduCfg) {
 					canIfTxPduCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfTxPduCfg"))
 					super.delegateAdd(index, canIfTxPduCfg)
 				}	
@@ -875,12 +875,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanIfHrhCfg, GContainer>(filteredContainers, typeof(CanIfHrhCfg), typeof(GContainer)) {
-					override protected delegateAdd(CanIfHrhCfg canIfHrhCfg) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg$CanIfHrhCfg canIfHrhCfg) {
 						canIfHrhCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfHrhCfg"))
 						super.delegateAdd(canIfHrhCfg)
 					}
 					
-					override protected delegateAdd(int index, CanIfHrhCfg canIfHrhCfg) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg$CanIfHrhCfg canIfHrhCfg) {
 						canIfHrhCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfHrhCfg"))
 						super.delegateAdd(index, canIfHrhCfg)
 					}	
@@ -894,12 +894,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanIfHthCfg, GContainer>(filteredContainers, typeof(CanIfHthCfg), typeof(GContainer)) {
-					override protected delegateAdd(CanIfHthCfg canIfHthCfg) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg$CanIfHthCfg canIfHthCfg) {
 						canIfHthCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfHthCfg"))
 						super.delegateAdd(canIfHthCfg)
 					}
 					
-					override protected delegateAdd(int index, CanIfHthCfg canIfHthCfg) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg$CanIfHthCfg canIfHthCfg) {
 						canIfHthCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfHthCfg"))
 						super.delegateAdd(index, canIfHthCfg)
 					}	
@@ -973,12 +973,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CanIfHrhRangeCfg, GContainer>(filteredContainers, typeof(CanIfHrhRangeCfg), typeof(GContainer)) {
-						override protected delegateAdd(CanIfHrhRangeCfg canIfHrhRangeCfg) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg$CanIfHrhCfg$CanIfHrhRangeCfg canIfHrhRangeCfg) {
 							canIfHrhRangeCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfHrhRangeCfg"))
 							super.delegateAdd(canIfHrhRangeCfg)
 						}
 						
-						override protected delegateAdd(int index, CanIfHrhRangeCfg canIfHrhRangeCfg) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfInitCfg$CanIfInitHohCfg$CanIfHrhCfg$CanIfHrhRangeCfg canIfHrhRangeCfg) {
 							canIfHrhRangeCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfHrhRangeCfg"))
 							super.delegateAdd(index, canIfHrhRangeCfg)
 						}	
@@ -2462,12 +2462,12 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanIfTrcvCfg, GContainer>(filteredContainers, typeof(CanIfTrcvCfg), typeof(GContainer)) {
-				override protected delegateAdd(CanIfTrcvCfg canIfTrcvCfg) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanIf$CanIfTrcvDrvCfg$CanIfTrcvCfg canIfTrcvCfg) {
 					canIfTrcvCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfTrcvCfg"))
 					super.delegateAdd(canIfTrcvCfg)
 				}
 				
-				override protected delegateAdd(int index, CanIfTrcvCfg canIfTrcvCfg) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanIf$CanIfTrcvDrvCfg$CanIfTrcvCfg canIfTrcvCfg) {
 					canIfTrcvCfg.target?.gSetDefinition(containerValue.getContainerDefinition("CanIfTrcvCfg"))
 					super.delegateAdd(index, canIfTrcvCfg)
 				}	

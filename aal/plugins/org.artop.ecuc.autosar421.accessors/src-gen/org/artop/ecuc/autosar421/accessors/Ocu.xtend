@@ -154,12 +154,12 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<OcuChannel, GContainer>(filteredContainers, typeof(OcuChannel), typeof(GContainer)) {
-				override protected delegateAdd(OcuChannel ocuChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Ocu$OcuConfigSet$OcuChannel ocuChannel) {
 					ocuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("OcuChannel"))
 					super.delegateAdd(ocuChannel)
 				}
 				
-				override protected delegateAdd(int index, OcuChannel ocuChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Ocu$OcuConfigSet$OcuChannel ocuChannel) {
 					ocuChannel.target?.gSetDefinition(containerValue.getContainerDefinition("OcuChannel"))
 					super.delegateAdd(index, ocuChannel)
 				}	
@@ -173,12 +173,12 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<OcuGroup, GContainer>(filteredContainers, typeof(OcuGroup), typeof(GContainer)) {
-				override protected delegateAdd(OcuGroup ocuGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Ocu$OcuConfigSet$OcuGroup ocuGroup) {
 					ocuGroup.target?.gSetDefinition(containerValue.getContainerDefinition("OcuGroup"))
 					super.delegateAdd(ocuGroup)
 				}
 				
-				override protected delegateAdd(int index, OcuGroup ocuGroup) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Ocu$OcuConfigSet$OcuGroup ocuGroup) {
 					ocuGroup.target?.gSetDefinition(containerValue.getContainerDefinition("OcuGroup"))
 					super.delegateAdd(index, ocuGroup)
 				}	

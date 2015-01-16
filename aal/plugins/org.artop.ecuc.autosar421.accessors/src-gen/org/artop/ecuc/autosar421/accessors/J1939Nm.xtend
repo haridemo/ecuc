@@ -121,12 +121,12 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<J1939NmChannel, GContainer>(filteredContainers, typeof(J1939NmChannel), typeof(GContainer)) {
-				override protected delegateAdd(J1939NmChannel j1939NmChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Nm$J1939NmConfigSet$J1939NmChannel j1939NmChannel) {
 					j1939NmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939NmChannel"))
 					super.delegateAdd(j1939NmChannel)
 				}
 				
-				override protected delegateAdd(int index, J1939NmChannel j1939NmChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Nm$J1939NmConfigSet$J1939NmChannel j1939NmChannel) {
 					j1939NmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939NmChannel"))
 					super.delegateAdd(index, j1939NmChannel)
 				}	
@@ -140,12 +140,12 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<J1939NmNode, GContainer>(filteredContainers, typeof(J1939NmNode), typeof(GContainer)) {
-				override protected delegateAdd(J1939NmNode j1939NmNode) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Nm$J1939NmConfigSet$J1939NmNode j1939NmNode) {
 					j1939NmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939NmNode"))
 					super.delegateAdd(j1939NmNode)
 				}
 				
-				override protected delegateAdd(int index, J1939NmNode j1939NmNode) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Nm$J1939NmConfigSet$J1939NmNode j1939NmNode) {
 					j1939NmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939NmNode"))
 					super.delegateAdd(index, j1939NmNode)
 				}	

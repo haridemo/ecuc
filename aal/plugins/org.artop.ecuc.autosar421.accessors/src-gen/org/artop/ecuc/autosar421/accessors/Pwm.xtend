@@ -121,12 +121,12 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PwmChannel, GContainer>(filteredContainers, typeof(PwmChannel), typeof(GContainer)) {
-				override protected delegateAdd(PwmChannel pwmChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Pwm$PwmChannelConfigSet$PwmChannel pwmChannel) {
 					pwmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("PwmChannel"))
 					super.delegateAdd(pwmChannel)
 				}
 				
-				override protected delegateAdd(int index, PwmChannel pwmChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Pwm$PwmChannelConfigSet$PwmChannel pwmChannel) {
 					pwmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("PwmChannel"))
 					super.delegateAdd(index, pwmChannel)
 				}	
@@ -594,12 +594,12 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PwmPowerStateConfig, GContainer>(filteredContainers, typeof(PwmPowerStateConfig), typeof(GContainer)) {
-				override protected delegateAdd(PwmPowerStateConfig pwmPowerStateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Pwm$PwmGeneral$PwmPowerStateConfig pwmPowerStateConfig) {
 					pwmPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("PwmPowerStateConfig"))
 					super.delegateAdd(pwmPowerStateConfig)
 				}
 				
-				override protected delegateAdd(int index, PwmPowerStateConfig pwmPowerStateConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Pwm$PwmGeneral$PwmPowerStateConfig pwmPowerStateConfig) {
 					pwmPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("PwmPowerStateConfig"))
 					super.delegateAdd(index, pwmPowerStateConfig)
 				}	

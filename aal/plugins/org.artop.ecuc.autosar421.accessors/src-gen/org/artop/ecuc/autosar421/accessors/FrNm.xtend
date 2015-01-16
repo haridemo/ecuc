@@ -113,12 +113,12 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrNmChannel, GContainer>(filteredContainers, typeof(FrNmChannel), typeof(GContainer)) {
-				override protected delegateAdd(FrNmChannel frNmChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrNm$FrNmChannelConfig$FrNmChannel frNmChannel) {
 					frNmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmChannel"))
 					super.delegateAdd(frNmChannel)
 				}
 				
-				override protected delegateAdd(int index, FrNmChannel frNmChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrNm$FrNmChannelConfig$FrNmChannel frNmChannel) {
 					frNmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmChannel"))
 					super.delegateAdd(index, frNmChannel)
 				}	
@@ -446,12 +446,12 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrNmRxPdu, GContainer>(filteredContainers, typeof(FrNmRxPdu), typeof(GContainer)) {
-						override protected delegateAdd(FrNmRxPdu frNmRxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrNm$FrNmChannelConfig$FrNmChannel$FrNmChannelIdentifiers$FrNmRxPdu frNmRxPdu) {
 							frNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmRxPdu"))
 							super.delegateAdd(frNmRxPdu)
 						}
 						
-						override protected delegateAdd(int index, FrNmRxPdu frNmRxPdu) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrNm$FrNmChannelConfig$FrNmChannel$FrNmChannelIdentifiers$FrNmRxPdu frNmRxPdu) {
 							frNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmRxPdu"))
 							super.delegateAdd(index, frNmRxPdu)
 						}	
@@ -465,12 +465,12 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrNmTxPdu, GContainer>(filteredContainers, typeof(FrNmTxPdu), typeof(GContainer)) {
-						override protected delegateAdd(FrNmTxPdu frNmTxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrNm$FrNmChannelConfig$FrNmChannel$FrNmChannelIdentifiers$FrNmTxPdu frNmTxPdu) {
 							frNmTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmTxPdu"))
 							super.delegateAdd(frNmTxPdu)
 						}
 						
-						override protected delegateAdd(int index, FrNmTxPdu frNmTxPdu) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrNm$FrNmChannelConfig$FrNmChannel$FrNmChannelIdentifiers$FrNmTxPdu frNmTxPdu) {
 							frNmTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmTxPdu"))
 							super.delegateAdd(index, frNmTxPdu)
 						}	
@@ -1437,12 +1437,12 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(FrNmPnFilterMaskByte), typeof(GContainer)) {
-						override protected delegateAdd(FrNmPnFilterMaskByte frNmPnFilterMaskByte) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrNm$FrNmGlobalConfig$FrNmGlobalFeatures$FrNmPnInfo$FrNmPnFilterMaskByte frNmPnFilterMaskByte) {
 							frNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmPnFilterMaskByte"))
 							super.delegateAdd(frNmPnFilterMaskByte)
 						}
 						
-						override protected delegateAdd(int index, FrNmPnFilterMaskByte frNmPnFilterMaskByte) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrNm$FrNmGlobalConfig$FrNmGlobalFeatures$FrNmPnInfo$FrNmPnFilterMaskByte frNmPnFilterMaskByte) {
 							frNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("FrNmPnFilterMaskByte"))
 							super.delegateAdd(index, frNmPnFilterMaskByte)
 						}	

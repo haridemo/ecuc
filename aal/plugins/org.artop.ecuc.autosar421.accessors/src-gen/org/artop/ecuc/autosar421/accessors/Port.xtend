@@ -113,12 +113,12 @@ class Port implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PortContainer, GContainer>(filteredContainers, typeof(PortContainer), typeof(GContainer)) {
-				override protected delegateAdd(PortContainer portContainer) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer portContainer) {
 					portContainer.target?.gSetDefinition(containerValue.getContainerDefinition("PortContainer"))
 					super.delegateAdd(portContainer)
 				}
 				
-				override protected delegateAdd(int index, PortContainer portContainer) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer portContainer) {
 					portContainer.target?.gSetDefinition(containerValue.getContainerDefinition("PortContainer"))
 					super.delegateAdd(index, portContainer)
 				}	
@@ -170,12 +170,12 @@ class Port implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<PortPin, GContainer>(filteredContainers, typeof(PortPin), typeof(GContainer)) {
-					override protected delegateAdd(PortPin portPin) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer$PortPin portPin) {
 						portPin.target?.gSetDefinition(containerValue.getContainerDefinition("PortPin"))
 						super.delegateAdd(portPin)
 					}
 					
-					override protected delegateAdd(int index, PortPin portPin) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer$PortPin portPin) {
 						portPin.target?.gSetDefinition(containerValue.getContainerDefinition("PortPin"))
 						super.delegateAdd(index, portPin)
 					}	

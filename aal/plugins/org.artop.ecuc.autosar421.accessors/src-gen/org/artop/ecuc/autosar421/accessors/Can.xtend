@@ -113,12 +113,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanController, GContainer>(filteredContainers, typeof(CanController), typeof(GContainer)) {
-				override protected delegateAdd(CanController canController) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanController canController) {
 					canController.target?.gSetDefinition(containerValue.getContainerDefinition("CanController"))
 					super.delegateAdd(canController)
 				}
 				
-				override protected delegateAdd(int index, CanController canController) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanController canController) {
 					canController.target?.gSetDefinition(containerValue.getContainerDefinition("CanController"))
 					super.delegateAdd(index, canController)
 				}	
@@ -132,12 +132,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanHardwareObject, GContainer>(filteredContainers, typeof(CanHardwareObject), typeof(GContainer)) {
-				override protected delegateAdd(CanHardwareObject canHardwareObject) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanHardwareObject canHardwareObject) {
 					canHardwareObject.target?.gSetDefinition(containerValue.getContainerDefinition("CanHardwareObject"))
 					super.delegateAdd(canHardwareObject)
 				}
 				
-				override protected delegateAdd(int index, CanHardwareObject canHardwareObject) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanHardwareObject canHardwareObject) {
 					canHardwareObject.target?.gSetDefinition(containerValue.getContainerDefinition("CanHardwareObject"))
 					super.delegateAdd(index, canHardwareObject)
 				}	
@@ -427,12 +427,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanControllerBaudrateConfig, GContainer>(filteredContainers, typeof(CanControllerBaudrateConfig), typeof(GContainer)) {
-					override protected delegateAdd(CanControllerBaudrateConfig canControllerBaudrateConfig) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanController$CanControllerBaudrateConfig canControllerBaudrateConfig) {
 						canControllerBaudrateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanControllerBaudrateConfig"))
 						super.delegateAdd(canControllerBaudrateConfig)
 					}
 					
-					override protected delegateAdd(int index, CanControllerBaudrateConfig canControllerBaudrateConfig) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanController$CanControllerBaudrateConfig canControllerBaudrateConfig) {
 						canControllerBaudrateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanControllerBaudrateConfig"))
 						super.delegateAdd(index, canControllerBaudrateConfig)
 					}	
@@ -1279,12 +1279,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanHwFilter, GContainer>(filteredContainers, typeof(CanHwFilter), typeof(GContainer)) {
-					override protected delegateAdd(CanHwFilter canHwFilter) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanHardwareObject$CanHwFilter canHwFilter) {
 						canHwFilter.target?.gSetDefinition(containerValue.getContainerDefinition("CanHwFilter"))
 						super.delegateAdd(canHwFilter)
 					}
 					
-					override protected delegateAdd(int index, CanHwFilter canHwFilter) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanHardwareObject$CanHwFilter canHwFilter) {
 						canHwFilter.target?.gSetDefinition(containerValue.getContainerDefinition("CanHwFilter"))
 						super.delegateAdd(index, canHwFilter)
 					}	
@@ -1298,12 +1298,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanTTHardwareObjectTrigger, GContainer>(filteredContainers, typeof(CanTTHardwareObjectTrigger), typeof(GContainer)) {
-					override protected delegateAdd(CanTTHardwareObjectTrigger canTTHardwareObjectTrigger) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanHardwareObject$CanTTHardwareObjectTrigger canTTHardwareObjectTrigger) {
 						canTTHardwareObjectTrigger.target?.gSetDefinition(containerValue.getContainerDefinition("CanTTHardwareObjectTrigger"))
 						super.delegateAdd(canTTHardwareObjectTrigger)
 					}
 					
-					override protected delegateAdd(int index, CanTTHardwareObjectTrigger canTTHardwareObjectTrigger) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanHardwareObject$CanTTHardwareObjectTrigger canTTHardwareObjectTrigger) {
 						canTTHardwareObjectTrigger.target?.gSetDefinition(containerValue.getContainerDefinition("CanTTHardwareObjectTrigger"))
 						super.delegateAdd(index, canTTHardwareObjectTrigger)
 					}	
@@ -1526,12 +1526,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanIcomConfig, GContainer>(filteredContainers, typeof(CanIcomConfig), typeof(GContainer)) {
-					override protected delegateAdd(CanIcomConfig canIcomConfig) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanIcom$CanIcomConfig canIcomConfig) {
 						canIcomConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomConfig"))
 						super.delegateAdd(canIcomConfig)
 					}
 					
-					override protected delegateAdd(int index, CanIcomConfig canIcomConfig) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanIcom$CanIcomConfig canIcomConfig) {
 						canIcomConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomConfig"))
 						super.delegateAdd(index, canIcomConfig)
 					}	
@@ -1630,12 +1630,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 							}
 						}
 						return new BasicWrappingEList<CanIcomRxMessage, GContainer>(filteredContainers, typeof(CanIcomRxMessage), typeof(GContainer)) {
-							override protected delegateAdd(CanIcomRxMessage canIcomRxMessage) {
+							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanIcom$CanIcomConfig$CanIcomWakeupCauses$CanIcomRxMessage canIcomRxMessage) {
 								canIcomRxMessage.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessage"))
 								super.delegateAdd(canIcomRxMessage)
 							}
 							
-							override protected delegateAdd(int index, CanIcomRxMessage canIcomRxMessage) {
+							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanIcom$CanIcomConfig$CanIcomWakeupCauses$CanIcomRxMessage canIcomRxMessage) {
 								canIcomRxMessage.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessage"))
 								super.delegateAdd(index, canIcomRxMessage)
 							}	
@@ -1751,12 +1751,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 								}
 							}
 							return new BasicWrappingEList<CanIcomRxMessageSignalConfig, GContainer>(filteredContainers, typeof(CanIcomRxMessageSignalConfig), typeof(GContainer)) {
-								override protected delegateAdd(CanIcomRxMessageSignalConfig canIcomRxMessageSignalConfig) {
+								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanIcom$CanIcomConfig$CanIcomWakeupCauses$CanIcomRxMessage$CanIcomRxMessageSignalConfig canIcomRxMessageSignalConfig) {
 									canIcomRxMessageSignalConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessageSignalConfig"))
 									super.delegateAdd(canIcomRxMessageSignalConfig)
 								}
 								
-								override protected delegateAdd(int index, CanIcomRxMessageSignalConfig canIcomRxMessageSignalConfig) {
+								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanConfigSet$CanIcom$CanIcomConfig$CanIcomWakeupCauses$CanIcomRxMessage$CanIcomRxMessageSignalConfig canIcomRxMessageSignalConfig) {
 									canIcomRxMessageSignalConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CanIcomRxMessageSignalConfig"))
 									super.delegateAdd(index, canIcomRxMessageSignalConfig)
 								}	
@@ -2114,12 +2114,12 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanMainFunctionRWPeriods, GContainer>(filteredContainers, typeof(CanMainFunctionRWPeriods), typeof(GContainer)) {
-				override protected delegateAdd(CanMainFunctionRWPeriods canMainFunctionRWPeriods) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Can$CanGeneral$CanMainFunctionRWPeriods canMainFunctionRWPeriods) {
 					canMainFunctionRWPeriods.target?.gSetDefinition(containerValue.getContainerDefinition("CanMainFunctionRWPeriods"))
 					super.delegateAdd(canMainFunctionRWPeriods)
 				}
 				
-				override protected delegateAdd(int index, CanMainFunctionRWPeriods canMainFunctionRWPeriods) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Can$CanGeneral$CanMainFunctionRWPeriods canMainFunctionRWPeriods) {
 					canMainFunctionRWPeriods.target?.gSetDefinition(containerValue.getContainerDefinition("CanMainFunctionRWPeriods"))
 					super.delegateAdd(index, canMainFunctionRWPeriods)
 				}	

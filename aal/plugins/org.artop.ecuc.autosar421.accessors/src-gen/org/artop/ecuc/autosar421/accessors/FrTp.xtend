@@ -296,12 +296,12 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrTpConnection, GContainer>(filteredContainers, typeof(FrTpConnection), typeof(GContainer)) {
-				override protected delegateAdd(FrTpConnection frTpConnection) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpConnection frTpConnection) {
 					frTpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpConnection"))
 					super.delegateAdd(frTpConnection)
 				}
 				
-				override protected delegateAdd(int index, FrTpConnection frTpConnection) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpConnection frTpConnection) {
 					frTpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpConnection"))
 					super.delegateAdd(index, frTpConnection)
 				}	
@@ -315,12 +315,12 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrTpConnectionControl, GContainer>(filteredContainers, typeof(FrTpConnectionControl), typeof(GContainer)) {
-				override protected delegateAdd(FrTpConnectionControl frTpConnectionControl) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpConnectionControl frTpConnectionControl) {
 					frTpConnectionControl.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpConnectionControl"))
 					super.delegateAdd(frTpConnectionControl)
 				}
 				
-				override protected delegateAdd(int index, FrTpConnectionControl frTpConnectionControl) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpConnectionControl frTpConnectionControl) {
 					frTpConnectionControl.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpConnectionControl"))
 					super.delegateAdd(index, frTpConnectionControl)
 				}	
@@ -334,12 +334,12 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrTpRxPduPool, GContainer>(filteredContainers, typeof(FrTpRxPduPool), typeof(GContainer)) {
-				override protected delegateAdd(FrTpRxPduPool frTpRxPduPool) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpRxPduPool frTpRxPduPool) {
 					frTpRxPduPool.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpRxPduPool"))
 					super.delegateAdd(frTpRxPduPool)
 				}
 				
-				override protected delegateAdd(int index, FrTpRxPduPool frTpRxPduPool) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpRxPduPool frTpRxPduPool) {
 					frTpRxPduPool.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpRxPduPool"))
 					super.delegateAdd(index, frTpRxPduPool)
 				}	
@@ -353,12 +353,12 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrTpTxPduPool, GContainer>(filteredContainers, typeof(FrTpTxPduPool), typeof(GContainer)) {
-				override protected delegateAdd(FrTpTxPduPool frTpTxPduPool) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpTxPduPool frTpTxPduPool) {
 					frTpTxPduPool.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpTxPduPool"))
 					super.delegateAdd(frTpTxPduPool)
 				}
 				
-				override protected delegateAdd(int index, FrTpTxPduPool frTpTxPduPool) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpTxPduPool frTpTxPduPool) {
 					frTpTxPduPool.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpTxPduPool"))
 					super.delegateAdd(index, frTpTxPduPool)
 				}	
@@ -964,12 +964,12 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrTpRxPdu, GContainer>(filteredContainers, typeof(FrTpRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(FrTpRxPdu frTpRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpRxPduPool$FrTpRxPdu frTpRxPdu) {
 						frTpRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpRxPdu"))
 						super.delegateAdd(frTpRxPdu)
 					}
 					
-					override protected delegateAdd(int index, FrTpRxPdu frTpRxPdu) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpRxPduPool$FrTpRxPdu frTpRxPdu) {
 						frTpRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpRxPdu"))
 						super.delegateAdd(index, frTpRxPdu)
 					}	
@@ -1058,12 +1058,12 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrTpTxPdu, GContainer>(filteredContainers, typeof(FrTpTxPdu), typeof(GContainer)) {
-					override protected delegateAdd(FrTpTxPdu frTpTxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpTxPduPool$FrTpTxPdu frTpTxPdu) {
 						frTpTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpTxPdu"))
 						super.delegateAdd(frTpTxPdu)
 					}
 					
-					override protected delegateAdd(int index, FrTpTxPdu frTpTxPdu) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTp$FrTpMultipleConfig$FrTpTxPduPool$FrTpTxPdu frTpTxPdu) {
 						frTpTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrTpTxPdu"))
 						super.delegateAdd(index, frTpTxPdu)
 					}	

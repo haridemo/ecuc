@@ -75,12 +75,12 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<CorTstBackgroundConfigSet, GContainer>(filteredContainers, typeof(CorTstBackgroundConfigSet), typeof(GContainer)) {
-			override protected delegateAdd(CorTstBackgroundConfigSet corTstBackgroundConfigSet) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CorTst$CorTstBackgroundConfigSet corTstBackgroundConfigSet) {
 				corTstBackgroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstBackgroundConfigSet"))
 				super.delegateAdd(corTstBackgroundConfigSet)
 			}
 		
-			override protected delegateAdd(int index, CorTstBackgroundConfigSet corTstBackgroundConfigSet) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CorTst$CorTstBackgroundConfigSet corTstBackgroundConfigSet) {
 				corTstBackgroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstBackgroundConfigSet"))
 				super.delegateAdd(index, corTstBackgroundConfigSet)
 			}
@@ -109,12 +109,12 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<CorTstForegroundConfigSet, GContainer>(filteredContainers, typeof(CorTstForegroundConfigSet), typeof(GContainer)) {
-			override protected delegateAdd(CorTstForegroundConfigSet corTstForegroundConfigSet) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CorTst$CorTstForegroundConfigSet corTstForegroundConfigSet) {
 				corTstForegroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstForegroundConfigSet"))
 				super.delegateAdd(corTstForegroundConfigSet)
 			}
 		
-			override protected delegateAdd(int index, CorTstForegroundConfigSet corTstForegroundConfigSet) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CorTst$CorTstForegroundConfigSet corTstForegroundConfigSet) {
 				corTstForegroundConfigSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("CorTstForegroundConfigSet"))
 				super.delegateAdd(index, corTstForegroundConfigSet)
 			}

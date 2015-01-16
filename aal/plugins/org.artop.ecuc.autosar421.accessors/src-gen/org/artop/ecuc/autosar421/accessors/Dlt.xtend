@@ -99,12 +99,12 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<DltVfbTrace, GContainer>(filteredContainers, typeof(DltVfbTrace), typeof(GContainer)) {
-			override protected delegateAdd(DltVfbTrace dltVfbTrace) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dlt$DltVfbTrace dltVfbTrace) {
 				dltVfbTrace.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("DltVfbTrace"))
 				super.delegateAdd(dltVfbTrace)
 			}
 		
-			override protected delegateAdd(int index, DltVfbTrace dltVfbTrace) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dlt$DltVfbTrace dltVfbTrace) {
 				dltVfbTrace.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("DltVfbTrace"))
 				super.delegateAdd(index, dltVfbTrace)
 			}

@@ -499,12 +499,12 @@ class Fls implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FlsSector, GContainer>(filteredContainers, typeof(FlsSector), typeof(GContainer)) {
-					override protected delegateAdd(FlsSector flsSector) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Fls$FlsConfigSet$FlsSectorList$FlsSector flsSector) {
 						flsSector.target?.gSetDefinition(containerValue.getContainerDefinition("FlsSector"))
 						super.delegateAdd(flsSector)
 					}
 					
-					override protected delegateAdd(int index, FlsSector flsSector) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Fls$FlsConfigSet$FlsSectorList$FlsSector flsSector) {
 						flsSector.target?.gSetDefinition(containerValue.getContainerDefinition("FlsSector"))
 						super.delegateAdd(index, flsSector)
 					}	

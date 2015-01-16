@@ -75,12 +75,12 @@ class Fee implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<FeeBlockConfiguration, GContainer>(filteredContainers, typeof(FeeBlockConfiguration), typeof(GContainer)) {
-			override protected delegateAdd(FeeBlockConfiguration feeBlockConfiguration) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Fee$FeeBlockConfiguration feeBlockConfiguration) {
 				feeBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FeeBlockConfiguration"))
 				super.delegateAdd(feeBlockConfiguration)
 			}
 		
-			override protected delegateAdd(int index, FeeBlockConfiguration feeBlockConfiguration) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Fee$FeeBlockConfiguration feeBlockConfiguration) {
 				feeBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FeeBlockConfiguration"))
 				super.delegateAdd(index, feeBlockConfiguration)
 			}

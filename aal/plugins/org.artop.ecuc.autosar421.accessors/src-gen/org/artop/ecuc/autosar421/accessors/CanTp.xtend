@@ -145,12 +145,12 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanTpChannel, GContainer>(filteredContainers, typeof(CanTpChannel), typeof(GContainer)) {
-				override protected delegateAdd(CanTpChannel canTpChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel canTpChannel) {
 					canTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpChannel"))
 					super.delegateAdd(canTpChannel)
 				}
 				
-				override protected delegateAdd(int index, CanTpChannel canTpChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel canTpChannel) {
 					canTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpChannel"))
 					super.delegateAdd(index, canTpChannel)
 				}	
@@ -219,12 +219,12 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanTpRxNSdu, GContainer>(filteredContainers, typeof(CanTpRxNSdu), typeof(GContainer)) {
-					override protected delegateAdd(CanTpRxNSdu canTpRxNSdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpRxNSdu canTpRxNSdu) {
 						canTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpRxNSdu"))
 						super.delegateAdd(canTpRxNSdu)
 					}
 					
-					override protected delegateAdd(int index, CanTpRxNSdu canTpRxNSdu) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpRxNSdu canTpRxNSdu) {
 						canTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpRxNSdu"))
 						super.delegateAdd(index, canTpRxNSdu)
 					}	
@@ -238,12 +238,12 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanTpTxNSdu, GContainer>(filteredContainers, typeof(CanTpTxNSdu), typeof(GContainer)) {
-					override protected delegateAdd(CanTpTxNSdu canTpTxNSdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpTxNSdu canTpTxNSdu) {
 						canTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpTxNSdu"))
 						super.delegateAdd(canTpTxNSdu)
 					}
 					
-					override protected delegateAdd(int index, CanTpTxNSdu canTpTxNSdu) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpTxNSdu canTpTxNSdu) {
 						canTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpTxNSdu"))
 						super.delegateAdd(index, canTpTxNSdu)
 					}	

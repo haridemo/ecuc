@@ -436,12 +436,12 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<UdpNmChannelConfig, GContainer>(filteredContainers, typeof(UdpNmChannelConfig), typeof(GContainer)) {
-				override protected delegateAdd(UdpNmChannelConfig udpNmChannelConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig udpNmChannelConfig) {
 					udpNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmChannelConfig"))
 					super.delegateAdd(udpNmChannelConfig)
 				}
 				
-				override protected delegateAdd(int index, UdpNmChannelConfig udpNmChannelConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig udpNmChannelConfig) {
 					udpNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmChannelConfig"))
 					super.delegateAdd(index, udpNmChannelConfig)
 				}	
@@ -827,12 +827,12 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<UdpNmRxPdu, GContainer>(filteredContainers, typeof(UdpNmRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(UdpNmRxPdu udpNmRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig$UdpNmRxPdu udpNmRxPdu) {
 						udpNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmRxPdu"))
 						super.delegateAdd(udpNmRxPdu)
 					}
 					
-					override protected delegateAdd(int index, UdpNmRxPdu udpNmRxPdu) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig$UdpNmRxPdu udpNmRxPdu) {
 						udpNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmRxPdu"))
 						super.delegateAdd(index, udpNmRxPdu)
 					}	
@@ -1119,12 +1119,12 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<UdpNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(UdpNmPnFilterMaskByte), typeof(GContainer)) {
-					override protected delegateAdd(UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmPnInfo$UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
 						udpNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmPnFilterMaskByte"))
 						super.delegateAdd(udpNmPnFilterMaskByte)
 					}
 					
-					override protected delegateAdd(int index, UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmPnInfo$UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
 						udpNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmPnFilterMaskByte"))
 						super.delegateAdd(index, udpNmPnFilterMaskByte)
 					}	

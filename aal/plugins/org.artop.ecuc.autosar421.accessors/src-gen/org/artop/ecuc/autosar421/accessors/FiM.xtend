@@ -113,12 +113,12 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FiMFID, GContainer>(filteredContainers, typeof(FiMFID), typeof(GContainer)) {
-				override protected delegateAdd(FiMFID fiMFID) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMFID fiMFID) {
 					fiMFID.target?.gSetDefinition(containerValue.getContainerDefinition("FiMFID"))
 					super.delegateAdd(fiMFID)
 				}
 				
-				override protected delegateAdd(int index, FiMFID fiMFID) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMFID fiMFID) {
 					fiMFID.target?.gSetDefinition(containerValue.getContainerDefinition("FiMFID"))
 					super.delegateAdd(index, fiMFID)
 				}	
@@ -132,12 +132,12 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FiMInhibitionConfiguration, GContainer>(filteredContainers, typeof(FiMInhibitionConfiguration), typeof(GContainer)) {
-				override protected delegateAdd(FiMInhibitionConfiguration fiMInhibitionConfiguration) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMInhibitionConfiguration fiMInhibitionConfiguration) {
 					fiMInhibitionConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("FiMInhibitionConfiguration"))
 					super.delegateAdd(fiMInhibitionConfiguration)
 				}
 				
-				override protected delegateAdd(int index, FiMInhibitionConfiguration fiMInhibitionConfiguration) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMInhibitionConfiguration fiMInhibitionConfiguration) {
 					fiMInhibitionConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("FiMInhibitionConfiguration"))
 					super.delegateAdd(index, fiMInhibitionConfiguration)
 				}	
@@ -151,12 +151,12 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FiMSummaryEvent, GContainer>(filteredContainers, typeof(FiMSummaryEvent), typeof(GContainer)) {
-				override protected delegateAdd(FiMSummaryEvent fiMSummaryEvent) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMSummaryEvent fiMSummaryEvent) {
 					fiMSummaryEvent.target?.gSetDefinition(containerValue.getContainerDefinition("FiMSummaryEvent"))
 					super.delegateAdd(fiMSummaryEvent)
 				}
 				
-				override protected delegateAdd(int index, FiMSummaryEvent fiMSummaryEvent) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMSummaryEvent fiMSummaryEvent) {
 					fiMSummaryEvent.target?.gSetDefinition(containerValue.getContainerDefinition("FiMSummaryEvent"))
 					super.delegateAdd(index, fiMSummaryEvent)
 				}	

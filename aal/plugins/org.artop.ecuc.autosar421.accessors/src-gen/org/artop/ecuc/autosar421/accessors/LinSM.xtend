@@ -129,12 +129,12 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinSMChannel, GContainer>(filteredContainers, typeof(LinSMChannel), typeof(GContainer)) {
-				override protected delegateAdd(LinSMChannel linSMChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel linSMChannel) {
 					linSMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMChannel"))
 					super.delegateAdd(linSMChannel)
 				}
 				
-				override protected delegateAdd(int index, LinSMChannel linSMChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel linSMChannel) {
 					linSMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMChannel"))
 					super.delegateAdd(index, linSMChannel)
 				}	
@@ -213,12 +213,12 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<LinSMSchedule, GContainer>(filteredContainers, typeof(LinSMSchedule), typeof(GContainer)) {
-					override protected delegateAdd(LinSMSchedule linSMSchedule) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel$LinSMSchedule linSMSchedule) {
 						linSMSchedule.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMSchedule"))
 						super.delegateAdd(linSMSchedule)
 					}
 					
-					override protected delegateAdd(int index, LinSMSchedule linSMSchedule) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel$LinSMSchedule linSMSchedule) {
 						linSMSchedule.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMSchedule"))
 						super.delegateAdd(index, linSMSchedule)
 					}	

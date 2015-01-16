@@ -75,12 +75,12 @@ class NvM implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<NvMBlockDescriptor, GContainer>(filteredContainers, typeof(NvMBlockDescriptor), typeof(GContainer)) {
-			override protected delegateAdd(NvMBlockDescriptor nvMBlockDescriptor) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.NvM$NvMBlockDescriptor nvMBlockDescriptor) {
 				nvMBlockDescriptor.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NvMBlockDescriptor"))
 				super.delegateAdd(nvMBlockDescriptor)
 			}
 		
-			override protected delegateAdd(int index, NvMBlockDescriptor nvMBlockDescriptor) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.NvM$NvMBlockDescriptor nvMBlockDescriptor) {
 				nvMBlockDescriptor.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NvMBlockDescriptor"))
 				super.delegateAdd(index, nvMBlockDescriptor)
 			}

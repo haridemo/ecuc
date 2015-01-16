@@ -75,12 +75,12 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<NmChannelConfig, GContainer>(filteredContainers, typeof(NmChannelConfig), typeof(GContainer)) {
-			override protected delegateAdd(NmChannelConfig nmChannelConfig) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Nm$NmChannelConfig nmChannelConfig) {
 				nmChannelConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NmChannelConfig"))
 				super.delegateAdd(nmChannelConfig)
 			}
 		
-			override protected delegateAdd(int index, NmChannelConfig nmChannelConfig) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Nm$NmChannelConfig nmChannelConfig) {
 				nmChannelConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("NmChannelConfig"))
 				super.delegateAdd(index, nmChannelConfig)
 			}

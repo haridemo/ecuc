@@ -83,12 +83,12 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<SecOCRxPduProcessing, GContainer>(filteredContainers, typeof(SecOCRxPduProcessing), typeof(GContainer)) {
-			override protected delegateAdd(SecOCRxPduProcessing secOCRxPduProcessing) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SecOC$SecOCRxPduProcessing secOCRxPduProcessing) {
 				secOCRxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCRxPduProcessing"))
 				super.delegateAdd(secOCRxPduProcessing)
 			}
 		
-			override protected delegateAdd(int index, SecOCRxPduProcessing secOCRxPduProcessing) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SecOC$SecOCRxPduProcessing secOCRxPduProcessing) {
 				secOCRxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCRxPduProcessing"))
 				super.delegateAdd(index, secOCRxPduProcessing)
 			}
@@ -101,12 +101,12 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<SecOCSameBufferPduCollection, GContainer>(filteredContainers, typeof(SecOCSameBufferPduCollection), typeof(GContainer)) {
-			override protected delegateAdd(SecOCSameBufferPduCollection secOCSameBufferPduCollection) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SecOC$SecOCSameBufferPduCollection secOCSameBufferPduCollection) {
 				secOCSameBufferPduCollection.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCSameBufferPduCollection"))
 				super.delegateAdd(secOCSameBufferPduCollection)
 			}
 		
-			override protected delegateAdd(int index, SecOCSameBufferPduCollection secOCSameBufferPduCollection) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SecOC$SecOCSameBufferPduCollection secOCSameBufferPduCollection) {
 				secOCSameBufferPduCollection.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCSameBufferPduCollection"))
 				super.delegateAdd(index, secOCSameBufferPduCollection)
 			}
@@ -119,12 +119,12 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<SecOCTxPduProcessing, GContainer>(filteredContainers, typeof(SecOCTxPduProcessing), typeof(GContainer)) {
-			override protected delegateAdd(SecOCTxPduProcessing secOCTxPduProcessing) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.SecOC$SecOCTxPduProcessing secOCTxPduProcessing) {
 				secOCTxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCTxPduProcessing"))
 				super.delegateAdd(secOCTxPduProcessing)
 			}
 		
-			override protected delegateAdd(int index, SecOCTxPduProcessing secOCTxPduProcessing) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.SecOC$SecOCTxPduProcessing secOCTxPduProcessing) {
 				secOCTxPduProcessing.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("SecOCTxPduProcessing"))
 				super.delegateAdd(index, secOCTxPduProcessing)
 			}

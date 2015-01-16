@@ -75,12 +75,12 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<LinTrcvChannel, GContainer>(filteredContainers, typeof(LinTrcvChannel), typeof(GContainer)) {
-			override protected delegateAdd(LinTrcvChannel linTrcvChannel) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel linTrcvChannel) {
 				linTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("LinTrcvChannel"))
 				super.delegateAdd(linTrcvChannel)
 			}
 		
-			override protected delegateAdd(int index, LinTrcvChannel linTrcvChannel) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel linTrcvChannel) {
 				linTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("LinTrcvChannel"))
 				super.delegateAdd(index, linTrcvChannel)
 			}
@@ -295,12 +295,12 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<LinTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(LinTrcvDioChannelAccess), typeof(GContainer)) {
-						override protected delegateAdd(LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel$LinTrcvAccess$LinTrcvDioAccess$LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
 							linTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("LinTrcvDioChannelAccess"))
 							super.delegateAdd(linTrcvDioChannelAccess)
 						}
 						
-						override protected delegateAdd(int index, LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel$LinTrcvAccess$LinTrcvDioAccess$LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
 							linTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("LinTrcvDioChannelAccess"))
 							super.delegateAdd(index, linTrcvDioChannelAccess)
 						}	

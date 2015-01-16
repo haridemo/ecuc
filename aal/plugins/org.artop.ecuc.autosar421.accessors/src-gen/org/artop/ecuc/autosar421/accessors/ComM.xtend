@@ -129,12 +129,12 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComMChannel, GContainer>(filteredContainers, typeof(ComMChannel), typeof(GContainer)) {
-				override protected delegateAdd(ComMChannel comMChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMChannel comMChannel) {
 					comMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMChannel"))
 					super.delegateAdd(comMChannel)
 				}
 				
-				override protected delegateAdd(int index, ComMChannel comMChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMChannel comMChannel) {
 					comMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMChannel"))
 					super.delegateAdd(index, comMChannel)
 				}	
@@ -148,12 +148,12 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComMPnc, GContainer>(filteredContainers, typeof(ComMPnc), typeof(GContainer)) {
-				override protected delegateAdd(ComMPnc comMPnc) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMPnc comMPnc) {
 					comMPnc.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPnc"))
 					super.delegateAdd(comMPnc)
 				}
 				
-				override protected delegateAdd(int index, ComMPnc comMPnc) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMPnc comMPnc) {
 					comMPnc.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPnc"))
 					super.delegateAdd(index, comMPnc)
 				}	
@@ -167,12 +167,12 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<ComMUser, GContainer>(filteredContainers, typeof(ComMUser), typeof(GContainer)) {
-				override protected delegateAdd(ComMUser comMUser) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMUser comMUser) {
 					comMUser.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUser"))
 					super.delegateAdd(comMUser)
 				}
 				
-				override protected delegateAdd(int index, ComMUser comMUser) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMUser comMUser) {
 					comMUser.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUser"))
 					super.delegateAdd(index, comMUser)
 				}	
@@ -403,12 +403,12 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<ComMUserPerChannel, GContainer>(filteredContainers, typeof(ComMUserPerChannel), typeof(GContainer)) {
-					override protected delegateAdd(ComMUserPerChannel comMUserPerChannel) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMChannel$ComMUserPerChannel comMUserPerChannel) {
 						comMUserPerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUserPerChannel"))
 						super.delegateAdd(comMUserPerChannel)
 					}
 					
-					override protected delegateAdd(int index, ComMUserPerChannel comMUserPerChannel) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMChannel$ComMUserPerChannel comMUserPerChannel) {
 						comMUserPerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("ComMUserPerChannel"))
 						super.delegateAdd(index, comMUserPerChannel)
 					}	
@@ -656,12 +656,12 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<ComMPncComSignal, GContainer>(filteredContainers, typeof(ComMPncComSignal), typeof(GContainer)) {
-					override protected delegateAdd(ComMPncComSignal comMPncComSignal) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMPnc$ComMPncComSignal comMPncComSignal) {
 						comMPncComSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPncComSignal"))
 						super.delegateAdd(comMPncComSignal)
 					}
 					
-					override protected delegateAdd(int index, ComMPncComSignal comMPncComSignal) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.ComM$ComMConfigSet$ComMPnc$ComMPncComSignal comMPncComSignal) {
 						comMPncComSignal.target?.gSetDefinition(containerValue.getContainerDefinition("ComMPncComSignal"))
 						super.delegateAdd(index, comMPncComSignal)
 					}	

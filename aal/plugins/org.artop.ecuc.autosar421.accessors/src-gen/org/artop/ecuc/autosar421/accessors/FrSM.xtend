@@ -113,12 +113,12 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrSMCluster, GContainer>(filteredContainers, typeof(FrSMCluster), typeof(GContainer)) {
-				override protected delegateAdd(FrSMCluster frSMCluster) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrSM$FrSMConfig$FrSMCluster frSMCluster) {
 					frSMCluster.target?.gSetDefinition(containerValue.getContainerDefinition("FrSMCluster"))
 					super.delegateAdd(frSMCluster)
 				}
 				
-				override protected delegateAdd(int index, FrSMCluster frSMCluster) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrSM$FrSMConfig$FrSMCluster frSMCluster) {
 					frSMCluster.target?.gSetDefinition(containerValue.getContainerDefinition("FrSMCluster"))
 					super.delegateAdd(index, frSMCluster)
 				}	

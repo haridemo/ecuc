@@ -217,12 +217,12 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FlsTstBlock, GContainer>(filteredContainers, typeof(FlsTstBlock), typeof(GContainer)) {
-					override protected delegateAdd(FlsTstBlock flsTstBlock) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FlsTst$FlsTstConfigSet$FlsTstBlockBgndConfigSet$FlsTstBlock flsTstBlock) {
 						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
 						super.delegateAdd(flsTstBlock)
 					}
 					
-					override protected delegateAdd(int index, FlsTstBlock flsTstBlock) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FlsTst$FlsTstConfigSet$FlsTstBlockBgndConfigSet$FlsTstBlock flsTstBlock) {
 						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
 						super.delegateAdd(index, flsTstBlock)
 					}	
@@ -405,12 +405,12 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FlsTstBlock, GContainer>(filteredContainers, typeof(FlsTstBlock), typeof(GContainer)) {
-					override protected delegateAdd(FlsTstBlock flsTstBlock) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FlsTst$FlsTstConfigSet$FlsTstBlockFgndConfigSet$FlsTstBlock flsTstBlock) {
 						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
 						super.delegateAdd(flsTstBlock)
 					}
 					
-					override protected delegateAdd(int index, FlsTstBlock flsTstBlock) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FlsTst$FlsTstConfigSet$FlsTstBlockFgndConfigSet$FlsTstBlock flsTstBlock) {
 						flsTstBlock.target?.gSetDefinition(containerValue.getContainerDefinition("FlsTstBlock"))
 						super.delegateAdd(index, flsTstBlock)
 					}	

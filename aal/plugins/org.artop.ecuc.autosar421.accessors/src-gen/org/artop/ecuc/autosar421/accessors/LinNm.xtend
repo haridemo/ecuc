@@ -329,12 +329,12 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinNmChannelConfig, GContainer>(filteredContainers, typeof(LinNmChannelConfig), typeof(GContainer)) {
-				override protected delegateAdd(LinNmChannelConfig linNmChannelConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinNm$LinNmGlobalConfig$LinNmChannelConfig linNmChannelConfig) {
 					linNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinNmChannelConfig"))
 					super.delegateAdd(linNmChannelConfig)
 				}
 				
-				override protected delegateAdd(int index, LinNmChannelConfig linNmChannelConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinNm$LinNmGlobalConfig$LinNmChannelConfig linNmChannelConfig) {
 					linNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinNmChannelConfig"))
 					super.delegateAdd(index, linNmChannelConfig)
 				}	

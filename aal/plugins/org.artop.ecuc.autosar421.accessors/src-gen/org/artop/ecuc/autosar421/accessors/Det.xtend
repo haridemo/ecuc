@@ -121,12 +121,12 @@ class Det implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DetModule, GContainer>(filteredContainers, typeof(DetModule), typeof(GContainer)) {
-				override protected delegateAdd(DetModule detModule) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Det$DetConfigSet$DetModule detModule) {
 					detModule.target?.gSetDefinition(containerValue.getContainerDefinition("DetModule"))
 					super.delegateAdd(detModule)
 				}
 				
-				override protected delegateAdd(int index, DetModule detModule) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Det$DetConfigSet$DetModule detModule) {
 					detModule.target?.gSetDefinition(containerValue.getContainerDefinition("DetModule"))
 					super.delegateAdd(index, detModule)
 				}	

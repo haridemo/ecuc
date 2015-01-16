@@ -75,12 +75,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<BswMConfig, GContainer>(filteredContainers, typeof(BswMConfig), typeof(GContainer)) {
-			override protected delegateAdd(BswMConfig bswMConfig) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig bswMConfig) {
 				bswMConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("BswMConfig"))
 				super.delegateAdd(bswMConfig)
 			}
 		
-			override protected delegateAdd(int index, BswMConfig bswMConfig) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig bswMConfig) {
 				bswMConfig.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("BswMConfig"))
 				super.delegateAdd(index, bswMConfig)
 			}
@@ -183,12 +183,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMLogicalExpression, GContainer>(filteredContainers, typeof(BswMLogicalExpression), typeof(GContainer)) {
-					override protected delegateAdd(BswMLogicalExpression bswMLogicalExpression) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMLogicalExpression bswMLogicalExpression) {
 						bswMLogicalExpression.target?.gSetDefinition(containerValue.getContainerDefinition("BswMLogicalExpression"))
 						super.delegateAdd(bswMLogicalExpression)
 					}
 					
-					override protected delegateAdd(int index, BswMLogicalExpression bswMLogicalExpression) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMLogicalExpression bswMLogicalExpression) {
 						bswMLogicalExpression.target?.gSetDefinition(containerValue.getContainerDefinition("BswMLogicalExpression"))
 						super.delegateAdd(index, bswMLogicalExpression)
 					}	
@@ -202,12 +202,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMModeCondition, GContainer>(filteredContainers, typeof(BswMModeCondition), typeof(GContainer)) {
-					override protected delegateAdd(BswMModeCondition bswMModeCondition) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMModeCondition bswMModeCondition) {
 						bswMModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeCondition"))
 						super.delegateAdd(bswMModeCondition)
 					}
 					
-					override protected delegateAdd(int index, BswMModeCondition bswMModeCondition) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMModeCondition bswMModeCondition) {
 						bswMModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeCondition"))
 						super.delegateAdd(index, bswMModeCondition)
 					}	
@@ -221,12 +221,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMModeRequestPort, GContainer>(filteredContainers, typeof(BswMModeRequestPort), typeof(GContainer)) {
-					override protected delegateAdd(BswMModeRequestPort bswMModeRequestPort) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMModeRequestPort bswMModeRequestPort) {
 						bswMModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeRequestPort"))
 						super.delegateAdd(bswMModeRequestPort)
 					}
 					
-					override protected delegateAdd(int index, BswMModeRequestPort bswMModeRequestPort) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMModeRequestPort bswMModeRequestPort) {
 						bswMModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMModeRequestPort"))
 						super.delegateAdd(index, bswMModeRequestPort)
 					}	
@@ -240,12 +240,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMRule, GContainer>(filteredContainers, typeof(BswMRule), typeof(GContainer)) {
-					override protected delegateAdd(BswMRule bswMRule) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMRule bswMRule) {
 						bswMRule.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRule"))
 						super.delegateAdd(bswMRule)
 					}
 					
-					override protected delegateAdd(int index, BswMRule bswMRule) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMArbitration$BswMRule bswMRule) {
 						bswMRule.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRule"))
 						super.delegateAdd(index, bswMRule)
 					}	
@@ -2237,12 +2237,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMAction, GContainer>(filteredContainers, typeof(BswMAction), typeof(GContainer)) {
-					override protected delegateAdd(BswMAction bswMAction) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMAction bswMAction) {
 						bswMAction.target?.gSetDefinition(containerValue.getContainerDefinition("BswMAction"))
 						super.delegateAdd(bswMAction)
 					}
 					
-					override protected delegateAdd(int index, BswMAction bswMAction) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMAction bswMAction) {
 						bswMAction.target?.gSetDefinition(containerValue.getContainerDefinition("BswMAction"))
 						super.delegateAdd(index, bswMAction)
 					}	
@@ -2256,12 +2256,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMActionList, GContainer>(filteredContainers, typeof(BswMActionList), typeof(GContainer)) {
-					override protected delegateAdd(BswMActionList bswMActionList) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMActionList bswMActionList) {
 						bswMActionList.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionList"))
 						super.delegateAdd(bswMActionList)
 					}
 					
-					override protected delegateAdd(int index, BswMActionList bswMActionList) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMActionList bswMActionList) {
 						bswMActionList.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionList"))
 						super.delegateAdd(index, bswMActionList)
 					}	
@@ -2275,12 +2275,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMRteModeRequestPort, GContainer>(filteredContainers, typeof(BswMRteModeRequestPort), typeof(GContainer)) {
-					override protected delegateAdd(BswMRteModeRequestPort bswMRteModeRequestPort) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMRteModeRequestPort bswMRteModeRequestPort) {
 						bswMRteModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRteModeRequestPort"))
 						super.delegateAdd(bswMRteModeRequestPort)
 					}
 					
-					override protected delegateAdd(int index, BswMRteModeRequestPort bswMRteModeRequestPort) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMRteModeRequestPort bswMRteModeRequestPort) {
 						bswMRteModeRequestPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMRteModeRequestPort"))
 						super.delegateAdd(index, bswMRteModeRequestPort)
 					}	
@@ -2294,12 +2294,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<BswMSwitchPort, GContainer>(filteredContainers, typeof(BswMSwitchPort), typeof(GContainer)) {
-					override protected delegateAdd(BswMSwitchPort bswMSwitchPort) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMSwitchPort bswMSwitchPort) {
 						bswMSwitchPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMSwitchPort"))
 						super.delegateAdd(bswMSwitchPort)
 					}
 					
-					override protected delegateAdd(int index, BswMSwitchPort bswMSwitchPort) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMSwitchPort bswMSwitchPort) {
 						bswMSwitchPort.target?.gSetDefinition(containerValue.getContainerDefinition("BswMSwitchPort"))
 						super.delegateAdd(index, bswMSwitchPort)
 					}	
@@ -4258,12 +4258,12 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<BswMActionListItem, GContainer>(filteredContainers, typeof(BswMActionListItem), typeof(GContainer)) {
-						override protected delegateAdd(BswMActionListItem bswMActionListItem) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMActionList$BswMActionListItem bswMActionListItem) {
 							bswMActionListItem.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionListItem"))
 							super.delegateAdd(bswMActionListItem)
 						}
 						
-						override protected delegateAdd(int index, BswMActionListItem bswMActionListItem) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.BswM$BswMConfig$BswMModeControl$BswMActionList$BswMActionListItem bswMActionListItem) {
 							bswMActionListItem.target?.gSetDefinition(containerValue.getContainerDefinition("BswMActionListItem"))
 							super.delegateAdd(index, bswMActionListItem)
 						}	

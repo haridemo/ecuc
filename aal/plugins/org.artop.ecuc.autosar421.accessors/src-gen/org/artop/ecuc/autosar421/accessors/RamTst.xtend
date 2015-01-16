@@ -617,12 +617,12 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<RamTstAlgParams, GContainer>(filteredContainers, typeof(RamTstAlgParams), typeof(GContainer)) {
-					override protected delegateAdd(RamTstAlgParams ramTstAlgParams) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams ramTstAlgParams) {
 						ramTstAlgParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstAlgParams"))
 						super.delegateAdd(ramTstAlgParams)
 					}
 					
-					override protected delegateAdd(int index, RamTstAlgParams ramTstAlgParams) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams ramTstAlgParams) {
 						ramTstAlgParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstAlgParams"))
 						super.delegateAdd(index, ramTstAlgParams)
 					}	
@@ -779,12 +779,12 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<RamTstBlockParams, GContainer>(filteredContainers, typeof(RamTstBlockParams), typeof(GContainer)) {
-						override protected delegateAdd(RamTstBlockParams ramTstBlockParams) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams$RamTstBlockParams ramTstBlockParams) {
 							ramTstBlockParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstBlockParams"))
 							super.delegateAdd(ramTstBlockParams)
 						}
 						
-						override protected delegateAdd(int index, RamTstBlockParams ramTstBlockParams) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams$RamTstBlockParams ramTstBlockParams) {
 							ramTstBlockParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstBlockParams"))
 							super.delegateAdd(index, ramTstBlockParams)
 						}	

@@ -75,12 +75,12 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<FrTrcvChannel, GContainer>(filteredContainers, typeof(FrTrcvChannel), typeof(GContainer)) {
-			override protected delegateAdd(FrTrcvChannel frTrcvChannel) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTrcv$FrTrcvChannel frTrcvChannel) {
 				frTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTrcvChannel"))
 				super.delegateAdd(frTrcvChannel)
 			}
 		
-			override protected delegateAdd(int index, FrTrcvChannel frTrcvChannel) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTrcv$FrTrcvChannel frTrcvChannel) {
 				frTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTrcvChannel"))
 				super.delegateAdd(index, frTrcvChannel)
 			}
@@ -306,12 +306,12 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrTrcvBranchIdContainer, GContainer>(filteredContainers, typeof(FrTrcvBranchIdContainer), typeof(GContainer)) {
-				override protected delegateAdd(FrTrcvBranchIdContainer frTrcvBranchIdContainer) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTrcv$FrTrcvChannel$FrTrcvBranchIdContainer frTrcvBranchIdContainer) {
 					frTrcvBranchIdContainer.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvBranchIdContainer"))
 					super.delegateAdd(frTrcvBranchIdContainer)
 				}
 				
-				override protected delegateAdd(int index, FrTrcvBranchIdContainer frTrcvBranchIdContainer) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTrcv$FrTrcvChannel$FrTrcvBranchIdContainer frTrcvBranchIdContainer) {
 					frTrcvBranchIdContainer.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvBranchIdContainer"))
 					super.delegateAdd(index, frTrcvBranchIdContainer)
 				}	
@@ -392,12 +392,12 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<FrTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(FrTrcvDioChannelAccess), typeof(GContainer)) {
-						override protected delegateAdd(FrTrcvDioChannelAccess frTrcvDioChannelAccess) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTrcv$FrTrcvChannel$FrTrcvAccess$FrTrcvDioAccess$FrTrcvDioChannelAccess frTrcvDioChannelAccess) {
 							frTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvDioChannelAccess"))
 							super.delegateAdd(frTrcvDioChannelAccess)
 						}
 						
-						override protected delegateAdd(int index, FrTrcvDioChannelAccess frTrcvDioChannelAccess) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTrcv$FrTrcvChannel$FrTrcvAccess$FrTrcvDioAccess$FrTrcvDioChannelAccess frTrcvDioChannelAccess) {
 							frTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("FrTrcvDioChannelAccess"))
 							super.delegateAdd(index, frTrcvDioChannelAccess)
 						}	

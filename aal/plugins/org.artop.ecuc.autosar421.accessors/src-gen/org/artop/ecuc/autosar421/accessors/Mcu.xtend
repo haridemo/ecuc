@@ -321,12 +321,12 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuClockSettingConfig, GContainer>(filteredContainers, typeof(McuClockSettingConfig), typeof(GContainer)) {
-				override protected delegateAdd(McuClockSettingConfig mcuClockSettingConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig mcuClockSettingConfig) {
 					mcuClockSettingConfig.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockSettingConfig"))
 					super.delegateAdd(mcuClockSettingConfig)
 				}
 				
-				override protected delegateAdd(int index, McuClockSettingConfig mcuClockSettingConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig mcuClockSettingConfig) {
 					mcuClockSettingConfig.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockSettingConfig"))
 					super.delegateAdd(index, mcuClockSettingConfig)
 				}	
@@ -349,12 +349,12 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuModeSettingConf, GContainer>(filteredContainers, typeof(McuModeSettingConf), typeof(GContainer)) {
-				override protected delegateAdd(McuModeSettingConf mcuModeSettingConf) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuModeSettingConf mcuModeSettingConf) {
 					mcuModeSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuModeSettingConf"))
 					super.delegateAdd(mcuModeSettingConf)
 				}
 				
-				override protected delegateAdd(int index, McuModeSettingConf mcuModeSettingConf) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuModeSettingConf mcuModeSettingConf) {
 					mcuModeSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuModeSettingConf"))
 					super.delegateAdd(index, mcuModeSettingConf)
 				}	
@@ -368,12 +368,12 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuRamSectorSettingConf, GContainer>(filteredContainers, typeof(McuRamSectorSettingConf), typeof(GContainer)) {
-				override protected delegateAdd(McuRamSectorSettingConf mcuRamSectorSettingConf) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuRamSectorSettingConf mcuRamSectorSettingConf) {
 					mcuRamSectorSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuRamSectorSettingConf"))
 					super.delegateAdd(mcuRamSectorSettingConf)
 				}
 				
-				override protected delegateAdd(int index, McuRamSectorSettingConf mcuRamSectorSettingConf) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuRamSectorSettingConf mcuRamSectorSettingConf) {
 					mcuRamSectorSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuRamSectorSettingConf"))
 					super.delegateAdd(index, mcuRamSectorSettingConf)
 				}	
@@ -425,12 +425,12 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<McuClockReferencePoint, GContainer>(filteredContainers, typeof(McuClockReferencePoint), typeof(GContainer)) {
-					override protected delegateAdd(McuClockReferencePoint mcuClockReferencePoint) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig$McuClockReferencePoint mcuClockReferencePoint) {
 						mcuClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockReferencePoint"))
 						super.delegateAdd(mcuClockReferencePoint)
 					}
 					
-					override protected delegateAdd(int index, McuClockReferencePoint mcuClockReferencePoint) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig$McuClockReferencePoint mcuClockReferencePoint) {
 						mcuClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockReferencePoint"))
 						super.delegateAdd(index, mcuClockReferencePoint)
 					}	
@@ -656,12 +656,12 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuResetReasonConf, GContainer>(filteredContainers, typeof(McuResetReasonConf), typeof(GContainer)) {
-				override protected delegateAdd(McuResetReasonConf mcuResetReasonConf) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuPublishedInformation$McuResetReasonConf mcuResetReasonConf) {
 					mcuResetReasonConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuResetReasonConf"))
 					super.delegateAdd(mcuResetReasonConf)
 				}
 				
-				override protected delegateAdd(int index, McuResetReasonConf mcuResetReasonConf) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuPublishedInformation$McuResetReasonConf mcuResetReasonConf) {
 					mcuResetReasonConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuResetReasonConf"))
 					super.delegateAdd(index, mcuResetReasonConf)
 				}	

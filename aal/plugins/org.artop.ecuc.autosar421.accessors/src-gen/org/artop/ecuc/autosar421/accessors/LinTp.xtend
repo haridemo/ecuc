@@ -248,12 +248,12 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinTpChannelConfig, GContainer>(filteredContainers, typeof(LinTpChannelConfig), typeof(GContainer)) {
-				override protected delegateAdd(LinTpChannelConfig linTpChannelConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTp$LinTpGlobalConfig$LinTpChannelConfig linTpChannelConfig) {
 					linTpChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpChannelConfig"))
 					super.delegateAdd(linTpChannelConfig)
 				}
 				
-				override protected delegateAdd(int index, LinTpChannelConfig linTpChannelConfig) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTp$LinTpGlobalConfig$LinTpChannelConfig linTpChannelConfig) {
 					linTpChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpChannelConfig"))
 					super.delegateAdd(index, linTpChannelConfig)
 				}	
@@ -267,12 +267,12 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinTpRxNSdu, GContainer>(filteredContainers, typeof(LinTpRxNSdu), typeof(GContainer)) {
-				override protected delegateAdd(LinTpRxNSdu linTpRxNSdu) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTp$LinTpGlobalConfig$LinTpRxNSdu linTpRxNSdu) {
 					linTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpRxNSdu"))
 					super.delegateAdd(linTpRxNSdu)
 				}
 				
-				override protected delegateAdd(int index, LinTpRxNSdu linTpRxNSdu) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTp$LinTpGlobalConfig$LinTpRxNSdu linTpRxNSdu) {
 					linTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpRxNSdu"))
 					super.delegateAdd(index, linTpRxNSdu)
 				}	
@@ -286,12 +286,12 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinTpTxNSdu, GContainer>(filteredContainers, typeof(LinTpTxNSdu), typeof(GContainer)) {
-				override protected delegateAdd(LinTpTxNSdu linTpTxNSdu) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTp$LinTpGlobalConfig$LinTpTxNSdu linTpTxNSdu) {
 					linTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpTxNSdu"))
 					super.delegateAdd(linTpTxNSdu)
 				}
 				
-				override protected delegateAdd(int index, LinTpTxNSdu linTpTxNSdu) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTp$LinTpGlobalConfig$LinTpTxNSdu linTpTxNSdu) {
 					linTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("LinTpTxNSdu"))
 					super.delegateAdd(index, linTpTxNSdu)
 				}	

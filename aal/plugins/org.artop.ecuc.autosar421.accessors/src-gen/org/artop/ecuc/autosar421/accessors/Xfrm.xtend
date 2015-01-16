@@ -83,12 +83,12 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<XfrmImplementationMapping, GContainer>(filteredContainers, typeof(XfrmImplementationMapping), typeof(GContainer)) {
-			override protected delegateAdd(XfrmImplementationMapping xfrmImplementationMapping) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xfrm$XfrmImplementationMapping xfrmImplementationMapping) {
 				xfrmImplementationMapping.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("XfrmImplementationMapping"))
 				super.delegateAdd(xfrmImplementationMapping)
 			}
 		
-			override protected delegateAdd(int index, XfrmImplementationMapping xfrmImplementationMapping) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xfrm$XfrmImplementationMapping xfrmImplementationMapping) {
 				xfrmImplementationMapping.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("XfrmImplementationMapping"))
 				super.delegateAdd(index, xfrmImplementationMapping)
 			}

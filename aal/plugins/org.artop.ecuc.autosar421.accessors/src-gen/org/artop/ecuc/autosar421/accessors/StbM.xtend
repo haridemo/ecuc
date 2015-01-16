@@ -83,12 +83,12 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<StbMSynchronizedTimeBase, GContainer>(filteredContainers, typeof(StbMSynchronizedTimeBase), typeof(GContainer)) {
-			override protected delegateAdd(StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.StbM$StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
 				stbMSynchronizedTimeBase.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMSynchronizedTimeBase"))
 				super.delegateAdd(stbMSynchronizedTimeBase)
 			}
 		
-			override protected delegateAdd(int index, StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.StbM$StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
 				stbMSynchronizedTimeBase.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMSynchronizedTimeBase"))
 				super.delegateAdd(index, stbMSynchronizedTimeBase)
 			}
@@ -101,12 +101,12 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<StbMTriggeredCustomer, GContainer>(filteredContainers, typeof(StbMTriggeredCustomer), typeof(GContainer)) {
-			override protected delegateAdd(StbMTriggeredCustomer stbMTriggeredCustomer) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.StbM$StbMTriggeredCustomer stbMTriggeredCustomer) {
 				stbMTriggeredCustomer.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMTriggeredCustomer"))
 				super.delegateAdd(stbMTriggeredCustomer)
 			}
 		
-			override protected delegateAdd(int index, StbMTriggeredCustomer stbMTriggeredCustomer) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.StbM$StbMTriggeredCustomer stbMTriggeredCustomer) {
 				stbMTriggeredCustomer.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMTriggeredCustomer"))
 				super.delegateAdd(index, stbMTriggeredCustomer)
 			}

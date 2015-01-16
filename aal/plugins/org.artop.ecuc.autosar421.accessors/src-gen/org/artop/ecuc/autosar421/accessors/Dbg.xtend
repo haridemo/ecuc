@@ -409,12 +409,12 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DbgPredefinedDID, GContainer>(filteredContainers, typeof(DbgPredefinedDID), typeof(GContainer)) {
-				override protected delegateAdd(DbgPredefinedDID dbgPredefinedDID) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgPredefinedDID dbgPredefinedDID) {
 					dbgPredefinedDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDID"))
 					super.delegateAdd(dbgPredefinedDID)
 				}
 				
-				override protected delegateAdd(int index, DbgPredefinedDID dbgPredefinedDID) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgPredefinedDID dbgPredefinedDID) {
 					dbgPredefinedDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDID"))
 					super.delegateAdd(index, dbgPredefinedDID)
 				}	
@@ -428,12 +428,12 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DbgStaticDID, GContainer>(filteredContainers, typeof(DbgStaticDID), typeof(GContainer)) {
-				override protected delegateAdd(DbgStaticDID dbgStaticDID) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgStaticDID dbgStaticDID) {
 					dbgStaticDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDID"))
 					super.delegateAdd(dbgStaticDID)
 				}
 				
-				override protected delegateAdd(int index, DbgStaticDID dbgStaticDID) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgStaticDID dbgStaticDID) {
 					dbgStaticDID.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDID"))
 					super.delegateAdd(index, dbgStaticDID)
 				}	
@@ -576,12 +576,12 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DbgPredefinedDIDAddInfo, GContainer>(filteredContainers, typeof(DbgPredefinedDIDAddInfo), typeof(GContainer)) {
-					override protected delegateAdd(DbgPredefinedDIDAddInfo dbgPredefinedDIDAddInfo) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgPredefinedDID$DbgPredefinedDIDAddInfo dbgPredefinedDIDAddInfo) {
 						dbgPredefinedDIDAddInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDIDAddInfo"))
 						super.delegateAdd(dbgPredefinedDIDAddInfo)
 					}
 					
-					override protected delegateAdd(int index, DbgPredefinedDIDAddInfo dbgPredefinedDIDAddInfo) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgPredefinedDID$DbgPredefinedDIDAddInfo dbgPredefinedDIDAddInfo) {
 						dbgPredefinedDIDAddInfo.target?.gSetDefinition(containerValue.getContainerDefinition("DbgPredefinedDIDAddInfo"))
 						super.delegateAdd(index, dbgPredefinedDIDAddInfo)
 					}	
@@ -1060,12 +1060,12 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DbgStaticDIDData, GContainer>(filteredContainers, typeof(DbgStaticDIDData), typeof(GContainer)) {
-					override protected delegateAdd(DbgStaticDIDData dbgStaticDIDData) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgStaticDID$DbgStaticDIDData dbgStaticDIDData) {
 						dbgStaticDIDData.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDIDData"))
 						super.delegateAdd(dbgStaticDIDData)
 					}
 					
-					override protected delegateAdd(int index, DbgStaticDIDData dbgStaticDIDData) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dbg$DbgDIDConfiguration$DbgStaticDID$DbgStaticDIDData dbgStaticDIDData) {
 						dbgStaticDIDData.target?.gSetDefinition(containerValue.getContainerDefinition("DbgStaticDIDData"))
 						super.delegateAdd(index, dbgStaticDIDData)
 					}	

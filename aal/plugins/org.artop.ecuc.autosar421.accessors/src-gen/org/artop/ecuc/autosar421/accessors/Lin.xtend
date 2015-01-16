@@ -242,12 +242,12 @@ class Lin implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinChannel, GContainer>(filteredContainers, typeof(LinChannel), typeof(GContainer)) {
-				override protected delegateAdd(LinChannel linChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Lin$LinGlobalConfig$LinChannel linChannel) {
 					linChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinChannel"))
 					super.delegateAdd(linChannel)
 				}
 				
-				override protected delegateAdd(int index, LinChannel linChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Lin$LinGlobalConfig$LinChannel linChannel) {
 					linChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinChannel"))
 					super.delegateAdd(index, linChannel)
 				}	

@@ -75,12 +75,12 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<WdgIfDevice, GContainer>(filteredContainers, typeof(WdgIfDevice), typeof(GContainer)) {
-			override protected delegateAdd(WdgIfDevice wdgIfDevice) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgIf$WdgIfDevice wdgIfDevice) {
 				wdgIfDevice.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("WdgIfDevice"))
 				super.delegateAdd(wdgIfDevice)
 			}
 		
-			override protected delegateAdd(int index, WdgIfDevice wdgIfDevice) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgIf$WdgIfDevice wdgIfDevice) {
 				wdgIfDevice.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("WdgIfDevice"))
 				super.delegateAdd(index, wdgIfDevice)
 			}

@@ -75,12 +75,12 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<EaBlockConfiguration, GContainer>(filteredContainers, typeof(EaBlockConfiguration), typeof(GContainer)) {
-			override protected delegateAdd(EaBlockConfiguration eaBlockConfiguration) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Ea$EaBlockConfiguration eaBlockConfiguration) {
 				eaBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EaBlockConfiguration"))
 				super.delegateAdd(eaBlockConfiguration)
 			}
 		
-			override protected delegateAdd(int index, EaBlockConfiguration eaBlockConfiguration) {
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Ea$EaBlockConfiguration eaBlockConfiguration) {
 				eaBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EaBlockConfiguration"))
 				super.delegateAdd(index, eaBlockConfiguration)
 			}

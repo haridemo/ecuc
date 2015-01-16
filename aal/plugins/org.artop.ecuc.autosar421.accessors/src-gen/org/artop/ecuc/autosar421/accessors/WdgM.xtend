@@ -133,12 +133,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<WdgMMode, GContainer>(filteredContainers, typeof(WdgMMode), typeof(GContainer)) {
-				override protected delegateAdd(WdgMMode wdgMMode) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode wdgMMode) {
 					wdgMMode.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMMode"))
 					super.delegateAdd(wdgMMode)
 				}
 				
-				override protected delegateAdd(int index, WdgMMode wdgMMode) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode wdgMMode) {
 					wdgMMode.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMMode"))
 					super.delegateAdd(index, wdgMMode)
 				}	
@@ -279,12 +279,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMAliveSupervision, GContainer>(filteredContainers, typeof(WdgMAliveSupervision), typeof(GContainer)) {
-					override protected delegateAdd(WdgMAliveSupervision wdgMAliveSupervision) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMAliveSupervision wdgMAliveSupervision) {
 						wdgMAliveSupervision.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMAliveSupervision"))
 						super.delegateAdd(wdgMAliveSupervision)
 					}
 					
-					override protected delegateAdd(int index, WdgMAliveSupervision wdgMAliveSupervision) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMAliveSupervision wdgMAliveSupervision) {
 						wdgMAliveSupervision.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMAliveSupervision"))
 						super.delegateAdd(index, wdgMAliveSupervision)
 					}	
@@ -298,12 +298,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMDeadlineSupervision, GContainer>(filteredContainers, typeof(WdgMDeadlineSupervision), typeof(GContainer)) {
-					override protected delegateAdd(WdgMDeadlineSupervision wdgMDeadlineSupervision) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMDeadlineSupervision wdgMDeadlineSupervision) {
 						wdgMDeadlineSupervision.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMDeadlineSupervision"))
 						super.delegateAdd(wdgMDeadlineSupervision)
 					}
 					
-					override protected delegateAdd(int index, WdgMDeadlineSupervision wdgMDeadlineSupervision) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMDeadlineSupervision wdgMDeadlineSupervision) {
 						wdgMDeadlineSupervision.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMDeadlineSupervision"))
 						super.delegateAdd(index, wdgMDeadlineSupervision)
 					}	
@@ -317,12 +317,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMExternalLogicalSupervision, GContainer>(filteredContainers, typeof(WdgMExternalLogicalSupervision), typeof(GContainer)) {
-					override protected delegateAdd(WdgMExternalLogicalSupervision wdgMExternalLogicalSupervision) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMExternalLogicalSupervision wdgMExternalLogicalSupervision) {
 						wdgMExternalLogicalSupervision.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMExternalLogicalSupervision"))
 						super.delegateAdd(wdgMExternalLogicalSupervision)
 					}
 					
-					override protected delegateAdd(int index, WdgMExternalLogicalSupervision wdgMExternalLogicalSupervision) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMExternalLogicalSupervision wdgMExternalLogicalSupervision) {
 						wdgMExternalLogicalSupervision.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMExternalLogicalSupervision"))
 						super.delegateAdd(index, wdgMExternalLogicalSupervision)
 					}	
@@ -336,12 +336,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMLocalStatusParams, GContainer>(filteredContainers, typeof(WdgMLocalStatusParams), typeof(GContainer)) {
-					override protected delegateAdd(WdgMLocalStatusParams wdgMLocalStatusParams) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMLocalStatusParams wdgMLocalStatusParams) {
 						wdgMLocalStatusParams.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMLocalStatusParams"))
 						super.delegateAdd(wdgMLocalStatusParams)
 					}
 					
-					override protected delegateAdd(int index, WdgMLocalStatusParams wdgMLocalStatusParams) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMLocalStatusParams wdgMLocalStatusParams) {
 						wdgMLocalStatusParams.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMLocalStatusParams"))
 						super.delegateAdd(index, wdgMLocalStatusParams)
 					}	
@@ -355,12 +355,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMTrigger, GContainer>(filteredContainers, typeof(WdgMTrigger), typeof(GContainer)) {
-					override protected delegateAdd(WdgMTrigger wdgMTrigger) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMTrigger wdgMTrigger) {
 						wdgMTrigger.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMTrigger"))
 						super.delegateAdd(wdgMTrigger)
 					}
 					
-					override protected delegateAdd(int index, WdgMTrigger wdgMTrigger) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMTrigger wdgMTrigger) {
 						wdgMTrigger.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMTrigger"))
 						super.delegateAdd(index, wdgMTrigger)
 					}	
@@ -639,12 +639,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<WdgMExternalTransition, GContainer>(filteredContainers, typeof(WdgMExternalTransition), typeof(GContainer)) {
-						override protected delegateAdd(WdgMExternalTransition wdgMExternalTransition) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMExternalLogicalSupervision$WdgMExternalTransition wdgMExternalTransition) {
 							wdgMExternalTransition.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMExternalTransition"))
 							super.delegateAdd(wdgMExternalTransition)
 						}
 						
-						override protected delegateAdd(int index, WdgMExternalTransition wdgMExternalTransition) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMConfigSet$WdgMMode$WdgMExternalLogicalSupervision$WdgMExternalTransition wdgMExternalTransition) {
 							wdgMExternalTransition.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMExternalTransition"))
 							super.delegateAdd(index, wdgMExternalTransition)
 						}	
@@ -973,12 +973,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<WdgMSupervisedEntity, GContainer>(filteredContainers, typeof(WdgMSupervisedEntity), typeof(GContainer)) {
-				override protected delegateAdd(WdgMSupervisedEntity wdgMSupervisedEntity) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMSupervisedEntity wdgMSupervisedEntity) {
 					wdgMSupervisedEntity.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMSupervisedEntity"))
 					super.delegateAdd(wdgMSupervisedEntity)
 				}
 				
-				override protected delegateAdd(int index, WdgMSupervisedEntity wdgMSupervisedEntity) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMSupervisedEntity wdgMSupervisedEntity) {
 					wdgMSupervisedEntity.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMSupervisedEntity"))
 					super.delegateAdd(index, wdgMSupervisedEntity)
 				}	
@@ -992,12 +992,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<WdgMWatchdog, GContainer>(filteredContainers, typeof(WdgMWatchdog), typeof(GContainer)) {
-				override protected delegateAdd(WdgMWatchdog wdgMWatchdog) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMWatchdog wdgMWatchdog) {
 					wdgMWatchdog.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMWatchdog"))
 					super.delegateAdd(wdgMWatchdog)
 				}
 				
-				override protected delegateAdd(int index, WdgMWatchdog wdgMWatchdog) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMWatchdog wdgMWatchdog) {
 					wdgMWatchdog.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMWatchdog"))
 					super.delegateAdd(index, wdgMWatchdog)
 				}	
@@ -1163,12 +1163,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMCheckpoint, GContainer>(filteredContainers, typeof(WdgMCheckpoint), typeof(GContainer)) {
-					override protected delegateAdd(WdgMCheckpoint wdgMCheckpoint) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMSupervisedEntity$WdgMCheckpoint wdgMCheckpoint) {
 						wdgMCheckpoint.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMCheckpoint"))
 						super.delegateAdd(wdgMCheckpoint)
 					}
 					
-					override protected delegateAdd(int index, WdgMCheckpoint wdgMCheckpoint) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMSupervisedEntity$WdgMCheckpoint wdgMCheckpoint) {
 						wdgMCheckpoint.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMCheckpoint"))
 						super.delegateAdd(index, wdgMCheckpoint)
 					}	
@@ -1182,12 +1182,12 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<WdgMInternalTransition, GContainer>(filteredContainers, typeof(WdgMInternalTransition), typeof(GContainer)) {
-					override protected delegateAdd(WdgMInternalTransition wdgMInternalTransition) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMSupervisedEntity$WdgMInternalTransition wdgMInternalTransition) {
 						wdgMInternalTransition.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMInternalTransition"))
 						super.delegateAdd(wdgMInternalTransition)
 					}
 					
-					override protected delegateAdd(int index, WdgMInternalTransition wdgMInternalTransition) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgM$WdgMGeneral$WdgMSupervisedEntity$WdgMInternalTransition wdgMInternalTransition) {
 						wdgMInternalTransition.target?.gSetDefinition(containerValue.getContainerDefinition("WdgMInternalTransition"))
 						super.delegateAdd(index, wdgMInternalTransition)
 					}	

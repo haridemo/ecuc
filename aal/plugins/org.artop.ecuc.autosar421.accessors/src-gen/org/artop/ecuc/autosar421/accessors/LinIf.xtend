@@ -293,12 +293,12 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinIfChannel, GContainer>(filteredContainers, typeof(LinIfChannel), typeof(GContainer)) {
-				override protected delegateAdd(LinIfChannel linIfChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel linIfChannel) {
 					linIfChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfChannel"))
 					super.delegateAdd(linIfChannel)
 				}
 				
-				override protected delegateAdd(int index, LinIfChannel linIfChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel linIfChannel) {
 					linIfChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfChannel"))
 					super.delegateAdd(index, linIfChannel)
 				}	
@@ -505,12 +505,12 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<LinIfFrame, GContainer>(filteredContainers, typeof(LinIfFrame), typeof(GContainer)) {
-					override protected delegateAdd(LinIfFrame linIfFrame) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfFrame linIfFrame) {
 						linIfFrame.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFrame"))
 						super.delegateAdd(linIfFrame)
 					}
 					
-					override protected delegateAdd(int index, LinIfFrame linIfFrame) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfFrame linIfFrame) {
 						linIfFrame.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFrame"))
 						super.delegateAdd(index, linIfFrame)
 					}	
@@ -533,12 +533,12 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<LinIfScheduleTable, GContainer>(filteredContainers, typeof(LinIfScheduleTable), typeof(GContainer)) {
-					override protected delegateAdd(LinIfScheduleTable linIfScheduleTable) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfScheduleTable linIfScheduleTable) {
 						linIfScheduleTable.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfScheduleTable"))
 						super.delegateAdd(linIfScheduleTable)
 					}
 					
-					override protected delegateAdd(int index, LinIfScheduleTable linIfScheduleTable) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfScheduleTable linIfScheduleTable) {
 						linIfScheduleTable.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfScheduleTable"))
 						super.delegateAdd(index, linIfScheduleTable)
 					}	
@@ -703,12 +703,12 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<LinIfSubstitutionFrames, GContainer>(filteredContainers, typeof(LinIfSubstitutionFrames), typeof(GContainer)) {
-						override protected delegateAdd(LinIfSubstitutionFrames linIfSubstitutionFrames) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfFrame$LinIfSubstitutionFrames linIfSubstitutionFrames) {
 							linIfSubstitutionFrames.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfSubstitutionFrames"))
 							super.delegateAdd(linIfSubstitutionFrames)
 						}
 						
-						override protected delegateAdd(int index, LinIfSubstitutionFrames linIfSubstitutionFrames) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfFrame$LinIfSubstitutionFrames linIfSubstitutionFrames) {
 							linIfSubstitutionFrames.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfSubstitutionFrames"))
 							super.delegateAdd(index, linIfSubstitutionFrames)
 						}	
@@ -744,12 +744,12 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							}
 						}
 						return new BasicWrappingEList<LinIfFixedFrameSduByte, GContainer>(filteredContainers, typeof(LinIfFixedFrameSduByte), typeof(GContainer)) {
-							override protected delegateAdd(LinIfFixedFrameSduByte linIfFixedFrameSduByte) {
+							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfFrame$LinIfFixedFrameSdu$LinIfFixedFrameSduByte linIfFixedFrameSduByte) {
 								linIfFixedFrameSduByte.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFixedFrameSduByte"))
 								super.delegateAdd(linIfFixedFrameSduByte)
 							}
 							
-							override protected delegateAdd(int index, LinIfFixedFrameSduByte linIfFixedFrameSduByte) {
+							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfFrame$LinIfFixedFrameSdu$LinIfFixedFrameSduByte linIfFixedFrameSduByte) {
 								linIfFixedFrameSduByte.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfFixedFrameSduByte"))
 								super.delegateAdd(index, linIfFixedFrameSduByte)
 							}	
@@ -1320,12 +1320,12 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<LinIfEntry, GContainer>(filteredContainers, typeof(LinIfEntry), typeof(GContainer)) {
-						override protected delegateAdd(LinIfEntry linIfEntry) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfScheduleTable$LinIfEntry linIfEntry) {
 							linIfEntry.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfEntry"))
 							super.delegateAdd(linIfEntry)
 						}
 						
-						override protected delegateAdd(int index, LinIfEntry linIfEntry) {
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinIf$LinIfGlobalConfig$LinIfChannel$LinIfScheduleTable$LinIfEntry linIfEntry) {
 							linIfEntry.target?.gSetDefinition(containerValue.getContainerDefinition("LinIfEntry"))
 							super.delegateAdd(index, linIfEntry)
 						}	

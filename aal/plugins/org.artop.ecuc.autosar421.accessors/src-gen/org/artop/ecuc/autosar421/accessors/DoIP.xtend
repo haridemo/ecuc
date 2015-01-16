@@ -161,12 +161,12 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DoIPChannel, GContainer>(filteredContainers, typeof(DoIPChannel), typeof(GContainer)) {
-				override protected delegateAdd(DoIPChannel doIPChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPChannel doIPChannel) {
 					doIPChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPChannel"))
 					super.delegateAdd(doIPChannel)
 				}
 				
-				override protected delegateAdd(int index, DoIPChannel doIPChannel) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPChannel doIPChannel) {
 					doIPChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPChannel"))
 					super.delegateAdd(index, doIPChannel)
 				}	
@@ -189,12 +189,12 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DoIPRoutingActivation, GContainer>(filteredContainers, typeof(DoIPRoutingActivation), typeof(GContainer)) {
-				override protected delegateAdd(DoIPRoutingActivation doIPRoutingActivation) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPRoutingActivation doIPRoutingActivation) {
 					doIPRoutingActivation.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPRoutingActivation"))
 					super.delegateAdd(doIPRoutingActivation)
 				}
 				
-				override protected delegateAdd(int index, DoIPRoutingActivation doIPRoutingActivation) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPRoutingActivation doIPRoutingActivation) {
 					doIPRoutingActivation.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPRoutingActivation"))
 					super.delegateAdd(index, doIPRoutingActivation)
 				}	
@@ -208,12 +208,12 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DoIPTester, GContainer>(filteredContainers, typeof(DoIPTester), typeof(GContainer)) {
-				override protected delegateAdd(DoIPTester doIPTester) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPTester doIPTester) {
 					doIPTester.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTester"))
 					super.delegateAdd(doIPTester)
 				}
 				
-				override protected delegateAdd(int index, DoIPTester doIPTester) {
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPTester doIPTester) {
 					doIPTester.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTester"))
 					super.delegateAdd(index, doIPTester)
 				}	
@@ -448,12 +448,12 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DoIPTargetAddress, GContainer>(filteredContainers, typeof(DoIPTargetAddress), typeof(GContainer)) {
-					override protected delegateAdd(DoIPTargetAddress doIPTargetAddress) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPConnections$DoIPTargetAddress doIPTargetAddress) {
 						doIPTargetAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTargetAddress"))
 						super.delegateAdd(doIPTargetAddress)
 					}
 					
-					override protected delegateAdd(int index, DoIPTargetAddress doIPTargetAddress) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPConnections$DoIPTargetAddress doIPTargetAddress) {
 						doIPTargetAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTargetAddress"))
 						super.delegateAdd(index, doIPTargetAddress)
 					}	
@@ -467,12 +467,12 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DoIPTcpConnection, GContainer>(filteredContainers, typeof(DoIPTcpConnection), typeof(GContainer)) {
-					override protected delegateAdd(DoIPTcpConnection doIPTcpConnection) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPConnections$DoIPTcpConnection doIPTcpConnection) {
 						doIPTcpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTcpConnection"))
 						super.delegateAdd(doIPTcpConnection)
 					}
 					
-					override protected delegateAdd(int index, DoIPTcpConnection doIPTcpConnection) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPConnections$DoIPTcpConnection doIPTcpConnection) {
 						doIPTcpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPTcpConnection"))
 						super.delegateAdd(index, doIPTcpConnection)
 					}	
@@ -486,12 +486,12 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DoIPUdpConnection, GContainer>(filteredContainers, typeof(DoIPUdpConnection), typeof(GContainer)) {
-					override protected delegateAdd(DoIPUdpConnection doIPUdpConnection) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPConnections$DoIPUdpConnection doIPUdpConnection) {
 						doIPUdpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPUdpConnection"))
 						super.delegateAdd(doIPUdpConnection)
 					}
 					
-					override protected delegateAdd(int index, DoIPUdpConnection doIPUdpConnection) {
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.DoIP$DoIPConfigSet$DoIPConnections$DoIPUdpConnection doIPUdpConnection) {
 						doIPUdpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("DoIPUdpConnection"))
 						super.delegateAdd(index, doIPUdpConnection)
 					}	
