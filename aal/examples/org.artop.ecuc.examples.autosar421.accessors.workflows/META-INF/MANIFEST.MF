@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.ecuc.examples.autosar421.accessors.workflows;singleton:=true
+Bundle-Version: 4.5.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.xtend.lib,
+ org.eclipse.sphinx.emf.mwe.dynamic,
+ org.eclipse.sphinx.examples.workflows.lib,
+ org.eclipse.sphinx.emf.check,
+ org.artop.ecuc.autosar421.accessors,
+ org.artop.aal.autosar421
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: org.artop.ecuc.examples.autosar421.accessors.workflows
+Bundle-ActivationPolicy: lazy
