@@ -14,14 +14,7 @@
  */
 package org.artop.ecuc.examples.autosar421.accessors.check.ui;
 
-import org.artop.ecuc.examples.autosar421.accessors.check.ui.internal.Activator;
-
 public interface IEcucValidationUIConstants {
-
-	/**
-	 * Identifier of the Validate sub menu.
-	 */
-	public static final String MENU_VALIDATE_ID = Activator.getDefault().getBundle().getSymbolicName() + ".menus.validate"; //$NON-NLS-1$
 
 	/**
 	 * Label of the Validate sub menu.
