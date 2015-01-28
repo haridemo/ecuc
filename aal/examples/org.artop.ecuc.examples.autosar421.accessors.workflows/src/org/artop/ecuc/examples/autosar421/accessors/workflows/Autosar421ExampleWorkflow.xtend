@@ -17,7 +17,6 @@ package org.artop.ecuc.examples.autosar421.accessors.workflows
 import autosar40.ecucdescription.EcucContainerValue
 import autosar40.ecucdescription.EcucModuleConfigurationValues
 import autosar40.ecucdescription.EcucNumericalParamValue
-import autosar40.ecucdescription.EcucReferenceValue
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucdescriptionFactory
 import autosar40.genericstructure.varianthandling.attributevaluevariationpoints.NumericalValueVariationPoint
@@ -53,44 +52,47 @@ class Autosar421ExampleWorkflowComponent extends AbstractModelWorkflowComponent 
 			if (modelObject instanceof EcucModuleConfigurationValues) {
 				if ("NvM".equals(modelObject.definition?.shortName)) {
 					val EcucModuleConfigurationValues nvmValues = modelObject
-					
-					// Add a container value
-					var EcucContainerValue nvmBlockDescriptor2 = EcucdescriptionFactory.eINSTANCE.createEcucContainerValue()
-					val definition = nvmValues.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals("NvMBlockDescriptor")]
-					nvmBlockDescriptor2.gSetDefinition(definition)
-					nvmBlockDescriptor2.setShortName("NvMBlockDescriptor2")
-					nvmValues.containers.add(nvmBlockDescriptor2)
-					
-					
-					// Set a textual parameter value
-					var EcucTextualParamValue nvMBlockCrcType = EcucdescriptionFactory.eINSTANCE.createEcucTextualParamValue()
-					val containerDef = nvmBlockDescriptor2.gGetDefinition
-					if (containerDef instanceof GParamConfContainerDef) {
-						val parameterDefinition = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockCrcType"]
-						nvMBlockCrcType.gSetDefinition(parameterDefinition)
+
+					// List existing NvMBlockDescriptor container values
+					print("Existing container values:")
+					nvmValues.containers.filter["NvMBlockDescriptor".equals(it.definition?.shortName)].forEach[print(" " + it.shortName)]
+					println
+
+					// Add new NvMBlockDescriptor container value
+					var EcucContainerValue nvmBlockDescriptorValue3 = EcucdescriptionFactory.eINSTANCE.createEcucContainerValue()
+					val nvmBlockDescriptorDef = nvmValues.gGetDefinition?.gGetContainers.findFirst[gGetShortName.equals("NvMBlockDescriptor")]
+					nvmBlockDescriptorValue3.gSetDefinition(nvmBlockDescriptorDef)
+					nvmBlockDescriptorValue3.setShortName("NvMBlockDescriptorValue3")
+					nvmValues.containers.add(nvmBlockDescriptorValue3)
+
+
+					// Set textual NvMBlockCrcType parameter value
+					var EcucTextualParamValue nvmBlockCrcTypeValue = EcucdescriptionFactory.eINSTANCE.createEcucTextualParamValue()
+					if (nvmBlockDescriptorDef instanceof GParamConfContainerDef) {
+						val nvmBlockCrcTypeDef = nvmBlockDescriptorDef.gGetParameters.findFirst[gGetShortName == "NvMBlockCrcType"]
+						nvmBlockCrcTypeValue.gSetDefinition(nvmBlockCrcTypeDef)
 					}
-					nvmBlockDescriptor2.gGetParameterValues += nvMBlockCrcType
-					
-					// Set a numerical parameter value
-					var EcucNumericalParamValue nvMBlockJobPriority = EcucdescriptionFactory.eINSTANCE.createEcucNumericalParamValue()
-					if (containerDef instanceof GParamConfContainerDef) {
-						val parameterDefinition = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockJobPriority"]
-						nvMBlockJobPriority.gSetDefinition(parameterDefinition)
+					nvmBlockCrcTypeValue.setValue("NVM_CRC32")
+					nvmBlockDescriptorValue3.gGetParameterValues += nvmBlockCrcTypeValue
+
+					// Set numerical NvMBlockJobPriority parameter value
+					var EcucNumericalParamValue nvmBlockJobPriorityValue = EcucdescriptionFactory.eINSTANCE.createEcucNumericalParamValue()
+					if (nvmBlockDescriptorDef instanceof GParamConfContainerDef) {
+						val nvmBlockJobPriorityDef = nvmBlockDescriptorDef.gGetParameters.findFirst[gGetShortName == "NvMBlockJobPriority"]
+						nvmBlockJobPriorityValue.gSetDefinition(nvmBlockJobPriorityDef)
 					}
-					nvmBlockDescriptor2.gGetParameterValues += nvMBlockJobPriority
-					var NumericalValueVariationPoint valueVariationPoint = nvMBlockJobPriority.getValue();
-					if (valueVariationPoint == null) {
-						valueVariationPoint = Autosar40Factory.eINSTANCE.createNumericalValueVariationPoint();
-						nvMBlockJobPriority.setValue(valueVariationPoint);
-					}
-					valueVariationPoint.setMixedText("4");
-					
-					// Set reference value
+					var NumericalValueVariationPoint numericalValueVariationPoint = Autosar40Factory.eINSTANCE.createNumericalValueVariationPoint();
+					numericalValueVariationPoint.setMixedText("4");
+					nvmBlockJobPriorityValue.setValue(numericalValueVariationPoint);
+					nvmBlockDescriptorValue3.gGetParameterValues += nvmBlockJobPriorityValue
+
+					// Set NvMTargetBlockReference choice container value
 					val nvmTargetBlockReferenceValue = EcucdescriptionFactory.eINSTANCE.createEcucContainerValue()
-					nvmTargetBlockReferenceValue.setShortName("NvMTargetBlockReference1");
-					var EcucReferenceValue nvmTargetBlockReference = EcucdescriptionFactory.eINSTANCE.createEcucReferenceValue
-					nvmTargetBlockReference.setValue(nvmTargetBlockReferenceValue) 
-					nvmBlockDescriptor2.getReferenceValues += nvmTargetBlockReference
+					// TODO Find and set NvMTargetBlockReference container definition
+					nvmTargetBlockReferenceValue.setShortName("NvMTargetBlockReferenceValue1");
+					nvmBlockDescriptorValue3.subContainers+= nvmTargetBlockReferenceValue
+
+					// TODO Add new NvmDemEventParameterRefs container value and set NVM_E_HARDWARE symbolic name reference
 				}
 			}
 		}

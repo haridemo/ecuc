@@ -50,22 +50,29 @@ class EcucValueAccessors421ExampleWorkflowComponent extends AbstractModelWorkflo
 			if (modelObject instanceof EcucModuleConfigurationValues) {
 				if ("NvM".equals(modelObject.definition?.shortName)) {
 					val NvM nvmValues = new NvM(modelObject)
-					
-					// Add a container value
-					var NvMBlockDescriptor nvmBlockDescriptor2 = new NvMBlockDescriptor(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
-					nvmBlockDescriptor2.setShortName("NvMBlockDescriptor2")
-					nvmValues.getNvMBlockDescriptors().add(nvmBlockDescriptor2)
-					
-					// Set a textual parameter value
-					nvmBlockDescriptor2.setNvMBlockCrcType(NvMBlockCrcType.NVM_CRC32)
 
-					// Set a numerical parameter value
-					nvmBlockDescriptor2.setNvMBlockJobPriority(4)
-					
-					// Set a reference value
+					// List existing NvMBlockDescriptor container values
+					print("Existing container values:")
+					nvmValues.getNvMBlockDescriptors().forEach[print(" " + it.shortName)]
+					println
+
+					// Add new NvMBlockDescriptor container value
+					var NvMBlockDescriptor nvmBlockDescriptorValue2 = new NvMBlockDescriptor(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
+					nvmBlockDescriptorValue2.setShortName("NvMBlockDescriptorValue1")
+					nvmValues.getNvMBlockDescriptors().add(nvmBlockDescriptorValue2)
+
+					// Set textual NvMBlockCrcType parameter value
+					nvmBlockDescriptorValue2.setNvMBlockCrcType(NvMBlockCrcType.NVM_CRC32)
+
+					// Set numerical NvMBlockJobPriority parameter value
+					nvmBlockDescriptorValue2.setNvMBlockJobPriority(4)
+
+					// Set NvMTargetBlockReference choice container value
 					val NvMTargetBlockReference nvmTargetBlockReferenceValue = new NvMTargetBlockReference(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
-					nvmTargetBlockReferenceValue.setShortName("NvMTargetBlockReference1")
-					nvmBlockDescriptor2.setNvMTargetBlockReference(nvmTargetBlockReferenceValue)
+					nvmTargetBlockReferenceValue.setShortName("NvMTargetBlockReferenceValue1")
+					nvmBlockDescriptorValue2.setNvMTargetBlockReference(nvmTargetBlockReferenceValue)
+
+					// TODO Add new NvmDemEventParameterRefs container value and set NVM_E_HARDWARE symbolic name reference
 				}
 			}
 		}
