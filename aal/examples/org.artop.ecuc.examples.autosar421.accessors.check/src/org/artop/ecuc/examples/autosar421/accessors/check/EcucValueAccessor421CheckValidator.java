@@ -35,13 +35,13 @@ public class EcucValueAccessor421CheckValidator extends AbstractEcucValueAccesso
 		super(EcucValueAccessor421Factory.INSTANCE);
 	}
 
-	private static final Pattern ILLEGAL_CHARACTERS_PATTERN = Pattern.compile(".*[ \\t\\.,;].*"); //$NON-NLS-1$
+	private static final Pattern ILLEGAL_CHARACTERS_PATTERN = Pattern.compile("[ \\t\\.,;]"); //$NON-NLS-1$
 
 	@Check(constraint = "DemShortNameNotValid", categories = { "Category1" })
 	void checkDemShortName(Dem dem) {
 		Assert.isNotNull(dem);
 
-		if (!isValidShortName(dem.getShortName())) {
+		if (!hasValidShortName(dem.getShortName())) {
 			issue(dem, GinfrastructurePackage.Literals.GREFERRABLE__GSHORT_NAME);
 		}
 	}
@@ -50,7 +50,7 @@ public class EcucValueAccessor421CheckValidator extends AbstractEcucValueAccesso
 	void checkNvMShortName(NvM nvm) {
 		Assert.isNotNull(nvm);
 
-		if (!isValidShortName(nvm.getShortName())) {
+		if (!hasValidShortName(nvm.getShortName())) {
 			issue(nvm, GinfrastructurePackage.Literals.GREFERRABLE__GSHORT_NAME);
 		}
 	}
@@ -70,12 +70,12 @@ public class EcucValueAccessor421CheckValidator extends AbstractEcucValueAccesso
 	void checkModuleConfigurationShortName(EcucModuleConfigurationValues moduleConf) {
 		Assert.isNotNull(moduleConf);
 
-		if (!isValidShortName(moduleConf.getShortName())) {
+		if (!hasValidShortName(moduleConf.getShortName())) {
 			issue(moduleConf, GinfrastructurePackage.Literals.GREFERRABLE__GSHORT_NAME);
 		}
 	}
 
-	private boolean isValidShortName(String shortName) {
-		return !ILLEGAL_CHARACTERS_PATTERN.matcher(shortName).matches();
+	private boolean hasValidShortName(String shortName) {
+		return !ILLEGAL_CHARACTERS_PATTERN.matcher(shortName).find();
 	}
 }
