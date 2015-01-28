@@ -23,7 +23,6 @@ import org.eclipse.sphinx.emf.mwe.dynamic.WorkspaceWorkflow
 import org.eclipse.sphinx.emf.mwe.dynamic.components.AbstractModelWorkflowComponent
 
 import static extension org.eclipse.sphinx.examples.workflows.lib.ModelWorkflowExtensions.*
-import java.util.List
 import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor
 import autosar40.ecucdescription.EcucdescriptionFactory
 import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor.NvMBlockCrcType
@@ -44,27 +43,29 @@ class EcucValueAccessors421ExampleWorkflowComponent extends AbstractModelWorkflo
 	}
 
 	override protected invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues) {
-		println("Executing Ecuc Value Accessors 421 Example Workflow component")
+		println("Running automatic ECUC configuration example using ECUC value accessor APIs reflecting underlying ECUC parameter definitions")
 		val modelObjects = ctx.modelSlot
 
 		for (modelObject : modelObjects) {
 			if (modelObject instanceof EcucModuleConfigurationValues) {
 				if ("NvM".equals(modelObject.definition?.shortName)) {
-					val NvM nvm = new NvM(modelObject)
+					val NvM nvmValues = new NvM(modelObject)
 					
-					// Add a containerValue
-					var NvMBlockDescriptor nvMBlockDescriptor = new NvMBlockDescriptor(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
-					nvMBlockDescriptor.setShortName("NvMBlockDescriptor2")
-					nvm.getNvMBlockDescriptors().add(nvMBlockDescriptor)
+					// Add a container value
+					var NvMBlockDescriptor nvmBlockDescriptor2 = new NvMBlockDescriptor(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
+					nvmBlockDescriptor2.setShortName("NvMBlockDescriptor2")
+					nvmValues.getNvMBlockDescriptors().add(nvmBlockDescriptor2)
 					
-					// Set parameterValue value
-					nvMBlockDescriptor.setNvMBlockCrcType(NvMBlockCrcType.NVM_CRC32)
-					nvMBlockDescriptor.setNvMBlockJobPriority(4)
+					// Set a textual parameter value
+					nvmBlockDescriptor2.setNvMBlockCrcType(NvMBlockCrcType.NVM_CRC32)
+
+					// Set a numerical parameter value
+					nvmBlockDescriptor2.setNvMBlockJobPriority(4)
 					
-					// Set referenceValue value
-					val NvMTargetBlockReference nvMTargetBlockReference = new NvMTargetBlockReference(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
-					nvMTargetBlockReference.setShortName("NvMTargetBlockReference1")
-					nvMBlockDescriptor.setNvMTargetBlockReference(nvMTargetBlockReference)
+					// Set a reference value
+					val NvMTargetBlockReference nvmTargetBlockReferenceValue = new NvMTargetBlockReference(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())
+					nvmTargetBlockReferenceValue.setShortName("NvMTargetBlockReference1")
+					nvmBlockDescriptor2.setNvMTargetBlockReference(nvmTargetBlockReferenceValue)
 				}
 			}
 		}
