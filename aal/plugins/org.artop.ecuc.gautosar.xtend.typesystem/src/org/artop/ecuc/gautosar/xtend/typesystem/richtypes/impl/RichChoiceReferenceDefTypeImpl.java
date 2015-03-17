@@ -1,15 +1,15 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
@@ -132,7 +132,7 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
 			GIdentifiable valueValue = value.gGetValue();
-			if (valueValue instanceof GContainer) {
+			if (valueValue instanceof GContainer && ((GContainer) valueValue).gGetDefinition() != null) {
 				String targetDefShortName = ((GContainer) valueValue).gGetDefinition().gGetShortName();
 				for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {
 					if (destinationTypeDef.gGetShortName().equals(targetDefShortName)) {
