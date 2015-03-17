@@ -1,15 +1,15 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.impl;
@@ -86,10 +86,12 @@ public class RichInstanceReferenceDefTypeImpl extends AbstractRichConfigReferenc
 					}
 					if (valueValueFeature != null) {
 						EObject instanceRef = (EObject) referenceValueValue.eGet(valueValueFeature);
-						// Handle both cases for AR 3.x and AR 4.x
-						if (ExtendedMetaData.INSTANCE.getName(instanceRef.eClass()).equals(destinationType)
-								|| instanceRef.eClass().getName().equals(destinationType)) {
-							return instanceRef;
+						if (instanceRef != null) {
+							// Handle both cases for AR 3.x and AR 4.x
+							if (ExtendedMetaData.INSTANCE.getName(instanceRef.eClass()).equals(destinationType)
+									|| instanceRef.eClass().getName().equals(destinationType)) {
+								return instanceRef;
+							}
 						}
 					}
 				}
