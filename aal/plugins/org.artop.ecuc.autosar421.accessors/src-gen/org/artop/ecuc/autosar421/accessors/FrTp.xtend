@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class FrTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -120,11 +122,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFrTpChanNum(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpChanNum"])
+		def BigInteger getFrTpChanNum(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpChanNum"])
 		}
 		
-		def void setFrTpChanNum(Integer value){
+		def void setFrTpChanNum(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpChanNum"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -184,11 +186,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getFrTpMainFuncCycle(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMainFuncCycle"])
+		def BigDecimal getFrTpMainFuncCycle(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMainFuncCycle"])
 		}
 		
-		def void setFrTpMainFuncCycle(Float value){
+		def void setFrTpMainFuncCycle(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMainFuncCycle"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -271,11 +273,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getFrTpMaxConnectionCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxConnectionCnt"])
+		def BigInteger getFrTpMaxConnectionCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxConnectionCnt"])
 		}
 		
-		def void setFrTpMaxConnectionCnt(Integer value){
+		def void setFrTpMaxConnectionCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxConnectionCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -401,11 +403,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpLa(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpLa"])
+			def BigInteger getFrTpLa(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpLa"])
 			}
 			
-			def void setFrTpLa(Integer value){
+			def void setFrTpLa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpLa"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -433,11 +435,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpRa(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRa"])
+			def BigInteger getFrTpRa(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRa"])
 			}
 			
-			def void setFrTpRa(Integer value){
+			def void setFrTpRa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRa"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -522,11 +524,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFrTpRxSduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxSduId"])
+				def BigInteger getFrTpRxSduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxSduId"])
 				}
 				
-				def void setFrTpRxSduId(Integer value){
+				def void setFrTpRxSduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxSduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -573,11 +575,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFrTpTxSduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxSduId"])
+				def BigInteger getFrTpTxSduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxSduId"])
 				}
 				
-				def void setFrTpTxSduId(Integer value){
+				def void setFrTpTxSduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxSduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -659,11 +661,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getFrTpMaxAr(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxAr"])
+			def BigInteger getFrTpMaxAr(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxAr"])
 			}
 			
-			def void setFrTpMaxAr(Integer value){
+			def void setFrTpMaxAr(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxAr"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -675,11 +677,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpMaxAs(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxAs"])
+			def BigInteger getFrTpMaxAs(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxAs"])
 			}
 			
-			def void setFrTpMaxAs(Integer value){
+			def void setFrTpMaxAs(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxAs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -691,11 +693,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpMaxBufferSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxBufferSize"])
+			def BigInteger getFrTpMaxBufferSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxBufferSize"])
 			}
 			
-			def void setFrTpMaxBufferSize(Integer value){
+			def void setFrTpMaxBufferSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxBufferSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -707,11 +709,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpMaxFCWait(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxFCWait"])
+			def BigInteger getFrTpMaxFCWait(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxFCWait"])
 			}
 			
-			def void setFrTpMaxFCWait(Integer value){
+			def void setFrTpMaxFCWait(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxFCWait"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -723,11 +725,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpMaxFrIf(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxFrIf"])
+			def BigInteger getFrTpMaxFrIf(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxFrIf"])
 			}
 			
-			def void setFrTpMaxFrIf(Integer value){
+			def void setFrTpMaxFrIf(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxFrIf"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -739,11 +741,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpMaxNbrOfNPduPerCycle(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxNbrOfNPduPerCycle"])
+			def BigInteger getFrTpMaxNbrOfNPduPerCycle(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxNbrOfNPduPerCycle"])
 			}
 			
-			def void setFrTpMaxNbrOfNPduPerCycle(Integer value){
+			def void setFrTpMaxNbrOfNPduPerCycle(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxNbrOfNPduPerCycle"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -755,11 +757,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpMaxRn(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxRn"])
+			def BigInteger getFrTpMaxRn(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxRn"])
 			}
 			
-			def void setFrTpMaxRn(Integer value){
+			def void setFrTpMaxRn(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxRn"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -771,11 +773,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrTpSCexp(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpSCexp"])
+			def BigInteger getFrTpSCexp(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpSCexp"])
 			}
 			
-			def void setFrTpSCexp(Integer value){
+			def void setFrTpSCexp(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpSCexp"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -787,11 +789,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeBr(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeBr"])
+			def BigDecimal getFrTpTimeBr(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeBr"])
 			}
 			
-			def void setFrTpTimeBr(Float value){
+			def void setFrTpTimeBr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeBr"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -803,11 +805,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeCs(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeCs"])
+			def BigDecimal getFrTpTimeCs(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeCs"])
 			}
 			
-			def void setFrTpTimeCs(Float value){
+			def void setFrTpTimeCs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeCs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -819,11 +821,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeFrIf(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeFrIf"])
+			def BigDecimal getFrTpTimeFrIf(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeFrIf"])
 			}
 			
-			def void setFrTpTimeFrIf(Float value){
+			def void setFrTpTimeFrIf(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeFrIf"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -835,11 +837,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeoutAr(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutAr"])
+			def BigDecimal getFrTpTimeoutAr(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutAr"])
 			}
 			
-			def void setFrTpTimeoutAr(Float value){
+			def void setFrTpTimeoutAr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutAr"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -851,11 +853,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeoutAs(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutAs"])
+			def BigDecimal getFrTpTimeoutAs(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutAs"])
 			}
 			
-			def void setFrTpTimeoutAs(Float value){
+			def void setFrTpTimeoutAs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutAs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -867,11 +869,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeoutBr(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutBr"])
+			def BigDecimal getFrTpTimeoutBr(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutBr"])
 			}
 			
-			def void setFrTpTimeoutBr(Float value){
+			def void setFrTpTimeoutBr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutBr"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -883,11 +885,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeoutBs(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutBs"])
+			def BigDecimal getFrTpTimeoutBs(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutBs"])
 			}
 			
-			def void setFrTpTimeoutBs(Float value){
+			def void setFrTpTimeoutBs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutBs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -899,11 +901,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeoutCr(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutCr"])
+			def BigDecimal getFrTpTimeoutCr(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutCr"])
 			}
 			
-			def void setFrTpTimeoutCr(Float value){
+			def void setFrTpTimeoutCr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutCr"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -915,11 +917,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrTpTimeoutCs(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutCs"])
+			def BigDecimal getFrTpTimeoutCs(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutCs"])
 			}
 			
-			def void setFrTpTimeoutCs(Float value){
+			def void setFrTpTimeoutCs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTimeoutCs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -996,11 +998,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFrTpRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxPduId"])
+				def BigInteger getFrTpRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxPduId"])
 				}
 				
-				def void setFrTpRxPduId(Integer value){
+				def void setFrTpRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1090,11 +1092,11 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFrTpTxConfirmationPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxConfirmationPduId"])
+				def BigInteger getFrTpTxConfirmationPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxConfirmationPduId"])
 				}
 				
-				def void setFrTpTxConfirmationPduId(Integer value){
+				def void setFrTpTxConfirmationPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxConfirmationPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

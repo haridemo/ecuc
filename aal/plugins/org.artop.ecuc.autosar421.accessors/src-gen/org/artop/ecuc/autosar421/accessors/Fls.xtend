@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Fls implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -112,11 +114,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getFlsAcErase(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcErase"])
+		def BigInteger getFlsAcErase(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcErase"])
 		}
 		
-		def void setFlsAcErase(Integer value){
+		def void setFlsAcErase(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcErase"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -128,11 +130,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsAcWrite(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcWrite"])
+		def BigInteger getFlsAcWrite(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcWrite"])
 		}
 		
-		def void setFlsAcWrite(Integer value){
+		def void setFlsAcWrite(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcWrite"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -144,11 +146,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getFlsCallCycle(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsCallCycle"])
+		def BigDecimal getFlsCallCycle(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsCallCycle"])
 		}
 		
-		def void setFlsCallCycle(Float value){
+		def void setFlsCallCycle(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsCallCycle"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -225,11 +227,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsMaxReadFastMode(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxReadFastMode"])
+		def BigInteger getFlsMaxReadFastMode(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxReadFastMode"])
 		}
 		
-		def void setFlsMaxReadFastMode(Integer value){
+		def void setFlsMaxReadFastMode(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxReadFastMode"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -241,11 +243,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsMaxReadNormalMode(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxReadNormalMode"])
+		def BigInteger getFlsMaxReadNormalMode(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxReadNormalMode"])
 		}
 		
-		def void setFlsMaxReadNormalMode(Integer value){
+		def void setFlsMaxReadNormalMode(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxReadNormalMode"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -257,11 +259,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsMaxWriteFastMode(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxWriteFastMode"])
+		def BigInteger getFlsMaxWriteFastMode(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxWriteFastMode"])
 		}
 		
-		def void setFlsMaxWriteFastMode(Integer value){
+		def void setFlsMaxWriteFastMode(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxWriteFastMode"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -273,11 +275,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsMaxWriteNormalMode(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxWriteNormalMode"])
+		def BigInteger getFlsMaxWriteNormalMode(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxWriteNormalMode"])
 		}
 		
-		def void setFlsMaxWriteNormalMode(Integer value){
+		def void setFlsMaxWriteNormalMode(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsMaxWriteNormalMode"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -289,11 +291,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsProtection(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsProtection"])
+		def BigInteger getFlsProtection(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsProtection"])
 		}
 		
-		def void setFlsProtection(Integer value){
+		def void setFlsProtection(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsProtection"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -531,11 +533,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFlsNumberOfSectors(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsNumberOfSectors"])
+				def BigInteger getFlsNumberOfSectors(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsNumberOfSectors"])
 				}
 				
-				def void setFlsNumberOfSectors(Integer value){
+				def void setFlsNumberOfSectors(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsNumberOfSectors"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -547,11 +549,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsPageSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsPageSize"])
+				def BigInteger getFlsPageSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsPageSize"])
 				}
 				
-				def void setFlsPageSize(Integer value){
+				def void setFlsPageSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsPageSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -563,11 +565,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsSectorSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSectorSize"])
+				def BigInteger getFlsSectorSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSectorSize"])
 				}
 				
-				def void setFlsSectorSize(Integer value){
+				def void setFlsSectorSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSectorSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -579,11 +581,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsSectorStartaddress(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSectorStartaddress"])
+				def BigInteger getFlsSectorStartaddress(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSectorStartaddress"])
 				}
 				
-				def void setFlsSectorStartaddress(Integer value){
+				def void setFlsSectorStartaddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSectorStartaddress"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -638,11 +640,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsBaseAddress(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsBaseAddress"])
+		def BigInteger getFlsBaseAddress(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsBaseAddress"])
 		}
 		
-		def void setFlsBaseAddress(Integer value){
+		def void setFlsBaseAddress(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsBaseAddress"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -718,11 +720,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsDriverIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsDriverIndex"])
+		def BigInteger getFlsDriverIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsDriverIndex"])
 		}
 		
-		def void setFlsDriverIndex(Integer value){
+		def void setFlsDriverIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsDriverIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -782,11 +784,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsTotalSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTotalSize"])
+		def BigInteger getFlsTotalSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTotalSize"])
 		}
 		
-		def void setFlsTotalSize(Integer value){
+		def void setFlsTotalSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTotalSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -853,11 +855,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getFlsAcLocationErase(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationErase"])
+		def BigInteger getFlsAcLocationErase(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationErase"])
 		}
 		
-		def void setFlsAcLocationErase(Integer value){
+		def void setFlsAcLocationErase(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationErase"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -869,11 +871,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsAcLocationWrite(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationWrite"])
+		def BigInteger getFlsAcLocationWrite(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationWrite"])
 		}
 		
-		def void setFlsAcLocationWrite(Integer value){
+		def void setFlsAcLocationWrite(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationWrite"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -885,11 +887,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsAcSizeErase(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcSizeErase"])
+		def BigInteger getFlsAcSizeErase(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcSizeErase"])
 		}
 		
-		def void setFlsAcSizeErase(Integer value){
+		def void setFlsAcSizeErase(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcSizeErase"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -901,11 +903,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsAcSizeWrite(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcSizeWrite"])
+		def BigInteger getFlsAcSizeWrite(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcSizeWrite"])
 		}
 		
-		def void setFlsAcSizeWrite(Integer value){
+		def void setFlsAcSizeWrite(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcSizeWrite"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -917,11 +919,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getFlsEraseTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsEraseTime"])
+		def BigDecimal getFlsEraseTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsEraseTime"])
 		}
 		
-		def void setFlsEraseTime(Float value){
+		def void setFlsEraseTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsEraseTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -933,11 +935,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsErasedValue(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsErasedValue"])
+		def BigInteger getFlsErasedValue(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsErasedValue"])
 		}
 		
-		def void setFlsErasedValue(Integer value){
+		def void setFlsErasedValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsErasedValue"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -965,11 +967,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsSpecifiedEraseCycles(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSpecifiedEraseCycles"])
+		def BigInteger getFlsSpecifiedEraseCycles(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSpecifiedEraseCycles"])
 		}
 		
-		def void setFlsSpecifiedEraseCycles(Integer value){
+		def void setFlsSpecifiedEraseCycles(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsSpecifiedEraseCycles"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -981,11 +983,11 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getFlsWriteTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsWriteTime"])
+		def BigDecimal getFlsWriteTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsWriteTime"])
 		}
 		
-		def void setFlsWriteTime(Float value){
+		def void setFlsWriteTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsWriteTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

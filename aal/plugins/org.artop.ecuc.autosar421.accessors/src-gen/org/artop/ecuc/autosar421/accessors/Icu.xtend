@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Icu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -112,11 +114,11 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getIcuMaxChannel(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuMaxChannel"])
+		def BigInteger getIcuMaxChannel(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuMaxChannel"])
 		}
 		
-		def void setIcuMaxChannel(Integer value){
+		def void setIcuMaxChannel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuMaxChannel"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -169,11 +171,11 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getIcuChannelId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuChannelId"])
+			def BigInteger getIcuChannelId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuChannelId"])
 			}
 			
-			def void setIcuChannelId(Integer value){
+			def void setIcuChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuChannelId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -559,11 +561,11 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getIcuIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuIndex"])
+		def BigInteger getIcuIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuIndex"])
 		}
 		
-		def void setIcuIndex(Integer value){
+		def void setIcuIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

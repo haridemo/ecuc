@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Can implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -222,11 +224,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanControllerBaseAddress(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaseAddress"])
+			def BigInteger getCanControllerBaseAddress(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaseAddress"])
 			}
 			
-			def void setCanControllerBaseAddress(Integer value){
+			def void setCanControllerBaseAddress(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaseAddress"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -238,11 +240,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanControllerId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerId"])
+			def BigInteger getCanControllerId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerId"])
 			}
 			
-			def void setCanControllerId(Integer value){
+			def void setCanControllerId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -468,11 +470,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanControllerBaudRate(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRate"])
+				def BigInteger getCanControllerBaudRate(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRate"])
 				}
 				
-				def void setCanControllerBaudRate(Integer value){
+				def void setCanControllerBaudRate(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRate"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -484,11 +486,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanControllerBaudRateConfigID(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRateConfigID"])
+				def BigInteger getCanControllerBaudRateConfigID(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRateConfigID"])
 				}
 				
-				def void setCanControllerBaudRateConfigID(Integer value){
+				def void setCanControllerBaudRateConfigID(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRateConfigID"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -500,11 +502,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanControllerPropSeg(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"])
+				def BigInteger getCanControllerPropSeg(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"])
 				}
 				
-				def void setCanControllerPropSeg(Integer value){
+				def void setCanControllerPropSeg(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -516,11 +518,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanControllerSeg1(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"])
+				def BigInteger getCanControllerSeg1(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"])
 				}
 				
-				def void setCanControllerSeg1(Integer value){
+				def void setCanControllerSeg1(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -532,11 +534,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanControllerSeg2(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"])
+				def BigInteger getCanControllerSeg2(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"])
 				}
 				
-				def void setCanControllerSeg2(Integer value){
+				def void setCanControllerSeg2(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -548,11 +550,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanControllerSyncJumpWidth(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"])
+				def BigInteger getCanControllerSyncJumpWidth(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"])
 				}
 				
-				def void setCanControllerSyncJumpWidth(Integer value){
+				def void setCanControllerSyncJumpWidth(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -595,11 +597,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getCanControllerFdBaudRate(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerFdBaudRate"])
+					def BigInteger getCanControllerFdBaudRate(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerFdBaudRate"])
 					}
 					
-					def void setCanControllerFdBaudRate(Integer value){
+					def void setCanControllerFdBaudRate(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerFdBaudRate"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -611,11 +613,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getCanControllerPropSeg(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"])
+					def BigInteger getCanControllerPropSeg(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"])
 					}
 					
-					def void setCanControllerPropSeg(Integer value){
+					def void setCanControllerPropSeg(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -627,11 +629,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getCanControllerSeg1(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"])
+					def BigInteger getCanControllerSeg1(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"])
 					}
 					
-					def void setCanControllerSeg1(Integer value){
+					def void setCanControllerSeg1(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -643,11 +645,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getCanControllerSeg2(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"])
+					def BigInteger getCanControllerSeg2(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"])
 					}
 					
-					def void setCanControllerSeg2(Integer value){
+					def void setCanControllerSeg2(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -659,11 +661,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getCanControllerSyncJumpWidth(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"])
+					def BigInteger getCanControllerSyncJumpWidth(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"])
 					}
 					
-					def void setCanControllerSyncJumpWidth(Integer value){
+					def void setCanControllerSyncJumpWidth(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -675,11 +677,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getCanControllerTrcvDelayCompensationOffset(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTrcvDelayCompensationOffset"])
+					def BigInteger getCanControllerTrcvDelayCompensationOffset(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTrcvDelayCompensationOffset"])
 					}
 					
-					def void setCanControllerTrcvDelayCompensationOffset(Integer value){
+					def void setCanControllerTrcvDelayCompensationOffset(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTrcvDelayCompensationOffset"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -733,11 +735,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTTControllerApplWatchdogLimit(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerApplWatchdogLimit"])
+				def BigInteger getCanTTControllerApplWatchdogLimit(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerApplWatchdogLimit"])
 				}
 				
-				def void setCanTTControllerApplWatchdogLimit(Integer value){
+				def void setCanTTControllerApplWatchdogLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerApplWatchdogLimit"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -749,11 +751,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerCycleCountMax(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerCycleCountMax"])
+				def BigInteger getCanTTControllerCycleCountMax(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerCycleCountMax"])
 				}
 				
-				def void setCanTTControllerCycleCountMax(Integer value){
+				def void setCanTTControllerCycleCountMax(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerCycleCountMax"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -765,11 +767,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerExpectedTxTrigger(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExpectedTxTrigger"])
+				def BigInteger getCanTTControllerExpectedTxTrigger(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExpectedTxTrigger"])
 				}
 				
-				def void setCanTTControllerExpectedTxTrigger(Integer value){
+				def void setCanTTControllerExpectedTxTrigger(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExpectedTxTrigger"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -813,11 +815,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerInitialRefOffset(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInitialRefOffset"])
+				def BigInteger getCanTTControllerInitialRefOffset(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInitialRefOffset"])
 				}
 				
-				def void setCanTTControllerInitialRefOffset(Integer value){
+				def void setCanTTControllerInitialRefOffset(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInitialRefOffset"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -829,11 +831,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerInterruptEnable(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInterruptEnable"])
+				def BigInteger getCanTTControllerInterruptEnable(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInterruptEnable"])
 				}
 				
-				def void setCanTTControllerInterruptEnable(Integer value){
+				def void setCanTTControllerInterruptEnable(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInterruptEnable"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -861,11 +863,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getCanTTControllerNTUConfig(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerNTUConfig"])
+				def BigDecimal getCanTTControllerNTUConfig(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerNTUConfig"])
 				}
 				
-				def void setCanTTControllerNTUConfig(Float value){
+				def void setCanTTControllerNTUConfig(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerNTUConfig"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -912,11 +914,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Float getCanTTControllerSyncDeviation(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerSyncDeviation"])
+				def BigDecimal getCanTTControllerSyncDeviation(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerSyncDeviation"])
 				}
 				
-				def void setCanTTControllerSyncDeviation(Float value){
+				def void setCanTTControllerSyncDeviation(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerSyncDeviation"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -960,11 +962,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerTimeMasterPriority(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMasterPriority"])
+				def BigInteger getCanTTControllerTimeMasterPriority(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMasterPriority"])
 				}
 				
-				def void setCanTTControllerTimeMasterPriority(Integer value){
+				def void setCanTTControllerTimeMasterPriority(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMasterPriority"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -976,11 +978,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerTxEnableWindowLength(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTxEnableWindowLength"])
+				def BigInteger getCanTTControllerTxEnableWindowLength(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTxEnableWindowLength"])
 				}
 				
-				def void setCanTTControllerTxEnableWindowLength(Integer value){
+				def void setCanTTControllerTxEnableWindowLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTxEnableWindowLength"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -992,11 +994,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerWatchTriggerGapTimeMark(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerGapTimeMark"])
+				def BigInteger getCanTTControllerWatchTriggerGapTimeMark(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerGapTimeMark"])
 				}
 				
-				def void setCanTTControllerWatchTriggerGapTimeMark(Integer value){
+				def void setCanTTControllerWatchTriggerGapTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerGapTimeMark"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1008,11 +1010,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTControllerWatchTriggerTimeMark(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerTimeMark"])
+				def BigInteger getCanTTControllerWatchTriggerTimeMark(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerTimeMark"])
 				}
 				
-				def void setCanTTControllerWatchTriggerTimeMark(Integer value){
+				def void setCanTTControllerWatchTriggerTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerTimeMark"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1083,11 +1085,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getCanFdPaddingValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"])
+			def BigInteger getCanFdPaddingValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"])
 			}
 			
-			def void setCanFdPaddingValue(Integer value){
+			def void setCanFdPaddingValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1132,11 +1134,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getCanHwObjectCount(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwObjectCount"])
+			def BigInteger getCanHwObjectCount(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwObjectCount"])
 			}
 			
-			def void setCanHwObjectCount(Integer value){
+			def void setCanHwObjectCount(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwObjectCount"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1183,11 +1185,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getCanObjectId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanObjectId"])
+			def BigInteger getCanObjectId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanObjectId"])
 			}
 			
-			def void setCanObjectId(Integer value){
+			def void setCanObjectId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanObjectId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1330,11 +1332,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanHwFilterCode(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterCode"])
+				def BigInteger getCanHwFilterCode(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterCode"])
 				}
 				
-				def void setCanHwFilterCode(Integer value){
+				def void setCanHwFilterCode(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterCode"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1346,11 +1348,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanHwFilterMask(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterMask"])
+				def BigInteger getCanHwFilterMask(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterMask"])
 				}
 				
-				def void setCanHwFilterMask(Integer value){
+				def void setCanHwFilterMask(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterMask"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1386,11 +1388,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTTHardwareObjectBaseCycle(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectBaseCycle"])
+				def BigInteger getCanTTHardwareObjectBaseCycle(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectBaseCycle"])
 				}
 				
-				def void setCanTTHardwareObjectBaseCycle(Integer value){
+				def void setCanTTHardwareObjectBaseCycle(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectBaseCycle"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1402,11 +1404,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTHardwareObjectCycleRepetition(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectCycleRepetition"])
+				def BigInteger getCanTTHardwareObjectCycleRepetition(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectCycleRepetition"])
 				}
 				
-				def void setCanTTHardwareObjectCycleRepetition(Integer value){
+				def void setCanTTHardwareObjectCycleRepetition(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectCycleRepetition"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1418,11 +1420,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTHardwareObjectTimeMark(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTimeMark"])
+				def BigInteger getCanTTHardwareObjectTimeMark(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTimeMark"])
 				}
 				
-				def void setCanTTHardwareObjectTimeMark(Integer value){
+				def void setCanTTHardwareObjectTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTimeMark"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1434,11 +1436,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTTHardwareObjectTriggerId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTriggerId"])
+				def BigInteger getCanTTHardwareObjectTriggerId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTriggerId"])
 				}
 				
-				def void setCanTTHardwareObjectTriggerId(Integer value){
+				def void setCanTTHardwareObjectTriggerId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTriggerId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1558,11 +1560,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanIcomConfigId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomConfigId"])
+				def BigInteger getCanIcomConfigId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomConfigId"])
 				}
 				
-				def void setCanIcomConfigId(Integer value){
+				def void setCanIcomConfigId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomConfigId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1662,11 +1664,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
-						def Integer getCanIcomCounterValue(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomCounterValue"])
+						def BigInteger getCanIcomCounterValue(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomCounterValue"])
 						}
 						
-						def void setCanIcomCounterValue(Integer value){
+						def void setCanIcomCounterValue(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomCounterValue"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -1678,11 +1680,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getCanIcomMessageId(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageId"])
+						def BigInteger getCanIcomMessageId(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageId"])
 						}
 						
-						def void setCanIcomMessageId(Integer value){
+						def void setCanIcomMessageId(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageId"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -1694,11 +1696,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getCanIcomMessageIdMask(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageIdMask"])
+						def BigInteger getCanIcomMessageIdMask(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageIdMask"])
 						}
 						
-						def void setCanIcomMessageIdMask(Integer value){
+						def void setCanIcomMessageIdMask(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageIdMask"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -1710,11 +1712,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Float getCanIcomMissingMessageTimerValue(){
-							EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMissingMessageTimerValue"])
+						def BigDecimal getCanIcomMissingMessageTimerValue(){
+							EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMissingMessageTimerValue"])
 						}
 						
-						def void setCanIcomMissingMessageTimerValue(Float value){
+						def void setCanIcomMissingMessageTimerValue(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMissingMessageTimerValue"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -1783,11 +1785,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getCanIcomSignalMask(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"])
+							def BigInteger getCanIcomSignalMask(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"])
 							}
 							
-							def void setCanIcomSignalMask(Integer value){
+							def void setCanIcomSignalMask(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -1838,11 +1840,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(paramValue, value)
 							}
 							
-							def Integer getCanIcomSignalValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValue"])
+							def BigInteger getCanIcomSignalValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValue"])
 							}
 							
-							def void setCanIcomSignalValue(Integer value){
+							def void setCanIcomSignalValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -1914,11 +1916,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCanIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIndex"])
+		def BigInteger getCanIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIndex"])
 		}
 		
-		def void setCanIndex(Integer value){
+		def void setCanIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1946,11 +1948,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanMainFunctionBusoffPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionBusoffPeriod"])
+		def BigDecimal getCanMainFunctionBusoffPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionBusoffPeriod"])
 		}
 		
-		def void setCanMainFunctionBusoffPeriod(Float value){
+		def void setCanMainFunctionBusoffPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionBusoffPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1962,11 +1964,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanMainFunctionModePeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionModePeriod"])
+		def BigDecimal getCanMainFunctionModePeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionModePeriod"])
 		}
 		
-		def void setCanMainFunctionModePeriod(Float value){
+		def void setCanMainFunctionModePeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionModePeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1978,11 +1980,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanMainFunctionWakeupPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionWakeupPeriod"])
+		def BigDecimal getCanMainFunctionWakeupPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionWakeupPeriod"])
 		}
 		
-		def void setCanMainFunctionWakeupPeriod(Float value){
+		def void setCanMainFunctionWakeupPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionWakeupPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2042,11 +2044,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanTimeoutDuration(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTimeoutDuration"])
+		def BigDecimal getCanTimeoutDuration(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTimeoutDuration"])
 		}
 		
-		def void setCanTimeoutDuration(Float value){
+		def void setCanTimeoutDuration(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTimeoutDuration"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2238,11 +2240,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getCanMainFunctionPeriod(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionPeriod"])
+			def BigDecimal getCanMainFunctionPeriod(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionPeriod"])
 			}
 			
-			def void setCanMainFunctionPeriod(Float value){
+			def void setCanMainFunctionPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionPeriod"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

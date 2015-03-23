@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class ComM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -256,11 +258,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getComMChannelId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMChannelId"])
+			def BigInteger getComMChannelId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMChannelId"])
 			}
 			
-			def void setComMChannelId(Integer value){
+			def void setComMChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMChannelId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -288,11 +290,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getComMMainFunctionPeriod(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMMainFunctionPeriod"])
+			def BigDecimal getComMMainFunctionPeriod(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMMainFunctionPeriod"])
 			}
 			
-			def void setComMMainFunctionPeriod(Float value){
+			def void setComMMainFunctionPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMMainFunctionPeriod"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -435,11 +437,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getComMNmLightTimeout(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmLightTimeout"])
+				def BigDecimal getComMNmLightTimeout(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmLightTimeout"])
 				}
 				
-				def void setComMNmLightTimeout(Float value){
+				def void setComMNmLightTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmLightTimeout"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -565,11 +567,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getComMPncId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncId"])
+			def BigInteger getComMPncId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncId"])
 			}
 			
-			def void setComMPncId(Integer value){
+			def void setComMPncId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -802,11 +804,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getComMUserIdentifier(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMUserIdentifier"])
+			def BigInteger getComMUserIdentifier(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMUserIdentifier"])
 			}
 			
-			def void setComMUserIdentifier(Integer value){
+			def void setComMUserIdentifier(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMUserIdentifier"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -886,11 +888,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getComMEcuGroupClassification(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMEcuGroupClassification"])
+		def BigInteger getComMEcuGroupClassification(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMEcuGroupClassification"])
 		}
 		
-		def void setComMEcuGroupClassification(Integer value){
+		def void setComMEcuGroupClassification(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMEcuGroupClassification"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -950,11 +952,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getComMPncPrepareSleepTimer(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncPrepareSleepTimer"])
+		def BigDecimal getComMPncPrepareSleepTimer(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncPrepareSleepTimer"])
 		}
 		
-		def void setComMPncPrepareSleepTimer(Float value){
+		def void setComMPncPrepareSleepTimer(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncPrepareSleepTimer"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1014,11 +1016,11 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getComMTMinFullComModeDuration(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMTMinFullComModeDuration"])
+		def BigDecimal getComMTMinFullComModeDuration(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMTMinFullComModeDuration"])
 		}
 		
-		def void setComMTMinFullComModeDuration(Float value){
+		def void setComMTMinFullComModeDuration(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMTMinFullComModeDuration"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

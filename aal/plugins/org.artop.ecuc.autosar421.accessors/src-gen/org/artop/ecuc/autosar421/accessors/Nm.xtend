@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Nm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -146,11 +148,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getNmCoordClusterIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordClusterIndex"])
+		def BigInteger getNmCoordClusterIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordClusterIndex"])
 		}
 		
-		def void setNmCoordClusterIndex(Integer value){
+		def void setNmCoordClusterIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordClusterIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -299,11 +301,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getNmGenericBusNmShutdownTime(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmGenericBusNmShutdownTime"])
+				def BigDecimal getNmGenericBusNmShutdownTime(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmGenericBusNmShutdownTime"])
 				}
 				
-				def void setNmGenericBusNmShutdownTime(Float value){
+				def void setNmGenericBusNmShutdownTime(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmGenericBusNmShutdownTime"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -454,11 +456,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getNmNumberOfChannels(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNumberOfChannels"])
+			def BigInteger getNmNumberOfChannels(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNumberOfChannels"])
 			}
 			
-			def void setNmNumberOfChannels(Integer value){
+			def void setNmNumberOfChannels(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNumberOfChannels"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -606,11 +608,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getNmGlobalCoordinatorTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmGlobalCoordinatorTime"])
+			def BigDecimal getNmGlobalCoordinatorTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmGlobalCoordinatorTime"])
 			}
 			
-			def void setNmGlobalCoordinatorTime(Float value){
+			def void setNmGlobalCoordinatorTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmGlobalCoordinatorTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -774,11 +776,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getNmCycletimeMainFunction(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCycletimeMainFunction"])
+			def BigDecimal getNmCycletimeMainFunction(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCycletimeMainFunction"])
 			}
 			
-			def void setNmCycletimeMainFunction(Float value){
+			def void setNmCycletimeMainFunction(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCycletimeMainFunction"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

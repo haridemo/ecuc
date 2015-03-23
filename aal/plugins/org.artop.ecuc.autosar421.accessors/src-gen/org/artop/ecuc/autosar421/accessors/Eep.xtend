@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Eep implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -128,11 +130,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepDriverIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepDriverIndex"])
+		def BigInteger getEepDriverIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepDriverIndex"])
 		}
 		
-		def void setEepDriverIndex(Integer value){
+		def void setEepDriverIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepDriverIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -215,11 +217,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getEepBaseAddress(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepBaseAddress"])
+		def BigInteger getEepBaseAddress(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepBaseAddress"])
 		}
 		
-		def void setEepBaseAddress(Integer value){
+		def void setEepBaseAddress(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepBaseAddress"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -264,11 +266,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Integer getEepFastReadBlockSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepFastReadBlockSize"])
+		def BigInteger getEepFastReadBlockSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepFastReadBlockSize"])
 		}
 		
-		def void setEepFastReadBlockSize(Integer value){
+		def void setEepFastReadBlockSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepFastReadBlockSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -280,11 +282,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepFastWriteBlockSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepFastWriteBlockSize"])
+		def BigInteger getEepFastWriteBlockSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepFastWriteBlockSize"])
 		}
 		
-		def void setEepFastWriteBlockSize(Integer value){
+		def void setEepFastWriteBlockSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepFastWriteBlockSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -296,11 +298,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEepJobCallCycle(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepJobCallCycle"])
+		def BigDecimal getEepJobCallCycle(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepJobCallCycle"])
 		}
 		
-		def void setEepJobCallCycle(Float value){
+		def void setEepJobCallCycle(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepJobCallCycle"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -344,11 +346,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepNormalReadBlockSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepNormalReadBlockSize"])
+		def BigInteger getEepNormalReadBlockSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepNormalReadBlockSize"])
 		}
 		
-		def void setEepNormalReadBlockSize(Integer value){
+		def void setEepNormalReadBlockSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepNormalReadBlockSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -360,11 +362,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepNormalWriteBlockSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepNormalWriteBlockSize"])
+		def BigInteger getEepNormalWriteBlockSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepNormalWriteBlockSize"])
 		}
 		
-		def void setEepNormalWriteBlockSize(Integer value){
+		def void setEepNormalWriteBlockSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepNormalWriteBlockSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -376,11 +378,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepSize"])
+		def BigInteger getEepSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepSize"])
 		}
 		
-		def void setEepSize(Integer value){
+		def void setEepSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -558,11 +560,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getEepAllowedWriteCycles(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepAllowedWriteCycles"])
+		def BigInteger getEepAllowedWriteCycles(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepAllowedWriteCycles"])
 		}
 		
-		def void setEepAllowedWriteCycles(Integer value){
+		def void setEepAllowedWriteCycles(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepAllowedWriteCycles"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -574,11 +576,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEepEraseTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseTime"])
+		def BigDecimal getEepEraseTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseTime"])
 		}
 		
-		def void setEepEraseTime(Float value){
+		def void setEepEraseTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -590,11 +592,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepEraseUnitSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseUnitSize"])
+		def BigInteger getEepEraseUnitSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseUnitSize"])
 		}
 		
-		def void setEepEraseUnitSize(Integer value){
+		def void setEepEraseUnitSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseUnitSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -606,11 +608,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepEraseValue(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseValue"])
+		def BigInteger getEepEraseValue(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseValue"])
 		}
 		
-		def void setEepEraseValue(Integer value){
+		def void setEepEraseValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepEraseValue"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -622,11 +624,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepMinimumAddressType(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepMinimumAddressType"])
+		def BigInteger getEepMinimumAddressType(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepMinimumAddressType"])
 		}
 		
-		def void setEepMinimumAddressType(Integer value){
+		def void setEepMinimumAddressType(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepMinimumAddressType"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -638,11 +640,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepMinimumLengthType(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepMinimumLengthType"])
+		def BigInteger getEepMinimumLengthType(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepMinimumLengthType"])
 		}
 		
-		def void setEepMinimumLengthType(Integer value){
+		def void setEepMinimumLengthType(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepMinimumLengthType"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -654,11 +656,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepReadUnitSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepReadUnitSize"])
+		def BigInteger getEepReadUnitSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepReadUnitSize"])
 		}
 		
-		def void setEepReadUnitSize(Integer value){
+		def void setEepReadUnitSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepReadUnitSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -670,11 +672,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepSpecifiedEraseCycles(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepSpecifiedEraseCycles"])
+		def BigInteger getEepSpecifiedEraseCycles(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepSpecifiedEraseCycles"])
 		}
 		
-		def void setEepSpecifiedEraseCycles(Integer value){
+		def void setEepSpecifiedEraseCycles(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepSpecifiedEraseCycles"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -686,11 +688,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepTotalSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepTotalSize"])
+		def BigInteger getEepTotalSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepTotalSize"])
 		}
 		
-		def void setEepTotalSize(Integer value){
+		def void setEepTotalSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepTotalSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -702,11 +704,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEepWriteTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepWriteTime"])
+		def BigDecimal getEepWriteTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepWriteTime"])
 		}
 		
-		def void setEepWriteTime(Float value){
+		def void setEepWriteTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepWriteTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -718,11 +720,11 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEepWriteUnitSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepWriteUnitSize"])
+		def BigInteger getEepWriteUnitSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepWriteUnitSize"])
 		}
 		
-		def void setEepWriteUnitSize(Integer value){
+		def void setEepWriteUnitSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepWriteUnitSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

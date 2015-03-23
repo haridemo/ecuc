@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Dio implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -145,11 +147,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDioPortId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortId"])
+			def BigInteger getDioPortId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortId"])
 			}
 			
-			def void setDioPortId(Integer value){
+			def void setDioPortId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -221,11 +223,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDioChannelId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelId"])
+				def BigInteger getDioChannelId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelId"])
 				}
 				
-				def void setDioChannelId(Integer value){
+				def void setDioChannelId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -277,11 +279,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDioPortMask(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortMask"])
+				def BigInteger getDioPortMask(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortMask"])
 				}
 				
-				def void setDioPortMask(Integer value){
+				def void setDioPortMask(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortMask"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -293,11 +295,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDioPortOffset(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortOffset"])
+				def BigInteger getDioPortOffset(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortOffset"])
 				}
 				
-				def void setDioPortOffset(Integer value){
+				def void setDioPortOffset(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortOffset"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

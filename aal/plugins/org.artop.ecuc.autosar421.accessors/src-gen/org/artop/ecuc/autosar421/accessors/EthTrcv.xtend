@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class EthTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -196,11 +198,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getEthTrcvCtrlIdx(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"])
+			def BigInteger getEthTrcvCtrlIdx(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"])
 			}
 			
-			def void setEthTrcvCtrlIdx(Integer value){
+			def void setEthTrcvCtrlIdx(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -245,11 +247,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getEthTrcvIdx(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"])
+			def BigInteger getEthTrcvIdx(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"])
 			}
 			
-			def void setEthTrcvIdx(Integer value){
+			def void setEthTrcvIdx(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -261,11 +263,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getEthTrcvMiiIdx(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"])
+			def BigInteger getEthTrcvMiiIdx(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"])
 			}
 			
-			def void setEthTrcvMiiIdx(Integer value){
+			def void setEthTrcvMiiIdx(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -634,11 +636,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEthTrcvIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"])
+		def BigInteger getEthTrcvIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"])
 		}
 		
-		def void setEthTrcvIndex(Integer value){
+		def void setEthTrcvIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -650,11 +652,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEthTrcvMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMainFunctionPeriod"])
+		def BigDecimal getEthTrcvMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMainFunctionPeriod"])
 		}
 		
-		def void setEthTrcvMainFunctionPeriod(Float value){
+		def void setEthTrcvMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -666,11 +668,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEthTrcvMaxTrcvsSupported(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"])
+		def BigInteger getEthTrcvMaxTrcvsSupported(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"])
 		}
 		
-		def void setEthTrcvMaxTrcvsSupported(Integer value){
+		def void setEthTrcvMaxTrcvsSupported(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

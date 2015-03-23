@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Os implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -578,11 +580,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getOsAlarmAlarmTime(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAlarmTime"])
+			def BigInteger getOsAlarmAlarmTime(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAlarmTime"])
 			}
 			
-			def void setOsAlarmAlarmTime(Integer value){
+			def void setOsAlarmAlarmTime(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAlarmTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -627,11 +629,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getOsAlarmCycleTime(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCycleTime"])
+			def BigInteger getOsAlarmCycleTime(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCycleTime"])
 			}
 			
-			def void setOsAlarmCycleTime(Integer value){
+			def void setOsAlarmCycleTime(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCycleTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1133,11 +1135,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getOsCounterMaxAllowedValue(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMaxAllowedValue"])
+		def BigInteger getOsCounterMaxAllowedValue(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMaxAllowedValue"])
 		}
 		
-		def void setOsCounterMaxAllowedValue(Integer value){
+		def void setOsCounterMaxAllowedValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMaxAllowedValue"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1149,11 +1151,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getOsCounterMinCycle(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMinCycle"])
+		def BigInteger getOsCounterMinCycle(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMinCycle"])
 		}
 		
-		def void setOsCounterMinCycle(Integer value){
+		def void setOsCounterMinCycle(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMinCycle"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1165,11 +1167,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getOsCounterTicksPerBase(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterTicksPerBase"])
+		def BigInteger getOsCounterTicksPerBase(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterTicksPerBase"])
 		}
 		
-		def void setOsCounterTicksPerBase(Integer value){
+		def void setOsCounterTicksPerBase(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterTicksPerBase"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1214,11 +1216,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Float getOsSecondsPerTick(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSecondsPerTick"])
+		def BigDecimal getOsSecondsPerTick(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSecondsPerTick"])
 		}
 		
-		def void setOsSecondsPerTick(Float value){
+		def void setOsSecondsPerTick(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSecondsPerTick"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1348,11 +1350,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getOsTimeValue(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTimeValue"])
+			def BigDecimal getOsTimeValue(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTimeValue"])
 			}
 			
-			def void setOsTimeValue(Float value){
+			def void setOsTimeValue(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTimeValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1389,11 +1391,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getOsEventMask(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsEventMask"])
+		def BigInteger getOsEventMask(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsEventMask"])
 		}
 		
-		def void setOsEventMask(Integer value){
+		def void setOsEventMask(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsEventMask"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1469,11 +1471,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getOsIocBufferLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocBufferLength"])
+			def BigInteger getOsIocBufferLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocBufferLength"])
 			}
 			
-			def void setOsIocBufferLength(Integer value){
+			def void setOsIocBufferLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocBufferLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1564,11 +1566,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getOsIocDataPropertyIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocDataPropertyIndex"])
+				def BigInteger getOsIocDataPropertyIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocDataPropertyIndex"])
 				}
 				
-				def void setOsIocDataPropertyIndex(Integer value){
+				def void setOsIocDataPropertyIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocDataPropertyIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1742,11 +1744,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getOsIocSenderId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocSenderId"])
+				def BigInteger getOsIocSenderId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocSenderId"])
 				}
 				
-				def void setOsIocSenderId(Integer value){
+				def void setOsIocSenderId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocSenderId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1893,11 +1895,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getOsIsrAllInterruptLockBudget(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrAllInterruptLockBudget"])
+			def BigDecimal getOsIsrAllInterruptLockBudget(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrAllInterruptLockBudget"])
 			}
 			
-			def void setOsIsrAllInterruptLockBudget(Float value){
+			def void setOsIsrAllInterruptLockBudget(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrAllInterruptLockBudget"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1909,11 +1911,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getOsIsrExecutionBudget(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrExecutionBudget"])
+			def BigDecimal getOsIsrExecutionBudget(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrExecutionBudget"])
 			}
 			
-			def void setOsIsrExecutionBudget(Float value){
+			def void setOsIsrExecutionBudget(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrExecutionBudget"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1925,11 +1927,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getOsIsrOsInterruptLockBudget(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrOsInterruptLockBudget"])
+			def BigDecimal getOsIsrOsInterruptLockBudget(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrOsInterruptLockBudget"])
 			}
 			
-			def void setOsIsrOsInterruptLockBudget(Float value){
+			def void setOsIsrOsInterruptLockBudget(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrOsInterruptLockBudget"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1941,11 +1943,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getOsIsrTimeFrame(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrTimeFrame"])
+			def BigDecimal getOsIsrTimeFrame(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrTimeFrame"])
 			}
 			
-			def void setOsIsrTimeFrame(Float value){
+			def void setOsIsrTimeFrame(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrTimeFrame"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1998,11 +2000,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getOsIsrResourceLockBudget(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrResourceLockBudget"])
+				def BigDecimal getOsIsrResourceLockBudget(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrResourceLockBudget"])
 				}
 				
-				def void setOsIsrResourceLockBudget(Float value){
+				def void setOsIsrResourceLockBudget(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrResourceLockBudget"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2052,11 +2054,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getOsNumberOfCores(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsNumberOfCores"])
+		def BigInteger getOsNumberOfCores(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsNumberOfCores"])
 		}
 		
-		def void setOsNumberOfCores(Integer value){
+		def void setOsNumberOfCores(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsNumberOfCores"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2456,11 +2458,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getOsScheduleTableDuration(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableDuration"])
+		def BigInteger getOsScheduleTableDuration(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableDuration"])
 		}
 		
-		def void setOsScheduleTableDuration(Integer value){
+		def void setOsScheduleTableDuration(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableDuration"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2626,11 +2628,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getOsScheduleTableStartValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableStartValue"])
+			def BigInteger getOsScheduleTableStartValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableStartValue"])
 			}
 			
-			def void setOsScheduleTableStartValue(Integer value){
+			def void setOsScheduleTableStartValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableStartValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2699,11 +2701,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getOsScheduleTblExpPointOffset(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExpPointOffset"])
+			def BigInteger getOsScheduleTblExpPointOffset(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExpPointOffset"])
 			}
 			
-			def void setOsScheduleTblExpPointOffset(Integer value){
+			def void setOsScheduleTblExpPointOffset(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExpPointOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2865,11 +2867,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getOsScheduleTableMaxLengthen(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxLengthen"])
+				def BigInteger getOsScheduleTableMaxLengthen(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxLengthen"])
 				}
 				
-				def void setOsScheduleTableMaxLengthen(Integer value){
+				def void setOsScheduleTableMaxLengthen(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxLengthen"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2881,11 +2883,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getOsScheduleTableMaxShorten(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxShorten"])
+				def BigInteger getOsScheduleTableMaxShorten(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxShorten"])
 				}
 				
-				def void setOsScheduleTableMaxShorten(Integer value){
+				def void setOsScheduleTableMaxShorten(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxShorten"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2923,11 +2925,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getOsScheduleTblExplicitPrecision(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExplicitPrecision"])
+			def BigInteger getOsScheduleTblExplicitPrecision(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExplicitPrecision"])
 			}
 			
-			def void setOsScheduleTblExplicitPrecision(Integer value){
+			def void setOsScheduleTblExplicitPrecision(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExplicitPrecision"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -3103,11 +3105,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getOsTaskActivation(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskActivation"])
+		def BigInteger getOsTaskActivation(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskActivation"])
 		}
 		
-		def void setOsTaskActivation(Integer value){
+		def void setOsTaskActivation(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskActivation"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3119,11 +3121,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getOsTaskPriority(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskPriority"])
+		def BigInteger getOsTaskPriority(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskPriority"])
 		}
 		
-		def void setOsTaskPriority(Integer value){
+		def void setOsTaskPriority(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskPriority"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3364,11 +3366,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getOsTaskAllInterruptLockBudget(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskAllInterruptLockBudget"])
+			def BigDecimal getOsTaskAllInterruptLockBudget(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskAllInterruptLockBudget"])
 			}
 			
-			def void setOsTaskAllInterruptLockBudget(Float value){
+			def void setOsTaskAllInterruptLockBudget(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskAllInterruptLockBudget"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -3380,11 +3382,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getOsTaskExecutionBudget(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskExecutionBudget"])
+			def BigDecimal getOsTaskExecutionBudget(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskExecutionBudget"])
 			}
 			
-			def void setOsTaskExecutionBudget(Float value){
+			def void setOsTaskExecutionBudget(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskExecutionBudget"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -3396,11 +3398,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getOsTaskOsInterruptLockBudget(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskOsInterruptLockBudget"])
+			def BigDecimal getOsTaskOsInterruptLockBudget(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskOsInterruptLockBudget"])
 			}
 			
-			def void setOsTaskOsInterruptLockBudget(Float value){
+			def void setOsTaskOsInterruptLockBudget(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskOsInterruptLockBudget"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -3412,11 +3414,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getOsTaskTimeFrame(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskTimeFrame"])
+			def BigDecimal getOsTaskTimeFrame(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskTimeFrame"])
 			}
 			
-			def void setOsTaskTimeFrame(Float value){
+			def void setOsTaskTimeFrame(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskTimeFrame"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -3469,11 +3471,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getOsTaskResourceLockBudget(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskResourceLockBudget"])
+				def BigDecimal getOsTaskResourceLockBudget(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskResourceLockBudget"])
 				}
 				
-				def void setOsTaskResourceLockBudget(Float value){
+				def void setOsTaskResourceLockBudget(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskResourceLockBudget"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

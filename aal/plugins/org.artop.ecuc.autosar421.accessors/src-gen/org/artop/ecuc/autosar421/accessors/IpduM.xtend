@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class IpduM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -112,11 +114,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getIpduMMaxTxBufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxBufferSize"])
+		def BigInteger getIpduMMaxTxBufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxBufferSize"])
 		}
 		
-		def void setIpduMMaxTxBufferSize(Integer value){
+		def void setIpduMMaxTxBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxBufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -128,11 +130,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getIpduMMaxTxPathwayCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxPathwayCnt"])
+		def BigInteger getIpduMMaxTxPathwayCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxPathwayCnt"])
 		}
 		
-		def void setIpduMMaxTxPathwayCnt(Integer value){
+		def void setIpduMMaxTxPathwayCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxPathwayCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -280,11 +282,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getIpduMContainedPduHeaderId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"])
+			def BigInteger getIpduMContainedPduHeaderId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"])
 			}
 			
-			def void setIpduMContainedPduHeaderId(Integer value){
+			def void setIpduMContainedPduHeaderId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -342,11 +344,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getIpduMContainedPduHeaderId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"])
+			def BigInteger getIpduMContainedPduHeaderId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"])
 			}
 			
-			def void setIpduMContainedPduHeaderId(Integer value){
+			def void setIpduMContainedPduHeaderId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -407,11 +409,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getIpduMContainedTxPduHandleId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduHandleId"])
+			def BigInteger getIpduMContainedTxPduHandleId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduHandleId"])
 			}
 			
-			def void setIpduMContainedTxPduHandleId(Integer value){
+			def void setIpduMContainedTxPduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduHandleId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -423,11 +425,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getIpduMContainedTxPduSendTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduSendTimeout"])
+			def BigDecimal getIpduMContainedTxPduSendTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduSendTimeout"])
 			}
 			
-			def void setIpduMContainedTxPduSendTimeout(Float value){
+			def void setIpduMContainedTxPduSendTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduSendTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -584,11 +586,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getIpduMContainerQueueSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"])
+			def BigInteger getIpduMContainerQueueSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"])
 			}
 			
-			def void setIpduMContainerQueueSize(Integer value){
+			def void setIpduMContainerQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -633,11 +635,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getIpduMContainerRxHandleId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerRxHandleId"])
+			def BigInteger getIpduMContainerRxHandleId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerRxHandleId"])
 			}
 			
-			def void setIpduMContainerRxHandleId(Integer value){
+			def void setIpduMContainerRxHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerRxHandleId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -717,11 +719,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getIpduMContainerQueueSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"])
+			def BigInteger getIpduMContainerQueueSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"])
 			}
 			
-			def void setIpduMContainerQueueSize(Integer value){
+			def void setIpduMContainerQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -733,11 +735,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getIpduMContainerTxConfirmationTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxConfirmationTimeout"])
+			def BigDecimal getIpduMContainerTxConfirmationTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxConfirmationTimeout"])
 			}
 			
-			def void setIpduMContainerTxConfirmationTimeout(Float value){
+			def void setIpduMContainerTxConfirmationTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxConfirmationTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -765,11 +767,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getIpduMContainerTxHandleId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxHandleId"])
+			def BigInteger getIpduMContainerTxHandleId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxHandleId"])
 			}
 			
-			def void setIpduMContainerTxHandleId(Integer value){
+			def void setIpduMContainerTxHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxHandleId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -781,11 +783,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getIpduMContainerTxSendTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSendTimeout"])
+			def BigDecimal getIpduMContainerTxSendTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSendTimeout"])
 			}
 			
-			def void setIpduMContainerTxSendTimeout(Float value){
+			def void setIpduMContainerTxSendTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSendTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -797,11 +799,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getIpduMContainerTxSizeThreshold(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSizeThreshold"])
+			def BigInteger getIpduMContainerTxSizeThreshold(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSizeThreshold"])
 			}
 			
-			def void setIpduMContainerTxSizeThreshold(Integer value){
+			def void setIpduMContainerTxSizeThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSizeThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -945,11 +947,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getIpduMRxHandleId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxHandleId"])
+				def BigInteger getIpduMRxHandleId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxHandleId"])
 				}
 				
-				def void setIpduMRxHandleId(Integer value){
+				def void setIpduMRxHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxHandleId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1069,11 +1071,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMRxSelectorValue(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxSelectorValue"])
+					def BigInteger getIpduMRxSelectorValue(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxSelectorValue"])
 					}
 					
-					def void setIpduMRxSelectorValue(Integer value){
+					def void setIpduMRxSelectorValue(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxSelectorValue"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1120,11 +1122,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMSegmentLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
+					def BigInteger getIpduMSegmentLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
 					}
 					
-					def void setIpduMSegmentLength(Integer value){
+					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1136,11 +1138,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMSegmentPosition(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
+					def BigInteger getIpduMSegmentPosition(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
 					}
 					
-					def void setIpduMSegmentPosition(Integer value){
+					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1211,11 +1213,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMSegmentLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
+					def BigInteger getIpduMSegmentLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
 					}
 					
-					def void setIpduMSegmentLength(Integer value){
+					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1227,11 +1229,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMSegmentPosition(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
+					def BigInteger getIpduMSegmentPosition(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
 					}
 					
-					def void setIpduMSegmentPosition(Integer value){
+					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1267,11 +1269,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMSelectorFieldLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"])
+					def BigInteger getIpduMSelectorFieldLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"])
 					}
 					
-					def void setIpduMSelectorFieldLength(Integer value){
+					def void setIpduMSelectorFieldLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1283,11 +1285,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMSelectorFieldPosition(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"])
+					def BigInteger getIpduMSelectorFieldPosition(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"])
 					}
 					
-					def void setIpduMSelectorFieldPosition(Integer value){
+					def void setIpduMSelectorFieldPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1391,11 +1393,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getIpduMIPduUnusedAreasDefault(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMIPduUnusedAreasDefault"])
+				def BigInteger getIpduMIPduUnusedAreasDefault(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMIPduUnusedAreasDefault"])
 				}
 				
-				def void setIpduMIPduUnusedAreasDefault(Integer value){
+				def void setIpduMIPduUnusedAreasDefault(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMIPduUnusedAreasDefault"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1407,11 +1409,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getIpduMTxConfirmationPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationPduId"])
+				def BigInteger getIpduMTxConfirmationPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationPduId"])
 				}
 				
-				def void setIpduMTxConfirmationPduId(Integer value){
+				def void setIpduMTxConfirmationPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1423,11 +1425,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getIpduMTxConfirmationTimeout(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationTimeout"])
+				def BigDecimal getIpduMTxConfirmationTimeout(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationTimeout"])
 				}
 				
-				def void setIpduMTxConfirmationTimeout(Float value){
+				def void setIpduMTxConfirmationTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationTimeout"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1595,11 +1597,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMSelectorFieldLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"])
+					def BigInteger getIpduMSelectorFieldLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"])
 					}
 					
-					def void setIpduMSelectorFieldLength(Integer value){
+					def void setIpduMSelectorFieldLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1611,11 +1613,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMSelectorFieldPosition(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"])
+					def BigInteger getIpduMSelectorFieldPosition(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"])
 					}
 					
-					def void setIpduMSelectorFieldPosition(Integer value){
+					def void setIpduMSelectorFieldPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1683,11 +1685,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMTxDynamicHandleId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicHandleId"])
+					def BigInteger getIpduMTxDynamicHandleId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicHandleId"])
 					}
 					
-					def void setIpduMTxDynamicHandleId(Integer value){
+					def void setIpduMTxDynamicHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicHandleId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1734,11 +1736,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMSegmentLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
+					def BigInteger getIpduMSegmentLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
 					}
 					
-					def void setIpduMSegmentLength(Integer value){
+					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1750,11 +1752,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMSegmentPosition(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
+					def BigInteger getIpduMSegmentPosition(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
 					}
 					
-					def void setIpduMSegmentPosition(Integer value){
+					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1822,11 +1824,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMTxStaticHandleId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticHandleId"])
+					def BigInteger getIpduMTxStaticHandleId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticHandleId"])
 					}
 					
-					def void setIpduMTxStaticHandleId(Integer value){
+					def void setIpduMTxStaticHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticHandleId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1873,11 +1875,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getIpduMSegmentLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
+					def BigInteger getIpduMSegmentLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
 					}
 					
-					def void setIpduMSegmentLength(Integer value){
+					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1889,11 +1891,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getIpduMSegmentPosition(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
+					def BigInteger getIpduMSegmentPosition(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"])
 					}
 					
-					def void setIpduMSegmentPosition(Integer value){
+					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1934,11 +1936,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Float getIpduMConfigurationTimeBase(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMConfigurationTimeBase"])
+		def BigDecimal getIpduMConfigurationTimeBase(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMConfigurationTimeBase"])
 		}
 		
-		def void setIpduMConfigurationTimeBase(Float value){
+		def void setIpduMConfigurationTimeBase(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMConfigurationTimeBase"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

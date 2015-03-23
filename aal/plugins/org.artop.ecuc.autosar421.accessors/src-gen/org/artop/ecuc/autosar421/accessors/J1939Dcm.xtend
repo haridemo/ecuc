@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class J1939Dcm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -244,7 +246,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def List<Integer> getJ1939DcmSPNsInDataStreams(){
+			def List<BigInteger> getJ1939DcmSPNsInDataStreams(){
 				val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 					override protected accept(EcucNumericalParamValue item) {
 						return accept(item, typeof(GConfigParameter), "J1939DcmSPNsInDataStream")
@@ -253,7 +255,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmSPNsInDataStream"]
-					return new IntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(Integer), parameterDef)
+					return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
 				}
 			}
 			
@@ -514,11 +516,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939DcmRxPduId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"])
+					def BigInteger getJ1939DcmRxPduId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"])
 					}
 					
-					def void setJ1939DcmRxPduId(Integer value){
+					def void setJ1939DcmRxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -565,11 +567,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939DcmTxPduId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmTxPduId"])
+					def BigInteger getJ1939DcmTxPduId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmTxPduId"])
 					}
 					
-					def void setJ1939DcmTxPduId(Integer value){
+					def void setJ1939DcmTxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmTxPduId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -621,11 +623,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getJ1939DcmCommonBufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmCommonBufferSize"])
+		def BigInteger getJ1939DcmCommonBufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmCommonBufferSize"])
 		}
 		
-		def void setJ1939DcmCommonBufferSize(Integer value){
+		def void setJ1939DcmCommonBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmCommonBufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -637,11 +639,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getJ1939DcmDM01BufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01BufferSize"])
+		def BigInteger getJ1939DcmDM01BufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01BufferSize"])
 		}
 		
-		def void setJ1939DcmDM01BufferSize(Integer value){
+		def void setJ1939DcmDM01BufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01BufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -669,11 +671,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getJ1939DcmMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMainFunctionPeriod"])
+		def BigDecimal getJ1939DcmMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMainFunctionPeriod"])
 		}
 		
-		def void setJ1939DcmMainFunctionPeriod(Float value){
+		def void setJ1939DcmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -685,11 +687,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getJ1939DcmMaxDTCsPerMainFunction(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxDTCsPerMainFunction"])
+		def BigInteger getJ1939DcmMaxDTCsPerMainFunction(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxDTCsPerMainFunction"])
 		}
 		
-		def void setJ1939DcmMaxDTCsPerMainFunction(Integer value){
+		def void setJ1939DcmMaxDTCsPerMainFunction(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxDTCsPerMainFunction"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -701,11 +703,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getJ1939DcmMaxFreezeFramesPerMainFunction(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"])
+		def BigInteger getJ1939DcmMaxFreezeFramesPerMainFunction(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"])
 		}
 		
-		def void setJ1939DcmMaxFreezeFramesPerMainFunction(Integer value){
+		def void setJ1939DcmMaxFreezeFramesPerMainFunction(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -717,11 +719,11 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getJ1939DcmMaxRatiosPerMainFunction(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxRatiosPerMainFunction"])
+		def BigInteger getJ1939DcmMaxRatiosPerMainFunction(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxRatiosPerMainFunction"])
 		}
 		
-		def void setJ1939DcmMaxRatiosPerMainFunction(Integer value){
+		def void setJ1939DcmMaxRatiosPerMainFunction(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxRatiosPerMainFunction"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

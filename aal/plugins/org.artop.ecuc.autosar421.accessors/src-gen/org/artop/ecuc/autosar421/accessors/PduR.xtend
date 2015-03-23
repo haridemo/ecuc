@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class PduR implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -409,11 +411,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getPduRConfigurationId(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRConfigurationId"])
+		def BigInteger getPduRConfigurationId(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRConfigurationId"])
 		}
 		
-		def void setPduRConfigurationId(Integer value){
+		def void setPduRConfigurationId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRConfigurationId"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -425,11 +427,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getPduRMaxRoutingPathCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathCnt"])
+		def BigInteger getPduRMaxRoutingPathCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathCnt"])
 		}
 		
-		def void setPduRMaxRoutingPathCnt(Integer value){
+		def void setPduRMaxRoutingPathCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -441,11 +443,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getPduRMaxRoutingPathGroupCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathGroupCnt"])
+		def BigInteger getPduRMaxRoutingPathGroupCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathGroupCnt"])
 		}
 		
-		def void setPduRMaxRoutingPathGroupCnt(Integer value){
+		def void setPduRMaxRoutingPathGroupCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathGroupCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -457,11 +459,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getPduRMaxRoutingTableCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingTableCnt"])
+		def BigInteger getPduRMaxRoutingTableCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingTableCnt"])
 		}
 		
-		def void setPduRMaxRoutingTableCnt(Integer value){
+		def void setPduRMaxRoutingTableCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingTableCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -567,11 +569,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getPduRRoutingPathGroupId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRoutingPathGroupId"])
+			def BigInteger getPduRRoutingPathGroupId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRoutingPathGroupId"])
 			}
 			
-			def void setPduRRoutingPathGroupId(Integer value){
+			def void setPduRRoutingPathGroupId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRoutingPathGroupId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -764,11 +766,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(paramValue, value)
 					}
 					
-					def Integer getPduRDestPduHandleId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduHandleId"])
+					def BigInteger getPduRDestPduHandleId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduHandleId"])
 					}
 					
-					def void setPduRDestPduHandleId(Integer value){
+					def void setPduRDestPduHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduHandleId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -780,11 +782,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getPduRTpThreshold(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpThreshold"])
+					def BigInteger getPduRTpThreshold(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpThreshold"])
 					}
 					
-					def void setPduRTpThreshold(Integer value){
+					def void setPduRTpThreshold(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpThreshold"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -906,11 +908,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getPduRDefaultValueElement(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElement"])
+							def BigInteger getPduRDefaultValueElement(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElement"])
 							}
 							
-							def void setPduRDefaultValueElement(Integer value){
+							def void setPduRDefaultValueElement(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElement"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -922,11 +924,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getPduRDefaultValueElementBytePosition(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElementBytePosition"])
+							def BigInteger getPduRDefaultValueElementBytePosition(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElementBytePosition"])
 							}
 							
-							def void setPduRDefaultValueElementBytePosition(Integer value){
+							def void setPduRDefaultValueElementBytePosition(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElementBytePosition"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -966,11 +968,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getPduRSourcePduHandleId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduHandleId"])
+					def BigInteger getPduRSourcePduHandleId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduHandleId"])
 					}
 					
-					def void setPduRSourcePduHandleId(Integer value){
+					def void setPduRSourcePduHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduHandleId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1078,11 +1080,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getPduRTpBufferLength(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpBufferLength"])
+				def BigInteger getPduRTpBufferLength(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpBufferLength"])
 				}
 				
-				def void setPduRTpBufferLength(Integer value){
+				def void setPduRTpBufferLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpBufferLength"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1161,11 +1163,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getPduRPduMaxLength(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"])
+				def BigInteger getPduRPduMaxLength(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"])
 				}
 				
-				def void setPduRPduMaxLength(Integer value){
+				def void setPduRPduMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1177,11 +1179,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getPduRTxBufferDepth(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxBufferDepth"])
+				def BigInteger getPduRTxBufferDepth(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxBufferDepth"])
 				}
 				
-				def void setPduRTxBufferDepth(Integer value){
+				def void setPduRTxBufferDepth(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxBufferDepth"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

@@ -27,6 +27,7 @@ import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor
 import autosar40.ecucdescription.EcucdescriptionFactory
 import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor.NvMBlockCrcType
 import org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor.NvMTargetBlockReference
+import java.math.BigInteger
 
 class EcucValueAccessors421ExampleWorkflow extends WorkspaceWorkflow {
 
@@ -65,7 +66,7 @@ class EcucValueAccessors421ExampleWorkflowComponent extends AbstractModelWorkflo
 					nvmBlockDescriptorValue2.setNvMBlockCrcType(NvMBlockCrcType.NVM_CRC32)
 
 					// Set numerical NvMBlockJobPriority parameter value
-					nvmBlockDescriptorValue2.setNvMBlockJobPriority(4)
+					nvmBlockDescriptorValue2.setNvMBlockJobPriority(new BigInteger("4"))
 
 					// Set NvMTargetBlockReference choice container value
 					val NvMTargetBlockReference nvmTargetBlockReferenceValue = new NvMTargetBlockReference(EcucdescriptionFactory.eINSTANCE.createEcucContainerValue())

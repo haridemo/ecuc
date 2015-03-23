@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Cal implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -304,11 +306,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalAsymDecryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"])
+		def BigInteger getCalAsymDecryptMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"])
 		}
 		
-		def void setCalAsymDecryptMaxCtxBufByteSize(Integer value){
+		def void setCalAsymDecryptMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -320,11 +322,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxKeySize"])
+		def BigInteger getCalAsymDecryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxKeySize"])
 		}
 		
-		def void setCalAsymDecryptMaxKeySize(Integer value){
+		def void setCalAsymDecryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -434,11 +436,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalAsymEncryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"])
+		def BigInteger getCalAsymEncryptMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"])
 		}
 		
-		def void setCalAsymEncryptMaxCtxBufByteSize(Integer value){
+		def void setCalAsymEncryptMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -450,11 +452,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxKeySize"])
+		def BigInteger getCalAsymEncryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxKeySize"])
 		}
 		
-		def void setCalAsymEncryptMaxKeySize(Integer value){
+		def void setCalAsymEncryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -564,11 +566,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalAsymPrivateKeyExtractMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"])
+		def BigInteger getCalAsymPrivateKeyExtractMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"])
 		}
 		
-		def void setCalAsymPrivateKeyExtractMaxCtxBufByteSize(Integer value){
+		def void setCalAsymPrivateKeyExtractMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -580,11 +582,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymPrivateKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"])
+		def BigInteger getCalAsymPrivateKeyExtractMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"])
 		}
 		
-		def void setCalAsymPrivateKeyExtractMaxKeySize(Integer value){
+		def void setCalAsymPrivateKeyExtractMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -694,11 +696,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"])
+		def BigInteger getCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"])
 		}
 		
-		def void setCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(Integer value){
+		def void setCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -710,11 +712,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymPrivateKeyWrapAsymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"])
+		def BigInteger getCalAsymPrivateKeyWrapAsymMaxPrivKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"])
 		}
 		
-		def void setCalAsymPrivateKeyWrapAsymMaxPrivKeySize(Integer value){
+		def void setCalAsymPrivateKeyWrapAsymMaxPrivKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -726,11 +728,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymPrivateKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"])
+		def BigInteger getCalAsymPrivateKeyWrapAsymMaxPubKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"])
 		}
 		
-		def void setCalAsymPrivateKeyWrapAsymMaxPubKeySize(Integer value){
+		def void setCalAsymPrivateKeyWrapAsymMaxPubKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -840,11 +842,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"])
+		def BigInteger getCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"])
 		}
 		
-		def void setCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(Integer value){
+		def void setCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -856,11 +858,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymPrivateKeyWrapSymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"])
+		def BigInteger getCalAsymPrivateKeyWrapSymMaxPrivKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"])
 		}
 		
-		def void setCalAsymPrivateKeyWrapSymMaxPrivKeySize(Integer value){
+		def void setCalAsymPrivateKeyWrapSymMaxPrivKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -872,11 +874,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymPrivateKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"])
+		def BigInteger getCalAsymPrivateKeyWrapSymMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"])
 		}
 		
-		def void setCalAsymPrivateKeyWrapSymMaxSymKeySize(Integer value){
+		def void setCalAsymPrivateKeyWrapSymMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -986,11 +988,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalAsymPublicKeyExtractMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"])
+		def BigInteger getCalAsymPublicKeyExtractMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"])
 		}
 		
-		def void setCalAsymPublicKeyExtractMaxCtxBufByteSize(Integer value){
+		def void setCalAsymPublicKeyExtractMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1002,11 +1004,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalAsymPublicKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"])
+		def BigInteger getCalAsymPublicKeyExtractMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"])
 		}
 		
-		def void setCalAsymPublicKeyExtractMaxKeySize(Integer value){
+		def void setCalAsymPublicKeyExtractMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1116,11 +1118,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalChecksumMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumMaxCtxBufByteSize"])
+		def BigInteger getCalChecksumMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumMaxCtxBufByteSize"])
 		}
 		
-		def void setCalChecksumMaxCtxBufByteSize(Integer value){
+		def void setCalChecksumMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1230,11 +1232,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalCompressMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressMaxCtxBufByteSize"])
+		def BigInteger getCalCompressMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressMaxCtxBufByteSize"])
 		}
 		
-		def void setCalCompressMaxCtxBufByteSize(Integer value){
+		def void setCalCompressMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1344,11 +1346,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalDecompressMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressMaxCtxBufByteSize"])
+		def BigInteger getCalDecompressMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressMaxCtxBufByteSize"])
 		}
 		
-		def void setCalDecompressMaxCtxBufByteSize(Integer value){
+		def void setCalDecompressMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1513,11 +1515,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalHashMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashMaxCtxBufByteSize"])
+		def BigInteger getCalHashMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashMaxCtxBufByteSize"])
 		}
 		
-		def void setCalHashMaxCtxBufByteSize(Integer value){
+		def void setCalHashMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1627,11 +1629,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalKeyDeriveMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"])
+		def BigInteger getCalKeyDeriveMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"])
 		}
 		
-		def void setCalKeyDeriveMaxCtxBufByteSize(Integer value){
+		def void setCalKeyDeriveMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1643,11 +1645,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalKeyDeriveMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxKeySize"])
+		def BigInteger getCalKeyDeriveMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxKeySize"])
 		}
 		
-		def void setCalKeyDeriveMaxKeySize(Integer value){
+		def void setCalKeyDeriveMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1757,11 +1759,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalKeyExchangeCalcPubValMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"])
+		def BigInteger getCalKeyExchangeCalcPubValMaxBaseTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"])
 		}
 		
-		def void setCalKeyExchangeCalcPubValMaxBaseTypeSize(Integer value){
+		def void setCalKeyExchangeCalcPubValMaxBaseTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1773,11 +1775,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalKeyExchangeCalcPubValMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"])
+		def BigInteger getCalKeyExchangeCalcPubValMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"])
 		}
 		
-		def void setCalKeyExchangeCalcPubValMaxCtxBufByteSize(Integer value){
+		def void setCalKeyExchangeCalcPubValMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1789,11 +1791,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalKeyExchangeCalcPubValMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"])
+		def BigInteger getCalKeyExchangeCalcPubValMaxPrivateTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"])
 		}
 		
-		def void setCalKeyExchangeCalcPubValMaxPrivateTypeSize(Integer value){
+		def void setCalKeyExchangeCalcPubValMaxPrivateTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1903,11 +1905,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalKeyExchangeCalcSecretMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"])
+		def BigInteger getCalKeyExchangeCalcSecretMaxBaseTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"])
 		}
 		
-		def void setCalKeyExchangeCalcSecretMaxBaseTypeSize(Integer value){
+		def void setCalKeyExchangeCalcSecretMaxBaseTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1919,11 +1921,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalKeyExchangeCalcSecretMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"])
+		def BigInteger getCalKeyExchangeCalcSecretMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"])
 		}
 		
-		def void setCalKeyExchangeCalcSecretMaxCtxBufByteSize(Integer value){
+		def void setCalKeyExchangeCalcSecretMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1935,11 +1937,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalKeyExchangeCalcSecretMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"])
+		def BigInteger getCalKeyExchangeCalcSecretMaxPrivateTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"])
 		}
 		
-		def void setCalKeyExchangeCalcSecretMaxPrivateTypeSize(Integer value){
+		def void setCalKeyExchangeCalcSecretMaxPrivateTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2049,11 +2051,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalMacGenerateMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxCtxBufByteSize"])
+		def BigInteger getCalMacGenerateMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxCtxBufByteSize"])
 		}
 		
-		def void setCalMacGenerateMaxCtxBufByteSize(Integer value){
+		def void setCalMacGenerateMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2065,11 +2067,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalMacGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxKeySize"])
+		def BigInteger getCalMacGenerateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxKeySize"])
 		}
 		
-		def void setCalMacGenerateMaxKeySize(Integer value){
+		def void setCalMacGenerateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2179,11 +2181,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalMacVerifyMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxCtxBufByteSize"])
+		def BigInteger getCalMacVerifyMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxCtxBufByteSize"])
 		}
 		
-		def void setCalMacVerifyMaxCtxBufByteSize(Integer value){
+		def void setCalMacVerifyMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2195,11 +2197,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalMacVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxKeySize"])
+		def BigInteger getCalMacVerifyMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxKeySize"])
 		}
 		
-		def void setCalMacVerifyMaxKeySize(Integer value){
+		def void setCalMacVerifyMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2407,11 +2409,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalRandomMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomMaxCtxBufByteSize"])
+		def BigInteger getCalRandomMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomMaxCtxBufByteSize"])
 		}
 		
-		def void setCalRandomMaxCtxBufByteSize(Integer value){
+		def void setCalRandomMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2521,11 +2523,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSignatureGenerateMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"])
+		def BigInteger getCalSignatureGenerateMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSignatureGenerateMaxCtxBufByteSize(Integer value){
+		def void setCalSignatureGenerateMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2537,11 +2539,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSignatureGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxKeySize"])
+		def BigInteger getCalSignatureGenerateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxKeySize"])
 		}
 		
-		def void setCalSignatureGenerateMaxKeySize(Integer value){
+		def void setCalSignatureGenerateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2651,11 +2653,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSignatureVerifyMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"])
+		def BigInteger getCalSignatureVerifyMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSignatureVerifyMaxCtxBufByteSize(Integer value){
+		def void setCalSignatureVerifyMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2667,11 +2669,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSignatureVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxKeySize"])
+		def BigInteger getCalSignatureVerifyMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxKeySize"])
 		}
 		
-		def void setCalSignatureVerifyMaxKeySize(Integer value){
+		def void setCalSignatureVerifyMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2781,11 +2783,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymBlockDecryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"])
+		def BigInteger getCalSymBlockDecryptMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymBlockDecryptMaxCtxBufByteSize(Integer value){
+		def void setCalSymBlockDecryptMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2797,11 +2799,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymBlockDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxKeySize"])
+		def BigInteger getCalSymBlockDecryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxKeySize"])
 		}
 		
-		def void setCalSymBlockDecryptMaxKeySize(Integer value){
+		def void setCalSymBlockDecryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2911,11 +2913,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymBlockEncryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"])
+		def BigInteger getCalSymBlockEncryptMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymBlockEncryptMaxCtxBufByteSize(Integer value){
+		def void setCalSymBlockEncryptMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2927,11 +2929,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymBlockEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxKeySize"])
+		def BigInteger getCalSymBlockEncryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxKeySize"])
 		}
 		
-		def void setCalSymBlockEncryptMaxKeySize(Integer value){
+		def void setCalSymBlockEncryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3041,11 +3043,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymDecryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxCtxBufByteSize"])
+		def BigInteger getCalSymDecryptMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymDecryptMaxCtxBufByteSize(Integer value){
+		def void setCalSymDecryptMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3057,11 +3059,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxKeySize"])
+		def BigInteger getCalSymDecryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxKeySize"])
 		}
 		
-		def void setCalSymDecryptMaxKeySize(Integer value){
+		def void setCalSymDecryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3171,11 +3173,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymEncryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxCtxBufByteSize"])
+		def BigInteger getCalSymEncryptMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymEncryptMaxCtxBufByteSize(Integer value){
+		def void setCalSymEncryptMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3187,11 +3189,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxKeySize"])
+		def BigInteger getCalSymEncryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxKeySize"])
 		}
 		
-		def void setCalSymEncryptMaxKeySize(Integer value){
+		def void setCalSymEncryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3301,11 +3303,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymKeyExtractMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"])
+		def BigInteger getCalSymKeyExtractMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymKeyExtractMaxCtxBufByteSize(Integer value){
+		def void setCalSymKeyExtractMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3317,11 +3319,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxKeySize"])
+		def BigInteger getCalSymKeyExtractMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxKeySize"])
 		}
 		
-		def void setCalSymKeyExtractMaxKeySize(Integer value){
+		def void setCalSymKeyExtractMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3431,11 +3433,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymKeyWrapAsymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"])
+		def BigInteger getCalSymKeyWrapAsymMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymKeyWrapAsymMaxCtxBufByteSize(Integer value){
+		def void setCalSymKeyWrapAsymMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3447,11 +3449,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"])
+		def BigInteger getCalSymKeyWrapAsymMaxPubKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"])
 		}
 		
-		def void setCalSymKeyWrapAsymMaxPubKeySize(Integer value){
+		def void setCalSymKeyWrapAsymMaxPubKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3463,11 +3465,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymKeyWrapAsymMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"])
+		def BigInteger getCalSymKeyWrapAsymMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"])
 		}
 		
-		def void setCalSymKeyWrapAsymMaxSymKeySize(Integer value){
+		def void setCalSymKeyWrapAsymMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3577,11 +3579,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCalSymKeyWrapSymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"])
+		def BigInteger getCalSymKeyWrapSymMaxCtxBufByteSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"])
 		}
 		
-		def void setCalSymKeyWrapSymMaxCtxBufByteSize(Integer value){
+		def void setCalSymKeyWrapSymMaxCtxBufByteSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3593,11 +3595,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCalSymKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"])
+		def BigInteger getCalSymKeyWrapSymMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"])
 		}
 		
-		def void setCalSymKeyWrapSymMaxSymKeySize(Integer value){
+		def void setCalSymKeyWrapSymMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

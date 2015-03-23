@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class FlsTst implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -120,11 +122,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getFlsTstBlockNumberBgnd(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberBgnd"])
+		def BigInteger getFlsTstBlockNumberBgnd(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberBgnd"])
 		}
 		
-		def void setFlsTstBlockNumberBgnd(Integer value){
+		def void setFlsTstBlockNumberBgnd(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberBgnd"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -136,11 +138,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsTstBlockNumberFgnd(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberFgnd"])
+		def BigInteger getFlsTstBlockNumberFgnd(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberFgnd"])
 		}
 		
-		def void setFlsTstBlockNumberFgnd(Integer value){
+		def void setFlsTstBlockNumberFgnd(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberFgnd"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -249,11 +251,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFlsTstBlockBaseAddress(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"])
+				def BigInteger getFlsTstBlockBaseAddress(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"])
 				}
 				
-				def void setFlsTstBlockBaseAddress(Integer value){
+				def void setFlsTstBlockBaseAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -265,11 +267,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstBlockIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"])
+				def BigInteger getFlsTstBlockIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"])
 				}
 				
-				def void setFlsTstBlockIndex(Integer value){
+				def void setFlsTstBlockIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -281,11 +283,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstBlockSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"])
+				def BigInteger getFlsTstBlockSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"])
 				}
 				
-				def void setFlsTstBlockSize(Integer value){
+				def void setFlsTstBlockSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -297,11 +299,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstNumberOfTestedCells(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"])
+				def BigInteger getFlsTstNumberOfTestedCells(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"])
 				}
 				
-				def void setFlsTstNumberOfTestedCells(Integer value){
+				def void setFlsTstNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -313,11 +315,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstSignatureAddress(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"])
+				def BigInteger getFlsTstSignatureAddress(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"])
 				}
 				
-				def void setFlsTstSignatureAddress(Integer value){
+				def void setFlsTstSignatureAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -437,11 +439,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getFlsTstBlockBaseAddress(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"])
+				def BigInteger getFlsTstBlockBaseAddress(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"])
 				}
 				
-				def void setFlsTstBlockBaseAddress(Integer value){
+				def void setFlsTstBlockBaseAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -453,11 +455,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstBlockIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"])
+				def BigInteger getFlsTstBlockIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"])
 				}
 				
-				def void setFlsTstBlockIndex(Integer value){
+				def void setFlsTstBlockIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -469,11 +471,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstBlockSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"])
+				def BigInteger getFlsTstBlockSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"])
 				}
 				
-				def void setFlsTstBlockSize(Integer value){
+				def void setFlsTstBlockSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -485,11 +487,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstNumberOfTestedCells(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"])
+				def BigInteger getFlsTstNumberOfTestedCells(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"])
 				}
 				
-				def void setFlsTstNumberOfTestedCells(Integer value){
+				def void setFlsTstNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -501,11 +503,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getFlsTstSignatureAddress(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"])
+				def BigInteger getFlsTstSignatureAddress(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"])
 				}
 				
-				def void setFlsTstSignatureAddress(Integer value){
+				def void setFlsTstSignatureAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -818,11 +820,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsTstNumberOfTestedCellsAtomic(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCellsAtomic"])
+		def BigInteger getFlsTstNumberOfTestedCellsAtomic(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCellsAtomic"])
 		}
 		
-		def void setFlsTstNumberOfTestedCellsAtomic(Integer value){
+		def void setFlsTstNumberOfTestedCellsAtomic(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCellsAtomic"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -850,11 +852,11 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFlsTstTestIntervalIdEndValue(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestIntervalIdEndValue"])
+		def BigInteger getFlsTstTestIntervalIdEndValue(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestIntervalIdEndValue"])
 		}
 		
-		def void setFlsTstTestIntervalIdEndValue(Integer value){
+		def void setFlsTstTestIntervalIdEndValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestIntervalIdEndValue"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

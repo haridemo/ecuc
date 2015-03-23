@@ -34,6 +34,8 @@ import org.eclipse.core.runtime.Assert
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class EcucValueAccessorUtil {
 	
@@ -156,12 +158,12 @@ class EcucValueAccessorUtil {
 		builder.toString
 	}
 	
-	def static Integer toInteger(String numString) {
-		Integer.parseInt(numString)
+	def static BigInteger toBigInteger(String numString) {
+		new BigInteger(numString)
 	}
 
-	def static Float toFloat(String numString) {
-		Float.parseFloat(numString)
+	def static BigDecimal toBigDecimal(String numString) {
+		new BigDecimal(numString)
 	}
 	
 	def static Boolean toBoolean(String boolString){

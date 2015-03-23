@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class CanSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -104,11 +106,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCanSMModeRequestRepetitionMax(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionMax"])
+		def BigInteger getCanSMModeRequestRepetitionMax(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionMax"])
 		}
 		
-		def void setCanSMModeRequestRepetitionMax(Integer value){
+		def void setCanSMModeRequestRepetitionMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionMax"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -120,11 +122,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanSMModeRequestRepetitionTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionTime"])
+		def BigDecimal getCanSMModeRequestRepetitionTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionTime"])
 		}
 		
-		def void setCanSMModeRequestRepetitionTime(Float value){
+		def void setCanSMModeRequestRepetitionTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -177,11 +179,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getCanSMBorCounterL1ToL2(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorCounterL1ToL2"])
+			def BigInteger getCanSMBorCounterL1ToL2(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorCounterL1ToL2"])
 			}
 			
-			def void setCanSMBorCounterL1ToL2(Integer value){
+			def void setCanSMBorCounterL1ToL2(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorCounterL1ToL2"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -193,11 +195,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanSMBorTimeL1(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL1"])
+			def BigDecimal getCanSMBorTimeL1(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL1"])
 			}
 			
-			def void setCanSMBorTimeL1(Float value){
+			def void setCanSMBorTimeL1(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL1"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -209,11 +211,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanSMBorTimeL2(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL2"])
+			def BigDecimal getCanSMBorTimeL2(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL2"])
 			}
 			
-			def void setCanSMBorTimeL2(Float value){
+			def void setCanSMBorTimeL2(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL2"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -225,11 +227,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanSMBorTimeTxEnsured(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeTxEnsured"])
+			def BigDecimal getCanSMBorTimeTxEnsured(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeTxEnsured"])
 			}
 			
-			def void setCanSMBorTimeTxEnsured(Float value){
+			def void setCanSMBorTimeTxEnsured(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeTxEnsured"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -482,11 +484,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanSMMainFunctionTimePeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMMainFunctionTimePeriod"])
+		def BigDecimal getCanSMMainFunctionTimePeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMMainFunctionTimePeriod"])
 		}
 		
-		def void setCanSMMainFunctionTimePeriod(Float value){
+		def void setCanSMMainFunctionTimePeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMMainFunctionTimePeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

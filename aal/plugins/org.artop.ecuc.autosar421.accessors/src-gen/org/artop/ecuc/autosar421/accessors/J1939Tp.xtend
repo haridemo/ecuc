@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class J1939Tp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -180,11 +182,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpRxDa(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDa"])
+			def BigInteger getJ1939TpRxDa(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDa"])
 			}
 			
-			def void setJ1939TpRxDa(Integer value){
+			def void setJ1939TpRxDa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDa"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -212,11 +214,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpRxDynamicBufferRatio(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBufferRatio"])
+			def BigInteger getJ1939TpRxDynamicBufferRatio(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBufferRatio"])
 			}
 			
-			def void setJ1939TpRxDynamicBufferRatio(Integer value){
+			def void setJ1939TpRxDynamicBufferRatio(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBufferRatio"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -228,11 +230,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpRxPacketsPerBlock(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPacketsPerBlock"])
+			def BigInteger getJ1939TpRxPacketsPerBlock(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPacketsPerBlock"])
 			}
 			
-			def void setJ1939TpRxPacketsPerBlock(Integer value){
+			def void setJ1939TpRxPacketsPerBlock(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPacketsPerBlock"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -293,11 +295,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpRxSa(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxSa"])
+			def BigInteger getJ1939TpRxSa(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxSa"])
 			}
 			
-			def void setJ1939TpRxSa(Integer value){
+			def void setJ1939TpRxSa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxSa"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -377,11 +379,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939TpRxCmNPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCmNPduId"])
+				def BigInteger getJ1939TpRxCmNPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCmNPduId"])
 				}
 				
-				def void setJ1939TpRxCmNPduId(Integer value){
+				def void setJ1939TpRxCmNPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCmNPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -428,11 +430,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939TpRxDtNPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDtNPduId"])
+				def BigInteger getJ1939TpRxDtNPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDtNPduId"])
 				}
 				
-				def void setJ1939TpRxDtNPduId(Integer value){
+				def void setJ1939TpRxDtNPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDtNPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -495,11 +497,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getJ1939TpRxPgPGN(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgPGN"])
+				def BigInteger getJ1939TpRxPgPGN(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgPGN"])
 				}
 				
-				def void setJ1939TpRxPgPGN(Integer value){
+				def void setJ1939TpRxPgPGN(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgPGN"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -561,11 +563,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939TpRxDirectNPduId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDirectNPduId"])
+					def BigInteger getJ1939TpRxDirectNPduId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDirectNPduId"])
 					}
 					
-					def void setJ1939TpRxDirectNPduId(Integer value){
+					def void setJ1939TpRxDirectNPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDirectNPduId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -612,11 +614,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939TpRxNSduId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxNSduId"])
+					def BigInteger getJ1939TpRxNSduId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxNSduId"])
 					}
 					
-					def void setJ1939TpRxNSduId(Integer value){
+					def void setJ1939TpRxNSduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxNSduId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -665,11 +667,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939TpTxFcNPduTxConfId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxFcNPduTxConfId"])
+				def BigInteger getJ1939TpTxFcNPduTxConfId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxFcNPduTxConfId"])
 				}
 				
-				def void setJ1939TpTxFcNPduTxConfId(Integer value){
+				def void setJ1939TpTxFcNPduTxConfId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxFcNPduTxConfId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -734,11 +736,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpTxDa(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDa"])
+			def BigInteger getJ1939TpTxDa(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDa"])
 			}
 			
-			def void setJ1939TpTxDa(Integer value){
+			def void setJ1939TpTxDa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDa"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -766,11 +768,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpTxMaxPacketsPerBlock(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxMaxPacketsPerBlock"])
+			def BigInteger getJ1939TpTxMaxPacketsPerBlock(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxMaxPacketsPerBlock"])
 			}
 			
-			def void setJ1939TpTxMaxPacketsPerBlock(Integer value){
+			def void setJ1939TpTxMaxPacketsPerBlock(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxMaxPacketsPerBlock"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -831,11 +833,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939TpTxSa(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxSa"])
+			def BigInteger getJ1939TpTxSa(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxSa"])
 			}
 			
-			def void setJ1939TpTxSa(Integer value){
+			def void setJ1939TpTxSa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxSa"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -915,11 +917,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939TpRxFcNPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxFcNPduId"])
+				def BigInteger getJ1939TpRxFcNPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxFcNPduId"])
 				}
 				
-				def void setJ1939TpRxFcNPduId(Integer value){
+				def void setJ1939TpRxFcNPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxFcNPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -966,11 +968,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939TpTxCmNPduTxConfId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCmNPduTxConfId"])
+				def BigInteger getJ1939TpTxCmNPduTxConfId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCmNPduTxConfId"])
 				}
 				
-				def void setJ1939TpTxCmNPduTxConfId(Integer value){
+				def void setJ1939TpTxCmNPduTxConfId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCmNPduTxConfId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1017,11 +1019,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939TpTxDtNPduTxConfId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDtNPduTxConfId"])
+				def BigInteger getJ1939TpTxDtNPduTxConfId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDtNPduTxConfId"])
 				}
 				
-				def void setJ1939TpTxDtNPduTxConfId(Integer value){
+				def void setJ1939TpTxDtNPduTxConfId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDtNPduTxConfId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1084,11 +1086,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getJ1939TpTxPgPGN(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgPGN"])
+				def BigInteger getJ1939TpTxPgPGN(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgPGN"])
 				}
 				
-				def void setJ1939TpTxPgPGN(Integer value){
+				def void setJ1939TpTxPgPGN(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgPGN"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1150,11 +1152,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939TpTxDirectNPduTxConfId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDirectNPduTxConfId"])
+					def BigInteger getJ1939TpTxDirectNPduTxConfId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDirectNPduTxConfId"])
 					}
 					
-					def void setJ1939TpTxDirectNPduTxConfId(Integer value){
+					def void setJ1939TpTxDirectNPduTxConfId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDirectNPduTxConfId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1201,11 +1203,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939TpTxNSduId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxNSduId"])
+					def BigInteger getJ1939TpTxNSduId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxNSduId"])
 					}
 					
-					def void setJ1939TpTxNSduId(Integer value){
+					def void setJ1939TpTxNSduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxNSduId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1289,11 +1291,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getJ1939TpMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpMainFunctionPeriod"])
+		def BigDecimal getJ1939TpMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpMainFunctionPeriod"])
 		}
 		
-		def void setJ1939TpMainFunctionPeriod(Float value){
+		def void setJ1939TpMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1305,11 +1307,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getJ1939TpTxConfTimeout(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxConfTimeout"])
+		def BigDecimal getJ1939TpTxConfTimeout(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxConfTimeout"])
 		}
 		
-		def void setJ1939TpTxConfTimeout(Float value){
+		def void setJ1939TpTxConfTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxConfTimeout"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

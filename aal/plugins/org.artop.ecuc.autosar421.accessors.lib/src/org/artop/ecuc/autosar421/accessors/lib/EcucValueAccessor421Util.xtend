@@ -31,20 +31,22 @@ import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil
 import org.eclipse.core.runtime.Assert
 import autosar40.ecucparameterdef.EcucAddInfoParamDef
 import autosar40.genericstructure.varianthandling.attributevaluevariationpoints.NumericalValueVariationPoint
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class EcucValueAccessor421Util {
 
-	def static Integer getIntegerValue(GParameterValue parameterValue) {
+	def static BigInteger getBigIntegerValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
 			val NumericalValueVariationPoint parameterValueValue = parameterValue.value
-			return EcucValueAccessorUtil.toInteger(parameterValueValue?.mixedText)
+			return EcucValueAccessorUtil.toBigInteger(parameterValueValue?.mixedText)
 		}
 	}
 
-	def static Float getFloatValue(GParameterValue parameterValue) {
+	def static BigDecimal getBigDecimalValue(GParameterValue parameterValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
 			val NumericalValueVariationPoint parameterValueValue = parameterValue.value
-			EcucValueAccessorUtil.toFloat(parameterValueValue?.mixedText)
+			EcucValueAccessorUtil.toBigDecimal(parameterValueValue?.mixedText)
 		}
 	}
 	

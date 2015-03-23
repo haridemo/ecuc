@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class J1939Rm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -164,11 +166,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getJ1939RmAckQueueSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckQueueSize"])
+			def BigInteger getJ1939RmAckQueueSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckQueueSize"])
 			}
 			
-			def void setJ1939RmAckQueueSize(Integer value){
+			def void setJ1939RmAckQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckQueueSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -180,11 +182,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939RmRequestQueueSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestQueueSize"])
+			def BigInteger getJ1939RmRequestQueueSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestQueueSize"])
 			}
 			
-			def void setJ1939RmRequestQueueSize(Integer value){
+			def void setJ1939RmRequestQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestQueueSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -196,11 +198,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getJ1939RmRequestTimeoutMonitors(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestTimeoutMonitors"])
+			def BigInteger getJ1939RmRequestTimeoutMonitors(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestTimeoutMonitors"])
 			}
 			
-			def void setJ1939RmRequestTimeoutMonitors(Integer value){
+			def void setJ1939RmRequestTimeoutMonitors(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestTimeoutMonitors"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -281,11 +283,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939RmAckmRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmRxPduId"])
+				def BigInteger getJ1939RmAckmRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmRxPduId"])
 				}
 				
-				def void setJ1939RmAckmRxPduId(Integer value){
+				def void setJ1939RmAckmRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -332,11 +334,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939RmAckmTxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmTxPduId"])
+				def BigInteger getJ1939RmAckmTxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmTxPduId"])
 				}
 				
-				def void setJ1939RmAckmTxPduId(Integer value){
+				def void setJ1939RmAckmTxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmTxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -383,11 +385,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939RmRqstRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstRxPduId"])
+				def BigInteger getJ1939RmRqstRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstRxPduId"])
 				}
 				
-				def void setJ1939RmRqstRxPduId(Integer value){
+				def void setJ1939RmRqstRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -434,11 +436,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getJ1939RmRqstTxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstTxPduId"])
+				def BigInteger getJ1939RmRqstTxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstTxPduId"])
 				}
 				
-				def void setJ1939RmRqstTxPduId(Integer value){
+				def void setJ1939RmRqstTxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstTxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -588,7 +590,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def List<Integer> getJ1939RmUserAckPGNs(){
+				def List<BigInteger> getJ1939RmUserAckPGNs(){
 					val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 						override protected accept(EcucNumericalParamValue item) {
 							return accept(item, typeof(GConfigParameter), "J1939RmUserAckPGN")
@@ -597,15 +599,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserAckPGN"]
-						return new IntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(Integer), parameterDef)
+						return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
 					}
 				}
 				
-				def Integer getJ1939RmUserId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserId"])
+				def BigInteger getJ1939RmUserId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserId"])
 				}
 				
-				def void setJ1939RmUserId(Integer value){
+				def void setJ1939RmUserId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -617,7 +619,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def List<Integer> getJ1939RmUserPGNs(){
+				def List<BigInteger> getJ1939RmUserPGNs(){
 					val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 						override protected accept(EcucNumericalParamValue item) {
 							return accept(item, typeof(GConfigParameter), "J1939RmUserPGN")
@@ -626,7 +628,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserPGN"]
-						return new IntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(Integer), parameterDef)
+						return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
 					}
 				}
 				
@@ -775,11 +777,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getJ1939RmComIPduPGN(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"])
+					def BigInteger getJ1939RmComIPduPGN(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"])
 					}
 					
-					def void setJ1939RmComIPduPGN(Integer value){
+					def void setJ1939RmComIPduPGN(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -847,11 +849,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getJ1939RmMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmMainFunctionPeriod"])
+		def BigDecimal getJ1939RmMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmMainFunctionPeriod"])
 		}
 		
-		def void setJ1939RmMainFunctionPeriod(Float value){
+		def void setJ1939RmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -943,11 +945,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getJ1939RmTxConfirmationTimeout(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmTxConfirmationTimeout"])
+		def BigDecimal getJ1939RmTxConfirmationTimeout(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmTxConfirmationTimeout"])
 		}
 		
-		def void setJ1939RmTxConfirmationTimeout(Float value){
+		def void setJ1939RmTxConfirmationTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmTxConfirmationTimeout"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

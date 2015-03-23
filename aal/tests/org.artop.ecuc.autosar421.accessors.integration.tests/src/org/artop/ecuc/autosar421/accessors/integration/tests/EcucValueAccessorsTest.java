@@ -17,6 +17,8 @@ package org.artop.ecuc.autosar421.accessors.integration.tests;
 import gautosar.gecucdescription.GContainer;
 import gautosar.gecucparameterdef.GContainerDef;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 import org.artop.ecuc.accessorgen.testutils.integration.referenceworkspace.AbstractEcucValueAccessorsIntegrationTestCase;
@@ -209,8 +211,8 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 		AdcHwUnit adcHwUnit = adcHwUnits.get(0);
 		assertNotNull(adcHwUnit);
 
-		Integer adcPrescale = adcHwUnit.getAdcPrescale();
-		assertTrue(adcPrescale == 13);
+		BigInteger adcPrescale = adcHwUnit.getAdcPrescale();
+		assertTrue(new BigInteger("13").compareTo(adcPrescale) == 0);
 	}
 
 	public void testIntegerParameterValueSetterAccessors() {
@@ -228,20 +230,20 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 		assertNotNull(adcHwUnit);
 
 		// Gets the old paramValue value
-		Integer adcPrescale = adcHwUnit.getAdcPrescale();
-		assertTrue(adcPrescale == 13);
+		BigInteger adcPrescale = adcHwUnit.getAdcPrescale();
+		assertTrue(new BigInteger("13").compareTo(adcPrescale) == 0);
 
 		// Sets the new paramValue value
 		Runnable runnable = new Runnable() {
 			public void run() {
-				adcHwUnit.setAdcPrescale(15);
+				adcHwUnit.setAdcPrescale(new BigInteger("15"));
 			}
 		};
 
 		try {
 			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting Integer ParameterValue Value");
 			adcPrescale = adcHwUnit.getAdcPrescale();
-			assertTrue(adcPrescale == 15);
+			assertTrue(new BigInteger("15").compareTo(adcPrescale) == 0);
 		} catch (OperationCanceledException ex) {
 
 		} catch (ExecutionException ex) {
@@ -445,20 +447,20 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 		assertNotNull(nvMBlockDescriptor);
 
 		// Gets the old paramValue value
-		Integer nvMNvBlockBaseNumber = nvMBlockDescriptor.getNvMNvBlockBaseNumber();
+		BigInteger nvMNvBlockBaseNumber = nvMBlockDescriptor.getNvMNvBlockBaseNumber();
 		assertTrue(nvMNvBlockBaseNumber == null);
 
 		// Sets the new paramValue value
 		Runnable runnable = new Runnable() {
 			public void run() {
-				nvMBlockDescriptor.setNvMNvBlockBaseNumber(11);
+				nvMBlockDescriptor.setNvMNvBlockBaseNumber(new BigInteger("11"));
 			}
 		};
 
 		try {
 			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting Boolean ParameterValue Value");
 			nvMNvBlockBaseNumber = nvMBlockDescriptor.getNvMNvBlockBaseNumber();
-			assertTrue(nvMNvBlockBaseNumber == 11);
+			assertTrue(new BigInteger("11").compareTo(nvMNvBlockBaseNumber) == 0);
 		} catch (OperationCanceledException ex) {
 
 		} catch (ExecutionException ex) {
@@ -659,11 +661,11 @@ public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegratio
 				canSM.getCanSMGeneral().setShortName("CanSMGeneral0");
 				canSM.getCanSMGeneral().setCanSMDevErrorDetect(true);
 				canSM.getCanSMGeneral().setCanSMIcomSupport(false);
-				canSM.getCanSMGeneral().setCanSMMainFunctionTimePeriod((float) 0.05);
+				canSM.getCanSMGeneral().setCanSMMainFunctionTimePeriod(new BigDecimal("0.05"));
 				canSM.setCanSMConfiguration(canSMConfiguration);
 				canSM.getCanSMConfiguration().setShortName("CanSMConfiguration0");
 				canSM.getCanSMConfiguration().getCanSMManagerNetworks().add(canSMManagerNetwork);
-				canSM.getCanSMConfiguration().getCanSMManagerNetworks().get(0).setCanSMBorCounterL1ToL2(100);
+				canSM.getCanSMConfiguration().getCanSMManagerNetworks().get(0).setCanSMBorCounterL1ToL2(new BigInteger("100"));
 			}
 		};
 

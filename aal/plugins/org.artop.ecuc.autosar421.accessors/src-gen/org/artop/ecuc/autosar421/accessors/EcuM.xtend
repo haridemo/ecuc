@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class EcuM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -169,11 +171,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getEcuMConfigConsistencyHash(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMConfigConsistencyHash"])
+			def BigInteger getEcuMConfigConsistencyHash(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMConfigConsistencyHash"])
 			}
 			
-			def void setEcuMConfigConsistencyHash(Integer value){
+			def void setEcuMConfigConsistencyHash(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMConfigConsistencyHash"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -811,11 +813,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMSleepModeId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeId"])
+				def BigInteger getEcuMSleepModeId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeId"])
 				}
 				
-				def void setEcuMSleepModeId(Integer value){
+				def void setEcuMSleepModeId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -911,11 +913,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getEcuMCheckWakeupTimeout(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMCheckWakeupTimeout"])
+				def BigDecimal getEcuMCheckWakeupTimeout(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMCheckWakeupTimeout"])
 				}
 				
-				def void setEcuMCheckWakeupTimeout(Float value){
+				def void setEcuMCheckWakeupTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMCheckWakeupTimeout"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -927,11 +929,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getEcuMValidationTimeout(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMValidationTimeout"])
+				def BigDecimal getEcuMValidationTimeout(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMValidationTimeout"])
 				}
 				
-				def void setEcuMValidationTimeout(Float value){
+				def void setEcuMValidationTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMValidationTimeout"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -943,11 +945,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getEcuMWakeupSourceId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourceId"])
+				def BigInteger getEcuMWakeupSourceId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourceId"])
 				}
 				
-				def void setEcuMWakeupSourceId(Integer value){
+				def void setEcuMWakeupSourceId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourceId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1045,11 +1047,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getEcuMNvramReadallTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramReadallTimeout"])
+			def BigDecimal getEcuMNvramReadallTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramReadallTimeout"])
 			}
 			
-			def void setEcuMNvramReadallTimeout(Float value){
+			def void setEcuMNvramReadallTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramReadallTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1061,11 +1063,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getEcuMNvramWriteallTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramWriteallTimeout"])
+			def BigDecimal getEcuMNvramWriteallTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramWriteallTimeout"])
 			}
 			
-			def void setEcuMNvramWriteallTimeout(Float value){
+			def void setEcuMNvramWriteallTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramWriteallTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1077,11 +1079,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getEcuMRunMinimumDuration(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMRunMinimumDuration"])
+			def BigDecimal getEcuMRunMinimumDuration(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMRunMinimumDuration"])
 			}
 			
-			def void setEcuMRunMinimumDuration(Float value){
+			def void setEcuMRunMinimumDuration(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMRunMinimumDuration"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1485,11 +1487,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMFixedUser(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFixedUser"])
+				def BigInteger getEcuMFixedUser(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFixedUser"])
 				}
 				
-				def void setEcuMFixedUser(Integer value){
+				def void setEcuMFixedUser(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFixedUser"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1525,11 +1527,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMDivisor(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDivisor"])
+				def BigInteger getEcuMDivisor(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDivisor"])
 				}
 				
-				def void setEcuMDivisor(Integer value){
+				def void setEcuMDivisor(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDivisor"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1749,11 +1751,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMAlarmClockId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockId"])
+				def BigInteger getEcuMAlarmClockId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockId"])
 				}
 				
-				def void setEcuMAlarmClockId(Integer value){
+				def void setEcuMAlarmClockId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1765,11 +1767,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getEcuMAlarmClockTimeOut(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockTimeOut"])
+				def BigDecimal getEcuMAlarmClockTimeOut(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockTimeOut"])
 				}
 				
-				def void setEcuMAlarmClockTimeOut(Float value){
+				def void setEcuMAlarmClockTimeOut(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockTimeOut"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1816,11 +1818,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMFlexUser(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFlexUser"])
+				def BigInteger getEcuMFlexUser(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFlexUser"])
 				}
 				
-				def void setEcuMFlexUser(Integer value){
+				def void setEcuMFlexUser(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFlexUser"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1924,11 +1926,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMResetModeId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetModeId"])
+				def BigInteger getEcuMResetModeId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetModeId"])
 				}
 				
-				def void setEcuMResetModeId(Integer value){
+				def void setEcuMResetModeId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetModeId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2021,11 +2023,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEcuMShutdownCauseId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMShutdownCauseId"])
+				def BigInteger getEcuMShutdownCauseId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMShutdownCauseId"])
 				}
 				
-				def void setEcuMShutdownCauseId(Integer value){
+				def void setEcuMShutdownCauseId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMShutdownCauseId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2260,11 +2262,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEcuMMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMMainFunctionPeriod"])
+		def BigDecimal getEcuMMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMMainFunctionPeriod"])
 		}
 		
-		def void setEcuMMainFunctionPeriod(Float value){
+		def void setEcuMMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Mcu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -264,11 +266,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Integer getMcuNumberOfMcuModes(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNumberOfMcuModes"])
+		def BigInteger getMcuNumberOfMcuModes(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNumberOfMcuModes"])
 		}
 		
-		def void setMcuNumberOfMcuModes(Integer value){
+		def void setMcuNumberOfMcuModes(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNumberOfMcuModes"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -280,11 +282,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getMcuRamSectors(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectors"])
+		def BigInteger getMcuRamSectors(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectors"])
 		}
 		
-		def void setMcuRamSectors(Integer value){
+		def void setMcuRamSectors(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectors"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -296,11 +298,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getMcuResetSetting(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetSetting"])
+		def BigInteger getMcuResetSetting(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetSetting"])
 		}
 		
-		def void setMcuResetSetting(Integer value){
+		def void setMcuResetSetting(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetSetting"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -400,11 +402,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getMcuClockSettingId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSettingId"])
+			def BigInteger getMcuClockSettingId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSettingId"])
 			}
 			
-			def void setMcuClockSettingId(Integer value){
+			def void setMcuClockSettingId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSettingId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -457,11 +459,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getMcuClockReferencePointFrequency(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockReferencePointFrequency"])
+				def BigDecimal getMcuClockReferencePointFrequency(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockReferencePointFrequency"])
 				}
 				
-				def void setMcuClockReferencePointFrequency(Float value){
+				def void setMcuClockReferencePointFrequency(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockReferencePointFrequency"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -534,11 +536,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getMcuMode(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuMode"])
+			def BigInteger getMcuMode(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuMode"])
 			}
 			
-			def void setMcuMode(Integer value){
+			def void setMcuMode(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuMode"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -574,11 +576,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getMcuRamDefaultValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamDefaultValue"])
+			def BigInteger getMcuRamDefaultValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamDefaultValue"])
 			}
 			
-			def void setMcuRamDefaultValue(Integer value){
+			def void setMcuRamDefaultValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamDefaultValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -590,11 +592,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getMcuRamSectionBaseAddress(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionBaseAddress"])
+			def BigInteger getMcuRamSectionBaseAddress(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionBaseAddress"])
 			}
 			
-			def void setMcuRamSectionBaseAddress(Integer value){
+			def void setMcuRamSectionBaseAddress(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionBaseAddress"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -606,11 +608,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getMcuRamSectionSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionSize"])
+			def BigInteger getMcuRamSectionSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionSize"])
 			}
 			
-			def void setMcuRamSectionSize(Integer value){
+			def void setMcuRamSectionSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -688,11 +690,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getMcuResetReason(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetReason"])
+			def BigInteger getMcuResetReason(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetReason"])
 			}
 			
-			def void setMcuResetReason(Integer value){
+			def void setMcuResetReason(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetReason"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

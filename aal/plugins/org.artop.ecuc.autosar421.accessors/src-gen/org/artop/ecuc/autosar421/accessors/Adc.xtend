@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Adc implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -211,11 +213,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getAdcPrescale(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPrescale"])
+			def BigInteger getAdcPrescale(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPrescale"])
 			}
 			
-			def void setAdcPrescale(Integer value){
+			def void setAdcPrescale(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPrescale"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -287,11 +289,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getAdcChannelConvTime(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelConvTime"])
+				def BigInteger getAdcChannelConvTime(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelConvTime"])
 				}
 				
-				def void setAdcChannelConvTime(Integer value){
+				def void setAdcChannelConvTime(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelConvTime"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -303,11 +305,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getAdcChannelHighLimit(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelHighLimit"])
+				def BigInteger getAdcChannelHighLimit(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelHighLimit"])
 				}
 				
-				def void setAdcChannelHighLimit(Integer value){
+				def void setAdcChannelHighLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelHighLimit"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -319,11 +321,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getAdcChannelId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelId"])
+				def BigInteger getAdcChannelId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelId"])
 				}
 				
-				def void setAdcChannelId(Integer value){
+				def void setAdcChannelId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -351,11 +353,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getAdcChannelLowLimit(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLowLimit"])
+				def BigInteger getAdcChannelLowLimit(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLowLimit"])
 				}
 				
-				def void setAdcChannelLowLimit(Integer value){
+				def void setAdcChannelLowLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLowLimit"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -468,11 +470,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getAdcChannelResolution(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelResolution"])
+				def BigInteger getAdcChannelResolution(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelResolution"])
 				}
 				
-				def void setAdcChannelResolution(Integer value){
+				def void setAdcChannelResolution(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelResolution"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -484,11 +486,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getAdcChannelSampTime(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelSampTime"])
+				def BigInteger getAdcChannelSampTime(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelSampTime"])
 				}
 				
-				def void setAdcChannelSampTime(Integer value){
+				def void setAdcChannelSampTime(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelSampTime"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -590,11 +592,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getAdcGroupId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupId"])
+				def BigInteger getAdcGroupId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupId"])
 				}
 				
-				def void setAdcGroupId(Integer value){
+				def void setAdcGroupId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -606,11 +608,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getAdcGroupPriority(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupPriority"])
+				def BigInteger getAdcGroupPriority(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupPriority"])
 				}
 				
-				def void setAdcGroupPriority(Integer value){
+				def void setAdcGroupPriority(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupPriority"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -723,11 +725,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getAdcHwTrigTimer(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTrigTimer"])
+				def BigInteger getAdcHwTrigTimer(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTrigTimer"])
 				}
 				
-				def void setAdcHwTrigTimer(Integer value){
+				def void setAdcHwTrigTimer(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTrigTimer"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -788,11 +790,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getAdcStreamingNumSamples(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcStreamingNumSamples"])
+				def BigInteger getAdcStreamingNumSamples(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcStreamingNumSamples"])
 				}
 				
-				def void setAdcStreamingNumSamples(Integer value){
+				def void setAdcStreamingNumSamples(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcStreamingNumSamples"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1149,11 +1151,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getAdcPowerState(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerState"])
+			def BigInteger getAdcPowerState(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerState"])
 			}
 			
-			def void setAdcPowerState(Integer value){
+			def void setAdcPowerState(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerState"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1238,11 +1240,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getAdcMaxChannelResolution(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcMaxChannelResolution"])
+		def BigInteger getAdcMaxChannelResolution(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcMaxChannelResolution"])
 		}
 		
-		def void setAdcMaxChannelResolution(Integer value){
+		def void setAdcMaxChannelResolution(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcMaxChannelResolution"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

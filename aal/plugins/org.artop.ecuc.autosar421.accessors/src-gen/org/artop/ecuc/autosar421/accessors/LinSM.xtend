@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class LinSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -104,11 +106,11 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getLinSMModeRequestRepetitionMax(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"])
+		def BigInteger getLinSMModeRequestRepetitionMax(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"])
 		}
 		
-		def void setLinSMModeRequestRepetitionMax(Integer value){
+		def void setLinSMModeRequestRepetitionMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -161,11 +163,11 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getLinSMConfirmationTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMConfirmationTimeout"])
+			def BigDecimal getLinSMConfirmationTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMConfirmationTimeout"])
 			}
 			
-			def void setLinSMConfirmationTimeout(Float value){
+			def void setLinSMConfirmationTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMConfirmationTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -245,11 +247,11 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getLinSMScheduleIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"])
+				def BigInteger getLinSMScheduleIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"])
 				}
 				
-				def void setLinSMScheduleIndex(Integer value){
+				def void setLinSMScheduleIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -315,11 +317,11 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getLinSMMainProcessingPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMMainProcessingPeriod"])
+		def BigDecimal getLinSMMainProcessingPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMMainProcessingPeriod"])
 		}
 		
-		def void setLinSMMainProcessingPeriod(Float value){
+		def void setLinSMMainProcessingPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMMainProcessingPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

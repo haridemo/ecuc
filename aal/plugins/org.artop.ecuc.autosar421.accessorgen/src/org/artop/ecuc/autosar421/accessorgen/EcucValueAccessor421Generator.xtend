@@ -24,8 +24,8 @@ public class EcucValueAccessor421Generator extends AbstractEcucValueAccessor4xGe
 	
 	import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 	import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-	import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-	import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+	import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+	import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 	import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 	import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 	import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList

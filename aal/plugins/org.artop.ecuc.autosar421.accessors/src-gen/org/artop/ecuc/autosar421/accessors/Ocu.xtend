@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Ocu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -214,11 +216,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getOcuAssignedHardwareChannel(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuAssignedHardwareChannel"])
+			def BigInteger getOcuAssignedHardwareChannel(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuAssignedHardwareChannel"])
 			}
 			
-			def void setOcuAssignedHardwareChannel(Integer value){
+			def void setOcuAssignedHardwareChannel(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuAssignedHardwareChannel"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -230,11 +232,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getOcuChannelId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelId"])
+			def BigInteger getOcuChannelId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelId"])
 			}
 			
-			def void setOcuChannelId(Integer value){
+			def void setOcuChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -246,11 +248,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getOcuChannelTickDuration(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelTickDuration"])
+			def BigInteger getOcuChannelTickDuration(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelTickDuration"])
 			}
 			
-			def void setOcuChannelTickDuration(Integer value){
+			def void setOcuChannelTickDuration(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelTickDuration"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -262,11 +264,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getOcuDefaultThreshold(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDefaultThreshold"])
+			def BigInteger getOcuDefaultThreshold(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDefaultThreshold"])
 			}
 			
-			def void setOcuDefaultThreshold(Integer value){
+			def void setOcuDefaultThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDefaultThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -278,11 +280,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getOcuHardwareTriggeredAdc(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredAdc"])
+			def BigInteger getOcuHardwareTriggeredAdc(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredAdc"])
 			}
 			
-			def void setOcuHardwareTriggeredAdc(Integer value){
+			def void setOcuHardwareTriggeredAdc(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredAdc"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -294,11 +296,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getOcuHardwareTriggeredDMA(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredDMA"])
+			def BigInteger getOcuHardwareTriggeredDMA(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredDMA"])
 			}
 			
-			def void setOcuHardwareTriggeredDMA(Integer value){
+			def void setOcuHardwareTriggeredDMA(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredDMA"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -310,11 +312,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getOcuMaxCounterValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuMaxCounterValue"])
+			def BigInteger getOcuMaxCounterValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuMaxCounterValue"])
 			}
 			
-			def void setOcuMaxCounterValue(Integer value){
+			def void setOcuMaxCounterValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuMaxCounterValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -415,11 +417,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getOcuGroupId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGroupId"])
+			def BigInteger getOcuGroupId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGroupId"])
 			}
 			
-			def void setOcuGroupId(Integer value){
+			def void setOcuGroupId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGroupId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

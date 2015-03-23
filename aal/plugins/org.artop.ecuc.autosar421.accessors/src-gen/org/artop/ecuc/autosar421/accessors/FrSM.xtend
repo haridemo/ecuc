@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class FrSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -177,11 +179,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrSMDurationT1(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT1"])
+			def BigDecimal getFrSMDurationT1(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT1"])
 			}
 			
-			def void setFrSMDurationT1(Float value){
+			def void setFrSMDurationT1(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT1"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -193,11 +195,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrSMDurationT2(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT2"])
+			def BigDecimal getFrSMDurationT2(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT2"])
 			}
 			
-			def void setFrSMDurationT2(Float value){
+			def void setFrSMDurationT2(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT2"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -209,11 +211,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrSMDurationT3(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT3"])
+			def BigDecimal getFrSMDurationT3(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT3"])
 			}
 			
-			def void setFrSMDurationT3(Float value){
+			def void setFrSMDurationT3(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT3"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -257,11 +259,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrSMMainFunctionCycleTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMainFunctionCycleTime"])
+			def BigDecimal getFrSMMainFunctionCycleTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMainFunctionCycleTime"])
 			}
 			
-			def void setFrSMMainFunctionCycleTime(Float value){
+			def void setFrSMMainFunctionCycleTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMainFunctionCycleTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -273,11 +275,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrSMMinNumberOfColdstarter(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMinNumberOfColdstarter"])
+			def BigInteger getFrSMMinNumberOfColdstarter(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMinNumberOfColdstarter"])
 			}
 			
-			def void setFrSMMinNumberOfColdstarter(Integer value){
+			def void setFrSMMinNumberOfColdstarter(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMinNumberOfColdstarter"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -289,11 +291,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrSMNumWakeupPatterns(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMNumWakeupPatterns"])
+			def BigInteger getFrSMNumWakeupPatterns(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMNumWakeupPatterns"])
 			}
 			
-			def void setFrSMNumWakeupPatterns(Integer value){
+			def void setFrSMNumWakeupPatterns(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMNumWakeupPatterns"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -305,11 +307,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrSMStartupRepetitions(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitions"])
+			def BigInteger getFrSMStartupRepetitions(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitions"])
 			}
 			
-			def void setFrSMStartupRepetitions(Integer value){
+			def void setFrSMStartupRepetitions(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitions"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -321,11 +323,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getFrSMStartupRepetitionsWithWakeup(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitionsWithWakeup"])
+			def BigInteger getFrSMStartupRepetitionsWithWakeup(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitionsWithWakeup"])
 			}
 			
-			def void setFrSMStartupRepetitionsWithWakeup(Integer value){
+			def void setFrSMStartupRepetitionsWithWakeup(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitionsWithWakeup"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -337,11 +339,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getFrSMTrcvStdbyDelay(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMTrcvStdbyDelay"])
+			def BigDecimal getFrSMTrcvStdbyDelay(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMTrcvStdbyDelay"])
 			}
 			
-			def void setFrSMTrcvStdbyDelay(Float value){
+			def void setFrSMTrcvStdbyDelay(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMTrcvStdbyDelay"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

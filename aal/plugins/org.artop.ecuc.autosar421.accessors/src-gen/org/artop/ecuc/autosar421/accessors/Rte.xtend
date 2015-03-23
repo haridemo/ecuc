@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Rte implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -469,11 +471,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getRteBswActivationOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswActivationOffset"])
+			def BigDecimal getRteBswActivationOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswActivationOffset"])
 			}
 			
-			def void setRteBswActivationOffset(Float value){
+			def void setRteBswActivationOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswActivationOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -501,11 +503,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getRteBswPositionInTask(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswPositionInTask"])
+			def BigInteger getRteBswPositionInTask(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswPositionInTask"])
 			}
 			
-			def void setRteBswPositionInTask(Integer value){
+			def void setRteBswPositionInTask(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswPositionInTask"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -729,11 +731,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getRteBswTriggerSourceQueueLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"])
+			def BigInteger getRteBswTriggerSourceQueueLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"])
 			}
 			
-			def void setRteBswTriggerSourceQueueLength(Integer value){
+			def void setRteBswTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -770,11 +772,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getRteBswTriggerSourceQueueLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"])
+			def BigInteger getRteBswTriggerSourceQueueLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"])
 			}
 			
-			def void setRteBswTriggerSourceQueueLength(Integer value){
+			def void setRteBswTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1031,11 +1033,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Integer getRteCodeVendorId(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCodeVendorId"])
+		def BigInteger getRteCodeVendorId(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCodeVendorId"])
 		}
 		
-		def void setRteCodeVendorId(Integer value){
+		def void setRteCodeVendorId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCodeVendorId"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1210,11 +1212,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Integer getRteToolChainSignificantCharacters(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteToolChainSignificantCharacters"])
+		def BigInteger getRteToolChainSignificantCharacters(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteToolChainSignificantCharacters"])
 		}
 		
-		def void setRteToolChainSignificantCharacters(Integer value){
+		def void setRteToolChainSignificantCharacters(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteToolChainSignificantCharacters"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1690,11 +1692,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getRteExpectedActivationOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedActivationOffset"])
+			def BigDecimal getRteExpectedActivationOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedActivationOffset"])
 			}
 			
-			def void setRteExpectedActivationOffset(Float value){
+			def void setRteExpectedActivationOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedActivationOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1706,11 +1708,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getRteExpectedTickDuration(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedTickDuration"])
+			def BigDecimal getRteExpectedTickDuration(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedTickDuration"])
 			}
 			
-			def void setRteExpectedTickDuration(Float value){
+			def void setRteExpectedTickDuration(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedTickDuration"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1922,11 +1924,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getRteActivationOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteActivationOffset"])
+			def BigDecimal getRteActivationOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteActivationOffset"])
 			}
 			
-			def void setRteActivationOffset(Float value){
+			def void setRteActivationOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteActivationOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1989,11 +1991,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getRtePositionInTask(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RtePositionInTask"])
+			def BigInteger getRtePositionInTask(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RtePositionInTask"])
 			}
 			
-			def void setRtePositionInTask(Integer value){
+			def void setRtePositionInTask(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RtePositionInTask"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2193,11 +2195,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getRteTriggerSourceQueueLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"])
+			def BigInteger getRteTriggerSourceQueueLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"])
 			}
 			
-			def void setRteTriggerSourceQueueLength(Integer value){
+			def void setRteTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2234,11 +2236,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getRteTriggerSourceQueueLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"])
+			def BigInteger getRteTriggerSourceQueueLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"])
 			}
 			
-			def void setRteTriggerSourceQueueLength(Integer value){
+			def void setRteTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

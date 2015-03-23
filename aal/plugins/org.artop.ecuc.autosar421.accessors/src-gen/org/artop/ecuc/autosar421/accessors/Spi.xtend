@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Spi implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -154,11 +156,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getSpiMaxChannel(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxChannel"])
+		def BigInteger getSpiMaxChannel(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxChannel"])
 		}
 		
-		def void setSpiMaxChannel(Integer value){
+		def void setSpiMaxChannel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxChannel"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -170,11 +172,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getSpiMaxJob(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxJob"])
+		def BigInteger getSpiMaxJob(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxJob"])
 		}
 		
-		def void setSpiMaxJob(Integer value){
+		def void setSpiMaxJob(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxJob"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -186,11 +188,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getSpiMaxSequence(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxSequence"])
+		def BigInteger getSpiMaxSequence(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxSequence"])
 		}
 		
-		def void setSpiMaxSequence(Integer value){
+		def void setSpiMaxSequence(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxSequence"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -300,11 +302,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getSpiChannelId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelId"])
+			def BigInteger getSpiChannelId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelId"])
 			}
 			
-			def void setSpiChannelId(Integer value){
+			def void setSpiChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -349,11 +351,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getSpiDataWidth(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDataWidth"])
+			def BigInteger getSpiDataWidth(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDataWidth"])
 			}
 			
-			def void setSpiDataWidth(Integer value){
+			def void setSpiDataWidth(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDataWidth"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -365,11 +367,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSpiDefaultData(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDefaultData"])
+			def BigInteger getSpiDefaultData(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDefaultData"])
 			}
 			
-			def void setSpiDefaultData(Integer value){
+			def void setSpiDefaultData(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDefaultData"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -381,11 +383,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSpiEbMaxLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEbMaxLength"])
+			def BigInteger getSpiEbMaxLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEbMaxLength"])
 			}
 			
-			def void setSpiEbMaxLength(Integer value){
+			def void setSpiEbMaxLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEbMaxLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -397,11 +399,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSpiIbNBuffers(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiIbNBuffers"])
+			def BigInteger getSpiIbNBuffers(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiIbNBuffers"])
 			}
 			
-			def void setSpiIbNBuffers(Integer value){
+			def void setSpiIbNBuffers(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiIbNBuffers"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -470,11 +472,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getSpiBaudrate(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiBaudrate"])
+			def BigDecimal getSpiBaudrate(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiBaudrate"])
 			}
 			
-			def void setSpiBaudrate(Float value){
+			def void setSpiBaudrate(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiBaudrate"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -687,11 +689,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Float getSpiTimeClk2Cs(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiTimeClk2Cs"])
+			def BigDecimal getSpiTimeClk2Cs(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiTimeClk2Cs"])
 			}
 			
-			def void setSpiTimeClk2Cs(Float value){
+			def void setSpiTimeClk2Cs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiTimeClk2Cs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -776,11 +778,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSpiJobId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobId"])
+			def BigInteger getSpiJobId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobId"])
 			}
 			
-			def void setSpiJobId(Integer value){
+			def void setSpiJobId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -792,11 +794,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSpiJobPriority(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobPriority"])
+			def BigInteger getSpiJobPriority(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobPriority"])
 			}
 			
-			def void setSpiJobPriority(Integer value){
+			def void setSpiJobPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobPriority"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -860,11 +862,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getSpiChannelIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelIndex"])
+				def BigInteger getSpiChannelIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelIndex"])
 				}
 				
-				def void setSpiChannelIndex(Integer value){
+				def void setSpiChannelIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -945,11 +947,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSpiSequenceId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSequenceId"])
+			def BigInteger getSpiSequenceId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSequenceId"])
 			}
 			
-			def void setSpiSequenceId(Integer value){
+			def void setSpiSequenceId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSequenceId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1035,11 +1037,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getSpiChannelBuffersAllowed(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelBuffersAllowed"])
+		def BigInteger getSpiChannelBuffersAllowed(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelBuffersAllowed"])
 		}
 		
-		def void setSpiChannelBuffersAllowed(Integer value){
+		def void setSpiChannelBuffersAllowed(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelBuffersAllowed"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1099,11 +1101,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getSpiLevelDelivered(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiLevelDelivered"])
+		def BigInteger getSpiLevelDelivered(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiLevelDelivered"])
 		}
 		
-		def void setSpiLevelDelivered(Integer value){
+		def void setSpiLevelDelivered(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiLevelDelivered"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1115,11 +1117,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getSpiMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMainFunctionPeriod"])
+		def BigDecimal getSpiMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMainFunctionPeriod"])
 		}
 		
-		def void setSpiMainFunctionPeriod(Float value){
+		def void setSpiMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1199,11 +1201,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getSpiMaxHwUnit(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxHwUnit"])
+		def BigInteger getSpiMaxHwUnit(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxHwUnit"])
 		}
 		
-		def void setSpiMaxHwUnit(Integer value){
+		def void setSpiMaxHwUnit(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxHwUnit"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

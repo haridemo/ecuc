@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class EthTSyn implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -146,11 +148,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEthTSynMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynMainFunctionPeriod"])
+		def BigDecimal getEthTSynMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynMainFunctionPeriod"])
 		}
 		
-		def void setEthTSynMainFunctionPeriod(Float value){
+		def void setEthTSynMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -201,11 +203,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getEthTSynGlobalTimeDomainId(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeDomainId"])
+		def BigInteger getEthTSynGlobalTimeDomainId(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeDomainId"])
 		}
 		
-		def void setEthTSynGlobalTimeDomainId(Integer value){
+		def void setEthTSynGlobalTimeDomainId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeDomainId"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -217,11 +219,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getEthTSynGlobalTimeFollowUpTimeout(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeFollowUpTimeout"])
+		def BigDecimal getEthTSynGlobalTimeFollowUpTimeout(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeFollowUpTimeout"])
 		}
 		
-		def void setEthTSynGlobalTimeFollowUpTimeout(Float value){
+		def void setEthTSynGlobalTimeFollowUpTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeFollowUpTimeout"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -284,11 +286,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getEthTSynGlobalTimeTxFollowUpOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"])
+			def BigDecimal getEthTSynGlobalTimeTxFollowUpOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"])
 			}
 			
-			def void setEthTSynGlobalTimeTxFollowUpOffset(Float value){
+			def void setEthTSynGlobalTimeTxFollowUpOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -300,11 +302,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getEthTSynGlobalTimeTxPdelayReqPeriod(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"])
+			def BigDecimal getEthTSynGlobalTimeTxPdelayReqPeriod(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"])
 			}
 			
-			def void setEthTSynGlobalTimeTxPdelayReqPeriod(Float value){
+			def void setEthTSynGlobalTimeTxPdelayReqPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -316,11 +318,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getEthTSynGlobalTimeTxPeriod(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPeriod"])
+			def BigDecimal getEthTSynGlobalTimeTxPeriod(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPeriod"])
 			}
 			
-			def void setEthTSynGlobalTimeTxPeriod(Float value){
+			def void setEthTSynGlobalTimeTxPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPeriod"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -367,11 +369,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getEthTSynGlobalTimeTxFollowUpOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"])
+			def BigDecimal getEthTSynGlobalTimeTxFollowUpOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"])
 			}
 			
-			def void setEthTSynGlobalTimeTxFollowUpOffset(Float value){
+			def void setEthTSynGlobalTimeTxFollowUpOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -383,11 +385,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getEthTSynGlobalTimeTxPdelayReqPeriod(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"])
+			def BigDecimal getEthTSynGlobalTimeTxPdelayReqPeriod(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"])
 			}
 			
-			def void setEthTSynGlobalTimeTxPdelayReqPeriod(Float value){
+			def void setEthTSynGlobalTimeTxPdelayReqPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -399,11 +401,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getEthTSynTimeHardwareCorrectionThreshold(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTimeHardwareCorrectionThreshold"])
+			def BigDecimal getEthTSynTimeHardwareCorrectionThreshold(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTimeHardwareCorrectionThreshold"])
 			}
 			
-			def void setEthTSynTimeHardwareCorrectionThreshold(Float value){
+			def void setEthTSynTimeHardwareCorrectionThreshold(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTimeHardwareCorrectionThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class LinIf implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -268,11 +270,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Float getLinIfTimeBase(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTimeBase"])
+		def BigDecimal getLinIfTimeBase(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTimeBase"])
 		}
 		
-		def void setLinIfTimeBase(Float value){
+		def void setLinIfTimeBase(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTimeBase"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -358,11 +360,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getLinIfMaxFrameCnt(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMaxFrameCnt"])
+			def BigInteger getLinIfMaxFrameCnt(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMaxFrameCnt"])
 			}
 			
-			def void setLinIfMaxFrameCnt(Integer value){
+			def void setLinIfMaxFrameCnt(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMaxFrameCnt"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -607,11 +609,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getLinIfFrameId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameId"])
+				def BigInteger getLinIfFrameId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameId"])
 				}
 				
-				def void setLinIfFrameId(Integer value){
+				def void setLinIfFrameId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -776,11 +778,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
-						def Integer getLinIfFixedFrameSduBytePos(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduBytePos"])
+						def BigInteger getLinIfFixedFrameSduBytePos(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduBytePos"])
 						}
 						
-						def void setLinIfFixedFrameSduBytePos(Integer value){
+						def void setLinIfFixedFrameSduBytePos(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduBytePos"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -792,11 +794,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getLinIfFixedFrameSduByteVal(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduByteVal"])
+						def BigInteger getLinIfFixedFrameSduByteVal(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduByteVal"])
 						}
 						
-						def void setLinIfFixedFrameSduByteVal(Integer value){
+						def void setLinIfFixedFrameSduByteVal(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduByteVal"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -1034,11 +1036,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getLinIfTxPduId(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxPduId"])
+						def BigInteger getLinIfTxPduId(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxPduId"])
 						}
 						
-						def void setLinIfTxPduId(Integer value){
+						def void setLinIfTxPduId(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxPduId"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -1136,11 +1138,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getLinIfFramePriority(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"])
+					def BigInteger getLinIfFramePriority(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"])
 					}
 					
-					def void setLinIfFramePriority(Integer value){
+					def void setLinIfFramePriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1189,11 +1191,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getLinIfJitter(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"])
+				def BigDecimal getLinIfJitter(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"])
 				}
 				
-				def void setLinIfJitter(Float value){
+				def void setLinIfJitter(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1295,11 +1297,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getLinIfScheduleTableIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleTableIndex"])
+				def BigInteger getLinIfScheduleTableIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleTableIndex"])
 				}
 				
-				def void setLinIfScheduleTableIndex(Integer value){
+				def void setLinIfScheduleTableIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleTableIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1352,11 +1354,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Float getLinIfDelay(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"])
+					def BigDecimal getLinIfDelay(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"])
 					}
 					
-					def void setLinIfDelay(Float value){
+					def void setLinIfDelay(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1368,11 +1370,11 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getLinIfEntryIndex(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfEntryIndex"])
+					def BigInteger getLinIfEntryIndex(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfEntryIndex"])
 					}
 					
-					def void setLinIfEntryIndex(Integer value){
+					def void setLinIfEntryIndex(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfEntryIndex"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition

@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class WdgM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -222,11 +224,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getWdgMExpiredSupervisionCycleTol(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpiredSupervisionCycleTol"])
+			def BigInteger getWdgMExpiredSupervisionCycleTol(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpiredSupervisionCycleTol"])
 			}
 			
-			def void setWdgMExpiredSupervisionCycleTol(Integer value){
+			def void setWdgMExpiredSupervisionCycleTol(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpiredSupervisionCycleTol"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -238,11 +240,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getWdgMModeId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMModeId"])
+			def BigInteger getWdgMModeId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMModeId"])
 			}
 			
-			def void setWdgMModeId(Integer value){
+			def void setWdgMModeId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMModeId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -254,11 +256,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getWdgMSupervisionCycle(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionCycle"])
+			def BigDecimal getWdgMSupervisionCycle(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionCycle"])
 			}
 			
-			def void setWdgMSupervisionCycle(Float value){
+			def void setWdgMSupervisionCycle(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionCycle"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -387,11 +389,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getWdgMExpectedAliveIndications(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpectedAliveIndications"])
+				def BigInteger getWdgMExpectedAliveIndications(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpectedAliveIndications"])
 				}
 				
-				def void setWdgMExpectedAliveIndications(Integer value){
+				def void setWdgMExpectedAliveIndications(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpectedAliveIndications"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -403,11 +405,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getWdgMMaxMargin(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMaxMargin"])
+				def BigInteger getWdgMMaxMargin(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMaxMargin"])
 				}
 				
-				def void setWdgMMaxMargin(Integer value){
+				def void setWdgMMaxMargin(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMaxMargin"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -419,11 +421,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getWdgMMinMargin(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMinMargin"])
+				def BigInteger getWdgMMinMargin(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMinMargin"])
 				}
 				
-				def void setWdgMMinMargin(Integer value){
+				def void setWdgMMinMargin(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMinMargin"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -435,11 +437,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getWdgMSupervisionReferenceCycle(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionReferenceCycle"])
+				def BigInteger getWdgMSupervisionReferenceCycle(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionReferenceCycle"])
 				}
 				
-				def void setWdgMSupervisionReferenceCycle(Integer value){
+				def void setWdgMSupervisionReferenceCycle(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionReferenceCycle"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -486,11 +488,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getWdgMDeadlineMax(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMax"])
+				def BigDecimal getWdgMDeadlineMax(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMax"])
 				}
 				
-				def void setWdgMDeadlineMax(Float value){
+				def void setWdgMDeadlineMax(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMax"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -502,11 +504,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getWdgMDeadlineMin(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMin"])
+				def BigDecimal getWdgMDeadlineMin(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMin"])
 				}
 				
-				def void setWdgMDeadlineMin(Float value){
+				def void setWdgMDeadlineMin(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMin"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -719,11 +721,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getWdgMFailedAliveSupervisionRefCycleTol(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMFailedAliveSupervisionRefCycleTol"])
+				def BigInteger getWdgMFailedAliveSupervisionRefCycleTol(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMFailedAliveSupervisionRefCycleTol"])
 				}
 				
-				def void setWdgMFailedAliveSupervisionRefCycleTol(Integer value){
+				def void setWdgMFailedAliveSupervisionRefCycleTol(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMFailedAliveSupervisionRefCycleTol"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -770,11 +772,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getWdgMTriggerConditionValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMTriggerConditionValue"])
+				def BigInteger getWdgMTriggerConditionValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMTriggerConditionValue"])
 				}
 				
-				def void setWdgMTriggerConditionValue(Integer value){
+				def void setWdgMTriggerConditionValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMTriggerConditionValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1024,7 +1026,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def List<Integer> getWdgMCallerIds(){
+			def List<BigInteger> getWdgMCallerIds(){
 				val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 					override protected accept(EcucNumericalParamValue item) {
 						return accept(item, typeof(GConfigParameter), "WdgMCallerId")
@@ -1033,7 +1035,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMCallerId"]
-					return new IntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(Integer), parameterDef)
+					return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
 				}
 			}
 			
@@ -1061,11 +1063,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getWdgMSupervisedEntityId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisedEntityId"])
+			def BigInteger getWdgMSupervisedEntityId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisedEntityId"])
 			}
 			
-			def void setWdgMSupervisedEntityId(Integer value){
+			def void setWdgMSupervisedEntityId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisedEntityId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1214,11 +1216,11 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getWdgMCheckpointId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMCheckpointId"])
+				def BigInteger getWdgMCheckpointId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMCheckpointId"])
 				}
 				
-				def void setWdgMCheckpointId(Integer value){
+				def void setWdgMCheckpointId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMCheckpointId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

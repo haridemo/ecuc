@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Dbg implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -136,11 +138,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getDbgBufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferSize"])
+		def BigInteger getDbgBufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferSize"])
 		}
 		
-		def void setDbgBufferSize(Integer value){
+		def void setDbgBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -281,11 +283,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDbgRxPduId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRxPduId"])
+			def BigInteger getDbgRxPduId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRxPduId"])
 			}
 			
-			def void setDbgRxPduId(Integer value){
+			def void setDbgRxPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRxPduId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -332,11 +334,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDbgTxConfirmationPduId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgTxConfirmationPduId"])
+			def BigInteger getDbgTxConfirmationPduId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgTxConfirmationPduId"])
 			}
 			
-			def void setDbgTxConfirmationPduId(Integer value){
+			def void setDbgTxConfirmationPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgTxConfirmationPduId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -384,11 +386,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getDbgMaxDynamicDID(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgMaxDynamicDID"])
+		def BigInteger getDbgMaxDynamicDID(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgMaxDynamicDID"])
 		}
 		
-		def void setDbgMaxDynamicDID(Integer value){
+		def void setDbgMaxDynamicDID(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgMaxDynamicDID"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -712,11 +714,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDbgCallComponentId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallComponentId"])
+					def BigInteger getDbgCallComponentId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallComponentId"])
 					}
 					
-					def void setDbgCallComponentId(Integer value){
+					def void setDbgCallComponentId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallComponentId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -728,11 +730,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgCallInstanceId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallInstanceId"])
+					def BigInteger getDbgCallInstanceId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallInstanceId"])
 					}
 					
-					def void setDbgCallInstanceId(Integer value){
+					def void setDbgCallInstanceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallInstanceId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -744,11 +746,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgCallPortId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallPortId"])
+					def BigInteger getDbgCallPortId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallPortId"])
 					}
 					
-					def void setDbgCallPortId(Integer value){
+					def void setDbgCallPortId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallPortId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -760,11 +762,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgCallServiceId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallServiceId"])
+					def BigInteger getDbgCallServiceId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallServiceId"])
 					}
 					
-					def void setDbgCallServiceId(Integer value){
+					def void setDbgCallServiceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallServiceId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -802,11 +804,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDbgRunnableComponentId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableComponentId"])
+					def BigInteger getDbgRunnableComponentId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableComponentId"])
 					}
 					
-					def void setDbgRunnableComponentId(Integer value){
+					def void setDbgRunnableComponentId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableComponentId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -818,11 +820,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgRunnableId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableId"])
+					def BigInteger getDbgRunnableId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableId"])
 					}
 					
-					def void setDbgRunnableId(Integer value){
+					def void setDbgRunnableId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -834,11 +836,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgRunnableInstanceId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableInstanceId"])
+					def BigInteger getDbgRunnableInstanceId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableInstanceId"])
 					}
 					
-					def void setDbgRunnableInstanceId(Integer value){
+					def void setDbgRunnableInstanceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableInstanceId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -877,11 +879,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDbgVfbComponentId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbComponentId"])
+					def BigInteger getDbgVfbComponentId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbComponentId"])
 					}
 					
-					def void setDbgVfbComponentId(Integer value){
+					def void setDbgVfbComponentId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbComponentId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -893,11 +895,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgVfbDataElementId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbDataElementId"])
+					def BigInteger getDbgVfbDataElementId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbDataElementId"])
 					}
 					
-					def void setDbgVfbDataElementId(Integer value){
+					def void setDbgVfbDataElementId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbDataElementId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -909,11 +911,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgVfbInstanceId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbInstanceId"])
+					def BigInteger getDbgVfbInstanceId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbInstanceId"])
 					}
 					
-					def void setDbgVfbInstanceId(Integer value){
+					def void setDbgVfbInstanceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbInstanceId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -925,11 +927,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgVfbPortId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbPortId"])
+					def BigInteger getDbgVfbPortId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbPortId"])
 					}
 					
-					def void setDbgVfbPortId(Integer value){
+					def void setDbgVfbPortId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbPortId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -971,11 +973,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDbgAutomaticCollectionFrequency(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgAutomaticCollectionFrequency"])
+			def BigInteger getDbgAutomaticCollectionFrequency(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgAutomaticCollectionFrequency"])
 			}
 			
-			def void setDbgAutomaticCollectionFrequency(Integer value){
+			def void setDbgAutomaticCollectionFrequency(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgAutomaticCollectionFrequency"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1136,11 +1138,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDbgASAbsoluteAddress(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASAbsoluteAddress"])
+					def BigInteger getDbgASAbsoluteAddress(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASAbsoluteAddress"])
 					}
 					
-					def void setDbgASAbsoluteAddress(Integer value){
+					def void setDbgASAbsoluteAddress(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASAbsoluteAddress"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1168,11 +1170,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDbgASSize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASSize"])
+					def BigInteger getDbgASSize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASSize"])
 					}
 					
-					def void setDbgASSize(Integer value){
+					def void setDbgASSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASSize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1331,11 +1333,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getDbgDataCollectionTick(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDataCollectionTick"])
+		def BigInteger getDbgDataCollectionTick(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDataCollectionTick"])
 		}
 		
-		def void setDbgDataCollectionTick(Integer value){
+		def void setDbgDataCollectionTick(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDataCollectionTick"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

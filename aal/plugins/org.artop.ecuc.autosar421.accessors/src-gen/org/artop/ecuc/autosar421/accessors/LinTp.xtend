@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class LinTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -159,11 +161,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getLinTpMaxNumberOfRespPendingFrames(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxNumberOfRespPendingFrames"])
+		def BigInteger getLinTpMaxNumberOfRespPendingFrames(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxNumberOfRespPendingFrames"])
 		}
 		
-		def void setLinTpMaxNumberOfRespPendingFrames(Integer value){
+		def void setLinTpMaxNumberOfRespPendingFrames(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxNumberOfRespPendingFrames"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -175,11 +177,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getLinTpMaxRxNSduCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxRxNSduCnt"])
+		def BigInteger getLinTpMaxRxNSduCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxRxNSduCnt"])
 		}
 		
-		def void setLinTpMaxRxNSduCnt(Integer value){
+		def void setLinTpMaxRxNSduCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxRxNSduCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -191,11 +193,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getLinTpMaxTxNSduCnt(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxTxNSduCnt"])
+		def BigInteger getLinTpMaxTxNSduCnt(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxTxNSduCnt"])
 		}
 		
-		def void setLinTpMaxTxNSduCnt(Integer value){
+		def void setLinTpMaxTxNSduCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxTxNSduCnt"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -207,11 +209,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getLinTpP2Max(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Max"])
+		def BigDecimal getLinTpP2Max(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Max"])
 		}
 		
-		def void setLinTpP2Max(Float value){
+		def void setLinTpP2Max(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Max"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -223,11 +225,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getLinTpP2Timing(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Timing"])
+		def BigDecimal getLinTpP2Timing(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Timing"])
 		}
 		
-		def void setLinTpP2Timing(Float value){
+		def void setLinTpP2Timing(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Timing"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -385,11 +387,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getLinTpNcr(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcr"])
+			def BigDecimal getLinTpNcr(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcr"])
 			}
 			
-			def void setLinTpNcr(Float value){
+			def void setLinTpNcr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcr"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -401,11 +403,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getLinTpRxNSduId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduId"])
+			def BigInteger getLinTpRxNSduId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduId"])
 			}
 			
-			def void setLinTpRxNSduId(Integer value){
+			def void setLinTpRxNSduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -417,11 +419,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getLinTpRxNSduNad(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduNad"])
+			def BigInteger getLinTpRxNSduNad(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduNad"])
 			}
 			
-			def void setLinTpRxNSduNad(Integer value){
+			def void setLinTpRxNSduNad(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduNad"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -479,11 +481,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getLinTpMaxBufReq(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxBufReq"])
+			def BigInteger getLinTpMaxBufReq(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxBufReq"])
 			}
 			
-			def void setLinTpMaxBufReq(Integer value){
+			def void setLinTpMaxBufReq(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxBufReq"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -495,11 +497,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getLinTpNas(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNas"])
+			def BigDecimal getLinTpNas(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNas"])
 			}
 			
-			def void setLinTpNas(Float value){
+			def void setLinTpNas(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNas"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -511,11 +513,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getLinTpNcs(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcs"])
+			def BigDecimal getLinTpNcs(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcs"])
 			}
 			
-			def void setLinTpNcs(Float value){
+			def void setLinTpNcs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -527,11 +529,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getLinTpTxNSduId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduId"])
+			def BigInteger getLinTpTxNSduId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduId"])
 			}
 			
-			def void setLinTpTxNSduId(Integer value){
+			def void setLinTpTxNSduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -543,11 +545,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getLinTpTxNSduNad(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduNad"])
+			def BigInteger getLinTpTxNSduNad(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduNad"])
 			}
 			
-			def void setLinTpTxNSduNad(Integer value){
+			def void setLinTpTxNSduNad(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduNad"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

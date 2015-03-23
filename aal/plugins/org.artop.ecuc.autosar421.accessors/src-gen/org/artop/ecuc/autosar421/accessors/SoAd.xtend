@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class SoAd implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -372,11 +374,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getSoAdTxPduId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxPduId"])
+			def BigInteger getSoAdTxPduId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxPduId"])
 			}
 			
-			def void setSoAdTxPduId(Integer value){
+			def void setSoAdTxPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxPduId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -473,11 +475,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getSoAdTxPduHeaderId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxPduHeaderId"])
+				def BigInteger getSoAdTxPduHeaderId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxPduHeaderId"])
 				}
 				
-				def void setSoAdTxPduHeaderId(Integer value){
+				def void setSoAdTxPduHeaderId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxPduHeaderId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -522,11 +524,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Float getSoAdTxUdpTriggerTimeout(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxUdpTriggerTimeout"])
+				def BigDecimal getSoAdTxUdpTriggerTimeout(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxUdpTriggerTimeout"])
 				}
 				
-				def void setSoAdTxUdpTriggerTimeout(Float value){
+				def void setSoAdTxUdpTriggerTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTxUdpTriggerTimeout"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -598,11 +600,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getSoAdRoutingGroupId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupId"])
+			def BigInteger getSoAdRoutingGroupId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupId"])
 			}
 			
-			def void setSoAdRoutingGroupId(Integer value){
+			def void setSoAdRoutingGroupId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -718,11 +720,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSoAdSocketFramePriority(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketFramePriority"])
+			def BigInteger getSoAdSocketFramePriority(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketFramePriority"])
 			}
 			
-			def void setSoAdSocketFramePriority(Integer value){
+			def void setSoAdSocketFramePriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketFramePriority"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -750,11 +752,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSoAdSocketLocalPort(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketLocalPort"])
+			def BigInteger getSoAdSocketLocalPort(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketLocalPort"])
 			}
 			
-			def void setSoAdSocketLocalPort(Integer value){
+			def void setSoAdSocketLocalPort(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketLocalPort"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -798,11 +800,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getSoAdSocketTpRxBufferMin(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTpRxBufferMin"])
+			def BigInteger getSoAdSocketTpRxBufferMin(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTpRxBufferMin"])
 			}
 			
-			def void setSoAdSocketTpRxBufferMin(Integer value){
+			def void setSoAdSocketTpRxBufferMin(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTpRxBufferMin"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -875,11 +877,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getSoAdSocketId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketId"])
+				def BigInteger getSoAdSocketId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketId"])
 				}
 				
-				def void setSoAdSocketId(Integer value){
+				def void setSoAdSocketId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -938,11 +940,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSoAdSocketRemotePort(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketRemotePort"])
+					def BigInteger getSoAdSocketRemotePort(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketRemotePort"])
 					}
 					
-					def void setSoAdSocketRemotePort(Integer value){
+					def void setSoAdSocketRemotePort(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketRemotePort"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1064,11 +1066,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getSoAdSocketTcpKeepAliveInterval(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveInterval"])
+					def BigDecimal getSoAdSocketTcpKeepAliveInterval(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveInterval"])
 					}
 					
-					def void setSoAdSocketTcpKeepAliveInterval(Float value){
+					def void setSoAdSocketTcpKeepAliveInterval(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveInterval"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1080,11 +1082,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSoAdSocketTcpKeepAliveProbesMax(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveProbesMax"])
+					def BigInteger getSoAdSocketTcpKeepAliveProbesMax(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveProbesMax"])
 					}
 					
-					def void setSoAdSocketTcpKeepAliveProbesMax(Integer value){
+					def void setSoAdSocketTcpKeepAliveProbesMax(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveProbesMax"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1096,11 +1098,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getSoAdSocketTcpKeepAliveTime(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveTime"])
+					def BigDecimal getSoAdSocketTcpKeepAliveTime(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveTime"])
 					}
 					
-					def void setSoAdSocketTcpKeepAliveTime(Float value){
+					def void setSoAdSocketTcpKeepAliveTime(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAliveTime"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1128,11 +1130,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSoAdSocketTcpTxQuota(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpTxQuota"])
+					def BigInteger getSoAdSocketTcpTxQuota(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpTxQuota"])
 					}
 					
-					def void setSoAdSocketTcpTxQuota(Integer value){
+					def void setSoAdSocketTcpTxQuota(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpTxQuota"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1168,11 +1170,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Float getSoAdSocketUdpAliveSupervisionTimeout(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpAliveSupervisionTimeout"])
+					def BigDecimal getSoAdSocketUdpAliveSupervisionTimeout(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpAliveSupervisionTimeout"])
 					}
 					
-					def void setSoAdSocketUdpAliveSupervisionTimeout(Float value){
+					def void setSoAdSocketUdpAliveSupervisionTimeout(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpAliveSupervisionTimeout"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1216,11 +1218,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getSoAdSocketUdpTriggerTimeout(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpTriggerTimeout"])
+					def BigDecimal getSoAdSocketUdpTriggerTimeout(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpTriggerTimeout"])
 					}
 					
-					def void setSoAdSocketUdpTriggerTimeout(Float value){
+					def void setSoAdSocketUdpTriggerTimeout(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpTriggerTimeout"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1232,11 +1234,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSoAdSocketnPduUdpTxBufferMin(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketnPduUdpTxBufferMin"])
+					def BigInteger getSoAdSocketnPduUdpTxBufferMin(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketnPduUdpTxBufferMin"])
 					}
 					
-					def void setSoAdSocketnPduUdpTxBufferMin(Integer value){
+					def void setSoAdSocketnPduUdpTxBufferMin(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketnPduUdpTxBufferMin"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1276,11 +1278,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getSoAdRxPduHeaderId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduHeaderId"])
+			def BigInteger getSoAdRxPduHeaderId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduHeaderId"])
 			}
 			
-			def void setSoAdRxPduHeaderId(Integer value){
+			def void setSoAdRxPduHeaderId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduHeaderId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1324,11 +1326,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getSoAdRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduId"])
+				def BigInteger getSoAdRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduId"])
 				}
 				
-				def void setSoAdRxPduId(Integer value){
+				def void setSoAdRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1476,11 +1478,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getSoAdMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdMainFunctionPeriod"])
+		def BigDecimal getSoAdMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdMainFunctionPeriod"])
 		}
 		
-		def void setSoAdMainFunctionPeriod(Float value){
+		def void setSoAdMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1492,11 +1494,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getSoAdRoutingGroupMax(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupMax"])
+		def BigInteger getSoAdRoutingGroupMax(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupMax"])
 		}
 		
-		def void setSoAdRoutingGroupMax(Integer value){
+		def void setSoAdRoutingGroupMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupMax"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1508,11 +1510,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getSoAdSoConMax(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSoConMax"])
+		def BigInteger getSoAdSoConMax(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSoConMax"])
 		}
 		
-		def void setSoAdSoConMax(Integer value){
+		def void setSoAdSoConMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSoConMax"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

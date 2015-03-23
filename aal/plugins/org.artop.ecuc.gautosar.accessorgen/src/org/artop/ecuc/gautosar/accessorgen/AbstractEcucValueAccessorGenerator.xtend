@@ -41,7 +41,7 @@ import java.text.MessageFormat
 public abstract class AbstractEcucValueAccessorGenerator {
 	
 	protected static final Set<String> RESERVED = #{"if", "while", "for", "else", "class", "interface", "enum"}
-	protected static final Set<String> KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES = #{"Integer", "String", "Float", "String", "Object", "DocumentationBlock"}
+	protected static final Set<String> KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES = #{"BigInteger", "String", "BigDecimal", "String", "Object", "DocumentationBlock"}
 	
 	private static final String ECUC_VALUE_ACCESSOR_FACTORY_CALSS_NAME = "EcucValueAccessor{0}Factory"
 	
@@ -81,6 +81,8 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	import org.eclipse.emf.ecore.EStructuralFeature
 	import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 	import org.eclipse.core.runtime.CoreException
+	import java.math.BigInteger
+	import java.math.BigDecimal
 	'''
 	
 	def String writeReleaseSpecificImportStatements()''''''
@@ -448,11 +450,11 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	}
 	
 	def dispatch String getParameterValueValueTypeName(GIntegerParamDef p, GParamConfContainerDef cont){
-		"Integer"
+		"BigInteger"
 	}
 	
 	def dispatch String getParameterValueValueTypeName(GFloatParamDef p, GParamConfContainerDef cont){
-		"Float"
+		"BigDecimal"
 	}
 	
 	def dispatch String getParameterValueValueTypeName(GAbstractStringParamDef p, GParamConfContainerDef cont){

@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Csm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -352,11 +354,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptMaxKeySize"])
+		def BigInteger getCsmAsymDecryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptMaxKeySize"])
 		}
 		
-		def void setCsmAsymDecryptMaxKeySize(Integer value){
+		def void setCsmAsymDecryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -482,11 +484,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptMaxKeySize"])
+		def BigInteger getCsmAsymEncryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptMaxKeySize"])
 		}
 		
-		def void setCsmAsymEncryptMaxKeySize(Integer value){
+		def void setCsmAsymEncryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -612,11 +614,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymPrivateKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"])
+		def BigInteger getCsmAsymPrivateKeyExtractMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"])
 		}
 		
-		def void setCsmAsymPrivateKeyExtractMaxKeySize(Integer value){
+		def void setCsmAsymPrivateKeyExtractMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -742,11 +744,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymPrivateKeyUpdateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"])
+		def BigInteger getCsmAsymPrivateKeyUpdateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"])
 		}
 		
-		def void setCsmAsymPrivateKeyUpdateMaxKeySize(Integer value){
+		def void setCsmAsymPrivateKeyUpdateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -872,11 +874,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymPrivateKeyWrapAsymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"])
+		def BigInteger getCsmAsymPrivateKeyWrapAsymMaxPrivKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"])
 		}
 		
-		def void setCsmAsymPrivateKeyWrapAsymMaxPrivKeySize(Integer value){
+		def void setCsmAsymPrivateKeyWrapAsymMaxPrivKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -888,11 +890,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmAsymPrivateKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"])
+		def BigInteger getCsmAsymPrivateKeyWrapAsymMaxPubKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"])
 		}
 		
-		def void setCsmAsymPrivateKeyWrapAsymMaxPubKeySize(Integer value){
+		def void setCsmAsymPrivateKeyWrapAsymMaxPubKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1018,11 +1020,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymPrivateKeyWrapSymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"])
+		def BigInteger getCsmAsymPrivateKeyWrapSymMaxPrivKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"])
 		}
 		
-		def void setCsmAsymPrivateKeyWrapSymMaxPrivKeySize(Integer value){
+		def void setCsmAsymPrivateKeyWrapSymMaxPrivKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1034,11 +1036,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmAsymPrivateKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"])
+		def BigInteger getCsmAsymPrivateKeyWrapSymMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"])
 		}
 		
-		def void setCsmAsymPrivateKeyWrapSymMaxSymKeySize(Integer value){
+		def void setCsmAsymPrivateKeyWrapSymMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1164,11 +1166,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymPublicKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"])
+		def BigInteger getCsmAsymPublicKeyExtractMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"])
 		}
 		
-		def void setCsmAsymPublicKeyExtractMaxKeySize(Integer value){
+		def void setCsmAsymPublicKeyExtractMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1294,11 +1296,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmAsymPublicKeyUpdateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"])
+		def BigInteger getCsmAsymPublicKeyUpdateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"])
 		}
 		
-		def void setCsmAsymPublicKeyUpdateMaxKeySize(Integer value){
+		def void setCsmAsymPublicKeyUpdateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1782,11 +1784,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCsmMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMainFunctionPeriod"])
+		def BigDecimal getCsmMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMainFunctionPeriod"])
 		}
 		
-		def void setCsmMainFunctionPeriod(Float value){
+		def void setCsmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1983,11 +1985,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmKeyDeriveMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveMaxKeySize"])
+		def BigInteger getCsmKeyDeriveMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveMaxKeySize"])
 		}
 		
-		def void setCsmKeyDeriveMaxKeySize(Integer value){
+		def void setCsmKeyDeriveMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2113,11 +2115,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmKeyDeriveSymKeyMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"])
+		def BigInteger getCsmKeyDeriveSymKeyMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"])
 		}
 		
-		def void setCsmKeyDeriveSymKeyMaxSymKeySize(Integer value){
+		def void setCsmKeyDeriveSymKeyMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2243,11 +2245,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmKeyExchangeCalcPubValMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"])
+		def BigInteger getCsmKeyExchangeCalcPubValMaxBaseTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"])
 		}
 		
-		def void setCsmKeyExchangeCalcPubValMaxBaseTypeSize(Integer value){
+		def void setCsmKeyExchangeCalcPubValMaxBaseTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2259,11 +2261,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmKeyExchangeCalcPubValMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"])
+		def BigInteger getCsmKeyExchangeCalcPubValMaxPrivateTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"])
 		}
 		
-		def void setCsmKeyExchangeCalcPubValMaxPrivateTypeSize(Integer value){
+		def void setCsmKeyExchangeCalcPubValMaxPrivateTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2389,11 +2391,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmKeyExchangeCalcSecretMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"])
+		def BigInteger getCsmKeyExchangeCalcSecretMaxBaseTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"])
 		}
 		
-		def void setCsmKeyExchangeCalcSecretMaxBaseTypeSize(Integer value){
+		def void setCsmKeyExchangeCalcSecretMaxBaseTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2405,11 +2407,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmKeyExchangeCalcSecretMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"])
+		def BigInteger getCsmKeyExchangeCalcSecretMaxPrivateTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"])
 		}
 		
-		def void setCsmKeyExchangeCalcSecretMaxPrivateTypeSize(Integer value){
+		def void setCsmKeyExchangeCalcSecretMaxPrivateTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2535,11 +2537,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmKeyExchangeCalcSymKeyMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"])
+		def BigInteger getCsmKeyExchangeCalcSymKeyMaxBaseTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"])
 		}
 		
-		def void setCsmKeyExchangeCalcSymKeyMaxBaseTypeSize(Integer value){
+		def void setCsmKeyExchangeCalcSymKeyMaxBaseTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2551,11 +2553,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmKeyExchangeCalcSymKeyMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"])
+		def BigInteger getCsmKeyExchangeCalcSymKeyMaxPrivateTypeSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"])
 		}
 		
-		def void setCsmKeyExchangeCalcSymKeyMaxPrivateTypeSize(Integer value){
+		def void setCsmKeyExchangeCalcSymKeyMaxPrivateTypeSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2567,11 +2569,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmKeyExchangeCalcSymKeyMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"])
+		def BigInteger getCsmKeyExchangeCalcSymKeyMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"])
 		}
 		
-		def void setCsmKeyExchangeCalcSymKeyMaxSymKeySize(Integer value){
+		def void setCsmKeyExchangeCalcSymKeyMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2697,11 +2699,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmMacGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateMaxKeySize"])
+		def BigInteger getCsmMacGenerateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateMaxKeySize"])
 		}
 		
-		def void setCsmMacGenerateMaxKeySize(Integer value){
+		def void setCsmMacGenerateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2827,11 +2829,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmMacVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyMaxKeySize"])
+		def BigInteger getCsmMacVerifyMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyMaxKeySize"])
 		}
 		
-		def void setCsmMacVerifyMaxKeySize(Integer value){
+		def void setCsmMacVerifyMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3185,11 +3187,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSignatureGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateMaxKeySize"])
+		def BigInteger getCsmSignatureGenerateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateMaxKeySize"])
 		}
 		
-		def void setCsmSignatureGenerateMaxKeySize(Integer value){
+		def void setCsmSignatureGenerateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3315,11 +3317,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSignatureVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyMaxKeySize"])
+		def BigInteger getCsmSignatureVerifyMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyMaxKeySize"])
 		}
 		
-		def void setCsmSignatureVerifyMaxKeySize(Integer value){
+		def void setCsmSignatureVerifyMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3445,11 +3447,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymBlockDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptMaxKeySize"])
+		def BigInteger getCsmSymBlockDecryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptMaxKeySize"])
 		}
 		
-		def void setCsmSymBlockDecryptMaxKeySize(Integer value){
+		def void setCsmSymBlockDecryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3575,11 +3577,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymBlockEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptMaxKeySize"])
+		def BigInteger getCsmSymBlockEncryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptMaxKeySize"])
 		}
 		
-		def void setCsmSymBlockEncryptMaxKeySize(Integer value){
+		def void setCsmSymBlockEncryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3705,11 +3707,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptMaxKeySize"])
+		def BigInteger getCsmSymDecryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptMaxKeySize"])
 		}
 		
-		def void setCsmSymDecryptMaxKeySize(Integer value){
+		def void setCsmSymDecryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3835,11 +3837,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptMaxKeySize"])
+		def BigInteger getCsmSymEncryptMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptMaxKeySize"])
 		}
 		
-		def void setCsmSymEncryptMaxKeySize(Integer value){
+		def void setCsmSymEncryptMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3965,11 +3967,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractMaxKeySize"])
+		def BigInteger getCsmSymKeyExtractMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractMaxKeySize"])
 		}
 		
-		def void setCsmSymKeyExtractMaxKeySize(Integer value){
+		def void setCsmSymKeyExtractMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -4095,11 +4097,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymKeyGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateMaxKeySize"])
+		def BigInteger getCsmSymKeyGenerateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateMaxKeySize"])
 		}
 		
-		def void setCsmSymKeyGenerateMaxKeySize(Integer value){
+		def void setCsmSymKeyGenerateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -4225,11 +4227,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymKeyUpdateMaxKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateMaxKeySize"])
+		def BigInteger getCsmSymKeyUpdateMaxKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateMaxKeySize"])
 		}
 		
-		def void setCsmSymKeyUpdateMaxKeySize(Integer value){
+		def void setCsmSymKeyUpdateMaxKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateMaxKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -4355,11 +4357,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"])
+		def BigInteger getCsmSymKeyWrapAsymMaxPubKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"])
 		}
 		
-		def void setCsmSymKeyWrapAsymMaxPubKeySize(Integer value){
+		def void setCsmSymKeyWrapAsymMaxPubKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -4371,11 +4373,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCsmSymKeyWrapAsymMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"])
+		def BigInteger getCsmSymKeyWrapAsymMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"])
 		}
 		
-		def void setCsmSymKeyWrapAsymMaxSymKeySize(Integer value){
+		def void setCsmSymKeyWrapAsymMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -4501,11 +4503,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCsmSymKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"])
+		def BigInteger getCsmSymKeyWrapSymMaxSymKeySize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"])
 		}
 		
-		def void setCsmSymKeyWrapSymMaxSymKeySize(Integer value){
+		def void setCsmSymKeyWrapSymMaxSymKeySize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

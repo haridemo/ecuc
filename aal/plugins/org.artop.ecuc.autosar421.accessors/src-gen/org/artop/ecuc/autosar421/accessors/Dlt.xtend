@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Dlt implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -290,11 +292,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDltVfbTraceLogLevel(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltVfbTraceLogLevel"])
+		def BigInteger getDltVfbTraceLogLevel(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltVfbTraceLogLevel"])
 		}
 		
-		def void setDltVfbTraceLogLevel(Integer value){
+		def void setDltVfbTraceLogLevel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltVfbTraceLogLevel"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -340,11 +342,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getDltInitBufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltInitBufferSize"])
+		def BigInteger getDltInitBufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltInitBufferSize"])
 		}
 		
-		def void setDltInitBufferSize(Integer value){
+		def void setDltInitBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltInitBufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -356,11 +358,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDltMaxCountAppIds(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountAppIds"])
+		def BigInteger getDltMaxCountAppIds(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountAppIds"])
 		}
 		
-		def void setDltMaxCountAppIds(Integer value){
+		def void setDltMaxCountAppIds(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountAppIds"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -372,11 +374,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDltMaxCountContextIds(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountContextIds"])
+		def BigInteger getDltMaxCountContextIds(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountContextIds"])
 		}
 		
-		def void setDltMaxCountContextIds(Integer value){
+		def void setDltMaxCountContextIds(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountContextIds"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -388,11 +390,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDltMaxCountContextIdsPerAppId(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountContextIdsPerAppId"])
+		def BigInteger getDltMaxCountContextIdsPerAppId(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountContextIdsPerAppId"])
 		}
 		
-		def void setDltMaxCountContextIdsPerAppId(Integer value){
+		def void setDltMaxCountContextIdsPerAppId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxCountContextIdsPerAppId"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -404,11 +406,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDltMessageBufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMessageBufferSize"])
+		def BigInteger getDltMessageBufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMessageBufferSize"])
 		}
 		
-		def void setDltMessageBufferSize(Integer value){
+		def void setDltMessageBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMessageBufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -503,11 +505,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDltBandwidthForComModule(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltBandwidthForComModule"])
+			def BigInteger getDltBandwidthForComModule(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltBandwidthForComModule"])
 			}
 			
-			def void setDltBandwidthForComModule(Integer value){
+			def void setDltBandwidthForComModule(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltBandwidthForComModule"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -519,11 +521,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDltBandwidthForDiagChannel(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltBandwidthForDiagChannel"])
+			def BigInteger getDltBandwidthForDiagChannel(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltBandwidthForDiagChannel"])
 			}
 			
-			def void setDltBandwidthForDiagChannel(Integer value){
+			def void setDltBandwidthForDiagChannel(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltBandwidthForDiagChannel"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -535,11 +537,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getDltTimePeriodTrafficShaping(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltTimePeriodTrafficShaping"])
+			def BigDecimal getDltTimePeriodTrafficShaping(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltTimePeriodTrafficShaping"])
 			}
 			
-			def void setDltTimePeriodTrafficShaping(Float value){
+			def void setDltTimePeriodTrafficShaping(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltTimePeriodTrafficShaping"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -575,11 +577,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDltDefaultMaxLogLevel(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltDefaultMaxLogLevel"])
+			def BigInteger getDltDefaultMaxLogLevel(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltDefaultMaxLogLevel"])
 			}
 			
-			def void setDltDefaultMaxLogLevel(Integer value){
+			def void setDltDefaultMaxLogLevel(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltDefaultMaxLogLevel"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -607,11 +609,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDltFactoryDefaultMaxLogLevel(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltFactoryDefaultMaxLogLevel"])
+			def BigInteger getDltFactoryDefaultMaxLogLevel(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltFactoryDefaultMaxLogLevel"])
 			}
 			
-			def void setDltFactoryDefaultMaxLogLevel(Integer value){
+			def void setDltFactoryDefaultMaxLogLevel(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltFactoryDefaultMaxLogLevel"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -776,11 +778,11 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDltMaxMessageLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxMessageLength"])
+			def BigInteger getDltMaxMessageLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxMessageLength"])
 			}
 			
-			def void setDltMaxMessageLength(Integer value){
+			def void setDltMaxMessageLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltMaxMessageLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

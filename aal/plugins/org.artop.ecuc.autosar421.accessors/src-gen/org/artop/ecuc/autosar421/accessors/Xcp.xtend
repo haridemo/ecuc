@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Xcp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -183,11 +185,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getXcpDaqListNumber(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqListNumber"])
+			def BigInteger getXcpDaqListNumber(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqListNumber"])
 			}
 			
-			def void setXcpDaqListNumber(Integer value){
+			def void setXcpDaqListNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqListNumber"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -234,11 +236,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getXcpMaxOdt(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdt"])
+			def BigInteger getXcpMaxOdt(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdt"])
 			}
 			
-			def void setXcpMaxOdt(Integer value){
+			def void setXcpMaxOdt(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdt"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -250,11 +252,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getXcpMaxOdtEntries(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdtEntries"])
+			def BigInteger getXcpMaxOdtEntries(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdtEntries"])
 			}
 			
-			def void setXcpMaxOdtEntries(Integer value){
+			def void setXcpMaxOdtEntries(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdtEntries"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -326,11 +328,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getXcpDtoPid(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDtoPid"])
+				def BigInteger getXcpDtoPid(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDtoPid"])
 				}
 				
-				def void setXcpDtoPid(Integer value){
+				def void setXcpDtoPid(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDtoPid"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -367,11 +369,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getXcpOdtEntryMaxSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryMaxSize"])
+				def BigInteger getXcpOdtEntryMaxSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryMaxSize"])
 				}
 				
-				def void setXcpOdtEntryMaxSize(Integer value){
+				def void setXcpOdtEntryMaxSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryMaxSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -383,11 +385,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getXcpOdtNumber(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtNumber"])
+				def BigInteger getXcpOdtNumber(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtNumber"])
 				}
 				
-				def void setXcpOdtNumber(Integer value){
+				def void setXcpOdtNumber(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtNumber"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -467,11 +469,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getXcpOdtEntryBitOffset(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryBitOffset"])
+					def BigInteger getXcpOdtEntryBitOffset(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryBitOffset"])
 					}
 					
-					def void setXcpOdtEntryBitOffset(Integer value){
+					def void setXcpOdtEntryBitOffset(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryBitOffset"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -483,11 +485,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getXcpOdtEntryLength(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryLength"])
+					def BigInteger getXcpOdtEntryLength(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryLength"])
 					}
 					
-					def void setXcpOdtEntryLength(Integer value){
+					def void setXcpOdtEntryLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryLength"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -499,11 +501,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getXcpOdtEntryNumber(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryNumber"])
+					def BigInteger getXcpOdtEntryNumber(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryNumber"])
 					}
 					
-					def void setXcpOdtEntryNumber(Integer value){
+					def void setXcpOdtEntryNumber(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryNumber"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -578,11 +580,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getXcpEventChannelMaxDaqList(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelMaxDaqList"])
+			def BigInteger getXcpEventChannelMaxDaqList(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelMaxDaqList"])
 			}
 			
-			def void setXcpEventChannelMaxDaqList(Integer value){
+			def void setXcpEventChannelMaxDaqList(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelMaxDaqList"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -594,11 +596,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getXcpEventChannelNumber(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelNumber"])
+			def BigInteger getXcpEventChannelNumber(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelNumber"])
 			}
 			
-			def void setXcpEventChannelNumber(Integer value){
+			def void setXcpEventChannelNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelNumber"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -610,11 +612,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getXcpEventChannelPriority(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelPriority"])
+			def BigInteger getXcpEventChannelPriority(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelPriority"])
 			}
 			
-			def void setXcpEventChannelPriority(Integer value){
+			def void setXcpEventChannelPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelPriority"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -626,11 +628,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getXcpEventChannelTimeCycle(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelTimeCycle"])
+			def BigInteger getXcpEventChannelTimeCycle(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelTimeCycle"])
 			}
 			
-			def void setXcpEventChannelTimeCycle(Integer value){
+			def void setXcpEventChannelTimeCycle(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelTimeCycle"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -825,11 +827,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getXcpRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpRxPduId"])
+				def BigInteger getXcpRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpRxPduId"])
 				}
 				
-				def void setXcpRxPduId(Integer value){
+				def void setXcpRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -876,11 +878,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getXcpTxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTxPduId"])
+				def BigInteger getXcpTxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTxPduId"])
 				}
 				
-				def void setXcpTxPduId(Integer value){
+				def void setXcpTxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -963,11 +965,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Integer getXcpDaqCount(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqCount"])
+		def BigInteger getXcpDaqCount(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqCount"])
 		}
 		
-		def void setXcpDaqCount(Integer value){
+		def void setXcpDaqCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqCount"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1048,11 +1050,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Float getXcpMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMainFunctionPeriod"])
+		def BigDecimal getXcpMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMainFunctionPeriod"])
 		}
 		
-		def void setXcpMainFunctionPeriod(Float value){
+		def void setXcpMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1064,11 +1066,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpMaxCto(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxCto"])
+		def BigInteger getXcpMaxCto(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxCto"])
 		}
 		
-		def void setXcpMaxCto(Integer value){
+		def void setXcpMaxCto(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxCto"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1080,11 +1082,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpMaxDto(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxDto"])
+		def BigInteger getXcpMaxDto(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxDto"])
 		}
 		
-		def void setXcpMaxDto(Integer value){
+		def void setXcpMaxDto(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxDto"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1096,11 +1098,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpMaxEventChannel(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxEventChannel"])
+		def BigInteger getXcpMaxEventChannel(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxEventChannel"])
 		}
 		
-		def void setXcpMaxEventChannel(Integer value){
+		def void setXcpMaxEventChannel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxEventChannel"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1112,11 +1114,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpMinDaq(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMinDaq"])
+		def BigInteger getXcpMinDaq(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMinDaq"])
 		}
 		
-		def void setXcpMinDaq(Integer value){
+		def void setXcpMinDaq(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMinDaq"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1128,11 +1130,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpOdtCount(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtCount"])
+		def BigInteger getXcpOdtCount(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtCount"])
 		}
 		
-		def void setXcpOdtCount(Integer value){
+		def void setXcpOdtCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtCount"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1144,11 +1146,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpOdtEntriesCount(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntriesCount"])
+		def BigInteger getXcpOdtEntriesCount(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntriesCount"])
 		}
 		
-		def void setXcpOdtEntriesCount(Integer value){
+		def void setXcpOdtEntriesCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntriesCount"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1160,11 +1162,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpOdtEntrySizeDaq(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeDaq"])
+		def BigInteger getXcpOdtEntrySizeDaq(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeDaq"])
 		}
 		
-		def void setXcpOdtEntrySizeDaq(Integer value){
+		def void setXcpOdtEntrySizeDaq(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeDaq"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1176,11 +1178,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpOdtEntrySizeStim(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeStim"])
+		def BigInteger getXcpOdtEntrySizeStim(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeStim"])
 		}
 		
-		def void setXcpOdtEntrySizeStim(Integer value){
+		def void setXcpOdtEntrySizeStim(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeStim"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -1288,11 +1290,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getXcpTimestampTicks(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTimestampTicks"])
+		def BigInteger getXcpTimestampTicks(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTimestampTicks"])
 		}
 		
-		def void setXcpTimestampTicks(Integer value){
+		def void setXcpTimestampTicks(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTimestampTicks"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Sd implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -311,11 +313,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientServiceHandleId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceHandleId"])
+				def BigInteger getSdClientServiceHandleId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceHandleId"])
 				}
 				
-				def void setSdClientServiceHandleId(Integer value){
+				def void setSdClientServiceHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceHandleId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -327,11 +329,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientServiceId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceId"])
+				def BigInteger getSdClientServiceId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceId"])
 				}
 				
-				def void setSdClientServiceId(Integer value){
+				def void setSdClientServiceId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -343,11 +345,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientServiceInstanceId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceInstanceId"])
+				def BigInteger getSdClientServiceInstanceId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceInstanceId"])
 				}
 				
-				def void setSdClientServiceInstanceId(Integer value){
+				def void setSdClientServiceInstanceId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceInstanceId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -359,11 +361,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientServiceMajorVersion(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceMajorVersion"])
+				def BigInteger getSdClientServiceMajorVersion(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceMajorVersion"])
 				}
 				
-				def void setSdClientServiceMajorVersion(Integer value){
+				def void setSdClientServiceMajorVersion(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceMajorVersion"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -375,11 +377,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientServiceMinorVersion(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceMinorVersion"])
+				def BigInteger getSdClientServiceMinorVersion(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceMinorVersion"])
 				}
 				
-				def void setSdClientServiceMinorVersion(Integer value){
+				def void setSdClientServiceMinorVersion(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceMinorVersion"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -565,11 +567,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSdConsumedEventGroupHandleId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupHandleId"])
+					def BigInteger getSdConsumedEventGroupHandleId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupHandleId"])
 					}
 					
-					def void setSdConsumedEventGroupHandleId(Integer value){
+					def void setSdConsumedEventGroupHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupHandleId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -581,11 +583,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSdConsumedEventGroupId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupId"])
+					def BigInteger getSdConsumedEventGroupId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupId"])
 					}
 					
-					def void setSdConsumedEventGroupId(Integer value){
+					def void setSdConsumedEventGroupId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -810,11 +812,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getSdClientTimerInitialFindDelayMax(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindDelayMax"])
+				def BigDecimal getSdClientTimerInitialFindDelayMax(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindDelayMax"])
 				}
 				
-				def void setSdClientTimerInitialFindDelayMax(Float value){
+				def void setSdClientTimerInitialFindDelayMax(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindDelayMax"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -826,11 +828,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdClientTimerInitialFindDelayMin(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindDelayMin"])
+				def BigDecimal getSdClientTimerInitialFindDelayMin(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindDelayMin"])
 				}
 				
-				def void setSdClientTimerInitialFindDelayMin(Float value){
+				def void setSdClientTimerInitialFindDelayMin(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindDelayMin"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -842,11 +844,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdClientTimerInitialFindRepetitionsBaseDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindRepetitionsBaseDelay"])
+				def BigDecimal getSdClientTimerInitialFindRepetitionsBaseDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindRepetitionsBaseDelay"])
 				}
 				
-				def void setSdClientTimerInitialFindRepetitionsBaseDelay(Float value){
+				def void setSdClientTimerInitialFindRepetitionsBaseDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindRepetitionsBaseDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -858,11 +860,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientTimerInitialFindRepetitionsMax(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindRepetitionsMax"])
+				def BigInteger getSdClientTimerInitialFindRepetitionsMax(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindRepetitionsMax"])
 				}
 				
-				def void setSdClientTimerInitialFindRepetitionsMax(Integer value){
+				def void setSdClientTimerInitialFindRepetitionsMax(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerInitialFindRepetitionsMax"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -874,11 +876,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdClientTimerRequestResponseMaxDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerRequestResponseMaxDelay"])
+				def BigDecimal getSdClientTimerRequestResponseMaxDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerRequestResponseMaxDelay"])
 				}
 				
-				def void setSdClientTimerRequestResponseMaxDelay(Float value){
+				def void setSdClientTimerRequestResponseMaxDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerRequestResponseMaxDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -890,11 +892,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdClientTimerRequestResponseMinDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerRequestResponseMinDelay"])
+				def BigDecimal getSdClientTimerRequestResponseMinDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerRequestResponseMinDelay"])
 				}
 				
-				def void setSdClientTimerRequestResponseMinDelay(Float value){
+				def void setSdClientTimerRequestResponseMinDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerRequestResponseMinDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -906,11 +908,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdClientTimerTTL(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerTTL"])
+				def BigInteger getSdClientTimerTTL(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerTTL"])
 				}
 				
-				def void setSdClientTimerTTL(Integer value){
+				def void setSdClientTimerTTL(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientTimerTTL"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -992,11 +994,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getSdRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdRxPduId"])
+				def BigInteger getSdRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdRxPduId"])
 				}
 				
-				def void setSdRxPduId(Integer value){
+				def void setSdRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1078,11 +1080,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getSdRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdRxPduId"])
+				def BigInteger getSdRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdRxPduId"])
 				}
 				
-				def void setSdRxPduId(Integer value){
+				def void setSdRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1145,11 +1147,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerServiceHandleId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceHandleId"])
+				def BigInteger getSdServerServiceHandleId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceHandleId"])
 				}
 				
-				def void setSdServerServiceHandleId(Integer value){
+				def void setSdServerServiceHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceHandleId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1161,11 +1163,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerServiceId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceId"])
+				def BigInteger getSdServerServiceId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceId"])
 				}
 				
-				def void setSdServerServiceId(Integer value){
+				def void setSdServerServiceId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1177,11 +1179,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerServiceInstanceId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceInstanceId"])
+				def BigInteger getSdServerServiceInstanceId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceInstanceId"])
 				}
 				
-				def void setSdServerServiceInstanceId(Integer value){
+				def void setSdServerServiceInstanceId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceInstanceId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1193,11 +1195,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerServiceMajorVersion(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceMajorVersion"])
+				def BigInteger getSdServerServiceMajorVersion(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceMajorVersion"])
 				}
 				
-				def void setSdServerServiceMajorVersion(Integer value){
+				def void setSdServerServiceMajorVersion(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceMajorVersion"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1209,11 +1211,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerServiceMinorVersion(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceMinorVersion"])
+				def BigInteger getSdServerServiceMinorVersion(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceMinorVersion"])
 				}
 				
-				def void setSdServerServiceMinorVersion(Integer value){
+				def void setSdServerServiceMinorVersion(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceMinorVersion"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1327,11 +1329,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getSdEventHandlerEventGroupId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerEventGroupId"])
+					def BigInteger getSdEventHandlerEventGroupId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerEventGroupId"])
 					}
 					
-					def void setSdEventHandlerEventGroupId(Integer value){
+					def void setSdEventHandlerEventGroupId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerEventGroupId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1343,11 +1345,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSdEventHandlerHandleId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerHandleId"])
+					def BigInteger getSdEventHandlerHandleId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerHandleId"])
 					}
 					
-					def void setSdEventHandlerHandleId(Integer value){
+					def void setSdEventHandlerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerHandleId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1359,11 +1361,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getSdEventHandlerMulticastThreshold(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerMulticastThreshold"])
+					def BigInteger getSdEventHandlerMulticastThreshold(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerMulticastThreshold"])
 					}
 					
-					def void setSdEventHandlerMulticastThreshold(Integer value){
+					def void setSdEventHandlerMulticastThreshold(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerMulticastThreshold"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1743,11 +1745,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getSdServerTimerInitialOfferDelayMax(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferDelayMax"])
+				def BigDecimal getSdServerTimerInitialOfferDelayMax(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferDelayMax"])
 				}
 				
-				def void setSdServerTimerInitialOfferDelayMax(Float value){
+				def void setSdServerTimerInitialOfferDelayMax(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferDelayMax"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1759,11 +1761,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdServerTimerInitialOfferDelayMin(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferDelayMin"])
+				def BigDecimal getSdServerTimerInitialOfferDelayMin(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferDelayMin"])
 				}
 				
-				def void setSdServerTimerInitialOfferDelayMin(Float value){
+				def void setSdServerTimerInitialOfferDelayMin(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferDelayMin"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1775,11 +1777,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdServerTimerInitialOfferRepetitionBaseDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferRepetitionBaseDelay"])
+				def BigDecimal getSdServerTimerInitialOfferRepetitionBaseDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferRepetitionBaseDelay"])
 				}
 				
-				def void setSdServerTimerInitialOfferRepetitionBaseDelay(Float value){
+				def void setSdServerTimerInitialOfferRepetitionBaseDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferRepetitionBaseDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1791,11 +1793,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerTimerInitialOfferRepetitionsMax(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferRepetitionsMax"])
+				def BigInteger getSdServerTimerInitialOfferRepetitionsMax(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferRepetitionsMax"])
 				}
 				
-				def void setSdServerTimerInitialOfferRepetitionsMax(Integer value){
+				def void setSdServerTimerInitialOfferRepetitionsMax(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerInitialOfferRepetitionsMax"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1807,11 +1809,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdServerTimerOfferCyclicDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerOfferCyclicDelay"])
+				def BigDecimal getSdServerTimerOfferCyclicDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerOfferCyclicDelay"])
 				}
 				
-				def void setSdServerTimerOfferCyclicDelay(Float value){
+				def void setSdServerTimerOfferCyclicDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerOfferCyclicDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1823,11 +1825,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdServerTimerRequestResponseMaxDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerRequestResponseMaxDelay"])
+				def BigDecimal getSdServerTimerRequestResponseMaxDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerRequestResponseMaxDelay"])
 				}
 				
-				def void setSdServerTimerRequestResponseMaxDelay(Float value){
+				def void setSdServerTimerRequestResponseMaxDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerRequestResponseMaxDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1839,11 +1841,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getSdServerTimerRequestResponseMinDelay(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerRequestResponseMinDelay"])
+				def BigDecimal getSdServerTimerRequestResponseMinDelay(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerRequestResponseMinDelay"])
 				}
 				
-				def void setSdServerTimerRequestResponseMinDelay(Float value){
+				def void setSdServerTimerRequestResponseMinDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerRequestResponseMinDelay"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1855,11 +1857,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getSdServerTimerTTL(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerTTL"])
+				def BigInteger getSdServerTimerTTL(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerTTL"])
 				}
 				
-				def void setSdServerTimerTTL(Integer value){
+				def void setSdServerTimerTTL(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerTimerTTL"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1914,11 +1916,11 @@ class Sd implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getSdMainFunctionCycleTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdMainFunctionCycleTime"])
+		def BigDecimal getSdMainFunctionCycleTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdMainFunctionCycleTime"])
 		}
 		
-		def void setSdMainFunctionCycleTime(Float value){
+		def void setSdMainFunctionCycleTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdMainFunctionCycleTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

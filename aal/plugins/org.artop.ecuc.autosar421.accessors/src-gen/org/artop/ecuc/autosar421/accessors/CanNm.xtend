@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class CanNm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -224,11 +226,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanNmMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMainFunctionPeriod"])
+		def BigDecimal getCanNmMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMainFunctionPeriod"])
 		}
 		
-		def void setCanNmMainFunctionPeriod(Float value){
+		def void setCanNmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -320,11 +322,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanNmPnResetTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnResetTime"])
+		def BigDecimal getCanNmPnResetTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnResetTime"])
 		}
 		
-		def void setCanNmPnResetTime(Float value){
+		def void setCanNmPnResetTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnResetTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -525,11 +527,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanNmCarWakeUpBitPosition(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpBitPosition"])
+			def BigInteger getCanNmCarWakeUpBitPosition(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpBitPosition"])
 			}
 			
-			def void setCanNmCarWakeUpBitPosition(Integer value){
+			def void setCanNmCarWakeUpBitPosition(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpBitPosition"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -541,11 +543,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanNmCarWakeUpBytePosition(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpBytePosition"])
+			def BigInteger getCanNmCarWakeUpBytePosition(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpBytePosition"])
 			}
 			
-			def void setCanNmCarWakeUpBytePosition(Integer value){
+			def void setCanNmCarWakeUpBytePosition(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpBytePosition"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -573,11 +575,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanNmCarWakeUpFilterNodeId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpFilterNodeId"])
+			def BigInteger getCanNmCarWakeUpFilterNodeId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpFilterNodeId"])
 			}
 			
-			def void setCanNmCarWakeUpFilterNodeId(Integer value){
+			def void setCanNmCarWakeUpFilterNodeId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpFilterNodeId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -605,11 +607,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmImmediateNmCycleTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateNmCycleTime"])
+			def BigDecimal getCanNmImmediateNmCycleTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateNmCycleTime"])
 			}
 			
-			def void setCanNmImmediateNmCycleTime(Float value){
+			def void setCanNmImmediateNmCycleTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateNmCycleTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -621,11 +623,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanNmImmediateNmTransmissions(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateNmTransmissions"])
+			def BigInteger getCanNmImmediateNmTransmissions(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateNmTransmissions"])
 			}
 			
-			def void setCanNmImmediateNmTransmissions(Integer value){
+			def void setCanNmImmediateNmTransmissions(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateNmTransmissions"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -637,11 +639,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmMsgCycleOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgCycleOffset"])
+			def BigDecimal getCanNmMsgCycleOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgCycleOffset"])
 			}
 			
-			def void setCanNmMsgCycleOffset(Float value){
+			def void setCanNmMsgCycleOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgCycleOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -653,11 +655,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmMsgCycleTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgCycleTime"])
+			def BigDecimal getCanNmMsgCycleTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgCycleTime"])
 			}
 			
-			def void setCanNmMsgCycleTime(Float value){
+			def void setCanNmMsgCycleTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgCycleTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -669,11 +671,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmMsgReducedTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgReducedTime"])
+			def BigDecimal getCanNmMsgReducedTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgReducedTime"])
 			}
 			
-			def void setCanNmMsgReducedTime(Float value){
+			def void setCanNmMsgReducedTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgReducedTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -685,11 +687,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmMsgTimeoutTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgTimeoutTime"])
+			def BigDecimal getCanNmMsgTimeoutTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgTimeoutTime"])
 			}
 			
-			def void setCanNmMsgTimeoutTime(Float value){
+			def void setCanNmMsgTimeoutTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmMsgTimeoutTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -701,11 +703,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanNmNodeId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeId"])
+			def BigInteger getCanNmNodeId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeId"])
 			}
 			
-			def void setCanNmNodeId(Integer value){
+			def void setCanNmNodeId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -835,11 +837,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmRemoteSleepIndTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRemoteSleepIndTime"])
+			def BigDecimal getCanNmRemoteSleepIndTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRemoteSleepIndTime"])
 			}
 			
-			def void setCanNmRemoteSleepIndTime(Float value){
+			def void setCanNmRemoteSleepIndTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRemoteSleepIndTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -851,11 +853,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmRepeatMessageTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRepeatMessageTime"])
+			def BigDecimal getCanNmRepeatMessageTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRepeatMessageTime"])
 			}
 			
-			def void setCanNmRepeatMessageTime(Float value){
+			def void setCanNmRepeatMessageTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRepeatMessageTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -883,11 +885,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmTimeoutTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTimeoutTime"])
+			def BigDecimal getCanNmTimeoutTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTimeoutTime"])
 			}
 			
-			def void setCanNmTimeoutTime(Float value){
+			def void setCanNmTimeoutTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTimeoutTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -899,11 +901,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanNmWaitBusSleepTime(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmWaitBusSleepTime"])
+			def BigDecimal getCanNmWaitBusSleepTime(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmWaitBusSleepTime"])
 			}
 			
-			def void setCanNmWaitBusSleepTime(Float value){
+			def void setCanNmWaitBusSleepTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmWaitBusSleepTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -996,11 +998,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanNmRxPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRxPduId"])
+				def BigInteger getCanNmRxPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRxPduId"])
 				}
 				
-				def void setCanNmRxPduId(Integer value){
+				def void setCanNmRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRxPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1047,11 +1049,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanNmTxConfirmationPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxConfirmationPduId"])
+				def BigInteger getCanNmTxConfirmationPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxConfirmationPduId"])
 				}
 				
-				def void setCanNmTxConfirmationPduId(Integer value){
+				def void setCanNmTxConfirmationPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxConfirmationPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1098,11 +1100,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanNmTxUserDataPduId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxUserDataPduId"])
+				def BigInteger getCanNmTxUserDataPduId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxUserDataPduId"])
 				}
 				
-				def void setCanNmTxUserDataPduId(Integer value){
+				def void setCanNmTxUserDataPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxUserDataPduId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1151,11 +1153,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getCanNmPnInfoLength(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnInfoLength"])
+			def BigInteger getCanNmPnInfoLength(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnInfoLength"])
 			}
 			
-			def void setCanNmPnInfoLength(Integer value){
+			def void setCanNmPnInfoLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnInfoLength"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1167,11 +1169,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getCanNmPnInfoOffset(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnInfoOffset"])
+			def BigInteger getCanNmPnInfoOffset(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnInfoOffset"])
 			}
 			
-			def void setCanNmPnInfoOffset(Integer value){
+			def void setCanNmPnInfoOffset(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnInfoOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1224,11 +1226,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanNmPnFilterMaskByteIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteIndex"])
+				def BigInteger getCanNmPnFilterMaskByteIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteIndex"])
 				}
 				
-				def void setCanNmPnFilterMaskByteIndex(Integer value){
+				def void setCanNmPnFilterMaskByteIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1240,11 +1242,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanNmPnFilterMaskByteValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteValue"])
+				def BigInteger getCanNmPnFilterMaskByteValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteValue"])
 				}
 				
-				def void setCanNmPnFilterMaskByteValue(Integer value){
+				def void setCanNmPnFilterMaskByteValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

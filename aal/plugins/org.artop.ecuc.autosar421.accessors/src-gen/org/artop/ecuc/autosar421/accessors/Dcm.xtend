@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Dcm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -330,11 +332,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDsdSidTabId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabId"])
+				def BigInteger getDcmDsdSidTabId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabId"])
 				}
 				
-				def void setDcmDsdSidTabId(Integer value){
+				def void setDcmDsdSidTabId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -419,11 +421,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDsdSidTabServiceId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabServiceId"])
+					def BigInteger getDcmDsdSidTabServiceId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabServiceId"])
 					}
 					
-					def void setDcmDsdSidTabServiceId(Integer value){
+					def void setDcmDsdSidTabServiceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabServiceId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -585,11 +587,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getDcmDsdSubServiceId(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSubServiceId"])
+						def BigInteger getDcmDsdSubServiceId(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSubServiceId"])
 						}
 						
-						def void setDcmDsdSubServiceId(Integer value){
+						def void setDcmDsdSubServiceId(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSubServiceId"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -802,11 +804,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDslBufferSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslBufferSize"])
+				def BigInteger getDcmDslBufferSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslBufferSize"])
 				}
 				
-				def void setDcmDslBufferSize(Integer value){
+				def void setDcmDslBufferSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslBufferSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -866,11 +868,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDslDiagRespMaxNumRespPend(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslDiagRespMaxNumRespPend"])
+				def BigInteger getDcmDslDiagRespMaxNumRespPend(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslDiagRespMaxNumRespPend"])
 				}
 				
-				def void setDcmDslDiagRespMaxNumRespPend(Integer value){
+				def void setDcmDslDiagRespMaxNumRespPend(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslDiagRespMaxNumRespPend"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -1046,11 +1048,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(paramValue, value)
 					}
 					
-					def Integer getDcmDslProtocolMaximumResponseSize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolMaximumResponseSize"])
+					def BigInteger getDcmDslProtocolMaximumResponseSize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolMaximumResponseSize"])
 					}
 					
-					def void setDcmDslProtocolMaximumResponseSize(Integer value){
+					def void setDcmDslProtocolMaximumResponseSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolMaximumResponseSize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1062,11 +1064,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmDslProtocolPreemptTimeout(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolPreemptTimeout"])
+					def BigDecimal getDcmDslProtocolPreemptTimeout(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolPreemptTimeout"])
 					}
 					
-					def void setDcmDslProtocolPreemptTimeout(Float value){
+					def void setDcmDslProtocolPreemptTimeout(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolPreemptTimeout"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1078,11 +1080,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDslProtocolPriority(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolPriority"])
+					def BigInteger getDcmDslProtocolPriority(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolPriority"])
 					}
 					
-					def void setDcmDslProtocolPriority(Integer value){
+					def void setDcmDslProtocolPriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolPriority"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1159,11 +1161,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmTimStrP2ServerAdjust(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTimStrP2ServerAdjust"])
+					def BigDecimal getDcmTimStrP2ServerAdjust(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTimStrP2ServerAdjust"])
 					}
 					
-					def void setDcmTimStrP2ServerAdjust(Float value){
+					def void setDcmTimStrP2ServerAdjust(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTimStrP2ServerAdjust"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1175,11 +1177,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmTimStrP2StarServerAdjust(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTimStrP2StarServerAdjust"])
+					def BigDecimal getDcmTimStrP2StarServerAdjust(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTimStrP2StarServerAdjust"])
 					}
 					
-					def void setDcmTimStrP2StarServerAdjust(Float value){
+					def void setDcmTimStrP2StarServerAdjust(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTimStrP2StarServerAdjust"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1309,11 +1311,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getDcmDslProtocolRxTesterSourceAddr(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxTesterSourceAddr"])
+							def BigInteger getDcmDslProtocolRxTesterSourceAddr(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxTesterSourceAddr"])
 							}
 							
-							def void setDcmDslProtocolRxTesterSourceAddr(Integer value){
+							def void setDcmDslProtocolRxTesterSourceAddr(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxTesterSourceAddr"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -1441,11 +1443,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									EcucValueAccessor421Util.setParameterValue(paramValue, value)
 								}
 								
-								def Integer getDcmDslProtocolRxPduId(){
-									EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxPduId"])
+								def BigInteger getDcmDslProtocolRxPduId(){
+									EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxPduId"])
 								}
 								
-								def void setDcmDslProtocolRxPduId(Integer value){
+								def void setDcmDslProtocolRxPduId(BigInteger value){
 									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxPduId"]
 									if (parameterValue == null) {
 										val containerDef = containerValue.gGetDefinition
@@ -1492,11 +1494,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									containerValue
 								}
 								
-								def Integer getDcmDslTxConfirmationPduId(){
-									EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslTxConfirmationPduId"])
+								def BigInteger getDcmDslTxConfirmationPduId(){
+									EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslTxConfirmationPduId"])
 								}
 								
-								def void setDcmDslTxConfirmationPduId(Integer value){
+								def void setDcmDslTxConfirmationPduId(BigInteger value){
 									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslTxConfirmationPduId"]
 									if (parameterValue == null) {
 										val containerDef = containerValue.gGetDefinition
@@ -1586,11 +1588,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									containerValue
 								}
 								
-								def Integer getDcmDslPeriodicTxConfirmationPduId(){
-									EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslPeriodicTxConfirmationPduId"])
+								def BigInteger getDcmDslPeriodicTxConfirmationPduId(){
+									EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslPeriodicTxConfirmationPduId"])
 								}
 								
-								def void setDcmDslPeriodicTxConfirmationPduId(Integer value){
+								def void setDcmDslPeriodicTxConfirmationPduId(BigInteger value){
 									var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslPeriodicTxConfirmationPduId"]
 									if (parameterValue == null) {
 										val containerDef = containerValue.gGetDefinition
@@ -1639,11 +1641,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getDcmDslRoeTxConfirmationPduId(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslRoeTxConfirmationPduId"])
+							def BigInteger getDcmDslRoeTxConfirmationPduId(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslRoeTxConfirmationPduId"])
 							}
 							
-							def void setDcmDslRoeTxConfirmationPduId(Integer value){
+							def void setDcmDslRoeTxConfirmationPduId(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslRoeTxConfirmationPduId"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -1749,11 +1751,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getDcmDspMaxDidToRead(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxDidToRead"])
+			def BigInteger getDcmDspMaxDidToRead(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxDidToRead"])
 			}
 			
-			def void setDcmDspMaxDidToRead(Integer value){
+			def void setDcmDspMaxDidToRead(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxDidToRead"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1765,11 +1767,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDcmDspMaxPeriodicDidToRead(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidToRead"])
+			def BigInteger getDcmDspMaxPeriodicDidToRead(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidToRead"])
 			}
 			
-			def void setDcmDspMaxPeriodicDidToRead(Integer value){
+			def void setDcmDspMaxPeriodicDidToRead(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidToRead"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1781,11 +1783,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDcmDspPowerDownTime(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPowerDownTime"])
+			def BigInteger getDcmDspPowerDownTime(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPowerDownTime"])
 			}
 			
-			def void setDcmDspPowerDownTime(Integer value){
+			def void setDcmDspPowerDownTime(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPowerDownTime"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2313,11 +2315,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspSubnetNumber(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSubnetNumber"])
+					def BigInteger getDcmDspSubnetNumber(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSubnetNumber"])
 					}
 					
-					def void setDcmDspSubnetNumber(Integer value){
+					def void setDcmDspSubnetNumber(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSubnetNumber"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -2364,11 +2366,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspComControlSubNodeId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSubNodeId"])
+					def BigInteger getDcmDspComControlSubNodeId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSubNodeId"])
 					}
 					
-					def void setDcmDspComControlSubNodeId(Integer value){
+					def void setDcmDspComControlSubNodeId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSubNodeId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -2796,11 +2798,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmDspDataSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataSize"])
+				def BigInteger getDcmDspDataSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataSize"])
 				}
 				
-				def void setDcmDspDataSize(Integer value){
+				def void setDcmDspDataSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -3165,11 +3167,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Float getDcmDspDiagnosisRepresentationDataLowerRange(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataLowerRange"])
+							def BigDecimal getDcmDspDiagnosisRepresentationDataLowerRange(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataLowerRange"])
 							}
 							
-							def void setDcmDspDiagnosisRepresentationDataLowerRange(Float value){
+							def void setDcmDspDiagnosisRepresentationDataLowerRange(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataLowerRange"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3181,11 +3183,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Float getDcmDspDiagnosisRepresentationDataOffset(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataOffset"])
+							def BigDecimal getDcmDspDiagnosisRepresentationDataOffset(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataOffset"])
 							}
 							
-							def void setDcmDspDiagnosisRepresentationDataOffset(Float value){
+							def void setDcmDspDiagnosisRepresentationDataOffset(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataOffset"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3197,11 +3199,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Float getDcmDspDiagnosisRepresentationDataResolution(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataResolution"])
+							def BigDecimal getDcmDspDiagnosisRepresentationDataResolution(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataResolution"])
 							}
 							
-							def void setDcmDspDiagnosisRepresentationDataResolution(Float value){
+							def void setDcmDspDiagnosisRepresentationDataResolution(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataResolution"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3213,11 +3215,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Float getDcmDspDiagnosisRepresentationDataUpperRange(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataUpperRange"])
+							def BigDecimal getDcmDspDiagnosisRepresentationDataUpperRange(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataUpperRange"])
 							}
 							
-							def void setDcmDspDiagnosisRepresentationDataUpperRange(Float value){
+							def void setDcmDspDiagnosisRepresentationDataUpperRange(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataUpperRange"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3253,11 +3255,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getDcmDspDiagnosisRepresentationDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"])
+							def BigInteger getDcmDspDiagnosisRepresentationDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"])
 							}
 							
-							def void setDcmDspDiagnosisRepresentationDataValue(Integer value){
+							def void setDcmDspDiagnosisRepresentationDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3269,11 +3271,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspInternalDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspInternalDataValue"])
+							def BigInteger getDcmDspInternalDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspInternalDataValue"])
 							}
 							
-							def void setDcmDspInternalDataValue(Integer value){
+							def void setDcmDspInternalDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspInternalDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3353,11 +3355,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getDcmDspDiagnosisRepresentationDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"])
+							def BigInteger getDcmDspDiagnosisRepresentationDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"])
 							}
 							
-							def void setDcmDspDiagnosisRepresentationDataValue(Integer value){
+							def void setDcmDspDiagnosisRepresentationDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3369,11 +3371,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspInternalDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspInternalDataValue"])
+							def BigInteger getDcmDspInternalDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspInternalDataValue"])
 							}
 							
-							def void setDcmDspInternalDataValue(Integer value){
+							def void setDcmDspInternalDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspInternalDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -3536,11 +3538,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspDataScalingInfoSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataScalingInfoSize"])
+				def BigInteger getDcmDspDataScalingInfoSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataScalingInfoSize"])
 				}
 				
-				def void setDcmDspDataScalingInfoSize(Integer value){
+				def void setDcmDspDataScalingInfoSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataScalingInfoSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -3576,11 +3578,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspDidIdentifier(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidIdentifier"])
+				def BigInteger getDcmDspDidIdentifier(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidIdentifier"])
 				}
 				
-				def void setDcmDspDidIdentifier(Integer value){
+				def void setDcmDspDidIdentifier(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidIdentifier"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -3715,11 +3717,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspDidDataPos(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidDataPos"])
+					def BigInteger getDcmDspDidDataPos(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidDataPos"])
 					}
 					
-					def void setDcmDspDidDataPos(Integer value){
+					def void setDcmDspDidDataPos(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidDataPos"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -3768,11 +3770,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspDDDIDMaxElements(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDDDIDMaxElements"])
+				def BigInteger getDcmDspDDDIDMaxElements(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDDDIDMaxElements"])
 				}
 				
-				def void setDcmDspDDDIDMaxElements(Integer value){
+				def void setDcmDspDDDIDMaxElements(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDDDIDMaxElements"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4218,11 +4220,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmDspDidRangeIdentifierLowerLimit(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeIdentifierLowerLimit"])
+				def BigInteger getDcmDspDidRangeIdentifierLowerLimit(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeIdentifierLowerLimit"])
 				}
 				
-				def void setDcmDspDidRangeIdentifierLowerLimit(Integer value){
+				def void setDcmDspDidRangeIdentifierLowerLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeIdentifierLowerLimit"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4234,11 +4236,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmDspDidRangeIdentifierUpperLimit(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeIdentifierUpperLimit"])
+				def BigInteger getDcmDspDidRangeIdentifierUpperLimit(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeIdentifierUpperLimit"])
 				}
 				
-				def void setDcmDspDidRangeIdentifierUpperLimit(Integer value){
+				def void setDcmDspDidRangeIdentifierUpperLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeIdentifierUpperLimit"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4266,11 +4268,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmDspDidRangeMaxDataLength(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeMaxDataLength"])
+				def BigInteger getDcmDspDidRangeMaxDataLength(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeMaxDataLength"])
 				}
 				
-				def void setDcmDspDidRangeMaxDataLength(Integer value){
+				def void setDcmDspDidRangeMaxDataLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeMaxDataLength"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4415,7 +4417,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def List<Integer> getDcmDspSupportedAddressAndLengthFormatIdentifiers(){
+					def List<BigInteger> getDcmDspSupportedAddressAndLengthFormatIdentifiers(){
 						val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 							override protected accept(EcucNumericalParamValue item) {
 								return accept(item, typeof(GConfigParameter), "DcmDspSupportedAddressAndLengthFormatIdentifier")
@@ -4424,7 +4426,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "DcmDspSupportedAddressAndLengthFormatIdentifier"]
-							return new IntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(Integer), parameterDef)
+							return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
 						}
 					}
 					
@@ -4452,11 +4454,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspMemoryIdValue(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMemoryIdValue"])
+					def BigInteger getDcmDspMemoryIdValue(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMemoryIdValue"])
 					}
 					
-					def void setDcmDspMemoryIdValue(Integer value){
+					def void setDcmDspMemoryIdValue(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMemoryIdValue"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -4528,11 +4530,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
-						def Integer getDcmDspReadMemoryRangeHigh(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspReadMemoryRangeHigh"])
+						def BigInteger getDcmDspReadMemoryRangeHigh(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspReadMemoryRangeHigh"])
 						}
 						
-						def void setDcmDspReadMemoryRangeHigh(Integer value){
+						def void setDcmDspReadMemoryRangeHigh(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspReadMemoryRangeHigh"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -4544,11 +4546,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getDcmDspReadMemoryRangeLow(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspReadMemoryRangeLow"])
+						def BigInteger getDcmDspReadMemoryRangeLow(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspReadMemoryRangeLow"])
 						}
 						
-						def void setDcmDspReadMemoryRangeLow(Integer value){
+						def void setDcmDspReadMemoryRangeLow(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspReadMemoryRangeLow"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -4628,11 +4630,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
-						def Integer getDcmDspWriteMemoryRangeHigh(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspWriteMemoryRangeHigh"])
+						def BigInteger getDcmDspWriteMemoryRangeHigh(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspWriteMemoryRangeHigh"])
 						}
 						
-						def void setDcmDspWriteMemoryRangeHigh(Integer value){
+						def void setDcmDspWriteMemoryRangeHigh(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspWriteMemoryRangeHigh"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -4644,11 +4646,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 						}
 						
-						def Integer getDcmDspWriteMemoryRangeLow(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspWriteMemoryRangeLow"])
+						def BigInteger getDcmDspWriteMemoryRangeLow(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspWriteMemoryRangeLow"])
 						}
 						
-						def void setDcmDspWriteMemoryRangeLow(Integer value){
+						def void setDcmDspWriteMemoryRangeLow(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspWriteMemoryRangeLow"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -4732,11 +4734,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspMaxPeriodicDidScheduler(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidScheduler"])
+				def BigInteger getDcmDspMaxPeriodicDidScheduler(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidScheduler"])
 				}
 				
-				def void setDcmDspMaxPeriodicDidScheduler(Integer value){
+				def void setDcmDspMaxPeriodicDidScheduler(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidScheduler"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4772,11 +4774,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getDcmDspPeriodicTransmissionFastRate(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionFastRate"])
+				def BigDecimal getDcmDspPeriodicTransmissionFastRate(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionFastRate"])
 				}
 				
-				def void setDcmDspPeriodicTransmissionFastRate(Float value){
+				def void setDcmDspPeriodicTransmissionFastRate(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionFastRate"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4788,11 +4790,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getDcmDspPeriodicTransmissionMediumRate(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionMediumRate"])
+				def BigDecimal getDcmDspPeriodicTransmissionMediumRate(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionMediumRate"])
 				}
 				
-				def void setDcmDspPeriodicTransmissionMediumRate(Float value){
+				def void setDcmDspPeriodicTransmissionMediumRate(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionMediumRate"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4804,11 +4806,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Float getDcmDspPeriodicTransmissionSlowRate(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionSlowRate"])
+				def BigDecimal getDcmDspPeriodicTransmissionSlowRate(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionSlowRate"])
 				}
 				
-				def void setDcmDspPeriodicTransmissionSlowRate(Float value){
+				def void setDcmDspPeriodicTransmissionSlowRate(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPeriodicTransmissionSlowRate"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4844,11 +4846,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspPidIdentifier(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidIdentifier"])
+				def BigInteger getDcmDspPidIdentifier(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidIdentifier"])
 				}
 				
-				def void setDcmDspPidIdentifier(Integer value){
+				def void setDcmDspPidIdentifier(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidIdentifier"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4895,11 +4897,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getDcmDspPidSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSize"])
+				def BigInteger getDcmDspPidSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSize"])
 				}
 				
-				def void setDcmDspPidSize(Integer value){
+				def void setDcmDspPidSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4987,11 +4989,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspPidDataPos(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataPos"])
+					def BigInteger getDcmDspPidDataPos(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataPos"])
 					}
 					
-					def void setDcmDspPidDataPos(Integer value){
+					def void setDcmDspPidDataPos(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataPos"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -5003,11 +5005,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspPidDataSize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSize"])
+					def BigInteger getDcmDspPidDataSize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSize"])
 					}
 					
-					def void setDcmDspPidDataSize(Integer value){
+					def void setDcmDspPidDataSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -5068,11 +5070,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
-						def Integer getDcmDspPidDataSupportInfoBit(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSupportInfoBit"])
+						def BigInteger getDcmDspPidDataSupportInfoBit(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSupportInfoBit"])
 						}
 						
-						def void setDcmDspPidDataSupportInfoBit(Integer value){
+						def void setDcmDspPidDataSupportInfoBit(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSupportInfoBit"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -5323,11 +5325,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspPidSupportInfoLen(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSupportInfoLen"])
+					def BigInteger getDcmDspPidSupportInfoLen(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSupportInfoLen"])
 					}
 					
-					def void setDcmDspPidSupportInfoLen(Integer value){
+					def void setDcmDspPidSupportInfoLen(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSupportInfoLen"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -5339,11 +5341,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspPidSupportInfoPos(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSupportInfoPos"])
+					def BigInteger getDcmDspPidSupportInfoPos(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSupportInfoPos"])
 					}
 					
-					def void setDcmDspPidSupportInfoPos(Integer value){
+					def void setDcmDspPidSupportInfoPos(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidSupportInfoPos"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -5381,11 +5383,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspRequestControlInBufferSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlInBufferSize"])
+				def BigInteger getDcmDspRequestControlInBufferSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlInBufferSize"])
 				}
 				
-				def void setDcmDspRequestControlInBufferSize(Integer value){
+				def void setDcmDspRequestControlInBufferSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlInBufferSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5397,11 +5399,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmDspRequestControlOutBufferSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlOutBufferSize"])
+				def BigInteger getDcmDspRequestControlOutBufferSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlOutBufferSize"])
 				}
 				
-				def void setDcmDspRequestControlOutBufferSize(Integer value){
+				def void setDcmDspRequestControlOutBufferSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlOutBufferSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5413,11 +5415,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmDspRequestControlTestId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlTestId"])
+				def BigInteger getDcmDspRequestControlTestId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlTestId"])
 				}
 				
-				def void setDcmDspRequestControlTestId(Integer value){
+				def void setDcmDspRequestControlTestId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestControlTestId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5453,11 +5455,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmRequestFileTransferFileSizeParameterLength(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferFileSizeParameterLength"])
+				def BigInteger getDcmRequestFileTransferFileSizeParameterLength(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferFileSizeParameterLength"])
 				}
 				
-				def void setDcmRequestFileTransferFileSizeParameterLength(Integer value){
+				def void setDcmRequestFileTransferFileSizeParameterLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferFileSizeParameterLength"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5469,11 +5471,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDcmRequestFileTransferLengthFormatIdentifier(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferLengthFormatIdentifier"])
+				def BigInteger getDcmRequestFileTransferLengthFormatIdentifier(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferLengthFormatIdentifier"])
 				}
 				
-				def void setDcmRequestFileTransferLengthFormatIdentifier(Integer value){
+				def void setDcmRequestFileTransferLengthFormatIdentifier(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferLengthFormatIdentifier"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5509,11 +5511,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Float getDcmDspRoeInterMessageTime(){
-					EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeInterMessageTime"])
+				def BigDecimal getDcmDspRoeInterMessageTime(){
+					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeInterMessageTime"])
 				}
 				
-				def void setDcmDspRoeInterMessageTime(Float value){
+				def void setDcmDspRoeInterMessageTime(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeInterMessageTime"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5585,11 +5587,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspRoeEventId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeEventId"])
+					def BigInteger getDcmDspRoeEventId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeEventId"])
 					}
 					
-					def void setDcmDspRoeEventId(Integer value){
+					def void setDcmDspRoeEventId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeEventId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -5841,11 +5843,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspRoutineIdentifier(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineIdentifier"])
+				def BigInteger getDcmDspRoutineIdentifier(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineIdentifier"])
 				}
 				
-				def void setDcmDspRoutineIdentifier(Integer value){
+				def void setDcmDspRoutineIdentifier(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineIdentifier"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -6083,11 +6085,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(paramValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalLength(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
+							def BigInteger getDcmDspRoutineSignalLength(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
 							}
 							
-							def void setDcmDspRoutineSignalLength(Integer value){
+							def void setDcmDspRoutineSignalLength(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6099,11 +6101,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalPos(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
+							def BigInteger getDcmDspRoutineSignalPos(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
 							}
 							
-							def void setDcmDspRoutineSignalPos(Integer value){
+							def void setDcmDspRoutineSignalPos(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6320,11 +6322,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(paramValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalLength(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
+							def BigInteger getDcmDspRoutineSignalLength(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
 							}
 							
-							def void setDcmDspRoutineSignalLength(Integer value){
+							def void setDcmDspRoutineSignalLength(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6336,11 +6338,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalPos(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
+							def BigInteger getDcmDspRoutineSignalPos(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
 							}
 							
-							def void setDcmDspRoutineSignalPos(Integer value){
+							def void setDcmDspRoutineSignalPos(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6499,11 +6501,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(paramValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalLength(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
+							def BigInteger getDcmDspRoutineSignalLength(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
 							}
 							
-							def void setDcmDspRoutineSignalLength(Integer value){
+							def void setDcmDspRoutineSignalLength(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6515,11 +6517,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalPos(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
+							def BigInteger getDcmDspRoutineSignalPos(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
 							}
 							
-							def void setDcmDspRoutineSignalPos(Integer value){
+							def void setDcmDspRoutineSignalPos(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6736,11 +6738,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(paramValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalLength(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
+							def BigInteger getDcmDspRoutineSignalLength(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
 							}
 							
-							def void setDcmDspRoutineSignalLength(Integer value){
+							def void setDcmDspRoutineSignalLength(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6752,11 +6754,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalPos(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
+							def BigInteger getDcmDspRoutineSignalPos(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
 							}
 							
-							def void setDcmDspRoutineSignalPos(Integer value){
+							def void setDcmDspRoutineSignalPos(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6915,11 +6917,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(paramValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalLength(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
+							def BigInteger getDcmDspRoutineSignalLength(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"])
 							}
 							
-							def void setDcmDspRoutineSignalLength(Integer value){
+							def void setDcmDspRoutineSignalLength(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalLength"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -6931,11 +6933,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDcmDspRoutineSignalPos(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
+							def BigInteger getDcmDspRoutineSignalPos(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"])
 							}
 							
-							def void setDcmDspRoutineSignalPos(Integer value){
+							def void setDcmDspRoutineSignalPos(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineSignalPos"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -7063,11 +7065,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspSecurityADRSize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityADRSize"])
+					def BigInteger getDcmDspSecurityADRSize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityADRSize"])
 					}
 					
-					def void setDcmDspSecurityADRSize(Integer value){
+					def void setDcmDspSecurityADRSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityADRSize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7111,11 +7113,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmDspSecurityDelayTime(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityDelayTime"])
+					def BigDecimal getDcmDspSecurityDelayTime(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityDelayTime"])
 					}
 					
-					def void setDcmDspSecurityDelayTime(Float value){
+					def void setDcmDspSecurityDelayTime(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityDelayTime"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7127,11 +7129,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmDspSecurityDelayTimeOnBoot(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityDelayTimeOnBoot"])
+					def BigDecimal getDcmDspSecurityDelayTimeOnBoot(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityDelayTimeOnBoot"])
 					}
 					
-					def void setDcmDspSecurityDelayTimeOnBoot(Float value){
+					def void setDcmDspSecurityDelayTimeOnBoot(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityDelayTimeOnBoot"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7175,11 +7177,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspSecurityKeySize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityKeySize"])
+					def BigInteger getDcmDspSecurityKeySize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityKeySize"])
 					}
 					
-					def void setDcmDspSecurityKeySize(Integer value){
+					def void setDcmDspSecurityKeySize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityKeySize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7191,11 +7193,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspSecurityLevel(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityLevel"])
+					def BigInteger getDcmDspSecurityLevel(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityLevel"])
 					}
 					
-					def void setDcmDspSecurityLevel(Integer value){
+					def void setDcmDspSecurityLevel(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityLevel"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7207,11 +7209,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspSecurityNumAttDelay(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityNumAttDelay"])
+					def BigInteger getDcmDspSecurityNumAttDelay(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityNumAttDelay"])
 					}
 					
-					def void setDcmDspSecurityNumAttDelay(Integer value){
+					def void setDcmDspSecurityNumAttDelay(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityNumAttDelay"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7223,11 +7225,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspSecuritySeedSize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecuritySeedSize"])
+					def BigInteger getDcmDspSecuritySeedSize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecuritySeedSize"])
 					}
 					
-					def void setDcmDspSecuritySeedSize(Integer value){
+					def void setDcmDspSecuritySeedSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecuritySeedSize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7390,11 +7392,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(paramValue, value)
 					}
 					
-					def Integer getDcmDspSessionLevel(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionLevel"])
+					def BigInteger getDcmDspSessionLevel(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionLevel"])
 					}
 					
-					def void setDcmDspSessionLevel(Integer value){
+					def void setDcmDspSessionLevel(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionLevel"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7406,11 +7408,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmDspSessionP2ServerMax(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionP2ServerMax"])
+					def BigDecimal getDcmDspSessionP2ServerMax(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionP2ServerMax"])
 					}
 					
-					def void setDcmDspSessionP2ServerMax(Float value){
+					def void setDcmDspSessionP2ServerMax(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionP2ServerMax"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7422,11 +7424,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Float getDcmDspSessionP2StarServerMax(){
-						EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionP2StarServerMax"])
+					def BigDecimal getDcmDspSessionP2StarServerMax(){
+						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionP2StarServerMax"])
 					}
 					
-					def void setDcmDspSessionP2StarServerMax(Float value){
+					def void setDcmDspSessionP2StarServerMax(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSessionP2StarServerMax"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7464,11 +7466,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDcmDspVehInfoInfoType(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoInfoType"])
+				def BigInteger getDcmDspVehInfoInfoType(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoInfoType"])
 				}
 				
-				def void setDcmDspVehInfoInfoType(Integer value){
+				def void setDcmDspVehInfoInfoType(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoInfoType"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -7521,11 +7523,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getDcmDspVehInfoDataOrder(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataOrder"])
+					def BigInteger getDcmDspVehInfoDataOrder(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataOrder"])
 					}
 					
-					def void setDcmDspVehInfoDataOrder(Integer value){
+					def void setDcmDspVehInfoDataOrder(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataOrder"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7553,11 +7555,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getDcmDspVehInfoDataSize(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataSize"])
+					def BigInteger getDcmDspVehInfoDataSize(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataSize"])
 					}
 					
-					def void setDcmDspVehInfoDataSize(Integer value){
+					def void setDcmDspVehInfoDataSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataSize"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -7629,11 +7631,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getDcmPagedBufferTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmPagedBufferTimeout"])
+			def BigDecimal getDcmPagedBufferTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmPagedBufferTimeout"])
 			}
 			
-			def void setDcmPagedBufferTimeout(Float value){
+			def void setDcmPagedBufferTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmPagedBufferTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -7841,11 +7843,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getDcmModeRuleNrcValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmModeRuleNrcValue"])
+				def BigInteger getDcmModeRuleNrcValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmModeRuleNrcValue"])
 				}
 				
-				def void setDcmModeRuleNrcValue(Integer value){
+				def void setDcmModeRuleNrcValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmModeRuleNrcValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -7946,11 +7948,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getDcmTaskTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTaskTime"])
+		def BigDecimal getDcmTaskTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTaskTime"])
 		}
 		
-		def void setDcmTaskTime(Float value){
+		def void setDcmTaskTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmTaskTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

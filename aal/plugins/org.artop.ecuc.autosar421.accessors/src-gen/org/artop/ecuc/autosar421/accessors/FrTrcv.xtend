@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class FrTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -114,11 +116,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getFrTrcvChannelId(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelId"])
+		def BigInteger getFrTrcvChannelId(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelId"])
 		}
 		
-		def void setFrTrcvChannelId(Integer value){
+		def void setFrTrcvChannelId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelId"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -504,11 +506,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getFrTrcvBranchId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvBranchId"])
+			def BigInteger getFrTrcvBranchId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvBranchId"])
 			}
 			
-			def void setFrTrcvBranchId(Integer value){
+			def void setFrTrcvBranchId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvBranchId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -671,11 +673,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFrTrcvIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvIndex"])
+		def BigInteger getFrTrcvIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvIndex"])
 		}
 		
-		def void setFrTrcvIndex(Integer value){
+		def void setFrTrcvIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -687,11 +689,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getFrTrcvMainFunctionCycleTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvMainFunctionCycleTime"])
+		def BigDecimal getFrTrcvMainFunctionCycleTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvMainFunctionCycleTime"])
 		}
 		
-		def void setFrTrcvMainFunctionCycleTime(Float value){
+		def void setFrTrcvMainFunctionCycleTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvMainFunctionCycleTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -703,11 +705,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getFrTrcvRetryCountInInit(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvRetryCountInInit"])
+		def BigInteger getFrTrcvRetryCountInInit(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvRetryCountInInit"])
 		}
 		
-		def void setFrTrcvRetryCountInInit(Integer value){
+		def void setFrTrcvRetryCountInInit(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvRetryCountInInit"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -752,11 +754,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Float getFrTrcvWaitTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWaitTime"])
+		def BigDecimal getFrTrcvWaitTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWaitTime"])
 		}
 		
-		def void setFrTrcvWaitTime(Float value){
+		def void setFrTrcvWaitTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWaitTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

@@ -24,18 +24,20 @@ import java.util.List
 import org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
+import java.math.BigInteger
+import java.math.BigDecimal
 
-class IntegerValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, Integer> {
+class BigIntegerValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, BigInteger> {
 	
 	private GConfigParameter parameterDef
 	
-	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<Integer> targetType, GConfigParameter parameterDef) {
+	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<BigInteger> targetType, GConfigParameter parameterDef) {
 		super(delegateList, wrapperType, targetType)
 		
 		this.parameterDef = parameterDef
 	}
 	
-	override protected wrap(Integer object) throws CoreException {
+	override protected wrap(BigInteger object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
 		parameterValue.gSetDefinition(parameterDef)
 		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
@@ -43,21 +45,21 @@ class IntegerValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalP
 	}
 	
 	override protected unwrap(EcucNumericalParamValue parameterValue) {
-		EcucValueAccessorUtil.toInteger(parameterValue.value?.mixedText)
+		EcucValueAccessorUtil.toBigInteger(parameterValue.value?.mixedText)
 	}
 }
 
-class FloatValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, Float> {
+class BigDecimalValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalParamValue, BigDecimal> {
 	
 	private GConfigParameter parameterDef
 	
-	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<Float> targetType, GConfigParameter parameterDef) {
+	new(List<EcucNumericalParamValue> delegateList, Class<EcucNumericalParamValue> wrapperType, Class<BigDecimal> targetType, GConfigParameter parameterDef) {
 		super(delegateList, wrapperType, targetType)
 		
 		this.parameterDef = parameterDef
 	}
 	
-	override protected wrap(Float object) throws CoreException {
+	override protected wrap(BigDecimal object) throws CoreException {
 		val parameterValue = Autosar40Factory.eINSTANCE.createEcucNumericalParamValue
 		parameterValue.gSetDefinition(parameterDef)
 		EcucValueAccessor421Util.setParameterValue(parameterValue, object)
@@ -65,7 +67,7 @@ class FloatValueUnwrappingEList extends AbstractUnwrappingEList<EcucNumericalPar
 	}
 	
 	override protected unwrap(EcucNumericalParamValue parameterValue) {
-		EcucValueAccessorUtil.toFloat(parameterValue.value?.mixedText)
+		EcucValueAccessorUtil.toBigDecimal(parameterValue.value?.mixedText)
 	}
 }
 

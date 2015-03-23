@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class EthSwt implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -114,11 +116,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getEthSwtIdx(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIdx"])
+		def BigInteger getEthSwtIdx(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIdx"])
 		}
 		
-		def void setEthSwtIdx(Integer value){
+		def void setEthSwtIdx(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIdx"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -284,11 +286,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getEthSwtPortIdx(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIdx"])
+			def BigInteger getEthSwtPortIdx(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIdx"])
 			}
 			
-			def void setEthSwtPortIdx(Integer value){
+			def void setEthSwtPortIdx(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIdx"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -545,7 +547,7 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def List<Integer> getEthSwtPortFifoTrafficClassAssignments(){
+					def List<BigInteger> getEthSwtPortFifoTrafficClassAssignments(){
 						val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 							override protected accept(EcucNumericalParamValue item) {
 								return accept(item, typeof(GConfigParameter), "EthSwtPortFifoTrafficClassAssignment")
@@ -554,7 +556,7 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "EthSwtPortFifoTrafficClassAssignment"]
-							return new IntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(Integer), parameterDef)
+							return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
 						}
 					}
 					
@@ -658,11 +660,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
-						def Integer getEthSwtPortSchedulerPredecessorOrder(){
-							EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortSchedulerPredecessorOrder"])
+						def BigInteger getEthSwtPortSchedulerPredecessorOrder(){
+							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortSchedulerPredecessorOrder"])
 						}
 						
-						def void setEthSwtPortSchedulerPredecessorOrder(Integer value){
+						def void setEthSwtPortSchedulerPredecessorOrder(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortSchedulerPredecessorOrder"]
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
@@ -701,11 +703,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getEthSwtPortShaperIdleSlope(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortShaperIdleSlope"])
+					def BigInteger getEthSwtPortShaperIdleSlope(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortShaperIdleSlope"])
 					}
 					
-					def void setEthSwtPortShaperIdleSlope(Integer value){
+					def void setEthSwtPortShaperIdleSlope(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortShaperIdleSlope"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -752,11 +754,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getEthSwtPortVlanDefaultPriority(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortVlanDefaultPriority"])
+					def BigInteger getEthSwtPortVlanDefaultPriority(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortVlanDefaultPriority"])
 					}
 					
-					def void setEthSwtPortVlanDefaultPriority(Integer value){
+					def void setEthSwtPortVlanDefaultPriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortVlanDefaultPriority"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -768,11 +770,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getEthSwtPortVlanForwardingId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortVlanForwardingId"])
+					def BigInteger getEthSwtPortVlanForwardingId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortVlanForwardingId"])
 					}
 					
-					def void setEthSwtPortVlanForwardingId(Integer value){
+					def void setEthSwtPortVlanForwardingId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortVlanForwardingId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -845,11 +847,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getEthSwtPortIngressVlanModification(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIngressVlanModification"])
+				def BigInteger getEthSwtPortIngressVlanModification(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIngressVlanModification"])
 				}
 				
-				def void setEthSwtPortIngressVlanModification(Integer value){
+				def void setEthSwtPortIngressVlanModification(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIngressVlanModification"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -861,11 +863,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getEthSwtPortTrafficClassAssignment(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortTrafficClassAssignment"])
+				def BigInteger getEthSwtPortTrafficClassAssignment(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortTrafficClassAssignment"])
 				}
 				
-				def void setEthSwtPortTrafficClassAssignment(Integer value){
+				def void setEthSwtPortTrafficClassAssignment(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortTrafficClassAssignment"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -937,11 +939,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getEthSwtPriorityRegenerationIngressPriority(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationIngressPriority"])
+					def BigInteger getEthSwtPriorityRegenerationIngressPriority(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationIngressPriority"])
 					}
 					
-					def void setEthSwtPriorityRegenerationIngressPriority(Integer value){
+					def void setEthSwtPriorityRegenerationIngressPriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationIngressPriority"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -953,11 +955,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getEthSwtPriorityRegenerationRegeneratedPriority(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationRegeneratedPriority"])
+					def BigInteger getEthSwtPriorityRegenerationRegeneratedPriority(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationRegeneratedPriority"])
 					}
 					
-					def void setEthSwtPriorityRegenerationRegeneratedPriority(Integer value){
+					def void setEthSwtPriorityRegenerationRegeneratedPriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationRegeneratedPriority"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -993,11 +995,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getEthSwtPriorityTrafficClassAssignmentPriority(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityTrafficClassAssignmentPriority"])
+					def BigInteger getEthSwtPriorityTrafficClassAssignmentPriority(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityTrafficClassAssignmentPriority"])
 					}
 					
-					def void setEthSwtPriorityTrafficClassAssignmentPriority(Integer value){
+					def void setEthSwtPriorityTrafficClassAssignmentPriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityTrafficClassAssignmentPriority"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1009,11 +1011,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getEthSwtPriorityTrafficClassAssignmentTrafficClass(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityTrafficClassAssignmentTrafficClass"])
+					def BigInteger getEthSwtPriorityTrafficClassAssignmentTrafficClass(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityTrafficClassAssignmentTrafficClass"])
 					}
 					
-					def void setEthSwtPriorityTrafficClassAssignmentTrafficClass(Integer value){
+					def void setEthSwtPriorityTrafficClassAssignmentTrafficClass(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityTrafficClassAssignmentTrafficClass"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -1314,11 +1316,11 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getEthSwtIndex(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIndex"])
+		def BigInteger getEthSwtIndex(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIndex"])
 		}
 		
-		def void setEthSwtIndex(Integer value){
+		def void setEthSwtIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIndex"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition

@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class CanTSyn implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -130,11 +132,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanTSynMainFunctionPeriod(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynMainFunctionPeriod"])
+		def BigDecimal getCanTSynMainFunctionPeriod(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynMainFunctionPeriod"])
 		}
 		
-		def void setCanTSynMainFunctionPeriod(Float value){
+		def void setCanTSynMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynMainFunctionPeriod"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -261,11 +263,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTSynGlobalTimeFupDataIDListIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFupDataIDListIndex"])
+				def BigInteger getCanTSynGlobalTimeFupDataIDListIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFupDataIDListIndex"])
 				}
 				
-				def void setCanTSynGlobalTimeFupDataIDListIndex(Integer value){
+				def void setCanTSynGlobalTimeFupDataIDListIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFupDataIDListIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -277,11 +279,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTSynGlobalTimeFupDataIDListValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFupDataIDListValue"])
+				def BigInteger getCanTSynGlobalTimeFupDataIDListValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFupDataIDListValue"])
 				}
 				
-				def void setCanTSynGlobalTimeFupDataIDListValue(Integer value){
+				def void setCanTSynGlobalTimeFupDataIDListValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFupDataIDListValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -360,11 +362,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTSynGlobalTimeOfnsDataIDListIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfnsDataIDListIndex"])
+				def BigInteger getCanTSynGlobalTimeOfnsDataIDListIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfnsDataIDListIndex"])
 				}
 				
-				def void setCanTSynGlobalTimeOfnsDataIDListIndex(Integer value){
+				def void setCanTSynGlobalTimeOfnsDataIDListIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfnsDataIDListIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -376,11 +378,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTSynGlobalTimeOfnsDataIDListValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfnsDataIDListValue"])
+				def BigInteger getCanTSynGlobalTimeOfnsDataIDListValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfnsDataIDListValue"])
 				}
 				
-				def void setCanTSynGlobalTimeOfnsDataIDListValue(Integer value){
+				def void setCanTSynGlobalTimeOfnsDataIDListValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfnsDataIDListValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -459,11 +461,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTSynGlobalTimeOfsDataIDListIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfsDataIDListIndex"])
+				def BigInteger getCanTSynGlobalTimeOfsDataIDListIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfsDataIDListIndex"])
 				}
 				
-				def void setCanTSynGlobalTimeOfsDataIDListIndex(Integer value){
+				def void setCanTSynGlobalTimeOfsDataIDListIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfsDataIDListIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -475,11 +477,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTSynGlobalTimeOfsDataIDListValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfsDataIDListValue"])
+				def BigInteger getCanTSynGlobalTimeOfsDataIDListValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfsDataIDListValue"])
 				}
 				
-				def void setCanTSynGlobalTimeOfsDataIDListValue(Integer value){
+				def void setCanTSynGlobalTimeOfsDataIDListValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeOfsDataIDListValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -558,11 +560,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTSynGlobalTimeSyncDataIDListIndex(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSyncDataIDListIndex"])
+				def BigInteger getCanTSynGlobalTimeSyncDataIDListIndex(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSyncDataIDListIndex"])
 				}
 				
-				def void setCanTSynGlobalTimeSyncDataIDListIndex(Integer value){
+				def void setCanTSynGlobalTimeSyncDataIDListIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSyncDataIDListIndex"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -574,11 +576,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getCanTSynGlobalTimeSyncDataIDListValue(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSyncDataIDListValue"])
+				def BigInteger getCanTSynGlobalTimeSyncDataIDListValue(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSyncDataIDListValue"])
 				}
 				
-				def void setCanTSynGlobalTimeSyncDataIDListValue(Integer value){
+				def void setCanTSynGlobalTimeSyncDataIDListValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSyncDataIDListValue"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -617,11 +619,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getCanTSynGlobalTimeDomainId(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeDomainId"])
+		def BigInteger getCanTSynGlobalTimeDomainId(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeDomainId"])
 		}
 		
-		def void setCanTSynGlobalTimeDomainId(Integer value){
+		def void setCanTSynGlobalTimeDomainId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeDomainId"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -633,11 +635,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Float getCanTSynGlobalTimeFollowUpTimeout(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFollowUpTimeout"])
+		def BigDecimal getCanTSynGlobalTimeFollowUpTimeout(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFollowUpTimeout"])
 		}
 		
-		def void setCanTSynGlobalTimeFollowUpTimeout(Float value){
+		def void setCanTSynGlobalTimeFollowUpTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeFollowUpTimeout"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -649,11 +651,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getCanTSynGlobalTimeSequenceCounterJumpWidth(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSequenceCounterJumpWidth"])
+		def BigInteger getCanTSynGlobalTimeSequenceCounterJumpWidth(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSequenceCounterJumpWidth"])
 		}
 		
-		def void setCanTSynGlobalTimeSequenceCounterJumpWidth(Integer value){
+		def void setCanTSynGlobalTimeSequenceCounterJumpWidth(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSequenceCounterJumpWidth"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -749,11 +751,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Float getCanTSynGlobalTimeTxFollowUpOffset(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeTxFollowUpOffset"])
+			def BigDecimal getCanTSynGlobalTimeTxFollowUpOffset(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeTxFollowUpOffset"])
 			}
 			
-			def void setCanTSynGlobalTimeTxFollowUpOffset(Float value){
+			def void setCanTSynGlobalTimeTxFollowUpOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeTxFollowUpOffset"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -765,11 +767,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanTSynGlobalTimeTxPeriod(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeTxPeriod"])
+			def BigDecimal getCanTSynGlobalTimeTxPeriod(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeTxPeriod"])
 			}
 			
-			def void setCanTSynGlobalTimeTxPeriod(Float value){
+			def void setCanTSynGlobalTimeTxPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeTxPeriod"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -781,11 +783,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getCanTSynMasterConfirmationTimeout(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynMasterConfirmationTimeout"])
+			def BigDecimal getCanTSynMasterConfirmationTimeout(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynMasterConfirmationTimeout"])
 			}
 			
-			def void setCanTSynMasterConfirmationTimeout(Float value){
+			def void setCanTSynMasterConfirmationTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynMasterConfirmationTimeout"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -828,11 +830,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTSynGlobalTimeMasterConfirmationHandleId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeMasterConfirmationHandleId"])
+				def BigInteger getCanTSynGlobalTimeMasterConfirmationHandleId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeMasterConfirmationHandleId"])
 				}
 				
-				def void setCanTSynGlobalTimeMasterConfirmationHandleId(Integer value){
+				def void setCanTSynGlobalTimeMasterConfirmationHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeMasterConfirmationHandleId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -947,11 +949,11 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getCanTSynGlobalTimeSlaveHandleId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSlaveHandleId"])
+				def BigInteger getCanTSynGlobalTimeSlaveHandleId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSlaveHandleId"])
 				}
 				
-				def void setCanTSynGlobalTimeSlaveHandleId(Integer value){
+				def void setCanTSynGlobalTimeSlaveHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSlaveHandleId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition

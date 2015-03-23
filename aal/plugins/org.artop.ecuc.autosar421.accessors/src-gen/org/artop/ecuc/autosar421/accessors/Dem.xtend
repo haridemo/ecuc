@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class Dem implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -395,11 +397,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemDTCFunctionalUnit(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCFunctionalUnit"])
+			def BigInteger getDemDTCFunctionalUnit(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCFunctionalUnit"])
 			}
 			
-			def void setDemDTCFunctionalUnit(Integer value){
+			def void setDemDTCFunctionalUnit(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCFunctionalUnit"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -448,11 +450,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getDemDtcValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"])
+			def BigInteger getDemDtcValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"])
 			}
 			
-			def void setDemDtcValue(Integer value){
+			def void setDemDtcValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -565,11 +567,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemAgingCycleCounterThreshold(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThreshold"])
+			def BigInteger getDemAgingCycleCounterThreshold(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThreshold"])
 			}
 			
-			def void setDemAgingCycleCounterThreshold(Integer value){
+			def void setDemAgingCycleCounterThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -581,11 +583,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemAgingCycleCounterThresholdForTFSLC(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"])
+			def BigInteger getDemAgingCycleCounterThresholdForTFSLC(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"])
 			}
 			
-			def void setDemAgingCycleCounterThresholdForTFSLC(Integer value){
+			def void setDemAgingCycleCounterThresholdForTFSLC(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -597,11 +599,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDTCPriority(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCPriority"])
+			def BigInteger getDemDTCPriority(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCPriority"])
 			}
 			
-			def void setDemDTCPriority(Integer value){
+			def void setDemDTCPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCPriority"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -646,11 +648,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getDemEventMemoryEntryFdcThresholdStorageValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"])
+			def BigInteger getDemEventMemoryEntryFdcThresholdStorageValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"])
 			}
 			
-			def void setDemEventMemoryEntryFdcThresholdStorageValue(Integer value){
+			def void setDemEventMemoryEntryFdcThresholdStorageValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -678,11 +680,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemMaxNumberFreezeFrameRecords(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberFreezeFrameRecords"])
+			def BigInteger getDemMaxNumberFreezeFrameRecords(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberFreezeFrameRecords"])
 			}
 			
-			def void setDemMaxNumberFreezeFrameRecords(Integer value){
+			def void setDemMaxNumberFreezeFrameRecords(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberFreezeFrameRecords"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -840,11 +842,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getDemDebounceCounterDecrementStepSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterDecrementStepSize"])
+			def BigInteger getDemDebounceCounterDecrementStepSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterDecrementStepSize"])
 			}
 			
-			def void setDemDebounceCounterDecrementStepSize(Integer value){
+			def void setDemDebounceCounterDecrementStepSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterDecrementStepSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -856,11 +858,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDebounceCounterFailedThreshold(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterFailedThreshold"])
+			def BigInteger getDemDebounceCounterFailedThreshold(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterFailedThreshold"])
 			}
 			
-			def void setDemDebounceCounterFailedThreshold(Integer value){
+			def void setDemDebounceCounterFailedThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterFailedThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -872,11 +874,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDebounceCounterIncrementStepSize(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterIncrementStepSize"])
+			def BigInteger getDemDebounceCounterIncrementStepSize(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterIncrementStepSize"])
 			}
 			
-			def void setDemDebounceCounterIncrementStepSize(Integer value){
+			def void setDemDebounceCounterIncrementStepSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterIncrementStepSize"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -904,11 +906,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDebounceCounterJumpDownValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDownValue"])
+			def BigInteger getDemDebounceCounterJumpDownValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDownValue"])
 			}
 			
-			def void setDemDebounceCounterJumpDownValue(Integer value){
+			def void setDemDebounceCounterJumpDownValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDownValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -936,11 +938,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDebounceCounterJumpUpValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUpValue"])
+			def BigInteger getDemDebounceCounterJumpUpValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUpValue"])
 			}
 			
-			def void setDemDebounceCounterJumpUpValue(Integer value){
+			def void setDemDebounceCounterJumpUpValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUpValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -952,11 +954,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDebounceCounterPassedThreshold(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterPassedThreshold"])
+			def BigInteger getDemDebounceCounterPassedThreshold(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterPassedThreshold"])
 			}
 			
-			def void setDemDebounceCounterPassedThreshold(Integer value){
+			def void setDemDebounceCounterPassedThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterPassedThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1041,11 +1043,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Float getDemDebounceTimeFailedThreshold(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeFailedThreshold"])
+			def BigDecimal getDemDebounceTimeFailedThreshold(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeFailedThreshold"])
 			}
 			
-			def void setDemDebounceTimeFailedThreshold(Float value){
+			def void setDemDebounceTimeFailedThreshold(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeFailedThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1057,11 +1059,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getDemDebounceTimePassedThreshold(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimePassedThreshold"])
+			def BigDecimal getDemDebounceTimePassedThreshold(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimePassedThreshold"])
 			}
 			
-			def void setDemDebounceTimePassedThreshold(Float value){
+			def void setDemDebounceTimePassedThreshold(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimePassedThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1097,11 +1099,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Float getDemDtrCompuDenominator0(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuDenominator0"])
+			def BigDecimal getDemDtrCompuDenominator0(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuDenominator0"])
 			}
 			
-			def void setDemDtrCompuDenominator0(Float value){
+			def void setDemDtrCompuDenominator0(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuDenominator0"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1113,11 +1115,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getDemDtrCompuNumerator0(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator0"])
+			def BigDecimal getDemDtrCompuNumerator0(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator0"])
 			}
 			
-			def void setDemDtrCompuNumerator0(Float value){
+			def void setDemDtrCompuNumerator0(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator0"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1129,11 +1131,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Float getDemDtrCompuNumerator1(){
-				EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator1"])
+			def BigDecimal getDemDtrCompuNumerator1(){
+				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator1"])
 			}
 			
-			def void setDemDtrCompuNumerator1(Float value){
+			def void setDemDtrCompuNumerator1(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator1"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1145,11 +1147,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDtrId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrId"])
+			def BigInteger getDemDtrId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrId"])
 			}
 			
-			def void setDemDtrId(Integer value){
+			def void setDemDtrId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1161,11 +1163,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDtrMid(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrMid"])
+			def BigInteger getDemDtrMid(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrMid"])
 			}
 			
-			def void setDemDtrMid(Integer value){
+			def void setDemDtrMid(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrMid"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1177,11 +1179,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDtrTid(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrTid"])
+			def BigInteger getDemDtrTid(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrTid"])
 			}
 			
-			def void setDemDtrTid(Integer value){
+			def void setDemDtrTid(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrTid"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1193,11 +1195,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDtrUasid(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUasid"])
+			def BigInteger getDemDtrUasid(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUasid"])
 			}
 			
-			def void setDemDtrUasid(Integer value){
+			def void setDemDtrUasid(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUasid"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1277,11 +1279,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemComponentPriority(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentPriority"])
+			def BigInteger getDemComponentPriority(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentPriority"])
 			}
 			
-			def void setDemComponentPriority(Integer value){
+			def void setDemComponentPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentPriority"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1309,11 +1311,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemEventFailureCycleCounterThreshold(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventFailureCycleCounterThreshold"])
+			def BigInteger getDemEventFailureCycleCounterThreshold(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventFailureCycleCounterThreshold"])
 			}
 			
-			def void setDemEventFailureCycleCounterThreshold(Integer value){
+			def void setDemEventFailureCycleCounterThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventFailureCycleCounterThreshold"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -1325,11 +1327,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemEventId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventId"])
+			def BigInteger getDemEventId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventId"])
 			}
 			
-			def void setDemEventId(Integer value){
+			def void setDemEventId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2006,11 +2008,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getDemIndicatorFailureCycleCounterThreshold(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorFailureCycleCounterThreshold"])
+				def BigInteger getDemIndicatorFailureCycleCounterThreshold(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorFailureCycleCounterThreshold"])
 				}
 				
-				def void setDemIndicatorFailureCycleCounterThreshold(Integer value){
+				def void setDemIndicatorFailureCycleCounterThreshold(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorFailureCycleCounterThreshold"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2022,11 +2024,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getDemIndicatorHealingCycleCounterThreshold(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorHealingCycleCounterThreshold"])
+				def BigInteger getDemIndicatorHealingCycleCounterThreshold(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorHealingCycleCounterThreshold"])
 				}
 				
-				def void setDemIndicatorHealingCycleCounterThreshold(Integer value){
+				def void setDemIndicatorHealingCycleCounterThreshold(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorHealingCycleCounterThreshold"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -2148,11 +2150,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemDtcValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"])
+			def BigInteger getDemDtcValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"])
 			}
 			
-			def void setDemDtcValue(Integer value){
+			def void setDemDtcValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2229,11 +2231,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getDemJ1939DTCValue(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939DTCValue"])
+			def BigInteger getDemJ1939DTCValue(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939DTCValue"])
 			}
 			
-			def void setDemJ1939DTCValue(Integer value){
+			def void setDemJ1939DTCValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939DTCValue"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2269,11 +2271,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemPidIdentifier(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPidIdentifier"])
+			def BigInteger getDemPidIdentifier(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPidIdentifier"])
 			}
 			
-			def void setDemPidIdentifier(Integer value){
+			def void setDemPidIdentifier(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPidIdentifier"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -2446,11 +2448,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Integer getDemBswErrorBufferSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemBswErrorBufferSize"])
+		def BigInteger getDemBswErrorBufferSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemBswErrorBufferSize"])
 		}
 		
-		def void setDemBswErrorBufferSize(Integer value){
+		def void setDemBswErrorBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemBswErrorBufferSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2613,11 +2615,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDemDtcStatusAvailabilityMask(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcStatusAvailabilityMask"])
+		def BigInteger getDemDtcStatusAvailabilityMask(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcStatusAvailabilityMask"])
 		}
 		
-		def void setDemDtcStatusAvailabilityMask(Integer value){
+		def void setDemDtcStatusAvailabilityMask(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcStatusAvailabilityMask"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2798,11 +2800,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def Integer getDemImmediateNvStorageLimit(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorageLimit"])
+		def BigInteger getDemImmediateNvStorageLimit(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorageLimit"])
 		}
 		
-		def void setDemImmediateNvStorageLimit(Integer value){
+		def void setDemImmediateNvStorageLimit(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorageLimit"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2814,11 +2816,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDemMaxNumberEventEntryEventBuffer(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryEventBuffer"])
+		def BigInteger getDemMaxNumberEventEntryEventBuffer(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryEventBuffer"])
 		}
 		
-		def void setDemMaxNumberEventEntryEventBuffer(Integer value){
+		def void setDemMaxNumberEventEntryEventBuffer(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryEventBuffer"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2830,11 +2832,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDemMaxNumberEventEntryPermanent(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPermanent"])
+		def BigInteger getDemMaxNumberEventEntryPermanent(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPermanent"])
 		}
 		
-		def void setDemMaxNumberEventEntryPermanent(Integer value){
+		def void setDemMaxNumberEventEntryPermanent(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPermanent"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -2846,11 +2848,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 		}
 		
-		def Integer getDemMaxNumberPrestoredFF(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberPrestoredFF"])
+		def BigInteger getDemMaxNumberPrestoredFF(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberPrestoredFF"])
 		}
 		
-		def void setDemMaxNumberPrestoredFF(Integer value){
+		def void setDemMaxNumberPrestoredFF(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberPrestoredFF"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3062,11 +3064,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			EcucValueAccessor421Util.setParameterValue(paramValue, value)
 		}
 		
-		def Float getDemTaskTime(){
-			EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTaskTime"])
+		def BigDecimal getDemTaskTime(){
+			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTaskTime"])
 		}
 		
-		def void setDemTaskTime(Float value){
+		def void setDemTaskTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTaskTime"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
@@ -3725,11 +3727,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDemDataElementDataSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
+				def BigInteger getDemDataElementDataSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
 				}
 				
-				def void setDemDataElementDataSize(Integer value){
+				def void setDemDataElementDataSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -3797,11 +3799,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDemDataElementDataSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
+				def BigInteger getDemDataElementDataSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
 				}
 				
-				def void setDemDataElementDataSize(Integer value){
+				def void setDemDataElementDataSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4084,11 +4086,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Float getDemDiagnosisRepresentationDataLowerRange(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataLowerRange"])
+							def BigDecimal getDemDiagnosisRepresentationDataLowerRange(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataLowerRange"])
 							}
 							
-							def void setDemDiagnosisRepresentationDataLowerRange(Float value){
+							def void setDemDiagnosisRepresentationDataLowerRange(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataLowerRange"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4100,11 +4102,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Float getDemDiagnosisRepresentationDataOffset(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataOffset"])
+							def BigDecimal getDemDiagnosisRepresentationDataOffset(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataOffset"])
 							}
 							
-							def void setDemDiagnosisRepresentationDataOffset(Float value){
+							def void setDemDiagnosisRepresentationDataOffset(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataOffset"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4116,11 +4118,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Float getDemDiagnosisRepresentationDataResolution(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataResolution"])
+							def BigDecimal getDemDiagnosisRepresentationDataResolution(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataResolution"])
 							}
 							
-							def void setDemDiagnosisRepresentationDataResolution(Float value){
+							def void setDemDiagnosisRepresentationDataResolution(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataResolution"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4132,11 +4134,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Float getDemDiagnosisRepresentationDataUpperRange(){
-								EcucValueAccessor421Util.getFloatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataUpperRange"])
+							def BigDecimal getDemDiagnosisRepresentationDataUpperRange(){
+								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataUpperRange"])
 							}
 							
-							def void setDemDiagnosisRepresentationDataUpperRange(Float value){
+							def void setDemDiagnosisRepresentationDataUpperRange(BigDecimal value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataUpperRange"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4172,11 +4174,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getDemDiagnosisRepresentationDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
+							def BigInteger getDemDiagnosisRepresentationDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
 							}
 							
-							def void setDemDiagnosisRepresentationDataValue(Integer value){
+							def void setDemDiagnosisRepresentationDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4188,11 +4190,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDemInternalDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"])
+							def BigInteger getDemInternalDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"])
 							}
 							
-							def void setDemInternalDataValue(Integer value){
+							def void setDemInternalDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4272,11 +4274,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
-							def Integer getDemDiagnosisRepresentationDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
+							def BigInteger getDemDiagnosisRepresentationDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
 							}
 							
-							def void setDemDiagnosisRepresentationDataValue(Integer value){
+							def void setDemDiagnosisRepresentationDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4288,11 +4290,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 							}
 							
-							def Integer getDemInternalDataValue(){
-								EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"])
+							def BigInteger getDemInternalDataValue(){
+								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"])
 							}
 							
-							def void setDemInternalDataValue(Integer value){
+							def void setDemInternalDataValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"]
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
@@ -4455,11 +4457,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDemDataElementDataSize(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
+				def BigInteger getDemDataElementDataSize(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
 				}
 				
-				def void setDemDataElementDataSize(Integer value){
+				def void setDemDataElementDataSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -4548,11 +4550,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemDidIdentifier(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDidIdentifier"])
+			def BigInteger getDemDidIdentifier(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDidIdentifier"])
 			}
 			
-			def void setDemDidIdentifier(Integer value){
+			def void setDemDidIdentifier(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDidIdentifier"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -4621,11 +4623,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemEnableConditionId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionId"])
+			def BigInteger getDemEnableConditionId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionId"])
 			}
 			
-			def void setDemEnableConditionId(Integer value){
+			def void setDemEnableConditionId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -4791,11 +4793,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemExtendedDataRecordNumber(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordNumber"])
+			def BigInteger getDemExtendedDataRecordNumber(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordNumber"])
 			}
 			
-			def void setDemExtendedDataRecordNumber(Integer value){
+			def void setDemExtendedDataRecordNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordNumber"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -5052,11 +5054,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemFreezeFrameRecordNumber(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordNumber"])
+			def BigInteger getDemFreezeFrameRecordNumber(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordNumber"])
 			}
 			
-			def void setDemFreezeFrameRecordNumber(Integer value){
+			def void setDemFreezeFrameRecordNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordNumber"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -5515,11 +5517,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getDemSPNId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSPNId"])
+				def BigInteger getDemSPNId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSPNId"])
 				}
 				
-				def void setDemSPNId(Integer value){
+				def void setDemSPNId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSPNId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -5600,11 +5602,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemOBDCompliancy(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCompliancy"])
+			def BigInteger getDemOBDCompliancy(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCompliancy"])
 			}
 			
-			def void setDemOBDCompliancy(Integer value){
+			def void setDemOBDCompliancy(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCompliancy"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -5758,11 +5760,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemGroupDTCs(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGroupDTCs"])
+			def BigInteger getDemGroupDTCs(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGroupDTCs"])
 			}
 			
-			def void setDemGroupDTCs(Integer value){
+			def void setDemGroupDTCs(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGroupDTCs"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -5798,11 +5800,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemIndicatorID(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorID"])
+			def BigInteger getDemIndicatorID(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorID"])
 			}
 			
-			def void setDemIndicatorID(Integer value){
+			def void setDemIndicatorID(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorID"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -5838,11 +5840,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemMaxNumberEventEntryMirror(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryMirror"])
+			def BigInteger getDemMaxNumberEventEntryMirror(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryMirror"])
 			}
 			
-			def void setDemMaxNumberEventEntryMirror(Integer value){
+			def void setDemMaxNumberEventEntryMirror(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryMirror"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -5945,11 +5947,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemOperationCycleId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleId"])
+			def BigInteger getDemOperationCycleId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleId"])
 			}
 			
-			def void setDemOperationCycleId(Integer value){
+			def void setDemOperationCycleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -6026,11 +6028,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemMaxNumberEventEntryPrimary(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPrimary"])
+			def BigInteger getDemMaxNumberEventEntryPrimary(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPrimary"])
 			}
 			
-			def void setDemMaxNumberEventEntryPrimary(Integer value){
+			def void setDemMaxNumberEventEntryPrimary(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPrimary"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -6168,11 +6170,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(paramValue, value)
 			}
 			
-			def Integer getDemRatioId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioId"])
+			def BigInteger getDemRatioId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioId"])
 			}
 			
-			def void setDemRatioId(Integer value){
+			def void setDemRatioId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -6296,11 +6298,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemStorageConditionId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionId"])
+			def BigInteger getDemStorageConditionId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionId"])
 			}
 			
-			def void setDemStorageConditionId(Integer value){
+			def void setDemStorageConditionId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -6420,11 +6422,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getDemMaxNumberEventEntryUserDefined(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryUserDefined"])
+			def BigInteger getDemMaxNumberEventEntryUserDefined(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryUserDefined"])
 			}
 			
-			def void setDemMaxNumberEventEntryUserDefined(Integer value){
+			def void setDemMaxNumberEventEntryUserDefined(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryUserDefined"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -6436,11 +6438,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getDemUserDefinedMemoryIdentifier(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemUserDefinedMemoryIdentifier"])
+			def BigInteger getDemUserDefinedMemoryIdentifier(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemUserDefinedMemoryIdentifier"])
 			}
 			
-			def void setDemUserDefinedMemoryIdentifier(Integer value){
+			def void setDemUserDefinedMemoryIdentifier(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemUserDefinedMemoryIdentifier"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition

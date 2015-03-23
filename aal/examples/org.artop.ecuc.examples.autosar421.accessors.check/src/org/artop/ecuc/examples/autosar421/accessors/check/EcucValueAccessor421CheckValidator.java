@@ -16,6 +16,7 @@ package org.artop.ecuc.examples.autosar421.accessors.check;
 
 import gautosar.ggenericstructure.ginfrastructure.GinfrastructurePackage;
 
+import java.math.BigInteger;
 import java.util.regex.Pattern;
 
 import org.artop.ecuc.autosar421.accessors.Dem;
@@ -60,7 +61,7 @@ public class EcucValueAccessor421CheckValidator extends AbstractEcucValueAccesso
 		Assert.isNotNull(nvm);
 
 		for (NvMBlockDescriptor nvMBlockDescriptor : nvm.getNvMBlockDescriptors()) {
-			if (nvMBlockDescriptor.getNvMBlockJobPriority() > 2) {
+			if (new BigInteger("2").compareTo(nvMBlockDescriptor.getNvMBlockJobPriority()) < 0) { //$NON-NLS-1$
 				issue(nvMBlockDescriptor, EcucdescriptionPackage.Literals.ECUC_NUMERICAL_PARAM_VALUE__VALUE);
 			}
 		}

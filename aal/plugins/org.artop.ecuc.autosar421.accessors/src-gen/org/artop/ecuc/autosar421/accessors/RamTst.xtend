@@ -23,8 +23,8 @@ import autosar40.util.Autosar40Factory
 
 import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
 import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.IntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.FloatValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
 import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
@@ -48,6 +48,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
 import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
 
 class RamTst implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
@@ -528,11 +530,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
-			def Integer getRamTstDefaultAlgParamsId(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDefaultAlgParamsId"])
+			def BigInteger getRamTstDefaultAlgParamsId(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDefaultAlgParamsId"])
 			}
 			
-			def void setRamTstDefaultAlgParamsId(Integer value){
+			def void setRamTstDefaultAlgParamsId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDefaultAlgParamsId"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -544,11 +546,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getRamTstMinNumberOfTestedCells(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMinNumberOfTestedCells"])
+			def BigInteger getRamTstMinNumberOfTestedCells(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMinNumberOfTestedCells"])
 			}
 			
-			def void setRamTstMinNumberOfTestedCells(Integer value){
+			def void setRamTstMinNumberOfTestedCells(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMinNumberOfTestedCells"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -560,11 +562,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 			}
 			
-			def Integer getRamTstNumberOfAlgParamSets(){
-				EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfAlgParamSets"])
+			def BigInteger getRamTstNumberOfAlgParamSets(){
+				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfAlgParamSets"])
 			}
 			
-			def void setRamTstNumberOfAlgParamSets(Integer value){
+			def void setRamTstNumberOfAlgParamSets(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfAlgParamSets"]
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
@@ -649,11 +651,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
-				def Integer getRamTstAlgParamsId(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgParamsId"])
+				def BigInteger getRamTstAlgParamsId(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgParamsId"])
 				}
 				
-				def void setRamTstAlgParamsId(Integer value){
+				def void setRamTstAlgParamsId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgParamsId"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -706,11 +708,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(paramValue, value)
 				}
 				
-				def Integer getRamTstExtNumberOfTestedCells(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstExtNumberOfTestedCells"])
+				def BigInteger getRamTstExtNumberOfTestedCells(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstExtNumberOfTestedCells"])
 				}
 				
-				def void setRamTstExtNumberOfTestedCells(Integer value){
+				def void setRamTstExtNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstExtNumberOfTestedCells"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -722,11 +724,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getRamTstMaxNumberOfTestedCells(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMaxNumberOfTestedCells"])
+				def BigInteger getRamTstMaxNumberOfTestedCells(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMaxNumberOfTestedCells"])
 				}
 				
-				def void setRamTstMaxNumberOfTestedCells(Integer value){
+				def void setRamTstMaxNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMaxNumberOfTestedCells"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -738,11 +740,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getRamTstNumberOfBlocks(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfBlocks"])
+				def BigInteger getRamTstNumberOfBlocks(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfBlocks"])
 				}
 				
-				def void setRamTstNumberOfBlocks(Integer value){
+				def void setRamTstNumberOfBlocks(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfBlocks"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -754,11 +756,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 				}
 				
-				def Integer getRamTstNumberOfTestedCells(){
-					EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfTestedCells"])
+				def BigInteger getRamTstNumberOfTestedCells(){
+					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfTestedCells"])
 				}
 				
-				def void setRamTstNumberOfTestedCells(Integer value){
+				def void setRamTstNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfTestedCells"]
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
@@ -811,11 +813,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
-					def Integer getRamTstBlockId(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"])
+					def BigInteger getRamTstBlockId(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"])
 					}
 					
-					def void setRamTstBlockId(Integer value){
+					def void setRamTstBlockId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -827,11 +829,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getRamTstEndAddress(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstEndAddress"])
+					def BigInteger getRamTstEndAddress(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstEndAddress"])
 					}
 					
-					def void setRamTstEndAddress(Integer value){
+					def void setRamTstEndAddress(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstEndAddress"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -843,11 +845,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getRamTstFillPattern(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstFillPattern"])
+					def BigInteger getRamTstFillPattern(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstFillPattern"])
 					}
 					
-					def void setRamTstFillPattern(Integer value){
+					def void setRamTstFillPattern(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstFillPattern"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -859,11 +861,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
 					}
 					
-					def Integer getRamTstStartAddress(){
-						EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStartAddress"])
+					def BigInteger getRamTstStartAddress(){
+						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStartAddress"])
 					}
 					
-					def void setRamTstStartAddress(Integer value){
+					def void setRamTstStartAddress(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStartAddress"]
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
@@ -971,11 +973,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
-		def Integer getRamTstCellSize(){
-			EcucValueAccessor421Util.getIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"])
+		def BigInteger getRamTstCellSize(){
+			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"])
 		}
 		
-		def void setRamTstCellSize(Integer value){
+		def void setRamTstCellSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"]
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
