@@ -14,19 +14,13 @@
  */
 package org.artop.ecuc.examples.autosar421.accessors.check.ui.actions;
 
-import gautosar.gecucdescription.GContainer;
-import gautosar.gecucdescription.GModuleConfiguration;
-import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
+import java.util.List;
+import java.util.Set;
 
-import org.artop.ecuc.autosar421.accessors.EcucValueAccessor421Factory;
 import org.artop.ecuc.examples.autosar421.accessors.check.ui.IEcucValidationUIConstants;
-import org.artop.ecuc.examples.autosar421.accessors.check.ui.internal.Activator;
-import org.artop.ecuc.gautosar.accessors.check.services.AutosarCheckProblemMarkerService;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.ecore.EObject;
+import org.artop.ecuc.gautosar.accessors.check.operations.AutosarCheckValidationOperation;
+import org.eclipse.sphinx.emf.check.operations.BasicCheckValidationOperation;
 import org.eclipse.sphinx.emf.check.ui.actions.BasicCheckValidationAction;
-import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 
 public class EcucValueAccessorCheckValidationAction extends BasicCheckValidationAction {
 
@@ -39,22 +33,7 @@ public class EcucValueAccessorCheckValidationAction extends BasicCheckValidation
 	}
 
 	@Override
-	protected Object getValidationInput() {
-		Object selectedObject = getSelectedObject();
-
-		if (selectedObject instanceof GModuleConfiguration || selectedObject instanceof GContainer) {
-			try {
-				return EcucValueAccessor421Factory.INSTANCE.createEcucValueAccessor((GIdentifiable) selectedObject);
-			} catch (CoreException ex) {
-				PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
-				return null;
-			}
-		}
-		return super.getValidationInput();
-	}
-
-	@Override
-	protected void updateProblemMarkers(EObject eObject, final Diagnostic diagnostic) {
-		AutosarCheckProblemMarkerService.INSTANCE.updateProblemMarkers(eObject, diagnostic);
+	protected BasicCheckValidationOperation createCheckValidationOperation(List<Object> modelObjects, Set<String> categories) {
+		return new AutosarCheckValidationOperation(modelObjects, categories);
 	}
 }

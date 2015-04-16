@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sphinx.emf.check.AbstractCheckValidator;
+import org.eclipse.sphinx.emf.check.CheckValidatorState;
 import org.eclipse.sphinx.emf.util.IWrapper;
 import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 
@@ -41,7 +42,7 @@ public abstract class AbstractEcucValueAccessorCheckValidator extends AbstractCh
 	}
 
 	@Override
-	protected Class<?> getMethodWrapperType(EObject eObject) {
+	protected Class<?> getModelObjectType(EObject eObject) {
 		if (eObject instanceof GModuleConfiguration || eObject instanceof GContainer) {
 			try {
 				IWrapper<?> wrapperType = ecucValueAccessorFactory.createEcucValueAccessor((GIdentifiable) eObject);
@@ -52,11 +53,11 @@ public abstract class AbstractEcucValueAccessorCheckValidator extends AbstractCh
 				PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 			}
 		}
-		return super.getMethodWrapperType(eObject);
+		return super.getModelObjectType(eObject);
 	}
 
 	@Override
-	protected void setCurrentObject(State state, Object object) {
+	protected void setCurrentObject(CheckValidatorState state, Object object) {
 		Object currentObject = object;
 		if (object instanceof GModuleConfiguration || object instanceof GContainer) {
 			try {

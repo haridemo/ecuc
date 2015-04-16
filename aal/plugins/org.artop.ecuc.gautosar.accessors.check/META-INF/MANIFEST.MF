@@ -13,6 +13,7 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.artop.ecuc.gautosar.accessors.check,
  org.artop.ecuc.gautosar.accessors.check.internal;x-internal:=true,
+ org.artop.ecuc.gautosar.accessors.check.operations,
  org.artop.ecuc.gautosar.accessors.check.services
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
