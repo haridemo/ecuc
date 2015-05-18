@@ -106,6 +106,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrTpGeneral)){
+				return false
+			}
+			this.target == (object as FrTpGeneral).target
+		}
+		
 		def Boolean getFrTpAckRt(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpAckRt"])
 		}
@@ -273,6 +280,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrTpMultipleConfig)){
+				return false
+			}
+			this.target == (object as FrTpMultipleConfig).target
+		}
+		
 		def BigInteger getFrTpMaxConnectionCnt(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpMaxConnectionCnt"])
 		}
@@ -385,6 +399,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTpConnection)){
+					return false
+				}
+				this.target == (object as FrTpConnection).target
 			}
 			
 			def Boolean getFrTpBandwidthLimitation(){
@@ -524,6 +545,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTpRxSdu)){
+						return false
+					}
+					this.target == (object as FrTpRxSdu).target
+				}
+				
 				def BigInteger getFrTpRxSduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpRxSduId"])
 				}
@@ -573,6 +601,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTpTxSdu)){
+						return false
+					}
+					this.target == (object as FrTpTxSdu).target
 				}
 				
 				def BigInteger getFrTpTxSduId(){
@@ -626,6 +661,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTpConnectionControl)){
+					return false
+				}
+				this.target == (object as FrTpConnectionControl).target
 			}
 			
 			def FrTpAckType getFrTpAckType(){
@@ -957,6 +999,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTpRxPduPool)){
+					return false
+				}
+				this.target == (object as FrTpRxPduPool).target
+			}
+			
 			
 			
 			def List<FrTpRxPdu> getFrTpRxPdus(){
@@ -996,6 +1045,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTpRxPdu)){
+						return false
+					}
+					this.target == (object as FrTpRxPdu).target
 				}
 				
 				def BigInteger getFrTpRxPduId(){
@@ -1051,6 +1107,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTpTxPduPool)){
+					return false
+				}
+				this.target == (object as FrTpTxPduPool).target
+			}
+			
 			
 			
 			def List<FrTpTxPdu> getFrTpTxPdus(){
@@ -1092,6 +1155,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTpTxPdu)){
+						return false
+					}
+					this.target == (object as FrTpTxPdu).target
+				}
+				
 				def BigInteger getFrTpTxConfirmationPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTpTxConfirmationPduId"])
 				}
@@ -1126,6 +1196,13 @@ class FrTp implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrTp)){
+			return false
+		}
+		this.target == (object as FrTp).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

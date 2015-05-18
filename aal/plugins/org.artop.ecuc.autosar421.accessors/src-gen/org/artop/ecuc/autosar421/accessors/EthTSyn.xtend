@@ -116,6 +116,13 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthTSynGeneral)){
+				return false
+			}
+			this.target == (object as EthTSynGeneral).target
+		}
+		
 		def Boolean getEthTSynDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynDevErrorDetect"])
 		}
@@ -203,6 +210,13 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthTSynGlobalTimeDomain)){
+				return false
+			}
+			this.target == (object as EthTSynGlobalTimeDomain).target
+		}
+		
 		def BigInteger getEthTSynGlobalTimeDomainId(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeDomainId"])
 		}
@@ -284,6 +298,13 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthTSynGlobalTimeMaster)){
+					return false
+				}
+				this.target == (object as EthTSynGlobalTimeMaster).target
 			}
 			
 			def BigDecimal getEthTSynGlobalTimeTxFollowUpOffset(){
@@ -369,6 +390,13 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthTSynGlobalTimeSlave)){
+					return false
+				}
+				this.target == (object as EthTSynGlobalTimeSlave).target
+			}
+			
 			def BigDecimal getEthTSynGlobalTimeTxFollowUpOffset(){
 				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxFollowUpOffset"])
 			}
@@ -433,6 +461,13 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EthTSyn)){
+			return false
+		}
+		this.target == (object as EthTSyn).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

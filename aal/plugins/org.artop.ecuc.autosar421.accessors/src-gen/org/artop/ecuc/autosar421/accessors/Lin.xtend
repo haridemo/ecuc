@@ -114,6 +114,13 @@ class Lin implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as LinDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getLIN_E_TIMEOUT(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "LIN_E_TIMEOUT")
@@ -146,6 +153,13 @@ class Lin implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinGeneral)){
+				return false
+			}
+			this.target == (object as LinGeneral).target
 		}
 		
 		def Boolean getLinDevErrorDetect(){
@@ -235,6 +249,13 @@ class Lin implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinGlobalConfig)){
+				return false
+			}
+			this.target == (object as LinGlobalConfig).target
+		}
+		
 		
 		
 		def List<LinChannel> getLinChannels(){
@@ -274,6 +295,13 @@ class Lin implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinChannel)){
+					return false
+				}
+				this.target == (object as LinChannel).target
 			}
 			
 			def BigInteger getLinChannelBaudRate(){
@@ -351,6 +379,13 @@ class Lin implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Lin)){
+			return false
+		}
+		this.target == (object as Lin).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

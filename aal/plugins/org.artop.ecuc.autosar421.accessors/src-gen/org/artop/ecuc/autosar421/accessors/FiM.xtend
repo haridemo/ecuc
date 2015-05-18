@@ -106,6 +106,13 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FiMConfigSet)){
+				return false
+			}
+			this.target == (object as FiMConfigSet).target
+		}
+		
 		
 		
 		def List<FiMFID> getFiMFIDs(){
@@ -185,6 +192,13 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FiMFID)){
+					return false
+				}
+				this.target == (object as FiMFID).target
+			}
+			
 			def BigInteger getFiMFunctionId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMFunctionId"])
 			}
@@ -223,6 +237,13 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FiMInhibitionConfiguration)){
+					return false
+				}
+				this.target == (object as FiMInhibitionConfiguration).target
 			}
 			
 			def FiMInhInhibitionMask getFiMInhInhibitionMask(){
@@ -396,6 +417,13 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FiMSummaryEvent)){
+					return false
+				}
+				this.target == (object as FiMSummaryEvent).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter> getFiMInputEventRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -452,6 +480,13 @@ class FiM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FiMGeneral)){
+				return false
+			}
+			this.target == (object as FiMGeneral).target
 		}
 		
 		def Boolean getFiMDataFixed(){
@@ -617,6 +652,13 @@ class FiM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FiM)){
+			return false
+		}
+		this.target == (object as FiM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

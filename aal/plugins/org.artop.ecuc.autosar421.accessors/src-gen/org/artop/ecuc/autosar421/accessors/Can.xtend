@@ -106,6 +106,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanConfigSet)){
+				return false
+			}
+			this.target == (object as CanConfigSet).target
+		}
+		
 		
 		
 		def List<CanController> getCanControllers(){
@@ -173,6 +180,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanController)){
+					return false
+				}
+				this.target == (object as CanController).target
 			}
 			
 			def CanBusoffProcessing getCanBusoffProcessing(){
@@ -470,6 +484,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanControllerBaudrateConfig)){
+						return false
+					}
+					this.target == (object as CanControllerBaudrateConfig).target
+				}
+				
 				def BigInteger getCanControllerBaudRate(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRate"])
 				}
@@ -595,6 +616,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CanControllerFdBaudrateConfig)){
+							return false
+						}
+						this.target == (object as CanControllerFdBaudrateConfig).target
 					}
 					
 					def BigInteger getCanControllerFdBaudRate(){
@@ -733,6 +761,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTTController)){
+						return false
+					}
+					this.target == (object as CanTTController).target
 				}
 				
 				def BigInteger getCanTTControllerApplWatchdogLimit(){
@@ -1085,6 +1120,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanHardwareObject)){
+					return false
+				}
+				this.target == (object as CanHardwareObject).target
+			}
+			
 			def BigInteger getCanFdPaddingValue(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"])
 			}
@@ -1332,6 +1374,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanHwFilter)){
+						return false
+					}
+					this.target == (object as CanHwFilter).target
+				}
+				
 				def BigInteger getCanHwFilterCode(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterCode"])
 				}
@@ -1386,6 +1435,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTTHardwareObjectTrigger)){
+						return false
+					}
+					this.target == (object as CanTTHardwareObjectTrigger).target
 				}
 				
 				def BigInteger getCanTTHardwareObjectBaseCycle(){
@@ -1519,6 +1575,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIcom)){
+					return false
+				}
+				this.target == (object as CanIcom).target
+			}
+			
 			
 			
 			def List<CanIcomConfig> getCanIcomConfigs(){
@@ -1558,6 +1621,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIcomConfig)){
+						return false
+					}
+					this.target == (object as CanIcomConfig).target
 				}
 				
 				def BigInteger getCanIcomConfigId(){
@@ -1623,6 +1693,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CanIcomWakeupCauses)){
+							return false
+						}
+						this.target == (object as CanIcomWakeupCauses).target
+					}
+					
 					
 					
 					def List<CanIcomRxMessage> getCanIcomRxMessages(){
@@ -1662,6 +1739,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof CanIcomRxMessage)){
+								return false
+							}
+							this.target == (object as CanIcomRxMessage).target
 						}
 						
 						def BigInteger getCanIcomCounterValue(){
@@ -1785,6 +1869,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof CanIcomRxMessageSignalConfig)){
+									return false
+								}
+								this.target == (object as CanIcomRxMessageSignalConfig).target
+							}
+							
 							def BigInteger getCanIcomSignalMask(){
 								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"])
 							}
@@ -1898,6 +1989,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanGeneral)){
+				return false
+			}
+			this.target == (object as CanGeneral).target
 		}
 		
 		def Boolean getCanDevErrorDetection(){
@@ -2148,6 +2246,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIcomGeneral)){
+					return false
+				}
+				this.target == (object as CanIcomGeneral).target
+			}
+			
 			def CanIcomLevel getCanIcomLevel(){
 				getCanIcomLevelValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomLevel"])
 			}
@@ -2240,6 +2345,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanMainFunctionRWPeriods)){
+					return false
+				}
+				this.target == (object as CanMainFunctionRWPeriods).target
+			}
+			
 			def BigDecimal getCanMainFunctionPeriod(){
 				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionPeriod"])
 			}
@@ -2261,6 +2373,13 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Can)){
+			return false
+		}
+		this.target == (object as Can).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

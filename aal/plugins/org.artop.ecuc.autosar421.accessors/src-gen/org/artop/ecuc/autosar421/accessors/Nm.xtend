@@ -116,6 +116,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof NmChannelConfig)){
+				return false
+			}
+			this.target == (object as NmChannelConfig).target
+		}
+		
 		def Boolean getNmActiveCoordinator(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmActiveCoordinator"])
 		}
@@ -249,6 +256,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof NmBusType)){
+					return false
+				}
+				this.target == (object as NmBusType).target
+			}
+			
 			def NmGenericBusNmConfig getNmGenericBusNmConfig(){
 				containerValue.getByType(typeof(NmGenericBusNmConfig))
 			}
@@ -283,6 +297,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof NmGenericBusNmConfig)){
+						return false
+					}
+					this.target == (object as NmGenericBusNmConfig).target
 				}
 				
 				def String getNmGenericBusNmPrefix(){
@@ -339,6 +360,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof NmStandardBusNmConfig)){
+						return false
+					}
+					this.target == (object as NmStandardBusNmConfig).target
 				}
 				
 				def NmStandardBusType getNmStandardBusType(){
@@ -407,6 +435,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof NmGlobalConfig)){
+				return false
+			}
+			this.target == (object as NmGlobalConfig).target
+		}
+		
 		
 		
 		def NmGlobalConstants getNmGlobalConstants(){
@@ -456,6 +491,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof NmGlobalConstants)){
+					return false
+				}
+				this.target == (object as NmGlobalConstants).target
+			}
+			
 			def BigInteger getNmNumberOfChannels(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNumberOfChannels"])
 			}
@@ -494,6 +536,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof NmGlobalFeatures)){
+					return false
+				}
+				this.target == (object as NmGlobalFeatures).target
 			}
 			
 			def Boolean getNmBusSynchronizationEnabled(){
@@ -776,6 +825,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof NmGlobalProperties)){
+					return false
+				}
+				this.target == (object as NmGlobalProperties).target
+			}
+			
 			def BigDecimal getNmCycletimeMainFunction(){
 				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCycletimeMainFunction"])
 			}
@@ -829,6 +885,13 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Nm)){
+			return false
+		}
+		this.target == (object as Nm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -174,6 +174,13 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		«cont.createContainerClass»
 		«ENDFOR»
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof «module.moduleTypeName»)){
+				return false
+			}
+			this.target == (object as «module.moduleTypeName»).target
+		}
+		
 		private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 			val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 			if (definitionFeature != null) {
@@ -205,6 +212,13 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof «cont.gGetShortName»)){
+				return false
+			}
+			this.target == (object as «cont.gGetShortName»).target
 		}
 		
 		«cont.containerContents»

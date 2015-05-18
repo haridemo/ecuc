@@ -106,6 +106,13 @@ class Eth implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthConfigSet)){
+				return false
+			}
+			this.target == (object as EthConfigSet).target
+		}
+		
 		
 		
 		def List<EthCtrlConfig> getEthCtrlConfigs(){
@@ -145,6 +152,13 @@ class Eth implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthCtrlConfig)){
+					return false
+				}
+				this.target == (object as EthCtrlConfig).target
 			}
 			
 			def Boolean getEthCtrlEnableMii(){
@@ -322,6 +336,13 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EthDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as EthDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getETH_E_ACCESS(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "ETH_E_ACCESS")
@@ -446,6 +467,13 @@ class Eth implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthGeneral)){
+				return false
+			}
+			this.target == (object as EthGeneral).target
 		}
 		
 		def Boolean getEthDevErrorDetect(){
@@ -623,6 +651,13 @@ class Eth implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthCtrlOffloading)){
+					return false
+				}
+				this.target == (object as EthCtrlOffloading).target
+			}
+			
 			def Boolean getEthCtrlEnableOffloadChecksumICMP(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumICMP"])
 			}
@@ -692,6 +727,13 @@ class Eth implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Eth)){
+			return false
+		}
+		this.target == (object as Eth).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

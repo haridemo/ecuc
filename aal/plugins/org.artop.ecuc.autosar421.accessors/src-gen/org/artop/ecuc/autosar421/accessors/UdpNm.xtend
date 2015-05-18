@@ -98,6 +98,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof UdpNmGlobalConfig)){
+				return false
+			}
+			this.target == (object as UdpNmGlobalConfig).target
+		}
+		
 		def Boolean getUdpNmBusSynchronizationEnabled(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmBusSynchronizationEnabled"])
 		}
@@ -486,6 +493,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof UdpNmChannelConfig)){
+					return false
+				}
+				this.target == (object as UdpNmChannelConfig).target
 			}
 			
 			def Boolean getUdpNmActiveWakeupBitEnabled(){
@@ -879,6 +893,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof UdpNmRxPdu)){
+						return false
+					}
+					this.target == (object as UdpNmRxPdu).target
+				}
+				
 				def BigInteger getUdpNmRxPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRxPduId"])
 				}
@@ -930,6 +951,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof UdpNmTxPdu)){
+						return false
+					}
+					this.target == (object as UdpNmTxPdu).target
+				}
+				
 				def BigInteger getUdpNmTxConfirmationPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTxConfirmationPduId"])
 				}
@@ -979,6 +1007,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof UdpNmUserDataTxPdu)){
+						return false
+					}
+					this.target == (object as UdpNmUserDataTxPdu).target
 				}
 				
 				def BigInteger getUdpNmTxUserDataPduId(){
@@ -1034,6 +1069,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof UdpNmDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as UdpNmDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getUDPNM_E_NETWORK_TIMEOUT(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "UDPNM_E_NETWORK_TIMEOUT")
@@ -1078,6 +1120,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof UdpNmPnInfo)){
+					return false
+				}
+				this.target == (object as UdpNmPnInfo).target
 			}
 			
 			def BigInteger getUdpNmPnInfoLength(){
@@ -1153,6 +1202,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof UdpNmPnFilterMaskByte)){
+						return false
+					}
+					this.target == (object as UdpNmPnFilterMaskByte).target
+				}
+				
 				def BigInteger getUdpNmPnFilterMaskByteIndex(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnFilterMaskByteIndex"])
 				}
@@ -1192,6 +1248,13 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof UdpNm)){
+			return false
+		}
+		this.target == (object as UdpNm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

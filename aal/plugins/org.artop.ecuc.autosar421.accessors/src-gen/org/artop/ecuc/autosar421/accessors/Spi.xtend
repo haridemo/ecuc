@@ -122,6 +122,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SpiDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as SpiDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getSPI_E_HARDWARE_ERROR(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "SPI_E_HARDWARE_ERROR")
@@ -154,6 +161,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SpiDriver)){
+				return false
+			}
+			this.target == (object as SpiDriver).target
 		}
 		
 		def BigInteger getSpiMaxChannel(){
@@ -300,6 +314,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SpiChannel)){
+					return false
+				}
+				this.target == (object as SpiChannel).target
 			}
 			
 			def BigInteger getSpiChannelId(){
@@ -470,6 +491,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SpiExternalDevice)){
+					return false
+				}
+				this.target == (object as SpiExternalDevice).target
 			}
 			
 			def BigDecimal getSpiBaudrate(){
@@ -729,6 +757,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SpiJob)){
+					return false
+				}
+				this.target == (object as SpiJob).target
+			}
+			
 			def SpiHwUnitSynchronous getSpiHwUnitSynchronous(){
 				getSpiHwUnitSynchronousValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiHwUnitSynchronous"])
 			}
@@ -862,6 +897,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SpiChannelList)){
+						return false
+					}
+					this.target == (object as SpiChannelList).target
+				}
+				
 				def BigInteger getSpiChannelIndex(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelIndex"])
 				}
@@ -913,6 +955,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SpiSequence)){
+					return false
+				}
+				this.target == (object as SpiSequence).target
 			}
 			
 			def Boolean getSpiInterruptibleSequence(){
@@ -1019,6 +1068,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SpiGeneral)){
+				return false
+			}
+			this.target == (object as SpiGeneral).target
 		}
 		
 		def Boolean getSpiCancelApi(){
@@ -1201,6 +1257,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SpiPublishedInformation)){
+				return false
+			}
+			this.target == (object as SpiPublishedInformation).target
+		}
+		
 		def BigInteger getSpiMaxHwUnit(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxHwUnit"])
 		}
@@ -1220,6 +1283,13 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Spi)){
+			return false
+		}
+		this.target == (object as Spi).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

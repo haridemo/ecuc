@@ -106,6 +106,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DcmConfigSet)){
+				return false
+			}
+			this.target == (object as DcmConfigSet).target
+		}
+		
 		
 		
 		def DcmDsd getDcmDsd(){
@@ -171,6 +178,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DcmDsd)){
+					return false
+				}
+				this.target == (object as DcmDsd).target
 			}
 			
 			def Boolean getDcmDsdRequestManufacturerNotificationEnabled(){
@@ -284,6 +298,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDsdServiceRequestManufacturerNotification)){
+						return false
+					}
+					this.target == (object as DcmDsdServiceRequestManufacturerNotification).target
+				}
+				
 				
 				
 				
@@ -308,6 +329,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDsdServiceRequestSupplierNotification)){
+						return false
+					}
+					this.target == (object as DcmDsdServiceRequestSupplierNotification).target
+				}
+				
 				
 				
 				
@@ -330,6 +358,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDsdServiceTable)){
+						return false
+					}
+					this.target == (object as DcmDsdServiceTable).target
 				}
 				
 				def BigInteger getDcmDsdSidTabId(){
@@ -387,6 +422,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDsdService)){
+							return false
+						}
+						this.target == (object as DcmDsdService).target
 					}
 					
 					def Boolean getDcmDsdServiceUsed(){
@@ -571,6 +613,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDsdSubService)){
+								return false
+							}
+							this.target == (object as DcmDsdSubService).target
+						}
+						
 						def String getDcmDsdSubServiceFnc(){
 							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSubServiceFnc"])
 						}
@@ -726,6 +775,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DcmDsl)){
+					return false
+				}
+				this.target == (object as DcmDsl).target
+			}
+			
 			
 			
 			def List<DcmDslBuffer> getDcmDslBuffers(){
@@ -804,6 +860,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDslBuffer)){
+						return false
+					}
+					this.target == (object as DcmDslBuffer).target
+				}
+				
 				def BigInteger getDcmDslBufferSize(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslBufferSize"])
 				}
@@ -844,6 +907,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDslCallbackDCMRequestService)){
+						return false
+					}
+					this.target == (object as DcmDslCallbackDCMRequestService).target
+				}
+				
 				
 				
 				
@@ -866,6 +936,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDslDiagResp)){
+						return false
+					}
+					this.target == (object as DcmDslDiagResp).target
 				}
 				
 				def BigInteger getDcmDslDiagRespMaxNumRespPend(){
@@ -924,6 +1001,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDslProtocol)){
+						return false
+					}
+					this.target == (object as DcmDslProtocol).target
+				}
+				
 				
 				
 				def List<DcmDslProtocolRow> getDcmDslProtocolRows(){
@@ -963,6 +1047,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDslProtocolRow)){
+							return false
+						}
+						this.target == (object as DcmDslProtocolRow).target
 					}
 					
 					def DcmDslProtocolID getDcmDslProtocolID(){
@@ -1267,6 +1358,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDslConnection)){
+								return false
+							}
+							this.target == (object as DcmDslConnection).target
+						}
+						
 						def DcmDslMainConnection getDcmDslMainConnection(){
 							containerValue.getByType(typeof(DcmDslMainConnection))
 						}
@@ -1309,6 +1407,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDslMainConnection)){
+									return false
+								}
+								this.target == (object as DcmDslMainConnection).target
 							}
 							
 							def BigInteger getDcmDslProtocolRxTesterSourceAddr(){
@@ -1410,6 +1515,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									containerValue
 								}
 								
+								override def boolean equals(Object object) {
+							        if (!(object instanceof DcmDslProtocolRx)){
+										return false
+									}
+									this.target == (object as DcmDslProtocolRx).target
+								}
+								
 								def DcmDslProtocolRxAddrType getDcmDslProtocolRxAddrType(){
 									getDcmDslProtocolRxAddrTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRxAddrType"])
 								}
@@ -1494,6 +1606,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									containerValue
 								}
 								
+								override def boolean equals(Object object) {
+							        if (!(object instanceof DcmDslProtocolTx)){
+										return false
+									}
+									this.target == (object as DcmDslProtocolTx).target
+								}
+								
 								def BigInteger getDcmDslTxConfirmationPduId(){
 									EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslTxConfirmationPduId"])
 								}
@@ -1547,6 +1666,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDslPeriodicTransmission)){
+									return false
+								}
+								this.target == (object as DcmDslPeriodicTransmission).target
+							}
+							
 							
 							
 							def List<DcmDslPeriodicConnection> getDcmDslPeriodicConnections(){
@@ -1586,6 +1712,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								
 								override def GContainer getTarget(){
 									containerValue
+								}
+								
+								override def boolean equals(Object object) {
+							        if (!(object instanceof DcmDslPeriodicConnection)){
+										return false
+									}
+									this.target == (object as DcmDslPeriodicConnection).target
 								}
 								
 								def BigInteger getDcmDslPeriodicTxConfirmationPduId(){
@@ -1639,6 +1772,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDslResponseOnEvent)){
+									return false
+								}
+								this.target == (object as DcmDslResponseOnEvent).target
 							}
 							
 							def BigInteger getDcmDslRoeTxConfirmationPduId(){
@@ -1698,6 +1838,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DcmDsp)){
+					return false
+				}
+				this.target == (object as DcmDsp).target
 			}
 			
 			def Boolean getDcmDspDDDIDcheckPerSourceDID(){
@@ -2125,6 +2272,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspComControl)){
+						return false
+					}
+					this.target == (object as DcmDspComControl).target
+				}
+				
 				
 				
 				def List<DcmDspComControlAllChannel> getDcmDspComControlAllChannels(){
@@ -2213,6 +2367,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspComControlAllChannel)){
+							return false
+						}
+						this.target == (object as DcmDspComControlAllChannel).target
+					}
+					
 					def Boolean getDcmDspComControlAllChannelUsed(){
 						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlAllChannelUsed"])
 					}
@@ -2264,6 +2425,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspComControlSetting)){
+							return false
+						}
+						this.target == (object as DcmDspComControlSetting).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmProcessingConditions.DcmModeRule getDcmDspComControlCommunicationReEnableModeRuleRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmProcessingConditions.DcmModeRule), "DcmDspComControlCommunicationReEnableModeRuleRef")
@@ -2297,6 +2465,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspComControlSpecificChannel)){
+							return false
+						}
+						this.target == (object as DcmDspComControlSpecificChannel).target
 					}
 					
 					def Boolean getDcmDspComControlSpecificChannelUsed(){
@@ -2366,6 +2541,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspComControlSubNode)){
+							return false
+						}
+						this.target == (object as DcmDspComControlSubNode).target
+					}
+					
 					def BigInteger getDcmDspComControlSubNodeId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSubNodeId"])
 					}
@@ -2433,6 +2615,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspCommonAuthorization)){
+						return false
+					}
+					this.target == (object as DcmDspCommonAuthorization).target
 				}
 				
 				
@@ -2536,6 +2725,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspControlDTCSetting)){
+						return false
+					}
+					this.target == (object as DcmDspControlDTCSetting).target
+				}
+				
 				def Boolean getDcmSupportDTCSettingControlOptionRecord(){
 					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmSupportDTCSettingControlOptionRecord"])
 				}
@@ -2585,6 +2781,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspData)){
+						return false
+					}
+					this.target == (object as DcmDspData).target
 				}
 				
 				def String getDcmDspDataConditionCheckReadFnc(){
@@ -3012,6 +3215,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspDiagnosisScaling)){
+							return false
+						}
+						this.target == (object as DcmDspDiagnosisScaling).target
+					}
+					
 					def DcmDspAlternativeDataInterface getDcmDspAlternativeDataInterface(){
 						containerValue.getByType(typeof(DcmDspAlternativeDataInterface))
 					}
@@ -3056,6 +3266,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspAlternativeDataInterface)){
+								return false
+							}
+							this.target == (object as DcmDspAlternativeDataInterface).target
+						}
+						
 						
 						
 						
@@ -3080,6 +3297,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspAlternativeDataProps)){
+								return false
+							}
+							this.target == (object as DcmDspAlternativeDataProps).target
 						}
 						
 						def DcmDspDataTypeCategory getDcmDspDataTypeCategory(){
@@ -3165,6 +3389,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspLinearScale)){
+									return false
+								}
+								this.target == (object as DcmDspLinearScale).target
 							}
 							
 							def BigDecimal getDcmDspDiagnosisRepresentationDataLowerRange(){
@@ -3255,6 +3486,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspTextTableMapping)){
+									return false
+								}
+								this.target == (object as DcmDspTextTableMapping).target
+							}
+							
 							def BigInteger getDcmDspDiagnosisRepresentationDataValue(){
 								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDiagnosisRepresentationDataValue"])
 							}
@@ -3313,6 +3551,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspAlternativeDataType)){
+								return false
+							}
+							this.target == (object as DcmDspAlternativeDataType).target
+						}
+						
 						
 						
 						
@@ -3353,6 +3598,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspTextTableMapping)){
+									return false
+								}
+								this.target == (object as DcmDspTextTableMapping).target
 							}
 							
 							def BigInteger getDcmDspDiagnosisRepresentationDataValue(){
@@ -3415,6 +3667,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspExternalSRDataElementClass)){
+							return false
+						}
+						this.target == (object as DcmDspExternalSRDataElementClass).target
+					}
+					
 					def DcmDataElementInstance getDcmDataElementInstance(){
 						containerValue.getByType(typeof(DcmDataElementInstance))
 					}
@@ -3459,6 +3718,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDataElementInstance)){
+								return false
+							}
+							this.target == (object as DcmDataElementInstance).target
+						}
+						
 						
 						
 						
@@ -3484,6 +3750,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmSubElementInDataElementInstance)){
+								return false
+							}
+							this.target == (object as DcmSubElementInDataElementInstance).target
+						}
+						
 						
 						
 						
@@ -3507,6 +3780,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmSubElementInImplDataElementInstance)){
+								return false
+							}
+							this.target == (object as DcmSubElementInImplDataElementInstance).target
 						}
 						
 						
@@ -3536,6 +3816,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspDataInfo)){
+						return false
+					}
+					this.target == (object as DcmDspDataInfo).target
 				}
 				
 				def BigInteger getDcmDspDataScalingInfoSize(){
@@ -3576,6 +3863,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspDid)){
+						return false
+					}
+					this.target == (object as DcmDspDid).target
 				}
 				
 				def BigInteger getDcmDspDidIdentifier(){
@@ -3717,6 +4011,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspDidSignal)){
+							return false
+						}
+						this.target == (object as DcmDspDidSignal).target
+					}
+					
 					def BigInteger getDcmDspDidDataPos(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidDataPos"])
 					}
@@ -3768,6 +4069,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspDidInfo)){
+						return false
+					}
+					this.target == (object as DcmDspDidInfo).target
 				}
 				
 				def BigInteger getDcmDspDDDIDMaxElements(){
@@ -3849,6 +4157,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspDidControl)){
+							return false
+						}
+						this.target == (object as DcmDspDidControl).target
 					}
 					
 					def Boolean getDcmDspDidFreezeCurrentState(){
@@ -4000,6 +4315,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspDidRead)){
+							return false
+						}
+						this.target == (object as DcmDspDidRead).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmProcessingConditions.DcmModeRule getDcmDspDidReadModeRuleRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dcm.DcmConfigSet.DcmProcessingConditions.DcmModeRule), "DcmDspDidReadModeRuleRef")
@@ -4099,6 +4421,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspDidWrite)){
+							return false
+						}
+						this.target == (object as DcmDspDidWrite).target
 					}
 					
 					
@@ -4202,6 +4531,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspDidRange)){
+						return false
+					}
+					this.target == (object as DcmDspDidRange).target
 				}
 				
 				def Boolean getDcmDspDidRangeHasGaps(){
@@ -4367,6 +4703,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspMemory)){
+						return false
+					}
+					this.target == (object as DcmDspMemory).target
+				}
+				
 				
 				
 				def DcmDspAddressAndLengthFormatIdentifier getDcmDspAddressAndLengthFormatIdentifier(){
@@ -4417,6 +4760,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspAddressAndLengthFormatIdentifier)){
+							return false
+						}
+						this.target == (object as DcmDspAddressAndLengthFormatIdentifier).target
+					}
+					
 					def List<BigInteger> getDcmDspSupportedAddressAndLengthFormatIdentifiers(){
 						val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 							override protected accept(EcucNumericalParamValue item) {
@@ -4452,6 +4802,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspMemoryIdInfo)){
+							return false
+						}
+						this.target == (object as DcmDspMemoryIdInfo).target
 					}
 					
 					def BigInteger getDcmDspMemoryIdValue(){
@@ -4528,6 +4885,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspReadMemoryRangeInfo)){
+								return false
+							}
+							this.target == (object as DcmDspReadMemoryRangeInfo).target
 						}
 						
 						def BigInteger getDcmDspReadMemoryRangeHigh(){
@@ -4628,6 +4992,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspWriteMemoryRangeInfo)){
+								return false
+							}
+							this.target == (object as DcmDspWriteMemoryRangeInfo).target
 						}
 						
 						def BigInteger getDcmDspWriteMemoryRangeHigh(){
@@ -4734,6 +5105,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspPeriodicDidTransmission)){
+						return false
+					}
+					this.target == (object as DcmDspPeriodicDidTransmission).target
+				}
+				
 				def BigInteger getDcmDspMaxPeriodicDidScheduler(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspMaxPeriodicDidScheduler"])
 				}
@@ -4772,6 +5150,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspPeriodicTransmission)){
+						return false
+					}
+					this.target == (object as DcmDspPeriodicTransmission).target
 				}
 				
 				def BigDecimal getDcmDspPeriodicTransmissionFastRate(){
@@ -4844,6 +5229,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspPid)){
+						return false
+					}
+					this.target == (object as DcmDspPid).target
 				}
 				
 				def BigInteger getDcmDspPidIdentifier(){
@@ -4989,6 +5381,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspPidData)){
+							return false
+						}
+						this.target == (object as DcmDspPidData).target
+					}
+					
 					def BigInteger getDcmDspPidDataPos(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataPos"])
 					}
@@ -5070,6 +5469,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspPidDataSupportInfo)){
+								return false
+							}
+							this.target == (object as DcmDspPidDataSupportInfo).target
+						}
+						
 						def BigInteger getDcmDspPidDataSupportInfoBit(){
 							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidDataSupportInfoBit"])
 						}
@@ -5119,6 +5525,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspPidService01)){
+								return false
+							}
+							this.target == (object as DcmDspPidService01).target
 						}
 						
 						def DcmDspPidDataEndianness getDcmDspPidDataEndianness(){
@@ -5288,6 +5701,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspPidService02)){
+								return false
+							}
+							this.target == (object as DcmDspPidService02).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemPidClass.DemPidDataElement getDcmDspPidDataDemRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemPidClass.DemPidDataElement), "DcmDspPidDataDemRef")
@@ -5323,6 +5743,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspPidSupportInfo)){
+							return false
+						}
+						this.target == (object as DcmDspPidSupportInfo).target
 					}
 					
 					def BigInteger getDcmDspPidSupportInfoLen(){
@@ -5381,6 +5808,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspRequestControl)){
+						return false
+					}
+					this.target == (object as DcmDspRequestControl).target
 				}
 				
 				def BigInteger getDcmDspRequestControlInBufferSize(){
@@ -5455,6 +5889,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspRequestFileTransfer)){
+						return false
+					}
+					this.target == (object as DcmDspRequestFileTransfer).target
+				}
+				
 				def BigInteger getDcmRequestFileTransferFileSizeParameterLength(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRequestFileTransferFileSizeParameterLength"])
 				}
@@ -5509,6 +5950,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspRoe)){
+						return false
+					}
+					this.target == (object as DcmDspRoe).target
 				}
 				
 				def BigDecimal getDcmDspRoeInterMessageTime(){
@@ -5585,6 +6033,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspRoeEvent)){
+							return false
+						}
+						this.target == (object as DcmDspRoeEvent).target
 					}
 					
 					def BigInteger getDcmDspRoeEventId(){
@@ -5667,6 +6122,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspRoeEventProperties)){
+								return false
+							}
+							this.target == (object as DcmDspRoeEventProperties).target
+						}
+						
 						def DcmDspRoeOnChangeOfDataIdentifier getDcmDspRoeOnChangeOfDataIdentifier(){
 							containerValue.getByType(typeof(DcmDspRoeOnChangeOfDataIdentifier))
 						}
@@ -5701,6 +6163,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspRoeOnChangeOfDataIdentifier)){
+									return false
+								}
+								this.target == (object as DcmDspRoeOnChangeOfDataIdentifier).target
 							}
 							
 							
@@ -5738,6 +6207,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspRoeOnDTCStatusChange)){
+									return false
+								}
+								this.target == (object as DcmDspRoeOnDTCStatusChange).target
+							}
+							
 							
 							
 							
@@ -5764,6 +6240,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspRoeEventWindowTime)){
+							return false
+						}
+						this.target == (object as DcmDspRoeEventWindowTime).target
 					}
 					
 					def DcmDspRoeEventWindowTimeEnum getDcmDspRoeEventWindowTime(){
@@ -5841,6 +6324,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspRoutine)){
+						return false
+					}
+					this.target == (object as DcmDspRoutine).target
 				}
 				
 				def BigInteger getDcmDspRoutineIdentifier(){
@@ -5962,6 +6452,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspRequestRoutineResults)){
+							return false
+						}
+						this.target == (object as DcmDspRequestRoutineResults).target
+					}
+					
 					def String getDcmDspRequestRoutineResultsFnc(){
 						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRequestRoutineResultsFnc"])
 					}
@@ -6009,6 +6506,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspRequestRoutineResultsOut)){
+								return false
+							}
+							this.target == (object as DcmDspRequestRoutineResultsOut).target
+						}
+						
 						
 						
 						def List<DcmDspRequestRoutineResultsOutSignal> getDcmDspRequestRoutineResultsOutSignals(){
@@ -6048,6 +6552,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspRequestRoutineResultsOutSignal)){
+									return false
+								}
+								this.target == (object as DcmDspRequestRoutineResultsOutSignal).target
 							}
 							
 							def DcmDspRoutineSignalEndianness getDcmDspRoutineSignalEndianness(){
@@ -6190,6 +6701,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspStartRoutine)){
+							return false
+						}
+						this.target == (object as DcmDspStartRoutine).target
+					}
+					
 					def String getDcmDspStartRoutineFnc(){
 						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspStartRoutineFnc"])
 					}
@@ -6246,6 +6764,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspStartRoutineIn)){
+								return false
+							}
+							this.target == (object as DcmDspStartRoutineIn).target
+						}
+						
 						
 						
 						def List<DcmDspStartRoutineInSignal> getDcmDspStartRoutineInSignals(){
@@ -6285,6 +6810,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspStartRoutineInSignal)){
+									return false
+								}
+								this.target == (object as DcmDspStartRoutineInSignal).target
 							}
 							
 							def DcmDspRoutineSignalEndianness getDcmDspRoutineSignalEndianness(){
@@ -6425,6 +6957,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspStartRoutineOut)){
+								return false
+							}
+							this.target == (object as DcmDspStartRoutineOut).target
+						}
+						
 						
 						
 						def List<DcmDspStartRoutineOutSignal> getDcmDspStartRoutineOutSignals(){
@@ -6464,6 +7003,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspStartRoutineOutSignal)){
+									return false
+								}
+								this.target == (object as DcmDspStartRoutineOutSignal).target
 							}
 							
 							def DcmDspRoutineSignalEndianness getDcmDspRoutineSignalEndianness(){
@@ -6606,6 +7152,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspStopRoutine)){
+							return false
+						}
+						this.target == (object as DcmDspStopRoutine).target
+					}
+					
 					def String getDcmDspStopRoutineFnc(){
 						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspStopRoutineFnc"])
 					}
@@ -6662,6 +7215,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspStopRoutineIn)){
+								return false
+							}
+							this.target == (object as DcmDspStopRoutineIn).target
+						}
+						
 						
 						
 						def List<DcmDspStopRoutineInSignal> getDcmDspStopRoutineInSignals(){
@@ -6701,6 +7261,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspStopRoutineInSignal)){
+									return false
+								}
+								this.target == (object as DcmDspStopRoutineInSignal).target
 							}
 							
 							def DcmDspRoutineSignalEndianness getDcmDspRoutineSignalEndianness(){
@@ -6841,6 +7408,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DcmDspStopRoutineOut)){
+								return false
+							}
+							this.target == (object as DcmDspStopRoutineOut).target
+						}
+						
 						
 						
 						def List<DcmDspStopRoutineOutSignal> getDcmDspStopRoutineOutSignals(){
@@ -6880,6 +7454,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DcmDspStopRoutineOutSignal)){
+									return false
+								}
+								this.target == (object as DcmDspStopRoutineOutSignal).target
 							}
 							
 							def DcmDspRoutineSignalEndianness getDcmDspRoutineSignalEndianness(){
@@ -7024,6 +7605,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspSecurity)){
+						return false
+					}
+					this.target == (object as DcmDspSecurity).target
+				}
+				
 				
 				
 				def List<DcmDspSecurityRow> getDcmDspSecurityRows(){
@@ -7063,6 +7651,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspSecurityRow)){
+							return false
+						}
+						this.target == (object as DcmDspSecurityRow).target
 					}
 					
 					def BigInteger getDcmDspSecurityADRSize(){
@@ -7316,6 +7911,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspSession)){
+						return false
+					}
+					this.target == (object as DcmDspSession).target
+				}
+				
 				
 				
 				def List<DcmDspSessionRow> getDcmDspSessionRows(){
@@ -7355,6 +7957,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspSessionRow)){
+							return false
+						}
+						this.target == (object as DcmDspSessionRow).target
 					}
 					
 					def DcmDspSessionForBoot getDcmDspSessionForBoot(){
@@ -7466,6 +8075,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmDspVehInfo)){
+						return false
+					}
+					this.target == (object as DcmDspVehInfo).target
+				}
+				
 				def BigInteger getDcmDspVehInfoInfoType(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoInfoType"])
 				}
@@ -7521,6 +8137,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DcmDspVehInfoData)){
+							return false
+						}
+						this.target == (object as DcmDspVehInfoData).target
 					}
 					
 					def BigInteger getDcmDspVehInfoDataOrder(){
@@ -7615,6 +8238,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DcmPageBufferCfg)){
+					return false
+				}
+				this.target == (object as DcmPageBufferCfg).target
+			}
+			
 			def Boolean getDcmPagedBufferEnabled(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmPagedBufferEnabled"])
 			}
@@ -7669,6 +8299,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DcmProcessingConditions)){
+					return false
+				}
+				this.target == (object as DcmProcessingConditions).target
 			}
 			
 			
@@ -7729,6 +8366,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmModeCondition)){
+						return false
+					}
+					this.target == (object as DcmModeCondition).target
 				}
 				
 				def DcmConditionType getDcmConditionType(){
@@ -7810,6 +8454,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DcmModeRule)){
+						return false
+					}
+					this.target == (object as DcmModeRule).target
+				}
+				
 				def DcmLogicalOperator getDcmLogicalOperator(){
 					getDcmLogicalOperatorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmLogicalOperator"])
 				}
@@ -7885,6 +8536,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DcmGeneral)){
+				return false
+			}
+			this.target == (object as DcmGeneral).target
 		}
 		
 		def Boolean getDcmDDDIDStorage(){
@@ -7994,6 +8652,13 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Dcm)){
+			return false
+		}
+		this.target == (object as Dcm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

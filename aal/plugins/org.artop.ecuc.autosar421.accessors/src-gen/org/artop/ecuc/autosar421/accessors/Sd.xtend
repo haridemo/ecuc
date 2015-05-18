@@ -106,6 +106,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SdConfig)){
+				return false
+			}
+			this.target == (object as SdConfig).target
+		}
+		
 		
 		
 		def List<SdInstance> getSdInstances(){
@@ -145,6 +152,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SdInstance)){
+					return false
+				}
+				this.target == (object as SdInstance).target
 			}
 			
 			def String getSdInstanceHostname(){
@@ -295,6 +309,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdClientService)){
+						return false
+					}
+					this.target == (object as SdClientService).target
 				}
 				
 				def Boolean getSdClientServiceAutoRequire(){
@@ -495,6 +516,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SdClientCapabilityRecord)){
+							return false
+						}
+						this.target == (object as SdClientCapabilityRecord).target
+					}
+					
 					def String getSdClientServiceCapabilityRecordKey(){
 						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceCapabilityRecordKey"])
 					}
@@ -549,6 +577,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SdConsumedEventGroup)){
+							return false
+						}
+						this.target == (object as SdConsumedEventGroup).target
 					}
 					
 					def Boolean getSdConsumedEventGroupAutoRequire(){
@@ -717,6 +752,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof SdClientCapabilityRecord)){
+								return false
+							}
+							this.target == (object as SdClientCapabilityRecord).target
+						}
+						
 						def String getSdClientServiceCapabilityRecordKey(){
 							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceCapabilityRecordKey"])
 						}
@@ -775,6 +817,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SdConsumedMethods)){
+							return false
+						}
+						this.target == (object as SdConsumedMethods).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdClientServiceActivationRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdClientServiceActivationRef")
@@ -810,6 +859,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdClientTimer)){
+						return false
+					}
+					this.target == (object as SdClientTimer).target
 				}
 				
 				def BigDecimal getSdClientTimerInitialFindDelayMax(){
@@ -948,6 +1004,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdInstanceDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as SdInstanceDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getSD_E_MALFORMED_MSG(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "SD_E_MALFORMED_MSG")
@@ -992,6 +1055,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdInstanceMulticastRxPdu)){
+						return false
+					}
+					this.target == (object as SdInstanceMulticastRxPdu).target
 				}
 				
 				def BigInteger getSdRxPduId(){
@@ -1045,6 +1115,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdInstanceTxPdu)){
+						return false
+					}
+					this.target == (object as SdInstanceTxPdu).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getSdTxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "SdTxPduRef")
@@ -1078,6 +1155,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdInstanceUnicastRxPdu)){
+						return false
+					}
+					this.target == (object as SdInstanceUnicastRxPdu).target
 				}
 				
 				def BigInteger getSdRxPduId(){
@@ -1129,6 +1213,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdServerService)){
+						return false
+					}
+					this.target == (object as SdServerService).target
 				}
 				
 				def Boolean getSdServerServiceAutoAvailable(){
@@ -1329,6 +1420,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SdEventHandler)){
+							return false
+						}
+						this.target == (object as SdEventHandler).target
+					}
+					
 					def BigInteger getSdEventHandlerEventGroupId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdEventHandlerEventGroupId"])
 					}
@@ -1456,6 +1554,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof SdEventHandlerMulticast)){
+								return false
+							}
+							this.target == (object as SdEventHandlerMulticast).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdEventActivationRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdEventActivationRef")
@@ -1500,6 +1605,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof SdEventHandlerTcp)){
+								return false
+							}
+							this.target == (object as SdEventHandlerTcp).target
 						}
 						
 						
@@ -1548,6 +1660,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof SdEventHandlerUdp)){
+								return false
+							}
+							this.target == (object as SdEventHandlerUdp).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdEventActivationRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdEventActivationRef")
@@ -1592,6 +1711,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof SdServerCapabilityRecord)){
+								return false
+							}
+							this.target == (object as SdServerCapabilityRecord).target
 						}
 						
 						def String getSdServerCapabilityRecordKey(){
@@ -1652,6 +1778,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SdProvidedMethods)){
+							return false
+						}
+						this.target == (object as SdProvidedMethods).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup getSdServerServiceActivationRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.SoAd.SoAdConfig.SoAdRoutingGroup), "SdServerServiceActivationRef")
@@ -1685,6 +1818,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SdServerCapabilityRecord)){
+							return false
+						}
+						this.target == (object as SdServerCapabilityRecord).target
 					}
 					
 					def String getSdServerCapabilityRecordKey(){
@@ -1743,6 +1883,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SdServerTimer)){
+						return false
+					}
+					this.target == (object as SdServerTimer).target
 				}
 				
 				def BigDecimal getSdServerTimerInitialOfferDelayMax(){
@@ -1900,6 +2047,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SdGeneral)){
+				return false
+			}
+			this.target == (object as SdGeneral).target
+		}
+		
 		def Boolean getSdDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdDevErrorDetect"])
 		}
@@ -1951,6 +2105,13 @@ class Sd implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Sd)){
+			return false
+		}
+		this.target == (object as Sd).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

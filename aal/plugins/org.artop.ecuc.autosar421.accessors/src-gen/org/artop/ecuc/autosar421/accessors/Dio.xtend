@@ -106,6 +106,13 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DioConfig)){
+				return false
+			}
+			this.target == (object as DioConfig).target
+		}
+		
 		
 		
 		def List<DioPort> getDioPorts(){
@@ -145,6 +152,13 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DioPort)){
+					return false
+				}
+				this.target == (object as DioPort).target
 			}
 			
 			def BigInteger getDioPortId(){
@@ -223,6 +237,13 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DioChannel)){
+						return false
+					}
+					this.target == (object as DioChannel).target
+				}
+				
 				def BigInteger getDioChannelId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelId"])
 				}
@@ -261,6 +282,13 @@ class Dio implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DioChannelGroup)){
+						return false
+					}
+					this.target == (object as DioChannelGroup).target
 				}
 				
 				def String getDioChannelGroupIdentification(){
@@ -338,6 +366,13 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DioGeneral)){
+				return false
+			}
+			this.target == (object as DioGeneral).target
+		}
+		
 		def Boolean getDioDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioDevErrorDetect"])
 		}
@@ -389,6 +424,13 @@ class Dio implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Dio)){
+			return false
+		}
+		this.target == (object as Dio).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

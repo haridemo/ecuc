@@ -106,6 +106,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939TpConfiguration)){
+				return false
+			}
+			this.target == (object as J1939TpConfiguration).target
+		}
+		
 		
 		
 		def List<J1939TpRxChannel> getJ1939TpRxChannels(){
@@ -164,6 +171,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939TpRxChannel)){
+					return false
+				}
+				this.target == (object as J1939TpRxChannel).target
 			}
 			
 			def Boolean getJ1939TpRxCancellationSupport(){
@@ -379,6 +393,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpRxCmNPdu)){
+						return false
+					}
+					this.target == (object as J1939TpRxCmNPdu).target
+				}
+				
 				def BigInteger getJ1939TpRxCmNPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCmNPduId"])
 				}
@@ -430,6 +451,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpRxDtNPdu)){
+						return false
+					}
+					this.target == (object as J1939TpRxDtNPdu).target
+				}
+				
 				def BigInteger getJ1939TpRxDtNPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDtNPduId"])
 				}
@@ -479,6 +507,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpRxPg)){
+						return false
+					}
+					this.target == (object as J1939TpRxPg).target
 				}
 				
 				def Boolean getJ1939TpRxPgDynLength(){
@@ -563,6 +598,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939TpRxDirectNPdu)){
+							return false
+						}
+						this.target == (object as J1939TpRxDirectNPdu).target
+					}
+					
 					def BigInteger getJ1939TpRxDirectNPduId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDirectNPduId"])
 					}
@@ -612,6 +654,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939TpRxNSdu)){
+							return false
+						}
+						this.target == (object as J1939TpRxNSdu).target
 					}
 					
 					def BigInteger getJ1939TpRxNSduId(){
@@ -667,6 +716,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpTxFcNPdu)){
+						return false
+					}
+					this.target == (object as J1939TpTxFcNPdu).target
+				}
+				
 				def BigInteger getJ1939TpTxFcNPduTxConfId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxFcNPduTxConfId"])
 				}
@@ -718,6 +774,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939TpTxChannel)){
+					return false
+				}
+				this.target == (object as J1939TpTxChannel).target
 			}
 			
 			def Boolean getJ1939TpTxCancellationSupport(){
@@ -917,6 +980,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpRxFcNPdu)){
+						return false
+					}
+					this.target == (object as J1939TpRxFcNPdu).target
+				}
+				
 				def BigInteger getJ1939TpRxFcNPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxFcNPduId"])
 				}
@@ -966,6 +1036,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpTxCmNPdu)){
+						return false
+					}
+					this.target == (object as J1939TpTxCmNPdu).target
 				}
 				
 				def BigInteger getJ1939TpTxCmNPduTxConfId(){
@@ -1019,6 +1096,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpTxDtNPdu)){
+						return false
+					}
+					this.target == (object as J1939TpTxDtNPdu).target
+				}
+				
 				def BigInteger getJ1939TpTxDtNPduTxConfId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDtNPduTxConfId"])
 				}
@@ -1068,6 +1152,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939TpTxPg)){
+						return false
+					}
+					this.target == (object as J1939TpTxPg).target
 				}
 				
 				def Boolean getJ1939TpTxPgDynLength(){
@@ -1152,6 +1243,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939TpTxDirectNPdu)){
+							return false
+						}
+						this.target == (object as J1939TpTxDirectNPdu).target
+					}
+					
 					def BigInteger getJ1939TpTxDirectNPduTxConfId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDirectNPduTxConfId"])
 					}
@@ -1201,6 +1299,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939TpTxNSdu)){
+							return false
+						}
+						this.target == (object as J1939TpTxNSdu).target
 					}
 					
 					def BigInteger getJ1939TpTxNSduId(){
@@ -1257,6 +1362,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939TpGeneral)){
+				return false
+			}
+			this.target == (object as J1939TpGeneral).target
 		}
 		
 		def Boolean getJ1939TpCancellationSupport(){
@@ -1342,6 +1454,13 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof J1939Tp)){
+			return false
+		}
+		this.target == (object as J1939Tp).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -106,6 +106,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrIfConfig)){
+				return false
+			}
+			this.target == (object as FrIfConfig).target
+		}
+		
 		def BigInteger getFrIfMaxPduCnt(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfMaxPduCnt"])
 		}
@@ -199,6 +206,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrIfCluster)){
+					return false
+				}
+				this.target == (object as FrIfCluster).target
 			}
 			
 			def BigInteger getFrIfClstIdx(){
@@ -893,6 +907,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrIfClusterDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as FrIfClusterDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getFRIF_E_ACS_CH_A(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "FRIF_E_ACS_CH_A")
@@ -981,6 +1002,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrIfController)){
+						return false
+					}
+					this.target == (object as FrIfController).target
 				}
 				
 				def BigInteger getFrIfCtrlIdx(){
@@ -1087,6 +1115,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrIfFrameTriggering)){
+							return false
+						}
+						this.target == (object as FrIfFrameTriggering).target
 					}
 					
 					def Boolean getFrIfAllowDynamicLSduLength(){
@@ -1294,6 +1329,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof FrIfFrameTriggeringDemEventParameterRefs)){
+								return false
+							}
+							this.target == (object as FrIfFrameTriggeringDemEventParameterRefs).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getFRIF_E_LPDU_SLOTSTATUS(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "FRIF_E_LPDU_SLOTSTATUS")
@@ -1329,6 +1371,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrIfLPdu)){
+							return false
+						}
+						this.target == (object as FrIfLPdu).target
 					}
 					
 					def BigInteger getFrIfLPduIdx(){
@@ -1396,6 +1445,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrIfTransceiver)){
+							return false
+						}
+						this.target == (object as FrIfTransceiver).target
 					}
 					
 					def FrIfClusterChannel getFrIfClusterChannel(){
@@ -1468,6 +1524,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrIfJobList)){
+						return false
+					}
+					this.target == (object as FrIfJobList).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Fr.FrMultipleConfiguration.FrController.FrAbsoluteTimer getFrIfAbsTimerRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Fr.FrMultipleConfiguration.FrController.FrAbsoluteTimer), "FrIfAbsTimerRef")
@@ -1518,6 +1581,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrIfJob)){
+							return false
+						}
+						this.target == (object as FrIfJob).target
 					}
 					
 					def BigInteger getFrIfCycle(){
@@ -1607,6 +1677,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof FrIfCommunicationOperation)){
+								return false
+							}
+							this.target == (object as FrIfCommunicationOperation).target
 						}
 						
 						def FrIfCommunicationAction getFrIfCommunicationAction(){
@@ -1727,6 +1804,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrIfFrameStructure)){
+					return false
+				}
+				this.target == (object as FrIfFrameStructure).target
+			}
+			
 			def FrIfByteOrder getFrIfByteOrder(){
 				getFrIfByteOrderValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfByteOrder"])
 			}
@@ -1801,6 +1885,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrIfPdusInFrame)){
+						return false
+					}
+					this.target == (object as FrIfPdusInFrame).target
+				}
+				
 				def BigInteger getFrIfPduOffset(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfPduOffset"])
 				}
@@ -1870,6 +1961,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrIfPdu)){
+					return false
+				}
+				this.target == (object as FrIfPdu).target
+			}
+			
 			
 			
 			def FrIfPduDirection getFrIfPduDirection(){
@@ -1899,6 +1997,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrIfPduDirection)){
+						return false
+					}
+					this.target == (object as FrIfPduDirection).target
 				}
 				
 				def FrIfRxPdu getFrIfRxPdu(){
@@ -1935,6 +2040,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrIfRxPdu)){
+							return false
+						}
+						this.target == (object as FrIfRxPdu).target
 					}
 					
 					def String getFrIfRxIndicationName(){
@@ -2027,6 +2139,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrIfTxPdu)){
+							return false
+						}
+						this.target == (object as FrIfTxPdu).target
 					}
 					
 					def Boolean getFrIfConfirm(){
@@ -2222,6 +2341,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrIfGeneral)){
+				return false
+			}
+			this.target == (object as FrIfGeneral).target
 		}
 		
 		def BigInteger getFrIfAbsTimerIdx(){
@@ -2608,6 +2734,13 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrIf)){
+			return false
+		}
+		this.target == (object as FrIf).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

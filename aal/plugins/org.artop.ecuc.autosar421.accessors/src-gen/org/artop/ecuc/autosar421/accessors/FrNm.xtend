@@ -106,6 +106,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrNmChannelConfig)){
+				return false
+			}
+			this.target == (object as FrNmChannelConfig).target
+		}
+		
 		
 		
 		def List<FrNmChannel> getFrNmChannels(){
@@ -147,6 +154,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrNmChannel)){
+					return false
+				}
+				this.target == (object as FrNmChannel).target
+			}
+			
 			
 			
 			def FrNmChannelIdentifiers getFrNmChannelIdentifiers(){
@@ -185,6 +199,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrNmChannelIdentifiers)){
+						return false
+					}
+					this.target == (object as FrNmChannelIdentifiers).target
 				}
 				
 				def Boolean getFrNmActiveWakeupBitEnabled(){
@@ -508,6 +529,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrNmRxPdu)){
+							return false
+						}
+						this.target == (object as FrNmRxPdu).target
+					}
+					
 					def Boolean getFrNmRxPduContainsData(){
 						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrNmRxPduContainsData"])
 					}
@@ -589,6 +617,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrNmTxPdu)){
+							return false
+						}
+						this.target == (object as FrNmTxPdu).target
 					}
 					
 					def BigInteger getFrNmTxConfirmationPduId(){
@@ -674,6 +709,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrNmUserDataTxPdu)){
+							return false
+						}
+						this.target == (object as FrNmUserDataTxPdu).target
+					}
+					
 					def BigInteger getFrNmTxUserDataPduId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrNmTxUserDataPduId"])
 					}
@@ -725,6 +767,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrNmChannelTiming)){
+						return false
+					}
+					this.target == (object as FrNmChannelTiming).target
 				}
 				
 				def FrNmDataCycle getFrNmDataCycle(){
@@ -979,6 +1028,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrNmGlobalConfig)){
+				return false
+			}
+			this.target == (object as FrNmGlobalConfig).target
+		}
+		
 		
 		
 		def FrNmGlobalConstants getFrNmGlobalConstants(){
@@ -1028,6 +1084,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrNmGlobalConstants)){
+					return false
+				}
+				this.target == (object as FrNmGlobalConstants).target
+			}
+			
 			def BigInteger getFrNmNumberOfClusters(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrNmNumberOfClusters"])
 			}
@@ -1066,6 +1129,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrNmGlobalFeatures)){
+					return false
+				}
+				this.target == (object as FrNmGlobalFeatures).target
 			}
 			
 			def Boolean getFrNmBusSynchronizationEnabled(){
@@ -1398,6 +1468,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrNmPnInfo)){
+						return false
+					}
+					this.target == (object as FrNmPnInfo).target
+				}
+				
 				def BigInteger getFrNmPnInfoLength(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrNmPnInfoLength"])
 				}
@@ -1471,6 +1548,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrNmPnFilterMaskByte)){
+							return false
+						}
+						this.target == (object as FrNmPnFilterMaskByte).target
+					}
+					
 					def BigInteger getFrNmPnFilterMaskByteIndex(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrNmPnFilterMaskByteIndex"])
 					}
@@ -1531,6 +1615,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrNmGlobalProperties)){
+					return false
+				}
+				this.target == (object as FrNmGlobalProperties).target
+			}
+			
 			def Boolean getFrNmDevErrorDetect(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrNmDevErrorDetect"])
 			}
@@ -1584,6 +1675,13 @@ class FrNm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrNm)){
+			return false
+		}
+		this.target == (object as FrNm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

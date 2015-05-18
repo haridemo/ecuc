@@ -124,6 +124,13 @@ class Fee implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FeeBlockConfiguration)){
+				return false
+			}
+			this.target == (object as FeeBlockConfiguration).target
+		}
+		
 		def BigInteger getFeeBlockNumber(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeBlockNumber"])
 		}
@@ -220,6 +227,13 @@ class Fee implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FeeGeneral)){
+				return false
+			}
+			this.target == (object as FeeGeneral).target
 		}
 		
 		def Boolean getFeeDevErrorDetect(){
@@ -373,6 +387,13 @@ class Fee implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FeePublishedInformation)){
+				return false
+			}
+			this.target == (object as FeePublishedInformation).target
+		}
+		
 		def BigInteger getFeeBlockOverhead(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeBlockOverhead"])
 		}
@@ -408,6 +429,13 @@ class Fee implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Fee)){
+			return false
+		}
+		this.target == (object as Fee).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

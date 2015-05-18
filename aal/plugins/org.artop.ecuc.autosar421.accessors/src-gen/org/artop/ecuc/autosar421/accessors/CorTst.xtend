@@ -150,6 +150,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CorTstBackgroundConfigSet)){
+				return false
+			}
+			this.target == (object as CorTstBackgroundConfigSet).target
+		}
+		
 		
 		
 		def CorTstSelect getCorTstSelect(){
@@ -179,6 +186,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CorTstSelect)){
+					return false
+				}
+				this.target == (object as CorTstSelect).target
 			}
 			
 			def Boolean getCorTstAddress(){
@@ -318,6 +332,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CorTstConfigApiServices)){
+				return false
+			}
+			this.target == (object as CorTstConfigApiServices).target
+		}
+		
 		def Boolean getCorTstAbortApi(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstAbortApi"])
 		}
@@ -453,6 +474,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CorTstDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as CorTstDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getCORTST_E_CORE_FAILURE(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "CORTST_E_CORE_FAILURE")
@@ -485,6 +513,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CorTstForegroundConfigSet)){
+				return false
+			}
+			this.target == (object as CorTstForegroundConfigSet).target
 		}
 		
 		def BigInteger getCorTstTestIdFgnd(){
@@ -532,6 +567,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CorTstSelect)){
+					return false
+				}
+				this.target == (object as CorTstSelect).target
 			}
 			
 			def Boolean getCorTstAddress(){
@@ -671,6 +713,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CorTstGeneral)){
+				return false
+			}
+			this.target == (object as CorTstGeneral).target
+		}
+		
 		def Boolean getCorTstDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstDevErrorDetect"])
 		}
@@ -754,6 +803,13 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof CorTst)){
+			return false
+		}
+		this.target == (object as CorTst).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

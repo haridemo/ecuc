@@ -114,6 +114,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof IpduMConfig)){
+				return false
+			}
+			this.target == (object as IpduMConfig).target
+		}
+		
 		def BigInteger getIpduMMaxTxBufferSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxBufferSize"])
 		}
@@ -282,6 +289,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IpduMContainedRxPdu)){
+					return false
+				}
+				this.target == (object as IpduMContainedRxPdu).target
+			}
+			
 			def BigInteger getIpduMContainedPduHeaderId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"])
 			}
@@ -342,6 +356,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IpduMContainedTxPdu)){
+					return false
+				}
+				this.target == (object as IpduMContainedTxPdu).target
 			}
 			
 			def BigInteger getIpduMContainedPduHeaderId(){
@@ -520,6 +541,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IpduMContainerRxPdu)){
+					return false
+				}
+				this.target == (object as IpduMContainerRxPdu).target
+			}
+			
 			def IpduMContainerHeaderSize getIpduMContainerHeaderSize(){
 				getIpduMContainerHeaderSizeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerHeaderSize"])
 			}
@@ -684,6 +712,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IpduMContainerTxPdu)){
+					return false
+				}
+				this.target == (object as IpduMContainerTxPdu).target
 			}
 			
 			def IpduMContainerHeaderSize getIpduMContainerHeaderSize(){
@@ -883,6 +918,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IpduMRxPathway)){
+					return false
+				}
+				this.target == (object as IpduMRxPathway).target
+			}
+			
 			
 			
 			def IpduMRxIndication getIpduMRxIndication(){
@@ -912,6 +954,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof IpduMRxIndication)){
+						return false
+					}
+					this.target == (object as IpduMRxIndication).target
 				}
 				
 				def IpduMByteOrder getIpduMByteOrder(){
@@ -1071,6 +1120,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMRxDynamicPart)){
+							return false
+						}
+						this.target == (object as IpduMRxDynamicPart).target
+					}
+					
 					def BigInteger getIpduMRxSelectorValue(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxSelectorValue"])
 					}
@@ -1120,6 +1176,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMRxDynamicSegment)){
+							return false
+						}
+						this.target == (object as IpduMRxDynamicSegment).target
 					}
 					
 					def BigInteger getIpduMSegmentLength(){
@@ -1178,6 +1241,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMRxStaticPart)){
+							return false
+						}
+						this.target == (object as IpduMRxStaticPart).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getIpduMOutgoingStaticPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "IpduMOutgoingStaticPduRef")
@@ -1211,6 +1281,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMRxStaticSegment)){
+							return false
+						}
+						this.target == (object as IpduMRxStaticSegment).target
 					}
 					
 					def BigInteger getIpduMSegmentLength(){
@@ -1267,6 +1344,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMSelectorField)){
+							return false
+						}
+						this.target == (object as IpduMSelectorField).target
 					}
 					
 					def BigInteger getIpduMSelectorFieldLength(){
@@ -1329,6 +1413,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IpduMTxPathway)){
+					return false
+				}
+				this.target == (object as IpduMTxPathway).target
+			}
+			
 			
 			
 			def IpduMTxRequest getIpduMTxRequest(){
@@ -1358,6 +1449,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof IpduMTxRequest)){
+						return false
+					}
+					this.target == (object as IpduMTxRequest).target
 				}
 				
 				def IpduMByteOrder getIpduMByteOrder(){
@@ -1597,6 +1695,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMSelectorField)){
+							return false
+						}
+						this.target == (object as IpduMSelectorField).target
+					}
+					
 					def BigInteger getIpduMSelectorFieldLength(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"])
 					}
@@ -1651,6 +1756,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMTxDynamicPart)){
+							return false
+						}
+						this.target == (object as IpduMTxDynamicPart).target
 					}
 					
 					def Boolean getIpduMJitUpdate(){
@@ -1736,6 +1848,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMTxDynamicSegment)){
+							return false
+						}
+						this.target == (object as IpduMTxDynamicSegment).target
+					}
+					
 					def BigInteger getIpduMSegmentLength(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
 					}
@@ -1790,6 +1909,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMTxStaticPart)){
+							return false
+						}
+						this.target == (object as IpduMTxStaticPart).target
 					}
 					
 					def Boolean getIpduMJitUpdate(){
@@ -1875,6 +2001,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof IpduMTxStaticSegment)){
+							return false
+						}
+						this.target == (object as IpduMTxStaticSegment).target
+					}
+					
 					def BigInteger getIpduMSegmentLength(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"])
 					}
@@ -1934,6 +2067,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof IpduMGeneral)){
+				return false
+			}
+			this.target == (object as IpduMGeneral).target
 		}
 		
 		def BigDecimal getIpduMConfigurationTimeBase(){
@@ -2056,6 +2196,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof IpduMPublishedInformation)){
+				return false
+			}
+			this.target == (object as IpduMPublishedInformation).target
+		}
+		
 		def Boolean getIpduMRxDirectComInvocation(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxDirectComInvocation"])
 		}
@@ -2075,6 +2222,13 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof IpduM)){
+			return false
+		}
+		this.target == (object as IpduM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

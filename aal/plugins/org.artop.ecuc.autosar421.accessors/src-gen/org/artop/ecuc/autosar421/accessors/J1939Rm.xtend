@@ -106,6 +106,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939RmConfigSet)){
+				return false
+			}
+			this.target == (object as J1939RmConfigSet).target
+		}
+		
 		
 		
 		def List<J1939RmChannel> getJ1939RmChannels(){
@@ -164,6 +171,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939RmChannel)){
+					return false
+				}
+				this.target == (object as J1939RmChannel).target
 			}
 			
 			def BigInteger getJ1939RmAckQueueSize(){
@@ -283,6 +297,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939RmAckmRxPdu)){
+						return false
+					}
+					this.target == (object as J1939RmAckmRxPdu).target
+				}
+				
 				def BigInteger getJ1939RmAckmRxPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmRxPduId"])
 				}
@@ -332,6 +353,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939RmAckmTxPdu)){
+						return false
+					}
+					this.target == (object as J1939RmAckmTxPdu).target
 				}
 				
 				def BigInteger getJ1939RmAckmTxPduId(){
@@ -385,6 +413,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939RmRqstRxPdu)){
+						return false
+					}
+					this.target == (object as J1939RmRqstRxPdu).target
+				}
+				
 				def BigInteger getJ1939RmRqstRxPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstRxPduId"])
 				}
@@ -434,6 +469,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939RmRqstTxPdu)){
+						return false
+					}
+					this.target == (object as J1939RmRqstTxPdu).target
 				}
 				
 				def BigInteger getJ1939RmRqstTxPduId(){
@@ -487,6 +529,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939RmNode)){
+					return false
+				}
+				this.target == (object as J1939RmNode).target
 			}
 			
 			
@@ -572,6 +621,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939RmUser)){
+						return false
+					}
+					this.target == (object as J1939RmUser).target
 				}
 				
 				def Boolean getJ1939RmUserAckIndication(){
@@ -777,6 +833,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939RmComIPdu)){
+							return false
+						}
+						this.target == (object as J1939RmComIPdu).target
+					}
+					
 					def BigInteger getJ1939RmComIPduPGN(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"])
 					}
@@ -831,6 +894,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939RmGeneral)){
+				return false
+			}
+			this.target == (object as J1939RmGeneral).target
 		}
 		
 		def Boolean getJ1939RmDevErrorDetect(){
@@ -980,6 +1050,13 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof J1939Rm)){
+			return false
+		}
+		this.target == (object as J1939Rm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

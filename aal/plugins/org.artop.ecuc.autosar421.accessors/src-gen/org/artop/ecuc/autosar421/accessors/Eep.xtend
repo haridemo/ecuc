@@ -114,6 +114,13 @@ class Eep implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EepGeneral)){
+				return false
+			}
+			this.target == (object as EepGeneral).target
+		}
+		
 		def Boolean getEepDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EepDevErrorDetect"])
 		}
@@ -215,6 +222,13 @@ class Eep implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EepInitConfiguration)){
+				return false
+			}
+			this.target == (object as EepInitConfiguration).target
 		}
 		
 		def BigInteger getEepBaseAddress(){
@@ -434,6 +448,13 @@ class Eep implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EepDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as EepDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getEEP_E_COMPARE_FAILED(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "EEP_E_COMPARE_FAILED")
@@ -502,6 +523,13 @@ class Eep implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EepExternalDriver)){
+					return false
+				}
+				this.target == (object as EepExternalDriver).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence> getEepSpiReferences(){
 				val containerDef = containerValue.gGetDefinition
@@ -558,6 +586,13 @@ class Eep implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EepPublishedInformation)){
+				return false
+			}
+			this.target == (object as EepPublishedInformation).target
 		}
 		
 		def BigInteger getEepAllowedWriteCycles(){
@@ -739,6 +774,13 @@ class Eep implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Eep)){
+			return false
+		}
+		this.target == (object as Eep).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

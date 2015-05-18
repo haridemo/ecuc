@@ -106,6 +106,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanTrcvConfigSet)){
+				return false
+			}
+			this.target == (object as CanTrcvConfigSet).target
+		}
+		
 		def BigInteger getCanTrcvSPICommRetries(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSPICommRetries"])
 		}
@@ -177,6 +184,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTrcvChannel)){
+					return false
+				}
+				this.target == (object as CanTrcvChannel).target
 			}
 			
 			def BigInteger getCanTrcvChannelId(){
@@ -403,6 +417,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTrcvAccess)){
+						return false
+					}
+					this.target == (object as CanTrcvAccess).target
+				}
+				
 				def CanTrcvDioAccess getCanTrcvDioAccess(){
 					containerValue.getByType(typeof(CanTrcvDioAccess))
 				}
@@ -437,6 +458,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CanTrcvDioAccess)){
+							return false
+						}
+						this.target == (object as CanTrcvDioAccess).target
 					}
 					
 					
@@ -478,6 +506,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof CanTrcvDioChannelAccess)){
+								return false
+							}
+							this.target == (object as CanTrcvDioChannelAccess).target
 						}
 						
 						def String getCanTrcvHardwareInterfaceName(){
@@ -523,6 +558,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CanTrcvSpiAccess)){
+							return false
+						}
+						this.target == (object as CanTrcvSpiAccess).target
+					}
+					
 					
 					
 					def List<CanTrcvSpiSequence> getCanTrcvSpiSequences(){
@@ -562,6 +604,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof CanTrcvSpiSequence)){
+								return false
+							}
+							this.target == (object as CanTrcvSpiSequence).target
 						}
 						
 						def Boolean getCanTrcvSpiAccessSynchronous(){
@@ -641,6 +690,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTrcvDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as CanTrcvDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getCANTRCV_E_BUS_ERROR(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "CANTRCV_E_BUS_ERROR")
@@ -674,6 +730,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTrcvPartialNetwork)){
+						return false
+					}
+					this.target == (object as CanTrcvPartialNetwork).target
 				}
 				
 				def BigInteger getCanTrcvBaudRate(){
@@ -845,6 +908,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CanTrcvPnFrameDataMaskSpec)){
+							return false
+						}
+						this.target == (object as CanTrcvPnFrameDataMaskSpec).target
+					}
+					
 					def BigInteger getCanTrcvPnFrameDataMask(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDataMask"])
 					}
@@ -904,6 +974,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanTrcvGeneral)){
+				return false
+			}
+			this.target == (object as CanTrcvGeneral).target
 		}
 		
 		def Boolean getCanTrcvDevErrorDetect(){
@@ -1071,6 +1148,13 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof CanTrcv)){
+			return false
+		}
+		this.target == (object as CanTrcv).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

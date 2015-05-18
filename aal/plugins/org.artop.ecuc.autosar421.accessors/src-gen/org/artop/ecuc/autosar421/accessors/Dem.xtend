@@ -106,6 +106,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DemConfigSet)){
+				return false
+			}
+			this.target == (object as DemConfigSet).target
+		}
+		
 		
 		
 		def List<DemComponent> getDemComponents(){
@@ -308,6 +315,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemComponent)){
+					return false
+				}
+				this.target == (object as DemComponent).target
+			}
+			
 			def String getDemComponentFailedCallbackFnc(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentFailedCallbackFnc"])
 			}
@@ -395,6 +409,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDTC)){
+					return false
+				}
+				this.target == (object as DemDTC).target
 			}
 			
 			def BigInteger getDemDTCFunctionalUnit(){
@@ -549,6 +570,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDTCAttributes)){
+					return false
+				}
+				this.target == (object as DemDTCAttributes).target
 			}
 			
 			def Boolean getDemAgingAllowed(){
@@ -809,6 +837,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDebounceCounterBasedClass)){
+					return false
+				}
+				this.target == (object as DemDebounceCounterBasedClass).target
+			}
+			
 			def DemDebounceBehavior getDemDebounceBehavior(){
 				getDemDebounceBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceBehavior"])
 			}
@@ -1010,6 +1045,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDebounceTimeBaseClass)){
+					return false
+				}
+				this.target == (object as DemDebounceTimeBaseClass).target
+			}
+			
 			def DemDebounceBehavior getDemDebounceBehavior(){
 				getDemDebounceBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceBehavior"])
 			}
@@ -1097,6 +1139,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDtr)){
+					return false
+				}
+				this.target == (object as DemDtr).target
 			}
 			
 			def BigDecimal getDemDtrCompuDenominator0(){
@@ -1277,6 +1326,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemEventParameter)){
+					return false
+				}
+				this.target == (object as DemEventParameter).target
 			}
 			
 			def BigInteger getDemComponentPriority(){
@@ -1587,6 +1643,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemCallbackClearEventAllowed)){
+						return false
+					}
+					this.target == (object as DemCallbackClearEventAllowed).target
+				}
+				
 				def String getDemCallbackClearEventAllowedFnc(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackClearEventAllowedFnc"])
 				}
@@ -1660,6 +1723,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemCallbackEventDataChanged)){
+						return false
+					}
+					this.target == (object as DemCallbackEventDataChanged).target
+				}
+				
 				def String getDemCallbackEventDataChangedFnc(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackEventDataChangedFnc"])
 				}
@@ -1698,6 +1768,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemCallbackEventStatusChanged)){
+						return false
+					}
+					this.target == (object as DemCallbackEventStatusChanged).target
 				}
 				
 				def String getDemCallbackEventStatusChangedFnc(){
@@ -1740,6 +1817,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemCallbackInitMForE)){
+						return false
+					}
+					this.target == (object as DemCallbackInitMForE).target
+				}
+				
 				def String getDemCallbackInitMForEFnc(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackInitMForEFnc"])
 				}
@@ -1778,6 +1862,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemDebounceAlgorithmClass)){
+						return false
+					}
+					this.target == (object as DemDebounceAlgorithmClass).target
 				}
 				
 				def DemDebounceCounterBased getDemDebounceCounterBased(){
@@ -1824,6 +1915,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DemDebounceCounterBased)){
+							return false
+						}
+						this.target == (object as DemDebounceCounterBased).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass getDemDebounceCounterBasedClassRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass), "DemDebounceCounterBasedClassRef")
@@ -1859,6 +1957,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DemDebounceMonitorInternal)){
+							return false
+						}
+						this.target == (object as DemDebounceMonitorInternal).target
+					}
+					
 					
 					
 					def DemCallbackGetFDC getDemCallbackGetFDC(){
@@ -1888,6 +1993,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemCallbackGetFDC)){
+								return false
+							}
+							this.target == (object as DemCallbackGetFDC).target
 						}
 						
 						def String getDemCallbackGetFDCFnc(){
@@ -1932,6 +2044,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DemDebounceTimeBase)){
+							return false
+						}
+						this.target == (object as DemDebounceTimeBase).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass getDemDebounceTimeBaseRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass), "DemDebounceTimeBaseRef")
@@ -1967,6 +2086,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemIndicatorAttribute)){
+						return false
+					}
+					this.target == (object as DemIndicatorAttribute).target
 				}
 				
 				def DemIndicatorBehaviour getDemIndicatorBehaviour(){
@@ -2077,6 +2203,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemJ1939NodeAddress)){
+					return false
+				}
+				this.target == (object as DemJ1939NodeAddress).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode> getDemJ1939NmNodeRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -2132,6 +2265,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemObdDTC)){
+					return false
+				}
+				this.target == (object as DemObdDTC).target
 			}
 			
 			def Boolean getDemConsiderPtoStatus(){
@@ -2271,6 +2411,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemPidClass)){
+					return false
+				}
+				this.target == (object as DemPidClass).target
+			}
+			
 			def BigInteger getDemPidIdentifier(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPidIdentifier"])
 			}
@@ -2328,6 +2475,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemPidDataElement)){
+						return false
+					}
+					this.target == (object as DemPidDataElement).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass getDemPidDataElementClassRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass), "DemPidDataElementClassRef")
@@ -2364,6 +2518,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DemGeneral)){
+				return false
+			}
+			this.target == (object as DemGeneral).target
 		}
 		
 		def DemAgingCycleCounterProcessing getDemAgingCycleCounterProcessing(){
@@ -3643,6 +3804,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemCallbackDTCStatusChanged)){
+					return false
+				}
+				this.target == (object as DemCallbackDTCStatusChanged).target
+			}
+			
 			def String getDemCallbackDTCStatusChangedFnc(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"])
 			}
@@ -3681,6 +3849,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDataElementClass)){
+					return false
+				}
+				this.target == (object as DemDataElementClass).target
 			}
 			
 			def DemExternalCSDataElementClass getDemExternalCSDataElementClass(){
@@ -3725,6 +3900,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemExternalCSDataElementClass)){
+						return false
+					}
+					this.target == (object as DemExternalCSDataElementClass).target
 				}
 				
 				def BigInteger getDemDataElementDataSize(){
@@ -3797,6 +3979,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemExternalSRDataElementClass)){
+						return false
+					}
+					this.target == (object as DemExternalSRDataElementClass).target
 				}
 				
 				def BigInteger getDemDataElementDataSize(){
@@ -3933,6 +4122,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DemDiagnosisScaling)){
+							return false
+						}
+						this.target == (object as DemDiagnosisScaling).target
+					}
+					
 					def DemAlternativeDataInterface getDemAlternativeDataInterface(){
 						containerValue.getByType(typeof(DemAlternativeDataInterface))
 					}
@@ -3977,6 +4173,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemAlternativeDataInterface)){
+								return false
+							}
+							this.target == (object as DemAlternativeDataInterface).target
+						}
+						
 						
 						
 						
@@ -4001,6 +4204,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemAlternativeDataProps)){
+								return false
+							}
+							this.target == (object as DemAlternativeDataProps).target
 						}
 						
 						def DemDataTypeCategory getDemDataTypeCategory(){
@@ -4084,6 +4294,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DemLinearScale)){
+									return false
+								}
+								this.target == (object as DemLinearScale).target
 							}
 							
 							def BigDecimal getDemDiagnosisRepresentationDataLowerRange(){
@@ -4174,6 +4391,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DemTextTableMapping)){
+									return false
+								}
+								this.target == (object as DemTextTableMapping).target
+							}
+							
 							def BigInteger getDemDiagnosisRepresentationDataValue(){
 								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
 							}
@@ -4232,6 +4456,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemAlternativeDataType)){
+								return false
+							}
+							this.target == (object as DemAlternativeDataType).target
+						}
+						
 						
 						
 						
@@ -4272,6 +4503,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof DemTextTableMapping)){
+									return false
+								}
+								this.target == (object as DemTextTableMapping).target
 							}
 							
 							def BigInteger getDemDiagnosisRepresentationDataValue(){
@@ -4334,6 +4572,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DemSRDataElementClass)){
+							return false
+						}
+						this.target == (object as DemSRDataElementClass).target
+					}
+					
 					def DemDataElementInstance getDemDataElementInstance(){
 						containerValue.getByType(typeof(DemDataElementInstance))
 					}
@@ -4378,6 +4623,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemDataElementInstance)){
+								return false
+							}
+							this.target == (object as DemDataElementInstance).target
+						}
+						
 						
 						
 						
@@ -4403,6 +4655,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemSubElementInDataElementInstance)){
+								return false
+							}
+							this.target == (object as DemSubElementInDataElementInstance).target
+						}
+						
 						
 						
 						
@@ -4426,6 +4685,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof DemSubElementInImplDataElementInstance)){
+								return false
+							}
+							this.target == (object as DemSubElementInImplDataElementInstance).target
 						}
 						
 						
@@ -4455,6 +4721,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemInternalDataElementClass)){
+						return false
+					}
+					this.target == (object as DemInternalDataElementClass).target
 				}
 				
 				def BigInteger getDemDataElementDataSize(){
@@ -4550,6 +4823,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemDidClass)){
+					return false
+				}
+				this.target == (object as DemDidClass).target
+			}
+			
 			def BigInteger getDemDidIdentifier(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDidIdentifier"])
 			}
@@ -4623,6 +4903,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemEnableCondition)){
+					return false
+				}
+				this.target == (object as DemEnableCondition).target
+			}
+			
 			def BigInteger getDemEnableConditionId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionId"])
 			}
@@ -4677,6 +4964,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemEnableConditionGroup)){
+					return false
+				}
+				this.target == (object as DemEnableConditionGroup).target
 			}
 			
 			
@@ -4736,6 +5030,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemExtendedDataClass)){
+					return false
+				}
+				this.target == (object as DemExtendedDataClass).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass> getDemExtendedDataRecordClassRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -4791,6 +5092,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemExtendedDataRecordClass)){
+					return false
+				}
+				this.target == (object as DemExtendedDataRecordClass).target
 			}
 			
 			def BigInteger getDemExtendedDataRecordNumber(){
@@ -4940,6 +5248,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemFreezeFrameClass)){
+					return false
+				}
+				this.target == (object as DemFreezeFrameClass).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass> getDemDidClassRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -4997,6 +5312,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemFreezeFrameRecNumClass)){
+					return false
+				}
+				this.target == (object as DemFreezeFrameRecNumClass).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass> getDemFreezeFrameRecordClassRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -5052,6 +5374,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemFreezeFrameRecordClass)){
+					return false
+				}
+				this.target == (object as DemFreezeFrameRecordClass).target
 			}
 			
 			def BigInteger getDemFreezeFrameRecordNumber(){
@@ -5162,6 +5491,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemGeneralJ1939)){
+					return false
+				}
+				this.target == (object as DemGeneralJ1939).target
 			}
 			
 			def Boolean getDemJ1939ClearDtcSupport(){
@@ -5420,6 +5756,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemCallbackJ1939DTCStatusChanged)){
+						return false
+					}
+					this.target == (object as DemCallbackJ1939DTCStatusChanged).target
+				}
+				
 				def String getDemCallbackDTCStatusChangedFnc(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"])
 				}
@@ -5458,6 +5801,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemJ1939FreezeFrameClass)){
+						return false
+					}
+					this.target == (object as DemJ1939FreezeFrameClass).target
 				}
 				
 				
@@ -5517,6 +5867,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemSPNClass)){
+						return false
+					}
+					this.target == (object as DemSPNClass).target
+				}
+				
 				def BigInteger getDemSPNId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSPNId"])
 				}
@@ -5568,6 +5925,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemGeneralOBD)){
+					return false
+				}
+				this.target == (object as DemGeneralOBD).target
 			}
 			
 			def Boolean getDemOBDCentralizedPID21Handling(){
@@ -5718,6 +6082,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DemCallbackOBDDTCStatusChanged)){
+						return false
+					}
+					this.target == (object as DemCallbackOBDDTCStatusChanged).target
+				}
+				
 				def String getDemCallbackDTCStatusChangedFnc(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"])
 				}
@@ -5760,6 +6131,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemGroupOfDTC)){
+					return false
+				}
+				this.target == (object as DemGroupOfDTC).target
+			}
+			
 			def BigInteger getDemGroupDTCs(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGroupDTCs"])
 			}
@@ -5798,6 +6176,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemIndicator)){
+					return false
+				}
+				this.target == (object as DemIndicator).target
 			}
 			
 			def BigInteger getDemIndicatorID(){
@@ -5840,6 +6225,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemMirrorMemory)){
+					return false
+				}
+				this.target == (object as DemMirrorMemory).target
+			}
+			
 			def BigInteger getDemMaxNumberEventEntryMirror(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryMirror"])
 			}
@@ -5880,6 +6272,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemNvRamBlockId)){
+					return false
+				}
+				this.target == (object as DemNvRamBlockId).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getDemNvRamBlockIdRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "DemNvRamBlockIdRef")
@@ -5913,6 +6312,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemOperationCycle)){
+					return false
+				}
+				this.target == (object as DemOperationCycle).target
 			}
 			
 			def Boolean getDemOperationCycleAutomaticEnd(){
@@ -6028,6 +6434,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemPrimaryMemory)){
+					return false
+				}
+				this.target == (object as DemPrimaryMemory).target
+			}
+			
 			def BigInteger getDemMaxNumberEventEntryPrimary(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPrimary"])
 			}
@@ -6066,6 +6479,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemRatio)){
+					return false
+				}
+				this.target == (object as DemRatio).target
 			}
 			
 			def DemIUMPRDenGroup getDemIUMPRDenGroup(){
@@ -6298,6 +6718,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemStorageCondition)){
+					return false
+				}
+				this.target == (object as DemStorageCondition).target
+			}
+			
 			def BigInteger getDemStorageConditionId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionId"])
 			}
@@ -6365,6 +6792,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemStorageConditionGroup)){
+					return false
+				}
+				this.target == (object as DemStorageConditionGroup).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition> getDemStorageConditionRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -6422,6 +6856,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DemUserDefinedMemory)){
+					return false
+				}
+				this.target == (object as DemUserDefinedMemory).target
+			}
+			
 			def BigInteger getDemMaxNumberEventEntryUserDefined(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryUserDefined"])
 			}
@@ -6459,6 +6900,13 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Dem)){
+			return false
+		}
+		this.target == (object as Dem).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -98,6 +98,13 @@ class MemIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof MemIfGeneral)){
+				return false
+			}
+			this.target == (object as MemIfGeneral).target
+		}
+		
 		def Boolean getMemIfDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemIfDevErrorDetect"])
 		}
@@ -149,6 +156,13 @@ class MemIf implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof MemIf)){
+			return false
+		}
+		this.target == (object as MemIf).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

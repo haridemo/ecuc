@@ -106,6 +106,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof XcpConfig)){
+				return false
+			}
+			this.target == (object as XcpConfig).target
+		}
+		
 		
 		
 		def List<XcpDaqList> getXcpDaqLists(){
@@ -183,6 +190,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof XcpDaqList)){
+					return false
+				}
+				this.target == (object as XcpDaqList).target
 			}
 			
 			def BigInteger getXcpDaqListNumber(){
@@ -328,6 +342,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof XcpDto)){
+						return false
+					}
+					this.target == (object as XcpDto).target
+				}
+				
 				def BigInteger getXcpDtoPid(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDtoPid"])
 				}
@@ -367,6 +388,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof XcpOdt)){
+						return false
+					}
+					this.target == (object as XcpOdt).target
 				}
 				
 				def BigInteger getXcpOdtEntryMaxSize(){
@@ -451,6 +479,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof XcpOdtEntry)){
+							return false
+						}
+						this.target == (object as XcpOdtEntry).target
 					}
 					
 					def String getXcpOdtEntryAddress(){
@@ -543,6 +578,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof XcpEventChannel)){
+					return false
+				}
+				this.target == (object as XcpEventChannel).target
 			}
 			
 			def XcpEventChannelConsistency getXcpEventChannelConsistency(){
@@ -791,6 +833,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof XcpPdu)){
+					return false
+				}
+				this.target == (object as XcpPdu).target
+			}
+			
 			def XcpRxPdu getXcpRxPdu(){
 				containerValue.getByType(typeof(XcpRxPdu))
 			}
@@ -825,6 +874,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof XcpRxPdu)){
+						return false
+					}
+					this.target == (object as XcpRxPdu).target
 				}
 				
 				def BigInteger getXcpRxPduId(){
@@ -876,6 +932,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof XcpTxPdu)){
+						return false
+					}
+					this.target == (object as XcpTxPdu).target
 				}
 				
 				def BigInteger getXcpTxPduId(){
@@ -930,6 +993,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof XcpGeneral)){
+				return false
+			}
+			this.target == (object as XcpGeneral).target
 		}
 		
 		def XcpDaqConfigType getXcpDaqConfigType(){
@@ -1439,6 +1509,13 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Xcp)){
+			return false
+		}
+		this.target == (object as Xcp).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

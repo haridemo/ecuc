@@ -106,6 +106,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrArTpGeneral)){
+				return false
+			}
+			this.target == (object as FrArTpGeneral).target
+		}
+		
 		def Boolean getFrArTpDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpDevErrorDetect"])
 		}
@@ -241,6 +248,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrArTpMultipleConfig)){
+				return false
+			}
+			this.target == (object as FrArTpMultipleConfig).target
+		}
+		
 		
 		
 		def List<FrArTpChannel> getFrArTpChannels(){
@@ -280,6 +294,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrArTpChannel)){
+					return false
+				}
+				this.target == (object as FrArTpChannel).target
 			}
 			
 			def FrArTpAckType getFrArTpAckType(){
@@ -701,6 +722,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrArTpConnection)){
+						return false
+					}
+					this.target == (object as FrArTpConnection).target
+				}
+				
 				def BigInteger getFrArTpConPrioPdus(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConPrioPdus"])
 				}
@@ -805,6 +833,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrArTpRxSdu)){
+							return false
+						}
+						this.target == (object as FrArTpRxSdu).target
+					}
+					
 					def BigInteger getFrArTpSduRxId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduRxId"])
 					}
@@ -854,6 +889,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrArTpTxSdu)){
+							return false
+						}
+						this.target == (object as FrArTpTxSdu).target
 					}
 					
 					def BigInteger getFrArTpSduTxId(){
@@ -907,6 +949,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrArTpPdu)){
+						return false
+					}
+					this.target == (object as FrArTpPdu).target
 				}
 				
 				def FrArTpPduDirection getFrArTpPduDirection(){
@@ -976,6 +1025,13 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrArTp)){
+			return false
+		}
+		this.target == (object as FrArTp).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -114,6 +114,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof McuGeneralConfiguration)){
+				return false
+			}
+			this.target == (object as McuGeneralConfiguration).target
+		}
+		
 		def Boolean getMcuDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuDevErrorDetect"])
 		}
@@ -231,6 +238,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof McuModuleConfiguration)){
+				return false
+			}
+			this.target == (object as McuModuleConfiguration).target
 		}
 		
 		def McuClockSrcFailureNotification getMcuClockSrcFailureNotification(){
@@ -402,6 +416,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof McuClockSettingConfig)){
+					return false
+				}
+				this.target == (object as McuClockSettingConfig).target
+			}
+			
 			def BigInteger getMcuClockSettingId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSettingId"])
 			}
@@ -459,6 +480,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof McuClockReferencePoint)){
+						return false
+					}
+					this.target == (object as McuClockReferencePoint).target
+				}
+				
 				def BigDecimal getMcuClockReferencePointFrequency(){
 					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockReferencePointFrequency"])
 				}
@@ -501,6 +529,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof McuDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as McuDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getMCU_E_CLOCK_FAILURE(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "MCU_E_CLOCK_FAILURE")
@@ -534,6 +569,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof McuModeSettingConf)){
+					return false
+				}
+				this.target == (object as McuModeSettingConf).target
 			}
 			
 			def BigInteger getMcuMode(){
@@ -574,6 +616,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof McuRamSectorSettingConf)){
+					return false
+				}
+				this.target == (object as McuRamSectorSettingConf).target
 			}
 			
 			def BigInteger getMcuRamDefaultValue(){
@@ -649,6 +698,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof McuPublishedInformation)){
+				return false
+			}
+			this.target == (object as McuPublishedInformation).target
+		}
+		
 		
 		
 		def List<McuResetReasonConf> getMcuResetReasonConfs(){
@@ -690,6 +746,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof McuResetReasonConf)){
+					return false
+				}
+				this.target == (object as McuResetReasonConf).target
+			}
+			
 			def BigInteger getMcuResetReason(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetReason"])
 			}
@@ -711,6 +774,13 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Mcu)){
+			return false
+		}
+		this.target == (object as Mcu).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -116,6 +116,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrTSynGeneral)){
+				return false
+			}
+			this.target == (object as FrTSynGeneral).target
+		}
+		
 		def Boolean getFrTSynDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynDevErrorDetect"])
 		}
@@ -204,6 +211,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTSynGlobalTimeOfsDataIDList)){
+					return false
+				}
+				this.target == (object as FrTSynGlobalTimeOfsDataIDList).target
+			}
+			
 			
 			
 			def List<FrTSynGlobalTimeOfsDataIDListElement> getFrTSynGlobalTimeOfsDataIDListElements(){
@@ -243,6 +257,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTSynGlobalTimeOfsDataIDListElement)){
+						return false
+					}
+					this.target == (object as FrTSynGlobalTimeOfsDataIDListElement).target
 				}
 				
 				def BigInteger getFrTSynGlobalTimeOfsDataIDListIndex(){
@@ -303,6 +324,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTSynGlobalTimeSyncDataIDList)){
+					return false
+				}
+				this.target == (object as FrTSynGlobalTimeSyncDataIDList).target
+			}
+			
 			
 			
 			def List<FrTSynGlobalTimeSyncDataIDListElement> getFrTSynGlobalTimeSyncDataIDListElements(){
@@ -342,6 +370,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTSynGlobalTimeSyncDataIDListElement)){
+						return false
+					}
+					this.target == (object as FrTSynGlobalTimeSyncDataIDListElement).target
 				}
 				
 				def BigInteger getFrTSynGlobalTimeSyncDataIDListIndex(){
@@ -401,6 +436,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrTSynGlobalTimeDomain)){
+				return false
+			}
+			this.target == (object as FrTSynGlobalTimeDomain).target
 		}
 		
 		def BigInteger getFrTSynGlobalTimeDomainId(){
@@ -486,6 +528,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTSynGlobalTimeMaster)){
+					return false
+				}
+				this.target == (object as FrTSynGlobalTimeMaster).target
+			}
+			
 			def FrTSynGlobalTimeTxCrcSecured getFrTSynGlobalTimeTxCrcSecured(){
 				getFrTSynGlobalTimeTxCrcSecuredValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeTxCrcSecured"])
 			}
@@ -566,6 +615,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTSynGlobalTimeMasterPdu)){
+						return false
+					}
+					this.target == (object as FrTSynGlobalTimeMasterPdu).target
+				}
+				
 				def BigInteger getFrTSynGlobalTimeMasterConfirmationHandleId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeMasterConfirmationHandleId"])
 				}
@@ -617,6 +673,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTSynGlobalTimeSlave)){
+					return false
+				}
+				this.target == (object as FrTSynGlobalTimeSlave).target
 			}
 			
 			def FrTSynRxCrcValidated getFrTSynRxCrcValidated(){
@@ -685,6 +748,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTSynGlobalTimeSlavePdu)){
+						return false
+					}
+					this.target == (object as FrTSynGlobalTimeSlavePdu).target
+				}
+				
 				def BigInteger getFrTSynGlobalTimeSlaveHandleId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSlaveHandleId"])
 				}
@@ -719,6 +789,13 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrTSyn)){
+			return false
+		}
+		this.target == (object as FrTSyn).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

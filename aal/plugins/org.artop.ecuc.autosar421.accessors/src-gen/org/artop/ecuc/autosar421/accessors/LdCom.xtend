@@ -106,6 +106,13 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LdComConfig)){
+				return false
+			}
+			this.target == (object as LdComConfig).target
+		}
+		
 		
 		
 		def List<LdComIPdu> getLdComIPdus(){
@@ -145,6 +152,13 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LdComIPdu)){
+					return false
+				}
+				this.target == (object as LdComIPdu).target
 			}
 			
 			def LdComApiType getLdComApiType(){
@@ -394,6 +408,13 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LdComGeneral)){
+				return false
+			}
+			this.target == (object as LdComGeneral).target
+		}
+		
 		def Boolean getLdComDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComDevErrorDetect"])
 		}
@@ -429,6 +450,13 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof LdCom)){
+			return false
+		}
+		this.target == (object as LdCom).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

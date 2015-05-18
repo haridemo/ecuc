@@ -138,6 +138,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcucConfigSet)){
+				return false
+			}
+			this.target == (object as EcucConfigSet).target
+		}
+		
 		
 		
 		def EcucPduCollection getEcucPduCollection(){
@@ -167,6 +174,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EcucPduCollection)){
+					return false
+				}
+				this.target == (object as EcucPduCollection).target
 			}
 			
 			def PduIdTypeEnum getPduIdTypeEnum(){
@@ -278,6 +292,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof Pdu)){
+						return false
+					}
+					this.target == (object as Pdu).target
+				}
+				
 				def BigInteger getMetaDataLength(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MetaDataLength"])
 				}
@@ -339,6 +360,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcucHardware)){
+				return false
+			}
+			this.target == (object as EcucHardware).target
+		}
+		
 		
 		
 		def List<EcucCoreDefinition> getEcucCoreDefinitions(){
@@ -378,6 +406,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EcucCoreDefinition)){
+					return false
+				}
+				this.target == (object as EcucCoreDefinition).target
 			}
 			
 			def BigInteger getEcucCoreId(){
@@ -422,6 +457,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcucPartitionCollection)){
+				return false
+			}
+			this.target == (object as EcucPartitionCollection).target
+		}
+		
 		
 		
 		def List<EcucPartition> getEcucPartitions(){
@@ -461,6 +503,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EcucPartition)){
+					return false
+				}
+				this.target == (object as EcucPartition).target
 			}
 			
 			def Boolean getEcucPartitionBswModuleExecution(){
@@ -538,6 +587,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcucPostBuildVariants)){
+				return false
+			}
+			this.target == (object as EcucPostBuildVariants).target
+		}
+		
 		
 		
 		
@@ -560,6 +616,13 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcucUnitGroupAssignment)){
+				return false
+			}
+			this.target == (object as EcucUnitGroupAssignment).target
 		}
 		
 		
@@ -586,10 +649,24 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcucVariationResolver)){
+				return false
+			}
+			this.target == (object as EcucVariationResolver).target
+		}
 		
 		
 		
 		
+		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EcuC)){
+			return false
+		}
+		this.target == (object as EcuC).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

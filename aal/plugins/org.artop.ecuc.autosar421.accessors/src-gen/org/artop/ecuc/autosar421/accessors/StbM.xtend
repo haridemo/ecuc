@@ -134,6 +134,13 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof StbMGeneral)){
+				return false
+			}
+			this.target == (object as StbMGeneral).target
+		}
+		
 		def Boolean getStbMDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"])
 		}
@@ -219,6 +226,13 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof StbMSynchronizedTimeBase)){
+				return false
+			}
+			this.target == (object as StbMSynchronizedTimeBase).target
 		}
 		
 		def Boolean getStbMIsSystemWideGlobalTimeMaster(){
@@ -374,6 +388,13 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof StbMTriggeredCustomer)){
+				return false
+			}
+			this.target == (object as StbMTriggeredCustomer).target
+		}
+		
 		def BigInteger getStbMTriggeredCustomerPeriod(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTriggeredCustomerPeriod"])
 		}
@@ -415,6 +436,13 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof StbM)){
+			return false
+		}
+		this.target == (object as StbM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

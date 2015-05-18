@@ -124,6 +124,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SoAdBswModules)){
+				return false
+			}
+			this.target == (object as SoAdBswModules).target
+		}
+		
 		def Boolean getSoAdIf(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIf"])
 		}
@@ -276,6 +283,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SoAdConfig)){
+				return false
+			}
+			this.target == (object as SoAdConfig).target
+		}
+		
 		
 		
 		def List<SoAdPduRoute> getSoAdPduRoutes(){
@@ -372,6 +386,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SoAdPduRoute)){
+					return false
+				}
+				this.target == (object as SoAdPduRoute).target
 			}
 			
 			def BigInteger getSoAdTxPduId(){
@@ -473,6 +494,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SoAdPduRouteDest)){
+						return false
+					}
+					this.target == (object as SoAdPduRouteDest).target
 				}
 				
 				def BigInteger getSoAdTxPduHeaderId(){
@@ -600,6 +628,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SoAdRoutingGroup)){
+					return false
+				}
+				this.target == (object as SoAdRoutingGroup).target
+			}
+			
 			def BigInteger getSoAdRoutingGroupId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupId"])
 			}
@@ -670,6 +705,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SoAdSocketConnectionGroup)){
+					return false
+				}
+				this.target == (object as SoAdSocketConnectionGroup).target
 			}
 			
 			def Boolean getSoAdPduHeaderEnable(){
@@ -877,6 +919,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SoAdSocketConnection)){
+						return false
+					}
+					this.target == (object as SoAdSocketConnection).target
+				}
+				
 				def BigInteger getSoAdSocketId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketId"])
 				}
@@ -922,6 +971,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SoAdSocketRemoteAddress)){
+							return false
+						}
+						this.target == (object as SoAdSocketRemoteAddress).target
 					}
 					
 					def String getSoAdSocketRemoteIpAddress(){
@@ -982,6 +1038,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SoAdSocketProtocol)){
+						return false
+					}
+					this.target == (object as SoAdSocketProtocol).target
+				}
+				
 				def SoAdSocketTcp getSoAdSocketTcp(){
 					containerValue.getByType(typeof(SoAdSocketTcp))
 				}
@@ -1016,6 +1079,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SoAdSocketTcp)){
+							return false
+						}
+						this.target == (object as SoAdSocketTcp).target
 					}
 					
 					def Boolean getSoAdSocketTcpImmediateTpTxConfirmation(){
@@ -1170,6 +1240,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof SoAdSocketUdp)){
+							return false
+						}
+						this.target == (object as SoAdSocketUdp).target
+					}
+					
 					def BigDecimal getSoAdSocketUdpAliveSupervisionTimeout(){
 						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpAliveSupervisionTimeout"])
 					}
@@ -1278,6 +1355,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SoAdSocketRoute)){
+					return false
+				}
+				this.target == (object as SoAdSocketRoute).target
+			}
+			
 			def BigInteger getSoAdRxPduHeaderId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRxPduHeaderId"])
 			}
@@ -1324,6 +1408,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof SoAdSocketRouteDest)){
+						return false
+					}
+					this.target == (object as SoAdSocketRouteDest).target
 				}
 				
 				def BigInteger getSoAdRxPduId(){
@@ -1446,6 +1537,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SoAdGeneral)){
+				return false
+			}
+			this.target == (object as SoAdGeneral).target
+		}
+		
 		def Boolean getSoAdDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdDevErrorDetect"])
 		}
@@ -1545,6 +1643,13 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof SoAd)){
+			return false
+		}
+		this.target == (object as SoAd).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

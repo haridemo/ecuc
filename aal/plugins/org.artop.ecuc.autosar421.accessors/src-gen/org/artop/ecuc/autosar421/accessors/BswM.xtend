@@ -116,6 +116,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof BswMConfig)){
+				return false
+			}
+			this.target == (object as BswMConfig).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition getBswMPartitionRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition), "BswMPartitionRef")
@@ -174,6 +181,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof BswMArbitration)){
+					return false
+				}
+				this.target == (object as BswMArbitration).target
 			}
 			
 			
@@ -274,6 +288,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMLogicalExpression)){
+						return false
+					}
+					this.target == (object as BswMLogicalExpression).target
+				}
+				
 				def BswMLogicalOperator getBswMLogicalOperator(){
 					getBswMLogicalOperatorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLogicalOperator"])
 				}
@@ -334,6 +355,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMModeCondition)){
+						return false
+					}
+					this.target == (object as BswMModeCondition).target
 				}
 				
 				def BswMConditionType getBswMConditionType(){
@@ -411,6 +439,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof BswMConditionValue)){
+							return false
+						}
+						this.target == (object as BswMConditionValue).target
+					}
+					
 					def BswMBswMode getBswMBswMode(){
 						containerValue.getByType(typeof(BswMBswMode))
 					}
@@ -445,6 +480,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMBswMode)){
+								return false
+							}
+							this.target == (object as BswMBswMode).target
 						}
 						
 						def String getBswMBswRequestedMode(){
@@ -494,6 +536,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								containerValue
 							}
 							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof BswMCompuScaleModeValue)){
+									return false
+								}
+								this.target == (object as BswMCompuScaleModeValue).target
+							}
+							
 							def String getBswMCompuConstText(){
 								EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCompuConstText"])
 							}
@@ -537,6 +586,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMModeDeclaration)){
+								return false
+							}
+							this.target == (object as BswMModeDeclaration).target
+						}
+						
 						
 						
 						
@@ -564,6 +620,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMModeRequestPort)){
+						return false
+					}
+					this.target == (object as BswMModeRequestPort).target
 				}
 				
 				def BswMRequestProcessing getBswMRequestProcessing(){
@@ -639,6 +702,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof BswMModeInitValue)){
+							return false
+						}
+						this.target == (object as BswMModeInitValue).target
+					}
+					
 					def String getBswMBswModeInitValue(){
 						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMBswModeInitValue"])
 					}
@@ -686,6 +756,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMCompuScaleModeValue)){
+								return false
+							}
+							this.target == (object as BswMCompuScaleModeValue).target
+						}
+						
 						def String getBswMCompuConstText(){
 							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCompuConstText"])
 						}
@@ -727,6 +804,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof BswMModeRequestSource)){
+							return false
+						}
+						this.target == (object as BswMModeRequestSource).target
 					}
 					
 					def BswMBswMModeRequest getBswMBswMModeRequest(){
@@ -997,6 +1081,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMBswMModeRequest)){
+								return false
+							}
+							this.target == (object as BswMBswMModeRequest).target
+						}
+						
 						
 						
 						
@@ -1020,6 +1111,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMBswMModeSwitchNotification)){
+								return false
+							}
+							this.target == (object as BswMBswMModeSwitchNotification).target
 						}
 						
 						
@@ -1047,6 +1145,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMBswModeNotification)){
+								return false
+							}
+							this.target == (object as BswMBswModeNotification).target
+						}
+						
 						
 						
 						
@@ -1070,6 +1175,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMCanSMIcomIndication)){
+								return false
+							}
+							this.target == (object as BswMCanSMIcomIndication).target
 						}
 						
 						def Boolean getBswMCanSMIcomIndicationSwitchError(){
@@ -1123,6 +1235,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMCanSMIndication)){
+								return false
+							}
+							this.target == (object as BswMCanSMIndication).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getBswMCanSMChannelRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "BswMCanSMChannelRef")
@@ -1156,6 +1275,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMComMIndication)){
+								return false
+							}
+							this.target == (object as BswMComMIndication).target
 						}
 						
 						
@@ -1193,6 +1319,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMComMInitiateReset)){
+								return false
+							}
+							this.target == (object as BswMComMInitiateReset).target
+						}
+						
 						
 						
 						
@@ -1215,6 +1348,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMComMPncRequest)){
+								return false
+							}
+							this.target == (object as BswMComMPncRequest).target
 						}
 						
 						
@@ -1252,6 +1392,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMDcmApplicationUpdatedIndication)){
+								return false
+							}
+							this.target == (object as BswMDcmApplicationUpdatedIndication).target
+						}
+						
 						
 						
 						
@@ -1274,6 +1421,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMDcmComModeRequest)){
+								return false
+							}
+							this.target == (object as BswMDcmComModeRequest).target
 						}
 						
 						
@@ -1311,6 +1465,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMIndication)){
+								return false
+							}
+							this.target == (object as BswMEcuMIndication).target
+						}
+						
 						
 						
 						
@@ -1333,6 +1494,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMRUNRequestIndication)){
+								return false
+							}
+							this.target == (object as BswMEcuMRUNRequestIndication).target
 						}
 						
 						def BswMEcuMRUNRequestProtocolPort getBswMEcuMRUNRequestProtocolPort(){
@@ -1392,6 +1560,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMWakeupSource)){
+								return false
+							}
+							this.target == (object as BswMEcuMWakeupSource).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getBswMEcuMWakeupSrcRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "BswMEcuMWakeupSrcRef")
@@ -1425,6 +1600,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEthSMIndication)){
+								return false
+							}
+							this.target == (object as BswMEthSMIndication).target
 						}
 						
 						
@@ -1462,6 +1644,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMFrSMIndication)){
+								return false
+							}
+							this.target == (object as BswMFrSMIndication).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getBswMFrSMChannelRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "BswMFrSMChannelRef")
@@ -1495,6 +1684,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMGenericRequest)){
+								return false
+							}
+							this.target == (object as BswMGenericRequest).target
 						}
 						
 						def BigInteger getBswMModeRequesterId(){
@@ -1553,6 +1749,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMJ1939DcmBroadcastStatus)){
+								return false
+							}
+							this.target == (object as BswMJ1939DcmBroadcastStatus).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getBswMJ1939DcmChannelRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "BswMJ1939DcmChannelRef")
@@ -1586,6 +1789,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMJ1939NmIndication)){
+								return false
+							}
+							this.target == (object as BswMJ1939NmIndication).target
 						}
 						
 						
@@ -1634,6 +1844,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMLinSMIndication)){
+								return false
+							}
+							this.target == (object as BswMLinSMIndication).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getBswMLinSMChannelRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "BswMLinSMChannelRef")
@@ -1667,6 +1884,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMLinScheduleIndication)){
+								return false
+							}
+							this.target == (object as BswMLinScheduleIndication).target
 						}
 						
 						
@@ -1715,6 +1939,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMLinTpModeRequest)){
+								return false
+							}
+							this.target == (object as BswMLinTpModeRequest).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getBswMLinTpChannelRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "BswMLinTpChannelRef")
@@ -1750,6 +1981,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMModeSwitchErrorEvent)){
+								return false
+							}
+							this.target == (object as BswMModeSwitchErrorEvent).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMModeControl.BswMSwitchPort getBswMRteSwitchPortRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMModeControl.BswMSwitchPort), "BswMRteSwitchPortRef")
@@ -1783,6 +2021,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMNvMJobModeIndication)){
+								return false
+							}
+							this.target == (object as BswMNvMJobModeIndication).target
 						}
 						
 						def BswMNvmService getBswMNvmService(){
@@ -1842,6 +2087,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMNvMRequest)){
+								return false
+							}
+							this.target == (object as BswMNvMRequest).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getBswMNvMBlockRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "BswMNvMBlockRef")
@@ -1877,6 +2129,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMPartitionRestarted)){
+								return false
+							}
+							this.target == (object as BswMPartitionRestarted).target
+						}
+						
 						
 						
 						
@@ -1899,6 +2158,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSdClientServiceCurrentState)){
+								return false
+							}
+							this.target == (object as BswMSdClientServiceCurrentState).target
 						}
 						
 						
@@ -1936,6 +2202,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSdConsumedEventGroupCurrentState)){
+								return false
+							}
+							this.target == (object as BswMSdConsumedEventGroupCurrentState).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdClientService.SdConsumedEventGroup getBswMSdConsumedEventGroupRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Sd.SdConfig.SdInstance.SdClientService.SdConsumedEventGroup), "BswMSdConsumedEventGroupRef")
@@ -1969,6 +2242,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSdEventHandlerCurrentState)){
+								return false
+							}
+							this.target == (object as BswMSdEventHandlerCurrentState).target
 						}
 						
 						
@@ -2006,6 +2286,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSwcModeNotification)){
+								return false
+							}
+							this.target == (object as BswMSwcModeNotification).target
+						}
+						
 						
 						
 						
@@ -2031,6 +2318,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSwcModeRequest)){
+								return false
+							}
+							this.target == (object as BswMSwcModeRequest).target
+						}
+						
 						
 						
 						
@@ -2054,6 +2348,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMWdgMRequestPartitionReset)){
+								return false
+							}
+							this.target == (object as BswMWdgMRequestPartitionReset).target
 						}
 						
 						
@@ -2093,6 +2394,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMRule)){
+						return false
+					}
+					this.target == (object as BswMRule).target
 				}
 				
 				def Boolean getBswMNestedExecutionOnly(){
@@ -2205,6 +2513,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof BswMDataTypeMappingSets)){
+					return false
+				}
+				this.target == (object as BswMDataTypeMappingSets).target
+			}
+			
 			
 			
 			
@@ -2228,6 +2543,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof BswMModeControl)){
+					return false
+				}
+				this.target == (object as BswMModeControl).target
 			}
 			
 			
@@ -2328,6 +2650,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMAction)){
+						return false
+					}
+					this.target == (object as BswMAction).target
+				}
+				
 				
 				
 				def BswMAvailableActions getBswMAvailableActions(){
@@ -2357,6 +2686,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof BswMAvailableActions)){
+							return false
+						}
+						this.target == (object as BswMAvailableActions).target
 					}
 					
 					def BswMComMAllowCom getBswMComMAllowCom(){
@@ -2611,6 +2947,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMComMAllowCom)){
+								return false
+							}
+							this.target == (object as BswMComMAllowCom).target
+						}
+						
 						def Boolean getBswMComAllowed(){
 							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComAllowed"])
 						}
@@ -2662,6 +3005,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMComMModeLimitation)){
+								return false
+							}
+							this.target == (object as BswMComMModeLimitation).target
+						}
+						
 						def Boolean getBswMComMLimitMode(){
 							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMLimitMode"])
 						}
@@ -2711,6 +3061,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMComMModeSwitch)){
+								return false
+							}
+							this.target == (object as BswMComMModeSwitch).target
 						}
 						
 						def BswMComMRequestedMode getBswMComMRequestedMode(){
@@ -2781,6 +3138,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMCoreHaltMode)){
+								return false
+							}
+							this.target == (object as BswMCoreHaltMode).target
+						}
+						
 						def String getBswMCoreHaltActivationState(){
 							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCoreHaltActivationState"])
 						}
@@ -2830,6 +3194,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMDeadlineMonitoringControl)){
+								return false
+							}
+							this.target == (object as BswMDeadlineMonitoringControl).target
 						}
 						
 						
@@ -2922,6 +3293,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMGoDown)){
+								return false
+							}
+							this.target == (object as BswMEcuMGoDown).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig getBswMEcuMUserIdRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig), "BswMEcuMUserIdRef")
@@ -2957,6 +3335,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMGoHalt)){
+								return false
+							}
+							this.target == (object as BswMEcuMGoHalt).target
+						}
+						
 						
 						
 						
@@ -2981,6 +3366,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMGoPoll)){
+								return false
+							}
+							this.target == (object as BswMEcuMGoPoll).target
+						}
+						
 						
 						
 						
@@ -3003,6 +3395,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMSelectShutdownTarget)){
+								return false
+							}
+							this.target == (object as BswMEcuMSelectShutdownTarget).target
 						}
 						
 						def BswMEcuMShutdownTarget getBswMEcuMShutdownTarget(){
@@ -3086,6 +3485,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMEcuMStateSwitch)){
+								return false
+							}
+							this.target == (object as BswMEcuMStateSwitch).target
+						}
+						
 						def BswMEcuMState getBswMEcuMState(){
 							getBswMEcuMStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMState"])
 						}
@@ -3149,6 +3555,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMFrSMAllSlots)){
+								return false
+							}
+							this.target == (object as BswMFrSMAllSlots).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getBswMFrSMAllSlotsNetworkHandleRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "BswMFrSMAllSlotsNetworkHandleRef")
@@ -3182,6 +3595,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMJ1939DcmStateSwitch)){
+								return false
+							}
+							this.target == (object as BswMJ1939DcmStateSwitch).target
 						}
 						
 						def BswMJ1939DcmRequestedState getBswMJ1939DcmRequestedState(){
@@ -3263,6 +3683,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMJ1939RmStateSwitch)){
+								return false
+							}
+							this.target == (object as BswMJ1939RmStateSwitch).target
+						}
+						
 						def BswMJ1939RmRequestedState getBswMJ1939RmRequestedState(){
 							getBswMJ1939RmRequestedStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939RmRequestedState"])
 						}
@@ -3342,6 +3769,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMLinScheduleSwitch)){
+								return false
+							}
+							this.target == (object as BswMLinScheduleSwitch).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.LinSM.LinSMConfigSet.LinSMChannel.LinSMSchedule getBswMLinScheduleRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.LinSM.LinSMConfigSet.LinSMChannel.LinSMSchedule), "BswMLinScheduleRef")
@@ -3375,6 +3809,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMNMControl)){
+								return false
+							}
+							this.target == (object as BswMNMControl).target
 						}
 						
 						def BswMNMAction getBswMNMAction(){
@@ -3443,6 +3884,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMPduGroupSwitch)){
+								return false
+							}
+							this.target == (object as BswMPduGroupSwitch).target
 						}
 						
 						def Boolean getBswMPduGroupSwitchReinit(){
@@ -3551,6 +3999,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMPduRouterControl)){
+								return false
+							}
+							this.target == (object as BswMPduRouterControl).target
+						}
+						
 						def BswMPduRouterAction getBswMPduRouterAction(){
 							getBswMPduRouterActionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduRouterAction"])
 						}
@@ -3657,6 +4112,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMRequestRemoteMode)){
+								return false
+							}
+							this.target == (object as BswMRequestRemoteMode).target
+						}
+						
 						
 						
 						
@@ -3692,6 +4154,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMRteModeRequest)){
+								return false
+							}
+							this.target == (object as BswMRteModeRequest).target
 						}
 						
 						
@@ -3730,6 +4199,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMRteSwitch)){
+								return false
+							}
+							this.target == (object as BswMRteSwitch).target
+						}
+						
 						
 						
 						def org.artop.ecuc.autosar421.accessors.BswM.BswMConfig.BswMModeControl.BswMSwitchPort getBswMRteSwitchPortRef(){
@@ -3766,6 +4242,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSchMSwitch)){
+								return false
+							}
+							this.target == (object as BswMSchMSwitch).target
+						}
+						
 						
 						
 						
@@ -3790,6 +4273,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSdClientServiceModeRequest)){
+								return false
+							}
+							this.target == (object as BswMSdClientServiceModeRequest).target
 						}
 						
 						def BswMSdClientServiceState getBswMSdClientServiceState(){
@@ -3860,6 +4350,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSdConsumedEventGroupModeRequest)){
+								return false
+							}
+							this.target == (object as BswMSdConsumedEventGroupModeRequest).target
+						}
+						
 						def BswMSdConsumedEventGroupState getBswMSdConsumedEventGroupState(){
 							getBswMSdConsumedEventGroupStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSdConsumedEventGroupState"])
 						}
@@ -3926,6 +4423,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSdServerServiceModeRequest)){
+								return false
+							}
+							this.target == (object as BswMSdServerServiceModeRequest).target
 						}
 						
 						def BswMSdServerServiceState getBswMSdServerServiceState(){
@@ -3996,6 +4500,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMSwitchIPduMode)){
+								return false
+							}
+							this.target == (object as BswMSwitchIPduMode).target
+						}
+						
 						def Boolean getBswMSwitchIPduModeValue(){
 							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSwitchIPduModeValue"])
 						}
@@ -4045,6 +4556,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMTriggerIPduSend)){
+								return false
+							}
+							this.target == (object as BswMTriggerIPduSend).target
 						}
 						
 						
@@ -4104,6 +4622,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMTriggerSlaveRTEStop)){
+								return false
+							}
+							this.target == (object as BswMTriggerSlaveRTEStop).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition getBswMCoreRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition), "BswMCoreRef")
@@ -4139,6 +4664,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMTriggerStartUpPhase2)){
+								return false
+							}
+							this.target == (object as BswMTriggerStartUpPhase2).target
+						}
+						
 						
 						def org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition getBswMCoreRef(){
 							containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition), "BswMCoreRef")
@@ -4172,6 +4704,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof BswMUserCallout)){
+								return false
+							}
+							this.target == (object as BswMUserCallout).target
 						}
 						
 						def String getBswMUserCalloutFunction(){
@@ -4216,6 +4755,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMActionList)){
+						return false
+					}
+					this.target == (object as BswMActionList).target
 				}
 				
 				def BswMActionListExecution getBswMActionListExecution(){
@@ -4292,6 +4838,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof BswMActionListItem)){
+							return false
+						}
+						this.target == (object as BswMActionListItem).target
+					}
+					
 					def Boolean getBswMAbortOnFail(){
 						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMAbortOnFail"])
 					}
@@ -4362,6 +4915,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMRteModeRequestPort)){
+						return false
+					}
+					this.target == (object as BswMRteModeRequestPort).target
+				}
+				
 				
 				
 				
@@ -4386,6 +4946,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof BswMSwitchPort)){
+						return false
+					}
+					this.target == (object as BswMSwitchPort).target
 				}
 				
 				
@@ -4414,6 +4981,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof BswMGeneral)){
+				return false
+			}
+			this.target == (object as BswMGeneral).target
 		}
 		
 		def Boolean getBswMCanSMEnabled(){
@@ -4735,6 +5309,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof BswMUserIncludeFiles)){
+					return false
+				}
+				this.target == (object as BswMUserIncludeFiles).target
+			}
+			
 			def List<String> getBswMUserIncludeFiles(){
 				val List<EcucTextualParamValue> filteredParameterValues = new AbstractFilteringEList<EcucTextualParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 					override protected accept(EcucTextualParamValue item) {
@@ -4753,6 +5334,13 @@ class BswM implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof BswM)){
+			return false
+		}
+		this.target == (object as BswM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

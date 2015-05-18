@@ -306,6 +306,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalAsymDecrypt)){
+				return false
+			}
+			this.target == (object as CalAsymDecrypt).target
+		}
+		
 		def BigInteger getCalAsymDecryptMaxCtxBufByteSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"])
 		}
@@ -379,6 +386,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalAsymDecryptConfig)){
+					return false
+				}
+				this.target == (object as CalAsymDecryptConfig).target
+			}
+			
 			def String getCalAsymDecryptInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptInitConfiguration"])
 			}
@@ -434,6 +448,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalAsymEncrypt)){
+				return false
+			}
+			this.target == (object as CalAsymEncrypt).target
 		}
 		
 		def BigInteger getCalAsymEncryptMaxCtxBufByteSize(){
@@ -509,6 +530,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalAsymEncryptConfig)){
+					return false
+				}
+				this.target == (object as CalAsymEncryptConfig).target
+			}
+			
 			def String getCalAsymEncryptInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptInitConfiguration"])
 			}
@@ -564,6 +592,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalAsymPrivateKeyExtract)){
+				return false
+			}
+			this.target == (object as CalAsymPrivateKeyExtract).target
 		}
 		
 		def BigInteger getCalAsymPrivateKeyExtractMaxCtxBufByteSize(){
@@ -639,6 +674,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalAsymPrivateKeyExtractConfig)){
+					return false
+				}
+				this.target == (object as CalAsymPrivateKeyExtractConfig).target
+			}
+			
 			def String getCalAsymPrivateKeyExtractInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractInitConfiguration"])
 			}
@@ -694,6 +736,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalAsymPrivateKeyWrapAsym)){
+				return false
+			}
+			this.target == (object as CalAsymPrivateKeyWrapAsym).target
 		}
 		
 		def BigInteger getCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(){
@@ -785,6 +834,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalAsymPrivateKeyWrapAsymConfig)){
+					return false
+				}
+				this.target == (object as CalAsymPrivateKeyWrapAsymConfig).target
+			}
+			
 			def String getCalAsymPrivateKeyWrapAsymInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymInitConfiguration"])
 			}
@@ -840,6 +896,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalAsymPrivateKeyWrapSym)){
+				return false
+			}
+			this.target == (object as CalAsymPrivateKeyWrapSym).target
 		}
 		
 		def BigInteger getCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(){
@@ -931,6 +994,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalAsymPrivateKeyWrapSymConfig)){
+					return false
+				}
+				this.target == (object as CalAsymPrivateKeyWrapSymConfig).target
+			}
+			
 			def String getCalAsymPrivateKeyWrapSymInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymInitConfiguration"])
 			}
@@ -986,6 +1056,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalAsymPublicKeyExtract)){
+				return false
+			}
+			this.target == (object as CalAsymPublicKeyExtract).target
 		}
 		
 		def BigInteger getCalAsymPublicKeyExtractMaxCtxBufByteSize(){
@@ -1061,6 +1138,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalAsymPublicKeyExtractConfig)){
+					return false
+				}
+				this.target == (object as CalAsymPublicKeyExtractConfig).target
+			}
+			
 			def String getCalAsymPublicKeyExtractInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractInitConfiguration"])
 			}
@@ -1116,6 +1200,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalChecksum)){
+				return false
+			}
+			this.target == (object as CalChecksum).target
 		}
 		
 		def BigInteger getCalChecksumMaxCtxBufByteSize(){
@@ -1175,6 +1266,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalChecksumConfig)){
+					return false
+				}
+				this.target == (object as CalChecksumConfig).target
+			}
+			
 			def String getCalChecksumInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumInitConfiguration"])
 			}
@@ -1230,6 +1328,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalCompression)){
+				return false
+			}
+			this.target == (object as CalCompression).target
 		}
 		
 		def BigInteger getCalCompressMaxCtxBufByteSize(){
@@ -1289,6 +1394,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalCompressionConfig)){
+					return false
+				}
+				this.target == (object as CalCompressionConfig).target
+			}
+			
 			def String getCalCompressInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressInitConfiguration"])
 			}
@@ -1344,6 +1456,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalDecompression)){
+				return false
+			}
+			this.target == (object as CalDecompression).target
 		}
 		
 		def BigInteger getCalDecompressMaxCtxBufByteSize(){
@@ -1403,6 +1522,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalDecompressionConfig)){
+					return false
+				}
+				this.target == (object as CalDecompressionConfig).target
+			}
+			
 			def String getCalDecompressInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressInitConfiguration"])
 			}
@@ -1460,6 +1586,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalGeneral)){
+				return false
+			}
+			this.target == (object as CalGeneral).target
+		}
+		
 		def String getCalMaxAlignScalarType(){
 			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMaxAlignScalarType"])
 		}
@@ -1513,6 +1646,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalHash)){
+				return false
+			}
+			this.target == (object as CalHash).target
 		}
 		
 		def BigInteger getCalHashMaxCtxBufByteSize(){
@@ -1572,6 +1712,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalHashConfig)){
+					return false
+				}
+				this.target == (object as CalHashConfig).target
+			}
+			
 			def String getCalHashInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashInitConfiguration"])
 			}
@@ -1627,6 +1774,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalKeyDerive)){
+				return false
+			}
+			this.target == (object as CalKeyDerive).target
 		}
 		
 		def BigInteger getCalKeyDeriveMaxCtxBufByteSize(){
@@ -1702,6 +1856,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalKeyDeriveConfig)){
+					return false
+				}
+				this.target == (object as CalKeyDeriveConfig).target
+			}
+			
 			def String getCalKeyDeriveInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveInitConfiguration"])
 			}
@@ -1757,6 +1918,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalKeyExchangeCalcPubVal)){
+				return false
+			}
+			this.target == (object as CalKeyExchangeCalcPubVal).target
 		}
 		
 		def BigInteger getCalKeyExchangeCalcPubValMaxBaseTypeSize(){
@@ -1848,6 +2016,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalKeyExchangeCalcPubValConfig)){
+					return false
+				}
+				this.target == (object as CalKeyExchangeCalcPubValConfig).target
+			}
+			
 			def String getCalKeyExchangeCalcPubValInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValInitConfiguration"])
 			}
@@ -1903,6 +2078,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalKeyExchangeCalcSecret)){
+				return false
+			}
+			this.target == (object as CalKeyExchangeCalcSecret).target
 		}
 		
 		def BigInteger getCalKeyExchangeCalcSecretMaxBaseTypeSize(){
@@ -1994,6 +2176,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalKeyExchangeCalcSecretConfig)){
+					return false
+				}
+				this.target == (object as CalKeyExchangeCalcSecretConfig).target
+			}
+			
 			def String getCalKeyExchangeCalcSecretInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretInitConfiguration"])
 			}
@@ -2049,6 +2238,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalMacGenerate)){
+				return false
+			}
+			this.target == (object as CalMacGenerate).target
 		}
 		
 		def BigInteger getCalMacGenerateMaxCtxBufByteSize(){
@@ -2124,6 +2320,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalMacGenerateConfig)){
+					return false
+				}
+				this.target == (object as CalMacGenerateConfig).target
+			}
+			
 			def String getCalMacGenerateInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateInitConfiguration"])
 			}
@@ -2179,6 +2382,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalMacVerify)){
+				return false
+			}
+			this.target == (object as CalMacVerify).target
 		}
 		
 		def BigInteger getCalMacVerifyMaxCtxBufByteSize(){
@@ -2254,6 +2464,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalMacVerifyConfig)){
+					return false
+				}
+				this.target == (object as CalMacVerifyConfig).target
+			}
+			
 			def String getCalMacVerifyInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyInitConfiguration"])
 			}
@@ -2311,6 +2528,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalRandomGenerate)){
+				return false
+			}
+			this.target == (object as CalRandomGenerate).target
+		}
+		
 		
 		
 		def List<CalRandomGenerateConfig> getCalRandomGenerateConfigs(){
@@ -2350,6 +2574,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalRandomGenerateConfig)){
+					return false
+				}
+				this.target == (object as CalRandomGenerateConfig).target
 			}
 			
 			def String getCalRandomGenerateInitConfiguration(){
@@ -2409,6 +2640,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalRandomSeed)){
+				return false
+			}
+			this.target == (object as CalRandomSeed).target
+		}
+		
 		def BigInteger getCalRandomMaxCtxBufByteSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomMaxCtxBufByteSize"])
 		}
@@ -2466,6 +2704,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalRandomSeedConfig)){
+					return false
+				}
+				this.target == (object as CalRandomSeedConfig).target
+			}
+			
 			def String getCalRandomSeedInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomSeedInitConfiguration"])
 			}
@@ -2521,6 +2766,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSignatureGenerate)){
+				return false
+			}
+			this.target == (object as CalSignatureGenerate).target
 		}
 		
 		def BigInteger getCalSignatureGenerateMaxCtxBufByteSize(){
@@ -2596,6 +2848,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSignatureGenerateConfig)){
+					return false
+				}
+				this.target == (object as CalSignatureGenerateConfig).target
+			}
+			
 			def String getCalSignatureGenerateInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateInitConfiguration"])
 			}
@@ -2651,6 +2910,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSignatureVerify)){
+				return false
+			}
+			this.target == (object as CalSignatureVerify).target
 		}
 		
 		def BigInteger getCalSignatureVerifyMaxCtxBufByteSize(){
@@ -2726,6 +2992,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSignatureVerifyConfig)){
+					return false
+				}
+				this.target == (object as CalSignatureVerifyConfig).target
+			}
+			
 			def String getCalSignatureVerifyInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyInitConfiguration"])
 			}
@@ -2781,6 +3054,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymBlockDecrypt)){
+				return false
+			}
+			this.target == (object as CalSymBlockDecrypt).target
 		}
 		
 		def BigInteger getCalSymBlockDecryptMaxCtxBufByteSize(){
@@ -2856,6 +3136,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymBlockDecryptConfig)){
+					return false
+				}
+				this.target == (object as CalSymBlockDecryptConfig).target
+			}
+			
 			def String getCalSymBlockDecryptInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptInitConfiguration"])
 			}
@@ -2911,6 +3198,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymBlockEncrypt)){
+				return false
+			}
+			this.target == (object as CalSymBlockEncrypt).target
 		}
 		
 		def BigInteger getCalSymBlockEncryptMaxCtxBufByteSize(){
@@ -2986,6 +3280,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymBlockEncryptConfig)){
+					return false
+				}
+				this.target == (object as CalSymBlockEncryptConfig).target
+			}
+			
 			def String getCalSymBlockEncryptInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptInitConfiguration"])
 			}
@@ -3041,6 +3342,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymDecrypt)){
+				return false
+			}
+			this.target == (object as CalSymDecrypt).target
 		}
 		
 		def BigInteger getCalSymDecryptMaxCtxBufByteSize(){
@@ -3116,6 +3424,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymDecryptConfig)){
+					return false
+				}
+				this.target == (object as CalSymDecryptConfig).target
+			}
+			
 			def String getCalSymDecryptInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptInitConfiguration"])
 			}
@@ -3171,6 +3486,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymEncrypt)){
+				return false
+			}
+			this.target == (object as CalSymEncrypt).target
 		}
 		
 		def BigInteger getCalSymEncryptMaxCtxBufByteSize(){
@@ -3246,6 +3568,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymEncryptConfig)){
+					return false
+				}
+				this.target == (object as CalSymEncryptConfig).target
+			}
+			
 			def String getCalSymEncryptInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptInitConfiguration"])
 			}
@@ -3301,6 +3630,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymKeyExtract)){
+				return false
+			}
+			this.target == (object as CalSymKeyExtract).target
 		}
 		
 		def BigInteger getCalSymKeyExtractMaxCtxBufByteSize(){
@@ -3376,6 +3712,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymKeyExtractConfig)){
+					return false
+				}
+				this.target == (object as CalSymKeyExtractConfig).target
+			}
+			
 			def String getCalSymKeyExtractInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractInitConfiguration"])
 			}
@@ -3431,6 +3774,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymKeyWrapAsym)){
+				return false
+			}
+			this.target == (object as CalSymKeyWrapAsym).target
 		}
 		
 		def BigInteger getCalSymKeyWrapAsymMaxCtxBufByteSize(){
@@ -3522,6 +3872,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymKeyWrapAsymConfig)){
+					return false
+				}
+				this.target == (object as CalSymKeyWrapAsymConfig).target
+			}
+			
 			def String getCalSymKeyWrapAsymInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymInitConfiguration"])
 			}
@@ -3577,6 +3934,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CalSymKeyWrapSym)){
+				return false
+			}
+			this.target == (object as CalSymKeyWrapSym).target
 		}
 		
 		def BigInteger getCalSymKeyWrapSymMaxCtxBufByteSize(){
@@ -3652,6 +4016,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CalSymKeyWrapSymConfig)){
+					return false
+				}
+				this.target == (object as CalSymKeyWrapSymConfig).target
+			}
+			
 			def String getCalSymKeyWrapSymInitConfiguration(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymInitConfiguration"])
 			}
@@ -3689,6 +4060,13 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Cal)){
+			return false
+		}
+		this.target == (object as Cal).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

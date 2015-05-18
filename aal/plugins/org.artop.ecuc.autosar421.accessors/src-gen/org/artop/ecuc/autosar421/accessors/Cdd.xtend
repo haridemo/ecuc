@@ -114,6 +114,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CddComStackContribution)){
+				return false
+			}
+			this.target == (object as CddComStackContribution).target
+		}
+		
 		
 		
 		def CddComIfUpperLayerContribution getCddComIfUpperLayerContribution(){
@@ -190,6 +197,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddComIfUpperLayerContribution)){
+					return false
+				}
+				this.target == (object as CddComIfUpperLayerContribution).target
+			}
+			
 			
 			
 			def List<CddComIfUpperLayerRxPdu> getCddComIfUpperLayerRxPdus(){
@@ -250,6 +264,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddComIfUpperLayerRxPdu)){
+						return false
+					}
+					this.target == (object as CddComIfUpperLayerRxPdu).target
+				}
+				
 				def BigInteger getCddComIfHandleId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"])
 				}
@@ -299,6 +320,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddComIfUpperLayerTxPdu)){
+						return false
+					}
+					this.target == (object as CddComIfUpperLayerTxPdu).target
 				}
 				
 				def BigInteger getCddComIfHandleId(){
@@ -354,6 +382,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddComMLowerLayerContribution)){
+					return false
+				}
+				this.target == (object as CddComMLowerLayerContribution).target
+			}
+			
 			
 			
 			def List<CddComMLowerLayerChannel> getCddComMLowerLayerChannels(){
@@ -395,6 +430,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddComMLowerLayerChannel)){
+						return false
+					}
+					this.target == (object as CddComMLowerLayerChannel).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddComMLowerLayerChannelRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddComMLowerLayerChannelRef")
@@ -430,6 +472,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddGenericNmLowerLayerContribution)){
+					return false
+				}
+				this.target == (object as CddGenericNmLowerLayerContribution).target
 			}
 			
 			
@@ -473,6 +522,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddGenericNmLowerLayerChannel)){
+						return false
+					}
+					this.target == (object as CddGenericNmLowerLayerChannel).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddGenericNmComMNetworkHandleRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddGenericNmComMNetworkHandleRef")
@@ -508,6 +564,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddPduRLowerLayerContribution)){
+					return false
+				}
+				this.target == (object as CddPduRLowerLayerContribution).target
 			}
 			
 			
@@ -568,6 +631,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddPduRLowerLayerRxPdu)){
+						return false
+					}
+					this.target == (object as CddPduRLowerLayerRxPdu).target
 				}
 				
 				def CddPduRApiType getCddPduRApiType(){
@@ -652,6 +722,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddPduRLowerLayerTxPdu)){
+						return false
+					}
+					this.target == (object as CddPduRLowerLayerTxPdu).target
 				}
 				
 				def CddPduRApiType getCddPduRApiType(){
@@ -740,6 +817,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddPduRUpperLayerContribution)){
+					return false
+				}
+				this.target == (object as CddPduRUpperLayerContribution).target
+			}
+			
 			
 			
 			def List<CddPduRUpperLayerRxPdu> getCddPduRUpperLayerRxPdus(){
@@ -798,6 +882,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddPduRUpperLayerRxPdu)){
+						return false
+					}
+					this.target == (object as CddPduRUpperLayerRxPdu).target
 				}
 				
 				def CddPduRApiType getCddPduRApiType(){
@@ -882,6 +973,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddPduRUpperLayerTxPdu)){
+						return false
+					}
+					this.target == (object as CddPduRUpperLayerTxPdu).target
 				}
 				
 				def CddPduRApiType getCddPduRApiType(){
@@ -970,6 +1068,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddSoAdUpperLayerContribution)){
+					return false
+				}
+				this.target == (object as CddSoAdUpperLayerContribution).target
+			}
+			
 			
 			
 			def List<CddSoAdUpperLayerRxPdu> getCddSoAdUpperLayerRxPdus(){
@@ -1028,6 +1133,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddSoAdUpperLayerRxPdu)){
+						return false
+					}
+					this.target == (object as CddSoAdUpperLayerRxPdu).target
 				}
 				
 				def CddPduRApiType getCddPduRApiType(){
@@ -1112,6 +1224,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddSoAdUpperLayerTxPdu)){
+						return false
+					}
+					this.target == (object as CddSoAdUpperLayerTxPdu).target
 				}
 				
 				def CddPduRApiType getCddPduRApiType(){
@@ -1201,6 +1320,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CddConfigSet)){
+				return false
+			}
+			this.target == (object as CddConfigSet).target
+		}
+		
 		
 		
 		def CddComStackContribution getCddComStackContribution(){
@@ -1239,6 +1365,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddComStackContribution)){
+					return false
+				}
+				this.target == (object as CddComStackContribution).target
 			}
 			
 			
@@ -1317,6 +1450,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddComIfUpperLayerContribution)){
+						return false
+					}
+					this.target == (object as CddComIfUpperLayerContribution).target
+				}
+				
 				
 				
 				def List<CddComIfUpperLayerRxPdu> getCddComIfUpperLayerRxPdus(){
@@ -1377,6 +1517,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddComIfUpperLayerRxPdu)){
+							return false
+						}
+						this.target == (object as CddComIfUpperLayerRxPdu).target
+					}
+					
 					def BigInteger getCddComIfHandleId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"])
 					}
@@ -1426,6 +1573,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddComIfUpperLayerTxPdu)){
+							return false
+						}
+						this.target == (object as CddComIfUpperLayerTxPdu).target
 					}
 					
 					def BigInteger getCddComIfHandleId(){
@@ -1481,6 +1635,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddComMLowerLayerContribution)){
+						return false
+					}
+					this.target == (object as CddComMLowerLayerContribution).target
+				}
+				
 				
 				
 				def List<CddComMLowerLayerChannel> getCddComMLowerLayerChannels(){
@@ -1522,6 +1683,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddComMLowerLayerChannel)){
+							return false
+						}
+						this.target == (object as CddComMLowerLayerChannel).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddComMLowerLayerChannelRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddComMLowerLayerChannelRef")
@@ -1557,6 +1725,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddGenericNmLowerLayerContribution)){
+						return false
+					}
+					this.target == (object as CddGenericNmLowerLayerContribution).target
 				}
 				
 				
@@ -1600,6 +1775,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddGenericNmLowerLayerChannel)){
+							return false
+						}
+						this.target == (object as CddGenericNmLowerLayerChannel).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddGenericNmComMNetworkHandleRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddGenericNmComMNetworkHandleRef")
@@ -1635,6 +1817,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddPduRLowerLayerContribution)){
+						return false
+					}
+					this.target == (object as CddPduRLowerLayerContribution).target
 				}
 				
 				
@@ -1695,6 +1884,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddPduRLowerLayerRxPdu)){
+							return false
+						}
+						this.target == (object as CddPduRLowerLayerRxPdu).target
 					}
 					
 					def CddPduRApiType getCddPduRApiType(){
@@ -1779,6 +1975,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddPduRLowerLayerTxPdu)){
+							return false
+						}
+						this.target == (object as CddPduRLowerLayerTxPdu).target
 					}
 					
 					def CddPduRApiType getCddPduRApiType(){
@@ -1867,6 +2070,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddPduRUpperLayerContribution)){
+						return false
+					}
+					this.target == (object as CddPduRUpperLayerContribution).target
+				}
+				
 				
 				
 				def List<CddPduRUpperLayerRxPdu> getCddPduRUpperLayerRxPdus(){
@@ -1925,6 +2135,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddPduRUpperLayerRxPdu)){
+							return false
+						}
+						this.target == (object as CddPduRUpperLayerRxPdu).target
 					}
 					
 					def CddPduRApiType getCddPduRApiType(){
@@ -2009,6 +2226,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddPduRUpperLayerTxPdu)){
+							return false
+						}
+						this.target == (object as CddPduRUpperLayerTxPdu).target
 					}
 					
 					def CddPduRApiType getCddPduRApiType(){
@@ -2097,6 +2321,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CddSoAdUpperLayerContribution)){
+						return false
+					}
+					this.target == (object as CddSoAdUpperLayerContribution).target
+				}
+				
 				
 				
 				def List<CddSoAdUpperLayerRxPdu> getCddSoAdUpperLayerRxPdus(){
@@ -2155,6 +2386,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddSoAdUpperLayerRxPdu)){
+							return false
+						}
+						this.target == (object as CddSoAdUpperLayerRxPdu).target
 					}
 					
 					def CddPduRApiType getCddPduRApiType(){
@@ -2239,6 +2477,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CddSoAdUpperLayerTxPdu)){
+							return false
+						}
+						this.target == (object as CddSoAdUpperLayerTxPdu).target
 					}
 					
 					def CddPduRApiType getCddPduRApiType(){
@@ -2329,6 +2574,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CddEcucPartitionInteraction)){
+					return false
+				}
+				this.target == (object as CddEcucPartitionInteraction).target
+			}
+			
 			def String getCddPartitionStoppedFunctionName(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"])
 			}
@@ -2381,6 +2633,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CddEcucPartitionInteraction)){
+				return false
+			}
+			this.target == (object as CddEcucPartitionInteraction).target
+		}
+		
 		def String getCddPartitionStoppedFunctionName(){
 			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"])
 		}
@@ -2411,6 +2670,13 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Cdd)){
+			return false
+		}
+		this.target == (object as Cdd).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

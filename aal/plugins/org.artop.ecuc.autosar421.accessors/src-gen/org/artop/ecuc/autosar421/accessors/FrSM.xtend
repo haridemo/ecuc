@@ -106,6 +106,13 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrSMConfig)){
+				return false
+			}
+			this.target == (object as FrSMConfig).target
+		}
+		
 		
 		
 		def List<FrSMCluster> getFrSMClusters(){
@@ -145,6 +152,13 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrSMCluster)){
+					return false
+				}
+				this.target == (object as FrSMCluster).target
 			}
 			
 			def Boolean getFrSMCheckWakeupReason(){
@@ -408,6 +422,13 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrSMClusterDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as FrSMClusterDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getFRSM_E_CLUSTER_STARTUP(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "FRSM_E_CLUSTER_STARTUP")
@@ -455,6 +476,13 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrSMGeneral)){
+				return false
+			}
+			this.target == (object as FrSMGeneral).target
 		}
 		
 		def Boolean getFrSMAllSlotsSupport(){
@@ -540,6 +568,13 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrSM)){
+			return false
+		}
+		this.target == (object as FrSM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

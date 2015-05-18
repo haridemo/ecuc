@@ -124,6 +124,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof NvMBlockDescriptor)){
+				return false
+			}
+			this.target == (object as NvMBlockDescriptor).target
+		}
+		
 		def NvMBlockCrcType getNvMBlockCrcType(){
 			getNvMBlockCrcTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockCrcType"])
 		}
@@ -721,6 +728,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof NvMTargetBlockReference)){
+					return false
+				}
+				this.target == (object as NvMTargetBlockReference).target
+			}
+			
 			def NvMEaRef getNvMEaRef(){
 				containerValue.getByType(typeof(NvMEaRef))
 			}
@@ -757,6 +771,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof NvMEaRef)){
+						return false
+					}
+					this.target == (object as NvMEaRef).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Ea.EaBlockConfiguration getNvMNameOfEaBlock(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Ea.EaBlockConfiguration), "NvMNameOfEaBlock")
@@ -790,6 +811,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof NvMFeeRef)){
+						return false
+					}
+					this.target == (object as NvMFeeRef).target
 				}
 				
 				
@@ -828,6 +856,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof NvMCommon)){
+				return false
+			}
+			this.target == (object as NvMCommon).target
 		}
 		
 		def NvMApiConfigClass getNvMApiConfigClass(){
@@ -1144,6 +1179,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof NvmDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as NvmDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getNVM_E_HARDWARE(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "NVM_E_HARDWARE")
@@ -1235,6 +1277,13 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof NvM)){
+			return false
+		}
+		this.target == (object as NvM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

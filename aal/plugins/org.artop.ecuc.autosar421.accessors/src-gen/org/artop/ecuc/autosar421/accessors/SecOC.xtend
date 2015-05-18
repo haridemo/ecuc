@@ -152,6 +152,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SecOCGeneral)){
+				return false
+			}
+			this.target == (object as SecOCGeneral).target
+		}
+		
 		def Boolean getSecOCDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCDevErrorDetect"])
 		}
@@ -261,6 +268,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SecOCRxPduProcessing)){
+				return false
+			}
+			this.target == (object as SecOCRxPduProcessing).target
 		}
 		
 		def BigInteger getSecOCAuthInfoTxLength(){
@@ -526,6 +540,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SecOCRxAuthenticPduLayer)){
+					return false
+				}
+				this.target == (object as SecOCRxAuthenticPduLayer).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getSecOCRxAuthenticLayerPduRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "SecOCRxAuthenticLayerPduRef")
@@ -559,6 +580,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SecOCRxSecuredPduLayer)){
+					return false
+				}
+				this.target == (object as SecOCRxSecuredPduLayer).target
 			}
 			
 			def BigInteger getSecOCRxSecuredLayerPduId(){
@@ -613,6 +641,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SecOCSameBufferPduCollection)){
+				return false
+			}
+			this.target == (object as SecOCSameBufferPduCollection).target
+		}
+		
 		def BigInteger getSecOCBufferLength(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCBufferLength"])
 		}
@@ -650,6 +685,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof SecOCTxPduProcessing)){
+				return false
+			}
+			this.target == (object as SecOCTxPduProcessing).target
 		}
 		
 		def BigInteger getSecOCAuthInfoTxLength(){
@@ -848,6 +890,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SecOCTxAuthenticPduLayer)){
+					return false
+				}
+				this.target == (object as SecOCTxAuthenticPduLayer).target
+			}
+			
 			def BigInteger getSecOCTxAuthenticLayerPduId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCTxAuthenticLayerPduId"])
 			}
@@ -899,6 +948,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof SecOCTxSecuredPduLayer)){
+					return false
+				}
+				this.target == (object as SecOCTxSecuredPduLayer).target
+			}
+			
 			def BigInteger getSecOCTxSecuredLayerPduId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCTxSecuredLayerPduId"])
 			}
@@ -931,6 +987,13 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof SecOC)){
+			return false
+		}
+		this.target == (object as SecOC).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

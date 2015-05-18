@@ -106,6 +106,13 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinSMConfigSet)){
+				return false
+			}
+			this.target == (object as LinSMConfigSet).target
+		}
+		
 		def BigInteger getLinSMModeRequestRepetitionMax(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"])
 		}
@@ -161,6 +168,13 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinSMChannel)){
+					return false
+				}
+				this.target == (object as LinSMChannel).target
 			}
 			
 			def BigDecimal getLinSMConfirmationTimeout(){
@@ -247,6 +261,13 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinSMSchedule)){
+						return false
+					}
+					this.target == (object as LinSMSchedule).target
+				}
+				
 				def BigInteger getLinSMScheduleIndex(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"])
 				}
@@ -301,6 +322,13 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinSMGeneral)){
+				return false
+			}
+			this.target == (object as LinSMGeneral).target
+		}
+		
 		def Boolean getLinSMDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMDevErrorDetect"])
 		}
@@ -352,6 +380,13 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof LinSM)){
+			return false
+		}
+		this.target == (object as LinSM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

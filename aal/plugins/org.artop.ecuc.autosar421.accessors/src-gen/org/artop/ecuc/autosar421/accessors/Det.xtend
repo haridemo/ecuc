@@ -114,6 +114,13 @@ class Det implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DetConfigSet)){
+				return false
+			}
+			this.target == (object as DetConfigSet).target
+		}
+		
 		
 		
 		def List<DetModule> getDetModules(){
@@ -155,6 +162,13 @@ class Det implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DetModule)){
+					return false
+				}
+				this.target == (object as DetModule).target
+			}
+			
 			def BigInteger getDetModuleId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetModuleId"])
 			}
@@ -194,6 +208,13 @@ class Det implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DetGeneral)){
+				return false
+			}
+			this.target == (object as DetGeneral).target
 		}
 		
 		def Boolean getDetForwardToDlt(){
@@ -283,6 +304,13 @@ class Det implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DetNotification)){
+				return false
+			}
+			this.target == (object as DetNotification).target
+		}
+		
 		def List<String> getDetErrorHooks(){
 			val List<EcucTextualParamValue> filteredParameterValues = new AbstractFilteringEList<EcucTextualParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 				override protected accept(EcucTextualParamValue item) {
@@ -299,6 +327,13 @@ class Det implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Det)){
+			return false
+		}
+		this.target == (object as Det).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

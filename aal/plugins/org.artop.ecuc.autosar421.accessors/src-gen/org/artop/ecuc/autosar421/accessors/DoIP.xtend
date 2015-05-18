@@ -106,6 +106,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DoIPConfigSet)){
+				return false
+			}
+			this.target == (object as DoIPConfigSet).target
+		}
+		
 		def BigInteger getDoIPEid(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPEid"])
 		}
@@ -242,6 +249,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPChannel)){
+					return false
+				}
+				this.target == (object as DoIPChannel).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPTester getDoIPChannelSARef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.DoIP.DoIPConfigSet.DoIPTester), "DoIPChannelSARef")
@@ -304,6 +318,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPPduRRxPdu)){
+						return false
+					}
+					this.target == (object as DoIPPduRRxPdu).target
+				}
+				
 				def BigInteger getDoIPPduRRxPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPPduRRxPduId"])
 				}
@@ -353,6 +374,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPPduRTxPdu)){
+						return false
+					}
+					this.target == (object as DoIPPduRTxPdu).target
 				}
 				
 				def BigInteger getDoIPPduRTxPduId(){
@@ -441,6 +469,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPConnections)){
+					return false
+				}
+				this.target == (object as DoIPConnections).target
+			}
+			
 			
 			
 			def List<DoIPTargetAddress> getDoIPTargetAddress(){
@@ -520,6 +555,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPTargetAddress)){
+						return false
+					}
+					this.target == (object as DoIPTargetAddress).target
+				}
+				
 				def BigInteger getDoIPTargetAddressValue(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPTargetAddressValue"])
 				}
@@ -560,6 +602,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPTcpConnection)){
+						return false
+					}
+					this.target == (object as DoIPTcpConnection).target
+				}
+				
 				
 				
 				def DoIPSoAdRxPdu getDoIPSoAdRxPdu(){
@@ -598,6 +647,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DoIPSoAdRxPdu)){
+							return false
+						}
+						this.target == (object as DoIPSoAdRxPdu).target
 					}
 					
 					def BigInteger getDoIPSoAdRxPduId(){
@@ -649,6 +705,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DoIPSoAdTxPdu)){
+							return false
+						}
+						this.target == (object as DoIPSoAdTxPdu).target
 					}
 					
 					def BigInteger getDoIPSoAdTxPduId(){
@@ -704,6 +767,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPUdpConnection)){
+						return false
+					}
+					this.target == (object as DoIPUdpConnection).target
+				}
+				
 				
 				
 				def DoIPSoAdRxPdu getDoIPSoAdRxPdu(){
@@ -742,6 +812,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DoIPSoAdRxPdu)){
+							return false
+						}
+						this.target == (object as DoIPSoAdRxPdu).target
 					}
 					
 					def BigInteger getDoIPSoAdRxPduId(){
@@ -793,6 +870,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DoIPSoAdTxPdu)){
+							return false
+						}
+						this.target == (object as DoIPSoAdTxPdu).target
 					}
 					
 					def BigInteger getDoIPSoAdTxPduId(){
@@ -848,6 +932,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPRoutingActivation)){
+					return false
+				}
+				this.target == (object as DoIPRoutingActivation).target
 			}
 			
 			def BigInteger getDoIPRoutingActivationNumber(){
@@ -939,6 +1030,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPRoutingActivationAuthenticationCallback)){
+						return false
+					}
+					this.target == (object as DoIPRoutingActivationAuthenticationCallback).target
+				}
+				
 				def String getDoIPRoutingActivationAuthenticationFunc(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationAuthenticationFunc"])
 				}
@@ -1009,6 +1107,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DoIPRoutingActivationConfirmationCallback)){
+						return false
+					}
+					this.target == (object as DoIPRoutingActivationConfirmationCallback).target
 				}
 				
 				def String getDoIPRoutingActivationConfirmationFunc(){
@@ -1083,6 +1188,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPTester)){
+					return false
+				}
+				this.target == (object as DoIPTester).target
 			}
 			
 			def BigInteger getDoIPNumByteDiagAckNack(){
@@ -1173,6 +1285,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DoIPGeneral)){
+				return false
+			}
+			this.target == (object as DoIPGeneral).target
 		}
 		
 		def BigDecimal getDoIPAliveCheckResponseTimeout(){
@@ -1606,6 +1725,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPGetGidCallback)){
+					return false
+				}
+				this.target == (object as DoIPGetGidCallback).target
+			}
+			
 			def String getDoIPGetGidDirect(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPGetGidDirect"])
 			}
@@ -1644,6 +1770,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPPowerModeCallback)){
+					return false
+				}
+				this.target == (object as DoIPPowerModeCallback).target
 			}
 			
 			def String getDoIPPowerModeDirect(){
@@ -1686,6 +1819,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DoIPTriggerGidSyncCallback)){
+					return false
+				}
+				this.target == (object as DoIPTriggerGidSyncCallback).target
+			}
+			
 			def String getDoIPTriggerGidSyncDirect(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPTriggerGidSyncDirect"])
 			}
@@ -1707,6 +1847,13 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof DoIP)){
+			return false
+		}
+		this.target == (object as DoIP).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

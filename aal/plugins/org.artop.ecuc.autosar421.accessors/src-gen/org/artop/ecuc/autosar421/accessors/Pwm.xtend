@@ -114,6 +114,13 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PwmChannelConfigSet)){
+				return false
+			}
+			this.target == (object as PwmChannelConfigSet).target
+		}
+		
 		
 		
 		def List<PwmChannel> getPwmChannels(){
@@ -153,6 +160,13 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PwmChannel)){
+					return false
+				}
+				this.target == (object as PwmChannel).target
 			}
 			
 			def PwmChannelClass getPwmChannelClass(){
@@ -356,6 +370,13 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PwmConfigurationOfOptApiServices)){
+				return false
+			}
+			this.target == (object as PwmConfigurationOfOptApiServices).target
+		}
+		
 		def Boolean getPwmDeInitApi(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDeInitApi"])
 		}
@@ -473,6 +494,13 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PwmGeneral)){
+				return false
+			}
+			this.target == (object as PwmGeneral).target
 		}
 		
 		def Boolean getPwmDevErrorDetect(){
@@ -628,6 +656,13 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PwmPowerStateConfig)){
+					return false
+				}
+				this.target == (object as PwmPowerStateConfig).target
+			}
+			
 			def BigInteger getPwmPowerState(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerState"])
 			}
@@ -665,6 +700,13 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Pwm)){
+			return false
+		}
+		this.target == (object as Pwm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

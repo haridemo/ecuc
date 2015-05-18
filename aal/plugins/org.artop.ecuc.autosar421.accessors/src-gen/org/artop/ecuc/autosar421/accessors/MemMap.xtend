@@ -144,6 +144,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof MemMapAddressingModeSet)){
+				return false
+			}
+			this.target == (object as MemMapAddressingModeSet).target
+		}
+		
 		def String getMemMapCompilerMemClassSymbolImpl(){
 			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
 		}
@@ -329,6 +336,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof MemMapAddressingMode)){
+					return false
+				}
+				this.target == (object as MemMapAddressingMode).target
+			}
+			
 			def String getMemMapAddressingModeStart(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStart"])
 			}
@@ -399,6 +413,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof MemMapAllocation)){
+				return false
+			}
+			this.target == (object as MemMapAllocation).target
+		}
+		
 		
 		
 		def List<MemMapGenericMapping> getMemMapGenericMappings(){
@@ -459,6 +480,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof MemMapGenericMapping)){
+					return false
+				}
+				this.target == (object as MemMapGenericMapping).target
+			}
+			
 			
 			
 			def org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet getMemMapAddressingModeSetRef(){
@@ -493,6 +521,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof MemMapSectionSpecificMapping)){
+					return false
+				}
+				this.target == (object as MemMapSectionSpecificMapping).target
 			}
 			
 			
@@ -532,6 +567,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof MemMapGenericCompilerMemClass)){
+				return false
+			}
+			this.target == (object as MemMapGenericCompilerMemClass).target
+		}
+		
 		def String getMemMapGenericCompilerMemClassSymbolImpl(){
 			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
 		}
@@ -551,6 +593,13 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof MemMap)){
+			return false
+		}
+		this.target == (object as MemMap).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -286,6 +286,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsAlarm)){
+				return false
+			}
+			this.target == (object as OsAlarm).target
+		}
+		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsAlarmAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
@@ -370,6 +377,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsAlarmAction)){
+					return false
+				}
+				this.target == (object as OsAlarmAction).target
+			}
+			
 			def OsAlarmActivateTask getOsAlarmActivateTask(){
 				containerValue.getByType(typeof(OsAlarmActivateTask))
 			}
@@ -422,6 +436,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsAlarmActivateTask)){
+						return false
+					}
+					this.target == (object as OsAlarmActivateTask).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsAlarmActivateTaskRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsAlarmActivateTaskRef")
@@ -455,6 +476,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsAlarmCallback)){
+						return false
+					}
+					this.target == (object as OsAlarmCallback).target
 				}
 				
 				def String getOsAlarmCallbackName(){
@@ -497,6 +525,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsAlarmIncrementCounter)){
+						return false
+					}
+					this.target == (object as OsAlarmIncrementCounter).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsCounter getOsAlarmIncrementCounterRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter), "OsAlarmIncrementCounterRef")
@@ -530,6 +565,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsAlarmSetEvent)){
+						return false
+					}
+					this.target == (object as OsAlarmSetEvent).target
 				}
 				
 				
@@ -578,6 +620,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsAlarmAutostart)){
+					return false
+				}
+				this.target == (object as OsAlarmAutostart).target
 			}
 			
 			def BigInteger getOsAlarmAlarmTime(){
@@ -703,6 +752,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsAppMode)){
+				return false
+			}
+			this.target == (object as OsAppMode).target
+		}
+		
 		
 		
 		
@@ -724,6 +780,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsApplication)){
+				return false
+			}
+			this.target == (object as OsApplication).target
 		}
 		
 		def Boolean getOsTrusted(){
@@ -1022,6 +1085,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsApplicationHooks)){
+					return false
+				}
+				this.target == (object as OsApplicationHooks).target
+			}
+			
 			def Boolean getOsAppErrorHook(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppErrorHook"])
 			}
@@ -1094,6 +1164,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsApplicationTrustedFunction)){
+					return false
+				}
+				this.target == (object as OsApplicationTrustedFunction).target
+			}
+			
 			def String getOsTrustedFunctionName(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedFunctionName"])
 			}
@@ -1133,6 +1210,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsCounter)){
+				return false
+			}
+			this.target == (object as OsCounter).target
 		}
 		
 		def BigInteger getOsCounterMaxAllowedValue(){
@@ -1315,6 +1399,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsDriver)){
+					return false
+				}
+				this.target == (object as OsDriver).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Gpt.GptChannelConfigSet.GptChannelConfiguration getOsGptChannelRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Gpt.GptChannelConfigSet.GptChannelConfiguration), "OsGptChannelRef")
@@ -1348,6 +1439,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsTimeConstant)){
+					return false
+				}
+				this.target == (object as OsTimeConstant).target
 			}
 			
 			def BigDecimal getOsTimeValue(){
@@ -1391,6 +1489,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsEvent)){
+				return false
+			}
+			this.target == (object as OsEvent).target
+		}
+		
 		def BigInteger getOsEventMask(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsEventMask"])
 		}
@@ -1428,6 +1533,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsIoc)){
+				return false
+			}
+			this.target == (object as OsIoc).target
 		}
 		
 		
@@ -1469,6 +1581,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsIocCommunication)){
+					return false
+				}
+				this.target == (object as OsIocCommunication).target
 			}
 			
 			def BigInteger getOsIocBufferLength(){
@@ -1566,6 +1685,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsIocDataProperties)){
+						return false
+					}
+					this.target == (object as OsIocDataProperties).target
+				}
+				
 				def BigInteger getOsIocDataPropertyIndex(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocDataPropertyIndex"])
 				}
@@ -1621,6 +1747,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsIocReceiverProperties)){
+						return false
+					}
+					this.target == (object as OsIocReceiverProperties).target
 				}
 				
 				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKind(){
@@ -1707,6 +1840,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsIocSenderProperties)){
+						return false
+					}
+					this.target == (object as OsIocSenderProperties).target
 				}
 				
 				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKind(){
@@ -1796,6 +1936,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsIsr)){
+				return false
+			}
+			this.target == (object as OsIsr).target
 		}
 		
 		def OsIsrCategory getOsIsrCategory(){
@@ -1893,6 +2040,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsIsrTimingProtection)){
+					return false
+				}
+				this.target == (object as OsIsrTimingProtection).target
 			}
 			
 			def BigDecimal getOsIsrAllInterruptLockBudget(){
@@ -2000,6 +2154,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsIsrResourceLock)){
+						return false
+					}
+					this.target == (object as OsIsrResourceLock).target
+				}
+				
 				def BigDecimal getOsIsrResourceLockBudget(){
 					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrResourceLockBudget"])
 				}
@@ -2052,6 +2213,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsOS)){
+				return false
+			}
+			this.target == (object as OsOS).target
 		}
 		
 		def BigInteger getOsNumberOfCores(){
@@ -2235,6 +2403,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsHooks)){
+					return false
+				}
+				this.target == (object as OsHooks).target
+			}
+			
 			def Boolean getOsErrorHook(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsErrorHook"])
 			}
@@ -2356,6 +2531,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsResource)){
+				return false
+			}
+			this.target == (object as OsResource).target
+		}
+		
 		def OsResourceProperty getOsResourceProperty(){
 			getOsResourcePropertyValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsResourceProperty"])
 		}
@@ -2456,6 +2638,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsScheduleTable)){
+				return false
+			}
+			this.target == (object as OsScheduleTable).target
 		}
 		
 		def BigInteger getOsScheduleTableDuration(){
@@ -2593,6 +2782,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsScheduleTableAutostart)){
+					return false
+				}
+				this.target == (object as OsScheduleTableAutostart).target
+			}
+			
 			def OsScheduleTableAutostartType getOsScheduleTableAutostartType(){
 				getOsScheduleTableAutostartTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableAutostartType"])
 			}
@@ -2701,6 +2897,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsScheduleTableExpiryPoint)){
+					return false
+				}
+				this.target == (object as OsScheduleTableExpiryPoint).target
+			}
+			
 			def BigInteger getOsScheduleTblExpPointOffset(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExpPointOffset"])
 			}
@@ -2786,6 +2989,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsScheduleTableEventSetting)){
+						return false
+					}
+					this.target == (object as OsScheduleTableEventSetting).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsEvent getOsScheduleTableSetEventRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsEvent), "OsScheduleTableSetEventRef")
@@ -2832,6 +3042,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsScheduleTableTaskActivation)){
+						return false
+					}
+					this.target == (object as OsScheduleTableTaskActivation).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsScheduleTableActivateTaskRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsScheduleTableActivateTaskRef")
@@ -2865,6 +3082,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsScheduleTblAdjustableExpPoint)){
+						return false
+					}
+					this.target == (object as OsScheduleTblAdjustableExpPoint).target
 				}
 				
 				def BigInteger getOsScheduleTableMaxLengthen(){
@@ -2923,6 +3147,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsScheduleTableSync)){
+					return false
+				}
+				this.target == (object as OsScheduleTableSync).target
 			}
 			
 			def BigInteger getOsScheduleTblExplicitPrecision(){
@@ -2999,6 +3230,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsSpinlock)){
+				return false
+			}
+			this.target == (object as OsSpinlock).target
 		}
 		
 		def OsSpinlockLockMethod getOsSpinlockLockMethod(){
@@ -3103,6 +3341,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OsTask)){
+				return false
+			}
+			this.target == (object as OsTask).target
 		}
 		
 		def BigInteger getOsTaskActivation(){
@@ -3309,6 +3554,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsTaskAutostart)){
+					return false
+				}
+				this.target == (object as OsTaskAutostart).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsTaskAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
@@ -3364,6 +3616,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OsTaskTimingProtection)){
+					return false
+				}
+				this.target == (object as OsTaskTimingProtection).target
 			}
 			
 			def BigDecimal getOsTaskAllInterruptLockBudget(){
@@ -3471,6 +3730,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof OsTaskResourceLock)){
+						return false
+					}
+					this.target == (object as OsTaskResourceLock).target
+				}
+				
 				def BigDecimal getOsTaskResourceLockBudget(){
 					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskResourceLockBudget"])
 				}
@@ -3505,6 +3771,13 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Os)){
+			return false
+		}
+		this.target == (object as Os).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

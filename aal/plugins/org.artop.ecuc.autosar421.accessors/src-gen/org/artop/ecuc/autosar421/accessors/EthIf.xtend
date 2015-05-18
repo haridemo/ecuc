@@ -106,6 +106,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthIfConfigSet)){
+				return false
+			}
+			this.target == (object as EthIfConfigSet).target
+		}
+		
 		
 		
 		def List<EthIfController> getEthIfControllers(){
@@ -242,6 +249,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthIfController)){
+					return false
+				}
+				this.target == (object as EthIfController).target
+			}
+			
 			def BigInteger getEthIfCtrlIdx(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfCtrlIdx"])
 			}
@@ -352,6 +366,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthIfFrameOwnerConfig)){
+					return false
+				}
+				this.target == (object as EthIfFrameOwnerConfig).target
+			}
+			
 			def BigInteger getEthIfFrameType(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfFrameType"])
 			}
@@ -408,6 +429,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthIfRxIndicationConfig)){
+					return false
+				}
+				this.target == (object as EthIfRxIndicationConfig).target
+			}
+			
 			def String getEthIfRxIndicationFunction(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfRxIndicationFunction"])
 			}
@@ -446,6 +474,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthIfSwitch)){
+					return false
+				}
+				this.target == (object as EthIfSwitch).target
 			}
 			
 			def BigInteger getEthIfSwitchIdx(){
@@ -499,6 +534,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthIfTrcvLinkStateChgConfig)){
+					return false
+				}
+				this.target == (object as EthIfTrcvLinkStateChgConfig).target
+			}
+			
 			def String getEthIfTrcvLinkStateChgFunction(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthIfTrcvLinkStateChgFunction"])
 			}
@@ -537,6 +579,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthIfTxConfirmationConfig)){
+					return false
+				}
+				this.target == (object as EthIfTxConfirmationConfig).target
 			}
 			
 			def String getEthIfTxConfirmationFunction(){
@@ -578,6 +627,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthIfGeneral)){
+				return false
+			}
+			this.target == (object as EthIfGeneral).target
 		}
 		
 		def Boolean getEthIfDevErrorDetect(){
@@ -852,6 +908,13 @@ class EthIf implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EthIf)){
+			return false
+		}
+		this.target == (object as EthIf).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

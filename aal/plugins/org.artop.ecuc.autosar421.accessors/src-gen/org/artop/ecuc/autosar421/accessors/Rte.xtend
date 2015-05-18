@@ -240,6 +240,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteBswGeneral)){
+				return false
+			}
+			this.target == (object as RteBswGeneral).target
+		}
+		
 		def Boolean getRteSchMVersionInfoApi(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteSchMVersionInfoApi"])
 		}
@@ -293,6 +300,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteBswModuleInstance)){
+				return false
+			}
+			this.target == (object as RteBswModuleInstance).target
 		}
 		
 		
@@ -471,6 +485,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswEventToTaskMapping)){
+					return false
+				}
+				this.target == (object as RteBswEventToTaskMapping).target
+			}
+			
 			def BigDecimal getRteBswActivationOffset(){
 				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswActivationOffset"])
 			}
@@ -645,6 +666,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswExclusiveAreaImpl)){
+					return false
+				}
+				this.target == (object as RteBswExclusiveAreaImpl).target
+			}
+			
 			def RteExclusiveAreaImplMechanism getRteExclusiveAreaImplMechanism(){
 				getRteExclusiveAreaImplMechanismValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExclusiveAreaImplMechanism"])
 			}
@@ -731,6 +759,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswExternalTriggerConfig)){
+					return false
+				}
+				this.target == (object as RteBswExternalTriggerConfig).target
+			}
+			
 			def BigInteger getRteBswTriggerSourceQueueLength(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"])
 			}
@@ -770,6 +805,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswInternalTriggerConfig)){
+					return false
+				}
+				this.target == (object as RteBswInternalTriggerConfig).target
 			}
 			
 			def BigInteger getRteBswTriggerSourceQueueLength(){
@@ -813,6 +855,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswRequiredClientServerConnection)){
+					return false
+				}
+				this.target == (object as RteBswRequiredClientServerConnection).target
+			}
+			
 			
 			
 			
@@ -848,6 +897,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswRequiredModeGroupConnection)){
+					return false
+				}
+				this.target == (object as RteBswRequiredModeGroupConnection).target
 			}
 			
 			
@@ -888,6 +944,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswRequiredSenderReceiverConnection)){
+					return false
+				}
+				this.target == (object as RteBswRequiredSenderReceiverConnection).target
+			}
+			
 			
 			
 			
@@ -923,6 +986,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteBswRequiredTriggerConnection)){
+					return false
+				}
+				this.target == (object as RteBswRequiredTriggerConnection).target
 			}
 			
 			
@@ -961,6 +1031,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteGeneration)){
+				return false
+			}
+			this.target == (object as RteGeneration).target
 		}
 		
 		def RteBypassSupport getRteBypassSupport(){
@@ -1309,6 +1386,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteImplicitCommunication)){
+				return false
+			}
+			this.target == (object as RteImplicitCommunication).target
+		}
+		
 		def Boolean getRteCoherentAccess(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCoherentAccess"])
 		}
@@ -1365,6 +1449,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteInitializationBehavior)){
+				return false
+			}
+			this.target == (object as RteInitializationBehavior).target
 		}
 		
 		def RteInitializationStrategy getRteInitializationStrategy(){
@@ -1440,6 +1531,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteInitializationRunnableBatch)){
+				return false
+			}
+			this.target == (object as RteInitializationRunnableBatch).target
+		}
+		
 		
 		
 		
@@ -1461,6 +1559,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteOsInteraction)){
+				return false
+			}
+			this.target == (object as RteOsInteraction).target
 		}
 		
 		
@@ -1542,6 +1647,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteModeToScheduleTableMapping)){
+					return false
+				}
+				this.target == (object as RteModeToScheduleTableMapping).target
+			}
+			
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable getRteModeScheduleTableRef(){
@@ -1594,6 +1706,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof RteModeSchtblMapBsw)){
+						return false
+					}
+					this.target == (object as RteModeSchtblMapBsw).target
+				}
+				
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Rte.RteBswModuleInstance getRteModeSchtblMapBswInstanceRef(){
@@ -1628,6 +1747,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof RteModeSchtblMapSwc)){
+						return false
+					}
+					this.target == (object as RteModeSchtblMapSwc).target
 				}
 				
 				
@@ -1668,6 +1794,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteSyncPoint)){
+					return false
+				}
+				this.target == (object as RteSyncPoint).target
+			}
+			
 			
 			
 			
@@ -1690,6 +1823,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteUsedOsActivation)){
+					return false
+				}
+				this.target == (object as RteUsedOsActivation).target
 			}
 			
 			def BigDecimal getRteExpectedActivationOffset(){
@@ -1782,6 +1922,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RtePostBuildVariantConfiguration)){
+				return false
+			}
+			this.target == (object as RtePostBuildVariantConfiguration).target
+		}
+		
 		
 		
 		
@@ -1804,6 +1951,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteSwComponentInstance)){
+				return false
+			}
+			this.target == (object as RteSwComponentInstance).target
 		}
 		
 		
@@ -1922,6 +2076,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteEventToTaskMapping)){
+					return false
+				}
+				this.target == (object as RteEventToTaskMapping).target
 			}
 			
 			def BigDecimal getRteActivationOffset(){
@@ -2120,6 +2281,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteExclusiveAreaImplementation)){
+					return false
+				}
+				this.target == (object as RteExclusiveAreaImplementation).target
+			}
+			
 			def RteExclusiveAreaImplMechanism getRteExclusiveAreaImplMechanism(){
 				getRteExclusiveAreaImplMechanismValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExclusiveAreaImplMechanism"])
 			}
@@ -2195,6 +2363,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteExternalTriggerConfig)){
+					return false
+				}
+				this.target == (object as RteExternalTriggerConfig).target
+			}
+			
 			def BigInteger getRteTriggerSourceQueueLength(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"])
 			}
@@ -2236,6 +2411,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteInternalTriggerConfig)){
+					return false
+				}
+				this.target == (object as RteInternalTriggerConfig).target
+			}
+			
 			def BigInteger getRteTriggerSourceQueueLength(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"])
 			}
@@ -2275,6 +2457,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteNvRamAllocation)){
+					return false
+				}
+				this.target == (object as RteNvRamAllocation).target
 			}
 			
 			def String getRteNvmRamBlockLocationSymbol(){
@@ -2347,6 +2536,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RteSwComponentType)){
+				return false
+			}
+			this.target == (object as RteSwComponentType).target
+		}
+		
 		def Boolean getRteBypassSupportEnabled(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBypassSupportEnabled"])
 		}
@@ -2396,6 +2592,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RteComponentTypeCalibration)){
+					return false
+				}
+				this.target == (object as RteComponentTypeCalibration).target
+			}
+			
 			def Boolean getRteCalibrationSupportEnabled(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCalibrationSupportEnabled"])
 			}
@@ -2418,6 +2621,13 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Rte)){
+			return false
+		}
+		this.target == (object as Rte).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

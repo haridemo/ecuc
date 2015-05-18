@@ -124,6 +124,13 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EaBlockConfiguration)){
+				return false
+			}
+			this.target == (object as EaBlockConfiguration).target
+		}
+		
 		def BigInteger getEaBlockNumber(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockNumber"])
 		}
@@ -220,6 +227,13 @@ class Ea implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EaGeneral)){
+				return false
+			}
+			this.target == (object as EaGeneral).target
 		}
 		
 		def Boolean getEaDevErrorDetect(){
@@ -373,6 +387,13 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EaPublishedInformation)){
+				return false
+			}
+			this.target == (object as EaPublishedInformation).target
+		}
+		
 		def BigInteger getEaBlockOverhead(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockOverhead"])
 		}
@@ -408,6 +429,13 @@ class Ea implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Ea)){
+			return false
+		}
+		this.target == (object as Ea).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

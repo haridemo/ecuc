@@ -106,6 +106,13 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinTpGeneral)){
+				return false
+			}
+			this.target == (object as LinTpGeneral).target
+		}
+		
 		def Boolean getLinTpChangeParameterApi(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpChangeParameterApi"])
 		}
@@ -159,6 +166,13 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinTpGlobalConfig)){
+				return false
+			}
+			this.target == (object as LinTpGlobalConfig).target
 		}
 		
 		def BigInteger getLinTpMaxNumberOfRespPendingFrames(){
@@ -320,6 +334,13 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinTpChannelConfig)){
+					return false
+				}
+				this.target == (object as LinTpChannelConfig).target
+			}
+			
 			def Boolean getLinTpDropNotRequestedNad(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpDropNotRequestedNad"])
 			}
@@ -385,6 +406,13 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinTpRxNSdu)){
+					return false
+				}
+				this.target == (object as LinTpRxNSdu).target
 			}
 			
 			def BigDecimal getLinTpNcr(){
@@ -479,6 +507,13 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinTpTxNSdu)){
+					return false
+				}
+				this.target == (object as LinTpTxNSdu).target
 			}
 			
 			def BigInteger getLinTpMaxBufReq(){
@@ -588,6 +623,13 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof LinTp)){
+			return false
+		}
+		this.target == (object as LinTp).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

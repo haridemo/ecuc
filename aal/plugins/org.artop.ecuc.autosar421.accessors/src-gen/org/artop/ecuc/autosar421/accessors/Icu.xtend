@@ -114,6 +114,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof IcuConfigSet)){
+				return false
+			}
+			this.target == (object as IcuConfigSet).target
+		}
+		
 		def BigInteger getIcuMaxChannel(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuMaxChannel"])
 		}
@@ -169,6 +176,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof IcuChannel)){
+					return false
+				}
+				this.target == (object as IcuChannel).target
 			}
 			
 			def BigInteger getIcuChannelId(){
@@ -333,6 +347,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof IcuSignalEdgeDetection)){
+						return false
+					}
+					this.target == (object as IcuSignalEdgeDetection).target
+				}
+				
 				def String getIcuSignalNotification(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuSignalNotification"])
 				}
@@ -371,6 +392,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof IcuSignalMeasurement)){
+						return false
+					}
+					this.target == (object as IcuSignalMeasurement).target
 				}
 				
 				def IcuSignalMeasurementProperty getIcuSignalMeasurementProperty(){
@@ -432,6 +460,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof IcuTimestampMeasurement)){
+						return false
+					}
+					this.target == (object as IcuTimestampMeasurement).target
 				}
 				
 				def IcuTimestampMeasurementProperty getIcuTimestampMeasurementProperty(){
@@ -507,6 +542,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof IcuWakeup)){
+						return false
+					}
+					this.target == (object as IcuWakeup).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getIcuChannelWakeupInfo(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "IcuChannelWakeupInfo")
@@ -543,6 +585,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof IcuGeneral)){
+				return false
+			}
+			this.target == (object as IcuGeneral).target
 		}
 		
 		def Boolean getIcuDevErrorDetect(){
@@ -614,6 +663,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof IcuOptionalApis)){
+				return false
+			}
+			this.target == (object as IcuOptionalApis).target
 		}
 		
 		def Boolean getIcuDeInitApi(){
@@ -827,6 +883,13 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Icu)){
+			return false
+		}
+		this.target == (object as Icu).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

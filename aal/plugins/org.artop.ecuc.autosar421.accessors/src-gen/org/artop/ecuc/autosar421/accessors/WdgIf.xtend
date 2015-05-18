@@ -116,6 +116,13 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgIfDevice)){
+				return false
+			}
+			this.target == (object as WdgIfDevice).target
+		}
+		
 		def BigInteger getWdgIfDeviceIndex(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfDeviceIndex"])
 		}
@@ -166,6 +173,13 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgIfGeneral)){
+				return false
+			}
+			this.target == (object as WdgIfGeneral).target
+		}
+		
 		def Boolean getWdgIfDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfDevErrorDetect"])
 		}
@@ -201,6 +215,13 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof WdgIf)){
+			return false
+		}
+		this.target == (object as WdgIf).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

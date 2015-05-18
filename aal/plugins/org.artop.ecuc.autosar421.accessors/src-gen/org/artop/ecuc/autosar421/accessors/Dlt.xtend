@@ -132,6 +132,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DltGeneral)){
+				return false
+			}
+			this.target == (object as DltGeneral).target
+		}
+		
 		def Boolean getDltDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltDevErrorDetect"])
 		}
@@ -342,6 +349,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DltMemory)){
+				return false
+			}
+			this.target == (object as DltMemory).target
+		}
+		
 		def BigInteger getDltInitBufferSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltInitBufferSize"])
 		}
@@ -445,6 +459,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DltMultipleConfigurationContainer)){
+				return false
+			}
+			this.target == (object as DltMultipleConfigurationContainer).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getDltNvRamBlockRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "DltNvRamBlockRef")
@@ -503,6 +524,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DltBandwidth)){
+					return false
+				}
+				this.target == (object as DltBandwidth).target
 			}
 			
 			def BigInteger getDltBandwidthForComModule(){
@@ -575,6 +603,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DltMessageFiltering)){
+					return false
+				}
+				this.target == (object as DltMessageFiltering).target
 			}
 			
 			def BigInteger getDltDefaultMaxLogLevel(){
@@ -663,6 +698,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DltProtocol)){
+					return false
+				}
+				this.target == (object as DltProtocol).target
 			}
 			
 			def String getDltEcuId(){
@@ -835,6 +877,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DltVfbTrace)){
+				return false
+			}
+			this.target == (object as DltVfbTrace).target
+		}
+		
 		def String getDltVfbTraceFunction(){
 			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltVfbTraceFunction"])
 		}
@@ -855,6 +904,13 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Dlt)){
+			return false
+		}
+		this.target == (object as Dlt).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

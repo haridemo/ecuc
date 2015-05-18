@@ -122,6 +122,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcuMConfiguration)){
+				return false
+			}
+			this.target == (object as EcuMConfiguration).target
+		}
+		
 		
 		
 		def EcuMCommonConfiguration getEcuMCommonConfiguration(){
@@ -169,6 +176,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EcuMCommonConfiguration)){
+					return false
+				}
+				this.target == (object as EcuMCommonConfiguration).target
 			}
 			
 			def BigInteger getEcuMConfigConsistencyHash(){
@@ -327,6 +341,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMDefaultShutdownTarget)){
+						return false
+					}
+					this.target == (object as EcuMDefaultShutdownTarget).target
+				}
+				
 				def EcuMDefaultState getEcuMDefaultState(){
 					getEcuMDefaultStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDefaultState"])
 				}
@@ -408,6 +429,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMDriverInitListOne)){
+						return false
+					}
+					this.target == (object as EcuMDriverInitListOne).target
+				}
+				
 				
 				
 				def List<EcuMDriverInitItem> getEcuMDriverInitItems(){
@@ -447,6 +475,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EcuMDriverInitItem)){
+							return false
+						}
+						this.target == (object as EcuMDriverInitItem).target
 					}
 					
 					def String getEcuMModuleID(){
@@ -543,6 +578,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMDriverInitListZero)){
+						return false
+					}
+					this.target == (object as EcuMDriverInitListZero).target
+				}
+				
 				
 				
 				def List<EcuMDriverInitItem> getEcuMDriverInitItems(){
@@ -582,6 +624,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EcuMDriverInitItem)){
+							return false
+						}
+						this.target == (object as EcuMDriverInitItem).target
 					}
 					
 					def String getEcuMModuleID(){
@@ -678,6 +727,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMDriverRestartList)){
+						return false
+					}
+					this.target == (object as EcuMDriverRestartList).target
+				}
+				
 				
 				
 				def List<EcuMDriverInitItem> getEcuMDriverInitItems(){
@@ -717,6 +773,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EcuMDriverInitItem)){
+							return false
+						}
+						this.target == (object as EcuMDriverInitItem).target
 					}
 					
 					def String getEcuMModuleID(){
@@ -811,6 +874,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMSleepMode)){
+						return false
+					}
+					this.target == (object as EcuMSleepMode).target
 				}
 				
 				def BigInteger getEcuMSleepModeId(){
@@ -911,6 +981,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMWakeupSource)){
+						return false
+					}
+					this.target == (object as EcuMWakeupSource).target
 				}
 				
 				def BigDecimal getEcuMCheckWakeupTimeout(){
@@ -1045,6 +1122,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EcuMFixedConfiguration)){
+					return false
+				}
+				this.target == (object as EcuMFixedConfiguration).target
 			}
 			
 			def BigDecimal getEcuMNvramReadallTimeout(){
@@ -1217,6 +1301,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMDriverInitListThree)){
+						return false
+					}
+					this.target == (object as EcuMDriverInitListThree).target
+				}
+				
 				
 				
 				def List<EcuMDriverInitItem> getEcuMDriverInitItems(){
@@ -1256,6 +1347,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EcuMDriverInitItem)){
+							return false
+						}
+						this.target == (object as EcuMDriverInitItem).target
 					}
 					
 					def String getEcuMModuleID(){
@@ -1352,6 +1450,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMDriverInitListTwo)){
+						return false
+					}
+					this.target == (object as EcuMDriverInitListTwo).target
+				}
+				
 				
 				
 				def List<EcuMDriverInitItem> getEcuMDriverInitItems(){
@@ -1391,6 +1496,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EcuMDriverInitItem)){
+							return false
+						}
+						this.target == (object as EcuMDriverInitItem).target
 					}
 					
 					def String getEcuMModuleID(){
@@ -1487,6 +1599,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMFixedUserConfig)){
+						return false
+					}
+					this.target == (object as EcuMFixedUserConfig).target
+				}
+				
 				def BigInteger getEcuMFixedUser(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFixedUser"])
 				}
@@ -1525,6 +1644,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMTTII)){
+						return false
+					}
+					this.target == (object as EcuMTTII).target
 				}
 				
 				def BigInteger getEcuMDivisor(){
@@ -1589,6 +1715,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EcuMFlexConfiguration)){
+					return false
+				}
+				this.target == (object as EcuMFlexConfiguration).target
 			}
 			
 			
@@ -1751,6 +1884,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMAlarmClock)){
+						return false
+					}
+					this.target == (object as EcuMAlarmClock).target
+				}
+				
 				def BigInteger getEcuMAlarmClockId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockId"])
 				}
@@ -1818,6 +1958,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMFlexUserConfig)){
+						return false
+					}
+					this.target == (object as EcuMFlexUserConfig).target
+				}
+				
 				def BigInteger getEcuMFlexUser(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFlexUser"])
 				}
@@ -1867,6 +2014,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMGoDownAllowedUsers)){
+						return false
+					}
+					this.target == (object as EcuMGoDownAllowedUsers).target
 				}
 				
 				
@@ -1926,6 +2080,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMResetMode)){
+						return false
+					}
+					this.target == (object as EcuMResetMode).target
+				}
+				
 				def BigInteger getEcuMResetModeId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetModeId"])
 				}
@@ -1964,6 +2125,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMSetClockAllowedUsers)){
+						return false
+					}
+					this.target == (object as EcuMSetClockAllowedUsers).target
 				}
 				
 				
@@ -2023,6 +2191,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EcuMShutdownCause)){
+						return false
+					}
+					this.target == (object as EcuMShutdownCause).target
+				}
+				
 				def BigInteger getEcuMShutdownCauseId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMShutdownCauseId"])
 				}
@@ -2064,6 +2239,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcuMFixedGeneral)){
+				return false
+			}
+			this.target == (object as EcuMFixedGeneral).target
 		}
 		
 		def Boolean getEcuMIncludeComM(){
@@ -2130,6 +2312,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcuMFlexGeneral)){
+				return false
+			}
+			this.target == (object as EcuMFlexGeneral).target
 		}
 		
 		def Boolean getEcuMAlarmClockPresent(){
@@ -2230,6 +2419,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EcuMGeneral)){
+				return false
+			}
+			this.target == (object as EcuMGeneral).target
+		}
+		
 		def Boolean getEcuMDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDevErrorDetect"])
 		}
@@ -2297,6 +2493,13 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EcuM)){
+			return false
+		}
+		this.target == (object as EcuM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

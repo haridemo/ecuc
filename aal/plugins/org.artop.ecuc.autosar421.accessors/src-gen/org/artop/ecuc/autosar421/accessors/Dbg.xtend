@@ -138,6 +138,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DbgBuffering)){
+				return false
+			}
+			this.target == (object as DbgBuffering).target
+		}
+		
 		def BigInteger getDbgBufferSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferSize"])
 		}
@@ -243,6 +250,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DbgCommunication)){
+				return false
+			}
+			this.target == (object as DbgCommunication).target
+		}
+		
 		
 		
 		def DbgRxPdu getDbgRxPdu(){
@@ -281,6 +295,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DbgRxPdu)){
+					return false
+				}
+				this.target == (object as DbgRxPdu).target
 			}
 			
 			def BigInteger getDbgRxPduId(){
@@ -334,6 +355,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DbgTxPdu)){
+					return false
+				}
+				this.target == (object as DbgTxPdu).target
+			}
+			
 			def BigInteger getDbgTxConfirmationPduId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgTxConfirmationPduId"])
 			}
@@ -384,6 +412,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DbgDIDConfiguration)){
+				return false
+			}
+			this.target == (object as DbgDIDConfiguration).target
 		}
 		
 		def BigInteger getDbgMaxDynamicDID(){
@@ -460,6 +495,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DbgPredefinedDID)){
+					return false
+				}
+				this.target == (object as DbgPredefinedDID).target
 			}
 			
 			def Boolean getDbgPredefinedDIDActivation(){
@@ -610,6 +652,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DbgPredefinedDIDAddInfo)){
+						return false
+					}
+					this.target == (object as DbgPredefinedDIDAddInfo).target
+				}
+				
 				def DbgAddInfoComSignal getDbgAddInfoComSignal(){
 					containerValue.getByType(typeof(DbgAddInfoComSignal))
 				}
@@ -662,6 +711,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgAddInfoComSignal)){
+							return false
+						}
+						this.target == (object as DbgAddInfoComSignal).target
+					}
+					
 					def String getDbgComSignalName(){
 						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgComSignalName"])
 					}
@@ -712,6 +768,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgAddInfoRteCall)){
+							return false
+						}
+						this.target == (object as DbgAddInfoRteCall).target
 					}
 					
 					def BigInteger getDbgCallComponentId(){
@@ -804,6 +867,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgAddInfoRunnable)){
+							return false
+						}
+						this.target == (object as DbgAddInfoRunnable).target
+					}
+					
 					def BigInteger getDbgRunnableComponentId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableComponentId"])
 					}
@@ -877,6 +947,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgAddInfoVfbSignal)){
+							return false
+						}
+						this.target == (object as DbgAddInfoVfbSignal).target
 					}
 					
 					def BigInteger getDbgVfbComponentId(){
@@ -971,6 +1048,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof DbgStaticDID)){
+					return false
+				}
+				this.target == (object as DbgStaticDID).target
 			}
 			
 			def BigInteger getDbgAutomaticCollectionFrequency(){
@@ -1094,6 +1178,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof DbgStaticDIDData)){
+						return false
+					}
+					this.target == (object as DbgStaticDIDData).target
+				}
+				
 				def DbgAddressSizePair getDbgAddressSizePair(){
 					containerValue.getByType(typeof(DbgAddressSizePair))
 				}
@@ -1136,6 +1227,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgAddressSizePair)){
+							return false
+						}
+						this.target == (object as DbgAddressSizePair).target
 					}
 					
 					def BigInteger getDbgASAbsoluteAddress(){
@@ -1210,6 +1308,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgDebugData)){
+							return false
+						}
+						this.target == (object as DbgDebugData).target
+					}
+					
 					
 					
 					
@@ -1233,6 +1338,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof DbgLocalDebugData)){
+							return false
+						}
+						this.target == (object as DbgLocalDebugData).target
 					}
 					
 					
@@ -1263,6 +1375,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DbgGeneral)){
+				return false
+			}
+			this.target == (object as DbgGeneral).target
 		}
 		
 		def Boolean getDbgDevErrorDetect(){
@@ -1333,6 +1452,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DbgPeriodicDataCollection)){
+				return false
+			}
+			this.target == (object as DbgPeriodicDataCollection).target
+		}
+		
 		def BigInteger getDbgDataCollectionTick(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDataCollectionTick"])
 		}
@@ -1381,6 +1507,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof DbgTimestampConfiguration)){
+				return false
+			}
+			this.target == (object as DbgTimestampConfiguration).target
 		}
 		
 		def DbgGlobalTimestampActivation getDbgGlobalTimestampActivation(){
@@ -1463,6 +1596,13 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Dbg)){
+			return false
+		}
+		this.target == (object as Dbg).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

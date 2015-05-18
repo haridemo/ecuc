@@ -98,6 +98,13 @@ class Crc implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CrcGeneral)){
+				return false
+			}
+			this.target == (object as CrcGeneral).target
+		}
+		
 		def Crc16Mode getCrc16Mode(){
 			getCrc16ModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc16Mode"])
 		}
@@ -276,6 +283,13 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Crc)){
+			return false
+		}
+		this.target == (object as Crc).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

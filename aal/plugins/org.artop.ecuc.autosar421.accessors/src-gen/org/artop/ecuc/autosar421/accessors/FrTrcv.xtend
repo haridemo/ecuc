@@ -116,6 +116,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrTrcvChannel)){
+				return false
+			}
+			this.target == (object as FrTrcvChannel).target
+		}
+		
 		def BigInteger getFrTrcvChannelId(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelId"])
 		}
@@ -349,6 +356,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTrcvAccess)){
+					return false
+				}
+				this.target == (object as FrTrcvAccess).target
+			}
+			
 			def FrTrcvDioAccess getFrTrcvDioAccess(){
 				containerValue.getByType(typeof(FrTrcvDioAccess))
 			}
@@ -383,6 +397,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTrcvDioAccess)){
+						return false
+					}
+					this.target == (object as FrTrcvDioAccess).target
 				}
 				
 				
@@ -424,6 +445,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrTrcvDioChannelAccess)){
+							return false
+						}
+						this.target == (object as FrTrcvDioChannelAccess).target
 					}
 					
 					def String getFrTrcvHardwareInterfaceName(){
@@ -469,6 +497,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrTrcvSpiSequence)){
+						return false
+					}
+					this.target == (object as FrTrcvSpiSequence).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence getFrTrcvSpiSequenceName(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence), "FrTrcvSpiSequenceName")
@@ -504,6 +539,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTrcvBranchIdContainer)){
+					return false
+				}
+				this.target == (object as FrTrcvBranchIdContainer).target
 			}
 			
 			def BigInteger getFrTrcvBranchId(){
@@ -544,6 +586,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrTrcvChannelDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as FrTrcvChannelDemEventParameterRefs).target
 			}
 			
 			
@@ -591,6 +640,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrTrcvGeneral)){
+				return false
+			}
+			this.target == (object as FrTrcvGeneral).target
 		}
 		
 		def String getFrTrcvDemReportErrorStatusConfiguration(){
@@ -806,6 +862,13 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FrTrcv)){
+			return false
+		}
+		this.target == (object as FrTrcv).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

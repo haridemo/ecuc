@@ -116,6 +116,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthSwtConfig)){
+				return false
+			}
+			this.target == (object as EthSwtConfig).target
+		}
+		
 		def BigInteger getEthSwtIdx(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtIdx"])
 		}
@@ -200,6 +207,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthSwtDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as EthSwtDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getETHSWT_E_ACCESS(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "ETHSWT_E_ACCESS")
@@ -235,6 +249,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthSwtNvm)){
+					return false
+				}
+				this.target == (object as EthSwtNvm).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getEthSwtNvmBlockDescriptorRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "EthSwtNvmBlockDescriptorRef")
@@ -268,6 +289,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthSwtPort)){
+					return false
+				}
+				this.target == (object as EthSwtPort).target
 			}
 			
 			def Boolean getEthSwtPortEnableLinkDownCallback(){
@@ -438,6 +466,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EthSwtPortEgress)){
+						return false
+					}
+					this.target == (object as EthSwtPortEgress).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig.EthSwtPort.EthSwtPortEgress.EthSwtPortScheduler getEthSwtPortEgressLastSchedulerRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthSwt.EthSwtConfig.EthSwtPort.EthSwtPortEgress.EthSwtPortScheduler), "EthSwtPortEgressLastSchedulerRef")
@@ -547,6 +582,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EthSwtPortFifo)){
+							return false
+						}
+						this.target == (object as EthSwtPortFifo).target
+					}
+					
 					def List<BigInteger> getEthSwtPortFifoTrafficClassAssignments(){
 						val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 							override protected accept(EcucNumericalParamValue item) {
@@ -582,6 +624,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EthSwtPortScheduler)){
+							return false
+						}
+						this.target == (object as EthSwtPortScheduler).target
 					}
 					
 					def EthSwtPortSchedulerAlgorithm getEthSwtPortSchedulerAlgorithm(){
@@ -660,6 +709,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof EthSwtPortSchedulerPredecessor)){
+								return false
+							}
+							this.target == (object as EthSwtPortSchedulerPredecessor).target
+						}
+						
 						def BigInteger getEthSwtPortSchedulerPredecessorOrder(){
 							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortSchedulerPredecessorOrder"])
 						}
@@ -701,6 +757,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EthSwtPortShaper)){
+							return false
+						}
+						this.target == (object as EthSwtPortShaper).target
 					}
 					
 					def BigInteger getEthSwtPortShaperIdleSlope(){
@@ -752,6 +815,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EthSwtPortVlanForwarding)){
+							return false
+						}
+						this.target == (object as EthSwtPortVlanForwarding).target
 					}
 					
 					def BigInteger getEthSwtPortVlanDefaultPriority(){
@@ -847,6 +917,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EthSwtPortIngress)){
+						return false
+					}
+					this.target == (object as EthSwtPortIngress).target
+				}
+				
 				def BigInteger getEthSwtPortIngressVlanModification(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPortIngressVlanModification"])
 				}
@@ -939,6 +1016,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EthSwtPriorityRegeneration)){
+							return false
+						}
+						this.target == (object as EthSwtPriorityRegeneration).target
+					}
+					
 					def BigInteger getEthSwtPriorityRegenerationIngressPriority(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSwtPriorityRegenerationIngressPriority"])
 					}
@@ -993,6 +1077,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof EthSwtPriorityTrafficClassAssignment)){
+							return false
+						}
+						this.target == (object as EthSwtPriorityTrafficClassAssignment).target
 					}
 					
 					def BigInteger getEthSwtPriorityTrafficClassAssignmentPriority(){
@@ -1055,6 +1146,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthSwtSpi)){
+					return false
+				}
+				this.target == (object as EthSwtSpi).target
+			}
+			
 			
 			
 			def List<EthSwtSpiSequence> getEthSwtSpiSequences(){
@@ -1094,6 +1192,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EthSwtSpiSequence)){
+						return false
+					}
+					this.target == (object as EthSwtSpiSequence).target
 				}
 				
 				def Boolean getEthSwtSpiAccessSynchronous(){
@@ -1170,6 +1275,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthSwtGeneral)){
+				return false
+			}
+			this.target == (object as EthSwtGeneral).target
 		}
 		
 		def Boolean getEthSwtDevErrorDetect(){
@@ -1524,6 +1636,13 @@ class EthSwt implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EthSwt)){
+			return false
+		}
+		this.target == (object as EthSwt).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

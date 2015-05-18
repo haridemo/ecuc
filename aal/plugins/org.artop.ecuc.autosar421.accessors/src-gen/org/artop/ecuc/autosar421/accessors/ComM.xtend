@@ -106,6 +106,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof ComMConfigSet)){
+				return false
+			}
+			this.target == (object as ComMConfigSet).target
+		}
+		
 		def Boolean getComMPncEnabled(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncEnabled"])
 		}
@@ -199,6 +206,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComMChannel)){
+					return false
+				}
+				this.target == (object as ComMChannel).target
 			}
 			
 			def ComMBusType getComMBusType(){
@@ -437,6 +451,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComMNetworkManagement)){
+						return false
+					}
+					this.target == (object as ComMNetworkManagement).target
+				}
+				
 				def BigDecimal getComMNmLightTimeout(){
 					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmLightTimeout"])
 				}
@@ -530,6 +551,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComMUserPerChannel)){
+						return false
+					}
+					this.target == (object as ComMUserPerChannel).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMUser getComMUserChannel(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMUser), "ComMUserChannel")
@@ -565,6 +593,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComMPnc)){
+					return false
+				}
+				this.target == (object as ComMPnc).target
 			}
 			
 			def BigInteger getComMPncId(){
@@ -690,6 +725,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComMPncComSignal)){
+						return false
+					}
+					this.target == (object as ComMPncComSignal).target
+				}
+				
 				def ComMPncComSignalDirection getComMPncComSignalDirection(){
 					getComMPncComSignalDirectionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncComSignalDirection"])
 				}
@@ -804,6 +846,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComMUser)){
+					return false
+				}
+				this.target == (object as ComMUser).target
+			}
+			
 			def BigInteger getComMUserIdentifier(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMUserIdentifier"])
 			}
@@ -854,6 +903,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof ComMGeneral)){
+				return false
+			}
+			this.target == (object as ComMGeneral).target
 		}
 		
 		def Boolean getComMDevErrorDetect(){
@@ -1078,6 +1134,13 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof ComM)){
+			return false
+		}
+		this.target == (object as ComM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

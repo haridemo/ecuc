@@ -106,6 +106,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939DcmConfigSet)){
+				return false
+			}
+			this.target == (object as J1939DcmConfigSet).target
+		}
+		
 		
 		
 		def List<J1939DcmChannel> getJ1939DcmChannels(){
@@ -164,6 +171,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939DcmChannel)){
+					return false
+				}
+				this.target == (object as J1939DcmChannel).target
 			}
 			
 			def J1939DcmBusType getJ1939DcmBusType(){
@@ -246,6 +260,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939DcmNode)){
+					return false
+				}
+				this.target == (object as J1939DcmNode).target
+			}
+			
 			def List<BigInteger> getJ1939DcmSPNsInDataStreams(){
 				val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 					override protected accept(EcucNumericalParamValue item) {
@@ -320,6 +341,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmDiagnosticMessageSupport)){
+						return false
+					}
+					this.target == (object as J1939DcmDiagnosticMessageSupport).target
 				}
 				
 				def J1939DcmDmxSupport getJ1939DcmDmxSupport(){
@@ -516,6 +544,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939DcmRxPdu)){
+							return false
+						}
+						this.target == (object as J1939DcmRxPdu).target
+					}
+					
 					def BigInteger getJ1939DcmRxPduId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"])
 					}
@@ -565,6 +600,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939DcmTxPdu)){
+							return false
+						}
+						this.target == (object as J1939DcmTxPdu).target
 					}
 					
 					def BigInteger getJ1939DcmTxPduId(){
@@ -621,6 +663,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939DcmGeneral)){
+				return false
+			}
+			this.target == (object as J1939DcmGeneral).target
 		}
 		
 		def BigInteger getJ1939DcmCommonBufferSize(){
@@ -754,6 +803,13 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof J1939Dcm)){
+			return false
+		}
+		this.target == (object as J1939Dcm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

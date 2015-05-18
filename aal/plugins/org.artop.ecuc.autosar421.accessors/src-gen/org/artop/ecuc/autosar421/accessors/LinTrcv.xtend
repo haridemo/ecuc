@@ -116,6 +116,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinTrcvChannel)){
+				return false
+			}
+			this.target == (object as LinTrcvChannel).target
+		}
+		
 		def BigInteger getLinTrcvChannelId(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelId"])
 		}
@@ -252,6 +259,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinTrcvAccess)){
+					return false
+				}
+				this.target == (object as LinTrcvAccess).target
+			}
+			
 			def LinTrcvDioAccess getLinTrcvDioAccess(){
 				containerValue.getByType(typeof(LinTrcvDioAccess))
 			}
@@ -286,6 +300,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinTrcvDioAccess)){
+						return false
+					}
+					this.target == (object as LinTrcvDioAccess).target
 				}
 				
 				
@@ -327,6 +348,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof LinTrcvDioChannelAccess)){
+							return false
+						}
+						this.target == (object as LinTrcvDioChannelAccess).target
 					}
 					
 					def String getLinTrcvHardwareInterfaceName(){
@@ -372,6 +400,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinTrcvSpiSequence)){
+						return false
+					}
+					this.target == (object as LinTrcvSpiSequence).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence getLinTrcvSpiSequenceName(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence), "LinTrcvSpiSequenceName")
@@ -408,6 +443,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinTrcvGeneral)){
+				return false
+			}
+			this.target == (object as LinTrcvGeneral).target
 		}
 		
 		def Boolean getLinTrcvDevErrorDetect(){
@@ -526,6 +568,13 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof LinTrcv)){
+			return false
+		}
+		this.target == (object as LinTrcv).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

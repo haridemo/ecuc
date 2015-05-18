@@ -106,6 +106,13 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthTrcvConfigSet)){
+				return false
+			}
+			this.target == (object as EthTrcvConfigSet).target
+		}
+		
 		
 		
 		def List<EthTrcvConfig> getEthTrcvConfigs(){
@@ -145,6 +152,13 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthTrcvConfig)){
+					return false
+				}
+				this.target == (object as EthTrcvConfig).target
 			}
 			
 			def Boolean getEthTrcvAutoNegotiationEnabled(){
@@ -424,6 +438,13 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EthTrcvDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as EthTrcvDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getETHTRCV_E_ACCESS(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "ETHTRCV_E_ACCESS")
@@ -457,6 +478,13 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof EthTrcvWakeupMap)){
+						return false
+					}
+					this.target == (object as EthTrcvWakeupMap).target
 				}
 				
 				def EthTrcvWakeupReason getEthTrcvWakeupReason(){
@@ -538,6 +566,13 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthTrcvGeneral)){
+				return false
+			}
+			this.target == (object as EthTrcvGeneral).target
 		}
 		
 		def Boolean getEthTrcvDevErrorDetect(){
@@ -786,6 +821,13 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EthTrcv)){
+			return false
+		}
+		this.target == (object as EthTrcv).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

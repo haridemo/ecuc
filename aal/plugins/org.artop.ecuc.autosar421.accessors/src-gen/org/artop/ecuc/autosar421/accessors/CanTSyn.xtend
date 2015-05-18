@@ -116,6 +116,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanTSynGeneral)){
+				return false
+			}
+			this.target == (object as CanTSynGeneral).target
+		}
+		
 		def Boolean getCanTSynDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynDevErrorDetect"])
 		}
@@ -222,6 +229,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTSynGlobalTimeFupDataIDList)){
+					return false
+				}
+				this.target == (object as CanTSynGlobalTimeFupDataIDList).target
+			}
+			
 			
 			
 			def List<CanTSynGlobalTimeFupDataIDListElement> getCanTSynGlobalTimeFupDataIDListElements(){
@@ -261,6 +275,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTSynGlobalTimeFupDataIDListElement)){
+						return false
+					}
+					this.target == (object as CanTSynGlobalTimeFupDataIDListElement).target
 				}
 				
 				def BigInteger getCanTSynGlobalTimeFupDataIDListIndex(){
@@ -321,6 +342,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTSynGlobalTimeOfnsDataIDList)){
+					return false
+				}
+				this.target == (object as CanTSynGlobalTimeOfnsDataIDList).target
+			}
+			
 			
 			
 			def List<CanTSynGlobalTimeOfnsDataIDListElement> getCanTSynGlobalTimeOfnsDataIDListElements(){
@@ -360,6 +388,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTSynGlobalTimeOfnsDataIDListElement)){
+						return false
+					}
+					this.target == (object as CanTSynGlobalTimeOfnsDataIDListElement).target
 				}
 				
 				def BigInteger getCanTSynGlobalTimeOfnsDataIDListIndex(){
@@ -420,6 +455,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTSynGlobalTimeOfsDataIDList)){
+					return false
+				}
+				this.target == (object as CanTSynGlobalTimeOfsDataIDList).target
+			}
+			
 			
 			
 			def List<CanTSynGlobalTimeOfsDataIDListElement> getCanTSynGlobalTimeOfsDataIDListElements(){
@@ -459,6 +501,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTSynGlobalTimeOfsDataIDListElement)){
+						return false
+					}
+					this.target == (object as CanTSynGlobalTimeOfsDataIDListElement).target
 				}
 				
 				def BigInteger getCanTSynGlobalTimeOfsDataIDListIndex(){
@@ -519,6 +568,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTSynGlobalTimeSyncDataIDList)){
+					return false
+				}
+				this.target == (object as CanTSynGlobalTimeSyncDataIDList).target
+			}
+			
 			
 			
 			def List<CanTSynGlobalTimeSyncDataIDListElement> getCanTSynGlobalTimeSyncDataIDListElements(){
@@ -558,6 +614,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTSynGlobalTimeSyncDataIDListElement)){
+						return false
+					}
+					this.target == (object as CanTSynGlobalTimeSyncDataIDListElement).target
 				}
 				
 				def BigInteger getCanTSynGlobalTimeSyncDataIDListIndex(){
@@ -617,6 +680,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanTSynGlobalTimeDomain)){
+				return false
+			}
+			this.target == (object as CanTSynGlobalTimeDomain).target
 		}
 		
 		def BigInteger getCanTSynGlobalTimeDomainId(){
@@ -716,6 +786,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTSynGlobalTimeMaster)){
+					return false
+				}
+				this.target == (object as CanTSynGlobalTimeMaster).target
 			}
 			
 			def CanTSynGlobalTimeTxCrcSecured getCanTSynGlobalTimeTxCrcSecured(){
@@ -830,6 +907,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTSynGlobalTimeMasterPdu)){
+						return false
+					}
+					this.target == (object as CanTSynGlobalTimeMasterPdu).target
+				}
+				
 				def BigInteger getCanTSynGlobalTimeMasterConfirmationHandleId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeMasterConfirmationHandleId"])
 				}
@@ -881,6 +965,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanTSynGlobalTimeSlave)){
+					return false
+				}
+				this.target == (object as CanTSynGlobalTimeSlave).target
 			}
 			
 			def CanTSynRxCrcValidated getCanTSynRxCrcValidated(){
@@ -949,6 +1040,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanTSynGlobalTimeSlavePdu)){
+						return false
+					}
+					this.target == (object as CanTSynGlobalTimeSlavePdu).target
+				}
+				
 				def BigInteger getCanTSynGlobalTimeSlaveHandleId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynGlobalTimeSlaveHandleId"])
 				}
@@ -983,6 +1081,13 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof CanTSyn)){
+			return false
+		}
+		this.target == (object as CanTSyn).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

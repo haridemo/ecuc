@@ -98,6 +98,13 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinNmGlobalConfig)){
+				return false
+			}
+			this.target == (object as LinNmGlobalConfig).target
+		}
+		
 		def Boolean getLinNmBusSynchronizationEnabled(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmBusSynchronizationEnabled"])
 		}
@@ -363,6 +370,13 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinNmChannelConfig)){
+					return false
+				}
+				this.target == (object as LinNmChannelConfig).target
+			}
+			
 			def BigDecimal getLinNmTimeoutTime(){
 				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmTimeoutTime"])
 			}
@@ -395,6 +409,13 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof LinNm)){
+			return false
+		}
+		this.target == (object as LinNm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

@@ -124,6 +124,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PduRBswModules)){
+				return false
+			}
+			this.target == (object as PduRBswModules).target
+		}
+		
 		def Boolean getPduRCancelReceive(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelReceive"])
 		}
@@ -324,6 +331,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PduRGeneral)){
+				return false
+			}
+			this.target == (object as PduRGeneral).target
+		}
+		
 		def Boolean getPduRDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDevErrorDetect"])
 		}
@@ -409,6 +423,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PduRRoutingTables)){
+				return false
+			}
+			this.target == (object as PduRRoutingTables).target
 		}
 		
 		def BigInteger getPduRConfigurationId(){
@@ -553,6 +574,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PduRRoutingPathGroup)){
+					return false
+				}
+				this.target == (object as PduRRoutingPathGroup).target
+			}
+			
 			def Boolean getPduRIsEnabledAtInit(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRIsEnabledAtInit"])
 			}
@@ -642,6 +670,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PduRRoutingTable)){
+					return false
+				}
+				this.target == (object as PduRRoutingTable).target
+			}
+			
 			
 			
 			def List<PduRRoutingPath> getPduRRoutingPaths(){
@@ -681,6 +716,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof PduRRoutingPath)){
+						return false
+					}
+					this.target == (object as PduRRoutingPath).target
 				}
 				
 				
@@ -731,6 +773,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof PduRDestPdu)){
+							return false
+						}
+						this.target == (object as PduRDestPdu).target
 					}
 					
 					def PduRDestPduDataProvision getPduRDestPduDataProvision(){
@@ -867,6 +916,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof PduRDefaultValue)){
+								return false
+							}
+							this.target == (object as PduRDefaultValue).target
+						}
+						
 						
 						
 						def List<PduRDefaultValueElement> getPduRDefaultValueElements(){
@@ -906,6 +962,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 							
 							override def GContainer getTarget(){
 								containerValue
+							}
+							
+							override def boolean equals(Object object) {
+						        if (!(object instanceof PduRDefaultValueElement)){
+									return false
+								}
+								this.target == (object as PduRDefaultValueElement).target
 							}
 							
 							def BigInteger getPduRDefaultValueElement(){
@@ -966,6 +1029,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof PduRSrcPdu)){
+							return false
+						}
+						this.target == (object as PduRSrcPdu).target
 					}
 					
 					def BigInteger getPduRSourcePduHandleId(){
@@ -1039,6 +1109,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PduRTpBufferTable)){
+					return false
+				}
+				this.target == (object as PduRTpBufferTable).target
+			}
+			
 			
 			
 			def List<PduRTpBuffer> getPduRTpBuffers(){
@@ -1078,6 +1155,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof PduRTpBuffer)){
+						return false
+					}
+					this.target == (object as PduRTpBuffer).target
 				}
 				
 				def BigInteger getPduRTpBufferLength(){
@@ -1122,6 +1206,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PduRTxBufferTable)){
+					return false
+				}
+				this.target == (object as PduRTxBufferTable).target
+			}
+			
 			
 			
 			def List<PduRTxBuffer> getPduRTxBuffers(){
@@ -1163,6 +1254,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof PduRTxBuffer)){
+						return false
+					}
+					this.target == (object as PduRTxBuffer).target
+				}
+				
 				def BigInteger getPduRPduMaxLength(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"])
 				}
@@ -1202,6 +1300,13 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof PduR)){
+			return false
+		}
+		this.target == (object as PduR).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

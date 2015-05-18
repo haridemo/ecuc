@@ -122,6 +122,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as WdgDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getWDG_E_DISABLE_REJECTED(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "WDG_E_DISABLE_REJECTED")
@@ -165,6 +172,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgGeneral)){
+				return false
+			}
+			this.target == (object as WdgGeneral).target
 		}
 		
 		def Boolean getWdgDevErrorDetect(){
@@ -335,6 +349,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgPublishedInformation)){
+				return false
+			}
+			this.target == (object as WdgPublishedInformation).target
+		}
+		
 		def WdgTriggerMode getWdgTriggerMode(){
 			getWdgTriggerModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgTriggerMode"])
 		}
@@ -391,6 +412,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgSettingsConfig)){
+				return false
+			}
+			this.target == (object as WdgSettingsConfig).target
 		}
 		
 		def WdgDefaultMode getWdgDefaultMode(){
@@ -486,6 +514,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgExternalConfiguration)){
+					return false
+				}
+				this.target == (object as WdgExternalConfiguration).target
+			}
+			
 			
 			
 			
@@ -509,6 +544,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgSettingsFast)){
+					return false
+				}
+				this.target == (object as WdgSettingsFast).target
 			}
 			
 			
@@ -535,6 +577,13 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgSettingsOff)){
+					return false
+				}
+				this.target == (object as WdgSettingsOff).target
+			}
+			
 			
 			
 			
@@ -559,11 +608,25 @@ class Wdg implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgSettingsSlow)){
+					return false
+				}
+				this.target == (object as WdgSettingsSlow).target
+			}
+			
 			
 			
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Wdg)){
+			return false
+		}
+		this.target == (object as Wdg).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

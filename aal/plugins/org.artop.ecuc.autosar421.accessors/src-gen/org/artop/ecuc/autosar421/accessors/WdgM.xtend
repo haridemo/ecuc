@@ -106,6 +106,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgMConfigSet)){
+				return false
+			}
+			this.target == (object as WdgMConfigSet).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.WdgM.WdgMConfigSet.WdgMMode getWdgMInitialMode(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMConfigSet.WdgMMode), "WdgMInitialMode")
@@ -167,6 +174,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgMDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as WdgMDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getWDGM_E_IMPROPER_CALLER(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "WDGM_E_IMPROPER_CALLER")
@@ -222,6 +236,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgMMode)){
+					return false
+				}
+				this.target == (object as WdgMMode).target
 			}
 			
 			def BigInteger getWdgMExpiredSupervisionCycleTol(){
@@ -389,6 +410,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMAliveSupervision)){
+						return false
+					}
+					this.target == (object as WdgMAliveSupervision).target
+				}
+				
 				def BigInteger getWdgMExpectedAliveIndications(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpectedAliveIndications"])
 				}
@@ -488,6 +516,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMDeadlineSupervision)){
+						return false
+					}
+					this.target == (object as WdgMDeadlineSupervision).target
+				}
+				
 				def BigDecimal getWdgMDeadlineMax(){
 					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMax"])
 				}
@@ -564,6 +599,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMExternalLogicalSupervision)){
+						return false
+					}
+					this.target == (object as WdgMExternalLogicalSupervision).target
 				}
 				
 				
@@ -673,6 +715,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof WdgMExternalTransition)){
+							return false
+						}
+						this.target == (object as WdgMExternalTransition).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint getWdgMExternalTransitionDestRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint), "WdgMExternalTransitionDestRef")
@@ -719,6 +768,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMLocalStatusParams)){
+						return false
+					}
+					this.target == (object as WdgMLocalStatusParams).target
 				}
 				
 				def BigInteger getWdgMFailedAliveSupervisionRefCycleTol(){
@@ -770,6 +826,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMTrigger)){
+						return false
+					}
+					this.target == (object as WdgMTrigger).target
 				}
 				
 				def BigInteger getWdgMTriggerConditionValue(){
@@ -859,6 +922,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof WdgMGeneral)){
+				return false
+			}
+			this.target == (object as WdgMGeneral).target
 		}
 		
 		def Boolean getWdgMDefensiveBehavior(){
@@ -1026,6 +1096,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgMCallerIds)){
+					return false
+				}
+				this.target == (object as WdgMCallerIds).target
+			}
+			
 			def List<BigInteger> getWdgMCallerIds(){
 				val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 					override protected accept(EcucNumericalParamValue item) {
@@ -1061,6 +1138,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgMSupervisedEntity)){
+					return false
+				}
+				this.target == (object as WdgMSupervisedEntity).target
 			}
 			
 			def BigInteger getWdgMSupervisedEntityId(){
@@ -1216,6 +1300,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMCheckpoint)){
+						return false
+					}
+					this.target == (object as WdgMCheckpoint).target
+				}
+				
 				def BigInteger getWdgMCheckpointId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMCheckpointId"])
 				}
@@ -1254,6 +1345,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof WdgMInternalTransition)){
+						return false
+					}
+					this.target == (object as WdgMInternalTransition).target
 				}
 				
 				
@@ -1304,6 +1402,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof WdgMWatchdog)){
+					return false
+				}
+				this.target == (object as WdgMWatchdog).target
+			}
+			
 			def String getWdgMWatchdogName(){
 				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMWatchdogName"])
 			}
@@ -1336,6 +1441,13 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof WdgM)){
+			return false
+		}
+		this.target == (object as WdgM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

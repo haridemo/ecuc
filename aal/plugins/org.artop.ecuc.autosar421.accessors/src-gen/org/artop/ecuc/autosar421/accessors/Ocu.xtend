@@ -114,6 +114,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OcuConfigSet)){
+				return false
+			}
+			this.target == (object as OcuConfigSet).target
+		}
+		
 		def OcuCountdirection getOcuCountdirection(){
 			getOcuCountdirectionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuCountdirection"])
 		}
@@ -214,6 +221,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OcuChannel)){
+					return false
+				}
+				this.target == (object as OcuChannel).target
 			}
 			
 			def BigInteger getOcuAssignedHardwareChannel(){
@@ -417,6 +431,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OcuGroup)){
+					return false
+				}
+				this.target == (object as OcuGroup).target
+			}
+			
 			def BigInteger getOcuGroupId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGroupId"])
 			}
@@ -488,6 +509,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof OcuHWSpecificSettings)){
+					return false
+				}
+				this.target == (object as OcuHWSpecificSettings).target
 			}
 			
 			def OcuClockSource getOcuClockSource(){
@@ -571,6 +599,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OcuConfigurationOfOptionalApis)){
+				return false
+			}
+			this.target == (object as OcuConfigurationOfOptionalApis).target
 		}
 		
 		def Boolean getOcuDeInitApi(){
@@ -724,6 +759,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof OcuGeneral)){
+				return false
+			}
+			this.target == (object as OcuGeneral).target
+		}
+		
 		def Boolean getOcuDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDevErrorDetect"])
 		}
@@ -743,6 +785,13 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Ocu)){
+			return false
+		}
+		this.target == (object as Ocu).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

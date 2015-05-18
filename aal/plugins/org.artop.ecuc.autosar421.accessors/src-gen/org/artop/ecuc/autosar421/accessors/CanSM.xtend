@@ -106,6 +106,13 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanSMConfiguration)){
+				return false
+			}
+			this.target == (object as CanSMConfiguration).target
+		}
+		
 		def BigInteger getCanSMModeRequestRepetitionMax(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionMax"])
 		}
@@ -177,6 +184,13 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanSMManagerNetwork)){
+					return false
+				}
+				this.target == (object as CanSMManagerNetwork).target
 			}
 			
 			def BigInteger getCanSMBorCounterL1ToL2(){
@@ -347,6 +361,13 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanSMController)){
+						return false
+					}
+					this.target == (object as CanSMController).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg getCanSMControllerId(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg), "CanSMControllerId")
@@ -380,6 +401,13 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanSMDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as CanSMDemEventParameterRefs).target
 				}
 				
 				
@@ -418,6 +446,13 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanSMGeneral)){
+				return false
+			}
+			this.target == (object as CanSMGeneral).target
 		}
 		
 		def Boolean getCanSMDevErrorDetect(){
@@ -567,6 +602,13 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof CanSM)){
+			return false
+		}
+		this.target == (object as CanSM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

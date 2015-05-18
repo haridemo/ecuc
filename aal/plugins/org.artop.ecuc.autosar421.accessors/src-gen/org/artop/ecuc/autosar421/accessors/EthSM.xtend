@@ -116,6 +116,13 @@ class EthSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthSMGeneral)){
+				return false
+			}
+			this.target == (object as EthSMGeneral).target
+		}
+		
 		def Boolean getEthSMDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthSMDevErrorDetect"])
 		}
@@ -203,6 +210,13 @@ class EthSM implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof EthSMNetwork)){
+				return false
+			}
+			this.target == (object as EthSMNetwork).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getEthSMComMNetworkHandleRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "EthSMComMNetworkHandleRef")
@@ -256,6 +270,13 @@ class EthSM implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof EthSMDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as EthSMDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getETHSM_E_LINK_DOWN(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "ETHSM_E_LINK_DOWN")
@@ -272,6 +293,13 @@ class EthSM implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof EthSM)){
+			return false
+		}
+		this.target == (object as EthSM).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

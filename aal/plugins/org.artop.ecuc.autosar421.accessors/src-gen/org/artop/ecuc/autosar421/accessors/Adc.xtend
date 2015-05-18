@@ -114,6 +114,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof AdcConfigSet)){
+				return false
+			}
+			this.target == (object as AdcConfigSet).target
+		}
+		
 		
 		
 		def List<AdcHwUnit> getAdcHwUnits(){
@@ -153,6 +160,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof AdcHwUnit)){
+					return false
+				}
+				this.target == (object as AdcHwUnit).target
 			}
 			
 			def AdcClockSource getAdcClockSource(){
@@ -287,6 +301,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof AdcChannel)){
+						return false
+					}
+					this.target == (object as AdcChannel).target
 				}
 				
 				def BigInteger getAdcChannelConvTime(){
@@ -524,6 +545,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof AdcGroup)){
+						return false
+					}
+					this.target == (object as AdcGroup).target
 				}
 				
 				def AdcGroupAccessMode getAdcGroupAccessMode(){
@@ -866,6 +894,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof AdcGeneral)){
+				return false
+			}
+			this.target == (object as AdcGeneral).target
+		}
+		
 		def Boolean getAdcDeInitApi(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDeInitApi"])
 		}
@@ -1151,6 +1186,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof AdcPowerStateConfig)){
+					return false
+				}
+				this.target == (object as AdcPowerStateConfig).target
+			}
+			
 			def BigInteger getAdcPowerState(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerState"])
 			}
@@ -1208,6 +1250,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof AdcPublishedInformation)){
+				return false
+			}
+			this.target == (object as AdcPublishedInformation).target
+		}
+		
 		def Boolean getAdcChannelValueSigned(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelValueSigned"])
 		}
@@ -1259,6 +1308,13 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Adc)){
+			return false
+		}
+		this.target == (object as Adc).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

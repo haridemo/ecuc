@@ -114,6 +114,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RamTstCommon)){
+				return false
+			}
+			this.target == (object as RamTstCommon).target
+		}
+		
 		def Boolean getRamTstAllowApi(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAllowApi"])
 		}
@@ -410,6 +417,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RamTstAlgorithms)){
+					return false
+				}
+				this.target == (object as RamTstAlgorithms).target
+			}
+			
 			def Boolean getRamTstAbrahamTestSelected(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAbrahamTestSelected"])
 			}
@@ -528,6 +542,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof RamTstConfigParams)){
+					return false
+				}
+				this.target == (object as RamTstConfigParams).target
 			}
 			
 			def BigInteger getRamTstDefaultAlgParamsId(){
@@ -649,6 +670,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof RamTstAlgParams)){
+						return false
+					}
+					this.target == (object as RamTstAlgParams).target
 				}
 				
 				def BigInteger getRamTstAlgParamsId(){
@@ -813,6 +841,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof RamTstBlockParams)){
+							return false
+						}
+						this.target == (object as RamTstBlockParams).target
+					}
+					
 					def BigInteger getRamTstBlockId(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"])
 					}
@@ -939,6 +974,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RamTstDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as RamTstDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getRAMTST_E_RAM_FAILURE(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "RAMTST_E_RAM_FAILURE")
@@ -973,6 +1015,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof RamTstPublishedInformation)){
+				return false
+			}
+			this.target == (object as RamTstPublishedInformation).target
+		}
+		
 		def BigInteger getRamTstCellSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"])
 		}
@@ -992,6 +1041,13 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof RamTst)){
+			return false
+		}
+		this.target == (object as RamTst).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

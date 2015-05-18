@@ -116,6 +116,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof XfrmGeneral)){
+				return false
+			}
+			this.target == (object as XfrmGeneral).target
+		}
+		
 		def Boolean getXfrmDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XfrmDevErrorDetect"])
 		}
@@ -153,6 +160,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof XfrmImplementationMapping)){
+				return false
+			}
+			this.target == (object as XfrmImplementationMapping).target
 		}
 		
 		
@@ -199,6 +213,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof XfrmDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as XfrmDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getXFRM_E_MALFORMED_MESSAGE(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "XFRM_E_MALFORMED_MESSAGE")
@@ -234,6 +255,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof XfrmSignal)){
+					return false
+				}
+				this.target == (object as XfrmSignal).target
+			}
+			
 			
 			
 			def XfrmSignalChoice getXfrmSignalChoice(){
@@ -263,6 +291,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof XfrmSignalChoice)){
+						return false
+					}
+					this.target == (object as XfrmSignalChoice).target
 				}
 				
 				def XfrmISignalGroupRefChoice getXfrmISignalGroupRefChoice(){
@@ -301,6 +336,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof XfrmISignalGroupRefChoice)){
+							return false
+						}
+						this.target == (object as XfrmISignalGroupRefChoice).target
+					}
+					
 					
 					
 					
@@ -326,6 +368,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof XfrmISignalRefChoice)){
+							return false
+						}
+						this.target == (object as XfrmISignalRefChoice).target
+					}
+					
 					
 					
 					
@@ -336,6 +385,13 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Xfrm)){
+			return false
+		}
+		this.target == (object as Xfrm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

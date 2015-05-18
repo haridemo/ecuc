@@ -158,6 +158,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanIfCtrlDrvCfg)){
+				return false
+			}
+			this.target == (object as CanIfCtrlDrvCfg).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.CanIf.CanIfInitCfg.CanIfInitHohCfg getCanIfCtrlDrvInitHohConfigRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.CanIf.CanIfInitCfg.CanIfInitHohCfg), "CanIfCtrlDrvInitHohConfigRef")
@@ -219,6 +226,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfCtrlCfg)){
+					return false
+				}
+				this.target == (object as CanIfCtrlCfg).target
 			}
 			
 			def BigInteger getCanIfCtrlId(){
@@ -287,6 +301,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanIfDispatchCfg)){
+				return false
+			}
+			this.target == (object as CanIfDispatchCfg).target
 		}
 		
 		def String getCanIfDispatchUserCheckTrcvWakeFlagIndicationName(){
@@ -655,6 +676,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanIfInitCfg)){
+				return false
+			}
+			this.target == (object as CanIfInitCfg).target
+		}
+		
 		def String getCanIfInitCfgSet(){
 			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfInitCfgSet"])
 		}
@@ -817,6 +845,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfBufferCfg)){
+					return false
+				}
+				this.target == (object as CanIfBufferCfg).target
+			}
+			
 			def BigInteger getCanIfBufferSize(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfBufferSize"])
 			}
@@ -866,6 +901,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfInitHohCfg)){
+					return false
+				}
+				this.target == (object as CanIfInitHohCfg).target
 			}
 			
 			
@@ -926,6 +968,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIfHrhCfg)){
+						return false
+					}
+					this.target == (object as CanIfHrhCfg).target
 				}
 				
 				def Boolean getCanIfHrhSoftwareFilter(){
@@ -1005,6 +1054,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof CanIfHrhRangeCfg)){
+							return false
+						}
+						this.target == (object as CanIfHrhRangeCfg).target
 					}
 					
 					def BigInteger getCanIfHrhRangeBaseId(){
@@ -1130,6 +1186,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIfHthCfg)){
+						return false
+					}
+					this.target == (object as CanIfHthCfg).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg getCanIfHthCanCtrlIdRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg), "CanIfHthCanCtrlIdRef")
@@ -1176,6 +1239,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfRxPduCfg)){
+					return false
+				}
+				this.target == (object as CanIfRxPduCfg).target
 			}
 			
 			def BigInteger getCanIfRxPduCanId(){
@@ -1438,6 +1508,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIfRxPduCanIdRange)){
+						return false
+					}
+					this.target == (object as CanIfRxPduCanIdRange).target
+				}
+				
 				def BigInteger getCanIfRxPduCanIdRangeLowerCanId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduCanIdRangeLowerCanId"])
 				}
@@ -1494,6 +1571,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIfTTRxFrameTriggering)){
+						return false
+					}
+					this.target == (object as CanIfTTRxFrameTriggering).target
+				}
+				
 				def BigInteger getCanTTRxJoblistTimeMark(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTRxJoblistTimeMark"])
 				}
@@ -1545,6 +1629,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfTxPduCfg)){
+					return false
+				}
+				this.target == (object as CanIfTxPduCfg).target
 			}
 			
 			def BigInteger getCanIfTxPduCanId(){
@@ -1843,6 +1934,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIfTTTxFrameTriggering)){
+						return false
+					}
+					this.target == (object as CanIfTTTxFrameTriggering).target
+				}
+				
 				def BigInteger getCanIfTTTxJoblistTimeMark(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTTxJoblistTimeMark"])
 				}
@@ -1895,6 +1993,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanIfPrivateCfg)){
+				return false
+			}
+			this.target == (object as CanIfPrivateCfg).target
 		}
 		
 		def Boolean getCanIfFixedBuffer(){
@@ -2013,6 +2118,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfTTGeneral)){
+					return false
+				}
+				this.target == (object as CanIfTTGeneral).target
+			}
+			
 			def Boolean getCanIfTTJoblist(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTJoblist"])
 			}
@@ -2076,6 +2188,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanIfTTDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as CanIfTTDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getCANIF_TT_E_JLE_SYNC(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "CANIF_TT_E_JLE_SYNC")
@@ -2112,6 +2231,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanIfPublicCfg)){
+				return false
+			}
+			this.target == (object as CanIfPublicCfg).target
 		}
 		
 		def Boolean getCanIfMetaDataSupport(){
@@ -2455,6 +2581,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanIfTrcvDrvCfg)){
+				return false
+			}
+			this.target == (object as CanIfTrcvDrvCfg).target
+		}
+		
 		
 		
 		def List<CanIfTrcvCfg> getCanIfTrcvCfgs(){
@@ -2494,6 +2627,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanIfTrcvCfg)){
+					return false
+				}
+				this.target == (object as CanIfTrcvCfg).target
 			}
 			
 			def BigInteger getCanIfTrcvId(){
@@ -2544,6 +2684,13 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof CanIf)){
+			return false
+		}
+		this.target == (object as CanIf).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

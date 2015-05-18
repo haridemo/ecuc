@@ -114,6 +114,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsConfigSet)){
+				return false
+			}
+			this.target == (object as FlsConfigSet).target
+		}
+		
 		def BigInteger getFlsAcErase(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcErase"])
 		}
@@ -356,6 +363,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FlsDemEventParameterRefs)){
+					return false
+				}
+				this.target == (object as FlsDemEventParameterRefs).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getFLS_E_COMPARE_FAILED(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "FLS_E_COMPARE_FAILED")
@@ -435,6 +449,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FlsExternalDriver)){
+					return false
+				}
+				this.target == (object as FlsExternalDriver).target
+			}
+			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence> getFlsSpiReferences(){
 				val containerDef = containerValue.gGetDefinition
@@ -492,6 +513,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FlsSectorList)){
+					return false
+				}
+				this.target == (object as FlsSectorList).target
+			}
+			
 			
 			
 			def List<FlsSector> getFlsSectors(){
@@ -531,6 +559,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FlsSector)){
+						return false
+					}
+					this.target == (object as FlsSector).target
 				}
 				
 				def BigInteger getFlsNumberOfSectors(){
@@ -622,6 +657,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsGeneral)){
+				return false
+			}
+			this.target == (object as FlsGeneral).target
 		}
 		
 		def Boolean getFlsAcLoadOnJobStart(){
@@ -855,6 +897,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsPublishedInformation)){
+				return false
+			}
+			this.target == (object as FlsPublishedInformation).target
+		}
+		
 		def BigInteger getFlsAcLocationErase(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsAcLocationErase"])
 		}
@@ -1002,6 +1051,13 @@ class Fls implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Fls)){
+			return false
+		}
+		this.target == (object as Fls).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

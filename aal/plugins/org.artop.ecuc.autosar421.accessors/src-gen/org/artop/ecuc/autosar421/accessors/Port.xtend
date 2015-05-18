@@ -106,6 +106,13 @@ class Port implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PortConfigSet)){
+				return false
+			}
+			this.target == (object as PortConfigSet).target
+		}
+		
 		
 		
 		def List<PortContainer> getPortContainers(){
@@ -145,6 +152,13 @@ class Port implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof PortContainer)){
+					return false
+				}
+				this.target == (object as PortContainer).target
 			}
 			
 			def BigInteger getPortNumberOfPortPins(){
@@ -202,6 +216,13 @@ class Port implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof PortPin)){
+						return false
+					}
+					this.target == (object as PortPin).target
 				}
 				
 				def PortPinDirection getPortPinDirection(){
@@ -455,6 +476,13 @@ class Port implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof PortGeneral)){
+				return false
+			}
+			this.target == (object as PortGeneral).target
+		}
+		
 		def Boolean getPortDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortDevErrorDetect"])
 		}
@@ -522,6 +550,13 @@ class Port implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Port)){
+			return false
+		}
+		this.target == (object as Port).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

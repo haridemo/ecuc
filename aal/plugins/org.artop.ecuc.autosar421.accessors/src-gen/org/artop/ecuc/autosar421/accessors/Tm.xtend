@@ -98,6 +98,13 @@ class Tm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof TmGeneral)){
+				return false
+			}
+			this.target == (object as TmGeneral).target
+		}
+		
 		def Boolean getTmDevErrorDetect(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmDevErrorDetect"])
 		}
@@ -197,6 +204,13 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Tm)){
+			return false
+		}
+		this.target == (object as Tm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

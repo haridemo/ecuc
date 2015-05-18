@@ -106,6 +106,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof TcpIpConfig)){
+				return false
+			}
+			this.target == (object as TcpIpConfig).target
+		}
+		
 		
 		
 		def List<TcpIpCtrl> getTcpIpCtrls(){
@@ -239,6 +246,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpCtrl)){
+					return false
+				}
+				this.target == (object as TcpIpCtrl).target
+			}
+			
 			def BigInteger getTcpIpIpFramePrioDefault(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpFramePrioDefault"])
 			}
@@ -317,6 +331,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpCtrlDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as TcpIpCtrlDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getTCPIP_E_CONNREFUSED(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "TCPIP_E_CONNREFUSED")
@@ -385,6 +406,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpIpVXCtrl)){
+						return false
+					}
+					this.target == (object as TcpIpIpVXCtrl).target
+				}
+				
 				def TcpIpIpV4Ctrl getTcpIpIpV4Ctrl(){
 					containerValue.getByType(typeof(TcpIpIpV4Ctrl))
 				}
@@ -419,6 +447,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpIpV4Ctrl)){
+							return false
+						}
+						this.target == (object as TcpIpIpV4Ctrl).target
 					}
 					
 					
@@ -489,6 +524,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpIpV6Ctrl)){
+							return false
+						}
+						this.target == (object as TcpIpIpV6Ctrl).target
+					}
+					
 					
 					def org.artop.ecuc.autosar421.accessors.TcpIp.TcpIpConfig.TcpIpIpConfig.TcpIpIpV6Config.TcpIpDhcpV6Config getTcpIpIpV6DhcpConfigRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.TcpIp.TcpIpConfig.TcpIpIpConfig.TcpIpIpV6Config.TcpIpDhcpV6Config), "TcpIpIpV6DhcpConfigRef")
@@ -551,6 +593,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof TcpIpIpV6MtuConfig)){
+								return false
+							}
+							this.target == (object as TcpIpIpV6MtuConfig).target
 						}
 						
 						def BigInteger getTcpIpIpV6DefaultMtuSize(){
@@ -629,6 +678,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpDhcpServerConfig)){
+					return false
+				}
+				this.target == (object as TcpIpDhcpServerConfig).target
 			}
 			
 			def String getTcpIpDhcpDefaultRouter(){
@@ -715,6 +771,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpDhcpAddressAssignment)){
+						return false
+					}
+					this.target == (object as TcpIpDhcpAddressAssignment).target
+				}
+				
 				def String getTcpIpDhcpAddressLowerBound(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpAddressLowerBound"])
 				}
@@ -784,6 +847,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpIpConfig)){
+					return false
+				}
+				this.target == (object as TcpIpIpConfig).target
+			}
+			
 			
 			
 			def TcpIpIpV4Config getTcpIpIpV4Config(){
@@ -822,6 +892,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpIpV4Config)){
+						return false
+					}
+					this.target == (object as TcpIpIpV4Config).target
 				}
 				
 				
@@ -931,6 +1008,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpArpConfig)){
+							return false
+						}
+						this.target == (object as TcpIpArpConfig).target
+					}
+					
 					def BigInteger getTcpIpArpNumGratuitousARPonStartup(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpArpNumGratuitousARPonStartup"])
 					}
@@ -1019,6 +1103,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpAutoIpConfig)){
+							return false
+						}
+						this.target == (object as TcpIpAutoIpConfig).target
+					}
+					
 					def BigDecimal getTcpIpAutoIpInitTimeout(){
 						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpAutoIpInitTimeout"])
 					}
@@ -1059,6 +1150,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpDhcpConfig)){
+							return false
+						}
+						this.target == (object as TcpIpDhcpConfig).target
+					}
+					
 					
 					
 					
@@ -1081,6 +1179,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpIcmpConfig)){
+							return false
+						}
+						this.target == (object as TcpIpIcmpConfig).target
 					}
 					
 					def BigInteger getTcpIpIcmpTtl(){
@@ -1128,6 +1233,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof TcpIpIcmpMsgHandler)){
+								return false
+							}
+							this.target == (object as TcpIpIcmpMsgHandler).target
 						}
 						
 						def String getTcpIpIcmpMsgHandlerHeaderFileName(){
@@ -1186,6 +1298,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpIpFragmentationConfig)){
+							return false
+						}
+						this.target == (object as TcpIpIpFragmentationConfig).target
 					}
 					
 					def Boolean getTcpIpIpFragmentationRxEnabled(){
@@ -1278,6 +1397,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpIpV6Config)){
+						return false
+					}
+					this.target == (object as TcpIpIpV6Config).target
+				}
+				
 				
 				
 				def List<TcpIpDhcpV6Config> getTcpIpDhcpV6Configs(){
@@ -1364,6 +1490,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpDhcpV6Config)){
+							return false
+						}
+						this.target == (object as TcpIpDhcpV6Config).target
 					}
 					
 					def BigDecimal getTcpIpDhcpV6CnfDelayMax(){
@@ -1486,6 +1619,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpIcmpV6Config)){
+							return false
+						}
+						this.target == (object as TcpIpIcmpV6Config).target
+					}
+					
 					def BigInteger getTcpIpIcmpV6EchoDataBufferSize(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6EchoDataBufferSize"])
 					}
@@ -1597,6 +1737,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof TcpIpIcmpV6MsgHandler)){
+								return false
+							}
+							this.target == (object as TcpIpIcmpV6MsgHandler).target
+						}
+						
 						def String getTcpIpIcmpV6MsgHandlerHeaderFileName(){
 							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6MsgHandlerHeaderFileName"])
 						}
@@ -1653,6 +1800,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpIpV6FragmentationConfig)){
+							return false
+						}
+						this.target == (object as TcpIpIpV6FragmentationConfig).target
 					}
 					
 					def BigInteger getTcpIpIpV6ReassemblyBufferCount(){
@@ -1775,6 +1929,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof TcpIpNdpConfig)){
+							return false
+						}
+						this.target == (object as TcpIpNdpConfig).target
+					}
+					
 					
 					
 					def TcpIpNdpArNudConfig getTcpIpNdpArNudConfig(){
@@ -1822,6 +1983,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof TcpIpNdpArNudConfig)){
+								return false
+							}
+							this.target == (object as TcpIpNdpArNudConfig).target
 						}
 						
 						def BigDecimal getTcpIpNdpDefaultReachableTime(){
@@ -2024,6 +2192,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof TcpIpNdpPrefixRouterDiscoveryConfig)){
+								return false
+							}
+							this.target == (object as TcpIpNdpPrefixRouterDiscoveryConfig).target
+						}
+						
 						def BigInteger getTcpIpNdpDefaultRouterListSize(){
 							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDefaultRouterListSize"])
 						}
@@ -2224,6 +2399,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof TcpIpNdpSlaacConfig)){
+								return false
+							}
+							this.target == (object as TcpIpNdpSlaacConfig).target
+						}
+						
 						def BigInteger getTcpIpNdpSlaacDadNumberOfTransmissions(){
 							EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpSlaacDadNumberOfTransmissions"])
 						}
@@ -2316,6 +2498,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpLocalAddr)){
+					return false
+				}
+				this.target == (object as TcpIpLocalAddr).target
 			}
 			
 			def BigInteger getTcpIpAddrId(){
@@ -2459,6 +2648,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpAddrAssignment)){
+						return false
+					}
+					this.target == (object as TcpIpAddrAssignment).target
 				}
 				
 				def TcpIpAssignmentLifetime getTcpIpAssignmentLifetime(){
@@ -2606,6 +2802,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpStaticIpAddressConfig)){
+						return false
+					}
+					this.target == (object as TcpIpStaticIpAddressConfig).target
+				}
+				
 				def String getTcpIpDefaultRouter(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDefaultRouter"])
 				}
@@ -2680,6 +2883,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpNvmBlock)){
+					return false
+				}
+				this.target == (object as TcpIpNvmBlock).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getTcpIpNvmBlockDescriptorRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "TcpIpNvmBlockDescriptorRef")
@@ -2715,6 +2925,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpPhysAddrConfig)){
+					return false
+				}
+				this.target == (object as TcpIpPhysAddrConfig).target
+			}
+			
 			
 			
 			def TcpIpPhysAddrChgHandler getTcpIpPhysAddrChgHandler(){
@@ -2744,6 +2961,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpPhysAddrChgHandler)){
+						return false
+					}
+					this.target == (object as TcpIpPhysAddrChgHandler).target
 				}
 				
 				def String getTcpIpPhysAddrChgHandlerHeaderFileName(){
@@ -2804,6 +3028,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpSocketOwnerConfig)){
+					return false
+				}
+				this.target == (object as TcpIpSocketOwnerConfig).target
+			}
+			
 			
 			
 			def List<TcpIpSocketOwner> getTcpIpSocketOwners(){
@@ -2843,6 +3074,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof TcpIpSocketOwner)){
+						return false
+					}
+					this.target == (object as TcpIpSocketOwner).target
 				}
 				
 				def String getTcpIpSocketOwnerCopyTxDataName(){
@@ -3014,6 +3252,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpTcpConfig)){
+					return false
+				}
+				this.target == (object as TcpIpTcpConfig).target
 			}
 			
 			def Boolean getTcpIpTcpCongestionAvoidanceEnabled(){
@@ -3312,6 +3557,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpUdpConfig)){
+					return false
+				}
+				this.target == (object as TcpIpUdpConfig).target
+			}
+			
 			def BigInteger getTcpIpUdpTtl(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpUdpTtl"])
 			}
@@ -3351,6 +3603,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof TcpIpGeneral)){
+				return false
+			}
+			this.target == (object as TcpIpGeneral).target
 		}
 		
 		def BigInteger getTcpIpBufferMemory(){
@@ -3588,6 +3847,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpIpV4General)){
+					return false
+				}
+				this.target == (object as TcpIpIpV4General).target
+			}
+			
 			def Boolean getTcpIpArpEnabled(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpArpEnabled"])
 			}
@@ -3724,6 +3990,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof TcpIpIpV6General)){
+					return false
+				}
+				this.target == (object as TcpIpIpV6General).target
+			}
+			
 			def Boolean getTcpIpDhcpV6ClientEnabled(){
 				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpV6ClientEnabled"])
 			}
@@ -3825,6 +4098,13 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof TcpIp)){
+			return false
+		}
+		this.target == (object as TcpIp).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

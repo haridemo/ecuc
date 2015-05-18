@@ -106,6 +106,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinIfGeneral)){
+				return false
+			}
+			this.target == (object as LinIfGeneral).target
+		}
+		
 		def Boolean getLinIfCancelTransmitSupported(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfCancelTransmitSupported"])
 		}
@@ -270,6 +277,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof LinIfGlobalConfig)){
+				return false
+			}
+			this.target == (object as LinIfGlobalConfig).target
+		}
+		
 		def BigDecimal getLinIfTimeBase(){
 			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTimeBase"])
 		}
@@ -325,6 +339,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof LinIfChannel)){
+					return false
+				}
+				this.target == (object as LinIfChannel).target
 			}
 			
 			def LinIfGotoSleepConfirmationUL getLinIfGotoSleepConfirmationUL(){
@@ -576,6 +597,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinIfFrame)){
+						return false
+					}
+					this.target == (object as LinIfFrame).target
+				}
+				
 				def LinIfChecksumType getLinIfChecksumType(){
 					getLinIfChecksumTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfChecksumType"])
 				}
@@ -737,6 +765,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof LinIfFixedFrameSdu)){
+							return false
+						}
+						this.target == (object as LinIfFixedFrameSdu).target
+					}
+					
 					
 					
 					def List<LinIfFixedFrameSduByte> getLinIfFixedFrameSduBytes(){
@@ -776,6 +811,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof LinIfFixedFrameSduByte)){
+								return false
+							}
+							this.target == (object as LinIfFixedFrameSduByte).target
 						}
 						
 						def BigInteger getLinIfFixedFrameSduBytePos(){
@@ -836,6 +878,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof LinIfPduDirection)){
+							return false
+						}
+						this.target == (object as LinIfPduDirection).target
+					}
+					
 					def LinIfInternalPdu getLinIfInternalPdu(){
 						containerValue.getByType(typeof(LinIfInternalPdu))
 					}
@@ -888,6 +937,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof LinIfInternalPdu)){
+								return false
+							}
+							this.target == (object as LinIfInternalPdu).target
+						}
+						
 						
 						
 						
@@ -910,6 +966,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof LinIfRxPdu)){
+								return false
+							}
+							this.target == (object as LinIfRxPdu).target
 						}
 						
 						def String getLinIfRxIndicationUL(){
@@ -996,6 +1059,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 							containerValue
 						}
 						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof LinIfSlaveToSlavePdu)){
+								return false
+							}
+							this.target == (object as LinIfSlaveToSlavePdu).target
+						}
+						
 						
 						
 						
@@ -1018,6 +1088,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof LinIfTxPdu)){
+								return false
+							}
+							this.target == (object as LinIfTxPdu).target
 						}
 						
 						def String getLinIfTxConfirmationUL(){
@@ -1138,6 +1215,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof LinIfSubstitutionFrames)){
+							return false
+						}
+						this.target == (object as LinIfSubstitutionFrames).target
+					}
+					
 					def BigInteger getLinIfFramePriority(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"])
 					}
@@ -1191,6 +1275,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinIfMaster)){
+						return false
+					}
+					this.target == (object as LinIfMaster).target
+				}
+				
 				def BigDecimal getLinIfJitter(){
 					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"])
 				}
@@ -1229,6 +1320,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinIfScheduleTable)){
+						return false
+					}
+					this.target == (object as LinIfScheduleTable).target
 				}
 				
 				def LinIfResumePosition getLinIfResumePosition(){
@@ -1354,6 +1452,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof LinIfEntry)){
+							return false
+						}
+						this.target == (object as LinIfEntry).target
+					}
+					
 					def BigDecimal getLinIfDelay(){
 						EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"])
 					}
@@ -1434,6 +1539,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof LinIfTransceiverDrvConfig)){
+						return false
+					}
+					this.target == (object as LinIfTransceiverDrvConfig).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.LinTrcv.LinTrcvChannel getLinIfTrcvIdRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.LinTrcv.LinTrcvChannel), "LinIfTrcvIdRef")
@@ -1452,6 +1564,13 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof LinIf)){
+			return false
+		}
+		this.target == (object as LinIf).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

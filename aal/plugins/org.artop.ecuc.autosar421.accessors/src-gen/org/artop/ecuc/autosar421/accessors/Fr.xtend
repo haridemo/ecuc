@@ -106,6 +106,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrGeneral)){
+				return false
+			}
+			this.target == (object as FrGeneral).target
+		}
+		
 		def BigInteger getFrCtrlTestCount(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrCtrlTestCount"])
 		}
@@ -289,6 +296,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FrMultipleConfiguration)){
+				return false
+			}
+			this.target == (object as FrMultipleConfiguration).target
+		}
+		
 		
 		
 		def List<FrController> getFrControllers(){
@@ -328,6 +342,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FrController)){
+					return false
+				}
+				this.target == (object as FrController).target
 			}
 			
 			def BigInteger getFrCtrlIdx(){
@@ -1005,6 +1026,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrAbsoluteTimer)){
+						return false
+					}
+					this.target == (object as FrAbsoluteTimer).target
+				}
+				
 				def BigInteger getFrAbsTimerIdx(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrAbsTimerIdx"])
 				}
@@ -1045,6 +1073,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrControllerDemEventParameterRefs)){
+						return false
+					}
+					this.target == (object as FrControllerDemEventParameterRefs).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getFR_E_CTRL_TESTRESULT(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "FR_E_CTRL_TESTRESULT")
@@ -1078,6 +1113,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FrFifo)){
+						return false
+					}
+					this.target == (object as FrFifo).target
 				}
 				
 				def Boolean getFrAdmitWithoutMessageId(){
@@ -1252,6 +1294,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof FrRange)){
+							return false
+						}
+						this.target == (object as FrRange).target
+					}
+					
 					def BigInteger getFrRangeMax(){
 						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrRangeMax"])
 					}
@@ -1293,6 +1342,13 @@ class Fr implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Fr)){
+			return false
+		}
+		this.target == (object as Fr).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

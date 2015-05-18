@@ -59,13 +59,32 @@ import autosar40.ecucdescription.EcucdescriptionFactory;
 import autosar40.ecucparameterdef.EcucContainerDef;
 
 @SuppressWarnings("nls")
-public class EcucValueAccessorsTest extends AbstractEcucValueAccessorsIntegrationTestCase {
+public class EcucValueAccessors421Test extends AbstractEcucValueAccessorsIntegrationTestCase {
 
 	/*
 	 * ***********************************************************
 	 * ****** Accessor's from a module configuration object ******
 	 * ***********************************************************
 	 */
+
+	/*
+	 * Test equals methods
+	 */
+	public void testEcucValueAccessorsEquals() {
+		EObject adcModuleConfiguration = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_ADC_MODULE_CONFIGURATION);
+		EObject nvmModuleConfiguration = getConfigurationObject(EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_NVM_MODULE_CONFIGURATION);
+		assertTrue(adcModuleConfiguration instanceof EcucModuleConfigurationValues);
+		assertTrue(nvmModuleConfiguration instanceof EcucModuleConfigurationValues);
+
+		Adc adc = new Adc((EcucModuleConfigurationValues) adcModuleConfiguration);
+		Adc anotherAdc = new Adc((EcucModuleConfigurationValues) adcModuleConfiguration);
+		final NvM nvm = new NvM((EcucModuleConfigurationValues) nvmModuleConfiguration);
+
+		assertTrue(adc.equals(anotherAdc));
+		assertTrue(adc.equals(adc));
+		assertFalse(adc.equals(adcModuleConfiguration));
+		assertFalse(adc.equals(nvm));
+	}
 
 	/*
 	 * 10_1_1 GModuleConfiguration short name

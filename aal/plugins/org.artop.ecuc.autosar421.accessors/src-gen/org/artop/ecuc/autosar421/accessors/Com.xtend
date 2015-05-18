@@ -106,6 +106,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof ComConfig)){
+				return false
+			}
+			this.target == (object as ComConfig).target
+		}
+		
 		def BigInteger getComDataMemSize(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComDataMemSize"])
 		}
@@ -264,6 +271,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComGwMapping)){
+					return false
+				}
+				this.target == (object as ComGwMapping).target
+			}
+			
 			
 			
 			def List<ComGwDestination> getComGwDestinations(){
@@ -314,6 +328,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComGwDestination)){
+						return false
+					}
+					this.target == (object as ComGwDestination).target
+				}
+				
 				def ComGwDestinationDescription getComGwDestinationDescription(){
 					containerValue.getByType(typeof(ComGwDestinationDescription))
 				}
@@ -348,6 +369,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComGwDestinationDescription)){
+							return false
+						}
+						this.target == (object as ComGwDestinationDescription).target
 					}
 					
 					def BigInteger getComBitPosition(){
@@ -512,6 +540,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof ComFilter)){
+								return false
+							}
+							this.target == (object as ComFilter).target
 						}
 						
 						def ComFilterAlgorithm getComFilterAlgorithm(){
@@ -681,6 +716,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComGwSignal)){
+							return false
+						}
+						this.target == (object as ComGwSignal).target
+					}
+					
 					
 					
 					
@@ -706,6 +748,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComGwSource)){
+						return false
+					}
+					this.target == (object as ComGwSource).target
 				}
 				
 				def ComGwSignal getComGwSignal(){
@@ -744,6 +793,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComGwSignal)){
+							return false
+						}
+						this.target == (object as ComGwSignal).target
+					}
+					
 					
 					
 					
@@ -767,6 +823,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					override def GContainer getTarget(){
 						containerValue
+					}
+					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComGwSourceDescription)){
+							return false
+						}
+						this.target == (object as ComGwSourceDescription).target
 					}
 					
 					def BigInteger getComBitPosition(){
@@ -956,6 +1019,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComIPdu)){
+					return false
+				}
+				this.target == (object as ComIPdu).target
 			}
 			
 			def String getComIPduCallout(){
@@ -1280,6 +1350,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComIPduCounter)){
+						return false
+					}
+					this.target == (object as ComIPduCounter).target
+				}
+				
 				def String getComIPduCounterErrorNotification(){
 					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCounterErrorNotification"])
 				}
@@ -1368,6 +1445,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComIPduReplication)){
+						return false
+					}
+					this.target == (object as ComIPduReplication).target
+				}
+				
 				def BigInteger getComIPduReplicationQuorum(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduReplicationQuorum"])
 				}
@@ -1439,6 +1523,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComTxIPdu)){
+						return false
+					}
+					this.target == (object as ComTxIPdu).target
 				}
 				
 				def String getComMetaDataDefault(){
@@ -1564,6 +1655,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComTxModeFalse)){
+							return false
+						}
+						this.target == (object as ComTxModeFalse).target
+					}
+					
 					
 					
 					def ComTxMode getComTxMode(){
@@ -1593,6 +1691,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof ComTxMode)){
+								return false
+							}
+							this.target == (object as ComTxMode).target
 						}
 						
 						def ComTxModeMode getComTxModeMode(){
@@ -1722,6 +1827,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComTxModeTrue)){
+							return false
+						}
+						this.target == (object as ComTxModeTrue).target
+					}
+					
 					
 					
 					def ComTxMode getComTxMode(){
@@ -1751,6 +1863,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						override def GContainer getTarget(){
 							containerValue
+						}
+						
+						override def boolean equals(Object object) {
+					        if (!(object instanceof ComTxMode)){
+								return false
+							}
+							this.target == (object as ComTxMode).target
 						}
 						
 						def ComTxModeMode getComTxModeMode(){
@@ -1884,6 +2003,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComIPduGroup)){
+					return false
+				}
+				this.target == (object as ComIPduGroup).target
+			}
+			
 			def BigInteger getComIPduGroupHandleId(){
 				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduGroupHandleId"])
 			}
@@ -1955,6 +2081,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComSignal)){
+					return false
+				}
+				this.target == (object as ComSignal).target
 			}
 			
 			def BigInteger getComBitPosition(){
@@ -2404,6 +2537,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComFilter)){
+						return false
+					}
+					this.target == (object as ComFilter).target
+				}
+				
 				def ComFilterAlgorithm getComFilterAlgorithm(){
 					getComFilterAlgorithmValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterAlgorithm"])
 				}
@@ -2569,6 +2709,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComSignalGroup)){
+					return false
+				}
+				this.target == (object as ComSignalGroup).target
 			}
 			
 			def ComDataInvalidAction getComDataInvalidAction(){
@@ -2878,6 +3025,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof ComGroupSignal)){
+						return false
+					}
+					this.target == (object as ComGroupSignal).target
+				}
+				
 				def BigInteger getComBitPosition(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitPosition"])
 				}
@@ -3125,6 +3279,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue
 					}
 					
+					override def boolean equals(Object object) {
+				        if (!(object instanceof ComFilter)){
+							return false
+						}
+						this.target == (object as ComFilter).target
+					}
+					
 					def ComFilterAlgorithm getComFilterAlgorithm(){
 						getComFilterAlgorithmValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterAlgorithm"])
 					}
@@ -3294,6 +3455,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof ComTimeBase)){
+					return false
+				}
+				this.target == (object as ComTimeBase).target
+			}
+			
 			def BigDecimal getComGwTimeBase(){
 				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComGwTimeBase"])
 			}
@@ -3365,6 +3533,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof ComGeneral)){
+				return false
+			}
+			this.target == (object as ComGeneral).target
 		}
 		
 		def Boolean getComCancellationSupport(){
@@ -3511,6 +3686,13 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Com)){
+			return false
+		}
+		this.target == (object as Com).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

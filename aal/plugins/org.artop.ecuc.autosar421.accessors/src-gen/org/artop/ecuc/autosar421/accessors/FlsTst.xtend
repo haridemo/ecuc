@@ -122,6 +122,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsTstConfigSet)){
+				return false
+			}
+			this.target == (object as FlsTstConfigSet).target
+		}
+		
 		def BigInteger getFlsTstBlockNumberBgnd(){
 			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberBgnd"])
 		}
@@ -210,6 +217,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FlsTstBlockBgndConfigSet)){
+					return false
+				}
+				this.target == (object as FlsTstBlockBgndConfigSet).target
+			}
+			
 			
 			
 			def List<FlsTstBlock> getFlsTstBlocks(){
@@ -249,6 +263,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FlsTstBlock)){
+						return false
+					}
+					this.target == (object as FlsTstBlock).target
 				}
 				
 				def BigInteger getFlsTstBlockBaseAddress(){
@@ -398,6 +419,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof FlsTstBlockFgndConfigSet)){
+					return false
+				}
+				this.target == (object as FlsTstBlockFgndConfigSet).target
+			}
+			
 			
 			
 			def List<FlsTstBlock> getFlsTstBlocks(){
@@ -437,6 +465,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof FlsTstBlock)){
+						return false
+					}
+					this.target == (object as FlsTstBlock).target
 				}
 				
 				def BigInteger getFlsTstBlockBaseAddress(){
@@ -585,6 +620,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsTstConfigurationOfOptApiServices)){
+				return false
+			}
+			this.target == (object as FlsTstConfigurationOfOptApiServices).target
 		}
 		
 		def Boolean getFlsTstGetCurrentStateApi(){
@@ -770,6 +812,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsTstDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as FlsTstDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getFLSTST_E_FLSTST_FAILURE(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "FLSTST_E_FLSTST_FAILURE")
@@ -802,6 +851,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof FlsTstGeneral)){
+				return false
+			}
+			this.target == (object as FlsTstGeneral).target
 		}
 		
 		def Boolean getFlsTstDevErrorDetect(){
@@ -887,6 +943,13 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof FlsTst)){
+			return false
+		}
+		this.target == (object as FlsTst).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

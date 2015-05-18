@@ -98,6 +98,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof CanNmGlobalConfig)){
+				return false
+			}
+			this.target == (object as CanNmGlobalConfig).target
+		}
+		
 		def Boolean getCanNmBusLoadReductionEnabled(){
 			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusLoadReductionEnabled"])
 		}
@@ -477,6 +484,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanNmChannelConfig)){
+					return false
+				}
+				this.target == (object as CanNmChannelConfig).target
 			}
 			
 			def Boolean getCanNmActiveWakeupBitEnabled(){
@@ -998,6 +1012,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanNmRxPdu)){
+						return false
+					}
+					this.target == (object as CanNmRxPdu).target
+				}
+				
 				def BigInteger getCanNmRxPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRxPduId"])
 				}
@@ -1047,6 +1068,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanNmTxPdu)){
+						return false
+					}
+					this.target == (object as CanNmTxPdu).target
 				}
 				
 				def BigInteger getCanNmTxConfirmationPduId(){
@@ -1100,6 +1128,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanNmUserDataTxPdu)){
+						return false
+					}
+					this.target == (object as CanNmUserDataTxPdu).target
+				}
+				
 				def BigInteger getCanNmTxUserDataPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmTxUserDataPduId"])
 				}
@@ -1151,6 +1186,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof CanNmPnInfo)){
+					return false
+				}
+				this.target == (object as CanNmPnInfo).target
 			}
 			
 			def BigInteger getCanNmPnInfoLength(){
@@ -1226,6 +1268,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof CanNmPnFilterMaskByte)){
+						return false
+					}
+					this.target == (object as CanNmPnFilterMaskByte).target
+				}
+				
 				def BigInteger getCanNmPnFilterMaskByteIndex(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnFilterMaskByteIndex"])
 				}
@@ -1265,6 +1314,13 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof CanNm)){
+			return false
+		}
+		this.target == (object as CanNm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

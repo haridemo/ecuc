@@ -114,6 +114,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof GptChannelConfigSet)){
+				return false
+			}
+			this.target == (object as GptChannelConfigSet).target
+		}
+		
 		
 		
 		def List<GptChannelConfiguration> getGptChannelConfigurations(){
@@ -153,6 +160,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof GptChannelConfiguration)){
+					return false
+				}
+				this.target == (object as GptChannelConfiguration).target
 			}
 			
 			def BigInteger getGptChannelId(){
@@ -310,6 +324,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof GptWakeupConfiguration)){
+						return false
+					}
+					this.target == (object as GptWakeupConfiguration).target
+				}
+				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getGptWakeupSourceRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "GptWakeupSourceRef")
@@ -346,6 +367,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof GptConfigurationOfOptApiServices)){
+				return false
+			}
+			this.target == (object as GptConfigurationOfOptApiServices).target
 		}
 		
 		def Boolean getGptDeinitApi(){
@@ -465,6 +493,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof GptDriverConfiguration)){
+				return false
+			}
+			this.target == (object as GptDriverConfiguration).target
 		}
 		
 		def Boolean getGptDevErrorDetect(){
@@ -593,6 +628,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof GptClockReferencePoint)){
+					return false
+				}
+				this.target == (object as GptClockReferencePoint).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint getGptClockReference(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint), "GptClockReference")
@@ -609,6 +651,13 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 		}
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof Gpt)){
+			return false
+		}
+		this.target == (object as Gpt).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {

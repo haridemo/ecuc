@@ -114,6 +114,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939NmConfigSet)){
+				return false
+			}
+			this.target == (object as J1939NmConfigSet).target
+		}
+		
 		
 		
 		def List<J1939NmChannel> getJ1939NmChannels(){
@@ -174,6 +181,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				containerValue
 			}
 			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939NmChannel)){
+					return false
+				}
+				this.target == (object as J1939NmChannel).target
+			}
+			
 			
 			def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getJ1939NmComMNetworkHandleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "J1939NmComMNetworkHandleRef")
@@ -223,6 +237,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				
 				override def GContainer getTarget(){
 					containerValue
+				}
+				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939NmRxPdu)){
+						return false
+					}
+					this.target == (object as J1939NmRxPdu).target
 				}
 				
 				def BigInteger getJ1939NmRxPduId(){
@@ -276,6 +297,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 					containerValue
 				}
 				
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939NmTxPdu)){
+						return false
+					}
+					this.target == (object as J1939NmTxPdu).target
+				}
+				
 				def BigInteger getJ1939NmTxPduId(){
 					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmTxPduId"])
 				}
@@ -327,6 +355,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			override def GContainer getTarget(){
 				containerValue
+			}
+			
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939NmNode)){
+					return false
+				}
+				this.target == (object as J1939NmNode).target
 			}
 			
 			def BigInteger getJ1939NmNodeId(){
@@ -579,6 +614,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			containerValue
 		}
 		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939NmDemEventParameterRefs)){
+				return false
+			}
+			this.target == (object as J1939NmDemEventParameterRefs).target
+		}
+		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getJ1939NM_E_ADDRESS_LOST(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "J1939NM_E_ADDRESS_LOST")
@@ -611,6 +653,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		override def GContainer getTarget(){
 			containerValue
+		}
+		
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939NmGeneral)){
+				return false
+			}
+			this.target == (object as J1939NmGeneral).target
 		}
 		
 		def BigDecimal getJ1939NmBusOffDelayTickPeriod(){
@@ -728,6 +777,13 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		
 		
+	}
+	
+	override def boolean equals(Object object) {
+        if (!(object instanceof J1939Nm)){
+			return false
+		}
+		this.target == (object as J1939Nm).target
 	}
 	
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
