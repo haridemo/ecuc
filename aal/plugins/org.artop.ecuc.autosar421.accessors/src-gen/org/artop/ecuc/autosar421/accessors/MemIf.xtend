@@ -106,7 +106,7 @@ class MemIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getMemIfDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemIfDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemIfDevErrorDetect"])
 		}
 		
 		def void setMemIfDevErrorDetect(Boolean value){
@@ -118,7 +118,7 @@ class MemIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getMemIfNumberOfDevices(){
@@ -138,7 +138,7 @@ class MemIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getMemIfVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemIfVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemIfVersionInfoApi"])
 		}
 		
 		def void setMemIfVersionInfoApi(Boolean value){
@@ -150,7 +150,7 @@ class MemIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

@@ -1045,7 +1045,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getComIPduCancellationSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCancellationSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCancellationSupport"])
 			}
 			
 			def void setComIPduCancellationSupport(Boolean value){
@@ -1057,7 +1057,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def ComIPduDirection getComIPduDirection(){
@@ -2204,7 +2204,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getComInitialValueOnly(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInitialValueOnly"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInitialValueOnly"])
 			}
 			
 			def void setComInitialValueOnly(Boolean value){
@@ -2216,7 +2216,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getComInvalidNotification(){
@@ -2800,7 +2800,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getComInitialValueOnly(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInitialValueOnly"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInitialValueOnly"])
 			}
 			
 			def void setComInitialValueOnly(Boolean value){
@@ -2812,7 +2812,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getComInvalidNotification(){
@@ -2881,7 +2881,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getComSignalGroupArrayAccess(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalGroupArrayAccess"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalGroupArrayAccess"])
 			}
 			
 			def void setComSignalGroupArrayAccess(Boolean value){
@@ -2893,7 +2893,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getComTimeout(){
@@ -3543,7 +3543,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getComCancellationSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComCancellationSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComCancellationSupport"])
 		}
 		
 		def void setComCancellationSupport(Boolean value){
@@ -3555,11 +3555,11 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getComConfigurationUseDet(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComConfigurationUseDet"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComConfigurationUseDet"])
 		}
 		
 		def void setComConfigurationUseDet(Boolean value){
@@ -3571,11 +3571,11 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getComEnableMDTForCyclicTransmission(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComEnableMDTForCyclicTransmission"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComEnableMDTForCyclicTransmission"])
 		}
 		
 		def void setComEnableMDTForCyclicTransmission(Boolean value){
@@ -3587,11 +3587,11 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getComEnableSignalGroupArrayApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComEnableSignalGroupArrayApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComEnableSignalGroupArrayApi"])
 		}
 		
 		def void setComEnableSignalGroupArrayApi(Boolean value){
@@ -3603,11 +3603,11 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getComMetaDataSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataSupport"])
 		}
 		
 		def void setComMetaDataSupport(Boolean value){
@@ -3619,11 +3619,11 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getComRetryFailedTransmitRequests(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComRetryFailedTransmitRequests"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComRetryFailedTransmitRequests"])
 		}
 		
 		def void setComRetryFailedTransmitRequests(Boolean value){
@@ -3635,7 +3635,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getComSupportedIPduGroups(){
@@ -3668,7 +3668,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getComVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComVersionInfoApi"])
 		}
 		
 		def void setComVersionInfoApi(Boolean value){
@@ -3680,7 +3680,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

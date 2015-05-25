@@ -252,7 +252,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanIfCtrlWakeupSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfCtrlWakeupSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfCtrlWakeupSupport"])
 			}
 			
 			def void setCanIfCtrlWakeupSupport(Boolean value){
@@ -264,7 +264,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -978,7 +978,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getCanIfHrhSoftwareFilter(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhSoftwareFilter"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhSoftwareFilter"])
 				}
 				
 				def void setCanIfHrhSoftwareFilter(Boolean value){
@@ -990,7 +990,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -1354,7 +1354,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanIfRxPduReadData(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduReadData"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduReadData"])
 			}
 			
 			def void setCanIfRxPduReadData(Boolean value){
@@ -1366,11 +1366,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanIfRxPduReadNotifyStatus(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduReadNotifyStatus"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduReadNotifyStatus"])
 			}
 			
 			def void setCanIfRxPduReadNotifyStatus(Boolean value){
@@ -1382,7 +1382,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getCanIfRxPduUserRxIndicationName(){
@@ -1724,7 +1724,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanIfTxPduPnFilterPdu(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduPnFilterPdu"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduPnFilterPdu"])
 			}
 			
 			def void setCanIfTxPduPnFilterPdu(Boolean value){
@@ -1736,11 +1736,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanIfTxPduReadNotifyStatus(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduReadNotifyStatus"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduReadNotifyStatus"])
 			}
 			
 			def void setCanIfTxPduReadNotifyStatus(Boolean value){
@@ -1752,11 +1752,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanIfTxPduTriggerTransmit(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduTriggerTransmit"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduTriggerTransmit"])
 			}
 			
 			def void setCanIfTxPduTriggerTransmit(Boolean value){
@@ -1768,7 +1768,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def CanIfTxPduType getCanIfTxPduType(){
@@ -2003,7 +2003,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanIfFixedBuffer(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfFixedBuffer"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfFixedBuffer"])
 		}
 		
 		def void setCanIfFixedBuffer(Boolean value){
@@ -2015,11 +2015,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPrivateDlcCheck(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPrivateDlcCheck"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPrivateDlcCheck"])
 		}
 		
 		def void setCanIfPrivateDlcCheck(Boolean value){
@@ -2031,7 +2031,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def CanIfPrivateSoftwareFilterType getCanIfPrivateSoftwareFilterType(){
@@ -2072,7 +2072,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanIfSupportTTCAN(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfSupportTTCAN"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfSupportTTCAN"])
 		}
 		
 		def void setCanIfSupportTTCAN(Boolean value){
@@ -2084,7 +2084,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2126,7 +2126,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanIfTTJoblist(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTJoblist"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTJoblist"])
 			}
 			
 			def void setCanIfTTJoblist(Boolean value){
@@ -2138,7 +2138,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getCanIfTTMaxIsrDelay(){
@@ -2241,7 +2241,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanIfMetaDataSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfMetaDataSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfMetaDataSupport"])
 		}
 		
 		def void setCanIfMetaDataSupport(Boolean value){
@@ -2253,11 +2253,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicCancelTransmitSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicCancelTransmitSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicCancelTransmitSupport"])
 		}
 		
 		def void setCanIfPublicCancelTransmitSupport(Boolean value){
@@ -2269,7 +2269,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getCanIfPublicCddHeaderFiles(){
@@ -2286,7 +2286,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanIfPublicDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicDevErrorDetect"])
 		}
 		
 		def void setCanIfPublicDevErrorDetect(Boolean value){
@@ -2298,7 +2298,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def CanIfPublicHandleTypeEnum getCanIfPublicHandleTypeEnum(){
@@ -2335,7 +2335,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanIfPublicIcomSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicIcomSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicIcomSupport"])
 		}
 		
 		def void setCanIfPublicIcomSupport(Boolean value){
@@ -2347,11 +2347,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicMultipleDrvSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicMultipleDrvSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicMultipleDrvSupport"])
 		}
 		
 		def void setCanIfPublicMultipleDrvSupport(Boolean value){
@@ -2363,11 +2363,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicPnSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicPnSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicPnSupport"])
 		}
 		
 		def void setCanIfPublicPnSupport(Boolean value){
@@ -2379,11 +2379,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicReadRxPduDataApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadRxPduDataApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadRxPduDataApi"])
 		}
 		
 		def void setCanIfPublicReadRxPduDataApi(Boolean value){
@@ -2395,11 +2395,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicReadRxPduNotifyStatusApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadRxPduNotifyStatusApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadRxPduNotifyStatusApi"])
 		}
 		
 		def void setCanIfPublicReadRxPduNotifyStatusApi(Boolean value){
@@ -2411,11 +2411,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicReadTxPduNotifyStatusApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadTxPduNotifyStatusApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadTxPduNotifyStatusApi"])
 		}
 		
 		def void setCanIfPublicReadTxPduNotifyStatusApi(Boolean value){
@@ -2427,11 +2427,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicSetDynamicTxIdApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicSetDynamicTxIdApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicSetDynamicTxIdApi"])
 		}
 		
 		def void setCanIfPublicSetDynamicTxIdApi(Boolean value){
@@ -2443,11 +2443,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicTxBuffering(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicTxBuffering"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicTxBuffering"])
 		}
 		
 		def void setCanIfPublicTxBuffering(Boolean value){
@@ -2459,11 +2459,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicTxConfirmPollingSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicTxConfirmPollingSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicTxConfirmPollingSupport"])
 		}
 		
 		def void setCanIfPublicTxConfirmPollingSupport(Boolean value){
@@ -2475,11 +2475,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicVersionInfoApi"])
 		}
 		
 		def void setCanIfPublicVersionInfoApi(Boolean value){
@@ -2491,11 +2491,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicWakeupCheckValidByNM(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicWakeupCheckValidByNM"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicWakeupCheckValidByNM"])
 		}
 		
 		def void setCanIfPublicWakeupCheckValidByNM(Boolean value){
@@ -2507,11 +2507,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfPublicWakeupCheckValidSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicWakeupCheckValidSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicWakeupCheckValidSupport"])
 		}
 		
 		def void setCanIfPublicWakeupCheckValidSupport(Boolean value){
@@ -2523,11 +2523,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfSetBaudrateApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfSetBaudrateApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfSetBaudrateApi"])
 		}
 		
 		def void setCanIfSetBaudrateApi(Boolean value){
@@ -2539,11 +2539,11 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanIfTxOfflineActiveSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxOfflineActiveSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxOfflineActiveSupport"])
 		}
 		
 		def void setCanIfTxOfflineActiveSupport(Boolean value){
@@ -2555,7 +2555,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2653,7 +2653,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanIfTrcvWakeupSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTrcvWakeupSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTrcvWakeupSupport"])
 			}
 			
 			def void setCanIfTrcvWakeupSupport(Boolean value){
@@ -2665,7 +2665,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

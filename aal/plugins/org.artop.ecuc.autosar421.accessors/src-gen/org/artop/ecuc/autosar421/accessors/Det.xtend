@@ -218,7 +218,7 @@ class Det implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDetForwardToDlt(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetForwardToDlt"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetForwardToDlt"])
 		}
 		
 		def void setDetForwardToDlt(Boolean value){
@@ -230,7 +230,7 @@ class Det implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getDetReportRuntimeErrorCallout(){
@@ -266,7 +266,7 @@ class Det implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDetVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetVersionInfoApi"])
 		}
 		
 		def void setDetVersionInfoApi(Boolean value){
@@ -278,7 +278,7 @@ class Det implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

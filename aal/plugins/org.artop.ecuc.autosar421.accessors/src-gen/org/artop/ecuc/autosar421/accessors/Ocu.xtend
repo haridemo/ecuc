@@ -359,7 +359,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getOcuOuptutPinUsed(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuOuptutPinUsed"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuOuptutPinUsed"])
 			}
 			
 			def void setOcuOuptutPinUsed(Boolean value){
@@ -371,7 +371,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def OcuOutputPinDefaultState getOcuOutputPinDefaultState(){
@@ -609,7 +609,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getOcuDeInitApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDeInitApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDeInitApi"])
 		}
 		
 		def void setOcuDeInitApi(Boolean value){
@@ -621,11 +621,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuGetCounterApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGetCounterApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGetCounterApi"])
 		}
 		
 		def void setOcuGetCounterApi(Boolean value){
@@ -637,11 +637,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuNotificationSupported(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuNotificationSupported"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuNotificationSupported"])
 		}
 		
 		def void setOcuNotificationSupported(Boolean value){
@@ -653,11 +653,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuSetAbsoluteThresholdApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetAbsoluteThresholdApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetAbsoluteThresholdApi"])
 		}
 		
 		def void setOcuSetAbsoluteThresholdApi(Boolean value){
@@ -669,11 +669,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuSetPinActionApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetPinActionApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetPinActionApi"])
 		}
 		
 		def void setOcuSetPinActionApi(Boolean value){
@@ -685,11 +685,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuSetPinStateApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetPinStateApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetPinStateApi"])
 		}
 		
 		def void setOcuSetPinStateApi(Boolean value){
@@ -701,11 +701,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuSetRelativeThresholdApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetRelativeThresholdApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetRelativeThresholdApi"])
 		}
 		
 		def void setOcuSetRelativeThresholdApi(Boolean value){
@@ -717,11 +717,11 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOcuVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuVersionInfoApi"])
 		}
 		
 		def void setOcuVersionInfoApi(Boolean value){
@@ -733,7 +733,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -767,7 +767,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getOcuDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDevErrorDetect"])
 		}
 		
 		def void setOcuDevErrorDetect(Boolean value){
@@ -779,7 +779,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

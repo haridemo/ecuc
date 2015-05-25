@@ -114,7 +114,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinTpChangeParameterApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpChangeParameterApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpChangeParameterApi"])
 		}
 		
 		def void setLinTpChangeParameterApi(Boolean value){
@@ -126,11 +126,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getLinTpVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpVersionInfoApi"])
 		}
 		
 		def void setLinTpVersionInfoApi(Boolean value){
@@ -142,7 +142,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -342,7 +342,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getLinTpDropNotRequestedNad(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpDropNotRequestedNad"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpDropNotRequestedNad"])
 			}
 			
 			def void setLinTpDropNotRequestedNad(Boolean value){
@@ -354,11 +354,11 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getLinTpScheduleChangeDiag(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpScheduleChangeDiag"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpScheduleChangeDiag"])
 			}
 			
 			def void setLinTpScheduleChangeDiag(Boolean value){
@@ -370,7 +370,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

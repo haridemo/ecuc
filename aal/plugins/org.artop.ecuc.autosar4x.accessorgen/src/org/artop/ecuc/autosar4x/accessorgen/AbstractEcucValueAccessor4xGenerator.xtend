@@ -45,6 +45,10 @@ public abstract class AbstractEcucValueAccessor4xGenerator extends AbstractEcucV
 		Autosar40Factory.simpleName
 	}
 	
+	def override boolean shouldConvertBooleanParameterValueValue() {
+		Boolean.TRUE
+	}
+	
 	def override String getParameterValueTypeName(GConfigParameter parameterDef){
 		if (parameterDef instanceof GIntegerParamDef || parameterDef instanceof GFloatParamDef || parameterDef instanceof GBooleanParamDef) {
 			EcucNumericalParamValue.simpleName

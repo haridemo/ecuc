@@ -1052,7 +1052,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getXcpDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDevErrorDetect"])
 		}
 		
 		def void setXcpDevErrorDetect(Boolean value){
@@ -1064,11 +1064,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getXcpFlashProgrammingEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpFlashProgrammingEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpFlashProgrammingEnabled"])
 		}
 		
 		def void setXcpFlashProgrammingEnabled(Boolean value){
@@ -1080,7 +1080,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def XcpIdentificationFieldType getXcpIdentificationFieldType(){
@@ -1265,7 +1265,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getXcpOnCanEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnCanEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnCanEnabled"])
 		}
 		
 		def void setXcpOnCanEnabled(Boolean value){
@@ -1277,11 +1277,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getXcpOnCddEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnCddEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnCddEnabled"])
 		}
 		
 		def void setXcpOnCddEnabled(Boolean value){
@@ -1293,11 +1293,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getXcpOnEthernetEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnEthernetEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnEthernetEnabled"])
 		}
 		
 		def void setXcpOnEthernetEnabled(Boolean value){
@@ -1309,11 +1309,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getXcpOnFlexRayEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnFlexRayEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnFlexRayEnabled"])
 		}
 		
 		def void setXcpOnFlexRayEnabled(Boolean value){
@@ -1325,11 +1325,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getXcpPrescalerSupported(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpPrescalerSupported"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpPrescalerSupported"])
 		}
 		
 		def void setXcpPrescalerSupported(Boolean value){
@@ -1341,11 +1341,11 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getXcpSuppressTxSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpSuppressTxSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpSuppressTxSupport"])
 		}
 		
 		def void setXcpSuppressTxSupport(Boolean value){
@@ -1357,7 +1357,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getXcpTimestampTicks(){
@@ -1469,7 +1469,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getXcpVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpVersionInfoApi"])
 		}
 		
 		def void setXcpVersionInfoApi(Boolean value){
@@ -1481,7 +1481,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

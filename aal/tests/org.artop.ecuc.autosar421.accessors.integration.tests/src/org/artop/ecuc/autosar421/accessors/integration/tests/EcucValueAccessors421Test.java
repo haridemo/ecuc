@@ -367,7 +367,7 @@ public class EcucValueAccessors421Test extends AbstractEcucValueAccessorsIntegra
 		};
 
 		try {
-			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting Boolean ParameterValue Value");
+			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting Enumeration ParameterValue Value");
 			nvMBlockCrcType = nvMBlockDescriptor.getNvMBlockCrcType();
 			assertTrue("NVM_CRC32".equals(nvMBlockCrcType.name())); //$NON-NLS-1$
 		} catch (OperationCanceledException ex) {
@@ -477,7 +477,7 @@ public class EcucValueAccessors421Test extends AbstractEcucValueAccessorsIntegra
 		};
 
 		try {
-			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting Boolean ParameterValue Value");
+			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting Integer ParameterValue Value");
 			nvMNvBlockBaseNumber = nvMBlockDescriptor.getNvMNvBlockBaseNumber();
 			assertTrue(new BigInteger("11").compareTo(nvMNvBlockBaseNumber) == 0);
 		} catch (OperationCanceledException ex) {

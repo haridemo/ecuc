@@ -164,7 +164,7 @@ class Fee implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFeeImmediateData(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeImmediateData"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeImmediateData"])
 		}
 		
 		def void setFeeImmediateData(Boolean value){
@@ -176,7 +176,7 @@ class Fee implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getFeeNumberOfWriteCycles(){
@@ -237,7 +237,7 @@ class Fee implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFeeDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeDevErrorDetect"])
 		}
 		
 		def void setFeeDevErrorDetect(Boolean value){
@@ -249,7 +249,7 @@ class Fee implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getFeeMainFunctionPeriod(){
@@ -301,7 +301,7 @@ class Fee implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFeePollingMode(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeePollingMode"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeePollingMode"])
 		}
 		
 		def void setFeePollingMode(Boolean value){
@@ -313,11 +313,11 @@ class Fee implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFeeSetModeSupported(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeSetModeSupported"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeSetModeSupported"])
 		}
 		
 		def void setFeeSetModeSupported(Boolean value){
@@ -329,11 +329,11 @@ class Fee implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFeeVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FeeVersionInfoApi"])
 		}
 		
 		def void setFeeVersionInfoApi(Boolean value){
@@ -345,7 +345,7 @@ class Fee implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getFeeVirtualPageSize(){

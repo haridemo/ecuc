@@ -319,7 +319,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getSdClientServiceAutoRequire(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceAutoRequire"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdClientServiceAutoRequire"])
 				}
 				
 				def void setSdClientServiceAutoRequire(Boolean value){
@@ -331,7 +331,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getSdClientServiceHandleId(){
@@ -587,7 +587,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getSdConsumedEventGroupAutoRequire(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupAutoRequire"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdConsumedEventGroupAutoRequire"])
 					}
 					
 					def void setSdConsumedEventGroupAutoRequire(Boolean value){
@@ -599,7 +599,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getSdConsumedEventGroupHandleId(){
@@ -1223,7 +1223,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getSdServerServiceAutoAvailable(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceAutoAvailable"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdServerServiceAutoAvailable"])
 				}
 				
 				def void setSdServerServiceAutoAvailable(Boolean value){
@@ -1235,7 +1235,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getSdServerServiceHandleId(){
@@ -2055,7 +2055,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSdDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdDevErrorDetect"])
 		}
 		
 		def void setSdDevErrorDetect(Boolean value){
@@ -2067,7 +2067,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getSdMainFunctionCycleTime(){
@@ -2087,7 +2087,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSdVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SdVersionInfoApi"])
 		}
 		
 		def void setSdVersionInfoApi(Boolean value){
@@ -2099,7 +2099,7 @@ class Sd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

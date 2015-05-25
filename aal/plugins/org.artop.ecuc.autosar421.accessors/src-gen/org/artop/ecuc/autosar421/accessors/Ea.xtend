@@ -164,7 +164,7 @@ class Ea implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEaImmediateData(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaImmediateData"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaImmediateData"])
 		}
 		
 		def void setEaImmediateData(Boolean value){
@@ -176,7 +176,7 @@ class Ea implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEaNumberOfWriteCycles(){
@@ -237,7 +237,7 @@ class Ea implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEaDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaDevErrorDetect"])
 		}
 		
 		def void setEaDevErrorDetect(Boolean value){
@@ -249,7 +249,7 @@ class Ea implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getEaMainFunctionPeriod(){
@@ -301,7 +301,7 @@ class Ea implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEaPollingMode(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaPollingMode"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaPollingMode"])
 		}
 		
 		def void setEaPollingMode(Boolean value){
@@ -313,11 +313,11 @@ class Ea implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEaSetModeSupported(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaSetModeSupported"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaSetModeSupported"])
 		}
 		
 		def void setEaSetModeSupported(Boolean value){
@@ -329,11 +329,11 @@ class Ea implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEaVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaVersionInfoApi"])
 		}
 		
 		def void setEaVersionInfoApi(Boolean value){
@@ -345,7 +345,7 @@ class Ea implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEaVirtualPageSize(){

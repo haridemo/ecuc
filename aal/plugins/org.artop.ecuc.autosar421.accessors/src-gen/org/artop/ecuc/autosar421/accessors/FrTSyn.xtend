@@ -124,7 +124,7 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrTSynDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynDevErrorDetect"])
 		}
 		
 		def void setFrTSynDevErrorDetect(Boolean value){
@@ -136,7 +136,7 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getFrTSynMainFunctionPeriod(){
@@ -156,7 +156,7 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrTSynVersionInfo(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynVersionInfo"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynVersionInfo"])
 		}
 		
 		def void setFrTSynVersionInfo(Boolean value){
@@ -168,7 +168,7 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

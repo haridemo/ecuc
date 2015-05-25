@@ -124,7 +124,7 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanTSynDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynDevErrorDetect"])
 		}
 		
 		def void setCanTSynDevErrorDetect(Boolean value){
@@ -136,7 +136,7 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getCanTSynMainFunctionPeriod(){
@@ -156,7 +156,7 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanTSynVersionInfo(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynVersionInfo"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTSynVersionInfo"])
 		}
 		
 		def void setCanTSynVersionInfo(Boolean value){
@@ -168,7 +168,7 @@ class CanTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

@@ -900,7 +900,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getEcuMSleepModeSuspend(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeSuspend"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeSuspend"])
 				}
 				
 				def void setEcuMSleepModeSuspend(Boolean value){
@@ -912,7 +912,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -1039,7 +1039,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getEcuMWakeupSourcePolling(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourcePolling"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourcePolling"])
 				}
 				
 				def void setEcuMWakeupSourcePolling(Boolean value){
@@ -1051,7 +1051,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -2249,7 +2249,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEcuMIncludeComM(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMIncludeComM"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMIncludeComM"])
 		}
 		
 		def void setEcuMIncludeComM(Boolean value){
@@ -2261,11 +2261,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEcuMTTIIEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMTTIIEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMTTIIEnabled"])
 		}
 		
 		def void setEcuMTTIIEnabled(Boolean value){
@@ -2277,7 +2277,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2322,7 +2322,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEcuMAlarmClockPresent(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockPresent"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockPresent"])
 		}
 		
 		def void setEcuMAlarmClockPresent(Boolean value){
@@ -2334,11 +2334,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEcuMModeHandling(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModeHandling"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModeHandling"])
 		}
 		
 		def void setEcuMModeHandling(Boolean value){
@@ -2350,11 +2350,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEcuMResetLoopDetection(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetLoopDetection"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetLoopDetection"])
 		}
 		
 		def void setEcuMResetLoopDetection(Boolean value){
@@ -2366,11 +2366,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEcuMSetProgrammableInterrupts(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSetProgrammableInterrupts"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSetProgrammableInterrupts"])
 		}
 		
 		def void setEcuMSetProgrammableInterrupts(Boolean value){
@@ -2382,7 +2382,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2427,7 +2427,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEcuMDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDevErrorDetect"])
 		}
 		
 		def void setEcuMDevErrorDetect(Boolean value){
@@ -2439,11 +2439,11 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEcuMIncludeDet(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMIncludeDet"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMIncludeDet"])
 		}
 		
 		def void setEcuMIncludeDet(Boolean value){
@@ -2455,7 +2455,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getEcuMMainFunctionPeriod(){
@@ -2475,7 +2475,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEcuMVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMVersionInfoApi"])
 		}
 		
 		def void setEcuMVersionInfoApi(Boolean value){
@@ -2487,7 +2487,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

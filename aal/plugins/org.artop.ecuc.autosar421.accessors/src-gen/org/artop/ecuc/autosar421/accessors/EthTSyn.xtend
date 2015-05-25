@@ -124,7 +124,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEthTSynDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynDevErrorDetect"])
 		}
 		
 		def void setEthTSynDevErrorDetect(Boolean value){
@@ -136,11 +136,11 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTSynHardwareTimestampSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynHardwareTimestampSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynHardwareTimestampSupport"])
 		}
 		
 		def void setEthTSynHardwareTimestampSupport(Boolean value){
@@ -152,7 +152,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getEthTSynMainFunctionPeriod(){
@@ -172,7 +172,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEthTSynVersionInfo(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynVersionInfo"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynVersionInfo"])
 		}
 		
 		def void setEthTSynVersionInfo(Boolean value){
@@ -184,7 +184,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

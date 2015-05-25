@@ -1185,7 +1185,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getBswMCanSMIcomIndicationSwitchError(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMIcomIndicationSwitchError"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMIcomIndicationSwitchError"])
 						}
 						
 						def void setBswMCanSMIcomIndicationSwitchError(Boolean value){
@@ -1197,7 +1197,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -2404,7 +2404,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getBswMNestedExecutionOnly(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNestedExecutionOnly"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNestedExecutionOnly"])
 				}
 				
 				def void setBswMNestedExecutionOnly(Boolean value){
@@ -2416,7 +2416,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BswMRuleInitState getBswMRuleInitState(){
@@ -2955,7 +2955,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getBswMComAllowed(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComAllowed"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComAllowed"])
 						}
 						
 						def void setBswMComAllowed(Boolean value){
@@ -2967,7 +2967,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -3013,7 +3013,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getBswMComMLimitMode(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMLimitMode"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMLimitMode"])
 						}
 						
 						def void setBswMComMLimitMode(Boolean value){
@@ -3025,7 +3025,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -3894,7 +3894,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getBswMPduGroupSwitchReinit(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduGroupSwitchReinit"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduGroupSwitchReinit"])
 						}
 						
 						def void setBswMPduGroupSwitchReinit(Boolean value){
@@ -3906,7 +3906,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -4040,7 +4040,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getBswMPduRouterDisableInitBuffer(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduRouterDisableInitBuffer"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduRouterDisableInitBuffer"])
 						}
 						
 						def void setBswMPduRouterDisableInitBuffer(Boolean value){
@@ -4052,7 +4052,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -4508,7 +4508,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getBswMSwitchIPduModeValue(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSwitchIPduModeValue"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSwitchIPduModeValue"])
 						}
 						
 						def void setBswMSwitchIPduModeValue(Boolean value){
@@ -4520,7 +4520,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -4846,7 +4846,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getBswMAbortOnFail(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMAbortOnFail"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMAbortOnFail"])
 					}
 					
 					def void setBswMAbortOnFail(Boolean value){
@@ -4858,7 +4858,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getBswMActionListItemIndex(){
@@ -4991,7 +4991,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getBswMCanSMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMEnabled"])
 		}
 		
 		def void setBswMCanSMEnabled(Boolean value){
@@ -5003,11 +5003,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMCanSMIcomEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMIcomEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMIcomEnabled"])
 		}
 		
 		def void setBswMCanSMIcomEnabled(Boolean value){
@@ -5019,11 +5019,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMComMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMEnabled"])
 		}
 		
 		def void setBswMComMEnabled(Boolean value){
@@ -5035,11 +5035,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMDcmEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMDcmEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMDcmEnabled"])
 		}
 		
 		def void setBswMDcmEnabled(Boolean value){
@@ -5051,11 +5051,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMDevErrorDetect"])
 		}
 		
 		def void setBswMDevErrorDetect(Boolean value){
@@ -5067,11 +5067,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMEcuMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMEnabled"])
 		}
 		
 		def void setBswMEcuMEnabled(Boolean value){
@@ -5083,11 +5083,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMEthSMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEthSMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEthSMEnabled"])
 		}
 		
 		def void setBswMEthSMEnabled(Boolean value){
@@ -5099,11 +5099,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMFrSMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMFrSMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMFrSMEnabled"])
 		}
 		
 		def void setBswMFrSMEnabled(Boolean value){
@@ -5115,11 +5115,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMGenericRequestEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMGenericRequestEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMGenericRequestEnabled"])
 		}
 		
 		def void setBswMGenericRequestEnabled(Boolean value){
@@ -5131,11 +5131,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMJ1939DcmEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939DcmEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939DcmEnabled"])
 		}
 		
 		def void setBswMJ1939DcmEnabled(Boolean value){
@@ -5147,11 +5147,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMJ1939NmEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939NmEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939NmEnabled"])
 		}
 		
 		def void setBswMJ1939NmEnabled(Boolean value){
@@ -5163,11 +5163,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMLinSMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLinSMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLinSMEnabled"])
 		}
 		
 		def void setBswMLinSMEnabled(Boolean value){
@@ -5179,11 +5179,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMLinTPEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLinTPEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLinTPEnabled"])
 		}
 		
 		def void setBswMLinTPEnabled(Boolean value){
@@ -5195,7 +5195,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getBswMMainFunctionPeriod(){
@@ -5215,7 +5215,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getBswMNvMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNvMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNvMEnabled"])
 		}
 		
 		def void setBswMNvMEnabled(Boolean value){
@@ -5227,11 +5227,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMSchMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSchMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSchMEnabled"])
 		}
 		
 		def void setBswMSchMEnabled(Boolean value){
@@ -5243,11 +5243,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMVersionInfoApi"])
 		}
 		
 		def void setBswMVersionInfoApi(Boolean value){
@@ -5259,11 +5259,11 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getBswMWdgMEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMWdgMEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMWdgMEnabled"])
 		}
 		
 		def void setBswMWdgMEnabled(Boolean value){
@@ -5275,7 +5275,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

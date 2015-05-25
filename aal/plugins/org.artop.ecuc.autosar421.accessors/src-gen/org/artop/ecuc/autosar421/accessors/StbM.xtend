@@ -142,7 +142,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getStbMDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"])
 		}
 		
 		def void setStbMDevErrorDetect(Boolean value){
@@ -154,11 +154,11 @@ class StbM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getStbMGetCurrentTimeExtendedAvailable(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGetCurrentTimeExtendedAvailable"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGetCurrentTimeExtendedAvailable"])
 		}
 		
 		def void setStbMGetCurrentTimeExtendedAvailable(Boolean value){
@@ -170,7 +170,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getStbMMainFunctionPeriod(){
@@ -190,7 +190,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getStbMVersionInfo(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMVersionInfo"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMVersionInfo"])
 		}
 		
 		def void setStbMVersionInfo(Boolean value){
@@ -202,7 +202,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -236,7 +236,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getStbMIsSystemWideGlobalTimeMaster(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"])
 		}
 		
 		def void setStbMIsSystemWideGlobalTimeMaster(Boolean value){
@@ -248,7 +248,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def StbMStoreTimebaseNonVolatile getStbMStoreTimebaseNonVolatile(){

@@ -631,7 +631,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getJ1939RmUserAckIndication(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserAckIndication"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserAckIndication"])
 				}
 				
 				def void setJ1939RmUserAckIndication(Boolean value){
@@ -643,7 +643,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def List<BigInteger> getJ1939RmUserAckPGNs(){
@@ -689,7 +689,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getJ1939RmUserRequestIndication(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserRequestIndication"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserRequestIndication"])
 				}
 				
 				def void setJ1939RmUserRequestIndication(Boolean value){
@@ -701,11 +701,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getJ1939RmUserSendAck(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendAck"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendAck"])
 				}
 				
 				def void setJ1939RmUserSendAck(Boolean value){
@@ -717,11 +717,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getJ1939RmUserSendRequest(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendRequest"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendRequest"])
 				}
 				
 				def void setJ1939RmUserSendRequest(Boolean value){
@@ -733,11 +733,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getJ1939RmUserTimeoutSupervision(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserTimeoutSupervision"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserTimeoutSupervision"])
 				}
 				
 				def void setJ1939RmUserTimeoutSupervision(Boolean value){
@@ -749,7 +749,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def J1939RmUserType getJ1939RmUserType(){
@@ -904,7 +904,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939RmDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmDevErrorDetect"])
 		}
 		
 		def void setJ1939RmDevErrorDetect(Boolean value){
@@ -916,7 +916,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939RmMainFunctionPeriod(){
@@ -936,7 +936,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939RmSupportAckIndication(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckIndication"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckIndication"])
 		}
 		
 		def void setJ1939RmSupportAckIndication(Boolean value){
@@ -948,11 +948,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportAckTransmission(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckTransmission"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckTransmission"])
 		}
 		
 		def void setJ1939RmSupportAckTransmission(Boolean value){
@@ -964,11 +964,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportRequestIndication(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestIndication"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestIndication"])
 		}
 		
 		def void setJ1939RmSupportRequestIndication(Boolean value){
@@ -980,11 +980,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportRequestTransmission(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestTransmission"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestTransmission"])
 		}
 		
 		def void setJ1939RmSupportRequestTransmission(Boolean value){
@@ -996,11 +996,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportTimeoutSupervision(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportTimeoutSupervision"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportTimeoutSupervision"])
 		}
 		
 		def void setJ1939RmSupportTimeoutSupervision(Boolean value){
@@ -1012,7 +1012,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939RmTxConfirmationTimeout(){
@@ -1032,7 +1032,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939RmVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmVersionInfoApi"])
 		}
 		
 		def void setJ1939RmVersionInfoApi(Boolean value){
@@ -1044,7 +1044,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

@@ -160,7 +160,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSecOCDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCDevErrorDetect"])
 		}
 		
 		def void setSecOCDevErrorDetect(Boolean value){
@@ -172,7 +172,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getSecOCMainFunctionPeriod(){
@@ -221,7 +221,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSecOCVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCVersionInfoApi"])
 		}
 		
 		def void setSecOCVersionInfoApi(Boolean value){
@@ -233,7 +233,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -438,7 +438,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSecOCUseFreshnessTimestamp(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCUseFreshnessTimestamp"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCUseFreshnessTimestamp"])
 		}
 		
 		def void setSecOCUseFreshnessTimestamp(Boolean value){
@@ -450,7 +450,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def SecOCVerificationStatusPropagationMode getSecOCVerificationStatusPropagationMode(){
@@ -823,7 +823,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSecOCUseFreshnessTimestamp(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCUseFreshnessTimestamp"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCUseFreshnessTimestamp"])
 		}
 		
 		def void setSecOCUseFreshnessTimestamp(Boolean value){
@@ -835,7 +835,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

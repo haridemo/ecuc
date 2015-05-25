@@ -132,7 +132,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSoAdIf(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIf"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIf"])
 		}
 		
 		def void setSoAdIf(Boolean value){
@@ -144,11 +144,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdIfTriggerTransmit(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIfTriggerTransmit"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIfTriggerTransmit"])
 		}
 		
 		def void setSoAdIfTriggerTransmit(Boolean value){
@@ -160,11 +160,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdIfTxConfirmation(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIfTxConfirmation"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIfTxConfirmation"])
 		}
 		
 		def void setSoAdIfTxConfirmation(Boolean value){
@@ -176,11 +176,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdLocalIpAddrAssigmentChg(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdLocalIpAddrAssigmentChg"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdLocalIpAddrAssigmentChg"])
 		}
 		
 		def void setSoAdLocalIpAddrAssigmentChg(Boolean value){
@@ -192,11 +192,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdSoConModeChg(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSoConModeChg"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSoConModeChg"])
 		}
 		
 		def void setSoAdSoConModeChg(Boolean value){
@@ -208,11 +208,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdTp(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTp"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdTp"])
 		}
 		
 		def void setSoAdTp(Boolean value){
@@ -224,11 +224,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdUseCallerInfix(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdUseCallerInfix"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdUseCallerInfix"])
 		}
 		
 		def void setSoAdUseCallerInfix(Boolean value){
@@ -240,11 +240,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdUseTypeInfix(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdUseTypeInfix"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdUseTypeInfix"])
 		}
 		
 		def void setSoAdUseTypeInfix(Boolean value){
@@ -256,7 +256,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -652,7 +652,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getSoAdRoutingGroupIsEnabledAtInit(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupIsEnabledAtInit"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupIsEnabledAtInit"])
 			}
 			
 			def void setSoAdRoutingGroupIsEnabledAtInit(Boolean value){
@@ -664,11 +664,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getSoAdRoutingGroupTxTriggerable(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupTxTriggerable"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdRoutingGroupTxTriggerable"])
 			}
 			
 			def void setSoAdRoutingGroupTxTriggerable(Boolean value){
@@ -680,7 +680,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -715,7 +715,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getSoAdPduHeaderEnable(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdPduHeaderEnable"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdPduHeaderEnable"])
 			}
 			
 			def void setSoAdPduHeaderEnable(Boolean value){
@@ -727,11 +727,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getSoAdResourceManagementEnable(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdResourceManagementEnable"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdResourceManagementEnable"])
 			}
 			
 			def void setSoAdResourceManagementEnable(Boolean value){
@@ -743,11 +743,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getSoAdSocketAutomaticSoConSetup(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketAutomaticSoConSetup"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketAutomaticSoConSetup"])
 			}
 			
 			def void setSoAdSocketAutomaticSoConSetup(Boolean value){
@@ -759,7 +759,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getSoAdSocketFramePriority(){
@@ -779,7 +779,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getSoAdSocketIpAddrAssignmentChgNotification(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketIpAddrAssignmentChgNotification"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketIpAddrAssignmentChgNotification"])
 			}
 			
 			def void setSoAdSocketIpAddrAssignmentChgNotification(Boolean value){
@@ -791,7 +791,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getSoAdSocketLocalPort(){
@@ -811,7 +811,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getSoAdSocketMsgAcceptanceFilterEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketMsgAcceptanceFilterEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketMsgAcceptanceFilterEnabled"])
 			}
 			
 			def void setSoAdSocketMsgAcceptanceFilterEnabled(Boolean value){
@@ -823,11 +823,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getSoAdSocketSoConModeChgNotification(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketSoConModeChgNotification"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketSoConModeChgNotification"])
 			}
 			
 			def void setSoAdSocketSoConModeChgNotification(Boolean value){
@@ -839,7 +839,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getSoAdSocketTpRxBufferMin(){
@@ -1089,7 +1089,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getSoAdSocketTcpImmediateTpTxConfirmation(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpImmediateTpTxConfirmation"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpImmediateTpTxConfirmation"])
 					}
 					
 					def void setSoAdSocketTcpImmediateTpTxConfirmation(Boolean value){
@@ -1101,11 +1101,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getSoAdSocketTcpInitiate(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpInitiate"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpInitiate"])
 					}
 					
 					def void setSoAdSocketTcpInitiate(Boolean value){
@@ -1117,11 +1117,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getSoAdSocketTcpKeepAlive(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAlive"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpKeepAlive"])
 					}
 					
 					def void setSoAdSocketTcpKeepAlive(Boolean value){
@@ -1133,7 +1133,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigDecimal getSoAdSocketTcpKeepAliveInterval(){
@@ -1185,7 +1185,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getSoAdSocketTcpNoDelay(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpNoDelay"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketTcpNoDelay"])
 					}
 					
 					def void setSoAdSocketTcpNoDelay(Boolean value){
@@ -1197,7 +1197,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getSoAdSocketTcpTxQuota(){
@@ -1264,7 +1264,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getSoAdSocketUdpListenOnly(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpListenOnly"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpListenOnly"])
 					}
 					
 					def void setSoAdSocketUdpListenOnly(Boolean value){
@@ -1276,11 +1276,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getSoAdSocketUdpStrictHeaderLenCheckEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpStrictHeaderLenCheckEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdSocketUdpStrictHeaderLenCheckEnabled"])
 					}
 					
 					def void setSoAdSocketUdpStrictHeaderLenCheckEnabled(Boolean value){
@@ -1292,7 +1292,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigDecimal getSoAdSocketUdpTriggerTimeout(){
@@ -1545,7 +1545,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSoAdDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdDevErrorDetect"])
 		}
 		
 		def void setSoAdDevErrorDetect(Boolean value){
@@ -1557,11 +1557,11 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSoAdIPv6AddressEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIPv6AddressEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdIPv6AddressEnabled"])
 		}
 		
 		def void setSoAdIPv6AddressEnabled(Boolean value){
@@ -1573,7 +1573,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getSoAdMainFunctionPeriod(){
@@ -1625,7 +1625,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSoAdVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SoAdVersionInfoApi"])
 		}
 		
 		def void setSoAdVersionInfoApi(Boolean value){
@@ -1637,7 +1637,7 @@ class SoAd implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

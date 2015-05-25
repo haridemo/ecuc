@@ -124,7 +124,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getNmActiveCoordinator(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmActiveCoordinator"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmActiveCoordinator"])
 		}
 		
 		def void setNmActiveCoordinator(Boolean value){
@@ -136,11 +136,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getNmChannelSleepMaster(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmChannelSleepMaster"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmChannelSleepMaster"])
 		}
 		
 		def void setNmChannelSleepMaster(Boolean value){
@@ -152,7 +152,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getNmCoordClusterIndex(){
@@ -172,7 +172,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getNmStateReportEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmStateReportEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmStateReportEnabled"])
 		}
 		
 		def void setNmStateReportEnabled(Boolean value){
@@ -184,11 +184,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getNmSynchronizingNetwork(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmSynchronizingNetwork"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmSynchronizingNetwork"])
 		}
 		
 		def void setNmSynchronizingNetwork(Boolean value){
@@ -200,7 +200,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -546,7 +546,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getNmBusSynchronizationEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmBusSynchronizationEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmBusSynchronizationEnabled"])
 			}
 			
 			def void setNmBusSynchronizationEnabled(Boolean value){
@@ -558,7 +558,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getNmCarWakeUpCallout(){
@@ -578,7 +578,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getNmCarWakeUpRxEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCarWakeUpRxEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCarWakeUpRxEnabled"])
 			}
 			
 			def void setNmCarWakeUpRxEnabled(Boolean value){
@@ -590,11 +590,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmComControlEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmComControlEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmComControlEnabled"])
 			}
 			
 			def void setNmComControlEnabled(Boolean value){
@@ -606,11 +606,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmComUserDataSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmComUserDataSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmComUserDataSupport"])
 			}
 			
 			def void setNmComUserDataSupport(Boolean value){
@@ -622,11 +622,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmCoordinatorSupportEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordinatorSupportEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordinatorSupportEnabled"])
 			}
 			
 			def void setNmCoordinatorSupportEnabled(Boolean value){
@@ -638,11 +638,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmCoordinatorSyncSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordinatorSyncSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmCoordinatorSyncSupport"])
 			}
 			
 			def void setNmCoordinatorSyncSupport(Boolean value){
@@ -654,7 +654,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getNmGlobalCoordinatorTime(){
@@ -674,7 +674,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getNmNodeDetectionEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNodeDetectionEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNodeDetectionEnabled"])
 			}
 			
 			def void setNmNodeDetectionEnabled(Boolean value){
@@ -686,11 +686,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmNodeIdEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNodeIdEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmNodeIdEnabled"])
 			}
 			
 			def void setNmNodeIdEnabled(Boolean value){
@@ -702,11 +702,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmPassiveModeEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmPassiveModeEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmPassiveModeEnabled"])
 			}
 			
 			def void setNmPassiveModeEnabled(Boolean value){
@@ -718,11 +718,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmPduRxIndicationEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmPduRxIndicationEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmPduRxIndicationEnabled"])
 			}
 			
 			def void setNmPduRxIndicationEnabled(Boolean value){
@@ -734,11 +734,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmRemoteSleepIndEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmRemoteSleepIndEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmRemoteSleepIndEnabled"])
 			}
 			
 			def void setNmRemoteSleepIndEnabled(Boolean value){
@@ -750,11 +750,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmRepeatMsgIndEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmRepeatMsgIndEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmRepeatMsgIndEnabled"])
 			}
 			
 			def void setNmRepeatMsgIndEnabled(Boolean value){
@@ -766,11 +766,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmStateChangeIndEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmStateChangeIndEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmStateChangeIndEnabled"])
 			}
 			
 			def void setNmStateChangeIndEnabled(Boolean value){
@@ -782,11 +782,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmUserDataEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmUserDataEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmUserDataEnabled"])
 			}
 			
 			def void setNmUserDataEnabled(Boolean value){
@@ -798,7 +798,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -849,7 +849,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getNmDevErrorDetect(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmDevErrorDetect"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmDevErrorDetect"])
 			}
 			
 			def void setNmDevErrorDetect(Boolean value){
@@ -861,11 +861,11 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getNmVersionInfoApi(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmVersionInfoApi"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NmVersionInfoApi"])
 			}
 			
 			def void setNmVersionInfoApi(Boolean value){
@@ -877,7 +877,7 @@ class Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

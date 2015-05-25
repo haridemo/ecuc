@@ -162,7 +162,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getEthCtrlEnableMii(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableMii"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableMii"])
 			}
 			
 			def void setEthCtrlEnableMii(Boolean value){
@@ -174,11 +174,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getEthCtrlEnableRxInterrupt(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableRxInterrupt"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableRxInterrupt"])
 			}
 			
 			def void setEthCtrlEnableRxInterrupt(Boolean value){
@@ -190,11 +190,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getEthCtrlEnableTxInterrupt(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableTxInterrupt"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableTxInterrupt"])
 			}
 			
 			def void setEthCtrlEnableTxInterrupt(Boolean value){
@@ -206,7 +206,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getEthCtrlIdx(){
@@ -477,7 +477,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEthDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthDevErrorDetect"])
 		}
 		
 		def void setEthDevErrorDetect(Boolean value){
@@ -489,11 +489,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthGetDropCountApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthGetDropCountApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthGetDropCountApi"])
 		}
 		
 		def void setEthGetDropCountApi(Boolean value){
@@ -505,11 +505,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthGetEtherStatsApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthGetEtherStatsApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthGetEtherStatsApi"])
 		}
 		
 		def void setEthGetEtherStatsApi(Boolean value){
@@ -521,11 +521,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthGlobalTimeSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthGlobalTimeSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthGlobalTimeSupport"])
 		}
 		
 		def void setEthGlobalTimeSupport(Boolean value){
@@ -537,7 +537,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEthIndex(){
@@ -589,7 +589,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEthUpdatePhysAddrFilter(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthUpdatePhysAddrFilter"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthUpdatePhysAddrFilter"])
 		}
 		
 		def void setEthUpdatePhysAddrFilter(Boolean value){
@@ -601,11 +601,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthVersionInfoApi"])
 		}
 		
 		def void setEthVersionInfoApi(Boolean value){
@@ -617,7 +617,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -659,7 +659,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getEthCtrlEnableOffloadChecksumICMP(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumICMP"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumICMP"])
 			}
 			
 			def void setEthCtrlEnableOffloadChecksumICMP(Boolean value){
@@ -671,11 +671,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getEthCtrlEnableOffloadChecksumIPv4(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumIPv4"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumIPv4"])
 			}
 			
 			def void setEthCtrlEnableOffloadChecksumIPv4(Boolean value){
@@ -687,11 +687,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getEthCtrlEnableOffloadChecksumTCP(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumTCP"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumTCP"])
 			}
 			
 			def void setEthCtrlEnableOffloadChecksumTCP(Boolean value){
@@ -703,11 +703,11 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getEthCtrlEnableOffloadChecksumUDP(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumUDP"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthCtrlEnableOffloadChecksumUDP"])
 			}
 			
 			def void setEthCtrlEnableOffloadChecksumUDP(Boolean value){
@@ -719,7 +719,7 @@ class Eth implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

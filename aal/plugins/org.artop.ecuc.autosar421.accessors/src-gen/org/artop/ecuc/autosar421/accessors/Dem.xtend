@@ -339,7 +339,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemComponentIgnoresPriority(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentIgnoresPriority"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentIgnoresPriority"])
 			}
 			
 			def void setDemComponentIgnoresPriority(Boolean value){
@@ -351,7 +351,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -580,7 +580,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemAgingAllowed(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingAllowed"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingAllowed"])
 			}
 			
 			def void setDemAgingAllowed(Boolean value){
@@ -592,7 +592,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemAgingCycleCounterThreshold(){
@@ -693,7 +693,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemImmediateNvStorage(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorage"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorage"])
 			}
 			
 			def void setDemImmediateNvStorage(Boolean value){
@@ -705,7 +705,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemMaxNumberFreezeFrameRecords(){
@@ -926,7 +926,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemDebounceCounterJumpDown(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDown"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDown"])
 			}
 			
 			def void setDemDebounceCounterJumpDown(Boolean value){
@@ -938,7 +938,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemDebounceCounterJumpDownValue(){
@@ -958,7 +958,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemDebounceCounterJumpUp(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUp"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUp"])
 			}
 			
 			def void setDemDebounceCounterJumpUp(Boolean value){
@@ -970,7 +970,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemDebounceCounterJumpUpValue(){
@@ -1006,7 +1006,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemDebounceCounterStorage(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterStorage"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterStorage"])
 			}
 			
 			def void setDemDebounceCounterStorage(Boolean value){
@@ -1018,7 +1018,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -1352,7 +1352,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemEventAvailable(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventAvailable"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventAvailable"])
 			}
 			
 			def void setDemEventAvailable(Boolean value){
@@ -1364,7 +1364,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemEventFailureCycleCounterThreshold(){
@@ -1433,7 +1433,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemFFPrestorageSupported(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFFPrestorageSupported"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFFPrestorageSupported"])
 			}
 			
 			def void setDemFFPrestorageSupported(Boolean value){
@@ -1445,7 +1445,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def DemReportBehavior getDemReportBehavior(){
@@ -2275,7 +2275,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemConsiderPtoStatus(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemConsiderPtoStatus"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemConsiderPtoStatus"])
 			}
 			
 			def void setDemConsiderPtoStatus(Boolean value){
@@ -2287,7 +2287,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemDtcValue(){
@@ -2561,7 +2561,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemAgingRequieresTestedCycle(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingRequieresTestedCycle"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingRequieresTestedCycle"])
 		}
 		
 		def void setDemAgingRequieresTestedCycle(Boolean value){
@@ -2573,7 +2573,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemAvailabilitySupport getDemAvailabilitySupport(){
@@ -2729,7 +2729,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemDebounceCounterBasedSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterBasedSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterBasedSupport"])
 		}
 		
 		def void setDemDebounceCounterBasedSupport(Boolean value){
@@ -2741,11 +2741,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemDebounceTimeBasedSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeBasedSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeBasedSupport"])
 		}
 		
 		def void setDemDebounceTimeBasedSupport(Boolean value){
@@ -2757,11 +2757,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDevErrorDetect"])
 		}
 		
 		def void setDemDevErrorDetect(Boolean value){
@@ -2773,7 +2773,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getDemDtcStatusAvailabilityMask(){
@@ -2933,7 +2933,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemGeneralInterfaceSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGeneralInterfaceSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGeneralInterfaceSupport"])
 		}
 		
 		def void setDemGeneralInterfaceSupport(Boolean value){
@@ -2945,7 +2945,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getDemHeaderFileInclusions(){
@@ -3096,7 +3096,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemOperationCycleStatusStorage(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleStatusStorage"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleStatusStorage"])
 		}
 		
 		def void setDemOperationCycleStatusStorage(Boolean value){
@@ -3108,11 +3108,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemPTOSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPTOSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPTOSupport"])
 		}
 		
 		def void setDemPTOSupport(Boolean value){
@@ -3124,11 +3124,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemResetConfirmedBitOnOverflow(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemResetConfirmedBitOnOverflow"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemResetConfirmedBitOnOverflow"])
 		}
 		
 		def void setDemResetConfirmedBitOnOverflow(Boolean value){
@@ -3140,7 +3140,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemStatusBitHandlingTestFailedSinceLastClear getDemStatusBitHandlingTestFailedSinceLastClear(){
@@ -3177,7 +3177,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemStatusBitStorageTestFailed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStatusBitStorageTestFailed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStatusBitStorageTestFailed"])
 		}
 		
 		def void setDemStatusBitStorageTestFailed(Boolean value){
@@ -3189,7 +3189,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemSuppressionSupport getDemSuppressionSupport(){
@@ -3242,7 +3242,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemTriggerDcmReports(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDcmReports"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDcmReports"])
 		}
 		
 		def void setDemTriggerDcmReports(Boolean value){
@@ -3254,11 +3254,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemTriggerDltReports(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDltReports"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDltReports"])
 		}
 		
 		def void setDemTriggerDltReports(Boolean value){
@@ -3270,11 +3270,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemTriggerFiMReports(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerFiMReports"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerFiMReports"])
 		}
 		
 		def void setDemTriggerFiMReports(Boolean value){
@@ -3286,11 +3286,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemTriggerMonitorInitBeforeClearOk(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerMonitorInitBeforeClearOk"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerMonitorInitBeforeClearOk"])
 		}
 		
 		def void setDemTriggerMonitorInitBeforeClearOk(Boolean value){
@@ -3302,7 +3302,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemTypeOfDTCSupported getDemTypeOfDTCSupported(){
@@ -3378,7 +3378,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDemVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemVersionInfoApi"])
 		}
 		
 		def void setDemVersionInfoApi(Boolean value){
@@ -3390,7 +3390,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -3942,7 +3942,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDemDataElementUsePort(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementUsePort"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementUsePort"])
 				}
 				
 				def void setDemDataElementUsePort(Boolean value){
@@ -3954,7 +3954,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -4927,7 +4927,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemEnableConditionStatus(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionStatus"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionStatus"])
 			}
 			
 			def void setDemEnableConditionStatus(Boolean value){
@@ -4939,7 +4939,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -5501,7 +5501,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemJ1939ClearDtcSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ClearDtcSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ClearDtcSupport"])
 			}
 			
 			def void setDemJ1939ClearDtcSupport(Boolean value){
@@ -5513,11 +5513,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Dm31Support(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Dm31Support"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Dm31Support"])
 			}
 			
 			def void setDemJ1939Dm31Support(Boolean value){
@@ -5529,11 +5529,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939ExpandedFreezeFrameSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ExpandedFreezeFrameSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ExpandedFreezeFrameSupport"])
 			}
 			
 			def void setDemJ1939ExpandedFreezeFrameSupport(Boolean value){
@@ -5545,11 +5545,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939FreezeFrameSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939FreezeFrameSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939FreezeFrameSupport"])
 			}
 			
 			def void setDemJ1939FreezeFrameSupport(Boolean value){
@@ -5561,11 +5561,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939RatioSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939RatioSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939RatioSupport"])
 			}
 			
 			def void setDemJ1939RatioSupport(Boolean value){
@@ -5577,11 +5577,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Readiness1Support(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness1Support"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness1Support"])
 			}
 			
 			def void setDemJ1939Readiness1Support(Boolean value){
@@ -5593,11 +5593,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Readiness2Support(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness2Support"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness2Support"])
 			}
 			
 			def void setDemJ1939Readiness2Support(Boolean value){
@@ -5609,11 +5609,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Readiness3Support(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness3Support"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness3Support"])
 			}
 			
 			def void setDemJ1939Readiness3Support(Boolean value){
@@ -5625,11 +5625,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939ReadingDtcSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ReadingDtcSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ReadingDtcSupport"])
 			}
 			
 			def void setDemJ1939ReadingDtcSupport(Boolean value){
@@ -5641,7 +5641,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -5935,7 +5935,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemOBDCentralizedPID21Handling(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID21Handling"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID21Handling"])
 			}
 			
 			def void setDemOBDCentralizedPID21Handling(Boolean value){
@@ -5947,11 +5947,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemOBDCentralizedPID31Handling(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID31Handling"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID31Handling"])
 			}
 			
 			def void setDemOBDCentralizedPID31Handling(Boolean value){
@@ -5963,7 +5963,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemOBDCompliancy(){
@@ -6016,7 +6016,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemOBDEventDisplacement(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDEventDisplacement"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDEventDisplacement"])
 			}
 			
 			def void setDemOBDEventDisplacement(Boolean value){
@@ -6028,7 +6028,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -6322,7 +6322,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemOperationCycleAutomaticEnd(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutomaticEnd"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutomaticEnd"])
 			}
 			
 			def void setDemOperationCycleAutomaticEnd(Boolean value){
@@ -6334,11 +6334,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemOperationCycleAutostart(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutostart"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutostart"])
 			}
 			
 			def void setDemOperationCycleAutostart(Boolean value){
@@ -6350,7 +6350,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemOperationCycleId(){
@@ -6742,7 +6742,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDemStorageConditionStatus(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionStatus"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionStatus"])
 			}
 			
 			def void setDemStorageConditionStatus(Boolean value){
@@ -6754,7 +6754,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

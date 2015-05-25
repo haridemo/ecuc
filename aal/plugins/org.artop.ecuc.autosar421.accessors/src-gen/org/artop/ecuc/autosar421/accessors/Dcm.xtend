@@ -188,7 +188,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDcmDsdRequestManufacturerNotificationEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdRequestManufacturerNotificationEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdRequestManufacturerNotificationEnabled"])
 			}
 			
 			def void setDcmDsdRequestManufacturerNotificationEnabled(Boolean value){
@@ -200,11 +200,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDcmDsdRequestSupplierNotificationEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdRequestSupplierNotificationEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdRequestSupplierNotificationEnabled"])
 			}
 			
 			def void setDcmDsdRequestSupplierNotificationEnabled(Boolean value){
@@ -216,7 +216,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -432,7 +432,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDsdServiceUsed(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdServiceUsed"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdServiceUsed"])
 					}
 					
 					def void setDcmDsdServiceUsed(Boolean value){
@@ -444,7 +444,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def String getDcmDsdSidTabFnc(){
@@ -480,7 +480,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDsdSidTabSubfuncAvail(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabSubfuncAvail"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSidTabSubfuncAvail"])
 					}
 					
 					def void setDcmDsdSidTabSubfuncAvail(Boolean value){
@@ -492,7 +492,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -653,7 +653,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getDcmDsdSubServiceUsed(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSubServiceUsed"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDsdSubServiceUsed"])
 						}
 						
 						def void setDcmDsdSubServiceUsed(Boolean value){
@@ -665,7 +665,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -962,7 +962,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDslDiagRespOnSecondDeclinedRequest(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslDiagRespOnSecondDeclinedRequest"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslDiagRespOnSecondDeclinedRequest"])
 				}
 				
 				def void setDcmDslDiagRespOnSecondDeclinedRequest(Boolean value){
@@ -974,7 +974,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -1188,7 +1188,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDslProtocolRowUsed(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRowUsed"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDslProtocolRowUsed"])
 					}
 					
 					def void setDcmDslProtocolRowUsed(Boolean value){
@@ -1200,7 +1200,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def DcmDslProtocolTransType getDcmDslProtocolTransType(){
@@ -1237,7 +1237,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmSendRespPendOnTransToBoot(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmSendRespPendOnTransToBoot"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmSendRespPendOnTransToBoot"])
 					}
 					
 					def void setDcmSendRespPendOnTransToBoot(Boolean value){
@@ -1249,7 +1249,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigDecimal getDcmTimStrP2ServerAdjust(){
@@ -1848,7 +1848,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDcmDspDDDIDcheckPerSourceDID(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDDDIDcheckPerSourceDID"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDDDIDcheckPerSourceDID"])
 			}
 			
 			def void setDcmDspDDDIDcheckPerSourceDID(Boolean value){
@@ -1860,7 +1860,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def DcmDspDataDefaultEndianness getDcmDspDataDefaultEndianness(){
@@ -2375,7 +2375,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspComControlAllChannelUsed(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlAllChannelUsed"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlAllChannelUsed"])
 					}
 					
 					def void setDcmDspComControlAllChannelUsed(Boolean value){
@@ -2387,7 +2387,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -2475,7 +2475,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspComControlSpecificChannelUsed(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSpecificChannelUsed"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSpecificChannelUsed"])
 					}
 					
 					def void setDcmDspComControlSpecificChannelUsed(Boolean value){
@@ -2487,7 +2487,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getDcmDspSubnetNumber(){
@@ -2565,7 +2565,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspComControlSubNodeUsed(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSubNodeUsed"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspComControlSubNodeUsed"])
 					}
 					
 					def void setDcmDspComControlSubNodeUsed(Boolean value){
@@ -2577,7 +2577,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -2733,7 +2733,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmSupportDTCSettingControlOptionRecord(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmSupportDTCSettingControlOptionRecord"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmSupportDTCSettingControlOptionRecord"])
 				}
 				
 				def void setDcmSupportDTCSettingControlOptionRecord(Boolean value){
@@ -2745,7 +2745,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -2807,7 +2807,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspDataConditionCheckReadFncUsed(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataConditionCheckReadFncUsed"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDataConditionCheckReadFncUsed"])
 				}
 				
 				def void setDcmDspDataConditionCheckReadFncUsed(Boolean value){
@@ -2819,7 +2819,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def String getDcmDspDataEcuSignal(){
@@ -3889,7 +3889,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspDidUsed(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidUsed"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidUsed"])
 				}
 				
 				def void setDcmDspDidUsed(Boolean value){
@@ -3901,7 +3901,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -4095,7 +4095,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspDidDynamicallyDefined(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidDynamicallyDefined"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidDynamicallyDefined"])
 				}
 				
 				def void setDcmDspDidDynamicallyDefined(Boolean value){
@@ -4107,7 +4107,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -4167,7 +4167,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspDidFreezeCurrentState(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidFreezeCurrentState"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidFreezeCurrentState"])
 					}
 					
 					def void setDcmDspDidFreezeCurrentState(Boolean value){
@@ -4179,11 +4179,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getDcmDspDidResetToDefault(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidResetToDefault"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidResetToDefault"])
 					}
 					
 					def void setDcmDspDidResetToDefault(Boolean value){
@@ -4195,11 +4195,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getDcmDspDidShortTermAdjustment(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidShortTermAdjustment"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidShortTermAdjustment"])
 					}
 					
 					def void setDcmDspDidShortTermAdjustment(Boolean value){
@@ -4211,7 +4211,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -4541,7 +4541,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspDidRangeHasGaps(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeHasGaps"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeHasGaps"])
 				}
 				
 				def void setDcmDspDidRangeHasGaps(Boolean value){
@@ -4553,7 +4553,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getDcmDspDidRangeIdentifierLowerLimit(){
@@ -4637,7 +4637,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspDidRangeUsePort(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeUsePort"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspDidRangeUsePort"])
 				}
 				
 				def void setDcmDspDidRangeUsePort(Boolean value){
@@ -4649,7 +4649,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def String getDcmDspDidRangeWriteDidFnc(){
@@ -5306,7 +5306,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspPidUsed(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidUsed"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspPidUsed"])
 				}
 				
 				def void setDcmDspPidUsed(Boolean value){
@@ -5318,7 +5318,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -6285,7 +6285,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspRoeStorageState(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeStorageState"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoeStorageState"])
 					}
 					
 					def void setDcmDspRoeStorageState(Boolean value){
@@ -6297,7 +6297,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -6350,7 +6350,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getDcmDspRoutineUsePort(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineUsePort"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineUsePort"])
 				}
 				
 				def void setDcmDspRoutineUsePort(Boolean value){
@@ -6362,11 +6362,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getDcmDspRoutineUsed(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineUsed"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspRoutineUsed"])
 				}
 				
 				def void setDcmDspRoutineUsed(Boolean value){
@@ -6378,7 +6378,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -7677,7 +7677,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspSecurityAttemptCounterEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityAttemptCounterEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspSecurityAttemptCounterEnabled"])
 					}
 					
 					def void setDcmDspSecurityAttemptCounterEnabled(Boolean value){
@@ -7689,7 +7689,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def String getDcmDspSecurityCompareKeyFnc(){
@@ -8195,7 +8195,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getDcmDspVehInfoDataUsePort(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataUsePort"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDspVehInfoDataUsePort"])
 					}
 					
 					def void setDcmDspVehInfoDataUsePort(Boolean value){
@@ -8207,7 +8207,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -8246,7 +8246,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDcmPagedBufferEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmPagedBufferEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmPagedBufferEnabled"])
 			}
 			
 			def void setDcmPagedBufferEnabled(Boolean value){
@@ -8258,7 +8258,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getDcmPagedBufferTimeout(){
@@ -8546,7 +8546,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDcmDDDIDStorage(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDDDIDStorage"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDDDIDStorage"])
 		}
 		
 		def void setDcmDDDIDStorage(Boolean value){
@@ -8558,11 +8558,11 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDcmDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmDevErrorDetect"])
 		}
 		
 		def void setDcmDevErrorDetect(Boolean value){
@@ -8574,7 +8574,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getDcmHeaderFileInclusions(){
@@ -8591,7 +8591,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDcmRespondAllRequest(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRespondAllRequest"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmRespondAllRequest"])
 		}
 		
 		def void setDcmRespondAllRequest(Boolean value){
@@ -8603,7 +8603,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getDcmTaskTime(){
@@ -8623,7 +8623,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDcmVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DcmVersionInfoApi"])
 		}
 		
 		def void setDcmVersionInfoApi(Boolean value){
@@ -8635,7 +8635,7 @@ class Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

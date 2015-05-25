@@ -194,7 +194,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getLinSMTransceiverPassiveMode(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMTransceiverPassiveMode"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMTransceiverPassiveMode"])
 			}
 			
 			def void setLinSMTransceiverPassiveMode(Boolean value){
@@ -206,7 +206,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -330,7 +330,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinSMDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMDevErrorDetect"])
 		}
 		
 		def void setLinSMDevErrorDetect(Boolean value){
@@ -342,7 +342,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getLinSMMainProcessingPeriod(){
@@ -362,7 +362,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinSMVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMVersionInfoApi"])
 		}
 		
 		def void setLinSMVersionInfoApi(Boolean value){
@@ -374,7 +374,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

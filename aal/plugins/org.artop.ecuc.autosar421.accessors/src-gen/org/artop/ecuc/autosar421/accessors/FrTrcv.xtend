@@ -140,7 +140,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrTrcvChannelUsed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelUsed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelUsed"])
 		}
 		
 		def void setFrTrcvChannelUsed(Boolean value){
@@ -152,11 +152,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrTrcvControlsPowerSupply(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvControlsPowerSupply"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvControlsPowerSupply"])
 		}
 		
 		def void setFrTrcvControlsPowerSupply(Boolean value){
@@ -168,7 +168,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getFrTrcvEnableInterruptCallout(){
@@ -260,7 +260,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrTrcvWakeupByBusUsed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWakeupByBusUsed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWakeupByBusUsed"])
 		}
 		
 		def void setFrTrcvWakeupByBusUsed(Boolean value){
@@ -272,7 +272,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -666,7 +666,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrTrcvDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvDevErrorDetect"])
 		}
 		
 		def void setFrTrcvDevErrorDetect(Boolean value){
@@ -678,11 +678,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrTrcvErrorCheckDuringCommunication(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvErrorCheckDuringCommunication"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvErrorCheckDuringCommunication"])
 		}
 		
 		def void setFrTrcvErrorCheckDuringCommunication(Boolean value){
@@ -694,11 +694,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrTrcvErrorCheckInInit(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvErrorCheckInInit"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvErrorCheckInInit"])
 		}
 		
 		def void setFrTrcvErrorCheckInInit(Boolean value){
@@ -710,11 +710,11 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrTrcvGetVersionInfo(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvGetVersionInfo"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvGetVersionInfo"])
 		}
 		
 		def void setFrTrcvGetVersionInfo(Boolean value){
@@ -726,7 +726,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getFrTrcvIndex(){

@@ -415,7 +415,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getIpduMContainedTxPduConfirmation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduConfirmation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduConfirmation"])
 			}
 			
 			def void setIpduMContainedTxPduConfirmation(Boolean value){
@@ -427,7 +427,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getIpduMContainedTxPduHandleId(){
@@ -787,7 +787,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getIpduMContainerTxFirstContainedPduTrigger(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxFirstContainedPduTrigger"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxFirstContainedPduTrigger"])
 			}
 			
 			def void setIpduMContainerTxFirstContainedPduTrigger(Boolean value){
@@ -799,7 +799,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getIpduMContainerTxHandleId(){
@@ -1766,7 +1766,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getIpduMJitUpdate(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMJitUpdate"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMJitUpdate"])
 					}
 					
 					def void setIpduMJitUpdate(Boolean value){
@@ -1778,11 +1778,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getIpduMTxDynamicConfirmation(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicConfirmation"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicConfirmation"])
 					}
 					
 					def void setIpduMTxDynamicConfirmation(Boolean value){
@@ -1794,7 +1794,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getIpduMTxDynamicHandleId(){
@@ -1919,7 +1919,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getIpduMJitUpdate(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMJitUpdate"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMJitUpdate"])
 					}
 					
 					def void setIpduMJitUpdate(Boolean value){
@@ -1931,11 +1931,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getIpduMTxStaticConfirmation(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticConfirmation"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticConfirmation"])
 					}
 					
 					def void setIpduMTxStaticConfirmation(Boolean value){
@@ -1947,7 +1947,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getIpduMTxStaticHandleId(){
@@ -2093,7 +2093,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getIpduMDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMDevErrorDetect"])
 		}
 		
 		def void setIpduMDevErrorDetect(Boolean value){
@@ -2105,7 +2105,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def IpduMHeaderByteOrder getIpduMHeaderByteOrder(){
@@ -2142,7 +2142,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getIpduMStaticPartExists(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMStaticPartExists"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMStaticPartExists"])
 		}
 		
 		def void setIpduMStaticPartExists(Boolean value){
@@ -2154,11 +2154,11 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getIpduMVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMVersionInfoApi"])
 		}
 		
 		def void setIpduMVersionInfoApi(Boolean value){
@@ -2170,7 +2170,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2204,7 +2204,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getIpduMRxDirectComInvocation(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxDirectComInvocation"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxDirectComInvocation"])
 		}
 		
 		def void setIpduMRxDirectComInvocation(Boolean value){
@@ -2216,7 +2216,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

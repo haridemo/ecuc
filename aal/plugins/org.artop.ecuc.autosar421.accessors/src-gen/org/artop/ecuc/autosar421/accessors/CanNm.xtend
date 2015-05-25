@@ -106,7 +106,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanNmBusLoadReductionEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusLoadReductionEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusLoadReductionEnabled"])
 		}
 		
 		def void setCanNmBusLoadReductionEnabled(Boolean value){
@@ -118,11 +118,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmBusSynchronizationEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusSynchronizationEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusSynchronizationEnabled"])
 		}
 		
 		def void setCanNmBusSynchronizationEnabled(Boolean value){
@@ -134,11 +134,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmComControlEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmComControlEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmComControlEnabled"])
 		}
 		
 		def void setCanNmComControlEnabled(Boolean value){
@@ -150,11 +150,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmComUserDataSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmComUserDataSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmComUserDataSupport"])
 		}
 		
 		def void setCanNmComUserDataSupport(Boolean value){
@@ -166,11 +166,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmCoordinatorSyncSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCoordinatorSyncSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCoordinatorSyncSupport"])
 		}
 		
 		def void setCanNmCoordinatorSyncSupport(Boolean value){
@@ -182,11 +182,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmDevErrorDetect"])
 		}
 		
 		def void setCanNmDevErrorDetect(Boolean value){
@@ -198,11 +198,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmImmediateRestartEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateRestartEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateRestartEnabled"])
 		}
 		
 		def void setCanNmImmediateRestartEnabled(Boolean value){
@@ -214,11 +214,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmImmediateTxconfEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateTxconfEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmImmediateTxconfEnabled"])
 		}
 		
 		def void setCanNmImmediateTxconfEnabled(Boolean value){
@@ -230,7 +230,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getCanNmMainFunctionPeriod(){
@@ -250,7 +250,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanNmNodeDetectionEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeDetectionEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeDetectionEnabled"])
 		}
 		
 		def void setCanNmNodeDetectionEnabled(Boolean value){
@@ -262,11 +262,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmNodeIdEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeIdEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmNodeIdEnabled"])
 		}
 		
 		def void setCanNmNodeIdEnabled(Boolean value){
@@ -278,11 +278,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmPassiveModeEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPassiveModeEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPassiveModeEnabled"])
 		}
 		
 		def void setCanNmPassiveModeEnabled(Boolean value){
@@ -294,11 +294,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmPduRxIndicationEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPduRxIndicationEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPduRxIndicationEnabled"])
 		}
 		
 		def void setCanNmPduRxIndicationEnabled(Boolean value){
@@ -310,11 +310,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmPnEiraCalcEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnEiraCalcEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnEiraCalcEnabled"])
 		}
 		
 		def void setCanNmPnEiraCalcEnabled(Boolean value){
@@ -326,7 +326,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getCanNmPnResetTime(){
@@ -346,7 +346,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanNmRemoteSleepIndEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRemoteSleepIndEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRemoteSleepIndEnabled"])
 		}
 		
 		def void setCanNmRemoteSleepIndEnabled(Boolean value){
@@ -358,11 +358,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmRepeatMsgIndEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRepeatMsgIndEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRepeatMsgIndEnabled"])
 		}
 		
 		def void setCanNmRepeatMsgIndEnabled(Boolean value){
@@ -374,11 +374,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmStateChangeIndEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmStateChangeIndEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmStateChangeIndEnabled"])
 		}
 		
 		def void setCanNmStateChangeIndEnabled(Boolean value){
@@ -390,11 +390,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmUserDataEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmUserDataEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmUserDataEnabled"])
 		}
 		
 		def void setCanNmUserDataEnabled(Boolean value){
@@ -406,11 +406,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanNmVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmVersionInfoApi"])
 		}
 		
 		def void setCanNmVersionInfoApi(Boolean value){
@@ -422,7 +422,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -494,7 +494,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanNmActiveWakeupBitEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmActiveWakeupBitEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmActiveWakeupBitEnabled"])
 			}
 			
 			def void setCanNmActiveWakeupBitEnabled(Boolean value){
@@ -506,11 +506,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanNmAllNmMessagesKeepAwake(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmAllNmMessagesKeepAwake"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmAllNmMessagesKeepAwake"])
 			}
 			
 			def void setCanNmAllNmMessagesKeepAwake(Boolean value){
@@ -522,11 +522,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanNmBusLoadReductionActive(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusLoadReductionActive"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmBusLoadReductionActive"])
 			}
 			
 			def void setCanNmBusLoadReductionActive(Boolean value){
@@ -538,7 +538,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getCanNmCarWakeUpBitPosition(){
@@ -574,7 +574,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanNmCarWakeUpFilterEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpFilterEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpFilterEnabled"])
 			}
 			
 			def void setCanNmCarWakeUpFilterEnabled(Boolean value){
@@ -586,7 +586,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getCanNmCarWakeUpFilterNodeId(){
@@ -606,7 +606,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanNmCarWakeUpRxEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpRxEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmCarWakeUpRxEnabled"])
 			}
 			
 			def void setCanNmCarWakeUpRxEnabled(Boolean value){
@@ -618,7 +618,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getCanNmImmediateNmCycleTime(){
@@ -804,7 +804,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanNmPnEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnEnabled"])
 			}
 			
 			def void setCanNmPnEnabled(Boolean value){
@@ -816,11 +816,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanNmPnEraCalcEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnEraCalcEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnEraCalcEnabled"])
 			}
 			
 			def void setCanNmPnEraCalcEnabled(Boolean value){
@@ -832,11 +832,11 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanNmPnHandleMultipleNetworkRequests(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnHandleMultipleNetworkRequests"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmPnHandleMultipleNetworkRequests"])
 			}
 			
 			def void setCanNmPnHandleMultipleNetworkRequests(Boolean value){
@@ -848,7 +848,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getCanNmRemoteSleepIndTime(){
@@ -884,7 +884,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanNmRetryFirstMessageRequest(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRetryFirstMessageRequest"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanNmRetryFirstMessageRequest"])
 			}
 			
 			def void setCanNmRetryFirstMessageRequest(Boolean value){
@@ -896,7 +896,7 @@ class CanNm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getCanNmTimeoutTime(){

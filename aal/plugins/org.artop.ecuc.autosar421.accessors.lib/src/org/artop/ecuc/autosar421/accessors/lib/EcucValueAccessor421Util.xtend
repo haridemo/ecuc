@@ -76,18 +76,18 @@ class EcucValueAccessor421Util {
 	def static void setParameterValue(GParameterValue parameterValue, Object parameterValueValue) {
 		if (parameterValue instanceof EcucNumericalParamValue) {
 			new GEcucNumericalParamValue40XAdapter(parameterValue)
-					.setValue(parameterValueValue?.toString);
+					.setValue(parameterValueValue?.toString)
 		} else if (parameterValue instanceof EcucTextualParamValue) {
-			parameterValue.setValue(parameterValueValue?.toString);
+			parameterValue.setValue(parameterValueValue?.toString)
 		} else if (parameterValue instanceof EcucAddInfoParamValue) {
 			if (parameterValueValue instanceof DocumentationBlock) {
-				parameterValue.setValue(parameterValueValue);
+				parameterValue.setValue(parameterValueValue)
 			}
 		}
 	}
 	
 	def static GParameterValue createParameterValue(GConfigParameter parameterDefinition) {
-		Assert.isNotNull(parameterDefinition);
+		Assert.isNotNull(parameterDefinition)
 		
 		var GParameterValue parameterValue
 		parameterValue = if (parameterDefinition instanceof EcucBooleanParamDef || parameterDefinition instanceof EcucFloatParamDef || parameterDefinition instanceof EcucIntegerParamDef) 

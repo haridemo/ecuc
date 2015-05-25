@@ -124,7 +124,7 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getXfrmDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XfrmDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XfrmDevErrorDetect"])
 		}
 		
 		def void setXfrmDevErrorDetect(Boolean value){
@@ -136,7 +136,7 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

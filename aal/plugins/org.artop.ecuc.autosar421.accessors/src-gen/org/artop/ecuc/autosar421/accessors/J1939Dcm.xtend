@@ -705,7 +705,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939DcmDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDevErrorDetect"])
 		}
 		
 		def void setJ1939DcmDevErrorDetect(Boolean value){
@@ -717,7 +717,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939DcmMainFunctionPeriod(){
@@ -785,7 +785,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939DcmVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmVersionInfoApi"])
 		}
 		
 		def void setJ1939DcmVersionInfoApi(Boolean value){
@@ -797,7 +797,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

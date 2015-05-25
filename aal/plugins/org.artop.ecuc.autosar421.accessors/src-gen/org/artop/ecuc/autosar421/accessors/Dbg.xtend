@@ -505,7 +505,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDbgPredefinedDIDActivation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDActivation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDActivation"])
 			}
 			
 			def void setDbgPredefinedDIDActivation(Boolean value){
@@ -517,11 +517,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDbgPredefinedDIDBuffering(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDBuffering"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDBuffering"])
 			}
 			
 			def void setDbgPredefinedDIDBuffering(Boolean value){
@@ -533,7 +533,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def DbgPredefinedDIDName getDbgPredefinedDIDName(){
@@ -596,7 +596,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDbgPredefinedDIDTimeStampActivation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDTimeStampActivation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDTimeStampActivation"])
 			}
 			
 			def void setDbgPredefinedDIDTimeStampActivation(Boolean value){
@@ -608,7 +608,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -1074,7 +1074,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDbgStaticDIDActivation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDActivation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDActivation"])
 			}
 			
 			def void setDbgStaticDIDActivation(Boolean value){
@@ -1086,11 +1086,11 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDbgStaticDIDBuffering(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDBuffering"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDBuffering"])
 			}
 			
 			def void setDbgStaticDIDBuffering(Boolean value){
@@ -1102,7 +1102,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getDbgStaticDIDNameRef(){
@@ -1122,7 +1122,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getDbgStaticTimeStampActivation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticTimeStampActivation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticTimeStampActivation"])
 			}
 			
 			def void setDbgStaticTimeStampActivation(Boolean value){
@@ -1134,7 +1134,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -1385,7 +1385,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDbgDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDevErrorDetect"])
 		}
 		
 		def void setDbgDevErrorDetect(Boolean value){
@@ -1397,7 +1397,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getDbgHeaderFileInclusions(){
@@ -1414,7 +1414,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDbgVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVersionInfoApi"])
 		}
 		
 		def void setDbgVersionInfoApi(Boolean value){
@@ -1426,7 +1426,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

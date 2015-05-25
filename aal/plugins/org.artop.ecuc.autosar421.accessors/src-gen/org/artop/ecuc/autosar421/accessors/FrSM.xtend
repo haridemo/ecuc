@@ -162,7 +162,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getFrSMCheckWakeupReason(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMCheckWakeupReason"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMCheckWakeupReason"])
 			}
 			
 			def void setFrSMCheckWakeupReason(Boolean value){
@@ -174,11 +174,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getFrSMDelayStartupWithoutWakeup(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDelayStartupWithoutWakeup"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDelayStartupWithoutWakeup"])
 			}
 			
 			def void setFrSMDelayStartupWithoutWakeup(Boolean value){
@@ -190,7 +190,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getFrSMDurationT1(){
@@ -242,7 +242,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getFrSMIsColdstartEcu(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMIsColdstartEcu"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMIsColdstartEcu"])
 			}
 			
 			def void setFrSMIsColdstartEcu(Boolean value){
@@ -254,11 +254,11 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getFrSMIsWakeupEcu(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMIsWakeupEcu"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMIsWakeupEcu"])
 			}
 			
 			def void setFrSMIsWakeupEcu(Boolean value){
@@ -270,7 +270,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getFrSMMainFunctionCycleTime(){
@@ -486,7 +486,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrSMAllSlotsSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMAllSlotsSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMAllSlotsSupport"])
 		}
 		
 		def void setFrSMAllSlotsSupport(Boolean value){
@@ -498,7 +498,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getFrSMCddHeaderFile(){
@@ -518,7 +518,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrSMDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDevErrorDetect"])
 		}
 		
 		def void setFrSMDevErrorDetect(Boolean value){
@@ -530,7 +530,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getFrSMSyncLossErrorIndicationName(){
@@ -550,7 +550,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrSMVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMVersionInfoApi"])
 		}
 		
 		def void setFrSMVersionInfoApi(Boolean value){
@@ -562,7 +562,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

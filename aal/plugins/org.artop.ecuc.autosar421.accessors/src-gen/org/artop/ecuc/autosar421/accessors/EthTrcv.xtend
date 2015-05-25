@@ -162,7 +162,7 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getEthTrcvAutoNegotiationEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvAutoNegotiationEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvAutoNegotiationEnabled"])
 			}
 			
 			def void setEthTrcvAutoNegotiationEnabled(Boolean value){
@@ -174,7 +174,7 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def EthTrcvConnNeg getEthTrcvConnNeg(){
@@ -576,7 +576,7 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEthTrcvDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvDevErrorDetect"])
 		}
 		
 		def void setEthTrcvDevErrorDetect(Boolean value){
@@ -588,11 +588,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetBaudRateApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetBaudRateApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetBaudRateApi"])
 		}
 		
 		def void setEthTrcvGetBaudRateApi(Boolean value){
@@ -604,11 +604,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetDuplexModeApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetDuplexModeApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetDuplexModeApi"])
 		}
 		
 		def void setEthTrcvGetDuplexModeApi(Boolean value){
@@ -620,11 +620,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetLinkStateApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetLinkStateApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetLinkStateApi"])
 		}
 		
 		def void setEthTrcvGetLinkStateApi(Boolean value){
@@ -636,11 +636,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetTransceiverModeApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverModeApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverModeApi"])
 		}
 		
 		def void setEthTrcvGetTransceiverModeApi(Boolean value){
@@ -652,11 +652,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetTransceiverWakeupModeApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverWakeupModeApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverWakeupModeApi"])
 		}
 		
 		def void setEthTrcvGetTransceiverWakeupModeApi(Boolean value){
@@ -668,7 +668,7 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEthTrcvIndex(){
@@ -720,7 +720,7 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getEthTrcvSetTransceiverModeApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvSetTransceiverModeApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvSetTransceiverModeApi"])
 		}
 		
 		def void setEthTrcvSetTransceiverModeApi(Boolean value){
@@ -732,11 +732,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvStartAutoNegotiationApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvStartAutoNegotiationApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvStartAutoNegotiationApi"])
 		}
 		
 		def void setEthTrcvStartAutoNegotiationApi(Boolean value){
@@ -748,11 +748,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApi"])
 		}
 		
 		def void setEthTrcvVersionInfoApi(Boolean value){
@@ -764,11 +764,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvVersionInfoApiMacro(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApiMacro"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApiMacro"])
 		}
 		
 		def void setEthTrcvVersionInfoApiMacro(Boolean value){
@@ -780,7 +780,7 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def EthTrcvWakeUpSupport getEthTrcvWakeUpSupport(){

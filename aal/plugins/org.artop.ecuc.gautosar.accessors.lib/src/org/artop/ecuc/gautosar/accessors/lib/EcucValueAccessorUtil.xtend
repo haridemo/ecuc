@@ -29,7 +29,6 @@ import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
 import gautosar.ggenericstructure.ginfrastructure.GReferrable
 import java.util.ArrayList
 import java.util.List
-import java.util.Set
 import org.eclipse.core.runtime.Assert
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
@@ -38,8 +37,6 @@ import java.math.BigInteger
 import java.math.BigDecimal
 
 class EcucValueAccessorUtil {
-	
-	protected static final Set<String> TRUE_STRINGS = #{"1", "true", "ON", "True"} 
 	
 	def static <T> T getByType(GModuleConfiguration moduleConfiguration, Class<T> clazz) {
 		Assert.isNotNull(moduleConfiguration)
@@ -158,16 +155,24 @@ class EcucValueAccessorUtil {
 		builder.toString
 	}
 	
-	def static BigInteger toBigInteger(String numString) {
-		new BigInteger(numString)
+	def static BigInteger toBigInteger(String value) {
+		new BigInteger(value)
 	}
 
-	def static BigDecimal toBigDecimal(String numString) {
-		new BigDecimal(numString)
+	def static BigDecimal toBigDecimal(String value) {
+		new BigDecimal(value)
 	}
 	
-	def static Boolean toBoolean(String boolString){
-		TRUE_STRINGS.contains(boolString)
+	def static Boolean toBoolean(String value){
+		if ("1".equals(value) || Boolean.parseBoolean(value)) //$NON-NLS-1$
+			return Boolean.TRUE
+		return Boolean.FALSE
+	}
+	
+	def static String getBooleanParameterValueValue(Boolean value, boolean convert){
+		if (convert){
+			if (value) return "1" else return "0" //$NON-NLS-1$ //$NON-NLS-2$
+		} else value.toString
 	}
 	
 	def static <T> List<T> toList(Iterable<T> in){
@@ -184,7 +189,7 @@ class EcucValueAccessorUtil {
 				return true
 			} else {
 				val String upperMultiplicity = childType.gGetUpperMultiplicityAsString()
-				return upperMultiplicity != null && upperMultiplicity.length() > 0 && !"1".equals(upperMultiplicity); //$NON-NLS-1$
+				return upperMultiplicity != null && upperMultiplicity.length() > 0 && !"1".equals(upperMultiplicity) //$NON-NLS-1$
 			}
 		}
 		
@@ -192,12 +197,12 @@ class EcucValueAccessorUtil {
 	}
 	
 	def static String getChildPropertyName(GIdentifiable childType){
-		Assert.isNotNull(childType);
+		Assert.isNotNull(childType)
 
 		if (isMany(childType)) {
-			return getPluralOf(childType.gGetShortName);
+			return getPluralOf(childType.gGetShortName)
 		}
-		return childType.gGetShortName;
+		return childType.gGetShortName
 	}
 	
 	def static String getPluralOf(String input) {
@@ -220,6 +225,6 @@ class EcucValueAccessorUtil {
 			}
 		}
 		
-		return plural;
+		return plural
 	}
 }

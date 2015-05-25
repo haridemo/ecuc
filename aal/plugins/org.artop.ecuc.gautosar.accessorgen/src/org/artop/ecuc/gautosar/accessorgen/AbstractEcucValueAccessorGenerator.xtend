@@ -41,7 +41,7 @@ import java.text.MessageFormat
 public abstract class AbstractEcucValueAccessorGenerator {
 	
 	protected static final Set<String> RESERVED = #{"if", "while", "for", "else", "class", "interface", "enum"}
-	protected static final Set<String> KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES = #{"BigInteger", "String", "BigDecimal", "String", "Object", "DocumentationBlock"}
+	protected static final Set<String> KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES = #{"BigInteger", "String", "BigDecimal", "Boolean", "Object", "DocumentationBlock"}
 	
 	private static final String ECUC_VALUE_ACCESSOR_FACTORY_CALSS_NAME = "EcucValueAccessor{0}Factory"
 	
@@ -86,6 +86,10 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	'''
 	
 	def String writeReleaseSpecificImportStatements()''''''
+	
+	def boolean shouldConvertBooleanParameterValueValue(){
+		Boolean.FALSE
+	}
 	
 	def void writeAccessorClasses(GARPackage arPackage, String srcFolderName, String javaPackageName, IProject project){
 		this.javaPackageName = javaPackageName;
@@ -294,7 +298,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 				containerValue.gGetParameterValues += parameterValue
 			}
 		}
-		«ecucAccessorUtilClassName».setParameterValue(parameterValue, value)
+		«ecucAccessorUtilClassName».setParameterValue(parameterValue, «IF "Boolean".equals(p.getParameterValueValueTypeName(cont))»getBooleanParameterValueValue(value, «shouldConvertBooleanParameterValueValue»)«ELSE»value«ENDIF»)
 	}
 	«ENDIF»
 	«p.generateEnumType(cont)»

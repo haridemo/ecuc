@@ -248,7 +248,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteSchMVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteSchMVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteSchMVersionInfoApi"])
 		}
 		
 		def void setRteSchMVersionInfoApi(Boolean value){
@@ -260,11 +260,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRteUseComShadowSignalApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteUseComShadowSignalApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteUseComShadowSignalApi"])
 		}
 		
 		def void setRteUseComShadowSignalApi(Boolean value){
@@ -276,7 +276,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -509,7 +509,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getRteBswImmediateRestart(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswImmediateRestart"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswImmediateRestart"])
 			}
 			
 			def void setRteBswImmediateRestart(Boolean value){
@@ -521,7 +521,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getRteBswPositionInTask(){
@@ -1127,7 +1127,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteDevErrorDetect"])
 		}
 		
 		def void setRteDevErrorDetect(Boolean value){
@@ -1139,11 +1139,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRteDevErrorDetectUninit(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteDevErrorDetectUninit"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteDevErrorDetectUninit"])
 		}
 		
 		def void setRteDevErrorDetectUninit(Boolean value){
@@ -1155,7 +1155,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def RteGenerationMode getRteGenerationMode(){
@@ -1192,7 +1192,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteInExclusiveAreaCheckEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteInExclusiveAreaCheckEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteInExclusiveAreaCheckEnabled"])
 		}
 		
 		def void setRteInExclusiveAreaCheckEnabled(Boolean value){
@@ -1204,7 +1204,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def RteIocInteractionReturnValue getRteIocInteractionReturnValue(){
@@ -1241,7 +1241,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteMeasurementSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteMeasurementSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteMeasurementSupport"])
 		}
 		
 		def void setRteMeasurementSupport(Boolean value){
@@ -1253,7 +1253,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def RteOptimizationMode getRteOptimizationMode(){
@@ -1306,7 +1306,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteValueRangeCheckEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteValueRangeCheckEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteValueRangeCheckEnabled"])
 		}
 		
 		def void setRteValueRangeCheckEnabled(Boolean value){
@@ -1318,7 +1318,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getRteVfbTraceClientPrefixs(){
@@ -1335,7 +1335,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteVfbTraceEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteVfbTraceEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteVfbTraceEnabled"])
 		}
 		
 		def void setRteVfbTraceEnabled(Boolean value){
@@ -1347,7 +1347,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getRteVfbTraceFunctions(){
@@ -1394,7 +1394,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteCoherentAccess(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCoherentAccess"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCoherentAccess"])
 		}
 		
 		def void setRteCoherentAccess(Boolean value){
@@ -1406,11 +1406,11 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRteImmediateBufferUpdate(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteImmediateBufferUpdate"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteImmediateBufferUpdate"])
 		}
 		
 		def void setRteImmediateBufferUpdate(Boolean value){
@@ -1422,7 +1422,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2102,7 +2102,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getRteImmediateRestart(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteImmediateRestart"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteImmediateRestart"])
 			}
 			
 			def void setRteImmediateRestart(Boolean value){
@@ -2114,7 +2114,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def RteOsSchedulePoint getRteOsSchedulePoint(){
@@ -2544,7 +2544,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getRteBypassSupportEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBypassSupportEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBypassSupportEnabled"])
 		}
 		
 		def void setRteBypassSupportEnabled(Boolean value){
@@ -2556,7 +2556,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2600,7 +2600,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getRteCalibrationSupportEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCalibrationSupportEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCalibrationSupportEnabled"])
 			}
 			
 			def void setRteCalibrationSupportEnabled(Boolean value){
@@ -2612,7 +2612,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

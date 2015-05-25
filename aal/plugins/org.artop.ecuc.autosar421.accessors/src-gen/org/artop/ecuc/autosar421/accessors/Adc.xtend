@@ -359,7 +359,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getAdcChannelLimitCheck(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLimitCheck"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLimitCheck"])
 				}
 				
 				def void setAdcChannelLimitCheck(Boolean value){
@@ -371,7 +371,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getAdcChannelLowLimit(){
@@ -902,7 +902,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getAdcDeInitApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDeInitApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDeInitApi"])
 		}
 		
 		def void setAdcDeInitApi(Boolean value){
@@ -914,11 +914,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDevErrorDetect"])
 		}
 		
 		def void setAdcDevErrorDetect(Boolean value){
@@ -930,11 +930,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcEnableLimitCheck(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableLimitCheck"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableLimitCheck"])
 		}
 		
 		def void setAdcEnableLimitCheck(Boolean value){
@@ -946,11 +946,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcEnableQueuing(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableQueuing"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableQueuing"])
 		}
 		
 		def void setAdcEnableQueuing(Boolean value){
@@ -962,11 +962,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcEnableStartStopGroupApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableStartStopGroupApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableStartStopGroupApi"])
 		}
 		
 		def void setAdcEnableStartStopGroupApi(Boolean value){
@@ -978,11 +978,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcGrpNotifCapability(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGrpNotifCapability"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGrpNotifCapability"])
 		}
 		
 		def void setAdcGrpNotifCapability(Boolean value){
@@ -994,11 +994,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcHwTriggerApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTriggerApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTriggerApi"])
 		}
 		
 		def void setAdcHwTriggerApi(Boolean value){
@@ -1010,11 +1010,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcLowPowerStatesSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcLowPowerStatesSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcLowPowerStatesSupport"])
 		}
 		
 		def void setAdcLowPowerStatesSupport(Boolean value){
@@ -1026,11 +1026,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcPowerStateAsynchTransitionMode(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerStateAsynchTransitionMode"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerStateAsynchTransitionMode"])
 		}
 		
 		def void setAdcPowerStateAsynchTransitionMode(Boolean value){
@@ -1042,7 +1042,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def AdcPriorityImplementation getAdcPriorityImplementation(){
@@ -1081,7 +1081,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getAdcReadGroupApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcReadGroupApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcReadGroupApi"])
 		}
 		
 		def void setAdcReadGroupApi(Boolean value){
@@ -1093,7 +1093,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def AdcResultAlignment getAdcResultAlignment(){
@@ -1130,7 +1130,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getAdcVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcVersionInfoApi"])
 		}
 		
 		def void setAdcVersionInfoApi(Boolean value){
@@ -1142,7 +1142,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -1258,7 +1258,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getAdcChannelValueSigned(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelValueSigned"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelValueSigned"])
 		}
 		
 		def void setAdcChannelValueSigned(Boolean value){
@@ -1270,11 +1270,11 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getAdcGroupFirstChannelFixed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupFirstChannelFixed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupFirstChannelFixed"])
 		}
 		
 		def void setAdcGroupFirstChannelFixed(Boolean value){
@@ -1286,7 +1286,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getAdcMaxChannelResolution(){

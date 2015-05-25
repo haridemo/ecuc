@@ -1311,7 +1311,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDoIPDevelopmentErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPDevelopmentErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPDevelopmentErrorDetect"])
 		}
 		
 		def void setDoIPDevelopmentErrorDetect(Boolean value){
@@ -1323,11 +1323,11 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDoIPDhcpOptionVinUse(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPDhcpOptionVinUse"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPDhcpOptionVinUse"])
 		}
 		
 		def void setDoIPDhcpOptionVinUse(Boolean value){
@@ -1339,11 +1339,11 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDoIPEntityStatusMaxByteFieldUse(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPEntityStatusMaxByteFieldUse"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPEntityStatusMaxByteFieldUse"])
 		}
 		
 		def void setDoIPEntityStatusMaxByteFieldUse(Boolean value){
@@ -1355,7 +1355,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getDoIPGIDInvalidityPattern(){
@@ -1549,7 +1549,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDoIPUseEIDasGID(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseEIDasGID"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseEIDasGID"])
 		}
 		
 		def void setDoIPUseEIDasGID(Boolean value){
@@ -1561,11 +1561,11 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDoIPUseMacAddressForIdentification(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseMacAddressForIdentification"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseMacAddressForIdentification"])
 		}
 		
 		def void setDoIPUseMacAddressForIdentification(Boolean value){
@@ -1577,11 +1577,11 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDoIPUseVehicleIdentificationSyncStatus(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseVehicleIdentificationSyncStatus"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseVehicleIdentificationSyncStatus"])
 		}
 		
 		def void setDoIPUseVehicleIdentificationSyncStatus(Boolean value){
@@ -1593,7 +1593,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getDoIPVehicleAnnouncementInterval(){
@@ -1629,7 +1629,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getDoIPVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVersionInfoApi"])
 		}
 		
 		def void setDoIPVersionInfoApi(Boolean value){
@@ -1641,11 +1641,11 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDoIPVinGidMaster(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVinGidMaster"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVinGidMaster"])
 		}
 		
 		def void setDoIPVinGidMaster(Boolean value){
@@ -1657,7 +1657,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getDoIPVinInvalidityPattern(){

@@ -114,7 +114,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrArTpDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpDevErrorDetect"])
 		}
 		
 		def void setFrArTpDevErrorDetect(Boolean value){
@@ -126,11 +126,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveAckRt(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveAckRt"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveAckRt"])
 		}
 		
 		def void setFrArTpHaveAckRt(Boolean value){
@@ -142,11 +142,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveGrpSeg(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveGrpSeg"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveGrpSeg"])
 		}
 		
 		def void setFrArTpHaveGrpSeg(Boolean value){
@@ -158,11 +158,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveLm(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveLm"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveLm"])
 		}
 		
 		def void setFrArTpHaveLm(Boolean value){
@@ -174,11 +174,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveTc(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveTc"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveTc"])
 		}
 		
 		def void setFrArTpHaveTc(Boolean value){
@@ -190,7 +190,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getFrArTpMainFuncCycle(){
@@ -210,7 +210,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrArTpVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpVersionInfoApi"])
 		}
 		
 		def void setFrArTpVersionInfoApi(Boolean value){
@@ -222,7 +222,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -388,7 +388,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getFrArTpGrpSeg(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpGrpSeg"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpGrpSeg"])
 			}
 			
 			def void setFrArTpGrpSeg(Boolean value){
@@ -400,7 +400,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def FrArTpLm getFrArTpLm(){
@@ -551,7 +551,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getFrArTpTc(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTc"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTc"])
 			}
 			
 			def void setFrArTpTc(Boolean value){
@@ -563,7 +563,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getFrArTpTimeBr(){
@@ -762,7 +762,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getFrArTpMultRec(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMultRec"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMultRec"])
 				}
 				
 				def void setFrArTpMultRec(Boolean value){
@@ -774,7 +774,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getFrArTpRa(){

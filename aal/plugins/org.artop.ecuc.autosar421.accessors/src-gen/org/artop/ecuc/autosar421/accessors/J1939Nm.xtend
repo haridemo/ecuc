@@ -381,7 +381,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939NmNodeNameArbitraryAddressCapable(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameArbitraryAddressCapable"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameArbitraryAddressCapable"])
 			}
 			
 			def void setJ1939NmNodeNameArbitraryAddressCapable(Boolean value){
@@ -393,7 +393,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939NmNodeNameECUInstance(){
@@ -541,7 +541,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939NmNodeStartUpDelay(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeStartUpDelay"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeStartUpDelay"])
 			}
 			
 			def void setJ1939NmNodeStartUpDelay(Boolean value){
@@ -553,7 +553,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -679,7 +679,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939NmDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmDevErrorDetect"])
 		}
 		
 		def void setJ1939NmDevErrorDetect(Boolean value){
@@ -691,7 +691,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939NmMainFunctionPeriod(){
@@ -759,7 +759,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939NmVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmVersionInfoApi"])
 		}
 		
 		def void setJ1939NmVersionInfoApi(Boolean value){
@@ -771,7 +771,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

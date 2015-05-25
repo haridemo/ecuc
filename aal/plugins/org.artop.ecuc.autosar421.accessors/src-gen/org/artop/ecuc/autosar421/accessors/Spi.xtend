@@ -632,7 +632,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getSpiEnableCs(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEnableCs"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEnableCs"])
 			}
 			
 			def void setSpiEnableCs(Boolean value){
@@ -644,7 +644,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def SpiHwUnit getSpiHwUnit(){
@@ -965,7 +965,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getSpiInterruptibleSequence(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiInterruptibleSequence"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiInterruptibleSequence"])
 			}
 			
 			def void setSpiInterruptibleSequence(Boolean value){
@@ -977,7 +977,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getSpiSeqEndNotification(){
@@ -1078,7 +1078,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSpiCancelApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiCancelApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiCancelApi"])
 		}
 		
 		def void setSpiCancelApi(Boolean value){
@@ -1090,7 +1090,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getSpiChannelBuffersAllowed(){
@@ -1110,7 +1110,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSpiDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDevErrorDetect"])
 		}
 		
 		def void setSpiDevErrorDetect(Boolean value){
@@ -1122,11 +1122,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSpiHwStatusApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiHwStatusApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiHwStatusApi"])
 		}
 		
 		def void setSpiHwStatusApi(Boolean value){
@@ -1138,11 +1138,11 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getSpiInterruptibleSeqAllowed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiInterruptibleSeqAllowed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiInterruptibleSeqAllowed"])
 		}
 		
 		def void setSpiInterruptibleSeqAllowed(Boolean value){
@@ -1154,7 +1154,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getSpiLevelDelivered(){
@@ -1190,7 +1190,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSpiSupportConcurrentSyncTransmit(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSupportConcurrentSyncTransmit"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSupportConcurrentSyncTransmit"])
 		}
 		
 		def void setSpiSupportConcurrentSyncTransmit(Boolean value){
@@ -1202,7 +1202,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getSpiUserCallbackHeaderFiles(){
@@ -1219,7 +1219,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getSpiVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiVersionInfoApi"])
 		}
 		
 		def void setSpiVersionInfoApi(Boolean value){
@@ -1231,7 +1231,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

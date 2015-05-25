@@ -223,7 +223,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanControllerActivation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerActivation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerActivation"])
 			}
 			
 			def void setCanControllerActivation(Boolean value){
@@ -235,7 +235,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getCanControllerBaseAddress(){
@@ -337,7 +337,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanWakeupFunctionalityAPI(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupFunctionalityAPI"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupFunctionalityAPI"])
 			}
 			
 			def void setCanWakeupFunctionalityAPI(Boolean value){
@@ -349,7 +349,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def CanWakeupProcessing getCanWakeupProcessing(){
@@ -386,7 +386,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanWakeupSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupSupport"])
 			}
 			
 			def void setCanWakeupSupport(Boolean value){
@@ -398,7 +398,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -722,7 +722,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getCanControllerTxBitRateSwitch(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTxBitRateSwitch"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTxBitRateSwitch"])
 					}
 					
 					def void setCanControllerTxBitRateSwitch(Boolean value){
@@ -734,7 +734,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -819,7 +819,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getCanTTControllerExternalClockSynchronisation(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExternalClockSynchronisation"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExternalClockSynchronisation"])
 				}
 				
 				def void setCanTTControllerExternalClockSynchronisation(Boolean value){
@@ -831,11 +831,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getCanTTControllerGlobalTimeFiltering(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerGlobalTimeFiltering"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerGlobalTimeFiltering"])
 				}
 				
 				def void setCanTTControllerGlobalTimeFiltering(Boolean value){
@@ -847,7 +847,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getCanTTControllerInitialRefOffset(){
@@ -883,7 +883,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getCanTTControllerLevel2(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerLevel2"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerLevel2"])
 				}
 				
 				def void setCanTTControllerLevel2(Boolean value){
@@ -895,7 +895,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigDecimal getCanTTControllerNTUConfig(){
@@ -966,7 +966,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getCanTTControllerTURRestore(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTURRestore"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTURRestore"])
 				}
 				
 				def void setCanTTControllerTURRestore(Boolean value){
@@ -978,11 +978,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getCanTTControllerTimeMaster(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMaster"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMaster"])
 				}
 				
 				def void setCanTTControllerTimeMaster(Boolean value){
@@ -994,7 +994,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getCanTTControllerTimeMasterPriority(){
@@ -1277,7 +1277,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getCanTriggerTransmitEnable(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTriggerTransmitEnable"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTriggerTransmitEnable"])
 			}
 			
 			def void setCanTriggerTransmitEnable(Boolean value){
@@ -1289,7 +1289,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -1647,7 +1647,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getCanIcomWakeOnBusOff(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomWakeOnBusOff"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomWakeOnBusOff"])
 				}
 				
 				def void setCanIcomWakeOnBusOff(Boolean value){
@@ -1659,7 +1659,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -1813,7 +1813,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getCanIcomPayloadLengthError(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomPayloadLengthError"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomPayloadLengthError"])
 						}
 						
 						def void setCanIcomPayloadLengthError(Boolean value){
@@ -1825,7 +1825,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -1999,7 +1999,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanDevErrorDetection(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanDevErrorDetection"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanDevErrorDetection"])
 		}
 		
 		def void setCanDevErrorDetection(Boolean value){
@@ -2011,7 +2011,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getCanIndex(){
@@ -2095,7 +2095,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanMultiplexedTransmission(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMultiplexedTransmission"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMultiplexedTransmission"])
 		}
 		
 		def void setCanMultiplexedTransmission(Boolean value){
@@ -2107,11 +2107,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanPublicIcomSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanPublicIcomSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanPublicIcomSupport"])
 		}
 		
 		def void setCanPublicIcomSupport(Boolean value){
@@ -2123,11 +2123,11 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanSetBaudrateApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSetBaudrateApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSetBaudrateApi"])
 		}
 		
 		def void setCanSetBaudrateApi(Boolean value){
@@ -2139,7 +2139,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getCanTimeoutDuration(){
@@ -2159,7 +2159,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getCanVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanVersionInfoApi"])
 		}
 		
 		def void setCanVersionInfoApi(Boolean value){
@@ -2171,7 +2171,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

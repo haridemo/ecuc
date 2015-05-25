@@ -251,7 +251,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getGptEnableWakeup(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptEnableWakeup"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptEnableWakeup"])
 			}
 			
 			def void setGptEnableWakeup(Boolean value){
@@ -263,7 +263,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def String getGptNotification(){
@@ -377,7 +377,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getGptDeinitApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptDeinitApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptDeinitApi"])
 		}
 		
 		def void setGptDeinitApi(Boolean value){
@@ -389,11 +389,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getGptEnableDisableNotificationApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptEnableDisableNotificationApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptEnableDisableNotificationApi"])
 		}
 		
 		def void setGptEnableDisableNotificationApi(Boolean value){
@@ -405,11 +405,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getGptTimeElapsedApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptTimeElapsedApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptTimeElapsedApi"])
 		}
 		
 		def void setGptTimeElapsedApi(Boolean value){
@@ -421,11 +421,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getGptTimeRemainingApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptTimeRemainingApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptTimeRemainingApi"])
 		}
 		
 		def void setGptTimeRemainingApi(Boolean value){
@@ -437,11 +437,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getGptVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptVersionInfoApi"])
 		}
 		
 		def void setGptVersionInfoApi(Boolean value){
@@ -453,11 +453,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getGptWakeupFunctionalityApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptWakeupFunctionalityApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptWakeupFunctionalityApi"])
 		}
 		
 		def void setGptWakeupFunctionalityApi(Boolean value){
@@ -469,7 +469,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -503,7 +503,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getGptDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptDevErrorDetect"])
 		}
 		
 		def void setGptDevErrorDetect(Boolean value){
@@ -515,11 +515,11 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getGptPredefTimer100us32bitEnable(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptPredefTimer100us32bitEnable"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptPredefTimer100us32bitEnable"])
 		}
 		
 		def void setGptPredefTimer100us32bitEnable(Boolean value){
@@ -531,7 +531,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def GptPredefTimer1usEnablingGrade getGptPredefTimer1usEnablingGrade(){
@@ -572,7 +572,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getGptReportWakeupSource(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptReportWakeupSource"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptReportWakeupSource"])
 		}
 		
 		def void setGptReportWakeupSource(Boolean value){
@@ -584,7 +584,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

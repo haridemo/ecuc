@@ -232,7 +232,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getFrIfDetectNITError(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDetectNITError"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDetectNITError"])
 			}
 			
 			def void setFrIfDetectNITError(Boolean value){
@@ -244,7 +244,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def FrIfGChannels getFrIfGChannels(){
@@ -1125,7 +1125,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getFrIfAllowDynamicLSduLength(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAllowDynamicLSduLength"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAllowDynamicLSduLength"])
 					}
 					
 					def void setFrIfAllowDynamicLSduLength(Boolean value){
@@ -1137,11 +1137,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getFrIfAlwaysTransmit(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAlwaysTransmit"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAlwaysTransmit"])
 					}
 					
 					def void setFrIfAlwaysTransmit(Boolean value){
@@ -1153,7 +1153,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getFrIfBaseCycle(){
@@ -1256,7 +1256,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getFrIfPayloadPreamble(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfPayloadPreamble"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfPayloadPreamble"])
 					}
 					
 					def void setFrIfPayloadPreamble(Boolean value){
@@ -1268,7 +1268,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getFrIfSlotId(){
@@ -1397,7 +1397,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getFrIfReconfigurable(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReconfigurable"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReconfigurable"])
 					}
 					
 					def void setFrIfReconfigurable(Boolean value){
@@ -1409,7 +1409,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -2149,7 +2149,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getFrIfConfirm(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfConfirm"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfConfirm"])
 					}
 					
 					def void setFrIfConfirm(Boolean value){
@@ -2161,7 +2161,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getFrIfCounterLimit(){
@@ -2181,7 +2181,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getFrIfImmediate(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfImmediate"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfImmediate"])
 					}
 					
 					def void setFrIfImmediate(Boolean value){
@@ -2193,11 +2193,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getFrIfNoneMode(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfNoneMode"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfNoneMode"])
 					}
 					
 					def void setFrIfNoneMode(Boolean value){
@@ -2209,7 +2209,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def String getFrIfTxConfirmationName(){
@@ -2367,7 +2367,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrIfAllSlotsSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAllSlotsSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAllSlotsSupport"])
 		}
 		
 		def void setFrIfAllSlotsSupport(Boolean value){
@@ -2379,11 +2379,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfCancelTransmitSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCancelTransmitSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCancelTransmitSupport"])
 		}
 		
 		def void setFrIfCancelTransmitSupport(Boolean value){
@@ -2395,11 +2395,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDevErrorDetect"])
 		}
 		
 		def void setFrIfDevErrorDetect(Boolean value){
@@ -2411,11 +2411,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfDisableLPduSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDisableLPduSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDisableLPduSupport"])
 		}
 		
 		def void setFrIfDisableLPduSupport(Boolean value){
@@ -2427,11 +2427,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfDisableTransceiverBranchSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDisableTransceiverBranchSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDisableTransceiverBranchSupport"])
 		}
 		
 		def void setFrIfDisableTransceiverBranchSupport(Boolean value){
@@ -2443,11 +2443,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfEnableTransceiverBranchSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfEnableTransceiverBranchSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfEnableTransceiverBranchSupport"])
 		}
 		
 		def void setFrIfEnableTransceiverBranchSupport(Boolean value){
@@ -2459,7 +2459,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getFrIfFreeOpAApiName(){
@@ -2511,7 +2511,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrIfGetClockCorrectionSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetClockCorrectionSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetClockCorrectionSupport"])
 		}
 		
 		def void setFrIfGetClockCorrectionSupport(Boolean value){
@@ -2523,11 +2523,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfGetGetChannelStatusSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetGetChannelStatusSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetGetChannelStatusSupport"])
 		}
 		
 		def void setFrIfGetGetChannelStatusSupport(Boolean value){
@@ -2539,11 +2539,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfGetNmVectorSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetNmVectorSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetNmVectorSupport"])
 		}
 		
 		def void setFrIfGetNmVectorSupport(Boolean value){
@@ -2555,11 +2555,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfGetNumOfStartupFramesSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetNumOfStartupFramesSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetNumOfStartupFramesSupport"])
 		}
 		
 		def void setFrIfGetNumOfStartupFramesSupport(Boolean value){
@@ -2571,11 +2571,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfGetSyncFrameListSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetSyncFrameListSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetSyncFrameListSupport"])
 		}
 		
 		def void setFrIfGetSyncFrameListSupport(Boolean value){
@@ -2587,11 +2587,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfGetTransceiverErrorSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetTransceiverErrorSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetTransceiverErrorSupport"])
 		}
 		
 		def void setFrIfGetTransceiverErrorSupport(Boolean value){
@@ -2603,11 +2603,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfGetWakeupRxStatusSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetWakeupRxStatusSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetWakeupRxStatusSupport"])
 		}
 		
 		def void setFrIfGetWakeupRxStatusSupport(Boolean value){
@@ -2619,7 +2619,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getFrIfNumClstSupported(){
@@ -2668,7 +2668,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrIfReadCCConfigApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReadCCConfigApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReadCCConfigApi"])
 		}
 		
 		def void setFrIfReadCCConfigApi(Boolean value){
@@ -2680,11 +2680,11 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrIfReconfigLPduSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReconfigLPduSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReconfigLPduSupport"])
 		}
 		
 		def void setFrIfReconfigLPduSupport(Boolean value){
@@ -2696,7 +2696,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getFrIfUnusedBitValue(){
@@ -2716,7 +2716,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getFrIfVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfVersionInfoApi"])
 		}
 		
 		def void setFrIfVersionInfoApi(Boolean value){
@@ -2728,7 +2728,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

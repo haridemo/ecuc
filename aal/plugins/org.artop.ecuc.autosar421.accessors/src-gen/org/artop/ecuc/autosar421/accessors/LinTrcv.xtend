@@ -140,7 +140,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinTrcvChannelUsed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelUsed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelUsed"])
 		}
 		
 		def void setLinTrcvChannelUsed(Boolean value){
@@ -152,7 +152,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def LinTrcvInitState getLinTrcvInitState(){
@@ -191,7 +191,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinTrcvWakeupByBusUsed(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeupByBusUsed"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeupByBusUsed"])
 		}
 		
 		def void setLinTrcvWakeupByBusUsed(Boolean value){
@@ -203,7 +203,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -453,7 +453,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinTrcvDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvDevErrorDetect"])
 		}
 		
 		def void setLinTrcvDevErrorDetect(Boolean value){
@@ -465,11 +465,11 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getLinTrcvGetVersionInfo(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvGetVersionInfo"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvGetVersionInfo"])
 		}
 		
 		def void setLinTrcvGetVersionInfo(Boolean value){
@@ -481,7 +481,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getLinTrcvIndex(){
@@ -550,7 +550,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinTrcvWakeUpSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeUpSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeUpSupport"])
 		}
 		
 		def void setLinTrcvWakeUpSupport(Boolean value){
@@ -562,7 +562,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

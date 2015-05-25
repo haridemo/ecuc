@@ -163,7 +163,7 @@ class Lin implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinDevErrorDetect"])
 		}
 		
 		def void setLinDevErrorDetect(Boolean value){
@@ -175,7 +175,7 @@ class Lin implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getLinIndex(){
@@ -211,7 +211,7 @@ class Lin implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getLinVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinVersionInfoApi"])
 		}
 		
 		def void setLinVersionInfoApi(Boolean value){
@@ -223,7 +223,7 @@ class Lin implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -337,7 +337,7 @@ class Lin implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getLinChannelWakeupSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinChannelWakeupSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinChannelWakeupSupport"])
 			}
 			
 			def void setLinChannelWakeupSupport(Boolean value){
@@ -349,7 +349,7 @@ class Lin implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			

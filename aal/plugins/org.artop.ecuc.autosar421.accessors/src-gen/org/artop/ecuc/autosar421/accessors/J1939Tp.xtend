@@ -181,7 +181,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939TpRxCancellationSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCancellationSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCancellationSupport"])
 			}
 			
 			def void setJ1939TpRxCancellationSupport(Boolean value){
@@ -193,7 +193,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939TpRxDa(){
@@ -213,7 +213,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939TpRxDynamicBlockCalculation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBlockCalculation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBlockCalculation"])
 			}
 			
 			def void setJ1939TpRxDynamicBlockCalculation(Boolean value){
@@ -225,7 +225,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939TpRxDynamicBufferRatio(){
@@ -294,7 +294,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939TpRxRetrySupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxRetrySupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxRetrySupport"])
 			}
 			
 			def void setJ1939TpRxRetrySupport(Boolean value){
@@ -306,7 +306,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939TpRxSa(){
@@ -517,7 +517,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getJ1939TpRxPgDynLength(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgDynLength"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgDynLength"])
 				}
 				
 				def void setJ1939TpRxPgDynLength(Boolean value){
@@ -529,7 +529,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getJ1939TpRxPgPGN(){
@@ -784,7 +784,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939TpTxCancellationSupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCancellationSupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCancellationSupport"])
 			}
 			
 			def void setJ1939TpTxCancellationSupport(Boolean value){
@@ -796,7 +796,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939TpTxDa(){
@@ -816,7 +816,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939TpTxDynamicBlockCalculation(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDynamicBlockCalculation"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDynamicBlockCalculation"])
 			}
 			
 			def void setJ1939TpTxDynamicBlockCalculation(Boolean value){
@@ -828,7 +828,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939TpTxMaxPacketsPerBlock(){
@@ -881,7 +881,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getJ1939TpTxRetrySupport(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxRetrySupport"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxRetrySupport"])
 			}
 			
 			def void setJ1939TpTxRetrySupport(Boolean value){
@@ -893,7 +893,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getJ1939TpTxSa(){
@@ -1162,7 +1162,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getJ1939TpTxPgDynLength(){
-					getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgDynLength"])
+					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgDynLength"])
 				}
 				
 				def void setJ1939TpTxPgDynLength(Boolean value){
@@ -1174,7 +1174,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getJ1939TpTxPgPGN(){
@@ -1372,7 +1372,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939TpCancellationSupport(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpCancellationSupport"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpCancellationSupport"])
 		}
 		
 		def void setJ1939TpCancellationSupport(Boolean value){
@@ -1384,11 +1384,11 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939TpDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpDevErrorDetect"])
 		}
 		
 		def void setJ1939TpDevErrorDetect(Boolean value){
@@ -1400,7 +1400,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939TpMainFunctionPeriod(){
@@ -1436,7 +1436,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getJ1939TpVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpVersionInfoApi"])
 		}
 		
 		def void setJ1939TpVersionInfoApi(Boolean value){
@@ -1448,7 +1448,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		

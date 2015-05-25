@@ -619,7 +619,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getTcpIpIpV6PathMtuEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV6PathMtuEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV6PathMtuEnabled"])
 						}
 						
 						def void setTcpIpIpV6PathMtuEnabled(Boolean value){
@@ -631,7 +631,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def BigDecimal getTcpIpIpV6PathMtuTimeout(){
@@ -1032,7 +1032,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getTcpIpArpPacketQueueEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpArpPacketQueueEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpArpPacketQueueEnabled"])
 					}
 					
 					def void setTcpIpArpPacketQueueEnabled(Boolean value){
@@ -1044,7 +1044,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigDecimal getTcpIpArpTableEntryTimeout(){
@@ -1308,7 +1308,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getTcpIpIpFragmentationRxEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpFragmentationRxEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpFragmentationRxEnabled"])
 					}
 					
 					def void setTcpIpIpFragmentationRxEnabled(Boolean value){
@@ -1320,7 +1320,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getTcpIpIpNumFragments(){
@@ -1643,7 +1643,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getTcpIpIcmpV6EchoReplyEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6EchoReplyEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6EchoReplyEnabled"])
 					}
 					
 					def void setTcpIpIcmpV6EchoReplyEnabled(Boolean value){
@@ -1655,7 +1655,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def BigInteger getTcpIpIcmpV6HopLimit(){
@@ -1675,7 +1675,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					}
 					
 					def Boolean getTcpIpIcmpV6MsgDestinationUnreachableEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6MsgDestinationUnreachableEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6MsgDestinationUnreachableEnabled"])
 					}
 					
 					def void setTcpIpIcmpV6MsgDestinationUnreachableEnabled(Boolean value){
@@ -1687,11 +1687,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					def Boolean getTcpIpIcmpV6MsgParameterProblemEnabled(){
-						getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6MsgParameterProblemEnabled"])
+						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpV6MsgParameterProblemEnabled"])
 					}
 					
 					def void setTcpIpIcmpV6MsgParameterProblemEnabled(Boolean value){
@@ -1703,7 +1703,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 					}
 					
 					
@@ -2089,7 +2089,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getTcpIpNdpNeighborUnreachabilityDetectionEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpNeighborUnreachabilityDetectionEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpNeighborUnreachabilityDetectionEnabled"])
 						}
 						
 						def void setTcpIpNdpNeighborUnreachabilityDetectionEnabled(Boolean value){
@@ -2101,7 +2101,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def BigInteger getTcpIpNdpNumMulticastSolicitations(){
@@ -2137,7 +2137,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getTcpIpNdpPacketQueueEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpPacketQueueEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpPacketQueueEnabled"])
 						}
 						
 						def void setTcpIpNdpPacketQueueEnabled(Boolean value){
@@ -2149,11 +2149,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def Boolean getTcpIpNdpRandomReachableTimeEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpRandomReachableTimeEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpRandomReachableTimeEnabled"])
 						}
 						
 						def void setTcpIpNdpRandomReachableTimeEnabled(Boolean value){
@@ -2165,7 +2165,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -2232,7 +2232,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getTcpIpNdpDynamicHopLimitEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicHopLimitEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicHopLimitEnabled"])
 						}
 						
 						def void setTcpIpNdpDynamicHopLimitEnabled(Boolean value){
@@ -2244,11 +2244,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def Boolean getTcpIpNdpDynamicMtuEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicMtuEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicMtuEnabled"])
 						}
 						
 						def void setTcpIpNdpDynamicMtuEnabled(Boolean value){
@@ -2260,11 +2260,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def Boolean getTcpIpNdpDynamicReachableTimeEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicReachableTimeEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicReachableTimeEnabled"])
 						}
 						
 						def void setTcpIpNdpDynamicReachableTimeEnabled(Boolean value){
@@ -2276,11 +2276,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def Boolean getTcpIpNdpDynamicRetransTimeEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicRetransTimeEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpDynamicRetransTimeEnabled"])
 						}
 						
 						def void setTcpIpNdpDynamicRetransTimeEnabled(Boolean value){
@@ -2292,7 +2292,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def BigDecimal getTcpIpNdpMaxRtrSolicitationDelay(){
@@ -2344,7 +2344,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getTcpIpNdpRndRtrSolicitationDelayEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpRndRtrSolicitationDelayEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpRndRtrSolicitationDelayEnabled"])
 						}
 						
 						def void setTcpIpNdpRndRtrSolicitationDelayEnabled(Boolean value){
@@ -2356,7 +2356,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def BigDecimal getTcpIpNdpRtrSolicitationInterval(){
@@ -2439,7 +2439,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						}
 						
 						def Boolean getTcpIpNdpSlaacDelayEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpSlaacDelayEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpSlaacDelayEnabled"])
 						}
 						
 						def void setTcpIpNdpSlaacDelayEnabled(Boolean value){
@@ -2451,11 +2451,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						def Boolean getTcpIpNdpSlaacOptimisticDadEnabled(){
-							getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpSlaacOptimisticDadEnabled"])
+							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpSlaacOptimisticDadEnabled"])
 						}
 						
 						def void setTcpIpNdpSlaacOptimisticDadEnabled(Boolean value){
@@ -2467,7 +2467,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 						}
 						
 						
@@ -3262,7 +3262,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpTcpCongestionAvoidanceEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpCongestionAvoidanceEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpCongestionAvoidanceEnabled"])
 			}
 			
 			def void setTcpIpTcpCongestionAvoidanceEnabled(Boolean value){
@@ -3274,11 +3274,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpTcpFastRecoveryEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpFastRecoveryEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpFastRecoveryEnabled"])
 			}
 			
 			def void setTcpIpTcpFastRecoveryEnabled(Boolean value){
@@ -3290,11 +3290,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpTcpFastRetransmitEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpFastRetransmitEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpFastRetransmitEnabled"])
 			}
 			
 			def void setTcpIpTcpFastRetransmitEnabled(Boolean value){
@@ -3306,7 +3306,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getTcpIpTcpFinWait2Timeout(){
@@ -3326,7 +3326,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpTcpKeepAliveEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpKeepAliveEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpKeepAliveEnabled"])
 			}
 			
 			def void setTcpIpTcpKeepAliveEnabled(Boolean value){
@@ -3338,7 +3338,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getTcpIpTcpKeepAliveInterval(){
@@ -3422,7 +3422,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpTcpNagleEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpNagleEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpNagleEnabled"])
 			}
 			
 			def void setTcpIpTcpNagleEnabled(Boolean value){
@@ -3434,7 +3434,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getTcpIpTcpReceiveWindowMax(){
@@ -3470,7 +3470,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpTcpSlowStartEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpSlowStartEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpSlowStartEnabled"])
 			}
 			
 			def void setTcpIpTcpSlowStartEnabled(Boolean value){
@@ -3482,7 +3482,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getTcpIpTcpSynMaxRtx(){
@@ -3629,7 +3629,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getTcpIpDevErrorDetect(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDevErrorDetect"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDevErrorDetect"])
 		}
 		
 		def void setTcpIpDevErrorDetect(Boolean value){
@@ -3641,11 +3641,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getTcpIpDhcpServerEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpServerEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpServerEnabled"])
 		}
 		
 		def void setTcpIpDhcpServerEnabled(Boolean value){
@@ -3657,7 +3657,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getTcpIpMainFunctionPeriod(){
@@ -3677,7 +3677,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getTcpIpResetIpAssignmentApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpResetIpAssignmentApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpResetIpAssignmentApi"])
 		}
 		
 		def void setTcpIpResetIpAssignmentApi(Boolean value){
@@ -3689,7 +3689,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def TcpIpScalabilityClass getTcpIpScalabilityClass(){
@@ -3728,7 +3728,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getTcpIpTcpEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpTcpEnabled"])
 		}
 		
 		def void setTcpIpTcpEnabled(Boolean value){
@@ -3740,7 +3740,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getTcpIpTcpSocketMax(){
@@ -3760,7 +3760,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getTcpIpUdpEnabled(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpUdpEnabled"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpUdpEnabled"])
 		}
 		
 		def void setTcpIpUdpEnabled(Boolean value){
@@ -3772,7 +3772,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getTcpIpUdpSocketMax(){
@@ -3792,7 +3792,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def Boolean getTcpIpVersionInfoApi(){
-			getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpVersionInfoApi"])
+			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpVersionInfoApi"])
 		}
 		
 		def void setTcpIpVersionInfoApi(Boolean value){
@@ -3804,7 +3804,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -3855,7 +3855,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpArpEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpArpEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpArpEnabled"])
 			}
 			
 			def void setTcpIpArpEnabled(Boolean value){
@@ -3867,11 +3867,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpAutoIpEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpAutoIpEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpAutoIpEnabled"])
 			}
 			
 			def void setTcpIpAutoIpEnabled(Boolean value){
@@ -3883,11 +3883,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpDhcpClientEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpClientEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpClientEnabled"])
 			}
 			
 			def void setTcpIpDhcpClientEnabled(Boolean value){
@@ -3899,11 +3899,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpIcmpEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIcmpEnabled"])
 			}
 			
 			def void setTcpIpIcmpEnabled(Boolean value){
@@ -3915,11 +3915,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpIpV4Enabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV4Enabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV4Enabled"])
 			}
 			
 			def void setTcpIpIpV4Enabled(Boolean value){
@@ -3931,7 +3931,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getTcpIpLocalAddrIpv4EntriesMax(){
@@ -3951,7 +3951,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpPathMtuDiscoveryEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpPathMtuDiscoveryEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpPathMtuDiscoveryEnabled"])
 			}
 			
 			def void setTcpIpPathMtuDiscoveryEnabled(Boolean value){
@@ -3963,7 +3963,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -3998,7 +3998,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpDhcpV6ClientEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpV6ClientEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpDhcpV6ClientEnabled"])
 			}
 			
 			def void setTcpIpDhcpV6ClientEnabled(Boolean value){
@@ -4010,11 +4010,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpIpV6Enabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV6Enabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV6Enabled"])
 			}
 			
 			def void setTcpIpIpV6Enabled(Boolean value){
@@ -4026,11 +4026,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpIpV6PathMtuDiscoveryEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV6PathMtuDiscoveryEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpIpV6PathMtuDiscoveryEnabled"])
 			}
 			
 			def void setTcpIpIpV6PathMtuDiscoveryEnabled(Boolean value){
@@ -4042,7 +4042,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getTcpIpLocalAddrIpv6EntriesMax(){
@@ -4062,7 +4062,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 			}
 			
 			def Boolean getTcpIpNdpAddressResolutionUnrechabilityDetectionEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpAddressResolutionUnrechabilityDetectionEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpAddressResolutionUnrechabilityDetectionEnabled"])
 			}
 			
 			def void setTcpIpNdpAddressResolutionUnrechabilityDetectionEnabled(Boolean value){
@@ -4074,11 +4074,11 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getTcpIpNdpPrefixAndRouterDiscoveryEnabled(){
-				getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpPrefixAndRouterDiscoveryEnabled"])
+				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TcpIpNdpPrefixAndRouterDiscoveryEnabled"])
 			}
 			
 			def void setTcpIpNdpPrefixAndRouterDiscoveryEnabled(Boolean value){
@@ -4090,7 +4090,7 @@ class TcpIp implements IWrapper<GModuleConfiguration> {
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
 			}
 			
 			
