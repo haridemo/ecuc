@@ -15,7 +15,7 @@
 package org.artop.ecuc.examples.autosar421.accessors.check.ui.actions;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 import org.artop.ecuc.examples.autosar421.accessors.check.ui.IEcucValidationUIConstants;
 import org.artop.ecuc.gautosar.accessors.check.operations.AutosarCheckValidationOperation;
@@ -33,7 +33,7 @@ public class EcucValueAccessorCheckValidationAction extends BasicCheckValidation
 	}
 
 	@Override
-	protected BasicCheckValidationOperation createCheckValidationOperation(List<Object> modelObjects, Set<String> categories) {
-		return new AutosarCheckValidationOperation(modelObjects, categories);
+	protected BasicCheckValidationOperation createCheckValidationOperation(List<Object> modelObjects, Map<Object, Object> options) {
+		return new AutosarCheckValidationOperation(modelObjects, options);
 	}
 }
