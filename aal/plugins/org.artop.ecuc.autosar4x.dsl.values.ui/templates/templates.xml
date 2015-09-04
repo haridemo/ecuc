@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>        
+   <template autoinsert="true"
+    context="org.artop.ecuc.autosar4x.dsl.values.EcucValuesDsl.Module"
+     id="org.artop.ecuc.autosar4x.dsl.values.EcucValuesDsl.Module" 
+     description="Create a new Module"
+      enabled="true" name="New Module">module ${definition:CrossReference(Module.definition)} : ${name} = {
+	${cursor}
+}</template>         
+</templates>

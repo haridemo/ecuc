@@ -1,0 +1,147 @@
+grammar org.artop.ecuc.autosar4x.dsl.paramdef.ParamDefDsl with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate paramDefDsl "http://www.artop.org/ecuc/autosar4x/dsl/paramdef/ParamDefDsl"
+
+Model:
+	("package" packageName=ID)?
+	modules+=ModuleDef*
+;
+	
+ModuleDef:
+	'module' name=ID ('(' (
+		('desc' desc=STRING)? 
+		& ('tags' tags+=Tag (',' tags+=Tag)*)?
+	) ')')? '{'
+		container+=AbstractContainerDef*
+	'}'
+;
+
+AbstractContainerDef:
+	ContainerDef | ChoiceContainerDef
+;
+
+ContainerDef:
+	'container' name=ID ('(' (
+		('requiresIndex' ((requiresIndex?='true')|'false'))? 
+		&('desc' desc=STRING)? 
+		& ('tags' tags+=Tag (',' tags+=Tag)*)? 
+		& ('lowerMultiplicity' lowerMultiplicity=LOWER_MULTIPLICITY)? 
+		& ('upperMultiplicity' upperMultiplicity=UPPER_MULTIPLICITY)?
+	)  ')')?  '{'
+		(
+			container+=AbstractContainerDef |
+			parameter+=ParameterDef |
+			references+=AbstractReferenceDef
+		)*
+	'}'
+;
+
+ContainerElement :
+	AbstractContainerDef | ParameterDef | ReferenceDef | InstanceReferenceDef
+;
+
+ChoiceContainerDef:
+	'choice' name=ID ('(' (
+		('requiresIndex' ((requiresIndex?='true')|'false'))? 
+		&('desc' desc=STRING)? 
+		& ('tags' tags+=Tag (',' tags+=Tag)*)? 
+		& ('lowerMultiplicity' lowerMultiplicity=LOWER_MULTIPLICITY)? 
+		& ('upperMultiplicity' upperMultiplicity=UPPER_MULTIPLICITY)?
+	)  ')')? '{'
+		container+=ContainerDef*
+	'}'
+;
+
+ParameterDef:
+	'param' name=ID ':' type=ParameterType  ('(' (
+		('requiresIndex' ((requiresIndex?='true')|'false'))?
+		 &('default' default=VALUE)? 
+		 & ('literals' literals+=ID+)? 
+		 & ('desc' desc=STRING)? 
+		 &  ('tags' tags+=Tag (',' tags+=Tag)*)?  
+		 & ('lowerMultiplicity' lowerMultiplicity=LOWER_MULTIPLICITY)? 
+		 & ('upperMultiplicity' upperMultiplicity=UPPER_MULTIPLICITY)?
+		 & ('min' min=NUMBER)?
+		 & ('max' max=NUMBER)?
+	)  ')')? 
+;
+
+AbstractReferenceDef:
+	ReferenceDef | InstanceReferenceDef | ForeignReferenceDef
+;
+
+ReferenceDef:
+	'ref' name=ID ':' types+=[ContainerDef|FQN] (','types+=[ContainerDef|FQN])* ('(' (
+		('requiresIndex' ((requiresIndex?='true')|'false'))?
+		 &('desc' desc=STRING)? 
+		 & ('tags' tags+=Tag (',' tags+=Tag)*)? 
+		 & ('lowerMultiplicity' lowerMultiplicity=LOWER_MULTIPLICITY)? 
+		 & ('upperMultiplicity' upperMultiplicity=UPPER_MULTIPLICITY)?
+	)  ')')? 
+;
+
+InstanceReferenceDef:
+	'iref' name=ID  ':' (contexts+=EClassRefStar (','contexts+=EClassRefStar)*)? '->' dest=EClassRef ('(' ( 
+		('requiresIndex' ((requiresIndex?='true')|'false'))? 
+		&  ('desc' desc=STRING)? 
+		& ('tags' tags+=Tag (',' tags+=Tag)*)?
+		 & ('lowerMultiplicity' lowerMultiplicity=LOWER_MULTIPLICITY)? 
+		 & ('upperMultiplicity' upperMultiplicity=UPPER_MULTIPLICITY)?
+	)  ')')? 
+;
+
+ForeignReferenceDef:
+	'fref' name=ID ':' dest=EClassRef ('(' ( 
+		('requiresIndex' ((requiresIndex?='true')|'false'))? 
+		&  ('desc' desc=STRING)?
+		 & ('tags' tags+=Tag (',' tags+=Tag)*)?
+		  & ('lowerMultiplicity' lowerMultiplicity=LOWER_MULTIPLICITY)?
+		   & ('upperMultiplicity' upperMultiplicity=UPPER_MULTIPLICITY)?
+	)  ')')? 
+;
+
+EClassRef:
+	target=[ecore::EClass|XML_NAME]
+;
+
+EClassRefStar:
+	target=[ecore::EClass|XML_NAME] (star="*")?
+;
+
+Tag:
+	key=KEY "->" value=VALUE
+;
+
+XML_NAME:
+	ID ('-' ID)*
+;
+
+VALUE:
+	STRING | ID | NUMBER | 'true' | 'false'
+;
+KEY:
+	STRING | ID | NUMBER | 'true' | 'false'
+;
+
+NUMBER:
+	INT ('.' INT)?
+;
+
+LOWER_MULTIPLICITY:
+	INT
+;
+
+UPPER_MULTIPLICITY:
+	INT | '*'
+;
+
+enum ParameterType:
+	ADD_INFO | BOOLEAN | ENUM | FLOAT | INTEGER | FUNCTION_NAME | LINKER_SYMBOL | MULTILINE_STRING | STRING
+;
+
+FQN:
+	ID ('/' ID)*
+;
+

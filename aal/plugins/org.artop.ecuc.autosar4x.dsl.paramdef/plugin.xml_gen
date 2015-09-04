@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.artop.org/ecuc/autosar4x/dsl/paramdef/ParamDefDsl" 
+       class = "org.artop.ecuc.autosar4x.dsl.paramdef.paramDefDsl.ParamDefDslPackage"
+       genModel = "model/generated/ParamDefDsl.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

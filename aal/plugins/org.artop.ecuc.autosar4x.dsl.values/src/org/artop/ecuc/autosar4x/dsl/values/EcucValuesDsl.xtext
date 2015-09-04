@@ -1,0 +1,101 @@
+grammar org.artop.ecuc.autosar4x.dsl.values.EcucValuesDsl with org.eclipse.xtext.common.Terminals
+
+generate ecucValuesDsl "http://www.artop.org/ecuc/autosar4x/dsl/values/EcucValuesDsl"
+
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://autosar.org/schema/r4.0/autosar40/ecucpd" as ecucpd
+
+Model:
+	("package" packageName=ID)?
+	modules+=Module*
+;
+
+
+Module:
+	{Module} "module" definition=[ecucpd::EcucModuleDef]  (":" shortName=ID)?  ('(' (('tags' tags+=Tag (',' tags+=Tag)*)?) ')')?"=" "{"
+		container+=Container*
+	"}"
+;
+
+ContainedElement:
+	Container | Parameter | Reference | InstanceReference
+;
+
+Container:
+	{Container} "container" definition=[ecucpd::EcucContainerDef] (":" shortName=ID)? ('(' (('index' index=INT)?& ('tags' tags+=Tag (',' tags+=Tag)*)?) ')')?  "=" "{"
+		elements+=ContainedElement*
+	"}"
+;
+
+Parameter:
+	{Parameter} "param" definition=[ecucpd::EcucParameterDef] "=" value=SimpleValue ('(' (('index' index=INT)? & ('tags' tags+=Tag (',' tags+=Tag)*)?)')')?
+;
+
+Reference:
+	{Reference} "ref" definition=[ecucpd::EcucAbstractReferenceDef] "=" value=ReferenceValue ('(' (('index' index=INT)? & ('tags' tags+=Tag (',' tags+=Tag)*)?)')')? 
+;
+
+InstanceReference:
+	{InstanceReference} "iref" definition=[ecucpd::EcucAbstractReferenceDef]  "=" value=InstanceReferenceValue  ('(' (('index' index=INT)? & ('tags' tags+=Tag (',' tags+=Tag)*)?)')')? 
+;
+
+
+ReferenceValue:
+    container=[ecore::EObject|FQN]
+;
+
+InstanceReferenceValue:
+    contexts=ContextChain '->' target=[ecore::EObject|FQN]
+;
+
+ContextChain returns AbstractContext :
+	Context ({ContextChain.prev=current}"," object=[ecore::EObject|FQN])*
+;
+
+Context returns AbstractContext:
+	{Context}start=[ecore::EObject|FQN]
+;
+
+
+SimpleValue:
+	StringValue | NumericValue | BooleanValue | EnumValue
+;
+
+StringValue:
+	value=STRING
+;
+
+EnumValue:
+	literal=EID
+;
+
+EID hidden() : "." ID;
+
+BooleanValue:
+	value=BooleanLiteral
+;
+
+enum BooleanLiteral: true | false;
+
+NumericValue:
+	value=NUMERIC
+;
+
+Tag:
+	key=KEY "->" value=VALUE
+;
+
+
+VALUE:
+	STRING | ID | NUMERIC | 'true' | 'false'
+;
+KEY:
+	STRING | ID | NUMERIC | 'true' | 'false'
+;
+
+NUMERIC returns ecore::EString:
+	'-'? INT ("." INT)?
+;
+
+FQN hidden() : ID ("/" ID)*;
