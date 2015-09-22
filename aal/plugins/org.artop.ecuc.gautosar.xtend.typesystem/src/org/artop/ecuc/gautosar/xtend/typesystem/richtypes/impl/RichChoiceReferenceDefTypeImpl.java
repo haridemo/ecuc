@@ -20,6 +20,7 @@ import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GChoiceReferenceDef;
 import gautosar.gecucparameterdef.GParamConfContainerDef;
 import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
+import gautosar.ggenericstructure.ginfrastructure.GReferrable;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -117,7 +118,7 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 	protected Object internalGet(Object target, GParamConfContainerDef destinationTypeDef) {
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
-			GIdentifiable valueValue = value.gGetValue();
+			GReferrable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer) {
 				if (((GContainer) valueValue).gGetDefinition() == destinationTypeDef) {
 					return valueValue;
@@ -131,7 +132,7 @@ public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceT
 	protected Object internalGet(Object target) {
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
-			GIdentifiable valueValue = value.gGetValue();
+			GReferrable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer && ((GContainer) valueValue).gGetDefinition() != null) {
 				String targetDefShortName = ((GContainer) valueValue).gGetDefinition().gGetShortName();
 				for (GParamConfContainerDef destinationTypeDef : destinationTypeDefs) {

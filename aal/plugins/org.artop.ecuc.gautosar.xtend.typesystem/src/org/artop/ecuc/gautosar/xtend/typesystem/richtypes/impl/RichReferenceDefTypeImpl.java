@@ -19,7 +19,7 @@ import gautosar.gecucdescription.GReferenceValue;
 import gautosar.gecucdescription.GecucdescriptionPackage;
 import gautosar.gecucparameterdef.GContainerDef;
 import gautosar.gecucparameterdef.GReferenceDef;
-import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
+import gautosar.ggenericstructure.ginfrastructure.GReferrable;
 
 import java.util.Collections;
 import java.util.Set;
@@ -60,7 +60,7 @@ public class RichReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImp
 		Assert.isNotNull(destinationTypeDef.gGetShortName());
 		GReferenceValue value = (GReferenceValue) target;
 		if (value.gGetDefinition() == getEcucTypeDef()) {
-			GIdentifiable valueValue = value.gGetValue();
+			GReferrable valueValue = value.gGetValue();
 			if (valueValue instanceof GContainer && ((GContainer) valueValue).gGetDefinition() != null) {
 				if (destinationTypeDef.gGetShortName().equals(((GContainer) valueValue).gGetDefinition().gGetShortName())) {
 					return valueValue;
