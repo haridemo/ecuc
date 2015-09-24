@@ -6,7 +6,7 @@ Bundle-Version: 4.5.0.qualifier
 Bundle-Activator: org.artop.ecuc.autosar4x.accessorgen.internal.Activator$Implementation
 Bundle-Vendor: %providerName
 Require-Bundle: org.artop.ecuc.gautosar.accessorgen;visibility:=reexport,
- org.artop.aal.autosar40;visibility:=reexport
+ org.artop.aal.autosar422;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.artop.ecuc.autosar4x.accessorgen,
