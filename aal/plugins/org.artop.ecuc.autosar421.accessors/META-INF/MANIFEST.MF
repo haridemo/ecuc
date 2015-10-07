@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.sphinx.emf,
  org.artop.aal.autosar421,
- org.artop.ecuc.autosar421.accessors.lib
+ org.artop.ecuc.autosar4x.accessors.lib
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
