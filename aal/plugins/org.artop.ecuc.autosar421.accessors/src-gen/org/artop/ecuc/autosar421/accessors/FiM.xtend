@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class FiM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def FiMConfigSet getFiMConfigSet(){
 		moduleConfiguration.getByType(typeof(FiMConfigSet))
 	}
-	
+
 	def void setFiMConfigSet(FiMConfigSet fiMConfigSet){
-		val GContainer container = fiMConfigSet.getTarget() 
+		val GContainer container = fiMConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "FiMConfigSet")
 	}
 	def FiMGeneral getFiMGeneral(){
 		moduleConfiguration.getByType(typeof(FiMGeneral))
 	}
-	
+
 	def void setFiMGeneral(FiMGeneral fiMGeneral){
-		val GContainer container = fiMGeneral.getTarget() 
+		val GContainer container = fiMGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "FiMGeneral")
 	}
-	
+
 	static class FiMConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof FiMConfigSet)){
 				return false
 			}
 			this.target == (object as FiMConfigSet).target
 		}
-		
+	
 		
 		
 		def List<FiMFID> getFiMFIDs(){
@@ -122,15 +121,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FiMFID, GContainer>(filteredContainers, typeof(FiMFID), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMFID fiMFID) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID fiMFID) {
 					fiMFID.target?.gSetDefinition(containerValue.getContainerDefinition("FiMFID"))
 					super.delegateAdd(fiMFID)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMFID fiMFID) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID fiMFID) {
 					fiMFID.target?.gSetDefinition(containerValue.getContainerDefinition("FiMFID"))
 					super.delegateAdd(index, fiMFID)
-				}	
+				}
 			}
 		}
 		
@@ -141,15 +140,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FiMInhibitionConfiguration, GContainer>(filteredContainers, typeof(FiMInhibitionConfiguration), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMInhibitionConfiguration fiMInhibitionConfiguration) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMInhibitionConfiguration fiMInhibitionConfiguration) {
 					fiMInhibitionConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("FiMInhibitionConfiguration"))
 					super.delegateAdd(fiMInhibitionConfiguration)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMInhibitionConfiguration fiMInhibitionConfiguration) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMInhibitionConfiguration fiMInhibitionConfiguration) {
 					fiMInhibitionConfiguration.target?.gSetDefinition(containerValue.getContainerDefinition("FiMInhibitionConfiguration"))
 					super.delegateAdd(index, fiMInhibitionConfiguration)
-				}	
+				}
 			}
 		}
 		
@@ -160,47 +159,47 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FiMSummaryEvent, GContainer>(filteredContainers, typeof(FiMSummaryEvent), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMSummaryEvent fiMSummaryEvent) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMSummaryEvent fiMSummaryEvent) {
 					fiMSummaryEvent.target?.gSetDefinition(containerValue.getContainerDefinition("FiMSummaryEvent"))
 					super.delegateAdd(fiMSummaryEvent)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM$FiMConfigSet$FiMSummaryEvent fiMSummaryEvent) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMSummaryEvent fiMSummaryEvent) {
 					fiMSummaryEvent.target?.gSetDefinition(containerValue.getContainerDefinition("FiMSummaryEvent"))
 					super.delegateAdd(index, fiMSummaryEvent)
-				}	
+				}
 			}
 		}
 		
 		
 		static class FiMFID implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FiMFID)){
 					return false
 				}
 				this.target == (object as FiMFID).target
 			}
-			
+		
 			def BigInteger getFiMFunctionId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMFunctionId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMFunctionId"].getBigIntegerValue()
 			}
 			
 			def void setFiMFunctionId(BigInteger value){
@@ -208,11 +207,11 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMFunctionId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMFunctionId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -222,32 +221,32 @@ class FiM implements IWrapper<GModuleConfiguration> {
 		
 		static class FiMInhibitionConfiguration implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FiMInhibitionConfiguration)){
 					return false
 				}
 				this.target == (object as FiMInhibitionConfiguration).target
 			}
-			
+		
 			def FiMInhInhibitionMask getFiMInhInhibitionMask(){
-				getFiMInhInhibitionMaskValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMInhInhibitionMask"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMInhInhibitionMask"].getFiMInhInhibitionMaskValue()
 			}
 			
 			def void setFiMInhInhibitionMask(FiMInhInhibitionMask value){
@@ -255,11 +254,11 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMInhInhibitionMask"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMInhInhibitionMask"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum FiMInhInhibitionMask {
@@ -268,10 +267,10 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				FIM_TESTED, 
 				FIM_TESTED_AND_FAILED
 			}
-				
-			def FiMInhInhibitionMask getFiMInhInhibitionMaskValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def FiMInhInhibitionMask getFiMInhInhibitionMaskValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "FIM_LAST_FAILED" : FiMInhInhibitionMask.FIM_LAST_FAILED
 					case "FIM_NOT_TESTED" : FiMInhInhibitionMask.FIM_NOT_TESTED
 					case "FIM_TESTED" : FiMInhInhibitionMask.FIM_TESTED
@@ -279,22 +278,22 @@ class FiM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setFiMInhInhibitionMaskValue(GParameterValue paramValue, FiMInhInhibitionMask value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setFiMInhInhibitionMaskValue(GParameterValue parameterValue, FiMInhInhibitionMask value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent> getFiMInhComponentRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "FiMInhComponentRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "FiMInhComponentRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent object) throws CoreException {
 						if (object != null) {
@@ -305,7 +304,7 @@ class FiM implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -320,25 +319,25 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			def org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID getFiMInhFunctionIdRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID), "FiMInhFunctionIdRef")
 			}
-					
+			
 			def void setFiMInhFunctionIdRef(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FiMInhFunctionIdRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FiMInhFunctionIdRef"], object.getTarget())
 				}
 			}
 			
 			def List<org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMSummaryEvent> getFiMInhSumRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "FiMInhSumRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "FiMInhSumRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMSummaryEvent>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMSummaryEvent)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMSummaryEvent object) throws CoreException {
 						if (object != null) {
@@ -349,7 +348,7 @@ class FiM implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -363,15 +362,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter> getFiMInhEventRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "FiMInhEventRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "FiMInhEventRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object) throws CoreException {
 						if (object != null) {
@@ -382,7 +381,7 @@ class FiM implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -400,42 +399,42 @@ class FiM implements IWrapper<GModuleConfiguration> {
 		
 		static class FiMSummaryEvent implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FiMSummaryEvent)){
 					return false
 				}
 				this.target == (object as FiMSummaryEvent).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter> getFiMInputEventRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "FiMInputEventRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "FiMInputEventRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object) throws CoreException {
 						if (object != null) {
@@ -446,7 +445,7 @@ class FiM implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -465,32 +464,32 @@ class FiM implements IWrapper<GModuleConfiguration> {
 	}
 	static class FiMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof FiMGeneral)){
 				return false
 			}
 			this.target == (object as FiMGeneral).target
 		}
-		
+	
 		def Boolean getFiMDataFixed(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMDataFixed"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMDataFixed"].getBooleanValue()
 		}
 		
 		def void setFiMDataFixed(Boolean value){
@@ -498,15 +497,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMDataFixed"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMDataFixed"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFiMDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setFiMDevErrorDetect(Boolean value){
@@ -514,15 +513,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFiMEventUpdateTriggeredByDem(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMEventUpdateTriggeredByDem"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMEventUpdateTriggeredByDem"].getBooleanValue()
 		}
 		
 		def void setFiMEventUpdateTriggeredByDem(Boolean value){
@@ -530,15 +529,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMEventUpdateTriggeredByDem"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMEventUpdateTriggeredByDem"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getFiMMaxEventsPerFidInhibitionConfiguration(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxEventsPerFidInhibitionConfiguration"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxEventsPerFidInhibitionConfiguration"].getBigIntegerValue()
 		}
 		
 		def void setFiMMaxEventsPerFidInhibitionConfiguration(BigInteger value){
@@ -546,15 +545,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxEventsPerFidInhibitionConfiguration"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxEventsPerFidInhibitionConfiguration"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getFiMMaxFiMInhibitionConfigurations(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxFiMInhibitionConfigurations"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxFiMInhibitionConfigurations"].getBigIntegerValue()
 		}
 		
 		def void setFiMMaxFiMInhibitionConfigurations(BigInteger value){
@@ -562,15 +561,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxFiMInhibitionConfigurations"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxFiMInhibitionConfigurations"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getFiMMaxInputEventsPerSummaryEvents(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxInputEventsPerSummaryEvents"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxInputEventsPerSummaryEvents"].getBigIntegerValue()
 		}
 		
 		def void setFiMMaxInputEventsPerSummaryEvents(BigInteger value){
@@ -578,15 +577,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxInputEventsPerSummaryEvents"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxInputEventsPerSummaryEvents"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getFiMMaxSumEventsPerFidInhibitionConfiguration(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxSumEventsPerFidInhibitionConfiguration"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxSumEventsPerFidInhibitionConfiguration"].getBigIntegerValue()
 		}
 		
 		def void setFiMMaxSumEventsPerFidInhibitionConfiguration(BigInteger value){
@@ -594,15 +593,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxSumEventsPerFidInhibitionConfiguration"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxSumEventsPerFidInhibitionConfiguration"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getFiMMaxSummaryEvents(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxSummaryEvents"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMMaxSummaryEvents"].getBigIntegerValue()
 		}
 		
 		def void setFiMMaxSummaryEvents(BigInteger value){
@@ -610,15 +609,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxSummaryEvents"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMMaxSummaryEvents"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getFiMTaskTime(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMTaskTime"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMTaskTime"].getBigDecimalValue()
 		}
 		
 		def void setFiMTaskTime(BigDecimal value){
@@ -626,15 +625,15 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMTaskTime"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMTaskTime"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getFiMVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FiMVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setFiMVersionInfoApi(Boolean value){
@@ -642,25 +641,25 @@ class FiM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FiMVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FiMVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof FiM)){
 			return false
 		}
 		this.target == (object as FiM).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

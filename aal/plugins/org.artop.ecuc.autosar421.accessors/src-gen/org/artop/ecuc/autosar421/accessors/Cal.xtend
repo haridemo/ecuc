@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,268 +52,268 @@ import java.math.BigDecimal
 
 class Cal implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def CalAsymDecrypt getCalAsymDecrypt(){
 		moduleConfiguration.getByType(typeof(CalAsymDecrypt))
 	}
-	
+
 	def void setCalAsymDecrypt(CalAsymDecrypt calAsymDecrypt){
-		val GContainer container = calAsymDecrypt.getTarget() 
+		val GContainer container = calAsymDecrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CalAsymDecrypt")
 	}
 	def CalAsymEncrypt getCalAsymEncrypt(){
 		moduleConfiguration.getByType(typeof(CalAsymEncrypt))
 	}
-	
+
 	def void setCalAsymEncrypt(CalAsymEncrypt calAsymEncrypt){
-		val GContainer container = calAsymEncrypt.getTarget() 
+		val GContainer container = calAsymEncrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CalAsymEncrypt")
 	}
 	def CalAsymPrivateKeyExtract getCalAsymPrivateKeyExtract(){
 		moduleConfiguration.getByType(typeof(CalAsymPrivateKeyExtract))
 	}
-	
+
 	def void setCalAsymPrivateKeyExtract(CalAsymPrivateKeyExtract calAsymPrivateKeyExtract){
-		val GContainer container = calAsymPrivateKeyExtract.getTarget() 
+		val GContainer container = calAsymPrivateKeyExtract.getTarget()
 	    moduleConfiguration.setContainer(container, "CalAsymPrivateKeyExtract")
 	}
 	def CalAsymPrivateKeyWrapAsym getCalAsymPrivateKeyWrapAsym(){
 		moduleConfiguration.getByType(typeof(CalAsymPrivateKeyWrapAsym))
 	}
-	
+
 	def void setCalAsymPrivateKeyWrapAsym(CalAsymPrivateKeyWrapAsym calAsymPrivateKeyWrapAsym){
-		val GContainer container = calAsymPrivateKeyWrapAsym.getTarget() 
+		val GContainer container = calAsymPrivateKeyWrapAsym.getTarget()
 	    moduleConfiguration.setContainer(container, "CalAsymPrivateKeyWrapAsym")
 	}
 	def CalAsymPrivateKeyWrapSym getCalAsymPrivateKeyWrapSym(){
 		moduleConfiguration.getByType(typeof(CalAsymPrivateKeyWrapSym))
 	}
-	
+
 	def void setCalAsymPrivateKeyWrapSym(CalAsymPrivateKeyWrapSym calAsymPrivateKeyWrapSym){
-		val GContainer container = calAsymPrivateKeyWrapSym.getTarget() 
+		val GContainer container = calAsymPrivateKeyWrapSym.getTarget()
 	    moduleConfiguration.setContainer(container, "CalAsymPrivateKeyWrapSym")
 	}
 	def CalAsymPublicKeyExtract getCalAsymPublicKeyExtract(){
 		moduleConfiguration.getByType(typeof(CalAsymPublicKeyExtract))
 	}
-	
+
 	def void setCalAsymPublicKeyExtract(CalAsymPublicKeyExtract calAsymPublicKeyExtract){
-		val GContainer container = calAsymPublicKeyExtract.getTarget() 
+		val GContainer container = calAsymPublicKeyExtract.getTarget()
 	    moduleConfiguration.setContainer(container, "CalAsymPublicKeyExtract")
 	}
 	def CalChecksum getCalChecksum(){
 		moduleConfiguration.getByType(typeof(CalChecksum))
 	}
-	
+
 	def void setCalChecksum(CalChecksum calChecksum){
-		val GContainer container = calChecksum.getTarget() 
+		val GContainer container = calChecksum.getTarget()
 	    moduleConfiguration.setContainer(container, "CalChecksum")
 	}
 	def CalCompression getCalCompression(){
 		moduleConfiguration.getByType(typeof(CalCompression))
 	}
-	
+
 	def void setCalCompression(CalCompression calCompression){
-		val GContainer container = calCompression.getTarget() 
+		val GContainer container = calCompression.getTarget()
 	    moduleConfiguration.setContainer(container, "CalCompression")
 	}
 	def CalDecompression getCalDecompression(){
 		moduleConfiguration.getByType(typeof(CalDecompression))
 	}
-	
+
 	def void setCalDecompression(CalDecompression calDecompression){
-		val GContainer container = calDecompression.getTarget() 
+		val GContainer container = calDecompression.getTarget()
 	    moduleConfiguration.setContainer(container, "CalDecompression")
 	}
 	def CalGeneral getCalGeneral(){
 		moduleConfiguration.getByType(typeof(CalGeneral))
 	}
-	
+
 	def void setCalGeneral(CalGeneral calGeneral){
-		val GContainer container = calGeneral.getTarget() 
+		val GContainer container = calGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "CalGeneral")
 	}
 	def CalHash getCalHash(){
 		moduleConfiguration.getByType(typeof(CalHash))
 	}
-	
+
 	def void setCalHash(CalHash calHash){
-		val GContainer container = calHash.getTarget() 
+		val GContainer container = calHash.getTarget()
 	    moduleConfiguration.setContainer(container, "CalHash")
 	}
 	def CalKeyDerive getCalKeyDerive(){
 		moduleConfiguration.getByType(typeof(CalKeyDerive))
 	}
-	
+
 	def void setCalKeyDerive(CalKeyDerive calKeyDerive){
-		val GContainer container = calKeyDerive.getTarget() 
+		val GContainer container = calKeyDerive.getTarget()
 	    moduleConfiguration.setContainer(container, "CalKeyDerive")
 	}
 	def CalKeyExchangeCalcPubVal getCalKeyExchangeCalcPubVal(){
 		moduleConfiguration.getByType(typeof(CalKeyExchangeCalcPubVal))
 	}
-	
+
 	def void setCalKeyExchangeCalcPubVal(CalKeyExchangeCalcPubVal calKeyExchangeCalcPubVal){
-		val GContainer container = calKeyExchangeCalcPubVal.getTarget() 
+		val GContainer container = calKeyExchangeCalcPubVal.getTarget()
 	    moduleConfiguration.setContainer(container, "CalKeyExchangeCalcPubVal")
 	}
 	def CalKeyExchangeCalcSecret getCalKeyExchangeCalcSecret(){
 		moduleConfiguration.getByType(typeof(CalKeyExchangeCalcSecret))
 	}
-	
+
 	def void setCalKeyExchangeCalcSecret(CalKeyExchangeCalcSecret calKeyExchangeCalcSecret){
-		val GContainer container = calKeyExchangeCalcSecret.getTarget() 
+		val GContainer container = calKeyExchangeCalcSecret.getTarget()
 	    moduleConfiguration.setContainer(container, "CalKeyExchangeCalcSecret")
 	}
 	def CalMacGenerate getCalMacGenerate(){
 		moduleConfiguration.getByType(typeof(CalMacGenerate))
 	}
-	
+
 	def void setCalMacGenerate(CalMacGenerate calMacGenerate){
-		val GContainer container = calMacGenerate.getTarget() 
+		val GContainer container = calMacGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CalMacGenerate")
 	}
 	def CalMacVerify getCalMacVerify(){
 		moduleConfiguration.getByType(typeof(CalMacVerify))
 	}
-	
+
 	def void setCalMacVerify(CalMacVerify calMacVerify){
-		val GContainer container = calMacVerify.getTarget() 
+		val GContainer container = calMacVerify.getTarget()
 	    moduleConfiguration.setContainer(container, "CalMacVerify")
 	}
 	def CalRandomGenerate getCalRandomGenerate(){
 		moduleConfiguration.getByType(typeof(CalRandomGenerate))
 	}
-	
+
 	def void setCalRandomGenerate(CalRandomGenerate calRandomGenerate){
-		val GContainer container = calRandomGenerate.getTarget() 
+		val GContainer container = calRandomGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CalRandomGenerate")
 	}
 	def CalRandomSeed getCalRandomSeed(){
 		moduleConfiguration.getByType(typeof(CalRandomSeed))
 	}
-	
+
 	def void setCalRandomSeed(CalRandomSeed calRandomSeed){
-		val GContainer container = calRandomSeed.getTarget() 
+		val GContainer container = calRandomSeed.getTarget()
 	    moduleConfiguration.setContainer(container, "CalRandomSeed")
 	}
 	def CalSignatureGenerate getCalSignatureGenerate(){
 		moduleConfiguration.getByType(typeof(CalSignatureGenerate))
 	}
-	
+
 	def void setCalSignatureGenerate(CalSignatureGenerate calSignatureGenerate){
-		val GContainer container = calSignatureGenerate.getTarget() 
+		val GContainer container = calSignatureGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSignatureGenerate")
 	}
 	def CalSignatureVerify getCalSignatureVerify(){
 		moduleConfiguration.getByType(typeof(CalSignatureVerify))
 	}
-	
+
 	def void setCalSignatureVerify(CalSignatureVerify calSignatureVerify){
-		val GContainer container = calSignatureVerify.getTarget() 
+		val GContainer container = calSignatureVerify.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSignatureVerify")
 	}
 	def CalSymBlockDecrypt getCalSymBlockDecrypt(){
 		moduleConfiguration.getByType(typeof(CalSymBlockDecrypt))
 	}
-	
+
 	def void setCalSymBlockDecrypt(CalSymBlockDecrypt calSymBlockDecrypt){
-		val GContainer container = calSymBlockDecrypt.getTarget() 
+		val GContainer container = calSymBlockDecrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymBlockDecrypt")
 	}
 	def CalSymBlockEncrypt getCalSymBlockEncrypt(){
 		moduleConfiguration.getByType(typeof(CalSymBlockEncrypt))
 	}
-	
+
 	def void setCalSymBlockEncrypt(CalSymBlockEncrypt calSymBlockEncrypt){
-		val GContainer container = calSymBlockEncrypt.getTarget() 
+		val GContainer container = calSymBlockEncrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymBlockEncrypt")
 	}
 	def CalSymDecrypt getCalSymDecrypt(){
 		moduleConfiguration.getByType(typeof(CalSymDecrypt))
 	}
-	
+
 	def void setCalSymDecrypt(CalSymDecrypt calSymDecrypt){
-		val GContainer container = calSymDecrypt.getTarget() 
+		val GContainer container = calSymDecrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymDecrypt")
 	}
 	def CalSymEncrypt getCalSymEncrypt(){
 		moduleConfiguration.getByType(typeof(CalSymEncrypt))
 	}
-	
+
 	def void setCalSymEncrypt(CalSymEncrypt calSymEncrypt){
-		val GContainer container = calSymEncrypt.getTarget() 
+		val GContainer container = calSymEncrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymEncrypt")
 	}
 	def CalSymKeyExtract getCalSymKeyExtract(){
 		moduleConfiguration.getByType(typeof(CalSymKeyExtract))
 	}
-	
+
 	def void setCalSymKeyExtract(CalSymKeyExtract calSymKeyExtract){
-		val GContainer container = calSymKeyExtract.getTarget() 
+		val GContainer container = calSymKeyExtract.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymKeyExtract")
 	}
 	def CalSymKeyWrapAsym getCalSymKeyWrapAsym(){
 		moduleConfiguration.getByType(typeof(CalSymKeyWrapAsym))
 	}
-	
+
 	def void setCalSymKeyWrapAsym(CalSymKeyWrapAsym calSymKeyWrapAsym){
-		val GContainer container = calSymKeyWrapAsym.getTarget() 
+		val GContainer container = calSymKeyWrapAsym.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymKeyWrapAsym")
 	}
 	def CalSymKeyWrapSym getCalSymKeyWrapSym(){
 		moduleConfiguration.getByType(typeof(CalSymKeyWrapSym))
 	}
-	
+
 	def void setCalSymKeyWrapSym(CalSymKeyWrapSym calSymKeyWrapSym){
-		val GContainer container = calSymKeyWrapSym.getTarget() 
+		val GContainer container = calSymKeyWrapSym.getTarget()
 	    moduleConfiguration.setContainer(container, "CalSymKeyWrapSym")
 	}
-	
+
 	static class CalAsymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalAsymDecrypt)){
 				return false
 			}
 			this.target == (object as CalAsymDecrypt).target
 		}
-		
+	
 		def BigInteger getCalAsymDecryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymDecryptMaxCtxBufByteSize(BigInteger value){
@@ -322,15 +321,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymDecryptMaxKeySize(BigInteger value){
@@ -338,11 +337,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -354,47 +353,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalAsymDecryptConfig, GContainer>(filteredContainers, typeof(CalAsymDecryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalAsymDecrypt$CalAsymDecryptConfig calAsymDecryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalAsymDecrypt.CalAsymDecryptConfig calAsymDecryptConfig) {
 					calAsymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymDecryptConfig"))
 					super.delegateAdd(calAsymDecryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalAsymDecrypt$CalAsymDecryptConfig calAsymDecryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalAsymDecrypt.CalAsymDecryptConfig calAsymDecryptConfig) {
 					calAsymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymDecryptConfig"))
 					super.delegateAdd(index, calAsymDecryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalAsymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalAsymDecryptConfig)){
 					return false
 				}
 				this.target == (object as CalAsymDecryptConfig).target
 			}
-			
+		
 			def String getCalAsymDecryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalAsymDecryptInitConfiguration(String value){
@@ -402,15 +401,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalAsymDecryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymDecryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalAsymDecryptPrimitiveName(String value){
@@ -418,11 +417,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymDecryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -433,32 +432,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalAsymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalAsymEncrypt)){
 				return false
 			}
 			this.target == (object as CalAsymEncrypt).target
 		}
-		
+	
 		def BigInteger getCalAsymEncryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymEncryptMaxCtxBufByteSize(BigInteger value){
@@ -466,15 +465,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymEncryptMaxKeySize(BigInteger value){
@@ -482,11 +481,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -498,47 +497,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalAsymEncryptConfig, GContainer>(filteredContainers, typeof(CalAsymEncryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalAsymEncrypt$CalAsymEncryptConfig calAsymEncryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalAsymEncrypt.CalAsymEncryptConfig calAsymEncryptConfig) {
 					calAsymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymEncryptConfig"))
 					super.delegateAdd(calAsymEncryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalAsymEncrypt$CalAsymEncryptConfig calAsymEncryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalAsymEncrypt.CalAsymEncryptConfig calAsymEncryptConfig) {
 					calAsymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymEncryptConfig"))
 					super.delegateAdd(index, calAsymEncryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalAsymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalAsymEncryptConfig)){
 					return false
 				}
 				this.target == (object as CalAsymEncryptConfig).target
 			}
-			
+		
 			def String getCalAsymEncryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalAsymEncryptInitConfiguration(String value){
@@ -546,15 +545,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalAsymEncryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymEncryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalAsymEncryptPrimitiveName(String value){
@@ -562,11 +561,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymEncryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -577,32 +576,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalAsymPrivateKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalAsymPrivateKeyExtract)){
 				return false
 			}
 			this.target == (object as CalAsymPrivateKeyExtract).target
 		}
-		
+	
 		def BigInteger getCalAsymPrivateKeyExtractMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyExtractMaxCtxBufByteSize(BigInteger value){
@@ -610,15 +609,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymPrivateKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyExtractMaxKeySize(BigInteger value){
@@ -626,11 +625,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -642,47 +641,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalAsymPrivateKeyExtractConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyExtractConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalAsymPrivateKeyExtract$CalAsymPrivateKeyExtractConfig calAsymPrivateKeyExtractConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalAsymPrivateKeyExtract.CalAsymPrivateKeyExtractConfig calAsymPrivateKeyExtractConfig) {
 					calAsymPrivateKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyExtractConfig"))
 					super.delegateAdd(calAsymPrivateKeyExtractConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalAsymPrivateKeyExtract$CalAsymPrivateKeyExtractConfig calAsymPrivateKeyExtractConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalAsymPrivateKeyExtract.CalAsymPrivateKeyExtractConfig calAsymPrivateKeyExtractConfig) {
 					calAsymPrivateKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyExtractConfig"))
 					super.delegateAdd(index, calAsymPrivateKeyExtractConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalAsymPrivateKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalAsymPrivateKeyExtractConfig)){
 					return false
 				}
 				this.target == (object as CalAsymPrivateKeyExtractConfig).target
 			}
-			
+		
 			def String getCalAsymPrivateKeyExtractInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalAsymPrivateKeyExtractInitConfiguration(String value){
@@ -690,15 +689,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalAsymPrivateKeyExtractPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyExtractPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalAsymPrivateKeyExtractPrimitiveName(String value){
@@ -706,11 +705,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyExtractPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -721,32 +720,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalAsymPrivateKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalAsymPrivateKeyWrapAsym)){
 				return false
 			}
 			this.target == (object as CalAsymPrivateKeyWrapAsym).target
 		}
-		
+	
 		def BigInteger getCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyWrapAsymMaxCtxBufByteSize(BigInteger value){
@@ -754,15 +753,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymPrivateKeyWrapAsymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyWrapAsymMaxPrivKeySize(BigInteger value){
@@ -770,15 +769,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPrivKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymPrivateKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyWrapAsymMaxPubKeySize(BigInteger value){
@@ -786,11 +785,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymMaxPubKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -802,47 +801,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalAsymPrivateKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyWrapAsymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalAsymPrivateKeyWrapAsym$CalAsymPrivateKeyWrapAsymConfig calAsymPrivateKeyWrapAsymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalAsymPrivateKeyWrapAsym.CalAsymPrivateKeyWrapAsymConfig calAsymPrivateKeyWrapAsymConfig) {
 					calAsymPrivateKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapAsymConfig"))
 					super.delegateAdd(calAsymPrivateKeyWrapAsymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalAsymPrivateKeyWrapAsym$CalAsymPrivateKeyWrapAsymConfig calAsymPrivateKeyWrapAsymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalAsymPrivateKeyWrapAsym.CalAsymPrivateKeyWrapAsymConfig calAsymPrivateKeyWrapAsymConfig) {
 					calAsymPrivateKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapAsymConfig"))
 					super.delegateAdd(index, calAsymPrivateKeyWrapAsymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalAsymPrivateKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalAsymPrivateKeyWrapAsymConfig)){
 					return false
 				}
 				this.target == (object as CalAsymPrivateKeyWrapAsymConfig).target
 			}
-			
+		
 			def String getCalAsymPrivateKeyWrapAsymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalAsymPrivateKeyWrapAsymInitConfiguration(String value){
@@ -850,15 +849,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalAsymPrivateKeyWrapAsymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapAsymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalAsymPrivateKeyWrapAsymPrimitiveName(String value){
@@ -866,11 +865,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapAsymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -881,32 +880,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalAsymPrivateKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalAsymPrivateKeyWrapSym)){
 				return false
 			}
 			this.target == (object as CalAsymPrivateKeyWrapSym).target
 		}
-		
+	
 		def BigInteger getCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyWrapSymMaxCtxBufByteSize(BigInteger value){
@@ -914,15 +913,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymPrivateKeyWrapSymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyWrapSymMaxPrivKeySize(BigInteger value){
@@ -930,15 +929,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymMaxPrivKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymPrivateKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPrivateKeyWrapSymMaxSymKeySize(BigInteger value){
@@ -946,11 +945,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -962,47 +961,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalAsymPrivateKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CalAsymPrivateKeyWrapSymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalAsymPrivateKeyWrapSym$CalAsymPrivateKeyWrapSymConfig calAsymPrivateKeyWrapSymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalAsymPrivateKeyWrapSym.CalAsymPrivateKeyWrapSymConfig calAsymPrivateKeyWrapSymConfig) {
 					calAsymPrivateKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapSymConfig"))
 					super.delegateAdd(calAsymPrivateKeyWrapSymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalAsymPrivateKeyWrapSym$CalAsymPrivateKeyWrapSymConfig calAsymPrivateKeyWrapSymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalAsymPrivateKeyWrapSym.CalAsymPrivateKeyWrapSymConfig calAsymPrivateKeyWrapSymConfig) {
 					calAsymPrivateKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPrivateKeyWrapSymConfig"))
 					super.delegateAdd(index, calAsymPrivateKeyWrapSymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalAsymPrivateKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalAsymPrivateKeyWrapSymConfig)){
 					return false
 				}
 				this.target == (object as CalAsymPrivateKeyWrapSymConfig).target
 			}
-			
+		
 			def String getCalAsymPrivateKeyWrapSymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalAsymPrivateKeyWrapSymInitConfiguration(String value){
@@ -1010,15 +1009,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalAsymPrivateKeyWrapSymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPrivateKeyWrapSymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalAsymPrivateKeyWrapSymPrimitiveName(String value){
@@ -1026,11 +1025,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPrivateKeyWrapSymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1041,32 +1040,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalAsymPublicKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalAsymPublicKeyExtract)){
 				return false
 			}
 			this.target == (object as CalAsymPublicKeyExtract).target
 		}
-		
+	
 		def BigInteger getCalAsymPublicKeyExtractMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPublicKeyExtractMaxCtxBufByteSize(BigInteger value){
@@ -1074,15 +1073,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalAsymPublicKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalAsymPublicKeyExtractMaxKeySize(BigInteger value){
@@ -1090,11 +1089,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1106,47 +1105,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalAsymPublicKeyExtractConfig, GContainer>(filteredContainers, typeof(CalAsymPublicKeyExtractConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalAsymPublicKeyExtract$CalAsymPublicKeyExtractConfig calAsymPublicKeyExtractConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalAsymPublicKeyExtract.CalAsymPublicKeyExtractConfig calAsymPublicKeyExtractConfig) {
 					calAsymPublicKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPublicKeyExtractConfig"))
 					super.delegateAdd(calAsymPublicKeyExtractConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalAsymPublicKeyExtract$CalAsymPublicKeyExtractConfig calAsymPublicKeyExtractConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalAsymPublicKeyExtract.CalAsymPublicKeyExtractConfig calAsymPublicKeyExtractConfig) {
 					calAsymPublicKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalAsymPublicKeyExtractConfig"))
 					super.delegateAdd(index, calAsymPublicKeyExtractConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalAsymPublicKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalAsymPublicKeyExtractConfig)){
 					return false
 				}
 				this.target == (object as CalAsymPublicKeyExtractConfig).target
 			}
-			
+		
 			def String getCalAsymPublicKeyExtractInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalAsymPublicKeyExtractInitConfiguration(String value){
@@ -1154,15 +1153,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalAsymPublicKeyExtractPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalAsymPublicKeyExtractPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalAsymPublicKeyExtractPrimitiveName(String value){
@@ -1170,11 +1169,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalAsymPublicKeyExtractPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1185,32 +1184,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalChecksum implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalChecksum)){
 				return false
 			}
 			this.target == (object as CalChecksum).target
 		}
-		
+	
 		def BigInteger getCalChecksumMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalChecksumMaxCtxBufByteSize(BigInteger value){
@@ -1218,11 +1217,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalChecksumMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalChecksumMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1234,47 +1233,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalChecksumConfig, GContainer>(filteredContainers, typeof(CalChecksumConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalChecksum$CalChecksumConfig calChecksumConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalChecksum.CalChecksumConfig calChecksumConfig) {
 					calChecksumConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalChecksumConfig"))
 					super.delegateAdd(calChecksumConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalChecksum$CalChecksumConfig calChecksumConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalChecksum.CalChecksumConfig calChecksumConfig) {
 					calChecksumConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalChecksumConfig"))
 					super.delegateAdd(index, calChecksumConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalChecksumConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalChecksumConfig)){
 					return false
 				}
 				this.target == (object as CalChecksumConfig).target
 			}
-			
+		
 			def String getCalChecksumInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalChecksumInitConfiguration(String value){
@@ -1282,15 +1281,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalChecksumInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalChecksumInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalChecksumPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalChecksumPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalChecksumPrimitiveName(String value){
@@ -1298,11 +1297,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalChecksumPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalChecksumPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1313,32 +1312,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalCompression implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalCompression)){
 				return false
 			}
 			this.target == (object as CalCompression).target
 		}
-		
+	
 		def BigInteger getCalCompressMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalCompressMaxCtxBufByteSize(BigInteger value){
@@ -1346,11 +1345,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalCompressMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalCompressMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1362,47 +1361,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalCompressionConfig, GContainer>(filteredContainers, typeof(CalCompressionConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalCompression$CalCompressionConfig calCompressionConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalCompression.CalCompressionConfig calCompressionConfig) {
 					calCompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalCompressionConfig"))
 					super.delegateAdd(calCompressionConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalCompression$CalCompressionConfig calCompressionConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalCompression.CalCompressionConfig calCompressionConfig) {
 					calCompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalCompressionConfig"))
 					super.delegateAdd(index, calCompressionConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalCompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalCompressionConfig)){
 					return false
 				}
 				this.target == (object as CalCompressionConfig).target
 			}
-			
+		
 			def String getCalCompressInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalCompressInitConfiguration(String value){
@@ -1410,15 +1409,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalCompressInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalCompressInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalCompressPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalCompressPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalCompressPrimitiveName(String value){
@@ -1426,11 +1425,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalCompressPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalCompressPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1441,32 +1440,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalDecompression implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalDecompression)){
 				return false
 			}
 			this.target == (object as CalDecompression).target
 		}
-		
+	
 		def BigInteger getCalDecompressMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalDecompressMaxCtxBufByteSize(BigInteger value){
@@ -1474,11 +1473,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalDecompressMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalDecompressMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1490,47 +1489,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalDecompressionConfig, GContainer>(filteredContainers, typeof(CalDecompressionConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalDecompression$CalDecompressionConfig calDecompressionConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalDecompression.CalDecompressionConfig calDecompressionConfig) {
 					calDecompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalDecompressionConfig"))
 					super.delegateAdd(calDecompressionConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalDecompression$CalDecompressionConfig calDecompressionConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalDecompression.CalDecompressionConfig calDecompressionConfig) {
 					calDecompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalDecompressionConfig"))
 					super.delegateAdd(index, calDecompressionConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalDecompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalDecompressionConfig)){
 					return false
 				}
 				this.target == (object as CalDecompressionConfig).target
 			}
-			
+		
 			def String getCalDecompressInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalDecompressInitConfiguration(String value){
@@ -1538,15 +1537,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalDecompressInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalDecompressInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalDecompressPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalDecompressPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalDecompressPrimitiveName(String value){
@@ -1554,11 +1553,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalDecompressPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalDecompressPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1569,32 +1568,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalGeneral)){
 				return false
 			}
 			this.target == (object as CalGeneral).target
 		}
-		
+	
 		def String getCalMaxAlignScalarType(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMaxAlignScalarType"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMaxAlignScalarType"].getStringValue()
 		}
 		
 		def void setCalMaxAlignScalarType(String value){
@@ -1602,15 +1601,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMaxAlignScalarType"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMaxAlignScalarType"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getCalVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setCalVersionInfoApi(Boolean value){
@@ -1618,11 +1617,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -1631,32 +1630,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalHash implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalHash)){
 				return false
 			}
 			this.target == (object as CalHash).target
 		}
-		
+	
 		def BigInteger getCalHashMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalHashMaxCtxBufByteSize(BigInteger value){
@@ -1664,11 +1663,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalHashMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalHashMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1680,47 +1679,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalHashConfig, GContainer>(filteredContainers, typeof(CalHashConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalHash$CalHashConfig calHashConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalHash.CalHashConfig calHashConfig) {
 					calHashConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalHashConfig"))
 					super.delegateAdd(calHashConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalHash$CalHashConfig calHashConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalHash.CalHashConfig calHashConfig) {
 					calHashConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalHashConfig"))
 					super.delegateAdd(index, calHashConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalHashConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalHashConfig)){
 					return false
 				}
 				this.target == (object as CalHashConfig).target
 			}
-			
+		
 			def String getCalHashInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalHashInitConfiguration(String value){
@@ -1728,15 +1727,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalHashInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalHashInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalHashPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalHashPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalHashPrimitiveName(String value){
@@ -1744,11 +1743,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalHashPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalHashPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1759,32 +1758,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalKeyDerive implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalKeyDerive)){
 				return false
 			}
 			this.target == (object as CalKeyDerive).target
 		}
-		
+	
 		def BigInteger getCalKeyDeriveMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyDeriveMaxCtxBufByteSize(BigInteger value){
@@ -1792,15 +1791,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDeriveMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalKeyDeriveMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyDeriveMaxKeySize(BigInteger value){
@@ -1808,11 +1807,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDeriveMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDeriveMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1824,47 +1823,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalKeyDeriveConfig, GContainer>(filteredContainers, typeof(CalKeyDeriveConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalKeyDerive$CalKeyDeriveConfig calKeyDeriveConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalKeyDerive.CalKeyDeriveConfig calKeyDeriveConfig) {
 					calKeyDeriveConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyDeriveConfig"))
 					super.delegateAdd(calKeyDeriveConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalKeyDerive$CalKeyDeriveConfig calKeyDeriveConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalKeyDerive.CalKeyDeriveConfig calKeyDeriveConfig) {
 					calKeyDeriveConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyDeriveConfig"))
 					super.delegateAdd(index, calKeyDeriveConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalKeyDeriveConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalKeyDeriveConfig)){
 					return false
 				}
 				this.target == (object as CalKeyDeriveConfig).target
 			}
-			
+		
 			def String getCalKeyDeriveInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDeriveInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalKeyDeriveInitConfiguration(String value){
@@ -1872,15 +1871,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDeriveInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDeriveInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalKeyDerivePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDerivePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyDerivePrimitiveName"].getStringValue()
 			}
 			
 			def void setCalKeyDerivePrimitiveName(String value){
@@ -1888,11 +1887,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDerivePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyDerivePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1903,32 +1902,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalKeyExchangeCalcPubVal implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalKeyExchangeCalcPubVal)){
 				return false
 			}
 			this.target == (object as CalKeyExchangeCalcPubVal).target
 		}
-		
+	
 		def BigInteger getCalKeyExchangeCalcPubValMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyExchangeCalcPubValMaxBaseTypeSize(BigInteger value){
@@ -1936,15 +1935,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValMaxBaseTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalKeyExchangeCalcPubValMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyExchangeCalcPubValMaxCtxBufByteSize(BigInteger value){
@@ -1952,15 +1951,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalKeyExchangeCalcPubValMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyExchangeCalcPubValMaxPrivateTypeSize(BigInteger value){
@@ -1968,11 +1967,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValMaxPrivateTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1984,47 +1983,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalKeyExchangeCalcPubValConfig, GContainer>(filteredContainers, typeof(CalKeyExchangeCalcPubValConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalKeyExchangeCalcPubVal$CalKeyExchangeCalcPubValConfig calKeyExchangeCalcPubValConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalKeyExchangeCalcPubVal.CalKeyExchangeCalcPubValConfig calKeyExchangeCalcPubValConfig) {
 					calKeyExchangeCalcPubValConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcPubValConfig"))
 					super.delegateAdd(calKeyExchangeCalcPubValConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalKeyExchangeCalcPubVal$CalKeyExchangeCalcPubValConfig calKeyExchangeCalcPubValConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalKeyExchangeCalcPubVal.CalKeyExchangeCalcPubValConfig calKeyExchangeCalcPubValConfig) {
 					calKeyExchangeCalcPubValConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcPubValConfig"))
 					super.delegateAdd(index, calKeyExchangeCalcPubValConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalKeyExchangeCalcPubValConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalKeyExchangeCalcPubValConfig)){
 					return false
 				}
 				this.target == (object as CalKeyExchangeCalcPubValConfig).target
 			}
-			
+		
 			def String getCalKeyExchangeCalcPubValInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalKeyExchangeCalcPubValInitConfiguration(String value){
@@ -2032,15 +2031,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalKeyExchangeCalcPubValPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcPubValPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalKeyExchangeCalcPubValPrimitiveName(String value){
@@ -2048,11 +2047,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcPubValPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2063,32 +2062,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalKeyExchangeCalcSecret implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalKeyExchangeCalcSecret)){
 				return false
 			}
 			this.target == (object as CalKeyExchangeCalcSecret).target
 		}
-		
+	
 		def BigInteger getCalKeyExchangeCalcSecretMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyExchangeCalcSecretMaxBaseTypeSize(BigInteger value){
@@ -2096,15 +2095,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretMaxBaseTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalKeyExchangeCalcSecretMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyExchangeCalcSecretMaxCtxBufByteSize(BigInteger value){
@@ -2112,15 +2111,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalKeyExchangeCalcSecretMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCalKeyExchangeCalcSecretMaxPrivateTypeSize(BigInteger value){
@@ -2128,11 +2127,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretMaxPrivateTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2144,47 +2143,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalKeyExchangeCalcSecretConfig, GContainer>(filteredContainers, typeof(CalKeyExchangeCalcSecretConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalKeyExchangeCalcSecret$CalKeyExchangeCalcSecretConfig calKeyExchangeCalcSecretConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalKeyExchangeCalcSecret.CalKeyExchangeCalcSecretConfig calKeyExchangeCalcSecretConfig) {
 					calKeyExchangeCalcSecretConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcSecretConfig"))
 					super.delegateAdd(calKeyExchangeCalcSecretConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalKeyExchangeCalcSecret$CalKeyExchangeCalcSecretConfig calKeyExchangeCalcSecretConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalKeyExchangeCalcSecret.CalKeyExchangeCalcSecretConfig calKeyExchangeCalcSecretConfig) {
 					calKeyExchangeCalcSecretConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalKeyExchangeCalcSecretConfig"))
 					super.delegateAdd(index, calKeyExchangeCalcSecretConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalKeyExchangeCalcSecretConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalKeyExchangeCalcSecretConfig)){
 					return false
 				}
 				this.target == (object as CalKeyExchangeCalcSecretConfig).target
 			}
-			
+		
 			def String getCalKeyExchangeCalcSecretInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalKeyExchangeCalcSecretInitConfiguration(String value){
@@ -2192,15 +2191,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalKeyExchangeCalcSecretPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalKeyExchangeCalcSecretPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalKeyExchangeCalcSecretPrimitiveName(String value){
@@ -2208,11 +2207,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalKeyExchangeCalcSecretPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2223,32 +2222,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalMacGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalMacGenerate)){
 				return false
 			}
 			this.target == (object as CalMacGenerate).target
 		}
-		
+	
 		def BigInteger getCalMacGenerateMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalMacGenerateMaxCtxBufByteSize(BigInteger value){
@@ -2256,15 +2255,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGenerateMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGenerateMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalMacGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalMacGenerateMaxKeySize(BigInteger value){
@@ -2272,11 +2271,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGenerateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGenerateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2288,47 +2287,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalMacGenerateConfig, GContainer>(filteredContainers, typeof(CalMacGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalMacGenerate$CalMacGenerateConfig calMacGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalMacGenerate.CalMacGenerateConfig calMacGenerateConfig) {
 					calMacGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacGenerateConfig"))
 					super.delegateAdd(calMacGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalMacGenerate$CalMacGenerateConfig calMacGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalMacGenerate.CalMacGenerateConfig calMacGenerateConfig) {
 					calMacGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacGenerateConfig"))
 					super.delegateAdd(index, calMacGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalMacGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalMacGenerateConfig)){
 					return false
 				}
 				this.target == (object as CalMacGenerateConfig).target
 			}
-			
+		
 			def String getCalMacGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalMacGenerateInitConfiguration(String value){
@@ -2336,15 +2335,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalMacGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCalMacGeneratePrimitiveName(String value){
@@ -2352,11 +2351,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2367,32 +2366,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalMacVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalMacVerify)){
 				return false
 			}
 			this.target == (object as CalMacVerify).target
 		}
-		
+	
 		def BigInteger getCalMacVerifyMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalMacVerifyMaxCtxBufByteSize(BigInteger value){
@@ -2400,15 +2399,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalMacVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalMacVerifyMaxKeySize(BigInteger value){
@@ -2416,11 +2415,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2432,47 +2431,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalMacVerifyConfig, GContainer>(filteredContainers, typeof(CalMacVerifyConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalMacVerify$CalMacVerifyConfig calMacVerifyConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalMacVerify.CalMacVerifyConfig calMacVerifyConfig) {
 					calMacVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacVerifyConfig"))
 					super.delegateAdd(calMacVerifyConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalMacVerify$CalMacVerifyConfig calMacVerifyConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalMacVerify.CalMacVerifyConfig calMacVerifyConfig) {
 					calMacVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalMacVerifyConfig"))
 					super.delegateAdd(index, calMacVerifyConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalMacVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalMacVerifyConfig)){
 					return false
 				}
 				this.target == (object as CalMacVerifyConfig).target
 			}
-			
+		
 			def String getCalMacVerifyInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalMacVerifyInitConfiguration(String value){
@@ -2480,15 +2479,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalMacVerifyPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalMacVerifyPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalMacVerifyPrimitiveName(String value){
@@ -2496,11 +2495,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalMacVerifyPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2511,30 +2510,30 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalRandomGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalRandomGenerate)){
 				return false
 			}
 			this.target == (object as CalRandomGenerate).target
 		}
-		
+	
 		
 		
 		def List<CalRandomGenerateConfig> getCalRandomGenerateConfigs(){
@@ -2544,47 +2543,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalRandomGenerateConfig, GContainer>(filteredContainers, typeof(CalRandomGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalRandomGenerate$CalRandomGenerateConfig calRandomGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalRandomGenerate.CalRandomGenerateConfig calRandomGenerateConfig) {
 					calRandomGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomGenerateConfig"))
 					super.delegateAdd(calRandomGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalRandomGenerate$CalRandomGenerateConfig calRandomGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalRandomGenerate.CalRandomGenerateConfig calRandomGenerateConfig) {
 					calRandomGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomGenerateConfig"))
 					super.delegateAdd(index, calRandomGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalRandomGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalRandomGenerateConfig)){
 					return false
 				}
 				this.target == (object as CalRandomGenerateConfig).target
 			}
-			
+		
 			def String getCalRandomGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalRandomGenerateInitConfiguration(String value){
@@ -2592,15 +2591,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalRandomGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCalRandomGeneratePrimitiveName(String value){
@@ -2608,11 +2607,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2623,32 +2622,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalRandomSeed implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalRandomSeed)){
 				return false
 			}
 			this.target == (object as CalRandomSeed).target
 		}
-		
+	
 		def BigInteger getCalRandomMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalRandomMaxCtxBufByteSize(BigInteger value){
@@ -2656,11 +2655,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2672,47 +2671,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalRandomSeedConfig, GContainer>(filteredContainers, typeof(CalRandomSeedConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalRandomSeed$CalRandomSeedConfig calRandomSeedConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalRandomSeed.CalRandomSeedConfig calRandomSeedConfig) {
 					calRandomSeedConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomSeedConfig"))
 					super.delegateAdd(calRandomSeedConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalRandomSeed$CalRandomSeedConfig calRandomSeedConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalRandomSeed.CalRandomSeedConfig calRandomSeedConfig) {
 					calRandomSeedConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalRandomSeedConfig"))
 					super.delegateAdd(index, calRandomSeedConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalRandomSeedConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalRandomSeedConfig)){
 					return false
 				}
 				this.target == (object as CalRandomSeedConfig).target
 			}
-			
+		
 			def String getCalRandomSeedInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomSeedInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomSeedInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalRandomSeedInitConfiguration(String value){
@@ -2720,15 +2719,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomSeedInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomSeedInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalRandomSeedPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomSeedPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalRandomSeedPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalRandomSeedPrimitiveName(String value){
@@ -2736,11 +2735,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomSeedPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalRandomSeedPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2751,32 +2750,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSignatureGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSignatureGenerate)){
 				return false
 			}
 			this.target == (object as CalSignatureGenerate).target
 		}
-		
+	
 		def BigInteger getCalSignatureGenerateMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSignatureGenerateMaxCtxBufByteSize(BigInteger value){
@@ -2784,15 +2783,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGenerateMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSignatureGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSignatureGenerateMaxKeySize(BigInteger value){
@@ -2800,11 +2799,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGenerateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGenerateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2816,47 +2815,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSignatureGenerateConfig, GContainer>(filteredContainers, typeof(CalSignatureGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSignatureGenerate$CalSignatureGenerateConfig calSignatureGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSignatureGenerate.CalSignatureGenerateConfig calSignatureGenerateConfig) {
 					calSignatureGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureGenerateConfig"))
 					super.delegateAdd(calSignatureGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSignatureGenerate$CalSignatureGenerateConfig calSignatureGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSignatureGenerate.CalSignatureGenerateConfig calSignatureGenerateConfig) {
 					calSignatureGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureGenerateConfig"))
 					super.delegateAdd(index, calSignatureGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSignatureGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSignatureGenerateConfig)){
 					return false
 				}
 				this.target == (object as CalSignatureGenerateConfig).target
 			}
-			
+		
 			def String getCalSignatureGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSignatureGenerateInitConfiguration(String value){
@@ -2864,15 +2863,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSignatureGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSignatureGeneratePrimitiveName(String value){
@@ -2880,11 +2879,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2895,32 +2894,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSignatureVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSignatureVerify)){
 				return false
 			}
 			this.target == (object as CalSignatureVerify).target
 		}
-		
+	
 		def BigInteger getCalSignatureVerifyMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSignatureVerifyMaxCtxBufByteSize(BigInteger value){
@@ -2928,15 +2927,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSignatureVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSignatureVerifyMaxKeySize(BigInteger value){
@@ -2944,11 +2943,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2960,47 +2959,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSignatureVerifyConfig, GContainer>(filteredContainers, typeof(CalSignatureVerifyConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSignatureVerify$CalSignatureVerifyConfig calSignatureVerifyConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSignatureVerify.CalSignatureVerifyConfig calSignatureVerifyConfig) {
 					calSignatureVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureVerifyConfig"))
 					super.delegateAdd(calSignatureVerifyConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSignatureVerify$CalSignatureVerifyConfig calSignatureVerifyConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSignatureVerify.CalSignatureVerifyConfig calSignatureVerifyConfig) {
 					calSignatureVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSignatureVerifyConfig"))
 					super.delegateAdd(index, calSignatureVerifyConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSignatureVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSignatureVerifyConfig)){
 					return false
 				}
 				this.target == (object as CalSignatureVerifyConfig).target
 			}
-			
+		
 			def String getCalSignatureVerifyInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSignatureVerifyInitConfiguration(String value){
@@ -3008,15 +3007,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSignatureVerifyPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSignatureVerifyPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSignatureVerifyPrimitiveName(String value){
@@ -3024,11 +3023,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSignatureVerifyPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3039,32 +3038,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymBlockDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymBlockDecrypt)){
 				return false
 			}
 			this.target == (object as CalSymBlockDecrypt).target
 		}
-		
+	
 		def BigInteger getCalSymBlockDecryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymBlockDecryptMaxCtxBufByteSize(BigInteger value){
@@ -3072,15 +3071,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymBlockDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymBlockDecryptMaxKeySize(BigInteger value){
@@ -3088,11 +3087,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3104,47 +3103,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymBlockDecryptConfig, GContainer>(filteredContainers, typeof(CalSymBlockDecryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymBlockDecrypt$CalSymBlockDecryptConfig calSymBlockDecryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymBlockDecrypt.CalSymBlockDecryptConfig calSymBlockDecryptConfig) {
 					calSymBlockDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockDecryptConfig"))
 					super.delegateAdd(calSymBlockDecryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymBlockDecrypt$CalSymBlockDecryptConfig calSymBlockDecryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymBlockDecrypt.CalSymBlockDecryptConfig calSymBlockDecryptConfig) {
 					calSymBlockDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockDecryptConfig"))
 					super.delegateAdd(index, calSymBlockDecryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymBlockDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymBlockDecryptConfig)){
 					return false
 				}
 				this.target == (object as CalSymBlockDecryptConfig).target
 			}
-			
+		
 			def String getCalSymBlockDecryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymBlockDecryptInitConfiguration(String value){
@@ -3152,15 +3151,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymBlockDecryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockDecryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymBlockDecryptPrimitiveName(String value){
@@ -3168,11 +3167,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockDecryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3183,32 +3182,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymBlockEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymBlockEncrypt)){
 				return false
 			}
 			this.target == (object as CalSymBlockEncrypt).target
 		}
-		
+	
 		def BigInteger getCalSymBlockEncryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymBlockEncryptMaxCtxBufByteSize(BigInteger value){
@@ -3216,15 +3215,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymBlockEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymBlockEncryptMaxKeySize(BigInteger value){
@@ -3232,11 +3231,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3248,47 +3247,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymBlockEncryptConfig, GContainer>(filteredContainers, typeof(CalSymBlockEncryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymBlockEncrypt$CalSymBlockEncryptConfig calSymBlockEncryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymBlockEncrypt.CalSymBlockEncryptConfig calSymBlockEncryptConfig) {
 					calSymBlockEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockEncryptConfig"))
 					super.delegateAdd(calSymBlockEncryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymBlockEncrypt$CalSymBlockEncryptConfig calSymBlockEncryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymBlockEncrypt.CalSymBlockEncryptConfig calSymBlockEncryptConfig) {
 					calSymBlockEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymBlockEncryptConfig"))
 					super.delegateAdd(index, calSymBlockEncryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymBlockEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymBlockEncryptConfig)){
 					return false
 				}
 				this.target == (object as CalSymBlockEncryptConfig).target
 			}
-			
+		
 			def String getCalSymBlockEncryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymBlockEncryptInitConfiguration(String value){
@@ -3296,15 +3295,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymBlockEncryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymBlockEncryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymBlockEncryptPrimitiveName(String value){
@@ -3312,11 +3311,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymBlockEncryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3327,32 +3326,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymDecrypt)){
 				return false
 			}
 			this.target == (object as CalSymDecrypt).target
 		}
-		
+	
 		def BigInteger getCalSymDecryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymDecryptMaxCtxBufByteSize(BigInteger value){
@@ -3360,15 +3359,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymDecryptMaxKeySize(BigInteger value){
@@ -3376,11 +3375,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3392,47 +3391,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymDecryptConfig, GContainer>(filteredContainers, typeof(CalSymDecryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymDecrypt$CalSymDecryptConfig calSymDecryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymDecrypt.CalSymDecryptConfig calSymDecryptConfig) {
 					calSymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymDecryptConfig"))
 					super.delegateAdd(calSymDecryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymDecrypt$CalSymDecryptConfig calSymDecryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymDecrypt.CalSymDecryptConfig calSymDecryptConfig) {
 					calSymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymDecryptConfig"))
 					super.delegateAdd(index, calSymDecryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymDecryptConfig)){
 					return false
 				}
 				this.target == (object as CalSymDecryptConfig).target
 			}
-			
+		
 			def String getCalSymDecryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymDecryptInitConfiguration(String value){
@@ -3440,15 +3439,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymDecryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymDecryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymDecryptPrimitiveName(String value){
@@ -3456,11 +3455,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymDecryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3471,32 +3470,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymEncrypt)){
 				return false
 			}
 			this.target == (object as CalSymEncrypt).target
 		}
-		
+	
 		def BigInteger getCalSymEncryptMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymEncryptMaxCtxBufByteSize(BigInteger value){
@@ -3504,15 +3503,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymEncryptMaxKeySize(BigInteger value){
@@ -3520,11 +3519,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3536,47 +3535,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymEncryptConfig, GContainer>(filteredContainers, typeof(CalSymEncryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymEncrypt$CalSymEncryptConfig calSymEncryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymEncrypt.CalSymEncryptConfig calSymEncryptConfig) {
 					calSymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymEncryptConfig"))
 					super.delegateAdd(calSymEncryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymEncrypt$CalSymEncryptConfig calSymEncryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymEncrypt.CalSymEncryptConfig calSymEncryptConfig) {
 					calSymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymEncryptConfig"))
 					super.delegateAdd(index, calSymEncryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymEncryptConfig)){
 					return false
 				}
 				this.target == (object as CalSymEncryptConfig).target
 			}
-			
+		
 			def String getCalSymEncryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymEncryptInitConfiguration(String value){
@@ -3584,15 +3583,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymEncryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymEncryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymEncryptPrimitiveName(String value){
@@ -3600,11 +3599,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymEncryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3615,32 +3614,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymKeyExtract)){
 				return false
 			}
 			this.target == (object as CalSymKeyExtract).target
 		}
-		
+	
 		def BigInteger getCalSymKeyExtractMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyExtractMaxCtxBufByteSize(BigInteger value){
@@ -3648,15 +3647,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyExtractMaxKeySize(BigInteger value){
@@ -3664,11 +3663,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3680,47 +3679,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymKeyExtractConfig, GContainer>(filteredContainers, typeof(CalSymKeyExtractConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymKeyExtract$CalSymKeyExtractConfig calSymKeyExtractConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymKeyExtract.CalSymKeyExtractConfig calSymKeyExtractConfig) {
 					calSymKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyExtractConfig"))
 					super.delegateAdd(calSymKeyExtractConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymKeyExtract$CalSymKeyExtractConfig calSymKeyExtractConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymKeyExtract.CalSymKeyExtractConfig calSymKeyExtractConfig) {
 					calSymKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyExtractConfig"))
 					super.delegateAdd(index, calSymKeyExtractConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymKeyExtractConfig)){
 					return false
 				}
 				this.target == (object as CalSymKeyExtractConfig).target
 			}
-			
+		
 			def String getCalSymKeyExtractInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymKeyExtractInitConfiguration(String value){
@@ -3728,15 +3727,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymKeyExtractPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyExtractPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymKeyExtractPrimitiveName(String value){
@@ -3744,11 +3743,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyExtractPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3759,32 +3758,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymKeyWrapAsym)){
 				return false
 			}
 			this.target == (object as CalSymKeyWrapAsym).target
 		}
-		
+	
 		def BigInteger getCalSymKeyWrapAsymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyWrapAsymMaxCtxBufByteSize(BigInteger value){
@@ -3792,15 +3791,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyWrapAsymMaxPubKeySize(BigInteger value){
@@ -3808,15 +3807,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymMaxPubKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymKeyWrapAsymMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyWrapAsymMaxSymKeySize(BigInteger value){
@@ -3824,11 +3823,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3840,47 +3839,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CalSymKeyWrapAsymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymKeyWrapAsym$CalSymKeyWrapAsymConfig calSymKeyWrapAsymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymKeyWrapAsym.CalSymKeyWrapAsymConfig calSymKeyWrapAsymConfig) {
 					calSymKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapAsymConfig"))
 					super.delegateAdd(calSymKeyWrapAsymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymKeyWrapAsym$CalSymKeyWrapAsymConfig calSymKeyWrapAsymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymKeyWrapAsym.CalSymKeyWrapAsymConfig calSymKeyWrapAsymConfig) {
 					calSymKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapAsymConfig"))
 					super.delegateAdd(index, calSymKeyWrapAsymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymKeyWrapAsymConfig)){
 					return false
 				}
 				this.target == (object as CalSymKeyWrapAsymConfig).target
 			}
-			
+		
 			def String getCalSymKeyWrapAsymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymKeyWrapAsymInitConfiguration(String value){
@@ -3888,15 +3887,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymKeyWrapAsymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapAsymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymKeyWrapAsymPrimitiveName(String value){
@@ -3904,11 +3903,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapAsymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3919,32 +3918,32 @@ class Cal implements IWrapper<GModuleConfiguration> {
 	}
 	static class CalSymKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CalSymKeyWrapSym)){
 				return false
 			}
 			this.target == (object as CalSymKeyWrapSym).target
 		}
-		
+	
 		def BigInteger getCalSymKeyWrapSymMaxCtxBufByteSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyWrapSymMaxCtxBufByteSize(BigInteger value){
@@ -3952,15 +3951,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymMaxCtxBufByteSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCalSymKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCalSymKeyWrapSymMaxSymKeySize(BigInteger value){
@@ -3968,11 +3967,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3984,47 +3983,47 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CalSymKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CalSymKeyWrapSymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal$CalSymKeyWrapSym$CalSymKeyWrapSymConfig calSymKeyWrapSymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cal.CalSymKeyWrapSym.CalSymKeyWrapSymConfig calSymKeyWrapSymConfig) {
 					calSymKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapSymConfig"))
 					super.delegateAdd(calSymKeyWrapSymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal$CalSymKeyWrapSym$CalSymKeyWrapSymConfig calSymKeyWrapSymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cal.CalSymKeyWrapSym.CalSymKeyWrapSymConfig calSymKeyWrapSymConfig) {
 					calSymKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CalSymKeyWrapSymConfig"))
 					super.delegateAdd(index, calSymKeyWrapSymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CalSymKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CalSymKeyWrapSymConfig)){
 					return false
 				}
 				this.target == (object as CalSymKeyWrapSymConfig).target
 			}
-			
+		
 			def String getCalSymKeyWrapSymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCalSymKeyWrapSymInitConfiguration(String value){
@@ -4032,15 +4031,15 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCalSymKeyWrapSymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CalSymKeyWrapSymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCalSymKeyWrapSymPrimitiveName(String value){
@@ -4048,11 +4047,11 @@ class Cal implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CalSymKeyWrapSymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4061,14 +4060,14 @@ class Cal implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Cal)){
 			return false
 		}
 		this.target == (object as Cal).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

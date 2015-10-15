@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,68 +52,68 @@ import java.math.BigDecimal
 
 class FrArTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def FrArTpGeneral getFrArTpGeneral(){
 		moduleConfiguration.getByType(typeof(FrArTpGeneral))
 	}
-	
+
 	def void setFrArTpGeneral(FrArTpGeneral frArTpGeneral){
-		val GContainer container = frArTpGeneral.getTarget() 
+		val GContainer container = frArTpGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "FrArTpGeneral")
 	}
 	def FrArTpMultipleConfig getFrArTpMultipleConfig(){
 		moduleConfiguration.getByType(typeof(FrArTpMultipleConfig))
 	}
-	
+
 	def void setFrArTpMultipleConfig(FrArTpMultipleConfig frArTpMultipleConfig){
-		val GContainer container = frArTpMultipleConfig.getTarget() 
+		val GContainer container = frArTpMultipleConfig.getTarget()
 	    moduleConfiguration.setContainer(container, "FrArTpMultipleConfig")
 	}
-	
+
 	static class FrArTpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof FrArTpGeneral)){
 				return false
 			}
 			this.target == (object as FrArTpGeneral).target
 		}
-		
+	
 		def Boolean getFrArTpDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setFrArTpDevErrorDetect(Boolean value){
@@ -122,15 +121,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveAckRt(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveAckRt"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveAckRt"].getBooleanValue()
 		}
 		
 		def void setFrArTpHaveAckRt(Boolean value){
@@ -138,15 +137,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveAckRt"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveAckRt"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveGrpSeg(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveGrpSeg"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveGrpSeg"].getBooleanValue()
 		}
 		
 		def void setFrArTpHaveGrpSeg(Boolean value){
@@ -154,15 +153,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveGrpSeg"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveGrpSeg"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveLm(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveLm"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveLm"].getBooleanValue()
 		}
 		
 		def void setFrArTpHaveLm(Boolean value){
@@ -170,15 +169,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveLm"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveLm"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getFrArTpHaveTc(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveTc"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveTc"].getBooleanValue()
 		}
 		
 		def void setFrArTpHaveTc(Boolean value){
@@ -186,15 +185,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveTc"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveTc"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getFrArTpMainFuncCycle(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMainFuncCycle"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMainFuncCycle"].getBigDecimalValue()
 		}
 		
 		def void setFrArTpMainFuncCycle(BigDecimal value){
@@ -202,15 +201,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMainFuncCycle"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMainFuncCycle"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getFrArTpVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setFrArTpVersionInfoApi(Boolean value){
@@ -218,11 +217,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -231,30 +230,30 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 	}
 	static class FrArTpMultipleConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof FrArTpMultipleConfig)){
 				return false
 			}
 			this.target == (object as FrArTpMultipleConfig).target
 		}
-		
+	
 		
 		
 		def List<FrArTpChannel> getFrArTpChannels(){
@@ -264,47 +263,47 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<FrArTpChannel, GContainer>(filteredContainers, typeof(FrArTpChannel), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrArTp$FrArTpMultipleConfig$FrArTpChannel frArTpChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrArTp.FrArTpMultipleConfig.FrArTpChannel frArTpChannel) {
 					frArTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpChannel"))
 					super.delegateAdd(frArTpChannel)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrArTp$FrArTpMultipleConfig$FrArTpChannel frArTpChannel) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrArTp.FrArTpMultipleConfig.FrArTpChannel frArTpChannel) {
 					frArTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpChannel"))
 					super.delegateAdd(index, frArTpChannel)
-				}	
+				}
 			}
 		}
 		
 		
 		static class FrArTpChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FrArTpChannel)){
 					return false
 				}
 				this.target == (object as FrArTpChannel).target
 			}
-			
+		
 			def FrArTpAckType getFrArTpAckType(){
-				getFrArTpAckTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpAckType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpAckType"].getFrArTpAckTypeValue()
 			}
 			
 			def void setFrArTpAckType(FrArTpAckType value){
@@ -312,11 +311,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpAckType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpAckType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum FrArTpAckType {
@@ -324,22 +323,22 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				FRARTP_ACK_WITH_RT, 
 				FRARTP_NO
 			}
-				
-			def FrArTpAckType getFrArTpAckTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def FrArTpAckType getFrArTpAckTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "FRARTP_ACK_WITHOUT_RT" : FrArTpAckType.FRARTP_ACK_WITHOUT_RT
 					case "FRARTP_ACK_WITH_RT" : FrArTpAckType.FRARTP_ACK_WITH_RT
 					case "FRARTP_NO" : FrArTpAckType.FRARTP_NO
 				}
 			}
 			
-			def void setFrArTpAckTypeValue(GParameterValue paramValue, FrArTpAckType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setFrArTpAckTypeValue(GParameterValue parameterValue, FrArTpAckType value){
+				parameterValue.setValue(value)
 			}
 			
 			def FrArTpAdrType getFrArTpAdrType(){
-				getFrArTpAdrTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpAdrType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpAdrType"].getFrArTpAdrTypeValue()
 			}
 			
 			def void setFrArTpAdrType(FrArTpAdrType value){
@@ -347,32 +346,32 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpAdrType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpAdrType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum FrArTpAdrType {
 				FRARTP_OB, 
 				FRARTP_TB
 			}
-				
-			def FrArTpAdrType getFrArTpAdrTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def FrArTpAdrType getFrArTpAdrTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "FRARTP_OB" : FrArTpAdrType.FRARTP_OB
 					case "FRARTP_TB" : FrArTpAdrType.FRARTP_TB
 				}
 			}
 			
-			def void setFrArTpAdrTypeValue(GParameterValue paramValue, FrArTpAdrType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setFrArTpAdrTypeValue(GParameterValue parameterValue, FrArTpAdrType value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getFrArTpConcurrentConnections(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConcurrentConnections"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConcurrentConnections"].getBigIntegerValue()
 			}
 			
 			def void setFrArTpConcurrentConnections(BigInteger value){
@@ -380,15 +379,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpConcurrentConnections"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpConcurrentConnections"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getFrArTpGrpSeg(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpGrpSeg"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpGrpSeg"].getBooleanValue()
 			}
 			
 			def void setFrArTpGrpSeg(Boolean value){
@@ -396,15 +395,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpGrpSeg"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpGrpSeg"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def FrArTpLm getFrArTpLm(){
-				getFrArTpLmValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpLm"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpLm"].getFrArTpLmValue()
 			}
 			
 			def void setFrArTpLm(FrArTpLm value){
@@ -412,11 +411,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpLm"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpLm"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum FrArTpLm {
@@ -424,22 +423,22 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				FRARTP_ISO6, 
 				FRARTP_L4G
 			}
-				
-			def FrArTpLm getFrArTpLmValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def FrArTpLm getFrArTpLmValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "FRARTP_ISO" : FrArTpLm.FRARTP_ISO
 					case "FRARTP_ISO6" : FrArTpLm.FRARTP_ISO6
 					case "FRARTP_L4G" : FrArTpLm.FRARTP_L4G
 				}
 			}
 			
-			def void setFrArTpLmValue(GParameterValue paramValue, FrArTpLm value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setFrArTpLmValue(GParameterValue parameterValue, FrArTpLm value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getFrArTpMaxAr(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxAr"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxAr"].getBigIntegerValue()
 			}
 			
 			def void setFrArTpMaxAr(BigInteger value){
@@ -447,15 +446,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxAr"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxAr"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getFrArTpMaxAs(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxAs"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxAs"].getBigIntegerValue()
 			}
 			
 			def void setFrArTpMaxAs(BigInteger value){
@@ -463,15 +462,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxAs"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxAs"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getFrArTpMaxBs(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxBs"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxBs"].getBigIntegerValue()
 			}
 			
 			def void setFrArTpMaxBs(BigInteger value){
@@ -479,15 +478,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxBs"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxBs"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getFrArTpMaxRn(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxRn"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxRn"].getBigIntegerValue()
 			}
 			
 			def void setFrArTpMaxRn(BigInteger value){
@@ -495,15 +494,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxRn"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxRn"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getFrArTpMaxWft(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxWft"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxWft"].getBigIntegerValue()
 			}
 			
 			def void setFrArTpMaxWft(BigInteger value){
@@ -511,15 +510,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxWft"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxWft"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpStMin(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpStMin"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpStMin"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpStMin(BigDecimal value){
@@ -527,15 +526,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpStMin"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpStMin"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpStMinGrpSeg(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpStMinGrpSeg"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpStMinGrpSeg"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpStMinGrpSeg(BigDecimal value){
@@ -543,15 +542,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpStMinGrpSeg"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpStMinGrpSeg"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getFrArTpTc(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTc"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTc"].getBooleanValue()
 			}
 			
 			def void setFrArTpTc(Boolean value){
@@ -559,15 +558,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTc"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTc"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getFrArTpTimeBr(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeBr"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeBr"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpTimeBr(BigDecimal value){
@@ -575,15 +574,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeBr"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeBr"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpTimeCs(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeCs"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeCs"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpTimeCs(BigDecimal value){
@@ -591,15 +590,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeCs"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeCs"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpTimeoutAr(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutAr"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutAr"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpTimeoutAr(BigDecimal value){
@@ -607,15 +606,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutAr"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutAr"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpTimeoutAs(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutAs"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutAs"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpTimeoutAs(BigDecimal value){
@@ -623,15 +622,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutAs"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutAs"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpTimeoutBs(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutBs"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutBs"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpTimeoutBs(BigDecimal value){
@@ -639,15 +638,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutBs"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutBs"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrArTpTimeoutCr(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutCr"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutCr"].getBigDecimalValue()
 			}
 			
 			def void setFrArTpTimeoutCr(BigDecimal value){
@@ -655,11 +654,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutCr"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutCr"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -671,15 +670,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrArTpConnection, GContainer>(filteredContainers, typeof(FrArTpConnection), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrArTp$FrArTpMultipleConfig$FrArTpChannel$FrArTpConnection frArTpConnection) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrArTp.FrArTpMultipleConfig.FrArTpChannel.FrArTpConnection frArTpConnection) {
 						frArTpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpConnection"))
 						super.delegateAdd(frArTpConnection)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrArTp$FrArTpMultipleConfig$FrArTpChannel$FrArTpConnection frArTpConnection) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrArTp.FrArTpMultipleConfig.FrArTpChannel.FrArTpConnection frArTpConnection) {
 						frArTpConnection.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpConnection"))
 						super.delegateAdd(index, frArTpConnection)
-					}	
+					}
 				}
 			}
 			
@@ -690,47 +689,47 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrArTpPdu, GContainer>(filteredContainers, typeof(FrArTpPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrArTp$FrArTpMultipleConfig$FrArTpChannel$FrArTpPdu frArTpPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrArTp.FrArTpMultipleConfig.FrArTpChannel.FrArTpPdu frArTpPdu) {
 						frArTpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpPdu"))
 						super.delegateAdd(frArTpPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrArTp$FrArTpMultipleConfig$FrArTpChannel$FrArTpPdu frArTpPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrArTp.FrArTpMultipleConfig.FrArTpChannel.FrArTpPdu frArTpPdu) {
 						frArTpPdu.target?.gSetDefinition(containerValue.getContainerDefinition("FrArTpPdu"))
 						super.delegateAdd(index, frArTpPdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class FrArTpConnection implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof FrArTpConnection)){
 						return false
 					}
 					this.target == (object as FrArTpConnection).target
 				}
-				
+			
 				def BigInteger getFrArTpConPrioPdus(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConPrioPdus"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConPrioPdus"].getBigIntegerValue()
 				}
 				
 				def void setFrArTpConPrioPdus(BigInteger value){
@@ -738,15 +737,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpConPrioPdus"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpConPrioPdus"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getFrArTpLa(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpLa"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpLa"].getBigIntegerValue()
 				}
 				
 				def void setFrArTpLa(BigInteger value){
@@ -754,15 +753,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpLa"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpLa"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getFrArTpMultRec(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMultRec"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMultRec"].getBooleanValue()
 				}
 				
 				def void setFrArTpMultRec(Boolean value){
@@ -770,15 +769,15 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMultRec"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMultRec"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getFrArTpRa(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpRa"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpRa"].getBigIntegerValue()
 				}
 				
 				def void setFrArTpRa(BigInteger value){
@@ -786,11 +785,11 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpRa"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpRa"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -816,32 +815,32 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				static class FrArTpRxSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof FrArTpRxSdu)){
 							return false
 						}
 						this.target == (object as FrArTpRxSdu).target
 					}
-					
+				
 					def BigInteger getFrArTpSduRxId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduRxId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduRxId"].getBigIntegerValue()
 					}
 					
 					def void setFrArTpSduRxId(BigInteger value){
@@ -849,22 +848,22 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpSduRxId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpSduRxId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getFrArTpRxSduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "FrArTpRxSduRef")
 					}
-							
+					
 					def void setFrArTpRxSduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FrArTpRxSduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FrArTpRxSduRef"], object.getTarget())
 						}
 					}
 					
@@ -874,32 +873,32 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				static class FrArTpTxSdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof FrArTpTxSdu)){
 							return false
 						}
 						this.target == (object as FrArTpTxSdu).target
 					}
-					
+				
 					def BigInteger getFrArTpSduTxId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduTxId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduTxId"].getBigIntegerValue()
 					}
 					
 					def void setFrArTpSduTxId(BigInteger value){
@@ -907,22 +906,22 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpSduTxId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpSduTxId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getFrArTpTxSduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "FrArTpTxSduRef")
 					}
-							
+					
 					def void setFrArTpTxSduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FrArTpTxSduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FrArTpTxSduRef"], object.getTarget())
 						}
 					}
 					
@@ -934,32 +933,32 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			static class FrArTpPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof FrArTpPdu)){
 						return false
 					}
 					this.target == (object as FrArTpPdu).target
 				}
-				
+			
 				def FrArTpPduDirection getFrArTpPduDirection(){
-					getFrArTpPduDirectionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpPduDirection"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpPduDirection"].getFrArTpPduDirectionValue()
 				}
 				
 				def void setFrArTpPduDirection(FrArTpPduDirection value){
@@ -967,32 +966,32 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpPduDirection"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpPduDirection"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum FrArTpPduDirection {
 					FRARTP_RX, 
 					FRARTP_TX
 				}
-					
-				def FrArTpPduDirection getFrArTpPduDirectionValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def FrArTpPduDirection getFrArTpPduDirectionValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "FRARTP_RX" : FrArTpPduDirection.FRARTP_RX
 						case "FRARTP_TX" : FrArTpPduDirection.FRARTP_TX
 					}
 				}
 				
-				def void setFrArTpPduDirectionValue(GParameterValue paramValue, FrArTpPduDirection value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setFrArTpPduDirectionValue(GParameterValue parameterValue, FrArTpPduDirection value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getFrArTpPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpPduId"].getBigIntegerValue()
 				}
 				
 				def void setFrArTpPduId(BigInteger value){
@@ -1000,22 +999,22 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getFrArTpPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "FrArTpPduRef")
 				}
-						
+				
 				def void setFrArTpPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FrArTpPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FrArTpPduRef"], object.getTarget())
 					}
 				}
 				
@@ -1026,14 +1025,14 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof FrArTp)){
 			return false
 		}
 		this.target == (object as FrArTp).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

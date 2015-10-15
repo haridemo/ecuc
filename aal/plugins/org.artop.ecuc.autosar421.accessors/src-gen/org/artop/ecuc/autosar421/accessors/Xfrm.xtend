@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,29 +52,29 @@ import java.math.BigDecimal
 
 class Xfrm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def XfrmGeneral getXfrmGeneral(){
 		moduleConfiguration.getByType(typeof(XfrmGeneral))
 	}
-	
+
 	def void setXfrmGeneral(XfrmGeneral xfrmGeneral){
-		val GContainer container = xfrmGeneral.getTarget() 
+		val GContainer container = xfrmGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "XfrmGeneral")
 	}
 	def List<XfrmImplementationMapping> getXfrmImplementationMappings(){
@@ -85,46 +84,46 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<XfrmImplementationMapping, GContainer>(filteredContainers, typeof(XfrmImplementationMapping), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xfrm$XfrmImplementationMapping xfrmImplementationMapping) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Xfrm.XfrmImplementationMapping xfrmImplementationMapping) {
 				xfrmImplementationMapping.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("XfrmImplementationMapping"))
 				super.delegateAdd(xfrmImplementationMapping)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xfrm$XfrmImplementationMapping xfrmImplementationMapping) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Xfrm.XfrmImplementationMapping xfrmImplementationMapping) {
 				xfrmImplementationMapping.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("XfrmImplementationMapping"))
 				super.delegateAdd(index, xfrmImplementationMapping)
 			}
 		}
 	}
-	
+
 	static class XfrmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof XfrmGeneral)){
 				return false
 			}
 			this.target == (object as XfrmGeneral).target
 		}
-		
+	
 		def Boolean getXfrmDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XfrmDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XfrmDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setXfrmDevErrorDetect(Boolean value){
@@ -132,11 +131,11 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "XfrmDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XfrmDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -145,30 +144,30 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 	}
 	static class XfrmImplementationMapping implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof XfrmImplementationMapping)){
 				return false
 			}
 			this.target == (object as XfrmImplementationMapping).target
 		}
-		
+	
 		
 		
 		
@@ -196,39 +195,39 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 		
 		static class XfrmDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof XfrmDemEventParameterRefs)){
 					return false
 				}
 				this.target == (object as XfrmDemEventParameterRefs).target
 			}
-			
+		
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getXFRM_E_MALFORMED_MESSAGE(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "XFRM_E_MALFORMED_MESSAGE")
 			}
-					
+			
 			def void setXFRM_E_MALFORMED_MESSAGE(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "XFRM_E_MALFORMED_MESSAGE"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "XFRM_E_MALFORMED_MESSAGE"], object.getTarget())
 				}
 			}
 			
@@ -238,30 +237,30 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 		
 		static class XfrmSignal implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof XfrmSignal)){
 					return false
 				}
 				this.target == (object as XfrmSignal).target
 			}
-			
+		
 			
 			
 			def XfrmSignalChoice getXfrmSignalChoice(){
@@ -276,30 +275,30 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 			
 			static class XfrmSignalChoice implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof XfrmSignalChoice)){
 						return false
 					}
 					this.target == (object as XfrmSignalChoice).target
 				}
-				
+			
 				def XfrmISignalGroupRefChoice getXfrmISignalGroupRefChoice(){
 					containerValue.getByType(typeof(XfrmISignalGroupRefChoice))
 				}
@@ -319,30 +318,30 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				
 				static class XfrmISignalGroupRefChoice implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof XfrmISignalGroupRefChoice)){
 							return false
 						}
 						this.target == (object as XfrmISignalGroupRefChoice).target
 					}
-					
+				
 					
 					
 					
@@ -351,30 +350,30 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 				
 				static class XfrmISignalRefChoice implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof XfrmISignalRefChoice)){
 							return false
 						}
 						this.target == (object as XfrmISignalRefChoice).target
 					}
-					
+				
 					
 					
 					
@@ -386,14 +385,14 @@ class Xfrm implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Xfrm)){
 			return false
 		}
 		this.target == (object as Xfrm).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

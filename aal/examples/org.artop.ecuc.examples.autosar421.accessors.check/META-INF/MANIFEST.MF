@@ -18,4 +18,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.artop.ecuc.gautosar.accessors.check,
  org.artop.aal.autosar40,
  org.artop.ecuc.autosar421.accessors,
- org.artop.ecuc.autosar421.accessors.lib
+ org.artop.ecuc.autosar4x.accessors.lib

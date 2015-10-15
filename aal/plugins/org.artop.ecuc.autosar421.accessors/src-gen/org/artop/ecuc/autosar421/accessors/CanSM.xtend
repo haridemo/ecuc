@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,68 +52,68 @@ import java.math.BigDecimal
 
 class CanSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def CanSMConfiguration getCanSMConfiguration(){
 		moduleConfiguration.getByType(typeof(CanSMConfiguration))
 	}
-	
+
 	def void setCanSMConfiguration(CanSMConfiguration canSMConfiguration){
-		val GContainer container = canSMConfiguration.getTarget() 
+		val GContainer container = canSMConfiguration.getTarget()
 	    moduleConfiguration.setContainer(container, "CanSMConfiguration")
 	}
 	def CanSMGeneral getCanSMGeneral(){
 		moduleConfiguration.getByType(typeof(CanSMGeneral))
 	}
-	
+
 	def void setCanSMGeneral(CanSMGeneral canSMGeneral){
-		val GContainer container = canSMGeneral.getTarget() 
+		val GContainer container = canSMGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "CanSMGeneral")
 	}
-	
+
 	static class CanSMConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CanSMConfiguration)){
 				return false
 			}
 			this.target == (object as CanSMConfiguration).target
 		}
-		
+	
 		def BigInteger getCanSMModeRequestRepetitionMax(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionMax"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionMax"].getBigIntegerValue()
 		}
 		
 		def void setCanSMModeRequestRepetitionMax(BigInteger value){
@@ -122,15 +121,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMModeRequestRepetitionMax"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMModeRequestRepetitionMax"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getCanSMModeRequestRepetitionTime(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionTime"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMModeRequestRepetitionTime"].getBigDecimalValue()
 		}
 		
 		def void setCanSMModeRequestRepetitionTime(BigDecimal value){
@@ -138,11 +137,11 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMModeRequestRepetitionTime"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMModeRequestRepetitionTime"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -154,47 +153,47 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanSMManagerNetwork, GContainer>(filteredContainers, typeof(CanSMManagerNetwork), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanSM$CanSMConfiguration$CanSMManagerNetwork canSMManagerNetwork) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanSM.CanSMConfiguration.CanSMManagerNetwork canSMManagerNetwork) {
 					canSMManagerNetwork.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMManagerNetwork"))
 					super.delegateAdd(canSMManagerNetwork)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanSM$CanSMConfiguration$CanSMManagerNetwork canSMManagerNetwork) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanSM.CanSMConfiguration.CanSMManagerNetwork canSMManagerNetwork) {
 					canSMManagerNetwork.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMManagerNetwork"))
 					super.delegateAdd(index, canSMManagerNetwork)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CanSMManagerNetwork implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CanSMManagerNetwork)){
 					return false
 				}
 				this.target == (object as CanSMManagerNetwork).target
 			}
-			
+		
 			def BigInteger getCanSMBorCounterL1ToL2(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorCounterL1ToL2"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorCounterL1ToL2"].getBigIntegerValue()
 			}
 			
 			def void setCanSMBorCounterL1ToL2(BigInteger value){
@@ -202,15 +201,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorCounterL1ToL2"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorCounterL1ToL2"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getCanSMBorTimeL1(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL1"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL1"].getBigDecimalValue()
 			}
 			
 			def void setCanSMBorTimeL1(BigDecimal value){
@@ -218,15 +217,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTimeL1"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTimeL1"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getCanSMBorTimeL2(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL2"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeL2"].getBigDecimalValue()
 			}
 			
 			def void setCanSMBorTimeL2(BigDecimal value){
@@ -234,15 +233,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTimeL2"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTimeL2"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getCanSMBorTimeTxEnsured(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeTxEnsured"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTimeTxEnsured"].getBigDecimalValue()
 			}
 			
 			def void setCanSMBorTimeTxEnsured(BigDecimal value){
@@ -250,15 +249,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTimeTxEnsured"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTimeTxEnsured"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getCanSMBorTxConfirmationPolling(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTxConfirmationPolling"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMBorTxConfirmationPolling"].getBooleanValue()
 			}
 			
 			def void setCanSMBorTxConfirmationPolling(Boolean value){
@@ -266,15 +265,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTxConfirmationPolling"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMBorTxConfirmationPolling"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanSMEnableBusOffDelay(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMEnableBusOffDelay"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMEnableBusOffDelay"].getBooleanValue()
 			}
 			
 			def void setCanSMEnableBusOffDelay(Boolean value){
@@ -282,33 +281,33 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMEnableBusOffDelay"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMEnableBusOffDelay"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCanSMComMNetworkHandleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CanSMComMNetworkHandleRef")
 			}
-					
+			
 			def void setCanSMComMNetworkHandleRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanSMComMNetworkHandleRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanSMComMNetworkHandleRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.CanIf.CanIfTrcvDrvCfg.CanIfTrcvCfg getCanSMTransceiverId(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.CanIf.CanIfTrcvDrvCfg.CanIfTrcvCfg), "CanSMTransceiverId")
 			}
-					
+			
 			def void setCanSMTransceiverId(org.artop.ecuc.autosar421.accessors.CanIf.CanIfTrcvDrvCfg.CanIfTrcvCfg object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanSMTransceiverId"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanSMTransceiverId"], object.getTarget())
 				}
 			}
 			
@@ -320,15 +319,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanSMController, GContainer>(filteredContainers, typeof(CanSMController), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanSM$CanSMConfiguration$CanSMManagerNetwork$CanSMController canSMController) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanSM.CanSMConfiguration.CanSMManagerNetwork.CanSMController canSMController) {
 						canSMController.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMController"))
 						super.delegateAdd(canSMController)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanSM$CanSMConfiguration$CanSMManagerNetwork$CanSMController canSMController) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanSM.CanSMConfiguration.CanSMManagerNetwork.CanSMController canSMController) {
 						canSMController.target?.gSetDefinition(containerValue.getContainerDefinition("CanSMController"))
 						super.delegateAdd(index, canSMController)
-					}	
+					}
 				}
 			}
 			
@@ -344,39 +343,39 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			
 			static class CanSMController implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanSMController)){
 						return false
 					}
 					this.target == (object as CanSMController).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg getCanSMControllerId(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg), "CanSMControllerId")
 				}
-						
+				
 				def void setCanSMControllerId(org.artop.ecuc.autosar421.accessors.CanIf.CanIfCtrlDrvCfg.CanIfCtrlCfg object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanSMControllerId"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanSMControllerId"], object.getTarget())
 					}
 				}
 				
@@ -386,39 +385,39 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			
 			static class CanSMDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanSMDemEventParameterRefs)){
 						return false
 					}
 					this.target == (object as CanSMDemEventParameterRefs).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getCANSM_E_BUS_OFF(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "CANSM_E_BUS_OFF")
 				}
-						
+				
 				def void setCANSM_E_BUS_OFF(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CANSM_E_BUS_OFF"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CANSM_E_BUS_OFF"], object.getTarget())
 					}
 				}
 				
@@ -431,32 +430,32 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 	}
 	static class CanSMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CanSMGeneral)){
 				return false
 			}
 			this.target == (object as CanSMGeneral).target
 		}
-		
+	
 		def Boolean getCanSMDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setCanSMDevErrorDetect(Boolean value){
@@ -464,15 +463,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getCanSMGetBusOffDelayFunction(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMGetBusOffDelayFunction"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMGetBusOffDelayFunction"].getStringValue()
 		}
 		
 		def void setCanSMGetBusOffDelayFunction(String value){
@@ -480,15 +479,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMGetBusOffDelayFunction"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMGetBusOffDelayFunction"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def String getCanSMGetBusOffDelayHeader(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMGetBusOffDelayHeader"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMGetBusOffDelayHeader"].getStringValue()
 		}
 		
 		def void setCanSMGetBusOffDelayHeader(String value){
@@ -496,15 +495,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMGetBusOffDelayHeader"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMGetBusOffDelayHeader"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getCanSMIcomSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMIcomSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMIcomSupport"].getBooleanValue()
 		}
 		
 		def void setCanSMIcomSupport(Boolean value){
@@ -512,15 +511,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMIcomSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMIcomSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getCanSMMainFunctionTimePeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMMainFunctionTimePeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMMainFunctionTimePeriod"].getBigDecimalValue()
 		}
 		
 		def void setCanSMMainFunctionTimePeriod(BigDecimal value){
@@ -528,15 +527,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMMainFunctionTimePeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMMainFunctionTimePeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getCanSMPncSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMPncSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMPncSupport"].getBooleanValue()
 		}
 		
 		def void setCanSMPncSupport(Boolean value){
@@ -544,15 +543,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMPncSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMPncSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanSMSetBaudrateApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMSetBaudrateApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMSetBaudrateApi"].getBooleanValue()
 		}
 		
 		def void setCanSMSetBaudrateApi(Boolean value){
@@ -560,15 +559,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMSetBaudrateApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMSetBaudrateApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanSMTxOfflineActiveSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMTxOfflineActiveSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMTxOfflineActiveSupport"].getBooleanValue()
 		}
 		
 		def void setCanSMTxOfflineActiveSupport(Boolean value){
@@ -576,15 +575,15 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMTxOfflineActiveSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMTxOfflineActiveSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanSMVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSMVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setCanSMVersionInfoApi(Boolean value){
@@ -592,25 +591,25 @@ class CanSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanSMVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSMVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof CanSM)){
 			return false
 		}
 		this.target == (object as CanSM).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,316 +52,316 @@ import java.math.BigDecimal
 
 class Csm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def CsmAsymDecrypt getCsmAsymDecrypt(){
 		moduleConfiguration.getByType(typeof(CsmAsymDecrypt))
 	}
-	
+
 	def void setCsmAsymDecrypt(CsmAsymDecrypt csmAsymDecrypt){
-		val GContainer container = csmAsymDecrypt.getTarget() 
+		val GContainer container = csmAsymDecrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymDecrypt")
 	}
 	def CsmAsymEncrypt getCsmAsymEncrypt(){
 		moduleConfiguration.getByType(typeof(CsmAsymEncrypt))
 	}
-	
+
 	def void setCsmAsymEncrypt(CsmAsymEncrypt csmAsymEncrypt){
-		val GContainer container = csmAsymEncrypt.getTarget() 
+		val GContainer container = csmAsymEncrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymEncrypt")
 	}
 	def CsmAsymPrivateKeyExtract getCsmAsymPrivateKeyExtract(){
 		moduleConfiguration.getByType(typeof(CsmAsymPrivateKeyExtract))
 	}
-	
+
 	def void setCsmAsymPrivateKeyExtract(CsmAsymPrivateKeyExtract csmAsymPrivateKeyExtract){
-		val GContainer container = csmAsymPrivateKeyExtract.getTarget() 
+		val GContainer container = csmAsymPrivateKeyExtract.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymPrivateKeyExtract")
 	}
 	def CsmAsymPrivateKeyUpdate getCsmAsymPrivateKeyUpdate(){
 		moduleConfiguration.getByType(typeof(CsmAsymPrivateKeyUpdate))
 	}
-	
+
 	def void setCsmAsymPrivateKeyUpdate(CsmAsymPrivateKeyUpdate csmAsymPrivateKeyUpdate){
-		val GContainer container = csmAsymPrivateKeyUpdate.getTarget() 
+		val GContainer container = csmAsymPrivateKeyUpdate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymPrivateKeyUpdate")
 	}
 	def CsmAsymPrivateKeyWrapAsym getCsmAsymPrivateKeyWrapAsym(){
 		moduleConfiguration.getByType(typeof(CsmAsymPrivateKeyWrapAsym))
 	}
-	
+
 	def void setCsmAsymPrivateKeyWrapAsym(CsmAsymPrivateKeyWrapAsym csmAsymPrivateKeyWrapAsym){
-		val GContainer container = csmAsymPrivateKeyWrapAsym.getTarget() 
+		val GContainer container = csmAsymPrivateKeyWrapAsym.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymPrivateKeyWrapAsym")
 	}
 	def CsmAsymPrivateKeyWrapSym getCsmAsymPrivateKeyWrapSym(){
 		moduleConfiguration.getByType(typeof(CsmAsymPrivateKeyWrapSym))
 	}
-	
+
 	def void setCsmAsymPrivateKeyWrapSym(CsmAsymPrivateKeyWrapSym csmAsymPrivateKeyWrapSym){
-		val GContainer container = csmAsymPrivateKeyWrapSym.getTarget() 
+		val GContainer container = csmAsymPrivateKeyWrapSym.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymPrivateKeyWrapSym")
 	}
 	def CsmAsymPublicKeyExtract getCsmAsymPublicKeyExtract(){
 		moduleConfiguration.getByType(typeof(CsmAsymPublicKeyExtract))
 	}
-	
+
 	def void setCsmAsymPublicKeyExtract(CsmAsymPublicKeyExtract csmAsymPublicKeyExtract){
-		val GContainer container = csmAsymPublicKeyExtract.getTarget() 
+		val GContainer container = csmAsymPublicKeyExtract.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymPublicKeyExtract")
 	}
 	def CsmAsymPublicKeyUpdate getCsmAsymPublicKeyUpdate(){
 		moduleConfiguration.getByType(typeof(CsmAsymPublicKeyUpdate))
 	}
-	
+
 	def void setCsmAsymPublicKeyUpdate(CsmAsymPublicKeyUpdate csmAsymPublicKeyUpdate){
-		val GContainer container = csmAsymPublicKeyUpdate.getTarget() 
+		val GContainer container = csmAsymPublicKeyUpdate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmAsymPublicKeyUpdate")
 	}
 	def CsmChecksum getCsmChecksum(){
 		moduleConfiguration.getByType(typeof(CsmChecksum))
 	}
-	
+
 	def void setCsmChecksum(CsmChecksum csmChecksum){
-		val GContainer container = csmChecksum.getTarget() 
+		val GContainer container = csmChecksum.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmChecksum")
 	}
 	def CsmCompression getCsmCompression(){
 		moduleConfiguration.getByType(typeof(CsmCompression))
 	}
-	
+
 	def void setCsmCompression(CsmCompression csmCompression){
-		val GContainer container = csmCompression.getTarget() 
+		val GContainer container = csmCompression.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmCompression")
 	}
 	def CsmDecompression getCsmDecompression(){
 		moduleConfiguration.getByType(typeof(CsmDecompression))
 	}
-	
+
 	def void setCsmDecompression(CsmDecompression csmDecompression){
-		val GContainer container = csmDecompression.getTarget() 
+		val GContainer container = csmDecompression.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmDecompression")
 	}
 	def CsmGeneral getCsmGeneral(){
 		moduleConfiguration.getByType(typeof(CsmGeneral))
 	}
-	
+
 	def void setCsmGeneral(CsmGeneral csmGeneral){
-		val GContainer container = csmGeneral.getTarget() 
+		val GContainer container = csmGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmGeneral")
 	}
 	def CsmHash getCsmHash(){
 		moduleConfiguration.getByType(typeof(CsmHash))
 	}
-	
+
 	def void setCsmHash(CsmHash csmHash){
-		val GContainer container = csmHash.getTarget() 
+		val GContainer container = csmHash.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmHash")
 	}
 	def CsmKeyDerive getCsmKeyDerive(){
 		moduleConfiguration.getByType(typeof(CsmKeyDerive))
 	}
-	
+
 	def void setCsmKeyDerive(CsmKeyDerive csmKeyDerive){
-		val GContainer container = csmKeyDerive.getTarget() 
+		val GContainer container = csmKeyDerive.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmKeyDerive")
 	}
 	def CsmKeyDeriveSymKey getCsmKeyDeriveSymKey(){
 		moduleConfiguration.getByType(typeof(CsmKeyDeriveSymKey))
 	}
-	
+
 	def void setCsmKeyDeriveSymKey(CsmKeyDeriveSymKey csmKeyDeriveSymKey){
-		val GContainer container = csmKeyDeriveSymKey.getTarget() 
+		val GContainer container = csmKeyDeriveSymKey.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmKeyDeriveSymKey")
 	}
 	def CsmKeyExchangeCalcPubVal getCsmKeyExchangeCalcPubVal(){
 		moduleConfiguration.getByType(typeof(CsmKeyExchangeCalcPubVal))
 	}
-	
+
 	def void setCsmKeyExchangeCalcPubVal(CsmKeyExchangeCalcPubVal csmKeyExchangeCalcPubVal){
-		val GContainer container = csmKeyExchangeCalcPubVal.getTarget() 
+		val GContainer container = csmKeyExchangeCalcPubVal.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmKeyExchangeCalcPubVal")
 	}
 	def CsmKeyExchangeCalcSecret getCsmKeyExchangeCalcSecret(){
 		moduleConfiguration.getByType(typeof(CsmKeyExchangeCalcSecret))
 	}
-	
+
 	def void setCsmKeyExchangeCalcSecret(CsmKeyExchangeCalcSecret csmKeyExchangeCalcSecret){
-		val GContainer container = csmKeyExchangeCalcSecret.getTarget() 
+		val GContainer container = csmKeyExchangeCalcSecret.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmKeyExchangeCalcSecret")
 	}
 	def CsmKeyExchangeCalcSymKey getCsmKeyExchangeCalcSymKey(){
 		moduleConfiguration.getByType(typeof(CsmKeyExchangeCalcSymKey))
 	}
-	
+
 	def void setCsmKeyExchangeCalcSymKey(CsmKeyExchangeCalcSymKey csmKeyExchangeCalcSymKey){
-		val GContainer container = csmKeyExchangeCalcSymKey.getTarget() 
+		val GContainer container = csmKeyExchangeCalcSymKey.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmKeyExchangeCalcSymKey")
 	}
 	def CsmMacGenerate getCsmMacGenerate(){
 		moduleConfiguration.getByType(typeof(CsmMacGenerate))
 	}
-	
+
 	def void setCsmMacGenerate(CsmMacGenerate csmMacGenerate){
-		val GContainer container = csmMacGenerate.getTarget() 
+		val GContainer container = csmMacGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmMacGenerate")
 	}
 	def CsmMacVerify getCsmMacVerify(){
 		moduleConfiguration.getByType(typeof(CsmMacVerify))
 	}
-	
+
 	def void setCsmMacVerify(CsmMacVerify csmMacVerify){
-		val GContainer container = csmMacVerify.getTarget() 
+		val GContainer container = csmMacVerify.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmMacVerify")
 	}
 	def CsmRandomGenerate getCsmRandomGenerate(){
 		moduleConfiguration.getByType(typeof(CsmRandomGenerate))
 	}
-	
+
 	def void setCsmRandomGenerate(CsmRandomGenerate csmRandomGenerate){
-		val GContainer container = csmRandomGenerate.getTarget() 
+		val GContainer container = csmRandomGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmRandomGenerate")
 	}
 	def CsmRandomSeed getCsmRandomSeed(){
 		moduleConfiguration.getByType(typeof(CsmRandomSeed))
 	}
-	
+
 	def void setCsmRandomSeed(CsmRandomSeed csmRandomSeed){
-		val GContainer container = csmRandomSeed.getTarget() 
+		val GContainer container = csmRandomSeed.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmRandomSeed")
 	}
 	def CsmSignatureGenerate getCsmSignatureGenerate(){
 		moduleConfiguration.getByType(typeof(CsmSignatureGenerate))
 	}
-	
+
 	def void setCsmSignatureGenerate(CsmSignatureGenerate csmSignatureGenerate){
-		val GContainer container = csmSignatureGenerate.getTarget() 
+		val GContainer container = csmSignatureGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSignatureGenerate")
 	}
 	def CsmSignatureVerify getCsmSignatureVerify(){
 		moduleConfiguration.getByType(typeof(CsmSignatureVerify))
 	}
-	
+
 	def void setCsmSignatureVerify(CsmSignatureVerify csmSignatureVerify){
-		val GContainer container = csmSignatureVerify.getTarget() 
+		val GContainer container = csmSignatureVerify.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSignatureVerify")
 	}
 	def CsmSymBlockDecrypt getCsmSymBlockDecrypt(){
 		moduleConfiguration.getByType(typeof(CsmSymBlockDecrypt))
 	}
-	
+
 	def void setCsmSymBlockDecrypt(CsmSymBlockDecrypt csmSymBlockDecrypt){
-		val GContainer container = csmSymBlockDecrypt.getTarget() 
+		val GContainer container = csmSymBlockDecrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymBlockDecrypt")
 	}
 	def CsmSymBlockEncrypt getCsmSymBlockEncrypt(){
 		moduleConfiguration.getByType(typeof(CsmSymBlockEncrypt))
 	}
-	
+
 	def void setCsmSymBlockEncrypt(CsmSymBlockEncrypt csmSymBlockEncrypt){
-		val GContainer container = csmSymBlockEncrypt.getTarget() 
+		val GContainer container = csmSymBlockEncrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymBlockEncrypt")
 	}
 	def CsmSymDecrypt getCsmSymDecrypt(){
 		moduleConfiguration.getByType(typeof(CsmSymDecrypt))
 	}
-	
+
 	def void setCsmSymDecrypt(CsmSymDecrypt csmSymDecrypt){
-		val GContainer container = csmSymDecrypt.getTarget() 
+		val GContainer container = csmSymDecrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymDecrypt")
 	}
 	def CsmSymEncrypt getCsmSymEncrypt(){
 		moduleConfiguration.getByType(typeof(CsmSymEncrypt))
 	}
-	
+
 	def void setCsmSymEncrypt(CsmSymEncrypt csmSymEncrypt){
-		val GContainer container = csmSymEncrypt.getTarget() 
+		val GContainer container = csmSymEncrypt.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymEncrypt")
 	}
 	def CsmSymKeyExtract getCsmSymKeyExtract(){
 		moduleConfiguration.getByType(typeof(CsmSymKeyExtract))
 	}
-	
+
 	def void setCsmSymKeyExtract(CsmSymKeyExtract csmSymKeyExtract){
-		val GContainer container = csmSymKeyExtract.getTarget() 
+		val GContainer container = csmSymKeyExtract.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymKeyExtract")
 	}
 	def CsmSymKeyGenerate getCsmSymKeyGenerate(){
 		moduleConfiguration.getByType(typeof(CsmSymKeyGenerate))
 	}
-	
+
 	def void setCsmSymKeyGenerate(CsmSymKeyGenerate csmSymKeyGenerate){
-		val GContainer container = csmSymKeyGenerate.getTarget() 
+		val GContainer container = csmSymKeyGenerate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymKeyGenerate")
 	}
 	def CsmSymKeyUpdate getCsmSymKeyUpdate(){
 		moduleConfiguration.getByType(typeof(CsmSymKeyUpdate))
 	}
-	
+
 	def void setCsmSymKeyUpdate(CsmSymKeyUpdate csmSymKeyUpdate){
-		val GContainer container = csmSymKeyUpdate.getTarget() 
+		val GContainer container = csmSymKeyUpdate.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymKeyUpdate")
 	}
 	def CsmSymKeyWrapAsym getCsmSymKeyWrapAsym(){
 		moduleConfiguration.getByType(typeof(CsmSymKeyWrapAsym))
 	}
-	
+
 	def void setCsmSymKeyWrapAsym(CsmSymKeyWrapAsym csmSymKeyWrapAsym){
-		val GContainer container = csmSymKeyWrapAsym.getTarget() 
+		val GContainer container = csmSymKeyWrapAsym.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymKeyWrapAsym")
 	}
 	def CsmSymKeyWrapSym getCsmSymKeyWrapSym(){
 		moduleConfiguration.getByType(typeof(CsmSymKeyWrapSym))
 	}
-	
+
 	def void setCsmSymKeyWrapSym(CsmSymKeyWrapSym csmSymKeyWrapSym){
-		val GContainer container = csmSymKeyWrapSym.getTarget() 
+		val GContainer container = csmSymKeyWrapSym.getTarget()
 	    moduleConfiguration.setContainer(container, "CsmSymKeyWrapSym")
 	}
-	
+
 	static class CsmAsymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymDecrypt)){
 				return false
 			}
 			this.target == (object as CsmAsymDecrypt).target
 		}
-		
+	
 		def BigInteger getCsmAsymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymDecryptMaxKeySize(BigInteger value){
@@ -370,11 +369,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymDecryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymDecryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -386,47 +385,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymDecryptConfig, GContainer>(filteredContainers, typeof(CsmAsymDecryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymDecrypt$CsmAsymDecryptConfig csmAsymDecryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymDecrypt.CsmAsymDecryptConfig csmAsymDecryptConfig) {
 					csmAsymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymDecryptConfig"))
 					super.delegateAdd(csmAsymDecryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymDecrypt$CsmAsymDecryptConfig csmAsymDecryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymDecrypt.CsmAsymDecryptConfig csmAsymDecryptConfig) {
 					csmAsymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymDecryptConfig"))
 					super.delegateAdd(index, csmAsymDecryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymDecryptConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymDecryptConfig).target
 			}
-			
+		
 			def String getCsmAsymDecryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymDecryptInitConfiguration(String value){
@@ -434,15 +433,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymDecryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymDecryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymDecryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymDecryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymDecryptPrimitiveName(String value){
@@ -450,15 +449,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymDecryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymDecryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymDecrypt(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymDecrypt"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymDecrypt"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymDecrypt(String value){
@@ -466,11 +465,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymDecrypt"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymDecrypt"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -481,32 +480,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymEncrypt)){
 				return false
 			}
 			this.target == (object as CsmAsymEncrypt).target
 		}
-		
+	
 		def BigInteger getCsmAsymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymEncryptMaxKeySize(BigInteger value){
@@ -514,11 +513,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymEncryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymEncryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -530,47 +529,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymEncryptConfig, GContainer>(filteredContainers, typeof(CsmAsymEncryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymEncrypt$CsmAsymEncryptConfig csmAsymEncryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymEncrypt.CsmAsymEncryptConfig csmAsymEncryptConfig) {
 					csmAsymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymEncryptConfig"))
 					super.delegateAdd(csmAsymEncryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymEncrypt$CsmAsymEncryptConfig csmAsymEncryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymEncrypt.CsmAsymEncryptConfig csmAsymEncryptConfig) {
 					csmAsymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymEncryptConfig"))
 					super.delegateAdd(index, csmAsymEncryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymEncryptConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymEncryptConfig).target
 			}
-			
+		
 			def String getCsmAsymEncryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymEncryptInitConfiguration(String value){
@@ -578,15 +577,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymEncryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymEncryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymEncryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymEncryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymEncryptPrimitiveName(String value){
@@ -594,15 +593,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymEncryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymEncryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymEncrypt(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymEncrypt"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymEncrypt"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymEncrypt(String value){
@@ -610,11 +609,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymEncrypt"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymEncrypt"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -625,32 +624,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymPrivateKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymPrivateKeyExtract)){
 				return false
 			}
 			this.target == (object as CsmAsymPrivateKeyExtract).target
 		}
-		
+	
 		def BigInteger getCsmAsymPrivateKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPrivateKeyExtractMaxKeySize(BigInteger value){
@@ -658,11 +657,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyExtractMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -674,47 +673,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymPrivateKeyExtractConfig, GContainer>(filteredContainers, typeof(CsmAsymPrivateKeyExtractConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyExtract$CsmAsymPrivateKeyExtractConfig csmAsymPrivateKeyExtractConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyExtract.CsmAsymPrivateKeyExtractConfig csmAsymPrivateKeyExtractConfig) {
 					csmAsymPrivateKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyExtractConfig"))
 					super.delegateAdd(csmAsymPrivateKeyExtractConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyExtract$CsmAsymPrivateKeyExtractConfig csmAsymPrivateKeyExtractConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyExtract.CsmAsymPrivateKeyExtractConfig csmAsymPrivateKeyExtractConfig) {
 					csmAsymPrivateKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyExtractConfig"))
 					super.delegateAdd(index, csmAsymPrivateKeyExtractConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymPrivateKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymPrivateKeyExtractConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymPrivateKeyExtractConfig).target
 			}
-			
+		
 			def String getCsmAsymPrivateKeyExtractInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyExtractInitConfiguration(String value){
@@ -722,15 +721,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyExtractInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyExtractInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymPrivateKeyExtractPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyExtractPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyExtractPrimitiveName(String value){
@@ -738,15 +737,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyExtractPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyExtractPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymPrivateKeyExtract(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyExtract"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyExtract"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymPrivateKeyExtract(String value){
@@ -754,11 +753,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyExtract"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyExtract"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -769,32 +768,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymPrivateKeyUpdate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymPrivateKeyUpdate)){
 				return false
 			}
 			this.target == (object as CsmAsymPrivateKeyUpdate).target
 		}
-		
+	
 		def BigInteger getCsmAsymPrivateKeyUpdateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPrivateKeyUpdateMaxKeySize(BigInteger value){
@@ -802,11 +801,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyUpdateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -818,47 +817,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymPrivateKeyUpdateConfig, GContainer>(filteredContainers, typeof(CsmAsymPrivateKeyUpdateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyUpdate$CsmAsymPrivateKeyUpdateConfig csmAsymPrivateKeyUpdateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyUpdate.CsmAsymPrivateKeyUpdateConfig csmAsymPrivateKeyUpdateConfig) {
 					csmAsymPrivateKeyUpdateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyUpdateConfig"))
 					super.delegateAdd(csmAsymPrivateKeyUpdateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyUpdate$CsmAsymPrivateKeyUpdateConfig csmAsymPrivateKeyUpdateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyUpdate.CsmAsymPrivateKeyUpdateConfig csmAsymPrivateKeyUpdateConfig) {
 					csmAsymPrivateKeyUpdateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyUpdateConfig"))
 					super.delegateAdd(index, csmAsymPrivateKeyUpdateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymPrivateKeyUpdateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymPrivateKeyUpdateConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymPrivateKeyUpdateConfig).target
 			}
-			
+		
 			def String getCsmAsymPrivateKeyUpdateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyUpdateInitConfiguration(String value){
@@ -866,15 +865,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyUpdateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyUpdateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymPrivateKeyUpdatePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdatePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyUpdatePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyUpdatePrimitiveName(String value){
@@ -882,15 +881,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyUpdatePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyUpdatePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymPrivateKeyUpdate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyUpdate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyUpdate"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymPrivateKeyUpdate(String value){
@@ -898,11 +897,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyUpdate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyUpdate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -913,32 +912,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymPrivateKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymPrivateKeyWrapAsym)){
 				return false
 			}
 			this.target == (object as CsmAsymPrivateKeyWrapAsym).target
 		}
-		
+	
 		def BigInteger getCsmAsymPrivateKeyWrapAsymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPrivateKeyWrapAsymMaxPrivKeySize(BigInteger value){
@@ -946,15 +945,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPrivKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmAsymPrivateKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPrivateKeyWrapAsymMaxPubKeySize(BigInteger value){
@@ -962,11 +961,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymMaxPubKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -978,47 +977,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymPrivateKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CsmAsymPrivateKeyWrapAsymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyWrapAsym$CsmAsymPrivateKeyWrapAsymConfig csmAsymPrivateKeyWrapAsymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyWrapAsym.CsmAsymPrivateKeyWrapAsymConfig csmAsymPrivateKeyWrapAsymConfig) {
 					csmAsymPrivateKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyWrapAsymConfig"))
 					super.delegateAdd(csmAsymPrivateKeyWrapAsymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyWrapAsym$CsmAsymPrivateKeyWrapAsymConfig csmAsymPrivateKeyWrapAsymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyWrapAsym.CsmAsymPrivateKeyWrapAsymConfig csmAsymPrivateKeyWrapAsymConfig) {
 					csmAsymPrivateKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyWrapAsymConfig"))
 					super.delegateAdd(index, csmAsymPrivateKeyWrapAsymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymPrivateKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymPrivateKeyWrapAsymConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymPrivateKeyWrapAsymConfig).target
 			}
-			
+		
 			def String getCsmAsymPrivateKeyWrapAsymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyWrapAsymInitConfiguration(String value){
@@ -1026,15 +1025,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymPrivateKeyWrapAsymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapAsymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyWrapAsymPrimitiveName(String value){
@@ -1042,15 +1041,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapAsymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymPrivateKeyWrapAsym(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyWrapAsym"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyWrapAsym"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymPrivateKeyWrapAsym(String value){
@@ -1058,11 +1057,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyWrapAsym"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyWrapAsym"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1073,32 +1072,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymPrivateKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymPrivateKeyWrapSym)){
 				return false
 			}
 			this.target == (object as CsmAsymPrivateKeyWrapSym).target
 		}
-		
+	
 		def BigInteger getCsmAsymPrivateKeyWrapSymMaxPrivKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPrivateKeyWrapSymMaxPrivKeySize(BigInteger value){
@@ -1106,15 +1105,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymMaxPrivKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmAsymPrivateKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPrivateKeyWrapSymMaxSymKeySize(BigInteger value){
@@ -1122,11 +1121,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1138,47 +1137,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymPrivateKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CsmAsymPrivateKeyWrapSymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyWrapSym$CsmAsymPrivateKeyWrapSymConfig csmAsymPrivateKeyWrapSymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyWrapSym.CsmAsymPrivateKeyWrapSymConfig csmAsymPrivateKeyWrapSymConfig) {
 					csmAsymPrivateKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyWrapSymConfig"))
 					super.delegateAdd(csmAsymPrivateKeyWrapSymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPrivateKeyWrapSym$CsmAsymPrivateKeyWrapSymConfig csmAsymPrivateKeyWrapSymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPrivateKeyWrapSym.CsmAsymPrivateKeyWrapSymConfig csmAsymPrivateKeyWrapSymConfig) {
 					csmAsymPrivateKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPrivateKeyWrapSymConfig"))
 					super.delegateAdd(index, csmAsymPrivateKeyWrapSymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymPrivateKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymPrivateKeyWrapSymConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymPrivateKeyWrapSymConfig).target
 			}
-			
+		
 			def String getCsmAsymPrivateKeyWrapSymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyWrapSymInitConfiguration(String value){
@@ -1186,15 +1185,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymPrivateKeyWrapSymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyWrapSymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymPrivateKeyWrapSymPrimitiveName(String value){
@@ -1202,15 +1201,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyWrapSymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymPrivateKeyWrapSym(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyWrapSym"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPrivateKeyWrapSym"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymPrivateKeyWrapSym(String value){
@@ -1218,11 +1217,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyWrapSym"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPrivateKeyWrapSym"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1233,32 +1232,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymPublicKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymPublicKeyExtract)){
 				return false
 			}
 			this.target == (object as CsmAsymPublicKeyExtract).target
 		}
-		
+	
 		def BigInteger getCsmAsymPublicKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPublicKeyExtractMaxKeySize(BigInteger value){
@@ -1266,11 +1265,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyExtractMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1282,47 +1281,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymPublicKeyExtractConfig, GContainer>(filteredContainers, typeof(CsmAsymPublicKeyExtractConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPublicKeyExtract$CsmAsymPublicKeyExtractConfig csmAsymPublicKeyExtractConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPublicKeyExtract.CsmAsymPublicKeyExtractConfig csmAsymPublicKeyExtractConfig) {
 					csmAsymPublicKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPublicKeyExtractConfig"))
 					super.delegateAdd(csmAsymPublicKeyExtractConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPublicKeyExtract$CsmAsymPublicKeyExtractConfig csmAsymPublicKeyExtractConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPublicKeyExtract.CsmAsymPublicKeyExtractConfig csmAsymPublicKeyExtractConfig) {
 					csmAsymPublicKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPublicKeyExtractConfig"))
 					super.delegateAdd(index, csmAsymPublicKeyExtractConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymPublicKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymPublicKeyExtractConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymPublicKeyExtractConfig).target
 			}
-			
+		
 			def String getCsmAsymPublicKeyExtractInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymPublicKeyExtractInitConfiguration(String value){
@@ -1330,15 +1329,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyExtractInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyExtractInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymPublicKeyExtractPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyExtractPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymPublicKeyExtractPrimitiveName(String value){
@@ -1346,15 +1345,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyExtractPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyExtractPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymPublicKeyExtract(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPublicKeyExtract"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPublicKeyExtract"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymPublicKeyExtract(String value){
@@ -1362,11 +1361,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPublicKeyExtract"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPublicKeyExtract"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1377,32 +1376,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmAsymPublicKeyUpdate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmAsymPublicKeyUpdate)){
 				return false
 			}
 			this.target == (object as CsmAsymPublicKeyUpdate).target
 		}
-		
+	
 		def BigInteger getCsmAsymPublicKeyUpdateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmAsymPublicKeyUpdateMaxKeySize(BigInteger value){
@@ -1410,11 +1409,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyUpdateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1426,47 +1425,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmAsymPublicKeyUpdateConfig, GContainer>(filteredContainers, typeof(CsmAsymPublicKeyUpdateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPublicKeyUpdate$CsmAsymPublicKeyUpdateConfig csmAsymPublicKeyUpdateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPublicKeyUpdate.CsmAsymPublicKeyUpdateConfig csmAsymPublicKeyUpdateConfig) {
 					csmAsymPublicKeyUpdateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPublicKeyUpdateConfig"))
 					super.delegateAdd(csmAsymPublicKeyUpdateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmAsymPublicKeyUpdate$CsmAsymPublicKeyUpdateConfig csmAsymPublicKeyUpdateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmAsymPublicKeyUpdate.CsmAsymPublicKeyUpdateConfig csmAsymPublicKeyUpdateConfig) {
 					csmAsymPublicKeyUpdateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmAsymPublicKeyUpdateConfig"))
 					super.delegateAdd(index, csmAsymPublicKeyUpdateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmAsymPublicKeyUpdateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmAsymPublicKeyUpdateConfig)){
 					return false
 				}
 				this.target == (object as CsmAsymPublicKeyUpdateConfig).target
 			}
-			
+		
 			def String getCsmAsymPublicKeyUpdateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmAsymPublicKeyUpdateInitConfiguration(String value){
@@ -1474,15 +1473,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyUpdateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyUpdateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmAsymPublicKeyUpdatePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdatePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyUpdatePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmAsymPublicKeyUpdatePrimitiveName(String value){
@@ -1490,15 +1489,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyUpdatePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyUpdatePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCallbackAsymPublicKeyUpdate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPublicKeyUpdate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackAsymPublicKeyUpdate"].getStringValue()
 			}
 			
 			def void setCsmCallbackAsymPublicKeyUpdate(String value){
@@ -1506,11 +1505,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPublicKeyUpdate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackAsymPublicKeyUpdate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1521,30 +1520,30 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmChecksum implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmChecksum)){
 				return false
 			}
 			this.target == (object as CsmChecksum).target
 		}
-		
+	
 		
 		
 		def List<CsmChecksumConfig> getCsmChecksumConfigs(){
@@ -1554,47 +1553,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmChecksumConfig, GContainer>(filteredContainers, typeof(CsmChecksumConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmChecksum$CsmChecksumConfig csmChecksumConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmChecksum.CsmChecksumConfig csmChecksumConfig) {
 					csmChecksumConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmChecksumConfig"))
 					super.delegateAdd(csmChecksumConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmChecksum$CsmChecksumConfig csmChecksumConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmChecksum.CsmChecksumConfig csmChecksumConfig) {
 					csmChecksumConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmChecksumConfig"))
 					super.delegateAdd(index, csmChecksumConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmChecksumConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmChecksumConfig)){
 					return false
 				}
 				this.target == (object as CsmChecksumConfig).target
 			}
-			
+		
 			def String getCsmCallbackChecksum(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackChecksum"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackChecksum"].getStringValue()
 			}
 			
 			def void setCsmCallbackChecksum(String value){
@@ -1602,15 +1601,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackChecksum"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackChecksum"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmChecksumInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmChecksumInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmChecksumInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmChecksumInitConfiguration(String value){
@@ -1618,15 +1617,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmChecksumInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmChecksumInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmChecksumPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmChecksumPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmChecksumPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmChecksumPrimitiveName(String value){
@@ -1634,11 +1633,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmChecksumPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmChecksumPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1649,30 +1648,30 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmCompression implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmCompression)){
 				return false
 			}
 			this.target == (object as CsmCompression).target
 		}
-		
+	
 		
 		
 		def List<CsmCompressionConfig> getCsmCompressionConfigs(){
@@ -1682,47 +1681,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmCompressionConfig, GContainer>(filteredContainers, typeof(CsmCompressionConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmCompression$CsmCompressionConfig csmCompressionConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmCompression.CsmCompressionConfig csmCompressionConfig) {
 					csmCompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmCompressionConfig"))
 					super.delegateAdd(csmCompressionConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmCompression$CsmCompressionConfig csmCompressionConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmCompression.CsmCompressionConfig csmCompressionConfig) {
 					csmCompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmCompressionConfig"))
 					super.delegateAdd(index, csmCompressionConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmCompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmCompressionConfig)){
 					return false
 				}
 				this.target == (object as CsmCompressionConfig).target
 			}
-			
+		
 			def String getCsmCallbackCompression(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackCompression"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackCompression"].getStringValue()
 			}
 			
 			def void setCsmCallbackCompression(String value){
@@ -1730,15 +1729,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackCompression"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackCompression"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCompressionInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCompressionInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCompressionInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmCompressionInitConfiguration(String value){
@@ -1746,15 +1745,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCompressionInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCompressionInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmCompressionPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCompressionPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCompressionPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmCompressionPrimitiveName(String value){
@@ -1762,11 +1761,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCompressionPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCompressionPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1777,30 +1776,30 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmDecompression implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmDecompression)){
 				return false
 			}
 			this.target == (object as CsmDecompression).target
 		}
-		
+	
 		
 		
 		def List<CsmDecompressionConfig> getCsmDecompressionConfigs(){
@@ -1810,47 +1809,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmDecompressionConfig, GContainer>(filteredContainers, typeof(CsmDecompressionConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmDecompression$CsmDecompressionConfig csmDecompressionConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmDecompression.CsmDecompressionConfig csmDecompressionConfig) {
 					csmDecompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmDecompressionConfig"))
 					super.delegateAdd(csmDecompressionConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmDecompression$CsmDecompressionConfig csmDecompressionConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmDecompression.CsmDecompressionConfig csmDecompressionConfig) {
 					csmDecompressionConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmDecompressionConfig"))
 					super.delegateAdd(index, csmDecompressionConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmDecompressionConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmDecompressionConfig)){
 					return false
 				}
 				this.target == (object as CsmDecompressionConfig).target
 			}
-			
+		
 			def String getCsmCallbackDecompression(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackDecompression"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackDecompression"].getStringValue()
 			}
 			
 			def void setCsmCallbackDecompression(String value){
@@ -1858,15 +1857,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackDecompression"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackDecompression"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmDecompressionInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecompressionInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecompressionInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmDecompressionInitConfiguration(String value){
@@ -1874,15 +1873,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecompressionInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecompressionInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmDecompressionPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecompressionPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecompressionPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmDecompressionPrimitiveName(String value){
@@ -1890,11 +1889,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecompressionPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecompressionPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1905,32 +1904,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmGeneral)){
 				return false
 			}
 			this.target == (object as CsmGeneral).target
 		}
-		
+	
 		def Boolean getCsmDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setCsmDevErrorDetect(Boolean value){
@@ -1938,15 +1937,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getCsmMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setCsmMainFunctionPeriod(BigDecimal value){
@@ -1954,15 +1953,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def String getCsmMaxAlignScalarType(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMaxAlignScalarType"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMaxAlignScalarType"].getStringValue()
 		}
 		
 		def void setCsmMaxAlignScalarType(String value){
@@ -1970,15 +1969,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMaxAlignScalarType"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMaxAlignScalarType"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getCsmUseSyncJobProcessing(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmUseSyncJobProcessing"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmUseSyncJobProcessing"].getBooleanValue()
 		}
 		
 		def void setCsmUseSyncJobProcessing(Boolean value){
@@ -1986,15 +1985,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmUseSyncJobProcessing"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmUseSyncJobProcessing"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCsmVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setCsmVersionInfoApi(Boolean value){
@@ -2002,11 +2001,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2015,30 +2014,30 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmHash implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmHash)){
 				return false
 			}
 			this.target == (object as CsmHash).target
 		}
-		
+	
 		
 		
 		def List<CsmHashConfig> getCsmHashConfigs(){
@@ -2048,47 +2047,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmHashConfig, GContainer>(filteredContainers, typeof(CsmHashConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmHash$CsmHashConfig csmHashConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmHash.CsmHashConfig csmHashConfig) {
 					csmHashConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmHashConfig"))
 					super.delegateAdd(csmHashConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmHash$CsmHashConfig csmHashConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmHash.CsmHashConfig csmHashConfig) {
 					csmHashConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmHashConfig"))
 					super.delegateAdd(index, csmHashConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmHashConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmHashConfig)){
 					return false
 				}
 				this.target == (object as CsmHashConfig).target
 			}
-			
+		
 			def String getCsmCallbackHash(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackHash"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackHash"].getStringValue()
 			}
 			
 			def void setCsmCallbackHash(String value){
@@ -2096,15 +2095,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackHash"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackHash"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmHashInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmHashInitConfiguration(String value){
@@ -2112,15 +2111,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmHashPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmHashPrimitiveName(String value){
@@ -2128,11 +2127,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2143,32 +2142,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmKeyDerive implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmKeyDerive)){
 				return false
 			}
 			this.target == (object as CsmKeyDerive).target
 		}
-		
+	
 		def BigInteger getCsmKeyDeriveMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyDeriveMaxKeySize(BigInteger value){
@@ -2176,11 +2175,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2192,47 +2191,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmKeyDeriveConfig, GContainer>(filteredContainers, typeof(CsmKeyDeriveConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmKeyDerive$CsmKeyDeriveConfig csmKeyDeriveConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmKeyDerive.CsmKeyDeriveConfig csmKeyDeriveConfig) {
 					csmKeyDeriveConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyDeriveConfig"))
 					super.delegateAdd(csmKeyDeriveConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmKeyDerive$CsmKeyDeriveConfig csmKeyDeriveConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmKeyDerive.CsmKeyDeriveConfig csmKeyDeriveConfig) {
 					csmKeyDeriveConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyDeriveConfig"))
 					super.delegateAdd(index, csmKeyDeriveConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmKeyDeriveConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmKeyDeriveConfig)){
 					return false
 				}
 				this.target == (object as CsmKeyDeriveConfig).target
 			}
-			
+		
 			def String getCsmCallbackKeyDerive(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyDerive"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyDerive"].getStringValue()
 			}
 			
 			def void setCsmCallbackKeyDerive(String value){
@@ -2240,15 +2239,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyDerive"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyDerive"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyDeriveInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmKeyDeriveInitConfiguration(String value){
@@ -2256,15 +2255,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyDerivePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDerivePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDerivePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmKeyDerivePrimitiveName(String value){
@@ -2272,11 +2271,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDerivePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDerivePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2287,32 +2286,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmKeyDeriveSymKey implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmKeyDeriveSymKey)){
 				return false
 			}
 			this.target == (object as CsmKeyDeriveSymKey).target
 		}
-		
+	
 		def BigInteger getCsmKeyDeriveSymKeyMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyDeriveSymKeyMaxSymKeySize(BigInteger value){
@@ -2320,11 +2319,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveSymKeyMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2336,47 +2335,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmKeyDeriveSymKeyConfig, GContainer>(filteredContainers, typeof(CsmKeyDeriveSymKeyConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmKeyDeriveSymKey$CsmKeyDeriveSymKeyConfig csmKeyDeriveSymKeyConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmKeyDeriveSymKey.CsmKeyDeriveSymKeyConfig csmKeyDeriveSymKeyConfig) {
 					csmKeyDeriveSymKeyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyDeriveSymKeyConfig"))
 					super.delegateAdd(csmKeyDeriveSymKeyConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmKeyDeriveSymKey$CsmKeyDeriveSymKeyConfig csmKeyDeriveSymKeyConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmKeyDeriveSymKey.CsmKeyDeriveSymKeyConfig csmKeyDeriveSymKeyConfig) {
 					csmKeyDeriveSymKeyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyDeriveSymKeyConfig"))
 					super.delegateAdd(index, csmKeyDeriveSymKeyConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmKeyDeriveSymKeyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmKeyDeriveSymKeyConfig)){
 					return false
 				}
 				this.target == (object as CsmKeyDeriveSymKeyConfig).target
 			}
-			
+		
 			def String getCsmCallbackKeyDeriveSymKey(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyDeriveSymKey"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyDeriveSymKey"].getStringValue()
 			}
 			
 			def void setCsmCallbackKeyDeriveSymKey(String value){
@@ -2384,15 +2383,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyDeriveSymKey"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyDeriveSymKey"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyDeriveSymKeyInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmKeyDeriveSymKeyInitConfiguration(String value){
@@ -2400,15 +2399,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveSymKeyInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveSymKeyInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyDeriveSymKeyPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyDeriveSymKeyPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmKeyDeriveSymKeyPrimitiveName(String value){
@@ -2416,11 +2415,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveSymKeyPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyDeriveSymKeyPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2431,32 +2430,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmKeyExchangeCalcPubVal implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmKeyExchangeCalcPubVal)){
 				return false
 			}
 			this.target == (object as CsmKeyExchangeCalcPubVal).target
 		}
-		
+	
 		def BigInteger getCsmKeyExchangeCalcPubValMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcPubValMaxBaseTypeSize(BigInteger value){
@@ -2464,15 +2463,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValMaxBaseTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmKeyExchangeCalcPubValMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcPubValMaxPrivateTypeSize(BigInteger value){
@@ -2480,11 +2479,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValMaxPrivateTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2496,47 +2495,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmKeyExchangeCalcPubValConfig, GContainer>(filteredContainers, typeof(CsmKeyExchangeCalcPubValConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmKeyExchangeCalcPubVal$CsmKeyExchangeCalcPubValConfig csmKeyExchangeCalcPubValConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmKeyExchangeCalcPubVal.CsmKeyExchangeCalcPubValConfig csmKeyExchangeCalcPubValConfig) {
 					csmKeyExchangeCalcPubValConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyExchangeCalcPubValConfig"))
 					super.delegateAdd(csmKeyExchangeCalcPubValConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmKeyExchangeCalcPubVal$CsmKeyExchangeCalcPubValConfig csmKeyExchangeCalcPubValConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmKeyExchangeCalcPubVal.CsmKeyExchangeCalcPubValConfig csmKeyExchangeCalcPubValConfig) {
 					csmKeyExchangeCalcPubValConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyExchangeCalcPubValConfig"))
 					super.delegateAdd(index, csmKeyExchangeCalcPubValConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmKeyExchangeCalcPubValConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmKeyExchangeCalcPubValConfig)){
 					return false
 				}
 				this.target == (object as CsmKeyExchangeCalcPubValConfig).target
 			}
-			
+		
 			def String getCsmCallbackKeyExchangeCalcPubVal(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyExchangeCalcPubVal"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyExchangeCalcPubVal"].getStringValue()
 			}
 			
 			def void setCsmCallbackKeyExchangeCalcPubVal(String value){
@@ -2544,15 +2543,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyExchangeCalcPubVal"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyExchangeCalcPubVal"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyExchangeCalcPubValInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmKeyExchangeCalcPubValInitConfiguration(String value){
@@ -2560,15 +2559,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyExchangeCalcPubValPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcPubValPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmKeyExchangeCalcPubValPrimitiveName(String value){
@@ -2576,11 +2575,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcPubValPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2591,32 +2590,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmKeyExchangeCalcSecret implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmKeyExchangeCalcSecret)){
 				return false
 			}
 			this.target == (object as CsmKeyExchangeCalcSecret).target
 		}
-		
+	
 		def BigInteger getCsmKeyExchangeCalcSecretMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcSecretMaxBaseTypeSize(BigInteger value){
@@ -2624,15 +2623,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretMaxBaseTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmKeyExchangeCalcSecretMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcSecretMaxPrivateTypeSize(BigInteger value){
@@ -2640,11 +2639,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretMaxPrivateTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2656,47 +2655,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmKeyExchangeCalcSecretConfig, GContainer>(filteredContainers, typeof(CsmKeyExchangeCalcSecretConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmKeyExchangeCalcSecret$CsmKeyExchangeCalcSecretConfig csmKeyExchangeCalcSecretConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmKeyExchangeCalcSecret.CsmKeyExchangeCalcSecretConfig csmKeyExchangeCalcSecretConfig) {
 					csmKeyExchangeCalcSecretConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyExchangeCalcSecretConfig"))
 					super.delegateAdd(csmKeyExchangeCalcSecretConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmKeyExchangeCalcSecret$CsmKeyExchangeCalcSecretConfig csmKeyExchangeCalcSecretConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmKeyExchangeCalcSecret.CsmKeyExchangeCalcSecretConfig csmKeyExchangeCalcSecretConfig) {
 					csmKeyExchangeCalcSecretConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyExchangeCalcSecretConfig"))
 					super.delegateAdd(index, csmKeyExchangeCalcSecretConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmKeyExchangeCalcSecretConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmKeyExchangeCalcSecretConfig)){
 					return false
 				}
 				this.target == (object as CsmKeyExchangeCalcSecretConfig).target
 			}
-			
+		
 			def String getCsmCallbackKeyExchangeCalcSecret(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyExchangeCalcSecret"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyExchangeCalcSecret"].getStringValue()
 			}
 			
 			def void setCsmCallbackKeyExchangeCalcSecret(String value){
@@ -2704,15 +2703,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyExchangeCalcSecret"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyExchangeCalcSecret"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyExchangeCalcSecretInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmKeyExchangeCalcSecretInitConfiguration(String value){
@@ -2720,15 +2719,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyExchangeCalcSecretPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSecretPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmKeyExchangeCalcSecretPrimitiveName(String value){
@@ -2736,11 +2735,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSecretPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2751,32 +2750,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmKeyExchangeCalcSymKey implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmKeyExchangeCalcSymKey)){
 				return false
 			}
 			this.target == (object as CsmKeyExchangeCalcSymKey).target
 		}
-		
+	
 		def BigInteger getCsmKeyExchangeCalcSymKeyMaxBaseTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcSymKeyMaxBaseTypeSize(BigInteger value){
@@ -2784,15 +2783,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyMaxBaseTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmKeyExchangeCalcSymKeyMaxPrivateTypeSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcSymKeyMaxPrivateTypeSize(BigInteger value){
@@ -2800,15 +2799,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyMaxPrivateTypeSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmKeyExchangeCalcSymKeyMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmKeyExchangeCalcSymKeyMaxSymKeySize(BigInteger value){
@@ -2816,11 +2815,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2832,47 +2831,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmKeyExchangeCalcSymKeyConfig, GContainer>(filteredContainers, typeof(CsmKeyExchangeCalcSymKeyConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmKeyExchangeCalcSymKey$CsmKeyExchangeCalcSymKeyConfig csmKeyExchangeCalcSymKeyConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmKeyExchangeCalcSymKey.CsmKeyExchangeCalcSymKeyConfig csmKeyExchangeCalcSymKeyConfig) {
 					csmKeyExchangeCalcSymKeyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyExchangeCalcSymKeyConfig"))
 					super.delegateAdd(csmKeyExchangeCalcSymKeyConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmKeyExchangeCalcSymKey$CsmKeyExchangeCalcSymKeyConfig csmKeyExchangeCalcSymKeyConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmKeyExchangeCalcSymKey.CsmKeyExchangeCalcSymKeyConfig csmKeyExchangeCalcSymKeyConfig) {
 					csmKeyExchangeCalcSymKeyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmKeyExchangeCalcSymKeyConfig"))
 					super.delegateAdd(index, csmKeyExchangeCalcSymKeyConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmKeyExchangeCalcSymKeyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmKeyExchangeCalcSymKeyConfig)){
 					return false
 				}
 				this.target == (object as CsmKeyExchangeCalcSymKeyConfig).target
 			}
-			
+		
 			def String getCsmCallbackKeyExchangeCalcSymKey(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyExchangeCalcSymKey"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackKeyExchangeCalcSymKey"].getStringValue()
 			}
 			
 			def void setCsmCallbackKeyExchangeCalcSymKey(String value){
@@ -2880,15 +2879,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyExchangeCalcSymKey"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackKeyExchangeCalcSymKey"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyExchangeCalcSymKeyInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmKeyExchangeCalcSymKeyInitConfiguration(String value){
@@ -2896,15 +2895,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmKeyExchangeCalcSymKeyPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyExchangeCalcSymKeyPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmKeyExchangeCalcSymKeyPrimitiveName(String value){
@@ -2912,11 +2911,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyExchangeCalcSymKeyPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2927,32 +2926,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmMacGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmMacGenerate)){
 				return false
 			}
 			this.target == (object as CsmMacGenerate).target
 		}
-		
+	
 		def BigInteger getCsmMacGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmMacGenerateMaxKeySize(BigInteger value){
@@ -2960,11 +2959,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -2976,47 +2975,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmMacGenerateConfig, GContainer>(filteredContainers, typeof(CsmMacGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmMacGenerate$CsmMacGenerateConfig csmMacGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmMacGenerate.CsmMacGenerateConfig csmMacGenerateConfig) {
 					csmMacGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmMacGenerateConfig"))
 					super.delegateAdd(csmMacGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmMacGenerate$CsmMacGenerateConfig csmMacGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmMacGenerate.CsmMacGenerateConfig csmMacGenerateConfig) {
 					csmMacGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmMacGenerateConfig"))
 					super.delegateAdd(index, csmMacGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmMacGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmMacGenerateConfig)){
 					return false
 				}
 				this.target == (object as CsmMacGenerateConfig).target
 			}
-			
+		
 			def String getCsmCallbackMacGenerate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackMacGenerate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackMacGenerate"].getStringValue()
 			}
 			
 			def void setCsmCallbackMacGenerate(String value){
@@ -3024,15 +3023,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackMacGenerate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackMacGenerate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmMacGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmMacGenerateInitConfiguration(String value){
@@ -3040,15 +3039,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmMacGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmMacGeneratePrimitiveName(String value){
@@ -3056,11 +3055,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3071,32 +3070,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmMacVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmMacVerify)){
 				return false
 			}
 			this.target == (object as CsmMacVerify).target
 		}
-		
+	
 		def BigInteger getCsmMacVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmMacVerifyMaxKeySize(BigInteger value){
@@ -3104,11 +3103,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3120,47 +3119,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmMacVerifyConfig, GContainer>(filteredContainers, typeof(CsmMacVerifyConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmMacVerify$CsmMacVerifyConfig csmMacVerifyConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmMacVerify.CsmMacVerifyConfig csmMacVerifyConfig) {
 					csmMacVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmMacVerifyConfig"))
 					super.delegateAdd(csmMacVerifyConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmMacVerify$CsmMacVerifyConfig csmMacVerifyConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmMacVerify.CsmMacVerifyConfig csmMacVerifyConfig) {
 					csmMacVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmMacVerifyConfig"))
 					super.delegateAdd(index, csmMacVerifyConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmMacVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmMacVerifyConfig)){
 					return false
 				}
 				this.target == (object as CsmMacVerifyConfig).target
 			}
-			
+		
 			def String getCsmCallbackMacVerify(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackMacVerify"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackMacVerify"].getStringValue()
 			}
 			
 			def void setCsmCallbackMacVerify(String value){
@@ -3168,15 +3167,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackMacVerify"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackMacVerify"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmMacVerifyInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmMacVerifyInitConfiguration(String value){
@@ -3184,15 +3183,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmMacVerifyPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmMacVerifyPrimitiveName(String value){
@@ -3200,11 +3199,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3215,30 +3214,30 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmRandomGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmRandomGenerate)){
 				return false
 			}
 			this.target == (object as CsmRandomGenerate).target
 		}
-		
+	
 		
 		
 		def List<CsmRandomGenerateConfig> getCsmRandomGenerateConfigs(){
@@ -3248,47 +3247,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmRandomGenerateConfig, GContainer>(filteredContainers, typeof(CsmRandomGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmRandomGenerate$CsmRandomGenerateConfig csmRandomGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmRandomGenerate.CsmRandomGenerateConfig csmRandomGenerateConfig) {
 					csmRandomGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmRandomGenerateConfig"))
 					super.delegateAdd(csmRandomGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmRandomGenerate$CsmRandomGenerateConfig csmRandomGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmRandomGenerate.CsmRandomGenerateConfig csmRandomGenerateConfig) {
 					csmRandomGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmRandomGenerateConfig"))
 					super.delegateAdd(index, csmRandomGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmRandomGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmRandomGenerateConfig)){
 					return false
 				}
 				this.target == (object as CsmRandomGenerateConfig).target
 			}
-			
+		
 			def String getCsmCallbackRandomGenerate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackRandomGenerate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackRandomGenerate"].getStringValue()
 			}
 			
 			def void setCsmCallbackRandomGenerate(String value){
@@ -3296,15 +3295,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackRandomGenerate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackRandomGenerate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmRandomGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmRandomGenerateInitConfiguration(String value){
@@ -3312,15 +3311,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmRandomGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmRandomGeneratePrimitiveName(String value){
@@ -3328,11 +3327,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3343,30 +3342,30 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmRandomSeed implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmRandomSeed)){
 				return false
 			}
 			this.target == (object as CsmRandomSeed).target
 		}
-		
+	
 		
 		
 		def List<CsmRandomSeedConfig> getCsmRandomSeedConfigs(){
@@ -3376,47 +3375,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmRandomSeedConfig, GContainer>(filteredContainers, typeof(CsmRandomSeedConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmRandomSeed$CsmRandomSeedConfig csmRandomSeedConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmRandomSeed.CsmRandomSeedConfig csmRandomSeedConfig) {
 					csmRandomSeedConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmRandomSeedConfig"))
 					super.delegateAdd(csmRandomSeedConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmRandomSeed$CsmRandomSeedConfig csmRandomSeedConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmRandomSeed.CsmRandomSeedConfig csmRandomSeedConfig) {
 					csmRandomSeedConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmRandomSeedConfig"))
 					super.delegateAdd(index, csmRandomSeedConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmRandomSeedConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmRandomSeedConfig)){
 					return false
 				}
 				this.target == (object as CsmRandomSeedConfig).target
 			}
-			
+		
 			def String getCsmCallbackRandomSeed(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackRandomSeed"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackRandomSeed"].getStringValue()
 			}
 			
 			def void setCsmCallbackRandomSeed(String value){
@@ -3424,15 +3423,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackRandomSeed"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackRandomSeed"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmRandomSeedInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomSeedInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomSeedInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmRandomSeedInitConfiguration(String value){
@@ -3440,15 +3439,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomSeedInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomSeedInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmRandomSeedPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomSeedPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomSeedPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmRandomSeedPrimitiveName(String value){
@@ -3456,11 +3455,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomSeedPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomSeedPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3471,32 +3470,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSignatureGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSignatureGenerate)){
 				return false
 			}
 			this.target == (object as CsmSignatureGenerate).target
 		}
-		
+	
 		def BigInteger getCsmSignatureGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSignatureGenerateMaxKeySize(BigInteger value){
@@ -3504,11 +3503,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3520,47 +3519,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSignatureGenerateConfig, GContainer>(filteredContainers, typeof(CsmSignatureGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSignatureGenerate$CsmSignatureGenerateConfig csmSignatureGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSignatureGenerate.CsmSignatureGenerateConfig csmSignatureGenerateConfig) {
 					csmSignatureGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSignatureGenerateConfig"))
 					super.delegateAdd(csmSignatureGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSignatureGenerate$CsmSignatureGenerateConfig csmSignatureGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSignatureGenerate.CsmSignatureGenerateConfig csmSignatureGenerateConfig) {
 					csmSignatureGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSignatureGenerateConfig"))
 					super.delegateAdd(index, csmSignatureGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSignatureGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSignatureGenerateConfig)){
 					return false
 				}
 				this.target == (object as CsmSignatureGenerateConfig).target
 			}
-			
+		
 			def String getCsmCallbackSignatureGenerate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSignatureGenerate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSignatureGenerate"].getStringValue()
 			}
 			
 			def void setCsmCallbackSignatureGenerate(String value){
@@ -3568,15 +3567,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSignatureGenerate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSignatureGenerate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSignatureGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSignatureGenerateInitConfiguration(String value){
@@ -3584,15 +3583,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSignatureGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSignatureGeneratePrimitiveName(String value){
@@ -3600,11 +3599,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3615,32 +3614,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSignatureVerify implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSignatureVerify)){
 				return false
 			}
 			this.target == (object as CsmSignatureVerify).target
 		}
-		
+	
 		def BigInteger getCsmSignatureVerifyMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSignatureVerifyMaxKeySize(BigInteger value){
@@ -3648,11 +3647,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3664,47 +3663,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSignatureVerifyConfig, GContainer>(filteredContainers, typeof(CsmSignatureVerifyConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSignatureVerify$CsmSignatureVerifyConfig csmSignatureVerifyConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSignatureVerify.CsmSignatureVerifyConfig csmSignatureVerifyConfig) {
 					csmSignatureVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSignatureVerifyConfig"))
 					super.delegateAdd(csmSignatureVerifyConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSignatureVerify$CsmSignatureVerifyConfig csmSignatureVerifyConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSignatureVerify.CsmSignatureVerifyConfig csmSignatureVerifyConfig) {
 					csmSignatureVerifyConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSignatureVerifyConfig"))
 					super.delegateAdd(index, csmSignatureVerifyConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSignatureVerifyConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSignatureVerifyConfig)){
 					return false
 				}
 				this.target == (object as CsmSignatureVerifyConfig).target
 			}
-			
+		
 			def String getCsmCallbackSignatureVerify(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSignatureVerify"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSignatureVerify"].getStringValue()
 			}
 			
 			def void setCsmCallbackSignatureVerify(String value){
@@ -3712,15 +3711,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSignatureVerify"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSignatureVerify"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSignatureVerifyInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSignatureVerifyInitConfiguration(String value){
@@ -3728,15 +3727,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSignatureVerifyPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSignatureVerifyPrimitiveName(String value){
@@ -3744,11 +3743,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3759,32 +3758,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymBlockDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymBlockDecrypt)){
 				return false
 			}
 			this.target == (object as CsmSymBlockDecrypt).target
 		}
-		
+	
 		def BigInteger getCsmSymBlockDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymBlockDecryptMaxKeySize(BigInteger value){
@@ -3792,11 +3791,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockDecryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockDecryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3808,47 +3807,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymBlockDecryptConfig, GContainer>(filteredContainers, typeof(CsmSymBlockDecryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymBlockDecrypt$CsmSymBlockDecryptConfig csmSymBlockDecryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymBlockDecrypt.CsmSymBlockDecryptConfig csmSymBlockDecryptConfig) {
 					csmSymBlockDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymBlockDecryptConfig"))
 					super.delegateAdd(csmSymBlockDecryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymBlockDecrypt$CsmSymBlockDecryptConfig csmSymBlockDecryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymBlockDecrypt.CsmSymBlockDecryptConfig csmSymBlockDecryptConfig) {
 					csmSymBlockDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymBlockDecryptConfig"))
 					super.delegateAdd(index, csmSymBlockDecryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymBlockDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymBlockDecryptConfig)){
 					return false
 				}
 				this.target == (object as CsmSymBlockDecryptConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymBlockDecrypt(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymBlockDecrypt"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymBlockDecrypt"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymBlockDecrypt(String value){
@@ -3856,15 +3855,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymBlockDecrypt"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymBlockDecrypt"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymBlockDecryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymBlockDecryptInitConfiguration(String value){
@@ -3872,15 +3871,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockDecryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockDecryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymBlockDecryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockDecryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymBlockDecryptPrimitiveName(String value){
@@ -3888,11 +3887,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockDecryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockDecryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3903,32 +3902,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymBlockEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymBlockEncrypt)){
 				return false
 			}
 			this.target == (object as CsmSymBlockEncrypt).target
 		}
-		
+	
 		def BigInteger getCsmSymBlockEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymBlockEncryptMaxKeySize(BigInteger value){
@@ -3936,11 +3935,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockEncryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockEncryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -3952,47 +3951,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymBlockEncryptConfig, GContainer>(filteredContainers, typeof(CsmSymBlockEncryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymBlockEncrypt$CsmSymBlockEncryptConfig csmSymBlockEncryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymBlockEncrypt.CsmSymBlockEncryptConfig csmSymBlockEncryptConfig) {
 					csmSymBlockEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymBlockEncryptConfig"))
 					super.delegateAdd(csmSymBlockEncryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymBlockEncrypt$CsmSymBlockEncryptConfig csmSymBlockEncryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymBlockEncrypt.CsmSymBlockEncryptConfig csmSymBlockEncryptConfig) {
 					csmSymBlockEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymBlockEncryptConfig"))
 					super.delegateAdd(index, csmSymBlockEncryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymBlockEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymBlockEncryptConfig)){
 					return false
 				}
 				this.target == (object as CsmSymBlockEncryptConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymBlockEncrypt(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymBlockEncrypt"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymBlockEncrypt"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymBlockEncrypt(String value){
@@ -4000,15 +3999,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymBlockEncrypt"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymBlockEncrypt"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymBlockEncryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymBlockEncryptInitConfiguration(String value){
@@ -4016,15 +4015,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockEncryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockEncryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymBlockEncryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymBlockEncryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymBlockEncryptPrimitiveName(String value){
@@ -4032,11 +4031,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockEncryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymBlockEncryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4047,32 +4046,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymDecrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymDecrypt)){
 				return false
 			}
 			this.target == (object as CsmSymDecrypt).target
 		}
-		
+	
 		def BigInteger getCsmSymDecryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymDecryptMaxKeySize(BigInteger value){
@@ -4080,11 +4079,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymDecryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymDecryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4096,47 +4095,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymDecryptConfig, GContainer>(filteredContainers, typeof(CsmSymDecryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymDecrypt$CsmSymDecryptConfig csmSymDecryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymDecrypt.CsmSymDecryptConfig csmSymDecryptConfig) {
 					csmSymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymDecryptConfig"))
 					super.delegateAdd(csmSymDecryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymDecrypt$CsmSymDecryptConfig csmSymDecryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymDecrypt.CsmSymDecryptConfig csmSymDecryptConfig) {
 					csmSymDecryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymDecryptConfig"))
 					super.delegateAdd(index, csmSymDecryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymDecryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymDecryptConfig)){
 					return false
 				}
 				this.target == (object as CsmSymDecryptConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymDecrypt(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymDecrypt"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymDecrypt"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymDecrypt(String value){
@@ -4144,15 +4143,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymDecrypt"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymDecrypt"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymDecryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymDecryptInitConfiguration(String value){
@@ -4160,15 +4159,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymDecryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymDecryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymDecryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymDecryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymDecryptPrimitiveName(String value){
@@ -4176,11 +4175,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymDecryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymDecryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4191,32 +4190,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymEncrypt implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymEncrypt)){
 				return false
 			}
 			this.target == (object as CsmSymEncrypt).target
 		}
-		
+	
 		def BigInteger getCsmSymEncryptMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymEncryptMaxKeySize(BigInteger value){
@@ -4224,11 +4223,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymEncryptMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymEncryptMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4240,47 +4239,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymEncryptConfig, GContainer>(filteredContainers, typeof(CsmSymEncryptConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymEncrypt$CsmSymEncryptConfig csmSymEncryptConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymEncrypt.CsmSymEncryptConfig csmSymEncryptConfig) {
 					csmSymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymEncryptConfig"))
 					super.delegateAdd(csmSymEncryptConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymEncrypt$CsmSymEncryptConfig csmSymEncryptConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymEncrypt.CsmSymEncryptConfig csmSymEncryptConfig) {
 					csmSymEncryptConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymEncryptConfig"))
 					super.delegateAdd(index, csmSymEncryptConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymEncryptConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymEncryptConfig)){
 					return false
 				}
 				this.target == (object as CsmSymEncryptConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymEncrypt(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymEncrypt"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymEncrypt"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymEncrypt(String value){
@@ -4288,15 +4287,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymEncrypt"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymEncrypt"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymEncryptInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymEncryptInitConfiguration(String value){
@@ -4304,15 +4303,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymEncryptInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymEncryptInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymEncryptPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymEncryptPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymEncryptPrimitiveName(String value){
@@ -4320,11 +4319,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymEncryptPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymEncryptPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4335,32 +4334,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymKeyExtract implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymKeyExtract)){
 				return false
 			}
 			this.target == (object as CsmSymKeyExtract).target
 		}
-		
+	
 		def BigInteger getCsmSymKeyExtractMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymKeyExtractMaxKeySize(BigInteger value){
@@ -4368,11 +4367,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyExtractMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyExtractMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4384,47 +4383,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymKeyExtractConfig, GContainer>(filteredContainers, typeof(CsmSymKeyExtractConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyExtract$CsmSymKeyExtractConfig csmSymKeyExtractConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyExtract.CsmSymKeyExtractConfig csmSymKeyExtractConfig) {
 					csmSymKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyExtractConfig"))
 					super.delegateAdd(csmSymKeyExtractConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyExtract$CsmSymKeyExtractConfig csmSymKeyExtractConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyExtract.CsmSymKeyExtractConfig csmSymKeyExtractConfig) {
 					csmSymKeyExtractConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyExtractConfig"))
 					super.delegateAdd(index, csmSymKeyExtractConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymKeyExtractConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymKeyExtractConfig)){
 					return false
 				}
 				this.target == (object as CsmSymKeyExtractConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymKeyExtract(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyExtract"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyExtract"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymKeyExtract(String value){
@@ -4432,15 +4431,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyExtract"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyExtract"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyExtractInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymKeyExtractInitConfiguration(String value){
@@ -4448,15 +4447,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyExtractInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyExtractInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyExtractPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyExtractPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymKeyExtractPrimitiveName(String value){
@@ -4464,11 +4463,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyExtractPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyExtractPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4479,32 +4478,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymKeyGenerate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymKeyGenerate)){
 				return false
 			}
 			this.target == (object as CsmSymKeyGenerate).target
 		}
-		
+	
 		def BigInteger getCsmSymKeyGenerateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymKeyGenerateMaxKeySize(BigInteger value){
@@ -4512,11 +4511,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyGenerateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyGenerateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4528,47 +4527,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymKeyGenerateConfig, GContainer>(filteredContainers, typeof(CsmSymKeyGenerateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyGenerate$CsmSymKeyGenerateConfig csmSymKeyGenerateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyGenerate.CsmSymKeyGenerateConfig csmSymKeyGenerateConfig) {
 					csmSymKeyGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyGenerateConfig"))
 					super.delegateAdd(csmSymKeyGenerateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyGenerate$CsmSymKeyGenerateConfig csmSymKeyGenerateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyGenerate.CsmSymKeyGenerateConfig csmSymKeyGenerateConfig) {
 					csmSymKeyGenerateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyGenerateConfig"))
 					super.delegateAdd(index, csmSymKeyGenerateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymKeyGenerateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymKeyGenerateConfig)){
 					return false
 				}
 				this.target == (object as CsmSymKeyGenerateConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymKeyGenerate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyGenerate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyGenerate"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymKeyGenerate(String value){
@@ -4576,15 +4575,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyGenerate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyGenerate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyGenerateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGenerateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymKeyGenerateInitConfiguration(String value){
@@ -4592,15 +4591,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyGenerateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyGenerateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyGeneratePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGeneratePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyGeneratePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymKeyGeneratePrimitiveName(String value){
@@ -4608,11 +4607,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyGeneratePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyGeneratePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4623,32 +4622,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymKeyUpdate implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymKeyUpdate)){
 				return false
 			}
 			this.target == (object as CsmSymKeyUpdate).target
 		}
-		
+	
 		def BigInteger getCsmSymKeyUpdateMaxKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateMaxKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateMaxKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymKeyUpdateMaxKeySize(BigInteger value){
@@ -4656,11 +4655,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyUpdateMaxKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyUpdateMaxKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4672,47 +4671,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymKeyUpdateConfig, GContainer>(filteredContainers, typeof(CsmSymKeyUpdateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyUpdate$CsmSymKeyUpdateConfig csmSymKeyUpdateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyUpdate.CsmSymKeyUpdateConfig csmSymKeyUpdateConfig) {
 					csmSymKeyUpdateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyUpdateConfig"))
 					super.delegateAdd(csmSymKeyUpdateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyUpdate$CsmSymKeyUpdateConfig csmSymKeyUpdateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyUpdate.CsmSymKeyUpdateConfig csmSymKeyUpdateConfig) {
 					csmSymKeyUpdateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyUpdateConfig"))
 					super.delegateAdd(index, csmSymKeyUpdateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymKeyUpdateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymKeyUpdateConfig)){
 					return false
 				}
 				this.target == (object as CsmSymKeyUpdateConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymKeyUpdate(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyUpdate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyUpdate"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymKeyUpdate(String value){
@@ -4720,15 +4719,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyUpdate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyUpdate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyUpdateInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdateInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymKeyUpdateInitConfiguration(String value){
@@ -4736,15 +4735,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyUpdateInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyUpdateInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyUpdatePrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdatePrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyUpdatePrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymKeyUpdatePrimitiveName(String value){
@@ -4752,11 +4751,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyUpdatePrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyUpdatePrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4767,32 +4766,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymKeyWrapAsym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymKeyWrapAsym)){
 				return false
 			}
 			this.target == (object as CsmSymKeyWrapAsym).target
 		}
-		
+	
 		def BigInteger getCsmSymKeyWrapAsymMaxPubKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymKeyWrapAsymMaxPubKeySize(BigInteger value){
@@ -4800,15 +4799,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymMaxPubKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCsmSymKeyWrapAsymMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymKeyWrapAsymMaxSymKeySize(BigInteger value){
@@ -4816,11 +4815,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4832,47 +4831,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymKeyWrapAsymConfig, GContainer>(filteredContainers, typeof(CsmSymKeyWrapAsymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyWrapAsym$CsmSymKeyWrapAsymConfig csmSymKeyWrapAsymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyWrapAsym.CsmSymKeyWrapAsymConfig csmSymKeyWrapAsymConfig) {
 					csmSymKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyWrapAsymConfig"))
 					super.delegateAdd(csmSymKeyWrapAsymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyWrapAsym$CsmSymKeyWrapAsymConfig csmSymKeyWrapAsymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyWrapAsym.CsmSymKeyWrapAsymConfig csmSymKeyWrapAsymConfig) {
 					csmSymKeyWrapAsymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyWrapAsymConfig"))
 					super.delegateAdd(index, csmSymKeyWrapAsymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymKeyWrapAsymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymKeyWrapAsymConfig)){
 					return false
 				}
 				this.target == (object as CsmSymKeyWrapAsymConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymKeyWrapAsym(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyWrapAsym"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyWrapAsym"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymKeyWrapAsym(String value){
@@ -4880,15 +4879,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyWrapAsym"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyWrapAsym"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyWrapAsymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymKeyWrapAsymInitConfiguration(String value){
@@ -4896,15 +4895,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyWrapAsymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapAsymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymKeyWrapAsymPrimitiveName(String value){
@@ -4912,11 +4911,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapAsymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -4927,32 +4926,32 @@ class Csm implements IWrapper<GModuleConfiguration> {
 	}
 	static class CsmSymKeyWrapSym implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CsmSymKeyWrapSym)){
 				return false
 			}
 			this.target == (object as CsmSymKeyWrapSym).target
 		}
-		
+	
 		def BigInteger getCsmSymKeyWrapSymMaxSymKeySize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"].getBigIntegerValue()
 		}
 		
 		def void setCsmSymKeyWrapSymMaxSymKeySize(BigInteger value){
@@ -4960,11 +4959,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapSymMaxSymKeySize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -4976,47 +4975,47 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CsmSymKeyWrapSymConfig, GContainer>(filteredContainers, typeof(CsmSymKeyWrapSymConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyWrapSym$CsmSymKeyWrapSymConfig csmSymKeyWrapSymConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyWrapSym.CsmSymKeyWrapSymConfig csmSymKeyWrapSymConfig) {
 					csmSymKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyWrapSymConfig"))
 					super.delegateAdd(csmSymKeyWrapSymConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm$CsmSymKeyWrapSym$CsmSymKeyWrapSymConfig csmSymKeyWrapSymConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Csm.CsmSymKeyWrapSym.CsmSymKeyWrapSymConfig csmSymKeyWrapSymConfig) {
 					csmSymKeyWrapSymConfig.target?.gSetDefinition(containerValue.getContainerDefinition("CsmSymKeyWrapSymConfig"))
 					super.delegateAdd(index, csmSymKeyWrapSymConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CsmSymKeyWrapSymConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CsmSymKeyWrapSymConfig)){
 					return false
 				}
 				this.target == (object as CsmSymKeyWrapSymConfig).target
 			}
-			
+		
 			def String getCsmCallbackSymKeyWrapSym(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyWrapSym"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackSymKeyWrapSym"].getStringValue()
 			}
 			
 			def void setCsmCallbackSymKeyWrapSym(String value){
@@ -5024,15 +5023,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyWrapSym"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackSymKeyWrapSym"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyWrapSymInitConfiguration(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymInitConfiguration"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymInitConfiguration"].getStringValue()
 			}
 			
 			def void setCsmSymKeyWrapSymInitConfiguration(String value){
@@ -5040,15 +5039,15 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapSymInitConfiguration"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapSymInitConfiguration"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getCsmSymKeyWrapSymPrimitiveName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymPrimitiveName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyWrapSymPrimitiveName"].getStringValue()
 			}
 			
 			def void setCsmSymKeyWrapSymPrimitiveName(String value){
@@ -5056,11 +5055,11 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapSymPrimitiveName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyWrapSymPrimitiveName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -5069,14 +5068,14 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Csm)){
 			return false
 		}
 		this.target == (object as Csm).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

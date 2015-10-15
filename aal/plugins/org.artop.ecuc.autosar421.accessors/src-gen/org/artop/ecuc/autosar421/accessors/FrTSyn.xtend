@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,29 +52,29 @@ import java.math.BigDecimal
 
 class FrTSyn implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def FrTSynGeneral getFrTSynGeneral(){
 		moduleConfiguration.getByType(typeof(FrTSynGeneral))
 	}
-	
+
 	def void setFrTSynGeneral(FrTSynGeneral frTSynGeneral){
-		val GContainer container = frTSynGeneral.getTarget() 
+		val GContainer container = frTSynGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "FrTSynGeneral")
 	}
 	def List<FrTSynGlobalTimeDomain> getFrTSynGlobalTimeDomains(){
@@ -85,46 +84,46 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<FrTSynGlobalTimeDomain, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeDomain), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTSyn$FrTSynGlobalTimeDomain frTSynGlobalTimeDomain) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTSyn.FrTSynGlobalTimeDomain frTSynGlobalTimeDomain) {
 				frTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTSynGlobalTimeDomain"))
 				super.delegateAdd(frTSynGlobalTimeDomain)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTSyn$FrTSynGlobalTimeDomain frTSynGlobalTimeDomain) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTSyn.FrTSynGlobalTimeDomain frTSynGlobalTimeDomain) {
 				frTSynGlobalTimeDomain.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("FrTSynGlobalTimeDomain"))
 				super.delegateAdd(index, frTSynGlobalTimeDomain)
 			}
 		}
 	}
-	
+
 	static class FrTSynGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof FrTSynGeneral)){
 				return false
 			}
 			this.target == (object as FrTSynGeneral).target
 		}
-		
+	
 		def Boolean getFrTSynDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setFrTSynDevErrorDetect(Boolean value){
@@ -132,15 +131,15 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getFrTSynMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setFrTSynMainFunctionPeriod(BigDecimal value){
@@ -148,15 +147,15 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getFrTSynVersionInfo(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynVersionInfo"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynVersionInfo"].getBooleanValue()
 		}
 		
 		def void setFrTSynVersionInfo(Boolean value){
@@ -164,11 +163,11 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynVersionInfo"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynVersionInfo"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -194,30 +193,30 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		
 		static class FrTSynGlobalTimeOfsDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FrTSynGlobalTimeOfsDataIDList)){
 					return false
 				}
 				this.target == (object as FrTSynGlobalTimeOfsDataIDList).target
 			}
-			
+		
 			
 			
 			def List<FrTSynGlobalTimeOfsDataIDListElement> getFrTSynGlobalTimeOfsDataIDListElements(){
@@ -227,47 +226,47 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrTSynGlobalTimeOfsDataIDListElement, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeOfsDataIDListElement), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTSyn$FrTSynGeneral$FrTSynGlobalTimeOfsDataIDList$FrTSynGlobalTimeOfsDataIDListElement frTSynGlobalTimeOfsDataIDListElement) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTSyn.FrTSynGeneral.FrTSynGlobalTimeOfsDataIDList.FrTSynGlobalTimeOfsDataIDListElement frTSynGlobalTimeOfsDataIDListElement) {
 						frTSynGlobalTimeOfsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeOfsDataIDListElement"))
 						super.delegateAdd(frTSynGlobalTimeOfsDataIDListElement)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTSyn$FrTSynGeneral$FrTSynGlobalTimeOfsDataIDList$FrTSynGlobalTimeOfsDataIDListElement frTSynGlobalTimeOfsDataIDListElement) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTSyn.FrTSynGeneral.FrTSynGlobalTimeOfsDataIDList.FrTSynGlobalTimeOfsDataIDListElement frTSynGlobalTimeOfsDataIDListElement) {
 						frTSynGlobalTimeOfsDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeOfsDataIDListElement"))
 						super.delegateAdd(index, frTSynGlobalTimeOfsDataIDListElement)
-					}	
+					}
 				}
 			}
 			
 			
 			static class FrTSynGlobalTimeOfsDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof FrTSynGlobalTimeOfsDataIDListElement)){
 						return false
 					}
 					this.target == (object as FrTSynGlobalTimeOfsDataIDListElement).target
 				}
-				
+			
 				def BigInteger getFrTSynGlobalTimeOfsDataIDListIndex(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeOfsDataIDListIndex"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeOfsDataIDListIndex"].getBigIntegerValue()
 				}
 				
 				def void setFrTSynGlobalTimeOfsDataIDListIndex(BigInteger value){
@@ -275,15 +274,15 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeOfsDataIDListIndex"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeOfsDataIDListIndex"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getFrTSynGlobalTimeOfsDataIDListValue(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeOfsDataIDListValue"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeOfsDataIDListValue"].getBigIntegerValue()
 				}
 				
 				def void setFrTSynGlobalTimeOfsDataIDListValue(BigInteger value){
@@ -291,11 +290,11 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeOfsDataIDListValue"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeOfsDataIDListValue"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -307,30 +306,30 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		
 		static class FrTSynGlobalTimeSyncDataIDList implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FrTSynGlobalTimeSyncDataIDList)){
 					return false
 				}
 				this.target == (object as FrTSynGlobalTimeSyncDataIDList).target
 			}
-			
+		
 			
 			
 			def List<FrTSynGlobalTimeSyncDataIDListElement> getFrTSynGlobalTimeSyncDataIDListElements(){
@@ -340,47 +339,47 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<FrTSynGlobalTimeSyncDataIDListElement, GContainer>(filteredContainers, typeof(FrTSynGlobalTimeSyncDataIDListElement), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTSyn$FrTSynGeneral$FrTSynGlobalTimeSyncDataIDList$FrTSynGlobalTimeSyncDataIDListElement frTSynGlobalTimeSyncDataIDListElement) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.FrTSyn.FrTSynGeneral.FrTSynGlobalTimeSyncDataIDList.FrTSynGlobalTimeSyncDataIDListElement frTSynGlobalTimeSyncDataIDListElement) {
 						frTSynGlobalTimeSyncDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeSyncDataIDListElement"))
 						super.delegateAdd(frTSynGlobalTimeSyncDataIDListElement)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTSyn$FrTSynGeneral$FrTSynGlobalTimeSyncDataIDList$FrTSynGlobalTimeSyncDataIDListElement frTSynGlobalTimeSyncDataIDListElement) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.FrTSyn.FrTSynGeneral.FrTSynGlobalTimeSyncDataIDList.FrTSynGlobalTimeSyncDataIDListElement frTSynGlobalTimeSyncDataIDListElement) {
 						frTSynGlobalTimeSyncDataIDListElement.target?.gSetDefinition(containerValue.getContainerDefinition("FrTSynGlobalTimeSyncDataIDListElement"))
 						super.delegateAdd(index, frTSynGlobalTimeSyncDataIDListElement)
-					}	
+					}
 				}
 			}
 			
 			
 			static class FrTSynGlobalTimeSyncDataIDListElement implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof FrTSynGlobalTimeSyncDataIDListElement)){
 						return false
 					}
 					this.target == (object as FrTSynGlobalTimeSyncDataIDListElement).target
 				}
-				
+			
 				def BigInteger getFrTSynGlobalTimeSyncDataIDListIndex(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSyncDataIDListIndex"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSyncDataIDListIndex"].getBigIntegerValue()
 				}
 				
 				def void setFrTSynGlobalTimeSyncDataIDListIndex(BigInteger value){
@@ -388,15 +387,15 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSyncDataIDListIndex"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSyncDataIDListIndex"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getFrTSynGlobalTimeSyncDataIDListValue(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSyncDataIDListValue"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSyncDataIDListValue"].getBigIntegerValue()
 				}
 				
 				def void setFrTSynGlobalTimeSyncDataIDListValue(BigInteger value){
@@ -404,11 +403,11 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSyncDataIDListValue"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSyncDataIDListValue"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -421,32 +420,32 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 	}
 	static class FrTSynGlobalTimeDomain implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof FrTSynGlobalTimeDomain)){
 				return false
 			}
 			this.target == (object as FrTSynGlobalTimeDomain).target
 		}
-		
+	
 		def BigInteger getFrTSynGlobalTimeDomainId(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeDomainId"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeDomainId"].getBigIntegerValue()
 		}
 		
 		def void setFrTSynGlobalTimeDomainId(BigInteger value){
@@ -454,15 +453,15 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeDomainId"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeDomainId"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getFrTSynGlobalTimeSequenceCounterJumpWidth(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSequenceCounterJumpWidth"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSequenceCounterJumpWidth"].getBigIntegerValue()
 		}
 		
 		def void setFrTSynGlobalTimeSequenceCounterJumpWidth(BigInteger value){
@@ -470,22 +469,22 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSequenceCounterJumpWidth"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSequenceCounterJumpWidth"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase getFrTSynSynchronizedTimeBaseRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase), "FrTSynSynchronizedTimeBaseRef")
 		}
-				
+		
 		def void setFrTSynSynchronizedTimeBaseRef(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FrTSynSynchronizedTimeBaseRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FrTSynSynchronizedTimeBaseRef"], object.getTarget())
 			}
 		}
 		
@@ -511,32 +510,32 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		
 		static class FrTSynGlobalTimeMaster implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FrTSynGlobalTimeMaster)){
 					return false
 				}
 				this.target == (object as FrTSynGlobalTimeMaster).target
 			}
-			
+		
 			def FrTSynGlobalTimeTxCrcSecured getFrTSynGlobalTimeTxCrcSecured(){
-				getFrTSynGlobalTimeTxCrcSecuredValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeTxCrcSecured"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeTxCrcSecured"].getFrTSynGlobalTimeTxCrcSecuredValue()
 			}
 			
 			def void setFrTSynGlobalTimeTxCrcSecured(FrTSynGlobalTimeTxCrcSecured value){
@@ -544,32 +543,32 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeTxCrcSecured"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeTxCrcSecured"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum FrTSynGlobalTimeTxCrcSecured {
 				CRC_NOT_SUPPORTED, 
 				CRC_SUPPORTED
 			}
-				
-			def FrTSynGlobalTimeTxCrcSecured getFrTSynGlobalTimeTxCrcSecuredValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def FrTSynGlobalTimeTxCrcSecured getFrTSynGlobalTimeTxCrcSecuredValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "CRC_NOT_SUPPORTED" : FrTSynGlobalTimeTxCrcSecured.CRC_NOT_SUPPORTED
 					case "CRC_SUPPORTED" : FrTSynGlobalTimeTxCrcSecured.CRC_SUPPORTED
 				}
 			}
 			
-			def void setFrTSynGlobalTimeTxCrcSecuredValue(GParameterValue paramValue, FrTSynGlobalTimeTxCrcSecured value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setFrTSynGlobalTimeTxCrcSecuredValue(GParameterValue parameterValue, FrTSynGlobalTimeTxCrcSecured value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getFrTSynGlobalTimeTxPeriod(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeTxPeriod"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeTxPeriod"].getBigDecimalValue()
 			}
 			
 			def void setFrTSynGlobalTimeTxPeriod(BigDecimal value){
@@ -577,11 +576,11 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeTxPeriod"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeTxPeriod"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -598,32 +597,32 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			
 			static class FrTSynGlobalTimeMasterPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof FrTSynGlobalTimeMasterPdu)){
 						return false
 					}
 					this.target == (object as FrTSynGlobalTimeMasterPdu).target
 				}
-				
+			
 				def BigInteger getFrTSynGlobalTimeMasterConfirmationHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeMasterConfirmationHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeMasterConfirmationHandleId"].getBigIntegerValue()
 				}
 				
 				def void setFrTSynGlobalTimeMasterConfirmationHandleId(BigInteger value){
@@ -631,22 +630,22 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeMasterConfirmationHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeMasterConfirmationHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getFrTSynGlobalTimePduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "FrTSynGlobalTimePduRef")
 				}
-						
+				
 				def void setFrTSynGlobalTimePduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FrTSynGlobalTimePduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FrTSynGlobalTimePduRef"], object.getTarget())
 					}
 				}
 				
@@ -658,32 +657,32 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		
 		static class FrTSynGlobalTimeSlave implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof FrTSynGlobalTimeSlave)){
 					return false
 				}
 				this.target == (object as FrTSynGlobalTimeSlave).target
 			}
-			
+		
 			def FrTSynRxCrcValidated getFrTSynRxCrcValidated(){
-				getFrTSynRxCrcValidatedValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynRxCrcValidated"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynRxCrcValidated"].getFrTSynRxCrcValidatedValue()
 			}
 			
 			def void setFrTSynRxCrcValidated(FrTSynRxCrcValidated value){
@@ -691,11 +690,11 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynRxCrcValidated"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynRxCrcValidated"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum FrTSynRxCrcValidated {
@@ -703,18 +702,18 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 				CRC_NOT_VALIDATED, 
 				CRC_VALIDATED
 			}
-				
-			def FrTSynRxCrcValidated getFrTSynRxCrcValidatedValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def FrTSynRxCrcValidated getFrTSynRxCrcValidatedValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "CRC_IGNORED" : FrTSynRxCrcValidated.CRC_IGNORED
 					case "CRC_NOT_VALIDATED" : FrTSynRxCrcValidated.CRC_NOT_VALIDATED
 					case "CRC_VALIDATED" : FrTSynRxCrcValidated.CRC_VALIDATED
 				}
 			}
 			
-			def void setFrTSynRxCrcValidatedValue(GParameterValue paramValue, FrTSynRxCrcValidated value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setFrTSynRxCrcValidatedValue(GParameterValue parameterValue, FrTSynRxCrcValidated value){
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -731,32 +730,32 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 			
 			static class FrTSynGlobalTimeSlavePdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof FrTSynGlobalTimeSlavePdu)){
 						return false
 					}
 					this.target == (object as FrTSynGlobalTimeSlavePdu).target
 				}
-				
+			
 				def BigInteger getFrTSynGlobalTimeSlaveHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSlaveHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTSynGlobalTimeSlaveHandleId"].getBigIntegerValue()
 				}
 				
 				def void setFrTSynGlobalTimeSlaveHandleId(BigInteger value){
@@ -764,22 +763,22 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSlaveHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTSynGlobalTimeSlaveHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getFrTSynGlobalTimePduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "FrTSynGlobalTimePduRef")
 				}
-						
+				
 				def void setFrTSynGlobalTimePduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "FrTSynGlobalTimePduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "FrTSynGlobalTimePduRef"], object.getTarget())
 					}
 				}
 				
@@ -790,14 +789,14 @@ class FrTSyn implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof FrTSyn)){
 			return false
 		}
 		this.target == (object as FrTSyn).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

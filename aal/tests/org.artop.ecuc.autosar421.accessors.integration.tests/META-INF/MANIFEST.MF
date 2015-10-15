@@ -5,8 +5,7 @@ Bundle-SymbolicName: org.artop.ecuc.autosar421.accessors.integration.tests;singl
 Bundle-Version: 4.5.0.qualifier
 Bundle-Activator: org.artop.ecuc.autosar421.accessors.integration.tests.internal.Activator$Implementation
 Require-Bundle: org.eclipse.core.runtime,
- org.artop.ecuc.accessorgen.testutils.integration.referenceworkspace;bundle-version="4.3.0",
- org.artop.ecuc.autosar4x.accessorgen,
+ org.artop.ecuc.accessorgen.testutils.integration.referenceworkspace,
  org.artop.ecuc.autosar421.accessors,
  org.eclipse.xtend.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

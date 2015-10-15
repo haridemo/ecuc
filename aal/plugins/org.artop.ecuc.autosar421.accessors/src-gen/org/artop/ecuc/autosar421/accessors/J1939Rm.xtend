@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class J1939Rm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def J1939RmConfigSet getJ1939RmConfigSet(){
 		moduleConfiguration.getByType(typeof(J1939RmConfigSet))
 	}
-	
+
 	def void setJ1939RmConfigSet(J1939RmConfigSet j1939RmConfigSet){
-		val GContainer container = j1939RmConfigSet.getTarget() 
+		val GContainer container = j1939RmConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "J1939RmConfigSet")
 	}
 	def J1939RmGeneral getJ1939RmGeneral(){
 		moduleConfiguration.getByType(typeof(J1939RmGeneral))
 	}
-	
+
 	def void setJ1939RmGeneral(J1939RmGeneral j1939RmGeneral){
-		val GContainer container = j1939RmGeneral.getTarget() 
+		val GContainer container = j1939RmGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "J1939RmGeneral")
 	}
-	
+
 	static class J1939RmConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof J1939RmConfigSet)){
 				return false
 			}
 			this.target == (object as J1939RmConfigSet).target
 		}
-		
+	
 		
 		
 		def List<J1939RmChannel> getJ1939RmChannels(){
@@ -122,15 +121,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<J1939RmChannel, GContainer>(filteredContainers, typeof(J1939RmChannel), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmChannel j1939RmChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel j1939RmChannel) {
 					j1939RmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmChannel"))
 					super.delegateAdd(j1939RmChannel)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmChannel j1939RmChannel) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel j1939RmChannel) {
 					j1939RmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmChannel"))
 					super.delegateAdd(index, j1939RmChannel)
-				}	
+				}
 			}
 		}
 		
@@ -141,47 +140,47 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<J1939RmNode, GContainer>(filteredContainers, typeof(J1939RmNode), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmNode j1939RmNode) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode j1939RmNode) {
 					j1939RmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmNode"))
 					super.delegateAdd(j1939RmNode)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmNode j1939RmNode) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode j1939RmNode) {
 					j1939RmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmNode"))
 					super.delegateAdd(index, j1939RmNode)
-				}	
+				}
 			}
 		}
 		
 		
 		static class J1939RmChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof J1939RmChannel)){
 					return false
 				}
 				this.target == (object as J1939RmChannel).target
 			}
-			
+		
 			def BigInteger getJ1939RmAckQueueSize(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckQueueSize"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckQueueSize"].getBigIntegerValue()
 			}
 			
 			def void setJ1939RmAckQueueSize(BigInteger value){
@@ -189,15 +188,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmAckQueueSize"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmAckQueueSize"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getJ1939RmRequestQueueSize(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestQueueSize"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestQueueSize"].getBigIntegerValue()
 			}
 			
 			def void setJ1939RmRequestQueueSize(BigInteger value){
@@ -205,15 +204,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRequestQueueSize"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRequestQueueSize"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getJ1939RmRequestTimeoutMonitors(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestTimeoutMonitors"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRequestTimeoutMonitors"].getBigIntegerValue()
 			}
 			
 			def void setJ1939RmRequestTimeoutMonitors(BigInteger value){
@@ -221,22 +220,22 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRequestTimeoutMonitors"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRequestTimeoutMonitors"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getJ1939RmComMNetworkHandleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "J1939RmComMNetworkHandleRef")
 			}
-					
+			
 			def void setJ1939RmComMNetworkHandleRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmComMNetworkHandleRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmComMNetworkHandleRef"], object.getTarget())
 				}
 			}
 			
@@ -280,32 +279,32 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			
 			static class J1939RmAckmRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof J1939RmAckmRxPdu)){
 						return false
 					}
 					this.target == (object as J1939RmAckmRxPdu).target
 				}
-				
+			
 				def BigInteger getJ1939RmAckmRxPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmRxPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmRxPduId"].getBigIntegerValue()
 				}
 				
 				def void setJ1939RmAckmRxPduId(BigInteger value){
@@ -313,22 +312,22 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmAckmRxPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmAckmRxPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmAckmRxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmAckmRxPduRef")
 				}
-						
+				
 				def void setJ1939RmAckmRxPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmAckmRxPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmAckmRxPduRef"], object.getTarget())
 					}
 				}
 				
@@ -338,32 +337,32 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			
 			static class J1939RmAckmTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof J1939RmAckmTxPdu)){
 						return false
 					}
 					this.target == (object as J1939RmAckmTxPdu).target
 				}
-				
+			
 				def BigInteger getJ1939RmAckmTxPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmTxPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmAckmTxPduId"].getBigIntegerValue()
 				}
 				
 				def void setJ1939RmAckmTxPduId(BigInteger value){
@@ -371,22 +370,22 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmAckmTxPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmAckmTxPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmAckmTxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmAckmTxPduRef")
 				}
-						
+				
 				def void setJ1939RmAckmTxPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmAckmTxPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmAckmTxPduRef"], object.getTarget())
 					}
 				}
 				
@@ -396,32 +395,32 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			
 			static class J1939RmRqstRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof J1939RmRqstRxPdu)){
 						return false
 					}
 					this.target == (object as J1939RmRqstRxPdu).target
 				}
-				
+			
 				def BigInteger getJ1939RmRqstRxPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstRxPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstRxPduId"].getBigIntegerValue()
 				}
 				
 				def void setJ1939RmRqstRxPduId(BigInteger value){
@@ -429,22 +428,22 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRqstRxPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRqstRxPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmRqstRxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmRqstRxPduRef")
 				}
-						
+				
 				def void setJ1939RmRqstRxPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmRqstRxPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmRqstRxPduRef"], object.getTarget())
 					}
 				}
 				
@@ -454,32 +453,32 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			
 			static class J1939RmRqstTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof J1939RmRqstTxPdu)){
 						return false
 					}
 					this.target == (object as J1939RmRqstTxPdu).target
 				}
-				
+			
 				def BigInteger getJ1939RmRqstTxPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstTxPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmRqstTxPduId"].getBigIntegerValue()
 				}
 				
 				def void setJ1939RmRqstTxPduId(BigInteger value){
@@ -487,22 +486,22 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRqstTxPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmRqstTxPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmRqstTxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmRqstTxPduRef")
 				}
-						
+				
 				def void setJ1939RmRqstTxPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmRqstTxPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmRqstTxPduRef"], object.getTarget())
 					}
 				}
 				
@@ -514,42 +513,42 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 		
 		static class J1939RmNode implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof J1939RmNode)){
 					return false
 				}
 				this.target == (object as J1939RmNode).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel> getJ1939RmNodeChannelRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmNodeChannelRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "J1939RmNodeChannelRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmChannel object) throws CoreException {
 						if (object != null) {
@@ -560,7 +559,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -575,11 +574,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			def org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode getJ1939RmNmNodeRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode), "J1939RmNmNodeRef")
 			}
-					
+			
 			def void setJ1939RmNmNodeRef(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmNmNodeRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmNmNodeRef"], object.getTarget())
 				}
 			}
 			
@@ -591,47 +590,47 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<J1939RmUser, GContainer>(filteredContainers, typeof(J1939RmUser), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmNode$J1939RmUser j1939RmUser) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser j1939RmUser) {
 						j1939RmUser.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmUser"))
 						super.delegateAdd(j1939RmUser)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmNode$J1939RmUser j1939RmUser) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser j1939RmUser) {
 						j1939RmUser.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmUser"))
 						super.delegateAdd(index, j1939RmUser)
-					}	
+					}
 				}
 			}
 			
 			
 			static class J1939RmUser implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof J1939RmUser)){
 						return false
 					}
 					this.target == (object as J1939RmUser).target
 				}
-				
+			
 				def Boolean getJ1939RmUserAckIndication(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserAckIndication"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserAckIndication"].getBooleanValue()
 				}
 				
 				def void setJ1939RmUserAckIndication(Boolean value){
@@ -639,11 +638,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserAckIndication"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserAckIndication"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def List<BigInteger> getJ1939RmUserAckPGNs(){
@@ -660,7 +659,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def BigInteger getJ1939RmUserId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserId"].getBigIntegerValue()
 				}
 				
 				def void setJ1939RmUserId(BigInteger value){
@@ -668,11 +667,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def List<BigInteger> getJ1939RmUserPGNs(){
@@ -689,7 +688,7 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 				}
 				
 				def Boolean getJ1939RmUserRequestIndication(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserRequestIndication"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserRequestIndication"].getBooleanValue()
 				}
 				
 				def void setJ1939RmUserRequestIndication(Boolean value){
@@ -697,15 +696,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserRequestIndication"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserRequestIndication"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getJ1939RmUserSendAck(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendAck"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendAck"].getBooleanValue()
 				}
 				
 				def void setJ1939RmUserSendAck(Boolean value){
@@ -713,15 +712,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserSendAck"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserSendAck"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getJ1939RmUserSendRequest(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendRequest"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserSendRequest"].getBooleanValue()
 				}
 				
 				def void setJ1939RmUserSendRequest(Boolean value){
@@ -729,15 +728,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserSendRequest"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserSendRequest"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getJ1939RmUserTimeoutSupervision(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserTimeoutSupervision"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserTimeoutSupervision"].getBooleanValue()
 				}
 				
 				def void setJ1939RmUserTimeoutSupervision(Boolean value){
@@ -745,15 +744,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserTimeoutSupervision"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserTimeoutSupervision"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def J1939RmUserType getJ1939RmUserType(){
-					getJ1939RmUserTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmUserType"].getJ1939RmUserTypeValue()
 				}
 				
 				def void setJ1939RmUserType(J1939RmUserType value){
@@ -761,11 +760,11 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmUserType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum J1939RmUserType {
@@ -775,10 +774,10 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					J1939RM_USER_J1939NM, 
 					J1939RM_USER_RTE
 				}
-					
-				def J1939RmUserType getJ1939RmUserTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def J1939RmUserType getJ1939RmUserTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "J1939RM_USER_CDD" : J1939RmUserType.J1939RM_USER_CDD
 						case "J1939RM_USER_COM" : J1939RmUserType.J1939RM_USER_COM
 						case "J1939RM_USER_J1939DCM" : J1939RmUserType.J1939RM_USER_J1939DCM
@@ -787,8 +786,8 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setJ1939RmUserTypeValue(GParameterValue paramValue, J1939RmUserType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setJ1939RmUserTypeValue(GParameterValue parameterValue, J1939RmUserType value){
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -801,47 +800,47 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<J1939RmComIPdu, GContainer>(filteredContainers, typeof(J1939RmComIPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmNode$J1939RmUser$J1939RmComIPdu j1939RmComIPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser.J1939RmComIPdu j1939RmComIPdu) {
 							j1939RmComIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmComIPdu"))
 							super.delegateAdd(j1939RmComIPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm$J1939RmConfigSet$J1939RmNode$J1939RmUser$J1939RmComIPdu j1939RmComIPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser.J1939RmComIPdu j1939RmComIPdu) {
 							j1939RmComIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("J1939RmComIPdu"))
 							super.delegateAdd(index, j1939RmComIPdu)
-						}	
+						}
 					}
 				}
 				
 				
 				static class J1939RmComIPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof J1939RmComIPdu)){
 							return false
 						}
 						this.target == (object as J1939RmComIPdu).target
 					}
-					
+				
 					def BigInteger getJ1939RmComIPduPGN(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmComIPduPGN"].getBigIntegerValue()
 					}
 					
 					def void setJ1939RmComIPduPGN(BigInteger value){
@@ -849,22 +848,22 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmComIPduPGN"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmComIPduPGN"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939RmComIPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939RmComIPduRef")
 					}
-							
+					
 					def void setJ1939RmComIPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmComIPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939RmComIPduRef"], object.getTarget())
 						}
 					}
 					
@@ -879,32 +878,32 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 	}
 	static class J1939RmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof J1939RmGeneral)){
 				return false
 			}
 			this.target == (object as J1939RmGeneral).target
 		}
-		
+	
 		def Boolean getJ1939RmDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setJ1939RmDevErrorDetect(Boolean value){
@@ -912,15 +911,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939RmMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setJ1939RmMainFunctionPeriod(BigDecimal value){
@@ -928,15 +927,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getJ1939RmSupportAckIndication(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckIndication"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckIndication"].getBooleanValue()
 		}
 		
 		def void setJ1939RmSupportAckIndication(Boolean value){
@@ -944,15 +943,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportAckIndication"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportAckIndication"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportAckTransmission(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckTransmission"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportAckTransmission"].getBooleanValue()
 		}
 		
 		def void setJ1939RmSupportAckTransmission(Boolean value){
@@ -960,15 +959,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportAckTransmission"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportAckTransmission"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportRequestIndication(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestIndication"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestIndication"].getBooleanValue()
 		}
 		
 		def void setJ1939RmSupportRequestIndication(Boolean value){
@@ -976,15 +975,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportRequestIndication"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportRequestIndication"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportRequestTransmission(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestTransmission"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportRequestTransmission"].getBooleanValue()
 		}
 		
 		def void setJ1939RmSupportRequestTransmission(Boolean value){
@@ -992,15 +991,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportRequestTransmission"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportRequestTransmission"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getJ1939RmSupportTimeoutSupervision(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportTimeoutSupervision"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmSupportTimeoutSupervision"].getBooleanValue()
 		}
 		
 		def void setJ1939RmSupportTimeoutSupervision(Boolean value){
@@ -1008,15 +1007,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportTimeoutSupervision"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmSupportTimeoutSupervision"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getJ1939RmTxConfirmationTimeout(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmTxConfirmationTimeout"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmTxConfirmationTimeout"].getBigDecimalValue()
 		}
 		
 		def void setJ1939RmTxConfirmationTimeout(BigDecimal value){
@@ -1024,15 +1023,15 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmTxConfirmationTimeout"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmTxConfirmationTimeout"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getJ1939RmVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939RmVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setJ1939RmVersionInfoApi(Boolean value){
@@ -1040,25 +1039,25 @@ class J1939Rm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939RmVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof J1939Rm)){
 			return false
 		}
 		this.target == (object as J1939Rm).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

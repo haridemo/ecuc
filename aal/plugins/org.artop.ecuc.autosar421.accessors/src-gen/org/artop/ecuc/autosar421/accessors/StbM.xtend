@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,29 +52,29 @@ import java.math.BigDecimal
 
 class StbM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def StbMGeneral getStbMGeneral(){
 		moduleConfiguration.getByType(typeof(StbMGeneral))
 	}
-	
+
 	def void setStbMGeneral(StbMGeneral stbMGeneral){
-		val GContainer container = stbMGeneral.getTarget() 
+		val GContainer container = stbMGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "StbMGeneral")
 	}
 	def List<StbMSynchronizedTimeBase> getStbMSynchronizedTimeBases(){
@@ -85,12 +84,12 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<StbMSynchronizedTimeBase, GContainer>(filteredContainers, typeof(StbMSynchronizedTimeBase), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.StbM$StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
 				stbMSynchronizedTimeBase.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMSynchronizedTimeBase"))
 				super.delegateAdd(stbMSynchronizedTimeBase)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.StbM$StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase stbMSynchronizedTimeBase) {
 				stbMSynchronizedTimeBase.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMSynchronizedTimeBase"))
 				super.delegateAdd(index, stbMSynchronizedTimeBase)
 			}
@@ -103,46 +102,46 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<StbMTriggeredCustomer, GContainer>(filteredContainers, typeof(StbMTriggeredCustomer), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.StbM$StbMTriggeredCustomer stbMTriggeredCustomer) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.StbM.StbMTriggeredCustomer stbMTriggeredCustomer) {
 				stbMTriggeredCustomer.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMTriggeredCustomer"))
 				super.delegateAdd(stbMTriggeredCustomer)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.StbM$StbMTriggeredCustomer stbMTriggeredCustomer) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.StbM.StbMTriggeredCustomer stbMTriggeredCustomer) {
 				stbMTriggeredCustomer.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("StbMTriggeredCustomer"))
 				super.delegateAdd(index, stbMTriggeredCustomer)
 			}
 		}
 	}
-	
+
 	static class StbMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof StbMGeneral)){
 				return false
 			}
 			this.target == (object as StbMGeneral).target
 		}
-		
+	
 		def Boolean getStbMDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setStbMDevErrorDetect(Boolean value){
@@ -150,15 +149,15 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getStbMGetCurrentTimeExtendedAvailable(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGetCurrentTimeExtendedAvailable"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGetCurrentTimeExtendedAvailable"].getBooleanValue()
 		}
 		
 		def void setStbMGetCurrentTimeExtendedAvailable(Boolean value){
@@ -166,15 +165,15 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMGetCurrentTimeExtendedAvailable"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMGetCurrentTimeExtendedAvailable"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getStbMMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setStbMMainFunctionPeriod(BigDecimal value){
@@ -182,15 +181,15 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getStbMVersionInfo(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMVersionInfo"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMVersionInfo"].getBooleanValue()
 		}
 		
 		def void setStbMVersionInfo(Boolean value){
@@ -198,11 +197,11 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMVersionInfo"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMVersionInfo"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -211,32 +210,32 @@ class StbM implements IWrapper<GModuleConfiguration> {
 	}
 	static class StbMSynchronizedTimeBase implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof StbMSynchronizedTimeBase)){
 				return false
 			}
 			this.target == (object as StbMSynchronizedTimeBase).target
 		}
-		
+	
 		def Boolean getStbMIsSystemWideGlobalTimeMaster(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"].getBooleanValue()
 		}
 		
 		def void setStbMIsSystemWideGlobalTimeMaster(Boolean value){
@@ -244,15 +243,15 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMIsSystemWideGlobalTimeMaster"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMIsSystemWideGlobalTimeMaster"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def StbMStoreTimebaseNonVolatile getStbMStoreTimebaseNonVolatile(){
-			getStbMStoreTimebaseNonVolatileValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMStoreTimebaseNonVolatile"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMStoreTimebaseNonVolatile"].getStbMStoreTimebaseNonVolatileValue()
 		}
 		
 		def void setStbMStoreTimebaseNonVolatile(StbMStoreTimebaseNonVolatile value){
@@ -260,32 +259,32 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMStoreTimebaseNonVolatile"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMStoreTimebaseNonVolatile"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum StbMStoreTimebaseNonVolatile {
 			NO_STORAGE, 
 			STORAGE_AT_SHUTDOWN
 		}
-			
-		def StbMStoreTimebaseNonVolatile getStbMStoreTimebaseNonVolatileValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def StbMStoreTimebaseNonVolatile getStbMStoreTimebaseNonVolatileValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "NO_STORAGE" : StbMStoreTimebaseNonVolatile.NO_STORAGE
 				case "STORAGE_AT_SHUTDOWN" : StbMStoreTimebaseNonVolatile.STORAGE_AT_SHUTDOWN
 			}
 		}
 		
-		def void setStbMStoreTimebaseNonVolatileValue(GParameterValue paramValue, StbMStoreTimebaseNonVolatile value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setStbMStoreTimebaseNonVolatileValue(GParameterValue parameterValue, StbMStoreTimebaseNonVolatile value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getStbMSyncLossThreshold(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncLossThreshold"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncLossThreshold"].getBigDecimalValue()
 		}
 		
 		def void setStbMSyncLossThreshold(BigDecimal value){
@@ -293,15 +292,15 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncLossThreshold"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncLossThreshold"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getStbMSyncLossTimeout(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncLossTimeout"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncLossTimeout"].getBigDecimalValue()
 		}
 		
 		def void setStbMSyncLossTimeout(BigDecimal value){
@@ -309,15 +308,15 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncLossTimeout"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncLossTimeout"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getStbMSynchronizedTimeBaseIdentifier(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSynchronizedTimeBaseIdentifier"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSynchronizedTimeBaseIdentifier"].getBigIntegerValue()
 		}
 		
 		def void setStbMSynchronizedTimeBaseIdentifier(BigInteger value){
@@ -325,44 +324,44 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMSynchronizedTimeBaseIdentifier"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSynchronizedTimeBaseIdentifier"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.EthTSyn.EthTSynGlobalTimeDomain getStbMEthGlobalTimeDomainRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EthTSyn.EthTSynGlobalTimeDomain), "StbMEthGlobalTimeDomainRef")
 		}
-				
+		
 		def void setStbMEthGlobalTimeDomainRef(org.artop.ecuc.autosar421.accessors.EthTSyn.EthTSynGlobalTimeDomain object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "StbMEthGlobalTimeDomainRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "StbMEthGlobalTimeDomainRef"], object.getTarget())
 			}
 		}
 		
 		def org.artop.ecuc.autosar421.accessors.Os.OsCounter getStbMLocalTimeRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter), "StbMLocalTimeRef")
 		}
-				
+		
 		def void setStbMLocalTimeRef(org.artop.ecuc.autosar421.accessors.Os.OsCounter object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "StbMLocalTimeRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "StbMLocalTimeRef"], object.getTarget())
 			}
 		}
 		
 		def org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase getStbMOffsetTimeBase(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase), "StbMOffsetTimeBase")
 		}
-				
+		
 		def void setStbMOffsetTimeBase(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "StbMOffsetTimeBase"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "StbMOffsetTimeBase"], object.getTarget())
 			}
 		}
 		
@@ -371,32 +370,32 @@ class StbM implements IWrapper<GModuleConfiguration> {
 	}
 	static class StbMTriggeredCustomer implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof StbMTriggeredCustomer)){
 				return false
 			}
 			this.target == (object as StbMTriggeredCustomer).target
 		}
-		
+	
 		def BigInteger getStbMTriggeredCustomerPeriod(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTriggeredCustomerPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTriggeredCustomerPeriod"].getBigIntegerValue()
 		}
 		
 		def void setStbMTriggeredCustomerPeriod(BigInteger value){
@@ -404,47 +403,47 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "StbMTriggeredCustomerPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTriggeredCustomerPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable getStbMOSScheduleTableRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable), "StbMOSScheduleTableRef")
 		}
-				
+		
 		def void setStbMOSScheduleTableRef(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "StbMOSScheduleTableRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "StbMOSScheduleTableRef"], object.getTarget())
 			}
 		}
 		
 		def org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase getStbMSynchronizedTimeBaseRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase), "StbMSynchronizedTimeBaseRef")
 		}
-				
+		
 		def void setStbMSynchronizedTimeBaseRef(org.artop.ecuc.autosar421.accessors.StbM.StbMSynchronizedTimeBase object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "StbMSynchronizedTimeBaseRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "StbMSynchronizedTimeBaseRef"], object.getTarget())
 			}
 		}
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof StbM)){
 			return false
 		}
 		this.target == (object as StbM).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

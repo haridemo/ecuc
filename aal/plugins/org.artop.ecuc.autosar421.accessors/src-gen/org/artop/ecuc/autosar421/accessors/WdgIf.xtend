@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,23 +52,23 @@ import java.math.BigDecimal
 
 class WdgIf implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def List<WdgIfDevice> getWdgIfDevices(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
@@ -77,12 +76,12 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<WdgIfDevice, GContainer>(filteredContainers, typeof(WdgIfDevice), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgIf$WdgIfDevice wdgIfDevice) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.WdgIf.WdgIfDevice wdgIfDevice) {
 				wdgIfDevice.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("WdgIfDevice"))
 				super.delegateAdd(wdgIfDevice)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgIf$WdgIfDevice wdgIfDevice) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.WdgIf.WdgIfDevice wdgIfDevice) {
 				wdgIfDevice.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("WdgIfDevice"))
 				super.delegateAdd(index, wdgIfDevice)
 			}
@@ -91,40 +90,40 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 	def WdgIfGeneral getWdgIfGeneral(){
 		moduleConfiguration.getByType(typeof(WdgIfGeneral))
 	}
-	
+
 	def void setWdgIfGeneral(WdgIfGeneral wdgIfGeneral){
-		val GContainer container = wdgIfGeneral.getTarget() 
+		val GContainer container = wdgIfGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "WdgIfGeneral")
 	}
-	
+
 	static class WdgIfDevice implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof WdgIfDevice)){
 				return false
 			}
 			this.target == (object as WdgIfDevice).target
 		}
-		
+	
 		def BigInteger getWdgIfDeviceIndex(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfDeviceIndex"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfDeviceIndex"].getBigIntegerValue()
 		}
 		
 		def void setWdgIfDeviceIndex(BigInteger value){
@@ -132,22 +131,22 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "WdgIfDeviceIndex"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgIfDeviceIndex"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.Wdg.WdgGeneral getWdgIfDriverRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Wdg.WdgGeneral), "WdgIfDriverRef")
 		}
-				
+		
 		def void setWdgIfDriverRef(org.artop.ecuc.autosar421.accessors.Wdg.WdgGeneral object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "WdgIfDriverRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "WdgIfDriverRef"], object.getTarget())
 			}
 		}
 		
@@ -156,32 +155,32 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 	}
 	static class WdgIfGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof WdgIfGeneral)){
 				return false
 			}
 			this.target == (object as WdgIfGeneral).target
 		}
-		
+	
 		def Boolean getWdgIfDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setWdgIfDevErrorDetect(Boolean value){
@@ -189,15 +188,15 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "WdgIfDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgIfDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getWdgIfVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgIfVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setWdgIfVersionInfoApi(Boolean value){
@@ -205,25 +204,25 @@ class WdgIf implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "WdgIfVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgIfVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof WdgIf)){
 			return false
 		}
 		this.target == (object as WdgIf).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

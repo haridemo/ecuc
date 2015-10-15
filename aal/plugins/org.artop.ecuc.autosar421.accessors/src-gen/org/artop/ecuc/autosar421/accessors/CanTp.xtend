@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,68 +52,68 @@ import java.math.BigDecimal
 
 class CanTp implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def CanTpConfig getCanTpConfig(){
 		moduleConfiguration.getByType(typeof(CanTpConfig))
 	}
-	
+
 	def void setCanTpConfig(CanTpConfig canTpConfig){
-		val GContainer container = canTpConfig.getTarget() 
+		val GContainer container = canTpConfig.getTarget()
 	    moduleConfiguration.setContainer(container, "CanTpConfig")
 	}
 	def CanTpGeneral getCanTpGeneral(){
 		moduleConfiguration.getByType(typeof(CanTpGeneral))
 	}
-	
+
 	def void setCanTpGeneral(CanTpGeneral canTpGeneral){
-		val GContainer container = canTpGeneral.getTarget() 
+		val GContainer container = canTpGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "CanTpGeneral")
 	}
-	
+
 	static class CanTpConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CanTpConfig)){
 				return false
 			}
 			this.target == (object as CanTpConfig).target
 		}
-		
+	
 		def BigDecimal getCanTpMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setCanTpMainFunctionPeriod(BigDecimal value){
@@ -122,15 +121,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCanTpMaxChannelCnt(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpMaxChannelCnt"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpMaxChannelCnt"].getBigIntegerValue()
 		}
 		
 		def void setCanTpMaxChannelCnt(BigInteger value){
@@ -138,11 +137,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpMaxChannelCnt"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpMaxChannelCnt"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -154,47 +153,47 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanTpChannel, GContainer>(filteredContainers, typeof(CanTpChannel), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel canTpChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp.CanTpConfig.CanTpChannel canTpChannel) {
 					canTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpChannel"))
 					super.delegateAdd(canTpChannel)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel canTpChannel) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp.CanTpConfig.CanTpChannel canTpChannel) {
 					canTpChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpChannel"))
 					super.delegateAdd(index, canTpChannel)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CanTpChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CanTpChannel)){
 					return false
 				}
 				this.target == (object as CanTpChannel).target
 			}
-			
+		
 			def CanTpChannelMode getCanTpChannelMode(){
-				getCanTpChannelModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpChannelMode"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpChannelMode"].getCanTpChannelModeValue()
 			}
 			
 			def void setCanTpChannelMode(CanTpChannelMode value){
@@ -202,28 +201,28 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpChannelMode"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpChannelMode"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum CanTpChannelMode {
 				CANTP_MODE_FULL_DUPLEX, 
 				CANTP_MODE_HALF_DUPLEX
 			}
-				
-			def CanTpChannelMode getCanTpChannelModeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def CanTpChannelMode getCanTpChannelModeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "CANTP_MODE_FULL_DUPLEX" : CanTpChannelMode.CANTP_MODE_FULL_DUPLEX
 					case "CANTP_MODE_HALF_DUPLEX" : CanTpChannelMode.CANTP_MODE_HALF_DUPLEX
 				}
 			}
 			
-			def void setCanTpChannelModeValue(GParameterValue paramValue, CanTpChannelMode value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setCanTpChannelModeValue(GParameterValue parameterValue, CanTpChannelMode value){
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -235,15 +234,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanTpRxNSdu, GContainer>(filteredContainers, typeof(CanTpRxNSdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpRxNSdu canTpRxNSdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp.CanTpConfig.CanTpChannel.CanTpRxNSdu canTpRxNSdu) {
 						canTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpRxNSdu"))
 						super.delegateAdd(canTpRxNSdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpRxNSdu canTpRxNSdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp.CanTpConfig.CanTpChannel.CanTpRxNSdu canTpRxNSdu) {
 						canTpRxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpRxNSdu"))
 						super.delegateAdd(index, canTpRxNSdu)
-					}	
+					}
 				}
 			}
 			
@@ -254,47 +253,47 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CanTpTxNSdu, GContainer>(filteredContainers, typeof(CanTpTxNSdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpTxNSdu canTpTxNSdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTp.CanTpConfig.CanTpChannel.CanTpTxNSdu canTpTxNSdu) {
 						canTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpTxNSdu"))
 						super.delegateAdd(canTpTxNSdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp$CanTpConfig$CanTpChannel$CanTpTxNSdu canTpTxNSdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTp.CanTpConfig.CanTpChannel.CanTpTxNSdu canTpTxNSdu) {
 						canTpTxNSdu.target?.gSetDefinition(containerValue.getContainerDefinition("CanTpTxNSdu"))
 						super.delegateAdd(index, canTpTxNSdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CanTpRxNSdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanTpRxNSdu)){
 						return false
 					}
 					this.target == (object as CanTpRxNSdu).target
 				}
-				
+			
 				def BigInteger getCanTpBs(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpBs"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpBs"].getBigIntegerValue()
 				}
 				
 				def void setCanTpBs(BigInteger value){
@@ -302,15 +301,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpBs"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpBs"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigDecimal getCanTpNar(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNar"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNar"].getBigDecimalValue()
 				}
 				
 				def void setCanTpNar(BigDecimal value){
@@ -318,15 +317,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNar"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNar"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigDecimal getCanTpNbr(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNbr"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNbr"].getBigDecimalValue()
 				}
 				
 				def void setCanTpNbr(BigDecimal value){
@@ -334,15 +333,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNbr"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNbr"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigDecimal getCanTpNcr(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNcr"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNcr"].getBigDecimalValue()
 				}
 				
 				def void setCanTpNcr(BigDecimal value){
@@ -350,15 +349,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNcr"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNcr"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def CanTpRxAddressingFormat getCanTpRxAddressingFormat(){
-					getCanTpRxAddressingFormatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxAddressingFormat"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxAddressingFormat"].getCanTpRxAddressingFormatValue()
 				}
 				
 				def void setCanTpRxAddressingFormat(CanTpRxAddressingFormat value){
@@ -366,11 +365,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxAddressingFormat"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxAddressingFormat"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CanTpRxAddressingFormat {
@@ -380,10 +379,10 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					CANTP_NORMALFIXED, 
 					CANTP_STANDARD
 				}
-					
-				def CanTpRxAddressingFormat getCanTpRxAddressingFormatValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CanTpRxAddressingFormat getCanTpRxAddressingFormatValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "CANTP_EXTENDED" : CanTpRxAddressingFormat.CANTP_EXTENDED
 						case "CANTP_MIXED" : CanTpRxAddressingFormat.CANTP_MIXED
 						case "CANTP_MIXED29BIT" : CanTpRxAddressingFormat.CANTP_MIXED29BIT
@@ -392,12 +391,12 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setCanTpRxAddressingFormatValue(GParameterValue paramValue, CanTpRxAddressingFormat value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCanTpRxAddressingFormatValue(GParameterValue parameterValue, CanTpRxAddressingFormat value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCanTpRxNSduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxNSduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxNSduId"].getBigIntegerValue()
 				}
 				
 				def void setCanTpRxNSduId(BigInteger value){
@@ -405,15 +404,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxNSduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxNSduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def CanTpRxPaddingActivation getCanTpRxPaddingActivation(){
-					getCanTpRxPaddingActivationValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxPaddingActivation"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxPaddingActivation"].getCanTpRxPaddingActivationValue()
 				}
 				
 				def void setCanTpRxPaddingActivation(CanTpRxPaddingActivation value){
@@ -421,32 +420,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxPaddingActivation"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxPaddingActivation"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CanTpRxPaddingActivation {
 					CANTP_OFF, 
 					CANTP_ON
 				}
-					
-				def CanTpRxPaddingActivation getCanTpRxPaddingActivationValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CanTpRxPaddingActivation getCanTpRxPaddingActivationValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "CANTP_OFF" : CanTpRxPaddingActivation.CANTP_OFF
 						case "CANTP_ON" : CanTpRxPaddingActivation.CANTP_ON
 					}
 				}
 				
-				def void setCanTpRxPaddingActivationValue(GParameterValue paramValue, CanTpRxPaddingActivation value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCanTpRxPaddingActivationValue(GParameterValue parameterValue, CanTpRxPaddingActivation value){
+					parameterValue.setValue(value)
 				}
 				
 				def CanTpRxTaType getCanTpRxTaType(){
-					getCanTpRxTaTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxTaType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxTaType"].getCanTpRxTaTypeValue()
 				}
 				
 				def void setCanTpRxTaType(CanTpRxTaType value){
@@ -454,11 +453,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxTaType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxTaType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CanTpRxTaType {
@@ -467,10 +466,10 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					CANTP_FUNCTIONAL, 
 					CANTP_PHYSICAL
 				}
-					
-				def CanTpRxTaType getCanTpRxTaTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CanTpRxTaType getCanTpRxTaTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "CANTP_CANFD_FUNCTIONAL" : CanTpRxTaType.CANTP_CANFD_FUNCTIONAL
 						case "CANTP_CANFD_PHYSICAL" : CanTpRxTaType.CANTP_CANFD_PHYSICAL
 						case "CANTP_FUNCTIONAL" : CanTpRxTaType.CANTP_FUNCTIONAL
@@ -478,12 +477,12 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setCanTpRxTaTypeValue(GParameterValue paramValue, CanTpRxTaType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCanTpRxTaTypeValue(GParameterValue parameterValue, CanTpRxTaType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCanTpRxWftMax(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxWftMax"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxWftMax"].getBigIntegerValue()
 				}
 				
 				def void setCanTpRxWftMax(BigInteger value){
@@ -491,15 +490,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxWftMax"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxWftMax"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigDecimal getCanTpSTmin(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpSTmin"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpSTmin"].getBigDecimalValue()
 				}
 				
 				def void setCanTpSTmin(BigDecimal value){
@@ -507,22 +506,22 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpSTmin"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpSTmin"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCanTpRxNSduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CanTpRxNSduRef")
 				}
-						
+				
 				def void setCanTpRxNSduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpRxNSduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpRxNSduRef"], object.getTarget())
 					}
 				}
 				
@@ -575,32 +574,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpNAe implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpNAe)){
 							return false
 						}
 						this.target == (object as CanTpNAe).target
 					}
-					
+				
 					def BigInteger getCanTpNAe(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNAe"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNAe"].getBigIntegerValue()
 					}
 					
 					def void setCanTpNAe(BigInteger value){
@@ -608,11 +607,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNAe"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNAe"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -622,32 +621,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpNSa implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpNSa)){
 							return false
 						}
 						this.target == (object as CanTpNSa).target
 					}
-					
+				
 					def BigInteger getCanTpNSa(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNSa"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNSa"].getBigIntegerValue()
 					}
 					
 					def void setCanTpNSa(BigInteger value){
@@ -655,11 +654,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNSa"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNSa"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -669,32 +668,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpNTa implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpNTa)){
 							return false
 						}
 						this.target == (object as CanTpNTa).target
 					}
-					
+				
 					def BigInteger getCanTpNTa(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNTa"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNTa"].getBigIntegerValue()
 					}
 					
 					def void setCanTpNTa(BigInteger value){
@@ -702,11 +701,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNTa"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNTa"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -716,32 +715,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpRxNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpRxNPdu)){
 							return false
 						}
 						this.target == (object as CanTpRxNPdu).target
 					}
-					
+				
 					def BigInteger getCanTpRxNPduId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxNPduId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxNPduId"].getBigIntegerValue()
 					}
 					
 					def void setCanTpRxNPduId(BigInteger value){
@@ -749,22 +748,22 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxNPduId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxNPduId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCanTpRxNPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CanTpRxNPduRef")
 					}
-							
+					
 					def void setCanTpRxNPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpRxNPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpRxNPduRef"], object.getTarget())
 						}
 					}
 					
@@ -774,32 +773,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpTxFcNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpTxFcNPdu)){
 							return false
 						}
 						this.target == (object as CanTpTxFcNPdu).target
 					}
-					
+				
 					def BigInteger getCanTpTxFcNPduConfirmationPduId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxFcNPduConfirmationPduId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxFcNPduConfirmationPduId"].getBigIntegerValue()
 					}
 					
 					def void setCanTpTxFcNPduConfirmationPduId(BigInteger value){
@@ -807,22 +806,22 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxFcNPduConfirmationPduId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxFcNPduConfirmationPduId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCanTpTxFcNPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CanTpTxFcNPduRef")
 					}
-							
+					
 					def void setCanTpTxFcNPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpTxFcNPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpTxFcNPduRef"], object.getTarget())
 						}
 					}
 					
@@ -834,32 +833,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			
 			static class CanTpTxNSdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanTpTxNSdu)){
 						return false
 					}
 					this.target == (object as CanTpTxNSdu).target
 				}
-				
+			
 				def BigDecimal getCanTpNas(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNas"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNas"].getBigDecimalValue()
 				}
 				
 				def void setCanTpNas(BigDecimal value){
@@ -867,15 +866,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNas"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNas"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigDecimal getCanTpNbs(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNbs"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNbs"].getBigDecimalValue()
 				}
 				
 				def void setCanTpNbs(BigDecimal value){
@@ -883,15 +882,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNbs"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNbs"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigDecimal getCanTpNcs(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNcs"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNcs"].getBigDecimalValue()
 				}
 				
 				def void setCanTpNcs(BigDecimal value){
@@ -899,15 +898,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNcs"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNcs"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getCanTpTc(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTc"].getBooleanValue()
 				}
 				
 				def void setCanTpTc(Boolean value){
@@ -915,15 +914,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def CanTpTxAddressingFormat getCanTpTxAddressingFormat(){
-					getCanTpTxAddressingFormatValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxAddressingFormat"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxAddressingFormat"].getCanTpTxAddressingFormatValue()
 				}
 				
 				def void setCanTpTxAddressingFormat(CanTpTxAddressingFormat value){
@@ -931,11 +930,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxAddressingFormat"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxAddressingFormat"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CanTpTxAddressingFormat {
@@ -945,10 +944,10 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					CANTP_NORMALFIXED, 
 					CANTP_STANDARD
 				}
-					
-				def CanTpTxAddressingFormat getCanTpTxAddressingFormatValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CanTpTxAddressingFormat getCanTpTxAddressingFormatValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "CANTP_EXTENDED" : CanTpTxAddressingFormat.CANTP_EXTENDED
 						case "CANTP_MIXED" : CanTpTxAddressingFormat.CANTP_MIXED
 						case "CANTP_MIXED29BIT" : CanTpTxAddressingFormat.CANTP_MIXED29BIT
@@ -957,12 +956,12 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setCanTpTxAddressingFormatValue(GParameterValue paramValue, CanTpTxAddressingFormat value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCanTpTxAddressingFormatValue(GParameterValue parameterValue, CanTpTxAddressingFormat value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCanTpTxNSduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxNSduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxNSduId"].getBigIntegerValue()
 				}
 				
 				def void setCanTpTxNSduId(BigInteger value){
@@ -970,15 +969,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxNSduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxNSduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def CanTpTxPaddingActivation getCanTpTxPaddingActivation(){
-					getCanTpTxPaddingActivationValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxPaddingActivation"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxPaddingActivation"].getCanTpTxPaddingActivationValue()
 				}
 				
 				def void setCanTpTxPaddingActivation(CanTpTxPaddingActivation value){
@@ -986,32 +985,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxPaddingActivation"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxPaddingActivation"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CanTpTxPaddingActivation {
 					CANTP_OFF, 
 					CANTP_ON
 				}
-					
-				def CanTpTxPaddingActivation getCanTpTxPaddingActivationValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CanTpTxPaddingActivation getCanTpTxPaddingActivationValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "CANTP_OFF" : CanTpTxPaddingActivation.CANTP_OFF
 						case "CANTP_ON" : CanTpTxPaddingActivation.CANTP_ON
 					}
 				}
 				
-				def void setCanTpTxPaddingActivationValue(GParameterValue paramValue, CanTpTxPaddingActivation value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCanTpTxPaddingActivationValue(GParameterValue parameterValue, CanTpTxPaddingActivation value){
+					parameterValue.setValue(value)
 				}
 				
 				def CanTpTxTaType getCanTpTxTaType(){
-					getCanTpTxTaTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxTaType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxTaType"].getCanTpTxTaTypeValue()
 				}
 				
 				def void setCanTpTxTaType(CanTpTxTaType value){
@@ -1019,39 +1018,39 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxTaType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxTaType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CanTpTxTaType {
 					CANTP_FUNCTIONAL, 
 					CANTP_PHYSICAL
 				}
-					
-				def CanTpTxTaType getCanTpTxTaTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CanTpTxTaType getCanTpTxTaTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "CANTP_FUNCTIONAL" : CanTpTxTaType.CANTP_FUNCTIONAL
 						case "CANTP_PHYSICAL" : CanTpTxTaType.CANTP_PHYSICAL
 					}
 				}
 				
-				def void setCanTpTxTaTypeValue(GParameterValue paramValue, CanTpTxTaType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCanTpTxTaTypeValue(GParameterValue parameterValue, CanTpTxTaType value){
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCanTpTxNSduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CanTpTxNSduRef")
 				}
-						
+				
 				def void setCanTpTxNSduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpTxNSduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpTxNSduRef"], object.getTarget())
 					}
 				}
 				
@@ -1104,32 +1103,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpNAe implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpNAe)){
 							return false
 						}
 						this.target == (object as CanTpNAe).target
 					}
-					
+				
 					def BigInteger getCanTpNAe(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNAe"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNAe"].getBigIntegerValue()
 					}
 					
 					def void setCanTpNAe(BigInteger value){
@@ -1137,11 +1136,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNAe"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNAe"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -1151,32 +1150,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpNSa implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpNSa)){
 							return false
 						}
 						this.target == (object as CanTpNSa).target
 					}
-					
+				
 					def BigInteger getCanTpNSa(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNSa"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNSa"].getBigIntegerValue()
 					}
 					
 					def void setCanTpNSa(BigInteger value){
@@ -1184,11 +1183,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNSa"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNSa"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -1198,32 +1197,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpNTa implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpNTa)){
 							return false
 						}
 						this.target == (object as CanTpNTa).target
 					}
-					
+				
 					def BigInteger getCanTpNTa(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNTa"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpNTa"].getBigIntegerValue()
 					}
 					
 					def void setCanTpNTa(BigInteger value){
@@ -1231,11 +1230,11 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNTa"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpNTa"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -1245,32 +1244,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpRxFcNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpRxFcNPdu)){
 							return false
 						}
 						this.target == (object as CanTpRxFcNPdu).target
 					}
-					
+				
 					def BigInteger getCanTpRxFcNPduId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxFcNPduId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpRxFcNPduId"].getBigIntegerValue()
 					}
 					
 					def void setCanTpRxFcNPduId(BigInteger value){
@@ -1278,22 +1277,22 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxFcNPduId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpRxFcNPduId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCanTpRxFcNPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CanTpRxFcNPduRef")
 					}
-							
+					
 					def void setCanTpRxFcNPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpRxFcNPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpRxFcNPduRef"], object.getTarget())
 						}
 					}
 					
@@ -1303,32 +1302,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTpTxNPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTpTxNPdu)){
 							return false
 						}
 						this.target == (object as CanTpTxNPdu).target
 					}
-					
+				
 					def BigInteger getCanTpTxNPduConfirmationPduId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxNPduConfirmationPduId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpTxNPduConfirmationPduId"].getBigIntegerValue()
 					}
 					
 					def void setCanTpTxNPduConfirmationPduId(BigInteger value){
@@ -1336,22 +1335,22 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxNPduConfirmationPduId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpTxNPduConfirmationPduId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCanTpTxNPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CanTpTxNPduRef")
 					}
-							
+					
 					def void setCanTpTxNPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpTxNPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTpTxNPduRef"], object.getTarget())
 						}
 					}
 					
@@ -1366,32 +1365,32 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 	}
 	static class CanTpGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CanTpGeneral)){
 				return false
 			}
 			this.target == (object as CanTpGeneral).target
 		}
-		
+	
 		def Boolean getCanTpChangeParameterApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpChangeParameterApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpChangeParameterApi"].getBooleanValue()
 		}
 		
 		def void setCanTpChangeParameterApi(Boolean value){
@@ -1399,15 +1398,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpChangeParameterApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpChangeParameterApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanTpDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setCanTpDevErrorDetect(Boolean value){
@@ -1415,15 +1414,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanTpDynIdSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpDynIdSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpDynIdSupport"].getBooleanValue()
 		}
 		
 		def void setCanTpDynIdSupport(Boolean value){
@@ -1431,15 +1430,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpDynIdSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpDynIdSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanTpFlexibleDataRateSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpFlexibleDataRateSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpFlexibleDataRateSupport"].getBooleanValue()
 		}
 		
 		def void setCanTpFlexibleDataRateSupport(Boolean value){
@@ -1447,15 +1446,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpFlexibleDataRateSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpFlexibleDataRateSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanTpGenericConnectionSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpGenericConnectionSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpGenericConnectionSupport"].getBooleanValue()
 		}
 		
 		def void setCanTpGenericConnectionSupport(Boolean value){
@@ -1463,15 +1462,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpGenericConnectionSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpGenericConnectionSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getCanTpPaddingByte(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpPaddingByte"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpPaddingByte"].getBigIntegerValue()
 		}
 		
 		def void setCanTpPaddingByte(BigInteger value){
@@ -1479,15 +1478,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpPaddingByte"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpPaddingByte"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getCanTpReadParameterApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpReadParameterApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpReadParameterApi"].getBooleanValue()
 		}
 		
 		def void setCanTpReadParameterApi(Boolean value){
@@ -1495,15 +1494,15 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpReadParameterApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpReadParameterApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanTpVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTpVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setCanTpVersionInfoApi(Boolean value){
@@ -1511,25 +1510,25 @@ class CanTp implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTpVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTpVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof CanTp)){
 			return false
 		}
 		this.target == (object as CanTp).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

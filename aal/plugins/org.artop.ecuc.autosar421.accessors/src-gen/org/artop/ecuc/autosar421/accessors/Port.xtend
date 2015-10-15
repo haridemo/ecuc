@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class Port implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def PortConfigSet getPortConfigSet(){
 		moduleConfiguration.getByType(typeof(PortConfigSet))
 	}
-	
+
 	def void setPortConfigSet(PortConfigSet portConfigSet){
-		val GContainer container = portConfigSet.getTarget() 
+		val GContainer container = portConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "PortConfigSet")
 	}
 	def PortGeneral getPortGeneral(){
 		moduleConfiguration.getByType(typeof(PortGeneral))
 	}
-	
+
 	def void setPortGeneral(PortGeneral portGeneral){
-		val GContainer container = portGeneral.getTarget() 
+		val GContainer container = portGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "PortGeneral")
 	}
-	
+
 	static class PortConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PortConfigSet)){
 				return false
 			}
 			this.target == (object as PortConfigSet).target
 		}
-		
+	
 		
 		
 		def List<PortContainer> getPortContainers(){
@@ -122,47 +121,47 @@ class Port implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PortContainer, GContainer>(filteredContainers, typeof(PortContainer), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer portContainer) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Port.PortConfigSet.PortContainer portContainer) {
 					portContainer.target?.gSetDefinition(containerValue.getContainerDefinition("PortContainer"))
 					super.delegateAdd(portContainer)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer portContainer) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Port.PortConfigSet.PortContainer portContainer) {
 					portContainer.target?.gSetDefinition(containerValue.getContainerDefinition("PortContainer"))
 					super.delegateAdd(index, portContainer)
-				}	
+				}
 			}
 		}
 		
 		
 		static class PortContainer implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PortContainer)){
 					return false
 				}
 				this.target == (object as PortContainer).target
 			}
-			
+		
 			def BigInteger getPortNumberOfPortPins(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortNumberOfPortPins"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortNumberOfPortPins"].getBigIntegerValue()
 			}
 			
 			def void setPortNumberOfPortPins(BigInteger value){
@@ -170,11 +169,11 @@ class Port implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortNumberOfPortPins"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortNumberOfPortPins"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -186,47 +185,47 @@ class Port implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<PortPin, GContainer>(filteredContainers, typeof(PortPin), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer$PortPin portPin) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Port.PortConfigSet.PortContainer.PortPin portPin) {
 						portPin.target?.gSetDefinition(containerValue.getContainerDefinition("PortPin"))
 						super.delegateAdd(portPin)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Port$PortConfigSet$PortContainer$PortPin portPin) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Port.PortConfigSet.PortContainer.PortPin portPin) {
 						portPin.target?.gSetDefinition(containerValue.getContainerDefinition("PortPin"))
 						super.delegateAdd(index, portPin)
-					}	
+					}
 				}
 			}
 			
 			
 			static class PortPin implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof PortPin)){
 						return false
 					}
 					this.target == (object as PortPin).target
 				}
-				
+			
 				def PortPinDirection getPortPinDirection(){
-					getPortPinDirectionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinDirection"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinDirection"].getPortPinDirectionValue()
 				}
 				
 				def void setPortPinDirection(PortPinDirection value){
@@ -234,32 +233,32 @@ class Port implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortPinDirection"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortPinDirection"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum PortPinDirection {
 					PORT_PIN_IN, 
 					PORT_PIN_OUT
 				}
-					
-				def PortPinDirection getPortPinDirectionValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def PortPinDirection getPortPinDirectionValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "PORT_PIN_IN" : PortPinDirection.PORT_PIN_IN
 						case "PORT_PIN_OUT" : PortPinDirection.PORT_PIN_OUT
 					}
 				}
 				
-				def void setPortPinDirectionValue(GParameterValue paramValue, PortPinDirection value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setPortPinDirectionValue(GParameterValue parameterValue, PortPinDirection value){
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getPortPinDirectionChangeable(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinDirectionChangeable"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinDirectionChangeable"].getBooleanValue()
 				}
 				
 				def void setPortPinDirectionChangeable(Boolean value){
@@ -267,15 +266,15 @@ class Port implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortPinDirectionChangeable"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortPinDirectionChangeable"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getPortPinId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinId"].getBigIntegerValue()
 				}
 				
 				def void setPortPinId(BigInteger value){
@@ -283,15 +282,15 @@ class Port implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortPinId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortPinId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def PortPinInitialMode getPortPinInitialMode(){
-					getPortPinInitialModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinInitialMode"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinInitialMode"].getPortPinInitialModeValue()
 				}
 				
 				def void setPortPinInitialMode(PortPinInitialMode value){
@@ -299,11 +298,11 @@ class Port implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortPinInitialMode"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortPinInitialMode"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum PortPinInitialMode {
@@ -319,10 +318,10 @@ class Port implements IWrapper<GModuleConfiguration> {
 					PORT_PIN_MODE_PWM, 
 					PORT_PIN_MODE_SPI
 				}
-					
-				def PortPinInitialMode getPortPinInitialModeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def PortPinInitialMode getPortPinInitialModeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "PORT_PIN_MODE_ADC" : PortPinInitialMode.PORT_PIN_MODE_ADC
 						case "PORT_PIN_MODE_CAN" : PortPinInitialMode.PORT_PIN_MODE_CAN
 						case "PORT_PIN_MODE_DIO" : PortPinInitialMode.PORT_PIN_MODE_DIO
@@ -337,12 +336,12 @@ class Port implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setPortPinInitialModeValue(GParameterValue paramValue, PortPinInitialMode value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setPortPinInitialModeValue(GParameterValue parameterValue, PortPinInitialMode value){
+					parameterValue.setValue(value)
 				}
 				
 				def PortPinLevelValue getPortPinLevelValue(){
-					getPortPinLevelValueValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinLevelValue"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinLevelValue"].getPortPinLevelValueValue()
 				}
 				
 				def void setPortPinLevelValue(PortPinLevelValue value){
@@ -350,28 +349,28 @@ class Port implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortPinLevelValue"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortPinLevelValue"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum PortPinLevelValue {
 					PORT_PIN_LEVEL_HIGH, 
 					PORT_PIN_LEVEL_LOW
 				}
-					
-				def PortPinLevelValue getPortPinLevelValueValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def PortPinLevelValue getPortPinLevelValueValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "PORT_PIN_LEVEL_HIGH" : PortPinLevelValue.PORT_PIN_LEVEL_HIGH
 						case "PORT_PIN_LEVEL_LOW" : PortPinLevelValue.PORT_PIN_LEVEL_LOW
 					}
 				}
 				
-				def void setPortPinLevelValueValue(GParameterValue paramValue, PortPinLevelValue value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setPortPinLevelValueValue(GParameterValue parameterValue, PortPinLevelValue value){
+					parameterValue.setValue(value)
 				}
 				
 				def List<PortPinMode> getPortPinModes(){
@@ -387,10 +386,10 @@ class Port implements IWrapper<GModuleConfiguration> {
 							override protected wrap(PortPinMode object) throws CoreException {
 								val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
 								parameterValue.gSetDefinition(parameterDef)
-								EcucValueAccessor421Util.setParameterValue(parameterValue, object)
+								parameterValue.setValue(object)
 								parameterValue
 							}
-							
+				
 							override protected unwrap(EcucTextualParamValue parameterValue) {
 								getPortPinModeValue(parameterValue)
 							}
@@ -411,10 +410,10 @@ class Port implements IWrapper<GModuleConfiguration> {
 					PORT_PIN_MODE_PWM, 
 					PORT_PIN_MODE_SPI
 				}
-					
-				def PortPinMode getPortPinModeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def PortPinMode getPortPinModeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "PORT_PIN_MODE_ADC" : PortPinMode.PORT_PIN_MODE_ADC
 						case "PORT_PIN_MODE_CAN" : PortPinMode.PORT_PIN_MODE_CAN
 						case "PORT_PIN_MODE_DIO" : PortPinMode.PORT_PIN_MODE_DIO
@@ -429,12 +428,12 @@ class Port implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setPortPinModeValue(GParameterValue paramValue, PortPinMode value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setPortPinModeValue(GParameterValue parameterValue, PortPinMode value){
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getPortPinModeChangeable(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinModeChangeable"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortPinModeChangeable"].getBooleanValue()
 				}
 				
 				def void setPortPinModeChangeable(Boolean value){
@@ -442,11 +441,11 @@ class Port implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortPinModeChangeable"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortPinModeChangeable"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -459,32 +458,32 @@ class Port implements IWrapper<GModuleConfiguration> {
 	}
 	static class PortGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PortGeneral)){
 				return false
 			}
 			this.target == (object as PortGeneral).target
 		}
-		
+	
 		def Boolean getPortDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setPortDevErrorDetect(Boolean value){
@@ -492,15 +491,15 @@ class Port implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPortSetPinDirectionApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortSetPinDirectionApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortSetPinDirectionApi"].getBooleanValue()
 		}
 		
 		def void setPortSetPinDirectionApi(Boolean value){
@@ -508,15 +507,15 @@ class Port implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortSetPinDirectionApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortSetPinDirectionApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPortSetPinModeApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortSetPinModeApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortSetPinModeApi"].getBooleanValue()
 		}
 		
 		def void setPortSetPinModeApi(Boolean value){
@@ -524,15 +523,15 @@ class Port implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortSetPinModeApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortSetPinModeApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPortVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PortVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setPortVersionInfoApi(Boolean value){
@@ -540,25 +539,25 @@ class Port implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PortVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PortVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Port)){
 			return false
 		}
 		this.target == (object as Port).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

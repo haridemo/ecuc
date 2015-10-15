@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,74 +52,74 @@ import java.math.BigDecimal
 
 class Cdd implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def CddComStackContribution getCddComStackContribution(){
 		moduleConfiguration.getByType(typeof(CddComStackContribution))
 	}
-	
+
 	def void setCddComStackContribution(CddComStackContribution cddComStackContribution){
-		val GContainer container = cddComStackContribution.getTarget() 
+		val GContainer container = cddComStackContribution.getTarget()
 	    moduleConfiguration.setContainer(container, "CddComStackContribution")
 	}
 	def CddConfigSet getCddConfigSet(){
 		moduleConfiguration.getByType(typeof(CddConfigSet))
 	}
-	
+
 	def void setCddConfigSet(CddConfigSet cddConfigSet){
-		val GContainer container = cddConfigSet.getTarget() 
+		val GContainer container = cddConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "CddConfigSet")
 	}
 	def CddEcucPartitionInteraction getCddEcucPartitionInteraction(){
 		moduleConfiguration.getByType(typeof(CddEcucPartitionInteraction))
 	}
-	
+
 	def void setCddEcucPartitionInteraction(CddEcucPartitionInteraction cddEcucPartitionInteraction){
-		val GContainer container = cddEcucPartitionInteraction.getTarget() 
+		val GContainer container = cddEcucPartitionInteraction.getTarget()
 	    moduleConfiguration.setContainer(container, "CddEcucPartitionInteraction")
 	}
-	
+
 	static class CddComStackContribution implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CddComStackContribution)){
 				return false
 			}
 			this.target == (object as CddComStackContribution).target
 		}
-		
+	
 		
 		
 		def CddComIfUpperLayerContribution getCddComIfUpperLayerContribution(){
@@ -180,30 +179,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddComIfUpperLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddComIfUpperLayerContribution)){
 					return false
 				}
 				this.target == (object as CddComIfUpperLayerContribution).target
 			}
-			
+		
 			
 			
 			def List<CddComIfUpperLayerRxPdu> getCddComIfUpperLayerRxPdus(){
@@ -213,15 +212,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddComIfUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
 						cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
 						super.delegateAdd(cddComIfUpperLayerRxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
 						cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
 						super.delegateAdd(index, cddComIfUpperLayerRxPdu)
-					}	
+					}
 				}
 			}
 			
@@ -232,47 +231,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddComIfUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerTxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
 						cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
 						super.delegateAdd(cddComIfUpperLayerTxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
 						cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
 						super.delegateAdd(index, cddComIfUpperLayerTxPdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CddComIfUpperLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddComIfUpperLayerRxPdu)){
 						return false
 					}
 					this.target == (object as CddComIfUpperLayerRxPdu).target
 				}
-				
+			
 				def BigInteger getCddComIfHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddComIfHandleId(BigInteger value){
@@ -280,22 +279,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddComIfPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddComIfPduRef")
 				}
-						
+				
 				def void setCddComIfPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
 					}
 				}
 				
@@ -305,32 +304,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddComIfUpperLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddComIfUpperLayerTxPdu)){
 						return false
 					}
 					this.target == (object as CddComIfUpperLayerTxPdu).target
 				}
-				
+			
 				def BigInteger getCddComIfHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddComIfHandleId(BigInteger value){
@@ -338,22 +337,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddComIfPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddComIfPduRef")
 				}
-						
+				
 				def void setCddComIfPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
 					}
 				}
 				
@@ -365,30 +364,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddComMLowerLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddComMLowerLayerContribution)){
 					return false
 				}
 				this.target == (object as CddComMLowerLayerContribution).target
 			}
-			
+		
 			
 			
 			def List<CddComMLowerLayerChannel> getCddComMLowerLayerChannels(){
@@ -398,54 +397,54 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddComMLowerLayerChannel, GContainer>(filteredContainers, typeof(CddComMLowerLayerChannel), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddComMLowerLayerContribution$CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddComMLowerLayerContribution.CddComMLowerLayerChannel cddComMLowerLayerChannel) {
 						cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
 						super.delegateAdd(cddComMLowerLayerChannel)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddComMLowerLayerContribution$CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddComMLowerLayerContribution.CddComMLowerLayerChannel cddComMLowerLayerChannel) {
 						cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
 						super.delegateAdd(index, cddComMLowerLayerChannel)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CddComMLowerLayerChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddComMLowerLayerChannel)){
 						return false
 					}
 					this.target == (object as CddComMLowerLayerChannel).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddComMLowerLayerChannelRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddComMLowerLayerChannelRef")
 				}
-						
+				
 				def void setCddComMLowerLayerChannelRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddComMLowerLayerChannelRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddComMLowerLayerChannelRef"], object.getTarget())
 					}
 				}
 				
@@ -457,30 +456,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddGenericNmLowerLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddGenericNmLowerLayerContribution)){
 					return false
 				}
 				this.target == (object as CddGenericNmLowerLayerContribution).target
 			}
-			
+		
 			
 			
 			def List<CddGenericNmLowerLayerChannel> getCddGenericNmLowerLayerChannels(){
@@ -490,54 +489,54 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddGenericNmLowerLayerChannel, GContainer>(filteredContainers, typeof(CddGenericNmLowerLayerChannel), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddGenericNmLowerLayerContribution$CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddGenericNmLowerLayerContribution.CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
 						cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
 						super.delegateAdd(cddGenericNmLowerLayerChannel)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddGenericNmLowerLayerContribution$CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddGenericNmLowerLayerContribution.CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
 						cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
 						super.delegateAdd(index, cddGenericNmLowerLayerChannel)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CddGenericNmLowerLayerChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddGenericNmLowerLayerChannel)){
 						return false
 					}
 					this.target == (object as CddGenericNmLowerLayerChannel).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddGenericNmComMNetworkHandleRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddGenericNmComMNetworkHandleRef")
 				}
-						
+				
 				def void setCddGenericNmComMNetworkHandleRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddGenericNmComMNetworkHandleRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddGenericNmComMNetworkHandleRef"], object.getTarget())
 					}
 				}
 				
@@ -549,30 +548,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddPduRLowerLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddPduRLowerLayerContribution)){
 					return false
 				}
 				this.target == (object as CddPduRLowerLayerContribution).target
 			}
-			
+		
 			
 			
 			def List<CddPduRLowerLayerRxPdu> getCddPduRLowerLayerRxPdus(){
@@ -582,15 +581,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddPduRLowerLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
 						cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
 						super.delegateAdd(cddPduRLowerLayerRxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
 						cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
 						super.delegateAdd(index, cddPduRLowerLayerRxPdu)
-					}	
+					}
 				}
 			}
 			
@@ -601,47 +600,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddPduRLowerLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerTxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
 						cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
 						super.delegateAdd(cddPduRLowerLayerTxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
 						cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
 						super.delegateAdd(index, cddPduRLowerLayerTxPdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CddPduRLowerLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddPduRLowerLayerRxPdu)){
 						return false
 					}
 					this.target == (object as CddPduRLowerLayerRxPdu).target
 				}
-				
+			
 				def CddPduRApiType getCddPduRApiType(){
-					getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 				}
 				
 				def void setCddPduRApiType(CddPduRApiType value){
@@ -649,32 +648,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CddPduRApiType {
 					^IF, 
 					TP
 				}
-					
-				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "IF" : CddPduRApiType.^IF
 						case "TP" : CddPduRApiType.TP
 					}
 				}
 				
-				def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCddPduRLowerLayerHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddPduRLowerLayerHandleId(BigInteger value){
@@ -682,22 +681,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRLowerLayerPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRLowerLayerPduRef")
 				}
-						
+				
 				def void setCddPduRLowerLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
 					}
 				}
 				
@@ -707,32 +706,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddPduRLowerLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddPduRLowerLayerTxPdu)){
 						return false
 					}
 					this.target == (object as CddPduRLowerLayerTxPdu).target
 				}
-				
+			
 				def CddPduRApiType getCddPduRApiType(){
-					getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 				}
 				
 				def void setCddPduRApiType(CddPduRApiType value){
@@ -740,32 +739,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CddPduRApiType {
 					^IF, 
 					TP
 				}
-					
-				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "IF" : CddPduRApiType.^IF
 						case "TP" : CddPduRApiType.TP
 					}
 				}
 				
-				def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCddPduRLowerLayerHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddPduRLowerLayerHandleId(BigInteger value){
@@ -773,22 +772,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRLowerLayerPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRLowerLayerPduRef")
 				}
-						
+				
 				def void setCddPduRLowerLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
 					}
 				}
 				
@@ -800,30 +799,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddPduRUpperLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddPduRUpperLayerContribution)){
 					return false
 				}
 				this.target == (object as CddPduRUpperLayerContribution).target
 			}
-			
+		
 			
 			
 			def List<CddPduRUpperLayerRxPdu> getCddPduRUpperLayerRxPdus(){
@@ -833,15 +832,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddPduRUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
 						cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
 						super.delegateAdd(cddPduRUpperLayerRxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
 						cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
 						super.delegateAdd(index, cddPduRUpperLayerRxPdu)
-					}	
+					}
 				}
 			}
 			
@@ -852,47 +851,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddPduRUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerTxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
 						cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
 						super.delegateAdd(cddPduRUpperLayerTxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
 						cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
 						super.delegateAdd(index, cddPduRUpperLayerTxPdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CddPduRUpperLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddPduRUpperLayerRxPdu)){
 						return false
 					}
 					this.target == (object as CddPduRUpperLayerRxPdu).target
 				}
-				
+			
 				def CddPduRApiType getCddPduRApiType(){
-					getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 				}
 				
 				def void setCddPduRApiType(CddPduRApiType value){
@@ -900,32 +899,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CddPduRApiType {
 					^IF, 
 					TP
 				}
-					
-				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "IF" : CddPduRApiType.^IF
 						case "TP" : CddPduRApiType.TP
 					}
 				}
 				
-				def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCddPduRUpperLayerHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddPduRUpperLayerHandleId(BigInteger value){
@@ -933,22 +932,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRUpperLayerPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRUpperLayerPduRef")
 				}
-						
+				
 				def void setCddPduRUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
 					}
 				}
 				
@@ -958,32 +957,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddPduRUpperLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddPduRUpperLayerTxPdu)){
 						return false
 					}
 					this.target == (object as CddPduRUpperLayerTxPdu).target
 				}
-				
+			
 				def CddPduRApiType getCddPduRApiType(){
-					getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 				}
 				
 				def void setCddPduRApiType(CddPduRApiType value){
@@ -991,32 +990,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CddPduRApiType {
 					^IF, 
 					TP
 				}
-					
-				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "IF" : CddPduRApiType.^IF
 						case "TP" : CddPduRApiType.TP
 					}
 				}
 				
-				def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCddPduRUpperLayerHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddPduRUpperLayerHandleId(BigInteger value){
@@ -1024,22 +1023,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRUpperLayerPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRUpperLayerPduRef")
 				}
-						
+				
 				def void setCddPduRUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
 					}
 				}
 				
@@ -1051,30 +1050,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddSoAdUpperLayerContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddSoAdUpperLayerContribution)){
 					return false
 				}
 				this.target == (object as CddSoAdUpperLayerContribution).target
 			}
-			
+		
 			
 			
 			def List<CddSoAdUpperLayerRxPdu> getCddSoAdUpperLayerRxPdus(){
@@ -1084,15 +1083,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddSoAdUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
 						cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
 						super.delegateAdd(cddSoAdUpperLayerRxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
 						cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
 						super.delegateAdd(index, cddSoAdUpperLayerRxPdu)
-					}	
+					}
 				}
 			}
 			
@@ -1103,47 +1102,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<CddSoAdUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerTxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
 						cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
 						super.delegateAdd(cddSoAdUpperLayerTxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
 						cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
 						super.delegateAdd(index, cddSoAdUpperLayerTxPdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class CddSoAdUpperLayerRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddSoAdUpperLayerRxPdu)){
 						return false
 					}
 					this.target == (object as CddSoAdUpperLayerRxPdu).target
 				}
-				
+			
 				def CddPduRApiType getCddPduRApiType(){
-					getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 				}
 				
 				def void setCddPduRApiType(CddPduRApiType value){
@@ -1151,32 +1150,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CddPduRApiType {
 					^IF, 
 					TP
 				}
-					
-				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "IF" : CddPduRApiType.^IF
 						case "TP" : CddPduRApiType.TP
 					}
 				}
 				
-				def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCddSoAdUpperLayerHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddSoAdUpperLayerHandleId(BigInteger value){
@@ -1184,22 +1183,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddSoAdUpperLayerPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddSoAdUpperLayerPduRef")
 				}
-						
+				
 				def void setCddSoAdUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
 					}
 				}
 				
@@ -1209,32 +1208,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddSoAdUpperLayerTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddSoAdUpperLayerTxPdu)){
 						return false
 					}
 					this.target == (object as CddSoAdUpperLayerTxPdu).target
 				}
-				
+			
 				def CddPduRApiType getCddPduRApiType(){
-					getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 				}
 				
 				def void setCddPduRApiType(CddPduRApiType value){
@@ -1242,32 +1241,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum CddPduRApiType {
 					^IF, 
 					TP
 				}
-					
-				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "IF" : CddPduRApiType.^IF
 						case "TP" : CddPduRApiType.TP
 					}
 				}
 				
-				def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCddSoAdUpperLayerHandleId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"].getBigIntegerValue()
 				}
 				
 				def void setCddSoAdUpperLayerHandleId(BigInteger value){
@@ -1275,22 +1274,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddSoAdUpperLayerPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddSoAdUpperLayerPduRef")
 				}
-						
+				
 				def void setCddSoAdUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
 					}
 				}
 				
@@ -1303,30 +1302,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 	}
 	static class CddConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CddConfigSet)){
 				return false
 			}
 			this.target == (object as CddConfigSet).target
 		}
-		
+	
 		
 		
 		def CddComStackContribution getCddComStackContribution(){
@@ -1350,30 +1349,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddComStackContribution implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddComStackContribution)){
 					return false
 				}
 				this.target == (object as CddComStackContribution).target
 			}
-			
+		
 			
 			
 			def CddComIfUpperLayerContribution getCddComIfUpperLayerContribution(){
@@ -1433,30 +1432,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddComIfUpperLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddComIfUpperLayerContribution)){
 						return false
 					}
 					this.target == (object as CddComIfUpperLayerContribution).target
 				}
-				
+			
 				
 				
 				def List<CddComIfUpperLayerRxPdu> getCddComIfUpperLayerRxPdus(){
@@ -1466,15 +1465,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddComIfUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerRxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
 							cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
 							super.delegateAdd(cddComIfUpperLayerRxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerRxPdu cddComIfUpperLayerRxPdu) {
 							cddComIfUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerRxPdu"))
 							super.delegateAdd(index, cddComIfUpperLayerRxPdu)
-						}	
+						}
 					}
 				}
 				
@@ -1485,47 +1484,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddComIfUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddComIfUpperLayerTxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
 							cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
 							super.delegateAdd(cddComIfUpperLayerTxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddComIfUpperLayerContribution$CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddComIfUpperLayerContribution.CddComIfUpperLayerTxPdu cddComIfUpperLayerTxPdu) {
 							cddComIfUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddComIfUpperLayerTxPdu"))
 							super.delegateAdd(index, cddComIfUpperLayerTxPdu)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CddComIfUpperLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddComIfUpperLayerRxPdu)){
 							return false
 						}
 						this.target == (object as CddComIfUpperLayerRxPdu).target
 					}
-					
+				
 					def BigInteger getCddComIfHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddComIfHandleId(BigInteger value){
@@ -1533,22 +1532,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddComIfPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddComIfPduRef")
 					}
-							
+					
 					def void setCddComIfPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
 						}
 					}
 					
@@ -1558,32 +1557,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				static class CddComIfUpperLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddComIfUpperLayerTxPdu)){
 							return false
 						}
 						this.target == (object as CddComIfUpperLayerTxPdu).target
 					}
-					
+				
 					def BigInteger getCddComIfHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddComIfHandleId(BigInteger value){
@@ -1591,22 +1590,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddComIfPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddComIfPduRef")
 					}
-							
+					
 					def void setCddComIfPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddComIfPduRef"], object.getTarget())
 						}
 					}
 					
@@ -1618,30 +1617,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddComMLowerLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddComMLowerLayerContribution)){
 						return false
 					}
 					this.target == (object as CddComMLowerLayerContribution).target
 				}
-				
+			
 				
 				
 				def List<CddComMLowerLayerChannel> getCddComMLowerLayerChannels(){
@@ -1651,54 +1650,54 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddComMLowerLayerChannel, GContainer>(filteredContainers, typeof(CddComMLowerLayerChannel), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddComMLowerLayerContribution$CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddComMLowerLayerContribution.CddComMLowerLayerChannel cddComMLowerLayerChannel) {
 							cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
 							super.delegateAdd(cddComMLowerLayerChannel)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddComMLowerLayerContribution$CddComMLowerLayerChannel cddComMLowerLayerChannel) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddComMLowerLayerContribution.CddComMLowerLayerChannel cddComMLowerLayerChannel) {
 							cddComMLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddComMLowerLayerChannel"))
 							super.delegateAdd(index, cddComMLowerLayerChannel)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CddComMLowerLayerChannel implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddComMLowerLayerChannel)){
 							return false
 						}
 						this.target == (object as CddComMLowerLayerChannel).target
 					}
-					
+				
 					
 					def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddComMLowerLayerChannelRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddComMLowerLayerChannelRef")
 					}
-							
+					
 					def void setCddComMLowerLayerChannelRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddComMLowerLayerChannelRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddComMLowerLayerChannelRef"], object.getTarget())
 						}
 					}
 					
@@ -1710,30 +1709,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddGenericNmLowerLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddGenericNmLowerLayerContribution)){
 						return false
 					}
 					this.target == (object as CddGenericNmLowerLayerContribution).target
 				}
-				
+			
 				
 				
 				def List<CddGenericNmLowerLayerChannel> getCddGenericNmLowerLayerChannels(){
@@ -1743,54 +1742,54 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddGenericNmLowerLayerChannel, GContainer>(filteredContainers, typeof(CddGenericNmLowerLayerChannel), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddGenericNmLowerLayerContribution$CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddGenericNmLowerLayerContribution.CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
 							cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
 							super.delegateAdd(cddGenericNmLowerLayerChannel)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddGenericNmLowerLayerContribution$CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddGenericNmLowerLayerContribution.CddGenericNmLowerLayerChannel cddGenericNmLowerLayerChannel) {
 							cddGenericNmLowerLayerChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CddGenericNmLowerLayerChannel"))
 							super.delegateAdd(index, cddGenericNmLowerLayerChannel)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CddGenericNmLowerLayerChannel implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddGenericNmLowerLayerChannel)){
 							return false
 						}
 						this.target == (object as CddGenericNmLowerLayerChannel).target
 					}
-					
+				
 					
 					def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getCddGenericNmComMNetworkHandleRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "CddGenericNmComMNetworkHandleRef")
 					}
-							
+					
 					def void setCddGenericNmComMNetworkHandleRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddGenericNmComMNetworkHandleRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddGenericNmComMNetworkHandleRef"], object.getTarget())
 						}
 					}
 					
@@ -1802,30 +1801,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddPduRLowerLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddPduRLowerLayerContribution)){
 						return false
 					}
 					this.target == (object as CddPduRLowerLayerContribution).target
 				}
-				
+			
 				
 				
 				def List<CddPduRLowerLayerRxPdu> getCddPduRLowerLayerRxPdus(){
@@ -1835,15 +1834,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddPduRLowerLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerRxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
 							cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
 							super.delegateAdd(cddPduRLowerLayerRxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerRxPdu cddPduRLowerLayerRxPdu) {
 							cddPduRLowerLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerRxPdu"))
 							super.delegateAdd(index, cddPduRLowerLayerRxPdu)
-						}	
+						}
 					}
 				}
 				
@@ -1854,47 +1853,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddPduRLowerLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRLowerLayerTxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
 							cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
 							super.delegateAdd(cddPduRLowerLayerTxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRLowerLayerContribution$CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRLowerLayerContribution.CddPduRLowerLayerTxPdu cddPduRLowerLayerTxPdu) {
 							cddPduRLowerLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRLowerLayerTxPdu"))
 							super.delegateAdd(index, cddPduRLowerLayerTxPdu)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CddPduRLowerLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddPduRLowerLayerRxPdu)){
 							return false
 						}
 						this.target == (object as CddPduRLowerLayerRxPdu).target
 					}
-					
+				
 					def CddPduRApiType getCddPduRApiType(){
-						getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 					}
 					
 					def void setCddPduRApiType(CddPduRApiType value){
@@ -1902,32 +1901,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum CddPduRApiType {
 						^IF, 
 						TP
 					}
-						
-					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "IF" : CddPduRApiType.^IF
 							case "TP" : CddPduRApiType.TP
 						}
 					}
 					
-					def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCddPduRLowerLayerHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddPduRLowerLayerHandleId(BigInteger value){
@@ -1935,22 +1934,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRLowerLayerPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRLowerLayerPduRef")
 					}
-							
+					
 					def void setCddPduRLowerLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
 						}
 					}
 					
@@ -1960,32 +1959,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				static class CddPduRLowerLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddPduRLowerLayerTxPdu)){
 							return false
 						}
 						this.target == (object as CddPduRLowerLayerTxPdu).target
 					}
-					
+				
 					def CddPduRApiType getCddPduRApiType(){
-						getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 					}
 					
 					def void setCddPduRApiType(CddPduRApiType value){
@@ -1993,32 +1992,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum CddPduRApiType {
 						^IF, 
 						TP
 					}
-						
-					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "IF" : CddPduRApiType.^IF
 							case "TP" : CddPduRApiType.TP
 						}
 					}
 					
-					def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCddPduRLowerLayerHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddPduRLowerLayerHandleId(BigInteger value){
@@ -2026,22 +2025,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRLowerLayerPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRLowerLayerPduRef")
 					}
-							
+					
 					def void setCddPduRLowerLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRLowerLayerPduRef"], object.getTarget())
 						}
 					}
 					
@@ -2053,30 +2052,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddPduRUpperLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddPduRUpperLayerContribution)){
 						return false
 					}
 					this.target == (object as CddPduRUpperLayerContribution).target
 				}
-				
+			
 				
 				
 				def List<CddPduRUpperLayerRxPdu> getCddPduRUpperLayerRxPdus(){
@@ -2086,15 +2085,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddPduRUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerRxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
 							cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
 							super.delegateAdd(cddPduRUpperLayerRxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerRxPdu cddPduRUpperLayerRxPdu) {
 							cddPduRUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerRxPdu"))
 							super.delegateAdd(index, cddPduRUpperLayerRxPdu)
-						}	
+						}
 					}
 				}
 				
@@ -2105,47 +2104,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddPduRUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddPduRUpperLayerTxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
 							cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
 							super.delegateAdd(cddPduRUpperLayerTxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddPduRUpperLayerContribution$CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddPduRUpperLayerContribution.CddPduRUpperLayerTxPdu cddPduRUpperLayerTxPdu) {
 							cddPduRUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddPduRUpperLayerTxPdu"))
 							super.delegateAdd(index, cddPduRUpperLayerTxPdu)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CddPduRUpperLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddPduRUpperLayerRxPdu)){
 							return false
 						}
 						this.target == (object as CddPduRUpperLayerRxPdu).target
 					}
-					
+				
 					def CddPduRApiType getCddPduRApiType(){
-						getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 					}
 					
 					def void setCddPduRApiType(CddPduRApiType value){
@@ -2153,32 +2152,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum CddPduRApiType {
 						^IF, 
 						TP
 					}
-						
-					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "IF" : CddPduRApiType.^IF
 							case "TP" : CddPduRApiType.TP
 						}
 					}
 					
-					def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCddPduRUpperLayerHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddPduRUpperLayerHandleId(BigInteger value){
@@ -2186,22 +2185,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRUpperLayerPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRUpperLayerPduRef")
 					}
-							
+					
 					def void setCddPduRUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
 						}
 					}
 					
@@ -2211,32 +2210,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				static class CddPduRUpperLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddPduRUpperLayerTxPdu)){
 							return false
 						}
 						this.target == (object as CddPduRUpperLayerTxPdu).target
 					}
-					
+				
 					def CddPduRApiType getCddPduRApiType(){
-						getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 					}
 					
 					def void setCddPduRApiType(CddPduRApiType value){
@@ -2244,32 +2243,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum CddPduRApiType {
 						^IF, 
 						TP
 					}
-						
-					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "IF" : CddPduRApiType.^IF
 							case "TP" : CddPduRApiType.TP
 						}
 					}
 					
-					def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCddPduRUpperLayerHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddPduRUpperLayerHandleId(BigInteger value){
@@ -2277,22 +2276,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddPduRUpperLayerPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddPduRUpperLayerPduRef")
 					}
-							
+					
 					def void setCddPduRUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddPduRUpperLayerPduRef"], object.getTarget())
 						}
 					}
 					
@@ -2304,30 +2303,30 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			static class CddSoAdUpperLayerContribution implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CddSoAdUpperLayerContribution)){
 						return false
 					}
 					this.target == (object as CddSoAdUpperLayerContribution).target
 				}
-				
+			
 				
 				
 				def List<CddSoAdUpperLayerRxPdu> getCddSoAdUpperLayerRxPdus(){
@@ -2337,15 +2336,15 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddSoAdUpperLayerRxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerRxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
 							cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
 							super.delegateAdd(cddSoAdUpperLayerRxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerRxPdu cddSoAdUpperLayerRxPdu) {
 							cddSoAdUpperLayerRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerRxPdu"))
 							super.delegateAdd(index, cddSoAdUpperLayerRxPdu)
-						}	
+						}
 					}
 				}
 				
@@ -2356,47 +2355,47 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CddSoAdUpperLayerTxPdu, GContainer>(filteredContainers, typeof(CddSoAdUpperLayerTxPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
 							cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
 							super.delegateAdd(cddSoAdUpperLayerTxPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd$CddConfigSet$CddComStackContribution$CddSoAdUpperLayerContribution$CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Cdd.CddConfigSet.CddComStackContribution.CddSoAdUpperLayerContribution.CddSoAdUpperLayerTxPdu cddSoAdUpperLayerTxPdu) {
 							cddSoAdUpperLayerTxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("CddSoAdUpperLayerTxPdu"))
 							super.delegateAdd(index, cddSoAdUpperLayerTxPdu)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CddSoAdUpperLayerRxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddSoAdUpperLayerRxPdu)){
 							return false
 						}
 						this.target == (object as CddSoAdUpperLayerRxPdu).target
 					}
-					
+				
 					def CddPduRApiType getCddPduRApiType(){
-						getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 					}
 					
 					def void setCddPduRApiType(CddPduRApiType value){
@@ -2404,32 +2403,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum CddPduRApiType {
 						^IF, 
 						TP
 					}
-						
-					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "IF" : CddPduRApiType.^IF
 							case "TP" : CddPduRApiType.TP
 						}
 					}
 					
-					def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCddSoAdUpperLayerHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddSoAdUpperLayerHandleId(BigInteger value){
@@ -2437,22 +2436,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddSoAdUpperLayerPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddSoAdUpperLayerPduRef")
 					}
-							
+					
 					def void setCddSoAdUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
 						}
 					}
 					
@@ -2462,32 +2461,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				static class CddSoAdUpperLayerTxPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CddSoAdUpperLayerTxPdu)){
 							return false
 						}
 						this.target == (object as CddSoAdUpperLayerTxPdu).target
 					}
-					
+				
 					def CddPduRApiType getCddPduRApiType(){
-						getCddPduRApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"].getCddPduRApiTypeValue()
 					}
 					
 					def void setCddPduRApiType(CddPduRApiType value){
@@ -2495,32 +2494,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum CddPduRApiType {
 						^IF, 
 						TP
 					}
-						
-					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def CddPduRApiType getCddPduRApiTypeValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "IF" : CddPduRApiType.^IF
 							case "TP" : CddPduRApiType.TP
 						}
 					}
 					
-					def void setCddPduRApiTypeValue(GParameterValue paramValue, CddPduRApiType value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setCddPduRApiTypeValue(GParameterValue parameterValue, CddPduRApiType value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCddSoAdUpperLayerHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"].getBigIntegerValue()
 					}
 					
 					def void setCddSoAdUpperLayerHandleId(BigInteger value){
@@ -2528,22 +2527,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getCddSoAdUpperLayerPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "CddSoAdUpperLayerPduRef")
 					}
-							
+					
 					def void setCddSoAdUpperLayerPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddSoAdUpperLayerPduRef"], object.getTarget())
 						}
 					}
 					
@@ -2557,32 +2556,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		static class CddEcucPartitionInteraction implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CddEcucPartitionInteraction)){
 					return false
 				}
 				this.target == (object as CddEcucPartitionInteraction).target
 			}
-			
+		
 			def String getCddPartitionStoppedFunctionName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"].getStringValue()
 			}
 			
 			def void setCddPartitionStoppedFunctionName(String value){
@@ -2590,22 +2589,22 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPartitionStoppedFunctionName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPartitionStoppedFunctionName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition getCddEcucPartitionRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition), "CddEcucPartitionRef")
 			}
-					
+			
 			def void setCddEcucPartitionRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddEcucPartitionRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddEcucPartitionRef"], object.getTarget())
 				}
 			}
 			
@@ -2616,32 +2615,32 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 	}
 	static class CddEcucPartitionInteraction implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CddEcucPartitionInteraction)){
 				return false
 			}
 			this.target == (object as CddEcucPartitionInteraction).target
 		}
-		
+	
 		def String getCddPartitionStoppedFunctionName(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"].getStringValue()
 		}
 		
 		def void setCddPartitionStoppedFunctionName(String value){
@@ -2649,36 +2648,36 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CddPartitionStoppedFunctionName"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPartitionStoppedFunctionName"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition getCddEcucPartitionRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition), "CddEcucPartitionRef")
 		}
-				
+		
 		def void setCddEcucPartitionRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CddEcucPartitionRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CddEcucPartitionRef"], object.getTarget())
 			}
 		}
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Cdd)){
 			return false
 		}
 		this.target == (object as Cdd).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

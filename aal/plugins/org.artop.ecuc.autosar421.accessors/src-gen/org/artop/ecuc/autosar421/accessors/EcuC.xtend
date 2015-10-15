@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,98 +52,98 @@ import java.math.BigDecimal
 
 class EcuC implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def EcucConfigSet getEcucConfigSet(){
 		moduleConfiguration.getByType(typeof(EcucConfigSet))
 	}
-	
+
 	def void setEcucConfigSet(EcucConfigSet ecucConfigSet){
-		val GContainer container = ecucConfigSet.getTarget() 
+		val GContainer container = ecucConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "EcucConfigSet")
 	}
 	def EcucHardware getEcucHardware(){
 		moduleConfiguration.getByType(typeof(EcucHardware))
 	}
-	
+
 	def void setEcucHardware(EcucHardware ecucHardware){
-		val GContainer container = ecucHardware.getTarget() 
+		val GContainer container = ecucHardware.getTarget()
 	    moduleConfiguration.setContainer(container, "EcucHardware")
 	}
 	def EcucPartitionCollection getEcucPartitionCollection(){
 		moduleConfiguration.getByType(typeof(EcucPartitionCollection))
 	}
-	
+
 	def void setEcucPartitionCollection(EcucPartitionCollection ecucPartitionCollection){
-		val GContainer container = ecucPartitionCollection.getTarget() 
+		val GContainer container = ecucPartitionCollection.getTarget()
 	    moduleConfiguration.setContainer(container, "EcucPartitionCollection")
 	}
 	def EcucPostBuildVariants getEcucPostBuildVariants(){
 		moduleConfiguration.getByType(typeof(EcucPostBuildVariants))
 	}
-	
+
 	def void setEcucPostBuildVariants(EcucPostBuildVariants ecucPostBuildVariants){
-		val GContainer container = ecucPostBuildVariants.getTarget() 
+		val GContainer container = ecucPostBuildVariants.getTarget()
 	    moduleConfiguration.setContainer(container, "EcucPostBuildVariants")
 	}
 	def EcucUnitGroupAssignment getEcucUnitGroupAssignment(){
 		moduleConfiguration.getByType(typeof(EcucUnitGroupAssignment))
 	}
-	
+
 	def void setEcucUnitGroupAssignment(EcucUnitGroupAssignment ecucUnitGroupAssignment){
-		val GContainer container = ecucUnitGroupAssignment.getTarget() 
+		val GContainer container = ecucUnitGroupAssignment.getTarget()
 	    moduleConfiguration.setContainer(container, "EcucUnitGroupAssignment")
 	}
 	def EcucVariationResolver getEcucVariationResolver(){
 		moduleConfiguration.getByType(typeof(EcucVariationResolver))
 	}
-	
+
 	def void setEcucVariationResolver(EcucVariationResolver ecucVariationResolver){
-		val GContainer container = ecucVariationResolver.getTarget() 
+		val GContainer container = ecucVariationResolver.getTarget()
 	    moduleConfiguration.setContainer(container, "EcucVariationResolver")
 	}
-	
+
 	static class EcucConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EcucConfigSet)){
 				return false
 			}
 			this.target == (object as EcucConfigSet).target
 		}
-		
+	
 		
 		
 		def EcucPduCollection getEcucPduCollection(){
@@ -159,32 +158,32 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 		
 		static class EcucPduCollection implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof EcucPduCollection)){
 					return false
 				}
 				this.target == (object as EcucPduCollection).target
 			}
-			
+		
 			def PduIdTypeEnum getPduIdTypeEnum(){
-				getPduIdTypeEnumValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduIdTypeEnum"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduIdTypeEnum"].getPduIdTypeEnumValue()
 			}
 			
 			def void setPduIdTypeEnum(PduIdTypeEnum value){
@@ -192,32 +191,32 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduIdTypeEnum"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduIdTypeEnum"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum PduIdTypeEnum {
 				UINT16, 
 				UINT8
 			}
-				
-			def PduIdTypeEnum getPduIdTypeEnumValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def PduIdTypeEnum getPduIdTypeEnumValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "UINT16" : PduIdTypeEnum.UINT16
 					case "UINT8" : PduIdTypeEnum.UINT8
 				}
 			}
 			
-			def void setPduIdTypeEnumValue(GParameterValue paramValue, PduIdTypeEnum value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setPduIdTypeEnumValue(GParameterValue parameterValue, PduIdTypeEnum value){
+				parameterValue.setValue(value)
 			}
 			
 			def PduLengthTypeEnum getPduLengthTypeEnum(){
-				getPduLengthTypeEnumValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduLengthTypeEnum"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduLengthTypeEnum"].getPduLengthTypeEnumValue()
 			}
 			
 			def void setPduLengthTypeEnum(PduLengthTypeEnum value){
@@ -225,11 +224,11 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduLengthTypeEnum"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduLengthTypeEnum"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum PduLengthTypeEnum {
@@ -237,18 +236,18 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				UINT32, 
 				UINT8
 			}
-				
-			def PduLengthTypeEnum getPduLengthTypeEnumValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def PduLengthTypeEnum getPduLengthTypeEnumValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "UINT16" : PduLengthTypeEnum.UINT16
 					case "UINT32" : PduLengthTypeEnum.UINT32
 					case "UINT8" : PduLengthTypeEnum.UINT8
 				}
 			}
 			
-			def void setPduLengthTypeEnumValue(GParameterValue paramValue, PduLengthTypeEnum value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setPduLengthTypeEnumValue(GParameterValue parameterValue, PduLengthTypeEnum value){
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -260,47 +259,47 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<Pdu, GContainer>(filteredContainers, typeof(Pdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC$EcucConfigSet$EcucPduCollection$Pdu pdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu pdu) {
 						pdu.target?.gSetDefinition(containerValue.getContainerDefinition("Pdu"))
 						super.delegateAdd(pdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC$EcucConfigSet$EcucPduCollection$Pdu pdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu pdu) {
 						pdu.target?.gSetDefinition(containerValue.getContainerDefinition("Pdu"))
 						super.delegateAdd(index, pdu)
-					}	
+					}
 				}
 			}
 			
 			
 			static class Pdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof Pdu)){
 						return false
 					}
 					this.target == (object as Pdu).target
 				}
-				
+			
 				def BigInteger getMetaDataLength(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MetaDataLength"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MetaDataLength"].getBigIntegerValue()
 				}
 				
 				def void setMetaDataLength(BigInteger value){
@@ -308,15 +307,15 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MetaDataLength"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MetaDataLength"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getPduLength(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduLength"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduLength"].getBigIntegerValue()
 				}
 				
 				def void setPduLength(BigInteger value){
@@ -324,11 +323,11 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduLength"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduLength"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -343,30 +342,30 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 	}
 	static class EcucHardware implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EcucHardware)){
 				return false
 			}
 			this.target == (object as EcucHardware).target
 		}
-		
+	
 		
 		
 		def List<EcucCoreDefinition> getEcucCoreDefinitions(){
@@ -376,47 +375,47 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EcucCoreDefinition, GContainer>(filteredContainers, typeof(EcucCoreDefinition), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC$EcucHardware$EcucCoreDefinition ecucCoreDefinition) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition ecucCoreDefinition) {
 					ecucCoreDefinition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucCoreDefinition"))
 					super.delegateAdd(ecucCoreDefinition)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC$EcucHardware$EcucCoreDefinition ecucCoreDefinition) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition ecucCoreDefinition) {
 					ecucCoreDefinition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucCoreDefinition"))
 					super.delegateAdd(index, ecucCoreDefinition)
-				}	
+				}
 			}
 		}
 		
 		
 		static class EcucCoreDefinition implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof EcucCoreDefinition)){
 					return false
 				}
 				this.target == (object as EcucCoreDefinition).target
 			}
-			
+		
 			def BigInteger getEcucCoreId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucCoreId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucCoreId"].getBigIntegerValue()
 			}
 			
 			def void setEcucCoreId(BigInteger value){
@@ -424,11 +423,11 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcucCoreId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcucCoreId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -440,30 +439,30 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 	}
 	static class EcucPartitionCollection implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EcucPartitionCollection)){
 				return false
 			}
 			this.target == (object as EcucPartitionCollection).target
 		}
-		
+	
 		
 		
 		def List<EcucPartition> getEcucPartitions(){
@@ -473,47 +472,47 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EcucPartition, GContainer>(filteredContainers, typeof(EcucPartition), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC$EcucPartitionCollection$EcucPartition ecucPartition) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition ecucPartition) {
 					ecucPartition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucPartition"))
 					super.delegateAdd(ecucPartition)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC$EcucPartitionCollection$EcucPartition ecucPartition) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition ecucPartition) {
 					ecucPartition.target?.gSetDefinition(containerValue.getContainerDefinition("EcucPartition"))
 					super.delegateAdd(index, ecucPartition)
-				}	
+				}
 			}
 		}
 		
 		
 		static class EcucPartition implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof EcucPartition)){
 					return false
 				}
 				this.target == (object as EcucPartition).target
 			}
-			
+		
 			def Boolean getEcucPartitionBswModuleExecution(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucPartitionBswModuleExecution"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucPartitionBswModuleExecution"].getBooleanValue()
 			}
 			
 			def void setEcucPartitionBswModuleExecution(Boolean value){
@@ -521,15 +520,15 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcucPartitionBswModuleExecution"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcucPartitionBswModuleExecution"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getEcucPartitionQmBswModuleExecution(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucPartitionQmBswModuleExecution"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucPartitionQmBswModuleExecution"].getBooleanValue()
 			}
 			
 			def void setEcucPartitionQmBswModuleExecution(Boolean value){
@@ -537,15 +536,15 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EcucPartitionQmBswModuleExecution"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcucPartitionQmBswModuleExecution"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getPartitionCanBeRestarted(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PartitionCanBeRestarted"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PartitionCanBeRestarted"].getBooleanValue()
 			}
 			
 			def void setPartitionCanBeRestarted(Boolean value){
@@ -553,11 +552,11 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PartitionCanBeRestarted"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PartitionCanBeRestarted"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -570,30 +569,30 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 	}
 	static class EcucPostBuildVariants implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EcucPostBuildVariants)){
 				return false
 			}
 			this.target == (object as EcucPostBuildVariants).target
 		}
-		
+	
 		
 		
 		
@@ -601,30 +600,30 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 	}
 	static class EcucUnitGroupAssignment implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EcucUnitGroupAssignment)){
 				return false
 			}
 			this.target == (object as EcucUnitGroupAssignment).target
 		}
-		
+	
 		
 		
 		
@@ -632,43 +631,43 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 	}
 	static class EcucVariationResolver implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EcucVariationResolver)){
 				return false
 			}
 			this.target == (object as EcucVariationResolver).target
 		}
-		
+	
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof EcuC)){
 			return false
 		}
 		this.target == (object as EcuC).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

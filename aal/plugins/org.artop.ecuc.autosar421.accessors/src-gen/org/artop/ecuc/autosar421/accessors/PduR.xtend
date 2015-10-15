@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,23 +52,23 @@ import java.math.BigDecimal
 
 class PduR implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def List<PduRBswModules> getPduRBswModules(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
@@ -77,12 +76,12 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<PduRBswModules, GContainer>(filteredContainers, typeof(PduRBswModules), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRBswModules pduRBswModules) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRBswModules pduRBswModules) {
 				pduRBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("PduRBswModules"))
 				super.delegateAdd(pduRBswModules)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRBswModules pduRBswModules) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRBswModules pduRBswModules) {
 				pduRBswModules.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("PduRBswModules"))
 				super.delegateAdd(index, pduRBswModules)
 			}
@@ -91,48 +90,48 @@ class PduR implements IWrapper<GModuleConfiguration> {
 	def PduRGeneral getPduRGeneral(){
 		moduleConfiguration.getByType(typeof(PduRGeneral))
 	}
-	
+
 	def void setPduRGeneral(PduRGeneral pduRGeneral){
-		val GContainer container = pduRGeneral.getTarget() 
+		val GContainer container = pduRGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "PduRGeneral")
 	}
 	def PduRRoutingTables getPduRRoutingTables(){
 		moduleConfiguration.getByType(typeof(PduRRoutingTables))
 	}
-	
+
 	def void setPduRRoutingTables(PduRRoutingTables pduRRoutingTables){
-		val GContainer container = pduRRoutingTables.getTarget() 
+		val GContainer container = pduRRoutingTables.getTarget()
 	    moduleConfiguration.setContainer(container, "PduRRoutingTables")
 	}
-	
+
 	static class PduRBswModules implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PduRBswModules)){
 				return false
 			}
 			this.target == (object as PduRBswModules).target
 		}
-		
+	
 		def Boolean getPduRCancelReceive(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelReceive"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelReceive"].getBooleanValue()
 		}
 		
 		def void setPduRCancelReceive(Boolean value){
@@ -140,15 +139,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRCancelReceive"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRCancelReceive"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRCancelTransmit(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelTransmit"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelTransmit"].getBooleanValue()
 		}
 		
 		def void setPduRCancelTransmit(Boolean value){
@@ -156,15 +155,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRCancelTransmit"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRCancelTransmit"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRChangeParameterApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRChangeParameterApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRChangeParameterApi"].getBooleanValue()
 		}
 		
 		def void setPduRChangeParameterApi(Boolean value){
@@ -172,15 +171,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRChangeParameterApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRChangeParameterApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRCommunicationInterface(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCommunicationInterface"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCommunicationInterface"].getBooleanValue()
 		}
 		
 		def void setPduRCommunicationInterface(Boolean value){
@@ -188,15 +187,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRCommunicationInterface"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRCommunicationInterface"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRLowerModule(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRLowerModule"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRLowerModule"].getBooleanValue()
 		}
 		
 		def void setPduRLowerModule(Boolean value){
@@ -204,15 +203,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRLowerModule"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRLowerModule"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRRetransmission(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRetransmission"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRetransmission"].getBooleanValue()
 		}
 		
 		def void setPduRRetransmission(Boolean value){
@@ -220,15 +219,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRRetransmission"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRRetransmission"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRTransportProtocol(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTransportProtocol"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTransportProtocol"].getBooleanValue()
 		}
 		
 		def void setPduRTransportProtocol(Boolean value){
@@ -236,15 +235,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTransportProtocol"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTransportProtocol"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRTriggertransmit(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTriggertransmit"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTriggertransmit"].getBooleanValue()
 		}
 		
 		def void setPduRTriggertransmit(Boolean value){
@@ -252,15 +251,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTriggertransmit"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTriggertransmit"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRTxConfirmation(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxConfirmation"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxConfirmation"].getBooleanValue()
 		}
 		
 		def void setPduRTxConfirmation(Boolean value){
@@ -268,15 +267,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTxConfirmation"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTxConfirmation"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRUpperModule(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRUpperModule"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRUpperModule"].getBooleanValue()
 		}
 		
 		def void setPduRUpperModule(Boolean value){
@@ -284,15 +283,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRUpperModule"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRUpperModule"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRUseTag(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRUseTag"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRUseTag"].getBooleanValue()
 		}
 		
 		def void setPduRUseTag(Boolean value){
@@ -300,11 +299,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRUseTag"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRUseTag"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -314,32 +313,32 @@ class PduR implements IWrapper<GModuleConfiguration> {
 	}
 	static class PduRGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PduRGeneral)){
 				return false
 			}
 			this.target == (object as PduRGeneral).target
 		}
-		
+	
 		def Boolean getPduRDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setPduRDevErrorDetect(Boolean value){
@@ -347,15 +346,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRMetaDataSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMetaDataSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMetaDataSupport"].getBooleanValue()
 		}
 		
 		def void setPduRMetaDataSupport(Boolean value){
@@ -363,15 +362,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRMetaDataSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMetaDataSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setPduRVersionInfoApi(Boolean value){
@@ -379,15 +378,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPduRZeroCostOperation(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRZeroCostOperation"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRZeroCostOperation"].getBooleanValue()
 		}
 		
 		def void setPduRZeroCostOperation(Boolean value){
@@ -395,11 +394,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRZeroCostOperation"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRZeroCostOperation"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -408,32 +407,32 @@ class PduR implements IWrapper<GModuleConfiguration> {
 	}
 	static class PduRRoutingTables implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PduRRoutingTables)){
 				return false
 			}
 			this.target == (object as PduRRoutingTables).target
 		}
-		
+	
 		def BigInteger getPduRConfigurationId(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRConfigurationId"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRConfigurationId"].getBigIntegerValue()
 		}
 		
 		def void setPduRConfigurationId(BigInteger value){
@@ -441,15 +440,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRConfigurationId"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRConfigurationId"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getPduRMaxRoutingPathCnt(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathCnt"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathCnt"].getBigIntegerValue()
 		}
 		
 		def void setPduRMaxRoutingPathCnt(BigInteger value){
@@ -457,15 +456,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingPathCnt"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingPathCnt"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getPduRMaxRoutingPathGroupCnt(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathGroupCnt"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathGroupCnt"].getBigIntegerValue()
 		}
 		
 		def void setPduRMaxRoutingPathGroupCnt(BigInteger value){
@@ -473,15 +472,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingPathGroupCnt"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingPathGroupCnt"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getPduRMaxRoutingTableCnt(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingTableCnt"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingTableCnt"].getBigIntegerValue()
 		}
 		
 		def void setPduRMaxRoutingTableCnt(BigInteger value){
@@ -489,11 +488,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingTableCnt"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingTableCnt"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -505,15 +504,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PduRRoutingPathGroup, GContainer>(filteredContainers, typeof(PduRRoutingPathGroup), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingPathGroup pduRRoutingPathGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingPathGroup pduRRoutingPathGroup) {
 					pduRRoutingPathGroup.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPathGroup"))
 					super.delegateAdd(pduRRoutingPathGroup)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingPathGroup pduRRoutingPathGroup) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingPathGroup pduRRoutingPathGroup) {
 					pduRRoutingPathGroup.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPathGroup"))
 					super.delegateAdd(index, pduRRoutingPathGroup)
-				}	
+				}
 			}
 		}
 		
@@ -524,15 +523,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PduRRoutingTable, GContainer>(filteredContainers, typeof(PduRRoutingTable), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable pduRRoutingTable) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable pduRRoutingTable) {
 					pduRRoutingTable.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingTable"))
 					super.delegateAdd(pduRRoutingTable)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable pduRRoutingTable) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable pduRRoutingTable) {
 					pduRRoutingTable.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingTable"))
 					super.delegateAdd(index, pduRRoutingTable)
-				}	
+				}
 			}
 		}
 		
@@ -557,32 +556,32 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		static class PduRRoutingPathGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PduRRoutingPathGroup)){
 					return false
 				}
 				this.target == (object as PduRRoutingPathGroup).target
 			}
-			
+		
 			def Boolean getPduRIsEnabledAtInit(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRIsEnabledAtInit"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRIsEnabledAtInit"].getBooleanValue()
 			}
 			
 			def void setPduRIsEnabledAtInit(Boolean value){
@@ -590,15 +589,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRIsEnabledAtInit"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRIsEnabledAtInit"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getPduRRoutingPathGroupId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRoutingPathGroupId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRoutingPathGroupId"].getBigIntegerValue()
 			}
 			
 			def void setPduRRoutingPathGroupId(BigInteger value){
@@ -606,25 +605,25 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRRoutingPathGroupId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRRoutingPathGroupId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu> getPduRDestPduRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "PduRDestPduRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "PduRDestPduRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu object) throws CoreException {
 						if (object != null) {
@@ -635,7 +634,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -653,30 +652,30 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		static class PduRRoutingTable implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PduRRoutingTable)){
 					return false
 				}
 				this.target == (object as PduRRoutingTable).target
 			}
-			
+		
 			
 			
 			def List<PduRRoutingPath> getPduRRoutingPaths(){
@@ -686,45 +685,45 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<PduRRoutingPath, GContainer>(filteredContainers, typeof(PduRRoutingPath), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable$PduRRoutingPath pduRRoutingPath) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath pduRRoutingPath) {
 						pduRRoutingPath.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPath"))
 						super.delegateAdd(pduRRoutingPath)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable$PduRRoutingPath pduRRoutingPath) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath pduRRoutingPath) {
 						pduRRoutingPath.target?.gSetDefinition(containerValue.getContainerDefinition("PduRRoutingPath"))
 						super.delegateAdd(index, pduRRoutingPath)
-					}	
+					}
 				}
 			}
 			
 			
 			static class PduRRoutingPath implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof PduRRoutingPath)){
 						return false
 					}
 					this.target == (object as PduRRoutingPath).target
 				}
-				
+			
 				
 				
 				def List<PduRDestPdu> getPduRDestPdus(){
@@ -734,15 +733,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<PduRDestPdu, GContainer>(filteredContainers, typeof(PduRDestPdu), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable$PduRRoutingPath$PduRDestPdu pduRDestPdu) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu pduRDestPdu) {
 							pduRDestPdu.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDestPdu"))
 							super.delegateAdd(pduRDestPdu)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable$PduRRoutingPath$PduRDestPdu pduRDestPdu) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu pduRDestPdu) {
 							pduRDestPdu.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDestPdu"))
 							super.delegateAdd(index, pduRDestPdu)
-						}	
+						}
 					}
 				}
 				
@@ -758,32 +757,32 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				
 				static class PduRDestPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof PduRDestPdu)){
 							return false
 						}
 						this.target == (object as PduRDestPdu).target
 					}
-					
+				
 					def PduRDestPduDataProvision getPduRDestPduDataProvision(){
-						getPduRDestPduDataProvisionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduDataProvision"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduDataProvision"].getPduRDestPduDataProvisionValue()
 					}
 					
 					def void setPduRDestPduDataProvision(PduRDestPduDataProvision value){
@@ -791,32 +790,32 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRDestPduDataProvision"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDestPduDataProvision"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum PduRDestPduDataProvision {
 						PDUR_DIRECT, 
 						PDUR_TRIGGERTRANSMIT
 					}
-						
-					def PduRDestPduDataProvision getPduRDestPduDataProvisionValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def PduRDestPduDataProvision getPduRDestPduDataProvisionValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "PDUR_DIRECT" : PduRDestPduDataProvision.PDUR_DIRECT
 							case "PDUR_TRIGGERTRANSMIT" : PduRDestPduDataProvision.PDUR_TRIGGERTRANSMIT
 						}
 					}
 					
-					def void setPduRDestPduDataProvisionValue(GParameterValue paramValue, PduRDestPduDataProvision value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setPduRDestPduDataProvisionValue(GParameterValue parameterValue, PduRDestPduDataProvision value){
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getPduRDestPduHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduHandleId"].getBigIntegerValue()
 					}
 					
 					def void setPduRDestPduHandleId(BigInteger value){
@@ -824,15 +823,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRDestPduHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDestPduHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getPduRTpThreshold(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpThreshold"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpThreshold"].getBigIntegerValue()
 					}
 					
 					def void setPduRTpThreshold(BigInteger value){
@@ -840,15 +839,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTpThreshold"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTpThreshold"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def Boolean getPduRTransmissionConfirmation(){
-						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTransmissionConfirmation"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTransmissionConfirmation"].getBooleanValue()
 					}
 					
 					def void setPduRTransmissionConfirmation(Boolean value){
@@ -856,33 +855,33 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTransmissionConfirmation"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTransmissionConfirmation"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+						parameterValue.setValue(getBooleanParameterValueValue(value, true))
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getPduRDestPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "PduRDestPduRef")
 					}
-							
+					
 					def void setPduRDestPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "PduRDestPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "PduRDestPduRef"], object.getTarget())
 						}
 					}
 					
 					def org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTxBufferTable.PduRTxBuffer getPduRDestTxBufferRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTxBufferTable.PduRTxBuffer), "PduRDestTxBufferRef")
 					}
-							
+					
 					def void setPduRDestTxBufferRef(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTxBufferTable.PduRTxBuffer object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "PduRDestTxBufferRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "PduRDestTxBufferRef"], object.getTarget())
 						}
 					}
 					
@@ -899,30 +898,30 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					
 					static class PduRDefaultValue implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof PduRDefaultValue)){
 								return false
 							}
 							this.target == (object as PduRDefaultValue).target
 						}
-						
+					
 						
 						
 						def List<PduRDefaultValueElement> getPduRDefaultValueElements(){
@@ -932,47 +931,47 @@ class PduR implements IWrapper<GModuleConfiguration> {
 								}
 							}
 							return new BasicWrappingEList<PduRDefaultValueElement, GContainer>(filteredContainers, typeof(PduRDefaultValueElement), typeof(GContainer)) {
-								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable$PduRRoutingPath$PduRDestPdu$PduRDefaultValue$PduRDefaultValueElement pduRDefaultValueElement) {
+								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu.PduRDefaultValue.PduRDefaultValueElement pduRDefaultValueElement) {
 									pduRDefaultValueElement.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDefaultValueElement"))
 									super.delegateAdd(pduRDefaultValueElement)
 								}
-								
-								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRRoutingTable$PduRRoutingPath$PduRDestPdu$PduRDefaultValue$PduRDefaultValueElement pduRDefaultValueElement) {
+						
+								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingTable.PduRRoutingPath.PduRDestPdu.PduRDefaultValue.PduRDefaultValueElement pduRDefaultValueElement) {
 									pduRDefaultValueElement.target?.gSetDefinition(containerValue.getContainerDefinition("PduRDefaultValueElement"))
 									super.delegateAdd(index, pduRDefaultValueElement)
-								}	
+								}
 							}
 						}
 						
 						
 						static class PduRDefaultValueElement implements IWrapper<GContainer> {
 							private GContainer containerValue
-							
+						
 							new(GContainer containerValue){
 								this.containerValue = containerValue
 							}
-							
+						
 							def String getShortName(){
 								containerValue?.gGetShortName
 							}
-							
+						
 							def void setShortName(String name){
 								containerValue?.gSetShortName(name)
 							}
-							
+						
 							override def GContainer getTarget(){
 								containerValue
 							}
-							
+						
 							override def boolean equals(Object object) {
 						        if (!(object instanceof PduRDefaultValueElement)){
 									return false
 								}
 								this.target == (object as PduRDefaultValueElement).target
 							}
-							
+						
 							def BigInteger getPduRDefaultValueElement(){
-								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElement"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElement"].getBigIntegerValue()
 							}
 							
 							def void setPduRDefaultValueElement(BigInteger value){
@@ -980,15 +979,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRDefaultValueElement"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDefaultValueElement"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							def BigInteger getPduRDefaultValueElementBytePosition(){
-								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElementBytePosition"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElementBytePosition"].getBigIntegerValue()
 							}
 							
 							def void setPduRDefaultValueElementBytePosition(BigInteger value){
@@ -996,11 +995,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRDefaultValueElementBytePosition"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDefaultValueElementBytePosition"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							
@@ -1014,32 +1013,32 @@ class PduR implements IWrapper<GModuleConfiguration> {
 				
 				static class PduRSrcPdu implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof PduRSrcPdu)){
 							return false
 						}
 						this.target == (object as PduRSrcPdu).target
 					}
-					
+				
 					def BigInteger getPduRSourcePduHandleId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduHandleId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduHandleId"].getBigIntegerValue()
 					}
 					
 					def void setPduRSourcePduHandleId(BigInteger value){
@@ -1047,15 +1046,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRSourcePduHandleId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRSourcePduHandleId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def Boolean getPduRSrcPduUpTxConf(){
-						EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSrcPduUpTxConf"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSrcPduUpTxConf"].getBooleanValue()
 					}
 					
 					def void setPduRSrcPduUpTxConf(Boolean value){
@@ -1063,22 +1062,22 @@ class PduR implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRSrcPduUpTxConf"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRSrcPduUpTxConf"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+						parameterValue.setValue(getBooleanParameterValueValue(value, true))
 					}
 					
 					
 					def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getPduRSrcPduRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "PduRSrcPduRef")
 					}
-							
+					
 					def void setPduRSrcPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "PduRSrcPduRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "PduRSrcPduRef"], object.getTarget())
 						}
 					}
 					
@@ -1092,30 +1091,30 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		static class PduRTpBufferTable implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PduRTpBufferTable)){
 					return false
 				}
 				this.target == (object as PduRTpBufferTable).target
 			}
-			
+		
 			
 			
 			def List<PduRTpBuffer> getPduRTpBuffers(){
@@ -1125,47 +1124,47 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<PduRTpBuffer, GContainer>(filteredContainers, typeof(PduRTpBuffer), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRTpBufferTable$PduRTpBuffer pduRTpBuffer) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTpBufferTable.PduRTpBuffer pduRTpBuffer) {
 						pduRTpBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTpBuffer"))
 						super.delegateAdd(pduRTpBuffer)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRTpBufferTable$PduRTpBuffer pduRTpBuffer) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTpBufferTable.PduRTpBuffer pduRTpBuffer) {
 						pduRTpBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTpBuffer"))
 						super.delegateAdd(index, pduRTpBuffer)
-					}	
+					}
 				}
 			}
 			
 			
 			static class PduRTpBuffer implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof PduRTpBuffer)){
 						return false
 					}
 					this.target == (object as PduRTpBuffer).target
 				}
-				
+			
 				def BigInteger getPduRTpBufferLength(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpBufferLength"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpBufferLength"].getBigIntegerValue()
 				}
 				
 				def void setPduRTpBufferLength(BigInteger value){
@@ -1173,11 +1172,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTpBufferLength"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTpBufferLength"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1189,30 +1188,30 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		static class PduRTxBufferTable implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PduRTxBufferTable)){
 					return false
 				}
 				this.target == (object as PduRTxBufferTable).target
 			}
-			
+		
 			
 			
 			def List<PduRTxBuffer> getPduRTxBuffers(){
@@ -1222,47 +1221,47 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<PduRTxBuffer, GContainer>(filteredContainers, typeof(PduRTxBuffer), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRTxBufferTable$PduRTxBuffer pduRTxBuffer) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTxBufferTable.PduRTxBuffer pduRTxBuffer) {
 						pduRTxBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTxBuffer"))
 						super.delegateAdd(pduRTxBuffer)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR$PduRRoutingTables$PduRTxBufferTable$PduRTxBuffer pduRTxBuffer) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRTxBufferTable.PduRTxBuffer pduRTxBuffer) {
 						pduRTxBuffer.target?.gSetDefinition(containerValue.getContainerDefinition("PduRTxBuffer"))
 						super.delegateAdd(index, pduRTxBuffer)
-					}	
+					}
 				}
 			}
 			
 			
 			static class PduRTxBuffer implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof PduRTxBuffer)){
 						return false
 					}
 					this.target == (object as PduRTxBuffer).target
 				}
-				
+			
 				def BigInteger getPduRPduMaxLength(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"].getBigIntegerValue()
 				}
 				
 				def void setPduRPduMaxLength(BigInteger value){
@@ -1270,15 +1269,15 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRPduMaxLength"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRPduMaxLength"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getPduRTxBufferDepth(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxBufferDepth"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxBufferDepth"].getBigIntegerValue()
 				}
 				
 				def void setPduRTxBufferDepth(BigInteger value){
@@ -1286,11 +1285,11 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PduRTxBufferDepth"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTxBufferDepth"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1301,14 +1300,14 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof PduR)){
 			return false
 		}
 		this.target == (object as PduR).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

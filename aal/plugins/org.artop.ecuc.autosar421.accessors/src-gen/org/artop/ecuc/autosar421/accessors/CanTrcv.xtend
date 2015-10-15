@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,68 +52,68 @@ import java.math.BigDecimal
 
 class CanTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def CanTrcvConfigSet getCanTrcvConfigSet(){
 		moduleConfiguration.getByType(typeof(CanTrcvConfigSet))
 	}
-	
+
 	def void setCanTrcvConfigSet(CanTrcvConfigSet canTrcvConfigSet){
-		val GContainer container = canTrcvConfigSet.getTarget() 
+		val GContainer container = canTrcvConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "CanTrcvConfigSet")
 	}
 	def CanTrcvGeneral getCanTrcvGeneral(){
 		moduleConfiguration.getByType(typeof(CanTrcvGeneral))
 	}
-	
+
 	def void setCanTrcvGeneral(CanTrcvGeneral canTrcvGeneral){
-		val GContainer container = canTrcvGeneral.getTarget() 
+		val GContainer container = canTrcvGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "CanTrcvGeneral")
 	}
-	
+
 	static class CanTrcvConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CanTrcvConfigSet)){
 				return false
 			}
 			this.target == (object as CanTrcvConfigSet).target
 		}
-		
+	
 		def BigInteger getCanTrcvSPICommRetries(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSPICommRetries"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSPICommRetries"].getBigIntegerValue()
 		}
 		
 		def void setCanTrcvSPICommRetries(BigInteger value){
@@ -122,15 +121,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvSPICommRetries"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvSPICommRetries"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getCanTrcvSPICommTimeout(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSPICommTimeout"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSPICommTimeout"].getBigIntegerValue()
 		}
 		
 		def void setCanTrcvSPICommTimeout(BigInteger value){
@@ -138,11 +137,11 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvSPICommTimeout"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvSPICommTimeout"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -154,47 +153,47 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<CanTrcvChannel, GContainer>(filteredContainers, typeof(CanTrcvChannel), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel canTrcvChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel canTrcvChannel) {
 					canTrcvChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvChannel"))
 					super.delegateAdd(canTrcvChannel)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel canTrcvChannel) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel canTrcvChannel) {
 					canTrcvChannel.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvChannel"))
 					super.delegateAdd(index, canTrcvChannel)
-				}	
+				}
 			}
 		}
 		
 		
 		static class CanTrcvChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof CanTrcvChannel)){
 					return false
 				}
 				this.target == (object as CanTrcvChannel).target
 			}
-			
+		
 			def BigInteger getCanTrcvChannelId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvChannelId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvChannelId"].getBigIntegerValue()
 			}
 			
 			def void setCanTrcvChannelId(BigInteger value){
@@ -202,15 +201,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvChannelId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvChannelId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getCanTrcvChannelUsed(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvChannelUsed"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvChannelUsed"].getBooleanValue()
 			}
 			
 			def void setCanTrcvChannelUsed(Boolean value){
@@ -218,15 +217,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvChannelUsed"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvChannelUsed"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanTrcvControlsPowerSupply(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvControlsPowerSupply"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvControlsPowerSupply"].getBooleanValue()
 			}
 			
 			def void setCanTrcvControlsPowerSupply(Boolean value){
@@ -234,15 +233,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvControlsPowerSupply"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvControlsPowerSupply"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getCanTrcvHwPnSupport(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvHwPnSupport"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvHwPnSupport"].getBooleanValue()
 			}
 			
 			def void setCanTrcvHwPnSupport(Boolean value){
@@ -250,15 +249,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvHwPnSupport"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvHwPnSupport"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def CanTrcvInitState getCanTrcvInitState(){
-				getCanTrcvInitStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvInitState"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvInitState"].getCanTrcvInitStateValue()
 			}
 			
 			def void setCanTrcvInitState(CanTrcvInitState value){
@@ -266,11 +265,11 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvInitState"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvInitState"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum CanTrcvInitState {
@@ -278,22 +277,22 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				CANTRCV_OP_MODE_SLEEP, 
 				CANTRCV_OP_MODE_STANDBY
 			}
-				
-			def CanTrcvInitState getCanTrcvInitStateValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def CanTrcvInitState getCanTrcvInitStateValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "CANTRCV_OP_MODE_NORMAL" : CanTrcvInitState.CANTRCV_OP_MODE_NORMAL
 					case "CANTRCV_OP_MODE_SLEEP" : CanTrcvInitState.CANTRCV_OP_MODE_SLEEP
 					case "CANTRCV_OP_MODE_STANDBY" : CanTrcvInitState.CANTRCV_OP_MODE_STANDBY
 				}
 			}
 			
-			def void setCanTrcvInitStateValue(GParameterValue paramValue, CanTrcvInitState value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setCanTrcvInitStateValue(GParameterValue parameterValue, CanTrcvInitState value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getCanTrcvMaxBaudrate(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvMaxBaudrate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvMaxBaudrate"].getBigIntegerValue()
 			}
 			
 			def void setCanTrcvMaxBaudrate(BigInteger value){
@@ -301,15 +300,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvMaxBaudrate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvMaxBaudrate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getCanTrcvWakeupByBusUsed(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvWakeupByBusUsed"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvWakeupByBusUsed"].getBooleanValue()
 			}
 			
 			def void setCanTrcvWakeupByBusUsed(Boolean value){
@@ -317,55 +316,55 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvWakeupByBusUsed"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvWakeupByBusUsed"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel getCanTrcvIcuChannelRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel), "CanTrcvIcuChannelRef")
 			}
-					
+			
 			def void setCanTrcvIcuChannelRef(org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvIcuChannelRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvIcuChannelRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getCanTrcvWakeupSourceRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "CanTrcvWakeupSourceRef")
 			}
-					
+			
 			def void setCanTrcvWakeupSourceRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvWakeupSourceRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvWakeupSourceRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getCanTrcvPorWakeupSourceRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "CanTrcvPorWakeupSourceRef")
 			}
-					
+			
 			def void setCanTrcvPorWakeupSourceRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvPorWakeupSourceRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvPorWakeupSourceRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getCanTrcvSyserrWakeupSourceRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "CanTrcvSyserrWakeupSourceRef")
 			}
-					
+			
 			def void setCanTrcvSyserrWakeupSourceRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvSyserrWakeupSourceRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvSyserrWakeupSourceRef"], object.getTarget())
 				}
 			}
 			
@@ -400,30 +399,30 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			
 			static class CanTrcvAccess implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanTrcvAccess)){
 						return false
 					}
 					this.target == (object as CanTrcvAccess).target
 				}
-				
+			
 				def CanTrcvDioAccess getCanTrcvDioAccess(){
 					containerValue.getByType(typeof(CanTrcvDioAccess))
 				}
@@ -443,30 +442,30 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTrcvDioAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTrcvDioAccess)){
 							return false
 						}
 						this.target == (object as CanTrcvDioAccess).target
 					}
-					
+				
 					
 					
 					def List<CanTrcvDioChannelAccess> getCanTrcvDioChannelAccess(){
@@ -476,47 +475,47 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 							}
 						}
 						return new BasicWrappingEList<CanTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(CanTrcvDioChannelAccess), typeof(GContainer)) {
-							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel$CanTrcvAccess$CanTrcvDioAccess$CanTrcvDioChannelAccess canTrcvDioChannelAccess) {
+							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel.CanTrcvAccess.CanTrcvDioAccess.CanTrcvDioChannelAccess canTrcvDioChannelAccess) {
 								canTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvDioChannelAccess"))
 								super.delegateAdd(canTrcvDioChannelAccess)
 							}
-							
-							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel$CanTrcvAccess$CanTrcvDioAccess$CanTrcvDioChannelAccess canTrcvDioChannelAccess) {
+					
+							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel.CanTrcvAccess.CanTrcvDioAccess.CanTrcvDioChannelAccess canTrcvDioChannelAccess) {
 								canTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvDioChannelAccess"))
 								super.delegateAdd(index, canTrcvDioChannelAccess)
-							}	
+							}
 						}
 					}
 					
 					
 					static class CanTrcvDioChannelAccess implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof CanTrcvDioChannelAccess)){
 								return false
 							}
 							this.target == (object as CanTrcvDioChannelAccess).target
 						}
-						
+					
 						def String getCanTrcvHardwareInterfaceName(){
-							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvHardwareInterfaceName"])
+							containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvHardwareInterfaceName"].getStringValue()
 						}
 						
 						def void setCanTrcvHardwareInterfaceName(String value){
@@ -524,11 +523,11 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvHardwareInterfaceName"])
+									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvHardwareInterfaceName"].createParameterValue()
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							parameterValue.setValue(value)
 						}
 						
 						
@@ -541,30 +540,30 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 				
 				static class CanTrcvSpiAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTrcvSpiAccess)){
 							return false
 						}
 						this.target == (object as CanTrcvSpiAccess).target
 					}
-					
+				
 					
 					
 					def List<CanTrcvSpiSequence> getCanTrcvSpiSequences(){
@@ -574,47 +573,47 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 							}
 						}
 						return new BasicWrappingEList<CanTrcvSpiSequence, GContainer>(filteredContainers, typeof(CanTrcvSpiSequence), typeof(GContainer)) {
-							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel$CanTrcvAccess$CanTrcvSpiAccess$CanTrcvSpiSequence canTrcvSpiSequence) {
+							override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel.CanTrcvAccess.CanTrcvSpiAccess.CanTrcvSpiSequence canTrcvSpiSequence) {
 								canTrcvSpiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvSpiSequence"))
 								super.delegateAdd(canTrcvSpiSequence)
 							}
-							
-							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel$CanTrcvAccess$CanTrcvSpiAccess$CanTrcvSpiSequence canTrcvSpiSequence) {
+					
+							override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel.CanTrcvAccess.CanTrcvSpiAccess.CanTrcvSpiSequence canTrcvSpiSequence) {
 								canTrcvSpiSequence.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvSpiSequence"))
 								super.delegateAdd(index, canTrcvSpiSequence)
-							}	
+							}
 						}
 					}
 					
 					
 					static class CanTrcvSpiSequence implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof CanTrcvSpiSequence)){
 								return false
 							}
 							this.target == (object as CanTrcvSpiSequence).target
 						}
-						
+					
 						def Boolean getCanTrcvSpiAccessSynchronous(){
-							EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSpiAccessSynchronous"])
+							containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvSpiAccessSynchronous"].getBooleanValue()
 						}
 						
 						def void setCanTrcvSpiAccessSynchronous(Boolean value){
@@ -622,25 +621,25 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvSpiAccessSynchronous"])
+									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvSpiAccessSynchronous"].createParameterValue()
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+							parameterValue.setValue(getBooleanParameterValueValue(value, true))
 						}
 						
 						
 						def List<org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence> getCanTrcvSpiSequenceNames(){
 							val containerDef = containerValue.gGetDefinition
-							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+							val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 								containerDef.gGetReferences.findFirst[gGetShortName == "CanTrcvSpiSequenceName"] else null
-											
+						
 							val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 								override protected accept(GReferenceValue item) {
 									return accept(item, typeof(GConfigReference), "CanTrcvSpiSequenceName")
 								}
 							}
-							
+						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence object) throws CoreException {
 									if (object != null) {
@@ -651,7 +650,7 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 										return referenceValue
 									}
 								}
-								
+						
 								override protected unwrap(GReferenceValue referenceValue) {
 									if (referenceValue != null) {
 										val referenceValueValue = referenceValue.gGetValue
@@ -673,39 +672,39 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			
 			static class CanTrcvDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanTrcvDemEventParameterRefs)){
 						return false
 					}
 					this.target == (object as CanTrcvDemEventParameterRefs).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getCANTRCV_E_BUS_ERROR(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "CANTRCV_E_BUS_ERROR")
 				}
-						
+				
 				def void setCANTRCV_E_BUS_ERROR(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "CANTRCV_E_BUS_ERROR"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "CANTRCV_E_BUS_ERROR"], object.getTarget())
 					}
 				}
 				
@@ -715,32 +714,32 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			
 			static class CanTrcvPartialNetwork implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof CanTrcvPartialNetwork)){
 						return false
 					}
 					this.target == (object as CanTrcvPartialNetwork).target
 				}
-				
+			
 				def BigInteger getCanTrcvBaudRate(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvBaudRate"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvBaudRate"].getBigIntegerValue()
 				}
 				
 				def void setCanTrcvBaudRate(BigInteger value){
@@ -748,15 +747,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvBaudRate"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvBaudRate"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getCanTrcvBusErrFlag(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvBusErrFlag"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvBusErrFlag"].getBooleanValue()
 				}
 				
 				def void setCanTrcvBusErrFlag(Boolean value){
@@ -764,15 +763,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvBusErrFlag"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvBusErrFlag"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getCanTrcvPnCanIdIsExtended(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnCanIdIsExtended"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnCanIdIsExtended"].getBooleanValue()
 				}
 				
 				def void setCanTrcvPnCanIdIsExtended(Boolean value){
@@ -780,15 +779,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnCanIdIsExtended"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnCanIdIsExtended"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def Boolean getCanTrcvPnEnabled(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnEnabled"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnEnabled"].getBooleanValue()
 				}
 				
 				def void setCanTrcvPnEnabled(Boolean value){
@@ -796,15 +795,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnEnabled"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnEnabled"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				def BigInteger getCanTrcvPnFrameCanId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameCanId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameCanId"].getBigIntegerValue()
 				}
 				
 				def void setCanTrcvPnFrameCanId(BigInteger value){
@@ -812,15 +811,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameCanId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameCanId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCanTrcvPnFrameCanIdMask(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameCanIdMask"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameCanIdMask"].getBigIntegerValue()
 				}
 				
 				def void setCanTrcvPnFrameCanIdMask(BigInteger value){
@@ -828,15 +827,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameCanIdMask"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameCanIdMask"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getCanTrcvPnFrameDlc(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDlc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDlc"].getBigIntegerValue()
 				}
 				
 				def void setCanTrcvPnFrameDlc(BigInteger value){
@@ -844,15 +843,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameDlc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameDlc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getCanTrcvPowerOnFlag(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPowerOnFlag"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPowerOnFlag"].getBooleanValue()
 				}
 				
 				def void setCanTrcvPowerOnFlag(Boolean value){
@@ -860,11 +859,11 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPowerOnFlag"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPowerOnFlag"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -876,47 +875,47 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<CanTrcvPnFrameDataMaskSpec, GContainer>(filteredContainers, typeof(CanTrcvPnFrameDataMaskSpec), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel$CanTrcvPartialNetwork$CanTrcvPnFrameDataMaskSpec canTrcvPnFrameDataMaskSpec) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel.CanTrcvPartialNetwork.CanTrcvPnFrameDataMaskSpec canTrcvPnFrameDataMaskSpec) {
 							canTrcvPnFrameDataMaskSpec.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvPnFrameDataMaskSpec"))
 							super.delegateAdd(canTrcvPnFrameDataMaskSpec)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv$CanTrcvConfigSet$CanTrcvChannel$CanTrcvPartialNetwork$CanTrcvPnFrameDataMaskSpec canTrcvPnFrameDataMaskSpec) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.CanTrcv.CanTrcvConfigSet.CanTrcvChannel.CanTrcvPartialNetwork.CanTrcvPnFrameDataMaskSpec canTrcvPnFrameDataMaskSpec) {
 							canTrcvPnFrameDataMaskSpec.target?.gSetDefinition(containerValue.getContainerDefinition("CanTrcvPnFrameDataMaskSpec"))
 							super.delegateAdd(index, canTrcvPnFrameDataMaskSpec)
-						}	
+						}
 					}
 				}
 				
 				
 				static class CanTrcvPnFrameDataMaskSpec implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof CanTrcvPnFrameDataMaskSpec)){
 							return false
 						}
 						this.target == (object as CanTrcvPnFrameDataMaskSpec).target
 					}
-					
+				
 					def BigInteger getCanTrcvPnFrameDataMask(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDataMask"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDataMask"].getBigIntegerValue()
 					}
 					
 					def void setCanTrcvPnFrameDataMask(BigInteger value){
@@ -924,15 +923,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameDataMask"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameDataMask"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getCanTrcvPnFrameDataMaskIndex(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDataMaskIndex"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvPnFrameDataMaskIndex"].getBigIntegerValue()
 					}
 					
 					def void setCanTrcvPnFrameDataMaskIndex(BigInteger value){
@@ -940,11 +939,11 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameDataMaskIndex"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvPnFrameDataMaskIndex"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -959,32 +958,32 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 	}
 	static class CanTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof CanTrcvGeneral)){
 				return false
 			}
 			this.target == (object as CanTrcvGeneral).target
 		}
-		
+	
 		def Boolean getCanTrcvDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setCanTrcvDevErrorDetect(Boolean value){
@@ -992,15 +991,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getCanTrcvGetVersionInfo(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvGetVersionInfo"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvGetVersionInfo"].getBooleanValue()
 		}
 		
 		def void setCanTrcvGetVersionInfo(Boolean value){
@@ -1008,15 +1007,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvGetVersionInfo"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvGetVersionInfo"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getCanTrcvIndex(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvIndex"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvIndex"].getBigIntegerValue()
 		}
 		
 		def void setCanTrcvIndex(BigInteger value){
@@ -1024,15 +1023,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvIndex"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvIndex"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getCanTrcvMainFunctionDiagnosticsPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvMainFunctionDiagnosticsPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvMainFunctionDiagnosticsPeriod"].getBigDecimalValue()
 		}
 		
 		def void setCanTrcvMainFunctionDiagnosticsPeriod(BigDecimal value){
@@ -1040,15 +1039,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvMainFunctionDiagnosticsPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvMainFunctionDiagnosticsPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getCanTrcvMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setCanTrcvMainFunctionPeriod(BigDecimal value){
@@ -1056,15 +1055,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def CanTrcvTimerType getCanTrcvTimerType(){
-			getCanTrcvTimerTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvTimerType"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvTimerType"].getCanTrcvTimerTypeValue()
 		}
 		
 		def void setCanTrcvTimerType(CanTrcvTimerType value){
@@ -1072,32 +1071,32 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvTimerType"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvTimerType"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum CanTrcvTimerType {
 			None, 
 			Timer_1us16bit
 		}
-			
-		def CanTrcvTimerType getCanTrcvTimerTypeValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def CanTrcvTimerType getCanTrcvTimerTypeValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "None" : CanTrcvTimerType.None
 				case "Timer_1us16bit" : CanTrcvTimerType.Timer_1us16bit
 			}
 		}
 		
-		def void setCanTrcvTimerTypeValue(GParameterValue paramValue, CanTrcvTimerType value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setCanTrcvTimerTypeValue(GParameterValue parameterValue, CanTrcvTimerType value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getCanTrcvWaitTime(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvWaitTime"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvWaitTime"].getBigDecimalValue()
 		}
 		
 		def void setCanTrcvWaitTime(BigDecimal value){
@@ -1105,15 +1104,15 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvWaitTime"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvWaitTime"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def CanTrcvWakeUpSupport getCanTrcvWakeUpSupport(){
-			getCanTrcvWakeUpSupportValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvWakeUpSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTrcvWakeUpSupport"].getCanTrcvWakeUpSupportValue()
 		}
 		
 		def void setCanTrcvWakeUpSupport(CanTrcvWakeUpSupport value){
@@ -1121,42 +1120,42 @@ class CanTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvWakeUpSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTrcvWakeUpSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum CanTrcvWakeUpSupport {
 			CANTRCV_WAKEUP_BY_POLLING, 
 			CANTRCV_WAKEUP_NOT_SUPPORTED
 		}
-			
-		def CanTrcvWakeUpSupport getCanTrcvWakeUpSupportValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def CanTrcvWakeUpSupport getCanTrcvWakeUpSupportValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "CANTRCV_WAKEUP_BY_POLLING" : CanTrcvWakeUpSupport.CANTRCV_WAKEUP_BY_POLLING
 				case "CANTRCV_WAKEUP_NOT_SUPPORTED" : CanTrcvWakeUpSupport.CANTRCV_WAKEUP_NOT_SUPPORTED
 			}
 		}
 		
-		def void setCanTrcvWakeUpSupportValue(GParameterValue paramValue, CanTrcvWakeUpSupport value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setCanTrcvWakeUpSupportValue(GParameterValue parameterValue, CanTrcvWakeUpSupport value){
+			parameterValue.setValue(value)
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof CanTrcv)){
 			return false
 		}
 		this.target == (object as CanTrcv).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

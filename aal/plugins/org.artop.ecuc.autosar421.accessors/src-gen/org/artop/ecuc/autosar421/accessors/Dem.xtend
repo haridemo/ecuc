@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class Dem implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def DemConfigSet getDemConfigSet(){
 		moduleConfiguration.getByType(typeof(DemConfigSet))
 	}
-	
+
 	def void setDemConfigSet(DemConfigSet demConfigSet){
-		val GContainer container = demConfigSet.getTarget() 
+		val GContainer container = demConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "DemConfigSet")
 	}
 	def DemGeneral getDemGeneral(){
 		moduleConfiguration.getByType(typeof(DemGeneral))
 	}
-	
+
 	def void setDemGeneral(DemGeneral demGeneral){
-		val GContainer container = demGeneral.getTarget() 
+		val GContainer container = demGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "DemGeneral")
 	}
-	
+
 	static class DemConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DemConfigSet)){
 				return false
 			}
 			this.target == (object as DemConfigSet).target
 		}
-		
+	
 		
 		
 		def List<DemComponent> getDemComponents(){
@@ -122,15 +121,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemComponent, GContainer>(filteredContainers, typeof(DemComponent), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemComponent demComponent) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent demComponent) {
 					demComponent.target?.gSetDefinition(containerValue.getContainerDefinition("DemComponent"))
 					super.delegateAdd(demComponent)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemComponent demComponent) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent demComponent) {
 					demComponent.target?.gSetDefinition(containerValue.getContainerDefinition("DemComponent"))
 					super.delegateAdd(index, demComponent)
-				}	
+				}
 			}
 		}
 		
@@ -141,15 +140,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemDTC, GContainer>(filteredContainers, typeof(DemDTC), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDTC demDTC) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTC demDTC) {
 					demDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTC"))
 					super.delegateAdd(demDTC)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDTC demDTC) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTC demDTC) {
 					demDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTC"))
 					super.delegateAdd(index, demDTC)
-				}	
+				}
 			}
 		}
 		
@@ -160,15 +159,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemDTCAttributes, GContainer>(filteredContainers, typeof(DemDTCAttributes), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDTCAttributes demDTCAttributes) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTCAttributes demDTCAttributes) {
 					demDTCAttributes.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTCAttributes"))
 					super.delegateAdd(demDTCAttributes)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDTCAttributes demDTCAttributes) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTCAttributes demDTCAttributes) {
 					demDTCAttributes.target?.gSetDefinition(containerValue.getContainerDefinition("DemDTCAttributes"))
 					super.delegateAdd(index, demDTCAttributes)
-				}	
+				}
 			}
 		}
 		
@@ -179,15 +178,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemDebounceCounterBasedClass, GContainer>(filteredContainers, typeof(DemDebounceCounterBasedClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDebounceCounterBasedClass demDebounceCounterBasedClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass demDebounceCounterBasedClass) {
 					demDebounceCounterBasedClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceCounterBasedClass"))
 					super.delegateAdd(demDebounceCounterBasedClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDebounceCounterBasedClass demDebounceCounterBasedClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass demDebounceCounterBasedClass) {
 					demDebounceCounterBasedClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceCounterBasedClass"))
 					super.delegateAdd(index, demDebounceCounterBasedClass)
-				}	
+				}
 			}
 		}
 		
@@ -198,15 +197,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemDebounceTimeBaseClass, GContainer>(filteredContainers, typeof(DemDebounceTimeBaseClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDebounceTimeBaseClass demDebounceTimeBaseClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass demDebounceTimeBaseClass) {
 					demDebounceTimeBaseClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceTimeBaseClass"))
 					super.delegateAdd(demDebounceTimeBaseClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemDebounceTimeBaseClass demDebounceTimeBaseClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass demDebounceTimeBaseClass) {
 					demDebounceTimeBaseClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDebounceTimeBaseClass"))
 					super.delegateAdd(index, demDebounceTimeBaseClass)
-				}	
+				}
 			}
 		}
 		
@@ -226,15 +225,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemEventParameter, GContainer>(filteredContainers, typeof(DemEventParameter), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemEventParameter demEventParameter) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter demEventParameter) {
 					demEventParameter.target?.gSetDefinition(containerValue.getContainerDefinition("DemEventParameter"))
 					super.delegateAdd(demEventParameter)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemEventParameter demEventParameter) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter demEventParameter) {
 					demEventParameter.target?.gSetDefinition(containerValue.getContainerDefinition("DemEventParameter"))
 					super.delegateAdd(index, demEventParameter)
-				}	
+				}
 			}
 		}
 		
@@ -245,15 +244,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemJ1939NodeAddress, GContainer>(filteredContainers, typeof(DemJ1939NodeAddress), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemJ1939NodeAddress demJ1939NodeAddress) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemJ1939NodeAddress demJ1939NodeAddress) {
 					demJ1939NodeAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939NodeAddress"))
 					super.delegateAdd(demJ1939NodeAddress)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemJ1939NodeAddress demJ1939NodeAddress) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemJ1939NodeAddress demJ1939NodeAddress) {
 					demJ1939NodeAddress.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939NodeAddress"))
 					super.delegateAdd(index, demJ1939NodeAddress)
-				}	
+				}
 			}
 		}
 		
@@ -264,15 +263,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemObdDTC, GContainer>(filteredContainers, typeof(DemObdDTC), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemObdDTC demObdDTC) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemObdDTC demObdDTC) {
 					demObdDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemObdDTC"))
 					super.delegateAdd(demObdDTC)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemObdDTC demObdDTC) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemObdDTC demObdDTC) {
 					demObdDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemObdDTC"))
 					super.delegateAdd(index, demObdDTC)
-				}	
+				}
 			}
 		}
 		
@@ -283,47 +282,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemPidClass, GContainer>(filteredContainers, typeof(DemPidClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemPidClass demPidClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemPidClass demPidClass) {
 					demPidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidClass"))
 					super.delegateAdd(demPidClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemPidClass demPidClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemPidClass demPidClass) {
 					demPidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidClass"))
 					super.delegateAdd(index, demPidClass)
-				}	
+				}
 			}
 		}
 		
 		
 		static class DemComponent implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemComponent)){
 					return false
 				}
 				this.target == (object as DemComponent).target
 			}
-			
+		
 			def String getDemComponentFailedCallbackFnc(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentFailedCallbackFnc"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentFailedCallbackFnc"].getStringValue()
 			}
 			
 			def void setDemComponentFailedCallbackFnc(String value){
@@ -331,15 +330,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemComponentFailedCallbackFnc"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemComponentFailedCallbackFnc"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemComponentIgnoresPriority(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentIgnoresPriority"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentIgnoresPriority"].getBooleanValue()
 			}
 			
 			def void setDemComponentIgnoresPriority(Boolean value){
@@ -347,25 +346,25 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemComponentIgnoresPriority"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemComponentIgnoresPriority"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent> getDemImmediateChildComponentRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemImmediateChildComponentRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemImmediateChildComponentRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent object) throws CoreException {
 						if (object != null) {
@@ -376,7 +375,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -394,32 +393,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDTC implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDTC)){
 					return false
 				}
 				this.target == (object as DemDTC).target
 			}
-			
+		
 			def BigInteger getDemDTCFunctionalUnit(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCFunctionalUnit"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCFunctionalUnit"].getBigIntegerValue()
 			}
 			
 			def void setDemDTCFunctionalUnit(BigInteger value){
@@ -427,15 +426,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCFunctionalUnit"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCFunctionalUnit"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemDTCSeverity getDemDTCSeverity(){
-				getDemDTCSeverityValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCSeverity"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCSeverity"].getDemDTCSeverityValue()
 			}
 			
 			def void setDemDTCSeverity(DemDTCSeverity value){
@@ -443,11 +442,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCSeverity"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCSeverity"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemDTCSeverity {
@@ -456,10 +455,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_SEVERITY_MAINTENANCE_ONLY, 
 				DEM_SEVERITY_NO_SEVERITY
 			}
-				
-			def DemDTCSeverity getDemDTCSeverityValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemDTCSeverity getDemDTCSeverityValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_SEVERITY_CHECK_AT_NEXT_HALT" : DemDTCSeverity.DEM_SEVERITY_CHECK_AT_NEXT_HALT
 					case "DEM_SEVERITY_CHECK_IMMEDIATELY" : DemDTCSeverity.DEM_SEVERITY_CHECK_IMMEDIATELY
 					case "DEM_SEVERITY_MAINTENANCE_ONLY" : DemDTCSeverity.DEM_SEVERITY_MAINTENANCE_ONLY
@@ -467,12 +466,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemDTCSeverityValue(GParameterValue paramValue, DemDTCSeverity value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemDTCSeverityValue(GParameterValue parameterValue, DemDTCSeverity value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDtcValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"].getBigIntegerValue()
 			}
 			
 			def void setDemDtcValue(BigInteger value){
@@ -480,15 +479,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtcValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtcValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemWWHOBDDTCClass getDemWWHOBDDTCClass(){
-				getDemWWHOBDDTCClassValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemWWHOBDDTCClass"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemWWHOBDDTCClass"].getDemWWHOBDDTCClassValue()
 			}
 			
 			def void setDemWWHOBDDTCClass(DemWWHOBDDTCClass value){
@@ -496,11 +495,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemWWHOBDDTCClass"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemWWHOBDDTCClass"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemWWHOBDDTCClass {
@@ -510,10 +509,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_DTC_WWHOBD_CLASS_C, 
 				DEM_DTC_WWHOBD_CLASS_NOCLASS
 			}
-				
-			def DemWWHOBDDTCClass getDemWWHOBDDTCClassValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemWWHOBDDTCClass getDemWWHOBDDTCClassValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_DTC_WWHOBD_CLASS_A" : DemWWHOBDDTCClass.DEM_DTC_WWHOBD_CLASS_A
 					case "DEM_DTC_WWHOBD_CLASS_B1" : DemWWHOBDDTCClass.DEM_DTC_WWHOBD_CLASS_B1
 					case "DEM_DTC_WWHOBD_CLASS_B2" : DemWWHOBDDTCClass.DEM_DTC_WWHOBD_CLASS_B2
@@ -522,30 +521,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemWWHOBDDTCClassValue(GParameterValue paramValue, DemWWHOBDDTCClass value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemWWHOBDDTCClassValue(GParameterValue parameterValue, DemWWHOBDDTCClass value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTCAttributes getDemDTCAttributesRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTCAttributes), "DemDTCAttributesRef")
 			}
-					
+			
 			def void setDemDTCAttributesRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTCAttributes object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDTCAttributesRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemDTCAttributesRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemObdDTC getDemObdDTCRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemObdDTC), "DemObdDTCRef")
 			}
-					
+			
 			def void setDemObdDTCRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemObdDTC object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemObdDTCRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemObdDTCRef"], object.getTarget())
 				}
 			}
 			
@@ -555,32 +554,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDTCAttributes implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDTCAttributes)){
 					return false
 				}
 				this.target == (object as DemDTCAttributes).target
 			}
-			
+		
 			def Boolean getDemAgingAllowed(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingAllowed"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingAllowed"].getBooleanValue()
 			}
 			
 			def void setDemAgingAllowed(Boolean value){
@@ -588,15 +587,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingAllowed"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingAllowed"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemAgingCycleCounterThreshold(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThreshold"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThreshold"].getBigIntegerValue()
 			}
 			
 			def void setDemAgingCycleCounterThreshold(BigInteger value){
@@ -604,15 +603,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingCycleCounterThreshold"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingCycleCounterThreshold"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemAgingCycleCounterThresholdForTFSLC(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"].getBigIntegerValue()
 			}
 			
 			def void setDemAgingCycleCounterThresholdForTFSLC(BigInteger value){
@@ -620,15 +619,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingCycleCounterThresholdForTFSLC"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDTCPriority(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCPriority"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCPriority"].getBigIntegerValue()
 			}
 			
 			def void setDemDTCPriority(BigInteger value){
@@ -636,15 +635,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCPriority"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCPriority"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemDTCSignificance getDemDTCSignificance(){
-				getDemDTCSignificanceValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCSignificance"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDTCSignificance"].getDemDTCSignificanceValue()
 			}
 			
 			def void setDemDTCSignificance(DemDTCSignificance value){
@@ -652,32 +651,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCSignificance"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDTCSignificance"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemDTCSignificance {
 				DEM_EVENT_SIGNIFICANCE_FAULT, 
 				DEM_EVENT_SIGNIFICANCE_OCCURRENCE
 			}
-				
-			def DemDTCSignificance getDemDTCSignificanceValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemDTCSignificance getDemDTCSignificanceValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_EVENT_SIGNIFICANCE_FAULT" : DemDTCSignificance.DEM_EVENT_SIGNIFICANCE_FAULT
 					case "DEM_EVENT_SIGNIFICANCE_OCCURRENCE" : DemDTCSignificance.DEM_EVENT_SIGNIFICANCE_OCCURRENCE
 				}
 			}
 			
-			def void setDemDTCSignificanceValue(GParameterValue paramValue, DemDTCSignificance value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemDTCSignificanceValue(GParameterValue parameterValue, DemDTCSignificance value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemEventMemoryEntryFdcThresholdStorageValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"].getBigIntegerValue()
 			}
 			
 			def void setDemEventMemoryEntryFdcThresholdStorageValue(BigInteger value){
@@ -685,15 +684,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventMemoryEntryFdcThresholdStorageValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemImmediateNvStorage(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorage"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorage"].getBooleanValue()
 			}
 			
 			def void setDemImmediateNvStorage(Boolean value){
@@ -701,15 +700,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemImmediateNvStorage"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemImmediateNvStorage"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemMaxNumberFreezeFrameRecords(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberFreezeFrameRecords"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberFreezeFrameRecords"].getBigIntegerValue()
 			}
 			
 			def void setDemMaxNumberFreezeFrameRecords(BigInteger value){
@@ -717,11 +716,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberFreezeFrameRecords"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberFreezeFrameRecords"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -729,88 +728,88 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle getDemAgingCycleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle), "DemAgingCycleRef")
 			}
-					
+			
 			def void setDemAgingCycleRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemAgingCycleRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemAgingCycleRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataClass getDemExtendedDataClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataClass), "DemExtendedDataClassRef")
 			}
-					
+			
 			def void setDemExtendedDataClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataClass object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemExtendedDataClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemExtendedDataClassRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass getDemFreezeFrameClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass), "DemFreezeFrameClassRef")
 			}
-					
+			
 			def void setDemFreezeFrameClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameClassRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecNumClass getDemFreezeFrameRecNumClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecNumClass), "DemFreezeFrameRecNumClassRef")
 			}
-					
+			
 			def void setDemFreezeFrameRecNumClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecNumClass object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameRecNumClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameRecNumClassRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemJ1939NodeAddress getDemJ1939DTC_NodeAddressRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemJ1939NodeAddress), "DemJ1939DTC_NodeAddressRef")
 			}
-					
+			
 			def void setDemJ1939DTC_NodeAddressRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemJ1939NodeAddress object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939DTC_NodeAddressRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939DTC_NodeAddressRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass getDemJ1939ExpandedFreezeFrameClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass), "DemJ1939ExpandedFreezeFrameClassRef")
 			}
-					
+			
 			def void setDemJ1939ExpandedFreezeFrameClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939ExpandedFreezeFrameClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939ExpandedFreezeFrameClassRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass getDemJ1939FreezeFrameClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass), "DemJ1939FreezeFrameClassRef")
 			}
-					
+			
 			def void setDemJ1939FreezeFrameClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939FreezeFrameClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939FreezeFrameClassRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass getDemWWHOBDFreezeFrameClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass), "DemWWHOBDFreezeFrameClassRef")
 			}
-					
+			
 			def void setDemWWHOBDFreezeFrameClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemWWHOBDFreezeFrameClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemWWHOBDFreezeFrameClassRef"], object.getTarget())
 				}
 			}
 			
@@ -820,32 +819,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDebounceCounterBasedClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDebounceCounterBasedClass)){
 					return false
 				}
 				this.target == (object as DemDebounceCounterBasedClass).target
 			}
-			
+		
 			def DemDebounceBehavior getDemDebounceBehavior(){
-				getDemDebounceBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceBehavior"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceBehavior"].getDemDebounceBehaviorValue()
 			}
 			
 			def void setDemDebounceBehavior(DemDebounceBehavior value){
@@ -853,32 +852,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceBehavior"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceBehavior"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemDebounceBehavior {
 				DEM_DEBOUNCE_FREEZE, 
 				DEM_DEBOUNCE_RESET
 			}
-				
-			def DemDebounceBehavior getDemDebounceBehaviorValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemDebounceBehavior getDemDebounceBehaviorValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_DEBOUNCE_FREEZE" : DemDebounceBehavior.DEM_DEBOUNCE_FREEZE
 					case "DEM_DEBOUNCE_RESET" : DemDebounceBehavior.DEM_DEBOUNCE_RESET
 				}
 			}
 			
-			def void setDemDebounceBehaviorValue(GParameterValue paramValue, DemDebounceBehavior value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemDebounceBehaviorValue(GParameterValue parameterValue, DemDebounceBehavior value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDebounceCounterDecrementStepSize(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterDecrementStepSize"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterDecrementStepSize"].getBigIntegerValue()
 			}
 			
 			def void setDemDebounceCounterDecrementStepSize(BigInteger value){
@@ -886,15 +885,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterDecrementStepSize"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterDecrementStepSize"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDebounceCounterFailedThreshold(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterFailedThreshold"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterFailedThreshold"].getBigIntegerValue()
 			}
 			
 			def void setDemDebounceCounterFailedThreshold(BigInteger value){
@@ -902,15 +901,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterFailedThreshold"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterFailedThreshold"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDebounceCounterIncrementStepSize(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterIncrementStepSize"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterIncrementStepSize"].getBigIntegerValue()
 			}
 			
 			def void setDemDebounceCounterIncrementStepSize(BigInteger value){
@@ -918,15 +917,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterIncrementStepSize"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterIncrementStepSize"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemDebounceCounterJumpDown(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDown"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDown"].getBooleanValue()
 			}
 			
 			def void setDemDebounceCounterJumpDown(Boolean value){
@@ -934,15 +933,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpDown"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpDown"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemDebounceCounterJumpDownValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDownValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpDownValue"].getBigIntegerValue()
 			}
 			
 			def void setDemDebounceCounterJumpDownValue(BigInteger value){
@@ -950,15 +949,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpDownValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpDownValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemDebounceCounterJumpUp(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUp"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUp"].getBooleanValue()
 			}
 			
 			def void setDemDebounceCounterJumpUp(Boolean value){
@@ -966,15 +965,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpUp"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpUp"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemDebounceCounterJumpUpValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUpValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterJumpUpValue"].getBigIntegerValue()
 			}
 			
 			def void setDemDebounceCounterJumpUpValue(BigInteger value){
@@ -982,15 +981,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpUpValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterJumpUpValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDebounceCounterPassedThreshold(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterPassedThreshold"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterPassedThreshold"].getBigIntegerValue()
 			}
 			
 			def void setDemDebounceCounterPassedThreshold(BigInteger value){
@@ -998,15 +997,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterPassedThreshold"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterPassedThreshold"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemDebounceCounterStorage(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterStorage"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterStorage"].getBooleanValue()
 			}
 			
 			def void setDemDebounceCounterStorage(Boolean value){
@@ -1014,11 +1013,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterStorage"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterStorage"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -1028,32 +1027,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDebounceTimeBaseClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDebounceTimeBaseClass)){
 					return false
 				}
 				this.target == (object as DemDebounceTimeBaseClass).target
 			}
-			
+		
 			def DemDebounceBehavior getDemDebounceBehavior(){
-				getDemDebounceBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceBehavior"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceBehavior"].getDemDebounceBehaviorValue()
 			}
 			
 			def void setDemDebounceBehavior(DemDebounceBehavior value){
@@ -1061,32 +1060,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceBehavior"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceBehavior"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemDebounceBehavior {
 				DEM_DEBOUNCE_FREEZE, 
 				DEM_DEBOUNCE_RESET
 			}
-				
-			def DemDebounceBehavior getDemDebounceBehaviorValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemDebounceBehavior getDemDebounceBehaviorValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_DEBOUNCE_FREEZE" : DemDebounceBehavior.DEM_DEBOUNCE_FREEZE
 					case "DEM_DEBOUNCE_RESET" : DemDebounceBehavior.DEM_DEBOUNCE_RESET
 				}
 			}
 			
-			def void setDemDebounceBehaviorValue(GParameterValue paramValue, DemDebounceBehavior value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemDebounceBehaviorValue(GParameterValue parameterValue, DemDebounceBehavior value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getDemDebounceTimeFailedThreshold(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeFailedThreshold"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeFailedThreshold"].getBigDecimalValue()
 			}
 			
 			def void setDemDebounceTimeFailedThreshold(BigDecimal value){
@@ -1094,15 +1093,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceTimeFailedThreshold"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceTimeFailedThreshold"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getDemDebounceTimePassedThreshold(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimePassedThreshold"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimePassedThreshold"].getBigDecimalValue()
 			}
 			
 			def void setDemDebounceTimePassedThreshold(BigDecimal value){
@@ -1110,11 +1109,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceTimePassedThreshold"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceTimePassedThreshold"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1124,32 +1123,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDtr implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDtr)){
 					return false
 				}
 				this.target == (object as DemDtr).target
 			}
-			
+		
 			def BigDecimal getDemDtrCompuDenominator0(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuDenominator0"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuDenominator0"].getBigDecimalValue()
 			}
 			
 			def void setDemDtrCompuDenominator0(BigDecimal value){
@@ -1157,15 +1156,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrCompuDenominator0"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrCompuDenominator0"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getDemDtrCompuNumerator0(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator0"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator0"].getBigDecimalValue()
 			}
 			
 			def void setDemDtrCompuNumerator0(BigDecimal value){
@@ -1173,15 +1172,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrCompuNumerator0"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrCompuNumerator0"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getDemDtrCompuNumerator1(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator1"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrCompuNumerator1"].getBigDecimalValue()
 			}
 			
 			def void setDemDtrCompuNumerator1(BigDecimal value){
@@ -1189,15 +1188,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrCompuNumerator1"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrCompuNumerator1"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDtrId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrId"].getBigIntegerValue()
 			}
 			
 			def void setDemDtrId(BigInteger value){
@@ -1205,15 +1204,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDtrMid(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrMid"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrMid"].getBigIntegerValue()
 			}
 			
 			def void setDemDtrMid(BigInteger value){
@@ -1221,15 +1220,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrMid"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrMid"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDtrTid(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrTid"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrTid"].getBigIntegerValue()
 			}
 			
 			def void setDemDtrTid(BigInteger value){
@@ -1237,15 +1236,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrTid"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrTid"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemDtrUasid(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUasid"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUasid"].getBigIntegerValue()
 			}
 			
 			def void setDemDtrUasid(BigInteger value){
@@ -1253,15 +1252,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrUasid"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrUasid"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemDtrUpdateKind getDemDtrUpdateKind(){
-				getDemDtrUpdateKindValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUpdateKind"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtrUpdateKind"].getDemDtrUpdateKindValue()
 			}
 			
 			def void setDemDtrUpdateKind(DemDtrUpdateKind value){
@@ -1269,39 +1268,39 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrUpdateKind"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtrUpdateKind"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemDtrUpdateKind {
 				DEM_DTR_UPDATE_ALWAYS, 
 				DEM_DTR_UPDATE_STEADY
 			}
-				
-			def DemDtrUpdateKind getDemDtrUpdateKindValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemDtrUpdateKind getDemDtrUpdateKindValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_DTR_UPDATE_ALWAYS" : DemDtrUpdateKind.DEM_DTR_UPDATE_ALWAYS
 					case "DEM_DTR_UPDATE_STEADY" : DemDtrUpdateKind.DEM_DTR_UPDATE_STEADY
 				}
 			}
 			
-			def void setDemDtrUpdateKindValue(GParameterValue paramValue, DemDtrUpdateKind value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemDtrUpdateKindValue(GParameterValue parameterValue, DemDtrUpdateKind value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getDemDtrEventRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "DemDtrEventRef")
 			}
-					
+			
 			def void setDemDtrEventRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDtrEventRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemDtrEventRef"], object.getTarget())
 				}
 			}
 			
@@ -1311,32 +1310,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemEventParameter implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemEventParameter)){
 					return false
 				}
 				this.target == (object as DemEventParameter).target
 			}
-			
+		
 			def BigInteger getDemComponentPriority(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentPriority"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemComponentPriority"].getBigIntegerValue()
 			}
 			
 			def void setDemComponentPriority(BigInteger value){
@@ -1344,15 +1343,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemComponentPriority"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemComponentPriority"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemEventAvailable(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventAvailable"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventAvailable"].getBooleanValue()
 			}
 			
 			def void setDemEventAvailable(Boolean value){
@@ -1360,15 +1359,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventAvailable"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventAvailable"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemEventFailureCycleCounterThreshold(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventFailureCycleCounterThreshold"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventFailureCycleCounterThreshold"].getBigIntegerValue()
 			}
 			
 			def void setDemEventFailureCycleCounterThreshold(BigInteger value){
@@ -1376,15 +1375,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventFailureCycleCounterThreshold"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventFailureCycleCounterThreshold"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemEventId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventId"].getBigIntegerValue()
 			}
 			
 			def void setDemEventId(BigInteger value){
@@ -1392,15 +1391,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemEventKind getDemEventKind(){
-				getDemEventKindValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventKind"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventKind"].getDemEventKindValue()
 			}
 			
 			def void setDemEventKind(DemEventKind value){
@@ -1408,32 +1407,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventKind"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventKind"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemEventKind {
 				DEM_EVENT_KIND_BSW, 
 				DEM_EVENT_KIND_SWC
 			}
-				
-			def DemEventKind getDemEventKindValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemEventKind getDemEventKindValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_EVENT_KIND_BSW" : DemEventKind.DEM_EVENT_KIND_BSW
 					case "DEM_EVENT_KIND_SWC" : DemEventKind.DEM_EVENT_KIND_SWC
 				}
 			}
 			
-			def void setDemEventKindValue(GParameterValue paramValue, DemEventKind value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemEventKindValue(GParameterValue parameterValue, DemEventKind value){
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemFFPrestorageSupported(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFFPrestorageSupported"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFFPrestorageSupported"].getBooleanValue()
 			}
 			
 			def void setDemFFPrestorageSupported(Boolean value){
@@ -1441,15 +1440,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemFFPrestorageSupported"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemFFPrestorageSupported"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def DemReportBehavior getDemReportBehavior(){
-				getDemReportBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemReportBehavior"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemReportBehavior"].getDemReportBehaviorValue()
 			}
 			
 			def void setDemReportBehavior(DemReportBehavior value){
@@ -1457,94 +1456,94 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemReportBehavior"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemReportBehavior"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemReportBehavior {
 				REPORT_AFTER_INIT, 
 				REPORT_BEFORE_INIT
 			}
-				
-			def DemReportBehavior getDemReportBehaviorValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemReportBehavior getDemReportBehaviorValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "REPORT_AFTER_INIT" : DemReportBehavior.REPORT_AFTER_INIT
 					case "REPORT_BEFORE_INIT" : DemReportBehavior.REPORT_BEFORE_INIT
 				}
 			}
 			
-			def void setDemReportBehaviorValue(GParameterValue paramValue, DemReportBehavior value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemReportBehaviorValue(GParameterValue parameterValue, DemReportBehavior value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent getDemComponentClassRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent), "DemComponentClassRef")
 			}
-					
+			
 			def void setDemComponentClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemComponent object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemComponentClassRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemComponentClassRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTC getDemDTCRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTC), "DemDTCRef")
 			}
-					
+			
 			def void setDemDTCRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDTC object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDTCRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemDTCRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableConditionGroup getDemEnableConditionGroupRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableConditionGroup), "DemEnableConditionGroupRef")
 			}
-					
+			
 			def void setDemEnableConditionGroupRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableConditionGroup object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemEnableConditionGroupRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemEnableConditionGroupRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getDemOBDGroupingAssociativeEventsRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "DemOBDGroupingAssociativeEventsRef")
 			}
-					
+			
 			def void setDemOBDGroupingAssociativeEventsRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemOBDGroupingAssociativeEventsRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemOBDGroupingAssociativeEventsRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle getDemOperationCycleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle), "DemOperationCycleRef")
 			}
-					
+			
 			def void setDemOperationCycleRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemOperationCycleRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemOperationCycleRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageConditionGroup getDemStorageConditionGroupRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageConditionGroup), "DemStorageConditionGroupRef")
 			}
-					
+			
 			def void setDemStorageConditionGroupRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageConditionGroup object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionGroupRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionGroupRef"], object.getTarget())
 				}
 			}
 			
@@ -1574,15 +1573,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemCallbackEventStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackEventStatusChanged), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemEventParameter$DemCallbackEventStatusChanged demCallbackEventStatusChanged) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter.DemCallbackEventStatusChanged demCallbackEventStatusChanged) {
 						demCallbackEventStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackEventStatusChanged"))
 						super.delegateAdd(demCallbackEventStatusChanged)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemEventParameter$DemCallbackEventStatusChanged demCallbackEventStatusChanged) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter.DemCallbackEventStatusChanged demCallbackEventStatusChanged) {
 						demCallbackEventStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackEventStatusChanged"))
 						super.delegateAdd(index, demCallbackEventStatusChanged)
-					}	
+					}
 				}
 			}
 			
@@ -1611,47 +1610,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemIndicatorAttribute, GContainer>(filteredContainers, typeof(DemIndicatorAttribute), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemEventParameter$DemIndicatorAttribute demIndicatorAttribute) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter.DemIndicatorAttribute demIndicatorAttribute) {
 						demIndicatorAttribute.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicatorAttribute"))
 						super.delegateAdd(demIndicatorAttribute)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemEventParameter$DemIndicatorAttribute demIndicatorAttribute) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter.DemIndicatorAttribute demIndicatorAttribute) {
 						demIndicatorAttribute.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicatorAttribute"))
 						super.delegateAdd(index, demIndicatorAttribute)
-					}	
+					}
 				}
 			}
 			
 			
 			static class DemCallbackClearEventAllowed implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemCallbackClearEventAllowed)){
 						return false
 					}
 					this.target == (object as DemCallbackClearEventAllowed).target
 				}
-				
+			
 				def String getDemCallbackClearEventAllowedFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackClearEventAllowedFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackClearEventAllowedFnc"].getStringValue()
 				}
 				
 				def void setDemCallbackClearEventAllowedFnc(String value){
@@ -1659,15 +1658,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackClearEventAllowedFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackClearEventAllowedFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def DemClearEventAllowedBehavior getDemClearEventAllowedBehavior(){
-					getDemClearEventAllowedBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemClearEventAllowedBehavior"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemClearEventAllowedBehavior"].getDemClearEventAllowedBehaviorValue()
 				}
 				
 				def void setDemClearEventAllowedBehavior(DemClearEventAllowedBehavior value){
@@ -1675,28 +1674,28 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemClearEventAllowedBehavior"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemClearEventAllowedBehavior"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum DemClearEventAllowedBehavior {
 					DEM_NO_STATUS_BYTE_CHANGE, 
 					DEM_ONLY_THIS_CYCLE_AND_READINESS
 				}
-					
-				def DemClearEventAllowedBehavior getDemClearEventAllowedBehaviorValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def DemClearEventAllowedBehavior getDemClearEventAllowedBehaviorValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "DEM_NO_STATUS_BYTE_CHANGE" : DemClearEventAllowedBehavior.DEM_NO_STATUS_BYTE_CHANGE
 						case "DEM_ONLY_THIS_CYCLE_AND_READINESS" : DemClearEventAllowedBehavior.DEM_ONLY_THIS_CYCLE_AND_READINESS
 					}
 				}
 				
-				def void setDemClearEventAllowedBehaviorValue(GParameterValue paramValue, DemClearEventAllowedBehavior value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setDemClearEventAllowedBehaviorValue(GParameterValue parameterValue, DemClearEventAllowedBehavior value){
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1706,32 +1705,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemCallbackEventDataChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemCallbackEventDataChanged)){
 						return false
 					}
 					this.target == (object as DemCallbackEventDataChanged).target
 				}
-				
+			
 				def String getDemCallbackEventDataChangedFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackEventDataChangedFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackEventDataChangedFnc"].getStringValue()
 				}
 				
 				def void setDemCallbackEventDataChangedFnc(String value){
@@ -1739,11 +1738,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackEventDataChangedFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackEventDataChangedFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1753,32 +1752,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemCallbackEventStatusChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemCallbackEventStatusChanged)){
 						return false
 					}
 					this.target == (object as DemCallbackEventStatusChanged).target
 				}
-				
+			
 				def String getDemCallbackEventStatusChangedFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackEventStatusChangedFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackEventStatusChangedFnc"].getStringValue()
 				}
 				
 				def void setDemCallbackEventStatusChangedFnc(String value){
@@ -1786,11 +1785,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackEventStatusChangedFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackEventStatusChangedFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1800,32 +1799,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemCallbackInitMForE implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemCallbackInitMForE)){
 						return false
 					}
 					this.target == (object as DemCallbackInitMForE).target
 				}
-				
+			
 				def String getDemCallbackInitMForEFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackInitMForEFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackInitMForEFnc"].getStringValue()
 				}
 				
 				def void setDemCallbackInitMForEFnc(String value){
@@ -1833,11 +1832,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackInitMForEFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackInitMForEFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1847,30 +1846,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemDebounceAlgorithmClass implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemDebounceAlgorithmClass)){
 						return false
 					}
 					this.target == (object as DemDebounceAlgorithmClass).target
 				}
-				
+			
 				def DemDebounceCounterBased getDemDebounceCounterBased(){
 					containerValue.getByType(typeof(DemDebounceCounterBased))
 				}
@@ -1898,39 +1897,39 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				static class DemDebounceCounterBased implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof DemDebounceCounterBased)){
 							return false
 						}
 						this.target == (object as DemDebounceCounterBased).target
 					}
-					
+				
 					
 					def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass getDemDebounceCounterBasedClassRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass), "DemDebounceCounterBasedClassRef")
 					}
-							
+					
 					def void setDemDebounceCounterBasedClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceCounterBasedClass object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDebounceCounterBasedClassRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemDebounceCounterBasedClassRef"], object.getTarget())
 						}
 					}
 					
@@ -1940,30 +1939,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				static class DemDebounceMonitorInternal implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof DemDebounceMonitorInternal)){
 							return false
 						}
 						this.target == (object as DemDebounceMonitorInternal).target
 					}
-					
+				
 					
 					
 					def DemCallbackGetFDC getDemCallbackGetFDC(){
@@ -1978,32 +1977,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemCallbackGetFDC implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemCallbackGetFDC)){
 								return false
 							}
 							this.target == (object as DemCallbackGetFDC).target
 						}
-						
+					
 						def String getDemCallbackGetFDCFnc(){
-							EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackGetFDCFnc"])
+							containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackGetFDCFnc"].getStringValue()
 						}
 						
 						def void setDemCallbackGetFDCFnc(String value){
@@ -2011,11 +2010,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackGetFDCFnc"])
+									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackGetFDCFnc"].createParameterValue()
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							parameterValue.setValue(value)
 						}
 						
 						
@@ -2027,39 +2026,39 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				static class DemDebounceTimeBase implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof DemDebounceTimeBase)){
 							return false
 						}
 						this.target == (object as DemDebounceTimeBase).target
 					}
-					
+				
 					
 					def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass getDemDebounceTimeBaseRef(){
 						containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass), "DemDebounceTimeBaseRef")
 					}
-							
+					
 					def void setDemDebounceTimeBaseRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemDebounceTimeBaseClass object){
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDebounceTimeBaseRef"], object.getTarget())
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemDebounceTimeBaseRef"], object.getTarget())
 						}
 					}
 					
@@ -2071,32 +2070,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemIndicatorAttribute implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemIndicatorAttribute)){
 						return false
 					}
 					this.target == (object as DemIndicatorAttribute).target
 				}
-				
+			
 				def DemIndicatorBehaviour getDemIndicatorBehaviour(){
-					getDemIndicatorBehaviourValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorBehaviour"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorBehaviour"].getDemIndicatorBehaviourValue()
 				}
 				
 				def void setDemIndicatorBehaviour(DemIndicatorBehaviour value){
@@ -2104,11 +2103,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorBehaviour"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorBehaviour"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum DemIndicatorBehaviour {
@@ -2118,10 +2117,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					DEM_INDICATOR_FAST_FLASH, 
 					DEM_INDICATOR_SLOW_FLASH
 				}
-					
-				def DemIndicatorBehaviour getDemIndicatorBehaviourValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def DemIndicatorBehaviour getDemIndicatorBehaviourValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "DEM_INDICATOR_BLINKING" : DemIndicatorBehaviour.DEM_INDICATOR_BLINKING
 						case "DEM_INDICATOR_BLINK_CONT" : DemIndicatorBehaviour.DEM_INDICATOR_BLINK_CONT
 						case "DEM_INDICATOR_CONTINUOUS" : DemIndicatorBehaviour.DEM_INDICATOR_CONTINUOUS
@@ -2130,12 +2129,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setDemIndicatorBehaviourValue(GParameterValue paramValue, DemIndicatorBehaviour value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setDemIndicatorBehaviourValue(GParameterValue parameterValue, DemIndicatorBehaviour value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getDemIndicatorFailureCycleCounterThreshold(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorFailureCycleCounterThreshold"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorFailureCycleCounterThreshold"].getBigIntegerValue()
 				}
 				
 				def void setDemIndicatorFailureCycleCounterThreshold(BigInteger value){
@@ -2143,15 +2142,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorFailureCycleCounterThreshold"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorFailureCycleCounterThreshold"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getDemIndicatorHealingCycleCounterThreshold(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorHealingCycleCounterThreshold"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorHealingCycleCounterThreshold"].getBigIntegerValue()
 				}
 				
 				def void setDemIndicatorHealingCycleCounterThreshold(BigInteger value){
@@ -2159,22 +2158,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorHealingCycleCounterThreshold"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorHealingCycleCounterThreshold"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator getDemIndicatorRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator), "DemIndicatorRef")
 				}
-						
+				
 				def void setDemIndicatorRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemIndicatorRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemIndicatorRef"], object.getTarget())
 					}
 				}
 				
@@ -2186,42 +2185,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemJ1939NodeAddress implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemJ1939NodeAddress)){
 					return false
 				}
 				this.target == (object as DemJ1939NodeAddress).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode> getDemJ1939NmNodeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemJ1939NmNodeRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemJ1939NmNodeRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode object) throws CoreException {
 						if (object != null) {
@@ -2232,7 +2231,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -2250,32 +2249,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemObdDTC implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemObdDTC)){
 					return false
 				}
 				this.target == (object as DemObdDTC).target
 			}
-			
+		
 			def Boolean getDemConsiderPtoStatus(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemConsiderPtoStatus"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemConsiderPtoStatus"].getBooleanValue()
 			}
 			
 			def void setDemConsiderPtoStatus(Boolean value){
@@ -2283,15 +2282,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemConsiderPtoStatus"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemConsiderPtoStatus"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemDtcValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcValue"].getBigIntegerValue()
 			}
 			
 			def void setDemDtcValue(BigInteger value){
@@ -2299,15 +2298,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtcValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtcValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemEventOBDReadinessGroup getDemEventOBDReadinessGroup(){
-				getDemEventOBDReadinessGroupValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventOBDReadinessGroup"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventOBDReadinessGroup"].getDemEventOBDReadinessGroupValue()
 			}
 			
 			def void setDemEventOBDReadinessGroup(DemEventOBDReadinessGroup value){
@@ -2315,11 +2314,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventOBDReadinessGroup"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventOBDReadinessGroup"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemEventOBDReadinessGroup {
@@ -2342,10 +2341,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_OBD_RDY_PMFLT, 
 				DEM_OBD_RDY_SECAIR
 			}
-				
-			def DemEventOBDReadinessGroup getDemEventOBDReadinessGroupValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemEventOBDReadinessGroup getDemEventOBDReadinessGroupValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_OBD_RDY_AC" : DemEventOBDReadinessGroup.DEM_OBD_RDY_AC
 					case "DEM_OBD_RDY_BOOSTPR" : DemEventOBDReadinessGroup.DEM_OBD_RDY_BOOSTPR
 					case "DEM_OBD_RDY_CAT" : DemEventOBDReadinessGroup.DEM_OBD_RDY_CAT
@@ -2367,12 +2366,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemEventOBDReadinessGroupValue(GParameterValue paramValue, DemEventOBDReadinessGroup value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemEventOBDReadinessGroupValue(GParameterValue parameterValue, DemEventOBDReadinessGroup value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemJ1939DTCValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939DTCValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939DTCValue"].getBigIntegerValue()
 			}
 			
 			def void setDemJ1939DTCValue(BigInteger value){
@@ -2380,11 +2379,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939DTCValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939DTCValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2394,32 +2393,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemPidClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemPidClass)){
 					return false
 				}
 				this.target == (object as DemPidClass).target
 			}
-			
+		
 			def BigInteger getDemPidIdentifier(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPidIdentifier"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPidIdentifier"].getBigIntegerValue()
 			}
 			
 			def void setDemPidIdentifier(BigInteger value){
@@ -2427,11 +2426,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemPidIdentifier"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemPidIdentifier"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2443,54 +2442,54 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemPidDataElement, GContainer>(filteredContainers, typeof(DemPidDataElement), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemPidClass$DemPidDataElement demPidDataElement) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemPidClass.DemPidDataElement demPidDataElement) {
 						demPidDataElement.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidDataElement"))
 						super.delegateAdd(demPidDataElement)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemConfigSet$DemPidClass$DemPidDataElement demPidDataElement) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemPidClass.DemPidDataElement demPidDataElement) {
 						demPidDataElement.target?.gSetDefinition(containerValue.getContainerDefinition("DemPidDataElement"))
 						super.delegateAdd(index, demPidDataElement)
-					}	
+					}
 				}
 			}
 			
 			
 			static class DemPidDataElement implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemPidDataElement)){
 						return false
 					}
 					this.target == (object as DemPidDataElement).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass getDemPidDataElementClassRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass), "DemPidDataElementClassRef")
 				}
-						
+				
 				def void setDemPidDataElementClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemPidDataElementClassRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemPidDataElementClassRef"], object.getTarget())
 					}
 				}
 				
@@ -2503,32 +2502,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 	}
 	static class DemGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DemGeneral)){
 				return false
 			}
 			this.target == (object as DemGeneral).target
 		}
-		
+	
 		def DemAgingCycleCounterProcessing getDemAgingCycleCounterProcessing(){
-			getDemAgingCycleCounterProcessingValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterProcessing"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingCycleCounterProcessing"].getDemAgingCycleCounterProcessingValue()
 		}
 		
 		def void setDemAgingCycleCounterProcessing(DemAgingCycleCounterProcessing value){
@@ -2536,32 +2535,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingCycleCounterProcessing"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingCycleCounterProcessing"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemAgingCycleCounterProcessing {
 			DEM_PROCESS_AGINGCTR_EXTERN, 
 			DEM_PROCESS_AGINGCTR_INTERN
 		}
-			
-		def DemAgingCycleCounterProcessing getDemAgingCycleCounterProcessingValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemAgingCycleCounterProcessing getDemAgingCycleCounterProcessingValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_PROCESS_AGINGCTR_EXTERN" : DemAgingCycleCounterProcessing.DEM_PROCESS_AGINGCTR_EXTERN
 				case "DEM_PROCESS_AGINGCTR_INTERN" : DemAgingCycleCounterProcessing.DEM_PROCESS_AGINGCTR_INTERN
 			}
 		}
 		
-		def void setDemAgingCycleCounterProcessingValue(GParameterValue paramValue, DemAgingCycleCounterProcessing value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemAgingCycleCounterProcessingValue(GParameterValue parameterValue, DemAgingCycleCounterProcessing value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemAgingRequieresTestedCycle(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingRequieresTestedCycle"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAgingRequieresTestedCycle"].getBooleanValue()
 		}
 		
 		def void setDemAgingRequieresTestedCycle(Boolean value){
@@ -2569,15 +2568,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingRequieresTestedCycle"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemAgingRequieresTestedCycle"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemAvailabilitySupport getDemAvailabilitySupport(){
-			getDemAvailabilitySupportValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAvailabilitySupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemAvailabilitySupport"].getDemAvailabilitySupportValue()
 		}
 		
 		def void setDemAvailabilitySupport(DemAvailabilitySupport value){
@@ -2585,32 +2584,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemAvailabilitySupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemAvailabilitySupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemAvailabilitySupport {
 			DEM_EVENT_AVAILABILITY, 
 			DEM_NO_AVAILABILITY
 		}
-			
-		def DemAvailabilitySupport getDemAvailabilitySupportValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemAvailabilitySupport getDemAvailabilitySupportValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_EVENT_AVAILABILITY" : DemAvailabilitySupport.DEM_EVENT_AVAILABILITY
 				case "DEM_NO_AVAILABILITY" : DemAvailabilitySupport.DEM_NO_AVAILABILITY
 			}
 		}
 		
-		def void setDemAvailabilitySupportValue(GParameterValue paramValue, DemAvailabilitySupport value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemAvailabilitySupportValue(GParameterValue parameterValue, DemAvailabilitySupport value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getDemBswErrorBufferSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemBswErrorBufferSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemBswErrorBufferSize"].getBigIntegerValue()
 		}
 		
 		def void setDemBswErrorBufferSize(BigInteger value){
@@ -2618,15 +2617,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemBswErrorBufferSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemBswErrorBufferSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def DemClearDTCBehavior getDemClearDTCBehavior(){
-			getDemClearDTCBehaviorValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemClearDTCBehavior"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemClearDTCBehavior"].getDemClearDTCBehaviorValue()
 		}
 		
 		def void setDemClearDTCBehavior(DemClearDTCBehavior value){
@@ -2634,11 +2633,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemClearDTCBehavior"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemClearDTCBehavior"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemClearDTCBehavior {
@@ -2646,22 +2645,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			DEM_CLRRESP_NONVOLATILE_TRIGGER, 
 			DEM_CLRRESP_VOLATILE
 		}
-			
-		def DemClearDTCBehavior getDemClearDTCBehaviorValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemClearDTCBehavior getDemClearDTCBehaviorValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_CLRRESP_NONVOLATILE_FINISH" : DemClearDTCBehavior.DEM_CLRRESP_NONVOLATILE_FINISH
 				case "DEM_CLRRESP_NONVOLATILE_TRIGGER" : DemClearDTCBehavior.DEM_CLRRESP_NONVOLATILE_TRIGGER
 				case "DEM_CLRRESP_VOLATILE" : DemClearDTCBehavior.DEM_CLRRESP_VOLATILE
 			}
 		}
 		
-		def void setDemClearDTCBehaviorValue(GParameterValue paramValue, DemClearDTCBehavior value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemClearDTCBehaviorValue(GParameterValue parameterValue, DemClearDTCBehavior value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemClearDTCLimitation getDemClearDTCLimitation(){
-			getDemClearDTCLimitationValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemClearDTCLimitation"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemClearDTCLimitation"].getDemClearDTCLimitationValue()
 		}
 		
 		def void setDemClearDTCLimitation(DemClearDTCLimitation value){
@@ -2669,32 +2668,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemClearDTCLimitation"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemClearDTCLimitation"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemClearDTCLimitation {
 			DEM_ALL_SUPPORTED_DTCS, 
 			DEM_ONLY_CLEAR_ALL_DTCS
 		}
-			
-		def DemClearDTCLimitation getDemClearDTCLimitationValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemClearDTCLimitation getDemClearDTCLimitationValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_ALL_SUPPORTED_DTCS" : DemClearDTCLimitation.DEM_ALL_SUPPORTED_DTCS
 				case "DEM_ONLY_CLEAR_ALL_DTCS" : DemClearDTCLimitation.DEM_ONLY_CLEAR_ALL_DTCS
 			}
 		}
 		
-		def void setDemClearDTCLimitationValue(GParameterValue paramValue, DemClearDTCLimitation value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemClearDTCLimitationValue(GParameterValue parameterValue, DemClearDTCLimitation value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemDataElementDefaultEndianness getDemDataElementDefaultEndianness(){
-			getDemDataElementDefaultEndiannessValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDefaultEndianness"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDefaultEndianness"].getDemDataElementDefaultEndiannessValue()
 		}
 		
 		def void setDemDataElementDefaultEndianness(DemDataElementDefaultEndianness value){
@@ -2702,11 +2701,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDefaultEndianness"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDefaultEndianness"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemDataElementDefaultEndianness {
@@ -2714,22 +2713,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			LITTLE_ENDIAN, 
 			OPAQUE
 		}
-			
-		def DemDataElementDefaultEndianness getDemDataElementDefaultEndiannessValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemDataElementDefaultEndianness getDemDataElementDefaultEndiannessValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "BIG_ENDIAN" : DemDataElementDefaultEndianness.BIG_ENDIAN
 				case "LITTLE_ENDIAN" : DemDataElementDefaultEndianness.LITTLE_ENDIAN
 				case "OPAQUE" : DemDataElementDefaultEndianness.OPAQUE
 			}
 		}
 		
-		def void setDemDataElementDefaultEndiannessValue(GParameterValue paramValue, DemDataElementDefaultEndianness value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemDataElementDefaultEndiannessValue(GParameterValue parameterValue, DemDataElementDefaultEndianness value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemDebounceCounterBasedSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterBasedSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceCounterBasedSupport"].getBooleanValue()
 		}
 		
 		def void setDemDebounceCounterBasedSupport(Boolean value){
@@ -2737,15 +2736,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterBasedSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceCounterBasedSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemDebounceTimeBasedSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeBasedSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDebounceTimeBasedSupport"].getBooleanValue()
 		}
 		
 		def void setDemDebounceTimeBasedSupport(Boolean value){
@@ -2753,15 +2752,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceTimeBasedSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDebounceTimeBasedSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setDemDevErrorDetect(Boolean value){
@@ -2769,15 +2768,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getDemDtcStatusAvailabilityMask(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcStatusAvailabilityMask"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDtcStatusAvailabilityMask"].getBigIntegerValue()
 		}
 		
 		def void setDemDtcStatusAvailabilityMask(BigInteger value){
@@ -2785,15 +2784,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDtcStatusAvailabilityMask"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDtcStatusAvailabilityMask"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def DemEnvironmentDataCapture getDemEnvironmentDataCapture(){
-			getDemEnvironmentDataCaptureValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnvironmentDataCapture"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnvironmentDataCapture"].getDemEnvironmentDataCaptureValue()
 		}
 		
 		def void setDemEnvironmentDataCapture(DemEnvironmentDataCapture value){
@@ -2801,32 +2800,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEnvironmentDataCapture"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEnvironmentDataCapture"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemEnvironmentDataCapture {
 			DEM_CAPTURE_ASYNCHRONOUS_TO_REPORTING, 
 			DEM_CAPTURE_SYNCHRONOUS_TO_REPORTING
 		}
-			
-		def DemEnvironmentDataCapture getDemEnvironmentDataCaptureValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemEnvironmentDataCapture getDemEnvironmentDataCaptureValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_CAPTURE_ASYNCHRONOUS_TO_REPORTING" : DemEnvironmentDataCapture.DEM_CAPTURE_ASYNCHRONOUS_TO_REPORTING
 				case "DEM_CAPTURE_SYNCHRONOUS_TO_REPORTING" : DemEnvironmentDataCapture.DEM_CAPTURE_SYNCHRONOUS_TO_REPORTING
 			}
 		}
 		
-		def void setDemEnvironmentDataCaptureValue(GParameterValue paramValue, DemEnvironmentDataCapture value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemEnvironmentDataCaptureValue(GParameterValue parameterValue, DemEnvironmentDataCapture value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemEventCombinationSupport getDemEventCombinationSupport(){
-			getDemEventCombinationSupportValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventCombinationSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventCombinationSupport"].getDemEventCombinationSupportValue()
 		}
 		
 		def void setDemEventCombinationSupport(DemEventCombinationSupport value){
@@ -2834,11 +2833,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventCombinationSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventCombinationSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemEventCombinationSupport {
@@ -2846,22 +2845,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			DEM_EVCOMB_ONRETRIEVAL, 
 			DEM_EVCOMB_ONSTORAGE
 		}
-			
-		def DemEventCombinationSupport getDemEventCombinationSupportValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemEventCombinationSupport getDemEventCombinationSupportValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_EVCOMB_DISABLED" : DemEventCombinationSupport.DEM_EVCOMB_DISABLED
 				case "DEM_EVCOMB_ONRETRIEVAL" : DemEventCombinationSupport.DEM_EVCOMB_ONRETRIEVAL
 				case "DEM_EVCOMB_ONSTORAGE" : DemEventCombinationSupport.DEM_EVCOMB_ONSTORAGE
 			}
 		}
 		
-		def void setDemEventCombinationSupportValue(GParameterValue paramValue, DemEventCombinationSupport value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemEventCombinationSupportValue(GParameterValue parameterValue, DemEventCombinationSupport value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemEventDisplacementStrategy getDemEventDisplacementStrategy(){
-			getDemEventDisplacementStrategyValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventDisplacementStrategy"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventDisplacementStrategy"].getDemEventDisplacementStrategyValue()
 		}
 		
 		def void setDemEventDisplacementStrategy(DemEventDisplacementStrategy value){
@@ -2869,11 +2868,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventDisplacementStrategy"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventDisplacementStrategy"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemEventDisplacementStrategy {
@@ -2881,22 +2880,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			DEM_DISPLACEMENT_NONE, 
 			DEM_DISPLACEMENT_PRIO_OCC
 		}
-			
-		def DemEventDisplacementStrategy getDemEventDisplacementStrategyValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemEventDisplacementStrategy getDemEventDisplacementStrategyValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_DISPLACEMENT_FULL" : DemEventDisplacementStrategy.DEM_DISPLACEMENT_FULL
 				case "DEM_DISPLACEMENT_NONE" : DemEventDisplacementStrategy.DEM_DISPLACEMENT_NONE
 				case "DEM_DISPLACEMENT_PRIO_OCC" : DemEventDisplacementStrategy.DEM_DISPLACEMENT_PRIO_OCC
 			}
 		}
 		
-		def void setDemEventDisplacementStrategyValue(GParameterValue paramValue, DemEventDisplacementStrategy value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemEventDisplacementStrategyValue(GParameterValue parameterValue, DemEventDisplacementStrategy value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemEventMemoryEntryStorageTrigger getDemEventMemoryEntryStorageTrigger(){
-			getDemEventMemoryEntryStorageTriggerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryStorageTrigger"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEventMemoryEntryStorageTrigger"].getDemEventMemoryEntryStorageTriggerValue()
 		}
 		
 		def void setDemEventMemoryEntryStorageTrigger(DemEventMemoryEntryStorageTrigger value){
@@ -2904,11 +2903,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEventMemoryEntryStorageTrigger"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEventMemoryEntryStorageTrigger"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemEventMemoryEntryStorageTrigger {
@@ -2917,10 +2916,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			DEM_TRIGGER_ON_PENDING, 
 			DEM_TRIGGER_ON_TEST_FAILED
 		}
-			
-		def DemEventMemoryEntryStorageTrigger getDemEventMemoryEntryStorageTriggerValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemEventMemoryEntryStorageTrigger getDemEventMemoryEntryStorageTriggerValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_TRIGGER_ON_CONFIRMED" : DemEventMemoryEntryStorageTrigger.DEM_TRIGGER_ON_CONFIRMED
 				case "DEM_TRIGGER_ON_FDC_THRESHOLD" : DemEventMemoryEntryStorageTrigger.DEM_TRIGGER_ON_FDC_THRESHOLD
 				case "DEM_TRIGGER_ON_PENDING" : DemEventMemoryEntryStorageTrigger.DEM_TRIGGER_ON_PENDING
@@ -2928,12 +2927,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def void setDemEventMemoryEntryStorageTriggerValue(GParameterValue paramValue, DemEventMemoryEntryStorageTrigger value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemEventMemoryEntryStorageTriggerValue(GParameterValue parameterValue, DemEventMemoryEntryStorageTrigger value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemGeneralInterfaceSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGeneralInterfaceSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGeneralInterfaceSupport"].getBooleanValue()
 		}
 		
 		def void setDemGeneralInterfaceSupport(Boolean value){
@@ -2941,11 +2940,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemGeneralInterfaceSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemGeneralInterfaceSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def List<String> getDemHeaderFileInclusions(){
@@ -2962,7 +2961,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 		def BigInteger getDemImmediateNvStorageLimit(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorageLimit"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemImmediateNvStorageLimit"].getBigIntegerValue()
 		}
 		
 		def void setDemImmediateNvStorageLimit(BigInteger value){
@@ -2970,15 +2969,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemImmediateNvStorageLimit"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemImmediateNvStorageLimit"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getDemMaxNumberEventEntryEventBuffer(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryEventBuffer"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryEventBuffer"].getBigIntegerValue()
 		}
 		
 		def void setDemMaxNumberEventEntryEventBuffer(BigInteger value){
@@ -2986,15 +2985,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryEventBuffer"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryEventBuffer"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getDemMaxNumberEventEntryPermanent(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPermanent"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPermanent"].getBigIntegerValue()
 		}
 		
 		def void setDemMaxNumberEventEntryPermanent(BigInteger value){
@@ -3002,15 +3001,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryPermanent"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryPermanent"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getDemMaxNumberPrestoredFF(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberPrestoredFF"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberPrestoredFF"].getBigIntegerValue()
 		}
 		
 		def void setDemMaxNumberPrestoredFF(BigInteger value){
@@ -3018,15 +3017,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberPrestoredFF"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberPrestoredFF"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def DemOBDSupport getDemOBDSupport(){
-			getDemOBDSupportValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDSupport"].getDemOBDSupportValue()
 		}
 		
 		def void setDemOBDSupport(DemOBDSupport value){
@@ -3034,11 +3033,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemOBDSupport {
@@ -3047,10 +3046,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			DEM_OBD_NO_OBD_SUPPORT, 
 			DEM_OBD_PRIMARY_ECU
 		}
-			
-		def DemOBDSupport getDemOBDSupportValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemOBDSupport getDemOBDSupportValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_OBD_DEP_SEC_ECU" : DemOBDSupport.DEM_OBD_DEP_SEC_ECU
 				case "DEM_OBD_MASTER_ECU" : DemOBDSupport.DEM_OBD_MASTER_ECU
 				case "DEM_OBD_NO_OBD_SUPPORT" : DemOBDSupport.DEM_OBD_NO_OBD_SUPPORT
@@ -3058,12 +3057,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def void setDemOBDSupportValue(GParameterValue paramValue, DemOBDSupport value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemOBDSupportValue(GParameterValue parameterValue, DemOBDSupport value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemOccurrenceCounterProcessing getDemOccurrenceCounterProcessing(){
-			getDemOccurrenceCounterProcessingValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOccurrenceCounterProcessing"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOccurrenceCounterProcessing"].getDemOccurrenceCounterProcessingValue()
 		}
 		
 		def void setDemOccurrenceCounterProcessing(DemOccurrenceCounterProcessing value){
@@ -3071,32 +3070,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOccurrenceCounterProcessing"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOccurrenceCounterProcessing"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemOccurrenceCounterProcessing {
 			DEM_PROCESS_OCCCTR_CDTC, 
 			DEM_PROCESS_OCCCTR_TF
 		}
-			
-		def DemOccurrenceCounterProcessing getDemOccurrenceCounterProcessingValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemOccurrenceCounterProcessing getDemOccurrenceCounterProcessingValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_PROCESS_OCCCTR_CDTC" : DemOccurrenceCounterProcessing.DEM_PROCESS_OCCCTR_CDTC
 				case "DEM_PROCESS_OCCCTR_TF" : DemOccurrenceCounterProcessing.DEM_PROCESS_OCCCTR_TF
 			}
 		}
 		
-		def void setDemOccurrenceCounterProcessingValue(GParameterValue paramValue, DemOccurrenceCounterProcessing value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemOccurrenceCounterProcessingValue(GParameterValue parameterValue, DemOccurrenceCounterProcessing value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemOperationCycleStatusStorage(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleStatusStorage"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleStatusStorage"].getBooleanValue()
 		}
 		
 		def void setDemOperationCycleStatusStorage(Boolean value){
@@ -3104,15 +3103,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleStatusStorage"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleStatusStorage"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemPTOSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPTOSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemPTOSupport"].getBooleanValue()
 		}
 		
 		def void setDemPTOSupport(Boolean value){
@@ -3120,15 +3119,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemPTOSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemPTOSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemResetConfirmedBitOnOverflow(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemResetConfirmedBitOnOverflow"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemResetConfirmedBitOnOverflow"].getBooleanValue()
 		}
 		
 		def void setDemResetConfirmedBitOnOverflow(Boolean value){
@@ -3136,15 +3135,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemResetConfirmedBitOnOverflow"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemResetConfirmedBitOnOverflow"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemStatusBitHandlingTestFailedSinceLastClear getDemStatusBitHandlingTestFailedSinceLastClear(){
-			getDemStatusBitHandlingTestFailedSinceLastClearValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStatusBitHandlingTestFailedSinceLastClear"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStatusBitHandlingTestFailedSinceLastClear"].getDemStatusBitHandlingTestFailedSinceLastClearValue()
 		}
 		
 		def void setDemStatusBitHandlingTestFailedSinceLastClear(DemStatusBitHandlingTestFailedSinceLastClear value){
@@ -3152,32 +3151,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemStatusBitHandlingTestFailedSinceLastClear"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemStatusBitHandlingTestFailedSinceLastClear"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemStatusBitHandlingTestFailedSinceLastClear {
 			DEM_STATUS_BIT_AGING_AND_DISPLACEMENT, 
 			DEM_STATUS_BIT_NORMAL
 		}
-			
-		def DemStatusBitHandlingTestFailedSinceLastClear getDemStatusBitHandlingTestFailedSinceLastClearValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemStatusBitHandlingTestFailedSinceLastClear getDemStatusBitHandlingTestFailedSinceLastClearValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_STATUS_BIT_AGING_AND_DISPLACEMENT" : DemStatusBitHandlingTestFailedSinceLastClear.DEM_STATUS_BIT_AGING_AND_DISPLACEMENT
 				case "DEM_STATUS_BIT_NORMAL" : DemStatusBitHandlingTestFailedSinceLastClear.DEM_STATUS_BIT_NORMAL
 			}
 		}
 		
-		def void setDemStatusBitHandlingTestFailedSinceLastClearValue(GParameterValue paramValue, DemStatusBitHandlingTestFailedSinceLastClear value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemStatusBitHandlingTestFailedSinceLastClearValue(GParameterValue parameterValue, DemStatusBitHandlingTestFailedSinceLastClear value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemStatusBitStorageTestFailed(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStatusBitStorageTestFailed"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStatusBitStorageTestFailed"].getBooleanValue()
 		}
 		
 		def void setDemStatusBitStorageTestFailed(Boolean value){
@@ -3185,15 +3184,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemStatusBitStorageTestFailed"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemStatusBitStorageTestFailed"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemSuppressionSupport getDemSuppressionSupport(){
-			getDemSuppressionSupportValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSuppressionSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSuppressionSupport"].getDemSuppressionSupportValue()
 		}
 		
 		def void setDemSuppressionSupport(DemSuppressionSupport value){
@@ -3201,32 +3200,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemSuppressionSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemSuppressionSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemSuppressionSupport {
 			DEM_DTC_SUPPRESSION, 
 			DEM_NO_SUPPRESSION
 		}
-			
-		def DemSuppressionSupport getDemSuppressionSupportValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemSuppressionSupport getDemSuppressionSupportValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_DTC_SUPPRESSION" : DemSuppressionSupport.DEM_DTC_SUPPRESSION
 				case "DEM_NO_SUPPRESSION" : DemSuppressionSupport.DEM_NO_SUPPRESSION
 			}
 		}
 		
-		def void setDemSuppressionSupportValue(GParameterValue paramValue, DemSuppressionSupport value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemSuppressionSupportValue(GParameterValue parameterValue, DemSuppressionSupport value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getDemTaskTime(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTaskTime"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTaskTime"].getBigDecimalValue()
 		}
 		
 		def void setDemTaskTime(BigDecimal value){
@@ -3234,15 +3233,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTaskTime"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTaskTime"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemTriggerDcmReports(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDcmReports"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDcmReports"].getBooleanValue()
 		}
 		
 		def void setDemTriggerDcmReports(Boolean value){
@@ -3250,15 +3249,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerDcmReports"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerDcmReports"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemTriggerDltReports(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDltReports"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerDltReports"].getBooleanValue()
 		}
 		
 		def void setDemTriggerDltReports(Boolean value){
@@ -3266,15 +3265,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerDltReports"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerDltReports"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemTriggerFiMReports(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerFiMReports"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerFiMReports"].getBooleanValue()
 		}
 		
 		def void setDemTriggerFiMReports(Boolean value){
@@ -3282,15 +3281,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerFiMReports"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerFiMReports"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDemTriggerMonitorInitBeforeClearOk(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerMonitorInitBeforeClearOk"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTriggerMonitorInitBeforeClearOk"].getBooleanValue()
 		}
 		
 		def void setDemTriggerMonitorInitBeforeClearOk(Boolean value){
@@ -3298,15 +3297,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerMonitorInitBeforeClearOk"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTriggerMonitorInitBeforeClearOk"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def DemTypeOfDTCSupported getDemTypeOfDTCSupported(){
-			getDemTypeOfDTCSupportedValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTypeOfDTCSupported"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTypeOfDTCSupported"].getDemTypeOfDTCSupportedValue()
 		}
 		
 		def void setDemTypeOfDTCSupported(DemTypeOfDTCSupported value){
@@ -3314,11 +3313,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTypeOfDTCSupported"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTypeOfDTCSupported"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemTypeOfDTCSupported {
@@ -3328,10 +3327,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			DEM_DTC_TRANSLATION_SAEJ1939_73, 
 			DEM_DTC_TRANSLATION_SAE_J2012_DA_DTCFORMAT_04
 		}
-			
-		def DemTypeOfDTCSupported getDemTypeOfDTCSupportedValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemTypeOfDTCSupported getDemTypeOfDTCSupportedValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_DTC_TRANSLATION_ISO11992_4" : DemTypeOfDTCSupported.DEM_DTC_TRANSLATION_ISO11992_4
 				case "DEM_DTC_TRANSLATION_ISO14229_1" : DemTypeOfDTCSupported.DEM_DTC_TRANSLATION_ISO14229_1
 				case "DEM_DTC_TRANSLATION_ISO15031_6" : DemTypeOfDTCSupported.DEM_DTC_TRANSLATION_ISO15031_6
@@ -3340,12 +3339,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def void setDemTypeOfDTCSupportedValue(GParameterValue paramValue, DemTypeOfDTCSupported value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemTypeOfDTCSupportedValue(GParameterValue parameterValue, DemTypeOfDTCSupported value){
+			parameterValue.setValue(value)
 		}
 		
 		def DemTypeOfFreezeFrameRecordNumeration getDemTypeOfFreezeFrameRecordNumeration(){
-			getDemTypeOfFreezeFrameRecordNumerationValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTypeOfFreezeFrameRecordNumeration"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemTypeOfFreezeFrameRecordNumeration"].getDemTypeOfFreezeFrameRecordNumerationValue()
 		}
 		
 		def void setDemTypeOfFreezeFrameRecordNumeration(DemTypeOfFreezeFrameRecordNumeration value){
@@ -3353,32 +3352,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemTypeOfFreezeFrameRecordNumeration"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemTypeOfFreezeFrameRecordNumeration"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum DemTypeOfFreezeFrameRecordNumeration {
 			DEM_FF_RECNUM_CALCULATED, 
 			DEM_FF_RECNUM_CONFIGURED
 		}
-			
-		def DemTypeOfFreezeFrameRecordNumeration getDemTypeOfFreezeFrameRecordNumerationValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def DemTypeOfFreezeFrameRecordNumeration getDemTypeOfFreezeFrameRecordNumerationValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DEM_FF_RECNUM_CALCULATED" : DemTypeOfFreezeFrameRecordNumeration.DEM_FF_RECNUM_CALCULATED
 				case "DEM_FF_RECNUM_CONFIGURED" : DemTypeOfFreezeFrameRecordNumeration.DEM_FF_RECNUM_CONFIGURED
 			}
 		}
 		
-		def void setDemTypeOfFreezeFrameRecordNumerationValue(GParameterValue paramValue, DemTypeOfFreezeFrameRecordNumeration value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setDemTypeOfFreezeFrameRecordNumerationValue(GParameterValue parameterValue, DemTypeOfFreezeFrameRecordNumeration value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDemVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setDemVersionInfoApi(Boolean value){
@@ -3386,22 +3385,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator getDemMILIndicatorRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator), "DemMILIndicatorRef")
 		}
-				
+		
 		def void setDemMILIndicatorRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemMILIndicatorRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemMILIndicatorRef"], object.getTarget())
 			}
 		}
 		
@@ -3413,15 +3412,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemCallbackDTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackDTCStatusChanged), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemCallbackDTCStatusChanged demCallbackDTCStatusChanged) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemCallbackDTCStatusChanged demCallbackDTCStatusChanged) {
 					demCallbackDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackDTCStatusChanged"))
 					super.delegateAdd(demCallbackDTCStatusChanged)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemCallbackDTCStatusChanged demCallbackDTCStatusChanged) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemCallbackDTCStatusChanged demCallbackDTCStatusChanged) {
 					demCallbackDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackDTCStatusChanged"))
 					super.delegateAdd(index, demCallbackDTCStatusChanged)
-				}	
+				}
 			}
 		}
 		
@@ -3432,15 +3431,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemDataElementClass, GContainer>(filteredContainers, typeof(DemDataElementClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDataElementClass demDataElementClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass demDataElementClass) {
 					demDataElementClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDataElementClass"))
 					super.delegateAdd(demDataElementClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDataElementClass demDataElementClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass demDataElementClass) {
 					demDataElementClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDataElementClass"))
 					super.delegateAdd(index, demDataElementClass)
-				}	
+				}
 			}
 		}
 		
@@ -3451,15 +3450,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemDidClass, GContainer>(filteredContainers, typeof(DemDidClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDidClass demDidClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass demDidClass) {
 					demDidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDidClass"))
 					super.delegateAdd(demDidClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDidClass demDidClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass demDidClass) {
 					demDidClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemDidClass"))
 					super.delegateAdd(index, demDidClass)
-				}	
+				}
 			}
 		}
 		
@@ -3470,15 +3469,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemEnableCondition, GContainer>(filteredContainers, typeof(DemEnableCondition), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemEnableCondition demEnableCondition) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition demEnableCondition) {
 					demEnableCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableCondition"))
 					super.delegateAdd(demEnableCondition)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemEnableCondition demEnableCondition) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition demEnableCondition) {
 					demEnableCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableCondition"))
 					super.delegateAdd(index, demEnableCondition)
-				}	
+				}
 			}
 		}
 		
@@ -3489,15 +3488,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemEnableConditionGroup, GContainer>(filteredContainers, typeof(DemEnableConditionGroup), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemEnableConditionGroup demEnableConditionGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableConditionGroup demEnableConditionGroup) {
 					demEnableConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableConditionGroup"))
 					super.delegateAdd(demEnableConditionGroup)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemEnableConditionGroup demEnableConditionGroup) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableConditionGroup demEnableConditionGroup) {
 					demEnableConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemEnableConditionGroup"))
 					super.delegateAdd(index, demEnableConditionGroup)
-				}	
+				}
 			}
 		}
 		
@@ -3508,15 +3507,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemExtendedDataClass, GContainer>(filteredContainers, typeof(DemExtendedDataClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemExtendedDataClass demExtendedDataClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataClass demExtendedDataClass) {
 					demExtendedDataClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataClass"))
 					super.delegateAdd(demExtendedDataClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemExtendedDataClass demExtendedDataClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataClass demExtendedDataClass) {
 					demExtendedDataClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataClass"))
 					super.delegateAdd(index, demExtendedDataClass)
-				}	
+				}
 			}
 		}
 		
@@ -3527,15 +3526,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemExtendedDataRecordClass, GContainer>(filteredContainers, typeof(DemExtendedDataRecordClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemExtendedDataRecordClass demExtendedDataRecordClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass demExtendedDataRecordClass) {
 					demExtendedDataRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataRecordClass"))
 					super.delegateAdd(demExtendedDataRecordClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemExtendedDataRecordClass demExtendedDataRecordClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass demExtendedDataRecordClass) {
 					demExtendedDataRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemExtendedDataRecordClass"))
 					super.delegateAdd(index, demExtendedDataRecordClass)
-				}	
+				}
 			}
 		}
 		
@@ -3546,15 +3545,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemFreezeFrameClass, GContainer>(filteredContainers, typeof(DemFreezeFrameClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemFreezeFrameClass demFreezeFrameClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass demFreezeFrameClass) {
 					demFreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameClass"))
 					super.delegateAdd(demFreezeFrameClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemFreezeFrameClass demFreezeFrameClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameClass demFreezeFrameClass) {
 					demFreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameClass"))
 					super.delegateAdd(index, demFreezeFrameClass)
-				}	
+				}
 			}
 		}
 		
@@ -3565,15 +3564,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemFreezeFrameRecNumClass, GContainer>(filteredContainers, typeof(DemFreezeFrameRecNumClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemFreezeFrameRecNumClass demFreezeFrameRecNumClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecNumClass demFreezeFrameRecNumClass) {
 					demFreezeFrameRecNumClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecNumClass"))
 					super.delegateAdd(demFreezeFrameRecNumClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemFreezeFrameRecNumClass demFreezeFrameRecNumClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecNumClass demFreezeFrameRecNumClass) {
 					demFreezeFrameRecNumClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecNumClass"))
 					super.delegateAdd(index, demFreezeFrameRecNumClass)
-				}	
+				}
 			}
 		}
 		
@@ -3584,15 +3583,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemFreezeFrameRecordClass, GContainer>(filteredContainers, typeof(DemFreezeFrameRecordClass), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemFreezeFrameRecordClass demFreezeFrameRecordClass) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass demFreezeFrameRecordClass) {
 					demFreezeFrameRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecordClass"))
 					super.delegateAdd(demFreezeFrameRecordClass)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemFreezeFrameRecordClass demFreezeFrameRecordClass) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass demFreezeFrameRecordClass) {
 					demFreezeFrameRecordClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemFreezeFrameRecordClass"))
 					super.delegateAdd(index, demFreezeFrameRecordClass)
-				}	
+				}
 			}
 		}
 		
@@ -3621,15 +3620,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemGroupOfDTC, GContainer>(filteredContainers, typeof(DemGroupOfDTC), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGroupOfDTC demGroupOfDTC) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGroupOfDTC demGroupOfDTC) {
 					demGroupOfDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemGroupOfDTC"))
 					super.delegateAdd(demGroupOfDTC)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGroupOfDTC demGroupOfDTC) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGroupOfDTC demGroupOfDTC) {
 					demGroupOfDTC.target?.gSetDefinition(containerValue.getContainerDefinition("DemGroupOfDTC"))
 					super.delegateAdd(index, demGroupOfDTC)
-				}	
+				}
 			}
 		}
 		
@@ -3640,15 +3639,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemIndicator, GContainer>(filteredContainers, typeof(DemIndicator), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemIndicator demIndicator) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator demIndicator) {
 					demIndicator.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicator"))
 					super.delegateAdd(demIndicator)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemIndicator demIndicator) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator demIndicator) {
 					demIndicator.target?.gSetDefinition(containerValue.getContainerDefinition("DemIndicator"))
 					super.delegateAdd(index, demIndicator)
-				}	
+				}
 			}
 		}
 		
@@ -3668,15 +3667,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemNvRamBlockId, GContainer>(filteredContainers, typeof(DemNvRamBlockId), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemNvRamBlockId demNvRamBlockId) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemNvRamBlockId demNvRamBlockId) {
 					demNvRamBlockId.target?.gSetDefinition(containerValue.getContainerDefinition("DemNvRamBlockId"))
 					super.delegateAdd(demNvRamBlockId)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemNvRamBlockId demNvRamBlockId) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemNvRamBlockId demNvRamBlockId) {
 					demNvRamBlockId.target?.gSetDefinition(containerValue.getContainerDefinition("DemNvRamBlockId"))
 					super.delegateAdd(index, demNvRamBlockId)
-				}	
+				}
 			}
 		}
 		
@@ -3687,15 +3686,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemOperationCycle, GContainer>(filteredContainers, typeof(DemOperationCycle), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemOperationCycle demOperationCycle) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle demOperationCycle) {
 					demOperationCycle.target?.gSetDefinition(containerValue.getContainerDefinition("DemOperationCycle"))
 					super.delegateAdd(demOperationCycle)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemOperationCycle demOperationCycle) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemOperationCycle demOperationCycle) {
 					demOperationCycle.target?.gSetDefinition(containerValue.getContainerDefinition("DemOperationCycle"))
 					super.delegateAdd(index, demOperationCycle)
-				}	
+				}
 			}
 		}
 		
@@ -3715,15 +3714,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemRatio, GContainer>(filteredContainers, typeof(DemRatio), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemRatio demRatio) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemRatio demRatio) {
 					demRatio.target?.gSetDefinition(containerValue.getContainerDefinition("DemRatio"))
 					super.delegateAdd(demRatio)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemRatio demRatio) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemRatio demRatio) {
 					demRatio.target?.gSetDefinition(containerValue.getContainerDefinition("DemRatio"))
 					super.delegateAdd(index, demRatio)
-				}	
+				}
 			}
 		}
 		
@@ -3734,15 +3733,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemStorageCondition, GContainer>(filteredContainers, typeof(DemStorageCondition), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemStorageCondition demStorageCondition) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition demStorageCondition) {
 					demStorageCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageCondition"))
 					super.delegateAdd(demStorageCondition)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemStorageCondition demStorageCondition) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition demStorageCondition) {
 					demStorageCondition.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageCondition"))
 					super.delegateAdd(index, demStorageCondition)
-				}	
+				}
 			}
 		}
 		
@@ -3753,15 +3752,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemStorageConditionGroup, GContainer>(filteredContainers, typeof(DemStorageConditionGroup), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemStorageConditionGroup demStorageConditionGroup) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageConditionGroup demStorageConditionGroup) {
 					demStorageConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageConditionGroup"))
 					super.delegateAdd(demStorageConditionGroup)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemStorageConditionGroup demStorageConditionGroup) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageConditionGroup demStorageConditionGroup) {
 					demStorageConditionGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DemStorageConditionGroup"))
 					super.delegateAdd(index, demStorageConditionGroup)
-				}	
+				}
 			}
 		}
 		
@@ -3772,47 +3771,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DemUserDefinedMemory, GContainer>(filteredContainers, typeof(DemUserDefinedMemory), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemUserDefinedMemory demUserDefinedMemory) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemUserDefinedMemory demUserDefinedMemory) {
 					demUserDefinedMemory.target?.gSetDefinition(containerValue.getContainerDefinition("DemUserDefinedMemory"))
 					super.delegateAdd(demUserDefinedMemory)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemUserDefinedMemory demUserDefinedMemory) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemUserDefinedMemory demUserDefinedMemory) {
 					demUserDefinedMemory.target?.gSetDefinition(containerValue.getContainerDefinition("DemUserDefinedMemory"))
 					super.delegateAdd(index, demUserDefinedMemory)
-				}	
+				}
 			}
 		}
 		
 		
 		static class DemCallbackDTCStatusChanged implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemCallbackDTCStatusChanged)){
 					return false
 				}
 				this.target == (object as DemCallbackDTCStatusChanged).target
 			}
-			
+		
 			def String getDemCallbackDTCStatusChangedFnc(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"].getStringValue()
 			}
 			
 			def void setDemCallbackDTCStatusChangedFnc(String value){
@@ -3820,11 +3819,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackDTCStatusChangedFnc"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackDTCStatusChangedFnc"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3834,30 +3833,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDataElementClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDataElementClass)){
 					return false
 				}
 				this.target == (object as DemDataElementClass).target
 			}
-			
+		
 			def DemExternalCSDataElementClass getDemExternalCSDataElementClass(){
 				containerValue.getByType(typeof(DemExternalCSDataElementClass))
 			}
@@ -3885,32 +3884,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemExternalCSDataElementClass implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemExternalCSDataElementClass)){
 						return false
 					}
 					this.target == (object as DemExternalCSDataElementClass).target
 				}
-				
+			
 				def BigInteger getDemDataElementDataSize(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"].getBigIntegerValue()
 				}
 				
 				def void setDemDataElementDataSize(BigInteger value){
@@ -3918,15 +3917,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataSize"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataSize"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def String getDemDataElementReadFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementReadFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementReadFnc"].getStringValue()
 				}
 				
 				def void setDemDataElementReadFnc(String value){
@@ -3934,15 +3933,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementReadFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementReadFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def Boolean getDemDataElementUsePort(){
-					EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementUsePort"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementUsePort"].getBooleanValue()
 				}
 				
 				def void setDemDataElementUsePort(Boolean value){
@@ -3950,11 +3949,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementUsePort"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementUsePort"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+					parameterValue.setValue(getBooleanParameterValueValue(value, true))
 				}
 				
 				
@@ -3964,32 +3963,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemExternalSRDataElementClass implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemExternalSRDataElementClass)){
 						return false
 					}
 					this.target == (object as DemExternalSRDataElementClass).target
 				}
-				
+			
 				def BigInteger getDemDataElementDataSize(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"].getBigIntegerValue()
 				}
 				
 				def void setDemDataElementDataSize(BigInteger value){
@@ -3997,15 +3996,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataSize"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataSize"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def DemDataElementDataType getDemDataElementDataType(){
-					getDemDataElementDataTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataType"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataType"].getDemDataElementDataTypeValue()
 				}
 				
 				def void setDemDataElementDataType(DemDataElementDataType value){
@@ -4013,11 +4012,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataType"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataType"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum DemDataElementDataType {
@@ -4029,10 +4028,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					UINT32, 
 					UINT8
 				}
-					
-				def DemDataElementDataType getDemDataElementDataTypeValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def DemDataElementDataType getDemDataElementDataTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "BOOLEAN" : DemDataElementDataType.BOOLEAN
 						case "SINT16" : DemDataElementDataType.SINT16
 						case "SINT32" : DemDataElementDataType.SINT32
@@ -4043,12 +4042,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setDemDataElementDataTypeValue(GParameterValue paramValue, DemDataElementDataType value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setDemDataElementDataTypeValue(GParameterValue parameterValue, DemDataElementDataType value){
+					parameterValue.setValue(value)
 				}
 				
 				def DemDataElementEndianness getDemDataElementEndianness(){
-					getDemDataElementEndiannessValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementEndianness"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementEndianness"].getDemDataElementEndiannessValue()
 				}
 				
 				def void setDemDataElementEndianness(DemDataElementEndianness value){
@@ -4056,11 +4055,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementEndianness"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementEndianness"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum DemDataElementEndianness {
@@ -4068,18 +4067,18 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					LITTLE_ENDIAN, 
 					OPAQUE
 				}
-					
-				def DemDataElementEndianness getDemDataElementEndiannessValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def DemDataElementEndianness getDemDataElementEndiannessValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "BIG_ENDIAN" : DemDataElementEndianness.BIG_ENDIAN
 						case "LITTLE_ENDIAN" : DemDataElementEndianness.LITTLE_ENDIAN
 						case "OPAQUE" : DemDataElementEndianness.OPAQUE
 					}
 				}
 				
-				def void setDemDataElementEndiannessValue(GParameterValue paramValue, DemDataElementEndianness value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setDemDataElementEndiannessValue(GParameterValue parameterValue, DemDataElementEndianness value){
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -4105,30 +4104,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				static class DemDiagnosisScaling implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof DemDiagnosisScaling)){
 							return false
 						}
 						this.target == (object as DemDiagnosisScaling).target
 					}
-					
+				
 					def DemAlternativeDataInterface getDemAlternativeDataInterface(){
 						containerValue.getByType(typeof(DemAlternativeDataInterface))
 					}
@@ -4156,30 +4155,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemAlternativeDataInterface implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemAlternativeDataInterface)){
 								return false
 							}
 							this.target == (object as DemAlternativeDataInterface).target
 						}
-						
+					
 						
 						
 						
@@ -4189,32 +4188,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemAlternativeDataProps implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemAlternativeDataProps)){
 								return false
 							}
 							this.target == (object as DemAlternativeDataProps).target
 						}
-						
+					
 						def DemDataTypeCategory getDemDataTypeCategory(){
-							getDemDataTypeCategoryValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataTypeCategory"])
+							containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataTypeCategory"].getDemDataTypeCategoryValue()
 						}
 						
 						def void setDemDataTypeCategory(DemDataTypeCategory value){
@@ -4222,28 +4221,28 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							if (parameterValue == null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
-									parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataTypeCategory"])
+									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataTypeCategory"].createParameterValue()
 									containerValue.gGetParameterValues += parameterValue
 								}
 							}
-							EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+							parameterValue.setValue(value)
 						}
 						
 						enum DemDataTypeCategory {
 							SCALE_LINEAR_AND_TEXTTABLE, 
 							TEXTTABLE
 						}
-							
-						def DemDataTypeCategory getDemDataTypeCategoryValue(GParameterValue paramValue){
-							val castedParamValue = paramValue as EcucTextualParamValue
-							switch (castedParamValue.value){
+						
+						def DemDataTypeCategory getDemDataTypeCategoryValue(GParameterValue parameterValue){
+							val castedParameterValue = parameterValue as EcucTextualParamValue
+							switch (castedParameterValue.value){
 								case "SCALE_LINEAR_AND_TEXTTABLE" : DemDataTypeCategory.SCALE_LINEAR_AND_TEXTTABLE
 								case "TEXTTABLE" : DemDataTypeCategory.TEXTTABLE
 							}
 						}
 						
-						def void setDemDataTypeCategoryValue(GParameterValue paramValue, DemDataTypeCategory value){
-							EcucValueAccessor421Util.setParameterValue(paramValue, value)
+						def void setDemDataTypeCategoryValue(GParameterValue parameterValue, DemDataTypeCategory value){
+							parameterValue.setValue(value)
 						}
 						
 						
@@ -4264,47 +4263,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								}
 							}
 							return new BasicWrappingEList<DemTextTableMapping, GContainer>(filteredContainers, typeof(DemTextTableMapping), typeof(GContainer)) {
-								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDataElementClass$DemExternalSRDataElementClass$DemDiagnosisScaling$DemAlternativeDataProps$DemTextTableMapping demTextTableMapping) {
+								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass.DemExternalSRDataElementClass.DemDiagnosisScaling.DemAlternativeDataProps.DemTextTableMapping demTextTableMapping) {
 									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
 									super.delegateAdd(demTextTableMapping)
 								}
-								
-								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDataElementClass$DemExternalSRDataElementClass$DemDiagnosisScaling$DemAlternativeDataProps$DemTextTableMapping demTextTableMapping) {
+						
+								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass.DemExternalSRDataElementClass.DemDiagnosisScaling.DemAlternativeDataProps.DemTextTableMapping demTextTableMapping) {
 									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
 									super.delegateAdd(index, demTextTableMapping)
-								}	
+								}
 							}
 						}
 						
 						
 						static class DemLinearScale implements IWrapper<GContainer> {
 							private GContainer containerValue
-							
+						
 							new(GContainer containerValue){
 								this.containerValue = containerValue
 							}
-							
+						
 							def String getShortName(){
 								containerValue?.gGetShortName
 							}
-							
+						
 							def void setShortName(String name){
 								containerValue?.gSetShortName(name)
 							}
-							
+						
 							override def GContainer getTarget(){
 								containerValue
 							}
-							
+						
 							override def boolean equals(Object object) {
 						        if (!(object instanceof DemLinearScale)){
 									return false
 								}
 								this.target == (object as DemLinearScale).target
 							}
-							
+						
 							def BigDecimal getDemDiagnosisRepresentationDataLowerRange(){
-								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataLowerRange"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataLowerRange"].getBigDecimalValue()
 							}
 							
 							def void setDemDiagnosisRepresentationDataLowerRange(BigDecimal value){
@@ -4312,15 +4311,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataLowerRange"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataLowerRange"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							def BigDecimal getDemDiagnosisRepresentationDataOffset(){
-								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataOffset"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataOffset"].getBigDecimalValue()
 							}
 							
 							def void setDemDiagnosisRepresentationDataOffset(BigDecimal value){
@@ -4328,15 +4327,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataOffset"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataOffset"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							def BigDecimal getDemDiagnosisRepresentationDataResolution(){
-								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataResolution"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataResolution"].getBigDecimalValue()
 							}
 							
 							def void setDemDiagnosisRepresentationDataResolution(BigDecimal value){
@@ -4344,15 +4343,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataResolution"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataResolution"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							def BigDecimal getDemDiagnosisRepresentationDataUpperRange(){
-								EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataUpperRange"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataUpperRange"].getBigDecimalValue()
 							}
 							
 							def void setDemDiagnosisRepresentationDataUpperRange(BigDecimal value){
@@ -4360,11 +4359,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataUpperRange"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataUpperRange"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							
@@ -4374,32 +4373,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 						
 						static class DemTextTableMapping implements IWrapper<GContainer> {
 							private GContainer containerValue
-							
+						
 							new(GContainer containerValue){
 								this.containerValue = containerValue
 							}
-							
+						
 							def String getShortName(){
 								containerValue?.gGetShortName
 							}
-							
+						
 							def void setShortName(String name){
 								containerValue?.gSetShortName(name)
 							}
-							
+						
 							override def GContainer getTarget(){
 								containerValue
 							}
-							
+						
 							override def boolean equals(Object object) {
 						        if (!(object instanceof DemTextTableMapping)){
 									return false
 								}
 								this.target == (object as DemTextTableMapping).target
 							}
-							
+						
 							def BigInteger getDemDiagnosisRepresentationDataValue(){
-								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"].getBigIntegerValue()
 							}
 							
 							def void setDemDiagnosisRepresentationDataValue(BigInteger value){
@@ -4407,15 +4406,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataValue"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataValue"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							def BigInteger getDemInternalDataValue(){
-								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"].getBigIntegerValue()
 							}
 							
 							def void setDemInternalDataValue(BigInteger value){
@@ -4423,11 +4422,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemInternalDataValue"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemInternalDataValue"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							
@@ -4439,30 +4438,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemAlternativeDataType implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemAlternativeDataType)){
 								return false
 							}
 							this.target == (object as DemAlternativeDataType).target
 						}
-						
+					
 						
 						
 						
@@ -4473,47 +4472,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								}
 							}
 							return new BasicWrappingEList<DemTextTableMapping, GContainer>(filteredContainers, typeof(DemTextTableMapping), typeof(GContainer)) {
-								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDataElementClass$DemExternalSRDataElementClass$DemDiagnosisScaling$DemAlternativeDataType$DemTextTableMapping demTextTableMapping) {
+								override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass.DemExternalSRDataElementClass.DemDiagnosisScaling.DemAlternativeDataType.DemTextTableMapping demTextTableMapping) {
 									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
 									super.delegateAdd(demTextTableMapping)
 								}
-								
-								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemDataElementClass$DemExternalSRDataElementClass$DemDiagnosisScaling$DemAlternativeDataType$DemTextTableMapping demTextTableMapping) {
+						
+								override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass.DemExternalSRDataElementClass.DemDiagnosisScaling.DemAlternativeDataType.DemTextTableMapping demTextTableMapping) {
 									demTextTableMapping.target?.gSetDefinition(containerValue.getContainerDefinition("DemTextTableMapping"))
 									super.delegateAdd(index, demTextTableMapping)
-								}	
+								}
 							}
 						}
 						
 						
 						static class DemTextTableMapping implements IWrapper<GContainer> {
 							private GContainer containerValue
-							
+						
 							new(GContainer containerValue){
 								this.containerValue = containerValue
 							}
-							
+						
 							def String getShortName(){
 								containerValue?.gGetShortName
 							}
-							
+						
 							def void setShortName(String name){
 								containerValue?.gSetShortName(name)
 							}
-							
+						
 							override def GContainer getTarget(){
 								containerValue
 							}
-							
+						
 							override def boolean equals(Object object) {
 						        if (!(object instanceof DemTextTableMapping)){
 									return false
 								}
 								this.target == (object as DemTextTableMapping).target
 							}
-							
+						
 							def BigInteger getDemDiagnosisRepresentationDataValue(){
-								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDiagnosisRepresentationDataValue"].getBigIntegerValue()
 							}
 							
 							def void setDemDiagnosisRepresentationDataValue(BigInteger value){
@@ -4521,15 +4520,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataValue"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDiagnosisRepresentationDataValue"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							def BigInteger getDemInternalDataValue(){
-								EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"])
+								containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataValue"].getBigIntegerValue()
 							}
 							
 							def void setDemInternalDataValue(BigInteger value){
@@ -4537,11 +4536,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								if (parameterValue == null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
-										parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemInternalDataValue"])
+										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemInternalDataValue"].createParameterValue()
 										containerValue.gGetParameterValues += parameterValue
 									}
 								}
-								EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+								parameterValue.setValue(value)
 							}
 							
 							
@@ -4555,30 +4554,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				
 				static class DemSRDataElementClass implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof DemSRDataElementClass)){
 							return false
 						}
 						this.target == (object as DemSRDataElementClass).target
 					}
-					
+				
 					def DemDataElementInstance getDemDataElementInstance(){
 						containerValue.getByType(typeof(DemDataElementInstance))
 					}
@@ -4606,30 +4605,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemDataElementInstance)){
 								return false
 							}
 							this.target == (object as DemDataElementInstance).target
 						}
-						
+					
 						
 						
 						
@@ -4638,30 +4637,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemSubElementInDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemSubElementInDataElementInstance)){
 								return false
 							}
 							this.target == (object as DemSubElementInDataElementInstance).target
 						}
-						
+					
 						
 						
 						
@@ -4670,30 +4669,30 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					
 					static class DemSubElementInImplDataElementInstance implements IWrapper<GContainer> {
 						private GContainer containerValue
-						
+					
 						new(GContainer containerValue){
 							this.containerValue = containerValue
 						}
-						
+					
 						def String getShortName(){
 							containerValue?.gGetShortName
 						}
-						
+					
 						def void setShortName(String name){
 							containerValue?.gSetShortName(name)
 						}
-						
+					
 						override def GContainer getTarget(){
 							containerValue
 						}
-						
+					
 						override def boolean equals(Object object) {
 					        if (!(object instanceof DemSubElementInImplDataElementInstance)){
 								return false
 							}
 							this.target == (object as DemSubElementInImplDataElementInstance).target
 						}
-						
+					
 						
 						
 						
@@ -4706,32 +4705,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemInternalDataElementClass implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemInternalDataElementClass)){
 						return false
 					}
 					this.target == (object as DemInternalDataElementClass).target
 				}
-				
+			
 				def BigInteger getDemDataElementDataSize(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDataElementDataSize"].getBigIntegerValue()
 				}
 				
 				def void setDemDataElementDataSize(BigInteger value){
@@ -4739,15 +4738,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataSize"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDataElementDataSize"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def DemInternalDataElement getDemInternalDataElement(){
-					getDemInternalDataElementValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataElement"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemInternalDataElement"].getDemInternalDataElementValue()
 				}
 				
 				def void setDemInternalDataElement(DemInternalDataElement value){
@@ -4755,11 +4754,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemInternalDataElement"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemInternalDataElement"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum DemInternalDataElement {
@@ -4775,10 +4774,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					DEM_OVFLIND, 
 					DEM_SIGNIFICANCE
 				}
-					
-				def DemInternalDataElement getDemInternalDataElementValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def DemInternalDataElement getDemInternalDataElementValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "DEM_AGINGCTR_DOWNCNT" : DemInternalDataElement.DEM_AGINGCTR_DOWNCNT
 						case "DEM_AGINGCTR_UPCNT" : DemInternalDataElement.DEM_AGINGCTR_UPCNT
 						case "DEM_CURRENT_FDC" : DemInternalDataElement.DEM_CURRENT_FDC
@@ -4793,8 +4792,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setDemInternalDataElementValue(GParameterValue paramValue, DemInternalDataElement value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setDemInternalDataElementValue(GParameterValue parameterValue, DemInternalDataElement value){
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -4806,32 +4805,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemDidClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemDidClass)){
 					return false
 				}
 				this.target == (object as DemDidClass).target
 			}
-			
+		
 			def BigInteger getDemDidIdentifier(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDidIdentifier"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemDidIdentifier"].getBigIntegerValue()
 			}
 			
 			def void setDemDidIdentifier(BigInteger value){
@@ -4839,25 +4838,25 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemDidIdentifier"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemDidIdentifier"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass> getDemDidDataElementClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemDidDataElementClassRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemDidDataElementClassRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object) throws CoreException {
 						if (object != null) {
@@ -4868,7 +4867,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -4886,32 +4885,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemEnableCondition implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemEnableCondition)){
 					return false
 				}
 				this.target == (object as DemEnableCondition).target
 			}
-			
+		
 			def BigInteger getDemEnableConditionId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionId"].getBigIntegerValue()
 			}
 			
 			def void setDemEnableConditionId(BigInteger value){
@@ -4919,15 +4918,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEnableConditionId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEnableConditionId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemEnableConditionStatus(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionStatus"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemEnableConditionStatus"].getBooleanValue()
 			}
 			
 			def void setDemEnableConditionStatus(Boolean value){
@@ -4935,11 +4934,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemEnableConditionStatus"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemEnableConditionStatus"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -4949,42 +4948,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemEnableConditionGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemEnableConditionGroup)){
 					return false
 				}
 				this.target == (object as DemEnableConditionGroup).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition> getDemEnableConditionRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemEnableConditionRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemEnableConditionRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemEnableCondition object) throws CoreException {
 						if (object != null) {
@@ -4995,7 +4994,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -5013,42 +5012,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemExtendedDataClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemExtendedDataClass)){
 					return false
 				}
 				this.target == (object as DemExtendedDataClass).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass> getDemExtendedDataRecordClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemExtendedDataRecordClassRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemExtendedDataRecordClassRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemExtendedDataRecordClass object) throws CoreException {
 						if (object != null) {
@@ -5059,7 +5058,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -5077,32 +5076,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemExtendedDataRecordClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemExtendedDataRecordClass)){
 					return false
 				}
 				this.target == (object as DemExtendedDataRecordClass).target
 			}
-			
+		
 			def BigInteger getDemExtendedDataRecordNumber(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordNumber"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordNumber"].getBigIntegerValue()
 			}
 			
 			def void setDemExtendedDataRecordNumber(BigInteger value){
@@ -5110,15 +5109,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemExtendedDataRecordNumber"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemExtendedDataRecordNumber"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemExtendedDataRecordTrigger getDemExtendedDataRecordTrigger(){
-				getDemExtendedDataRecordTriggerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordTrigger"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordTrigger"].getDemExtendedDataRecordTriggerValue()
 			}
 			
 			def void setDemExtendedDataRecordTrigger(DemExtendedDataRecordTrigger value){
@@ -5126,11 +5125,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemExtendedDataRecordTrigger"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemExtendedDataRecordTrigger"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemExtendedDataRecordTrigger {
@@ -5141,10 +5140,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_TRIGGER_ON_PENDING, 
 				DEM_TRIGGER_ON_TEST_FAILED
 			}
-				
-			def DemExtendedDataRecordTrigger getDemExtendedDataRecordTriggerValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemExtendedDataRecordTrigger getDemExtendedDataRecordTriggerValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_TRIGGER_ON_CONFIRMED" : DemExtendedDataRecordTrigger.DEM_TRIGGER_ON_CONFIRMED
 					case "DEM_TRIGGER_ON_FDC_THRESHOLD" : DemExtendedDataRecordTrigger.DEM_TRIGGER_ON_FDC_THRESHOLD
 					case "DEM_TRIGGER_ON_MIRROR" : DemExtendedDataRecordTrigger.DEM_TRIGGER_ON_MIRROR
@@ -5154,12 +5153,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemExtendedDataRecordTriggerValue(GParameterValue paramValue, DemExtendedDataRecordTrigger value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemExtendedDataRecordTriggerValue(GParameterValue parameterValue, DemExtendedDataRecordTrigger value){
+				parameterValue.setValue(value)
 			}
 			
 			def DemExtendedDataRecordUpdate getDemExtendedDataRecordUpdate(){
-				getDemExtendedDataRecordUpdateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordUpdate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemExtendedDataRecordUpdate"].getDemExtendedDataRecordUpdateValue()
 			}
 			
 			def void setDemExtendedDataRecordUpdate(DemExtendedDataRecordUpdate value){
@@ -5167,42 +5166,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemExtendedDataRecordUpdate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemExtendedDataRecordUpdate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemExtendedDataRecordUpdate {
 				DEM_UPDATE_RECORD_NO, 
 				DEM_UPDATE_RECORD_YES
 			}
-				
-			def DemExtendedDataRecordUpdate getDemExtendedDataRecordUpdateValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemExtendedDataRecordUpdate getDemExtendedDataRecordUpdateValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_UPDATE_RECORD_NO" : DemExtendedDataRecordUpdate.DEM_UPDATE_RECORD_NO
 					case "DEM_UPDATE_RECORD_YES" : DemExtendedDataRecordUpdate.DEM_UPDATE_RECORD_YES
 				}
 			}
 			
-			def void setDemExtendedDataRecordUpdateValue(GParameterValue paramValue, DemExtendedDataRecordUpdate value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemExtendedDataRecordUpdateValue(GParameterValue parameterValue, DemExtendedDataRecordUpdate value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass> getDemDataElementClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemDataElementClassRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemDataElementClassRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object) throws CoreException {
 						if (object != null) {
@@ -5213,7 +5212,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -5231,42 +5230,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemFreezeFrameClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemFreezeFrameClass)){
 					return false
 				}
 				this.target == (object as DemFreezeFrameClass).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass> getDemDidClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemDidClassRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemDidClassRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDidClass object) throws CoreException {
 						if (object != null) {
@@ -5277,7 +5276,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -5295,42 +5294,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemFreezeFrameRecNumClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemFreezeFrameRecNumClass)){
 					return false
 				}
 				this.target == (object as DemFreezeFrameRecNumClass).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass> getDemFreezeFrameRecordClassRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemFreezeFrameRecordClassRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemFreezeFrameRecordClassRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemFreezeFrameRecordClass object) throws CoreException {
 						if (object != null) {
@@ -5341,7 +5340,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -5359,32 +5358,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemFreezeFrameRecordClass implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemFreezeFrameRecordClass)){
 					return false
 				}
 				this.target == (object as DemFreezeFrameRecordClass).target
 			}
-			
+		
 			def BigInteger getDemFreezeFrameRecordNumber(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordNumber"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordNumber"].getBigIntegerValue()
 			}
 			
 			def void setDemFreezeFrameRecordNumber(BigInteger value){
@@ -5392,15 +5391,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemFreezeFrameRecordNumber"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemFreezeFrameRecordNumber"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemFreezeFrameRecordTrigger getDemFreezeFrameRecordTrigger(){
-				getDemFreezeFrameRecordTriggerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordTrigger"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordTrigger"].getDemFreezeFrameRecordTriggerValue()
 			}
 			
 			def void setDemFreezeFrameRecordTrigger(DemFreezeFrameRecordTrigger value){
@@ -5408,11 +5407,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemFreezeFrameRecordTrigger"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemFreezeFrameRecordTrigger"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemFreezeFrameRecordTrigger {
@@ -5421,10 +5420,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_TRIGGER_ON_PENDING, 
 				DEM_TRIGGER_ON_TEST_FAILED
 			}
-				
-			def DemFreezeFrameRecordTrigger getDemFreezeFrameRecordTriggerValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemFreezeFrameRecordTrigger getDemFreezeFrameRecordTriggerValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_TRIGGER_ON_CONFIRMED" : DemFreezeFrameRecordTrigger.DEM_TRIGGER_ON_CONFIRMED
 					case "DEM_TRIGGER_ON_FDC_THRESHOLD" : DemFreezeFrameRecordTrigger.DEM_TRIGGER_ON_FDC_THRESHOLD
 					case "DEM_TRIGGER_ON_PENDING" : DemFreezeFrameRecordTrigger.DEM_TRIGGER_ON_PENDING
@@ -5432,12 +5431,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemFreezeFrameRecordTriggerValue(GParameterValue paramValue, DemFreezeFrameRecordTrigger value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemFreezeFrameRecordTriggerValue(GParameterValue parameterValue, DemFreezeFrameRecordTrigger value){
+				parameterValue.setValue(value)
 			}
 			
 			def DemFreezeFrameRecordUpdate getDemFreezeFrameRecordUpdate(){
-				getDemFreezeFrameRecordUpdateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordUpdate"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemFreezeFrameRecordUpdate"].getDemFreezeFrameRecordUpdateValue()
 			}
 			
 			def void setDemFreezeFrameRecordUpdate(DemFreezeFrameRecordUpdate value){
@@ -5445,28 +5444,28 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemFreezeFrameRecordUpdate"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemFreezeFrameRecordUpdate"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemFreezeFrameRecordUpdate {
 				DEM_UPDATE_RECORD_NO, 
 				DEM_UPDATE_RECORD_YES
 			}
-				
-			def DemFreezeFrameRecordUpdate getDemFreezeFrameRecordUpdateValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemFreezeFrameRecordUpdate getDemFreezeFrameRecordUpdateValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_UPDATE_RECORD_NO" : DemFreezeFrameRecordUpdate.DEM_UPDATE_RECORD_NO
 					case "DEM_UPDATE_RECORD_YES" : DemFreezeFrameRecordUpdate.DEM_UPDATE_RECORD_YES
 				}
 			}
 			
-			def void setDemFreezeFrameRecordUpdateValue(GParameterValue paramValue, DemFreezeFrameRecordUpdate value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemFreezeFrameRecordUpdateValue(GParameterValue parameterValue, DemFreezeFrameRecordUpdate value){
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -5476,32 +5475,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemGeneralJ1939 implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemGeneralJ1939)){
 					return false
 				}
 				this.target == (object as DemGeneralJ1939).target
 			}
-			
+		
 			def Boolean getDemJ1939ClearDtcSupport(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ClearDtcSupport"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ClearDtcSupport"].getBooleanValue()
 			}
 			
 			def void setDemJ1939ClearDtcSupport(Boolean value){
@@ -5509,15 +5508,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939ClearDtcSupport"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939ClearDtcSupport"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Dm31Support(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Dm31Support"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Dm31Support"].getBooleanValue()
 			}
 			
 			def void setDemJ1939Dm31Support(Boolean value){
@@ -5525,15 +5524,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Dm31Support"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Dm31Support"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939ExpandedFreezeFrameSupport(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ExpandedFreezeFrameSupport"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ExpandedFreezeFrameSupport"].getBooleanValue()
 			}
 			
 			def void setDemJ1939ExpandedFreezeFrameSupport(Boolean value){
@@ -5541,15 +5540,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939ExpandedFreezeFrameSupport"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939ExpandedFreezeFrameSupport"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939FreezeFrameSupport(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939FreezeFrameSupport"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939FreezeFrameSupport"].getBooleanValue()
 			}
 			
 			def void setDemJ1939FreezeFrameSupport(Boolean value){
@@ -5557,15 +5556,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939FreezeFrameSupport"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939FreezeFrameSupport"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939RatioSupport(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939RatioSupport"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939RatioSupport"].getBooleanValue()
 			}
 			
 			def void setDemJ1939RatioSupport(Boolean value){
@@ -5573,15 +5572,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939RatioSupport"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939RatioSupport"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Readiness1Support(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness1Support"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness1Support"].getBooleanValue()
 			}
 			
 			def void setDemJ1939Readiness1Support(Boolean value){
@@ -5589,15 +5588,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Readiness1Support"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Readiness1Support"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Readiness2Support(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness2Support"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness2Support"].getBooleanValue()
 			}
 			
 			def void setDemJ1939Readiness2Support(Boolean value){
@@ -5605,15 +5604,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Readiness2Support"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Readiness2Support"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939Readiness3Support(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness3Support"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939Readiness3Support"].getBooleanValue()
 			}
 			
 			def void setDemJ1939Readiness3Support(Boolean value){
@@ -5621,15 +5620,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Readiness3Support"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939Readiness3Support"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemJ1939ReadingDtcSupport(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ReadingDtcSupport"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemJ1939ReadingDtcSupport"].getBooleanValue()
 			}
 			
 			def void setDemJ1939ReadingDtcSupport(Boolean value){
@@ -5637,44 +5636,44 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939ReadingDtcSupport"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemJ1939ReadingDtcSupport"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator getDemAmberWarningLampIndicatorRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator), "DemAmberWarningLampIndicatorRef")
 			}
-					
+			
 			def void setDemAmberWarningLampIndicatorRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemAmberWarningLampIndicatorRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemAmberWarningLampIndicatorRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator getDemProtectLampIndicatorRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator), "DemProtectLampIndicatorRef")
 			}
-					
+			
 			def void setDemProtectLampIndicatorRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemProtectLampIndicatorRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemProtectLampIndicatorRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator getDemRedStopLampIndicatorRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator), "DemRedStopLampIndicatorRef")
 			}
-					
+			
 			def void setDemRedStopLampIndicatorRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemIndicator object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemRedStopLampIndicatorRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemRedStopLampIndicatorRef"], object.getTarget())
 				}
 			}
 			
@@ -5686,15 +5685,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemCallbackJ1939DTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackJ1939DTCStatusChanged), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralJ1939$DemCallbackJ1939DTCStatusChanged demCallbackJ1939DTCStatusChanged) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemCallbackJ1939DTCStatusChanged demCallbackJ1939DTCStatusChanged) {
 						demCallbackJ1939DTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackJ1939DTCStatusChanged"))
 						super.delegateAdd(demCallbackJ1939DTCStatusChanged)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralJ1939$DemCallbackJ1939DTCStatusChanged demCallbackJ1939DTCStatusChanged) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemCallbackJ1939DTCStatusChanged demCallbackJ1939DTCStatusChanged) {
 						demCallbackJ1939DTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackJ1939DTCStatusChanged"))
 						super.delegateAdd(index, demCallbackJ1939DTCStatusChanged)
-					}	
+					}
 				}
 			}
 			
@@ -5705,15 +5704,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemJ1939FreezeFrameClass, GContainer>(filteredContainers, typeof(DemJ1939FreezeFrameClass), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralJ1939$DemJ1939FreezeFrameClass demJ1939FreezeFrameClass) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass demJ1939FreezeFrameClass) {
 						demJ1939FreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939FreezeFrameClass"))
 						super.delegateAdd(demJ1939FreezeFrameClass)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralJ1939$DemJ1939FreezeFrameClass demJ1939FreezeFrameClass) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemJ1939FreezeFrameClass demJ1939FreezeFrameClass) {
 						demJ1939FreezeFrameClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemJ1939FreezeFrameClass"))
 						super.delegateAdd(index, demJ1939FreezeFrameClass)
-					}	
+					}
 				}
 			}
 			
@@ -5724,47 +5723,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemSPNClass, GContainer>(filteredContainers, typeof(DemSPNClass), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralJ1939$DemSPNClass demSPNClass) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass demSPNClass) {
 						demSPNClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemSPNClass"))
 						super.delegateAdd(demSPNClass)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralJ1939$DemSPNClass demSPNClass) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass demSPNClass) {
 						demSPNClass.target?.gSetDefinition(containerValue.getContainerDefinition("DemSPNClass"))
 						super.delegateAdd(index, demSPNClass)
-					}	
+					}
 				}
 			}
 			
 			
 			static class DemCallbackJ1939DTCStatusChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemCallbackJ1939DTCStatusChanged)){
 						return false
 					}
 					this.target == (object as DemCallbackJ1939DTCStatusChanged).target
 				}
-				
+			
 				def String getDemCallbackDTCStatusChangedFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"].getStringValue()
 				}
 				
 				def void setDemCallbackDTCStatusChangedFnc(String value){
@@ -5772,11 +5771,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackDTCStatusChangedFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackDTCStatusChangedFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -5786,42 +5785,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemJ1939FreezeFrameClass implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemJ1939FreezeFrameClass)){
 						return false
 					}
 					this.target == (object as DemJ1939FreezeFrameClass).target
 				}
-				
+			
 				
 				def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass> getDemSPNClassRefs(){
 					val containerDef = containerValue.gGetDefinition
-					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+					val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 						containerDef.gGetReferences.findFirst[gGetShortName == "DemSPNClassRef"] else null
-									
+				
 					val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 						override protected accept(GReferenceValue item) {
 							return accept(item, typeof(GConfigReference), "DemSPNClassRef")
 						}
 					}
-					
+				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass)) {
 						override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralJ1939.DemSPNClass object) throws CoreException {
 							if (object != null) {
@@ -5832,7 +5831,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 								return referenceValue
 							}
 						}
-						
+				
 						override protected unwrap(GReferenceValue referenceValue) {
 							if (referenceValue != null) {
 								val referenceValueValue = referenceValue.gGetValue
@@ -5850,32 +5849,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 			
 			static class DemSPNClass implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemSPNClass)){
 						return false
 					}
 					this.target == (object as DemSPNClass).target
 				}
-				
+			
 				def BigInteger getDemSPNId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSPNId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemSPNId"].getBigIntegerValue()
 				}
 				
 				def void setDemSPNId(BigInteger value){
@@ -5883,22 +5882,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemSPNId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemSPNId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass getDemSPNDataElementClassRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass), "DemSPNDataElementClassRef")
 				}
-						
+				
 				def void setDemSPNDataElementClassRef(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemDataElementClass object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemSPNDataElementClassRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemSPNDataElementClassRef"], object.getTarget())
 					}
 				}
 				
@@ -5910,32 +5909,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemGeneralOBD implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemGeneralOBD)){
 					return false
 				}
 				this.target == (object as DemGeneralOBD).target
 			}
-			
+		
 			def Boolean getDemOBDCentralizedPID21Handling(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID21Handling"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID21Handling"].getBooleanValue()
 			}
 			
 			def void setDemOBDCentralizedPID21Handling(Boolean value){
@@ -5943,15 +5942,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDCentralizedPID21Handling"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDCentralizedPID21Handling"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemOBDCentralizedPID31Handling(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID31Handling"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCentralizedPID31Handling"].getBooleanValue()
 			}
 			
 			def void setDemOBDCentralizedPID31Handling(Boolean value){
@@ -5959,15 +5958,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDCentralizedPID31Handling"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDCentralizedPID31Handling"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemOBDCompliancy(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCompliancy"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDCompliancy"].getBigIntegerValue()
 			}
 			
 			def void setDemOBDCompliancy(BigInteger value){
@@ -5975,15 +5974,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDCompliancy"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDCompliancy"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemOBDEngineType getDemOBDEngineType(){
-				getDemOBDEngineTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDEngineType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDEngineType"].getDemOBDEngineTypeValue()
 			}
 			
 			def void setDemOBDEngineType(DemOBDEngineType value){
@@ -5991,32 +5990,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDEngineType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDEngineType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemOBDEngineType {
 				DEM_IGNITION_COMPRESSION, 
 				DEM_IGNITION_SPARK
 			}
-				
-			def DemOBDEngineType getDemOBDEngineTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemOBDEngineType getDemOBDEngineTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_IGNITION_COMPRESSION" : DemOBDEngineType.DEM_IGNITION_COMPRESSION
 					case "DEM_IGNITION_SPARK" : DemOBDEngineType.DEM_IGNITION_SPARK
 				}
 			}
 			
-			def void setDemOBDEngineTypeValue(GParameterValue paramValue, DemOBDEngineType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemOBDEngineTypeValue(GParameterValue parameterValue, DemOBDEngineType value){
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemOBDEventDisplacement(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDEventDisplacement"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOBDEventDisplacement"].getBooleanValue()
 			}
 			
 			def void setDemOBDEventDisplacement(Boolean value){
@@ -6024,11 +6023,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDEventDisplacement"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOBDEventDisplacement"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -6050,47 +6049,47 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DemCallbackOBDDTCStatusChanged, GContainer>(filteredContainers, typeof(DemCallbackOBDDTCStatusChanged), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralOBD$DemCallbackOBDDTCStatusChanged demCallbackOBDDTCStatusChanged) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralOBD.DemCallbackOBDDTCStatusChanged demCallbackOBDDTCStatusChanged) {
 						demCallbackOBDDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackOBDDTCStatusChanged"))
 						super.delegateAdd(demCallbackOBDDTCStatusChanged)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem$DemGeneral$DemGeneralOBD$DemCallbackOBDDTCStatusChanged demCallbackOBDDTCStatusChanged) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemGeneralOBD.DemCallbackOBDDTCStatusChanged demCallbackOBDDTCStatusChanged) {
 						demCallbackOBDDTCStatusChanged.target?.gSetDefinition(containerValue.getContainerDefinition("DemCallbackOBDDTCStatusChanged"))
 						super.delegateAdd(index, demCallbackOBDDTCStatusChanged)
-					}	
+					}
 				}
 			}
 			
 			
 			static class DemCallbackOBDDTCStatusChanged implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DemCallbackOBDDTCStatusChanged)){
 						return false
 					}
 					this.target == (object as DemCallbackOBDDTCStatusChanged).target
 				}
-				
+			
 				def String getDemCallbackDTCStatusChangedFnc(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemCallbackDTCStatusChangedFnc"].getStringValue()
 				}
 				
 				def void setDemCallbackDTCStatusChangedFnc(String value){
@@ -6098,11 +6097,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackDTCStatusChangedFnc"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemCallbackDTCStatusChangedFnc"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -6114,32 +6113,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemGroupOfDTC implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemGroupOfDTC)){
 					return false
 				}
 				this.target == (object as DemGroupOfDTC).target
 			}
-			
+		
 			def BigInteger getDemGroupDTCs(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGroupDTCs"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemGroupDTCs"].getBigIntegerValue()
 			}
 			
 			def void setDemGroupDTCs(BigInteger value){
@@ -6147,11 +6146,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemGroupDTCs"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemGroupDTCs"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -6161,32 +6160,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemIndicator implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemIndicator)){
 					return false
 				}
 				this.target == (object as DemIndicator).target
 			}
-			
+		
 			def BigInteger getDemIndicatorID(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorID"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIndicatorID"].getBigIntegerValue()
 			}
 			
 			def void setDemIndicatorID(BigInteger value){
@@ -6194,11 +6193,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorID"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemIndicatorID"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -6208,32 +6207,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemMirrorMemory implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemMirrorMemory)){
 					return false
 				}
 				this.target == (object as DemMirrorMemory).target
 			}
-			
+		
 			def BigInteger getDemMaxNumberEventEntryMirror(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryMirror"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryMirror"].getBigIntegerValue()
 			}
 			
 			def void setDemMaxNumberEventEntryMirror(BigInteger value){
@@ -6241,11 +6240,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryMirror"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryMirror"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -6255,39 +6254,39 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemNvRamBlockId implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemNvRamBlockId)){
 					return false
 				}
 				this.target == (object as DemNvRamBlockId).target
 			}
-			
+		
 			
 			def org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor getDemNvRamBlockIdRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor), "DemNvRamBlockIdRef")
 			}
-					
+			
 			def void setDemNvRamBlockIdRef(org.artop.ecuc.autosar421.accessors.NvM.NvMBlockDescriptor object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemNvRamBlockIdRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemNvRamBlockIdRef"], object.getTarget())
 				}
 			}
 			
@@ -6297,32 +6296,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemOperationCycle implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemOperationCycle)){
 					return false
 				}
 				this.target == (object as DemOperationCycle).target
 			}
-			
+		
 			def Boolean getDemOperationCycleAutomaticEnd(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutomaticEnd"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutomaticEnd"].getBooleanValue()
 			}
 			
 			def void setDemOperationCycleAutomaticEnd(Boolean value){
@@ -6330,15 +6329,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleAutomaticEnd"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleAutomaticEnd"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getDemOperationCycleAutostart(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutostart"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleAutostart"].getBooleanValue()
 			}
 			
 			def void setDemOperationCycleAutostart(Boolean value){
@@ -6346,15 +6345,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleAutostart"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleAutostart"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getDemOperationCycleId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleId"].getBigIntegerValue()
 			}
 			
 			def void setDemOperationCycleId(BigInteger value){
@@ -6362,15 +6361,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemOperationCycleType getDemOperationCycleType(){
-				getDemOperationCycleTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemOperationCycleType"].getDemOperationCycleTypeValue()
 			}
 			
 			def void setDemOperationCycleType(DemOperationCycleType value){
@@ -6378,11 +6377,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemOperationCycleType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemOperationCycleType {
@@ -6393,10 +6392,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_OPCYC_TIME, 
 				DEM_OPCYC_WARMUP
 			}
-				
-			def DemOperationCycleType getDemOperationCycleTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemOperationCycleType getDemOperationCycleTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_OPCYC_IGNITION" : DemOperationCycleType.DEM_OPCYC_IGNITION
 					case "DEM_OPCYC_OBD_DCY" : DemOperationCycleType.DEM_OPCYC_OBD_DCY
 					case "DEM_OPCYC_OTHER" : DemOperationCycleType.DEM_OPCYC_OTHER
@@ -6406,8 +6405,8 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemOperationCycleTypeValue(GParameterValue paramValue, DemOperationCycleType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemOperationCycleTypeValue(GParameterValue parameterValue, DemOperationCycleType value){
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -6417,32 +6416,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemPrimaryMemory implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemPrimaryMemory)){
 					return false
 				}
 				this.target == (object as DemPrimaryMemory).target
 			}
-			
+		
 			def BigInteger getDemMaxNumberEventEntryPrimary(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPrimary"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryPrimary"].getBigIntegerValue()
 			}
 			
 			def void setDemMaxNumberEventEntryPrimary(BigInteger value){
@@ -6450,11 +6449,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryPrimary"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryPrimary"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -6464,32 +6463,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemRatio implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemRatio)){
 					return false
 				}
 				this.target == (object as DemRatio).target
 			}
-			
+		
 			def DemIUMPRDenGroup getDemIUMPRDenGroup(){
-				getDemIUMPRDenGroupValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIUMPRDenGroup"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIUMPRDenGroup"].getDemIUMPRDenGroupValue()
 			}
 			
 			def void setDemIUMPRDenGroup(DemIUMPRDenGroup value){
@@ -6497,11 +6496,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemIUMPRDenGroup"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemIUMPRDenGroup"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemIUMPRDenGroup {
@@ -6511,10 +6510,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_IUMPR_DEN_NONE, 
 				DEM_IUMPR_DEN_PHYS_API
 			}
-				
-			def DemIUMPRDenGroup getDemIUMPRDenGroupValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemIUMPRDenGroup getDemIUMPRDenGroupValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_IUMPR_DEN_500MILL" : DemIUMPRDenGroup.DEM_IUMPR_DEN_500MILL
 					case "DEM_IUMPR_DEN_COLDSTART" : DemIUMPRDenGroup.DEM_IUMPR_DEN_COLDSTART
 					case "DEM_IUMPR_DEN_EVAP" : DemIUMPRDenGroup.DEM_IUMPR_DEN_EVAP
@@ -6523,12 +6522,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemIUMPRDenGroupValue(GParameterValue paramValue, DemIUMPRDenGroup value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemIUMPRDenGroupValue(GParameterValue parameterValue, DemIUMPRDenGroup value){
+				parameterValue.setValue(value)
 			}
 			
 			def DemIUMPRGroup getDemIUMPRGroup(){
-				getDemIUMPRGroupValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIUMPRGroup"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemIUMPRGroup"].getDemIUMPRGroupValue()
 			}
 			
 			def void setDemIUMPRGroup(DemIUMPRGroup value){
@@ -6536,11 +6535,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemIUMPRGroup"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemIUMPRGroup"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemIUMPRGroup {
@@ -6562,10 +6561,10 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				DEM_IUMPR_SECOXS1, 
 				DEM_IUMPR_SECOXS2
 			}
-				
-			def DemIUMPRGroup getDemIUMPRGroupValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemIUMPRGroup getDemIUMPRGroupValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_IUMPR_BOOSTPRS" : DemIUMPRGroup.DEM_IUMPR_BOOSTPRS
 					case "DEM_IUMPR_CAT1" : DemIUMPRGroup.DEM_IUMPR_CAT1
 					case "DEM_IUMPR_CAT2" : DemIUMPRGroup.DEM_IUMPR_CAT2
@@ -6586,12 +6585,12 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			
-			def void setDemIUMPRGroupValue(GParameterValue paramValue, DemIUMPRGroup value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemIUMPRGroupValue(GParameterValue parameterValue, DemIUMPRGroup value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemRatioId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioId"].getBigIntegerValue()
 			}
 			
 			def void setDemRatioId(BigInteger value){
@@ -6599,15 +6598,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemRatioId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemRatioId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def DemRatioKind getDemRatioKind(){
-				getDemRatioKindValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioKind"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemRatioKind"].getDemRatioKindValue()
 			}
 			
 			def void setDemRatioKind(DemRatioKind value){
@@ -6615,64 +6614,64 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemRatioKind"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemRatioKind"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum DemRatioKind {
 				DEM_RATIO_API, 
 				DEM_RATIO_OBSERVER
 			}
-				
-			def DemRatioKind getDemRatioKindValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def DemRatioKind getDemRatioKindValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "DEM_RATIO_API" : DemRatioKind.DEM_RATIO_API
 					case "DEM_RATIO_OBSERVER" : DemRatioKind.DEM_RATIO_OBSERVER
 				}
 			}
 			
-			def void setDemRatioKindValue(GParameterValue paramValue, DemRatioKind value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setDemRatioKindValue(GParameterValue parameterValue, DemRatioKind value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getDemDiagnosticEventRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "DemDiagnosticEventRef")
 			}
-					
+			
 			def void setDemDiagnosticEventRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemDiagnosticEventRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemDiagnosticEventRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID getDemFunctionIdRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID), "DemFunctionIdRef")
 			}
-					
+			
 			def void setDemFunctionIdRef(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemFunctionIdRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemFunctionIdRef"], object.getTarget())
 				}
 			}
 			
 			def List<org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID> getDemSecondaryFunctionIdRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemSecondaryFunctionIdRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemSecondaryFunctionIdRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.FiM.FiMConfigSet.FiMFID object) throws CoreException {
 						if (object != null) {
@@ -6683,7 +6682,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -6701,32 +6700,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemStorageCondition implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemStorageCondition)){
 					return false
 				}
 				this.target == (object as DemStorageCondition).target
 			}
-			
+		
 			def BigInteger getDemStorageConditionId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionId"].getBigIntegerValue()
 			}
 			
 			def void setDemStorageConditionId(BigInteger value){
@@ -6734,15 +6733,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemStorageConditionId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemStorageConditionId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getDemStorageConditionStatus(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionStatus"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemStorageConditionStatus"].getBooleanValue()
 			}
 			
 			def void setDemStorageConditionStatus(Boolean value){
@@ -6750,22 +6749,22 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemStorageConditionStatus"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemStorageConditionStatus"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getDemStorageConditionReplacementEventRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "DemStorageConditionReplacementEventRef")
 			}
-					
+			
 			def void setDemStorageConditionReplacementEventRef(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionReplacementEventRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionReplacementEventRef"], object.getTarget())
 				}
 			}
 			
@@ -6775,42 +6774,42 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemStorageConditionGroup implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemStorageConditionGroup)){
 					return false
 				}
 				this.target == (object as DemStorageConditionGroup).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition> getDemStorageConditionRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "DemStorageConditionRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "DemStorageConditionRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Dem.DemGeneral.DemStorageCondition object) throws CoreException {
 						if (object != null) {
@@ -6821,7 +6820,7 @@ class Dem implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -6839,32 +6838,32 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		
 		static class DemUserDefinedMemory implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DemUserDefinedMemory)){
 					return false
 				}
 				this.target == (object as DemUserDefinedMemory).target
 			}
-			
+		
 			def BigInteger getDemMaxNumberEventEntryUserDefined(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryUserDefined"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemMaxNumberEventEntryUserDefined"].getBigIntegerValue()
 			}
 			
 			def void setDemMaxNumberEventEntryUserDefined(BigInteger value){
@@ -6872,15 +6871,15 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryUserDefined"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemMaxNumberEventEntryUserDefined"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getDemUserDefinedMemoryIdentifier(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemUserDefinedMemoryIdentifier"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DemUserDefinedMemoryIdentifier"].getBigIntegerValue()
 			}
 			
 			def void setDemUserDefinedMemoryIdentifier(BigInteger value){
@@ -6888,11 +6887,11 @@ class Dem implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DemUserDefinedMemoryIdentifier"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DemUserDefinedMemoryIdentifier"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -6901,14 +6900,14 @@ class Dem implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Dem)){
 			return false
 		}
 		this.target == (object as Dem).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

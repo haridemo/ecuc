@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class EthTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def EthTrcvConfigSet getEthTrcvConfigSet(){
 		moduleConfiguration.getByType(typeof(EthTrcvConfigSet))
 	}
-	
+
 	def void setEthTrcvConfigSet(EthTrcvConfigSet ethTrcvConfigSet){
-		val GContainer container = ethTrcvConfigSet.getTarget() 
+		val GContainer container = ethTrcvConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "EthTrcvConfigSet")
 	}
 	def EthTrcvGeneral getEthTrcvGeneral(){
 		moduleConfiguration.getByType(typeof(EthTrcvGeneral))
 	}
-	
+
 	def void setEthTrcvGeneral(EthTrcvGeneral ethTrcvGeneral){
-		val GContainer container = ethTrcvGeneral.getTarget() 
+		val GContainer container = ethTrcvGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "EthTrcvGeneral")
 	}
-	
+
 	static class EthTrcvConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EthTrcvConfigSet)){
 				return false
 			}
 			this.target == (object as EthTrcvConfigSet).target
 		}
-		
+	
 		
 		
 		def List<EthTrcvConfig> getEthTrcvConfigs(){
@@ -122,47 +121,47 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<EthTrcvConfig, GContainer>(filteredContainers, typeof(EthTrcvConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig ethTrcvConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthTrcv.EthTrcvConfigSet.EthTrcvConfig ethTrcvConfig) {
 					ethTrcvConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvConfig"))
 					super.delegateAdd(ethTrcvConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig ethTrcvConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthTrcv.EthTrcvConfigSet.EthTrcvConfig ethTrcvConfig) {
 					ethTrcvConfig.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvConfig"))
 					super.delegateAdd(index, ethTrcvConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class EthTrcvConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof EthTrcvConfig)){
 					return false
 				}
 				this.target == (object as EthTrcvConfig).target
 			}
-			
+		
 			def Boolean getEthTrcvAutoNegotiationEnabled(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvAutoNegotiationEnabled"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvAutoNegotiationEnabled"].getBooleanValue()
 			}
 			
 			def void setEthTrcvAutoNegotiationEnabled(Boolean value){
@@ -170,15 +169,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvAutoNegotiationEnabled"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvAutoNegotiationEnabled"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def EthTrcvConnNeg getEthTrcvConnNeg(){
-				getEthTrcvConnNegValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvConnNeg"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvConnNeg"].getEthTrcvConnNegValue()
 			}
 			
 			def void setEthTrcvConnNeg(EthTrcvConnNeg value){
@@ -186,11 +185,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvConnNeg"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvConnNeg"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum EthTrcvConnNeg {
@@ -198,22 +197,22 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				TRCV_CONN_NEG_MASTER, 
 				TRCV_CONN_NEG_SLAVE
 			}
-				
-			def EthTrcvConnNeg getEthTrcvConnNegValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def EthTrcvConnNeg getEthTrcvConnNegValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "TRCV_CONN_NEG_AUTO" : EthTrcvConnNeg.TRCV_CONN_NEG_AUTO
 					case "TRCV_CONN_NEG_MASTER" : EthTrcvConnNeg.TRCV_CONN_NEG_MASTER
 					case "TRCV_CONN_NEG_SLAVE" : EthTrcvConnNeg.TRCV_CONN_NEG_SLAVE
 				}
 			}
 			
-			def void setEthTrcvConnNegValue(GParameterValue paramValue, EthTrcvConnNeg value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setEthTrcvConnNegValue(GParameterValue parameterValue, EthTrcvConnNeg value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getEthTrcvCtrlIdx(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvCtrlIdx"].getBigIntegerValue()
 			}
 			
 			def void setEthTrcvCtrlIdx(BigInteger value){
@@ -221,15 +220,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvCtrlIdx"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvCtrlIdx"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def EthTrcvDuplexMode getEthTrcvDuplexMode(){
-				getEthTrcvDuplexModeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvDuplexMode"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvDuplexMode"].getEthTrcvDuplexModeValue()
 			}
 			
 			def void setEthTrcvDuplexMode(EthTrcvDuplexMode value){
@@ -237,32 +236,32 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDuplexMode"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDuplexMode"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum EthTrcvDuplexMode {
 				ETHTRCV_DUPLEX_MODE_FULL, 
 				ETHTRCV_DUPLEX_MODE_HALF
 			}
-				
-			def EthTrcvDuplexMode getEthTrcvDuplexModeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def EthTrcvDuplexMode getEthTrcvDuplexModeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "ETHTRCV_DUPLEX_MODE_FULL" : EthTrcvDuplexMode.ETHTRCV_DUPLEX_MODE_FULL
 					case "ETHTRCV_DUPLEX_MODE_HALF" : EthTrcvDuplexMode.ETHTRCV_DUPLEX_MODE_HALF
 				}
 			}
 			
-			def void setEthTrcvDuplexModeValue(GParameterValue paramValue, EthTrcvDuplexMode value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setEthTrcvDuplexModeValue(GParameterValue parameterValue, EthTrcvDuplexMode value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getEthTrcvIdx(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIdx"].getBigIntegerValue()
 			}
 			
 			def void setEthTrcvIdx(BigInteger value){
@@ -270,15 +269,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIdx"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIdx"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getEthTrcvMiiIdx(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMiiIdx"].getBigIntegerValue()
 			}
 			
 			def void setEthTrcvMiiIdx(BigInteger value){
@@ -286,15 +285,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMiiIdx"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMiiIdx"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def EthTrcvPhysLayerType getEthTrcvPhysLayerType(){
-				getEthTrcvPhysLayerTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvPhysLayerType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvPhysLayerType"].getEthTrcvPhysLayerTypeValue()
 			}
 			
 			def void setEthTrcvPhysLayerType(EthTrcvPhysLayerType value){
@@ -302,32 +301,32 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvPhysLayerType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvPhysLayerType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum EthTrcvPhysLayerType {
 				TRCV_PHYS_LAYER_TYPE_BASE_T, 
 				TRCV_PHYS_LAYER_TYPE_BROADR_REACH
 			}
-				
-			def EthTrcvPhysLayerType getEthTrcvPhysLayerTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def EthTrcvPhysLayerType getEthTrcvPhysLayerTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "TRCV_PHYS_LAYER_TYPE_BASE_T" : EthTrcvPhysLayerType.TRCV_PHYS_LAYER_TYPE_BASE_T
 					case "TRCV_PHYS_LAYER_TYPE_BROADR_REACH" : EthTrcvPhysLayerType.TRCV_PHYS_LAYER_TYPE_BROADR_REACH
 				}
 			}
 			
-			def void setEthTrcvPhysLayerTypeValue(GParameterValue paramValue, EthTrcvPhysLayerType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setEthTrcvPhysLayerTypeValue(GParameterValue parameterValue, EthTrcvPhysLayerType value){
+				parameterValue.setValue(value)
 			}
 			
 			def EthTrcvSpeed getEthTrcvSpeed(){
-				getEthTrcvSpeedValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvSpeed"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvSpeed"].getEthTrcvSpeedValue()
 			}
 			
 			def void setEthTrcvSpeed(EthTrcvSpeed value){
@@ -335,11 +334,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSpeed"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSpeed"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum EthTrcvSpeed {
@@ -347,22 +346,22 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				TRCV_SPEED_100, 
 				TRCV_SPEED_1000
 			}
-				
-			def EthTrcvSpeed getEthTrcvSpeedValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def EthTrcvSpeed getEthTrcvSpeedValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "TRCV_SPEED_10" : EthTrcvSpeed.TRCV_SPEED_10
 					case "TRCV_SPEED_100" : EthTrcvSpeed.TRCV_SPEED_100
 					case "TRCV_SPEED_1000" : EthTrcvSpeed.TRCV_SPEED_1000
 				}
 			}
 			
-			def void setEthTrcvSpeedValue(GParameterValue paramValue, EthTrcvSpeed value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setEthTrcvSpeedValue(GParameterValue parameterValue, EthTrcvSpeed value){
+				parameterValue.setValue(value)
 			}
 			
 			def String getEthTrcvWakeUpCallout(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvWakeUpCallout"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvWakeUpCallout"].getStringValue()
 			}
 			
 			def void setEthTrcvWakeUpCallout(String value){
@@ -370,22 +369,22 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvWakeUpCallout"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvWakeUpCallout"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel getEthTrcvIcuChannelRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel), "EthTrcvIcuChannelRef")
 			}
-					
+			
 			def void setEthTrcvIcuChannelRef(org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EthTrcvIcuChannelRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "EthTrcvIcuChannelRef"], object.getTarget())
 				}
 			}
 			
@@ -406,54 +405,54 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<EthTrcvWakeupMap, GContainer>(filteredContainers, typeof(EthTrcvWakeupMap), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig$EthTrcvWakeupMap ethTrcvWakeupMap) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.EthTrcv.EthTrcvConfigSet.EthTrcvConfig.EthTrcvWakeupMap ethTrcvWakeupMap) {
 						ethTrcvWakeupMap.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvWakeupMap"))
 						super.delegateAdd(ethTrcvWakeupMap)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthTrcv$EthTrcvConfigSet$EthTrcvConfig$EthTrcvWakeupMap ethTrcvWakeupMap) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.EthTrcv.EthTrcvConfigSet.EthTrcvConfig.EthTrcvWakeupMap ethTrcvWakeupMap) {
 						ethTrcvWakeupMap.target?.gSetDefinition(containerValue.getContainerDefinition("EthTrcvWakeupMap"))
 						super.delegateAdd(index, ethTrcvWakeupMap)
-					}	
+					}
 				}
 			}
 			
 			
 			static class EthTrcvDemEventParameterRefs implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof EthTrcvDemEventParameterRefs)){
 						return false
 					}
 					this.target == (object as EthTrcvDemEventParameterRefs).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getETHTRCV_E_ACCESS(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "ETHTRCV_E_ACCESS")
 				}
-						
+				
 				def void setETHTRCV_E_ACCESS(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "ETHTRCV_E_ACCESS"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "ETHTRCV_E_ACCESS"], object.getTarget())
 					}
 				}
 				
@@ -463,32 +462,32 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			static class EthTrcvWakeupMap implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof EthTrcvWakeupMap)){
 						return false
 					}
 					this.target == (object as EthTrcvWakeupMap).target
 				}
-				
+			
 				def EthTrcvWakeupReason getEthTrcvWakeupReason(){
-					getEthTrcvWakeupReasonValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvWakeupReason"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvWakeupReason"].getEthTrcvWakeupReasonValue()
 				}
 				
 				def void setEthTrcvWakeupReason(EthTrcvWakeupReason value){
@@ -496,11 +495,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvWakeupReason"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvWakeupReason"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum EthTrcvWakeupReason {
@@ -512,10 +511,10 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					ETHTRCV_WUR_RESET, 
 					ETHTRCV_WUR_SYSERR
 				}
-					
-				def EthTrcvWakeupReason getEthTrcvWakeupReasonValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def EthTrcvWakeupReason getEthTrcvWakeupReasonValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "ETHTRCV_WUR_BUS" : EthTrcvWakeupReason.ETHTRCV_WUR_BUS
 						case "ETHTRCV_WUR_GENERAL" : EthTrcvWakeupReason.ETHTRCV_WUR_GENERAL
 						case "ETHTRCV_WUR_INTERNAL" : EthTrcvWakeupReason.ETHTRCV_WUR_INTERNAL
@@ -526,19 +525,19 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setEthTrcvWakeupReasonValue(GParameterValue paramValue, EthTrcvWakeupReason value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setEthTrcvWakeupReasonValue(GParameterValue parameterValue, EthTrcvWakeupReason value){
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getEthTrcvWakeupSourceRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "EthTrcvWakeupSourceRef")
 				}
-						
+				
 				def void setEthTrcvWakeupSourceRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EthTrcvWakeupSourceRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "EthTrcvWakeupSourceRef"], object.getTarget())
 					}
 				}
 				
@@ -551,32 +550,32 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 	}
 	static class EthTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EthTrcvGeneral)){
 				return false
 			}
 			this.target == (object as EthTrcvGeneral).target
 		}
-		
+	
 		def Boolean getEthTrcvDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setEthTrcvDevErrorDetect(Boolean value){
@@ -584,15 +583,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetBaudRateApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetBaudRateApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetBaudRateApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvGetBaudRateApi(Boolean value){
@@ -600,15 +599,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetBaudRateApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetBaudRateApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetDuplexModeApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetDuplexModeApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetDuplexModeApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvGetDuplexModeApi(Boolean value){
@@ -616,15 +615,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetDuplexModeApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetDuplexModeApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetLinkStateApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetLinkStateApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetLinkStateApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvGetLinkStateApi(Boolean value){
@@ -632,15 +631,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetLinkStateApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetLinkStateApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetTransceiverModeApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverModeApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverModeApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvGetTransceiverModeApi(Boolean value){
@@ -648,15 +647,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetTransceiverModeApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetTransceiverModeApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvGetTransceiverWakeupModeApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverWakeupModeApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvGetTransceiverWakeupModeApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvGetTransceiverWakeupModeApi(Boolean value){
@@ -664,15 +663,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetTransceiverWakeupModeApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvGetTransceiverWakeupModeApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEthTrcvIndex(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvIndex"].getBigIntegerValue()
 		}
 		
 		def void setEthTrcvIndex(BigInteger value){
@@ -680,15 +679,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIndex"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvIndex"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getEthTrcvMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setEthTrcvMainFunctionPeriod(BigDecimal value){
@@ -696,15 +695,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getEthTrcvMaxTrcvsSupported(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvMaxTrcvsSupported"].getBigIntegerValue()
 		}
 		
 		def void setEthTrcvMaxTrcvsSupported(BigInteger value){
@@ -712,15 +711,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMaxTrcvsSupported"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvMaxTrcvsSupported"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getEthTrcvSetTransceiverModeApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvSetTransceiverModeApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvSetTransceiverModeApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvSetTransceiverModeApi(Boolean value){
@@ -728,15 +727,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSetTransceiverModeApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvSetTransceiverModeApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvStartAutoNegotiationApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvStartAutoNegotiationApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvStartAutoNegotiationApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvStartAutoNegotiationApi(Boolean value){
@@ -744,15 +743,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvStartAutoNegotiationApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvStartAutoNegotiationApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setEthTrcvVersionInfoApi(Boolean value){
@@ -760,15 +759,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEthTrcvVersionInfoApiMacro(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApiMacro"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvVersionInfoApiMacro"].getBooleanValue()
 		}
 		
 		def void setEthTrcvVersionInfoApiMacro(Boolean value){
@@ -776,15 +775,15 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApiMacro"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvVersionInfoApiMacro"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def EthTrcvWakeUpSupport getEthTrcvWakeUpSupport(){
-			getEthTrcvWakeUpSupportValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvWakeUpSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTrcvWakeUpSupport"].getEthTrcvWakeUpSupportValue()
 		}
 		
 		def void setEthTrcvWakeUpSupport(EthTrcvWakeUpSupport value){
@@ -792,11 +791,11 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvWakeUpSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTrcvWakeUpSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum EthTrcvWakeUpSupport {
@@ -804,32 +803,32 @@ class EthTrcv implements IWrapper<GModuleConfiguration> {
 			ETHTRCV_WAKEUP_BY_POLLING, 
 			ETHTRCV_WAKEUP_NOT_SUPPORTED
 		}
-			
-		def EthTrcvWakeUpSupport getEthTrcvWakeUpSupportValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def EthTrcvWakeUpSupport getEthTrcvWakeUpSupportValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "ETHTRCV_WAKEUP_BY_INTERRUPT" : EthTrcvWakeUpSupport.ETHTRCV_WAKEUP_BY_INTERRUPT
 				case "ETHTRCV_WAKEUP_BY_POLLING" : EthTrcvWakeUpSupport.ETHTRCV_WAKEUP_BY_POLLING
 				case "ETHTRCV_WAKEUP_NOT_SUPPORTED" : EthTrcvWakeUpSupport.ETHTRCV_WAKEUP_NOT_SUPPORTED
 			}
 		}
 		
-		def void setEthTrcvWakeUpSupportValue(GParameterValue paramValue, EthTrcvWakeUpSupport value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setEthTrcvWakeUpSupportValue(GParameterValue parameterValue, EthTrcvWakeUpSupport value){
+			parameterValue.setValue(value)
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof EthTrcv)){
 			return false
 		}
 		this.target == (object as EthTrcv).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

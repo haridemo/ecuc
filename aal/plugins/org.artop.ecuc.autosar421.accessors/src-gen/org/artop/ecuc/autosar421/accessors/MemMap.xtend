@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,23 +52,23 @@ import java.math.BigDecimal
 
 class MemMap implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def List<MemMapAddressingModeSet> getMemMapAddressingModeSets(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
@@ -77,12 +76,12 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<MemMapAddressingModeSet, GContainer>(filteredContainers, typeof(MemMapAddressingModeSet), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap$MemMapAddressingModeSet memMapAddressingModeSet) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet memMapAddressingModeSet) {
 				memMapAddressingModeSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAddressingModeSet"))
 				super.delegateAdd(memMapAddressingModeSet)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap$MemMapAddressingModeSet memMapAddressingModeSet) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet memMapAddressingModeSet) {
 				memMapAddressingModeSet.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAddressingModeSet"))
 				super.delegateAdd(index, memMapAddressingModeSet)
 			}
@@ -95,12 +94,12 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<MemMapAllocation, GContainer>(filteredContainers, typeof(MemMapAllocation), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap$MemMapAllocation memMapAllocation) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAllocation memMapAllocation) {
 				memMapAllocation.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAllocation"))
 				super.delegateAdd(memMapAllocation)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap$MemMapAllocation memMapAllocation) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap.MemMapAllocation memMapAllocation) {
 				memMapAllocation.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapAllocation"))
 				super.delegateAdd(index, memMapAllocation)
 			}
@@ -113,46 +112,46 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<MemMapGenericCompilerMemClass, GContainer>(filteredContainers, typeof(MemMapGenericCompilerMemClass), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap$MemMapGenericCompilerMemClass memMapGenericCompilerMemClass) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap.MemMapGenericCompilerMemClass memMapGenericCompilerMemClass) {
 				memMapGenericCompilerMemClass.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapGenericCompilerMemClass"))
 				super.delegateAdd(memMapGenericCompilerMemClass)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap$MemMapGenericCompilerMemClass memMapGenericCompilerMemClass) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap.MemMapGenericCompilerMemClass memMapGenericCompilerMemClass) {
 				memMapGenericCompilerMemClass.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("MemMapGenericCompilerMemClass"))
 				super.delegateAdd(index, memMapGenericCompilerMemClass)
 			}
 		}
 	}
-	
+
 	static class MemMapAddressingModeSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof MemMapAddressingModeSet)){
 				return false
 			}
 			this.target == (object as MemMapAddressingModeSet).target
 		}
-		
+	
 		def String getMemMapCompilerMemClassSymbolImpl(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapCompilerMemClassSymbolImpl"].getStringValue()
 		}
 		
 		def void setMemMapCompilerMemClassSymbolImpl(String value){
@@ -160,11 +159,11 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapCompilerMemClassSymbolImpl"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MemMapCompilerMemClassSymbolImpl"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def List<String> getMemMapSupportedAddressingMethodOptions(){
@@ -193,10 +192,10 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 					override protected wrap(MemMapSupportedMemoryAllocationKeywordPolicy object) throws CoreException {
 						val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
 						parameterValue.gSetDefinition(parameterDef)
-						EcucValueAccessor421Util.setParameterValue(parameterValue, object)
+						parameterValue.setValue(object)
 						parameterValue
 					}
-					
+		
 					override protected unwrap(EcucTextualParamValue parameterValue) {
 						getMemMapSupportedMemoryAllocationKeywordPolicyValue(parameterValue)
 					}
@@ -208,17 +207,17 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			MEMMAP_ALLOCATION_KEYWORD_POLICY_ADDR_METHOD_SHORT_NAME, 
 			MEMMAP_ALLOCATION_KEYWORD_POLICY_ADDR_METHOD_SHORT_NAME_AND_ALIGNMENT
 		}
-			
-		def MemMapSupportedMemoryAllocationKeywordPolicy getMemMapSupportedMemoryAllocationKeywordPolicyValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def MemMapSupportedMemoryAllocationKeywordPolicy getMemMapSupportedMemoryAllocationKeywordPolicyValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "MEMMAP_ALLOCATION_KEYWORD_POLICY_ADDR_METHOD_SHORT_NAME" : MemMapSupportedMemoryAllocationKeywordPolicy.MEMMAP_ALLOCATION_KEYWORD_POLICY_ADDR_METHOD_SHORT_NAME
 				case "MEMMAP_ALLOCATION_KEYWORD_POLICY_ADDR_METHOD_SHORT_NAME_AND_ALIGNMENT" : MemMapSupportedMemoryAllocationKeywordPolicy.MEMMAP_ALLOCATION_KEYWORD_POLICY_ADDR_METHOD_SHORT_NAME_AND_ALIGNMENT
 			}
 		}
 		
-		def void setMemMapSupportedMemoryAllocationKeywordPolicyValue(GParameterValue paramValue, MemMapSupportedMemoryAllocationKeywordPolicy value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setMemMapSupportedMemoryAllocationKeywordPolicyValue(GParameterValue parameterValue, MemMapSupportedMemoryAllocationKeywordPolicy value){
+			parameterValue.setValue(value)
 		}
 		
 		def List<String> getMemMapSupportedSectionInitializationPolicies(){
@@ -247,10 +246,10 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 					override protected wrap(MemMapSupportedSectionType object) throws CoreException {
 						val parameterValue = Autosar40Factory.eINSTANCE.createEcucTextualParamValue
 						parameterValue.gSetDefinition(parameterDef)
-						EcucValueAccessor421Util.setParameterValue(parameterValue, object)
+						parameterValue.setValue(object)
 						parameterValue
 					}
-					
+		
 					override protected unwrap(EcucTextualParamValue parameterValue) {
 						getMemMapSupportedSectionTypeValue(parameterValue)
 					}
@@ -272,10 +271,10 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			MEMMAP_SECTION_TYPE_VAR_NO_INIT, 
 			MEMMAP_SECTION_TYPE_VAR_POWER_ON_INIT
 		}
-			
-		def MemMapSupportedSectionType getMemMapSupportedSectionTypeValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def MemMapSupportedSectionType getMemMapSupportedSectionTypeValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "MEMMAP_SECTION_TYPE_CALIBRATION_OFFLINE" : MemMapSupportedSectionType.MEMMAP_SECTION_TYPE_CALIBRATION_OFFLINE
 				case "MEMMAP_SECTION_TYPE_CALIBRATION_ONLINE" : MemMapSupportedSectionType.MEMMAP_SECTION_TYPE_CALIBRATION_ONLINE
 				case "MEMMAP_SECTION_TYPE_CAL_PRM" : MemMapSupportedSectionType.MEMMAP_SECTION_TYPE_CAL_PRM
@@ -291,8 +290,8 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def void setMemMapSupportedSectionTypeValue(GParameterValue paramValue, MemMapSupportedSectionType value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setMemMapSupportedSectionTypeValue(GParameterValue parameterValue, MemMapSupportedSectionType value){
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -304,47 +303,47 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<MemMapAddressingMode, GContainer>(filteredContainers, typeof(MemMapAddressingMode), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap$MemMapAddressingModeSet$MemMapAddressingMode memMapAddressingMode) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet.MemMapAddressingMode memMapAddressingMode) {
 					memMapAddressingMode.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapAddressingMode"))
 					super.delegateAdd(memMapAddressingMode)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap$MemMapAddressingModeSet$MemMapAddressingMode memMapAddressingMode) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet.MemMapAddressingMode memMapAddressingMode) {
 					memMapAddressingMode.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapAddressingMode"))
 					super.delegateAdd(index, memMapAddressingMode)
-				}	
+				}
 			}
 		}
 		
 		
 		static class MemMapAddressingMode implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof MemMapAddressingMode)){
 					return false
 				}
 				this.target == (object as MemMapAddressingMode).target
 			}
-			
+		
 			def String getMemMapAddressingModeStart(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStart"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStart"].getStringValue()
 			}
 			
 			def void setMemMapAddressingModeStart(String value){
@@ -352,15 +351,15 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStart"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStart"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getMemMapAddressingModeStop(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStop"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapAddressingModeStop"].getStringValue()
 			}
 			
 			def void setMemMapAddressingModeStop(String value){
@@ -368,11 +367,11 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStop"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MemMapAddressingModeStop"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def List<String> getMemMapAlignmentSelectors(){
@@ -396,30 +395,30 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 	}
 	static class MemMapAllocation implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof MemMapAllocation)){
 				return false
 			}
 			this.target == (object as MemMapAllocation).target
 		}
-		
+	
 		
 		
 		def List<MemMapGenericMapping> getMemMapGenericMappings(){
@@ -429,15 +428,15 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<MemMapGenericMapping, GContainer>(filteredContainers, typeof(MemMapGenericMapping), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap$MemMapAllocation$MemMapGenericMapping memMapGenericMapping) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAllocation.MemMapGenericMapping memMapGenericMapping) {
 					memMapGenericMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapGenericMapping"))
 					super.delegateAdd(memMapGenericMapping)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap$MemMapAllocation$MemMapGenericMapping memMapGenericMapping) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap.MemMapAllocation.MemMapGenericMapping memMapGenericMapping) {
 					memMapGenericMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapGenericMapping"))
 					super.delegateAdd(index, memMapGenericMapping)
-				}	
+				}
 			}
 		}
 		
@@ -448,55 +447,55 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<MemMapSectionSpecificMapping, GContainer>(filteredContainers, typeof(MemMapSectionSpecificMapping), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap$MemMapAllocation$MemMapSectionSpecificMapping memMapSectionSpecificMapping) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAllocation.MemMapSectionSpecificMapping memMapSectionSpecificMapping) {
 					memMapSectionSpecificMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapSectionSpecificMapping"))
 					super.delegateAdd(memMapSectionSpecificMapping)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap$MemMapAllocation$MemMapSectionSpecificMapping memMapSectionSpecificMapping) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.MemMap.MemMapAllocation.MemMapSectionSpecificMapping memMapSectionSpecificMapping) {
 					memMapSectionSpecificMapping.target?.gSetDefinition(containerValue.getContainerDefinition("MemMapSectionSpecificMapping"))
 					super.delegateAdd(index, memMapSectionSpecificMapping)
-				}	
+				}
 			}
 		}
 		
 		
 		static class MemMapGenericMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof MemMapGenericMapping)){
 					return false
 				}
 				this.target == (object as MemMapGenericMapping).target
 			}
-			
+		
 			
 			
 			def org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet getMemMapAddressingModeSetRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet), "MemMapAddressingModeSetRef")
 			}
-					
+			
 			def void setMemMapAddressingModeSetRef(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "MemMapAddressingModeSetRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "MemMapAddressingModeSetRef"], object.getTarget())
 				}
 			}
 			
@@ -506,40 +505,40 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 		
 		static class MemMapSectionSpecificMapping implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof MemMapSectionSpecificMapping)){
 					return false
 				}
 				this.target == (object as MemMapSectionSpecificMapping).target
 			}
-			
+		
 			
 			
 			def org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet getMemMapAddressingModeSetRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet), "MemMapAddressingModeSetRef")
 			}
-					
+			
 			def void setMemMapAddressingModeSetRef(org.artop.ecuc.autosar421.accessors.MemMap.MemMapAddressingModeSet object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "MemMapAddressingModeSetRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "MemMapAddressingModeSetRef"], object.getTarget())
 				}
 			}
 			
@@ -550,32 +549,32 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 	}
 	static class MemMapGenericCompilerMemClass implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof MemMapGenericCompilerMemClass)){
 				return false
 			}
 			this.target == (object as MemMapGenericCompilerMemClass).target
 		}
-		
+	
 		def String getMemMapGenericCompilerMemClassSymbolImpl(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"].getStringValue()
 		}
 		
 		def void setMemMapGenericCompilerMemClassSymbolImpl(String value){
@@ -583,25 +582,25 @@ class MemMap implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MemMapGenericCompilerMemClassSymbolImpl"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof MemMap)){
 			return false
 		}
 		this.target == (object as MemMap).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

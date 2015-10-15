@@ -1,15 +1,15 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors;
@@ -24,11 +24,11 @@ public class EcucValueAccessor421Factory extends AbstractEcucValueAccessorFactor
 
 	// Prevent instantiation
 	private EcucValueAccessor421Factory() {
-	
+
 	}
 
 	@Override
 	protected String getEcucValueAccessorJavaPackageName() {
-		return ECUC_VALUE_ACCESSORS_JAVA_PACKAGE_NAME; 
+		return ECUC_VALUE_ACCESSORS_JAVA_PACKAGE_NAME;
 	}
 }

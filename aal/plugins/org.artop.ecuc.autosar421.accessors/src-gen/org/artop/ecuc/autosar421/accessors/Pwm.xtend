@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,74 +52,74 @@ import java.math.BigDecimal
 
 class Pwm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def PwmChannelConfigSet getPwmChannelConfigSet(){
 		moduleConfiguration.getByType(typeof(PwmChannelConfigSet))
 	}
-	
+
 	def void setPwmChannelConfigSet(PwmChannelConfigSet pwmChannelConfigSet){
-		val GContainer container = pwmChannelConfigSet.getTarget() 
+		val GContainer container = pwmChannelConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "PwmChannelConfigSet")
 	}
 	def PwmConfigurationOfOptApiServices getPwmConfigurationOfOptApiServices(){
 		moduleConfiguration.getByType(typeof(PwmConfigurationOfOptApiServices))
 	}
-	
+
 	def void setPwmConfigurationOfOptApiServices(PwmConfigurationOfOptApiServices pwmConfigurationOfOptApiServices){
-		val GContainer container = pwmConfigurationOfOptApiServices.getTarget() 
+		val GContainer container = pwmConfigurationOfOptApiServices.getTarget()
 	    moduleConfiguration.setContainer(container, "PwmConfigurationOfOptApiServices")
 	}
 	def PwmGeneral getPwmGeneral(){
 		moduleConfiguration.getByType(typeof(PwmGeneral))
 	}
-	
+
 	def void setPwmGeneral(PwmGeneral pwmGeneral){
-		val GContainer container = pwmGeneral.getTarget() 
+		val GContainer container = pwmGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "PwmGeneral")
 	}
-	
+
 	static class PwmChannelConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PwmChannelConfigSet)){
 				return false
 			}
 			this.target == (object as PwmChannelConfigSet).target
 		}
-		
+	
 		
 		
 		def List<PwmChannel> getPwmChannels(){
@@ -130,47 +129,47 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PwmChannel, GContainer>(filteredContainers, typeof(PwmChannel), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Pwm$PwmChannelConfigSet$PwmChannel pwmChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Pwm.PwmChannelConfigSet.PwmChannel pwmChannel) {
 					pwmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("PwmChannel"))
 					super.delegateAdd(pwmChannel)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Pwm$PwmChannelConfigSet$PwmChannel pwmChannel) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Pwm.PwmChannelConfigSet.PwmChannel pwmChannel) {
 					pwmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("PwmChannel"))
 					super.delegateAdd(index, pwmChannel)
-				}	
+				}
 			}
 		}
 		
 		
 		static class PwmChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PwmChannel)){
 					return false
 				}
 				this.target == (object as PwmChannel).target
 			}
-			
+		
 			def PwmChannelClass getPwmChannelClass(){
-				getPwmChannelClassValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmChannelClass"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmChannelClass"].getPwmChannelClassValue()
 			}
 			
 			def void setPwmChannelClass(PwmChannelClass value){
@@ -178,11 +177,11 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmChannelClass"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmChannelClass"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum PwmChannelClass {
@@ -190,22 +189,22 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				PWM_FIXED_PERIOD_SHIFTED, 
 				PWM_VARIABLE_PERIOD
 			}
-				
-			def PwmChannelClass getPwmChannelClassValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def PwmChannelClass getPwmChannelClassValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "PWM_FIXED_PERIOD" : PwmChannelClass.PWM_FIXED_PERIOD
 					case "PWM_FIXED_PERIOD_SHIFTED" : PwmChannelClass.PWM_FIXED_PERIOD_SHIFTED
 					case "PWM_VARIABLE_PERIOD" : PwmChannelClass.PWM_VARIABLE_PERIOD
 				}
 			}
 			
-			def void setPwmChannelClassValue(GParameterValue paramValue, PwmChannelClass value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setPwmChannelClassValue(GParameterValue parameterValue, PwmChannelClass value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getPwmChannelId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmChannelId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmChannelId"].getBigIntegerValue()
 			}
 			
 			def void setPwmChannelId(BigInteger value){
@@ -213,15 +212,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmChannelId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmChannelId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getPwmDutycycleDefault(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDutycycleDefault"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDutycycleDefault"].getBigIntegerValue()
 			}
 			
 			def void setPwmDutycycleDefault(BigInteger value){
@@ -229,15 +228,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmDutycycleDefault"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDutycycleDefault"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def PwmIdleState getPwmIdleState(){
-				getPwmIdleStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmIdleState"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmIdleState"].getPwmIdleStateValue()
 			}
 			
 			def void setPwmIdleState(PwmIdleState value){
@@ -245,32 +244,32 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmIdleState"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmIdleState"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum PwmIdleState {
 				PWM_HIGH, 
 				PWM_LOW
 			}
-				
-			def PwmIdleState getPwmIdleStateValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def PwmIdleState getPwmIdleStateValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "PWM_HIGH" : PwmIdleState.PWM_HIGH
 					case "PWM_LOW" : PwmIdleState.PWM_LOW
 				}
 			}
 			
-			def void setPwmIdleStateValue(GParameterValue paramValue, PwmIdleState value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setPwmIdleStateValue(GParameterValue parameterValue, PwmIdleState value){
+				parameterValue.setValue(value)
 			}
 			
 			def String getPwmNotification(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmNotification"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmNotification"].getStringValue()
 			}
 			
 			def void setPwmNotification(String value){
@@ -278,15 +277,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmNotification"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmNotification"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getPwmPeriodDefault(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPeriodDefault"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPeriodDefault"].getBigDecimalValue()
 			}
 			
 			def void setPwmPeriodDefault(BigDecimal value){
@@ -294,15 +293,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmPeriodDefault"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPeriodDefault"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def PwmPolarity getPwmPolarity(){
-				getPwmPolarityValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPolarity"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPolarity"].getPwmPolarityValue()
 			}
 			
 			def void setPwmPolarity(PwmPolarity value){
@@ -310,39 +309,39 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmPolarity"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPolarity"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum PwmPolarity {
 				PWM_HIGH, 
 				PWM_LOW
 			}
-				
-			def PwmPolarity getPwmPolarityValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def PwmPolarity getPwmPolarityValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "PWM_HIGH" : PwmPolarity.PWM_HIGH
 					case "PWM_LOW" : PwmPolarity.PWM_LOW
 				}
 			}
 			
-			def void setPwmPolarityValue(GParameterValue paramValue, PwmPolarity value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setPwmPolarityValue(GParameterValue parameterValue, PwmPolarity value){
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint getPwmMcuClockReferencePoint(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint), "PwmMcuClockReferencePoint")
 			}
-					
+			
 			def void setPwmMcuClockReferencePoint(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "PwmMcuClockReferencePoint"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "PwmMcuClockReferencePoint"], object.getTarget())
 				}
 			}
 			
@@ -353,32 +352,32 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 	}
 	static class PwmConfigurationOfOptApiServices implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PwmConfigurationOfOptApiServices)){
 				return false
 			}
 			this.target == (object as PwmConfigurationOfOptApiServices).target
 		}
-		
+	
 		def Boolean getPwmDeInitApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDeInitApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDeInitApi"].getBooleanValue()
 		}
 		
 		def void setPwmDeInitApi(Boolean value){
@@ -386,15 +385,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmDeInitApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDeInitApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmGetOutputState(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmGetOutputState"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmGetOutputState"].getBooleanValue()
 		}
 		
 		def void setPwmGetOutputState(Boolean value){
@@ -402,15 +401,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmGetOutputState"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmGetOutputState"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmSetDutyCycle(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetDutyCycle"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetDutyCycle"].getBooleanValue()
 		}
 		
 		def void setPwmSetDutyCycle(Boolean value){
@@ -418,15 +417,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetDutyCycle"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetDutyCycle"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmSetOutputToIdle(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetOutputToIdle"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetOutputToIdle"].getBooleanValue()
 		}
 		
 		def void setPwmSetOutputToIdle(Boolean value){
@@ -434,15 +433,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetOutputToIdle"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetOutputToIdle"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmSetPeriodAndDuty(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetPeriodAndDuty"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetPeriodAndDuty"].getBooleanValue()
 		}
 		
 		def void setPwmSetPeriodAndDuty(Boolean value){
@@ -450,15 +449,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetPeriodAndDuty"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetPeriodAndDuty"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setPwmVersionInfoApi(Boolean value){
@@ -466,11 +465,11 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -479,32 +478,32 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 	}
 	static class PwmGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof PwmGeneral)){
 				return false
 			}
 			this.target == (object as PwmGeneral).target
 		}
-		
+	
 		def Boolean getPwmDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setPwmDevErrorDetect(Boolean value){
@@ -512,15 +511,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmDutycycleUpdatedEndperiod(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDutycycleUpdatedEndperiod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDutycycleUpdatedEndperiod"].getBooleanValue()
 		}
 		
 		def void setPwmDutycycleUpdatedEndperiod(Boolean value){
@@ -528,15 +527,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmDutycycleUpdatedEndperiod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDutycycleUpdatedEndperiod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getPwmIndex(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmIndex"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmIndex"].getBigIntegerValue()
 		}
 		
 		def void setPwmIndex(BigInteger value){
@@ -544,15 +543,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmIndex"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmIndex"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getPwmLowPowerStatesSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmLowPowerStatesSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmLowPowerStatesSupport"].getBooleanValue()
 		}
 		
 		def void setPwmLowPowerStatesSupport(Boolean value){
@@ -560,15 +559,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmLowPowerStatesSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmLowPowerStatesSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmNotificationSupported(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmNotificationSupported"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmNotificationSupported"].getBooleanValue()
 		}
 		
 		def void setPwmNotificationSupported(Boolean value){
@@ -576,15 +575,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmNotificationSupported"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmNotificationSupported"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmPeriodUpdatedEndperiod(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPeriodUpdatedEndperiod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPeriodUpdatedEndperiod"].getBooleanValue()
 		}
 		
 		def void setPwmPeriodUpdatedEndperiod(Boolean value){
@@ -592,15 +591,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmPeriodUpdatedEndperiod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPeriodUpdatedEndperiod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getPwmPowerStateAsynchTransitionMode(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerStateAsynchTransitionMode"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerStateAsynchTransitionMode"].getBooleanValue()
 		}
 		
 		def void setPwmPowerStateAsynchTransitionMode(Boolean value){
@@ -608,11 +607,11 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerStateAsynchTransitionMode"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerStateAsynchTransitionMode"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -624,47 +623,47 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<PwmPowerStateConfig, GContainer>(filteredContainers, typeof(PwmPowerStateConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Pwm$PwmGeneral$PwmPowerStateConfig pwmPowerStateConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Pwm.PwmGeneral.PwmPowerStateConfig pwmPowerStateConfig) {
 					pwmPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("PwmPowerStateConfig"))
 					super.delegateAdd(pwmPowerStateConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Pwm$PwmGeneral$PwmPowerStateConfig pwmPowerStateConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Pwm.PwmGeneral.PwmPowerStateConfig pwmPowerStateConfig) {
 					pwmPowerStateConfig.target?.gSetDefinition(containerValue.getContainerDefinition("PwmPowerStateConfig"))
 					super.delegateAdd(index, pwmPowerStateConfig)
-				}	
+				}
 			}
 		}
 		
 		
 		static class PwmPowerStateConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof PwmPowerStateConfig)){
 					return false
 				}
 				this.target == (object as PwmPowerStateConfig).target
 			}
-			
+		
 			def BigInteger getPwmPowerState(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerState"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerState"].getBigIntegerValue()
 			}
 			
 			def void setPwmPowerState(BigInteger value){
@@ -672,15 +671,15 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerState"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerState"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getPwmPowerStateReadyCbkRef(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerStateReadyCbkRef"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerStateReadyCbkRef"].getStringValue()
 			}
 			
 			def void setPwmPowerStateReadyCbkRef(String value){
@@ -688,11 +687,11 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerStateReadyCbkRef"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerStateReadyCbkRef"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -701,14 +700,14 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Pwm)){
 			return false
 		}
 		this.target == (object as Pwm).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

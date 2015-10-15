@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,68 +52,68 @@ import java.math.BigDecimal
 
 class LinSM implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def LinSMConfigSet getLinSMConfigSet(){
 		moduleConfiguration.getByType(typeof(LinSMConfigSet))
 	}
-	
+
 	def void setLinSMConfigSet(LinSMConfigSet linSMConfigSet){
-		val GContainer container = linSMConfigSet.getTarget() 
+		val GContainer container = linSMConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "LinSMConfigSet")
 	}
 	def LinSMGeneral getLinSMGeneral(){
 		moduleConfiguration.getByType(typeof(LinSMGeneral))
 	}
-	
+
 	def void setLinSMGeneral(LinSMGeneral linSMGeneral){
-		val GContainer container = linSMGeneral.getTarget() 
+		val GContainer container = linSMGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "LinSMGeneral")
 	}
-	
+
 	static class LinSMConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof LinSMConfigSet)){
 				return false
 			}
 			this.target == (object as LinSMConfigSet).target
 		}
-		
+	
 		def BigInteger getLinSMModeRequestRepetitionMax(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"].getBigIntegerValue()
 		}
 		
 		def void setLinSMModeRequestRepetitionMax(BigInteger value){
@@ -122,11 +121,11 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMModeRequestRepetitionMax"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMModeRequestRepetitionMax"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -138,47 +137,47 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LinSMChannel, GContainer>(filteredContainers, typeof(LinSMChannel), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel linSMChannel) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinSM.LinSMConfigSet.LinSMChannel linSMChannel) {
 					linSMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMChannel"))
 					super.delegateAdd(linSMChannel)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel linSMChannel) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinSM.LinSMConfigSet.LinSMChannel linSMChannel) {
 					linSMChannel.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMChannel"))
 					super.delegateAdd(index, linSMChannel)
-				}	
+				}
 			}
 		}
 		
 		
 		static class LinSMChannel implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof LinSMChannel)){
 					return false
 				}
 				this.target == (object as LinSMChannel).target
 			}
-			
+		
 			def BigDecimal getLinSMConfirmationTimeout(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMConfirmationTimeout"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMConfirmationTimeout"].getBigDecimalValue()
 			}
 			
 			def void setLinSMConfirmationTimeout(BigDecimal value){
@@ -186,15 +185,15 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMConfirmationTimeout"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMConfirmationTimeout"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getLinSMTransceiverPassiveMode(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMTransceiverPassiveMode"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMTransceiverPassiveMode"].getBooleanValue()
 			}
 			
 			def void setLinSMTransceiverPassiveMode(Boolean value){
@@ -202,22 +201,22 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMTransceiverPassiveMode"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMTransceiverPassiveMode"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getLinSMComMNetworkHandleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "LinSMComMNetworkHandleRef")
 			}
-					
+			
 			def void setLinSMComMNetworkHandleRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "LinSMComMNetworkHandleRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "LinSMComMNetworkHandleRef"], object.getTarget())
 				}
 			}
 			
@@ -229,47 +228,47 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<LinSMSchedule, GContainer>(filteredContainers, typeof(LinSMSchedule), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel$LinSMSchedule linSMSchedule) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinSM.LinSMConfigSet.LinSMChannel.LinSMSchedule linSMSchedule) {
 						linSMSchedule.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMSchedule"))
 						super.delegateAdd(linSMSchedule)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinSM$LinSMConfigSet$LinSMChannel$LinSMSchedule linSMSchedule) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinSM.LinSMConfigSet.LinSMChannel.LinSMSchedule linSMSchedule) {
 						linSMSchedule.target?.gSetDefinition(containerValue.getContainerDefinition("LinSMSchedule"))
 						super.delegateAdd(index, linSMSchedule)
-					}	
+					}
 				}
 			}
 			
 			
 			static class LinSMSchedule implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof LinSMSchedule)){
 						return false
 					}
 					this.target == (object as LinSMSchedule).target
 				}
-				
+			
 				def BigInteger getLinSMScheduleIndex(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"].getBigIntegerValue()
 				}
 				
 				def void setLinSMScheduleIndex(BigInteger value){
@@ -277,22 +276,22 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMScheduleIndex"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMScheduleIndex"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.LinIf.LinIfGlobalConfig.LinIfChannel.LinIfScheduleTable getLinSMScheduleIndexRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.LinIf.LinIfGlobalConfig.LinIfChannel.LinIfScheduleTable), "LinSMScheduleIndexRef")
 				}
-						
+				
 				def void setLinSMScheduleIndexRef(org.artop.ecuc.autosar421.accessors.LinIf.LinIfGlobalConfig.LinIfChannel.LinIfScheduleTable object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "LinSMScheduleIndexRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "LinSMScheduleIndexRef"], object.getTarget())
 					}
 				}
 				
@@ -305,32 +304,32 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 	}
 	static class LinSMGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof LinSMGeneral)){
 				return false
 			}
 			this.target == (object as LinSMGeneral).target
 		}
-		
+	
 		def Boolean getLinSMDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setLinSMDevErrorDetect(Boolean value){
@@ -338,15 +337,15 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getLinSMMainProcessingPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMMainProcessingPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMMainProcessingPeriod"].getBigDecimalValue()
 		}
 		
 		def void setLinSMMainProcessingPeriod(BigDecimal value){
@@ -354,15 +353,15 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMMainProcessingPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMMainProcessingPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getLinSMVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setLinSMVersionInfoApi(Boolean value){
@@ -370,25 +369,25 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinSMVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof LinSM)){
 			return false
 		}
 		this.target == (object as LinSM).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

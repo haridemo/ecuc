@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class LdCom implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def LdComConfig getLdComConfig(){
 		moduleConfiguration.getByType(typeof(LdComConfig))
 	}
-	
+
 	def void setLdComConfig(LdComConfig ldComConfig){
-		val GContainer container = ldComConfig.getTarget() 
+		val GContainer container = ldComConfig.getTarget()
 	    moduleConfiguration.setContainer(container, "LdComConfig")
 	}
 	def LdComGeneral getLdComGeneral(){
 		moduleConfiguration.getByType(typeof(LdComGeneral))
 	}
-	
+
 	def void setLdComGeneral(LdComGeneral ldComGeneral){
-		val GContainer container = ldComGeneral.getTarget() 
+		val GContainer container = ldComGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "LdComGeneral")
 	}
-	
+
 	static class LdComConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof LdComConfig)){
 				return false
 			}
 			this.target == (object as LdComConfig).target
 		}
-		
+	
 		
 		
 		def List<LdComIPdu> getLdComIPdus(){
@@ -122,47 +121,47 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<LdComIPdu, GContainer>(filteredContainers, typeof(LdComIPdu), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LdCom$LdComConfig$LdComIPdu ldComIPdu) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LdCom.LdComConfig.LdComIPdu ldComIPdu) {
 					ldComIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("LdComIPdu"))
 					super.delegateAdd(ldComIPdu)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LdCom$LdComConfig$LdComIPdu ldComIPdu) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LdCom.LdComConfig.LdComIPdu ldComIPdu) {
 					ldComIPdu.target?.gSetDefinition(containerValue.getContainerDefinition("LdComIPdu"))
 					super.delegateAdd(index, ldComIPdu)
-				}	
+				}
 			}
 		}
 		
 		
 		static class LdComIPdu implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof LdComIPdu)){
 					return false
 				}
 				this.target == (object as LdComIPdu).target
 			}
-			
+		
 			def LdComApiType getLdComApiType(){
-				getLdComApiTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComApiType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComApiType"].getLdComApiTypeValue()
 			}
 			
 			def void setLdComApiType(LdComApiType value){
@@ -170,32 +169,32 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComApiType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComApiType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum LdComApiType {
 				LDCOM_IF, 
 				LDCOM_TP
 			}
-				
-			def LdComApiType getLdComApiTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def LdComApiType getLdComApiTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "LDCOM_IF" : LdComApiType.LDCOM_IF
 					case "LDCOM_TP" : LdComApiType.LDCOM_TP
 				}
 			}
 			
-			def void setLdComApiTypeValue(GParameterValue paramValue, LdComApiType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setLdComApiTypeValue(GParameterValue parameterValue, LdComApiType value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getLdComHandleId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComHandleId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComHandleId"].getBigIntegerValue()
 			}
 			
 			def void setLdComHandleId(BigInteger value){
@@ -203,15 +202,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComHandleId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComHandleId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def LdComIPduDirection getLdComIPduDirection(){
-				getLdComIPduDirectionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComIPduDirection"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComIPduDirection"].getLdComIPduDirectionValue()
 			}
 			
 			def void setLdComIPduDirection(LdComIPduDirection value){
@@ -219,32 +218,32 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComIPduDirection"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComIPduDirection"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum LdComIPduDirection {
 				LDCOM_RECEIVE, 
 				LDCOM_SEND
 			}
-				
-			def LdComIPduDirection getLdComIPduDirectionValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def LdComIPduDirection getLdComIPduDirectionValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "LDCOM_RECEIVE" : LdComIPduDirection.LDCOM_RECEIVE
 					case "LDCOM_SEND" : LdComIPduDirection.LDCOM_SEND
 				}
 			}
 			
-			def void setLdComIPduDirectionValue(GParameterValue paramValue, LdComIPduDirection value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setLdComIPduDirectionValue(GParameterValue parameterValue, LdComIPduDirection value){
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComRxCopyRxData(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxCopyRxData"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxCopyRxData"].getStringValue()
 			}
 			
 			def void setLdComRxCopyRxData(String value){
@@ -252,15 +251,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxCopyRxData"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxCopyRxData"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComRxIndication(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxIndication"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxIndication"].getStringValue()
 			}
 			
 			def void setLdComRxIndication(String value){
@@ -268,15 +267,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxIndication"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxIndication"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComRxStartOfReception(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxStartOfReception"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxStartOfReception"].getStringValue()
 			}
 			
 			def void setLdComRxStartOfReception(String value){
@@ -284,15 +283,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxStartOfReception"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxStartOfReception"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComTpRxIndication(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTpRxIndication"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTpRxIndication"].getStringValue()
 			}
 			
 			def void setLdComTpRxIndication(String value){
@@ -300,15 +299,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComTpRxIndication"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTpRxIndication"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComTpTxConfirmation(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTpTxConfirmation"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTpTxConfirmation"].getStringValue()
 			}
 			
 			def void setLdComTpTxConfirmation(String value){
@@ -316,15 +315,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComTpTxConfirmation"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTpTxConfirmation"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComTxConfirmation(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxConfirmation"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxConfirmation"].getStringValue()
 			}
 			
 			def void setLdComTxConfirmation(String value){
@@ -332,15 +331,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxConfirmation"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxConfirmation"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComTxCopyTxData(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxCopyTxData"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxCopyTxData"].getStringValue()
 			}
 			
 			def void setLdComTxCopyTxData(String value){
@@ -348,15 +347,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxCopyTxData"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxCopyTxData"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getLdComTxTriggerTransmit(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxTriggerTransmit"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxTriggerTransmit"].getStringValue()
 			}
 			
 			def void setLdComTxTriggerTransmit(String value){
@@ -364,11 +363,11 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxTriggerTransmit"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxTriggerTransmit"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -376,11 +375,11 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getLdComPduRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "LdComPduRef")
 			}
-					
+			
 			def void setLdComPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "LdComPduRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "LdComPduRef"], object.getTarget())
 				}
 			}
 			
@@ -391,32 +390,32 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 	}
 	static class LdComGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof LdComGeneral)){
 				return false
 			}
 			this.target == (object as LdComGeneral).target
 		}
-		
+	
 		def Boolean getLdComDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setLdComDevErrorDetect(Boolean value){
@@ -424,15 +423,15 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getLdComVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setLdComVersionInfoApi(Boolean value){
@@ -440,25 +439,25 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LdComVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof LdCom)){
 			return false
 		}
 		this.target == (object as LdCom).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

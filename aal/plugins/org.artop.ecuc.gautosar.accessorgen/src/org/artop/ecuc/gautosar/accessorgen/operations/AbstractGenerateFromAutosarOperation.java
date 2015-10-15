@@ -14,8 +14,6 @@
  */
 package org.artop.ecuc.gautosar.accessorgen.operations;
 
-import gautosar.ggenericstructure.ginfrastructure.GARPackage;
-
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +39,8 @@ import org.eclipse.sphinx.emf.util.EcoreResourceUtil;
 import org.eclipse.sphinx.emf.workspace.loading.ModelLoadManager;
 import org.eclipse.sphinx.platform.operations.AbstractWorkspaceOperation;
 
+import gautosar.ggenericstructure.ginfrastructure.GARPackage;
+
 public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorkspaceOperation implements IGenerateFromAutosarOperation {
 
 	protected IFile autosarFile;
@@ -49,8 +49,8 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 	protected IProject targetProject;
 	protected String autosarRevision;
 
-	private static final Pattern AR_XSD_PATTERN = Pattern.compile(
-			"autosar_(\\d)-(\\d)-(\\d)(_(strict|compact|strict_compact))?\\.xsd", Pattern.CASE_INSENSITIVE); //$NON-NLS-1$
+	private static final Pattern AR_XSD_PATTERN = Pattern.compile("autosar_(\\d)-(\\d)-(\\d)(_(strict|compact|strict_compact))?\\.xsd", //$NON-NLS-1$
+			Pattern.CASE_INSENSITIVE);
 
 	private static final String TARGET_PLUGIN_NAME = "org.artop.ecuc.autosar{0}.accessors"; //$NON-NLS-1$
 	private static final String AUTOSAR_REVISION_PLUGIN_NAME = "org.artop.aal.autosar{0}"; //$NON-NLS-1$
@@ -118,8 +118,8 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 	 * .ginfrastructure.GARPackage, org.eclipse.core.resources.IProject, org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
-	public abstract void generate(GARPackage arPackage, IProject targetProject, IProgressMonitor monitor) throws CoreException,
-			OperationCanceledException;
+	public abstract void generate(GARPackage arPackage, IProject targetProject, IProgressMonitor monitor)
+			throws CoreException, OperationCanceledException;
 
 	protected GARPackage getARPackage(String absoluteQualifiedName, IProgressMonitor monitor) throws CoreException, OperationCanceledException {
 		Assert.isNotNull(autosarFile);
@@ -168,8 +168,8 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 		return null;
 	}
 
-	protected IProject createTargetProject(String targetPluginName, String autosarRevision, IProgressMonitor monitor) throws CoreException,
-			OperationCanceledException {
+	protected IProject createTargetProject(String targetPluginName, String autosarRevision, IProgressMonitor monitor)
+			throws CoreException, OperationCanceledException {
 		SubMonitor progress = SubMonitor.convert(monitor, 100);
 		if (progress.isCanceled()) {
 			throw new OperationCanceledException();
@@ -182,7 +182,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 
 			List<String> requiredBundleIds = new ArrayList<String>();
 			requiredBundleIds.add(SPHINX_EMF_PLUGIN_NAME);
-			requiredBundleIds.add(MessageFormat.format(AR_ECUC_ACCESSORS_LIB_PLUGIN_NAME, autosarRevision));
+			requiredBundleIds.add(MessageFormat.format(AR_ECUC_ACCESSORS_LIB_PLUGIN_NAME, getAutosarReleasePostfix(autosarRevision)));
 			requiredBundleIds.add(MessageFormat.format(AUTOSAR_REVISION_PLUGIN_NAME, autosarRevision));
 
 			ConvertToXtendEnabledPluginProjectJob convertProjectToXtendPluginOperation = new ConvertToXtendEnabledPluginProjectJob(targetProject,
@@ -190,6 +190,22 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 			convertProjectToXtendPluginOperation.runInWorkspace(progress.newChild(80));
 		}
 		return targetProject;
+	}
+
+	protected static String getAutosarReleasePostfix(String autosarRevision) {
+		Assert.isNotNull(autosarRevision);
+		Assert.isLegal(!autosarRevision.isEmpty());
+
+		Character majorVersionNumber = autosarRevision.charAt(0);
+		switch (majorVersionNumber) {
+		case '2':
+			return "21"; //$NON-NLS-1$
+		case '3':
+		case '4':
+			return majorVersionNumber + "x"; //$NON-NLS-1$
+		default:
+			return "00"; //$NON-NLS-1$
+		}
 	}
 
 	protected Resource getModelResource(IProgressMonitor monitor) {

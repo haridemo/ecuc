@@ -18,20 +18,6 @@
    </license>
 
    <plugin
-         id="org.artop.ecuc.examples.autosar421.accessorgen.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.artop.ecuc.examples.autosar421.accessorgen.ui.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.artop.ecuc.examples.autosar421.accessors.check"
          download-size="0"
          install-size="0"
@@ -65,8 +51,8 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-  <plugin
+
+   <plugin
          id="org.artop.ecuc.examples.autosar421.accessors.workflows.source"
          download-size="0"
          install-size="0"

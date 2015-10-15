@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,23 +52,23 @@ import java.math.BigDecimal
 
 class LinTrcv implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def List<LinTrcvChannel> getLinTrcvChannels(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
@@ -77,12 +76,12 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<LinTrcvChannel, GContainer>(filteredContainers, typeof(LinTrcvChannel), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel linTrcvChannel) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTrcv.LinTrcvChannel linTrcvChannel) {
 				linTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("LinTrcvChannel"))
 				super.delegateAdd(linTrcvChannel)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel linTrcvChannel) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTrcv.LinTrcvChannel linTrcvChannel) {
 				linTrcvChannel.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("LinTrcvChannel"))
 				super.delegateAdd(index, linTrcvChannel)
 			}
@@ -91,40 +90,40 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 	def LinTrcvGeneral getLinTrcvGeneral(){
 		moduleConfiguration.getByType(typeof(LinTrcvGeneral))
 	}
-	
+
 	def void setLinTrcvGeneral(LinTrcvGeneral linTrcvGeneral){
-		val GContainer container = linTrcvGeneral.getTarget() 
+		val GContainer container = linTrcvGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "LinTrcvGeneral")
 	}
-	
+
 	static class LinTrcvChannel implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof LinTrcvChannel)){
 				return false
 			}
 			this.target == (object as LinTrcvChannel).target
 		}
-		
+	
 		def BigInteger getLinTrcvChannelId(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelId"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelId"].getBigIntegerValue()
 		}
 		
 		def void setLinTrcvChannelId(BigInteger value){
@@ -132,15 +131,15 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvChannelId"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvChannelId"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getLinTrcvChannelUsed(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelUsed"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelUsed"].getBooleanValue()
 		}
 		
 		def void setLinTrcvChannelUsed(Boolean value){
@@ -148,15 +147,15 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvChannelUsed"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvChannelUsed"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def LinTrcvInitState getLinTrcvInitState(){
-			getLinTrcvInitStateValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvInitState"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvInitState"].getLinTrcvInitStateValue()
 		}
 		
 		def void setLinTrcvInitState(LinTrcvInitState value){
@@ -164,11 +163,11 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvInitState"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvInitState"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum LinTrcvInitState {
@@ -176,22 +175,22 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			LINTRCV_TRCV_MODE_SLEEP, 
 			LINTRCV_TRCV_MODE_STANDBY
 		}
-			
-		def LinTrcvInitState getLinTrcvInitStateValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def LinTrcvInitState getLinTrcvInitStateValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "LINTRCV_TRCV_MODE_NORMAL" : LinTrcvInitState.LINTRCV_TRCV_MODE_NORMAL
 				case "LINTRCV_TRCV_MODE_SLEEP" : LinTrcvInitState.LINTRCV_TRCV_MODE_SLEEP
 				case "LINTRCV_TRCV_MODE_STANDBY" : LinTrcvInitState.LINTRCV_TRCV_MODE_STANDBY
 			}
 		}
 		
-		def void setLinTrcvInitStateValue(GParameterValue paramValue, LinTrcvInitState value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setLinTrcvInitStateValue(GParameterValue parameterValue, LinTrcvInitState value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getLinTrcvWakeupByBusUsed(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeupByBusUsed"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeupByBusUsed"].getBooleanValue()
 		}
 		
 		def void setLinTrcvWakeupByBusUsed(Boolean value){
@@ -199,33 +198,33 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWakeupByBusUsed"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWakeupByBusUsed"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel getLinTrcvIcuChannelRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel), "LinTrcvIcuChannelRef")
 		}
-				
+		
 		def void setLinTrcvIcuChannelRef(org.artop.ecuc.autosar421.accessors.Icu.IcuConfigSet.IcuChannel object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "LinTrcvIcuChannelRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "LinTrcvIcuChannelRef"], object.getTarget())
 			}
 		}
 		
 		def org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource getLinTrcvWakeupSourceRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource), "LinTrcvWakeupSourceRef")
 		}
-				
+		
 		def void setLinTrcvWakeupSourceRef(org.artop.ecuc.autosar421.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "LinTrcvWakeupSourceRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "LinTrcvWakeupSourceRef"], object.getTarget())
 			}
 		}
 		
@@ -242,30 +241,30 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		static class LinTrcvAccess implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof LinTrcvAccess)){
 					return false
 				}
 				this.target == (object as LinTrcvAccess).target
 			}
-			
+		
 			def LinTrcvDioAccess getLinTrcvDioAccess(){
 				containerValue.getByType(typeof(LinTrcvDioAccess))
 			}
@@ -285,30 +284,30 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			
 			static class LinTrcvDioAccess implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof LinTrcvDioAccess)){
 						return false
 					}
 					this.target == (object as LinTrcvDioAccess).target
 				}
-				
+			
 				
 				
 				def List<LinTrcvDioChannelAccess> getLinTrcvDioChannelAccess(){
@@ -318,47 +317,47 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<LinTrcvDioChannelAccess, GContainer>(filteredContainers, typeof(LinTrcvDioChannelAccess), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel$LinTrcvAccess$LinTrcvDioAccess$LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.LinTrcv.LinTrcvChannel.LinTrcvAccess.LinTrcvDioAccess.LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
 							linTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("LinTrcvDioChannelAccess"))
 							super.delegateAdd(linTrcvDioChannelAccess)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTrcv$LinTrcvChannel$LinTrcvAccess$LinTrcvDioAccess$LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.LinTrcv.LinTrcvChannel.LinTrcvAccess.LinTrcvDioAccess.LinTrcvDioChannelAccess linTrcvDioChannelAccess) {
 							linTrcvDioChannelAccess.target?.gSetDefinition(containerValue.getContainerDefinition("LinTrcvDioChannelAccess"))
 							super.delegateAdd(index, linTrcvDioChannelAccess)
-						}	
+						}
 					}
 				}
 				
 				
 				static class LinTrcvDioChannelAccess implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof LinTrcvDioChannelAccess)){
 							return false
 						}
 						this.target == (object as LinTrcvDioChannelAccess).target
 					}
-					
+				
 					def String getLinTrcvHardwareInterfaceName(){
-						EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvHardwareInterfaceName"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvHardwareInterfaceName"].getStringValue()
 					}
 					
 					def void setLinTrcvHardwareInterfaceName(String value){
@@ -366,11 +365,11 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvHardwareInterfaceName"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvHardwareInterfaceName"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -383,39 +382,39 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			
 			static class LinTrcvSpiSequence implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof LinTrcvSpiSequence)){
 						return false
 					}
 					this.target == (object as LinTrcvSpiSequence).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence getLinTrcvSpiSequenceName(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence), "LinTrcvSpiSequenceName")
 				}
-						
+				
 				def void setLinTrcvSpiSequenceName(org.artop.ecuc.autosar421.accessors.Spi.SpiDriver.SpiSequence object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "LinTrcvSpiSequenceName"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "LinTrcvSpiSequenceName"], object.getTarget())
 					}
 				}
 				
@@ -428,32 +427,32 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 	}
 	static class LinTrcvGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof LinTrcvGeneral)){
 				return false
 			}
 			this.target == (object as LinTrcvGeneral).target
 		}
-		
+	
 		def Boolean getLinTrcvDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setLinTrcvDevErrorDetect(Boolean value){
@@ -461,15 +460,15 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getLinTrcvGetVersionInfo(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvGetVersionInfo"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvGetVersionInfo"].getBooleanValue()
 		}
 		
 		def void setLinTrcvGetVersionInfo(Boolean value){
@@ -477,15 +476,15 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvGetVersionInfo"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvGetVersionInfo"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getLinTrcvIndex(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvIndex"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvIndex"].getBigIntegerValue()
 		}
 		
 		def void setLinTrcvIndex(BigInteger value){
@@ -493,15 +492,15 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvIndex"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvIndex"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def LinTrcvTimerType getLinTrcvTimerType(){
-			getLinTrcvTimerTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvTimerType"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvTimerType"].getLinTrcvTimerTypeValue()
 		}
 		
 		def void setLinTrcvTimerType(LinTrcvTimerType value){
@@ -509,32 +508,32 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvTimerType"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvTimerType"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum LinTrcvTimerType {
 			None, 
 			Timer_1us16bit
 		}
-			
-		def LinTrcvTimerType getLinTrcvTimerTypeValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def LinTrcvTimerType getLinTrcvTimerTypeValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "None" : LinTrcvTimerType.None
 				case "Timer_1us16bit" : LinTrcvTimerType.Timer_1us16bit
 			}
 		}
 		
-		def void setLinTrcvTimerTypeValue(GParameterValue paramValue, LinTrcvTimerType value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setLinTrcvTimerTypeValue(GParameterValue parameterValue, LinTrcvTimerType value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getLinTrcvWaitTime(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWaitTime"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWaitTime"].getBigDecimalValue()
 		}
 		
 		def void setLinTrcvWaitTime(BigDecimal value){
@@ -542,15 +541,15 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWaitTime"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWaitTime"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getLinTrcvWakeUpSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeUpSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeUpSupport"].getBooleanValue()
 		}
 		
 		def void setLinTrcvWakeUpSupport(Boolean value){
@@ -558,25 +557,25 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWakeUpSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWakeUpSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof LinTrcv)){
 			return false
 		}
 		this.target == (object as LinTrcv).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

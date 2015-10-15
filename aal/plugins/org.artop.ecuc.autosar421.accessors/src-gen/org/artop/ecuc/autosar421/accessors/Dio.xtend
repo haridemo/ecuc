@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,66 +52,66 @@ import java.math.BigDecimal
 
 class Dio implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def DioConfig getDioConfig(){
 		moduleConfiguration.getByType(typeof(DioConfig))
 	}
-	
+
 	def void setDioConfig(DioConfig dioConfig){
-		val GContainer container = dioConfig.getTarget() 
+		val GContainer container = dioConfig.getTarget()
 	    moduleConfiguration.setContainer(container, "DioConfig")
 	}
 	def DioGeneral getDioGeneral(){
 		moduleConfiguration.getByType(typeof(DioGeneral))
 	}
-	
+
 	def void setDioGeneral(DioGeneral dioGeneral){
-		val GContainer container = dioGeneral.getTarget() 
+		val GContainer container = dioGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "DioGeneral")
 	}
-	
+
 	static class DioConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DioConfig)){
 				return false
 			}
 			this.target == (object as DioConfig).target
 		}
-		
+	
 		
 		
 		def List<DioPort> getDioPorts(){
@@ -122,47 +121,47 @@ class Dio implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DioPort, GContainer>(filteredContainers, typeof(DioPort), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort dioPort) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio.DioConfig.DioPort dioPort) {
 					dioPort.target?.gSetDefinition(containerValue.getContainerDefinition("DioPort"))
 					super.delegateAdd(dioPort)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort dioPort) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio.DioConfig.DioPort dioPort) {
 					dioPort.target?.gSetDefinition(containerValue.getContainerDefinition("DioPort"))
 					super.delegateAdd(index, dioPort)
-				}	
+				}
 			}
 		}
 		
 		
 		static class DioPort implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DioPort)){
 					return false
 				}
 				this.target == (object as DioPort).target
 			}
-			
+		
 			def BigInteger getDioPortId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortId"].getBigIntegerValue()
 			}
 			
 			def void setDioPortId(BigInteger value){
@@ -170,11 +169,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioPortId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioPortId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -186,15 +185,15 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DioChannel, GContainer>(filteredContainers, typeof(DioChannel), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannel dioChannel) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio.DioConfig.DioPort.DioChannel dioChannel) {
 						dioChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannel"))
 						super.delegateAdd(dioChannel)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannel dioChannel) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio.DioConfig.DioPort.DioChannel dioChannel) {
 						dioChannel.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannel"))
 						super.delegateAdd(index, dioChannel)
-					}	
+					}
 				}
 			}
 			
@@ -205,47 +204,47 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<DioChannelGroup, GContainer>(filteredContainers, typeof(DioChannelGroup), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannelGroup dioChannelGroup) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Dio.DioConfig.DioPort.DioChannelGroup dioChannelGroup) {
 						dioChannelGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannelGroup"))
 						super.delegateAdd(dioChannelGroup)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio$DioConfig$DioPort$DioChannelGroup dioChannelGroup) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Dio.DioConfig.DioPort.DioChannelGroup dioChannelGroup) {
 						dioChannelGroup.target?.gSetDefinition(containerValue.getContainerDefinition("DioChannelGroup"))
 						super.delegateAdd(index, dioChannelGroup)
-					}	
+					}
 				}
 			}
 			
 			
 			static class DioChannel implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DioChannel)){
 						return false
 					}
 					this.target == (object as DioChannel).target
 				}
-				
+			
 				def BigInteger getDioChannelId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelId"].getBigIntegerValue()
 				}
 				
 				def void setDioChannelId(BigInteger value){
@@ -253,11 +252,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioChannelId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioChannelId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -267,32 +266,32 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			
 			static class DioChannelGroup implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof DioChannelGroup)){
 						return false
 					}
 					this.target == (object as DioChannelGroup).target
 				}
-				
+			
 				def String getDioChannelGroupIdentification(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelGroupIdentification"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioChannelGroupIdentification"].getStringValue()
 				}
 				
 				def void setDioChannelGroupIdentification(String value){
@@ -300,15 +299,15 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioChannelGroupIdentification"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioChannelGroupIdentification"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getDioPortMask(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortMask"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortMask"].getBigIntegerValue()
 				}
 				
 				def void setDioPortMask(BigInteger value){
@@ -316,15 +315,15 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioPortMask"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioPortMask"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getDioPortOffset(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortOffset"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioPortOffset"].getBigIntegerValue()
 				}
 				
 				def void setDioPortOffset(BigInteger value){
@@ -332,11 +331,11 @@ class Dio implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioPortOffset"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioPortOffset"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -349,32 +348,32 @@ class Dio implements IWrapper<GModuleConfiguration> {
 	}
 	static class DioGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DioGeneral)){
 				return false
 			}
 			this.target == (object as DioGeneral).target
 		}
-		
+	
 		def Boolean getDioDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setDioDevErrorDetect(Boolean value){
@@ -382,15 +381,15 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDioFlipChannelApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioFlipChannelApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioFlipChannelApi"].getBooleanValue()
 		}
 		
 		def void setDioFlipChannelApi(Boolean value){
@@ -398,15 +397,15 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioFlipChannelApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioFlipChannelApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getDioVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DioVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setDioVersionInfoApi(Boolean value){
@@ -414,25 +413,25 @@ class Dio implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DioVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DioVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Dio)){
 			return false
 		}
 		this.target == (object as Dio).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

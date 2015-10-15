@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,74 +52,74 @@ import java.math.BigDecimal
 
 class Det implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def DetConfigSet getDetConfigSet(){
 		moduleConfiguration.getByType(typeof(DetConfigSet))
 	}
-	
+
 	def void setDetConfigSet(DetConfigSet detConfigSet){
-		val GContainer container = detConfigSet.getTarget() 
+		val GContainer container = detConfigSet.getTarget()
 	    moduleConfiguration.setContainer(container, "DetConfigSet")
 	}
 	def DetGeneral getDetGeneral(){
 		moduleConfiguration.getByType(typeof(DetGeneral))
 	}
-	
+
 	def void setDetGeneral(DetGeneral detGeneral){
-		val GContainer container = detGeneral.getTarget() 
+		val GContainer container = detGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "DetGeneral")
 	}
 	def DetNotification getDetNotification(){
 		moduleConfiguration.getByType(typeof(DetNotification))
 	}
-	
+
 	def void setDetNotification(DetNotification detNotification){
-		val GContainer container = detNotification.getTarget() 
+		val GContainer container = detNotification.getTarget()
 	    moduleConfiguration.setContainer(container, "DetNotification")
 	}
-	
+
 	static class DetConfigSet implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DetConfigSet)){
 				return false
 			}
 			this.target == (object as DetConfigSet).target
 		}
-		
+	
 		
 		
 		def List<DetModule> getDetModules(){
@@ -130,47 +129,47 @@ class Det implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<DetModule, GContainer>(filteredContainers, typeof(DetModule), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Det$DetConfigSet$DetModule detModule) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Det.DetConfigSet.DetModule detModule) {
 					detModule.target?.gSetDefinition(containerValue.getContainerDefinition("DetModule"))
 					super.delegateAdd(detModule)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Det$DetConfigSet$DetModule detModule) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Det.DetConfigSet.DetModule detModule) {
 					detModule.target?.gSetDefinition(containerValue.getContainerDefinition("DetModule"))
 					super.delegateAdd(index, detModule)
-				}	
+				}
 			}
 		}
 		
 		
 		static class DetModule implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof DetModule)){
 					return false
 				}
 				this.target == (object as DetModule).target
 			}
-			
+		
 			def BigInteger getDetModuleId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetModuleId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetModuleId"].getBigIntegerValue()
 			}
 			
 			def void setDetModuleId(BigInteger value){
@@ -178,11 +177,11 @@ class Det implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetModuleId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DetModuleId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -193,32 +192,32 @@ class Det implements IWrapper<GModuleConfiguration> {
 	}
 	static class DetGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DetGeneral)){
 				return false
 			}
 			this.target == (object as DetGeneral).target
 		}
-		
+	
 		def Boolean getDetForwardToDlt(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetForwardToDlt"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetForwardToDlt"].getBooleanValue()
 		}
 		
 		def void setDetForwardToDlt(Boolean value){
@@ -226,15 +225,15 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetForwardToDlt"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DetForwardToDlt"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def String getDetReportRuntimeErrorCallout(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportRuntimeErrorCallout"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportRuntimeErrorCallout"].getStringValue()
 		}
 		
 		def void setDetReportRuntimeErrorCallout(String value){
@@ -242,15 +241,15 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetReportRuntimeErrorCallout"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DetReportRuntimeErrorCallout"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def String getDetReportTransientFaultCallout(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportTransientFaultCallout"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetReportTransientFaultCallout"].getStringValue()
 		}
 		
 		def void setDetReportTransientFaultCallout(String value){
@@ -258,15 +257,15 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetReportTransientFaultCallout"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DetReportTransientFaultCallout"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getDetVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DetVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setDetVersionInfoApi(Boolean value){
@@ -274,11 +273,11 @@ class Det implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "DetVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DetVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -287,30 +286,30 @@ class Det implements IWrapper<GModuleConfiguration> {
 	}
 	static class DetNotification implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof DetNotification)){
 				return false
 			}
 			this.target == (object as DetNotification).target
 		}
-		
+	
 		def List<String> getDetErrorHooks(){
 			val List<EcucTextualParamValue> filteredParameterValues = new AbstractFilteringEList<EcucTextualParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
 				override protected accept(EcucTextualParamValue item) {
@@ -328,14 +327,14 @@ class Det implements IWrapper<GModuleConfiguration> {
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Det)){
 			return false
 		}
 		this.target == (object as Det).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

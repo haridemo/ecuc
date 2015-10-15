@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,60 +52,60 @@ import java.math.BigDecimal
 
 class UdpNm implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def UdpNmGlobalConfig getUdpNmGlobalConfig(){
 		moduleConfiguration.getByType(typeof(UdpNmGlobalConfig))
 	}
-	
+
 	def void setUdpNmGlobalConfig(UdpNmGlobalConfig udpNmGlobalConfig){
-		val GContainer container = udpNmGlobalConfig.getTarget() 
+		val GContainer container = udpNmGlobalConfig.getTarget()
 	    moduleConfiguration.setContainer(container, "UdpNmGlobalConfig")
 	}
-	
+
 	static class UdpNmGlobalConfig implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof UdpNmGlobalConfig)){
 				return false
 			}
 			this.target == (object as UdpNmGlobalConfig).target
 		}
-		
+	
 		def Boolean getUdpNmBusSynchronizationEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmBusSynchronizationEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmBusSynchronizationEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmBusSynchronizationEnabled(Boolean value){
@@ -114,15 +113,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmBusSynchronizationEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmBusSynchronizationEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmComControlEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmComControlEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmComControlEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmComControlEnabled(Boolean value){
@@ -130,15 +129,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmComControlEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmComControlEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmComUserDataSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmComUserDataSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmComUserDataSupport"].getBooleanValue()
 		}
 		
 		def void setUdpNmComUserDataSupport(Boolean value){
@@ -146,15 +145,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmComUserDataSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmComUserDataSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmCoordinatorEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmCoordinatorEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmCoordinatorEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmCoordinatorEnabled(Boolean value){
@@ -162,15 +161,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmCoordinatorEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmCoordinatorEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getUdpNmCoordinatorId(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmCoordinatorId"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmCoordinatorId"].getBigIntegerValue()
 		}
 		
 		def void setUdpNmCoordinatorId(BigInteger value){
@@ -178,15 +177,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmCoordinatorId"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmCoordinatorId"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getUdpNmCoordinatorSyncSupport(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmCoordinatorSyncSupport"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmCoordinatorSyncSupport"].getBooleanValue()
 		}
 		
 		def void setUdpNmCoordinatorSyncSupport(Boolean value){
@@ -194,15 +193,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmCoordinatorSyncSupport"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmCoordinatorSyncSupport"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setUdpNmDevErrorDetect(Boolean value){
@@ -210,15 +209,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmImmediateRestartEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmImmediateRestartEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmImmediateRestartEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmImmediateRestartEnabled(Boolean value){
@@ -226,15 +225,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmImmediateRestartEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmImmediateRestartEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmNodeDetectionEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNodeDetectionEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNodeDetectionEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmNodeDetectionEnabled(Boolean value){
@@ -242,15 +241,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNodeDetectionEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNodeDetectionEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmNodeIdEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNodeIdEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNodeIdEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmNodeIdEnabled(Boolean value){
@@ -258,15 +257,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNodeIdEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNodeIdEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getUdpNmNumberOfChannels(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNumberOfChannels"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNumberOfChannels"].getBigIntegerValue()
 		}
 		
 		def void setUdpNmNumberOfChannels(BigInteger value){
@@ -274,15 +273,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNumberOfChannels"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNumberOfChannels"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getUdpNmPassiveModeEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPassiveModeEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPassiveModeEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmPassiveModeEnabled(Boolean value){
@@ -290,15 +289,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPassiveModeEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPassiveModeEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmPduRxIndicationEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduRxIndicationEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduRxIndicationEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmPduRxIndicationEnabled(Boolean value){
@@ -306,15 +305,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduRxIndicationEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduRxIndicationEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmPnEiraCalcEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnEiraCalcEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnEiraCalcEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmPnEiraCalcEnabled(Boolean value){
@@ -322,15 +321,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnEiraCalcEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnEiraCalcEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getUdpNmPnResetTime(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnResetTime"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnResetTime"].getBigDecimalValue()
 		}
 		
 		def void setUdpNmPnResetTime(BigDecimal value){
@@ -338,15 +337,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnResetTime"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnResetTime"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getUdpNmRemoteSleepIndEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRemoteSleepIndEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRemoteSleepIndEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmRemoteSleepIndEnabled(Boolean value){
@@ -354,15 +353,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRemoteSleepIndEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRemoteSleepIndEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmRepeatMsgIndEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRepeatMsgIndEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRepeatMsgIndEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmRepeatMsgIndEnabled(Boolean value){
@@ -370,15 +369,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRepeatMsgIndEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRepeatMsgIndEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmStateChangeIndEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmStateChangeIndEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmStateChangeIndEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmStateChangeIndEnabled(Boolean value){
@@ -386,15 +385,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmStateChangeIndEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmStateChangeIndEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmUserDataEnabled(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmUserDataEnabled"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmUserDataEnabled"].getBooleanValue()
 		}
 		
 		def void setUdpNmUserDataEnabled(Boolean value){
@@ -402,15 +401,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmUserDataEnabled"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmUserDataEnabled"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getUdpNmVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setUdpNmVersionInfoApi(Boolean value){
@@ -418,22 +417,22 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getUdpNmPnEiraRxNSduRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "UdpNmPnEiraRxNSduRef")
 		}
-				
+		
 		def void setUdpNmPnEiraRxNSduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmPnEiraRxNSduRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmPnEiraRxNSduRef"], object.getTarget())
 			}
 		}
 		
@@ -445,15 +444,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<UdpNmChannelConfig, GContainer>(filteredContainers, typeof(UdpNmChannelConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig udpNmChannelConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm.UdpNmGlobalConfig.UdpNmChannelConfig udpNmChannelConfig) {
 					udpNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmChannelConfig"))
 					super.delegateAdd(udpNmChannelConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig udpNmChannelConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm.UdpNmGlobalConfig.UdpNmChannelConfig udpNmChannelConfig) {
 					udpNmChannelConfig.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmChannelConfig"))
 					super.delegateAdd(index, udpNmChannelConfig)
-				}	
+				}
 			}
 		}
 		
@@ -478,32 +477,32 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 		
 		static class UdpNmChannelConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof UdpNmChannelConfig)){
 					return false
 				}
 				this.target == (object as UdpNmChannelConfig).target
 			}
-			
+		
 			def Boolean getUdpNmActiveWakeupBitEnabled(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmActiveWakeupBitEnabled"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmActiveWakeupBitEnabled"].getBooleanValue()
 			}
 			
 			def void setUdpNmActiveWakeupBitEnabled(Boolean value){
@@ -511,15 +510,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmActiveWakeupBitEnabled"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmActiveWakeupBitEnabled"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigInteger getUdpNmImmediateNmTransmissions(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmImmediateNmTransmissions"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmImmediateNmTransmissions"].getBigIntegerValue()
 			}
 			
 			def void setUdpNmImmediateNmTransmissions(BigInteger value){
@@ -527,15 +526,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmImmediateNmTransmissions"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmImmediateNmTransmissions"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmMainFunctionPeriod(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMainFunctionPeriod"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMainFunctionPeriod"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmMainFunctionPeriod(BigDecimal value){
@@ -543,15 +542,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMainFunctionPeriod"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMainFunctionPeriod"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmMsgCycleOffset(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMsgCycleOffset"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMsgCycleOffset"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmMsgCycleOffset(BigDecimal value){
@@ -559,15 +558,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMsgCycleOffset"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMsgCycleOffset"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmMsgCycleTime(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMsgCycleTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMsgCycleTime"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmMsgCycleTime(BigDecimal value){
@@ -575,15 +574,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMsgCycleTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMsgCycleTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmMsgTimeoutTime(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMsgTimeoutTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmMsgTimeoutTime"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmMsgTimeoutTime(BigDecimal value){
@@ -591,15 +590,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMsgTimeoutTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmMsgTimeoutTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getUdpNmNodeId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNodeId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmNodeId"].getBigIntegerValue()
 			}
 			
 			def void setUdpNmNodeId(BigInteger value){
@@ -607,15 +606,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNodeId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmNodeId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def UdpNmPduCbvPosition getUdpNmPduCbvPosition(){
-				getUdpNmPduCbvPositionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduCbvPosition"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduCbvPosition"].getUdpNmPduCbvPositionValue()
 			}
 			
 			def void setUdpNmPduCbvPosition(UdpNmPduCbvPosition value){
@@ -623,11 +622,11 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduCbvPosition"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduCbvPosition"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum UdpNmPduCbvPosition {
@@ -635,22 +634,22 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				UDPNM_PDU_BYTE_1, 
 				UDPNM_PDU_OFF
 			}
-				
-			def UdpNmPduCbvPosition getUdpNmPduCbvPositionValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def UdpNmPduCbvPosition getUdpNmPduCbvPositionValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "UDPNM_PDU_BYTE_0" : UdpNmPduCbvPosition.UDPNM_PDU_BYTE_0
 					case "UDPNM_PDU_BYTE_1" : UdpNmPduCbvPosition.UDPNM_PDU_BYTE_1
 					case "UDPNM_PDU_OFF" : UdpNmPduCbvPosition.UDPNM_PDU_OFF
 				}
 			}
 			
-			def void setUdpNmPduCbvPositionValue(GParameterValue paramValue, UdpNmPduCbvPosition value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setUdpNmPduCbvPositionValue(GParameterValue parameterValue, UdpNmPduCbvPosition value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getUdpNmPduLength(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduLength"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduLength"].getBigIntegerValue()
 			}
 			
 			def void setUdpNmPduLength(BigInteger value){
@@ -658,15 +657,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduLength"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduLength"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def UdpNmPduNidPosition getUdpNmPduNidPosition(){
-				getUdpNmPduNidPositionValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduNidPosition"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPduNidPosition"].getUdpNmPduNidPositionValue()
 			}
 			
 			def void setUdpNmPduNidPosition(UdpNmPduNidPosition value){
@@ -674,11 +673,11 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduNidPosition"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPduNidPosition"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum UdpNmPduNidPosition {
@@ -686,22 +685,22 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				UDPNM_PDU_BYTE_1, 
 				UDPNM_PDU_OFF
 			}
-				
-			def UdpNmPduNidPosition getUdpNmPduNidPositionValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def UdpNmPduNidPosition getUdpNmPduNidPositionValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "UDPNM_PDU_BYTE_0" : UdpNmPduNidPosition.UDPNM_PDU_BYTE_0
 					case "UDPNM_PDU_BYTE_1" : UdpNmPduNidPosition.UDPNM_PDU_BYTE_1
 					case "UDPNM_PDU_OFF" : UdpNmPduNidPosition.UDPNM_PDU_OFF
 				}
 			}
 			
-			def void setUdpNmPduNidPositionValue(GParameterValue paramValue, UdpNmPduNidPosition value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setUdpNmPduNidPositionValue(GParameterValue parameterValue, UdpNmPduNidPosition value){
+				parameterValue.setValue(value)
 			}
 			
 			def Boolean getUdpNmPnEnabled(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnEnabled"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnEnabled"].getBooleanValue()
 			}
 			
 			def void setUdpNmPnEnabled(Boolean value){
@@ -709,15 +708,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnEnabled"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnEnabled"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getUdpNmPnEraCalcEnabled(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnEraCalcEnabled"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnEraCalcEnabled"].getBooleanValue()
 			}
 			
 			def void setUdpNmPnEraCalcEnabled(Boolean value){
@@ -725,15 +724,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnEraCalcEnabled"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnEraCalcEnabled"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getUdpNmPnHandleMultipleNetworkRequests(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnHandleMultipleNetworkRequests"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnHandleMultipleNetworkRequests"].getBooleanValue()
 			}
 			
 			def void setUdpNmPnHandleMultipleNetworkRequests(Boolean value){
@@ -741,15 +740,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnHandleMultipleNetworkRequests"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnHandleMultipleNetworkRequests"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def BigDecimal getUdpNmRemoteSleepIndTime(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRemoteSleepIndTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRemoteSleepIndTime"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmRemoteSleepIndTime(BigDecimal value){
@@ -757,15 +756,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRemoteSleepIndTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRemoteSleepIndTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmRepeatMessageTime(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRepeatMessageTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRepeatMessageTime"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmRepeatMessageTime(BigDecimal value){
@@ -773,15 +772,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRepeatMessageTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRepeatMessageTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmTimeoutTime(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTimeoutTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTimeoutTime"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmTimeoutTime(BigDecimal value){
@@ -789,15 +788,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmTimeoutTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmTimeoutTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getUdpNmWaitBusSleepTime(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmWaitBusSleepTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmWaitBusSleepTime"].getBigDecimalValue()
 			}
 			
 			def void setUdpNmWaitBusSleepTime(BigDecimal value){
@@ -805,33 +804,33 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmWaitBusSleepTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmWaitBusSleepTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getUdpNmPnEraRxNSduRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "UdpNmPnEraRxNSduRef")
 			}
-					
+			
 			def void setUdpNmPnEraRxNSduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmPnEraRxNSduRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmPnEraRxNSduRef"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel getUdpNmComMNetworkHandleRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel), "UdpNmComMNetworkHandleRef")
 			}
-					
+			
 			def void setUdpNmComMNetworkHandleRef(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmComMNetworkHandleRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmComMNetworkHandleRef"], object.getTarget())
 				}
 			}
 			
@@ -843,15 +842,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<UdpNmRxPdu, GContainer>(filteredContainers, typeof(UdpNmRxPdu), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig$UdpNmRxPdu udpNmRxPdu) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm.UdpNmGlobalConfig.UdpNmChannelConfig.UdpNmRxPdu udpNmRxPdu) {
 						udpNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmRxPdu"))
 						super.delegateAdd(udpNmRxPdu)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmChannelConfig$UdpNmRxPdu udpNmRxPdu) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm.UdpNmGlobalConfig.UdpNmChannelConfig.UdpNmRxPdu udpNmRxPdu) {
 						udpNmRxPdu.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmRxPdu"))
 						super.delegateAdd(index, udpNmRxPdu)
-					}	
+					}
 				}
 			}
 			
@@ -876,32 +875,32 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			
 			static class UdpNmRxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof UdpNmRxPdu)){
 						return false
 					}
 					this.target == (object as UdpNmRxPdu).target
 				}
-				
+			
 				def BigInteger getUdpNmRxPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRxPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmRxPduId"].getBigIntegerValue()
 				}
 				
 				def void setUdpNmRxPduId(BigInteger value){
@@ -909,22 +908,22 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRxPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmRxPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getUdpNmRxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "UdpNmRxPduRef")
 				}
-						
+				
 				def void setUdpNmRxPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmRxPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmRxPduRef"], object.getTarget())
 					}
 				}
 				
@@ -934,32 +933,32 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			
 			static class UdpNmTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof UdpNmTxPdu)){
 						return false
 					}
 					this.target == (object as UdpNmTxPdu).target
 				}
-				
+			
 				def BigInteger getUdpNmTxConfirmationPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTxConfirmationPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTxConfirmationPduId"].getBigIntegerValue()
 				}
 				
 				def void setUdpNmTxConfirmationPduId(BigInteger value){
@@ -967,22 +966,22 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmTxConfirmationPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmTxConfirmationPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getUdpNmTxPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "UdpNmTxPduRef")
 				}
-						
+				
 				def void setUdpNmTxPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmTxPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmTxPduRef"], object.getTarget())
 					}
 				}
 				
@@ -992,32 +991,32 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 			
 			static class UdpNmUserDataTxPdu implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof UdpNmUserDataTxPdu)){
 						return false
 					}
 					this.target == (object as UdpNmUserDataTxPdu).target
 				}
-				
+			
 				def BigInteger getUdpNmTxUserDataPduId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTxUserDataPduId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmTxUserDataPduId"].getBigIntegerValue()
 				}
 				
 				def void setUdpNmTxUserDataPduId(BigInteger value){
@@ -1025,22 +1024,22 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmTxUserDataPduId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmTxUserDataPduId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getUdpNmTxUserDataPduRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "UdpNmTxUserDataPduRef")
 				}
-						
+				
 				def void setUdpNmTxUserDataPduRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmTxUserDataPduRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UdpNmTxUserDataPduRef"], object.getTarget())
 					}
 				}
 				
@@ -1052,50 +1051,50 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 		
 		static class UdpNmDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof UdpNmDemEventParameterRefs)){
 					return false
 				}
 				this.target == (object as UdpNmDemEventParameterRefs).target
 			}
-			
+		
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getUDPNM_E_NETWORK_TIMEOUT(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "UDPNM_E_NETWORK_TIMEOUT")
 			}
-					
+			
 			def void setUDPNM_E_NETWORK_TIMEOUT(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UDPNM_E_NETWORK_TIMEOUT"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UDPNM_E_NETWORK_TIMEOUT"], object.getTarget())
 				}
 			}
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getUDPNM_E_TCPIP_TRANSMIT_ERROR(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "UDPNM_E_TCPIP_TRANSMIT_ERROR")
 			}
-					
+			
 			def void setUDPNM_E_TCPIP_TRANSMIT_ERROR(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "UDPNM_E_TCPIP_TRANSMIT_ERROR"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "UDPNM_E_TCPIP_TRANSMIT_ERROR"], object.getTarget())
 				}
 			}
 			
@@ -1105,32 +1104,32 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 		
 		static class UdpNmPnInfo implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof UdpNmPnInfo)){
 					return false
 				}
 				this.target == (object as UdpNmPnInfo).target
 			}
-			
+		
 			def BigInteger getUdpNmPnInfoLength(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnInfoLength"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnInfoLength"].getBigIntegerValue()
 			}
 			
 			def void setUdpNmPnInfoLength(BigInteger value){
@@ -1138,15 +1137,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnInfoLength"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnInfoLength"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getUdpNmPnInfoOffset(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnInfoOffset"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnInfoOffset"].getBigIntegerValue()
 			}
 			
 			def void setUdpNmPnInfoOffset(BigInteger value){
@@ -1154,11 +1153,11 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnInfoOffset"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnInfoOffset"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1170,47 +1169,47 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<UdpNmPnFilterMaskByte, GContainer>(filteredContainers, typeof(UdpNmPnFilterMaskByte), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmPnInfo$UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.UdpNm.UdpNmGlobalConfig.UdpNmPnInfo.UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
 						udpNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmPnFilterMaskByte"))
 						super.delegateAdd(udpNmPnFilterMaskByte)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm$UdpNmGlobalConfig$UdpNmPnInfo$UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.UdpNm.UdpNmGlobalConfig.UdpNmPnInfo.UdpNmPnFilterMaskByte udpNmPnFilterMaskByte) {
 						udpNmPnFilterMaskByte.target?.gSetDefinition(containerValue.getContainerDefinition("UdpNmPnFilterMaskByte"))
 						super.delegateAdd(index, udpNmPnFilterMaskByte)
-					}	
+					}
 				}
 			}
 			
 			
 			static class UdpNmPnFilterMaskByte implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof UdpNmPnFilterMaskByte)){
 						return false
 					}
 					this.target == (object as UdpNmPnFilterMaskByte).target
 				}
-				
+			
 				def BigInteger getUdpNmPnFilterMaskByteIndex(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnFilterMaskByteIndex"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnFilterMaskByteIndex"].getBigIntegerValue()
 				}
 				
 				def void setUdpNmPnFilterMaskByteIndex(BigInteger value){
@@ -1218,15 +1217,15 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnFilterMaskByteIndex"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnFilterMaskByteIndex"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getUdpNmPnFilterMaskByteValue(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnFilterMaskByteValue"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "UdpNmPnFilterMaskByteValue"].getBigIntegerValue()
 				}
 				
 				def void setUdpNmPnFilterMaskByteValue(BigInteger value){
@@ -1234,11 +1233,11 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnFilterMaskByteValue"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "UdpNmPnFilterMaskByteValue"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1249,14 +1248,14 @@ class UdpNm implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof UdpNm)){
 			return false
 		}
 		this.target == (object as UdpNm).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

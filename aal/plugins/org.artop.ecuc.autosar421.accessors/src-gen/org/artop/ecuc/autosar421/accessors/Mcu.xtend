@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,76 +52,76 @@ import java.math.BigDecimal
 
 class Mcu implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def McuGeneralConfiguration getMcuGeneralConfiguration(){
 		moduleConfiguration.getByType(typeof(McuGeneralConfiguration))
 	}
-	
+
 	def void setMcuGeneralConfiguration(McuGeneralConfiguration mcuGeneralConfiguration){
-		val GContainer container = mcuGeneralConfiguration.getTarget() 
+		val GContainer container = mcuGeneralConfiguration.getTarget()
 	    moduleConfiguration.setContainer(container, "McuGeneralConfiguration")
 	}
 	def McuModuleConfiguration getMcuModuleConfiguration(){
 		moduleConfiguration.getByType(typeof(McuModuleConfiguration))
 	}
-	
+
 	def void setMcuModuleConfiguration(McuModuleConfiguration mcuModuleConfiguration){
-		val GContainer container = mcuModuleConfiguration.getTarget() 
+		val GContainer container = mcuModuleConfiguration.getTarget()
 	    moduleConfiguration.setContainer(container, "McuModuleConfiguration")
 	}
 	def McuPublishedInformation getMcuPublishedInformation(){
 		moduleConfiguration.getByType(typeof(McuPublishedInformation))
 	}
-	
+
 	def void setMcuPublishedInformation(McuPublishedInformation mcuPublishedInformation){
-		val GContainer container = mcuPublishedInformation.getTarget() 
+		val GContainer container = mcuPublishedInformation.getTarget()
 	    moduleConfiguration.setContainer(container, "McuPublishedInformation")
 	}
-	
+
 	static class McuGeneralConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof McuGeneralConfiguration)){
 				return false
 			}
 			this.target == (object as McuGeneralConfiguration).target
 		}
-		
+	
 		def Boolean getMcuDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setMcuDevErrorDetect(Boolean value){
@@ -130,15 +129,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getMcuGetRamStateApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuGetRamStateApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuGetRamStateApi"].getBooleanValue()
 		}
 		
 		def void setMcuGetRamStateApi(Boolean value){
@@ -146,15 +145,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuGetRamStateApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuGetRamStateApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getMcuInitClock(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuInitClock"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuInitClock"].getBooleanValue()
 		}
 		
 		def void setMcuInitClock(Boolean value){
@@ -162,15 +161,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuInitClock"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuInitClock"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getMcuNoPll(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNoPll"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNoPll"].getBooleanValue()
 		}
 		
 		def void setMcuNoPll(Boolean value){
@@ -178,15 +177,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuNoPll"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuNoPll"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getMcuPerformResetApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuPerformResetApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuPerformResetApi"].getBooleanValue()
 		}
 		
 		def void setMcuPerformResetApi(Boolean value){
@@ -194,15 +193,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuPerformResetApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuPerformResetApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getMcuVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setMcuVersionInfoApi(Boolean value){
@@ -210,11 +209,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -223,32 +222,32 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 	}
 	static class McuModuleConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof McuModuleConfiguration)){
 				return false
 			}
 			this.target == (object as McuModuleConfiguration).target
 		}
-		
+	
 		def McuClockSrcFailureNotification getMcuClockSrcFailureNotification(){
-			getMcuClockSrcFailureNotificationValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSrcFailureNotification"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSrcFailureNotification"].getMcuClockSrcFailureNotificationValue()
 		}
 		
 		def void setMcuClockSrcFailureNotification(McuClockSrcFailureNotification value){
@@ -256,32 +255,32 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuClockSrcFailureNotification"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuClockSrcFailureNotification"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum McuClockSrcFailureNotification {
 			DISABLED, 
 			ENABLED
 		}
-			
-		def McuClockSrcFailureNotification getMcuClockSrcFailureNotificationValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def McuClockSrcFailureNotification getMcuClockSrcFailureNotificationValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "DISABLED" : McuClockSrcFailureNotification.DISABLED
 				case "ENABLED" : McuClockSrcFailureNotification.ENABLED
 			}
 		}
 		
-		def void setMcuClockSrcFailureNotificationValue(GParameterValue paramValue, McuClockSrcFailureNotification value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setMcuClockSrcFailureNotificationValue(GParameterValue parameterValue, McuClockSrcFailureNotification value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getMcuNumberOfMcuModes(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNumberOfMcuModes"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuNumberOfMcuModes"].getBigIntegerValue()
 		}
 		
 		def void setMcuNumberOfMcuModes(BigInteger value){
@@ -289,15 +288,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuNumberOfMcuModes"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuNumberOfMcuModes"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getMcuRamSectors(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectors"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectors"].getBigIntegerValue()
 		}
 		
 		def void setMcuRamSectors(BigInteger value){
@@ -305,15 +304,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuRamSectors"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuRamSectors"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getMcuResetSetting(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetSetting"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetSetting"].getBigIntegerValue()
 		}
 		
 		def void setMcuResetSetting(BigInteger value){
@@ -321,11 +320,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuResetSetting"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuResetSetting"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -337,15 +336,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuClockSettingConfig, GContainer>(filteredContainers, typeof(McuClockSettingConfig), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig mcuClockSettingConfig) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig mcuClockSettingConfig) {
 					mcuClockSettingConfig.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockSettingConfig"))
 					super.delegateAdd(mcuClockSettingConfig)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig mcuClockSettingConfig) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig mcuClockSettingConfig) {
 					mcuClockSettingConfig.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockSettingConfig"))
 					super.delegateAdd(index, mcuClockSettingConfig)
-				}	
+				}
 			}
 		}
 		
@@ -365,15 +364,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuModeSettingConf, GContainer>(filteredContainers, typeof(McuModeSettingConf), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuModeSettingConf mcuModeSettingConf) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuModeSettingConf mcuModeSettingConf) {
 					mcuModeSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuModeSettingConf"))
 					super.delegateAdd(mcuModeSettingConf)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuModeSettingConf mcuModeSettingConf) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuModeSettingConf mcuModeSettingConf) {
 					mcuModeSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuModeSettingConf"))
 					super.delegateAdd(index, mcuModeSettingConf)
-				}	
+				}
 			}
 		}
 		
@@ -384,47 +383,47 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuRamSectorSettingConf, GContainer>(filteredContainers, typeof(McuRamSectorSettingConf), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuRamSectorSettingConf mcuRamSectorSettingConf) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuRamSectorSettingConf mcuRamSectorSettingConf) {
 					mcuRamSectorSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuRamSectorSettingConf"))
 					super.delegateAdd(mcuRamSectorSettingConf)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuRamSectorSettingConf mcuRamSectorSettingConf) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuRamSectorSettingConf mcuRamSectorSettingConf) {
 					mcuRamSectorSettingConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuRamSectorSettingConf"))
 					super.delegateAdd(index, mcuRamSectorSettingConf)
-				}	
+				}
 			}
 		}
 		
 		
 		static class McuClockSettingConfig implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof McuClockSettingConfig)){
 					return false
 				}
 				this.target == (object as McuClockSettingConfig).target
 			}
-			
+		
 			def BigInteger getMcuClockSettingId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSettingId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockSettingId"].getBigIntegerValue()
 			}
 			
 			def void setMcuClockSettingId(BigInteger value){
@@ -432,11 +431,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuClockSettingId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuClockSettingId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -448,47 +447,47 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<McuClockReferencePoint, GContainer>(filteredContainers, typeof(McuClockReferencePoint), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig$McuClockReferencePoint mcuClockReferencePoint) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint mcuClockReferencePoint) {
 						mcuClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockReferencePoint"))
 						super.delegateAdd(mcuClockReferencePoint)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuModuleConfiguration$McuClockSettingConfig$McuClockReferencePoint mcuClockReferencePoint) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu.McuModuleConfiguration.McuClockSettingConfig.McuClockReferencePoint mcuClockReferencePoint) {
 						mcuClockReferencePoint.target?.gSetDefinition(containerValue.getContainerDefinition("McuClockReferencePoint"))
 						super.delegateAdd(index, mcuClockReferencePoint)
-					}	
+					}
 				}
 			}
 			
 			
 			static class McuClockReferencePoint implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof McuClockReferencePoint)){
 						return false
 					}
 					this.target == (object as McuClockReferencePoint).target
 				}
-				
+			
 				def BigDecimal getMcuClockReferencePointFrequency(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockReferencePointFrequency"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuClockReferencePointFrequency"].getBigDecimalValue()
 				}
 				
 				def void setMcuClockReferencePointFrequency(BigDecimal value){
@@ -496,11 +495,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuClockReferencePointFrequency"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuClockReferencePointFrequency"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -512,39 +511,39 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 		
 		static class McuDemEventParameterRefs implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof McuDemEventParameterRefs)){
 					return false
 				}
 				this.target == (object as McuDemEventParameterRefs).target
 			}
-			
+		
 			
 			def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getMCU_E_CLOCK_FAILURE(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "MCU_E_CLOCK_FAILURE")
 			}
-					
+			
 			def void setMCU_E_CLOCK_FAILURE(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "MCU_E_CLOCK_FAILURE"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "MCU_E_CLOCK_FAILURE"], object.getTarget())
 				}
 			}
 			
@@ -554,32 +553,32 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 		
 		static class McuModeSettingConf implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof McuModeSettingConf)){
 					return false
 				}
 				this.target == (object as McuModeSettingConf).target
 			}
-			
+		
 			def BigInteger getMcuMode(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuMode"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuMode"].getBigIntegerValue()
 			}
 			
 			def void setMcuMode(BigInteger value){
@@ -587,11 +586,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuMode"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuMode"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -601,32 +600,32 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 		
 		static class McuRamSectorSettingConf implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof McuRamSectorSettingConf)){
 					return false
 				}
 				this.target == (object as McuRamSectorSettingConf).target
 			}
-			
+		
 			def BigInteger getMcuRamDefaultValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamDefaultValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamDefaultValue"].getBigIntegerValue()
 			}
 			
 			def void setMcuRamDefaultValue(BigInteger value){
@@ -634,15 +633,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuRamDefaultValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuRamDefaultValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getMcuRamSectionBaseAddress(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionBaseAddress"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionBaseAddress"].getBigIntegerValue()
 			}
 			
 			def void setMcuRamSectionBaseAddress(BigInteger value){
@@ -650,15 +649,15 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuRamSectionBaseAddress"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuRamSectionBaseAddress"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getMcuRamSectionSize(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionSize"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuRamSectionSize"].getBigIntegerValue()
 			}
 			
 			def void setMcuRamSectionSize(BigInteger value){
@@ -666,11 +665,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuRamSectionSize"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuRamSectionSize"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -681,30 +680,30 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 	}
 	static class McuPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof McuPublishedInformation)){
 				return false
 			}
 			this.target == (object as McuPublishedInformation).target
 		}
-		
+	
 		
 		
 		def List<McuResetReasonConf> getMcuResetReasonConfs(){
@@ -714,47 +713,47 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<McuResetReasonConf, GContainer>(filteredContainers, typeof(McuResetReasonConf), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu$McuPublishedInformation$McuResetReasonConf mcuResetReasonConf) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf mcuResetReasonConf) {
 					mcuResetReasonConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuResetReasonConf"))
 					super.delegateAdd(mcuResetReasonConf)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu$McuPublishedInformation$McuResetReasonConf mcuResetReasonConf) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Mcu.McuPublishedInformation.McuResetReasonConf mcuResetReasonConf) {
 					mcuResetReasonConf.target?.gSetDefinition(containerValue.getContainerDefinition("McuResetReasonConf"))
 					super.delegateAdd(index, mcuResetReasonConf)
-				}	
+				}
 			}
 		}
 		
 		
 		static class McuResetReasonConf implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof McuResetReasonConf)){
 					return false
 				}
 				this.target == (object as McuResetReasonConf).target
 			}
-			
+		
 			def BigInteger getMcuResetReason(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetReason"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "McuResetReason"].getBigIntegerValue()
 			}
 			
 			def void setMcuResetReason(BigInteger value){
@@ -762,11 +761,11 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "McuResetReason"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "McuResetReason"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -775,14 +774,14 @@ class Mcu implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Mcu)){
 			return false
 		}
 		this.target == (object as Mcu).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

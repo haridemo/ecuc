@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,23 +52,23 @@ import java.math.BigDecimal
 
 class Ea implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def List<EaBlockConfiguration> getEaBlockConfigurations(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
@@ -77,12 +76,12 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<EaBlockConfiguration, GContainer>(filteredContainers, typeof(EaBlockConfiguration), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Ea$EaBlockConfiguration eaBlockConfiguration) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Ea.EaBlockConfiguration eaBlockConfiguration) {
 				eaBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EaBlockConfiguration"))
 				super.delegateAdd(eaBlockConfiguration)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Ea$EaBlockConfiguration eaBlockConfiguration) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Ea.EaBlockConfiguration eaBlockConfiguration) {
 				eaBlockConfiguration.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("EaBlockConfiguration"))
 				super.delegateAdd(index, eaBlockConfiguration)
 			}
@@ -91,48 +90,48 @@ class Ea implements IWrapper<GModuleConfiguration> {
 	def EaGeneral getEaGeneral(){
 		moduleConfiguration.getByType(typeof(EaGeneral))
 	}
-	
+
 	def void setEaGeneral(EaGeneral eaGeneral){
-		val GContainer container = eaGeneral.getTarget() 
+		val GContainer container = eaGeneral.getTarget()
 	    moduleConfiguration.setContainer(container, "EaGeneral")
 	}
 	def EaPublishedInformation getEaPublishedInformation(){
 		moduleConfiguration.getByType(typeof(EaPublishedInformation))
 	}
-	
+
 	def void setEaPublishedInformation(EaPublishedInformation eaPublishedInformation){
-		val GContainer container = eaPublishedInformation.getTarget() 
+		val GContainer container = eaPublishedInformation.getTarget()
 	    moduleConfiguration.setContainer(container, "EaPublishedInformation")
 	}
-	
+
 	static class EaBlockConfiguration implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EaBlockConfiguration)){
 				return false
 			}
 			this.target == (object as EaBlockConfiguration).target
 		}
-		
+	
 		def BigInteger getEaBlockNumber(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockNumber"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockNumber"].getBigIntegerValue()
 		}
 		
 		def void setEaBlockNumber(BigInteger value){
@@ -140,15 +139,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaBlockNumber"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaBlockNumber"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getEaBlockSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockSize"].getBigIntegerValue()
 		}
 		
 		def void setEaBlockSize(BigInteger value){
@@ -156,15 +155,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaBlockSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaBlockSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getEaImmediateData(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaImmediateData"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaImmediateData"].getBooleanValue()
 		}
 		
 		def void setEaImmediateData(Boolean value){
@@ -172,15 +171,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaImmediateData"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaImmediateData"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEaNumberOfWriteCycles(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaNumberOfWriteCycles"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaNumberOfWriteCycles"].getBigIntegerValue()
 		}
 		
 		def void setEaNumberOfWriteCycles(BigInteger value){
@@ -188,22 +187,22 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaNumberOfWriteCycles"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaNumberOfWriteCycles"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def org.artop.ecuc.autosar421.accessors.Eep.EepGeneral getEaDeviceIndex(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Eep.EepGeneral), "EaDeviceIndex")
 		}
-				
+		
 		def void setEaDeviceIndex(org.artop.ecuc.autosar421.accessors.Eep.EepGeneral object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "EaDeviceIndex"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "EaDeviceIndex"], object.getTarget())
 			}
 		}
 		
@@ -212,32 +211,32 @@ class Ea implements IWrapper<GModuleConfiguration> {
 	}
 	static class EaGeneral implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EaGeneral)){
 				return false
 			}
 			this.target == (object as EaGeneral).target
 		}
-		
+	
 		def Boolean getEaDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setEaDevErrorDetect(Boolean value){
@@ -245,15 +244,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigDecimal getEaMainFunctionPeriod(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaMainFunctionPeriod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaMainFunctionPeriod"].getBigDecimalValue()
 		}
 		
 		def void setEaMainFunctionPeriod(BigDecimal value){
@@ -261,15 +260,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaMainFunctionPeriod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaMainFunctionPeriod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def String getEaNvmJobEndNotification(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaNvmJobEndNotification"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaNvmJobEndNotification"].getStringValue()
 		}
 		
 		def void setEaNvmJobEndNotification(String value){
@@ -277,15 +276,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaNvmJobEndNotification"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaNvmJobEndNotification"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def String getEaNvmJobErrorNotification(){
-			EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaNvmJobErrorNotification"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaNvmJobErrorNotification"].getStringValue()
 		}
 		
 		def void setEaNvmJobErrorNotification(String value){
@@ -293,15 +292,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaNvmJobErrorNotification"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaNvmJobErrorNotification"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getEaPollingMode(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaPollingMode"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaPollingMode"].getBooleanValue()
 		}
 		
 		def void setEaPollingMode(Boolean value){
@@ -309,15 +308,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaPollingMode"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaPollingMode"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEaSetModeSupported(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaSetModeSupported"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaSetModeSupported"].getBooleanValue()
 		}
 		
 		def void setEaSetModeSupported(Boolean value){
@@ -325,15 +324,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaSetModeSupported"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaSetModeSupported"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getEaVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setEaVersionInfoApi(Boolean value){
@@ -341,15 +340,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def BigInteger getEaVirtualPageSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaVirtualPageSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaVirtualPageSize"].getBigIntegerValue()
 		}
 		
 		def void setEaVirtualPageSize(BigInteger value){
@@ -357,11 +356,11 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaVirtualPageSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaVirtualPageSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -370,32 +369,32 @@ class Ea implements IWrapper<GModuleConfiguration> {
 	}
 	static class EaPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof EaPublishedInformation)){
 				return false
 			}
 			this.target == (object as EaPublishedInformation).target
 		}
-		
+	
 		def BigInteger getEaBlockOverhead(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockOverhead"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaBlockOverhead"].getBigIntegerValue()
 		}
 		
 		def void setEaBlockOverhead(BigInteger value){
@@ -403,15 +402,15 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaBlockOverhead"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaBlockOverhead"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getEaPageOverhead(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaPageOverhead"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EaPageOverhead"].getBigIntegerValue()
 		}
 		
 		def void setEaPageOverhead(BigInteger value){
@@ -419,25 +418,25 @@ class Ea implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "EaPageOverhead"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EaPageOverhead"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Ea)){
 			return false
 		}
 		this.target == (object as Ea).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

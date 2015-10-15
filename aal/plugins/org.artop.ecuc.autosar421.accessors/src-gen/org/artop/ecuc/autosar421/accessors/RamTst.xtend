@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,76 +52,76 @@ import java.math.BigDecimal
 
 class RamTst implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def RamTstCommon getRamTstCommon(){
 		moduleConfiguration.getByType(typeof(RamTstCommon))
 	}
-	
+
 	def void setRamTstCommon(RamTstCommon ramTstCommon){
-		val GContainer container = ramTstCommon.getTarget() 
+		val GContainer container = ramTstCommon.getTarget()
 	    moduleConfiguration.setContainer(container, "RamTstCommon")
 	}
 	def RamTstDemEventParameterRefs getRamTstDemEventParameterRefs(){
 		moduleConfiguration.getByType(typeof(RamTstDemEventParameterRefs))
 	}
-	
+
 	def void setRamTstDemEventParameterRefs(RamTstDemEventParameterRefs ramTstDemEventParameterRefs){
-		val GContainer container = ramTstDemEventParameterRefs.getTarget() 
+		val GContainer container = ramTstDemEventParameterRefs.getTarget()
 	    moduleConfiguration.setContainer(container, "RamTstDemEventParameterRefs")
 	}
 	def RamTstPublishedInformation getRamTstPublishedInformation(){
 		moduleConfiguration.getByType(typeof(RamTstPublishedInformation))
 	}
-	
+
 	def void setRamTstPublishedInformation(RamTstPublishedInformation ramTstPublishedInformation){
-		val GContainer container = ramTstPublishedInformation.getTarget() 
+		val GContainer container = ramTstPublishedInformation.getTarget()
 	    moduleConfiguration.setContainer(container, "RamTstPublishedInformation")
 	}
-	
+
 	static class RamTstCommon implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof RamTstCommon)){
 				return false
 			}
 			this.target == (object as RamTstCommon).target
 		}
-		
+	
 		def Boolean getRamTstAllowApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAllowApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAllowApi"].getBooleanValue()
 		}
 		
 		def void setRamTstAllowApi(Boolean value){
@@ -130,15 +129,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAllowApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAllowApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstChangeNumOfTestedCellsApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstChangeNumOfTestedCellsApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstChangeNumOfTestedCellsApi"].getBooleanValue()
 		}
 		
 		def void setRamTstChangeNumOfTestedCellsApi(Boolean value){
@@ -146,15 +145,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstChangeNumOfTestedCellsApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstChangeNumOfTestedCellsApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstDevErrorDetect(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDevErrorDetect"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDevErrorDetect"].getBooleanValue()
 		}
 		
 		def void setRamTstDevErrorDetect(Boolean value){
@@ -162,15 +161,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstDevErrorDetect"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstDevErrorDetect"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetAlgParamsApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetAlgParamsApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetAlgParamsApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetAlgParamsApi(Boolean value){
@@ -178,15 +177,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetAlgParamsApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetAlgParamsApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetExecutionStatusApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetExecutionStatusApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetExecutionStatusApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetExecutionStatusApi(Boolean value){
@@ -194,15 +193,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetExecutionStatusApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetExecutionStatusApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetNumberOfTestedCellsApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetNumberOfTestedCellsApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetNumberOfTestedCellsApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetNumberOfTestedCellsApi(Boolean value){
@@ -210,15 +209,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetNumberOfTestedCellsApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetNumberOfTestedCellsApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetTestAlgorithmApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestAlgorithmApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestAlgorithmApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetTestAlgorithmApi(Boolean value){
@@ -226,15 +225,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestAlgorithmApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestAlgorithmApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetTestResultApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestResultApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestResultApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetTestResultApi(Boolean value){
@@ -242,15 +241,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestResultApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestResultApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetTestResultPerBlockApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestResultPerBlockApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestResultPerBlockApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetTestResultPerBlockApi(Boolean value){
@@ -258,15 +257,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestResultPerBlockApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestResultPerBlockApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstGetVersionInfoApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetVersionInfoApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetVersionInfoApi"].getBooleanValue()
 		}
 		
 		def void setRamTstGetVersionInfoApi(Boolean value){
@@ -274,15 +273,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetVersionInfoApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetVersionInfoApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstResumeApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstResumeApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstResumeApi"].getBooleanValue()
 		}
 		
 		def void setRamTstResumeApi(Boolean value){
@@ -290,15 +289,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstResumeApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstResumeApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstRunFullTestApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstRunFullTestApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstRunFullTestApi"].getBooleanValue()
 		}
 		
 		def void setRamTstRunFullTestApi(Boolean value){
@@ -306,15 +305,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstRunFullTestApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstRunFullTestApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstRunPartialTestApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstRunPartialTestApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstRunPartialTestApi"].getBooleanValue()
 		}
 		
 		def void setRamTstRunPartialTestApi(Boolean value){
@@ -322,15 +321,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstRunPartialTestApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstRunPartialTestApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstSelectAlgParamsApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstSelectAlgParamsApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstSelectAlgParamsApi"].getBooleanValue()
 		}
 		
 		def void setRamTstSelectAlgParamsApi(Boolean value){
@@ -338,15 +337,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstSelectAlgParamsApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstSelectAlgParamsApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstStopApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStopApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStopApi"].getBooleanValue()
 		}
 		
 		def void setRamTstStopApi(Boolean value){
@@ -354,15 +353,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstStopApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstStopApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getRamTstSuspendApi(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstSuspendApi"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstSuspendApi"].getBooleanValue()
 		}
 		
 		def void setRamTstSuspendApi(Boolean value){
@@ -370,11 +369,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstSuspendApi"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstSuspendApi"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -400,32 +399,32 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		static class RamTstAlgorithms implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof RamTstAlgorithms)){
 					return false
 				}
 				this.target == (object as RamTstAlgorithms).target
 			}
-			
+		
 			def Boolean getRamTstAbrahamTestSelected(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAbrahamTestSelected"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAbrahamTestSelected"].getBooleanValue()
 			}
 			
 			def void setRamTstAbrahamTestSelected(Boolean value){
@@ -433,15 +432,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAbrahamTestSelected"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAbrahamTestSelected"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getRamTstCheckerboardTestSelected(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCheckerboardTestSelected"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCheckerboardTestSelected"].getBooleanValue()
 			}
 			
 			def void setRamTstCheckerboardTestSelected(Boolean value){
@@ -449,15 +448,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstCheckerboardTestSelected"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstCheckerboardTestSelected"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getRamTstGalpatTestSelected(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGalpatTestSelected"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGalpatTestSelected"].getBooleanValue()
 			}
 			
 			def void setRamTstGalpatTestSelected(Boolean value){
@@ -465,15 +464,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGalpatTestSelected"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGalpatTestSelected"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getRamTstMarchTestSelected(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMarchTestSelected"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMarchTestSelected"].getBooleanValue()
 			}
 			
 			def void setRamTstMarchTestSelected(Boolean value){
@@ -481,15 +480,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMarchTestSelected"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMarchTestSelected"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getRamTstTranspGalpatTestSelected(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTranspGalpatTestSelected"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTranspGalpatTestSelected"].getBooleanValue()
 			}
 			
 			def void setRamTstTranspGalpatTestSelected(Boolean value){
@@ -497,15 +496,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTranspGalpatTestSelected"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTranspGalpatTestSelected"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getRamTstWalkPathTestSelected(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstWalkPathTestSelected"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstWalkPathTestSelected"].getBooleanValue()
 			}
 			
 			def void setRamTstWalkPathTestSelected(Boolean value){
@@ -513,11 +512,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstWalkPathTestSelected"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstWalkPathTestSelected"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -527,32 +526,32 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		static class RamTstConfigParams implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof RamTstConfigParams)){
 					return false
 				}
 				this.target == (object as RamTstConfigParams).target
 			}
-			
+		
 			def BigInteger getRamTstDefaultAlgParamsId(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDefaultAlgParamsId"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDefaultAlgParamsId"].getBigIntegerValue()
 			}
 			
 			def void setRamTstDefaultAlgParamsId(BigInteger value){
@@ -560,15 +559,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstDefaultAlgParamsId"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstDefaultAlgParamsId"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getRamTstMinNumberOfTestedCells(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMinNumberOfTestedCells"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMinNumberOfTestedCells"].getBigIntegerValue()
 			}
 			
 			def void setRamTstMinNumberOfTestedCells(BigInteger value){
@@ -576,15 +575,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMinNumberOfTestedCells"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMinNumberOfTestedCells"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getRamTstNumberOfAlgParamSets(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfAlgParamSets"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfAlgParamSets"].getBigIntegerValue()
 			}
 			
 			def void setRamTstNumberOfAlgParamSets(BigInteger value){
@@ -592,15 +591,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfAlgParamSets"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfAlgParamSets"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getRamTstTestCompletedNotification(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestCompletedNotification"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestCompletedNotification"].getStringValue()
 			}
 			
 			def void setRamTstTestCompletedNotification(String value){
@@ -608,15 +607,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestCompletedNotification"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestCompletedNotification"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def String getRamTstTestErrorNotification(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestErrorNotification"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestErrorNotification"].getStringValue()
 			}
 			
 			def void setRamTstTestErrorNotification(String value){
@@ -624,11 +623,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestErrorNotification"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestErrorNotification"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -640,47 +639,47 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<RamTstAlgParams, GContainer>(filteredContainers, typeof(RamTstAlgParams), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams ramTstAlgParams) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.RamTst.RamTstCommon.RamTstConfigParams.RamTstAlgParams ramTstAlgParams) {
 						ramTstAlgParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstAlgParams"))
 						super.delegateAdd(ramTstAlgParams)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams ramTstAlgParams) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.RamTst.RamTstCommon.RamTstConfigParams.RamTstAlgParams ramTstAlgParams) {
 						ramTstAlgParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstAlgParams"))
 						super.delegateAdd(index, ramTstAlgParams)
-					}	
+					}
 				}
 			}
 			
 			
 			static class RamTstAlgParams implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof RamTstAlgParams)){
 						return false
 					}
 					this.target == (object as RamTstAlgParams).target
 				}
-				
+			
 				def BigInteger getRamTstAlgParamsId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgParamsId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgParamsId"].getBigIntegerValue()
 				}
 				
 				def void setRamTstAlgParamsId(BigInteger value){
@@ -688,15 +687,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAlgParamsId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAlgParamsId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def RamTstAlgorithm getRamTstAlgorithm(){
-					getRamTstAlgorithmValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgorithm"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgorithm"].getRamTstAlgorithmValue()
 				}
 				
 				def void setRamTstAlgorithm(RamTstAlgorithm value){
@@ -704,11 +703,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAlgorithm"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAlgorithm"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum RamTstAlgorithm {
@@ -719,10 +718,10 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					RAMTST_TRANSP_GALPAT_TEST, 
 					RAMTST_WALK_PATH_TEST
 				}
-					
-				def RamTstAlgorithm getRamTstAlgorithmValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def RamTstAlgorithm getRamTstAlgorithmValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "RAMTST_ABRAHAM_TEST" : RamTstAlgorithm.RAMTST_ABRAHAM_TEST
 						case "RAMTST_CHECKERBOARD_TEST" : RamTstAlgorithm.RAMTST_CHECKERBOARD_TEST
 						case "RAMTST_GALPAT_TEST" : RamTstAlgorithm.RAMTST_GALPAT_TEST
@@ -732,12 +731,12 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				
-				def void setRamTstAlgorithmValue(GParameterValue paramValue, RamTstAlgorithm value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setRamTstAlgorithmValue(GParameterValue parameterValue, RamTstAlgorithm value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getRamTstExtNumberOfTestedCells(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstExtNumberOfTestedCells"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstExtNumberOfTestedCells"].getBigIntegerValue()
 				}
 				
 				def void setRamTstExtNumberOfTestedCells(BigInteger value){
@@ -745,15 +744,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstExtNumberOfTestedCells"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstExtNumberOfTestedCells"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getRamTstMaxNumberOfTestedCells(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMaxNumberOfTestedCells"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMaxNumberOfTestedCells"].getBigIntegerValue()
 				}
 				
 				def void setRamTstMaxNumberOfTestedCells(BigInteger value){
@@ -761,15 +760,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMaxNumberOfTestedCells"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMaxNumberOfTestedCells"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getRamTstNumberOfBlocks(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfBlocks"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfBlocks"].getBigIntegerValue()
 				}
 				
 				def void setRamTstNumberOfBlocks(BigInteger value){
@@ -777,15 +776,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfBlocks"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfBlocks"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getRamTstNumberOfTestedCells(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfTestedCells"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfTestedCells"].getBigIntegerValue()
 				}
 				
 				def void setRamTstNumberOfTestedCells(BigInteger value){
@@ -793,11 +792,11 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfTestedCells"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfTestedCells"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -809,47 +808,47 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						}
 					}
 					return new BasicWrappingEList<RamTstBlockParams, GContainer>(filteredContainers, typeof(RamTstBlockParams), typeof(GContainer)) {
-						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams$RamTstBlockParams ramTstBlockParams) {
+						override protected delegateAdd(org.artop.ecuc.autosar421.accessors.RamTst.RamTstCommon.RamTstConfigParams.RamTstAlgParams.RamTstBlockParams ramTstBlockParams) {
 							ramTstBlockParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstBlockParams"))
 							super.delegateAdd(ramTstBlockParams)
 						}
-						
-						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.RamTst$RamTstCommon$RamTstConfigParams$RamTstAlgParams$RamTstBlockParams ramTstBlockParams) {
+				
+						override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.RamTst.RamTstCommon.RamTstConfigParams.RamTstAlgParams.RamTstBlockParams ramTstBlockParams) {
 							ramTstBlockParams.target?.gSetDefinition(containerValue.getContainerDefinition("RamTstBlockParams"))
 							super.delegateAdd(index, ramTstBlockParams)
-						}	
+						}
 					}
 				}
 				
 				
 				static class RamTstBlockParams implements IWrapper<GContainer> {
 					private GContainer containerValue
-					
+				
 					new(GContainer containerValue){
 						this.containerValue = containerValue
 					}
-					
+				
 					def String getShortName(){
 						containerValue?.gGetShortName
 					}
-					
+				
 					def void setShortName(String name){
 						containerValue?.gSetShortName(name)
 					}
-					
+				
 					override def GContainer getTarget(){
 						containerValue
 					}
-					
+				
 					override def boolean equals(Object object) {
 				        if (!(object instanceof RamTstBlockParams)){
 							return false
 						}
 						this.target == (object as RamTstBlockParams).target
 					}
-					
+				
 					def BigInteger getRamTstBlockId(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"].getBigIntegerValue()
 					}
 					
 					def void setRamTstBlockId(BigInteger value){
@@ -857,15 +856,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstBlockId"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstBlockId"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getRamTstEndAddress(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstEndAddress"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstEndAddress"].getBigIntegerValue()
 					}
 					
 					def void setRamTstEndAddress(BigInteger value){
@@ -873,15 +872,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstEndAddress"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstEndAddress"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getRamTstFillPattern(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstFillPattern"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstFillPattern"].getBigIntegerValue()
 					}
 					
 					def void setRamTstFillPattern(BigInteger value){
@@ -889,15 +888,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstFillPattern"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstFillPattern"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def BigInteger getRamTstStartAddress(){
-						EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStartAddress"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStartAddress"].getBigIntegerValue()
 					}
 					
 					def void setRamTstStartAddress(BigInteger value){
@@ -905,15 +904,15 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstStartAddress"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstStartAddress"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					def RamTstTestPolicy getRamTstTestPolicy(){
-						getRamTstTestPolicyValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestPolicy"])
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestPolicy"].getRamTstTestPolicyValue()
 					}
 					
 					def void setRamTstTestPolicy(RamTstTestPolicy value){
@@ -921,28 +920,28 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 						if (parameterValue == null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
-								parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestPolicy"])
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestPolicy"].createParameterValue()
 								containerValue.gGetParameterValues += parameterValue
 							}
 						}
-						EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+						parameterValue.setValue(value)
 					}
 					
 					enum RamTstTestPolicy {
 						RAMTEST_DESTRUCTIVE, 
 						RAMTEST_NON_DESTRUCTIVE
 					}
-						
-					def RamTstTestPolicy getRamTstTestPolicyValue(GParameterValue paramValue){
-						val castedParamValue = paramValue as EcucTextualParamValue
-						switch (castedParamValue.value){
+					
+					def RamTstTestPolicy getRamTstTestPolicyValue(GParameterValue parameterValue){
+						val castedParameterValue = parameterValue as EcucTextualParamValue
+						switch (castedParameterValue.value){
 							case "RAMTEST_DESTRUCTIVE" : RamTstTestPolicy.RAMTEST_DESTRUCTIVE
 							case "RAMTEST_NON_DESTRUCTIVE" : RamTstTestPolicy.RAMTEST_NON_DESTRUCTIVE
 						}
 					}
 					
-					def void setRamTstTestPolicyValue(GParameterValue paramValue, RamTstTestPolicy value){
-						EcucValueAccessor421Util.setParameterValue(paramValue, value)
+					def void setRamTstTestPolicyValue(GParameterValue parameterValue, RamTstTestPolicy value){
+						parameterValue.setValue(value)
 					}
 					
 					
@@ -957,39 +956,39 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 	}
 	static class RamTstDemEventParameterRefs implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof RamTstDemEventParameterRefs)){
 				return false
 			}
 			this.target == (object as RamTstDemEventParameterRefs).target
 		}
-		
+	
 		
 		def org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter getRAMTST_E_RAM_FAILURE(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter), "RAMTST_E_RAM_FAILURE")
 		}
-				
+		
 		def void setRAMTST_E_RAM_FAILURE(org.artop.ecuc.autosar421.accessors.Dem.DemConfigSet.DemEventParameter object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "RAMTST_E_RAM_FAILURE"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "RAMTST_E_RAM_FAILURE"], object.getTarget())
 			}
 		}
 		
@@ -998,32 +997,32 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 	}
 	static class RamTstPublishedInformation implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof RamTstPublishedInformation)){
 				return false
 			}
 			this.target == (object as RamTstPublishedInformation).target
 		}
-		
+	
 		def BigInteger getRamTstCellSize(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"].getBigIntegerValue()
 		}
 		
 		def void setRamTstCellSize(BigInteger value){
@@ -1031,25 +1030,25 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "RamTstCellSize"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstCellSize"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof RamTst)){
 			return false
 		}
 		this.target == (object as RamTst).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {

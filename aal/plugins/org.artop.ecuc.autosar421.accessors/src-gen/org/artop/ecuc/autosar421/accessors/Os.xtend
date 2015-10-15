@@ -1,33 +1,32 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     itemis - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar421.accessors
 
 import java.util.List
 
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
 import autosar40.ecucdescription.EcucTextualParamValue
 import autosar40.ecucdescription.EcucNumericalParamValue
 import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
 import autosar40.util.Autosar40Factory
-
-import static extension org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util.*
-import org.artop.ecuc.autosar421.accessors.lib.EcucValueAccessor421Util
-import org.artop.ecuc.autosar421.accessors.lib.BigIntegerValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BigDecimalValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.BooleanValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.StringValueUnwrappingEList
-import org.artop.ecuc.autosar421.accessors.lib.DocumentationBlockValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
 
 import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -53,23 +52,23 @@ import java.math.BigDecimal
 
 class Os implements IWrapper<GModuleConfiguration> {
 	protected GModuleConfiguration moduleConfiguration
-	
+
 	new (GModuleConfiguration moduleConfiguration){
 		this.moduleConfiguration = moduleConfiguration
 	}
-	
+
 	def String getShortName(){
 		moduleConfiguration?.gGetShortName
 	}
-	
+
 	def void setShortName(String name){
 		moduleConfiguration?.gSetShortName(name)
 	}
-	
+
 	override def GModuleConfiguration getTarget(){
 		moduleConfiguration
 	}
-	
+
 	def List<OsAlarm> getOsAlarms(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
@@ -77,12 +76,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsAlarm, GContainer>(filteredContainers, typeof(OsAlarm), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsAlarm osAlarm) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsAlarm osAlarm) {
 				osAlarm.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAlarm"))
 				super.delegateAdd(osAlarm)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsAlarm osAlarm) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsAlarm osAlarm) {
 				osAlarm.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAlarm"))
 				super.delegateAdd(index, osAlarm)
 			}
@@ -95,12 +94,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsAppMode, GContainer>(filteredContainers, typeof(OsAppMode), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsAppMode osAppMode) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsAppMode osAppMode) {
 				osAppMode.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAppMode"))
 				super.delegateAdd(osAppMode)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsAppMode osAppMode) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsAppMode osAppMode) {
 				osAppMode.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsAppMode"))
 				super.delegateAdd(index, osAppMode)
 			}
@@ -113,12 +112,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsApplication, GContainer>(filteredContainers, typeof(OsApplication), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsApplication osApplication) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsApplication osApplication) {
 				osApplication.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsApplication"))
 				super.delegateAdd(osApplication)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsApplication osApplication) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsApplication osApplication) {
 				osApplication.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsApplication"))
 				super.delegateAdd(index, osApplication)
 			}
@@ -131,12 +130,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsCounter, GContainer>(filteredContainers, typeof(OsCounter), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsCounter osCounter) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsCounter osCounter) {
 				osCounter.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsCounter"))
 				super.delegateAdd(osCounter)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsCounter osCounter) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsCounter osCounter) {
 				osCounter.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsCounter"))
 				super.delegateAdd(index, osCounter)
 			}
@@ -149,12 +148,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsEvent, GContainer>(filteredContainers, typeof(OsEvent), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsEvent osEvent) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsEvent osEvent) {
 				osEvent.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsEvent"))
 				super.delegateAdd(osEvent)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsEvent osEvent) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsEvent osEvent) {
 				osEvent.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsEvent"))
 				super.delegateAdd(index, osEvent)
 			}
@@ -163,9 +162,9 @@ class Os implements IWrapper<GModuleConfiguration> {
 	def OsIoc getOsIoc(){
 		moduleConfiguration.getByType(typeof(OsIoc))
 	}
-	
+
 	def void setOsIoc(OsIoc osIoc){
-		val GContainer container = osIoc.getTarget() 
+		val GContainer container = osIoc.getTarget()
 	    moduleConfiguration.setContainer(container, "OsIoc")
 	}
 	def List<OsIsr> getOsIsrs(){
@@ -175,12 +174,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsIsr, GContainer>(filteredContainers, typeof(OsIsr), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsIsr osIsr) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsIsr osIsr) {
 				osIsr.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsIsr"))
 				super.delegateAdd(osIsr)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsIsr osIsr) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsIsr osIsr) {
 				osIsr.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsIsr"))
 				super.delegateAdd(index, osIsr)
 			}
@@ -189,9 +188,9 @@ class Os implements IWrapper<GModuleConfiguration> {
 	def OsOS getOsOS(){
 		moduleConfiguration.getByType(typeof(OsOS))
 	}
-	
+
 	def void setOsOS(OsOS osOS){
-		val GContainer container = osOS.getTarget() 
+		val GContainer container = osOS.getTarget()
 	    moduleConfiguration.setContainer(container, "OsOS")
 	}
 	def List<OsResource> getOsResources(){
@@ -201,12 +200,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsResource, GContainer>(filteredContainers, typeof(OsResource), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsResource osResource) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsResource osResource) {
 				osResource.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsResource"))
 				super.delegateAdd(osResource)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsResource osResource) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsResource osResource) {
 				osResource.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsResource"))
 				super.delegateAdd(index, osResource)
 			}
@@ -219,12 +218,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsScheduleTable, GContainer>(filteredContainers, typeof(OsScheduleTable), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable osScheduleTable) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable osScheduleTable) {
 				osScheduleTable.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsScheduleTable"))
 				super.delegateAdd(osScheduleTable)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable osScheduleTable) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable osScheduleTable) {
 				osScheduleTable.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsScheduleTable"))
 				super.delegateAdd(index, osScheduleTable)
 			}
@@ -237,12 +236,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsSpinlock, GContainer>(filteredContainers, typeof(OsSpinlock), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsSpinlock osSpinlock) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsSpinlock osSpinlock) {
 				osSpinlock.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsSpinlock"))
 				super.delegateAdd(osSpinlock)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsSpinlock osSpinlock) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsSpinlock osSpinlock) {
 				osSpinlock.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsSpinlock"))
 				super.delegateAdd(index, osSpinlock)
 			}
@@ -255,56 +254,56 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		return new BasicWrappingEList<OsTask, GContainer>(filteredContainers, typeof(OsTask), typeof(GContainer)) {
-			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsTask osTask) {
+			override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsTask osTask) {
 				osTask.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsTask"))
 				super.delegateAdd(osTask)
 			}
-		
-			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsTask osTask) {
+
+			override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsTask osTask) {
 				osTask.target?.gSetDefinition(moduleConfiguration.getContainerDefinition("OsTask"))
 				super.delegateAdd(index, osTask)
 			}
 		}
 	}
-	
+
 	static class OsAlarm implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsAlarm)){
 				return false
 			}
 			this.target == (object as OsAlarm).target
 		}
-		
+	
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsAlarmAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmAccessingApplication"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsAlarmAccessingApplication")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
 					if (object != null) {
@@ -315,7 +314,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -330,11 +329,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 		def org.artop.ecuc.autosar421.accessors.Os.OsCounter getOsAlarmCounterRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter), "OsAlarmCounterRef")
 		}
-				
+		
 		def void setOsAlarmCounterRef(org.artop.ecuc.autosar421.accessors.Os.OsCounter object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmCounterRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmCounterRef"], object.getTarget())
 			}
 		}
 		
@@ -360,30 +359,30 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsAlarmAction implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsAlarmAction)){
 					return false
 				}
 				this.target == (object as OsAlarmAction).target
 			}
-			
+		
 			def OsAlarmActivateTask getOsAlarmActivateTask(){
 				containerValue.getByType(typeof(OsAlarmActivateTask))
 			}
@@ -419,39 +418,39 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsAlarmActivateTask implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsAlarmActivateTask)){
 						return false
 					}
 					this.target == (object as OsAlarmActivateTask).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsAlarmActivateTaskRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsAlarmActivateTaskRef")
 				}
-						
+				
 				def void setOsAlarmActivateTaskRef(org.artop.ecuc.autosar421.accessors.Os.OsTask object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmActivateTaskRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmActivateTaskRef"], object.getTarget())
 					}
 				}
 				
@@ -461,32 +460,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsAlarmCallback implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsAlarmCallback)){
 						return false
 					}
 					this.target == (object as OsAlarmCallback).target
 				}
-				
+			
 				def String getOsAlarmCallbackName(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCallbackName"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCallbackName"].getStringValue()
 				}
 				
 				def void setOsAlarmCallbackName(String value){
@@ -494,11 +493,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmCallbackName"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmCallbackName"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -508,39 +507,39 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsAlarmIncrementCounter implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsAlarmIncrementCounter)){
 						return false
 					}
 					this.target == (object as OsAlarmIncrementCounter).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsCounter getOsAlarmIncrementCounterRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter), "OsAlarmIncrementCounterRef")
 				}
-						
+				
 				def void setOsAlarmIncrementCounterRef(org.artop.ecuc.autosar421.accessors.Os.OsCounter object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmIncrementCounterRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmIncrementCounterRef"], object.getTarget())
 					}
 				}
 				
@@ -550,50 +549,50 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsAlarmSetEvent implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsAlarmSetEvent)){
 						return false
 					}
 					this.target == (object as OsAlarmSetEvent).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsEvent getOsAlarmSetEventRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsEvent), "OsAlarmSetEventRef")
 				}
-						
+				
 				def void setOsAlarmSetEventRef(org.artop.ecuc.autosar421.accessors.Os.OsEvent object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmSetEventRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmSetEventRef"], object.getTarget())
 					}
 				}
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsAlarmSetEventTaskRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsAlarmSetEventTaskRef")
 				}
-						
+				
 				def void setOsAlarmSetEventTaskRef(org.artop.ecuc.autosar421.accessors.Os.OsTask object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmSetEventTaskRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmSetEventTaskRef"], object.getTarget())
 					}
 				}
 				
@@ -605,32 +604,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsAlarmAutostart implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsAlarmAutostart)){
 					return false
 				}
 				this.target == (object as OsAlarmAutostart).target
 			}
-			
+		
 			def BigInteger getOsAlarmAlarmTime(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAlarmTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAlarmTime"].getBigIntegerValue()
 			}
 			
 			def void setOsAlarmAlarmTime(BigInteger value){
@@ -638,15 +637,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmAlarmTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmAlarmTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def OsAlarmAutostartType getOsAlarmAutostartType(){
-				getOsAlarmAutostartTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAutostartType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmAutostartType"].getOsAlarmAutostartTypeValue()
 			}
 			
 			def void setOsAlarmAutostartType(OsAlarmAutostartType value){
@@ -654,32 +653,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmAutostartType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmAutostartType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum OsAlarmAutostartType {
 				ABSOLUTE, 
 				RELATIVE
 			}
-				
-			def OsAlarmAutostartType getOsAlarmAutostartTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def OsAlarmAutostartType getOsAlarmAutostartTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "ABSOLUTE" : OsAlarmAutostartType.ABSOLUTE
 					case "RELATIVE" : OsAlarmAutostartType.RELATIVE
 				}
 			}
 			
-			def void setOsAlarmAutostartTypeValue(GParameterValue paramValue, OsAlarmAutostartType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setOsAlarmAutostartTypeValue(GParameterValue parameterValue, OsAlarmAutostartType value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getOsAlarmCycleTime(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCycleTime"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAlarmCycleTime"].getBigIntegerValue()
 			}
 			
 			def void setOsAlarmCycleTime(BigInteger value){
@@ -687,25 +686,25 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmCycleTime"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAlarmCycleTime"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsAlarmAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "OsAlarmAppModeRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "OsAlarmAppModeRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAppMode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object) throws CoreException {
 						if (object != null) {
@@ -716,7 +715,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -735,62 +734,62 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsAppMode implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsAppMode)){
 				return false
 			}
 			this.target == (object as OsAppMode).target
 		}
-		
+	
 		
 		
 		
 	}
 	static class OsApplication implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsApplication)){
 				return false
 			}
 			this.target == (object as OsApplication).target
 		}
-		
+	
 		def Boolean getOsTrusted(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrusted"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrusted"].getBooleanValue()
 		}
 		
 		def void setOsTrusted(Boolean value){
@@ -798,15 +797,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTrusted"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTrusted"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOsTrustedApplicationDelayTimingViolationCall(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedApplicationDelayTimingViolationCall"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedApplicationDelayTimingViolationCall"].getBooleanValue()
 		}
 		
 		def void setOsTrustedApplicationDelayTimingViolationCall(Boolean value){
@@ -814,15 +813,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTrustedApplicationDelayTimingViolationCall"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTrustedApplicationDelayTimingViolationCall"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOsTrustedApplicationWithProtection(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedApplicationWithProtection"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedApplicationWithProtection"].getBooleanValue()
 		}
 		
 		def void setOsTrustedApplicationWithProtection(Boolean value){
@@ -830,25 +829,25 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTrustedApplicationWithProtection"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTrustedApplicationWithProtection"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsAlarm> getOsAppAlarmRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppAlarmRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsAppAlarmRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAlarm>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAlarm)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAlarm object) throws CoreException {
 					if (object != null) {
@@ -859,7 +858,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -873,15 +872,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsCounter> getOsAppCounterRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppCounterRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsAppCounterRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsCounter>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsCounter object) throws CoreException {
 					if (object != null) {
@@ -892,7 +891,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -907,25 +906,25 @@ class Os implements IWrapper<GModuleConfiguration> {
 		def org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition getOsAppEcucPartitionRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition), "OsAppEcucPartitionRef")
 		}
-				
+		
 		def void setOsAppEcucPartitionRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucPartitionCollection.EcucPartition object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppEcucPartitionRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsAppEcucPartitionRef"], object.getTarget())
 			}
 		}
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsIsr> getOsAppIsrRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppIsrRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsAppIsrRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsIsr>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsIsr)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsIsr object) throws CoreException {
 					if (object != null) {
@@ -936,7 +935,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -950,15 +949,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable> getOsAppScheduleTableRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppScheduleTableRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsAppScheduleTableRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable object) throws CoreException {
 					if (object != null) {
@@ -969,7 +968,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -983,15 +982,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsTask> getOsAppTaskRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsAppTaskRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsAppTaskRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsTask>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsTask object) throws CoreException {
 					if (object != null) {
@@ -1002,7 +1001,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -1017,22 +1016,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 		def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsRestartTask(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsRestartTask")
 		}
-				
+		
 		def void setOsRestartTask(org.artop.ecuc.autosar421.accessors.Os.OsTask object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsRestartTask"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsRestartTask"], object.getTarget())
 			}
 		}
 		
 		def org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition getOsApplicationCoreRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition), "OsApplicationCoreRef")
 		}
-				
+		
 		def void setOsApplicationCoreRef(org.artop.ecuc.autosar421.accessors.EcuC.EcucHardware.EcucCoreDefinition object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsApplicationCoreRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsApplicationCoreRef"], object.getTarget())
 			}
 		}
 		
@@ -1053,47 +1052,47 @@ class Os implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<OsApplicationTrustedFunction, GContainer>(filteredContainers, typeof(OsApplicationTrustedFunction), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsApplication$OsApplicationTrustedFunction osApplicationTrustedFunction) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsApplication.OsApplicationTrustedFunction osApplicationTrustedFunction) {
 					osApplicationTrustedFunction.target?.gSetDefinition(containerValue.getContainerDefinition("OsApplicationTrustedFunction"))
 					super.delegateAdd(osApplicationTrustedFunction)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsApplication$OsApplicationTrustedFunction osApplicationTrustedFunction) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsApplication.OsApplicationTrustedFunction osApplicationTrustedFunction) {
 					osApplicationTrustedFunction.target?.gSetDefinition(containerValue.getContainerDefinition("OsApplicationTrustedFunction"))
 					super.delegateAdd(index, osApplicationTrustedFunction)
-				}	
+				}
 			}
 		}
 		
 		
 		static class OsApplicationHooks implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsApplicationHooks)){
 					return false
 				}
 				this.target == (object as OsApplicationHooks).target
 			}
-			
+		
 			def Boolean getOsAppErrorHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppErrorHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppErrorHook"].getBooleanValue()
 			}
 			
 			def void setOsAppErrorHook(Boolean value){
@@ -1101,15 +1100,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAppErrorHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAppErrorHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsAppShutdownHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppShutdownHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppShutdownHook"].getBooleanValue()
 			}
 			
 			def void setOsAppShutdownHook(Boolean value){
@@ -1117,15 +1116,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAppShutdownHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAppShutdownHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsAppStartupHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppStartupHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsAppStartupHook"].getBooleanValue()
 			}
 			
 			def void setOsAppStartupHook(Boolean value){
@@ -1133,11 +1132,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsAppStartupHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsAppStartupHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -1147,32 +1146,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsApplicationTrustedFunction implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsApplicationTrustedFunction)){
 					return false
 				}
 				this.target == (object as OsApplicationTrustedFunction).target
 			}
-			
+		
 			def String getOsTrustedFunctionName(){
-				EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedFunctionName"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTrustedFunctionName"].getStringValue()
 			}
 			
 			def void setOsTrustedFunctionName(String value){
@@ -1180,11 +1179,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTrustedFunctionName"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTrustedFunctionName"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1195,32 +1194,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsCounter implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsCounter)){
 				return false
 			}
 			this.target == (object as OsCounter).target
 		}
-		
+	
 		def BigInteger getOsCounterMaxAllowedValue(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMaxAllowedValue"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMaxAllowedValue"].getBigIntegerValue()
 		}
 		
 		def void setOsCounterMaxAllowedValue(BigInteger value){
@@ -1228,15 +1227,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterMaxAllowedValue"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterMaxAllowedValue"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getOsCounterMinCycle(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMinCycle"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterMinCycle"].getBigIntegerValue()
 		}
 		
 		def void setOsCounterMinCycle(BigInteger value){
@@ -1244,15 +1243,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterMinCycle"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterMinCycle"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getOsCounterTicksPerBase(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterTicksPerBase"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterTicksPerBase"].getBigIntegerValue()
 		}
 		
 		def void setOsCounterTicksPerBase(BigInteger value){
@@ -1260,15 +1259,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterTicksPerBase"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterTicksPerBase"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def OsCounterType getOsCounterType(){
-			getOsCounterTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterType"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsCounterType"].getOsCounterTypeValue()
 		}
 		
 		def void setOsCounterType(OsCounterType value){
@@ -1276,32 +1275,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterType"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsCounterType"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsCounterType {
 			HARDWARE, 
 			SOFTWARE
 		}
-			
-		def OsCounterType getOsCounterTypeValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsCounterType getOsCounterTypeValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "HARDWARE" : OsCounterType.HARDWARE
 				case "SOFTWARE" : OsCounterType.SOFTWARE
 			}
 		}
 		
-		def void setOsCounterTypeValue(GParameterValue paramValue, OsCounterType value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsCounterTypeValue(GParameterValue parameterValue, OsCounterType value){
+			parameterValue.setValue(value)
 		}
 		
 		def BigDecimal getOsSecondsPerTick(){
-			EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSecondsPerTick"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSecondsPerTick"].getBigDecimalValue()
 		}
 		
 		def void setOsSecondsPerTick(BigDecimal value){
@@ -1309,25 +1308,25 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsSecondsPerTick"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsSecondsPerTick"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsCounterAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsCounterAccessingApplication"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsCounterAccessingApplication")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
 					if (object != null) {
@@ -1338,7 +1337,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -1367,54 +1366,54 @@ class Os implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<OsTimeConstant, GContainer>(filteredContainers, typeof(OsTimeConstant), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsCounter$OsTimeConstant osTimeConstant) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsCounter.OsTimeConstant osTimeConstant) {
 					osTimeConstant.target?.gSetDefinition(containerValue.getContainerDefinition("OsTimeConstant"))
 					super.delegateAdd(osTimeConstant)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsCounter$OsTimeConstant osTimeConstant) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsCounter.OsTimeConstant osTimeConstant) {
 					osTimeConstant.target?.gSetDefinition(containerValue.getContainerDefinition("OsTimeConstant"))
 					super.delegateAdd(index, osTimeConstant)
-				}	
+				}
 			}
 		}
 		
 		
 		static class OsDriver implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsDriver)){
 					return false
 				}
 				this.target == (object as OsDriver).target
 			}
-			
+		
 			
 			def org.artop.ecuc.autosar421.accessors.Gpt.GptChannelConfigSet.GptChannelConfiguration getOsGptChannelRef(){
 				containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Gpt.GptChannelConfigSet.GptChannelConfiguration), "OsGptChannelRef")
 			}
-					
+			
 			def void setOsGptChannelRef(org.artop.ecuc.autosar421.accessors.Gpt.GptChannelConfigSet.GptChannelConfiguration object){
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsGptChannelRef"], object.getTarget())
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsGptChannelRef"], object.getTarget())
 				}
 			}
 			
@@ -1424,32 +1423,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsTimeConstant implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsTimeConstant)){
 					return false
 				}
 				this.target == (object as OsTimeConstant).target
 			}
-			
+		
 			def BigDecimal getOsTimeValue(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTimeValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTimeValue"].getBigDecimalValue()
 			}
 			
 			def void setOsTimeValue(BigDecimal value){
@@ -1457,11 +1456,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTimeValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTimeValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1472,32 +1471,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsEvent implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsEvent)){
 				return false
 			}
 			this.target == (object as OsEvent).target
 		}
-		
+	
 		def BigInteger getOsEventMask(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsEventMask"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsEventMask"].getBigIntegerValue()
 		}
 		
 		def void setOsEventMask(BigInteger value){
@@ -1505,11 +1504,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsEventMask"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsEventMask"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		
@@ -1518,30 +1517,30 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsIoc implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsIoc)){
 				return false
 			}
 			this.target == (object as OsIoc).target
 		}
-		
+	
 		
 		
 		def List<OsIocCommunication> getOsIocCommunications(){
@@ -1551,47 +1550,47 @@ class Os implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<OsIocCommunication, GContainer>(filteredContainers, typeof(OsIocCommunication), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication osIocCommunication) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication osIocCommunication) {
 					osIocCommunication.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocCommunication"))
 					super.delegateAdd(osIocCommunication)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication osIocCommunication) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication osIocCommunication) {
 					osIocCommunication.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocCommunication"))
 					super.delegateAdd(index, osIocCommunication)
-				}	
+				}
 			}
 		}
 		
 		
 		static class OsIocCommunication implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsIocCommunication)){
 					return false
 				}
 				this.target == (object as OsIocCommunication).target
 			}
-			
+		
 			def BigInteger getOsIocBufferLength(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocBufferLength"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocBufferLength"].getBigIntegerValue()
 			}
 			
 			def void setOsIocBufferLength(BigInteger value){
@@ -1599,11 +1598,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocBufferLength"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocBufferLength"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -1615,15 +1614,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsIocDataProperties, GContainer>(filteredContainers, typeof(OsIocDataProperties), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication$OsIocDataProperties osIocDataProperties) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication.OsIocDataProperties osIocDataProperties) {
 						osIocDataProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocDataProperties"))
 						super.delegateAdd(osIocDataProperties)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication$OsIocDataProperties osIocDataProperties) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication.OsIocDataProperties osIocDataProperties) {
 						osIocDataProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocDataProperties"))
 						super.delegateAdd(index, osIocDataProperties)
-					}	
+					}
 				}
 			}
 			
@@ -1634,15 +1633,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsIocReceiverProperties, GContainer>(filteredContainers, typeof(OsIocReceiverProperties), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication$OsIocReceiverProperties osIocReceiverProperties) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication.OsIocReceiverProperties osIocReceiverProperties) {
 						osIocReceiverProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocReceiverProperties"))
 						super.delegateAdd(osIocReceiverProperties)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication$OsIocReceiverProperties osIocReceiverProperties) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication.OsIocReceiverProperties osIocReceiverProperties) {
 						osIocReceiverProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocReceiverProperties"))
 						super.delegateAdd(index, osIocReceiverProperties)
-					}	
+					}
 				}
 			}
 			
@@ -1653,47 +1652,47 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsIocSenderProperties, GContainer>(filteredContainers, typeof(OsIocSenderProperties), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication$OsIocSenderProperties osIocSenderProperties) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication.OsIocSenderProperties osIocSenderProperties) {
 						osIocSenderProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocSenderProperties"))
 						super.delegateAdd(osIocSenderProperties)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsIoc$OsIocCommunication$OsIocSenderProperties osIocSenderProperties) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsIoc.OsIocCommunication.OsIocSenderProperties osIocSenderProperties) {
 						osIocSenderProperties.target?.gSetDefinition(containerValue.getContainerDefinition("OsIocSenderProperties"))
 						super.delegateAdd(index, osIocSenderProperties)
-					}	
+					}
 				}
 			}
 			
 			
 			static class OsIocDataProperties implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsIocDataProperties)){
 						return false
 					}
 					this.target == (object as OsIocDataProperties).target
 				}
-				
+			
 				def BigInteger getOsIocDataPropertyIndex(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocDataPropertyIndex"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocDataPropertyIndex"].getBigIntegerValue()
 				}
 				
 				def void setOsIocDataPropertyIndex(BigInteger value){
@@ -1701,15 +1700,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocDataPropertyIndex"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocDataPropertyIndex"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def String getOsIocInitValue(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocInitValue"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocInitValue"].getStringValue()
 				}
 				
 				def void setOsIocInitValue(String value){
@@ -1717,11 +1716,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocInitValue"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocInitValue"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -1732,32 +1731,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsIocReceiverProperties implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsIocReceiverProperties)){
 						return false
 					}
 					this.target == (object as OsIocReceiverProperties).target
 				}
-				
+			
 				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKind(){
-					getOsIocFunctionImplementationKindValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocFunctionImplementationKind"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocFunctionImplementationKind"].getOsIocFunctionImplementationKindValue()
 				}
 				
 				def void setOsIocFunctionImplementationKind(OsIocFunctionImplementationKind value){
@@ -1765,11 +1764,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocFunctionImplementationKind"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocFunctionImplementationKind"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum OsIocFunctionImplementationKind {
@@ -1777,22 +1776,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 					FUNCTION, 
 					MACRO
 				}
-					
-				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKindValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKindValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "DO_NOT_CARE" : OsIocFunctionImplementationKind.DO_NOT_CARE
 						case "FUNCTION" : OsIocFunctionImplementationKind.FUNCTION
 						case "MACRO" : OsIocFunctionImplementationKind.MACRO
 					}
 				}
 				
-				def void setOsIocFunctionImplementationKindValue(GParameterValue paramValue, OsIocFunctionImplementationKind value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setOsIocFunctionImplementationKindValue(GParameterValue parameterValue, OsIocFunctionImplementationKind value){
+					parameterValue.setValue(value)
 				}
 				
 				def String getOsIocReceiverPullCB(){
-					EcucValueAccessor421Util.getStringValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocReceiverPullCB"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocReceiverPullCB"].getStringValue()
 				}
 				
 				def void setOsIocReceiverPullCB(String value){
@@ -1800,22 +1799,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocReceiverPullCB"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocReceiverPullCB"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsIocReceivingOsApplicationRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsIocReceivingOsApplicationRef")
 				}
-						
+				
 				def void setOsIocReceivingOsApplicationRef(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsIocReceivingOsApplicationRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsIocReceivingOsApplicationRef"], object.getTarget())
 					}
 				}
 				
@@ -1825,32 +1824,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsIocSenderProperties implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsIocSenderProperties)){
 						return false
 					}
 					this.target == (object as OsIocSenderProperties).target
 				}
-				
+			
 				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKind(){
-					getOsIocFunctionImplementationKindValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocFunctionImplementationKind"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocFunctionImplementationKind"].getOsIocFunctionImplementationKindValue()
 				}
 				
 				def void setOsIocFunctionImplementationKind(OsIocFunctionImplementationKind value){
@@ -1858,11 +1857,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocFunctionImplementationKind"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocFunctionImplementationKind"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				enum OsIocFunctionImplementationKind {
@@ -1870,22 +1869,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 					FUNCTION, 
 					MACRO
 				}
-					
-				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKindValue(GParameterValue paramValue){
-					val castedParamValue = paramValue as EcucTextualParamValue
-					switch (castedParamValue.value){
+				
+				def OsIocFunctionImplementationKind getOsIocFunctionImplementationKindValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
 						case "DO_NOT_CARE" : OsIocFunctionImplementationKind.DO_NOT_CARE
 						case "FUNCTION" : OsIocFunctionImplementationKind.FUNCTION
 						case "MACRO" : OsIocFunctionImplementationKind.MACRO
 					}
 				}
 				
-				def void setOsIocFunctionImplementationKindValue(GParameterValue paramValue, OsIocFunctionImplementationKind value){
-					EcucValueAccessor421Util.setParameterValue(paramValue, value)
+				def void setOsIocFunctionImplementationKindValue(GParameterValue parameterValue, OsIocFunctionImplementationKind value){
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getOsIocSenderId(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocSenderId"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIocSenderId"].getBigIntegerValue()
 				}
 				
 				def void setOsIocSenderId(BigInteger value){
@@ -1893,22 +1892,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIocSenderId"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIocSenderId"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsApplication getOsIocSendingOsApplicationRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication), "OsIocSendingOsApplicationRef")
 				}
-						
+				
 				def void setOsIocSendingOsApplicationRef(org.artop.ecuc.autosar421.accessors.Os.OsApplication object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsIocSendingOsApplicationRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsIocSendingOsApplicationRef"], object.getTarget())
 					}
 				}
 				
@@ -1921,32 +1920,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsIsr implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsIsr)){
 				return false
 			}
 			this.target == (object as OsIsr).target
 		}
-		
+	
 		def OsIsrCategory getOsIsrCategory(){
-			getOsIsrCategoryValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrCategory"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrCategory"].getOsIsrCategoryValue()
 		}
 		
 		def void setOsIsrCategory(OsIsrCategory value){
@@ -1954,42 +1953,42 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrCategory"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrCategory"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsIsrCategory {
 			CATEGORY_1, 
 			CATEGORY_2
 		}
-			
-		def OsIsrCategory getOsIsrCategoryValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsIsrCategory getOsIsrCategoryValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "CATEGORY_1" : OsIsrCategory.CATEGORY_1
 				case "CATEGORY_2" : OsIsrCategory.CATEGORY_2
 			}
 		}
 		
-		def void setOsIsrCategoryValue(GParameterValue paramValue, OsIsrCategory value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsIsrCategoryValue(GParameterValue parameterValue, OsIsrCategory value){
+			parameterValue.setValue(value)
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsResource> getOsIsrResourceRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsIsrResourceRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsIsrResourceRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsResource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsResource object) throws CoreException {
 					if (object != null) {
@@ -2000,7 +1999,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -2025,32 +2024,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsIsrTimingProtection implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsIsrTimingProtection)){
 					return false
 				}
 				this.target == (object as OsIsrTimingProtection).target
 			}
-			
+		
 			def BigDecimal getOsIsrAllInterruptLockBudget(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrAllInterruptLockBudget"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrAllInterruptLockBudget"].getBigDecimalValue()
 			}
 			
 			def void setOsIsrAllInterruptLockBudget(BigDecimal value){
@@ -2058,15 +2057,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrAllInterruptLockBudget"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrAllInterruptLockBudget"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getOsIsrExecutionBudget(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrExecutionBudget"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrExecutionBudget"].getBigDecimalValue()
 			}
 			
 			def void setOsIsrExecutionBudget(BigDecimal value){
@@ -2074,15 +2073,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrExecutionBudget"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrExecutionBudget"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getOsIsrOsInterruptLockBudget(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrOsInterruptLockBudget"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrOsInterruptLockBudget"].getBigDecimalValue()
 			}
 			
 			def void setOsIsrOsInterruptLockBudget(BigDecimal value){
@@ -2090,15 +2089,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrOsInterruptLockBudget"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrOsInterruptLockBudget"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getOsIsrTimeFrame(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrTimeFrame"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrTimeFrame"].getBigDecimalValue()
 			}
 			
 			def void setOsIsrTimeFrame(BigDecimal value){
@@ -2106,11 +2105,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrTimeFrame"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrTimeFrame"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2122,47 +2121,47 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsIsrResourceLock, GContainer>(filteredContainers, typeof(OsIsrResourceLock), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsIsr$OsIsrTimingProtection$OsIsrResourceLock osIsrResourceLock) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsIsr.OsIsrTimingProtection.OsIsrResourceLock osIsrResourceLock) {
 						osIsrResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsIsrResourceLock"))
 						super.delegateAdd(osIsrResourceLock)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsIsr$OsIsrTimingProtection$OsIsrResourceLock osIsrResourceLock) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsIsr.OsIsrTimingProtection.OsIsrResourceLock osIsrResourceLock) {
 						osIsrResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsIsrResourceLock"))
 						super.delegateAdd(index, osIsrResourceLock)
-					}	
+					}
 				}
 			}
 			
 			
 			static class OsIsrResourceLock implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsIsrResourceLock)){
 						return false
 					}
 					this.target == (object as OsIsrResourceLock).target
 				}
-				
+			
 				def BigDecimal getOsIsrResourceLockBudget(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrResourceLockBudget"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsIsrResourceLockBudget"].getBigDecimalValue()
 				}
 				
 				def void setOsIsrResourceLockBudget(BigDecimal value){
@@ -2170,22 +2169,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrResourceLockBudget"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsIsrResourceLockBudget"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsResource getOsIsrResourceLockResourceRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource), "OsIsrResourceLockResourceRef")
 				}
-						
+				
 				def void setOsIsrResourceLockResourceRef(org.artop.ecuc.autosar421.accessors.Os.OsResource object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsIsrResourceLockResourceRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsIsrResourceLockResourceRef"], object.getTarget())
 					}
 				}
 				
@@ -2198,32 +2197,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsOS implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsOS)){
 				return false
 			}
 			this.target == (object as OsOS).target
 		}
-		
+	
 		def BigInteger getOsNumberOfCores(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsNumberOfCores"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsNumberOfCores"].getBigIntegerValue()
 		}
 		
 		def void setOsNumberOfCores(BigInteger value){
@@ -2231,15 +2230,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsNumberOfCores"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsNumberOfCores"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def OsScalabilityClass getOsScalabilityClass(){
-			getOsScalabilityClassValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScalabilityClass"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScalabilityClass"].getOsScalabilityClassValue()
 		}
 		
 		def void setOsScalabilityClass(OsScalabilityClass value){
@@ -2247,11 +2246,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScalabilityClass"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScalabilityClass"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsScalabilityClass {
@@ -2260,10 +2259,10 @@ class Os implements IWrapper<GModuleConfiguration> {
 			SC3, 
 			SC4
 		}
-			
-		def OsScalabilityClass getOsScalabilityClassValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsScalabilityClass getOsScalabilityClassValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "SC1" : OsScalabilityClass.SC1
 				case "SC2" : OsScalabilityClass.SC2
 				case "SC3" : OsScalabilityClass.SC3
@@ -2271,12 +2270,12 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def void setOsScalabilityClassValue(GParameterValue paramValue, OsScalabilityClass value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsScalabilityClassValue(GParameterValue parameterValue, OsScalabilityClass value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getOsStackMonitoring(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsStackMonitoring"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsStackMonitoring"].getBooleanValue()
 		}
 		
 		def void setOsStackMonitoring(Boolean value){
@@ -2284,15 +2283,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsStackMonitoring"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsStackMonitoring"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def OsStatus getOsStatus(){
-			getOsStatusValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsStatus"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsStatus"].getOsStatusValue()
 		}
 		
 		def void setOsStatus(OsStatus value){
@@ -2300,32 +2299,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsStatus"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsStatus"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsStatus {
 			EXTENDED, 
 			STANDARD
 		}
-			
-		def OsStatus getOsStatusValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsStatus getOsStatusValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "EXTENDED" : OsStatus.EXTENDED
 				case "STANDARD" : OsStatus.STANDARD
 			}
 		}
 		
-		def void setOsStatusValue(GParameterValue paramValue, OsStatus value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsStatusValue(GParameterValue parameterValue, OsStatus value){
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getOsUseGetServiceId(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsUseGetServiceId"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsUseGetServiceId"].getBooleanValue()
 		}
 		
 		def void setOsUseGetServiceId(Boolean value){
@@ -2333,15 +2332,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsUseGetServiceId"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsUseGetServiceId"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOsUseParameterAccess(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsUseParameterAccess"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsUseParameterAccess"].getBooleanValue()
 		}
 		
 		def void setOsUseParameterAccess(Boolean value){
@@ -2349,15 +2348,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsUseParameterAccess"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsUseParameterAccess"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		def Boolean getOsUseResScheduler(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsUseResScheduler"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsUseResScheduler"].getBooleanValue()
 		}
 		
 		def void setOsUseResScheduler(Boolean value){
@@ -2365,11 +2364,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsUseResScheduler"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsUseResScheduler"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
@@ -2386,32 +2385,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsHooks implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsHooks)){
 					return false
 				}
 				this.target == (object as OsHooks).target
 			}
-			
+		
 			def Boolean getOsErrorHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsErrorHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsErrorHook"].getBooleanValue()
 			}
 			
 			def void setOsErrorHook(Boolean value){
@@ -2419,15 +2418,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsErrorHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsErrorHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsPostTaskHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsPostTaskHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsPostTaskHook"].getBooleanValue()
 			}
 			
 			def void setOsPostTaskHook(Boolean value){
@@ -2435,15 +2434,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsPostTaskHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsPostTaskHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsPreTaskHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsPreTaskHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsPreTaskHook"].getBooleanValue()
 			}
 			
 			def void setOsPreTaskHook(Boolean value){
@@ -2451,15 +2450,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsPreTaskHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsPreTaskHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsProtectionHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsProtectionHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsProtectionHook"].getBooleanValue()
 			}
 			
 			def void setOsProtectionHook(Boolean value){
@@ -2467,15 +2466,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsProtectionHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsProtectionHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsShutdownHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsShutdownHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsShutdownHook"].getBooleanValue()
 			}
 			
 			def void setOsShutdownHook(Boolean value){
@@ -2483,15 +2482,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsShutdownHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsShutdownHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			def Boolean getOsStartupHook(){
-				EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsStartupHook"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsStartupHook"].getBooleanValue()
 			}
 			
 			def void setOsStartupHook(Boolean value){
@@ -2499,11 +2498,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsStartupHook"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsStartupHook"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+				parameterValue.setValue(getBooleanParameterValueValue(value, true))
 			}
 			
 			
@@ -2514,32 +2513,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsResource implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsResource)){
 				return false
 			}
 			this.target == (object as OsResource).target
 		}
-		
+	
 		def OsResourceProperty getOsResourceProperty(){
-			getOsResourcePropertyValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsResourceProperty"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsResourceProperty"].getOsResourcePropertyValue()
 		}
 		
 		def void setOsResourceProperty(OsResourceProperty value){
@@ -2547,11 +2546,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsResourceProperty"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsResourceProperty"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsResourceProperty {
@@ -2559,32 +2558,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			LINKED, 
 			STANDARD
 		}
-			
-		def OsResourceProperty getOsResourcePropertyValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsResourceProperty getOsResourcePropertyValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "INTERNAL" : OsResourceProperty.INTERNAL
 				case "LINKED" : OsResourceProperty.LINKED
 				case "STANDARD" : OsResourceProperty.STANDARD
 			}
 		}
 		
-		def void setOsResourcePropertyValue(GParameterValue paramValue, OsResourceProperty value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsResourcePropertyValue(GParameterValue parameterValue, OsResourceProperty value){
+			parameterValue.setValue(value)
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsResourceAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsResourceAccessingApplication"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsResourceAccessingApplication")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
 					if (object != null) {
@@ -2595,7 +2594,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -2610,11 +2609,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 		def org.artop.ecuc.autosar421.accessors.Os.OsResource getOsResourceLinkedResourceRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource), "OsResourceLinkedResourceRef")
 		}
-				
+		
 		def void setOsResourceLinkedResourceRef(org.artop.ecuc.autosar421.accessors.Os.OsResource object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsResourceLinkedResourceRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsResourceLinkedResourceRef"], object.getTarget())
 			}
 		}
 		
@@ -2623,32 +2622,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsScheduleTable implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsScheduleTable)){
 				return false
 			}
 			this.target == (object as OsScheduleTable).target
 		}
-		
+	
 		def BigInteger getOsScheduleTableDuration(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableDuration"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableDuration"].getBigIntegerValue()
 		}
 		
 		def void setOsScheduleTableDuration(BigInteger value){
@@ -2656,15 +2655,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableDuration"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableDuration"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def Boolean getOsScheduleTableRepeating(){
-			EcucValueAccessor421Util.getBooleanValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableRepeating"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableRepeating"].getBooleanValue()
 		}
 		
 		def void setOsScheduleTableRepeating(Boolean value){
@@ -2672,25 +2671,25 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableRepeating"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableRepeating"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, getBooleanParameterValueValue(value, true))
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsSchTblAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsSchTblAccessingApplication"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsSchTblAccessingApplication")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
 					if (object != null) {
@@ -2701,7 +2700,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -2716,11 +2715,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 		def org.artop.ecuc.autosar421.accessors.Os.OsCounter getOsScheduleTableCounterRef(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsCounter), "OsScheduleTableCounterRef")
 		}
-				
+		
 		def void setOsScheduleTableCounterRef(org.artop.ecuc.autosar421.accessors.Os.OsCounter object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableCounterRef"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableCounterRef"], object.getTarget())
 			}
 		}
 		
@@ -2741,15 +2740,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				}
 			}
 			return new BasicWrappingEList<OsScheduleTableExpiryPoint, GContainer>(filteredContainers, typeof(OsScheduleTableExpiryPoint), typeof(GContainer)) {
-				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable$OsScheduleTableExpiryPoint osScheduleTableExpiryPoint) {
+				override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable.OsScheduleTableExpiryPoint osScheduleTableExpiryPoint) {
 					osScheduleTableExpiryPoint.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableExpiryPoint"))
 					super.delegateAdd(osScheduleTableExpiryPoint)
 				}
-				
-				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable$OsScheduleTableExpiryPoint osScheduleTableExpiryPoint) {
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable.OsScheduleTableExpiryPoint osScheduleTableExpiryPoint) {
 					osScheduleTableExpiryPoint.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableExpiryPoint"))
 					super.delegateAdd(index, osScheduleTableExpiryPoint)
-				}	
+				}
 			}
 		}
 		
@@ -2765,32 +2764,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsScheduleTableAutostart implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsScheduleTableAutostart)){
 					return false
 				}
 				this.target == (object as OsScheduleTableAutostart).target
 			}
-			
+		
 			def OsScheduleTableAutostartType getOsScheduleTableAutostartType(){
-				getOsScheduleTableAutostartTypeValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableAutostartType"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableAutostartType"].getOsScheduleTableAutostartTypeValue()
 			}
 			
 			def void setOsScheduleTableAutostartType(OsScheduleTableAutostartType value){
@@ -2798,11 +2797,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableAutostartType"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableAutostartType"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum OsScheduleTableAutostartType {
@@ -2810,22 +2809,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 				RELATIVE, 
 				SYNCHRON
 			}
-				
-			def OsScheduleTableAutostartType getOsScheduleTableAutostartTypeValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def OsScheduleTableAutostartType getOsScheduleTableAutostartTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "ABSOLUTE" : OsScheduleTableAutostartType.ABSOLUTE
 					case "RELATIVE" : OsScheduleTableAutostartType.RELATIVE
 					case "SYNCHRON" : OsScheduleTableAutostartType.SYNCHRON
 				}
 			}
 			
-			def void setOsScheduleTableAutostartTypeValue(GParameterValue paramValue, OsScheduleTableAutostartType value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setOsScheduleTableAutostartTypeValue(GParameterValue parameterValue, OsScheduleTableAutostartType value){
+				parameterValue.setValue(value)
 			}
 			
 			def BigInteger getOsScheduleTableStartValue(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableStartValue"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableStartValue"].getBigIntegerValue()
 			}
 			
 			def void setOsScheduleTableStartValue(BigInteger value){
@@ -2833,25 +2832,25 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableStartValue"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableStartValue"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
 			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsScheduleTableAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableAppModeRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "OsScheduleTableAppModeRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAppMode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object) throws CoreException {
 						if (object != null) {
@@ -2862,7 +2861,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -2880,32 +2879,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsScheduleTableExpiryPoint implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsScheduleTableExpiryPoint)){
 					return false
 				}
 				this.target == (object as OsScheduleTableExpiryPoint).target
 			}
-			
+		
 			def BigInteger getOsScheduleTblExpPointOffset(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExpPointOffset"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExpPointOffset"].getBigIntegerValue()
 			}
 			
 			def void setOsScheduleTblExpPointOffset(BigInteger value){
@@ -2913,11 +2912,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTblExpPointOffset"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTblExpPointOffset"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -2929,15 +2928,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsScheduleTableEventSetting, GContainer>(filteredContainers, typeof(OsScheduleTableEventSetting), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable$OsScheduleTableExpiryPoint$OsScheduleTableEventSetting osScheduleTableEventSetting) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable.OsScheduleTableExpiryPoint.OsScheduleTableEventSetting osScheduleTableEventSetting) {
 						osScheduleTableEventSetting.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableEventSetting"))
 						super.delegateAdd(osScheduleTableEventSetting)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable$OsScheduleTableExpiryPoint$OsScheduleTableEventSetting osScheduleTableEventSetting) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable.OsScheduleTableExpiryPoint.OsScheduleTableEventSetting osScheduleTableEventSetting) {
 						osScheduleTableEventSetting.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableEventSetting"))
 						super.delegateAdd(index, osScheduleTableEventSetting)
-					}	
+					}
 				}
 			}
 			
@@ -2948,15 +2947,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsScheduleTableTaskActivation, GContainer>(filteredContainers, typeof(OsScheduleTableTaskActivation), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable$OsScheduleTableExpiryPoint$OsScheduleTableTaskActivation osScheduleTableTaskActivation) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable.OsScheduleTableExpiryPoint.OsScheduleTableTaskActivation osScheduleTableTaskActivation) {
 						osScheduleTableTaskActivation.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableTaskActivation"))
 						super.delegateAdd(osScheduleTableTaskActivation)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsScheduleTable$OsScheduleTableExpiryPoint$OsScheduleTableTaskActivation osScheduleTableTaskActivation) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsScheduleTable.OsScheduleTableExpiryPoint.OsScheduleTableTaskActivation osScheduleTableTaskActivation) {
 						osScheduleTableTaskActivation.target?.gSetDefinition(containerValue.getContainerDefinition("OsScheduleTableTaskActivation"))
 						super.delegateAdd(index, osScheduleTableTaskActivation)
-					}	
+					}
 				}
 			}
 			
@@ -2972,50 +2971,50 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsScheduleTableEventSetting implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsScheduleTableEventSetting)){
 						return false
 					}
 					this.target == (object as OsScheduleTableEventSetting).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsEvent getOsScheduleTableSetEventRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsEvent), "OsScheduleTableSetEventRef")
 				}
-						
+				
 				def void setOsScheduleTableSetEventRef(org.artop.ecuc.autosar421.accessors.Os.OsEvent object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableSetEventRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableSetEventRef"], object.getTarget())
 					}
 				}
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsScheduleTableSetEventTaskRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsScheduleTableSetEventTaskRef")
 				}
-						
+				
 				def void setOsScheduleTableSetEventTaskRef(org.artop.ecuc.autosar421.accessors.Os.OsTask object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableSetEventTaskRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableSetEventTaskRef"], object.getTarget())
 					}
 				}
 				
@@ -3025,39 +3024,39 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsScheduleTableTaskActivation implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsScheduleTableTaskActivation)){
 						return false
 					}
 					this.target == (object as OsScheduleTableTaskActivation).target
 				}
-				
+			
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsTask getOsScheduleTableActivateTaskRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsTask), "OsScheduleTableActivateTaskRef")
 				}
-						
+				
 				def void setOsScheduleTableActivateTaskRef(org.artop.ecuc.autosar421.accessors.Os.OsTask object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableActivateTaskRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsScheduleTableActivateTaskRef"], object.getTarget())
 					}
 				}
 				
@@ -3067,32 +3066,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 			
 			static class OsScheduleTblAdjustableExpPoint implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsScheduleTblAdjustableExpPoint)){
 						return false
 					}
 					this.target == (object as OsScheduleTblAdjustableExpPoint).target
 				}
-				
+			
 				def BigInteger getOsScheduleTableMaxLengthen(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxLengthen"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxLengthen"].getBigIntegerValue()
 				}
 				
 				def void setOsScheduleTableMaxLengthen(BigInteger value){
@@ -3100,15 +3099,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableMaxLengthen"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableMaxLengthen"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				def BigInteger getOsScheduleTableMaxShorten(){
-					EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxShorten"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTableMaxShorten"].getBigIntegerValue()
 				}
 				
 				def void setOsScheduleTableMaxShorten(BigInteger value){
@@ -3116,11 +3115,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableMaxShorten"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTableMaxShorten"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
@@ -3132,32 +3131,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsScheduleTableSync implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsScheduleTableSync)){
 					return false
 				}
 				this.target == (object as OsScheduleTableSync).target
 			}
-			
+		
 			def BigInteger getOsScheduleTblExplicitPrecision(){
-				EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExplicitPrecision"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblExplicitPrecision"].getBigIntegerValue()
 			}
 			
 			def void setOsScheduleTblExplicitPrecision(BigInteger value){
@@ -3165,15 +3164,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTblExplicitPrecision"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTblExplicitPrecision"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def OsScheduleTblSyncStrategy getOsScheduleTblSyncStrategy(){
-				getOsScheduleTblSyncStrategyValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblSyncStrategy"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsScheduleTblSyncStrategy"].getOsScheduleTblSyncStrategyValue()
 			}
 			
 			def void setOsScheduleTblSyncStrategy(OsScheduleTblSyncStrategy value){
@@ -3181,11 +3180,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTblSyncStrategy"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsScheduleTblSyncStrategy"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			enum OsScheduleTblSyncStrategy {
@@ -3193,18 +3192,18 @@ class Os implements IWrapper<GModuleConfiguration> {
 				IMPLICIT, 
 				NONE
 			}
-				
-			def OsScheduleTblSyncStrategy getOsScheduleTblSyncStrategyValue(GParameterValue paramValue){
-				val castedParamValue = paramValue as EcucTextualParamValue
-				switch (castedParamValue.value){
+			
+			def OsScheduleTblSyncStrategy getOsScheduleTblSyncStrategyValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
 					case "EXPLICIT" : OsScheduleTblSyncStrategy.EXPLICIT
 					case "IMPLICIT" : OsScheduleTblSyncStrategy.IMPLICIT
 					case "NONE" : OsScheduleTblSyncStrategy.NONE
 				}
 			}
 			
-			def void setOsScheduleTblSyncStrategyValue(GParameterValue paramValue, OsScheduleTblSyncStrategy value){
-				EcucValueAccessor421Util.setParameterValue(paramValue, value)
+			def void setOsScheduleTblSyncStrategyValue(GParameterValue parameterValue, OsScheduleTblSyncStrategy value){
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3215,32 +3214,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsSpinlock implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsSpinlock)){
 				return false
 			}
 			this.target == (object as OsSpinlock).target
 		}
-		
+	
 		def OsSpinlockLockMethod getOsSpinlockLockMethod(){
-			getOsSpinlockLockMethodValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSpinlockLockMethod"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsSpinlockLockMethod"].getOsSpinlockLockMethodValue()
 		}
 		
 		def void setOsSpinlockLockMethod(OsSpinlockLockMethod value){
@@ -3248,11 +3247,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsSpinlockLockMethod"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsSpinlockLockMethod"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsSpinlockLockMethod {
@@ -3261,10 +3260,10 @@ class Os implements IWrapper<GModuleConfiguration> {
 			LOCK_NOTHING, 
 			LOCK_WITH_RES_SCHEDULER
 		}
-			
-		def OsSpinlockLockMethod getOsSpinlockLockMethodValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsSpinlockLockMethod getOsSpinlockLockMethodValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "LOCK_ALL_INTERRUPTS" : OsSpinlockLockMethod.LOCK_ALL_INTERRUPTS
 				case "LOCK_CAT2_INTERRUPTS" : OsSpinlockLockMethod.LOCK_CAT2_INTERRUPTS
 				case "LOCK_NOTHING" : OsSpinlockLockMethod.LOCK_NOTHING
@@ -3272,22 +3271,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 			}
 		}
 		
-		def void setOsSpinlockLockMethodValue(GParameterValue paramValue, OsSpinlockLockMethod value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsSpinlockLockMethodValue(GParameterValue parameterValue, OsSpinlockLockMethod value){
+			parameterValue.setValue(value)
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsSpinlockAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsSpinlockAccessingApplication"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsSpinlockAccessingApplication")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
 					if (object != null) {
@@ -3298,7 +3297,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -3313,11 +3312,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 		def org.artop.ecuc.autosar421.accessors.Os.OsSpinlock getOsSpinlockSuccessor(){
 			containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsSpinlock), "OsSpinlockSuccessor")
 		}
-				
+		
 		def void setOsSpinlockSuccessor(org.artop.ecuc.autosar421.accessors.Os.OsSpinlock object){
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsSpinlockSuccessor"], object.getTarget())
+				containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsSpinlockSuccessor"], object.getTarget())
 			}
 		}
 		
@@ -3326,32 +3325,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 	}
 	static class OsTask implements IWrapper<GContainer> {
 		private GContainer containerValue
-		
+	
 		new(GContainer containerValue){
 			this.containerValue = containerValue
 		}
-		
+	
 		def String getShortName(){
 			containerValue?.gGetShortName
 		}
-		
+	
 		def void setShortName(String name){
 			containerValue?.gSetShortName(name)
 		}
-		
+	
 		override def GContainer getTarget(){
 			containerValue
 		}
-		
+	
 		override def boolean equals(Object object) {
 	        if (!(object instanceof OsTask)){
 				return false
 			}
 			this.target == (object as OsTask).target
 		}
-		
+	
 		def BigInteger getOsTaskActivation(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskActivation"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskActivation"].getBigIntegerValue()
 		}
 		
 		def void setOsTaskActivation(BigInteger value){
@@ -3359,15 +3358,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskActivation"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskActivation"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def BigInteger getOsTaskPriority(){
-			EcucValueAccessor421Util.getBigIntegerValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskPriority"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskPriority"].getBigIntegerValue()
 		}
 		
 		def void setOsTaskPriority(BigInteger value){
@@ -3375,15 +3374,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskPriority"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskPriority"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		def OsTaskSchedule getOsTaskSchedule(){
-			getOsTaskScheduleValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskSchedule"])
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskSchedule"].getOsTaskScheduleValue()
 		}
 		
 		def void setOsTaskSchedule(OsTaskSchedule value){
@@ -3391,42 +3390,42 @@ class Os implements IWrapper<GModuleConfiguration> {
 			if (parameterValue == null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
-					parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskSchedule"])
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskSchedule"].createParameterValue()
 					containerValue.gGetParameterValues += parameterValue
 				}
 			}
-			EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+			parameterValue.setValue(value)
 		}
 		
 		enum OsTaskSchedule {
 			FULL, 
 			NON
 		}
-			
-		def OsTaskSchedule getOsTaskScheduleValue(GParameterValue paramValue){
-			val castedParamValue = paramValue as EcucTextualParamValue
-			switch (castedParamValue.value){
+		
+		def OsTaskSchedule getOsTaskScheduleValue(GParameterValue parameterValue){
+			val castedParameterValue = parameterValue as EcucTextualParamValue
+			switch (castedParameterValue.value){
 				case "FULL" : OsTaskSchedule.FULL
 				case "NON" : OsTaskSchedule.NON
 			}
 		}
 		
-		def void setOsTaskScheduleValue(GParameterValue paramValue, OsTaskSchedule value){
-			EcucValueAccessor421Util.setParameterValue(paramValue, value)
+		def void setOsTaskScheduleValue(GParameterValue parameterValue, OsTaskSchedule value){
+			parameterValue.setValue(value)
 		}
 		
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsApplication> getOsTaskAccessingApplications(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskAccessingApplication"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsTaskAccessingApplication")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsApplication>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsApplication)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsApplication object) throws CoreException {
 					if (object != null) {
@@ -3437,7 +3436,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -3451,15 +3450,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsEvent> getOsTaskEventRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskEventRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsTaskEventRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsEvent>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsEvent)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsEvent object) throws CoreException {
 					if (object != null) {
@@ -3470,7 +3469,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -3484,15 +3483,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		def List<org.artop.ecuc.autosar421.accessors.Os.OsResource> getOsTaskResourceRefs(){
 			val containerDef = containerValue.gGetDefinition
-			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+			val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 				containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskResourceRef"] else null
-							
+		
 			val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 				override protected accept(GReferenceValue item) {
 					return accept(item, typeof(GConfigReference), "OsTaskResourceRef")
 				}
 			}
-			
+		
 			return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsResource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource)) {
 				override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsResource object) throws CoreException {
 					if (object != null) {
@@ -3503,7 +3502,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 						return referenceValue
 					}
 				}
-				
+		
 				override protected unwrap(GReferenceValue referenceValue) {
 					if (referenceValue != null) {
 						val referenceValueValue = referenceValue.gGetValue
@@ -3537,42 +3536,42 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsTaskAutostart implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsTaskAutostart)){
 					return false
 				}
 				this.target == (object as OsTaskAutostart).target
 			}
-			
+		
 			
 			def List<org.artop.ecuc.autosar421.accessors.Os.OsAppMode> getOsTaskAppModeRefs(){
 				val containerDef = containerValue.gGetDefinition
-				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef) 
+				val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
 					containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskAppModeRef"] else null
-								
+			
 				val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 					override protected accept(GReferenceValue item) {
 						return accept(item, typeof(GConfigReference), "OsTaskAppModeRef")
 					}
 				}
-				
+			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Os.OsAppMode>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Os.OsAppMode)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Os.OsAppMode object) throws CoreException {
 						if (object != null) {
@@ -3583,7 +3582,7 @@ class Os implements IWrapper<GModuleConfiguration> {
 							return referenceValue
 						}
 					}
-					
+			
 					override protected unwrap(GReferenceValue referenceValue) {
 						if (referenceValue != null) {
 							val referenceValueValue = referenceValue.gGetValue
@@ -3601,32 +3600,32 @@ class Os implements IWrapper<GModuleConfiguration> {
 		
 		static class OsTaskTimingProtection implements IWrapper<GContainer> {
 			private GContainer containerValue
-			
+		
 			new(GContainer containerValue){
 				this.containerValue = containerValue
 			}
-			
+		
 			def String getShortName(){
 				containerValue?.gGetShortName
 			}
-			
+		
 			def void setShortName(String name){
 				containerValue?.gSetShortName(name)
 			}
-			
+		
 			override def GContainer getTarget(){
 				containerValue
 			}
-			
+		
 			override def boolean equals(Object object) {
 		        if (!(object instanceof OsTaskTimingProtection)){
 					return false
 				}
 				this.target == (object as OsTaskTimingProtection).target
 			}
-			
+		
 			def BigDecimal getOsTaskAllInterruptLockBudget(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskAllInterruptLockBudget"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskAllInterruptLockBudget"].getBigDecimalValue()
 			}
 			
 			def void setOsTaskAllInterruptLockBudget(BigDecimal value){
@@ -3634,15 +3633,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskAllInterruptLockBudget"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskAllInterruptLockBudget"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getOsTaskExecutionBudget(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskExecutionBudget"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskExecutionBudget"].getBigDecimalValue()
 			}
 			
 			def void setOsTaskExecutionBudget(BigDecimal value){
@@ -3650,15 +3649,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskExecutionBudget"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskExecutionBudget"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getOsTaskOsInterruptLockBudget(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskOsInterruptLockBudget"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskOsInterruptLockBudget"].getBigDecimalValue()
 			}
 			
 			def void setOsTaskOsInterruptLockBudget(BigDecimal value){
@@ -3666,15 +3665,15 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskOsInterruptLockBudget"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskOsInterruptLockBudget"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			def BigDecimal getOsTaskTimeFrame(){
-				EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskTimeFrame"])
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskTimeFrame"].getBigDecimalValue()
 			}
 			
 			def void setOsTaskTimeFrame(BigDecimal value){
@@ -3682,11 +3681,11 @@ class Os implements IWrapper<GModuleConfiguration> {
 				if (parameterValue == null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskTimeFrame"])
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskTimeFrame"].createParameterValue()
 						containerValue.gGetParameterValues += parameterValue
 					}
 				}
-				EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+				parameterValue.setValue(value)
 			}
 			
 			
@@ -3698,47 +3697,47 @@ class Os implements IWrapper<GModuleConfiguration> {
 					}
 				}
 				return new BasicWrappingEList<OsTaskResourceLock, GContainer>(filteredContainers, typeof(OsTaskResourceLock), typeof(GContainer)) {
-					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os$OsTask$OsTaskTimingProtection$OsTaskResourceLock osTaskResourceLock) {
+					override protected delegateAdd(org.artop.ecuc.autosar421.accessors.Os.OsTask.OsTaskTimingProtection.OsTaskResourceLock osTaskResourceLock) {
 						osTaskResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsTaskResourceLock"))
 						super.delegateAdd(osTaskResourceLock)
 					}
-					
-					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os$OsTask$OsTaskTimingProtection$OsTaskResourceLock osTaskResourceLock) {
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar421.accessors.Os.OsTask.OsTaskTimingProtection.OsTaskResourceLock osTaskResourceLock) {
 						osTaskResourceLock.target?.gSetDefinition(containerValue.getContainerDefinition("OsTaskResourceLock"))
 						super.delegateAdd(index, osTaskResourceLock)
-					}	
+					}
 				}
 			}
 			
 			
 			static class OsTaskResourceLock implements IWrapper<GContainer> {
 				private GContainer containerValue
-				
+			
 				new(GContainer containerValue){
 					this.containerValue = containerValue
 				}
-				
+			
 				def String getShortName(){
 					containerValue?.gGetShortName
 				}
-				
+			
 				def void setShortName(String name){
 					containerValue?.gSetShortName(name)
 				}
-				
+			
 				override def GContainer getTarget(){
 					containerValue
 				}
-				
+			
 				override def boolean equals(Object object) {
 			        if (!(object instanceof OsTaskResourceLock)){
 						return false
 					}
 					this.target == (object as OsTaskResourceLock).target
 				}
-				
+			
 				def BigDecimal getOsTaskResourceLockBudget(){
-					EcucValueAccessor421Util.getBigDecimalValue(containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskResourceLockBudget"])
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OsTaskResourceLockBudget"].getBigDecimalValue()
 				}
 				
 				def void setOsTaskResourceLockBudget(BigDecimal value){
@@ -3746,22 +3745,22 @@ class Os implements IWrapper<GModuleConfiguration> {
 					if (parameterValue == null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
-							parameterValue = EcucValueAccessor421Util.createParameterValue(containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskResourceLockBudget"])
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OsTaskResourceLockBudget"].createParameterValue()
 							containerValue.gGetParameterValues += parameterValue
 						}
 					}
-					EcucValueAccessor421Util.setParameterValue(parameterValue, value)
+					parameterValue.setValue(value)
 				}
 				
 				
 				def org.artop.ecuc.autosar421.accessors.Os.OsResource getOsTaskResourceLockResourceRef(){
 					containerValue.getReference(typeof(org.artop.ecuc.autosar421.accessors.Os.OsResource), "OsTaskResourceLockResourceRef")
 				}
-						
+				
 				def void setOsTaskResourceLockResourceRef(org.artop.ecuc.autosar421.accessors.Os.OsResource object){
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
-						containerValue.setReference(containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskResourceLockResourceRef"], object.getTarget())
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "OsTaskResourceLockResourceRef"], object.getTarget())
 					}
 				}
 				
@@ -3772,14 +3771,14 @@ class Os implements IWrapper<GModuleConfiguration> {
 		}
 		
 	}
-	
+
 	override def boolean equals(Object object) {
         if (!(object instanceof Os)){
 			return false
 		}
 		this.target == (object as Os).target
 	}
-	
+
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
 		if (definitionFeature != null) {
