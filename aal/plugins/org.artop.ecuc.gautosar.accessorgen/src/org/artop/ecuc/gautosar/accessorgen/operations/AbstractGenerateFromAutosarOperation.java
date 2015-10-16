@@ -54,6 +54,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 
 	private static final String TARGET_PLUGIN_NAME = "org.artop.ecuc.autosar{0}.accessors"; //$NON-NLS-1$
 	private static final String AUTOSAR_REVISION_PLUGIN_NAME = "org.artop.aal.autosar{0}"; //$NON-NLS-1$
+	private static final String AUTOSAR_SERVICES_REVISION_PLUGIN_NAME = "org.artop.aal.autosar{0}.services"; //$NON-NLS-1$
 	private static final String AR_ECUC_ACCESSORS_LIB_PLUGIN_NAME = "org.artop.ecuc.autosar{0}.accessors.lib"; //$NON-NLS-1$
 	private static final String SPHINX_EMF_PLUGIN_NAME = "org.eclipse.sphinx.emf"; //$NON-NLS-1$
 
@@ -184,6 +185,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 			requiredBundleIds.add(SPHINX_EMF_PLUGIN_NAME);
 			requiredBundleIds.add(MessageFormat.format(AR_ECUC_ACCESSORS_LIB_PLUGIN_NAME, getAutosarReleasePostfix(autosarRevision)));
 			requiredBundleIds.add(MessageFormat.format(AUTOSAR_REVISION_PLUGIN_NAME, autosarRevision));
+			requiredBundleIds.add(MessageFormat.format(AUTOSAR_SERVICES_REVISION_PLUGIN_NAME, autosarRevision));
 
 			ConvertToXtendEnabledPluginProjectJob convertProjectToXtendPluginOperation = new ConvertToXtendEnabledPluginProjectJob(targetProject,
 					requiredBundleIds);
