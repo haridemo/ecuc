@@ -12,6 +12,7 @@
 	<artifactId>org.artop.ecuc.gautosar.accessors.lib</artifactId>
 	<version>4.6.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
+	<name>org.artop.ecuc.gautosar.accessors.lib</name>
 	<build>
 		<plugins>
 			<plugin>

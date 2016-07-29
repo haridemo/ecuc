@@ -11,4 +11,5 @@
 	<artifactId>org.artop.ecuc.accessors422</artifactId>
 	<version>4.6.0-SNAPSHOT</version>
 	<packaging>eclipse-feature</packaging>
+	<name>org.artop.ecuc.accessors422-feature</name>
 </project>
