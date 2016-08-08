@@ -12,6 +12,11 @@
 	<version>4.6.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	<name>org.artop.ecuc.autosar4x.dsl.paramdef</name>
+	<properties>
+        <findbugs.skip>true</findbugs.skip>
+		<checkstyle.skip>true</checkstyle.skip>
+		<pmd.skip>true</pmd.skip>
+	</properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>

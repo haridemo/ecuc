@@ -15,5 +15,7 @@
 	<name>org.artop.ecuc.gautosar.accessorgen.ui</name>
 	<properties>
         <findbugs.skip>true</findbugs.skip>
+		<checkstyle.skip>true</checkstyle.skip>
+		<pmd.skip>true</pmd.skip>
 	</properties>
 </project>
