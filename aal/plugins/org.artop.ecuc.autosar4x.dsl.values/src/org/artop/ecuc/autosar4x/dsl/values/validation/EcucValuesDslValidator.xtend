@@ -54,13 +54,13 @@ class EcucValuesDslValidator extends AbstractEcucValuesDslValidator {
 				if (def.min != null && def.min.mixedText != null) {
 					val min = Integer.parseInt(def.min.mixedText)
 					if (v < min) {
-						error('''value must be >= Â«minÂ»''', value, null)
+						error('''value must be >= «min»''', value, null)
 					}
 				}
 				if (def.max != null && def.max.mixedText != null) {
 					val max = Integer.parseInt(def.max.mixedText)
 					if (v > max) {
-						error('''value must be <= Â«maxÂ»''', value, null)
+						error('''value must be <= «max»''', value, null)
 					}
 				}
 			} catch (NumberFormatException e) {

@@ -192,7 +192,7 @@ class ParamDefDslToAutosarTransformer {
 	def dispatch create target : Autosar40Factory.eINSTANCE.createEcucInstanceReferenceDef toEcucReferenceDef(
 		InstanceReferenceDef source) {
 		target.shortName = source.name
-		target.destinationContext = source.contexts.map['''Â«it.target.xmlNameÂ»Â«IF it.star != nullÂ»*Â«ENDIFÂ»'''].join(" ")
+		target.destinationContext = source.contexts.map['''«it.target.xmlName»«IF it.star != null»*«ENDIF»'''].join(" ")
 		target.destinationType = source.dest.target.xmlName
 		target.setMultiplicities(source.lowerMultiplicity, source.upperMultiplicity)
 		target.requiresIndex = source.requiresIndex

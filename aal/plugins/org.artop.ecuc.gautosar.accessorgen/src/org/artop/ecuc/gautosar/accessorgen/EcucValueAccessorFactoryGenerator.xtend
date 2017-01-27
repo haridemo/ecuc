@@ -31,18 +31,18 @@ public class EcucValueAccessorFactoryGenerator {
 	 *
 	 * </copyright>
 	 */
-	package Â«javaPackageNameÂ»;
+	package «javaPackageName»;
 
 	import org.artop.ecuc.gautosar.accessors.lib.factory.AbstractEcucValueAccessorFactory;
 
-	public class Â«ecucValueAccessorFactoryClassNameÂ» extends AbstractEcucValueAccessorFactory {
+	public class «ecucValueAccessorFactoryClassName» extends AbstractEcucValueAccessorFactory {
 
-		private static final String ECUC_VALUE_ACCESSORS_JAVA_PACKAGE_NAME = "Â«javaPackageNameÂ»"; //$NON-NLS-1$
+		private static final String ECUC_VALUE_ACCESSORS_JAVA_PACKAGE_NAME = "«javaPackageName»"; //$NON-NLS-1$
 
-		public static final Â«ecucValueAccessorFactoryClassNameÂ» INSTANCE = new Â«ecucValueAccessorFactoryClassNameÂ»();
+		public static final «ecucValueAccessorFactoryClassName» INSTANCE = new «ecucValueAccessorFactoryClassName»();
 
 		// Prevent instantiation
-		private Â«ecucValueAccessorFactoryClassNameÂ»() {
+		private «ecucValueAccessorFactoryClassName»() {
 
 		}
 

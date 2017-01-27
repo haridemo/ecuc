@@ -28,7 +28,7 @@ class EcucInstanceReferenceHelper {
 		var State next
 
 		override toString() {
-			'''Â«type.nameÂ»Â«IF starÂ»*Â«ENDIFÂ» Â«next?.toStringÂ»'''
+			'''«type.name»«IF star»*«ENDIF» «next?.toString»'''
 		}
 
 		def State consume(List<EObject> objects, Function<EObject,EClass> mapToAutosar) {

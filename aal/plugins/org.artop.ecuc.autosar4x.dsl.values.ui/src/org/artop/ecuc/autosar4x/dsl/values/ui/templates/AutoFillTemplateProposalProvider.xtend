@@ -54,11 +54,11 @@ class AutoFillTemplateProposalProvider extends DefaultTemplateProposalProvider {
 				if (ctx instanceof Module) {
 					if (ctx.container.size == 0) {
 					val pattern = '''
-				Â«FOR c : ctx.definition.containersÂ»
-				container Â«c.shortNameÂ» : ${Â«c.shortNameÂ»} = {
+				«FOR c : ctx.definition.containers»
+				container «c.shortName» : ${«c.shortName»} = {
 					
 				}
-				Â«ENDFORÂ»
+				«ENDFOR»
 				'''
 					val t = new Template("AutoFill","AutoFill with Step-Through", templateContext.contextType.id,pattern,true)
 					acceptor.accept(createProposal(t, templateContext, context, getImage(t), getRelevance(t)))
@@ -69,29 +69,29 @@ class AutoFillTemplateProposalProvider extends DefaultTemplateProposalProvider {
 					val def = ctx.definition
 					if (def instanceof EcucParamConfContainerDef) {
 					val pattern = '''
-				Â«FOR c : def.subContainersÂ»
-				container Â«c.shortNameÂ» : ${Â«c.shortNameÂ»} = {
+				«FOR c : def.subContainers»
+				container «c.shortName» : ${«c.shortName»} = {
 					
 				}
-				Â«ENDFORÂ»
-				Â«FOR p : def.parametersÂ»
-				param Â«p.shortNameÂ» = Â«p.valueTemplateÂ»
-				Â«ENDFORÂ»
-Â«Â«Â«				Refs gehen nicht schÃ¶n wg Scoping Context = container
-Â«Â«Â«				Â«FOR r : def.referencesÂ»
-Â«Â«Â«				ref Â«r.shortNameÂ» = ${Â«r.shortNameÂ»:CrossReference(ReferenceValue.container)}
-Â«Â«Â«				Â«ENDFORÂ»
+				«ENDFOR»
+				«FOR p : def.parameters»
+				param «p.shortName» = «p.valueTemplate»
+				«ENDFOR»
+«««				Refs gehen nicht schön wg Scoping Context = container
+«««				«FOR r : def.references»
+«««				ref «r.shortName» = ${«r.shortName»:CrossReference(ReferenceValue.container)}
+«««				«ENDFOR»
 				'''
 					val t = new Template("AutoFill","AutoFill with Step-Through", templateContext.contextType.id,pattern,true)
 					acceptor.accept(createProposal(t, templateContext, context, getImage(t), getRelevance(t)))
 					
 					} else if (def instanceof EcucChoiceContainerDef) {
 						val pattern = '''
-				Â«FOR c : def.choicesÂ»
-				container Â«c.shortNameÂ» : ${Â«c.shortNameÂ»} = {
+				«FOR c : def.choices»
+				container «c.shortName» : ${«c.shortName»} = {
 					
 				}
-				Â«ENDFORÂ»
+				«ENDFOR»
 				'''
 					val t = new Template("AutoFill","AutoFill with Step-Through", templateContext.contextType.id,pattern,true)
 					acceptor.accept(createProposal(t, templateContext, context, getImage(t), getRelevance(t)))
@@ -115,7 +115,7 @@ class AutoFillTemplateProposalProvider extends DefaultTemplateProposalProvider {
 				"TDB"
 			}
 		}
-		'''.${value_enum_literal_Â«d.shortNameÂ»:EnumLiteral(Â«literalsÂ»)}'''
+		'''.${value_enum_literal_«d.shortName»:EnumLiteral(«literals»)}'''
 	}
 	
 	def dispatch String valueTemplate(EcucIntegerParamDef d) {
@@ -123,7 +123,7 @@ class AutoFillTemplateProposalProvider extends DefaultTemplateProposalProvider {
 		if (defaultValue == null || defaultValue.empty) {
 			defaultValue = "1"
 		}
-		'''${value_int_Â«d.shortNameÂ»:IntLiteral(Â«defaultValueÂ»)}'''
+		'''${value_int_«d.shortName»:IntLiteral(«defaultValue»)}'''
 	}
 	
 	def dispatch String valueTemplate(EcucFloatParamDef d) {
@@ -131,7 +131,7 @@ class AutoFillTemplateProposalProvider extends DefaultTemplateProposalProvider {
 		if (defaultValue == null || defaultValue.empty) {
 			defaultValue = "1.0"
 		}
-		'''${value_float_Â«d.shortNameÂ»:FloatLiteral(Â«defaultValueÂ»)}'''
+		'''${value_float_«d.shortName»:FloatLiteral(«defaultValue»)}'''
 	}
 	
 	def dispatch String valueTemplate(EcucBooleanParamDef d) {
@@ -147,15 +147,15 @@ class AutoFillTemplateProposalProvider extends DefaultTemplateProposalProvider {
 			case "false": defaultValue = "false"
 			case "FALSE": defaultValue = "false"
 		}
-		'''${value_boolean_Â«d.shortNameÂ»:BooleanLiteral(Â«defaultValueÂ»)}'''
+		'''${value_boolean_«d.shortName»:BooleanLiteral(«defaultValue»)}'''
 	}
 	
 	def dispatch String valueTemplate(EcucAbstractStringParamDef d) {
-		'''"${value_string_Â«d.shortNameÂ»:StringLiteral(value)}"'''
+		'''"${value_string_«d.shortName»:StringLiteral(value)}"'''
 	}
 	
 	def dispatch String valueTemplate(EcucAddInfoParamDef d) {
-		'''"${value_string_Â«d.shortNameÂ»:StringLiteral(documentation)}"'''
+		'''"${value_string_«d.shortName»:StringLiteral(documentation)}"'''
 	}
 	
 	def dispatch String valueTemplate(EcucParameterDef d) {
