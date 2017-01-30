@@ -27,7 +27,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.artop.ecuc.autosar4x.dsl.values,
  org.artop.ecuc.autosar4x.dsl.values.conversion,
  org.artop.ecuc.autosar4x.dsl.values.ecucValuesDsl,

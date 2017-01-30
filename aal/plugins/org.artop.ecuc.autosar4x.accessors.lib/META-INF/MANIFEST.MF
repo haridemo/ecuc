@@ -12,7 +12,7 @@ Require-Bundle: com.google.guava,
  org.artop.aal.autosar40,
  org.artop.aal.autosar40.services
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.artop.ecuc.autosar4x.accessors.lib,
  org.artop.ecuc.autosar4x.accessors.lib.internal;x-internal:=true
 Bundle-Localization: plugin

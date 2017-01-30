@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.artop.ecuc.gautosar.codegen.xpand.ui,
  org.artop.aal.autosar3x
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.artop.ecuc.autosar3x.codegen.xpand.ui.actions,
  org.artop.ecuc.autosar3x.codegen.xpand.ui.actions.providers,
  org.artop.ecuc.autosar3x.codegen.xpand.ui.internal;x-internal:=true,

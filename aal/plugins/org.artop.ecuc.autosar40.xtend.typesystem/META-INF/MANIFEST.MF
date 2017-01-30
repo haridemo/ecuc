@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.artop.ecuc.autosar40.xtend.typesystem;singleton:=true
 Bundle-Version: 4.6.0.qualifier
 Bundle-Vendor: %providerName
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.artop.ecuc.autosar40.xtend.typesystem,
  org.artop.ecuc.autosar40.xtend.typesystem.internal;x-internal:=true,
  org.artop.ecuc.autosar40.xtend.typesystem.metatypes.concrete,

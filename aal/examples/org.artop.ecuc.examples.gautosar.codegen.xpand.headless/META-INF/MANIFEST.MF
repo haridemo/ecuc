@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.artop.ecuc.examples.gautosar.codegen.xpand.headless;sin
 Bundle-Version: 4.6.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.sphinx.emf.workspace;visibility:=reexport,
  org.artop.aal.common;visibility:=reexport,

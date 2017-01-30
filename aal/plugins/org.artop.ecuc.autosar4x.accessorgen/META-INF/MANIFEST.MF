@@ -8,7 +8,7 @@ Bundle-Vendor: %providerName
 Require-Bundle: org.artop.ecuc.gautosar.accessorgen;visibility:=reexport,
  org.artop.aal.autosar40;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.artop.ecuc.autosar4x.accessorgen,
  org.artop.ecuc.autosar4x.accessorgen.internal;x-internal:=true,
  org.artop.ecuc.autosar4x.accessorgen.internal.messages;x-friends:="org.artop.ecuc.examples.autosar4x.accessorgen.ui",
