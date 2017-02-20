@@ -58,7 +58,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	def String writeImportStatements()'''
 	import java.util.List
 
-	«writeReleaseSpecificImportStatements»
+	Â«writeReleaseSpecificImportStatementsÂ»
 
 	import org.eclipse.sphinx.emf.util.AbstractFilteringEList
 	import org.eclipse.sphinx.emf.util.BasicWrappingEList
@@ -117,11 +117,11 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	 *
 	 * </copyright>
 	 */
-	package «javaPackageName»
+	package Â«javaPackageNameÂ»
 
-	«writeImportStatements»
+	Â«writeImportStatementsÂ»
 
-	class «module.moduleTypeName» implements IWrapper<GModuleConfiguration> {
+	class Â«module.moduleTypeNameÂ» implements IWrapper<GModuleConfiguration> {
 		protected GModuleConfiguration moduleConfiguration
 
 		new (GModuleConfiguration moduleConfiguration){
@@ -140,47 +140,47 @@ public abstract class AbstractEcucValueAccessorGenerator {
 			moduleConfiguration
 		}
 
-		«FOR cont : module.gGetContainers»
-		«IF EcucValueAccessorUtil.isMany(cont)»
-		def List<«cont.containerTypeName»> get«cont.containerTypeName.toFirstUpper.pluralOf»(){
+		Â«FOR cont : module.gGetContainersÂ»
+		Â«IF EcucValueAccessorUtil.isMany(cont)Â»
+		def List<Â«cont.containerTypeNameÂ»> getÂ«cont.containerTypeName.toFirstUpper.pluralOfÂ»(){
 			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(moduleConfiguration, getEContainingFeature(moduleConfiguration, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 				override protected accept(GContainer item) {
-					return accept(item, typeof(GContainerDef), "«cont.containerTypeName»")
+					return accept(item, typeof(GContainerDef), "Â«cont.containerTypeNameÂ»")
 				}
 			}
-			return new BasicWrappingEList<«cont.containerTypeName», GContainer>(filteredContainers, typeof(«cont.containerTypeName»), typeof(GContainer)) {
-				override protected delegateAdd(«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, cont, ".")» «cont.containerTypeName.toFirstLower») {
-					«cont.containerTypeName.toFirstLower».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("«cont.containerTypeName»"))
-					super.delegateAdd(«cont.containerTypeName.toFirstLower»)
+			return new BasicWrappingEList<Â«cont.containerTypeNameÂ», GContainer>(filteredContainers, typeof(Â«cont.containerTypeNameÂ»), typeof(GContainer)) {
+				override protected delegateAdd(Â«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, cont, ".")Â» Â«cont.containerTypeName.toFirstLowerÂ») {
+					Â«cont.containerTypeName.toFirstLowerÂ».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("Â«cont.containerTypeNameÂ»"))
+					super.delegateAdd(Â«cont.containerTypeName.toFirstLowerÂ»)
 				}
 
-				override protected delegateAdd(int index, «EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, cont, ".")» «cont.containerTypeName.toFirstLower») {
-					«cont.containerTypeName.toFirstLower».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("«cont.containerTypeName»"))
-					super.delegateAdd(index, «cont.containerTypeName.toFirstLower»)
+				override protected delegateAdd(int index, Â«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, cont, ".")Â» Â«cont.containerTypeName.toFirstLowerÂ») {
+					Â«cont.containerTypeName.toFirstLowerÂ».target?.gSetDefinition(moduleConfiguration.getContainerDefinition("Â«cont.containerTypeNameÂ»"))
+					super.delegateAdd(index, Â«cont.containerTypeName.toFirstLowerÂ»)
 				}
 			}
 		}
-		«ELSE»
-		def «cont.containerTypeName» get«cont.containerTypeName.toFirstUpper»(){
-			moduleConfiguration.getByType(typeof(«cont.containerTypeName»))
+		Â«ELSEÂ»
+		def Â«cont.containerTypeNameÂ» getÂ«cont.containerTypeName.toFirstUpperÂ»(){
+			moduleConfiguration.getByType(typeof(Â«cont.containerTypeNameÂ»))
 		}
 
-		def void set«cont.containerTypeName.toFirstUpper»(«cont.containerTypeName.toFirstUpper» «cont.containerTypeName.toFirstLower»){
-			val GContainer container = «cont.containerTypeName.toFirstLower».getTarget()
-		    moduleConfiguration.setContainer(container, "«cont.containerTypeName.toFirstUpper»")
+		def void setÂ«cont.containerTypeName.toFirstUpperÂ»(Â«cont.containerTypeName.toFirstUpperÂ» Â«cont.containerTypeName.toFirstLowerÂ»){
+			val GContainer container = Â«cont.containerTypeName.toFirstLowerÂ».getTarget()
+		    moduleConfiguration.setContainer(container, "Â«cont.containerTypeName.toFirstUpperÂ»")
 		}
-		«ENDIF»
-		«ENDFOR»
+		Â«ENDIFÂ»
+		Â«ENDFORÂ»
 
-		«FOR cont : module.gGetContainers»
-		«cont.createContainerClass»
-		«ENDFOR»
+		Â«FOR cont : module.gGetContainersÂ»
+		Â«cont.createContainerClassÂ»
+		Â«ENDFORÂ»
 
 		override def boolean equals(Object object) {
-	        if (!(object instanceof «module.moduleTypeName»)){
+	        if (!(object instanceof Â«module.moduleTypeNameÂ»)){
 				return false
 			}
-			this.target == (object as «module.moduleTypeName»).target
+			this.target == (object as Â«module.moduleTypeNameÂ»).target
 		}
 
 		private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
@@ -197,7 +197,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	'''
 
 	def createContainerClass(GContainerDef cont)'''
-	static class «cont.gGetShortName» implements IWrapper<GContainer> {
+	static class Â«cont.gGetShortNameÂ» implements IWrapper<GContainer> {
 		private GContainer containerValue
 
 		new(GContainer containerValue){
@@ -217,156 +217,156 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		}
 
 		override def boolean equals(Object object) {
-	        if (!(object instanceof «cont.gGetShortName»)){
+	        if (!(object instanceof Â«cont.gGetShortNameÂ»)){
 				return false
 			}
-			this.target == (object as «cont.gGetShortName»).target
+			this.target == (object as Â«cont.gGetShortNameÂ»).target
 		}
 
-		«cont.containerContents»
+		Â«cont.containerContentsÂ»
 	}
 	'''
 
 	def dispatch getContainerContents(GChoiceContainerDef cont)'''
-	«FOR sc : cont.gGetChoices»
-	def «sc.gGetShortName» get«sc.gGetShortName.toFirstUpper»(){
-		containerValue.getByType(typeof(«sc.gGetShortName»))
+	Â«FOR sc : cont.gGetChoicesÂ»
+	def Â«sc.gGetShortNameÂ» getÂ«sc.gGetShortName.toFirstUpperÂ»(){
+		containerValue.getByType(typeof(Â«sc.gGetShortNameÂ»))
 	}
 
-	def void set«sc.containerTypeName.toFirstUpper»(«sc.containerTypeName.toFirstUpper» «sc.containerTypeName.toFirstLower»){
-		val GContainer subContainer = «sc.containerTypeName.toFirstLower».getTarget()
-		containerValue.setContainer(subContainer, "«sc.containerTypeName.toFirstUpper»")
+	def void setÂ«sc.containerTypeName.toFirstUpperÂ»(Â«sc.containerTypeName.toFirstUpperÂ» Â«sc.containerTypeName.toFirstLowerÂ»){
+		val GContainer subContainer = Â«sc.containerTypeName.toFirstLowerÂ».getTarget()
+		containerValue.setContainer(subContainer, "Â«sc.containerTypeName.toFirstUpperÂ»")
 	}
-	«ENDFOR»
+	Â«ENDFORÂ»
 
-	«FOR sc : cont.gGetChoices»
-	«sc.createContainerClass»
+	Â«FOR sc : cont.gGetChoicesÂ»
+	Â«sc.createContainerClassÂ»
 
-	«ENDFOR»
+	Â«ENDFORÂ»
 	'''
 
 	def dispatch getContainerContents(GParamConfContainerDef cont)'''
-	«FOR p : cont.gGetParameters»
-	«IF (EcucValueAccessorUtil.isMany(p))»
-	«val valueTypeName = p.getParameterValueValueTypeName(cont)»
-	«val parameterValueTypeName = p.parameterValueTypeName»
-	def List<«valueTypeName»> get«p.gGetShortName.toFirstUpper.pluralOf»(){
-		val List<«parameterValueTypeName»> filteredParameterValues = new AbstractFilteringEList<«parameterValueTypeName»>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
-			override protected accept(«parameterValueTypeName» item) {
-				return accept(item, typeof(GConfigParameter), "«p.gGetShortName»")
+	Â«FOR p : cont.gGetParametersÂ»
+	Â«IF (EcucValueAccessorUtil.isMany(p))Â»
+	Â«val valueTypeName = p.getParameterValueValueTypeName(cont)Â»
+	Â«val parameterValueTypeName = p.parameterValueTypeNameÂ»
+	def List<Â«valueTypeNameÂ»> getÂ«p.gGetShortName.toFirstUpper.pluralOfÂ»(){
+		val List<Â«parameterValueTypeNameÂ»> filteredParameterValues = new AbstractFilteringEList<Â«parameterValueTypeNameÂ»>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
+			override protected accept(Â«parameterValueTypeNameÂ» item) {
+				return accept(item, typeof(GConfigParameter), "Â«p.gGetShortNameÂ»")
 			}
 		}
 		val containerDef = containerValue.gGetDefinition
 		if (containerDef instanceof GParamConfContainerDef) {
-			val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "«p.gGetShortName»"]
-			«IF !(p instanceof GEnumerationParamDef)»
-			return new «valueTypeName»ValueUnwrappingEList(filteredParameterValues, typeof(«parameterValueTypeName»), typeof(«valueTypeName»), parameterDef)
-			«ELSE»
-			return new AbstractUnwrappingEList<«parameterValueTypeName», «valueTypeName»>(filteredParameterValues, typeof(«parameterValueTypeName»), typeof(«valueTypeName?.toFirstUpper»)) {
-				override protected wrap(«valueTypeName?.toFirstUpper» object) throws CoreException {
-					val parameterValue = «autosarFactoryClassName».eINSTANCE.create«parameterValueTypeName»
+			val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "Â«p.gGetShortNameÂ»"]
+			Â«IF !(p instanceof GEnumerationParamDef)Â»
+			return new Â«valueTypeNameÂ»ValueUnwrappingEList(filteredParameterValues, typeof(Â«parameterValueTypeNameÂ»), typeof(Â«valueTypeNameÂ»), parameterDef)
+			Â«ELSEÂ»
+			return new AbstractUnwrappingEList<Â«parameterValueTypeNameÂ», Â«valueTypeNameÂ»>(filteredParameterValues, typeof(Â«parameterValueTypeNameÂ»), typeof(Â«valueTypeName?.toFirstUpperÂ»)) {
+				override protected wrap(Â«valueTypeName?.toFirstUpperÂ» object) throws CoreException {
+					val parameterValue = Â«autosarFactoryClassNameÂ».eINSTANCE.createÂ«parameterValueTypeNameÂ»
 					parameterValue.gSetDefinition(parameterDef)
 					parameterValue.setValue(object)
 					parameterValue
 				}
 
-				override protected unwrap(«parameterValueTypeName» parameterValue) {
-					get«valueTypeName?.toFirstUpper»Value(parameterValue)
+				override protected unwrap(Â«parameterValueTypeNameÂ» parameterValue) {
+					getÂ«valueTypeName?.toFirstUpperÂ»Value(parameterValue)
 				}
 			}
-			«ENDIF»
+			Â«ENDIFÂ»
 		}
 	}
-	«ELSE»
-	def «p.getParameterValueValueTypeName(cont)» get«p.gGetShortName.toFirstUpper»(){
-	«val parameterTypeName = p.getParameterValueValueTypeName(cont)»
-		«IF org.artop.ecuc.gautosar.accessorgen.AbstractEcucValueAccessorGenerator.KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES.contains(parameterTypeName)»
-		containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "«p.gGetShortName»"].get«parameterTypeName?.toFirstUpper»Value()
-		«ELSE»
-		containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "«p.gGetShortName»"].get«parameterTypeName?.toFirstUpper»Value()
-		«ENDIF»
+	Â«ELSEÂ»
+	def Â«p.getParameterValueValueTypeName(cont)Â» getÂ«p.gGetShortName.toFirstUpperÂ»(){
+	Â«val parameterTypeName = p.getParameterValueValueTypeName(cont)Â»
+		Â«IF org.artop.ecuc.gautosar.accessorgen.AbstractEcucValueAccessorGenerator.KNOWN_PARAMETER_VALUE_VALUE_TYPE_NAMES.contains(parameterTypeName)Â»
+		containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Â«p.gGetShortNameÂ»"].getÂ«parameterTypeName?.toFirstUpperÂ»Value()
+		Â«ELSEÂ»
+		containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Â«p.gGetShortNameÂ»"].getÂ«parameterTypeName?.toFirstUpperÂ»Value()
+		Â«ENDIFÂ»
 	}
 
-	def void set«p.gGetShortName.toFirstUpper»(«p.getParameterValueValueTypeName(cont)» value){
-		var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "«p.gGetShortName»"]
+	def void setÂ«p.gGetShortName.toFirstUpperÂ»(Â«p.getParameterValueValueTypeName(cont)Â» value){
+		var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Â«p.gGetShortNameÂ»"]
 		if (parameterValue == null) {
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
-				parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "«p.gGetShortName»"].createParameterValue()
+				parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "Â«p.gGetShortNameÂ»"].createParameterValue()
 				containerValue.gGetParameterValues += parameterValue
 			}
 		}
-		parameterValue.setValue(«IF "Boolean".equals(p.getParameterValueValueTypeName(cont))»getBooleanParameterValueValue(value, «shouldConvertBooleanParameterValueValue»)«ELSE»value«ENDIF»)
+		parameterValue.setValue(Â«IF "Boolean".equals(p.getParameterValueValueTypeName(cont))Â»getBooleanParameterValueValue(value, Â«shouldConvertBooleanParameterValueValueÂ»)Â«ELSEÂ»valueÂ«ENDIFÂ»)
 	}
-	«ENDIF»
-	«p.generateEnumType(cont)»
+	Â«ENDIFÂ»
+	Â«p.generateEnumType(cont)Â»
 
-	«ENDFOR»
+	Â«ENDFORÂ»
 
-	«FOR referenceDef : cont.gGetReferences»
-	«referenceDef.referenceContents»
+	Â«FOR referenceDef : cont.gGetReferencesÂ»
+	Â«referenceDef.referenceContentsÂ»
 
-	«ENDFOR»
+	Â«ENDFORÂ»
 
-	«FOR sc : cont.gGetSubContainers»
-	«IF EcucValueAccessorUtil.isMany(sc)»
-	def List<«sc.containerTypeName»> get«sc.containerTypeName.toFirstUpper.pluralOf»(){
+	Â«FOR sc : cont.gGetSubContainersÂ»
+	Â«IF EcucValueAccessorUtil.isMany(sc)Â»
+	def List<Â«sc.containerTypeNameÂ»> getÂ«sc.containerTypeName.toFirstUpper.pluralOfÂ»(){
 		val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
 			override protected accept(GContainer item) {
-				return accept(item, typeof(GContainerDef), "«sc.containerTypeName»")
+				return accept(item, typeof(GContainerDef), "Â«sc.containerTypeNameÂ»")
 			}
 		}
-		return new BasicWrappingEList<«sc.containerTypeName», GContainer>(filteredContainers, typeof(«sc.containerTypeName»), typeof(GContainer)) {
-			override protected delegateAdd(«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, sc, ".")» «sc.containerTypeName.toFirstLower») {
-				«sc.containerTypeName.toFirstLower».target?.gSetDefinition(containerValue.getContainerDefinition("«sc.containerTypeName»"))
-				super.delegateAdd(«sc.containerTypeName.toFirstLower»)
+		return new BasicWrappingEList<Â«sc.containerTypeNameÂ», GContainer>(filteredContainers, typeof(Â«sc.containerTypeNameÂ»), typeof(GContainer)) {
+			override protected delegateAdd(Â«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, sc, ".")Â» Â«sc.containerTypeName.toFirstLowerÂ») {
+				Â«sc.containerTypeName.toFirstLowerÂ».target?.gSetDefinition(containerValue.getContainerDefinition("Â«sc.containerTypeNameÂ»"))
+				super.delegateAdd(Â«sc.containerTypeName.toFirstLowerÂ»)
 			}
 
-			override protected delegateAdd(int index, «EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, sc, ".")» «sc.containerTypeName.toFirstLower») {
-				«sc.containerTypeName.toFirstLower».target?.gSetDefinition(containerValue.getContainerDefinition("«sc.containerTypeName»"))
-				super.delegateAdd(index, «sc.containerTypeName.toFirstLower»)
+			override protected delegateAdd(int index, Â«EcucValueAccessorUtil.getAccessorClassQualifiedName(javaPackageName, sc, ".")Â» Â«sc.containerTypeName.toFirstLowerÂ») {
+				Â«sc.containerTypeName.toFirstLowerÂ».target?.gSetDefinition(containerValue.getContainerDefinition("Â«sc.containerTypeNameÂ»"))
+				super.delegateAdd(index, Â«sc.containerTypeName.toFirstLowerÂ»)
 			}
 		}
 	}
-	«ELSE»
-	def «sc.containerTypeName» get«sc.containerTypeName.toFirstUpper»(){
-		containerValue.getByType(typeof(«sc.gGetShortName»))
+	Â«ELSEÂ»
+	def Â«sc.containerTypeNameÂ» getÂ«sc.containerTypeName.toFirstUpperÂ»(){
+		containerValue.getByType(typeof(Â«sc.gGetShortNameÂ»))
 	}
 
-	def void set«sc.containerTypeName.toFirstUpper»(«sc.containerTypeName.toFirstUpper» «sc.containerTypeName.toFirstLower»){
-		val GContainer subContainer = «sc.containerTypeName.toFirstLower».getTarget()
-		containerValue.setContainer(subContainer, "«sc.containerTypeName.toFirstUpper»")
+	def void setÂ«sc.containerTypeName.toFirstUpperÂ»(Â«sc.containerTypeName.toFirstUpperÂ» Â«sc.containerTypeName.toFirstLowerÂ»){
+		val GContainer subContainer = Â«sc.containerTypeName.toFirstLowerÂ».getTarget()
+		containerValue.setContainer(subContainer, "Â«sc.containerTypeName.toFirstUpperÂ»")
 	}
-	«ENDIF»
+	Â«ENDIFÂ»
 
-	«ENDFOR»
+	Â«ENDFORÂ»
 
-	«FOR sc : cont.gGetSubContainers»
-	«sc.createContainerClass»
+	Â«FOR sc : cont.gGetSubContainersÂ»
+	Â«sc.createContainerClassÂ»
 
-	«ENDFOR»
+	Â«ENDFORÂ»
 	'''
 
 	def dispatch getReferenceContents(GReferenceDef referenceDef)'''
-	«IF referenceDef.gGetRefDestination != null»
-	«val refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, referenceDef.gGetRefDestination, ".")»
-	«IF EcucValueAccessorUtil.isMany(referenceDef)»
-	def List<«refDestinationClassName»> get«referenceDef.gGetShortName.toFirstUpper.pluralOf»(){
+	Â«IF referenceDef.gGetRefDestination != nullÂ»
+	Â«val refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, referenceDef.gGetRefDestination, ".")Â»
+	Â«IF EcucValueAccessorUtil.isMany(referenceDef)Â»
+	def List<Â«refDestinationClassNameÂ»> getÂ«referenceDef.gGetShortName.toFirstUpper.pluralOfÂ»(){
 		val containerDef = containerValue.gGetDefinition
 		val GConfigReference referenceValueDef = if (containerDef instanceof GParamConfContainerDef)
-			containerDef.gGetReferences.findFirst[gGetShortName == "«referenceDef.gGetShortName»"] else null
+			containerDef.gGetReferences.findFirst[gGetShortName == "Â«referenceDef.gGetShortNameÂ»"] else null
 
 		val List<GReferenceValue> filteredReferenceValues = new AbstractFilteringEList<GReferenceValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGConfigReferenceValue())) {
 			override protected accept(GReferenceValue item) {
-				return accept(item, typeof(GConfigReference), "«referenceDef.gGetShortName»")
+				return accept(item, typeof(GConfigReference), "Â«referenceDef.gGetShortNameÂ»")
 			}
 		}
 
-		return new AbstractUnwrappingEList<GReferenceValue, «refDestinationClassName»>(filteredReferenceValues, typeof(GReferenceValue), typeof(«refDestinationClassName»)) {
-			override protected wrap(«refDestinationClassName» object) throws CoreException {
+		return new AbstractUnwrappingEList<GReferenceValue, Â«refDestinationClassNameÂ»>(filteredReferenceValues, typeof(GReferenceValue), typeof(Â«refDestinationClassNameÂ»)) {
+			override protected wrap(Â«refDestinationClassNameÂ» object) throws CoreException {
 				if (object != null) {
 					val container = object.getTarget()
-					val referenceValue = «autosarFactoryClassName».eINSTANCE.create«referenceValueTypeName»
+					val referenceValue = Â«autosarFactoryClassNameÂ».eINSTANCE.createÂ«referenceValueTypeNameÂ»
 					referenceValue.gSetDefinition(referenceValueDef)
 					referenceValue.gSetValue(container)
 					return referenceValue
@@ -377,25 +377,25 @@ public abstract class AbstractEcucValueAccessorGenerator {
 				if (referenceValue != null) {
 					val referenceValueValue = referenceValue.gGetValue
 					if (referenceValueValue instanceof GContainer) {
-						return new «refDestinationClassName»(referenceValueValue as GContainer)
+						return new Â«refDestinationClassNameÂ»(referenceValueValue as GContainer)
 					}
 				}
 			}
 		}
 	}
-	«ELSE»
-	def «refDestinationClassName» get«referenceDef.gGetShortName»(){
-		containerValue.getReference(typeof(«refDestinationClassName»), "«referenceDef.gGetShortName»")
+	Â«ELSEÂ»
+	def Â«refDestinationClassNameÂ» getÂ«referenceDef.gGetShortNameÂ»(){
+		containerValue.getReference(typeof(Â«refDestinationClassNameÂ»), "Â«referenceDef.gGetShortNameÂ»")
 	}
 
-	def void set«referenceDef.gGetShortName»(«refDestinationClassName» object){
+	def void setÂ«referenceDef.gGetShortNameÂ»(Â«refDestinationClassNameÂ» object){
 		val containerDef = containerValue.gGetDefinition
 		if (containerDef instanceof GParamConfContainerDef) {
-			containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "«referenceDef.gGetShortName»"], object.getTarget())
+			containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "Â«referenceDef.gGetShortNameÂ»"], object.getTarget())
 		}
 	}
-	«ENDIF»
-	«ENDIF»
+	Â«ENDIFÂ»
+	Â«ENDIFÂ»
 	'''
 
 	def dispatch getReferenceContents(GConfigReference referenceDef)''''''
@@ -435,22 +435,22 @@ public abstract class AbstractEcucValueAccessorGenerator {
 
 	def dispatch generateEnumType(GEnumerationParamDef p, GParamConfContainerDef cont)'''
 
-	enum «p.getParameterValueValueTypeName(cont)» {
-		«FOR l : p.gGetLiterals SEPARATOR ", "»
-		«l.gGetShortName.literalName»
-		«ENDFOR»
+	enum Â«p.getParameterValueValueTypeName(cont)Â» {
+		Â«FOR l : p.gGetLiterals SEPARATOR ", "Â»
+		Â«l.gGetShortName.literalNameÂ»
+		Â«ENDFORÂ»
 	}
 
-	def «p.getParameterValueValueTypeName(cont)» get«p.getParameterValueValueTypeName(cont)»Value(GParameterValue parameterValue){
-		val castedParameterValue = parameterValue as «enumerationParameterValueTypeName»
+	def Â«p.getParameterValueValueTypeName(cont)Â» getÂ«p.getParameterValueValueTypeName(cont)Â»Value(GParameterValue parameterValue){
+		val castedParameterValue = parameterValue as Â«enumerationParameterValueTypeNameÂ»
 		switch (castedParameterValue.value){
-			«FOR l : p.gGetLiterals»
-			case "«l.gGetShortName»" : «p.getParameterValueValueTypeName(cont)».«l.gGetShortName.literalName»
-			«ENDFOR»
+			Â«FOR l : p.gGetLiteralsÂ»
+			case "Â«l.gGetShortNameÂ»" : Â«p.getParameterValueValueTypeName(cont)Â».Â«l.gGetShortName.literalNameÂ»
+			Â«ENDFORÂ»
 		}
 	}
 
-	def void set«p.getParameterValueValueTypeName(cont)»Value(GParameterValue parameterValue, «p.getParameterValueValueTypeName(cont)» value){
+	def void setÂ«p.getParameterValueValueTypeName(cont)Â»Value(GParameterValue parameterValue, Â«p.getParameterValueValueTypeName(cont)Â» value){
 		parameterValue.setValue(value)
 	}
 	'''
