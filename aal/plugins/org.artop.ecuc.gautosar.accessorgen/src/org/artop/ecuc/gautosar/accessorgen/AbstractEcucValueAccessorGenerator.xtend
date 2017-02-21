@@ -95,6 +95,10 @@ public abstract class AbstractEcucValueAccessorGenerator {
 		for (mod : arPackage.gGetElements.filter[it instanceof GModuleDef]){
 			writeFile((mod as GModuleDef).createModuleClass(javaPackageName), mod.gGetShortName + ".xtend", srcFolderName, project)
 		}
+		
+		for (subPackage : arPackage.gGetSubPackages) {
+			writeAccessorClasses(subPackage, srcFolderName, javaPackageName, project)
+		}
 	}
 
 	def void generateEcucValueAccessorFactoryClass(IProject project, String srcFolderName, String javaPackageName, String autosarRevision){
@@ -196,7 +200,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	}
 	'''
 
-	def createContainerClass(GContainerDef cont)'''
+	def Object createContainerClass(GContainerDef cont)'''
 	static class «cont.gGetShortName» implements IWrapper<GContainer> {
 		private GContainer containerValue
 
@@ -458,9 +462,9 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	def dispatch generateEnumType(GConfigParameter p, GParamConfContainerDef cont) ''''''
 
 	def dispatch String getParameterValueValueTypeName(GEnumerationParamDef p, GParamConfContainerDef cont){
-		// Avoid name clash with enclosing DcmDspRoeEventWindowTime container definition
-		if (p.gGetShortName.equals("DcmDspRoeEventWindowTime")) {
-			return "DcmDspRoeEventWindowTimeEnum"
+		// Avoid name clashes with enclosing container definition (e.g., DcmDspRoeEventWindowTime, EcuMDefaultShutdownTarget)
+		if (p.gGetShortName == cont.gGetShortName) {
+			return '''«p.gGetShortName»Enum'''
 		}
 		p.gGetShortName
 	}
