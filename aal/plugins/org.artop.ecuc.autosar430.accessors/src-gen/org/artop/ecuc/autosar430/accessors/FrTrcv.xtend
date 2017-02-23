@@ -128,7 +128,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvChannelId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvChannelId"].createParameterValue()
@@ -144,7 +144,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvChannelUsed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvChannelUsed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvChannelUsed"].createParameterValue()
@@ -160,7 +160,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvControlsPowerSupply(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvControlsPowerSupply"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvControlsPowerSupply"].createParameterValue()
@@ -176,7 +176,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvInitState(FrTrcvInitState value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvInitState"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvInitState"].createParameterValue()
@@ -213,7 +213,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvMaxBaudrate(FrTrcvMaxBaudrate value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvMaxBaudrate"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvMaxBaudrate"].createParameterValue()
@@ -248,7 +248,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvWakeupByBusUsed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWakeupByBusUsed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvWakeupByBusUsed"].createParameterValue()
@@ -443,7 +443,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrTrcvHardwareInterfaceName(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvHardwareInterfaceName"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvHardwareInterfaceName"].createParameterValue()
@@ -537,7 +537,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrTrcvBranchId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvBranchId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvBranchId"].createParameterValue()
@@ -638,7 +638,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvDemReportErrorStatusConfiguration(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvDemReportErrorStatusConfiguration"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvDemReportErrorStatusConfiguration"].createParameterValue()
@@ -654,7 +654,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvDevErrorDetect"].createParameterValue()
@@ -670,7 +670,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvErrorCheckDuringCommunication(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvErrorCheckDuringCommunication"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvErrorCheckDuringCommunication"].createParameterValue()
@@ -686,7 +686,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvErrorCheckInInit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvErrorCheckInInit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvErrorCheckInInit"].createParameterValue()
@@ -702,7 +702,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvIndex"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvIndex"].createParameterValue()
@@ -718,7 +718,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvMainFunctionCycleTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvMainFunctionCycleTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvMainFunctionCycleTime"].createParameterValue()
@@ -734,7 +734,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvRetryCountInInit(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvRetryCountInInit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvRetryCountInInit"].createParameterValue()
@@ -750,7 +750,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvTimerType(FrTrcvTimerType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvTimerType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvTimerType"].createParameterValue()
@@ -783,7 +783,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvVersionInfoApi"].createParameterValue()
@@ -799,7 +799,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvWaitTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWaitTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvWaitTime"].createParameterValue()
@@ -815,7 +815,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrTrcvWakeUpSupport(FrTrcvWakeUpSupport value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrTrcvWakeUpSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrTrcvWakeUpSupport"].createParameterValue()
@@ -856,7 +856,7 @@ class FrTrcv implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -110,7 +110,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		
 		def void setCrc16Mode(Crc16Mode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc16Mode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "Crc16Mode"].createParameterValue()
@@ -145,7 +145,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		
 		def void setCrc32Mode(Crc32Mode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc32Mode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "Crc32Mode"].createParameterValue()
@@ -180,7 +180,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		
 		def void setCrc32P4Mode(Crc32P4Mode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc32P4Mode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "Crc32P4Mode"].createParameterValue()
@@ -215,7 +215,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		
 		def void setCrc8H2FMode(Crc8H2FMode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc8H2FMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "Crc8H2FMode"].createParameterValue()
@@ -250,7 +250,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 		
 		def void setCrc8Mode(Crc8Mode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "Crc8Mode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "Crc8Mode"].createParameterValue()
@@ -293,7 +293,7 @@ class Crc implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

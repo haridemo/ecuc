@@ -118,7 +118,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPEid(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPEid"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPEid"].createParameterValue()
@@ -134,7 +134,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPGid(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPGid"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPGid"].createParameterValue()
@@ -150,7 +150,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPLogicalAddress(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPLogicalAddress"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPLogicalAddress"].createParameterValue()
@@ -330,7 +330,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPPduRRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPPduRRxPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPPduRRxPduId"].createParameterValue()
@@ -388,7 +388,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPPduRTxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPPduRTxPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPPduRTxPduId"].createParameterValue()
@@ -404,7 +404,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPPduType(DoIPPduType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPPduType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPPduType"].createParameterValue()
@@ -586,7 +586,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPTargetAddressValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPTargetAddressValue"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPTargetAddressValue"].createParameterValue()
@@ -680,7 +680,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					def void setDoIPSoAdRxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPSoAdRxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPSoAdRxPduId"].createParameterValue()
@@ -738,7 +738,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					def void setDoIPSoAdTxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPSoAdTxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPSoAdTxPduId"].createParameterValue()
@@ -845,7 +845,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					def void setDoIPSoAdRxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPSoAdRxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPSoAdRxPduId"].createParameterValue()
@@ -903,7 +903,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					def void setDoIPSoAdTxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPSoAdTxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPSoAdTxPduId"].createParameterValue()
@@ -1001,7 +1001,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					
 					def void setDoIPSoAdUdpVehicleAnnouncementTxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPSoAdUdpVehicleAnnouncementTxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPSoAdUdpVehicleAnnouncementTxPduId"].createParameterValue()
@@ -1063,7 +1063,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			def void setDoIPRoutingActivationNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationNumber"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationNumber"].createParameterValue()
@@ -1087,7 +1087,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1097,7 +1097,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPConnections.DoIPTargetAddress(referenceValueValue as GContainer)
@@ -1159,7 +1159,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPRoutingActivationAuthenticationFunc(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationAuthenticationFunc"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationAuthenticationFunc"].createParameterValue()
@@ -1175,7 +1175,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPRoutingActivationAuthenticationReqLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationAuthenticationReqLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationAuthenticationReqLength"].createParameterValue()
@@ -1191,7 +1191,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPRoutingActivationAuthenticationResLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationAuthenticationResLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationAuthenticationResLength"].createParameterValue()
@@ -1238,7 +1238,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPRoutingActivationConfirmationFunc(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationConfirmationFunc"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationConfirmationFunc"].createParameterValue()
@@ -1254,7 +1254,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPRoutingActivationConfirmationReqLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationConfirmationReqLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationConfirmationReqLength"].createParameterValue()
@@ -1270,7 +1270,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 				
 				def void setDoIPRoutingActivationConfirmationResLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPRoutingActivationConfirmationResLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPRoutingActivationConfirmationResLength"].createParameterValue()
@@ -1319,7 +1319,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			def void setDoIPNumByteDiagAckNack(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPNumByteDiagAckNack"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPNumByteDiagAckNack"].createParameterValue()
@@ -1335,7 +1335,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			def void setDoIPTesterSA(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPTesterSA"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPTesterSA"].createParameterValue()
@@ -1359,7 +1359,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1369,7 +1369,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.DoIP.DoIPConfigSet.DoIPRoutingActivation(referenceValueValue as GContainer)
@@ -1416,7 +1416,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPAliveCheckResponseTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPAliveCheckResponseTimeout"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPAliveCheckResponseTimeout"].createParameterValue()
@@ -1432,7 +1432,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPDevelopmentErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPDevelopmentErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPDevelopmentErrorDetect"].createParameterValue()
@@ -1448,7 +1448,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPDhcpOptionVinUse(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPDhcpOptionVinUse"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPDhcpOptionVinUse"].createParameterValue()
@@ -1464,7 +1464,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPEntityStatusMaxByteFieldUse(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPEntityStatusMaxByteFieldUse"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPEntityStatusMaxByteFieldUse"].createParameterValue()
@@ -1480,7 +1480,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPGeneralInactivityTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPGeneralInactivityTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPGeneralInactivityTime"].createParameterValue()
@@ -1496,7 +1496,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPGIDInvalidityPattern(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPGIDInvalidityPattern"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPGIDInvalidityPattern"].createParameterValue()
@@ -1525,7 +1525,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPHostNameSizeMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPHostNameSizeMax"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPHostNameSizeMax"].createParameterValue()
@@ -1541,7 +1541,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPInitialInactivityTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPInitialInactivityTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPInitialInactivityTime"].createParameterValue()
@@ -1557,7 +1557,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPInitialVehicleAnnouncementTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPInitialVehicleAnnouncementTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPInitialVehicleAnnouncementTime"].createParameterValue()
@@ -1573,7 +1573,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPMainFunctionPeriod"].createParameterValue()
@@ -1589,7 +1589,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPMaxRequestBytes(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPMaxRequestBytes"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPMaxRequestBytes"].createParameterValue()
@@ -1605,7 +1605,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPMaxTesterConnections(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPMaxTesterConnections"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPMaxTesterConnections"].createParameterValue()
@@ -1621,7 +1621,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPMaxUDPRequestPerMessage(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPMaxUDPRequestPerMessage"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPMaxUDPRequestPerMessage"].createParameterValue()
@@ -1637,7 +1637,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPNodeType(DoIPNodeType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPNodeType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPNodeType"].createParameterValue()
@@ -1670,7 +1670,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPUseEIDasGID(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseEIDasGID"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPUseEIDasGID"].createParameterValue()
@@ -1686,7 +1686,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPUseMacAddressForIdentification(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseMacAddressForIdentification"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPUseMacAddressForIdentification"].createParameterValue()
@@ -1702,7 +1702,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPUseVehicleIdentificationSyncStatus(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPUseVehicleIdentificationSyncStatus"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPUseVehicleIdentificationSyncStatus"].createParameterValue()
@@ -1718,7 +1718,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPVehicleAnnouncementInterval(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVehicleAnnouncementInterval"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPVehicleAnnouncementInterval"].createParameterValue()
@@ -1734,7 +1734,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPVehicleAnnouncementRepetition(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVehicleAnnouncementRepetition"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPVehicleAnnouncementRepetition"].createParameterValue()
@@ -1750,7 +1750,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPVersionInfoApi"].createParameterValue()
@@ -1766,7 +1766,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPVinGidMaster(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVinGidMaster"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPVinGidMaster"].createParameterValue()
@@ -1782,7 +1782,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 		
 		def void setDoIPVinInvalidityPattern(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPVinInvalidityPattern"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPVinInvalidityPattern"].createParameterValue()
@@ -1854,7 +1854,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			def void setDoIPGetGidDirect(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPGetGidDirect"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPGetGidDirect"].createParameterValue()
@@ -1901,7 +1901,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			def void setDoIPPowerModeDirect(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPPowerModeDirect"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPPowerModeDirect"].createParameterValue()
@@ -1948,7 +1948,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 			
 			def void setDoIPTriggerGidSyncDirect(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DoIPTriggerGidSyncDirect"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DoIPTriggerGidSyncDirect"].createParameterValue()
@@ -1974,7 +1974,7 @@ class DoIP implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

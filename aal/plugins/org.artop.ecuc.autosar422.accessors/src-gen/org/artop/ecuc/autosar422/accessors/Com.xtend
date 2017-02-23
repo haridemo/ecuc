@@ -118,7 +118,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComDataMemSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComDataMemSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComDataMemSize"].createParameterValue()
@@ -134,7 +134,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMaxIPduCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMaxIPduCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMaxIPduCnt"].createParameterValue()
@@ -383,7 +383,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComBitPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitPosition"].createParameterValue()
@@ -399,7 +399,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComSignalEndianness(ComSignalEndianness value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalEndianness"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalEndianness"].createParameterValue()
@@ -434,7 +434,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComSignalInitValue(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalInitValue"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalInitValue"].createParameterValue()
@@ -450,7 +450,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComTransferProperty(ComTransferProperty value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTransferProperty"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTransferProperty"].createParameterValue()
@@ -489,7 +489,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComUpdateBitPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComUpdateBitPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComUpdateBitPosition"].createParameterValue()
@@ -554,7 +554,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterAlgorithm(ComFilterAlgorithm value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterAlgorithm"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterAlgorithm"].createParameterValue()
@@ -599,7 +599,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterMask(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMask"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMask"].createParameterValue()
@@ -615,7 +615,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterMax(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMax"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMax"].createParameterValue()
@@ -631,7 +631,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterMin(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMin"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMin"].createParameterValue()
@@ -647,7 +647,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterOffset(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterOffset"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterOffset"].createParameterValue()
@@ -663,7 +663,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterPeriod(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterPeriod"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterPeriod"].createParameterValue()
@@ -679,7 +679,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComFilterX(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterX"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterX"].createParameterValue()
@@ -837,7 +837,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComBitPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitPosition"].createParameterValue()
@@ -853,7 +853,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComBitSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitSize"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitSize"].createParameterValue()
@@ -869,7 +869,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComSignalEndianness(ComSignalEndianness value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalEndianness"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalEndianness"].createParameterValue()
@@ -904,7 +904,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComSignalLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalLength"].createParameterValue()
@@ -920,7 +920,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComSignalType(ComSignalType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalType"].createParameterValue()
@@ -975,7 +975,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComUpdateBitPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComUpdateBitPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComUpdateBitPosition"].createParameterValue()
@@ -1037,7 +1037,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduCallout(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCallout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduCallout"].createParameterValue()
@@ -1053,7 +1053,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduCancellationSupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCancellationSupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduCancellationSupport"].createParameterValue()
@@ -1069,7 +1069,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduDirection(ComIPduDirection value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduDirection"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduDirection"].createParameterValue()
@@ -1102,7 +1102,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduHandleId"].createParameterValue()
@@ -1118,7 +1118,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduSignalProcessing(ComIPduSignalProcessing value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduSignalProcessing"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduSignalProcessing"].createParameterValue()
@@ -1151,7 +1151,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduTriggerTransmitCallout(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduTriggerTransmitCallout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduTriggerTransmitCallout"].createParameterValue()
@@ -1167,7 +1167,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduType(ComIPduType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduType"].createParameterValue()
@@ -1208,7 +1208,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup)) {
 					override protected wrap(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1218,7 +1218,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
@@ -1241,7 +1241,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignalGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignalGroup)) {
 					override protected wrap(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignalGroup object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1251,7 +1251,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignalGroup(referenceValueValue as GContainer)
@@ -1274,7 +1274,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignal>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignal)) {
 					override protected wrap(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignal object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1284,7 +1284,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComSignal(referenceValueValue as GContainer)
@@ -1366,7 +1366,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComIPduCounterErrorNotification(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCounterErrorNotification"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduCounterErrorNotification"].createParameterValue()
@@ -1382,7 +1382,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComIPduCounterSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCounterSize"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduCounterSize"].createParameterValue()
@@ -1398,7 +1398,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComIPduCounterStartPosition(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCounterStartPosition"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduCounterStartPosition"].createParameterValue()
@@ -1414,7 +1414,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComIPduCounterThreshold(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduCounterThreshold"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduCounterThreshold"].createParameterValue()
@@ -1461,7 +1461,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComIPduReplicationQuorum(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduReplicationQuorum"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduReplicationQuorum"].createParameterValue()
@@ -1485,7 +1485,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu)) {
 						override protected wrap(org.artop.ecuc.autosar422.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -1495,7 +1495,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar422.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu(referenceValueValue as GContainer)
@@ -1541,7 +1541,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMetaDataDefault(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataDefault"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMetaDataDefault"].createParameterValue()
@@ -1557,7 +1557,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMinimumDelayTime(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMinimumDelayTime"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMinimumDelayTime"].createParameterValue()
@@ -1573,7 +1573,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComTxIPduClearUpdateBit(ComTxIPduClearUpdateBit value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxIPduClearUpdateBit"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxIPduClearUpdateBit"].createParameterValue()
@@ -1608,7 +1608,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComTxIPduUnusedAreasDefault(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxIPduUnusedAreasDefault"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxIPduUnusedAreasDefault"].createParameterValue()
@@ -1709,7 +1709,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeMode(ComTxModeMode value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeMode"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeMode"].createParameterValue()
@@ -1746,7 +1746,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeNumberOfRepetitions(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeNumberOfRepetitions"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeNumberOfRepetitions"].createParameterValue()
@@ -1762,7 +1762,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeRepetitionPeriod(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeRepetitionPeriod"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeRepetitionPeriod"].createParameterValue()
@@ -1778,7 +1778,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeTimeOffset(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeTimeOffset"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeTimeOffset"].createParameterValue()
@@ -1794,7 +1794,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeTimePeriod(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeTimePeriod"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeTimePeriod"].createParameterValue()
@@ -1881,7 +1881,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeMode(ComTxModeMode value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeMode"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeMode"].createParameterValue()
@@ -1918,7 +1918,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeNumberOfRepetitions(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeNumberOfRepetitions"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeNumberOfRepetitions"].createParameterValue()
@@ -1934,7 +1934,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeRepetitionPeriod(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeRepetitionPeriod"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeRepetitionPeriod"].createParameterValue()
@@ -1950,7 +1950,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeTimeOffset(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeTimeOffset"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeTimeOffset"].createParameterValue()
@@ -1966,7 +1966,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 						
 						def void setComTxModeTimePeriod(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxModeTimePeriod"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxModeTimePeriod"].createParameterValue()
@@ -2019,7 +2019,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComIPduGroupHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComIPduGroupHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComIPduGroupHandleId"].createParameterValue()
@@ -2043,7 +2043,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup)) {
 					override protected wrap(org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -2053,7 +2053,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar422.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
@@ -2099,7 +2099,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComBitPosition(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitPosition"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitPosition"].createParameterValue()
@@ -2115,7 +2115,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComBitSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitSize"].createParameterValue()
@@ -2131,7 +2131,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComDataInvalidAction(ComDataInvalidAction value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComDataInvalidAction"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComDataInvalidAction"].createParameterValue()
@@ -2164,7 +2164,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComErrorNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComErrorNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComErrorNotification"].createParameterValue()
@@ -2180,7 +2180,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComFirstTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFirstTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFirstTimeout"].createParameterValue()
@@ -2196,7 +2196,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComHandleId"].createParameterValue()
@@ -2212,7 +2212,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComInitialValueOnly(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInitialValueOnly"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComInitialValueOnly"].createParameterValue()
@@ -2228,7 +2228,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComInvalidNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInvalidNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComInvalidNotification"].createParameterValue()
@@ -2244,7 +2244,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComNotification"].createParameterValue()
@@ -2260,7 +2260,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComRxDataTimeoutAction(ComRxDataTimeoutAction value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComRxDataTimeoutAction"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComRxDataTimeoutAction"].createParameterValue()
@@ -2293,7 +2293,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComSignalDataInvalidValue(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalDataInvalidValue"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalDataInvalidValue"].createParameterValue()
@@ -2309,7 +2309,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComSignalEndianness(ComSignalEndianness value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalEndianness"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalEndianness"].createParameterValue()
@@ -2344,7 +2344,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComSignalInitValue(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalInitValue"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalInitValue"].createParameterValue()
@@ -2360,7 +2360,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComSignalLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalLength"].createParameterValue()
@@ -2376,7 +2376,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComSignalType(ComSignalType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalType"].createParameterValue()
@@ -2431,7 +2431,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTimeout"].createParameterValue()
@@ -2447,7 +2447,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTimeoutNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTimeoutNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTimeoutNotification"].createParameterValue()
@@ -2463,7 +2463,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTransferProperty(ComTransferProperty value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTransferProperty"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTransferProperty"].createParameterValue()
@@ -2502,7 +2502,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComUpdateBitPosition(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComUpdateBitPosition"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComUpdateBitPosition"].createParameterValue()
@@ -2557,7 +2557,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterAlgorithm(ComFilterAlgorithm value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterAlgorithm"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterAlgorithm"].createParameterValue()
@@ -2602,7 +2602,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterMask(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMask"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMask"].createParameterValue()
@@ -2618,7 +2618,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterMax(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMax"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMax"].createParameterValue()
@@ -2634,7 +2634,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterMin(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMin"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMin"].createParameterValue()
@@ -2650,7 +2650,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterOffset(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterOffset"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterOffset"].createParameterValue()
@@ -2666,7 +2666,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterPeriod(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterPeriod"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterPeriod"].createParameterValue()
@@ -2682,7 +2682,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComFilterX(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterX"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterX"].createParameterValue()
@@ -2731,7 +2731,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComDataInvalidAction(ComDataInvalidAction value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComDataInvalidAction"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComDataInvalidAction"].createParameterValue()
@@ -2764,7 +2764,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComErrorNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComErrorNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComErrorNotification"].createParameterValue()
@@ -2780,7 +2780,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComFirstTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFirstTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFirstTimeout"].createParameterValue()
@@ -2796,7 +2796,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComHandleId"].createParameterValue()
@@ -2812,7 +2812,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComInitialValueOnly(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInitialValueOnly"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComInitialValueOnly"].createParameterValue()
@@ -2828,7 +2828,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComInvalidNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComInvalidNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComInvalidNotification"].createParameterValue()
@@ -2844,7 +2844,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComNotification"].createParameterValue()
@@ -2860,7 +2860,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComRxDataTimeoutAction(ComRxDataTimeoutAction value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComRxDataTimeoutAction"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComRxDataTimeoutAction"].createParameterValue()
@@ -2893,7 +2893,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComSignalGroupArrayAccess(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalGroupArrayAccess"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalGroupArrayAccess"].createParameterValue()
@@ -2909,7 +2909,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTimeout"].createParameterValue()
@@ -2925,7 +2925,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTimeoutNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTimeoutNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTimeoutNotification"].createParameterValue()
@@ -2941,7 +2941,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTransferProperty(ComTransferProperty value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTransferProperty"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTransferProperty"].createParameterValue()
@@ -2980,7 +2980,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComUpdateBitPosition(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComUpdateBitPosition"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComUpdateBitPosition"].createParameterValue()
@@ -3045,7 +3045,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComBitPosition(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitPosition"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitPosition"].createParameterValue()
@@ -3061,7 +3061,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComBitSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComBitSize"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComBitSize"].createParameterValue()
@@ -3077,7 +3077,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComHandleId"].createParameterValue()
@@ -3093,7 +3093,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComSignalDataInvalidValue(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalDataInvalidValue"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalDataInvalidValue"].createParameterValue()
@@ -3109,7 +3109,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComSignalEndianness(ComSignalEndianness value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalEndianness"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalEndianness"].createParameterValue()
@@ -3144,7 +3144,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComSignalInitValue(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalInitValue"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalInitValue"].createParameterValue()
@@ -3160,7 +3160,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComSignalLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalLength"].createParameterValue()
@@ -3176,7 +3176,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComSignalType(ComSignalType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSignalType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSignalType"].createParameterValue()
@@ -3231,7 +3231,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 				
 				def void setComTransferProperty(ComTransferProperty value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTransferProperty"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTransferProperty"].createParameterValue()
@@ -3303,7 +3303,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterAlgorithm(ComFilterAlgorithm value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterAlgorithm"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterAlgorithm"].createParameterValue()
@@ -3348,7 +3348,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterMask(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMask"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMask"].createParameterValue()
@@ -3364,7 +3364,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterMax(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMax"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMax"].createParameterValue()
@@ -3380,7 +3380,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterMin(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterMin"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterMin"].createParameterValue()
@@ -3396,7 +3396,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterOffset(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterOffset"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterOffset"].createParameterValue()
@@ -3412,7 +3412,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterPeriod(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterPeriod"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterPeriod"].createParameterValue()
@@ -3428,7 +3428,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 					
 					def void setComFilterX(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComFilterX"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComFilterX"].createParameterValue()
@@ -3479,7 +3479,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComGwTimeBase(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComGwTimeBase"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComGwTimeBase"].createParameterValue()
@@ -3495,7 +3495,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComRxTimeBase(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComRxTimeBase"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComRxTimeBase"].createParameterValue()
@@ -3511,7 +3511,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 			
 			def void setComTxTimeBase(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComTxTimeBase"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComTxTimeBase"].createParameterValue()
@@ -3559,7 +3559,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComCancellationSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComCancellationSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComCancellationSupport"].createParameterValue()
@@ -3575,7 +3575,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComConfigurationUseDet(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComConfigurationUseDet"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComConfigurationUseDet"].createParameterValue()
@@ -3591,7 +3591,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComEnableMDTForCyclicTransmission(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComEnableMDTForCyclicTransmission"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComEnableMDTForCyclicTransmission"].createParameterValue()
@@ -3607,7 +3607,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComEnableSignalGroupArrayApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComEnableSignalGroupArrayApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComEnableSignalGroupArrayApi"].createParameterValue()
@@ -3623,7 +3623,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMetaDataSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMetaDataSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMetaDataSupport"].createParameterValue()
@@ -3639,7 +3639,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComRetryFailedTransmitRequests(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComRetryFailedTransmitRequests"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComRetryFailedTransmitRequests"].createParameterValue()
@@ -3655,7 +3655,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComSupportedIPduGroups(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComSupportedIPduGroups"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComSupportedIPduGroups"].createParameterValue()
@@ -3684,7 +3684,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 		
 		def void setComVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComVersionInfoApi"].createParameterValue()
@@ -3708,7 +3708,7 @@ class Com implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

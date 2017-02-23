@@ -134,7 +134,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstBlockNumberBgnd(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberBgnd"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockNumberBgnd"].createParameterValue()
@@ -150,7 +150,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstBlockNumberFgnd(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockNumberFgnd"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockNumberFgnd"].createParameterValue()
@@ -166,7 +166,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstTestCompletedNotification(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestCompletedNotification"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestCompletedNotification"].createParameterValue()
@@ -277,7 +277,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstBlockBaseAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockBaseAddress"].createParameterValue()
@@ -293,7 +293,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstBlockIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockIndex"].createParameterValue()
@@ -309,7 +309,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstBlockSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockSize"].createParameterValue()
@@ -325,7 +325,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstNumberOfTestedCells"].createParameterValue()
@@ -341,7 +341,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstSignatureAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstSignatureAddress"].createParameterValue()
@@ -357,7 +357,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstTestAlgorithm(FlsTstTestAlgorithm value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestAlgorithm"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestAlgorithm"].createParameterValue()
@@ -479,7 +479,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstBlockBaseAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockBaseAddress"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockBaseAddress"].createParameterValue()
@@ -495,7 +495,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstBlockIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockIndex"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockIndex"].createParameterValue()
@@ -511,7 +511,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstBlockSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstBlockSize"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstBlockSize"].createParameterValue()
@@ -527,7 +527,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstNumberOfTestedCells"].createParameterValue()
@@ -543,7 +543,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstSignatureAddress(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSignatureAddress"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstSignatureAddress"].createParameterValue()
@@ -559,7 +559,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setFlsTstTestAlgorithm(FlsTstTestAlgorithm value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestAlgorithm"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestAlgorithm"].createParameterValue()
@@ -634,7 +634,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstGetCurrentStateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstGetCurrentStateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstGetCurrentStateApi"].createParameterValue()
@@ -650,7 +650,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstGetErrorDetailsApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstGetErrorDetailsApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstGetErrorDetailsApi"].createParameterValue()
@@ -666,7 +666,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstGetTestResultBgndApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstGetTestResultBgndApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstGetTestResultBgndApi"].createParameterValue()
@@ -682,7 +682,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstGetTestResultFgndApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstGetTestResultFgndApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstGetTestResultFgndApi"].createParameterValue()
@@ -698,7 +698,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstGetTestSignatureBgndApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstGetTestSignatureBgndApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstGetTestSignatureBgndApi"].createParameterValue()
@@ -714,7 +714,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstGetTestSignatureFgndApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstGetTestSignatureFgndApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstGetTestSignatureFgndApi"].createParameterValue()
@@ -730,7 +730,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstStartFgndApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstStartFgndApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstStartFgndApi"].createParameterValue()
@@ -746,7 +746,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstSuspendResumeApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstSuspendResumeApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstSuspendResumeApi"].createParameterValue()
@@ -762,7 +762,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstTestEccApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestEccApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestEccApi"].createParameterValue()
@@ -778,7 +778,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstVersionInfoApi"].createParameterValue()
@@ -865,7 +865,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstDevErrorDetect"].createParameterValue()
@@ -881,7 +881,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstNumberOfTestedCells(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCells"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstNumberOfTestedCells"].createParameterValue()
@@ -897,7 +897,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstNumberOfTestedCellsAtomic(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstNumberOfTestedCellsAtomic"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstNumberOfTestedCellsAtomic"].createParameterValue()
@@ -913,7 +913,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstTestCompletedNotificationSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestCompletedNotificationSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestCompletedNotificationSupported"].createParameterValue()
@@ -929,7 +929,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstTestIntervalIdEndValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestIntervalIdEndValue"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestIntervalIdEndValue"].createParameterValue()
@@ -945,7 +945,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setFlsTstTestResultSignature(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FlsTstTestResultSignature"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FlsTstTestResultSignature"].createParameterValue()
@@ -969,7 +969,7 @@ class FlsTst implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

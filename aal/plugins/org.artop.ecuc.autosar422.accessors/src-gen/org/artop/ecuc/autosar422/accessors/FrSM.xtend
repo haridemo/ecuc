@@ -166,7 +166,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMCheckWakeupReason(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMCheckWakeupReason"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMCheckWakeupReason"].createParameterValue()
@@ -182,7 +182,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMDelayStartupWithoutWakeup(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDelayStartupWithoutWakeup"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMDelayStartupWithoutWakeup"].createParameterValue()
@@ -198,7 +198,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMDurationT1(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT1"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMDurationT1"].createParameterValue()
@@ -214,7 +214,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMDurationT2(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT2"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMDurationT2"].createParameterValue()
@@ -230,7 +230,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMDurationT3(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDurationT3"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMDurationT3"].createParameterValue()
@@ -246,7 +246,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMIsColdstartEcu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMIsColdstartEcu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMIsColdstartEcu"].createParameterValue()
@@ -262,7 +262,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMIsWakeupEcu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMIsWakeupEcu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMIsWakeupEcu"].createParameterValue()
@@ -278,7 +278,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMMainFunctionCycleTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMainFunctionCycleTime"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMMainFunctionCycleTime"].createParameterValue()
@@ -294,7 +294,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMMinNumberOfColdstarter(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMMinNumberOfColdstarter"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMMinNumberOfColdstarter"].createParameterValue()
@@ -310,7 +310,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMNumWakeupPatterns(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMNumWakeupPatterns"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMNumWakeupPatterns"].createParameterValue()
@@ -326,7 +326,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMStartupRepetitions(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitions"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMStartupRepetitions"].createParameterValue()
@@ -342,7 +342,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMStartupRepetitionsWithWakeup(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMStartupRepetitionsWithWakeup"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMStartupRepetitionsWithWakeup"].createParameterValue()
@@ -358,7 +358,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrSMTrcvStdbyDelay(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMTrcvStdbyDelay"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMTrcvStdbyDelay"].createParameterValue()
@@ -490,7 +490,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrSMAllSlotsSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMAllSlotsSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMAllSlotsSupport"].createParameterValue()
@@ -506,7 +506,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrSMCddHeaderFile(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMCddHeaderFile"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMCddHeaderFile"].createParameterValue()
@@ -522,7 +522,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrSMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMDevErrorDetect"].createParameterValue()
@@ -538,7 +538,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrSMSyncLossErrorIndicationName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMSyncLossErrorIndicationName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMSyncLossErrorIndicationName"].createParameterValue()
@@ -554,7 +554,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrSMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrSMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrSMVersionInfoApi"].createParameterValue()
@@ -578,7 +578,7 @@ class FrSM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

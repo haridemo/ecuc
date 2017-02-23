@@ -190,7 +190,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcuMConfigConsistencyHash(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMConfigConsistencyHash"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMConfigConsistencyHash"].createParameterValue()
@@ -225,7 +225,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.Os.OsResource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.Os.OsResource)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.Os.OsResource object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -235,7 +235,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.Os.OsResource(referenceValueValue as GContainer)
@@ -353,7 +353,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMDefaultShutdownTarget(EcuMDefaultShutdownTargetEnum value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDefaultShutdownTarget"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMDefaultShutdownTarget"].createParameterValue()
@@ -489,7 +489,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleParameter(EcuMModuleParameter value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"].createParameterValue()
@@ -524,7 +524,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleService(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleService"].createParameterValue()
@@ -622,7 +622,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleParameter(EcuMModuleParameter value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"].createParameterValue()
@@ -657,7 +657,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleService(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleService"].createParameterValue()
@@ -755,7 +755,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleParameter(EcuMModuleParameter value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"].createParameterValue()
@@ -790,7 +790,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleService(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleService"].createParameterValue()
@@ -840,7 +840,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMSleepModeId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMSleepModeId"].createParameterValue()
@@ -856,7 +856,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMSleepModeSuspend(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSleepModeSuspend"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMSleepModeSuspend"].createParameterValue()
@@ -891,7 +891,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource)) {
 						override protected wrap(org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -901,7 +901,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMCommonConfiguration.EcuMWakeupSource(referenceValueValue as GContainer)
@@ -947,7 +947,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMCheckWakeupTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMCheckWakeupTimeout"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMCheckWakeupTimeout"].createParameterValue()
@@ -963,7 +963,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMValidationTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMValidationTimeout"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMValidationTimeout"].createParameterValue()
@@ -979,7 +979,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMWakeupSourceId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourceId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMWakeupSourceId"].createParameterValue()
@@ -995,7 +995,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMWakeupSourcePolling(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMWakeupSourcePolling"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMWakeupSourcePolling"].createParameterValue()
@@ -1030,7 +1030,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMPnc>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMPnc)) {
 						override protected wrap(org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMPnc object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -1040,7 +1040,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMPnc(referenceValueValue as GContainer)
@@ -1063,7 +1063,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.Mcu.McuPublishedInformation.McuResetReasonConf>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.Mcu.McuPublishedInformation.McuResetReasonConf)) {
 						override protected wrap(org.artop.ecuc.autosar430.accessors.Mcu.McuPublishedInformation.McuResetReasonConf object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -1073,7 +1073,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar430.accessors.Mcu.McuPublishedInformation.McuResetReasonConf(referenceValueValue as GContainer)
@@ -1121,7 +1121,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcuMNvramReadallTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramReadallTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMNvramReadallTimeout"].createParameterValue()
@@ -1137,7 +1137,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcuMNvramWriteallTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMNvramWriteallTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMNvramWriteallTimeout"].createParameterValue()
@@ -1153,7 +1153,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcuMRunMinimumDuration(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMRunMinimumDuration"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMRunMinimumDuration"].createParameterValue()
@@ -1177,7 +1177,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMChannel)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMChannel object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1187,7 +1187,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.ComM.ComMConfigSet.ComMChannel(referenceValueValue as GContainer)
@@ -1346,7 +1346,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleParameter(EcuMModuleParameter value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"].createParameterValue()
@@ -1381,7 +1381,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleService(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleService"].createParameterValue()
@@ -1479,7 +1479,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleParameter(EcuMModuleParameter value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"].createParameterValue()
@@ -1514,7 +1514,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleService(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleService"].createParameterValue()
@@ -1564,7 +1564,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMFixedUser(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFixedUser"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMFixedUser"].createParameterValue()
@@ -1611,7 +1611,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMDivisor(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDivisor"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMDivisor"].createParameterValue()
@@ -1701,7 +1701,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.EcuC.EcucPartitionCollection.EcucPartition>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.EcuC.EcucPartitionCollection.EcucPartition)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.EcuC.EcucPartitionCollection.EcucPartition object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1711,7 +1711,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.EcuC.EcucPartitionCollection.EcucPartition(referenceValueValue as GContainer)
@@ -1868,7 +1868,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMAlarmClockId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMAlarmClockId"].createParameterValue()
@@ -1884,7 +1884,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMAlarmClockTimeOut(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockTimeOut"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMAlarmClockTimeOut"].createParameterValue()
@@ -1990,7 +1990,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleParameter(EcuMModuleParameter value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleParameter"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleParameter"].createParameterValue()
@@ -2025,7 +2025,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 					
 					def void setEcuMModuleService(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModuleService"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModuleService"].createParameterValue()
@@ -2075,7 +2075,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMFlexUser(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMFlexUser"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMFlexUser"].createParameterValue()
@@ -2141,7 +2141,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig)) {
 						override protected wrap(org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -2151,7 +2151,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig(referenceValueValue as GContainer)
@@ -2197,7 +2197,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMResetModeId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetModeId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMResetModeId"].createParameterValue()
@@ -2252,7 +2252,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig)) {
 						override protected wrap(org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -2262,7 +2262,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar430.accessors.EcuM.EcuMConfiguration.EcuMFlexConfiguration.EcuMFlexUserConfig(referenceValueValue as GContainer)
@@ -2308,7 +2308,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 				
 				def void setEcuMShutdownCauseId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMShutdownCauseId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMShutdownCauseId"].createParameterValue()
@@ -2358,7 +2358,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMIncludeComM(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMIncludeComM"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMIncludeComM"].createParameterValue()
@@ -2374,7 +2374,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMTTIIEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMTTIIEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMTTIIEnabled"].createParameterValue()
@@ -2431,7 +2431,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMAlarmClockPresent(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMAlarmClockPresent"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMAlarmClockPresent"].createParameterValue()
@@ -2447,7 +2447,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMModeHandling(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMModeHandling"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMModeHandling"].createParameterValue()
@@ -2463,7 +2463,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMResetLoopDetection(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMResetLoopDetection"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMResetLoopDetection"].createParameterValue()
@@ -2479,7 +2479,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMSetProgrammableInterrupts(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMSetProgrammableInterrupts"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMSetProgrammableInterrupts"].createParameterValue()
@@ -2536,7 +2536,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMDevErrorDetect"].createParameterValue()
@@ -2552,7 +2552,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMIncludeDet(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMIncludeDet"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMIncludeDet"].createParameterValue()
@@ -2568,7 +2568,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMMainFunctionPeriod"].createParameterValue()
@@ -2584,7 +2584,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 		
 		def void setEcuMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcuMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcuMVersionInfoApi"].createParameterValue()
@@ -2608,7 +2608,7 @@ class EcuM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -188,7 +188,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduIdTypeEnum(PduIdTypeEnum value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduIdTypeEnum"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduIdTypeEnum"].createParameterValue()
@@ -221,7 +221,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduLengthTypeEnum(PduLengthTypeEnum value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduLengthTypeEnum"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduLengthTypeEnum"].createParameterValue()
@@ -371,7 +371,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					
 					def void setMetaDataItemLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MetaDataItemLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MetaDataItemLength"].createParameterValue()
@@ -387,7 +387,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 					
 					def void setMetaDataItemType(MetaDataItemType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MetaDataItemType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MetaDataItemType"].createParameterValue()
@@ -465,7 +465,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939Requestable(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939Requestable"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939Requestable"].createParameterValue()
@@ -481,7 +481,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 				
 				def void setPduLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduLength"].createParameterValue()
@@ -592,7 +592,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcucCoreId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucCoreId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcucCoreId"].createParameterValue()
@@ -689,7 +689,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcucPartitionBswModuleExecution(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucPartitionBswModuleExecution"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcucPartitionBswModuleExecution"].createParameterValue()
@@ -705,7 +705,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			def void setEcucPartitionQmBswModuleExecution(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EcucPartitionQmBswModuleExecution"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EcucPartitionQmBswModuleExecution"].createParameterValue()
@@ -721,7 +721,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 			
 			def void setPartitionCanBeRestarted(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PartitionCanBeRestarted"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PartitionCanBeRestarted"].createParameterValue()
@@ -842,7 +842,7 @@ class EcuC implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -203,7 +203,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939DcmBusType(J1939DcmBusType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmBusType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmBusType"].createParameterValue()
@@ -550,7 +550,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939DcmDmxSupport(J1939DcmDmxSupport value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDmxSupport"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDmxSupport"].createParameterValue()
@@ -762,7 +762,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 					
 					def void setJ1939DcmRxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmRxPduId"].createParameterValue()
@@ -820,7 +820,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 					
 					def void setJ1939DcmTxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmTxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmTxPduId"].createParameterValue()
@@ -949,7 +949,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939DcmConditionType(J1939DcmConditionType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmConditionType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmConditionType"].createParameterValue()
@@ -1035,7 +1035,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939DcmLogicalOperator(J1939DcmLogicalOperator value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmLogicalOperator"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmLogicalOperator"].createParameterValue()
@@ -1068,7 +1068,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939DcmModeRuleNrcValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmModeRuleNrcValue"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmModeRuleNrcValue"].createParameterValue()
@@ -1119,7 +1119,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmCommonBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmCommonBufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmCommonBufferSize"].createParameterValue()
@@ -1135,7 +1135,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDevErrorDetect"].createParameterValue()
@@ -1151,7 +1151,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmDM01BufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01BufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDM01BufferSize"].createParameterValue()
@@ -1167,7 +1167,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmDM01MaxDTCs(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01MaxDTCs"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDM01MaxDTCs"].createParameterValue()
@@ -1183,7 +1183,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMainFunctionPeriod"].createParameterValue()
@@ -1199,7 +1199,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmMaxDTCsPerMainFunction(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxDTCsPerMainFunction"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMaxDTCsPerMainFunction"].createParameterValue()
@@ -1215,7 +1215,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmMaxFreezeFramesPerMainFunction(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"].createParameterValue()
@@ -1231,7 +1231,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmMaxRatiosPerMainFunction(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxRatiosPerMainFunction"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMaxRatiosPerMainFunction"].createParameterValue()
@@ -1247,7 +1247,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939DcmVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmVersionInfoApi"].createParameterValue()
@@ -1271,7 +1271,7 @@ class J1939Dcm implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -174,7 +174,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			
 			def void setAdcClockSource(AdcClockSource value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcClockSource"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcClockSource"].createParameterValue()
@@ -203,7 +203,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			
 			def void setAdcHwUnitId(AdcHwUnitId value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwUnitId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcHwUnitId"].createParameterValue()
@@ -232,7 +232,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			
 			def void setAdcPrescale(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPrescale"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcPrescale"].createParameterValue()
@@ -315,7 +315,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelConvTime(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelConvTime"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelConvTime"].createParameterValue()
@@ -331,7 +331,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelHighLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelHighLimit"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelHighLimit"].createParameterValue()
@@ -347,7 +347,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelId"].createParameterValue()
@@ -363,7 +363,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelLimitCheck(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLimitCheck"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelLimitCheck"].createParameterValue()
@@ -379,7 +379,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelLowLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelLowLimit"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelLowLimit"].createParameterValue()
@@ -395,7 +395,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelRangeSelect(AdcChannelRangeSelect value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelRangeSelect"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelRangeSelect"].createParameterValue()
@@ -438,7 +438,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelRefVoltsrcHigh(AdcChannelRefVoltsrcHigh value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelRefVoltsrcHigh"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelRefVoltsrcHigh"].createParameterValue()
@@ -467,7 +467,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelRefVoltsrcLow(AdcChannelRefVoltsrcLow value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelRefVoltsrcLow"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelRefVoltsrcLow"].createParameterValue()
@@ -496,7 +496,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelResolution(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelResolution"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelResolution"].createParameterValue()
@@ -512,7 +512,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcChannelSampTime(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelSampTime"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelSampTime"].createParameterValue()
@@ -559,7 +559,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcGroupAccessMode(AdcGroupAccessMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupAccessMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupAccessMode"].createParameterValue()
@@ -592,7 +592,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcGroupConversionMode(AdcGroupConversionMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupConversionMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupConversionMode"].createParameterValue()
@@ -625,7 +625,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcGroupId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupId"].createParameterValue()
@@ -641,7 +641,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcGroupPriority(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupPriority"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupPriority"].createParameterValue()
@@ -657,7 +657,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcGroupReplacement(AdcGroupReplacement value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupReplacement"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupReplacement"].createParameterValue()
@@ -690,7 +690,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcGroupTriggSrc(AdcGroupTriggSrc value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupTriggSrc"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupTriggSrc"].createParameterValue()
@@ -723,7 +723,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcHwTrigSignal(AdcHwTrigSignal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTrigSignal"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcHwTrigSignal"].createParameterValue()
@@ -758,7 +758,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcHwTrigTimer(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTrigTimer"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcHwTrigTimer"].createParameterValue()
@@ -774,7 +774,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcNotification(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcNotification"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcNotification"].createParameterValue()
@@ -790,7 +790,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcStreamingBufferMode(AdcStreamingBufferMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcStreamingBufferMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcStreamingBufferMode"].createParameterValue()
@@ -823,7 +823,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 				def void setAdcStreamingNumSamples(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcStreamingNumSamples"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcStreamingNumSamples"].createParameterValue()
@@ -847,7 +847,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel)) {
 						override protected wrap(org.artop.ecuc.autosar422.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -857,7 +857,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar422.accessors.Adc.AdcConfigSet.AdcHwUnit.AdcChannel(referenceValueValue as GContainer)
@@ -906,7 +906,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcDeInitApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDeInitApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcDeInitApi"].createParameterValue()
@@ -922,7 +922,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcDevErrorDetect"].createParameterValue()
@@ -938,7 +938,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcEnableLimitCheck(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableLimitCheck"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcEnableLimitCheck"].createParameterValue()
@@ -954,7 +954,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcEnableQueuing(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableQueuing"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcEnableQueuing"].createParameterValue()
@@ -970,7 +970,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcEnableStartStopGroupApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcEnableStartStopGroupApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcEnableStartStopGroupApi"].createParameterValue()
@@ -986,7 +986,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcGrpNotifCapability(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGrpNotifCapability"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGrpNotifCapability"].createParameterValue()
@@ -1002,7 +1002,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcHwTriggerApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcHwTriggerApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcHwTriggerApi"].createParameterValue()
@@ -1018,7 +1018,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcLowPowerStatesSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcLowPowerStatesSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcLowPowerStatesSupport"].createParameterValue()
@@ -1034,7 +1034,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcPowerStateAsynchTransitionMode(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerStateAsynchTransitionMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcPowerStateAsynchTransitionMode"].createParameterValue()
@@ -1050,7 +1050,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcPriorityImplementation(AdcPriorityImplementation value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPriorityImplementation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcPriorityImplementation"].createParameterValue()
@@ -1085,7 +1085,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcReadGroupApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcReadGroupApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcReadGroupApi"].createParameterValue()
@@ -1101,7 +1101,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcResultAlignment(AdcResultAlignment value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcResultAlignment"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcResultAlignment"].createParameterValue()
@@ -1134,7 +1134,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcVersionInfoApi"].createParameterValue()
@@ -1198,7 +1198,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			
 			def void setAdcPowerState(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerState"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcPowerState"].createParameterValue()
@@ -1214,7 +1214,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 			
 			def void setAdcPowerStateReadyCbkRef(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcPowerStateReadyCbkRef"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcPowerStateReadyCbkRef"].createParameterValue()
@@ -1262,7 +1262,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcChannelValueSigned(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcChannelValueSigned"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcChannelValueSigned"].createParameterValue()
@@ -1278,7 +1278,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcGroupFirstChannelFixed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcGroupFirstChannelFixed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcGroupFirstChannelFixed"].createParameterValue()
@@ -1294,7 +1294,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 		
 		def void setAdcMaxChannelResolution(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "AdcMaxChannelResolution"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "AdcMaxChannelResolution"].createParameterValue()
@@ -1318,7 +1318,7 @@ class Adc implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

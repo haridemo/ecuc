@@ -118,7 +118,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpChangeParameterApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpChangeParameterApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpChangeParameterApi"].createParameterValue()
@@ -134,7 +134,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpVersionInfoApi"].createParameterValue()
@@ -180,7 +180,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpMaxNumberOfRespPendingFrames(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxNumberOfRespPendingFrames"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpMaxNumberOfRespPendingFrames"].createParameterValue()
@@ -196,7 +196,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpMaxRxNSduCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxRxNSduCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpMaxRxNSduCnt"].createParameterValue()
@@ -212,7 +212,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpMaxTxNSduCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxTxNSduCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpMaxTxNSduCnt"].createParameterValue()
@@ -228,7 +228,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpP2Max(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Max"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpP2Max"].createParameterValue()
@@ -244,7 +244,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTpP2Timing(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpP2Timing"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpP2Timing"].createParameterValue()
@@ -346,7 +346,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpDropNotRequestedNad(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpDropNotRequestedNad"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpDropNotRequestedNad"].createParameterValue()
@@ -362,7 +362,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpScheduleChangeDiag(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpScheduleChangeDiag"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpScheduleChangeDiag"].createParameterValue()
@@ -420,7 +420,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpNcr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcr"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpNcr"].createParameterValue()
@@ -436,7 +436,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpRxNSduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpRxNSduId"].createParameterValue()
@@ -452,7 +452,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpRxNSduNad(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpRxNSduNad"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpRxNSduNad"].createParameterValue()
@@ -521,7 +521,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpMaxBufReq(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpMaxBufReq"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpMaxBufReq"].createParameterValue()
@@ -537,7 +537,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpNas(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNas"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpNas"].createParameterValue()
@@ -553,7 +553,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpNcs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpNcs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpNcs"].createParameterValue()
@@ -569,7 +569,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpTxNSduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpTxNSduId"].createParameterValue()
@@ -585,7 +585,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinTpTxNSduNad(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTpTxNSduNad"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTpTxNSduNad"].createParameterValue()
@@ -633,7 +633,7 @@ class LinTp implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

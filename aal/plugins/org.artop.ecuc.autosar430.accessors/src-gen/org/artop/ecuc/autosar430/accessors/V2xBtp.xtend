@@ -128,7 +128,7 @@ class V2xBtp implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xBtpDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xBtpDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xBtpDevErrorDetect"].createParameterValue()
@@ -144,7 +144,7 @@ class V2xBtp implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xBtpVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xBtpVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xBtpVersionInfoApi"].createParameterValue()
@@ -190,7 +190,7 @@ class V2xBtp implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xBtpCddHeaderFile(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xBtpCddHeaderFile"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xBtpCddHeaderFile"].createParameterValue()
@@ -206,7 +206,7 @@ class V2xBtp implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xBtpDestinationPort(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xBtpDestinationPort"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xBtpDestinationPort"].createParameterValue()
@@ -222,7 +222,7 @@ class V2xBtp implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xBtpRxIndicationFunctionName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xBtpRxIndicationFunctionName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xBtpRxIndicationFunctionName"].createParameterValue()
@@ -246,7 +246,7 @@ class V2xBtp implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

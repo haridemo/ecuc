@@ -146,7 +146,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMCustomerHeaderInclude(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMCustomerHeaderInclude"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMCustomerHeaderInclude"].createParameterValue()
@@ -162,7 +162,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMDevErrorDetect"].createParameterValue()
@@ -178,7 +178,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMGetCurrentTimeExtendedAvailable(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMGetCurrentTimeExtendedAvailable"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMGetCurrentTimeExtendedAvailable"].createParameterValue()
@@ -194,7 +194,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMMainFunctionPeriod"].createParameterValue()
@@ -210,7 +210,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMTimeRecordingSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTimeRecordingSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTimeRecordingSupport"].createParameterValue()
@@ -226,7 +226,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMVersionInfoApi"].createParameterValue()
@@ -283,7 +283,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMAllowMasterRateCorrection(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMAllowMasterRateCorrection"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMAllowMasterRateCorrection"].createParameterValue()
@@ -299,7 +299,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMAllowSystemWideGlobalTimeMaster(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMAllowSystemWideGlobalTimeMaster"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMAllowSystemWideGlobalTimeMaster"].createParameterValue()
@@ -315,7 +315,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMClearTimeleapCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMClearTimeleapCount"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMClearTimeleapCount"].createParameterValue()
@@ -331,7 +331,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMIsSystemWideGlobalTimeMaster(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMIsSystemWideGlobalTimeMaster"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMIsSystemWideGlobalTimeMaster"].createParameterValue()
@@ -347,7 +347,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMMasterRateDeviationMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMMasterRateDeviationMax"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMMasterRateDeviationMax"].createParameterValue()
@@ -363,7 +363,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMStatusNotificationCallback(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMStatusNotificationCallback"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMStatusNotificationCallback"].createParameterValue()
@@ -379,7 +379,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMStatusNotificationMask(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMStatusNotificationMask"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMStatusNotificationMask"].createParameterValue()
@@ -395,7 +395,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMStoreTimebaseNonVolatile(StbMStoreTimebaseNonVolatile value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMStoreTimebaseNonVolatile"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMStoreTimebaseNonVolatile"].createParameterValue()
@@ -428,7 +428,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMSynchronizedTimeBaseIdentifier(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSynchronizedTimeBaseIdentifier"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSynchronizedTimeBaseIdentifier"].createParameterValue()
@@ -444,7 +444,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMSyncLossTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncLossTimeout"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncLossTimeout"].createParameterValue()
@@ -460,7 +460,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMTimeLeapFutureThreshold(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTimeLeapFutureThreshold"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTimeLeapFutureThreshold"].createParameterValue()
@@ -476,7 +476,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMTimeLeapPastThreshold(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTimeLeapPastThreshold"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTimeLeapPastThreshold"].createParameterValue()
@@ -578,7 +578,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMClockFrequency(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMClockFrequency"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMClockFrequency"].createParameterValue()
@@ -594,7 +594,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMClockPrescaler(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMClockPrescaler"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMClockPrescaler"].createParameterValue()
@@ -642,7 +642,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMNotificationCustomerId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMNotificationCustomerId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMNotificationCustomerId"].createParameterValue()
@@ -658,7 +658,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMTimeNotificationCallback(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTimeNotificationCallback"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTimeNotificationCallback"].createParameterValue()
@@ -674,7 +674,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMTimerStartThreshold(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTimerStartThreshold"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTimerStartThreshold"].createParameterValue()
@@ -721,7 +721,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMOffsetCorrectionAdaptionInterval(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMOffsetCorrectionAdaptionInterval"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMOffsetCorrectionAdaptionInterval"].createParameterValue()
@@ -737,7 +737,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMOffsetCorrectionJumpThreshold(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMOffsetCorrectionJumpThreshold"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMOffsetCorrectionJumpThreshold"].createParameterValue()
@@ -753,7 +753,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMRateCorrectionMeasurementDuration(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMRateCorrectionMeasurementDuration"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMRateCorrectionMeasurementDuration"].createParameterValue()
@@ -769,7 +769,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMRateCorrectionsPerMeasurementDuration(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMRateCorrectionsPerMeasurementDuration"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMRateCorrectionsPerMeasurementDuration"].createParameterValue()
@@ -816,7 +816,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMOffsetTimeRecordBlockCallback(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMOffsetTimeRecordBlockCallback"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMOffsetTimeRecordBlockCallback"].createParameterValue()
@@ -832,7 +832,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMOffsetTimeRecordTableBlockCount(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMOffsetTimeRecordTableBlockCount"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMOffsetTimeRecordTableBlockCount"].createParameterValue()
@@ -848,7 +848,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMSyncTimeRecordBlockCallback(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncTimeRecordBlockCallback"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncTimeRecordBlockCallback"].createParameterValue()
@@ -864,7 +864,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 			
 			def void setStbMSyncTimeRecordTableBlockCount(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMSyncTimeRecordTableBlockCount"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMSyncTimeRecordTableBlockCount"].createParameterValue()
@@ -912,7 +912,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 		
 		def void setStbMTriggeredCustomerPeriod(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "StbMTriggeredCustomerPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "StbMTriggeredCustomerPeriod"].createParameterValue()
@@ -958,7 +958,7 @@ class StbM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

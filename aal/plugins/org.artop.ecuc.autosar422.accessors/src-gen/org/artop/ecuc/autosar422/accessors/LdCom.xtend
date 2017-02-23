@@ -166,7 +166,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComApiType(LdComApiType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComApiType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComApiType"].createParameterValue()
@@ -199,7 +199,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComHandleId"].createParameterValue()
@@ -215,7 +215,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComIPduDirection(LdComIPduDirection value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComIPduDirection"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComIPduDirection"].createParameterValue()
@@ -248,7 +248,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComRxCopyRxData(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxCopyRxData"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxCopyRxData"].createParameterValue()
@@ -264,7 +264,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComRxIndication(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxIndication"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxIndication"].createParameterValue()
@@ -280,7 +280,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComRxStartOfReception(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComRxStartOfReception"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComRxStartOfReception"].createParameterValue()
@@ -296,7 +296,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComTpRxIndication(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTpRxIndication"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTpRxIndication"].createParameterValue()
@@ -312,7 +312,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComTpTxConfirmation(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTpTxConfirmation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTpTxConfirmation"].createParameterValue()
@@ -328,7 +328,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComTxConfirmation(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxConfirmation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxConfirmation"].createParameterValue()
@@ -344,7 +344,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComTxCopyTxData(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxCopyTxData"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxCopyTxData"].createParameterValue()
@@ -360,7 +360,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 			
 			def void setLdComTxTriggerTransmit(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComTxTriggerTransmit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComTxTriggerTransmit"].createParameterValue()
@@ -420,7 +420,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 		
 		def void setLdComDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComDevErrorDetect"].createParameterValue()
@@ -436,7 +436,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 		
 		def void setLdComVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LdComVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LdComVersionInfoApi"].createParameterValue()
@@ -460,7 +460,7 @@ class LdCom implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -166,7 +166,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthCtrlId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthCtrlId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthCtrlId"].createParameterValue()
@@ -182,7 +182,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthCtrlPhyAddress(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthCtrlPhyAddress"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthCtrlPhyAddress"].createParameterValue()
@@ -198,7 +198,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthCtrlRxBufLenByte(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthCtrlRxBufLenByte"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthCtrlRxBufLenByte"].createParameterValue()
@@ -214,7 +214,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthCtrlTxBufLenByte(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthCtrlTxBufLenByte"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthCtrlTxBufLenByte"].createParameterValue()
@@ -230,7 +230,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthRxBufTotal(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthRxBufTotal"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthRxBufTotal"].createParameterValue()
@@ -246,7 +246,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTxBufTotal(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTxBufTotal"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTxBufTotal"].createParameterValue()
@@ -345,7 +345,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthDevErrorDetect"].createParameterValue()
@@ -361,7 +361,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthGetWEtherStatsApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthGetWEtherStatsApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthGetWEtherStatsApi"].createParameterValue()
@@ -377,7 +377,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthIndex"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthIndex"].createParameterValue()
@@ -393,7 +393,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthMainFunctionPeriod"].createParameterValue()
@@ -409,7 +409,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthUpdatePhysAddrFilter(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthUpdatePhysAddrFilter"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthUpdatePhysAddrFilter"].createParameterValue()
@@ -425,7 +425,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthVersionInfoApi"].createParameterValue()
@@ -449,7 +449,7 @@ class WEth implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -136,7 +136,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockCrcType(NvMBlockCrcType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockCrcType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockCrcType"].createParameterValue()
@@ -171,7 +171,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockHeaderInclude(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockHeaderInclude"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockHeaderInclude"].createParameterValue()
@@ -187,7 +187,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockJobPriority(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockJobPriority"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockJobPriority"].createParameterValue()
@@ -203,7 +203,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockManagementType(NvMBlockManagementType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockManagementType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockManagementType"].createParameterValue()
@@ -238,7 +238,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockUseAutoValidation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockUseAutoValidation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseAutoValidation"].createParameterValue()
@@ -254,7 +254,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockUseCRCCompMechanism(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockUseCRCCompMechanism"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseCRCCompMechanism"].createParameterValue()
@@ -270,7 +270,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockUseCrc(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockUseCrc"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseCrc"].createParameterValue()
@@ -286,7 +286,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockUseSetRamBlockStatus(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockUseSetRamBlockStatus"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseSetRamBlockStatus"].createParameterValue()
@@ -302,7 +302,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockUseSyncMechanism(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockUseSyncMechanism"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockUseSyncMechanism"].createParameterValue()
@@ -318,7 +318,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBlockWriteProt(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBlockWriteProt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBlockWriteProt"].createParameterValue()
@@ -334,7 +334,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBswMBlockStatusInformation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBswMBlockStatusInformation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBswMBlockStatusInformation"].createParameterValue()
@@ -350,7 +350,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMCalcRamBlockCrc(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCalcRamBlockCrc"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMCalcRamBlockCrc"].createParameterValue()
@@ -366,7 +366,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMInitBlockCallback(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMInitBlockCallback"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMInitBlockCallback"].createParameterValue()
@@ -382,7 +382,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMMaxNumOfReadRetries(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMaxNumOfReadRetries"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMMaxNumOfReadRetries"].createParameterValue()
@@ -398,7 +398,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMMaxNumOfWriteRetries(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMaxNumOfWriteRetries"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMMaxNumOfWriteRetries"].createParameterValue()
@@ -414,7 +414,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMNvBlockBaseNumber(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockBaseNumber"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockBaseNumber"].createParameterValue()
@@ -430,7 +430,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMNvBlockLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockLength"].createParameterValue()
@@ -446,7 +446,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMNvBlockNum(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvBlockNum"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvBlockNum"].createParameterValue()
@@ -462,7 +462,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMNvramBlockIdentifier(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvramBlockIdentifier"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvramBlockIdentifier"].createParameterValue()
@@ -478,7 +478,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMNvramDeviceId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMNvramDeviceId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMNvramDeviceId"].createParameterValue()
@@ -494,7 +494,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMRamBlockDataAddress(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRamBlockDataAddress"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMRamBlockDataAddress"].createParameterValue()
@@ -510,7 +510,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMReadRamBlockFromNvCallback(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMReadRamBlockFromNvCallback"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMReadRamBlockFromNvCallback"].createParameterValue()
@@ -526,7 +526,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMResistantToChangedSw(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMResistantToChangedSw"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMResistantToChangedSw"].createParameterValue()
@@ -542,7 +542,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMRomBlockDataAddress(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRomBlockDataAddress"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMRomBlockDataAddress"].createParameterValue()
@@ -558,7 +558,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMRomBlockNum(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRomBlockNum"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMRomBlockNum"].createParameterValue()
@@ -574,7 +574,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMSelectBlockForReadAll(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSelectBlockForReadAll"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMSelectBlockForReadAll"].createParameterValue()
@@ -590,7 +590,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMSelectBlockForWriteAll(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSelectBlockForWriteAll"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMSelectBlockForWriteAll"].createParameterValue()
@@ -606,7 +606,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMSingleBlockCallback(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSingleBlockCallback"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMSingleBlockCallback"].createParameterValue()
@@ -622,7 +622,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMStaticBlockIDCheck(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMStaticBlockIDCheck"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMStaticBlockIDCheck"].createParameterValue()
@@ -638,7 +638,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMWriteBlockOnce(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteBlockOnce"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteBlockOnce"].createParameterValue()
@@ -654,7 +654,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMWriteRamBlockToNvCallback(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteRamBlockToNvCallback"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteRamBlockToNvCallback"].createParameterValue()
@@ -670,7 +670,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMWriteVerification(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteVerification"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteVerification"].createParameterValue()
@@ -686,7 +686,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMWriteVerificationDataSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMWriteVerificationDataSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMWriteVerificationDataSize"].createParameterValue()
@@ -870,7 +870,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMApiConfigClass(NvMApiConfigClass value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMApiConfigClass"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMApiConfigClass"].createParameterValue()
@@ -905,7 +905,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMBswMMultiBlockJobStatusInformation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMBswMMultiBlockJobStatusInformation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMBswMMultiBlockJobStatusInformation"].createParameterValue()
@@ -921,7 +921,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMCompiledConfigId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCompiledConfigId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMCompiledConfigId"].createParameterValue()
@@ -937,7 +937,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMCrcNumOfBytes(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMCrcNumOfBytes"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMCrcNumOfBytes"].createParameterValue()
@@ -953,7 +953,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMDatasetSelectionBits(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMDatasetSelectionBits"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMDatasetSelectionBits"].createParameterValue()
@@ -969,7 +969,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMDevErrorDetect"].createParameterValue()
@@ -985,7 +985,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMDrvModeSwitch(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMDrvModeSwitch"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMDrvModeSwitch"].createParameterValue()
@@ -1001,7 +1001,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMDynamicConfiguration(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMDynamicConfiguration"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMDynamicConfiguration"].createParameterValue()
@@ -1017,7 +1017,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMJobPrioritization(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMJobPrioritization"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMJobPrioritization"].createParameterValue()
@@ -1033,7 +1033,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMMainFunctionPeriod"].createParameterValue()
@@ -1049,7 +1049,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMMultiBlockCallback(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMMultiBlockCallback"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMMultiBlockCallback"].createParameterValue()
@@ -1065,7 +1065,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMPollingMode(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMPollingMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMPollingMode"].createParameterValue()
@@ -1081,7 +1081,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMRepeatMirrorOperations(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMRepeatMirrorOperations"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMRepeatMirrorOperations"].createParameterValue()
@@ -1097,7 +1097,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMSetRamBlockStatusApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSetRamBlockStatusApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMSetRamBlockStatusApi"].createParameterValue()
@@ -1113,7 +1113,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMSizeImmediateJobQueue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSizeImmediateJobQueue"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMSizeImmediateJobQueue"].createParameterValue()
@@ -1129,7 +1129,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMSizeStandardJobQueue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMSizeStandardJobQueue"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMSizeStandardJobQueue"].createParameterValue()
@@ -1145,7 +1145,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 		
 		def void setNvMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "NvMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "NvMVersionInfoApi"].createParameterValue()
@@ -1287,7 +1287,7 @@ class NvM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

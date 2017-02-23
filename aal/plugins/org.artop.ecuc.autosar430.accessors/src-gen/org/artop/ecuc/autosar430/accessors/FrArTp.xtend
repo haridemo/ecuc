@@ -118,7 +118,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpDevErrorDetect"].createParameterValue()
@@ -134,7 +134,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpHaveAckRt(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveAckRt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveAckRt"].createParameterValue()
@@ -150,7 +150,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpHaveGrpSeg(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveGrpSeg"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveGrpSeg"].createParameterValue()
@@ -166,7 +166,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpHaveLm(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveLm"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveLm"].createParameterValue()
@@ -182,7 +182,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpHaveTc(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpHaveTc"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpHaveTc"].createParameterValue()
@@ -198,7 +198,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpMainFuncCycle(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMainFuncCycle"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMainFuncCycle"].createParameterValue()
@@ -214,7 +214,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrArTpVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpVersionInfoApi"].createParameterValue()
@@ -308,7 +308,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpAckType(FrArTpAckType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpAckType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpAckType"].createParameterValue()
@@ -343,7 +343,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpAdrType(FrArTpAdrType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpAdrType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpAdrType"].createParameterValue()
@@ -376,7 +376,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpConcurrentConnections(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConcurrentConnections"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpConcurrentConnections"].createParameterValue()
@@ -392,7 +392,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpGrpSeg(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpGrpSeg"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpGrpSeg"].createParameterValue()
@@ -408,7 +408,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpLm(FrArTpLm value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpLm"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpLm"].createParameterValue()
@@ -443,7 +443,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpMaxAr(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxAr"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxAr"].createParameterValue()
@@ -459,7 +459,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpMaxAs(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxAs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxAs"].createParameterValue()
@@ -475,7 +475,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpMaxBs(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxBs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxBs"].createParameterValue()
@@ -491,7 +491,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpMaxRn(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxRn"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxRn"].createParameterValue()
@@ -507,7 +507,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpMaxWft(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMaxWft"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMaxWft"].createParameterValue()
@@ -523,7 +523,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpStMin(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpStMin"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpStMin"].createParameterValue()
@@ -539,7 +539,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpStMinGrpSeg(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpStMinGrpSeg"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpStMinGrpSeg"].createParameterValue()
@@ -555,7 +555,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTc(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTc"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTc"].createParameterValue()
@@ -571,7 +571,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTimeBr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeBr"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeBr"].createParameterValue()
@@ -587,7 +587,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTimeCs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeCs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeCs"].createParameterValue()
@@ -603,7 +603,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTimeoutAr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutAr"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutAr"].createParameterValue()
@@ -619,7 +619,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTimeoutAs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutAs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutAs"].createParameterValue()
@@ -635,7 +635,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTimeoutBs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutBs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutBs"].createParameterValue()
@@ -651,7 +651,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrArTpTimeoutCr(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpTimeoutCr"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpTimeoutCr"].createParameterValue()
@@ -734,7 +734,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrArTpConPrioPdus(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpConPrioPdus"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpConPrioPdus"].createParameterValue()
@@ -750,7 +750,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrArTpLa(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpLa"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpLa"].createParameterValue()
@@ -766,7 +766,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrArTpMultRec(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpMultRec"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpMultRec"].createParameterValue()
@@ -782,7 +782,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrArTpRa(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpRa"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpRa"].createParameterValue()
@@ -845,7 +845,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrArTpSduRxId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduRxId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpSduRxId"].createParameterValue()
@@ -903,7 +903,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrArTpSduTxId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpSduTxId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpSduTxId"].createParameterValue()
@@ -963,7 +963,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrArTpPduDirection(FrArTpPduDirection value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpPduDirection"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpPduDirection"].createParameterValue()
@@ -996,7 +996,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrArTpPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrArTpPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrArTpPduId"].createParameterValue()
@@ -1035,7 +1035,7 @@ class FrArTp implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

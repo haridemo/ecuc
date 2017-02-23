@@ -189,7 +189,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 
 		private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 			val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-			if (definitionFeature != null) {
+			if (definitionFeature !== null) {
 				val definition = child.eGet(definitionFeature)
 				if (ecucTypeDefType.isInstance(definition)) {
 					return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)
@@ -293,7 +293,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 
 	def void set«p.gGetShortName.toFirstUpper»(«p.getParameterValueValueTypeName(cont)» value){
 		var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "«p.gGetShortName»"]
-		if (parameterValue == null) {
+		if (parameterValue === null) {
 			val containerDef = containerValue.gGetDefinition
 			if (containerDef instanceof GParamConfContainerDef) {
 				parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "«p.gGetShortName»"].createParameterValue()
@@ -352,7 +352,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 	'''
 
 	def dispatch getReferenceContents(GReferenceDef referenceDef)'''
-	«IF referenceDef.gGetRefDestination != null»
+	«IF referenceDef.gGetRefDestination !== null»
 	«val refDestinationClassName = EcucValueAccessorUtil.getAccessorClassQualifiedName(this.javaPackageName, referenceDef.gGetRefDestination, ".")»
 	«IF EcucValueAccessorUtil.isMany(referenceDef)»
 	def List<«refDestinationClassName»> get«referenceDef.gGetShortName.toFirstUpper.pluralOf»(){
@@ -368,7 +368,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 
 		return new AbstractUnwrappingEList<GReferenceValue, «refDestinationClassName»>(filteredReferenceValues, typeof(GReferenceValue), typeof(«refDestinationClassName»)) {
 			override protected wrap(«refDestinationClassName» object) throws CoreException {
-				if (object != null) {
+				if (object !== null) {
 					val container = object.getTarget()
 					val referenceValue = «autosarFactoryClassName».eINSTANCE.create«referenceValueTypeName»
 					referenceValue.gSetDefinition(referenceValueDef)
@@ -378,7 +378,7 @@ public abstract class AbstractEcucValueAccessorGenerator {
 			}
 
 			override protected unwrap(GReferenceValue referenceValue) {
-				if (referenceValue != null) {
+				if (referenceValue !== null) {
 					val referenceValueValue = referenceValue.gGetValue
 					if (referenceValueValue instanceof GContainer) {
 						return new «refDestinationClassName»(referenceValueValue as GContainer)

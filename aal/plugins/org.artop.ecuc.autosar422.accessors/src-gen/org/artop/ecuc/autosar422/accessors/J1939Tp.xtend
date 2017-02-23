@@ -185,7 +185,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxCancellationSupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCancellationSupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxCancellationSupport"].createParameterValue()
@@ -201,7 +201,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxDa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDa"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxDa"].createParameterValue()
@@ -217,7 +217,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxDynamicBlockCalculation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBlockCalculation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxDynamicBlockCalculation"].createParameterValue()
@@ -233,7 +233,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxDynamicBufferRatio(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDynamicBufferRatio"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxDynamicBufferRatio"].createParameterValue()
@@ -249,7 +249,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxPacketsPerBlock(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPacketsPerBlock"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxPacketsPerBlock"].createParameterValue()
@@ -265,7 +265,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxProtocolType(J1939TpRxProtocolType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxProtocolType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxProtocolType"].createParameterValue()
@@ -298,7 +298,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxRetrySupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxRetrySupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxRetrySupport"].createParameterValue()
@@ -314,7 +314,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpRxSa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxSa"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxSa"].createParameterValue()
@@ -405,7 +405,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpRxCmNPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxCmNPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxCmNPduId"].createParameterValue()
@@ -463,7 +463,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpRxDtNPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDtNPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxDtNPduId"].createParameterValue()
@@ -521,7 +521,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpRxPgDynLength(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgDynLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxPgDynLength"].createParameterValue()
@@ -537,7 +537,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpRxPgPGN(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxPgPGN"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxPgPGN"].createParameterValue()
@@ -610,7 +610,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					
 					def void setJ1939TpRxDirectNPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxDirectNPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxDirectNPduId"].createParameterValue()
@@ -668,7 +668,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					
 					def void setJ1939TpRxNSduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxNSduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxNSduId"].createParameterValue()
@@ -728,7 +728,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpTxFcNPduTxConfId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxFcNPduTxConfId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxFcNPduTxConfId"].createParameterValue()
@@ -788,7 +788,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxCancellationSupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCancellationSupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxCancellationSupport"].createParameterValue()
@@ -804,7 +804,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxDa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDa"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxDa"].createParameterValue()
@@ -820,7 +820,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxDynamicBlockCalculation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDynamicBlockCalculation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxDynamicBlockCalculation"].createParameterValue()
@@ -836,7 +836,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxMaxPacketsPerBlock(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxMaxPacketsPerBlock"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxMaxPacketsPerBlock"].createParameterValue()
@@ -852,7 +852,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxProtocolType(J1939TpTxProtocolType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxProtocolType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxProtocolType"].createParameterValue()
@@ -885,7 +885,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxRetrySupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxRetrySupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxRetrySupport"].createParameterValue()
@@ -901,7 +901,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939TpTxSa(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxSa"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxSa"].createParameterValue()
@@ -992,7 +992,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpRxFcNPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpRxFcNPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpRxFcNPduId"].createParameterValue()
@@ -1050,7 +1050,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpTxCmNPduTxConfId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxCmNPduTxConfId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxCmNPduTxConfId"].createParameterValue()
@@ -1108,7 +1108,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpTxDtNPduTxConfId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDtNPduTxConfId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxDtNPduTxConfId"].createParameterValue()
@@ -1166,7 +1166,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpTxPgDynLength(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgDynLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxPgDynLength"].createParameterValue()
@@ -1182,7 +1182,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939TpTxPgPGN(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxPgPGN"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxPgPGN"].createParameterValue()
@@ -1255,7 +1255,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					
 					def void setJ1939TpTxDirectNPduTxConfId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxDirectNPduTxConfId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxDirectNPduTxConfId"].createParameterValue()
@@ -1313,7 +1313,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 					
 					def void setJ1939TpTxNSduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxNSduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxNSduId"].createParameterValue()
@@ -1376,7 +1376,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939TpCancellationSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpCancellationSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpCancellationSupport"].createParameterValue()
@@ -1392,7 +1392,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939TpDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpDevErrorDetect"].createParameterValue()
@@ -1408,7 +1408,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939TpMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpMainFunctionPeriod"].createParameterValue()
@@ -1424,7 +1424,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939TpTxConfTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpTxConfTimeout"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpTxConfTimeout"].createParameterValue()
@@ -1440,7 +1440,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939TpVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939TpVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939TpVersionInfoApi"].createParameterValue()
@@ -1464,7 +1464,7 @@ class J1939Tp implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

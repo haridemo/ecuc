@@ -126,7 +126,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuMaxChannel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuMaxChannel"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuMaxChannel"].createParameterValue()
@@ -190,7 +190,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			
 			def void setIcuChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuChannelId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuChannelId"].createParameterValue()
@@ -206,7 +206,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			
 			def void setIcuDefaultStartEdge(IcuDefaultStartEdge value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuDefaultStartEdge"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuDefaultStartEdge"].createParameterValue()
@@ -241,7 +241,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			
 			def void setIcuMeasurementMode(IcuMeasurementMode value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuMeasurementMode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuMeasurementMode"].createParameterValue()
@@ -278,7 +278,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 			
 			def void setIcuWakeupCapability(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuWakeupCapability"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuWakeupCapability"].createParameterValue()
@@ -359,7 +359,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				
 				def void setIcuSignalNotification(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuSignalNotification"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuSignalNotification"].createParameterValue()
@@ -406,7 +406,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				
 				def void setIcuSignalMeasurementProperty(IcuSignalMeasurementProperty value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuSignalMeasurementProperty"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuSignalMeasurementProperty"].createParameterValue()
@@ -474,7 +474,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				
 				def void setIcuTimestampMeasurementProperty(IcuTimestampMeasurementProperty value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuTimestampMeasurementProperty"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuTimestampMeasurementProperty"].createParameterValue()
@@ -507,7 +507,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 				
 				def void setIcuTimestampNotification(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuTimestampNotification"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuTimestampNotification"].createParameterValue()
@@ -599,7 +599,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuDevErrorDetect"].createParameterValue()
@@ -615,7 +615,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuReportWakeupSource(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuReportWakeupSource"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuReportWakeupSource"].createParameterValue()
@@ -661,7 +661,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuDeInitApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuDeInitApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuDeInitApi"].createParameterValue()
@@ -677,7 +677,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuDisableWakeupApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuDisableWakeupApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuDisableWakeupApi"].createParameterValue()
@@ -693,7 +693,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuEdgeCountApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuEdgeCountApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuEdgeCountApi"].createParameterValue()
@@ -709,7 +709,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuEdgeDetectApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuEdgeDetectApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuEdgeDetectApi"].createParameterValue()
@@ -725,7 +725,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuEnableWakeupApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuEnableWakeupApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuEnableWakeupApi"].createParameterValue()
@@ -741,7 +741,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuGetDutyCycleValuesApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuGetDutyCycleValuesApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuGetDutyCycleValuesApi"].createParameterValue()
@@ -757,7 +757,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuGetInputStateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuGetInputStateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuGetInputStateApi"].createParameterValue()
@@ -773,7 +773,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuGetTimeElapsedApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuGetTimeElapsedApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuGetTimeElapsedApi"].createParameterValue()
@@ -789,7 +789,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuGetVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuGetVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuGetVersionInfoApi"].createParameterValue()
@@ -805,7 +805,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuSetModeApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuSetModeApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuSetModeApi"].createParameterValue()
@@ -821,7 +821,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuSignalMeasurementApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuSignalMeasurementApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuSignalMeasurementApi"].createParameterValue()
@@ -837,7 +837,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuTimestampApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuTimestampApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuTimestampApi"].createParameterValue()
@@ -853,7 +853,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 		
 		def void setIcuWakeupFunctionalityApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IcuWakeupFunctionalityApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IcuWakeupFunctionalityApi"].createParameterValue()
@@ -877,7 +877,7 @@ class Icu implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

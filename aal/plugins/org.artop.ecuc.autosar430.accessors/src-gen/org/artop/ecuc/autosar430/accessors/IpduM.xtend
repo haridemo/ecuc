@@ -126,7 +126,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMMaxTxBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxBufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMMaxTxBufferSize"].createParameterValue()
@@ -142,7 +142,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMMaxTxPathwayCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMaxTxPathwayCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMMaxTxPathwayCnt"].createParameterValue()
@@ -301,7 +301,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedRxPduLongHeaderId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedRxPduLongHeaderId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedRxPduLongHeaderId"].createParameterValue()
@@ -317,7 +317,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedRxPduShortHeaderId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedRxPduShortHeaderId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedRxPduShortHeaderId"].createParameterValue()
@@ -386,7 +386,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedPduHeaderId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedPduHeaderId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedPduHeaderId"].createParameterValue()
@@ -402,7 +402,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedTxPduCollectionSemantics(IpduMContainedTxPduCollectionSemantics value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduCollectionSemantics"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedTxPduCollectionSemantics"].createParameterValue()
@@ -435,7 +435,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedTxPduConfirmation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduConfirmation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedTxPduConfirmation"].createParameterValue()
@@ -451,7 +451,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedTxPduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedTxPduHandleId"].createParameterValue()
@@ -467,7 +467,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedTxPduSendTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduSendTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedTxPduSendTimeout"].createParameterValue()
@@ -483,7 +483,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainedTxPduTrigger(IpduMContainedTxPduTrigger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainedTxPduTrigger"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainedTxPduTrigger"].createParameterValue()
@@ -569,7 +569,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerHeaderSize(IpduMContainerHeaderSize value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerHeaderSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerHeaderSize"].createParameterValue()
@@ -602,7 +602,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerPduProcessing(IpduMContainerPduProcessing value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerPduProcessing"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerPduProcessing"].createParameterValue()
@@ -635,7 +635,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerQueueSize"].createParameterValue()
@@ -651,7 +651,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerRxAcceptContainedPdu(IpduMContainerRxAcceptContainedPdu value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerRxAcceptContainedPdu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerRxAcceptContainedPdu"].createParameterValue()
@@ -684,7 +684,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerRxHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerRxHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerRxHandleId"].createParameterValue()
@@ -742,7 +742,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerHeaderSize(IpduMContainerHeaderSize value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerHeaderSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerHeaderSize"].createParameterValue()
@@ -775,7 +775,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerQueueSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerQueueSize"].createParameterValue()
@@ -791,7 +791,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerTxFirstContainedPduTrigger(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxFirstContainedPduTrigger"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerTxFirstContainedPduTrigger"].createParameterValue()
@@ -807,7 +807,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerTxHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerTxHandleId"].createParameterValue()
@@ -823,7 +823,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerTxSendTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSendTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerTxSendTimeout"].createParameterValue()
@@ -839,7 +839,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerTxSizeThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxSizeThreshold"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerTxSizeThreshold"].createParameterValue()
@@ -855,7 +855,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 			
 			def void setIpduMContainerTxTriggerMode(IpduMContainerTxTriggerMode value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMContainerTxTriggerMode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMContainerTxTriggerMode"].createParameterValue()
@@ -968,7 +968,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				def void setIpduMByteOrder(IpduMByteOrder value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMByteOrder"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMByteOrder"].createParameterValue()
@@ -1001,7 +1001,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				def void setIpduMRxHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMRxHandleId"].createParameterValue()
@@ -1132,7 +1132,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMRxSelectorValue(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxSelectorValue"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMRxSelectorValue"].createParameterValue()
@@ -1190,7 +1190,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentLength"].createParameterValue()
@@ -1206,7 +1206,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentPosition"].createParameterValue()
@@ -1295,7 +1295,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentLength"].createParameterValue()
@@ -1311,7 +1311,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentPosition"].createParameterValue()
@@ -1358,7 +1358,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSelectorFieldLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSelectorFieldLength"].createParameterValue()
@@ -1374,7 +1374,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSelectorFieldPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSelectorFieldPosition"].createParameterValue()
@@ -1463,7 +1463,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				def void setIpduMByteOrder(IpduMByteOrder value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMByteOrder"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMByteOrder"].createParameterValue()
@@ -1496,7 +1496,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				def void setIpduMIPduUnusedAreasDefault(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMIPduUnusedAreasDefault"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMIPduUnusedAreasDefault"].createParameterValue()
@@ -1512,7 +1512,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				def void setIpduMTxConfirmationPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxConfirmationPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxConfirmationPduId"].createParameterValue()
@@ -1528,7 +1528,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 				
 				def void setIpduMTxTriggerMode(IpduMTxTriggerMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxTriggerMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxTriggerMode"].createParameterValue()
@@ -1691,7 +1691,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSelectorFieldLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSelectorFieldLength"].createParameterValue()
@@ -1707,7 +1707,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSelectorFieldPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSelectorFieldPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSelectorFieldPosition"].createParameterValue()
@@ -1754,7 +1754,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMJitUpdate(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMJitUpdate"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMJitUpdate"].createParameterValue()
@@ -1770,7 +1770,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMTxDynamicConfirmation(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicConfirmation"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxDynamicConfirmation"].createParameterValue()
@@ -1786,7 +1786,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMTxDynamicHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxDynamicHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxDynamicHandleId"].createParameterValue()
@@ -1844,7 +1844,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentLength"].createParameterValue()
@@ -1860,7 +1860,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentPosition"].createParameterValue()
@@ -1907,7 +1907,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMJitUpdate(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMJitUpdate"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMJitUpdate"].createParameterValue()
@@ -1923,7 +1923,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMTxStaticConfirmation(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticConfirmation"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxStaticConfirmation"].createParameterValue()
@@ -1939,7 +1939,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMTxStaticHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxStaticHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxStaticHandleId"].createParameterValue()
@@ -1997,7 +1997,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentLength"].createParameterValue()
@@ -2013,7 +2013,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 					
 					def void setIpduMSegmentPosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMSegmentPosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMSegmentPosition"].createParameterValue()
@@ -2065,7 +2065,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMDevErrorDetect"].createParameterValue()
@@ -2081,7 +2081,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMHeaderByteOrder(IpduMHeaderByteOrder value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMHeaderByteOrder"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMHeaderByteOrder"].createParameterValue()
@@ -2114,7 +2114,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMMetaDataSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMMetaDataSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMMetaDataSupport"].createParameterValue()
@@ -2130,7 +2130,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMRxTimeBase(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxTimeBase"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMRxTimeBase"].createParameterValue()
@@ -2146,7 +2146,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMStaticPartExists(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMStaticPartExists"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMStaticPartExists"].createParameterValue()
@@ -2162,7 +2162,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMTxTimeBase(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMTxTimeBase"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMTxTimeBase"].createParameterValue()
@@ -2178,7 +2178,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMVersionInfoApi"].createParameterValue()
@@ -2224,7 +2224,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 		
 		def void setIpduMRxDirectComInvocation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "IpduMRxDirectComInvocation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "IpduMRxDirectComInvocation"].createParameterValue()
@@ -2248,7 +2248,7 @@ class IpduM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

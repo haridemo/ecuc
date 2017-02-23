@@ -220,7 +220,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltDefaultLogLevel(DltDefaultLogLevel value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltDefaultLogLevel"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltDefaultLogLevel"].createParameterValue()
@@ -372,7 +372,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelBufferOverflowTimer(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelBufferOverflowTimer"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelBufferOverflowTimer"].createParameterValue()
@@ -388,7 +388,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelBufferSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelBufferSize"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelBufferSize"].createParameterValue()
@@ -404,7 +404,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelId(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelId"].createParameterValue()
@@ -420,7 +420,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelMaxMessageLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelMaxMessageLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelMaxMessageLength"].createParameterValue()
@@ -436,7 +436,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelMaxNumOfRetries(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelMaxNumOfRetries"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelMaxNumOfRetries"].createParameterValue()
@@ -452,7 +452,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelThreshold(DltLogChannelThreshold value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelThreshold"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelThreshold"].createParameterValue()
@@ -495,7 +495,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelTrafficShapingBandwidth(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelTrafficShapingBandwidth"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelTrafficShapingBandwidth"].createParameterValue()
@@ -511,7 +511,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogChannelTransmitCycle(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogChannelTransmitCycle"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogChannelTransmitCycle"].createParameterValue()
@@ -527,7 +527,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltLogTraceStatusFlag(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltLogTraceStatusFlag"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltLogTraceStatusFlag"].createParameterValue()
@@ -581,7 +581,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 					
 					def void setDltITxPduHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltITxPduHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltITxPduHandleId"].createParameterValue()
@@ -696,7 +696,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltHeaderUseEcuId(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltHeaderUseEcuId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltHeaderUseEcuId"].createParameterValue()
@@ -712,7 +712,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltHeaderUseSessionID(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltHeaderUseSessionID"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltHeaderUseSessionID"].createParameterValue()
@@ -728,7 +728,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltHeaderUseTimestamp(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltHeaderUseTimestamp"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltHeaderUseTimestamp"].createParameterValue()
@@ -744,7 +744,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltUseExtHeaderInNonVerbMode(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltUseExtHeaderInNonVerbMode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltUseExtHeaderInNonVerbMode"].createParameterValue()
@@ -841,7 +841,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 					
 					def void setDltEcuIdCallout(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltEcuIdCallout"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltEcuIdCallout"].createParameterValue()
@@ -888,7 +888,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 					
 					def void setDltEcuIdValue(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltEcuIdValue"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltEcuIdValue"].createParameterValue()
@@ -939,7 +939,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltIRxPduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltIRxPduHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltIRxPduHandleId"].createParameterValue()
@@ -997,7 +997,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltDefaultTraceStatus(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltDefaultTraceStatus"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltDefaultTraceStatus"].createParameterValue()
@@ -1061,7 +1061,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 				
 				def void setDltTraceStatus(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltTraceStatus"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltTraceStatus"].createParameterValue()
@@ -1122,7 +1122,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralDevErrorDetect"].createParameterValue()
@@ -1138,7 +1138,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralInjectionSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralInjectionSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralInjectionSupport"].createParameterValue()
@@ -1154,7 +1154,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralRegisterContextNotification(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralRegisterContextNotification"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralRegisterContextNotification"].createParameterValue()
@@ -1170,7 +1170,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralRxDataPathSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralRxDataPathSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralRxDataPathSupport"].createParameterValue()
@@ -1186,7 +1186,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralStartUpDelayTimer(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralStartUpDelayTimer"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralStartUpDelayTimer"].createParameterValue()
@@ -1202,7 +1202,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralTimeStampSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralTimeStampSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralTimeStampSupport"].createParameterValue()
@@ -1218,7 +1218,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralTrafficShapingSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralTrafficShapingSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralTrafficShapingSupport"].createParameterValue()
@@ -1234,7 +1234,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltGeneralVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltGeneralVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltGeneralVersionInfoApi"].createParameterValue()
@@ -1302,7 +1302,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltSwcSessionId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltSwcSessionId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltSwcSessionId"].createParameterValue()
@@ -1318,7 +1318,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setDltSwcSupportLogLevelChangeNotification(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltSwcSupportLogLevelChangeNotification"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltSwcSupportLogLevelChangeNotification"].createParameterValue()
@@ -1334,7 +1334,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setMaxSwcLogMessageLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MaxSwcLogMessageLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MaxSwcLogMessageLength"].createParameterValue()
@@ -1350,7 +1350,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 		
 		def void setMaxSwcTraceMessageLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "MaxSwcTraceMessageLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "MaxSwcTraceMessageLength"].createParameterValue()
@@ -1414,7 +1414,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltSwcApplicationId(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltSwcApplicationId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltSwcApplicationId"].createParameterValue()
@@ -1430,7 +1430,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 			
 			def void setDltSwcContextId(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DltSwcContextId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DltSwcContextId"].createParameterValue()
@@ -1456,7 +1456,7 @@ class Dlt implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

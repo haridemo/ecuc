@@ -128,7 +128,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setSomeIpTpNPduSeparationTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpNPduSeparationTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpNPduSeparationTime"].createParameterValue()
@@ -144,7 +144,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setSomeIpTpRxTimeoutTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpRxTimeoutTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpRxTimeoutTime"].createParameterValue()
@@ -276,7 +276,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setSomeIpTpRxNPduHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpRxNPduHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpRxNPduHandleId"].createParameterValue()
@@ -336,7 +336,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 			
 			def void setSomeIpTpTxNSduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpTxNSduHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpTxNSduHandleId"].createParameterValue()
@@ -401,7 +401,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 				
 				def void setSomeIpTpTxNPduHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpTxNPduHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpTxNPduHandleId"].createParameterValue()
@@ -462,7 +462,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setSomeIpTpDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpDevErrorDetect"].createParameterValue()
@@ -478,7 +478,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setSomeIpTpRxMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpRxMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpRxMainFunctionPeriod"].createParameterValue()
@@ -494,7 +494,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setSomeIpTpTxMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpTxMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpTxMainFunctionPeriod"].createParameterValue()
@@ -510,7 +510,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 		
 		def void setSomeIpTpVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SomeIpTpVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SomeIpTpVersionInfoApi"].createParameterValue()
@@ -534,7 +534,7 @@ class SomeIpTp implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

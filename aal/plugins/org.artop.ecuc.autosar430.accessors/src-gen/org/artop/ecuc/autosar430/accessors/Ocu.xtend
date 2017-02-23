@@ -126,7 +126,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuCountdirection(OcuCountdirection value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuCountdirection"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuCountdirection"].createParameterValue()
@@ -235,7 +235,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuAssignedHardwareChannel(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuAssignedHardwareChannel"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuAssignedHardwareChannel"].createParameterValue()
@@ -251,7 +251,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuChannelId"].createParameterValue()
@@ -267,7 +267,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuChannelTickDuration(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuChannelTickDuration"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuChannelTickDuration"].createParameterValue()
@@ -283,7 +283,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuDefaultThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDefaultThreshold"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuDefaultThreshold"].createParameterValue()
@@ -299,7 +299,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuHardwareTriggeredAdc(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredAdc"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuHardwareTriggeredAdc"].createParameterValue()
@@ -315,7 +315,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuHardwareTriggeredDMA(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuHardwareTriggeredDMA"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuHardwareTriggeredDMA"].createParameterValue()
@@ -331,7 +331,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuMaxCounterValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuMaxCounterValue"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuMaxCounterValue"].createParameterValue()
@@ -347,7 +347,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuNotification"].createParameterValue()
@@ -363,7 +363,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuOuptutPinUsed(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuOuptutPinUsed"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuOuptutPinUsed"].createParameterValue()
@@ -379,7 +379,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuOutputPinDefaultState(OcuOutputPinDefaultState value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuOutputPinDefaultState"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuOutputPinDefaultState"].createParameterValue()
@@ -443,7 +443,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuGroupId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGroupId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuGroupId"].createParameterValue()
@@ -467,7 +467,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.Ocu.OcuConfigSet.OcuChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.Ocu.OcuConfigSet.OcuChannel)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.Ocu.OcuConfigSet.OcuChannel object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -477,7 +477,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.Ocu.OcuConfigSet.OcuChannel(referenceValueValue as GContainer)
@@ -523,7 +523,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuClockSource(OcuClockSource value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuClockSource"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuClockSource"].createParameterValue()
@@ -552,7 +552,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 			
 			def void setOcuPrescale(OcuPrescale value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuPrescale"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuPrescale"].createParameterValue()
@@ -613,7 +613,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuDeInitApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDeInitApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuDeInitApi"].createParameterValue()
@@ -629,7 +629,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuGetCounterApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuGetCounterApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuGetCounterApi"].createParameterValue()
@@ -645,7 +645,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuNotificationSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuNotificationSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuNotificationSupported"].createParameterValue()
@@ -661,7 +661,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuSetAbsoluteThresholdApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetAbsoluteThresholdApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuSetAbsoluteThresholdApi"].createParameterValue()
@@ -677,7 +677,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuSetPinActionApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetPinActionApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuSetPinActionApi"].createParameterValue()
@@ -693,7 +693,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuSetPinStateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetPinStateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuSetPinStateApi"].createParameterValue()
@@ -709,7 +709,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuSetRelativeThresholdApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuSetRelativeThresholdApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuSetRelativeThresholdApi"].createParameterValue()
@@ -725,7 +725,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuVersionInfoApi"].createParameterValue()
@@ -771,7 +771,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 		
 		def void setOcuDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "OcuDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "OcuDevErrorDetect"].createParameterValue()
@@ -795,7 +795,7 @@ class Ocu implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

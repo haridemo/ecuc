@@ -192,7 +192,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvAntennaId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvAntennaId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvAntennaId"].createParameterValue()
@@ -288,7 +288,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvBusId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvBusId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvBusId"].createParameterValue()
@@ -304,7 +304,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvId"].createParameterValue()
@@ -320,7 +320,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvPhysLayerType(WEthTrcvPhysLayerType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvPhysLayerType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvPhysLayerType"].createParameterValue()
@@ -456,7 +456,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvDevErrorDetect"].createParameterValue()
@@ -472,7 +472,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvGetLinkStateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvGetLinkStateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvGetLinkStateApi"].createParameterValue()
@@ -488,7 +488,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvGetTransceiverModeApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvGetTransceiverModeApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvGetTransceiverModeApi"].createParameterValue()
@@ -504,7 +504,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvIndex"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvIndex"].createParameterValue()
@@ -520,7 +520,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvMainFunctionPeriod"].createParameterValue()
@@ -536,7 +536,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvMaxTrcvsSupported(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvMaxTrcvsSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvMaxTrcvsSupported"].createParameterValue()
@@ -552,7 +552,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvSetTransceiverModeApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvSetTransceiverModeApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvSetTransceiverModeApi"].createParameterValue()
@@ -568,7 +568,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvVersionInfoApi"].createParameterValue()
@@ -584,7 +584,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setWEthTrcvVersionInfoApiMacro(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvVersionInfoApiMacro"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvVersionInfoApiMacro"].createParameterValue()
@@ -678,7 +678,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioChannelBandwidth(WEthTrcvRadioChannelBandwidth value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelBandwidth"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelBandwidth"].createParameterValue()
@@ -715,7 +715,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioChannelCsPowerThreshold(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelCsPowerThreshold"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelCsPowerThreshold"].createParameterValue()
@@ -731,7 +731,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioChannelFreq(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelFreq"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelFreq"].createParameterValue()
@@ -747,7 +747,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioChannelMaxTxPower(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelMaxTxPower"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelMaxTxPower"].createParameterValue()
@@ -763,7 +763,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioChannelTxDatarate(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelTxDatarate"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelTxDatarate"].createParameterValue()
@@ -779,7 +779,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioId"].createParameterValue()
@@ -795,7 +795,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 			
 			def void setWEthTrcvRadioMode(WEthTrcvRadioMode value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioMode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioMode"].createParameterValue()
@@ -904,7 +904,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 				
 				def void setWEthTrcvRadioChannelTxQueueAifsn(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelTxQueueAifsn"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelTxQueueAifsn"].createParameterValue()
@@ -920,7 +920,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 				
 				def void setWEthTrcvRadioChannelTxQueueCwMax(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelTxQueueCwMax"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelTxQueueCwMax"].createParameterValue()
@@ -936,7 +936,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 				
 				def void setWEthTrcvRadioChannelTxQueueCwMin(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelTxQueueCwMin"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelTxQueueCwMin"].createParameterValue()
@@ -952,7 +952,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 				
 				def void setWEthTrcvRadioChannelTxQueueId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelTxQueueId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelTxQueueId"].createParameterValue()
@@ -968,7 +968,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 				
 				def void setWEthTrcvRadioChannelTxQueueTxOpDurationLimit(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WEthTrcvRadioChannelTxQueueTxOpDurationLimit"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WEthTrcvRadioChannelTxQueueTxOpDurationLimit"].createParameterValue()
@@ -996,7 +996,7 @@ class WEthTrcv implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)
