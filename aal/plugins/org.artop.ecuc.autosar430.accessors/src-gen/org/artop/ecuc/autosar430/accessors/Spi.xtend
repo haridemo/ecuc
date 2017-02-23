@@ -175,7 +175,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiMaxChannel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxChannel"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiMaxChannel"].createParameterValue()
@@ -191,7 +191,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiMaxJob(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxJob"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiMaxJob"].createParameterValue()
@@ -207,7 +207,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiMaxSequence(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxSequence"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiMaxSequence"].createParameterValue()
@@ -328,7 +328,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiChannelId"].createParameterValue()
@@ -344,7 +344,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiChannelType(SpiChannelType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiChannelType"].createParameterValue()
@@ -377,7 +377,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiDataWidth(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDataWidth"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiDataWidth"].createParameterValue()
@@ -393,7 +393,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiDefaultData(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDefaultData"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiDefaultData"].createParameterValue()
@@ -409,7 +409,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiEbMaxLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEbMaxLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiEbMaxLength"].createParameterValue()
@@ -425,7 +425,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiIbNBuffers(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiIbNBuffers"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiIbNBuffers"].createParameterValue()
@@ -441,7 +441,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiTransferStart(SpiTransferStart value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiTransferStart"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiTransferStart"].createParameterValue()
@@ -505,7 +505,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiBaudrate(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiBaudrate"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiBaudrate"].createParameterValue()
@@ -521,7 +521,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiCsIdentifier(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiCsIdentifier"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiCsIdentifier"].createParameterValue()
@@ -537,7 +537,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiCsPolarity(SpiCsPolarity value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiCsPolarity"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiCsPolarity"].createParameterValue()
@@ -570,7 +570,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiCsSelection(SpiCsSelection value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiCsSelection"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiCsSelection"].createParameterValue()
@@ -603,7 +603,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiDataShiftEdge(SpiDataShiftEdge value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDataShiftEdge"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiDataShiftEdge"].createParameterValue()
@@ -636,7 +636,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiEnableCs(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiEnableCs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiEnableCs"].createParameterValue()
@@ -652,7 +652,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiHwUnit(SpiHwUnit value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiHwUnit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiHwUnit"].createParameterValue()
@@ -689,7 +689,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiShiftClockIdleLevel(SpiShiftClockIdleLevel value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiShiftClockIdleLevel"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiShiftClockIdleLevel"].createParameterValue()
@@ -722,7 +722,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiTimeClk2Cs(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiTimeClk2Cs"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiTimeClk2Cs"].createParameterValue()
@@ -769,7 +769,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiHwUnitSynchronous(SpiHwUnitSynchronous value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiHwUnitSynchronous"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiHwUnitSynchronous"].createParameterValue()
@@ -802,7 +802,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiJobEndNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobEndNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiJobEndNotification"].createParameterValue()
@@ -818,7 +818,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiJobId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiJobId"].createParameterValue()
@@ -834,7 +834,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiJobPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiJobPriority"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiJobPriority"].createParameterValue()
@@ -909,7 +909,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 				
 				def void setSpiChannelIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelIndex"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiChannelIndex"].createParameterValue()
@@ -969,7 +969,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiInterruptibleSequence(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiInterruptibleSequence"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiInterruptibleSequence"].createParameterValue()
@@ -985,7 +985,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiSeqEndNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSeqEndNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiSeqEndNotification"].createParameterValue()
@@ -1001,7 +1001,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 			def void setSpiSequenceId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSequenceId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiSequenceId"].createParameterValue()
@@ -1025,7 +1025,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.Spi.SpiDriver.SpiJob>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.Spi.SpiDriver.SpiJob)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.Spi.SpiDriver.SpiJob object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1035,7 +1035,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.Spi.SpiDriver.SpiJob(referenceValueValue as GContainer)
@@ -1082,7 +1082,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiCancelApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiCancelApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiCancelApi"].createParameterValue()
@@ -1098,7 +1098,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiChannelBuffersAllowed(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiChannelBuffersAllowed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiChannelBuffersAllowed"].createParameterValue()
@@ -1114,7 +1114,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiDevErrorDetect"].createParameterValue()
@@ -1130,7 +1130,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiHwStatusApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiHwStatusApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiHwStatusApi"].createParameterValue()
@@ -1146,7 +1146,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiInterruptibleSeqAllowed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiInterruptibleSeqAllowed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiInterruptibleSeqAllowed"].createParameterValue()
@@ -1162,7 +1162,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiLevelDelivered(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiLevelDelivered"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiLevelDelivered"].createParameterValue()
@@ -1178,7 +1178,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiMainFunctionPeriod"].createParameterValue()
@@ -1194,7 +1194,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiSupportConcurrentSyncTransmit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiSupportConcurrentSyncTransmit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiSupportConcurrentSyncTransmit"].createParameterValue()
@@ -1223,7 +1223,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiVersionInfoApi"].createParameterValue()
@@ -1269,7 +1269,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 		
 		def void setSpiMaxHwUnit(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SpiMaxHwUnit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SpiMaxHwUnit"].createParameterValue()
@@ -1293,7 +1293,7 @@ class Spi implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

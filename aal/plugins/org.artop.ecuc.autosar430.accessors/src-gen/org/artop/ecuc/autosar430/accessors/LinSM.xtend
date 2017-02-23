@@ -118,7 +118,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinSMModeRequestRepetitionMax(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMModeRequestRepetitionMax"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMModeRequestRepetitionMax"].createParameterValue()
@@ -182,7 +182,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinSMConfirmationTimeout(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMConfirmationTimeout"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMConfirmationTimeout"].createParameterValue()
@@ -198,7 +198,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinSMTransceiverPassiveMode(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMTransceiverPassiveMode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMTransceiverPassiveMode"].createParameterValue()
@@ -273,7 +273,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinSMScheduleIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMScheduleIndex"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMScheduleIndex"].createParameterValue()
@@ -334,7 +334,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinSMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMDevErrorDetect"].createParameterValue()
@@ -350,7 +350,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinSMMainProcessingPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMMainProcessingPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMMainProcessingPeriod"].createParameterValue()
@@ -366,7 +366,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinSMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinSMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinSMVersionInfoApi"].createParameterValue()
@@ -390,7 +390,7 @@ class LinSM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

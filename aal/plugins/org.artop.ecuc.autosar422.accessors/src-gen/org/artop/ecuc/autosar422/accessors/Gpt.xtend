@@ -174,7 +174,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			def void setGptChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelId"].createParameterValue()
@@ -190,7 +190,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			def void setGptChannelMode(GptChannelMode value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelMode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelMode"].createParameterValue()
@@ -223,7 +223,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			def void setGptChannelTickFrequency(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelTickFrequency"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelTickFrequency"].createParameterValue()
@@ -239,7 +239,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			def void setGptChannelTickValueMax(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptChannelTickValueMax"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptChannelTickValueMax"].createParameterValue()
@@ -255,7 +255,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			def void setGptEnableWakeup(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptEnableWakeup"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptEnableWakeup"].createParameterValue()
@@ -271,7 +271,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 			
 			def void setGptNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptNotification"].createParameterValue()
@@ -381,7 +381,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptDeinitApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptDeinitApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptDeinitApi"].createParameterValue()
@@ -397,7 +397,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptEnableDisableNotificationApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptEnableDisableNotificationApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptEnableDisableNotificationApi"].createParameterValue()
@@ -413,7 +413,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptTimeElapsedApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptTimeElapsedApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptTimeElapsedApi"].createParameterValue()
@@ -429,7 +429,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptTimeRemainingApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptTimeRemainingApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptTimeRemainingApi"].createParameterValue()
@@ -445,7 +445,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptVersionInfoApi"].createParameterValue()
@@ -461,7 +461,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptWakeupFunctionalityApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptWakeupFunctionalityApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptWakeupFunctionalityApi"].createParameterValue()
@@ -507,7 +507,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptDevErrorDetect"].createParameterValue()
@@ -523,7 +523,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptPredefTimer100us32bitEnable(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptPredefTimer100us32bitEnable"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptPredefTimer100us32bitEnable"].createParameterValue()
@@ -539,7 +539,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptPredefTimer1usEnablingGrade(GptPredefTimer1usEnablingGrade value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptPredefTimer1usEnablingGrade"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptPredefTimer1usEnablingGrade"].createParameterValue()
@@ -576,7 +576,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 		
 		def void setGptReportWakeupSource(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "GptReportWakeupSource"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "GptReportWakeupSource"].createParameterValue()
@@ -661,7 +661,7 @@ class Gpt implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

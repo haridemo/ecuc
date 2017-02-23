@@ -110,7 +110,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmBusSynchronizationEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmBusSynchronizationEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmBusSynchronizationEnabled"].createParameterValue()
@@ -126,7 +126,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmComControlEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmComControlEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmComControlEnabled"].createParameterValue()
@@ -142,7 +142,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmCoordinatorSyncSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmCoordinatorSyncSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmCoordinatorSyncSupport"].createParameterValue()
@@ -158,7 +158,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmDevErrorDetect"].createParameterValue()
@@ -174,7 +174,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmMainFunctionPeriod"].createParameterValue()
@@ -190,7 +190,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmNodeDetectionEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmNodeDetectionEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmNodeDetectionEnabled"].createParameterValue()
@@ -206,7 +206,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmNodeIdEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmNodeIdEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmNodeIdEnabled"].createParameterValue()
@@ -222,7 +222,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmPassiveModeEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmPassiveModeEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmPassiveModeEnabled"].createParameterValue()
@@ -238,7 +238,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmRemoteSleepIndicationEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmRemoteSleepIndicationEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmRemoteSleepIndicationEnabled"].createParameterValue()
@@ -254,7 +254,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmStateChangeIndEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmStateChangeIndEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmStateChangeIndEnabled"].createParameterValue()
@@ -270,7 +270,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmSynchronizationPointEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmSynchronizationPointEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmSynchronizationPointEnabled"].createParameterValue()
@@ -286,7 +286,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmUserDataEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmUserDataEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmUserDataEnabled"].createParameterValue()
@@ -302,7 +302,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinNmVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmVersionInfoApi"].createParameterValue()
@@ -366,7 +366,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinNmTimeoutTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinNmTimeoutTime"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinNmTimeoutTime"].createParameterValue()
@@ -403,7 +403,7 @@ class LinNm implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

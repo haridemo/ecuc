@@ -128,7 +128,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvChannelId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvChannelId"].createParameterValue()
@@ -144,7 +144,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvChannelUsed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvChannelUsed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvChannelUsed"].createParameterValue()
@@ -160,7 +160,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvInitState(LinTrcvInitState value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvInitState"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvInitState"].createParameterValue()
@@ -195,7 +195,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvWakeupByBusUsed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeupByBusUsed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWakeupByBusUsed"].createParameterValue()
@@ -362,7 +362,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 					
 					def void setLinTrcvHardwareInterfaceName(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvHardwareInterfaceName"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvHardwareInterfaceName"].createParameterValue()
@@ -457,7 +457,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvDevErrorDetect"].createParameterValue()
@@ -473,7 +473,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvIndex"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvIndex"].createParameterValue()
@@ -489,7 +489,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvTimerType(LinTrcvTimerType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvTimerType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvTimerType"].createParameterValue()
@@ -522,7 +522,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvVersionInfoApi"].createParameterValue()
@@ -538,7 +538,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvWaitTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWaitTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWaitTime"].createParameterValue()
@@ -554,7 +554,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinTrcvWakeUpSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinTrcvWakeUpSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinTrcvWakeUpSupport"].createParameterValue()
@@ -578,7 +578,7 @@ class LinTrcv implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

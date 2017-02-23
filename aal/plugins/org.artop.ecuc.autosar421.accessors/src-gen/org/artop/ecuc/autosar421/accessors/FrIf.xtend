@@ -118,7 +118,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfMaxPduCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfMaxPduCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfMaxPduCnt"].createParameterValue()
@@ -220,7 +220,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfClstIdx(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfClstIdx"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfClstIdx"].createParameterValue()
@@ -236,7 +236,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfDetectNITError(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDetectNITError"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfDetectNITError"].createParameterValue()
@@ -252,7 +252,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGChannels(FrIfGChannels value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGChannels"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGChannels"].createParameterValue()
@@ -287,7 +287,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGColdStartAttempts(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGColdStartAttempts"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGColdStartAttempts"].createParameterValue()
@@ -303,7 +303,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGCycleCountMax(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGCycleCountMax"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGCycleCountMax"].createParameterValue()
@@ -319,7 +319,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGListenNoise(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGListenNoise"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGListenNoise"].createParameterValue()
@@ -335,7 +335,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGMacroPerCycle(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGMacroPerCycle"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGMacroPerCycle"].createParameterValue()
@@ -351,7 +351,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGMaxWithoutClockCorrectFatal(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGMaxWithoutClockCorrectFatal"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGMaxWithoutClockCorrectFatal"].createParameterValue()
@@ -367,7 +367,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGMaxWithoutClockCorrectPassive(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGMaxWithoutClockCorrectPassive"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGMaxWithoutClockCorrectPassive"].createParameterValue()
@@ -383,7 +383,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGNetworkManagementVectorLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGNetworkManagementVectorLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGNetworkManagementVectorLength"].createParameterValue()
@@ -399,7 +399,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGNumberOfMinislots(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGNumberOfMinislots"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGNumberOfMinislots"].createParameterValue()
@@ -415,7 +415,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGNumberOfStaticSlots(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGNumberOfStaticSlots"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGNumberOfStaticSlots"].createParameterValue()
@@ -431,7 +431,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGPayloadLengthStatic(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGPayloadLengthStatic"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGPayloadLengthStatic"].createParameterValue()
@@ -447,7 +447,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGSyncFrameIDCountMax(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGSyncFrameIDCountMax"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGSyncFrameIDCountMax"].createParameterValue()
@@ -463,7 +463,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdActionPointOffset(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdActionPointOffset"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdActionPointOffset"].createParameterValue()
@@ -479,7 +479,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdBit(FrIfGdBit value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdBit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdBit"].createParameterValue()
@@ -514,7 +514,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdCasRxLowMax(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdCasRxLowMax"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdCasRxLowMax"].createParameterValue()
@@ -530,7 +530,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdCycle(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdCycle"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdCycle"].createParameterValue()
@@ -546,7 +546,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdDynamicSlotIdlePhase(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdDynamicSlotIdlePhase"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdDynamicSlotIdlePhase"].createParameterValue()
@@ -562,7 +562,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdIgnoreAfterTx(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdIgnoreAfterTx"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdIgnoreAfterTx"].createParameterValue()
@@ -578,7 +578,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdMacrotick(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdMacrotick"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdMacrotick"].createParameterValue()
@@ -594,7 +594,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdMiniSlotActionPointOffset(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdMiniSlotActionPointOffset"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdMiniSlotActionPointOffset"].createParameterValue()
@@ -610,7 +610,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdMinislot(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdMinislot"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdMinislot"].createParameterValue()
@@ -626,7 +626,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdNit(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdNit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdNit"].createParameterValue()
@@ -642,7 +642,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdSampleClockPeriod(FrIfGdSampleClockPeriod value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdSampleClockPeriod"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdSampleClockPeriod"].createParameterValue()
@@ -677,7 +677,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdStaticSlot(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdStaticSlot"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdStaticSlot"].createParameterValue()
@@ -693,7 +693,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdSymbolWindow(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdSymbolWindow"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdSymbolWindow"].createParameterValue()
@@ -709,7 +709,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdSymbolWindowActionPointOffset(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdSymbolWindowActionPointOffset"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdSymbolWindowActionPointOffset"].createParameterValue()
@@ -725,7 +725,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdTSSTransmitter(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdTSSTransmitter"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdTSSTransmitter"].createParameterValue()
@@ -741,7 +741,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdWakeupRxIdle(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdWakeupRxIdle"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdWakeupRxIdle"].createParameterValue()
@@ -757,7 +757,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdWakeupRxLow(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdWakeupRxLow"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdWakeupRxLow"].createParameterValue()
@@ -773,7 +773,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdWakeupRxWindow(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdWakeupRxWindow"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdWakeupRxWindow"].createParameterValue()
@@ -789,7 +789,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdWakeupTxActive(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdWakeupTxActive"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdWakeupTxActive"].createParameterValue()
@@ -805,7 +805,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfGdWakeupTxIdle(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGdWakeupTxIdle"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGdWakeupTxIdle"].createParameterValue()
@@ -821,7 +821,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfMainFunctionPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfMainFunctionPeriod"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfMainFunctionPeriod"].createParameterValue()
@@ -837,7 +837,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfSafetyMargin(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfSafetyMargin"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfSafetyMargin"].createParameterValue()
@@ -1016,7 +1016,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrIfCtrlIdx(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCtrlIdx"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCtrlIdx"].createParameterValue()
@@ -1129,7 +1129,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfAllowDynamicLSduLength(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAllowDynamicLSduLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfAllowDynamicLSduLength"].createParameterValue()
@@ -1145,7 +1145,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfAlwaysTransmit(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAlwaysTransmit"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfAlwaysTransmit"].createParameterValue()
@@ -1161,7 +1161,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfBaseCycle(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfBaseCycle"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfBaseCycle"].createParameterValue()
@@ -1177,7 +1177,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfChannel(FrIfChannel value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfChannel"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfChannel"].createParameterValue()
@@ -1212,7 +1212,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfCycleRepetition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCycleRepetition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCycleRepetition"].createParameterValue()
@@ -1228,7 +1228,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfLSduLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfLSduLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfLSduLength"].createParameterValue()
@@ -1244,7 +1244,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfMessageId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfMessageId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfMessageId"].createParameterValue()
@@ -1260,7 +1260,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfPayloadPreamble(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfPayloadPreamble"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfPayloadPreamble"].createParameterValue()
@@ -1276,7 +1276,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfSlotId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfSlotId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfSlotId"].createParameterValue()
@@ -1385,7 +1385,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfLPduIdx(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfLPduIdx"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfLPduIdx"].createParameterValue()
@@ -1401,7 +1401,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfReconfigurable(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReconfigurable"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfReconfigurable"].createParameterValue()
@@ -1459,7 +1459,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfClusterChannel(FrIfClusterChannel value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfClusterChannel"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfClusterChannel"].createParameterValue()
@@ -1595,7 +1595,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfCycle(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCycle"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCycle"].createParameterValue()
@@ -1611,7 +1611,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfMacrotick(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfMacrotick"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfMacrotick"].createParameterValue()
@@ -1627,7 +1627,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfMaxIsrDelay(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfMaxIsrDelay"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfMaxIsrDelay"].createParameterValue()
@@ -1691,7 +1691,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setFrIfCommunicationAction(FrIfCommunicationAction value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCommunicationAction"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCommunicationAction"].createParameterValue()
@@ -1736,7 +1736,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setFrIfCommunicationOperationIdx(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCommunicationOperationIdx"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCommunicationOperationIdx"].createParameterValue()
@@ -1752,7 +1752,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setFrIfRxComOpMaxLoop(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfRxComOpMaxLoop"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfRxComOpMaxLoop"].createParameterValue()
@@ -1816,7 +1816,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setFrIfByteOrder(FrIfByteOrder value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfByteOrder"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfByteOrder"].createParameterValue()
@@ -1897,7 +1897,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrIfPduOffset(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfPduOffset"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfPduOffset"].createParameterValue()
@@ -1913,7 +1913,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setFrIfPduUpdateBitOffset(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfPduUpdateBitOffset"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfPduUpdateBitOffset"].createParameterValue()
@@ -2054,7 +2054,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfRxIndicationName(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfRxIndicationName"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfRxIndicationName"].createParameterValue()
@@ -2070,7 +2070,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfUserRxIndicationUL(FrIfUserRxIndicationUL value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfUserRxIndicationUL"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfUserRxIndicationUL"].createParameterValue()
@@ -2153,7 +2153,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfConfirm(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfConfirm"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfConfirm"].createParameterValue()
@@ -2169,7 +2169,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfCounterLimit(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCounterLimit"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCounterLimit"].createParameterValue()
@@ -2185,7 +2185,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfImmediate(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfImmediate"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfImmediate"].createParameterValue()
@@ -2201,7 +2201,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfNoneMode(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfNoneMode"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfNoneMode"].createParameterValue()
@@ -2217,7 +2217,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfTxConfirmationName(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfTxConfirmationName"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfTxConfirmationName"].createParameterValue()
@@ -2233,7 +2233,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfTxPduId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfTxPduId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfTxPduId"].createParameterValue()
@@ -2249,7 +2249,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfUserTriggerTransmitName(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfUserTriggerTransmitName"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfUserTriggerTransmitName"].createParameterValue()
@@ -2265,7 +2265,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setFrIfUserTxUL(FrIfUserTxUL value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfUserTxUL"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfUserTxUL"].createParameterValue()
@@ -2355,7 +2355,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfAbsTimerIdx(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAbsTimerIdx"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfAbsTimerIdx"].createParameterValue()
@@ -2371,7 +2371,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfAllSlotsSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfAllSlotsSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfAllSlotsSupport"].createParameterValue()
@@ -2387,7 +2387,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfCancelTransmitSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfCancelTransmitSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfCancelTransmitSupport"].createParameterValue()
@@ -2403,7 +2403,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfDevErrorDetect"].createParameterValue()
@@ -2419,7 +2419,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfDisableLPduSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDisableLPduSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfDisableLPduSupport"].createParameterValue()
@@ -2435,7 +2435,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfDisableTransceiverBranchSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfDisableTransceiverBranchSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfDisableTransceiverBranchSupport"].createParameterValue()
@@ -2451,7 +2451,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfEnableTransceiverBranchSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfEnableTransceiverBranchSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfEnableTransceiverBranchSupport"].createParameterValue()
@@ -2467,7 +2467,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfFreeOpAApiName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfFreeOpAApiName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfFreeOpAApiName"].createParameterValue()
@@ -2483,7 +2483,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfFreeOpBApiName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfFreeOpBApiName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfFreeOpBApiName"].createParameterValue()
@@ -2499,7 +2499,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfFreeOpsHeader(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfFreeOpsHeader"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfFreeOpsHeader"].createParameterValue()
@@ -2515,7 +2515,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetClockCorrectionSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetClockCorrectionSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetClockCorrectionSupport"].createParameterValue()
@@ -2531,7 +2531,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetGetChannelStatusSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetGetChannelStatusSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetGetChannelStatusSupport"].createParameterValue()
@@ -2547,7 +2547,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetNmVectorSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetNmVectorSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetNmVectorSupport"].createParameterValue()
@@ -2563,7 +2563,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetNumOfStartupFramesSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetNumOfStartupFramesSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetNumOfStartupFramesSupport"].createParameterValue()
@@ -2579,7 +2579,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetSyncFrameListSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetSyncFrameListSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetSyncFrameListSupport"].createParameterValue()
@@ -2595,7 +2595,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetTransceiverErrorSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetTransceiverErrorSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetTransceiverErrorSupport"].createParameterValue()
@@ -2611,7 +2611,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfGetWakeupRxStatusSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfGetWakeupRxStatusSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfGetWakeupRxStatusSupport"].createParameterValue()
@@ -2627,7 +2627,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfNumClstSupported(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfNumClstSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfNumClstSupported"].createParameterValue()
@@ -2643,7 +2643,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfNumCtrlSupported(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfNumCtrlSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfNumCtrlSupported"].createParameterValue()
@@ -2672,7 +2672,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfReadCCConfigApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReadCCConfigApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfReadCCConfigApi"].createParameterValue()
@@ -2688,7 +2688,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfReconfigLPduSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfReconfigLPduSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfReconfigLPduSupport"].createParameterValue()
@@ -2704,7 +2704,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfUnusedBitValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfUnusedBitValue"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfUnusedBitValue"].createParameterValue()
@@ -2720,7 +2720,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setFrIfVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "FrIfVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "FrIfVersionInfoApi"].createParameterValue()
@@ -2744,7 +2744,7 @@ class FrIf implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -204,7 +204,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpDaqListNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqListNumber"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpDaqListNumber"].createParameterValue()
@@ -220,7 +220,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpDaqListType(XcpDaqListType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqListType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpDaqListType"].createParameterValue()
@@ -255,7 +255,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpMaxOdt(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdt"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMaxOdt"].createParameterValue()
@@ -271,7 +271,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpMaxOdtEntries(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxOdtEntries"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMaxOdtEntries"].createParameterValue()
@@ -354,7 +354,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				def void setXcpDtoPid(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDtoPid"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpDtoPid"].createParameterValue()
@@ -402,7 +402,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				def void setXcpOdtEntryMaxSize(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryMaxSize"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntryMaxSize"].createParameterValue()
@@ -418,7 +418,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				def void setXcpOdtNumber(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtNumber"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtNumber"].createParameterValue()
@@ -493,7 +493,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					
 					def void setXcpOdtEntryAddress(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryAddress"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntryAddress"].createParameterValue()
@@ -509,7 +509,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					
 					def void setXcpOdtEntryBitOffset(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryBitOffset"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntryBitOffset"].createParameterValue()
@@ -525,7 +525,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					
 					def void setXcpOdtEntryLength(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryLength"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntryLength"].createParameterValue()
@@ -541,7 +541,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					
 					def void setXcpOdtEntryNumber(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntryNumber"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntryNumber"].createParameterValue()
@@ -592,7 +592,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelConsistency(XcpEventChannelConsistency value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelConsistency"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelConsistency"].createParameterValue()
@@ -627,7 +627,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelMaxDaqList(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelMaxDaqList"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelMaxDaqList"].createParameterValue()
@@ -643,7 +643,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelNumber"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelNumber"].createParameterValue()
@@ -659,7 +659,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelPriority"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelPriority"].createParameterValue()
@@ -675,7 +675,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelTimeCycle(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelTimeCycle"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelTimeCycle"].createParameterValue()
@@ -691,7 +691,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelTimeUnit(XcpEventChannelTimeUnit value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelTimeUnit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelTimeUnit"].createParameterValue()
@@ -746,7 +746,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 			def void setXcpEventChannelType(XcpEventChannelType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpEventChannelType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpEventChannelType"].createParameterValue()
@@ -789,7 +789,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -799,7 +799,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar421.accessors.Xcp.XcpConfig.XcpDaqList(referenceValueValue as GContainer)
@@ -888,7 +888,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				def void setXcpRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpRxPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpRxPduId"].createParameterValue()
@@ -946,7 +946,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 				
 				def void setXcpTxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTxPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpTxPduId"].createParameterValue()
@@ -1007,7 +1007,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpDaqConfigType(XcpDaqConfigType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqConfigType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpDaqConfigType"].createParameterValue()
@@ -1040,7 +1040,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpDaqCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDaqCount"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpDaqCount"].createParameterValue()
@@ -1056,7 +1056,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpDevErrorDetect"].createParameterValue()
@@ -1072,7 +1072,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpFlashProgrammingEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpFlashProgrammingEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpFlashProgrammingEnabled"].createParameterValue()
@@ -1088,7 +1088,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpIdentificationFieldType(XcpIdentificationFieldType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpIdentificationFieldType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpIdentificationFieldType"].createParameterValue()
@@ -1125,7 +1125,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMainFunctionPeriod"].createParameterValue()
@@ -1141,7 +1141,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpMaxCto(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxCto"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMaxCto"].createParameterValue()
@@ -1157,7 +1157,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpMaxDto(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxDto"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMaxDto"].createParameterValue()
@@ -1173,7 +1173,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpMaxEventChannel(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMaxEventChannel"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMaxEventChannel"].createParameterValue()
@@ -1189,7 +1189,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpMinDaq(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpMinDaq"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpMinDaq"].createParameterValue()
@@ -1205,7 +1205,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOdtCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtCount"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtCount"].createParameterValue()
@@ -1221,7 +1221,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOdtEntriesCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntriesCount"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntriesCount"].createParameterValue()
@@ -1237,7 +1237,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOdtEntrySizeDaq(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeDaq"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntrySizeDaq"].createParameterValue()
@@ -1253,7 +1253,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOdtEntrySizeStim(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOdtEntrySizeStim"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOdtEntrySizeStim"].createParameterValue()
@@ -1269,7 +1269,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOnCanEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnCanEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOnCanEnabled"].createParameterValue()
@@ -1285,7 +1285,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOnCddEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnCddEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOnCddEnabled"].createParameterValue()
@@ -1301,7 +1301,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOnEthernetEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnEthernetEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOnEthernetEnabled"].createParameterValue()
@@ -1317,7 +1317,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpOnFlexRayEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpOnFlexRayEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpOnFlexRayEnabled"].createParameterValue()
@@ -1333,7 +1333,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpPrescalerSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpPrescalerSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpPrescalerSupported"].createParameterValue()
@@ -1349,7 +1349,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpSuppressTxSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpSuppressTxSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpSuppressTxSupport"].createParameterValue()
@@ -1365,7 +1365,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpTimestampTicks(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTimestampTicks"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpTimestampTicks"].createParameterValue()
@@ -1381,7 +1381,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpTimestampType(XcpTimestampType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTimestampType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpTimestampType"].createParameterValue()
@@ -1418,7 +1418,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpTimestampUnit(XcpTimestampUnit value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpTimestampUnit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpTimestampUnit"].createParameterValue()
@@ -1473,7 +1473,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 		
 		def void setXcpVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "XcpVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "XcpVersionInfoApi"].createParameterValue()
@@ -1519,7 +1519,7 @@ class Xcp implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

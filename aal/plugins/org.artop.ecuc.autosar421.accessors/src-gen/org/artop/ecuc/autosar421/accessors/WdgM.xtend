@@ -250,7 +250,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			def void setWdgMExpiredSupervisionCycleTol(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpiredSupervisionCycleTol"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMExpiredSupervisionCycleTol"].createParameterValue()
@@ -266,7 +266,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			def void setWdgMModeId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMModeId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMModeId"].createParameterValue()
@@ -282,7 +282,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			def void setWdgMSupervisionCycle(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionCycle"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMSupervisionCycle"].createParameterValue()
@@ -422,7 +422,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMExpectedAliveIndications(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMExpectedAliveIndications"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMExpectedAliveIndications"].createParameterValue()
@@ -438,7 +438,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMMaxMargin(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMaxMargin"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMMaxMargin"].createParameterValue()
@@ -454,7 +454,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMMinMargin(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMMinMargin"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMMinMargin"].createParameterValue()
@@ -470,7 +470,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMSupervisionReferenceCycle(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisionReferenceCycle"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMSupervisionReferenceCycle"].createParameterValue()
@@ -528,7 +528,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMDeadlineMax(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMax"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMDeadlineMax"].createParameterValue()
@@ -544,7 +544,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMDeadlineMin(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDeadlineMin"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMDeadlineMin"].createParameterValue()
@@ -621,7 +621,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint)) {
 						override protected wrap(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -631,7 +631,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint(referenceValueValue as GContainer)
@@ -654,7 +654,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 					return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint)) {
 						override protected wrap(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object) throws CoreException {
-							if (object != null) {
+							if (object !== null) {
 								val container = object.getTarget()
 								val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 								referenceValue.gSetDefinition(referenceValueDef)
@@ -664,7 +664,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 						}
 				
 						override protected unwrap(GReferenceValue referenceValue) {
-							if (referenceValue != null) {
+							if (referenceValue !== null) {
 								val referenceValueValue = referenceValue.gGetValue
 								if (referenceValueValue instanceof GContainer) {
 									return new org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint(referenceValueValue as GContainer)
@@ -782,7 +782,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMFailedAliveSupervisionRefCycleTol(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMFailedAliveSupervisionRefCycleTol"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMFailedAliveSupervisionRefCycleTol"].createParameterValue()
@@ -840,7 +840,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMTriggerConditionValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMTriggerConditionValue"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMTriggerConditionValue"].createParameterValue()
@@ -856,7 +856,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMWatchdogMode(WdgMWatchdogMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMWatchdogMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMWatchdogMode"].createParameterValue()
@@ -936,7 +936,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		def void setWdgMDefensiveBehavior(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDefensiveBehavior"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMDefensiveBehavior"].createParameterValue()
@@ -952,7 +952,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		def void setWdgMDemStoppedSupervisionReport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDemStoppedSupervisionReport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMDemStoppedSupervisionReport"].createParameterValue()
@@ -968,7 +968,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		def void setWdgMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMDevErrorDetect"].createParameterValue()
@@ -984,7 +984,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		def void setWdgMImmediateReset(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMImmediateReset"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMImmediateReset"].createParameterValue()
@@ -1000,7 +1000,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		def void setWdgMOffModeEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMOffModeEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMOffModeEnabled"].createParameterValue()
@@ -1016,7 +1016,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 		
 		def void setWdgMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMVersionInfoApi"].createParameterValue()
@@ -1152,7 +1152,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			def void setWdgMSupervisedEntityId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMSupervisedEntityId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMSupervisedEntityId"].createParameterValue()
@@ -1220,7 +1220,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -1230,7 +1230,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar421.accessors.WdgM.WdgMGeneral.WdgMSupervisedEntity.WdgMCheckpoint(referenceValueValue as GContainer)
@@ -1312,7 +1312,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 				
 				def void setWdgMCheckpointId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMCheckpointId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMCheckpointId"].createParameterValue()
@@ -1414,7 +1414,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 			
 			def void setWdgMWatchdogName(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "WdgMWatchdogName"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "WdgMWatchdogName"].createParameterValue()
@@ -1451,7 +1451,7 @@ class WdgM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

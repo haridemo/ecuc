@@ -128,7 +128,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynDestPhyAddr(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynDestPhyAddr"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynDestPhyAddr"].createParameterValue()
@@ -144,7 +144,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynDevErrorDetect"].createParameterValue()
@@ -160,7 +160,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynGlobalTimeRxToUplinkSwitchResidenceTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeRxToUplinkSwitchResidenceTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeRxToUplinkSwitchResidenceTime"].createParameterValue()
@@ -176,7 +176,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynGlobalTimeUplinkToTxSwitchResidenceTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeUplinkToTxSwitchResidenceTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeUplinkToTxSwitchResidenceTime"].createParameterValue()
@@ -192,7 +192,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynHardwareTimestampSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynHardwareTimestampSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynHardwareTimestampSupport"].createParameterValue()
@@ -208,7 +208,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynMainFunctionPeriod"].createParameterValue()
@@ -224,7 +224,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynMasterSlaveConflictDetection(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynMasterSlaveConflictDetection"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynMasterSlaveConflictDetection"].createParameterValue()
@@ -240,7 +240,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynMessageCompliance(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynMessageCompliance"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynMessageCompliance"].createParameterValue()
@@ -256,7 +256,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynSwitchMgmtRxMessageBufferCount(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynSwitchMgmtRxMessageBufferCount"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynSwitchMgmtRxMessageBufferCount"].createParameterValue()
@@ -272,7 +272,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynVersionInfoApi"].createParameterValue()
@@ -329,7 +329,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 		
 		def void setEthTSynGlobalTimeDomainId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeDomainId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeDomainId"].createParameterValue()
@@ -461,7 +461,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				
 				def void setEthTSynGlobalTimeFollowUpDataIDListIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeFollowUpDataIDListIndex"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeFollowUpDataIDListIndex"].createParameterValue()
@@ -477,7 +477,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				
 				def void setEthTSynGlobalTimeFollowUpDataIDListValue(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeFollowUpDataIDListValue"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeFollowUpDataIDListValue"].createParameterValue()
@@ -526,7 +526,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			
 			def void setEthTSynFramePrio(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynFramePrio"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynFramePrio"].createParameterValue()
@@ -542,7 +542,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 			
 			def void setEthTSynGlobalTimeDebounceTime(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeDebounceTime"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeDebounceTime"].createParameterValue()
@@ -627,7 +627,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				
 				def void setEthTSynGlobalTimePdelayRespEnable(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimePdelayRespEnable"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimePdelayRespEnable"].createParameterValue()
@@ -643,7 +643,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				
 				def void setEthTSynGlobalTimePropagationDelay(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimePropagationDelay"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimePropagationDelay"].createParameterValue()
@@ -659,7 +659,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				
 				def void setEthTSynGlobalTimeTxPdelayReqPeriod(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeTxPdelayReqPeriod"].createParameterValue()
@@ -675,7 +675,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 				
 				def void setEthTSynPdelayRespAndRespFollowUpTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynPdelayRespAndRespFollowUpTimeout"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynPdelayRespAndRespFollowUpTimeout"].createParameterValue()
@@ -765,7 +765,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynCyclicMsgResumeTime(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCyclicMsgResumeTime"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCyclicMsgResumeTime"].createParameterValue()
@@ -781,7 +781,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynGlobalTimeTxCrcSecured(EthTSynGlobalTimeTxCrcSecured value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxCrcSecured"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeTxCrcSecured"].createParameterValue()
@@ -814,7 +814,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynGlobalTimeTxPeriod(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeTxPeriod"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeTxPeriod"].createParameterValue()
@@ -830,7 +830,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynImmediateTimeSync(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynImmediateTimeSync"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynImmediateTimeSync"].createParameterValue()
@@ -846,7 +846,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynIsSystemWideGlobalTimeMaster(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynIsSystemWideGlobalTimeMaster"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynIsSystemWideGlobalTimeMaster"].createParameterValue()
@@ -862,7 +862,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynTLVFollowUpOFSSubTLV(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTLVFollowUpOFSSubTLV"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynTLVFollowUpOFSSubTLV"].createParameterValue()
@@ -878,7 +878,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynTLVFollowUpStatusSubTLV(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTLVFollowUpStatusSubTLV"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynTLVFollowUpStatusSubTLV"].createParameterValue()
@@ -894,7 +894,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynTLVFollowUpTimeSubTLV(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTLVFollowUpTimeSubTLV"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynTLVFollowUpTimeSubTLV"].createParameterValue()
@@ -910,7 +910,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynTLVFollowUpUserDataSubTLV(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynTLVFollowUpUserDataSubTLV"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynTLVFollowUpUserDataSubTLV"].createParameterValue()
@@ -964,7 +964,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcCorrectionField(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcCorrectionField"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcCorrectionField"].createParameterValue()
@@ -980,7 +980,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcDomainNumber(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcDomainNumber"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcDomainNumber"].createParameterValue()
@@ -996,7 +996,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcMessageLength(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcMessageLength"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcMessageLength"].createParameterValue()
@@ -1012,7 +1012,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcPreciseOriginTimestamp(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcPreciseOriginTimestamp"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcPreciseOriginTimestamp"].createParameterValue()
@@ -1028,7 +1028,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcSequenceId(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcSequenceId"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcSequenceId"].createParameterValue()
@@ -1044,7 +1044,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcSourcePortIdentity(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcSourcePortIdentity"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcSourcePortIdentity"].createParameterValue()
@@ -1093,7 +1093,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynGlobalTimeFollowUpTimeout(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynGlobalTimeFollowUpTimeout"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynGlobalTimeFollowUpTimeout"].createParameterValue()
@@ -1109,7 +1109,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 					
 					def void setEthTSynRxCrcValidated(EthTSynRxCrcValidated value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynRxCrcValidated"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynRxCrcValidated"].createParameterValue()
@@ -1184,7 +1184,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcCorrectionField(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcCorrectionField"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcCorrectionField"].createParameterValue()
@@ -1200,7 +1200,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcDomainNumber(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcDomainNumber"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcDomainNumber"].createParameterValue()
@@ -1216,7 +1216,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcMessageLength(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcMessageLength"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcMessageLength"].createParameterValue()
@@ -1232,7 +1232,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcPreciseOriginTimestamp(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcPreciseOriginTimestamp"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcPreciseOriginTimestamp"].createParameterValue()
@@ -1248,7 +1248,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcSequenceId(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcSequenceId"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcSequenceId"].createParameterValue()
@@ -1264,7 +1264,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 						
 						def void setEthTSynCrcSourcePortIdentity(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "EthTSynCrcSourcePortIdentity"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "EthTSynCrcSourcePortIdentity"].createParameterValue()
@@ -1296,7 +1296,7 @@ class EthTSyn implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

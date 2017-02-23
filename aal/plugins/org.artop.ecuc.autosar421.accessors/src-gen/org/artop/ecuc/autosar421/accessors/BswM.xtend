@@ -300,7 +300,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				def void setBswMLogicalOperator(BswMLogicalOperator value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLogicalOperator"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMLogicalOperator"].createParameterValue()
@@ -369,7 +369,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				def void setBswMConditionType(BswMConditionType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMConditionType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMConditionType"].createParameterValue()
@@ -494,7 +494,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMBswRequestedMode(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMBswRequestedMode"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMBswRequestedMode"].createParameterValue()
@@ -548,7 +548,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 							
 							def void setBswMCompuConstText(String value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCompuConstText"]
-								if (parameterValue == null) {
+								if (parameterValue === null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
 										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMCompuConstText"].createParameterValue()
@@ -634,7 +634,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				def void setBswMRequestProcessing(BswMRequestProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMRequestProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMRequestProcessing"].createParameterValue()
@@ -714,7 +714,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					
 					def void setBswMBswModeInitValue(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMBswModeInitValue"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMBswModeInitValue"].createParameterValue()
@@ -768,7 +768,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMCompuConstText(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCompuConstText"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMCompuConstText"].createParameterValue()
@@ -1189,7 +1189,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMCanSMIcomIndicationSwitchError(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMIcomIndicationSwitchError"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMCanSMIcomIndicationSwitchError"].createParameterValue()
@@ -1508,7 +1508,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMEcuMRUNRequestProtocolPort(BswMEcuMRUNRequestProtocolPort value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMRUNRequestProtocolPort"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMEcuMRUNRequestProtocolPort"].createParameterValue()
@@ -1698,7 +1698,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMModeRequesterId(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMModeRequesterId"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMModeRequesterId"].createParameterValue()
@@ -1714,7 +1714,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMRequestedModeMax(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMRequestedModeMax"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMRequestedModeMax"].createParameterValue()
@@ -2035,7 +2035,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMNvmService(BswMNvmService value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNvmService"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMNvmService"].createParameterValue()
@@ -2408,7 +2408,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				def void setBswMNestedExecutionOnly(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNestedExecutionOnly"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMNestedExecutionOnly"].createParameterValue()
@@ -2424,7 +2424,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				def void setBswMRuleInitState(BswMRuleInitState value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMRuleInitState"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMRuleInitState"].createParameterValue()
@@ -2959,7 +2959,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMComAllowed(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComAllowed"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMComAllowed"].createParameterValue()
@@ -3017,7 +3017,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMComMLimitMode(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMLimitMode"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMComMLimitMode"].createParameterValue()
@@ -3075,7 +3075,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMComMRequestedMode(BswMComMRequestedMode value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMRequestedMode"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMComMRequestedMode"].createParameterValue()
@@ -3150,7 +3150,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMCoreHaltActivationState(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCoreHaltActivationState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMCoreHaltActivationState"].createParameterValue()
@@ -3216,7 +3216,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
-									if (object != null) {
+									if (object !== null) {
 										val container = object.getTarget()
 										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 										referenceValue.gSetDefinition(referenceValueDef)
@@ -3226,7 +3226,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								}
 						
 								override protected unwrap(GReferenceValue referenceValue) {
-									if (referenceValue != null) {
+									if (referenceValue !== null) {
 										val referenceValueValue = referenceValue.gGetValue
 										if (referenceValueValue instanceof GContainer) {
 											return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
@@ -3249,7 +3249,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
-									if (object != null) {
+									if (object !== null) {
 										val container = object.getTarget()
 										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 										referenceValue.gSetDefinition(referenceValueDef)
@@ -3259,7 +3259,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								}
 						
 								override protected unwrap(GReferenceValue referenceValue) {
-									if (referenceValue != null) {
+									if (referenceValue !== null) {
 										val referenceValueValue = referenceValue.gGetValue
 										if (referenceValueValue instanceof GContainer) {
 											return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
@@ -3409,7 +3409,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMEcuMShutdownTarget(BswMEcuMShutdownTarget value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMShutdownTarget"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMEcuMShutdownTarget"].createParameterValue()
@@ -3497,7 +3497,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMEcuMState(BswMEcuMState value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMEcuMState"].createParameterValue()
@@ -3609,7 +3609,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMJ1939DcmRequestedState(BswMJ1939DcmRequestedState value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939DcmRequestedState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMJ1939DcmRequestedState"].createParameterValue()
@@ -3695,7 +3695,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMJ1939RmRequestedState(BswMJ1939RmRequestedState value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939RmRequestedState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMJ1939RmRequestedState"].createParameterValue()
@@ -3823,7 +3823,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMNMAction(BswMNMAction value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNMAction"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMNMAction"].createParameterValue()
@@ -3898,7 +3898,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMPduGroupSwitchReinit(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduGroupSwitchReinit"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMPduGroupSwitchReinit"].createParameterValue()
@@ -3922,7 +3922,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
-									if (object != null) {
+									if (object !== null) {
 										val container = object.getTarget()
 										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 										referenceValue.gSetDefinition(referenceValueDef)
@@ -3932,7 +3932,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								}
 						
 								override protected unwrap(GReferenceValue referenceValue) {
-									if (referenceValue != null) {
+									if (referenceValue !== null) {
 										val referenceValueValue = referenceValue.gGetValue
 										if (referenceValueValue instanceof GContainer) {
 											return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
@@ -3955,7 +3955,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup object) throws CoreException {
-									if (object != null) {
+									if (object !== null) {
 										val container = object.getTarget()
 										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 										referenceValue.gSetDefinition(referenceValueDef)
@@ -3965,7 +3965,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								}
 						
 								override protected unwrap(GReferenceValue referenceValue) {
-									if (referenceValue != null) {
+									if (referenceValue !== null) {
 										val referenceValueValue = referenceValue.gGetValue
 										if (referenceValueValue instanceof GContainer) {
 											return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPduGroup(referenceValueValue as GContainer)
@@ -4011,7 +4011,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMPduRouterAction(BswMPduRouterAction value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduRouterAction"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMPduRouterAction"].createParameterValue()
@@ -4044,7 +4044,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMPduRouterDisableInitBuffer(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMPduRouterDisableInitBuffer"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMPduRouterDisableInitBuffer"].createParameterValue()
@@ -4068,7 +4068,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingPathGroup>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingPathGroup)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingPathGroup object) throws CoreException {
-									if (object != null) {
+									if (object !== null) {
 										val container = object.getTarget()
 										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 										referenceValue.gSetDefinition(referenceValueDef)
@@ -4078,7 +4078,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								}
 						
 								override protected unwrap(GReferenceValue referenceValue) {
-									if (referenceValue != null) {
+									if (referenceValue !== null) {
 										val referenceValueValue = referenceValue.gGetValue
 										if (referenceValueValue instanceof GContainer) {
 											return new org.artop.ecuc.autosar421.accessors.PduR.PduRRoutingTables.PduRRoutingPathGroup(referenceValueValue as GContainer)
@@ -4287,7 +4287,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMSdClientServiceState(BswMSdClientServiceState value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSdClientServiceState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMSdClientServiceState"].createParameterValue()
@@ -4362,7 +4362,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMSdConsumedEventGroupState(BswMSdConsumedEventGroupState value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSdConsumedEventGroupState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMSdConsumedEventGroupState"].createParameterValue()
@@ -4437,7 +4437,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMSdServerServiceState(BswMSdServerServiceState value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSdServerServiceState"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMSdServerServiceState"].createParameterValue()
@@ -4512,7 +4512,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMSwitchIPduModeValue(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSwitchIPduModeValue"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMSwitchIPduModeValue"].createParameterValue()
@@ -4578,7 +4578,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 							return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPdu>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPdu)) {
 								override protected wrap(org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPdu object) throws CoreException {
-									if (object != null) {
+									if (object !== null) {
 										val container = object.getTarget()
 										val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 										referenceValue.gSetDefinition(referenceValueDef)
@@ -4588,7 +4588,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 								}
 						
 								override protected unwrap(GReferenceValue referenceValue) {
-									if (referenceValue != null) {
+									if (referenceValue !== null) {
 										val referenceValueValue = referenceValue.gGetValue
 										if (referenceValueValue instanceof GContainer) {
 											return new org.artop.ecuc.autosar421.accessors.Com.ComConfig.ComIPdu(referenceValueValue as GContainer)
@@ -4718,7 +4718,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 						
 						def void setBswMUserCalloutFunction(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMUserCalloutFunction"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMUserCalloutFunction"].createParameterValue()
@@ -4769,7 +4769,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 				
 				def void setBswMActionListExecution(BswMActionListExecution value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMActionListExecution"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMActionListExecution"].createParameterValue()
@@ -4850,7 +4850,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					
 					def void setBswMAbortOnFail(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMAbortOnFail"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMAbortOnFail"].createParameterValue()
@@ -4866,7 +4866,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 					
 					def void setBswMActionListItemIndex(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMActionListItemIndex"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMActionListItemIndex"].createParameterValue()
@@ -4995,7 +4995,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMCanSMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMCanSMEnabled"].createParameterValue()
@@ -5011,7 +5011,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMCanSMIcomEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMCanSMIcomEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMCanSMIcomEnabled"].createParameterValue()
@@ -5027,7 +5027,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMComMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMComMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMComMEnabled"].createParameterValue()
@@ -5043,7 +5043,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMDcmEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMDcmEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMDcmEnabled"].createParameterValue()
@@ -5059,7 +5059,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMDevErrorDetect"].createParameterValue()
@@ -5075,7 +5075,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMEcuMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEcuMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMEcuMEnabled"].createParameterValue()
@@ -5091,7 +5091,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMEthSMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMEthSMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMEthSMEnabled"].createParameterValue()
@@ -5107,7 +5107,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMFrSMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMFrSMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMFrSMEnabled"].createParameterValue()
@@ -5123,7 +5123,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMGenericRequestEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMGenericRequestEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMGenericRequestEnabled"].createParameterValue()
@@ -5139,7 +5139,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMJ1939DcmEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939DcmEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMJ1939DcmEnabled"].createParameterValue()
@@ -5155,7 +5155,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMJ1939NmEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMJ1939NmEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMJ1939NmEnabled"].createParameterValue()
@@ -5171,7 +5171,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMLinSMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLinSMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMLinSMEnabled"].createParameterValue()
@@ -5187,7 +5187,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMLinTPEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMLinTPEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMLinTPEnabled"].createParameterValue()
@@ -5203,7 +5203,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMMainFunctionPeriod"].createParameterValue()
@@ -5219,7 +5219,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMNvMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMNvMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMNvMEnabled"].createParameterValue()
@@ -5235,7 +5235,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMSchMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMSchMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMSchMEnabled"].createParameterValue()
@@ -5251,7 +5251,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMVersionInfoApi"].createParameterValue()
@@ -5267,7 +5267,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 		
 		def void setBswMWdgMEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "BswMWdgMEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "BswMWdgMEnabled"].createParameterValue()
@@ -5344,7 +5344,7 @@ class BswM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

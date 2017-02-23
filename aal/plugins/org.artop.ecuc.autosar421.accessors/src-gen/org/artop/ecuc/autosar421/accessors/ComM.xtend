@@ -118,7 +118,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMPncEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncEnabled"].createParameterValue()
@@ -220,7 +220,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMBusType(ComMBusType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMBusType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMBusType"].createParameterValue()
@@ -261,7 +261,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMCDDBusPrefix(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMCDDBusPrefix"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMCDDBusPrefix"].createParameterValue()
@@ -277,7 +277,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMChannelId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMChannelId"].createParameterValue()
@@ -293,7 +293,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMFullCommRequestNotificationEnabled(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMFullCommRequestNotificationEnabled"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMFullCommRequestNotificationEnabled"].createParameterValue()
@@ -309,7 +309,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMMainFunctionPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMMainFunctionPeriod"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMMainFunctionPeriod"].createParameterValue()
@@ -325,7 +325,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMNoCom(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNoCom"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMNoCom"].createParameterValue()
@@ -341,7 +341,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMNoWakeUpInhibitionNvmStorage(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNoWakeUpInhibitionNvmStorage"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMNoWakeUpInhibitionNvmStorage"].createParameterValue()
@@ -357,7 +357,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMNoWakeup(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNoWakeup"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMNoWakeup"].createParameterValue()
@@ -373,7 +373,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMPncGatewayType(ComMPncGatewayType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncGatewayType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncGatewayType"].createParameterValue()
@@ -463,7 +463,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMNmLightTimeout(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmLightTimeout"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMNmLightTimeout"].createParameterValue()
@@ -479,7 +479,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMNmVariant(ComMNmVariant value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmVariant"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMNmVariant"].createParameterValue()
@@ -516,7 +516,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMPncNmRequest(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncNmRequest"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncNmRequest"].createParameterValue()
@@ -607,7 +607,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMPncId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncId"].createParameterValue()
@@ -631,7 +631,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -641,7 +641,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMChannel(referenceValueValue as GContainer)
@@ -664,7 +664,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMUser>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMUser)) {
 					override protected wrap(org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMUser object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -674,7 +674,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar421.accessors.ComM.ComMConfigSet.ComMUser(referenceValueValue as GContainer)
@@ -737,7 +737,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMPncComSignalDirection(ComMPncComSignalDirection value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncComSignalDirection"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncComSignalDirection"].createParameterValue()
@@ -770,7 +770,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 				
 				def void setComMPncComSignalKind(ComMPncComSignalKind value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncComSignalKind"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncComSignalKind"].createParameterValue()
@@ -858,7 +858,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 			
 			def void setComMUserIdentifier(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMUserIdentifier"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMUserIdentifier"].createParameterValue()
@@ -917,7 +917,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMDevErrorDetect"].createParameterValue()
@@ -933,7 +933,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMDirectUserMapping(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMDirectUserMapping"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMDirectUserMapping"].createParameterValue()
@@ -949,7 +949,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMEcuGroupClassification(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMEcuGroupClassification"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMEcuGroupClassification"].createParameterValue()
@@ -965,7 +965,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMModeLimitationEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMModeLimitationEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMModeLimitationEnabled"].createParameterValue()
@@ -981,7 +981,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMNmPassiveModeEnable(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMNmPassiveModeEnable"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMNmPassiveModeEnable"].createParameterValue()
@@ -997,7 +997,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMPncGatewayEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncGatewayEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncGatewayEnabled"].createParameterValue()
@@ -1013,7 +1013,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMPncPrepareSleepTimer(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncPrepareSleepTimer"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncPrepareSleepTimer"].createParameterValue()
@@ -1029,7 +1029,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMPncSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMPncSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMPncSupport"].createParameterValue()
@@ -1045,7 +1045,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMResetAfterForcingNoComm(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMResetAfterForcingNoComm"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMResetAfterForcingNoComm"].createParameterValue()
@@ -1061,7 +1061,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMSynchronousWakeUp(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMSynchronousWakeUp"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMSynchronousWakeUp"].createParameterValue()
@@ -1077,7 +1077,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMTMinFullComModeDuration(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMTMinFullComModeDuration"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMTMinFullComModeDuration"].createParameterValue()
@@ -1093,7 +1093,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMVersionInfoApi"].createParameterValue()
@@ -1109,7 +1109,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 		
 		def void setComMWakeupInhibitionEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "ComMWakeupInhibitionEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "ComMWakeupInhibitionEnabled"].createParameterValue()
@@ -1144,7 +1144,7 @@ class ComM implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

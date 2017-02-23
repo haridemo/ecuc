@@ -118,7 +118,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfCancelTransmitSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfCancelTransmitSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfCancelTransmitSupported"].createParameterValue()
@@ -134,7 +134,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfDevErrorDetect"].createParameterValue()
@@ -150,7 +150,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfMultipleDriversSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMultipleDriversSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMultipleDriversSupported"].createParameterValue()
@@ -166,7 +166,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfMultipleTrcvDriverSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMultipleTrcvDriverSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMultipleTrcvDriverSupported"].createParameterValue()
@@ -182,7 +182,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfNcOptionalRequestSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfNcOptionalRequestSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfNcOptionalRequestSupported"].createParameterValue()
@@ -211,7 +211,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfTpSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTpSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTpSupported"].createParameterValue()
@@ -227,7 +227,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfTrcvDriverSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTrcvDriverSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTrcvDriverSupported"].createParameterValue()
@@ -243,7 +243,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setLinIfVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfVersionInfoApi"].createParameterValue()
@@ -337,7 +337,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfGotoSleepConfirmationUL(LinIfGotoSleepConfirmationUL value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfGotoSleepConfirmationUL"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfGotoSleepConfirmationUL"].createParameterValue()
@@ -370,7 +370,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfMainFunctionPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMainFunctionPeriod"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMainFunctionPeriod"].createParameterValue()
@@ -386,7 +386,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfMaxFrameCnt(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfMaxFrameCnt"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfMaxFrameCnt"].createParameterValue()
@@ -402,7 +402,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfScheduleChangeNextTimeBase(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleChangeNextTimeBase"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleChangeNextTimeBase"].createParameterValue()
@@ -418,7 +418,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfScheduleRequestConfirmationUL(LinIfScheduleRequestConfirmationUL value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleRequestConfirmationUL"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleRequestConfirmationUL"].createParameterValue()
@@ -451,7 +451,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfStartupState(LinIfStartupState value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfStartupState"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfStartupState"].createParameterValue()
@@ -484,7 +484,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setLinIfWakeupConfirmationUL(LinIfWakeupConfirmationUL value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfWakeupConfirmationUL"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfWakeupConfirmationUL"].createParameterValue()
@@ -625,7 +625,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfChecksumType(LinIfChecksumType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfChecksumType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfChecksumType"].createParameterValue()
@@ -658,7 +658,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfFrameId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFrameId"].createParameterValue()
@@ -674,7 +674,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfFrameType(LinIfFrameType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFrameType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFrameType"].createParameterValue()
@@ -841,7 +841,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfFixedFrameSduBytePos(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduBytePos"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFixedFrameSduBytePos"].createParameterValue()
@@ -857,7 +857,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfFixedFrameSduByteVal(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFixedFrameSduByteVal"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFixedFrameSduByteVal"].createParameterValue()
@@ -996,7 +996,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfRxIndicationUL(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfRxIndicationUL"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfRxIndicationUL"].createParameterValue()
@@ -1012,7 +1012,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfUserRxIndicationUL(LinIfUserRxIndicationUL value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfUserRxIndicationUL"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfUserRxIndicationUL"].createParameterValue()
@@ -1118,7 +1118,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfTxConfirmationUL(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxConfirmationUL"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxConfirmationUL"].createParameterValue()
@@ -1134,7 +1134,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfTxPduId(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxPduId"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxPduId"].createParameterValue()
@@ -1150,7 +1150,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfTxTriggerTransmitUL(String value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfTxTriggerTransmitUL"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfTxTriggerTransmitUL"].createParameterValue()
@@ -1166,7 +1166,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 						
 						def void setLinIfUserTxUL(LinIfUserTxUL value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfUserTxUL"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfUserTxUL"].createParameterValue()
@@ -1243,7 +1243,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setLinIfFramePriority(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfFramePriority"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfFramePriority"].createParameterValue()
@@ -1303,7 +1303,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfJitter(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfJitter"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfJitter"].createParameterValue()
@@ -1350,7 +1350,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfResumePosition(LinIfResumePosition value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfResumePosition"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfResumePosition"].createParameterValue()
@@ -1383,7 +1383,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfRunMode(LinIfRunMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfRunMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfRunMode"].createParameterValue()
@@ -1416,7 +1416,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setLinIfScheduleTableIndex(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfScheduleTableIndex"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfScheduleTableIndex"].createParameterValue()
@@ -1480,7 +1480,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setLinIfDelay(BigDecimal value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfDelay"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfDelay"].createParameterValue()
@@ -1496,7 +1496,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setLinIfEntryIndex(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "LinIfEntryIndex"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "LinIfEntryIndex"].createParameterValue()
@@ -1590,7 +1590,7 @@ class LinIf implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

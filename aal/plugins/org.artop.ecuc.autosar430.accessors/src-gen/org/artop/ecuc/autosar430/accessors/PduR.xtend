@@ -136,7 +136,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRCancelReceive(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelReceive"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRCancelReceive"].createParameterValue()
@@ -152,7 +152,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRCancelTransmit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCancelTransmit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRCancelTransmit"].createParameterValue()
@@ -168,7 +168,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRChangeParameterApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRChangeParameterApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRChangeParameterApi"].createParameterValue()
@@ -184,7 +184,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRCommunicationInterface(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRCommunicationInterface"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRCommunicationInterface"].createParameterValue()
@@ -200,7 +200,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRLowerModule(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRLowerModule"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRLowerModule"].createParameterValue()
@@ -216,7 +216,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRRetransmission(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRetransmission"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRRetransmission"].createParameterValue()
@@ -232,7 +232,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRTransportProtocol(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTransportProtocol"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTransportProtocol"].createParameterValue()
@@ -248,7 +248,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRTriggertransmit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTriggertransmit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTriggertransmit"].createParameterValue()
@@ -264,7 +264,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRTxConfirmation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTxConfirmation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTxConfirmation"].createParameterValue()
@@ -280,7 +280,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRUpperModule(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRUpperModule"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRUpperModule"].createParameterValue()
@@ -296,7 +296,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRUseTag(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRUseTag"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRUseTag"].createParameterValue()
@@ -343,7 +343,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDevErrorDetect"].createParameterValue()
@@ -359,7 +359,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRMetaDataSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMetaDataSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMetaDataSupport"].createParameterValue()
@@ -375,7 +375,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRVersionInfoApi"].createParameterValue()
@@ -391,7 +391,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRZeroCostOperation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRZeroCostOperation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRZeroCostOperation"].createParameterValue()
@@ -437,7 +437,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRConfigurationId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRConfigurationId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRConfigurationId"].createParameterValue()
@@ -453,7 +453,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRMaxRoutingPathCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingPathCnt"].createParameterValue()
@@ -469,7 +469,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 		
 		def void setPduRMaxRoutingPathGroupCnt(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRMaxRoutingPathGroupCnt"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRMaxRoutingPathGroupCnt"].createParameterValue()
@@ -609,7 +609,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRDestPduDataProvision(PduRDestPduDataProvision value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduDataProvision"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDestPduDataProvision"].createParameterValue()
@@ -642,7 +642,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRDestPduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDestPduHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDestPduHandleId"].createParameterValue()
@@ -658,7 +658,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRTransmissionConfirmation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTransmissionConfirmation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTransmissionConfirmation"].createParameterValue()
@@ -716,7 +716,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRQueueDepth(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRQueueDepth"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRQueueDepth"].createParameterValue()
@@ -732,7 +732,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRTpThreshold(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRTpThreshold"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRTpThreshold"].createParameterValue()
@@ -767,7 +767,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.PduR.PduRRoutingPaths.PduRTxBuffer>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.PduR.PduRRoutingPaths.PduRTxBuffer)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.PduR.PduRRoutingPaths.PduRTxBuffer object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -777,7 +777,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.PduR.PduRRoutingPaths.PduRTxBuffer(referenceValueValue as GContainer)
@@ -900,7 +900,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					
 					def void setPduRDefaultValueElement(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElement"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDefaultValueElement"].createParameterValue()
@@ -916,7 +916,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 					
 					def void setPduRDefaultValueElementBytePosition(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRDefaultValueElementBytePosition"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRDefaultValueElementBytePosition"].createParameterValue()
@@ -967,7 +967,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRIsEnabledAtInit(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRIsEnabledAtInit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRIsEnabledAtInit"].createParameterValue()
@@ -983,7 +983,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRRoutingPathGroupId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRRoutingPathGroupId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRRoutingPathGroupId"].createParameterValue()
@@ -1030,7 +1030,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRSourcePduBlockSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduBlockSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRSourcePduBlockSize"].createParameterValue()
@@ -1046,7 +1046,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRSourcePduHandleId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSourcePduHandleId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRSourcePduHandleId"].createParameterValue()
@@ -1062,7 +1062,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRSrcPduUpTxConf(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRSrcPduUpTxConf"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRSrcPduUpTxConf"].createParameterValue()
@@ -1120,7 +1120,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 			
 			def void setPduRPduMaxLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PduRPduMaxLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PduRPduMaxLength"].createParameterValue()
@@ -1146,7 +1146,7 @@ class PduR implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -43,7 +43,7 @@ class EcucValueAccessorUtil {
 		Assert.isNotNull(clazz)
 		
 		val container = moduleConfiguration.gGetContainers.findFirst[gGetDefinition?.gGetShortName == clazz.simpleName]
-		if (container != null) {
+		if (container !== null) {
 			val constructor = clazz.getDeclaredConstructor(typeof(GContainer))
 			return constructor.newInstance(container)
 		} else {
@@ -56,7 +56,7 @@ class EcucValueAccessorUtil {
 		Assert.isNotNull(clazz)
 		
 		val subContainer = container.gGetSubContainers.findFirst[gGetDefinition?.gGetShortName == clazz.simpleName]
-		if (subContainer != null) {
+		if (subContainer !== null) {
 			val constructor = clazz.getDeclaredConstructor(typeof(GContainer))
 			return constructor.newInstance(subContainer)
 		} else {
@@ -68,7 +68,7 @@ class EcucValueAccessorUtil {
 		Assert.isTrue(target instanceof GModuleConfiguration || target instanceof GContainer)
 		
 		val feature = getEContainingFeature(target, GecucdescriptionPackage.eINSTANCE.getGContainer())
-		if (container != null && !"".equals(container.toString())) { //$NON-NLS-1$
+		if (container !== null && !"".equals(container.toString())) { //$NON-NLS-1$
 			if (feature.isMany()) {
 				(((target as EObject).eGet(feature)) as List<Object>).add(container)
 			} else {
@@ -189,7 +189,7 @@ class EcucValueAccessorUtil {
 				return true
 			} else {
 				val String upperMultiplicity = childType.gGetUpperMultiplicityAsString()
-				return upperMultiplicity != null && upperMultiplicity.length() > 0 && !"1".equals(upperMultiplicity) //$NON-NLS-1$
+				return upperMultiplicity !== null && upperMultiplicity.length() > 0 && !"1".equals(upperMultiplicity) //$NON-NLS-1$
 			}
 		}
 		

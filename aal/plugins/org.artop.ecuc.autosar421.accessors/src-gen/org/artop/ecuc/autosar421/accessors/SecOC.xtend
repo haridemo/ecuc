@@ -164,7 +164,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCDevErrorDetect"].createParameterValue()
@@ -180,7 +180,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCMainFunctionPeriod"].createParameterValue()
@@ -196,7 +196,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCMaxAlignScalarType(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCMaxAlignScalarType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCMaxAlignScalarType"].createParameterValue()
@@ -225,7 +225,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCVersionInfoApi"].createParameterValue()
@@ -282,7 +282,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCAuthInfoTxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCAuthInfoTxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCAuthInfoTxLength"].createParameterValue()
@@ -298,7 +298,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCDataId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCDataId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCDataId"].createParameterValue()
@@ -314,7 +314,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessCounterSyncAttempts(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessCounterSyncAttempts"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessCounterSyncAttempts"].createParameterValue()
@@ -330,7 +330,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessTimestampTimePeriodFactor(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessTimestampTimePeriodFactor"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessTimestampTimePeriodFactor"].createParameterValue()
@@ -346,7 +346,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessValueId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessValueId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessValueId"].createParameterValue()
@@ -362,7 +362,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessValueLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessValueLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessValueLength"].createParameterValue()
@@ -378,7 +378,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessValueTxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessValueTxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessValueTxLength"].createParameterValue()
@@ -394,7 +394,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCKeyId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCKeyId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCKeyId"].createParameterValue()
@@ -410,7 +410,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCRxAcceptanceWindow(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCRxAcceptanceWindow"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCRxAcceptanceWindow"].createParameterValue()
@@ -426,7 +426,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCSecondaryFreshnessValueId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCSecondaryFreshnessValueId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCSecondaryFreshnessValueId"].createParameterValue()
@@ -442,7 +442,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCUseFreshnessTimestamp(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCUseFreshnessTimestamp"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCUseFreshnessTimestamp"].createParameterValue()
@@ -458,7 +458,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCVerificationStatusPropagationMode(SecOCVerificationStatusPropagationMode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCVerificationStatusPropagationMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCVerificationStatusPropagationMode"].createParameterValue()
@@ -594,7 +594,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			
 			def void setSecOCRxSecuredLayerPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCRxSecuredLayerPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCRxSecuredLayerPduId"].createParameterValue()
@@ -653,7 +653,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCBufferLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCBufferLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCBufferLength"].createParameterValue()
@@ -699,7 +699,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCAuthInfoTxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCAuthInfoTxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCAuthInfoTxLength"].createParameterValue()
@@ -715,7 +715,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCAuthenticationRetries(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCAuthenticationRetries"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCAuthenticationRetries"].createParameterValue()
@@ -731,7 +731,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCDataId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCDataId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCDataId"].createParameterValue()
@@ -747,7 +747,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessTimestampTimePeriodFactor(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessTimestampTimePeriodFactor"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessTimestampTimePeriodFactor"].createParameterValue()
@@ -763,7 +763,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessValueId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessValueId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessValueId"].createParameterValue()
@@ -779,7 +779,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessValueLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessValueLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessValueLength"].createParameterValue()
@@ -795,7 +795,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCFreshnessValueTxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCFreshnessValueTxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCFreshnessValueTxLength"].createParameterValue()
@@ -811,7 +811,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCKeyId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCKeyId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCKeyId"].createParameterValue()
@@ -827,7 +827,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 		
 		def void setSecOCUseFreshnessTimestamp(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCUseFreshnessTimestamp"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCUseFreshnessTimestamp"].createParameterValue()
@@ -902,7 +902,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			
 			def void setSecOCTxAuthenticLayerPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCTxAuthenticLayerPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCTxAuthenticLayerPduId"].createParameterValue()
@@ -960,7 +960,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 			
 			def void setSecOCTxSecuredLayerPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "SecOCTxSecuredLayerPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "SecOCTxSecuredLayerPduId"].createParameterValue()
@@ -997,7 +997,7 @@ class SecOC implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

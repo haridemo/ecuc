@@ -208,7 +208,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoDriverObjectId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoDriverObjectId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoDriverObjectId"].createParameterValue()
@@ -224,7 +224,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoQueueSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoQueueSize"].createParameterValue()
@@ -283,7 +283,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 		
 		def void setCryptoDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoDevErrorDetect"].createParameterValue()
@@ -299,7 +299,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 		
 		def void setCryptoMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoMainFunctionPeriod"].createParameterValue()
@@ -315,7 +315,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 		
 		def void setCryptoVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoVersionInfoApi"].createParameterValue()
@@ -409,7 +409,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementAllowPartialAccess(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementAllowPartialAccess"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementAllowPartialAccess"].createParameterValue()
@@ -425,7 +425,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementId"].createParameterValue()
@@ -441,7 +441,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementInitValue(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementInitValue"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementInitValue"].createParameterValue()
@@ -457,7 +457,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementPersist(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementPersist"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementPersist"].createParameterValue()
@@ -473,7 +473,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementReadAccess(CryptoKeyElementReadAccess value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementReadAccess"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementReadAccess"].createParameterValue()
@@ -510,7 +510,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementSize"].createParameterValue()
@@ -526,7 +526,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyElementWriteAccess(CryptoKeyElementWriteAccess value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyElementWriteAccess"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyElementWriteAccess"].createParameterValue()
@@ -571,7 +571,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -581,7 +581,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement(referenceValueValue as GContainer)
@@ -684,7 +684,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement)) {
 					override protected wrap(org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -694,7 +694,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar430.accessors.Crypto.CryptoKeyElements.CryptoKeyElement(referenceValueValue as GContainer)
@@ -789,7 +789,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyDeriveIterations(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyDeriveIterations"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyDeriveIterations"].createParameterValue()
@@ -805,7 +805,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoKeyId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoKeyId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoKeyId"].createParameterValue()
@@ -1187,7 +1187,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 			
 			def void setCryptoPrimitiveService(CryptoPrimitiveService value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CryptoPrimitiveService"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CryptoPrimitiveService"].createParameterValue()
@@ -1246,7 +1246,7 @@ class Crypto implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

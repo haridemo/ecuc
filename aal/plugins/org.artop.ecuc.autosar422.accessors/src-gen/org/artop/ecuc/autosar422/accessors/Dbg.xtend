@@ -150,7 +150,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgBufferSize"].createParameterValue()
@@ -166,7 +166,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgBufferStrategy(DbgBufferStrategy value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferStrategy"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgBufferStrategy"].createParameterValue()
@@ -199,7 +199,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgBufferTransmission(DbgBufferTransmission value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgBufferTransmission"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgBufferTransmission"].createParameterValue()
@@ -309,7 +309,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgRxPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRxPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgRxPduId"].createParameterValue()
@@ -367,7 +367,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgTxConfirmationPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgTxConfirmationPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgTxConfirmationPduId"].createParameterValue()
@@ -426,7 +426,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgMaxDynamicDID(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgMaxDynamicDID"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgMaxDynamicDID"].createParameterValue()
@@ -509,7 +509,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgPredefinedDIDActivation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDActivation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgPredefinedDIDActivation"].createParameterValue()
@@ -525,7 +525,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgPredefinedDIDBuffering(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDBuffering"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgPredefinedDIDBuffering"].createParameterValue()
@@ -541,7 +541,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgPredefinedDIDName(DbgPredefinedDIDName value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDName"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgPredefinedDIDName"].createParameterValue()
@@ -600,7 +600,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgPredefinedDIDTimeStampActivation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgPredefinedDIDTimeStampActivation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgPredefinedDIDTimeStampActivation"].createParameterValue()
@@ -723,7 +723,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgComSignalName(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgComSignalName"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgComSignalName"].createParameterValue()
@@ -782,7 +782,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgCallComponentId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallComponentId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgCallComponentId"].createParameterValue()
@@ -798,7 +798,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgCallInstanceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallInstanceId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgCallInstanceId"].createParameterValue()
@@ -814,7 +814,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgCallPortId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallPortId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgCallPortId"].createParameterValue()
@@ -830,7 +830,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgCallServiceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgCallServiceId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgCallServiceId"].createParameterValue()
@@ -879,7 +879,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgRunnableComponentId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableComponentId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgRunnableComponentId"].createParameterValue()
@@ -895,7 +895,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgRunnableId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgRunnableId"].createParameterValue()
@@ -911,7 +911,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgRunnableInstanceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgRunnableInstanceId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgRunnableInstanceId"].createParameterValue()
@@ -961,7 +961,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgVfbComponentId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbComponentId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgVfbComponentId"].createParameterValue()
@@ -977,7 +977,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgVfbDataElementId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbDataElementId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgVfbDataElementId"].createParameterValue()
@@ -993,7 +993,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgVfbInstanceId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbInstanceId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgVfbInstanceId"].createParameterValue()
@@ -1009,7 +1009,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgVfbPortId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVfbPortId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgVfbPortId"].createParameterValue()
@@ -1062,7 +1062,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgAutomaticCollectionFrequency(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgAutomaticCollectionFrequency"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgAutomaticCollectionFrequency"].createParameterValue()
@@ -1078,7 +1078,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgStaticDIDActivation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDActivation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgStaticDIDActivation"].createParameterValue()
@@ -1094,7 +1094,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgStaticDIDBuffering(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDBuffering"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgStaticDIDBuffering"].createParameterValue()
@@ -1110,7 +1110,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgStaticDIDNameRef(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticDIDNameRef"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgStaticDIDNameRef"].createParameterValue()
@@ -1126,7 +1126,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 			
 			def void setDbgStaticTimeStampActivation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgStaticTimeStampActivation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgStaticTimeStampActivation"].createParameterValue()
@@ -1241,7 +1241,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgASAbsoluteAddress(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASAbsoluteAddress"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgASAbsoluteAddress"].createParameterValue()
@@ -1257,7 +1257,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgASNameRef(String value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASNameRef"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgASNameRef"].createParameterValue()
@@ -1273,7 +1273,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 					
 					def void setDbgASSize(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgASSize"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgASSize"].createParameterValue()
@@ -1389,7 +1389,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgDevErrorDetect"].createParameterValue()
@@ -1418,7 +1418,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgVersionInfoApi"].createParameterValue()
@@ -1464,7 +1464,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgDataCollectionTick(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgDataCollectionTick"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgDataCollectionTick"].createParameterValue()
@@ -1521,7 +1521,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgGlobalTimestampActivation(DbgGlobalTimestampActivation value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgGlobalTimestampActivation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgGlobalTimestampActivation"].createParameterValue()
@@ -1554,7 +1554,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 		
 		def void setDbgTimeStampSize(DbgTimeStampSize value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "DbgTimeStampSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "DbgTimeStampSize"].createParameterValue()
@@ -1606,7 +1606,7 @@ class Dbg implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

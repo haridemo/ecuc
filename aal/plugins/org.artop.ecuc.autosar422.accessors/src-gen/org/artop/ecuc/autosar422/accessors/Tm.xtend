@@ -110,7 +110,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		def void setTmDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "TmDevErrorDetect"].createParameterValue()
@@ -126,7 +126,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		def void setTmEnablePredefTimer100us32bit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmEnablePredefTimer100us32bit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "TmEnablePredefTimer100us32bit"].createParameterValue()
@@ -142,7 +142,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		def void setTmEnablePredefTimer1us16bit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmEnablePredefTimer1us16bit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "TmEnablePredefTimer1us16bit"].createParameterValue()
@@ -158,7 +158,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		def void setTmEnablePredefTimer1us24bit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmEnablePredefTimer1us24bit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "TmEnablePredefTimer1us24bit"].createParameterValue()
@@ -174,7 +174,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		def void setTmEnablePredefTimer1us32bit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmEnablePredefTimer1us32bit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "TmEnablePredefTimer1us32bit"].createParameterValue()
@@ -190,7 +190,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 		
 		def void setTmVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "TmVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "TmVersionInfoApi"].createParameterValue()
@@ -214,7 +214,7 @@ class Tm implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

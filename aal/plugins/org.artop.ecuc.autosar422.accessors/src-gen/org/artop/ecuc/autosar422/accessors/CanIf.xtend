@@ -240,7 +240,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfCtrlId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfCtrlId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfCtrlId"].createParameterValue()
@@ -256,7 +256,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfCtrlWakeupSupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfCtrlWakeupSupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfCtrlWakeupSupport"].createParameterValue()
@@ -315,7 +315,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserCheckTrcvWakeFlagIndicationName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserCheckTrcvWakeFlagIndicationName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserCheckTrcvWakeFlagIndicationName"].createParameterValue()
@@ -331,7 +331,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserCheckTrcvWakeFlagIndicationUL(CanIfDispatchUserCheckTrcvWakeFlagIndicationUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserCheckTrcvWakeFlagIndicationUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserCheckTrcvWakeFlagIndicationUL"].createParameterValue()
@@ -364,7 +364,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserClearTrcvWufFlagIndicationName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserClearTrcvWufFlagIndicationName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserClearTrcvWufFlagIndicationName"].createParameterValue()
@@ -380,7 +380,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserClearTrcvWufFlagIndicationUL(CanIfDispatchUserClearTrcvWufFlagIndicationUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserClearTrcvWufFlagIndicationUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserClearTrcvWufFlagIndicationUL"].createParameterValue()
@@ -413,7 +413,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserConfirmPnAvailabilityName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserConfirmPnAvailabilityName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserConfirmPnAvailabilityName"].createParameterValue()
@@ -429,7 +429,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserConfirmPnAvailabilityUL(CanIfDispatchUserConfirmPnAvailabilityUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserConfirmPnAvailabilityUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserConfirmPnAvailabilityUL"].createParameterValue()
@@ -462,7 +462,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserCtrlBusOffName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserCtrlBusOffName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserCtrlBusOffName"].createParameterValue()
@@ -478,7 +478,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserCtrlBusOffUL(CanIfDispatchUserCtrlBusOffUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserCtrlBusOffUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserCtrlBusOffUL"].createParameterValue()
@@ -511,7 +511,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserCtrlModeIndicationName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserCtrlModeIndicationName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserCtrlModeIndicationName"].createParameterValue()
@@ -527,7 +527,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserCtrlModeIndicationUL(CanIfDispatchUserCtrlModeIndicationUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserCtrlModeIndicationUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserCtrlModeIndicationUL"].createParameterValue()
@@ -560,7 +560,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserTrcvModeIndicationName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserTrcvModeIndicationName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserTrcvModeIndicationName"].createParameterValue()
@@ -576,7 +576,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserTrcvModeIndicationUL(CanIfDispatchUserTrcvModeIndicationUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserTrcvModeIndicationUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserTrcvModeIndicationUL"].createParameterValue()
@@ -609,7 +609,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserValidateWakeupEventName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserValidateWakeupEventName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserValidateWakeupEventName"].createParameterValue()
@@ -625,7 +625,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfDispatchUserValidateWakeupEventUL(CanIfDispatchUserValidateWakeupEventUL value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfDispatchUserValidateWakeupEventUL"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfDispatchUserValidateWakeupEventUL"].createParameterValue()
@@ -688,7 +688,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfInitCfgSet(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfInitCfgSet"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfInitCfgSet"].createParameterValue()
@@ -704,7 +704,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfMaxBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfMaxBufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfMaxBufferSize"].createParameterValue()
@@ -720,7 +720,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfMaxRxPduCfg(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfMaxRxPduCfg"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfMaxRxPduCfg"].createParameterValue()
@@ -736,7 +736,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfMaxTxPduCfg(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfMaxTxPduCfg"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfMaxTxPduCfg"].createParameterValue()
@@ -857,7 +857,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfBufferSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfBufferSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfBufferSize"].createParameterValue()
@@ -982,7 +982,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanIfHrhSoftwareFilter(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhSoftwareFilter"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfHrhSoftwareFilter"].createParameterValue()
@@ -1068,7 +1068,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanIfHrhRangeBaseId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhRangeBaseId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfHrhRangeBaseId"].createParameterValue()
@@ -1084,7 +1084,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanIfHrhRangeMask(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhRangeMask"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfHrhRangeMask"].createParameterValue()
@@ -1100,7 +1100,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanIfHrhRangeRxPduLowerCanId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhRangeRxPduLowerCanId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfHrhRangeRxPduLowerCanId"].createParameterValue()
@@ -1116,7 +1116,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanIfHrhRangeRxPduRangeCanIdType(CanIfHrhRangeRxPduRangeCanIdType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhRangeRxPduRangeCanIdType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfHrhRangeRxPduRangeCanIdType"].createParameterValue()
@@ -1149,7 +1149,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanIfHrhRangeRxPduUpperCanId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfHrhRangeRxPduUpperCanId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfHrhRangeRxPduUpperCanId"].createParameterValue()
@@ -1253,7 +1253,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduCanId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduCanId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduCanId"].createParameterValue()
@@ -1269,7 +1269,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduCanIdMask(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduCanIdMask"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduCanIdMask"].createParameterValue()
@@ -1285,7 +1285,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduCanIdType(CanIfRxPduCanIdType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduCanIdType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduCanIdType"].createParameterValue()
@@ -1326,7 +1326,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduDlc(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduDlc"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduDlc"].createParameterValue()
@@ -1342,7 +1342,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduId"].createParameterValue()
@@ -1358,7 +1358,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduReadData(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduReadData"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduReadData"].createParameterValue()
@@ -1374,7 +1374,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduReadNotifyStatus(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduReadNotifyStatus"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduReadNotifyStatus"].createParameterValue()
@@ -1390,7 +1390,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduUserRxIndicationName(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduUserRxIndicationName"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduUserRxIndicationName"].createParameterValue()
@@ -1406,7 +1406,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfRxPduUserRxIndicationUL(CanIfRxPduUserRxIndicationUL value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduUserRxIndicationUL"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduUserRxIndicationUL"].createParameterValue()
@@ -1520,7 +1520,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanIfRxPduCanIdRangeLowerCanId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduCanIdRangeLowerCanId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduCanIdRangeLowerCanId"].createParameterValue()
@@ -1536,7 +1536,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanIfRxPduCanIdRangeUpperCanId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfRxPduCanIdRangeUpperCanId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfRxPduCanIdRangeUpperCanId"].createParameterValue()
@@ -1583,7 +1583,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTRxJoblistTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTRxJoblistTimeMark"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTRxJoblistTimeMark"].createParameterValue()
@@ -1643,7 +1643,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduCanId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduCanId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduCanId"].createParameterValue()
@@ -1659,7 +1659,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduCanIdMask(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduCanIdMask"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduCanIdMask"].createParameterValue()
@@ -1675,7 +1675,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduCanIdType(CanIfTxPduCanIdType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduCanIdType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduCanIdType"].createParameterValue()
@@ -1712,7 +1712,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduId"].createParameterValue()
@@ -1728,7 +1728,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduPnFilterPdu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduPnFilterPdu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduPnFilterPdu"].createParameterValue()
@@ -1744,7 +1744,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduReadNotifyStatus(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduReadNotifyStatus"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduReadNotifyStatus"].createParameterValue()
@@ -1760,7 +1760,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduTriggerTransmit(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduTriggerTransmit"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduTriggerTransmit"].createParameterValue()
@@ -1776,7 +1776,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduType(CanIfTxPduType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduType"].createParameterValue()
@@ -1809,7 +1809,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduUserTriggerTransmitName(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduUserTriggerTransmitName"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduUserTriggerTransmitName"].createParameterValue()
@@ -1825,7 +1825,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduUserTxConfirmationName(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduUserTxConfirmationName"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduUserTxConfirmationName"].createParameterValue()
@@ -1841,7 +1841,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTxPduUserTxConfirmationUL(CanIfTxPduUserTxConfirmationUL value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxPduUserTxConfirmationUL"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxPduUserTxConfirmationUL"].createParameterValue()
@@ -1946,7 +1946,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanIfTTTxJoblistTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTTxJoblistTimeMark"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTTTxJoblistTimeMark"].createParameterValue()
@@ -2007,7 +2007,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfFixedBuffer(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfFixedBuffer"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfFixedBuffer"].createParameterValue()
@@ -2023,7 +2023,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPrivateDlcCheck(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPrivateDlcCheck"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPrivateDlcCheck"].createParameterValue()
@@ -2039,7 +2039,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPrivateSoftwareFilterType(CanIfPrivateSoftwareFilterType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPrivateSoftwareFilterType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPrivateSoftwareFilterType"].createParameterValue()
@@ -2076,7 +2076,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfSupportTTCAN(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfSupportTTCAN"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfSupportTTCAN"].createParameterValue()
@@ -2130,7 +2130,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTTJoblist(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTJoblist"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTTJoblist"].createParameterValue()
@@ -2146,7 +2146,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTTMaxIsrDelay(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTTMaxIsrDelay"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTTMaxIsrDelay"].createParameterValue()
@@ -2245,7 +2245,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfMetaDataSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfMetaDataSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfMetaDataSupport"].createParameterValue()
@@ -2261,7 +2261,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicCancelTransmitSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicCancelTransmitSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicCancelTransmitSupport"].createParameterValue()
@@ -2290,7 +2290,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicDevErrorDetect"].createParameterValue()
@@ -2306,7 +2306,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicHandleTypeEnum(CanIfPublicHandleTypeEnum value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicHandleTypeEnum"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicHandleTypeEnum"].createParameterValue()
@@ -2339,7 +2339,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicIcomSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicIcomSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicIcomSupport"].createParameterValue()
@@ -2355,7 +2355,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicMultipleDrvSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicMultipleDrvSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicMultipleDrvSupport"].createParameterValue()
@@ -2371,7 +2371,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicPnSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicPnSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicPnSupport"].createParameterValue()
@@ -2387,7 +2387,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicReadRxPduDataApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadRxPduDataApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicReadRxPduDataApi"].createParameterValue()
@@ -2403,7 +2403,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicReadRxPduNotifyStatusApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadRxPduNotifyStatusApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicReadRxPduNotifyStatusApi"].createParameterValue()
@@ -2419,7 +2419,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicReadTxPduNotifyStatusApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicReadTxPduNotifyStatusApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicReadTxPduNotifyStatusApi"].createParameterValue()
@@ -2435,7 +2435,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicSetDynamicTxIdApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicSetDynamicTxIdApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicSetDynamicTxIdApi"].createParameterValue()
@@ -2451,7 +2451,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicTxBuffering(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicTxBuffering"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicTxBuffering"].createParameterValue()
@@ -2467,7 +2467,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicTxConfirmPollingSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicTxConfirmPollingSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicTxConfirmPollingSupport"].createParameterValue()
@@ -2483,7 +2483,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicVersionInfoApi"].createParameterValue()
@@ -2499,7 +2499,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicWakeupCheckValidByNM(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicWakeupCheckValidByNM"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicWakeupCheckValidByNM"].createParameterValue()
@@ -2515,7 +2515,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfPublicWakeupCheckValidSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfPublicWakeupCheckValidSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfPublicWakeupCheckValidSupport"].createParameterValue()
@@ -2531,7 +2531,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfSetBaudrateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfSetBaudrateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfSetBaudrateApi"].createParameterValue()
@@ -2547,7 +2547,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfTriggerTransmitSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTriggerTransmitSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTriggerTransmitSupport"].createParameterValue()
@@ -2563,7 +2563,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfTxOfflineActiveSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTxOfflineActiveSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTxOfflineActiveSupport"].createParameterValue()
@@ -2579,7 +2579,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIfWakeupSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfWakeupSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfWakeupSupport"].createParameterValue()
@@ -2673,7 +2673,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTrcvId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTrcvId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTrcvId"].createParameterValue()
@@ -2689,7 +2689,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIfTrcvWakeupSupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIfTrcvWakeupSupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIfTrcvWakeupSupport"].createParameterValue()
@@ -2726,7 +2726,7 @@ class CanIf implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

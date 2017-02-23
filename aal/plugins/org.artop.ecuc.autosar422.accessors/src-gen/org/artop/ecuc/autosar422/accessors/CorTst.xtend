@@ -200,7 +200,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstAddress(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstAddress"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstAddress"].createParameterValue()
@@ -216,7 +216,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstAlu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstAlu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstAlu"].createParameterValue()
@@ -232,7 +232,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstCache(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstCache"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstCache"].createParameterValue()
@@ -248,7 +248,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstInterrupt(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstInterrupt"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstInterrupt"].createParameterValue()
@@ -264,7 +264,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstMemoryIf(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstMemoryIf"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstMemoryIf"].createParameterValue()
@@ -280,7 +280,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstMpu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstMpu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstMpu"].createParameterValue()
@@ -296,7 +296,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstRegister(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstRegister"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstRegister"].createParameterValue()
@@ -344,7 +344,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstAbortApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstAbortApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstAbortApi"].createParameterValue()
@@ -360,7 +360,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstGetCurrentStatus(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstGetCurrentStatus"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstGetCurrentStatus"].createParameterValue()
@@ -376,7 +376,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstGetFgndSignature(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstGetFgndSignature"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstGetFgndSignature"].createParameterValue()
@@ -392,7 +392,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstGetSignature(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstGetSignature"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstGetSignature"].createParameterValue()
@@ -408,7 +408,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstGetStateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstGetStateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstGetStateApi"].createParameterValue()
@@ -424,7 +424,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstStartApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstStartApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstStartApi"].createParameterValue()
@@ -440,7 +440,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstVersionInfoApi"].createParameterValue()
@@ -527,7 +527,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstTestIdFgnd(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstTestIdFgnd"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstTestIdFgnd"].createParameterValue()
@@ -581,7 +581,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstAddress(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstAddress"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstAddress"].createParameterValue()
@@ -597,7 +597,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstAlu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstAlu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstAlu"].createParameterValue()
@@ -613,7 +613,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstCache(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstCache"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstCache"].createParameterValue()
@@ -629,7 +629,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstInterrupt(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstInterrupt"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstInterrupt"].createParameterValue()
@@ -645,7 +645,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstMemoryIf(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstMemoryIf"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstMemoryIf"].createParameterValue()
@@ -661,7 +661,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstMpu(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstMpu"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstMpu"].createParameterValue()
@@ -677,7 +677,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setCorTstRegister(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstRegister"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstRegister"].createParameterValue()
@@ -725,7 +725,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstDevErrorDetect"].createParameterValue()
@@ -741,7 +741,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstFgndTestNumber(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstFgndTestNumber"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstFgndTestNumber"].createParameterValue()
@@ -757,7 +757,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstNotificationSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstNotificationSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstNotificationSupported"].createParameterValue()
@@ -773,7 +773,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstTestIntervalIdEndValue(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstTestIntervalIdEndValue"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstTestIntervalIdEndValue"].createParameterValue()
@@ -789,7 +789,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setCorTstTestResultMode(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CorTstTestResultMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CorTstTestResultMode"].createParameterValue()
@@ -813,7 +813,7 @@ class CorTst implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

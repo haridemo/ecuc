@@ -276,7 +276,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddComIfHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
@@ -334,7 +334,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddComIfHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
@@ -645,7 +645,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRApiType(CddPduRApiType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -678,7 +678,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRLowerLayerHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
@@ -736,7 +736,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRApiType(CddPduRApiType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -769,7 +769,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRLowerLayerHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
@@ -896,7 +896,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRApiType(CddPduRApiType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -929,7 +929,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRUpperLayerHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
@@ -987,7 +987,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRApiType(CddPduRApiType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -1020,7 +1020,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRUpperLayerHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
@@ -1147,7 +1147,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRApiType(CddPduRApiType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -1180,7 +1180,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddSoAdUpperLayerHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
@@ -1238,7 +1238,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddPduRApiType(CddPduRApiType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -1271,7 +1271,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 				
 				def void setCddSoAdUpperLayerHandleId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
@@ -1529,7 +1529,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddComIfHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
@@ -1587,7 +1587,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddComIfHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddComIfHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddComIfHandleId"].createParameterValue()
@@ -1898,7 +1898,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRApiType(CddPduRApiType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -1931,7 +1931,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRLowerLayerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
@@ -1989,7 +1989,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRApiType(CddPduRApiType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -2022,7 +2022,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRLowerLayerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRLowerLayerHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRLowerLayerHandleId"].createParameterValue()
@@ -2149,7 +2149,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRApiType(CddPduRApiType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -2182,7 +2182,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRUpperLayerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
@@ -2240,7 +2240,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRApiType(CddPduRApiType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -2273,7 +2273,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRUpperLayerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRUpperLayerHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRUpperLayerHandleId"].createParameterValue()
@@ -2400,7 +2400,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRApiType(CddPduRApiType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -2433,7 +2433,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddSoAdUpperLayerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
@@ -2491,7 +2491,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddPduRApiType(CddPduRApiType value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPduRApiType"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPduRApiType"].createParameterValue()
@@ -2524,7 +2524,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 					
 					def void setCddSoAdUpperLayerHandleId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddSoAdUpperLayerHandleId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddSoAdUpperLayerHandleId"].createParameterValue()
@@ -2586,7 +2586,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 			
 			def void setCddPartitionStoppedFunctionName(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPartitionStoppedFunctionName"].createParameterValue()
@@ -2645,7 +2645,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 		
 		def void setCddPartitionStoppedFunctionName(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CddPartitionStoppedFunctionName"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CddPartitionStoppedFunctionName"].createParameterValue()
@@ -2680,7 +2680,7 @@ class Cdd implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

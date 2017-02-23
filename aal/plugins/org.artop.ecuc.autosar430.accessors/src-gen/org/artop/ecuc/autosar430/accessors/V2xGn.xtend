@@ -126,7 +126,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnBeaconServiceMaxJitter(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnBeaconServiceMaxJitter"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnBeaconServiceMaxJitter"].createParameterValue()
@@ -142,7 +142,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnBeaconServiceRetransmitTimer(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnBeaconServiceRetransmitTimer"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnBeaconServiceRetransmitTimer"].createParameterValue()
@@ -188,7 +188,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnDevErrorDetect"].createParameterValue()
@@ -204,7 +204,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnLifetimeLocTE(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnLifetimeLocTE"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnLifetimeLocTE"].createParameterValue()
@@ -220,7 +220,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnLocalGnAddr(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnLocalGnAddr"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnLocalGnAddr"].createParameterValue()
@@ -236,7 +236,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMaxGeoNetworkingHeaderSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMaxGeoNetworkingHeaderSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMaxGeoNetworkingHeaderSize"].createParameterValue()
@@ -252,7 +252,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMaxSduSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMaxSduSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMaxSduSize"].createParameterValue()
@@ -268,7 +268,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMinUpdateFrequencyLPV(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMinUpdateFrequencyLPV"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMinUpdateFrequencyLPV"].createParameterValue()
@@ -284,7 +284,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnPaiInterval(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnPaiInterval"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnPaiInterval"].createParameterValue()
@@ -300,7 +300,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnProtocolVersion(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnProtocolVersion"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnProtocolVersion"].createParameterValue()
@@ -316,7 +316,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnSnDecapResultHandling(V2xGnItsGnSnDecapResultHandling value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnSnDecapResultHandling"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnSnDecapResultHandling"].createParameterValue()
@@ -349,7 +349,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnStationType(V2xGnItsGnStationType value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnStationType"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnStationType"].createParameterValue()
@@ -402,7 +402,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnMainFunctionPeriod"].createParameterValue()
@@ -418,7 +418,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnTxConfirmation(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnTxConfirmation"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnTxConfirmation"].createParameterValue()
@@ -434,7 +434,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnVersionInfoApi"].createParameterValue()
@@ -491,7 +491,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnBcForwardingPacketBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnBcForwardingPacketBufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnBcForwardingPacketBufferSize"].createParameterValue()
@@ -507,7 +507,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnCbfPacketBufferSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnCbfPacketBufferSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnCbfPacketBufferSize"].createParameterValue()
@@ -523,7 +523,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnDefaultHopLimit(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnDefaultHopLimit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnDefaultHopLimit"].createParameterValue()
@@ -539,7 +539,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnDefaultMaxCommunicationRange(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnDefaultMaxCommunicationRange"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnDefaultMaxCommunicationRange"].createParameterValue()
@@ -555,7 +555,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnDefaultPacketLifetime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnDefaultPacketLifetime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnDefaultPacketLifetime"].createParameterValue()
@@ -571,7 +571,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnDefaultTrafficClass(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnDefaultTrafficClass"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnDefaultTrafficClass"].createParameterValue()
@@ -587,7 +587,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnGeoAreaLineForwardingUsed(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnGeoAreaLineForwardingUsed"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnGeoAreaLineForwardingUsed"].createParameterValue()
@@ -603,7 +603,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnGeoBroadcastCbfMaxTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnGeoBroadcastCbfMaxTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnGeoBroadcastCbfMaxTime"].createParameterValue()
@@ -619,7 +619,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnGeoBroadcastCbfMinTime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnGeoBroadcastCbfMinTime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnGeoBroadcastCbfMinTime"].createParameterValue()
@@ -635,7 +635,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMaxGeoAreaSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMaxGeoAreaSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMaxGeoAreaSize"].createParameterValue()
@@ -651,7 +651,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMaxPacketDataRate(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMaxPacketDataRate"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMaxPacketDataRate"].createParameterValue()
@@ -667,7 +667,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMaxPacketDataRateEmaBeta(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMaxPacketDataRateEmaBeta"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMaxPacketDataRateEmaBeta"].createParameterValue()
@@ -683,7 +683,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 		
 		def void setV2xGnItsGnMaxPacketLifetime(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "V2xGnItsGnMaxPacketLifetime"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "V2xGnItsGnMaxPacketLifetime"].createParameterValue()
@@ -707,7 +707,7 @@ class V2xGn implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

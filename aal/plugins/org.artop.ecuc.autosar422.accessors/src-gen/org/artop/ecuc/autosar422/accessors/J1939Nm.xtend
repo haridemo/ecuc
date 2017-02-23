@@ -193,7 +193,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmChannelUsesAddressArbitration(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmChannelUsesAddressArbitration"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmChannelUsesAddressArbitration"].createParameterValue()
@@ -267,7 +267,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939NmRxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmRxPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmRxPduId"].createParameterValue()
@@ -325,7 +325,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 				
 				def void setJ1939NmTxPduId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmTxPduId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmTxPduId"].createParameterValue()
@@ -385,7 +385,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeId"].createParameterValue()
@@ -401,7 +401,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameArbitraryAddressCapable(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameArbitraryAddressCapable"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameArbitraryAddressCapable"].createParameterValue()
@@ -417,7 +417,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameECUInstance(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameECUInstance"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameECUInstance"].createParameterValue()
@@ -433,7 +433,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameFunction(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameFunction"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameFunction"].createParameterValue()
@@ -449,7 +449,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameFunctionInstance(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameFunctionInstance"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameFunctionInstance"].createParameterValue()
@@ -465,7 +465,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameIdentityNumber(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameIdentityNumber"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameIdentityNumber"].createParameterValue()
@@ -481,7 +481,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameIndustryGroup(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameIndustryGroup"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameIndustryGroup"].createParameterValue()
@@ -497,7 +497,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameManufacturerCode(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameManufacturerCode"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameManufacturerCode"].createParameterValue()
@@ -513,7 +513,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameVehicleSystem(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameVehicleSystem"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameVehicleSystem"].createParameterValue()
@@ -529,7 +529,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeNameVehicleSystemInstance(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeNameVehicleSystemInstance"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeNameVehicleSystemInstance"].createParameterValue()
@@ -545,7 +545,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodePreferredAddress(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodePreferredAddress"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodePreferredAddress"].createParameterValue()
@@ -561,7 +561,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 			def void setJ1939NmNodeStartUpDelay(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmNodeStartUpDelay"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmNodeStartUpDelay"].createParameterValue()
@@ -585,7 +585,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 			
 				return new AbstractUnwrappingEList<GReferenceValue, org.artop.ecuc.autosar422.accessors.J1939Nm.J1939NmConfigSet.J1939NmChannel>(filteredReferenceValues, typeof(GReferenceValue), typeof(org.artop.ecuc.autosar422.accessors.J1939Nm.J1939NmConfigSet.J1939NmChannel)) {
 					override protected wrap(org.artop.ecuc.autosar422.accessors.J1939Nm.J1939NmConfigSet.J1939NmChannel object) throws CoreException {
-						if (object != null) {
+						if (object !== null) {
 							val container = object.getTarget()
 							val referenceValue = Autosar40Factory.eINSTANCE.createEcucReferenceValue
 							referenceValue.gSetDefinition(referenceValueDef)
@@ -595,7 +595,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 					}
 			
 					override protected unwrap(GReferenceValue referenceValue) {
-						if (referenceValue != null) {
+						if (referenceValue !== null) {
 							val referenceValueValue = referenceValue.gGetValue
 							if (referenceValueValue instanceof GContainer) {
 								return new org.artop.ecuc.autosar422.accessors.J1939Nm.J1939NmConfigSet.J1939NmChannel(referenceValueValue as GContainer)
@@ -683,7 +683,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmBusOffDelayTickPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmBusOffDelayTickPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmBusOffDelayTickPeriod"].createParameterValue()
@@ -699,7 +699,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmDevErrorDetect"].createParameterValue()
@@ -715,7 +715,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmMainFunctionPeriod"].createParameterValue()
@@ -731,7 +731,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmTxConfirmationTimeout(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmTxConfirmationTimeout"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmTxConfirmationTimeout"].createParameterValue()
@@ -747,7 +747,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmUserCallout(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmUserCallout"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmUserCallout"].createParameterValue()
@@ -763,7 +763,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmUserCalloutHeaderFile(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmUserCalloutHeaderFile"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmUserCalloutHeaderFile"].createParameterValue()
@@ -779,7 +779,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 		
 		def void setJ1939NmVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939NmVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939NmVersionInfoApi"].createParameterValue()
@@ -803,7 +803,7 @@ class J1939Nm implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

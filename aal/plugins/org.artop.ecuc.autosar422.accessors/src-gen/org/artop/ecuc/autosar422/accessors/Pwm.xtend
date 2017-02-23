@@ -174,7 +174,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmChannelClass(PwmChannelClass value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmChannelClass"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmChannelClass"].createParameterValue()
@@ -209,7 +209,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmChannelId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmChannelId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmChannelId"].createParameterValue()
@@ -225,7 +225,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmDutycycleDefault(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDutycycleDefault"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDutycycleDefault"].createParameterValue()
@@ -241,7 +241,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmIdleState(PwmIdleState value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmIdleState"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmIdleState"].createParameterValue()
@@ -274,7 +274,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmNotification"].createParameterValue()
@@ -290,7 +290,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmPeriodDefault(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPeriodDefault"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPeriodDefault"].createParameterValue()
@@ -306,7 +306,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmPolarity(PwmPolarity value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPolarity"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPolarity"].createParameterValue()
@@ -382,7 +382,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmDeInitApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDeInitApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDeInitApi"].createParameterValue()
@@ -398,7 +398,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmGetOutputState(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmGetOutputState"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmGetOutputState"].createParameterValue()
@@ -414,7 +414,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmSetDutyCycle(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetDutyCycle"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetDutyCycle"].createParameterValue()
@@ -430,7 +430,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmSetOutputToIdle(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetOutputToIdle"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetOutputToIdle"].createParameterValue()
@@ -446,7 +446,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmSetPeriodAndDuty(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmSetPeriodAndDuty"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmSetPeriodAndDuty"].createParameterValue()
@@ -462,7 +462,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmVersionInfoApi"].createParameterValue()
@@ -508,7 +508,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDevErrorDetect"].createParameterValue()
@@ -524,7 +524,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmDutycycleUpdatedEndperiod(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmDutycycleUpdatedEndperiod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmDutycycleUpdatedEndperiod"].createParameterValue()
@@ -540,7 +540,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmIndex"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmIndex"].createParameterValue()
@@ -556,7 +556,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmLowPowerStatesSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmLowPowerStatesSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmLowPowerStatesSupport"].createParameterValue()
@@ -572,7 +572,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmNotificationSupported(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmNotificationSupported"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmNotificationSupported"].createParameterValue()
@@ -588,7 +588,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmPeriodUpdatedEndperiod(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPeriodUpdatedEndperiod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPeriodUpdatedEndperiod"].createParameterValue()
@@ -604,7 +604,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 		
 		def void setPwmPowerStateAsynchTransitionMode(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerStateAsynchTransitionMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerStateAsynchTransitionMode"].createParameterValue()
@@ -668,7 +668,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmPowerState(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerState"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerState"].createParameterValue()
@@ -684,7 +684,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 			
 			def void setPwmPowerStateReadyCbkRef(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "PwmPowerStateReadyCbkRef"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "PwmPowerStateReadyCbkRef"].createParameterValue()
@@ -710,7 +710,7 @@ class Pwm implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

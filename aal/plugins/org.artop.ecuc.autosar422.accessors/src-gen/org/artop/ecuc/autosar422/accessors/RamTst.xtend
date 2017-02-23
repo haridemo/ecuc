@@ -126,7 +126,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstAllowApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAllowApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAllowApi"].createParameterValue()
@@ -142,7 +142,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstChangeNumOfTestedCellsApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstChangeNumOfTestedCellsApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstChangeNumOfTestedCellsApi"].createParameterValue()
@@ -158,7 +158,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstDevErrorDetect"].createParameterValue()
@@ -174,7 +174,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetAlgParamsApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetAlgParamsApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetAlgParamsApi"].createParameterValue()
@@ -190,7 +190,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetExecutionStatusApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetExecutionStatusApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetExecutionStatusApi"].createParameterValue()
@@ -206,7 +206,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetNumberOfTestedCellsApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetNumberOfTestedCellsApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetNumberOfTestedCellsApi"].createParameterValue()
@@ -222,7 +222,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetTestAlgorithmApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestAlgorithmApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestAlgorithmApi"].createParameterValue()
@@ -238,7 +238,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetTestResultApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestResultApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestResultApi"].createParameterValue()
@@ -254,7 +254,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetTestResultPerBlockApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetTestResultPerBlockApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetTestResultPerBlockApi"].createParameterValue()
@@ -270,7 +270,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstGetVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGetVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGetVersionInfoApi"].createParameterValue()
@@ -286,7 +286,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstResumeApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstResumeApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstResumeApi"].createParameterValue()
@@ -302,7 +302,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstRunFullTestApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstRunFullTestApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstRunFullTestApi"].createParameterValue()
@@ -318,7 +318,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstRunPartialTestApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstRunPartialTestApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstRunPartialTestApi"].createParameterValue()
@@ -334,7 +334,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstSelectAlgParamsApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstSelectAlgParamsApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstSelectAlgParamsApi"].createParameterValue()
@@ -350,7 +350,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstStopApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStopApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstStopApi"].createParameterValue()
@@ -366,7 +366,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstSuspendApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstSuspendApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstSuspendApi"].createParameterValue()
@@ -429,7 +429,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstAbrahamTestSelected(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAbrahamTestSelected"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAbrahamTestSelected"].createParameterValue()
@@ -445,7 +445,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstCheckerboardTestSelected(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCheckerboardTestSelected"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstCheckerboardTestSelected"].createParameterValue()
@@ -461,7 +461,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstGalpatTestSelected(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstGalpatTestSelected"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstGalpatTestSelected"].createParameterValue()
@@ -477,7 +477,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstMarchTestSelected(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMarchTestSelected"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMarchTestSelected"].createParameterValue()
@@ -493,7 +493,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstTranspGalpatTestSelected(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTranspGalpatTestSelected"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTranspGalpatTestSelected"].createParameterValue()
@@ -509,7 +509,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstWalkPathTestSelected(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstWalkPathTestSelected"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstWalkPathTestSelected"].createParameterValue()
@@ -556,7 +556,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstDefaultAlgParamsId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstDefaultAlgParamsId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstDefaultAlgParamsId"].createParameterValue()
@@ -572,7 +572,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstMinNumberOfTestedCells(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMinNumberOfTestedCells"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMinNumberOfTestedCells"].createParameterValue()
@@ -588,7 +588,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstNumberOfAlgParamSets(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfAlgParamSets"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfAlgParamSets"].createParameterValue()
@@ -604,7 +604,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstTestCompletedNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestCompletedNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestCompletedNotification"].createParameterValue()
@@ -620,7 +620,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 			
 			def void setRamTstTestErrorNotification(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestErrorNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestErrorNotification"].createParameterValue()
@@ -684,7 +684,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setRamTstAlgParamsId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgParamsId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAlgParamsId"].createParameterValue()
@@ -700,7 +700,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setRamTstAlgorithm(RamTstAlgorithm value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstAlgorithm"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstAlgorithm"].createParameterValue()
@@ -741,7 +741,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setRamTstExtNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstExtNumberOfTestedCells"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstExtNumberOfTestedCells"].createParameterValue()
@@ -757,7 +757,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setRamTstMaxNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstMaxNumberOfTestedCells"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstMaxNumberOfTestedCells"].createParameterValue()
@@ -773,7 +773,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setRamTstNumberOfBlocks(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfBlocks"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfBlocks"].createParameterValue()
@@ -789,7 +789,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 				
 				def void setRamTstNumberOfTestedCells(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstNumberOfTestedCells"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstNumberOfTestedCells"].createParameterValue()
@@ -853,7 +853,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					
 					def void setRamTstBlockId(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstBlockId"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstBlockId"].createParameterValue()
@@ -869,7 +869,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					
 					def void setRamTstEndAddress(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstEndAddress"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstEndAddress"].createParameterValue()
@@ -885,7 +885,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					
 					def void setRamTstFillPattern(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstFillPattern"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstFillPattern"].createParameterValue()
@@ -901,7 +901,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					
 					def void setRamTstStartAddress(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstStartAddress"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstStartAddress"].createParameterValue()
@@ -917,7 +917,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 					
 					def void setRamTstTestPolicy(RamTstTestPolicy value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstTestPolicy"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstTestPolicy"].createParameterValue()
@@ -1027,7 +1027,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 		
 		def void setRamTstCellSize(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RamTstCellSize"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RamTstCellSize"].createParameterValue()
@@ -1051,7 +1051,7 @@ class RamTst implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

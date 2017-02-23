@@ -194,7 +194,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanBusoffProcessing(CanBusoffProcessing value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanBusoffProcessing"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanBusoffProcessing"].createParameterValue()
@@ -227,7 +227,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanControllerActivation(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerActivation"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerActivation"].createParameterValue()
@@ -243,7 +243,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanControllerBaseAddress(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaseAddress"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerBaseAddress"].createParameterValue()
@@ -259,7 +259,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanControllerId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerId"].createParameterValue()
@@ -275,7 +275,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanRxProcessing(CanRxProcessing value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanRxProcessing"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanRxProcessing"].createParameterValue()
@@ -308,7 +308,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanTxProcessing(CanTxProcessing value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTxProcessing"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTxProcessing"].createParameterValue()
@@ -341,7 +341,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanWakeupFunctionalityAPI(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupFunctionalityAPI"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanWakeupFunctionalityAPI"].createParameterValue()
@@ -357,7 +357,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanWakeupProcessing(CanWakeupProcessing value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupProcessing"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanWakeupProcessing"].createParameterValue()
@@ -390,7 +390,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanWakeupSupport(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanWakeupSupport"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanWakeupSupport"].createParameterValue()
@@ -496,7 +496,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanControllerBaudRate(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRate"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerBaudRate"].createParameterValue()
@@ -512,7 +512,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanControllerBaudRateConfigID(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerBaudRateConfigID"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerBaudRateConfigID"].createParameterValue()
@@ -528,7 +528,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanControllerPropSeg(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerPropSeg"].createParameterValue()
@@ -544,7 +544,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanControllerSeg1(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerSeg1"].createParameterValue()
@@ -560,7 +560,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanControllerSeg2(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerSeg2"].createParameterValue()
@@ -576,7 +576,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanControllerSyncJumpWidth(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerSyncJumpWidth"].createParameterValue()
@@ -630,7 +630,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerFdBaudRate(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerFdBaudRate"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerFdBaudRate"].createParameterValue()
@@ -646,7 +646,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerPropSeg(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerPropSeg"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerPropSeg"].createParameterValue()
@@ -662,7 +662,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerSeg1(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg1"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerSeg1"].createParameterValue()
@@ -678,7 +678,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerSeg2(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSeg2"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerSeg2"].createParameterValue()
@@ -694,7 +694,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerSyncJumpWidth(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerSyncJumpWidth"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerSyncJumpWidth"].createParameterValue()
@@ -710,7 +710,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerTrcvDelayCompensationOffset(BigInteger value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTrcvDelayCompensationOffset"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerTrcvDelayCompensationOffset"].createParameterValue()
@@ -726,7 +726,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 					
 					def void setCanControllerTxBitRateSwitch(Boolean value){
 						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanControllerTxBitRateSwitch"]
-						if (parameterValue == null) {
+						if (parameterValue === null) {
 							val containerDef = containerValue.gGetDefinition
 							if (containerDef instanceof GParamConfContainerDef) {
 								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanControllerTxBitRateSwitch"].createParameterValue()
@@ -775,7 +775,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerApplWatchdogLimit(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerApplWatchdogLimit"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerApplWatchdogLimit"].createParameterValue()
@@ -791,7 +791,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerCycleCountMax(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerCycleCountMax"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerCycleCountMax"].createParameterValue()
@@ -807,7 +807,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerExpectedTxTrigger(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExpectedTxTrigger"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerExpectedTxTrigger"].createParameterValue()
@@ -823,7 +823,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerExternalClockSynchronisation(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerExternalClockSynchronisation"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerExternalClockSynchronisation"].createParameterValue()
@@ -839,7 +839,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerGlobalTimeFiltering(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerGlobalTimeFiltering"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerGlobalTimeFiltering"].createParameterValue()
@@ -855,7 +855,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerInitialRefOffset(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInitialRefOffset"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerInitialRefOffset"].createParameterValue()
@@ -871,7 +871,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerInterruptEnable(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerInterruptEnable"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerInterruptEnable"].createParameterValue()
@@ -887,7 +887,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerLevel2(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerLevel2"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerLevel2"].createParameterValue()
@@ -903,7 +903,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerNTUConfig(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerNTUConfig"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerNTUConfig"].createParameterValue()
@@ -919,7 +919,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerOperationMode(CanTTControllerOperationMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerOperationMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerOperationMode"].createParameterValue()
@@ -954,7 +954,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerSyncDeviation(BigDecimal value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerSyncDeviation"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerSyncDeviation"].createParameterValue()
@@ -970,7 +970,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerTURRestore(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTURRestore"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerTURRestore"].createParameterValue()
@@ -986,7 +986,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerTimeMaster(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMaster"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerTimeMaster"].createParameterValue()
@@ -1002,7 +1002,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerTimeMasterPriority(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTimeMasterPriority"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerTimeMasterPriority"].createParameterValue()
@@ -1018,7 +1018,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerTxEnableWindowLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerTxEnableWindowLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerTxEnableWindowLength"].createParameterValue()
@@ -1034,7 +1034,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerWatchTriggerGapTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerGapTimeMark"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerWatchTriggerGapTimeMark"].createParameterValue()
@@ -1050,7 +1050,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTControllerWatchTriggerTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTControllerWatchTriggerTimeMark"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTControllerWatchTriggerTimeMark"].createParameterValue()
@@ -1066,7 +1066,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTIRQProcessing(CanTTIRQProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTIRQProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTIRQProcessing"].createParameterValue()
@@ -1132,7 +1132,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanFdPaddingValue(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanFdPaddingValue"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanFdPaddingValue"].createParameterValue()
@@ -1148,7 +1148,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanHandleType(CanHandleType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHandleType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanHandleType"].createParameterValue()
@@ -1181,7 +1181,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanHwObjectCount(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwObjectCount"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanHwObjectCount"].createParameterValue()
@@ -1197,7 +1197,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIdType(CanIdType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIdType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIdType"].createParameterValue()
@@ -1232,7 +1232,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanObjectId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanObjectId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanObjectId"].createParameterValue()
@@ -1248,7 +1248,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanObjectType(CanObjectType value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanObjectType"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanObjectType"].createParameterValue()
@@ -1281,7 +1281,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanTriggerTransmitEnable(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTriggerTransmitEnable"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTriggerTransmitEnable"].createParameterValue()
@@ -1386,7 +1386,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanHwFilterCode(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterCode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanHwFilterCode"].createParameterValue()
@@ -1402,7 +1402,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanHwFilterMask(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanHwFilterMask"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanHwFilterMask"].createParameterValue()
@@ -1449,7 +1449,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTHardwareObjectBaseCycle(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectBaseCycle"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTHardwareObjectBaseCycle"].createParameterValue()
@@ -1465,7 +1465,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTHardwareObjectCycleRepetition(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectCycleRepetition"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTHardwareObjectCycleRepetition"].createParameterValue()
@@ -1481,7 +1481,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTHardwareObjectTimeMark(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTimeMark"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTHardwareObjectTimeMark"].createParameterValue()
@@ -1497,7 +1497,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTHardwareObjectTriggerId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTriggerId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTHardwareObjectTriggerId"].createParameterValue()
@@ -1513,7 +1513,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanTTHardwareObjectTriggerType(CanTTHardwareObjectTriggerType value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTTHardwareObjectTriggerType"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTTHardwareObjectTriggerType"].createParameterValue()
@@ -1635,7 +1635,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanIcomConfigId(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomConfigId"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomConfigId"].createParameterValue()
@@ -1651,7 +1651,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 				
 				def void setCanIcomWakeOnBusOff(Boolean value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomWakeOnBusOff"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomWakeOnBusOff"].createParameterValue()
@@ -1753,7 +1753,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						
 						def void setCanIcomCounterValue(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomCounterValue"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomCounterValue"].createParameterValue()
@@ -1769,7 +1769,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						
 						def void setCanIcomMessageId(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageId"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomMessageId"].createParameterValue()
@@ -1785,7 +1785,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						
 						def void setCanIcomMessageIdMask(BigInteger value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMessageIdMask"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomMessageIdMask"].createParameterValue()
@@ -1801,7 +1801,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						
 						def void setCanIcomMissingMessageTimerValue(BigDecimal value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomMissingMessageTimerValue"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomMissingMessageTimerValue"].createParameterValue()
@@ -1817,7 +1817,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 						
 						def void setCanIcomPayloadLengthError(Boolean value){
 							var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomPayloadLengthError"]
-							if (parameterValue == null) {
+							if (parameterValue === null) {
 								val containerDef = containerValue.gGetDefinition
 								if (containerDef instanceof GParamConfContainerDef) {
 									parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomPayloadLengthError"].createParameterValue()
@@ -1881,7 +1881,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							
 							def void setCanIcomSignalMask(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalMask"]
-								if (parameterValue == null) {
+								if (parameterValue === null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
 										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalMask"].createParameterValue()
@@ -1897,7 +1897,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							
 							def void setCanIcomSignalOperation(CanIcomSignalOperation value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalOperation"]
-								if (parameterValue == null) {
+								if (parameterValue === null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
 										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalOperation"].createParameterValue()
@@ -1936,7 +1936,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 							
 							def void setCanIcomSignalValue(BigInteger value){
 								var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomSignalValue"]
-								if (parameterValue == null) {
+								if (parameterValue === null) {
 									val containerDef = containerValue.gGetDefinition
 									if (containerDef instanceof GParamConfContainerDef) {
 										parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomSignalValue"].createParameterValue()
@@ -2003,7 +2003,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanDevErrorDetection(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanDevErrorDetection"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanDevErrorDetection"].createParameterValue()
@@ -2019,7 +2019,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanIndex(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIndex"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIndex"].createParameterValue()
@@ -2035,7 +2035,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanLPduReceiveCalloutFunction(String value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanLPduReceiveCalloutFunction"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanLPduReceiveCalloutFunction"].createParameterValue()
@@ -2051,7 +2051,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanMainFunctionBusoffPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionBusoffPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanMainFunctionBusoffPeriod"].createParameterValue()
@@ -2067,7 +2067,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanMainFunctionModePeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionModePeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanMainFunctionModePeriod"].createParameterValue()
@@ -2083,7 +2083,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanMainFunctionWakeupPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionWakeupPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanMainFunctionWakeupPeriod"].createParameterValue()
@@ -2099,7 +2099,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanMultiplexedTransmission(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMultiplexedTransmission"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanMultiplexedTransmission"].createParameterValue()
@@ -2115,7 +2115,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanPublicIcomSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanPublicIcomSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanPublicIcomSupport"].createParameterValue()
@@ -2131,7 +2131,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanSetBaudrateApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanSetBaudrateApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanSetBaudrateApi"].createParameterValue()
@@ -2147,7 +2147,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanTimeoutDuration(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanTimeoutDuration"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanTimeoutDuration"].createParameterValue()
@@ -2163,7 +2163,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 		
 		def void setCanVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanVersionInfoApi"].createParameterValue()
@@ -2258,7 +2258,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIcomLevel(CanIcomLevel value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomLevel"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomLevel"].createParameterValue()
@@ -2291,7 +2291,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanIcomVariant(CanIcomVariant value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanIcomVariant"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanIcomVariant"].createParameterValue()
@@ -2357,7 +2357,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 			
 			def void setCanMainFunctionPeriod(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CanMainFunctionPeriod"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CanMainFunctionPeriod"].createParameterValue()
@@ -2383,7 +2383,7 @@ class Can implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

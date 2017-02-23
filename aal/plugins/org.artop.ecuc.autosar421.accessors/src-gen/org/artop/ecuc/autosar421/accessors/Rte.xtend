@@ -252,7 +252,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteSchMVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteSchMVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteSchMVersionInfoApi"].createParameterValue()
@@ -268,7 +268,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteUseComShadowSignalApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteUseComShadowSignalApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteUseComShadowSignalApi"].createParameterValue()
@@ -497,7 +497,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteBswActivationOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswActivationOffset"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBswActivationOffset"].createParameterValue()
@@ -513,7 +513,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteBswImmediateRestart(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswImmediateRestart"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBswImmediateRestart"].createParameterValue()
@@ -529,7 +529,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteBswPositionInTask(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswPositionInTask"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBswPositionInTask"].createParameterValue()
@@ -545,7 +545,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteOsSchedulePoint(RteOsSchedulePoint value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteOsSchedulePoint"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteOsSchedulePoint"].createParameterValue()
@@ -678,7 +678,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteExclusiveAreaImplMechanism(RteExclusiveAreaImplMechanism value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExclusiveAreaImplMechanism"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteExclusiveAreaImplMechanism"].createParameterValue()
@@ -771,7 +771,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteBswTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBswTriggerSourceQueueLength"].createParameterValue()
@@ -819,7 +819,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteBswTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBswTriggerSourceQueueLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBswTriggerSourceQueueLength"].createParameterValue()
@@ -1045,7 +1045,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteBypassSupport(RteBypassSupport value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBypassSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBypassSupport"].createParameterValue()
@@ -1078,7 +1078,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteCalibrationSupport(RteCalibrationSupport value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCalibrationSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteCalibrationSupport"].createParameterValue()
@@ -1115,7 +1115,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteCodeVendorId(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCodeVendorId"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteCodeVendorId"].createParameterValue()
@@ -1131,7 +1131,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteDevErrorDetect"].createParameterValue()
@@ -1147,7 +1147,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteDevErrorDetectUninit(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteDevErrorDetectUninit"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteDevErrorDetectUninit"].createParameterValue()
@@ -1163,7 +1163,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteGenerationMode(RteGenerationMode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteGenerationMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteGenerationMode"].createParameterValue()
@@ -1196,7 +1196,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteInExclusiveAreaCheckEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteInExclusiveAreaCheckEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteInExclusiveAreaCheckEnabled"].createParameterValue()
@@ -1212,7 +1212,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteIocInteractionReturnValue(RteIocInteractionReturnValue value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteIocInteractionReturnValue"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteIocInteractionReturnValue"].createParameterValue()
@@ -1245,7 +1245,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteMeasurementSupport(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteMeasurementSupport"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteMeasurementSupport"].createParameterValue()
@@ -1261,7 +1261,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteOptimizationMode(RteOptimizationMode value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteOptimizationMode"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteOptimizationMode"].createParameterValue()
@@ -1294,7 +1294,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteToolChainSignificantCharacters(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteToolChainSignificantCharacters"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteToolChainSignificantCharacters"].createParameterValue()
@@ -1310,7 +1310,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteValueRangeCheckEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteValueRangeCheckEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteValueRangeCheckEnabled"].createParameterValue()
@@ -1339,7 +1339,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteVfbTraceEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteVfbTraceEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteVfbTraceEnabled"].createParameterValue()
@@ -1398,7 +1398,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteCoherentAccess(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCoherentAccess"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteCoherentAccess"].createParameterValue()
@@ -1414,7 +1414,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteImmediateBufferUpdate(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteImmediateBufferUpdate"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteImmediateBufferUpdate"].createParameterValue()
@@ -1463,7 +1463,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteInitializationStrategy(RteInitializationStrategy value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteInitializationStrategy"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteInitializationStrategy"].createParameterValue()
@@ -1837,7 +1837,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteExpectedActivationOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedActivationOffset"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteExpectedActivationOffset"].createParameterValue()
@@ -1853,7 +1853,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteExpectedTickDuration(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExpectedTickDuration"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteExpectedTickDuration"].createParameterValue()
@@ -2090,7 +2090,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteActivationOffset(BigDecimal value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteActivationOffset"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteActivationOffset"].createParameterValue()
@@ -2106,7 +2106,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteImmediateRestart(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteImmediateRestart"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteImmediateRestart"].createParameterValue()
@@ -2122,7 +2122,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteOsSchedulePoint(RteOsSchedulePoint value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteOsSchedulePoint"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteOsSchedulePoint"].createParameterValue()
@@ -2157,7 +2157,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRtePositionInTask(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RtePositionInTask"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RtePositionInTask"].createParameterValue()
@@ -2293,7 +2293,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteExclusiveAreaImplMechanism(RteExclusiveAreaImplMechanism value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteExclusiveAreaImplMechanism"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteExclusiveAreaImplMechanism"].createParameterValue()
@@ -2375,7 +2375,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteTriggerSourceQueueLength"].createParameterValue()
@@ -2423,7 +2423,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteTriggerSourceQueueLength(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteTriggerSourceQueueLength"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteTriggerSourceQueueLength"].createParameterValue()
@@ -2471,7 +2471,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteNvmRamBlockLocationSymbol(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteNvmRamBlockLocationSymbol"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteNvmRamBlockLocationSymbol"].createParameterValue()
@@ -2487,7 +2487,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteNvmRomBlockLocationSymbol(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteNvmRomBlockLocationSymbol"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteNvmRomBlockLocationSymbol"].createParameterValue()
@@ -2548,7 +2548,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 		
 		def void setRteBypassSupportEnabled(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteBypassSupportEnabled"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteBypassSupportEnabled"].createParameterValue()
@@ -2604,7 +2604,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 			
 			def void setRteCalibrationSupportEnabled(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "RteCalibrationSupportEnabled"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "RteCalibrationSupportEnabled"].createParameterValue()
@@ -2631,7 +2631,7 @@ class Rte implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)

@@ -208,7 +208,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmCallbackFunc(String value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackFunc"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackFunc"].createParameterValue()
@@ -224,7 +224,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmCallbackId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmCallbackId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmCallbackId"].createParameterValue()
@@ -272,7 +272,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmAsymPrivateKeyMaxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPrivateKeyMaxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPrivateKeyMaxLength"].createParameterValue()
@@ -288,7 +288,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmAsymPublicKeyMaxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAsymPublicKeyMaxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAsymPublicKeyMaxLength"].createParameterValue()
@@ -304,7 +304,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmDevErrorDetect(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDevErrorDetect"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDevErrorDetect"].createParameterValue()
@@ -320,7 +320,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmMainFunctionPeriod(BigDecimal value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMainFunctionPeriod"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMainFunctionPeriod"].createParameterValue()
@@ -336,7 +336,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmSymKeyMaxLength(BigInteger value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSymKeyMaxLength"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSymKeyMaxLength"].createParameterValue()
@@ -352,7 +352,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmUseDeprecated(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmUseDeprecated"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmUseDeprecated"].createParameterValue()
@@ -368,7 +368,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 		
 		def void setCsmVersionInfoApi(Boolean value){
 			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmVersionInfoApi"]
-			if (parameterValue == null) {
+			if (parameterValue === null) {
 				val containerDef = containerValue.gGetDefinition
 				if (containerDef instanceof GParamConfContainerDef) {
 					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmVersionInfoApi"].createParameterValue()
@@ -462,7 +462,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmJobId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmJobId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmJobId"].createParameterValue()
@@ -478,7 +478,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmJobPrimitiveCallbackUpdateNotification(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmJobPrimitiveCallbackUpdateNotification"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmJobPrimitiveCallbackUpdateNotification"].createParameterValue()
@@ -494,7 +494,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmJobPriority(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmJobPriority"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmJobPriority"].createParameterValue()
@@ -510,7 +510,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmJobUsePort(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmJobUsePort"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmJobUsePort"].createParameterValue()
@@ -650,7 +650,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmKeyId(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyId"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyId"].createParameterValue()
@@ -666,7 +666,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmKeyUsePort(Boolean value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmKeyUsePort"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmKeyUsePort"].createParameterValue()
@@ -891,7 +891,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptAlgorithmFamiliy(CsmAEADDecryptAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptAlgorithmFamiliy"].createParameterValue()
@@ -926,7 +926,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptAlgorithmFamilyCustom"].createParameterValue()
@@ -942,7 +942,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptAlgorithmKeyLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptAlgorithmKeyLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptAlgorithmKeyLength"].createParameterValue()
@@ -958,7 +958,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptAlgorithmMode(CsmAEADDecryptAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptAlgorithmMode"].createParameterValue()
@@ -991,7 +991,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptAlgorithmModeCustom"].createParameterValue()
@@ -1007,7 +1007,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptAssociatedDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptAssociatedDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptAssociatedDataMaxLength"].createParameterValue()
@@ -1023,7 +1023,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptCiphertextMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptCiphertextMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptCiphertextMaxLength"].createParameterValue()
@@ -1039,7 +1039,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptPlaintextMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptPlaintextMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptPlaintextMaxLength"].createParameterValue()
@@ -1055,7 +1055,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptProcessing(CsmAEADDecryptProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptProcessing"].createParameterValue()
@@ -1088,7 +1088,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADDecryptTagLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADDecryptTagLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADDecryptTagLength"].createParameterValue()
@@ -1197,7 +1197,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptAlgorithmFamiliy(CsmAEADEncryptAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptAlgorithmFamiliy"].createParameterValue()
@@ -1232,7 +1232,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptAlgorithmFamilyCustom"].createParameterValue()
@@ -1248,7 +1248,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptAlgorithmKeyLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptAlgorithmKeyLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptAlgorithmKeyLength"].createParameterValue()
@@ -1264,7 +1264,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptAlgorithmMode(CsmAEADEncryptAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptAlgorithmMode"].createParameterValue()
@@ -1297,7 +1297,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptAlgorithmModeCustom"].createParameterValue()
@@ -1313,7 +1313,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptAssociatedDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptAssociatedDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptAssociatedDataMaxLength"].createParameterValue()
@@ -1329,7 +1329,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptCiphertextMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptCiphertextMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptCiphertextMaxLength"].createParameterValue()
@@ -1345,7 +1345,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptPlaintextMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptPlaintextMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptPlaintextMaxLength"].createParameterValue()
@@ -1361,7 +1361,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptProcessing(CsmAEADEncryptProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptProcessing"].createParameterValue()
@@ -1394,7 +1394,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmAEADEncryptTagLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmAEADEncryptTagLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmAEADEncryptTagLength"].createParameterValue()
@@ -1503,7 +1503,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmFamiliy(CsmDecryptAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmFamiliy"].createParameterValue()
@@ -1544,7 +1544,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmFamilyCustom"].createParameterValue()
@@ -1560,7 +1560,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmKeyLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmKeyLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmKeyLength"].createParameterValue()
@@ -1576,7 +1576,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmMode(CsmDecryptAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmMode"].createParameterValue()
@@ -1629,7 +1629,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmModeCustom"].createParameterValue()
@@ -1645,7 +1645,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmSecondaryFamily(CsmDecryptAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmSecondaryFamily"].createParameterValue()
@@ -1678,7 +1678,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -1694,7 +1694,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptDataMaxLength"].createParameterValue()
@@ -1710,7 +1710,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptProcessing(CsmDecryptProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptProcessing"].createParameterValue()
@@ -1743,7 +1743,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmDecryptResultMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmDecryptResultMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmDecryptResultMaxLength"].createParameterValue()
@@ -1830,7 +1830,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptAlgorithmFamiliy(CsmEncryptAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptAlgorithmFamiliy"].createParameterValue()
@@ -1871,7 +1871,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptAlgorithmFamilyCustom"].createParameterValue()
@@ -1887,7 +1887,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptAlgorithmMode(CsmEncryptAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptAlgorithmMode"].createParameterValue()
@@ -1942,7 +1942,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptAlgorithmModeCustom"].createParameterValue()
@@ -1958,7 +1958,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptAlgorithmSecondaryFamily(CsmEncryptAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptAlgorithmSecondaryFamily"].createParameterValue()
@@ -1991,7 +1991,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -2007,7 +2007,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptDataMaxLength"].createParameterValue()
@@ -2023,7 +2023,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptProcessing(CsmEncryptProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptProcessing"].createParameterValue()
@@ -2056,7 +2056,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmEncryptResultMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmEncryptResultMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmEncryptResultMaxLength"].createParameterValue()
@@ -2143,7 +2143,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashAlgorithmFamiliy(CsmHashAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashAlgorithmFamiliy"].createParameterValue()
@@ -2210,7 +2210,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashAlgorithmFamilyCustom"].createParameterValue()
@@ -2226,7 +2226,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashAlgorithmMode(CsmHashAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashAlgorithmMode"].createParameterValue()
@@ -2259,7 +2259,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashAlgorithmModeCustom"].createParameterValue()
@@ -2275,7 +2275,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashAlgorithmSecondaryFamily(CsmHashAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashAlgorithmSecondaryFamily"].createParameterValue()
@@ -2308,7 +2308,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -2324,7 +2324,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashDataMaxLength"].createParameterValue()
@@ -2340,7 +2340,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashProcessing(CsmHashProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashProcessing"].createParameterValue()
@@ -2373,7 +2373,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmHashResultLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmHashResultLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmHashResultLength"].createParameterValue()
@@ -2460,7 +2460,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmFamiliy(CsmMacGenerateAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmFamiliy"].createParameterValue()
@@ -2535,7 +2535,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmFamilyCustom"].createParameterValue()
@@ -2551,7 +2551,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmKeyLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmKeyLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmKeyLength"].createParameterValue()
@@ -2567,7 +2567,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmMode(CsmMacGenerateAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmMode"].createParameterValue()
@@ -2612,7 +2612,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmModeCustom"].createParameterValue()
@@ -2628,7 +2628,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmSecondaryFamily(CsmMacGenerateAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmSecondaryFamily"].createParameterValue()
@@ -2661,7 +2661,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -2677,7 +2677,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateDataMaxLength"].createParameterValue()
@@ -2693,7 +2693,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateProcessing(CsmMacGenerateProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateProcessing"].createParameterValue()
@@ -2726,7 +2726,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacGenerateResultLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacGenerateResultLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacGenerateResultLength"].createParameterValue()
@@ -2813,7 +2813,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyAlgorithmFamiliy(CsmMacVerifyAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyAlgorithmFamiliy"].createParameterValue()
@@ -2884,7 +2884,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyAlgorithmFamilyCustom"].createParameterValue()
@@ -2900,7 +2900,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyAlgorithmSecondaryFamily(CsmMacVerifyAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyAlgorithmSecondaryFamily"].createParameterValue()
@@ -2933,7 +2933,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -2949,7 +2949,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyCompareLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyCompareLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyCompareLength"].createParameterValue()
@@ -2965,7 +2965,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyDataMaxLength"].createParameterValue()
@@ -2981,7 +2981,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmMacVerifyProcessing(CsmMacVerifyProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmMacVerifyProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmMacVerifyProcessing"].createParameterValue()
@@ -3085,7 +3085,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateAlgorithmFamiliy(CsmRandomGenerateAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateAlgorithmFamiliy"].createParameterValue()
@@ -3160,7 +3160,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateAlgorithmFamilyCustom"].createParameterValue()
@@ -3176,7 +3176,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateAlgorithmMode(CsmRandomGenerateAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateAlgorithmMode"].createParameterValue()
@@ -3221,7 +3221,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateAlgorithmModeCustom"].createParameterValue()
@@ -3237,7 +3237,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateAlgorithmSecondaryFamily(CsmRandomGenerateAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateAlgorithmSecondaryFamily"].createParameterValue()
@@ -3270,7 +3270,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -3286,7 +3286,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateProcessing(CsmRandomGenerateProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateProcessing"].createParameterValue()
@@ -3319,7 +3319,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmRandomGenerateResultLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmRandomGenerateResultLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmRandomGenerateResultLength"].createParameterValue()
@@ -3488,7 +3488,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateAlgorithmFamiliy(CsmSignatureGenerateAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateAlgorithmFamiliy"].createParameterValue()
@@ -3527,7 +3527,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateAlgorithmFamilyCustom"].createParameterValue()
@@ -3543,7 +3543,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateAlgorithmMode(CsmSignatureGenerateAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateAlgorithmMode"].createParameterValue()
@@ -3580,7 +3580,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateAlgorithmModeCustom"].createParameterValue()
@@ -3596,7 +3596,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateAlgorithmSecondaryFamily(CsmSignatureGenerateAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateAlgorithmSecondaryFamily"].createParameterValue()
@@ -3659,7 +3659,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -3675,7 +3675,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateDataMaxLength"].createParameterValue()
@@ -3691,7 +3691,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateKeyLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateKeyLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateKeyLength"].createParameterValue()
@@ -3707,7 +3707,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateProcessing(CsmSignatureGenerateProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateProcessing"].createParameterValue()
@@ -3740,7 +3740,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureGenerateResultLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureGenerateResultLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureGenerateResultLength"].createParameterValue()
@@ -3827,7 +3827,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyAlgorithmFamiliy(CsmSignatureVerifyAlgorithmFamiliy value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyAlgorithmFamiliy"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyAlgorithmFamiliy"].createParameterValue()
@@ -3866,7 +3866,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyAlgorithmFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyAlgorithmFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyAlgorithmFamilyCustom"].createParameterValue()
@@ -3882,7 +3882,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyAlgorithmMode(CsmSignatureVerifyAlgorithmMode value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyAlgorithmMode"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyAlgorithmMode"].createParameterValue()
@@ -3919,7 +3919,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyAlgorithmModeCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyAlgorithmModeCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyAlgorithmModeCustom"].createParameterValue()
@@ -3935,7 +3935,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyAlgorithmSecondaryFamily(CsmSignatureVerifyAlgorithmSecondaryFamily value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyAlgorithmSecondaryFamily"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyAlgorithmSecondaryFamily"].createParameterValue()
@@ -3998,7 +3998,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyAlgorithmSecondaryFamilyCustom(String value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyAlgorithmSecondaryFamilyCustom"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyAlgorithmSecondaryFamilyCustom"].createParameterValue()
@@ -4014,7 +4014,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyCompareLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyCompareLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyCompareLength"].createParameterValue()
@@ -4030,7 +4030,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyDataMaxLength(BigInteger value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyDataMaxLength"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyDataMaxLength"].createParameterValue()
@@ -4046,7 +4046,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 				
 				def void setCsmSignatureVerifyProcessing(CsmSignatureVerifyProcessing value){
 					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmSignatureVerifyProcessing"]
-					if (parameterValue == null) {
+					if (parameterValue === null) {
 						val containerDef = containerValue.gGetDefinition
 						if (containerDef instanceof GParamConfContainerDef) {
 							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmSignatureVerifyProcessing"].createParameterValue()
@@ -4161,7 +4161,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 			
 			def void setCsmQueueSize(BigInteger value){
 				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "CsmQueueSize"]
-				if (parameterValue == null) {
+				if (parameterValue === null) {
 					val containerDef = containerValue.gGetDefinition
 					if (containerDef instanceof GParamConfContainerDef) {
 						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "CsmQueueSize"].createParameterValue()
@@ -4198,7 +4198,7 @@ class Csm implements IWrapper<GModuleConfiguration> {
 
 	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
 		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
-		if (definitionFeature != null) {
+		if (definitionFeature !== null) {
 			val definition = child.eGet(definitionFeature)
 			if (ecucTypeDefType.isInstance(definition)) {
 				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)
