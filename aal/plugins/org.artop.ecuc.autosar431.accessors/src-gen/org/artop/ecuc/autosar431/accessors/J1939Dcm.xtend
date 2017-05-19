@@ -1,0 +1,1282 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) itemis and others.
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the Artop Software License Based on AUTOSAR
+ * Released Material (ASLR) which accompanies this distribution, and is
+ * available at http://www.artop.org/aslr.html
+ *
+ * Contributors:
+ *     itemis - Initial API and implementation
+ *
+ * </copyright>
+ */
+package org.artop.ecuc.autosar431.accessors
+
+import java.util.List
+
+import static extension org.artop.ecuc.autosar4x.accessors.lib.EcucValueAccessor4xUtil.*
+
+import autosar40.ecucdescription.EcucTextualParamValue
+import autosar40.ecucdescription.EcucNumericalParamValue
+import autosar40.genericstructure.generaltemplateclasses.documentation.blockelements.DocumentationBlock
+import autosar40.util.Autosar40Factory
+import org.artop.ecuc.autosar4x.accessors.lib.BigIntegerValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BigDecimalValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.BooleanValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.StringValueUnwrappingEList
+import org.artop.ecuc.autosar4x.accessors.lib.DocumentationBlockValueUnwrappingEList
+
+import org.eclipse.sphinx.emf.util.AbstractFilteringEList
+import org.eclipse.sphinx.emf.util.BasicWrappingEList
+import org.eclipse.sphinx.emf.util.IWrapper
+
+import gautosar.gecucdescription.GContainer
+import gautosar.gecucdescription.GModuleConfiguration
+import gautosar.gecucdescription.GParameterValue
+import gautosar.gecucdescription.GecucdescriptionPackage
+import gautosar.gecucparameterdef.GConfigParameter
+import gautosar.gecucparameterdef.GConfigReference
+import gautosar.gecucdescription.GReferenceValue
+import gautosar.gecucparameterdef.GContainerDef
+import gautosar.gecucparameterdef.GParamConfContainerDef
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable
+import static extension org.artop.ecuc.gautosar.accessors.lib.EcucValueAccessorUtil.*
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.sphinx.emf.util.AbstractUnwrappingEList
+import org.eclipse.core.runtime.CoreException
+import java.math.BigInteger
+import java.math.BigDecimal
+
+class J1939Dcm implements IWrapper<GModuleConfiguration> {
+	protected GModuleConfiguration moduleConfiguration
+
+	new (GModuleConfiguration moduleConfiguration){
+		this.moduleConfiguration = moduleConfiguration
+	}
+
+	def String getShortName(){
+		moduleConfiguration?.gGetShortName
+	}
+
+	def void setShortName(String name){
+		moduleConfiguration?.gSetShortName(name)
+	}
+
+	override def GModuleConfiguration getTarget(){
+		moduleConfiguration
+	}
+
+	def J1939DcmConfigSet getJ1939DcmConfigSet(){
+		moduleConfiguration.getByType(typeof(J1939DcmConfigSet))
+	}
+
+	def void setJ1939DcmConfigSet(J1939DcmConfigSet j1939DcmConfigSet){
+		val GContainer container = j1939DcmConfigSet.getTarget()
+	    moduleConfiguration.setContainer(container, "J1939DcmConfigSet")
+	}
+	def J1939DcmGeneral getJ1939DcmGeneral(){
+		moduleConfiguration.getByType(typeof(J1939DcmGeneral))
+	}
+
+	def void setJ1939DcmGeneral(J1939DcmGeneral j1939DcmGeneral){
+		val GContainer container = j1939DcmGeneral.getTarget()
+	    moduleConfiguration.setContainer(container, "J1939DcmGeneral")
+	}
+
+	static class J1939DcmConfigSet implements IWrapper<GContainer> {
+		private GContainer containerValue
+	
+		new(GContainer containerValue){
+			this.containerValue = containerValue
+		}
+	
+		def String getShortName(){
+			containerValue?.gGetShortName
+		}
+	
+		def void setShortName(String name){
+			containerValue?.gSetShortName(name)
+		}
+	
+		override def GContainer getTarget(){
+			containerValue
+		}
+	
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939DcmConfigSet)){
+				return false
+			}
+			this.target == (object as J1939DcmConfigSet).target
+		}
+	
+		
+		
+		def List<J1939DcmChannel> getJ1939DcmChannels(){
+			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+				override protected accept(GContainer item) {
+					return accept(item, typeof(GContainerDef), "J1939DcmChannel")
+				}
+			}
+			return new BasicWrappingEList<J1939DcmChannel, GContainer>(filteredContainers, typeof(J1939DcmChannel), typeof(GContainer)) {
+				override protected delegateAdd(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmChannel j1939DcmChannel) {
+					j1939DcmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmChannel"))
+					super.delegateAdd(j1939DcmChannel)
+				}
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmChannel j1939DcmChannel) {
+					j1939DcmChannel.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmChannel"))
+					super.delegateAdd(index, j1939DcmChannel)
+				}
+			}
+		}
+		
+		def J1939DcmDspExternalSRDataElementClass getJ1939DcmDspExternalSRDataElementClass(){
+			containerValue.getByType(typeof(J1939DcmDspExternalSRDataElementClass))
+		}
+		
+		def void setJ1939DcmDspExternalSRDataElementClass(J1939DcmDspExternalSRDataElementClass j1939DcmDspExternalSRDataElementClass){
+			val GContainer subContainer = j1939DcmDspExternalSRDataElementClass.getTarget()
+			containerValue.setContainer(subContainer, "J1939DcmDspExternalSRDataElementClass")
+		}
+		
+		def List<J1939DcmNode> getJ1939DcmNodes(){
+			val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+				override protected accept(GContainer item) {
+					return accept(item, typeof(GContainerDef), "J1939DcmNode")
+				}
+			}
+			return new BasicWrappingEList<J1939DcmNode, GContainer>(filteredContainers, typeof(J1939DcmNode), typeof(GContainer)) {
+				override protected delegateAdd(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmNode j1939DcmNode) {
+					j1939DcmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmNode"))
+					super.delegateAdd(j1939DcmNode)
+				}
+		
+				override protected delegateAdd(int index, org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmNode j1939DcmNode) {
+					j1939DcmNode.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmNode"))
+					super.delegateAdd(index, j1939DcmNode)
+				}
+			}
+		}
+		
+		def J1939DcmProcessingConditions getJ1939DcmProcessingConditions(){
+			containerValue.getByType(typeof(J1939DcmProcessingConditions))
+		}
+		
+		def void setJ1939DcmProcessingConditions(J1939DcmProcessingConditions j1939DcmProcessingConditions){
+			val GContainer subContainer = j1939DcmProcessingConditions.getTarget()
+			containerValue.setContainer(subContainer, "J1939DcmProcessingConditions")
+		}
+		
+		
+		static class J1939DcmChannel implements IWrapper<GContainer> {
+			private GContainer containerValue
+		
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+		
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+		
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+		
+			override def GContainer getTarget(){
+				containerValue
+			}
+		
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939DcmChannel)){
+					return false
+				}
+				this.target == (object as J1939DcmChannel).target
+			}
+		
+			def J1939DcmBusType getJ1939DcmBusType(){
+				containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmBusType"].getJ1939DcmBusTypeValue()
+			}
+			
+			def void setJ1939DcmBusType(J1939DcmBusType value){
+				var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmBusType"]
+				if (parameterValue === null) {
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmBusType"].createParameterValue()
+						containerValue.gGetParameterValues += parameterValue
+					}
+				}
+				parameterValue.setValue(value)
+			}
+			
+			enum J1939DcmBusType {
+				J1939DCM_ISO9141, 
+				J1939DCM_J1587, 
+				J1939DCM_J1850, 
+				J1939DCM_J1922, 
+				J1939DCM_J1939_NETWORK_1, 
+				J1939DCM_J1939_NETWORK_2, 
+				J1939DCM_J1939_NETWORK_3, 
+				J1939DCM_J1939_NETWORK_4, 
+				J1939DCM_OTHER, 
+				J1939DCM_PROPRIETARY_NETWORK_1, 
+				J1939DCM_PROPRIETARY_NETWORK_2
+			}
+			
+			def J1939DcmBusType getJ1939DcmBusTypeValue(GParameterValue parameterValue){
+				val castedParameterValue = parameterValue as EcucTextualParamValue
+				switch (castedParameterValue.value){
+					case "J1939DCM_ISO9141" : J1939DcmBusType.J1939DCM_ISO9141
+					case "J1939DCM_J1587" : J1939DcmBusType.J1939DCM_J1587
+					case "J1939DCM_J1850" : J1939DcmBusType.J1939DCM_J1850
+					case "J1939DCM_J1922" : J1939DcmBusType.J1939DCM_J1922
+					case "J1939DCM_J1939_NETWORK_1" : J1939DcmBusType.J1939DCM_J1939_NETWORK_1
+					case "J1939DCM_J1939_NETWORK_2" : J1939DcmBusType.J1939DCM_J1939_NETWORK_2
+					case "J1939DCM_J1939_NETWORK_3" : J1939DcmBusType.J1939DCM_J1939_NETWORK_3
+					case "J1939DCM_J1939_NETWORK_4" : J1939DcmBusType.J1939DCM_J1939_NETWORK_4
+					case "J1939DCM_OTHER" : J1939DcmBusType.J1939DCM_OTHER
+					case "J1939DCM_PROPRIETARY_NETWORK_1" : J1939DcmBusType.J1939DCM_PROPRIETARY_NETWORK_1
+					case "J1939DCM_PROPRIETARY_NETWORK_2" : J1939DcmBusType.J1939DCM_PROPRIETARY_NETWORK_2
+				}
+			}
+			
+			def void setJ1939DcmBusTypeValue(GParameterValue parameterValue, J1939DcmBusType value){
+				parameterValue.setValue(value)
+			}
+			
+			
+			def org.artop.ecuc.autosar431.accessors.ComM.ComMConfigSet.ComMChannel getJ1939DcmComMChannelRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.ComM.ComMConfigSet.ComMChannel), "J1939DcmComMChannelRef")
+			}
+			
+			def void setJ1939DcmComMChannelRef(org.artop.ecuc.autosar431.accessors.ComM.ComMConfigSet.ComMChannel object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmComMChannelRef"], object.getTarget())
+				}
+			}
+			
+			
+			
+		}
+		
+		static class J1939DcmDspExternalSRDataElementClass implements IWrapper<GContainer> {
+			private GContainer containerValue
+		
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+		
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+		
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+		
+			override def GContainer getTarget(){
+				containerValue
+			}
+		
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939DcmDspExternalSRDataElementClass)){
+					return false
+				}
+				this.target == (object as J1939DcmDspExternalSRDataElementClass).target
+			}
+		
+			def J1939DcmDataElementInstance getJ1939DcmDataElementInstance(){
+				containerValue.getByType(typeof(J1939DcmDataElementInstance))
+			}
+			
+			def void setJ1939DcmDataElementInstance(J1939DcmDataElementInstance j1939DcmDataElementInstance){
+				val GContainer subContainer = j1939DcmDataElementInstance.getTarget()
+				containerValue.setContainer(subContainer, "J1939DcmDataElementInstance")
+			}
+			def J1939DcmSubElementInDataElementInstance getJ1939DcmSubElementInDataElementInstance(){
+				containerValue.getByType(typeof(J1939DcmSubElementInDataElementInstance))
+			}
+			
+			def void setJ1939DcmSubElementInDataElementInstance(J1939DcmSubElementInDataElementInstance j1939DcmSubElementInDataElementInstance){
+				val GContainer subContainer = j1939DcmSubElementInDataElementInstance.getTarget()
+				containerValue.setContainer(subContainer, "J1939DcmSubElementInDataElementInstance")
+			}
+			def J1939DcmSubElementInImplDataElementInstance getJ1939DcmSubElementInImplDataElementInstance(){
+				containerValue.getByType(typeof(J1939DcmSubElementInImplDataElementInstance))
+			}
+			
+			def void setJ1939DcmSubElementInImplDataElementInstance(J1939DcmSubElementInImplDataElementInstance j1939DcmSubElementInImplDataElementInstance){
+				val GContainer subContainer = j1939DcmSubElementInImplDataElementInstance.getTarget()
+				containerValue.setContainer(subContainer, "J1939DcmSubElementInImplDataElementInstance")
+			}
+			
+			static class J1939DcmDataElementInstance implements IWrapper<GContainer> {
+				private GContainer containerValue
+			
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+			
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+			
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+			
+				override def GContainer getTarget(){
+					containerValue
+				}
+			
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmDataElementInstance)){
+						return false
+					}
+					this.target == (object as J1939DcmDataElementInstance).target
+				}
+			
+				
+				
+				
+				
+			}
+			
+			static class J1939DcmSubElementInDataElementInstance implements IWrapper<GContainer> {
+				private GContainer containerValue
+			
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+			
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+			
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+			
+				override def GContainer getTarget(){
+					containerValue
+				}
+			
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmSubElementInDataElementInstance)){
+						return false
+					}
+					this.target == (object as J1939DcmSubElementInDataElementInstance).target
+				}
+			
+				
+				
+				
+				
+			}
+			
+			static class J1939DcmSubElementInImplDataElementInstance implements IWrapper<GContainer> {
+				private GContainer containerValue
+			
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+			
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+			
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+			
+				override def GContainer getTarget(){
+					containerValue
+				}
+			
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmSubElementInImplDataElementInstance)){
+						return false
+					}
+					this.target == (object as J1939DcmSubElementInImplDataElementInstance).target
+				}
+			
+				
+				
+				
+				
+			}
+			
+		}
+		
+		static class J1939DcmNode implements IWrapper<GContainer> {
+			private GContainer containerValue
+		
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+		
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+		
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+		
+			override def GContainer getTarget(){
+				containerValue
+			}
+		
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939DcmNode)){
+					return false
+				}
+				this.target == (object as J1939DcmNode).target
+			}
+		
+			def List<BigInteger> getJ1939DcmSPNsInDataStreams(){
+				val List<EcucNumericalParamValue> filteredParameterValues = new AbstractFilteringEList<EcucNumericalParamValue>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.GParameterValue)) {
+					override protected accept(EcucNumericalParamValue item) {
+						return accept(item, typeof(GConfigParameter), "J1939DcmSPNsInDataStream")
+					}
+				}
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					val parameterDef = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmSPNsInDataStream"]
+					return new BigIntegerValueUnwrappingEList(filteredParameterValues, typeof(EcucNumericalParamValue), typeof(BigInteger), parameterDef)
+				}
+			}
+			
+			
+			def org.artop.ecuc.autosar431.accessors.Dem.DemGeneral.DemClient getJ1939DcmDemClientRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.Dem.DemGeneral.DemClient), "J1939DcmDemClientRef")
+			}
+			
+			def void setJ1939DcmDemClientRef(org.artop.ecuc.autosar431.accessors.Dem.DemGeneral.DemClient object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmDemClientRef"], object.getTarget())
+				}
+			}
+			
+			def org.artop.ecuc.autosar431.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode getJ1939DcmNmNodeRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode), "J1939DcmNmNodeRef")
+			}
+			
+			def void setJ1939DcmNmNodeRef(org.artop.ecuc.autosar431.accessors.J1939Nm.J1939NmConfigSet.J1939NmNode object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmNmNodeRef"], object.getTarget())
+				}
+			}
+			
+			def org.artop.ecuc.autosar431.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser.J1939RmDcmUser getJ1939DcmNodeRmUserRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser.J1939RmDcmUser), "J1939DcmNodeRmUserRef")
+			}
+			
+			def void setJ1939DcmNodeRmUserRef(org.artop.ecuc.autosar431.accessors.J1939Rm.J1939RmConfigSet.J1939RmNode.J1939RmUser.J1939RmDcmUser object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmNodeRmUserRef"], object.getTarget())
+				}
+			}
+			
+			def org.artop.ecuc.autosar431.accessors.Dem.DemGeneral.DemEventMemorySet.DemUserDefinedMemory getJ1939DcmServiceOnlyDTCsMemoryDestinationRef(){
+				containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.Dem.DemGeneral.DemEventMemorySet.DemUserDefinedMemory), "J1939DcmServiceOnlyDTCsMemoryDestinationRef")
+			}
+			
+			def void setJ1939DcmServiceOnlyDTCsMemoryDestinationRef(org.artop.ecuc.autosar431.accessors.Dem.DemGeneral.DemEventMemorySet.DemUserDefinedMemory object){
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmServiceOnlyDTCsMemoryDestinationRef"], object.getTarget())
+				}
+			}
+			
+			
+			def List<J1939DcmDiagnosticMessageSupport> getJ1939DcmDiagnosticMessageSupports(){
+				val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+					override protected accept(GContainer item) {
+						return accept(item, typeof(GContainerDef), "J1939DcmDiagnosticMessageSupport")
+					}
+				}
+				return new BasicWrappingEList<J1939DcmDiagnosticMessageSupport, GContainer>(filteredContainers, typeof(J1939DcmDiagnosticMessageSupport), typeof(GContainer)) {
+					override protected delegateAdd(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmNode.J1939DcmDiagnosticMessageSupport j1939DcmDiagnosticMessageSupport) {
+						j1939DcmDiagnosticMessageSupport.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmDiagnosticMessageSupport"))
+						super.delegateAdd(j1939DcmDiagnosticMessageSupport)
+					}
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmNode.J1939DcmDiagnosticMessageSupport j1939DcmDiagnosticMessageSupport) {
+						j1939DcmDiagnosticMessageSupport.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmDiagnosticMessageSupport"))
+						super.delegateAdd(index, j1939DcmDiagnosticMessageSupport)
+					}
+				}
+			}
+			
+			
+			static class J1939DcmDiagnosticMessageSupport implements IWrapper<GContainer> {
+				private GContainer containerValue
+			
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+			
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+			
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+			
+				override def GContainer getTarget(){
+					containerValue
+				}
+			
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmDiagnosticMessageSupport)){
+						return false
+					}
+					this.target == (object as J1939DcmDiagnosticMessageSupport).target
+				}
+			
+				def J1939DcmDmxSupport getJ1939DcmDmxSupport(){
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDmxSupport"].getJ1939DcmDmxSupportValue()
+				}
+				
+				def void setJ1939DcmDmxSupport(J1939DcmDmxSupport value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDmxSupport"]
+					if (parameterValue === null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDmxSupport"].createParameterValue()
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					parameterValue.setValue(value)
+				}
+				
+				enum J1939DcmDmxSupport {
+					J1939DCM_DM01_SUPPORT, 
+					J1939DCM_DM02_SUPPORT, 
+					J1939DCM_DM03_SUPPORT, 
+					J1939DCM_DM04_SUPPORT, 
+					J1939DCM_DM05_SUPPORT, 
+					J1939DCM_DM06_SUPPORT, 
+					J1939DCM_DM07_SUPPORT, 
+					J1939DCM_DM08_SUPPORT, 
+					J1939DCM_DM09_SUPPORT, 
+					J1939DCM_DM10_SUPPORT, 
+					J1939DCM_DM11_SUPPORT, 
+					J1939DCM_DM12_SUPPORT, 
+					J1939DCM_DM13_SUPPORT, 
+					J1939DCM_DM14_SUPPORT, 
+					J1939DCM_DM15_SUPPORT, 
+					J1939DCM_DM16_SUPPORT, 
+					J1939DCM_DM17_SUPPORT, 
+					J1939DCM_DM18_SUPPORT, 
+					J1939DCM_DM19_SUPPORT, 
+					J1939DCM_DM20_SUPPORT, 
+					J1939DCM_DM21_SUPPORT, 
+					J1939DCM_DM22_SUPPORT, 
+					J1939DCM_DM23_SUPPORT, 
+					J1939DCM_DM24_SUPPORT, 
+					J1939DCM_DM25_SUPPORT, 
+					J1939DCM_DM26_SUPPORT, 
+					J1939DCM_DM27_SUPPORT, 
+					J1939DCM_DM28_SUPPORT, 
+					J1939DCM_DM29_SUPPORT, 
+					J1939DCM_DM30_SUPPORT, 
+					J1939DCM_DM31_SUPPORT, 
+					J1939DCM_DM32_SUPPORT, 
+					J1939DCM_DM33_SUPPORT, 
+					J1939DCM_DM34_SUPPORT, 
+					J1939DCM_DM35_SUPPORT, 
+					J1939DCM_DM36_SUPPORT, 
+					J1939DCM_DM37_SUPPORT, 
+					J1939DCM_DM38_SUPPORT, 
+					J1939DCM_DM39_SUPPORT, 
+					J1939DCM_DM40_SUPPORT, 
+					J1939DCM_DM41_SUPPORT, 
+					J1939DCM_DM42_SUPPORT, 
+					J1939DCM_DM43_SUPPORT, 
+					J1939DCM_DM44_SUPPORT, 
+					J1939DCM_DM45_SUPPORT, 
+					J1939DCM_DM46_SUPPORT, 
+					J1939DCM_DM47_SUPPORT, 
+					J1939DCM_DM48_SUPPORT, 
+					J1939DCM_DM49_SUPPORT, 
+					J1939DCM_DM50_SUPPORT, 
+					J1939DCM_DM51_SUPPORT, 
+					J1939DCM_DM52_SUPPORT, 
+					J1939DCM_DM53_SUPPORT, 
+					J1939DCM_DM54_SUPPORT, 
+					J1939DCM_DM55_SUPPORT, 
+					J1939DCM_DM56_SUPPORT, 
+					J1939DCM_DM57_SUPPORT
+				}
+				
+				def J1939DcmDmxSupport getJ1939DcmDmxSupportValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
+						case "J1939DCM_DM01_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM01_SUPPORT
+						case "J1939DCM_DM02_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM02_SUPPORT
+						case "J1939DCM_DM03_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM03_SUPPORT
+						case "J1939DCM_DM04_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM04_SUPPORT
+						case "J1939DCM_DM05_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM05_SUPPORT
+						case "J1939DCM_DM06_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM06_SUPPORT
+						case "J1939DCM_DM07_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM07_SUPPORT
+						case "J1939DCM_DM08_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM08_SUPPORT
+						case "J1939DCM_DM09_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM09_SUPPORT
+						case "J1939DCM_DM10_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM10_SUPPORT
+						case "J1939DCM_DM11_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM11_SUPPORT
+						case "J1939DCM_DM12_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM12_SUPPORT
+						case "J1939DCM_DM13_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM13_SUPPORT
+						case "J1939DCM_DM14_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM14_SUPPORT
+						case "J1939DCM_DM15_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM15_SUPPORT
+						case "J1939DCM_DM16_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM16_SUPPORT
+						case "J1939DCM_DM17_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM17_SUPPORT
+						case "J1939DCM_DM18_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM18_SUPPORT
+						case "J1939DCM_DM19_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM19_SUPPORT
+						case "J1939DCM_DM20_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM20_SUPPORT
+						case "J1939DCM_DM21_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM21_SUPPORT
+						case "J1939DCM_DM22_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM22_SUPPORT
+						case "J1939DCM_DM23_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM23_SUPPORT
+						case "J1939DCM_DM24_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM24_SUPPORT
+						case "J1939DCM_DM25_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM25_SUPPORT
+						case "J1939DCM_DM26_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM26_SUPPORT
+						case "J1939DCM_DM27_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM27_SUPPORT
+						case "J1939DCM_DM28_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM28_SUPPORT
+						case "J1939DCM_DM29_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM29_SUPPORT
+						case "J1939DCM_DM30_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM30_SUPPORT
+						case "J1939DCM_DM31_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM31_SUPPORT
+						case "J1939DCM_DM32_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM32_SUPPORT
+						case "J1939DCM_DM33_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM33_SUPPORT
+						case "J1939DCM_DM34_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM34_SUPPORT
+						case "J1939DCM_DM35_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM35_SUPPORT
+						case "J1939DCM_DM36_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM36_SUPPORT
+						case "J1939DCM_DM37_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM37_SUPPORT
+						case "J1939DCM_DM38_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM38_SUPPORT
+						case "J1939DCM_DM39_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM39_SUPPORT
+						case "J1939DCM_DM40_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM40_SUPPORT
+						case "J1939DCM_DM41_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM41_SUPPORT
+						case "J1939DCM_DM42_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM42_SUPPORT
+						case "J1939DCM_DM43_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM43_SUPPORT
+						case "J1939DCM_DM44_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM44_SUPPORT
+						case "J1939DCM_DM45_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM45_SUPPORT
+						case "J1939DCM_DM46_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM46_SUPPORT
+						case "J1939DCM_DM47_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM47_SUPPORT
+						case "J1939DCM_DM48_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM48_SUPPORT
+						case "J1939DCM_DM49_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM49_SUPPORT
+						case "J1939DCM_DM50_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM50_SUPPORT
+						case "J1939DCM_DM51_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM51_SUPPORT
+						case "J1939DCM_DM52_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM52_SUPPORT
+						case "J1939DCM_DM53_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM53_SUPPORT
+						case "J1939DCM_DM54_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM54_SUPPORT
+						case "J1939DCM_DM55_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM55_SUPPORT
+						case "J1939DCM_DM56_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM56_SUPPORT
+						case "J1939DCM_DM57_SUPPORT" : J1939DcmDmxSupport.J1939DCM_DM57_SUPPORT
+					}
+				}
+				
+				def void setJ1939DcmDmxSupportValue(GParameterValue parameterValue, J1939DcmDmxSupport value){
+					parameterValue.setValue(value)
+				}
+				
+				
+				def org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeRule getJ1939DcmDiagnosticMessageModeRuleRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeRule), "J1939DcmDiagnosticMessageModeRuleRef")
+				}
+				
+				def void setJ1939DcmDiagnosticMessageModeRuleRef(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeRule object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmDiagnosticMessageModeRuleRef"], object.getTarget())
+					}
+				}
+				
+				def org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmChannel getJ1939DcmDiagnosticMessageSupportChannelRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmChannel), "J1939DcmDiagnosticMessageSupportChannelRef")
+				}
+				
+				def void setJ1939DcmDiagnosticMessageSupportChannelRef(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmChannel object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmDiagnosticMessageSupportChannelRef"], object.getTarget())
+					}
+				}
+				
+				
+				def J1939DcmRxPdu getJ1939DcmRxPdu(){
+					containerValue.getByType(typeof(J1939DcmRxPdu))
+				}
+				
+				def void setJ1939DcmRxPdu(J1939DcmRxPdu j1939DcmRxPdu){
+					val GContainer subContainer = j1939DcmRxPdu.getTarget()
+					containerValue.setContainer(subContainer, "J1939DcmRxPdu")
+				}
+				
+				def J1939DcmTxPdu getJ1939DcmTxPdu(){
+					containerValue.getByType(typeof(J1939DcmTxPdu))
+				}
+				
+				def void setJ1939DcmTxPdu(J1939DcmTxPdu j1939DcmTxPdu){
+					val GContainer subContainer = j1939DcmTxPdu.getTarget()
+					containerValue.setContainer(subContainer, "J1939DcmTxPdu")
+				}
+				
+				
+				static class J1939DcmRxPdu implements IWrapper<GContainer> {
+					private GContainer containerValue
+				
+					new(GContainer containerValue){
+						this.containerValue = containerValue
+					}
+				
+					def String getShortName(){
+						containerValue?.gGetShortName
+					}
+				
+					def void setShortName(String name){
+						containerValue?.gSetShortName(name)
+					}
+				
+					override def GContainer getTarget(){
+						containerValue
+					}
+				
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939DcmRxPdu)){
+							return false
+						}
+						this.target == (object as J1939DcmRxPdu).target
+					}
+				
+					def BigInteger getJ1939DcmRxPduId(){
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"].getBigIntegerValue()
+					}
+					
+					def void setJ1939DcmRxPduId(BigInteger value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmRxPduId"]
+						if (parameterValue === null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmRxPduId"].createParameterValue()
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						parameterValue.setValue(value)
+					}
+					
+					
+					def org.artop.ecuc.autosar431.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939DcmRxPduRef(){
+						containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939DcmRxPduRef")
+					}
+					
+					def void setJ1939DcmRxPduRef(org.artop.ecuc.autosar431.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmRxPduRef"], object.getTarget())
+						}
+					}
+					
+					
+					
+				}
+				
+				static class J1939DcmTxPdu implements IWrapper<GContainer> {
+					private GContainer containerValue
+				
+					new(GContainer containerValue){
+						this.containerValue = containerValue
+					}
+				
+					def String getShortName(){
+						containerValue?.gGetShortName
+					}
+				
+					def void setShortName(String name){
+						containerValue?.gSetShortName(name)
+					}
+				
+					override def GContainer getTarget(){
+						containerValue
+					}
+				
+					override def boolean equals(Object object) {
+				        if (!(object instanceof J1939DcmTxPdu)){
+							return false
+						}
+						this.target == (object as J1939DcmTxPdu).target
+					}
+				
+					def BigInteger getJ1939DcmTxPduId(){
+						containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmTxPduId"].getBigIntegerValue()
+					}
+					
+					def void setJ1939DcmTxPduId(BigInteger value){
+						var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmTxPduId"]
+						if (parameterValue === null) {
+							val containerDef = containerValue.gGetDefinition
+							if (containerDef instanceof GParamConfContainerDef) {
+								parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmTxPduId"].createParameterValue()
+								containerValue.gGetParameterValues += parameterValue
+							}
+						}
+						parameterValue.setValue(value)
+					}
+					
+					
+					def org.artop.ecuc.autosar431.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu getJ1939DcmTxPduRef(){
+						containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu), "J1939DcmTxPduRef")
+					}
+					
+					def void setJ1939DcmTxPduRef(org.artop.ecuc.autosar431.accessors.EcuC.EcucConfigSet.EcucPduCollection.Pdu object){
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmTxPduRef"], object.getTarget())
+						}
+					}
+					
+					
+					
+				}
+				
+			}
+			
+		}
+		
+		static class J1939DcmProcessingConditions implements IWrapper<GContainer> {
+			private GContainer containerValue
+		
+			new(GContainer containerValue){
+				this.containerValue = containerValue
+			}
+		
+			def String getShortName(){
+				containerValue?.gGetShortName
+			}
+		
+			def void setShortName(String name){
+				containerValue?.gSetShortName(name)
+			}
+		
+			override def GContainer getTarget(){
+				containerValue
+			}
+		
+			override def boolean equals(Object object) {
+		        if (!(object instanceof J1939DcmProcessingConditions)){
+					return false
+				}
+				this.target == (object as J1939DcmProcessingConditions).target
+			}
+		
+			
+			
+			def List<J1939DcmModeCondition> getJ1939DcmModeConditions(){
+				val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+					override protected accept(GContainer item) {
+						return accept(item, typeof(GContainerDef), "J1939DcmModeCondition")
+					}
+				}
+				return new BasicWrappingEList<J1939DcmModeCondition, GContainer>(filteredContainers, typeof(J1939DcmModeCondition), typeof(GContainer)) {
+					override protected delegateAdd(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeCondition j1939DcmModeCondition) {
+						j1939DcmModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmModeCondition"))
+						super.delegateAdd(j1939DcmModeCondition)
+					}
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeCondition j1939DcmModeCondition) {
+						j1939DcmModeCondition.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmModeCondition"))
+						super.delegateAdd(index, j1939DcmModeCondition)
+					}
+				}
+			}
+			
+			def List<J1939DcmModeRule> getJ1939DcmModeRules(){
+				val List<GContainer> filteredContainers = new AbstractFilteringEList<GContainer>(containerValue, getEContainingFeature(containerValue, GecucdescriptionPackage.eINSTANCE.getGContainer())) {
+					override protected accept(GContainer item) {
+						return accept(item, typeof(GContainerDef), "J1939DcmModeRule")
+					}
+				}
+				return new BasicWrappingEList<J1939DcmModeRule, GContainer>(filteredContainers, typeof(J1939DcmModeRule), typeof(GContainer)) {
+					override protected delegateAdd(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeRule j1939DcmModeRule) {
+						j1939DcmModeRule.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmModeRule"))
+						super.delegateAdd(j1939DcmModeRule)
+					}
+			
+					override protected delegateAdd(int index, org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmProcessingConditions.J1939DcmModeRule j1939DcmModeRule) {
+						j1939DcmModeRule.target?.gSetDefinition(containerValue.getContainerDefinition("J1939DcmModeRule"))
+						super.delegateAdd(index, j1939DcmModeRule)
+					}
+				}
+			}
+			
+			
+			static class J1939DcmModeCondition implements IWrapper<GContainer> {
+				private GContainer containerValue
+			
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+			
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+			
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+			
+				override def GContainer getTarget(){
+					containerValue
+				}
+			
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmModeCondition)){
+						return false
+					}
+					this.target == (object as J1939DcmModeCondition).target
+				}
+			
+				def J1939DcmConditionType getJ1939DcmConditionType(){
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmConditionType"].getJ1939DcmConditionTypeValue()
+				}
+				
+				def void setJ1939DcmConditionType(J1939DcmConditionType value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmConditionType"]
+					if (parameterValue === null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmConditionType"].createParameterValue()
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					parameterValue.setValue(value)
+				}
+				
+				enum J1939DcmConditionType {
+					J1939DCM_EQUALS, 
+					J1939DCM_EQUALS_NOT, 
+					J1939DCM_GREATER_OR_EQUAL, 
+					J1939DCM_GREATER_THAN, 
+					J1939DCM_LESS_OR_EQUAL, 
+					J1939DCM_LESS_THAN
+				}
+				
+				def J1939DcmConditionType getJ1939DcmConditionTypeValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
+						case "J1939DCM_EQUALS" : J1939DcmConditionType.J1939DCM_EQUALS
+						case "J1939DCM_EQUALS_NOT" : J1939DcmConditionType.J1939DCM_EQUALS_NOT
+						case "J1939DCM_GREATER_OR_EQUAL" : J1939DcmConditionType.J1939DCM_GREATER_OR_EQUAL
+						case "J1939DCM_GREATER_THAN" : J1939DcmConditionType.J1939DCM_GREATER_THAN
+						case "J1939DCM_LESS_OR_EQUAL" : J1939DcmConditionType.J1939DCM_LESS_OR_EQUAL
+						case "J1939DCM_LESS_THAN" : J1939DcmConditionType.J1939DCM_LESS_THAN
+					}
+				}
+				
+				def void setJ1939DcmConditionTypeValue(GParameterValue parameterValue, J1939DcmConditionType value){
+					parameterValue.setValue(value)
+				}
+				
+				
+				
+				
+				def org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmDspExternalSRDataElementClass getJ1939DcmSwcSRDataElementRef(){
+					containerValue.getReference(typeof(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmDspExternalSRDataElementClass), "J1939DcmSwcSRDataElementRef")
+				}
+				
+				def void setJ1939DcmSwcSRDataElementRef(org.artop.ecuc.autosar431.accessors.J1939Dcm.J1939DcmConfigSet.J1939DcmDspExternalSRDataElementClass object){
+					val containerDef = containerValue.gGetDefinition
+					if (containerDef instanceof GParamConfContainerDef) {
+						containerValue.setReferenceValue(containerDef.gGetReferences.findFirst[gGetShortName == "J1939DcmSwcSRDataElementRef"], object.getTarget())
+					}
+				}
+				
+				
+				
+				
+			}
+			
+			static class J1939DcmModeRule implements IWrapper<GContainer> {
+				private GContainer containerValue
+			
+				new(GContainer containerValue){
+					this.containerValue = containerValue
+				}
+			
+				def String getShortName(){
+					containerValue?.gGetShortName
+				}
+			
+				def void setShortName(String name){
+					containerValue?.gSetShortName(name)
+				}
+			
+				override def GContainer getTarget(){
+					containerValue
+				}
+			
+				override def boolean equals(Object object) {
+			        if (!(object instanceof J1939DcmModeRule)){
+						return false
+					}
+					this.target == (object as J1939DcmModeRule).target
+				}
+			
+				def J1939DcmLogicalOperator getJ1939DcmLogicalOperator(){
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmLogicalOperator"].getJ1939DcmLogicalOperatorValue()
+				}
+				
+				def void setJ1939DcmLogicalOperator(J1939DcmLogicalOperator value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmLogicalOperator"]
+					if (parameterValue === null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmLogicalOperator"].createParameterValue()
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					parameterValue.setValue(value)
+				}
+				
+				enum J1939DcmLogicalOperator {
+					J1939DCM_AND, 
+					J1939DCM_OR
+				}
+				
+				def J1939DcmLogicalOperator getJ1939DcmLogicalOperatorValue(GParameterValue parameterValue){
+					val castedParameterValue = parameterValue as EcucTextualParamValue
+					switch (castedParameterValue.value){
+						case "J1939DCM_AND" : J1939DcmLogicalOperator.J1939DCM_AND
+						case "J1939DCM_OR" : J1939DcmLogicalOperator.J1939DCM_OR
+					}
+				}
+				
+				def void setJ1939DcmLogicalOperatorValue(GParameterValue parameterValue, J1939DcmLogicalOperator value){
+					parameterValue.setValue(value)
+				}
+				
+				def BigInteger getJ1939DcmModeRuleNrcValue(){
+					containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmModeRuleNrcValue"].getBigIntegerValue()
+				}
+				
+				def void setJ1939DcmModeRuleNrcValue(BigInteger value){
+					var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmModeRuleNrcValue"]
+					if (parameterValue === null) {
+						val containerDef = containerValue.gGetDefinition
+						if (containerDef instanceof GParamConfContainerDef) {
+							parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmModeRuleNrcValue"].createParameterValue()
+							containerValue.gGetParameterValues += parameterValue
+						}
+					}
+					parameterValue.setValue(value)
+				}
+				
+				
+				
+				
+				
+			}
+			
+		}
+		
+	}
+	static class J1939DcmGeneral implements IWrapper<GContainer> {
+		private GContainer containerValue
+	
+		new(GContainer containerValue){
+			this.containerValue = containerValue
+		}
+	
+		def String getShortName(){
+			containerValue?.gGetShortName
+		}
+	
+		def void setShortName(String name){
+			containerValue?.gSetShortName(name)
+		}
+	
+		override def GContainer getTarget(){
+			containerValue
+		}
+	
+		override def boolean equals(Object object) {
+	        if (!(object instanceof J1939DcmGeneral)){
+				return false
+			}
+			this.target == (object as J1939DcmGeneral).target
+		}
+	
+		def BigInteger getJ1939DcmCommonBufferSize(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmCommonBufferSize"].getBigIntegerValue()
+		}
+		
+		def void setJ1939DcmCommonBufferSize(BigInteger value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmCommonBufferSize"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmCommonBufferSize"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def Boolean getJ1939DcmDevErrorDetect(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDevErrorDetect"].getBooleanValue()
+		}
+		
+		def void setJ1939DcmDevErrorDetect(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDevErrorDetect"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDevErrorDetect"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
+		}
+		
+		def BigInteger getJ1939DcmDM01BufferSize(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01BufferSize"].getBigIntegerValue()
+		}
+		
+		def void setJ1939DcmDM01BufferSize(BigInteger value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01BufferSize"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDM01BufferSize"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def BigInteger getJ1939DcmDM01MaxDTCs(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01MaxDTCs"].getBigIntegerValue()
+		}
+		
+		def void setJ1939DcmDM01MaxDTCs(BigInteger value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmDM01MaxDTCs"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmDM01MaxDTCs"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def BigDecimal getJ1939DcmMainFunctionPeriod(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMainFunctionPeriod"].getBigDecimalValue()
+		}
+		
+		def void setJ1939DcmMainFunctionPeriod(BigDecimal value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMainFunctionPeriod"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMainFunctionPeriod"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def BigInteger getJ1939DcmMaxDTCsPerMainFunction(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxDTCsPerMainFunction"].getBigIntegerValue()
+		}
+		
+		def void setJ1939DcmMaxDTCsPerMainFunction(BigInteger value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxDTCsPerMainFunction"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMaxDTCsPerMainFunction"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def BigInteger getJ1939DcmMaxFreezeFramesPerMainFunction(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"].getBigIntegerValue()
+		}
+		
+		def void setJ1939DcmMaxFreezeFramesPerMainFunction(BigInteger value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMaxFreezeFramesPerMainFunction"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def BigInteger getJ1939DcmMaxRatiosPerMainFunction(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxRatiosPerMainFunction"].getBigIntegerValue()
+		}
+		
+		def void setJ1939DcmMaxRatiosPerMainFunction(BigInteger value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmMaxRatiosPerMainFunction"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmMaxRatiosPerMainFunction"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(value)
+		}
+		
+		def Boolean getJ1939DcmVersionInfoApi(){
+			containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmVersionInfoApi"].getBooleanValue()
+		}
+		
+		def void setJ1939DcmVersionInfoApi(Boolean value){
+			var GParameterValue parameterValue = containerValue.gGetParameterValues.findFirst[gGetDefinition?.gGetShortName == "J1939DcmVersionInfoApi"]
+			if (parameterValue === null) {
+				val containerDef = containerValue.gGetDefinition
+				if (containerDef instanceof GParamConfContainerDef) {
+					parameterValue = containerDef.gGetParameters.findFirst[gGetShortName == "J1939DcmVersionInfoApi"].createParameterValue()
+					containerValue.gGetParameterValues += parameterValue
+				}
+			}
+			parameterValue.setValue(getBooleanParameterValueValue(value, true))
+		}
+		
+		
+		
+		
+	}
+
+	override def boolean equals(Object object) {
+        if (!(object instanceof J1939Dcm)){
+			return false
+		}
+		this.target == (object as J1939Dcm).target
+	}
+
+	private static def boolean accept(EObject child, Class<? extends GIdentifiable> ecucTypeDefType, String ecucTypeDefName) {
+		val EStructuralFeature definitionFeature = child.eClass().getEStructuralFeature("definition") //$NON-NLS-1$
+		if (definitionFeature !== null) {
+			val definition = child.eGet(definitionFeature)
+			if (ecucTypeDefType.isInstance(definition)) {
+				return ecucTypeDefType.cast(definition).gGetShortName.equals(ecucTypeDefName)
+			}
+		}
+		return false
+	}
+}
