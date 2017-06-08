@@ -1298,7 +1298,7 @@ public class EcucMetaModelTest extends AbstractEcucIntegrationTestCase {
 		/** 41_1_6 Property value **/
 		Property valueProperty = finitionLevelRichType.getProperty("value"); //$NON-NLS-1$
 		assertNotNull(valueProperty);
-		assertEquals(ecucMetaModel.getTypeForName(ParamConfContainerDefType.TYPE_NAME), valueProperty.getReturnType());
+		assertEquals(ecucMetaModel.getTypeForName(ContainerDefType.TYPE_NAME), valueProperty.getReturnType());
 		Object value = valueProperty.get(finitionLevelObject);
 		assertTrue(value instanceof EcucContainerValue);
 		assertEquals(getConfigurationObject(EcucTestReferenceWorkspaceDescriptor.URI_FRAGMENT_EPC_CAR_OPTIONS_FINITION_LEVELS_HIGH), value);
