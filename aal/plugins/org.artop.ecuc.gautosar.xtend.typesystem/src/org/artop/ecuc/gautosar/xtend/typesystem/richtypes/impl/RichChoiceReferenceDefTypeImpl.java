@@ -43,14 +43,14 @@ import gautosar.ggenericstructure.ginfrastructure.GReferrable;
 
 public class RichChoiceReferenceDefTypeImpl extends AbstractRichConfigReferenceTypeImpl implements RichChoiceReferenceDefType {
 
-	protected Collection<GContainerDef> destinationTypeDefs;
+	protected Collection<? extends GContainerDef> destinationTypeDefs;
 
 	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef) {
 		this(context, choiceReferenceDef, choiceReferenceDef.gGetDestinations());
 	}
 
 	public RichChoiceReferenceDefTypeImpl(EcucContext context, GChoiceReferenceDef choiceReferenceDef,
-			Collection<GContainerDef> destinationTypeDefs) {
+			Collection<? extends GContainerDef> destinationTypeDefs) {
 		super(context, choiceReferenceDef);
 		this.destinationTypeDefs = destinationTypeDefs;
 	}
