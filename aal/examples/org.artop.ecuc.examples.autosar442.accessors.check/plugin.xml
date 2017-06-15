@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.sphinx.emf.check.checkvalidators">
+      <validator
+            class="org.artop.ecuc.examples.autosar442.accessors.check.EcucValueAccessor442CheckValidator"
+            catalog="model/EcucValueAcessors442.checkcatalog">
+      </validator>
+      <ePackageMapping
+            eObjectWrapperPackageName="org.artop.ecuc.autosar442.accessors"
+            ePackageNsURI="http://autosar.org/schema/r4.0/autosar40/ecucd">
+      </ePackageMapping>
+   </extension>
+</plugin>
