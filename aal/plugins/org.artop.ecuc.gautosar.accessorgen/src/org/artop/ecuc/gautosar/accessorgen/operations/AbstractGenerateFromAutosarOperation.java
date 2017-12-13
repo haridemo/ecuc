@@ -49,9 +49,12 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 	protected IProject targetProject;
 	protected String autosarRevision;
 
-	private static final Pattern AR_XSD_PATTERN = Pattern.compile("autosar_(\\d)-(\\d)-(\\d)(_(strict|compact|strict_compact))?\\.xsd", //$NON-NLS-1$
+	private static final Pattern AR_XSD_PATTERN_OLD = Pattern.compile("autosar_(\\d)-(\\d)-(\\d)(_(strict|compact|strict_compact))?\\.xsd", //$NON-NLS-1$
+			Pattern.CASE_INSENSITIVE); // up to 430
+	private static final Pattern AR_XSD_PATTERN_NEW = Pattern.compile("autosar_000(\\d)(\\d)(_(strict|compact|strict_compact))?\\.xsd", //$NON-NLS-1$
 			Pattern.CASE_INSENSITIVE);
 
+	private static final String MAJOR_VERSION = "4";
 	private static final String TARGET_PLUGIN_NAME = "org.artop.ecuc.autosar{0}.accessors"; //$NON-NLS-1$
 	private static final String AUTOSAR_REVISION_PLUGIN_NAME = "org.artop.aal.autosar{0}"; //$NON-NLS-1$
 	private static final String AUTOSAR_SERVICES_REVISION_PLUGIN_NAME = "org.artop.aal.autosar{0}.services"; //$NON-NLS-1$
@@ -151,8 +154,7 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 			Map<String, String> schemaLocationEntries = EcoreResourceUtil.readSchemaLocationEntries(autosarResource);
 			if (!schemaLocationEntries.isEmpty()) {
 				String arXSD = schemaLocationEntries.values().iterator().next();
-				if (AR_XSD_PATTERN.matcher(arXSD).matches()) {
-					autosarRevision = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1$2$3"); //$NON-NLS-1$
+				if (setAutosarRevision(arXSD)) {
 					final String targetPluginName = MessageFormat.format(TARGET_PLUGIN_NAME, autosarRevision);
 					IProject targetProject = ResourcesPlugin.getWorkspace().getRoot().getProject(targetPluginName);
 					// Create the target project if not exist yet
@@ -245,12 +247,21 @@ public abstract class AbstractGenerateFromAutosarOperation extends AbstractWorks
 				Map<String, String> schemaLocationEntries = EcoreResourceUtil.readSchemaLocationEntries(autosarResource);
 				if (!schemaLocationEntries.isEmpty()) {
 					String arXSD = schemaLocationEntries.values().iterator().next();
-					if (AR_XSD_PATTERN.matcher(arXSD).matches()) {
-						autosarRevision = AR_XSD_PATTERN.matcher(arXSD).replaceAll("$1$2$3"); //$NON-NLS-1$
-					}
+					setAutosarRevision(arXSD);
 				}
 			}
 		}
 		return autosarRevision;
+	}
+
+	private boolean setAutosarRevision(String arXSD) {
+		if (AR_XSD_PATTERN_NEW.matcher(arXSD).matches()) {
+			autosarRevision = MAJOR_VERSION + AR_XSD_PATTERN_NEW.matcher(arXSD).replaceAll("$1$2"); //$NON-NLS-1$ ;
+			return true;
+		} else if (AR_XSD_PATTERN_OLD.matcher(arXSD).matches()) {
+			autosarRevision = AR_XSD_PATTERN_OLD.matcher(arXSD).replaceAll("$1$2$3"); //$NON-NLS-1$
+			return true;
+		}
+		return false;
 	}
 }
