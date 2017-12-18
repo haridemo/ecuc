@@ -39,6 +39,8 @@ import org.artop.ecuc.autosar444.accessors.CanSM.CanSMConfiguration;
 import org.artop.ecuc.autosar444.accessors.CanSM.CanSMConfiguration.CanSMManagerNetwork;
 import org.artop.ecuc.autosar444.accessors.CanSM.CanSMGeneral;
 import org.artop.ecuc.autosar444.accessors.EcuC.EcucPartitionCollection.EcucPartition;
+import org.artop.ecuc.autosar444.accessors.IpduM.IpduMConfig.IpduMContainerRxPdu;
+import org.artop.ecuc.autosar444.accessors.IpduM.IpduMConfig.IpduMContainerRxPdu.IpduMContainerHeaderSize;
 import org.artop.ecuc.autosar444.accessors.NvM;
 import org.artop.ecuc.autosar444.accessors.NvM.NvMBlockDescriptor;
 import org.artop.ecuc.autosar444.accessors.NvM.NvMBlockDescriptor.NvMBlockCrcType;
@@ -654,8 +656,8 @@ public class EcucValueAccessors444Test extends AbstractEcucValueAccessorsIntegra
 	}
 
 	/*
-	 * *********************************************************** ****** SubContainer Accessor's
-	 * ************************** ***********************************************************
+	 * *********************************************************** ****** SubContainer Accessor's **************************
+	 * ***********************************************************
 	 */
 	public void testSetSubContainer() {
 		EObject bswModuleConfiguration = getConfigurationObject(
@@ -727,5 +729,35 @@ public class EcucValueAccessors444Test extends AbstractEcucValueAccessorsIntegra
 		} catch (ExecutionException ex) {
 			fail(ex.getLocalizedMessage());
 		}
+	}
+
+	public void testIPduMContainerHeaderSizeAccessors() {
+		EObject IPduMContainerRxPduContainerValue = getConfigurationObject(
+				EcucValueAccessorsTestReferenceWorkspaceDescriptor.URI_FRAGMENT_IPDUM_CONTAINER_RX_PDU_CONTAINER_VALUE);
+		assertTrue(IPduMContainerRxPduContainerValue instanceof EcucContainerValue);
+
+		final IpduMContainerRxPdu ipduMContainedRxPdu = new IpduMContainerRxPdu((EcucContainerValue) IPduMContainerRxPduContainerValue);
+		IpduMContainerHeaderSize ipduMContainerHeaderSize = ipduMContainedRxPdu.getIpduMContainerHeaderSize();
+		assertNotNull(ipduMContainerHeaderSize);
+		assertEquals(IpduMContainerHeaderSize.IPDUM_HEADERTYPE_LONG, ipduMContainerHeaderSize);
+
+		Runnable runnable = new Runnable() {
+			@Override
+			public void run() {
+				ipduMContainedRxPdu.setIpduMContainerHeaderSize(IpduMContainerHeaderSize.IPDUM_HEADERTYPE_SHORT);
+			}
+		};
+
+		try {
+			WorkspaceTransactionUtil.executeInWriteTransaction(getRefWks().editingDomain4x, runnable, "Setting SubContainer");
+		} catch (OperationCanceledException ex) {
+
+		} catch (ExecutionException ex) {
+			fail(ex.getLocalizedMessage());
+		}
+
+		ipduMContainerHeaderSize = ipduMContainedRxPdu.getIpduMContainerHeaderSize();
+		assertNotNull(ipduMContainerHeaderSize);
+		assertEquals(IpduMContainerHeaderSize.IPDUM_HEADERTYPE_SHORT, ipduMContainerHeaderSize);
 	}
 }

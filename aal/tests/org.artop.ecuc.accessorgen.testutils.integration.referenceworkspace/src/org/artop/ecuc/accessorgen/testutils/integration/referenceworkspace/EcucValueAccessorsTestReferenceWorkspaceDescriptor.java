@@ -51,15 +51,18 @@ public class EcucValueAccessorsTestReferenceWorkspaceDescriptor extends Abstract
 	public static final String URI_FRAGMENT_CANSM_MODULE_CONFIGURATION = "/Values/CanSMValues?type=EcucModuleConfigurationValues";
 	public static final String URI_FRAGMENT_BSWMODEVALUES_CONTAINER_VALUE = "/Values/BswMValues/BswMConfigValues/BswMArbitrationValues/BswMModeConditionValues/BswMConditionValueVals/BswModeValues?type=EcucContainerValue";
 	public static final String URI_FRAGMENT_ECUC_PARTITION_MODULE_CONFIGURATION = "/Values/EcuCValues/EcucPartitionCollectionValues/EcucPartitionValues?type=EcucContainerValue";
+	public static final String URI_FRAGMENT_IPDUM_CONTAINER_RX_PDU_CONTAINER_VALUE = "/Values/IPduMValues/IPduMContainerRxPduValues?type=EcucContainerValue";
 
 	public EcucValueAccessorsTestReferenceWorkspaceDescriptor(String[] referenceProjectNames) {
 		super(new HashSet<String>(Arrays.asList(referenceProjectNames)));
 	}
 
+	@Override
 	public Plugin getReferenceWorkspacePlugin() {
 		return Activator.getPlugin();
 	}
 
+	@Override
 	public String getReferenceWorkspaceArchiveFileName() {
 		return ECUC_PARAMETER_VALUE_ACCESSORS_TEST_REFERENCE_WORKSPACE_ARCHIVE_FILE_NAME;
 	}
@@ -76,14 +79,17 @@ public class EcucValueAccessorsTestReferenceWorkspaceDescriptor extends Abstract
 		return new String[] { AUTOSAR_4X_PROJECT_NAME };
 	}
 
+	@Override
 	public String getName() {
 		return REFERENCE_WORKSPACE_NAME;
 	}
 
+	@Override
 	public IPath getArchivePath() {
 		return ARCHIVE_PATH;
 	}
 
+	@Override
 	public Bundle getSrcBundle() {
 		return getBundle(EcucValueAccessorsTestReferenceWorkspace.class);
 	}
