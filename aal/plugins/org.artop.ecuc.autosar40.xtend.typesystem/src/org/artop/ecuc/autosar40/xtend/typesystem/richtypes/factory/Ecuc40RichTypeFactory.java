@@ -1,30 +1,22 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.autosar40.xtend.typesystem.richtypes.factory;
 
-import gautosar.gecucparameterdef.GBooleanParamDef;
-import gautosar.gecucparameterdef.GChoiceContainerDef;
-import gautosar.gecucparameterdef.GConfigParameter;
-import gautosar.gecucparameterdef.GContainerDef;
-import gautosar.gecucparameterdef.GEnumerationParamDef;
-import gautosar.gecucparameterdef.GFloatParamDef;
-import gautosar.gecucparameterdef.GIntegerParamDef;
-import gautosar.gecucparameterdef.GModuleDef;
-
 import java.util.Map;
 
+import org.artop.ecuc.autosar40.xtend.typesystem.internal.Activator;
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichBooleanParamDef40TypeImpl;
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichChoiceContainerDef40TypeImpl;
 import org.artop.ecuc.autosar40.xtend.typesystem.richtypes.impl.RichEnumerationParamDef40TypeImpl;
@@ -45,10 +37,20 @@ import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichModuleDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.RichStringParamDefType;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.EcucRichTypeFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory.IEcucRichTypeHierarchyVisitor;
+import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xtend.typesystem.Type;
 
 import autosar40.ecucparameterdef.EcucAddInfoParamDef;
 import autosar40.ecucparameterdef.EcucMultilineStringParamDef;
+import autosar40.ecucparameterdef.EcucUriReferenceDef;
+import gautosar.gecucparameterdef.GBooleanParamDef;
+import gautosar.gecucparameterdef.GChoiceContainerDef;
+import gautosar.gecucparameterdef.GConfigParameter;
+import gautosar.gecucparameterdef.GContainerDef;
+import gautosar.gecucparameterdef.GEnumerationParamDef;
+import gautosar.gecucparameterdef.GFloatParamDef;
+import gautosar.gecucparameterdef.GIntegerParamDef;
+import gautosar.gecucparameterdef.GModuleDef;
 
 public class Ecuc40RichTypeFactory extends EcucRichTypeFactory {
 
@@ -64,10 +66,13 @@ public class Ecuc40RichTypeFactory extends EcucRichTypeFactory {
 		} else if (parameter instanceof EcucAddInfoParamDef) {
 			// TODO Provide support for RichAddInfoParamDef40Type
 			// configParameterType = new RichAddInfoParamDef40Type(context, parameter);
-			System.err.println("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			PlatformLogUtil.logAsWarning(Activator.getPlugin(), "ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (parameter instanceof EcucMultilineStringParamDef) {
 			// TODO Provide support for RichMultilineStringParamDef40Type
-			System.err.println("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			PlatformLogUtil.logAsWarning(Activator.getPlugin(), "ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (parameter instanceof EcucUriReferenceDef) {
+			// TODO Provide support for EcucUriReferenceDef
+			PlatformLogUtil.logAsWarning(Activator.getPlugin(), "ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else {
 			configParameterType = super.createConfigParameterType(parameter);
 		}

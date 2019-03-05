@@ -1,48 +1,25 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys, itemis and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
  *     itemis - API & fixed Bug 1582 https://www.artop.org/bugs/show_bug.cgi?id=1582
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem.richtypes.factory;
 
-import gautosar.gecucparameterdef.GBooleanParamDef;
-import gautosar.gecucparameterdef.GChoiceContainerDef;
-import gautosar.gecucparameterdef.GChoiceReferenceDef;
-import gautosar.gecucparameterdef.GConfigParameter;
-import gautosar.gecucparameterdef.GConfigReference;
-import gautosar.gecucparameterdef.GContainerDef;
-import gautosar.gecucparameterdef.GEnumerationLiteralDef;
-import gautosar.gecucparameterdef.GEnumerationParamDef;
-import gautosar.gecucparameterdef.GFloatParamDef;
-import gautosar.gecucparameterdef.GForeignReferenceDef;
-import gautosar.gecucparameterdef.GFunctionNameDef;
-import gautosar.gecucparameterdef.GInstanceReferenceDef;
-import gautosar.gecucparameterdef.GIntegerParamDef;
-import gautosar.gecucparameterdef.GLinkerSymbolDef;
-import gautosar.gecucparameterdef.GModuleDef;
-import gautosar.gecucparameterdef.GParamConfContainerDef;
-import gautosar.gecucparameterdef.GReferenceDef;
-import gautosar.gecucparameterdef.GStringParamDef;
-import gautosar.gecucparameterdef.GSymbolicNameReferenceDef;
-import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
-
-import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import org.artop.aal.common.resource.AutosarURIFactory;
 import org.artop.ecuc.gautosar.xtend.typesystem.EcucContext;
 import org.artop.ecuc.gautosar.xtend.typesystem.internal.Activator;
 import org.artop.ecuc.gautosar.xtend.typesystem.richtypes.CompositeEcucRichType;
@@ -81,6 +58,27 @@ import org.eclipse.sphinx.emf.util.EObjectUtil;
 import org.eclipse.sphinx.platform.util.PlatformLogUtil;
 import org.eclipse.xtend.typesystem.Type;
 
+import gautosar.gecucparameterdef.GBooleanParamDef;
+import gautosar.gecucparameterdef.GChoiceContainerDef;
+import gautosar.gecucparameterdef.GChoiceReferenceDef;
+import gautosar.gecucparameterdef.GConfigParameter;
+import gautosar.gecucparameterdef.GConfigReference;
+import gautosar.gecucparameterdef.GContainerDef;
+import gautosar.gecucparameterdef.GEnumerationLiteralDef;
+import gautosar.gecucparameterdef.GEnumerationParamDef;
+import gautosar.gecucparameterdef.GFloatParamDef;
+import gautosar.gecucparameterdef.GForeignReferenceDef;
+import gautosar.gecucparameterdef.GFunctionNameDef;
+import gautosar.gecucparameterdef.GInstanceReferenceDef;
+import gautosar.gecucparameterdef.GIntegerParamDef;
+import gautosar.gecucparameterdef.GLinkerSymbolDef;
+import gautosar.gecucparameterdef.GModuleDef;
+import gautosar.gecucparameterdef.GParamConfContainerDef;
+import gautosar.gecucparameterdef.GReferenceDef;
+import gautosar.gecucparameterdef.GStringParamDef;
+import gautosar.gecucparameterdef.GSymbolicNameReferenceDef;
+import gautosar.ggenericstructure.ginfrastructure.GIdentifiable;
+
 public class EcucRichTypeFactory implements IRichTypeFactory {
 
 	protected EcucContext context;
@@ -113,19 +111,9 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 
 	protected void createRichModuleDefTypes() {
 		for (GModuleDef moduleDef : EObjectUtil.getAllInstancesOf(context.getModuleDefModelDescriptor(), GModuleDef.class, false)) {
-			// TODO Surround with appropriate tracing option
-			long start = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
-			int typesBefore = types.size();
-
 			RichModuleDefType rich = createRichModuleDefType(moduleDef);
 			registerType(rich, moduleDef);
-
 			createCompositeRichTypes(rich, moduleDef);
-
-			// TODO Surround with appropriate tracing option
-			long stop = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
-			System.out
-					.println("Created " + (types.size() - typesBefore) + " types in " + (stop - start) / 1000000 + " ms for " + AutosarURIFactory.getAbsoluteQualifiedName(moduleDef)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 	}
 
@@ -150,12 +138,14 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			} else if (containerDef instanceof GChoiceContainerDef) {
 				containerDefType = createRichChoiceContainerDefType(containerDef);
 			} else {
-				throw new UnsupportedOperationException("ContainerDef type " + containerDef.eClass().getName() + " currently not supported!"); //$NON-NLS-1$ //$NON-NLS-2$
+				PlatformLogUtil.logAsWarning(Activator.getPlugin(),
+						"ContainerDef type " + containerDef.eClass().getName() + " currently not supported!"); //$NON-NLS-1$ //$NON-NLS-2$
 			}
-			registerType(containerDefType, containerDef);
-			parentType.addChildType(containerDefType);
-
-			createCompositeRichTypes(containerDefType, containerDef);
+			if (containerDefType != null) {
+				registerType(containerDefType, containerDef);
+				parentType.addChildType(containerDefType);
+				createCompositeRichTypes(containerDefType, containerDef);
+			}
 		}
 
 		if (identifiable instanceof GParamConfContainerDef) {
@@ -206,7 +196,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			}
 			configParameterType = enumerationParamDefType;
 		} else {
-			throw new UnsupportedOperationException("ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			PlatformLogUtil.logAsWarning(Activator.getPlugin(), "ConfigParameter type '" + parameter.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configParameterType;
 	}
@@ -248,7 +238,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			// TODO Provide support for GSymbolicNameReferenceDef
 			// configReferenceType.add(new RichSymbolicNameReferenceDefType(context, reference,
 			// getRichTypeName(reference));
-			System.err.println("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			PlatformLogUtil.logAsWarning(Activator.getPlugin(), "ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		} else if (reference instanceof GForeignReferenceDef) {
 			GForeignReferenceDef foreignReferenceDef = (GForeignReferenceDef) reference;
 			configReferenceTypes.add(createRichForeignReferenceDefType(foreignReferenceDef));
@@ -259,7 +249,7 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 			GChoiceReferenceDef choiceReferenceDef = (GChoiceReferenceDef) reference;
 			configReferenceTypes.add(createRichChoiceReferenceDefType(choiceReferenceDef));
 		} else {
-			throw new UnsupportedOperationException("ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
+			PlatformLogUtil.logAsWarning(Activator.getPlugin(), "ConfigReference type '" + reference.eClass().getName() + "' not supported yet!"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return configReferenceTypes;
 	}
@@ -283,8 +273,8 @@ public class EcucRichTypeFactory implements IRichTypeFactory {
 	protected void registerType(EcucRichType type, GIdentifiable identifiable) {
 		Type previousType = types.put(type.getName(), type);
 		if (previousType != null) {
-			PlatformLogUtil.logAsError(Activator.getPlugin(), new IllegalStateException(
-					"Type name conflict: " + type.getName() + " Please adjust your Model !")); //$NON-NLS-1$ //$NON-NLS-2$
+			PlatformLogUtil.logAsError(Activator.getPlugin(),
+					new IllegalStateException("Type name conflict: " + type.getName() + " Please adjust your Model !")); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		if (type instanceof RichModuleDefType) {
 			rootTypes.add((RichModuleDefType) type);

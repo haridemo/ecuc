@@ -1,26 +1,19 @@
 /**
  * <copyright>
- * 
+ *
  * Copyright (c) See4sys and others.
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Artop Software License Based on AUTOSAR
  * Released Material (ASLR) which accompanies this distribution, and is
  * available at http://www.artop.org/aslr.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  *     See4sys - Initial API and implementation
- * 
+ *
  * </copyright>
  */
 package org.artop.ecuc.gautosar.xtend.typesystem;
 
-import gautosar.gecucdescription.GConfigReferenceValue;
-import gautosar.gecucdescription.GContainer;
-import gautosar.gecucdescription.GModuleConfiguration;
-import gautosar.gecucdescription.GParameterValue;
-import gautosar.ggenericstructure.ginfrastructure.GARObject;
-
-import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -53,6 +46,12 @@ import org.eclipse.xtend.expression.TypeSystem;
 import org.eclipse.xtend.typesystem.MetaModel;
 import org.eclipse.xtend.typesystem.Type;
 
+import gautosar.gecucdescription.GConfigReferenceValue;
+import gautosar.gecucdescription.GContainer;
+import gautosar.gecucdescription.GModuleConfiguration;
+import gautosar.gecucdescription.GParameterValue;
+import gautosar.ggenericstructure.ginfrastructure.GARObject;
+
 public class EcucMetaModel implements MetaModel {
 
 	protected EcucContext context;
@@ -70,9 +69,6 @@ public class EcucMetaModel implements MetaModel {
 	private Map<String, Type> allTypes;
 	// additional cache to access the type for parameter values faster
 	private Map<GARObject, Type> value2DefinitionType;
-
-	// Debug only
-	private static int createCounter = 0;
 
 	public EcucMetaModel(EcucContext context) {
 		Assert.isNotNull(context);
@@ -156,7 +152,7 @@ public class EcucMetaModel implements MetaModel {
 	 * <li>GContainer
 	 * <li>GParameterValue
 	 * </ul>
-	 * 
+	 *
 	 * @param target
 	 *            Target object
 	 * @return Definition for target, <code>null</code> for unhandled types
@@ -225,10 +221,6 @@ public class EcucMetaModel implements MetaModel {
 		types = new HashMap<String, Type>();
 		value2DefinitionType = new HashMap<GARObject, Type>();
 
-		// TODO Surround with appropriate tracing option
-		long start = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
-		createCounter++;
-
 		// First define the base types
 		createBaseTypes();
 
@@ -243,9 +235,6 @@ public class EcucMetaModel implements MetaModel {
 			PlatformLogUtil.logAsError(Activator.getPlugin(), ex);
 		}
 
-		// TODO Surround with appropriate tracing option
-		long stop = ManagementFactory.getThreadMXBean().getCurrentThreadCpuTime();
-		System.out.println("Created " + types.size() + " types in " + (stop - start) / 1000000 + " ms (#run " + createCounter + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 	}
 
 	protected void createBaseTypes() {
