@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.artop.ecuc.examples.autosar4x.accessorgen.ui;singleton:=true
-Bundle-Version: 4.12.0.qualifier
+Bundle-Version: 4.13.0.qualifier
 Bundle-Activator: org.artop.ecuc.examples.autosar4x.accessorgen.ui.internal.Activator$Implementation
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.sphinx.emf.ui,
